@@ -1,0 +1,6 @@
+
+*.gbc
+*.gb
+_tmp
+
+.vscode

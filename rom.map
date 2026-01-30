@@ -1,0 +1,945 @@
+SUMMARY:
+	ROM0: 16384 bytes used / 0 free
+	ROMX: 2079383 bytes used / 1385 free in 127 banks
+	SRAM: 8192 bytes used / 0 free in 1 bank
+	WRAM0: 8192 bytes used / 0 free
+	HRAM: 127 bytes used / 0 free
+
+ROM0 bank #0:
+	SECTION: $0000-$003f ($0040 bytes) ["bank00"]
+	         $0020 = rst_00_0020
+	SECTION: $0040-$0047 ($0008 bytes) ["isrVBlank"]
+	         $0040 = isrVBlank
+	SECTION: $0048-$004f ($0008 bytes) ["isrLCDC"]
+	         $0048 = isrLCDC
+	SECTION: $0050-$0057 ($0008 bytes) ["isrTimer"]
+	         $0050 = isrTimer
+	SECTION: $0058-$00ff ($00a8 bytes) ["isrSerial"]
+	         $0058 = isrSerial
+	SECTION: $0100-$014f ($0050 bytes) ["entry"]
+	         $0100 = entry
+	SECTION: $0150-$3fff ($3eb0 bytes) ["bank00_0150"]
+	         $0254 = entry2
+	         $0269 = entry2.jr_00_0269
+	         $026e = entry2.jr_00_026e
+	         $027b = entry2.jr_00_027b
+	         $029a = entry2.jr_00_029a
+	         $02a7 = jp_00_02a7
+	         $02b2 = jp_00_02a7.jr_00_02b2
+	         $02b6 = jp_00_02a7.jr_00_02b6
+	         $02d0 = jp_00_02a7.jr_00_02d0
+	         $02de = jp_00_02a7.jr_00_02de
+	         $02e2 = jp_00_02a7.jr_00_02e2
+	         $0307 = jp_00_02a7.jr_00_0307
+	         $0316 = jp_00_02a7.jr_00_0316
+	         $031d = jp_00_02a7.jr_00_031d
+	         $0328 = jp_00_02a7.jr_00_0328
+	         $0346 = jp_00_02a7.jr_00_0346
+	         $0350 = jp_00_02a7.jr_00_0350
+	         $0391 = jp_00_02a7.jr_00_0391
+	         $0397 = jp_00_02a7.jr_00_0397
+	         $03c0 = jp_00_02a7.jr_00_03c0
+	         $03c9 = call_00_03c9
+	         $03de = call_00_03c9.jr_00_03de
+	         $03e5 = call_00_03e5
+	         $0406 = call_00_03e5.jr_00_0406
+	         $041b = call_00_03e5.jr_00_041b
+	         $0422 = call_00_0422
+	         $0432 = call_00_0422.jr_00_0432
+	         $0443 = call_00_0422.jr_00_0443
+	         $0445 = call_00_0422.jr_00_0445
+	         $0466 = call_00_0422.jr_00_0466
+	         $046c = call_00_0422.jr_00_046c
+	         $047b = call_00_0422.jr_00_047b
+	         $047d = call_00_0422.jr_00_047d
+	         $048b = jp_00_048b
+	         $048c = jp_00_048c
+	         $04a6 = jp_00_048c.jr_00_04a6
+	         $04b3 = jp_00_048c.jr_00_04b3
+	         $04bd = jp_00_048c.jr_00_04bd
+	         $04be = jp_00_048c.jr_00_04be
+	         $04c9 = jp_00_048c.jr_00_04c9
+	         $04dd = jp_00_04dd
+	         $04e5 = jp_00_04dd.jr_00_04e5
+	         $04ea = jp_00_04dd.jr_00_04ea
+	         $04fa = jp_00_04dd.jr_00_04fa
+	         $0584 = jp_00_04dd.jr_00_0584
+	         $0589 = call_00_0589
+	         $058f = call_00_0589.jr_00_058f
+	         $0597 = call_00_0589.jr_00_0597
+	         $059a = jp_00_059a
+	         $05cd = jp_00_059a.jr_00_05cd
+	         $05d0 = jp_00_059a.jp_00_05d0
+	         $05e2 = jp_00_059a.jr_00_05e2
+	         $05e5 = jp_00_059a.jr_00_05e5
+	         $0629 = jp_00_059a.jr_00_0629
+	         $0636 = jp_00_059a.jr_00_0636
+	         $0644 = jp_00_059a.jr_00_0644
+	         $0672 = jp_00_059a.jr_00_0672
+	         $0683 = jp_00_059a.jp_00_0683
+	         $06ae = call_00_06ae
+	         $06d2 = call_00_06ae.jr_00_06d2
+	         $06e7 = call_00_06e7
+	         $06f9 = call_00_06e7.jr_00_06f9
+	         $0708 = call_00_06e7.jr_00_0708
+	         $070b = call_00_06e7.jr_00_070b
+	         $0716 = call_00_06e7.jr_00_0716
+	         $0731 = call_00_0731
+	         $0743 = call_00_0731.jr_00_0743
+	         $075a = call_00_0731.jr_00_075a
+	         $075c = call_00_0731.jr_00_075c
+	         $0778 = call_00_0731.jr_00_0778
+	         $0784 = call_00_0784
+	         $0785 = call_00_0785
+	         $078b = call_00_0785.jr_00_078b
+	         $078f = call_00_078f
+	         $079f = call_00_078f.jr_00_079f
+	         $07ae = call_00_078f.jr_00_07ae
+	         $07b9 = call_00_07b9
+	         $07d6 = call_00_07d6
+	         $07e6 = call_00_07d6.jr_00_07e6
+	         $07fb = call_00_07d6.jr_00_07fb
+	         $0803 = call_00_07d6.jr_00_0803
+	         $080e = call_00_07d6.jr_00_080e
+	         $0821 = call_00_0821
+	         $085e = jp_00_085e
+	         $0875 = jp_00_085e.jr_00_0875
+	         $0882 = jp_00_085e.jr_00_0882
+	         $088f = jp_00_085e.jr_00_088f
+	         $089f = jp_00_085e.jp_00_089f
+	         $08ba = jp_00_085e.jr_00_08ba
+	         $08bf = jp_00_085e.jp_00_08bf
+	         $08c2 = jp_00_085e.jp_00_08c2
+	         $08c5 = jp_00_085e.jp_00_08c5
+	         $08c8 = jp_00_085e.jr_00_08c8
+	         $08d1 = jp_00_085e.jp_00_08d1
+	         $096b = call_00_096b
+	         $23c6 = call_00_23c6
+	         $242f = call_00_242f
+	         $2434 = call_00_2434
+	         $2439 = call_00_2439
+	         $243c = jr_00_243c
+	         $243e = jr_00_243c.jr_00_243e
+	         $2446 = jr_00_243c.jr_00_2446
+	         $244c = jr_00_243c.jr_00_244c
+	         $2457 = jr_00_243c.jr_00_2457
+	         $2464 = jr_00_243c.jr_00_2464
+	         $2515 = call_00_2515
+	         $251a = call_00_251a
+	         $2534 = call_00_251a.jr_00_2534
+	         $2545 = call_00_251a.jr_00_2545
+	         $254a = call_00_251a.jr_00_254a
+	         $254f = call_00_251a.jr_00_254f
+	         $2554 = call_00_251a.jr_00_2554
+	         $2572 = call_00_2572
+	         $2573 = call_00_2572.jr_00_2573
+	         $257a = call_00_257a
+	         $258d = call_00_257a.jr_00_258d
+	         $2598 = call_00_257a.jr_00_2598
+	         $25a4 = call_00_257a.jr_00_25a4
+	         $25c4 = call_00_25c4
+	         $25e8 = call_00_25c4.jr_00_25e8
+	         $25f3 = call_00_25f3
+	         $2622 = call_00_25f3.jr_00_2622
+	         $2633 = call_00_25f3.jr_00_2633
+	         $2638 = call_00_25f3.jr_00_2638
+	         $263d = call_00_25f3.jr_00_263d
+	         $2642 = call_00_25f3.jr_00_2642
+	         $2660 = call_00_2660
+	         $2665 = call_00_2660.jr_00_2665
+	         $2677 = call_00_2660.jr_00_2677
+	         $2680 = call_00_2680
+	         $2693 = call_00_2680.jr_00_2693
+	         $26a2 = call_00_2680.jr_00_26a2
+	         $26ae = call_00_2680.jr_00_26ae
+	         $26c0 = call_00_2680.jr_00_26c0
+	         $26e2 = call_00_26e2
+	         $26fe = call_00_26e2.jr_00_26fe
+	         $2713 = call_00_26e2.jr_00_2713
+	         $2726 = call_00_26e2.jr_00_2726
+	         $273a = call_00_26e2.jr_00_273a
+	         $2750 = call_00_26e2.jr_00_2750
+	         $275c = call_00_275c
+	         $2788 = call_00_275c.jr_00_2788
+	         $27a4 = call_00_27a4
+	         $27be = call_00_27be
+	         $27c8 = call_00_27be.jr_00_27c8
+	         $27dd = call_00_27dd
+	         $27e7 = call_00_27dd.jr_00_27e7
+	         $27f3 = call_00_27f3
+	         $285c = call_00_285c
+	         $2875 = call_00_285c.jr_00_2875
+	         $28a5 = call_00_285c.jr_00_28a5
+	         $28cb = call_00_285c.jr_00_28cb
+	         $2a47 = call_00_2a47
+	         $2a62 = jp_00_2a62
+	         $2a7f = call_00_2a7f
+	         $2a8b = call_00_2a7f.jr_00_2a8b
+	         $2a9b = call_00_2a7f.jr_00_2a9b
+	         $2a9e = call_00_2a7f.jr_00_2a9e
+	         $2aad = call_00_2a7f.jr_00_2aad
+	         $2ab1 = call_00_2a7f.jr_00_2ab1
+	         $2ab2 = call_00_2ab2
+	         $2adb = call_00_2ab2.jp_00_2adb
+	         $2ae9 = call_00_2ab2.jr_00_2ae9
+	         $2b05 = call_00_2ab2.jr_00_2b05
+	         $2b0c = call_00_2ab2.jr_00_2b0c
+	         $2b11 = call_00_2ab2.jr_00_2b11
+	         $2b1e = call_00_2ab2.jr_00_2b1e
+	         $2b40 = call_00_2ab2.jr_00_2b40
+	         $2b41 = call_00_2ab2.jr_00_2b41
+	         $2b43 = call_00_2ab2.jr_00_2b43
+	         $2b4d = call_00_2ab2.jp_00_2b4d
+	         $2b52 = call_00_2b52
+	         $2b72 = call_00_2b52.jr_00_2b72
+	         $2b95 = call_00_2b52.jr_00_2b95
+	         $2b96 = call_00_2b52.jr_00_2b96
+	         $2bec = call_00_2b52.jr_00_2bec
+	         $2c00 = call_00_2b52.jr_00_2c00
+	         $2c40 = call_00_2b52.jr_00_2c40
+	         $2c51 = call_00_2b52.jr_00_2c51
+	         $2c84 = call_00_2b52.jp_00_2c84
+	         $2fcf = call_00_2fcf
+	         $2fd6 = call_00_2fcf.jr_00_2fd6
+	         $2fe4 = call_00_2fcf.jp_00_2fe4
+	         $2feb = call_00_2fcf.jr_00_2feb
+	         $2fed = call_00_2fcf.jp_00_2fed
+	         $2fff = call_00_2fcf.jr_00_2fff
+	         $3003 = call_00_2fcf.jr_00_3003
+	         $3014 = call_00_2fcf.jr_00_3014
+	         $301f = call_00_2fcf.jp_00_301f
+	         $307f = call_00_2fcf.jp_00_307f
+	         $365c = call_00_365c
+	         $3663 = call_00_365c.jr_00_3663
+	         $3674 = call_00_365c.jp_00_3674
+	         $367f = call_00_365c.jr_00_367f
+	         $3681 = call_00_365c.jp_00_3681
+	         $368c = call_00_365c.jr_00_368c
+	         $369b = call_00_365c.jr_00_369b
+	         $36a1 = call_00_365c.jr_00_36a1
+	         $36f0 = call_00_365c.jr_00_36f0
+	         $3825 = call_00_365c.jp_00_3825
+	         $3856 = call_00_365c.jr_00_3856
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #1:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank01"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #2:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank02"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #3:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank03"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #4:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank04"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #5:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank05"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #6:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank06"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #7:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank07"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #8:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank08"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #9:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank09"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #10:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank0a"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #11:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank0b"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #12:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank0c"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #13:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank0d"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #14:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank0e"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #15:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank0f"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #16:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank10"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #17:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank11"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #18:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank12"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #19:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank13"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #20:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank14"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #21:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank15"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #22:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank16"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #23:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank17"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #24:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank18"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #25:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank19"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #26:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank1a"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #27:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank1b"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #28:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank1c"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #29:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank1d"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #30:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank1e"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #31:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank1f"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #32:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank20"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #33:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank21"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #34:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank22"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #35:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank23"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #36:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank24"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #37:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank25"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #38:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank26"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #39:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank27"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #40:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank28"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #41:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank29"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #42:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank2a"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #43:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank2b"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #44:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank2c"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #45:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank2d"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #46:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank2e"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #47:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank2f"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #48:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank30"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #49:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank31"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #50:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank32"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #51:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank33"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #52:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank34"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #53:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank35"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #54:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank36"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #55:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank37"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #56:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank38"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #57:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank39"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #58:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank3a"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #59:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank3b"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #60:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank3c"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #61:
+	SECTION: $4000-$7ff5 ($3ff6 bytes) ["bank3d"]
+	EMPTY: $7ff6-$7fff ($000a bytes)
+	TOTAL EMPTY: $000a bytes
+
+ROMX bank #62:
+	SECTION: $4000-$7af9 ($3afa bytes) ["bank3e"]
+	EMPTY: $7afa-$7fff ($0506 bytes)
+	TOTAL EMPTY: $0506 bytes
+
+ROMX bank #63:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank3f"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #64:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank40"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #65:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank41"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #66:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank42"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #67:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank43"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #68:
+	SECTION: $4000-$7ffb ($3ffc bytes) ["bank44"]
+	EMPTY: $7ffc-$7fff ($0004 bytes)
+	TOTAL EMPTY: $0004 bytes
+
+ROMX bank #69:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank45"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #70:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank46"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #71:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank47"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #72:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank48"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #73:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank49"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #74:
+	SECTION: $4000-$7ff7 ($3ff8 bytes) ["bank4a"]
+	EMPTY: $7ff8-$7fff ($0008 bytes)
+	TOTAL EMPTY: $0008 bytes
+
+ROMX bank #75:
+	SECTION: $4000-$7ff9 ($3ffa bytes) ["bank4b"]
+	EMPTY: $7ffa-$7fff ($0006 bytes)
+	TOTAL EMPTY: $0006 bytes
+
+ROMX bank #76:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank4c"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #77:
+	SECTION: $4000-$7ff7 ($3ff8 bytes) ["bank4d"]
+	EMPTY: $7ff8-$7fff ($0008 bytes)
+	TOTAL EMPTY: $0008 bytes
+
+ROMX bank #78:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank4e"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #79:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank4f"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #80:
+	SECTION: $4000-$7ff7 ($3ff8 bytes) ["bank50"]
+	EMPTY: $7ff8-$7fff ($0008 bytes)
+	TOTAL EMPTY: $0008 bytes
+
+ROMX bank #81:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank51"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #82:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank52"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #83:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank53"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #84:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank54"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #85:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank55"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #86:
+	SECTION: $4000-$7ff9 ($3ffa bytes) ["bank56"]
+	EMPTY: $7ffa-$7fff ($0006 bytes)
+	TOTAL EMPTY: $0006 bytes
+
+ROMX bank #87:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank57"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #88:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank58"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #89:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank59"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #90:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank5a"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #91:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank5b"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #92:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank5c"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #93:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank5d"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #94:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank5e"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #95:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank5f"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #96:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank60"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #97:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank61"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #98:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank62"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #99:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank63"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #100:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank64"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #101:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank65"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #102:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank66"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #103:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank67"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #104:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank68"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #105:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank69"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #106:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank6a"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #107:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank6b"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #108:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank6c"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #109:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank6d"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #110:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank6e"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #111:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank6f"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #112:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank70"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #113:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank71"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #114:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank72"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #115:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank73"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #116:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank74"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #117:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank75"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #118:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank76"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #119:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank77"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #120:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank78"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #121:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank79"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #122:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank7a"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #123:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank7b"]
+	TOTAL EMPTY: $0000 bytes
+
+ROMX bank #124:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank7c"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #125:
+	SECTION: $4000-$7ffd ($3ffe bytes) ["bank7d"]
+	EMPTY: $7ffe-$7fff ($0002 bytes)
+	TOTAL EMPTY: $0002 bytes
+
+ROMX bank #126:
+	SECTION: $4000-$7ffe ($3fff bytes) ["bank7e"]
+	EMPTY: $7fff-$7fff ($0001 byte)
+	TOTAL EMPTY: $0001 byte
+
+ROMX bank #127:
+	SECTION: $4000-$7fff ($4000 bytes) ["bank7f"]
+	TOTAL EMPTY: $0000 bytes
+
+VRAM bank #0:
+	SECTION: $8000-$9fff ($2000 bytes) ["vram"]
+	TOTAL EMPTY: $0000 bytes
+
+SRAM bank #0:
+	SECTION: $a000-$bfff ($2000 bytes) ["sram"]
+	         $a000 = sA000
+	TOTAL EMPTY: $0000 bytes
+
+WRAM0 bank #0:
+	SECTION: $c000-$dfff ($2000 bytes) ["wram0"]
+	         $c000 = wC000
+	         $c2a0 = wC2A0
+	         $c302 = wC302
+	         $c303 = wC303
+	         $c304 = wC304
+	         $c305 = wC305
+	         $c306 = wC306
+	         $c307 = wC307
+	         $c310 = wC310
+	         $c311 = wC311
+	         $c312 = wC312
+	         $c313 = wC313
+	         $c314 = wC314
+	         $c315 = wC315
+	         $c316 = wC316
+	         $c317 = wC317
+	         $c318 = wC318
+	         $c319 = wC319
+	         $c31a = wC31A
+	         $c31b = wC31B
+	         $c322 = wOpcodeC322
+	         $c323 = wDunnoCheckBeforeConsultingJumpArrayC323
+	         $c324 = wReturnAddressC324
+	         $c326 = wLengthOfPreviousInstructionC326
+	         $c327 = wLengthOfPreviousInstructionC326.high_zero
+	         $c328 = wTextToPrintC328
+	         $c329 = wTextToPrintC328.high
+	         $c32a = wTextToPrintC328.bank
+	         $c346 = wC346
+	         $c356 = wC356
+	         $c357 = wC357
+	         $c358 = wDupeBitArrayIndexC358
+	         $c35a = wC35A
+	         $c35b = wC35B
+	         $c35c = wC35C
+	         $c35d = wC35D
+	         $c35e = wBitArrayIndexC35E
+	         $c360 = wC360
+	         $c362 = wC362
+	         $c363 = wC363
+	         $c364 = wC364
+	         $c365 = wC365
+	         $c366 = wC366
+	         $c36a = wC36A
+	         $c36c = wC36C
+	         $c36d = wC36D
+	         $c36e = wC36E
+	         $c36f = wC36F
+	         $c370 = wC370
+	         $c371 = wC371
+	         $c374 = wC374
+	         $c378 = wC378
+	         $c379 = wC379
+	         $c37c = wC37C
+	         $c37d = wC37D
+	         $c37e = wC37E
+	         $c37f = wC37F
+	         $c380 = wC380
+	         $c38a = wSubOpsLoopCountdownC38A
+	         $c38e = wHamChatCursorIndexC38E
+	         $c3c4 = wC3C4
+	         $c3d0 = wC3D0
+	         $c3dc = wC3DC
+	         $c472 = wC472
+	         $c51a = wHamChatWheelStartC51A
+	         $c53a = wOp1CScriptTableIndexC53A
+	         $c582 = wHamChatWheelValueC582
+	         $c5e3 = wStackHeadAddressC5E3
+	         $c5e4 = wStackStartC5E5
+	         $c625 = wC625
+	         $c64e = wC64E
+	         $c64f = wC64F
+	         $c650 = wC650
+	         $c651 = wC651
+	         $c662 = wHamJamFlagsC662
+	         $c66e = wC66E
+	         $c66f = wC66F
+	         $c670 = wC670
+	         $c671 = wC671
+	         $c672 = wC672
+	         $c673 = wC673
+	         $c674 = wC674
+	         $c675 = wC675
+	         $c676 = wC676
+	         $c677 = wCurrentRomBankC677
+	         $c678 = wC678
+	         $c679 = wC679
+	         $c67a = wC67A
+	         $c67b = wC67B
+	         $c67d = wC67D
+	         $c680 = wC680
+	         $c683 = wC683
+	         $c686 = wC686
+	         $c689 = wC689
+	         $c68c = wC68C
+	         $c68f = wC68F
+	         $c692 = wC692
+	         $c695 = wC695
+	         $c6a0 = wArgAddressC6A0
+	         $c6a1 = wArgAddressC6A0.high
+	         $c6a2 = wArgAddressC6A0.bank
+	         $c6a3 = wUnknownAddressArrayAddressC6A3
+	         $c6a4 = wUnknownAddressArrayAddressC6A3.high
+	         $c6a5 = wUnknownAddressArrayAddressC6A3.bank
+	         $c6a6 = wC6A6
+	         $c6a7 = wC6A7
+	         $c6a8 = wPossibleBankSourceC6A8
+	         $c6aa = wSomeOffsetOfAddressArrayC6AA
+	         $c6ab = wC6AB
+	         $c6ac = wC6AC
+	         $c6ad = wC6AD
+	         $c6ae = wC6AE
+	         $c6af = wC6AF
+	         $c6b0 = wC6B0
+	         $c715 = wHamChatIndexC715
+	         $c718 = wPlayerStateRegionStartC718
+	         $c71a = wC71A
+	         $c918 = wBitArrayC918
+	         $c9a3 = wHamChatDictArrayC9A3
+	         $c9e1 = wC9E1
+	         $ca4f = wNumHamChatsCA45
+	         $ca53 = wSeedCountCA53
+	         $ca54 = wAcornCountCA54
+	         $ca56 = wRockCountCA56
+	         $ca9a = wCA9A
+	         $ca9b = wCA9B
+	         $ca9c = wCA9C
+	         $ca9d = wCA9D
+	         $ca9e = wCA9E
+	         $ca9f = wCA9F
+	         $caa0 = wCAA0
+	         $caa1 = wCAA1
+	         $cff8 = wCFF8
+	         $d000 = wD000
+	         $d001 = wD001
+	         $d002 = wD002
+	         $d0f8 = wHamChatIndexD0F8
+	         $d0fd = wSomethingWithHamchatsD0FD
+	         $d1fd = wBeginRegionD1FD
+	         $d203 = wSomeAddressD203
+	         $d204 = wSomeAddressD203.high
+	         $d205 = wSomeAddressD203.bank
+	         $d5c3 = wD5C3
+	         $d5c5 = wD5C5
+	         $d5ee = wTextboxIsClosingD5EE
+	         $d855 = wD855
+	         $d857 = wD857
+	         $d917 = wD917
+	         $dd99 = wDD99
+	         $dd9a = wDD9A
+	         $ddda = wDDDA
+	         $de19 = wDE19
+	TOTAL EMPTY: $0000 bytes
+
+HRAM bank #0:
+	SECTION: $ff80-$fffe ($007f bytes) ["hram"]
+	         $fffe = hFFFE
+	TOTAL EMPTY: $0000 bytes
