@@ -3,4 +3,6 @@
 *.gb
 _tmp
 
+*.txt
+
 .vscode
