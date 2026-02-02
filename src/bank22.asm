@@ -1986,7 +1986,7 @@ data_22_6889:
     db   $22, $92, $00, $50                            ;; 22:6893 ?w.w
 
 data_22_6897:
-    dw   wHamChatIndexC715                             ;; 22:6897 pP
+    dw   wBitArrayIndexC715                            ;; 22:6897 pP
     db   $00, $2c, $82                                 ;; 22:6899 ..w
 
 data_22_689c:
@@ -3320,7 +3320,7 @@ data_22_7599:
     db   $01, $50                                      ;; 22:75a3 .w
 
 data_22_75a5:
-    dw   wHamChatIndexC715                             ;; 22:75a5 pP
+    dw   wBitArrayIndexC715                            ;; 22:75a5 pP
     db   $00, $48, $82                                 ;; 22:75a7 ..w
 
 data_22_75aa:
@@ -3732,7 +3732,7 @@ data_22_7a92:
     db   $01, $05, $70, $ff, $7b, $22, $50             ;; 22:7b8c ...???w
 
 data_22_7b93:
-    dw   wHamChatIndexC715                             ;; 22:7b93 pP
+    dw   wBitArrayIndexC715                            ;; 22:7b93 pP
     db   $00, $31, $82                                 ;; 22:7b95 ..w
 
 data_22_7b98:
@@ -3813,7 +3813,7 @@ data_22_7bfb:
     db   $7c, $22, $50                                 ;; 22:7c05 ??w
 
 data_22_7c08:
-    dw   wHamChatIndexC715                             ;; 22:7c08 pP
+    dw   wBitArrayIndexC715                            ;; 22:7c08 pP
     db   $00, $30, $82                                 ;; 22:7c0a ..w
 
 data_22_7c0d:

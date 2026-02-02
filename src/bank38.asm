@@ -623,7 +623,7 @@ data_38_4540:
     db   $50                                           ;; 38:4540 w
 
 data_38_4541:
-    dw   wHamChatIndexC715                             ;; 38:4541 pP
+    dw   wBitArrayIndexC715                            ;; 38:4541 pP
     db   $00, $12, $82                                 ;; 38:4543 ..w
 
 data_38_4546:
@@ -2223,7 +2223,7 @@ data_38_58a4:
     db   $38, $e5, $58, $38, $50                       ;; 38:58a6 .???w
 
 data_38_58ab:
-    dw   wHamChatIndexC715                             ;; 38:58ab pP
+    dw   wBitArrayIndexC715                            ;; 38:58ab pP
     db   $00, $48, $82                                 ;; 38:58ad ..w
 
 data_38_58b0:
@@ -3088,7 +3088,7 @@ data_38_629e:
     db   $13, $50                                      ;; 38:62a0 .w
 
 data_38_62a2:
-    dw   wHamChatIndexC715                             ;; 38:62a2 pP
+    dw   wBitArrayIndexC715                            ;; 38:62a2 pP
     db   $00, $11, $82                                 ;; 38:62a4 ..w
 
 data_38_62a7:
@@ -3096,7 +3096,7 @@ data_38_62a7:
     db   $02, $16, $01, $3e, $1c, $50                  ;; 38:62a9 .w...w
 
 data_38_62af:
-    dw   wHamChatIndexC715                             ;; 38:62af pP
+    dw   wBitArrayIndexC715                            ;; 38:62af pP
     db   $00, $45, $82                                 ;; 38:62b1 ..w
 
 data_38_62b4:
@@ -3891,7 +3891,7 @@ data_38_69be:
     db   $04, $50                                      ;; 38:69c0 .w
 
 data_38_69c2:
-    dw   wHamChatIndexC715                             ;; 38:69c2 pP
+    dw   wBitArrayIndexC715                            ;; 38:69c2 pP
     db   $00, $27, $82                                 ;; 38:69c4 ..w
 
 data_38_69c7:
@@ -4351,7 +4351,7 @@ data_38_6e13:
     db   $4e, $33, $18, $61, $6b, $38, $50             ;; 38:6e13 ??????w
 
 data_38_6e1a:
-    dw   wHamChatIndexC715                             ;; 38:6e1a pP
+    dw   wBitArrayIndexC715                            ;; 38:6e1a pP
     db   $00, $3a, $82                                 ;; 38:6e1c ..w
 
 data_38_6e1f:
@@ -4466,7 +4466,7 @@ data_38_6f31:
     db   $50                                           ;; 38:6f83 w
 
 data_38_6f84:
-    dw   wHamChatIndexC715                             ;; 38:6f84 pP
+    dw   wBitArrayIndexC715                            ;; 38:6f84 pP
     db   $00, $47, $82                                 ;; 38:6f86 ..w
 
 data_38_6f89:

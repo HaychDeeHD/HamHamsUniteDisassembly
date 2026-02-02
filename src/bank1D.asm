@@ -630,7 +630,7 @@ data_1d_450f:
     db   $4b, $1d, $84, $4b, $1d, $50                  ;; 1d:450f ?????w
 
 data_1d_4515:
-    dw   wHamChatIndexC715                             ;; 1d:4515 pP
+    dw   wBitArrayIndexC715                            ;; 1d:4515 pP
     db   $00, $00, $82                                 ;; 1d:4517 ..w
 
 data_1d_451a:
@@ -777,7 +777,7 @@ data_1d_463c:
     db   $20, $18, $1f, $40, $1d, $20, $50             ;; 1d:46ac ??????w
 
 data_1d_46b3:
-    dw   wHamChatIndexC715                             ;; 1d:46b3 pP
+    dw   wBitArrayIndexC715                            ;; 1d:46b3 pP
     db   $00, $24, $82                                 ;; 1d:46b5 ..w
 
 data_1d_46b8:
@@ -976,7 +976,7 @@ data_1d_47df:
     db   $18, $1f, $40, $1d, $50                       ;; 1d:4a01 ????w
 
 data_1d_4a06:
-    dw   wHamChatIndexC715                             ;; 1d:4a06 pP
+    dw   wBitArrayIndexC715                            ;; 1d:4a06 pP
     db   $00, $22, $82                                 ;; 1d:4a08 ..w
 
 data_1d_4a0b:
@@ -1141,7 +1141,7 @@ data_1d_4bfe:
     db   $50                                           ;; 1d:4c10 w
 
 data_1d_4c11:
-    dw   wHamChatIndexC715                             ;; 1d:4c11 pP
+    dw   wBitArrayIndexC715                            ;; 1d:4c11 pP
     db   $00, $00, $82                                 ;; 1d:4c13 ..w
 
 data_1d_4c16:
@@ -1191,7 +1191,7 @@ data_1d_4c3a:
     db   $18, $93, $4d, $1d, $50                       ;; 1d:4ce4 ????w
 
 data_1d_4ce9:
-    dw   wHamChatIndexC715                             ;; 1d:4ce9 pP
+    dw   wBitArrayIndexC715                            ;; 1d:4ce9 pP
     db   $00, $22, $82                                 ;; 1d:4ceb ..w
 
 data_1d_4cee:
@@ -1634,7 +1634,7 @@ data_1d_54fa:
     db   $5a, $1d, $50                                 ;; 1d:5504 ??w
 
 data_1d_5507:
-    dw   wHamChatIndexC715                             ;; 1d:5507 pP
+    dw   wBitArrayIndexC715                            ;; 1d:5507 pP
     db   $00, $00, $82                                 ;; 1d:5509 ..w
 
 data_1d_550c:
@@ -1692,7 +1692,7 @@ data_1d_5563:
     db   $1d, $50                                      ;; 1d:5565 .w
 
 data_1d_5567:
-    dw   wHamChatIndexC715                             ;; 1d:5567 pP
+    dw   wBitArrayIndexC715                            ;; 1d:5567 pP
     db   $00, $01, $82                                 ;; 1d:5569 ..w
 
 data_1d_556c:
@@ -1738,7 +1738,7 @@ data_1d_55c7:
     db   $2f, $18, $1f, $40, $1d, $50                  ;; 1d:55ef ?????w
 
 data_1d_55f5:
-    dw   wHamChatIndexC715                             ;; 1d:55f5 pP
+    dw   wBitArrayIndexC715                            ;; 1d:55f5 pP
     db   $00, $02, $82                                 ;; 1d:55f7 ..w
 
 data_1d_55fa:
@@ -1804,7 +1804,7 @@ data_1d_5660:
     db   $1d, $50                                      ;; 1d:5662 .w
 
 data_1d_5664:
-    dw   wHamChatIndexC715                             ;; 1d:5664 pP
+    dw   wBitArrayIndexC715                            ;; 1d:5664 pP
     db   $00, $03, $82                                 ;; 1d:5666 ..w
 
 data_1d_5669:
@@ -1833,7 +1833,7 @@ data_1d_568b:
     db   $1d, $20, $50                                 ;; 1d:568d .?w
 
 data_1d_5690:
-    dw   wHamChatIndexC715                             ;; 1d:5690 pP
+    dw   wBitArrayIndexC715                            ;; 1d:5690 pP
     db   $00, $24, $82                                 ;; 1d:5692 ..w
 
 data_1d_5695:
@@ -1947,7 +1947,7 @@ data_1d_5753:
     db   $1d, $50                                      ;; 1d:5755 .w
 
 data_1d_5757:
-    dw   wHamChatIndexC715                             ;; 1d:5757 pP
+    dw   wBitArrayIndexC715                            ;; 1d:5757 pP
     db   $00, $22, $82                                 ;; 1d:5759 ..w
 
 data_1d_575c:
@@ -2015,7 +2015,7 @@ data_1d_57b3:
     db   $2f, $18, $1f, $40, $1d, $50                  ;; 1d:5815 ?????w
 
 data_1d_581b:
-    dw   wHamChatIndexC715                             ;; 1d:581b pP
+    dw   wBitArrayIndexC715                            ;; 1d:581b pP
     db   $00, $39, $82                                 ;; 1d:581d ..w
 
 data_1d_5820:

@@ -334,12 +334,12 @@ jp_00_02a7:
     ei                                                 ;; 00:0390 $fb
 .jr_00_0391:
     call call_00_275c                                  ;; 00:0391 $cd $5c $27
-    call call_00_23c6                                  ;; 00:0394 $cd $c6 $23
+    call DoubleDerefC6A0to2_AddressIntoSelf            ;; 00:0394 $cd $c6 $23
 .jr_00_0397:
     call call_00_03c9                                  ;; 00:0397 $cd $c9 $03
     call call_00_03e5                                  ;; 00:039a $cd $e5 $03
     call call_00_242f                                  ;; 00:039d $cd $2f $24
-    call call_00_096b                                  ;; 00:03a0 $cd $6b $09
+    call JumpUsingOpTableUsingIndexFromC322            ;; 00:03a0 $cd $6b $09
     call call_00_0589                                  ;; 00:03a3 $cd $89 $05
     call call_00_2434                                  ;; 00:03a6 $cd $34 $24
     ld   A, [wC71A]                                    ;; 00:03a9 $fa $1a $c7
@@ -1152,7 +1152,8 @@ g08DE:
     db   $ea, $6f, $c6, $3e, $0d, $ea, $79, $c6        ;; 00:095b ????????
     db   $3e, $09, $ea, $7a, $c6, $c3, $d1, $08        ;; 00:0963 ????????
 
-call_00_096b:
+;@jumptablefunction
+JumpUsingOpTableUsingIndexFromC322:
     ld   A, [wOpcodeC322]                              ;; 00:096b $fa $22 $c3
     ld   E, A                                          ;; 00:096e $5f
     ld   D, $00                                        ;; 00:096f $16 $00
@@ -1163,158 +1164,87 @@ call_00_096b:
     ld   H, [HL]                                       ;; 00:0977 $66
     ld   L, E                                          ;; 00:0978 $6b
     jp   HL                                            ;; 00:0979 $e9
+;@jumptable amount=77
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:097a pP $00
+    dw   Op02_AddressTableJump                         ;; 00:097c ?? $01
+    dw   Op04_1b5c                                     ;; 00:097e pP $02
+    dw   Op06_waitAdvanceText                          ;; 00:0980 pP $03
+    dw   Op08                                          ;; 00:0982 ?? $04
+    dw   Op0A                                          ;; 00:0984 ?? $05
+    dw   Op0C                                          ;; 00:0986 pP $06
+    dw   Op0E                                          ;; 00:0988 ?? $07
+    dw   Op10_WaitForChatSelect                        ;; 00:098a pP $08
+    dw   Op12                                          ;; 00:098c ?? $09
+    dw   Op14                                          ;; 00:098e pP $0a
+    dw   Op16_RunSubOps                                ;; 00:0990 pP $0b
+    dw   Op18_Jump                                     ;; 00:0992 pP $0c
+    dw   Op1A                                          ;; 00:0994 pP $0d
+    dw   Op1C_ExecuteScriptAtAddressC6A0_IndexC53A     ;; 00:0996 pP $0e
+    dw   Op1E_Call                                     ;; 00:0998 pP $0f
+    dw   Op20_PopFromCustomStack_Return                ;; 00:099a pP $10
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:099c ?? $11
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:099e ?? $12
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09a0 ?? $13
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09a2 ?? $14
+    dw   Op2A_FrequentLoop                             ;; 00:09a4 pP $15
+    dw   Op2C                                          ;; 00:09a6 ?? $16
+    dw   Op2E                                          ;; 00:09a8 ?? $17
+    dw   Op30                                          ;; 00:09aa ?? $18
+    dw   Op32                                          ;; 00:09ac pP $19
+    dw   Op34                                          ;; 00:09ae pP $1a
+    dw   Op36                                          ;; 00:09b0 pP $1b
+    dw   Op38                                          ;; 00:09b2 pP $1c
+    dw   Op3A                                          ;; 00:09b4 pP $1d
+    dw   Op3C                                          ;; 00:09b6 pP $1e
+    dw   Op3E_Branch                                   ;; 00:09b8 pP $1f
+    dw   Op40                                          ;; 00:09ba pP $20
+    dw   Op42                                          ;; 00:09bc pP $21
+    dw   Op44                                          ;; 00:09be pP $22
+    dw   Op46                                          ;; 00:09c0 ?? $23
+    dw   Op48                                          ;; 00:09c2 pP $24
+    dw   Op4A                                          ;; 00:09c4 pP $25
+    dw   Op4C                                          ;; 00:09c6 pP $26
+    dw   Op4E                                          ;; 00:09c8 pP $27
+    dw   Op50_ExecuteWriteByteToAddress                ;; 00:09ca pP $28
+    dw   Op52_Write2BytesToAddress                     ;; 00:09cc pP $29
+    dw   Op54                                          ;; 00:09ce pP $2a
+    dw   Op56                                          ;; 00:09d0 pP $2b
+    dw   Op58                                          ;; 00:09d2 pP $2c
+    dw   Op5A                                          ;; 00:09d4 pP $2d
+    dw   Op5C                                          ;; 00:09d6 ?? $2e
+    dw   Op5E_WriteToCFF9                              ;; 00:09d8 pP $2f
+    dw   Op60                                          ;; 00:09da ?? $30
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09dc ?? $31
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09de ?? $32
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09e0 ?? $33
+    dw   Op68_CopyBytes                                ;; 00:09e2 pP $34
+    dw   Op6A                                          ;; 00:09e4 pP $35
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09e6 ?? $36
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09e8 ?? $37
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09ea ?? $38
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09ec ?? $39
+    dw   Op74_CopyToC53A                               ;; 00:09ee pP $3a
+    dw   Op76                                          ;; 00:09f0 pP $3b
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09f2 ?? $3c
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09f4 ?? $3d
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09f6 ?? $3e
+    dw   Op7E                                          ;; 00:09f8 pP $3f
+    dw   Op80                                          ;; 00:09fa pP $40
+    dw   Op82_Execute                                  ;; 00:09fc pP $41
+    dw   Op84                                          ;; 00:09fe pP $42
+    dw   Op86                                          ;; 00:0a00 pP $43
+    dw   Op88                                          ;; 00:0a02 ?? $44
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:0a04 ?? $45
+    dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:0a06 ?? $46
+    dw   Op8E                                          ;; 00:0a08 pP $47
+    dw   Op90                                          ;; 00:0a0a ?? $48
+    dw   Op92                                          ;; 00:0a0c pP $49
+    dw   Op94                                          ;; 00:0a0e ?? $4a
+    dw   Op96                                          ;; 00:0a10 ?? $4b
+    dw   Op98                                          ;; 00:0a12 ?? $4c
 
-data_00_097a:
-    dw   jp_00_0a14                                    ;; 00:097a pP
-    db   $ca, $0c                                      ;; 00:097c ??
-
-data_00_097e:
-    dw   data_00_1b5c                                  ;; 00:097e pP
-
-data_00_0980:
-    dw   data_00_1b94                                  ;; 00:0980 pP
-    db   $52, $1b, $8a, $1b                            ;; 00:0982 ????
-
-data_00_0986:
-    dw   data_00_20a8                                  ;; 00:0986 pP
-    db   $9c, $20                                      ;; 00:0988 ??
-
-data_00_098a:
-    dw   data_00_208e                                  ;; 00:098a pP
-    db   $82, $20                                      ;; 00:098c ??
-
-data_00_098e:
-    dw   data_00_1f25                                  ;; 00:098e pP
-
-data_00_0990:
-    dw   data_00_1fc7                                  ;; 00:0990 pP
-
-data_00_0992:
-    dw   data_00_0cfc                                  ;; 00:0992 pP
-
-data_00_0994:
-    dw   data_00_0ca4                                  ;; 00:0994 pP
-
-data_00_0996:
-    dw   data_00_0d13                                  ;; 00:0996 pP
-
-data_00_0998:
-    dw   data_00_0bf1                                  ;; 00:0998 pP
-
-data_00_099a:
-    dw   data_00_0c64                                  ;; 00:099a pP
-    db   $14, $0a, $14, $0a, $14, $0a, $14, $0a        ;; 00:099c ????????
-
-data_00_09a4:
-    dw   data_00_14a6                                  ;; 00:09a4 pP
-    db   $75, $14, $92, $14, $61, $14                  ;; 00:09a6 ??????
-
-data_00_09ac:
-    dw   data_00_1274                                  ;; 00:09ac pP
-
-data_00_09ae:
-    dw   data_00_12da                                  ;; 00:09ae pP
-
-data_00_09b0:
-    dw   data_00_1325                                  ;; 00:09b0 pP
-
-data_00_09b2:
-    dw   data_00_1350                                  ;; 00:09b2 pP
-
-data_00_09b4:
-    dw   data_00_13e0                                  ;; 00:09b4 pP
-
-data_00_09b6:
-    dw   data_00_15a0                                  ;; 00:09b6 pP
-
-data_00_09b8:
-    dw   data_00_0d54                                  ;; 00:09b8 pP
-
-data_00_09ba:
-    dw   data_00_109a                                  ;; 00:09ba pP
-
-data_00_09bc:
-    dw   data_00_0ff8                                  ;; 00:09bc pP
-
-data_00_09be:
-    dw   data_00_0b17                                  ;; 00:09be pP
-    db   $c0, $0b                                      ;; 00:09c0 ??
-
-data_00_09c2:
-    dw   data_00_0b04                                  ;; 00:09c2 pP
-
-data_00_09c4:
-    dw   data_00_0b0c                                  ;; 00:09c4 pP
-
-data_00_09c6:
-    dw   data_00_110e                                  ;; 00:09c6 pP
-
-data_00_09c8:
-    dw   data_00_0f96                                  ;; 00:09c8 pP
-
-data_00_09ca:
-    dw   data_00_0ae8                                  ;; 00:09ca pP
-
-data_00_09cc:
-    dw   data_00_0ac9                                  ;; 00:09cc pP
-
-data_00_09ce:
-    dw   data_00_0c8b                                  ;; 00:09ce pP
-
-data_00_09d0:
-    dw   data_00_11d1                                  ;; 00:09d0 pP
-
-data_00_09d2:
-    dw   data_00_11c4                                  ;; 00:09d2 pP
-
-data_00_09d4:
-    dw   data_00_0eac                                  ;; 00:09d4 pP
-    db   $c4, $0e                                      ;; 00:09d6 ??
-
-data_00_09d8:
-    dw   data_00_0edc                                  ;; 00:09d8 pP
-    db   $eb, $0e, $14, $0a, $14, $0a, $14, $0a        ;; 00:09da ????????
-
-data_00_09e2:
-    dw   data_00_0dfd                                  ;; 00:09e2 pP
-
-data_00_09e4:
-    dw   data_00_107f                                  ;; 00:09e4 pP
-    db   $14, $0a, $14, $0a, $14, $0a, $14, $0a        ;; 00:09e6 ????????
-
-data_00_09ee:
-    dw   data_00_0aa7                                  ;; 00:09ee pP
-
-data_00_09f0:
-    dw   data_00_0aba                                  ;; 00:09f0 pP
-    db   $14, $0a, $14, $0a, $14, $0a                  ;; 00:09f2 ??????
-
-data_00_09f8:
-    dw   data_00_137f                                  ;; 00:09f8 pP
-
-data_00_09fa:
-    dw   data_00_10e0                                  ;; 00:09fa pP
-
-data_00_09fc:
-    dw   data_00_0e87                                  ;; 00:09fc pP
-
-data_00_09fe:
-    dw   data_00_10b5                                  ;; 00:09fe pP
-
-data_00_0a00:
-    dw   data_00_13b2                                  ;; 00:0a00 pP
-    db   $54, $0b, $14, $0a, $14, $0a                  ;; 00:0a02 ??????
-
-data_00_0a08:
-    dw   data_00_0e2a                                  ;; 00:0a08 pP
-    db   $42, $0e                                      ;; 00:0a0a ??
-
-data_00_0a0c:
-    dw   data_00_1f0c                                  ;; 00:0a0c pP
-    db   $76, $22, $c4, $22, $5a, $0e                  ;; 00:0a0e ??????
-
-jp_00_0a14:
-    call call_00_0a41                                  ;; 00:0a14 $cd $41 $0a
+CallNextScriptInstruction_PrepArgAddr:
+    call GetNextScriptInstructionLocationInHL          ;; 00:0a14 $cd $41 $0a
     ld   A, [wArgAddressC6A0.bank]                     ;; 00:0a17 $fa $a2 $c6
     ld   [wCurrentRomBankC677], A                      ;; 00:0a1a $ea $77 $c6
     ld   [$2000], A                                    ;; 00:0a1d $ea $00 $20
@@ -1322,20 +1252,20 @@ jp_00_0a14:
     ld   [wOpcodeC322], A                              ;; 00:0a21 $ea $22 $c3
     ld   A, $00                                        ;; 00:0a24 $3e $00
     ld   [wReturnAddressC324], A                       ;; 00:0a26 $ea $24 $c3
-    ld   [wC325], A                                    ;; 00:0a29 $ea $25 $c3
+    ld   [wReturnAddressC324.high], A                  ;; 00:0a29 $ea $25 $c3
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0a2c $ea $26 $c3
     ld   [wLengthOfPreviousInstructionC326.high_zero], A ;; 00:0a2f $ea $27 $c3
     inc  HL                                            ;; 00:0a32 $23
-    call call_00_0a52                                  ;; 00:0a33 $cd $52 $0a
-    jp   call_00_096b                                  ;; 00:0a36 $c3 $6b $09
+    call CopyHLValueToArgAddr_BankIncIfOver8000        ;; 00:0a33 $cd $52 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322            ;; 00:0a36 $c3 $6b $09
 
-jp_00_0a39:
+JumpUsingOpTableUsingIndexFromC322_IfC323:
     ld   A, [wDunnoCheckBeforeConsultingJumpArrayC323] ;; 00:0a39 $fa $23 $c3
     and  A, A                                          ;; 00:0a3c $a7
     ret  Z                                             ;; 00:0a3d $c8
-    jp   call_00_096b                                  ;; 00:0a3e $c3 $6b $09
+    jp   JumpUsingOpTableUsingIndexFromC322            ;; 00:0a3e $c3 $6b $09
 
-call_00_0a41:
+GetNextScriptInstructionLocationInHL:
     ld   A, [wLengthOfPreviousInstructionC326]         ;; 00:0a41 $fa $26 $c3
     ld   E, A                                          ;; 00:0a44 $5f
     ld   A, [wLengthOfPreviousInstructionC326.high_zero] ;; 00:0a45 $fa $27 $c3
@@ -1346,22 +1276,22 @@ call_00_0a41:
     ld   H, A                                          ;; 00:0a50 $67
     add  HL, DE                                        ;; 00:0a51 $19
 
-call_00_0a52:
+CopyHLValueToArgAddr_BankIncIfOver8000:
     ld   A, H                                          ;; 00:0a52 $7c
     cp   A, $80                                        ;; 00:0a53 $fe $80
-    jr   C, .jr_00_0a60                                ;; 00:0a55 $38 $09
+    jr   C, .copyHLValueToArgAddr                      ;; 00:0a55 $38 $09
     ld   H, $40                                        ;; 00:0a57 $26 $40
     ld   A, [wArgAddressC6A0.bank]                     ;; 00:0a59 $fa $a2 $c6
     inc  A                                             ;; 00:0a5c $3c
     ld   [wArgAddressC6A0.bank], A                     ;; 00:0a5d $ea $a2 $c6
-.jr_00_0a60:
+.copyHLValueToArgAddr:
     ld   A, H                                          ;; 00:0a60 $7c
     ld   [wArgAddressC6A0.high], A                     ;; 00:0a61 $ea $a1 $c6
     ld   A, L                                          ;; 00:0a64 $7d
     ld   [wArgAddressC6A0], A                          ;; 00:0a65 $ea $a0 $c6
     ret                                                ;; 00:0a68 $c9
 
-call_00_0a69:
+LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch:
     ld   A, [wArgAddressC6A0]                          ;; 00:0a69 $fa $a0 $c6
     ld   L, A                                          ;; 00:0a6c $6f
     ld   A, [wArgAddressC6A0.high]                     ;; 00:0a6d $fa $a1 $c6
@@ -1372,7 +1302,7 @@ call_00_0a69:
     ld   A, [HL]                                       ;; 00:0a7a $7e
     ret                                                ;; 00:0a7b $c9
 
-call_00_0a7c:
+LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch:
     ld   A, [wArgAddressC6A0]                          ;; 00:0a7c $fa $a0 $c6
     ld   E, A                                          ;; 00:0a7f $5f
     ld   A, [wArgAddressC6A0.high]                     ;; 00:0a80 $fa $a1 $c6
@@ -1382,12 +1312,26 @@ call_00_0a7c:
     ld   [$2000], A                                    ;; 00:0a8a $ea $00 $20
     ld   A, [DE]                                       ;; 00:0a8d $1a
     ret                                                ;; 00:0a8e $c9
-    db   $fa, $a0, $c6, $6f, $fa, $a1, $c6, $67        ;; 00:0a8f ????????
-    db   $fa, $a2, $c6, $ea, $3e, $c5, $2b, $7d        ;; 00:0a97 ????????
-    db   $ea, $3c, $c5, $7c, $ea, $3d, $c5, $c9        ;; 00:0a9f ????????
 
-data_00_0aa7:
-    call call_00_0a69                                  ;; 00:0aa7 $cd $69 $0a
+; This also subtracts one from the C6A0 address.
+; Normally that address points at the first arg of the current op
+; So what is getting copied is the address of the script instruction op.
+CopyC6A0AddressToC53CtoE:
+    ld   A, [wArgAddressC6A0]                          ;; 00:0a8f $fa $a0 $c6
+    ld   L, A                                          ;; 00:0a92 $6f
+    ld   A, [wArgAddressC6A0.high]                     ;; 00:0a93 $fa $a1 $c6
+    ld   H, A                                          ;; 00:0a96 $67
+    ld   A, [wArgAddressC6A0.bank]                     ;; 00:0a97 $fa $a2 $c6
+    ld   [wC53E], A                                    ;; 00:0a9a $ea $3e $c5
+    dec  HL                                            ;; 00:0a9d $2b
+    ld   A, L                                          ;; 00:0a9e $7d
+    ld   [wC53C], A                                    ;; 00:0a9f $ea $3c $c5
+    ld   A, H                                          ;; 00:0aa2 $7c
+    ld   [wC53D], A                                    ;; 00:0aa3 $ea $3d $c5
+    ret                                                ;; 00:0aa6 $c9
+
+Op74_CopyToC53A:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0aa7 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0aaa $2a
     ld   C, A                                          ;; 00:0aab $4f
     ld   A, [HL]                                       ;; 00:0aac $7e
@@ -1396,30 +1340,31 @@ data_00_0aa7:
     ld   [wOp1CScriptTableIndexC53A], A                ;; 00:0aaf $ea $3a $c5
     ld   A, $02                                        ;; 00:0ab2 $3e $02
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ab4 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0ab7 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ab7 $c3 $14 $0a
 
-data_00_0aba:
-    call call_00_0a69                                  ;; 00:0aba $cd $69 $0a
+Op76:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0aba $cd $69 $0a
     ld   A, [HL]                                       ;; 00:0abd $7e
     ld   [wOp1CScriptTableIndexC53A], A                ;; 00:0abe $ea $3a $c5
     ld   A, $01                                        ;; 00:0ac1 $3e $01
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ac3 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0ac6 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ac6 $c3 $14 $0a
 
-data_00_0ac9:
-    call call_00_0a69                                  ;; 00:0ac9 $cd $69 $0a
+Op52_Write2BytesToAddress:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0ac9 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0acc $2a
     ld   C, A                                          ;; 00:0acd $4f
     ld   A, [HL+]                                      ;; 00:0ace $2a
     ld   B, A                                          ;; 00:0acf $47
     cp   A, $a0                                        ;; 00:0ad0 $fe $a0
     ld   A, [HL+]                                      ;; 00:0ad2 $2a
-    jr   C, .jr_00_0ad9                                ;; 00:0ad3 $38 $04
+    jr   C, .else                                      ;; 00:0ad3 $38 $04
+; if !C
     ldh  [rSVBK], A                                    ;; 00:0ad5 $e0 $70
-    jr   .jr_00_0adb                                   ;; 00:0ad7 $18 $02
-.jr_00_0ad9:
+    jr   .endifelse                                    ;; 00:0ad7 $18 $02
+.else:
     ldh  [rVBK], A                                     ;; 00:0ad9 $e0 $4f
-.jr_00_0adb:
+.endifelse:
     ld   A, [HL+]                                      ;; 00:0adb $2a
     ld   [BC], A                                       ;; 00:0adc $02
     inc  BC                                            ;; 00:0add $03
@@ -1427,44 +1372,51 @@ data_00_0ac9:
     ld   [BC], A                                       ;; 00:0adf $02
     ld   A, $05                                        ;; 00:0ae0 $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ae2 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0ae5 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ae5 $c3 $14 $0a
 
-data_00_0ae8:
-    call call_00_0a69                                  ;; 00:0ae8 $cd $69 $0a
+Op50_ExecuteWriteByteToAddress:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0ae8 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0aeb $2a
     ld   C, A                                          ;; 00:0aec $4f
     ld   A, [HL+]                                      ;; 00:0aed $2a
     ld   B, A                                          ;; 00:0aee $47
     cp   A, $a0                                        ;; 00:0aef $fe $a0
     ld   A, [HL+]                                      ;; 00:0af1 $2a
-    jr   C, .jr_00_0af8                                ;; 00:0af2 $38 $04
+    jr   C, .else                                      ;; 00:0af2 $38 $04
+; if !C
     ldh  [rSVBK], A                                    ;; 00:0af4 $e0 $70
-    jr   .jr_00_0afa                                   ;; 00:0af6 $18 $02
-.jr_00_0af8:
+    jr   .endifelse                                    ;; 00:0af6 $18 $02
+.else:
     ldh  [rVBK], A                                     ;; 00:0af8 $e0 $4f
-.jr_00_0afa:
+.endifelse:
     ld   A, [HL+]                                      ;; 00:0afa $2a
     ld   [BC], A                                       ;; 00:0afb $02
     ld   A, $04                                        ;; 00:0afc $3e $04
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0afe $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0b01 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0b01 $c3 $14 $0a
 
-data_00_0b04:
+Op48:
     ld   A, $01                                        ;; 00:0b04 $3e $01
     ld   [wDunnoCheckBeforeConsultingJumpArrayC323], A ;; 00:0b06 $ea $23 $c3
-    jp   jp_00_0a14                                    ;; 00:0b09 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0b09 $c3 $14 $0a
 
-data_00_0b0c:
+Op4A:
     ld   A, $00                                        ;; 00:0b0c $3e $00
     ld   [wOpcodeC322], A                              ;; 00:0b0e $ea $22 $c3
     ld   [wDunnoCheckBeforeConsultingJumpArrayC323], A ;; 00:0b11 $ea $23 $c3
-    jp   jp_00_0a39                                    ;; 00:0b14 $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:0b14 $c3 $39 $0a
 
-data_00_0b17:
-    call call_00_0a69                                  ;; 00:0b17 $cd $69 $0a
+Op44:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0b17 $cd $69 $0a
     ld   A, [wReturnAddressC324]                       ;; 00:0b1a $fa $24 $c3
     and  A, A                                          ;; 00:0b1d $a7
-    jr   NZ, .jr_00_0b30                               ;; 00:0b1e $20 $10
+; If C324 is empty
+;   Write 1 to C324
+;   BC = first 2 args (byteswapped)
+; Else
+;   BC = C39A-B
+    jr   NZ, .c324NotEmptyCase                         ;; 00:0b1e $20 $10
+; if c324empty
     ld   A, $01                                        ;; 00:0b20 $3e $01
     ld   [wReturnAddressC324], A                       ;; 00:0b22 $ea $24 $c3
     ld   A, [HL+]                                      ;; 00:0b25 $2a
@@ -1473,51 +1425,111 @@ data_00_0b17:
     ld   B, A                                          ;; 00:0b28 $47
     ld   A, $02                                        ;; 00:0b29 $3e $02
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0b2b $ea $26 $c3
-    jr   .jr_00_0b38                                   ;; 00:0b2e $18 $08
-.jr_00_0b30:
+    jr   .afterAssignedBC                              ;; 00:0b2e $18 $08
+; else
+.c324NotEmptyCase:
     ld   A, [wC39A]                                    ;; 00:0b30 $fa $9a $c3
     ld   C, A                                          ;; 00:0b33 $4f
     ld   A, [wC39B]                                    ;; 00:0b34 $fa $9b $c3
     ld   B, A                                          ;; 00:0b37 $47
-.jr_00_0b38:
+.afterAssignedBC:
     dec  BC                                            ;; 00:0b38 $0b
     ld   A, C                                          ;; 00:0b39 $79
     ld   [wC39A], A                                    ;; 00:0b3a $ea $9a $c3
     ld   A, B                                          ;; 00:0b3d $78
     ld   [wC39B], A                                    ;; 00:0b3e $ea $9b $c3
     and  A, A                                          ;; 00:0b41 $a7
-    jr   NZ, .jr_00_0b4b                               ;; 00:0b42 $20 $07
+    jr   NZ, .finish                                   ;; 00:0b42 $20 $07
     ld   A, C                                          ;; 00:0b44 $79
     and  A, A                                          ;; 00:0b45 $a7
-    jr   NZ, .jr_00_0b4b                               ;; 00:0b46 $20 $03
+    jr   NZ, .finish                                   ;; 00:0b46 $20 $03
     ld   [wOpcodeC322], A                              ;; 00:0b48 $ea $22 $c3
-.jr_00_0b4b:
-    call call_00_0efc                                  ;; 00:0b4b $cd $fc $0e
-    jp   NC, jp_00_0a39                                ;; 00:0b4e $d2 $39 $0a
-    jp   jp_00_0a14                                    ;; 00:0b51 $c3 $14 $0a
-    db   $cd, $69, $0a, $fa, $24, $c3, $a7, $20        ;; 00:0b54 ????????
-    db   $18, $3e, $01, $ea, $24, $c3, $2a, $4f        ;; 00:0b5c ????????
-    db   $2a, $47, $3e, $02, $ea, $26, $c3, $fa        ;; 00:0b64 ????????
-    db   $16, $c3, $e6, $80, $ea, $16, $c3, $18        ;; 00:0b6c ????????
-    db   $2a, $fa, $9a, $c3, $4f, $fa, $9b, $c3        ;; 00:0b74 ????????
-    db   $47, $fa, $16, $c3, $e6, $10, $20, $0e        ;; 00:0b7c ????????
-    db   $fa, $16, $c3, $e6, $80, $28, $14, $3e        ;; 00:0b84 ????????
-    db   $02, $ea, $3a, $c5, $18, $05, $3e, $01        ;; 00:0b8c ????????
-    db   $ea, $3a, $c5, $3e, $00, $ea, $22, $c3        ;; 00:0b94 ????????
-    db   $c3, $39, $0a, $3e, $00, $ea, $3a, $c5        ;; 00:0b9c ????????
-    db   $0b, $79, $ea, $9a, $c3, $78, $ea, $9b        ;; 00:0ba4 ????????
-    db   $c3, $a7, $20, $07, $79, $a7, $20, $03        ;; 00:0bac ????????
-    db   $ea, $22, $c3, $cd, $fc, $0e, $d2, $39        ;; 00:0bb4 ????????
-    db   $0a, $c3, $14, $0a, $cd, $fc, $0e, $da        ;; 00:0bbc ????????
-    db   $14, $0a, $fa, $24, $c3, $a7, $20, $10        ;; 00:0bc4 ????????
-    db   $3e, $01, $ea, $24, $c3, $fa, $16, $c3        ;; 00:0bcc ????????
-    db   $e6, $80, $ea, $16, $c3, $c3, $39, $0a        ;; 00:0bd4 ????????
-    db   $fa, $16, $c3, $e6, $10, $ca, $39, $0a        ;; 00:0bdc ????????
-    db   $3e, $01, $ea, $3a, $c5, $3e, $00, $ea        ;; 00:0be4 ????????
-    db   $22, $c3, $c3, $14, $0a                       ;; 00:0bec ?????
+.finish:
+    call CopyC625toC640_maybeSetC6A0                   ;; 00:0b4b $cd $fc $0e
+    jp   NC, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:0b4e $d2 $39 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0b51 $c3 $14 $0a
 
-data_00_0bf1:
-    call call_00_0a69                                  ;; 00:0bf1 $cd $69 $0a
+Op88:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0b54 $cd $69 $0a
+    ld   A, [wReturnAddressC324]                       ;; 00:0b57 $fa $24 $c3
+    and  A, A                                          ;; 00:0b5a $a7
+    jr   NZ, .jr_00_0b75                               ;; 00:0b5b $20 $18
+    ld   A, $01                                        ;; 00:0b5d $3e $01
+    ld   [wReturnAddressC324], A                       ;; 00:0b5f $ea $24 $c3
+    ld   A, [HL+]                                      ;; 00:0b62 $2a
+    ld   C, A                                          ;; 00:0b63 $4f
+    ld   A, [HL+]                                      ;; 00:0b64 $2a
+    ld   B, A                                          ;; 00:0b65 $47
+    ld   A, $02                                        ;; 00:0b66 $3e $02
+    ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0b68 $ea $26 $c3
+    ld   A, [wC316]                                    ;; 00:0b6b $fa $16 $c3
+    and  A, $80                                        ;; 00:0b6e $e6 $80
+    ld   [wC316], A                                    ;; 00:0b70 $ea $16 $c3
+    jr   .jr_00_0b9f                                   ;; 00:0b73 $18 $2a
+.jr_00_0b75:
+    ld   A, [wC39A]                                    ;; 00:0b75 $fa $9a $c3
+    ld   C, A                                          ;; 00:0b78 $4f
+    ld   A, [wC39B]                                    ;; 00:0b79 $fa $9b $c3
+    ld   B, A                                          ;; 00:0b7c $47
+    ld   A, [wC316]                                    ;; 00:0b7d $fa $16 $c3
+    and  A, $10                                        ;; 00:0b80 $e6 $10
+    jr   NZ, .jr_00_0b92                               ;; 00:0b82 $20 $0e
+    ld   A, [wC316]                                    ;; 00:0b84 $fa $16 $c3
+    and  A, $80                                        ;; 00:0b87 $e6 $80
+    jr   Z, .jr_00_0b9f                                ;; 00:0b89 $28 $14
+    ld   A, $02                                        ;; 00:0b8b $3e $02
+    ld   [wOp1CScriptTableIndexC53A], A                ;; 00:0b8d $ea $3a $c5
+    jr   .jr_00_0b97                                   ;; 00:0b90 $18 $05
+.jr_00_0b92:
+    ld   A, $01                                        ;; 00:0b92 $3e $01
+    ld   [wOp1CScriptTableIndexC53A], A                ;; 00:0b94 $ea $3a $c5
+.jr_00_0b97:
+    ld   A, $00                                        ;; 00:0b97 $3e $00
+    ld   [wOpcodeC322], A                              ;; 00:0b99 $ea $22 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:0b9c $c3 $39 $0a
+.jr_00_0b9f:
+    ld   A, $00                                        ;; 00:0b9f $3e $00
+    ld   [wOp1CScriptTableIndexC53A], A                ;; 00:0ba1 $ea $3a $c5
+    dec  BC                                            ;; 00:0ba4 $0b
+    ld   A, C                                          ;; 00:0ba5 $79
+    ld   [wC39A], A                                    ;; 00:0ba6 $ea $9a $c3
+    ld   A, B                                          ;; 00:0ba9 $78
+    ld   [wC39B], A                                    ;; 00:0baa $ea $9b $c3
+    and  A, A                                          ;; 00:0bad $a7
+    jr   NZ, .jr_00_0bb7                               ;; 00:0bae $20 $07
+    ld   A, C                                          ;; 00:0bb0 $79
+    and  A, A                                          ;; 00:0bb1 $a7
+    jr   NZ, .jr_00_0bb7                               ;; 00:0bb2 $20 $03
+    ld   [wOpcodeC322], A                              ;; 00:0bb4 $ea $22 $c3
+.jr_00_0bb7:
+    call CopyC625toC640_maybeSetC6A0                   ;; 00:0bb7 $cd $fc $0e
+    jp   NC, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:0bba $d2 $39 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0bbd $c3 $14 $0a
+
+Op46:
+    call CopyC625toC640_maybeSetC6A0                   ;; 00:0bc0 $cd $fc $0e
+    jp   C, CallNextScriptInstruction_PrepArgAddr      ;; 00:0bc3 $da $14 $0a
+    ld   A, [wReturnAddressC324]                       ;; 00:0bc6 $fa $24 $c3
+    and  A, A                                          ;; 00:0bc9 $a7
+    jr   NZ, .jr_00_0bdc                               ;; 00:0bca $20 $10
+    ld   A, $01                                        ;; 00:0bcc $3e $01
+    ld   [wReturnAddressC324], A                       ;; 00:0bce $ea $24 $c3
+    ld   A, [wC316]                                    ;; 00:0bd1 $fa $16 $c3
+    and  A, $80                                        ;; 00:0bd4 $e6 $80
+    ld   [wC316], A                                    ;; 00:0bd6 $ea $16 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:0bd9 $c3 $39 $0a
+.jr_00_0bdc:
+    ld   A, [wC316]                                    ;; 00:0bdc $fa $16 $c3
+    and  A, $10                                        ;; 00:0bdf $e6 $10
+    jp   Z, JumpUsingOpTableUsingIndexFromC322_IfC323  ;; 00:0be1 $ca $39 $0a
+    ld   A, $01                                        ;; 00:0be4 $3e $01
+    ld   [wOp1CScriptTableIndexC53A], A                ;; 00:0be6 $ea $3a $c5
+    ld   A, $00                                        ;; 00:0be9 $3e $00
+    ld   [wOpcodeC322], A                              ;; 00:0beb $ea $22 $c3
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0bee $c3 $14 $0a
+
+Op1E_Call:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0bf1 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0bf4 $2a
     ld   [wC356], A                                    ;; 00:0bf5 $ea $56 $c3
     ld   A, [HL+]                                      ;; 00:0bf8 $2a
@@ -1539,11 +1551,16 @@ data_00_0bf1:
     ld   [BC], A                                       ;; 00:0c14 $02
     inc  BC                                            ;; 00:0c15 $03
     ld   A, C                                          ;; 00:0c16 $79
+; C625 might be the upper limit of the callstack?
+; The case this jumps to does some RAM swapping.
+; Could be there's continued stack there, or could be stack overflow handling
     cp   A, $25                                        ;; 00:0c17 $fe $25
-    jr   Z, .jr_00_0c39                                ;; 00:0c19 $28 $1e
+    jr   Z, .callstackFull                             ;; 00:0c19 $28 $1e
     ld   [wStackHeadAddressC5E3], A                    ;; 00:0c1b $ea $e3 $c5
     ld   A, B                                          ;; 00:0c1e $78
     ld   [wStackStartC5E5], A                          ;; 00:0c1f $ea $e4 $c5
+; This part sets C6A0-2 to match C356-8 (which were the args to Op 1E),
+; then calls next script instruction.
     ld   HL, wArgAddressC6A0                           ;; 00:0c22 $21 $a0 $c6
     ld   A, [wC356]                                    ;; 00:0c25 $fa $56 $c3
     ld   [HL+], A                                      ;; 00:0c28 $22
@@ -1553,8 +1570,8 @@ data_00_0bf1:
     ld   [HL], A                                       ;; 00:0c30 $77
     ld   A, $00                                        ;; 00:0c31 $3e $00
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0c33 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0c36 $c3 $14 $0a
-.jr_00_0c39:
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0c36 $c3 $14 $0a
+.callstackFull:
     ld   A, $01                                        ;; 00:0c39 $3e $01
     ld   [wCAB8], A                                    ;; 00:0c3b $ea $b8 $ca
     call call_00_39e1                                  ;; 00:0c3e $cd $e1 $39
@@ -1566,21 +1583,21 @@ data_00_0bf1:
     ld   DE, sAA00                                     ;; 00:0c4b $11 $00 $aa
     ld   HL, wC5E5                                     ;; 00:0c4e $21 $e5 $c5
     ld   BC, $40                                       ;; 00:0c51 $01 $40 $00
-.jr_00_0c54:
+.loop:
     ld   A, [HL+]                                      ;; 00:0c54 $2a
     ld   [DE], A                                       ;; 00:0c55 $12
     inc  DE                                            ;; 00:0c56 $13
     dec  BC                                            ;; 00:0c57 $0b
     ld   A, B                                          ;; 00:0c58 $78
     or   A, C                                          ;; 00:0c59 $b1
-    jr   NZ, .jr_00_0c54                               ;; 00:0c5a $20 $f8
+    jr   NZ, .loop                                     ;; 00:0c5a $20 $f8
     ei                                                 ;; 00:0c5c $fb
     ld   A, $00                                        ;; 00:0c5d $3e $00
     ld   [$0000], A                                    ;; 00:0c5f $ea $00 $00
-.jr_00_0c62:
-    jr   .jr_00_0c62                                   ;; 00:0c62 $18 $fe
+.hang:
+    jr   .hang                                         ;; 00:0c62 $18 $fe
 
-data_00_0c64:
+Op20_PopFromCustomStack_Return:
     ld   A, $00                                        ;; 00:0c64 $3e $00
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0c66 $ea $26 $c3
     ld   A, [wStackHeadAddressC5E3]                    ;; 00:0c69 $fa $e3 $c5
@@ -1600,10 +1617,10 @@ data_00_0c64:
     ld   [wStackHeadAddressC5E3], A                    ;; 00:0c81 $ea $e3 $c5
     ld   A, B                                          ;; 00:0c84 $78
     ld   [wStackStartC5E5], A                          ;; 00:0c85 $ea $e4 $c5
-    jp   jp_00_0a14                                    ;; 00:0c88 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0c88 $c3 $14 $0a
 
-data_00_0c8b:
-    call call_00_0a69                                  ;; 00:0c8b $cd $69 $0a
+Op54:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0c8b $cd $69 $0a
     ld   A, [HL]                                       ;; 00:0c8e $7e
     ld   [wC6A9], A                                    ;; 00:0c8f $ea $a9 $c6
     ld   [wPlayerStateRegionStartC718], A              ;; 00:0c92 $ea $18 $c7
@@ -1612,28 +1629,33 @@ data_00_0c8b:
     call call_00_0f79                                  ;; 00:0c9a $cd $79 $0f
     xor  A, A                                          ;; 00:0c9d $af
     ld   [wSomeOffsetOfAddressArrayC6AA], A            ;; 00:0c9e $ea $aa $c6
-    jp   jp_00_0a39                                    ;; 00:0ca1 $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:0ca1 $c3 $39 $0a
 
-data_00_0ca4:
-    call call_00_0a69                                  ;; 00:0ca4 $cd $69 $0a
+Op1A:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0ca4 $cd $69 $0a
     ld   A, [HL]                                       ;; 00:0ca7 $7e
     ld   [wSomeOffsetOfAddressArrayC6AA], A            ;; 00:0ca8 $ea $aa $c6
     ld   A, $01                                        ;; 00:0cab $3e $01
     ld   [wCurrentRomBankC677], A                      ;; 00:0cad $ea $77 $c6
     ld   [$2000], A                                    ;; 00:0cb0 $ea $00 $20
     call call_01_5bbd                                  ;; 00:0cb3 $cd $bd $5b
-    call call_00_0cd0                                  ;; 00:0cb6 $cd $d0 $0c
+    call addressTableJumpHelper                        ;; 00:0cb6 $cd $d0 $0c
     ld   A, [wC71D]                                    ;; 00:0cb9 $fa $1d $c7
     and  A, A                                          ;; 00:0cbc $a7
-    jr   Z, .jr_00_0cc7                                ;; 00:0cbd $28 $08
+    jr   Z, .ifC71DWasEmpty                            ;; 00:0cbd $28 $08
     ld   A, $01                                        ;; 00:0cbf $3e $01
     ld   [wCAB8], A                                    ;; 00:0cc1 $ea $b8 $ca
     call call_00_39e1                                  ;; 00:0cc4 $cd $e1 $39
-.jr_00_0cc7:
-    jp   jp_00_0a14                                    ;; 00:0cc7 $c3 $14 $0a
-    db   $cd, $d0, $0c, $c3, $14, $0a                  ;; 00:0cca ??????
+.ifC71DWasEmpty:
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0cc7 $c3 $14 $0a
 
-call_00_0cd0:
+Op02_AddressTableJump:
+    call addressTableJumpHelper                        ;; 00:0cca $cd $d0 $0c
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ccd $c3 $14 $0a
+
+; C6A3-5 point to a 3byte Address table. C6AA has the table index.
+; This puts the looked-up address into C6A0-2. Like a Jump Op.
+addressTableJumpHelper:
     ld   A, [wUnknownAddressArrayAddressC6A3]          ;; 00:0cd0 $fa $a3 $c6
     ld   L, A                                          ;; 00:0cd3 $6f
     ld   A, [wUnknownAddressArrayAddressC6A3.high]     ;; 00:0cd4 $fa $a4 $c6
@@ -1657,8 +1679,8 @@ call_00_0cd0:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0cf8 $ea $26 $c3
     ret                                                ;; 00:0cfb $c9
 
-data_00_0cfc:
-    call call_00_0a69                                  ;; 00:0cfc $cd $69 $0a
+Op18_Jump:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0cfc $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0cff $2a
     ld   [wArgAddressC6A0], A                          ;; 00:0d00 $ea $a0 $c6
     ld   A, [HL+]                                      ;; 00:0d03 $2a
@@ -1667,20 +1689,22 @@ data_00_0cfc:
     ld   [wArgAddressC6A0.bank], A                     ;; 00:0d08 $ea $a2 $c6
     ld   A, $00                                        ;; 00:0d0b $3e $00
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0d0d $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0d10 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0d10 $c3 $14 $0a
 
-data_00_0d13:
+; Probably is instead "Execute Script from Table at index". Index comes from C53A
+Op1C_ExecuteScriptAtAddressC6A0_IndexC53A:
     ld   A, [wOp1CScriptTableIndexC53A]                ;; 00:0d13 $fa $3a $c5
     and  A, A                                          ;; 00:0d16 $a7
-    jr   Z, .jr_00_0d3b                                ;; 00:0d17 $28 $22
+    jr   Z, .scriptTableIndexWasZero                   ;; 00:0d17 $28 $22
     dec  A                                             ;; 00:0d19 $3d
     ld   E, A                                          ;; 00:0d1a $5f
     ld   D, $00                                        ;; 00:0d1b $16 $00
+; The first byte is the length of the table. So skip it.
     ld   HL, $01                                       ;; 00:0d1d $21 $01 $00
     add  HL, DE                                        ;; 00:0d20 $19
     add  HL, DE                                        ;; 00:0d21 $19
     add  HL, DE                                        ;; 00:0d22 $19
-    call call_00_0a7c                                  ;; 00:0d23 $cd $7c $0a
+    call LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch ;; 00:0d23 $cd $7c $0a
     add  HL, DE                                        ;; 00:0d26 $19
     ld   A, [HL+]                                      ;; 00:0d27 $2a
     ld   [wArgAddressC6A0], A                          ;; 00:0d28 $ea $a0 $c6
@@ -1690,9 +1714,12 @@ data_00_0d13:
     ld   [wArgAddressC6A0.bank], A                     ;; 00:0d30 $ea $a2 $c6
     ld   A, $00                                        ;; 00:0d33 $3e $00
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0d35 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0d38 $c3 $14 $0a
-.jr_00_0d3b:
-    call call_00_0a69                                  ;; 00:0d3b $cd $69 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0d38 $c3 $14 $0a
+; If the Table Index was 0 (it's 1 indexed) put the address immediately following
+; the table into LengthOfPreviousInstruction (?) and call next instruction.
+.scriptTableIndexWasZero:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0d3b $cd $69 $0a
+; Table length
     ld   A, [HL]                                       ;; 00:0d3e $7e
     ld   E, A                                          ;; 00:0d3f $5f
     ld   D, $00                                        ;; 00:0d40 $16 $00
@@ -1700,19 +1727,29 @@ data_00_0d13:
     add  HL, DE                                        ;; 00:0d45 $19
     add  HL, DE                                        ;; 00:0d46 $19
     add  HL, DE                                        ;; 00:0d47 $19
+; Add 1 because first byte is the length.
     inc  HL                                            ;; 00:0d48 $23
     ld   A, L                                          ;; 00:0d49 $7d
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0d4a $ea $26 $c3
     ld   A, H                                          ;; 00:0d4d $7c
     ld   [wLengthOfPreviousInstructionC326.high_zero], A ;; 00:0d4e $ea $27 $c3
-    jp   jp_00_0a14                                    ;; 00:0d51 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0d51 $c3 $14 $0a
 
-data_00_0d54:
+; Op 3e has 7 arg bytes
+; Arg Byte 1: index into 0DBD array (stores addresses)
+; Next 3 bytes: Payload to compare against
+; Last 3 bytes: Jump destination if all match
+;
+; Lookup an address from 0DBD (plus 6).
+; Assert that the 3 bytes there match the given payload.
+; If YES, jump to given address.
+; If NO, continue to next sequential instruction.
+Op3E_Branch:
     ldh  A, [rSVBK]                                    ;; 00:0d54 $f0 $70
     push AF                                            ;; 00:0d56 $f5
     ld   A, $01                                        ;; 00:0d57 $3e $01
     ldh  [rSVBK], A                                    ;; 00:0d59 $e0 $70
-    call call_00_0a69                                  ;; 00:0d5b $cd $69 $0a
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0d5b $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0d5e $2a
     ldh  [hFF80], A                                    ;; 00:0d5f $e0 $80
     ld   A, [HL+]                                      ;; 00:0d61 $2a
@@ -1727,7 +1764,7 @@ data_00_0d54:
     ldh  [hFF85], A                                    ;; 00:0d6e $e0 $85
     ld   A, [HL]                                       ;; 00:0d70 $7e
     ldh  [hFF86], A                                    ;; 00:0d71 $e0 $86
-    ld   HL, $dbd                                      ;; 00:0d73 $21 $bd $0d
+    ld   HL, AddressArray_0dbd ;@=ptr                  ;; 00:0d73 $21 $bd $0d
     ldh  A, [hFF80]                                    ;; 00:0d76 $f0 $80
     ld   E, A                                          ;; 00:0d78 $5f
     ld   D, $00                                        ;; 00:0d79 $16 $00
@@ -1769,72 +1806,45 @@ data_00_0d54:
 .jr_00_0db7:
     pop  AF                                            ;; 00:0db7 $f1
     ldh  [rSVBK], A                                    ;; 00:0db8 $e0 $70
-    jp   jp_00_0a14                                    ;; 00:0dba $c3 $14 $0a
-    db   $03, $d0, $31, $d0, $5f, $d0                  ;; 00:0dbd ??????
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0dba $c3 $14 $0a
 
-data_00_0dc3:
-    dw   $d08d                                         ;; 00:0dc3 wW
+;@data format=p amount=32
+AddressArray_0dbd:
+    dw   wD003                                         ;; 00:0dbd ?? $00
+    dw   wD031                                         ;; 00:0dbf ?? $01
+    dw   wD05F                                         ;; 00:0dc1 ?? $02
+    dw   wD08D                                         ;; 00:0dc3 wW $03
+    dw   $d0bb                                         ;; 00:0dc5 wW $04
+    dw   $d0e9                                         ;; 00:0dc7 wW $05
+    dw   $d117                                         ;; 00:0dc9 wW $06
+    dw   $d145                                         ;; 00:0dcb wW $07
+    dw   $d173                                         ;; 00:0dcd wW $08
+    dw   wD1A1                                         ;; 00:0dcf ?? $09
+    dw   wD1CF                                         ;; 00:0dd1 ?? $0a
+    dw   wBeginRegionD1FD                              ;; 00:0dd3 wW $0b
+    dw   wD22B                                         ;; 00:0dd5 wW $0c
+    dw   wD259                                         ;; 00:0dd7 wW $0d
+    dw   $d287                                         ;; 00:0dd9 wW $0e
+    dw   $d2b5                                         ;; 00:0ddb wW $0f
+    dw   $d2e3                                         ;; 00:0ddd wW $10
+    dw   $d311                                         ;; 00:0ddf wW $11
+    dw   $d33f                                         ;; 00:0de1 wW $12
+    dw   $d36d                                         ;; 00:0de3 ?? $13
+    dw   $d39b                                         ;; 00:0de5 ?? $14
+    dw   $d3c9                                         ;; 00:0de7 ?? $15
+    dw   $d3f7                                         ;; 00:0de9 ?? $16
+    dw   $d425                                         ;; 00:0deb ?? $17
+    dw   $d453                                         ;; 00:0ded ?? $18
+    dw   $d481                                         ;; 00:0def wW $19
+    dw   $d4af                                         ;; 00:0df1 wW $1a
+    dw   $d4dd                                         ;; 00:0df3 wW $1b
+    dw   $d50b                                         ;; 00:0df5 wW $1c
+    dw   $d539                                         ;; 00:0df7 wW $1d
+    dw   $d567                                         ;; 00:0df9 ?? $1e
+    dw   $d595                                         ;; 00:0dfb ?? $1f
 
-data_00_0dc5:
-    dw   $d0bb                                         ;; 00:0dc5 wW
-
-data_00_0dc7:
-    dw   $d0e9                                         ;; 00:0dc7 wW
-
-data_00_0dc9:
-    dw   $d117                                         ;; 00:0dc9 wW
-
-data_00_0dcb:
-    dw   $d145                                         ;; 00:0dcb wW
-
-data_00_0dcd:
-    dw   $d173                                         ;; 00:0dcd wW
-    db   $a1, $d1, $cf, $d1                            ;; 00:0dcf ????
-
-data_00_0dd3:
-    dw   $d1fd                                         ;; 00:0dd3 wW
-
-data_00_0dd5:
-    dw   $d22b                                         ;; 00:0dd5 wW
-
-data_00_0dd7:
-    dw   $d259                                         ;; 00:0dd7 wW
-
-data_00_0dd9:
-    dw   $d287                                         ;; 00:0dd9 wW
-
-data_00_0ddb:
-    dw   $d2b5                                         ;; 00:0ddb wW
-
-data_00_0ddd:
-    dw   $d2e3                                         ;; 00:0ddd wW
-
-data_00_0ddf:
-    dw   $d311                                         ;; 00:0ddf wW
-
-data_00_0de1:
-    dw   $d33f                                         ;; 00:0de1 wW
-    db   $6d, $d3, $9b, $d3, $c9, $d3, $f7, $d3        ;; 00:0de3 ????????
-    db   $25, $d4, $53, $d4                            ;; 00:0deb ????
-
-data_00_0def:
-    dw   $d481                                         ;; 00:0def wW
-
-data_00_0df1:
-    dw   $d4af                                         ;; 00:0df1 wW
-
-data_00_0df3:
-    dw   $d4dd                                         ;; 00:0df3 wW
-
-data_00_0df5:
-    dw   $d50b                                         ;; 00:0df5 wW
-
-data_00_0df7:
-    dw   $d539                                         ;; 00:0df7 wW
-    db   $67, $d5, $95, $d5                            ;; 00:0df9 ????
-
-data_00_0dfd:
-    call call_00_0a69                                  ;; 00:0dfd $cd $69 $0a
+Op68_CopyBytes:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0dfd $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0e00 $2a
     ld   [wC35A], A                                    ;; 00:0e01 $ea $5a $c3
     ld   A, [HL+]                                      ;; 00:0e04 $2a
@@ -1845,29 +1855,30 @@ data_00_0dfd:
     ld   C, A                                          ;; 00:0e09 $4f
     ld   A, [HL+]                                      ;; 00:0e0a $2a
     ld   B, A                                          ;; 00:0e0b $47
+; Bank switch is performed depending on the address.
     cp   A, $a0                                        ;; 00:0e0c $fe $a0
     ld   A, [HL+]                                      ;; 00:0e0e $2a
-    jr   C, .jr_00_0e15                                ;; 00:0e0f $38 $04
+    jr   C, .rvbkCase                                  ;; 00:0e0f $38 $04
     ldh  [rSVBK], A                                    ;; 00:0e11 $e0 $70
-    jr   .jr_00_0e17                                   ;; 00:0e13 $18 $02
-.jr_00_0e15:
+    jr   .afterBankManaged                             ;; 00:0e13 $18 $02
+.rvbkCase:
     ldh  [rVBK], A                                     ;; 00:0e15 $e0 $4f
-.jr_00_0e17:
+.afterBankManaged:
     ld   A, $06                                        ;; 00:0e17 $3e $06
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0e19 $ea $26 $c3
     ld   A, [wC35A]                                    ;; 00:0e1c $fa $5a $c3
     ld   L, A                                          ;; 00:0e1f $6f
-.jr_00_0e20:
+.loop:
     ld   A, [BC]                                       ;; 00:0e20 $0a
     ld   [DE], A                                       ;; 00:0e21 $12
     inc  BC                                            ;; 00:0e22 $03
     inc  DE                                            ;; 00:0e23 $13
     dec  L                                             ;; 00:0e24 $2d
-    jr   NZ, .jr_00_0e20                               ;; 00:0e25 $20 $f9
-    jp   jp_00_0a14                                    ;; 00:0e27 $c3 $14 $0a
+    jr   NZ, .loop                                     ;; 00:0e25 $20 $f9
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0e27 $c3 $14 $0a
 
-data_00_0e2a:
-    call call_00_0a69                                  ;; 00:0e2a $cd $69 $0a
+Op8E:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0e2a $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0e2d $2a
     sla  A                                             ;; 00:0e2e $cb $27
     ld   E, A                                          ;; 00:0e30 $5f
@@ -1878,13 +1889,29 @@ data_00_0e2a:
 
 data_00_0e3a:
     dw   wC3C4                                         ;; 00:0e3a pP
-    db   $c7, $c3, $ca, $c3, $cd, $c3, $cd, $69        ;; 00:0e3c ????????
-    db   $0a, $2a, $cb, $27, $5f, $16, $00, $e5        ;; 00:0e44 ????????
-    db   $21, $52, $0e, $c3, $72, $0e, $d0, $c3        ;; 00:0e4c ????????
-    db   $d3, $c3, $d6, $c3, $d9, $c3, $cd, $69        ;; 00:0e54 ????????
-    db   $0a, $2a, $cb, $27, $5f, $16, $00, $e5        ;; 00:0e5c ????????
-    db   $21, $6a, $0e, $c3, $72, $0e, $dc, $c3        ;; 00:0e64 ????????
-    db   $df, $c3, $e2, $c3, $e5, $c3                  ;; 00:0e6c ??????
+    db   $c7, $c3, $ca, $c3, $cd, $c3                  ;; 00:0e3c ??????
+
+Op90:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0e42 $cd $69 $0a
+    ld   A, [HL+]                                      ;; 00:0e45 $2a
+    sla  A                                             ;; 00:0e46 $cb $27
+    ld   E, A                                          ;; 00:0e48 $5f
+    ld   D, $00                                        ;; 00:0e49 $16 $00
+    push HL                                            ;; 00:0e4b $e5
+    ld   HL, $e52                                      ;; 00:0e4c $21 $52 $0e
+    jp   jp_00_0e72                                    ;; 00:0e4f $c3 $72 $0e
+    db   $d0, $c3, $d3, $c3, $d6, $c3, $d9, $c3        ;; 00:0e52 ????????
+
+Op98:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0e5a $cd $69 $0a
+    ld   A, [HL+]                                      ;; 00:0e5d $2a
+    sla  A                                             ;; 00:0e5e $cb $27
+    ld   E, A                                          ;; 00:0e60 $5f
+    ld   D, $00                                        ;; 00:0e61 $16 $00
+    push HL                                            ;; 00:0e63 $e5
+    ld   HL, $e6a                                      ;; 00:0e64 $21 $6a $0e
+    jp   jp_00_0e72                                    ;; 00:0e67 $c3 $72 $0e
+    db   $dc, $c3, $df, $c3, $e2, $c3, $e5, $c3        ;; 00:0e6a ????????
 
 jp_00_0e72:
     add  HL, DE                                        ;; 00:0e72 $19
@@ -1902,10 +1929,10 @@ jp_00_0e72:
     ld   [BC], A                                       ;; 00:0e7e $02
     ld   A, $04                                        ;; 00:0e7f $3e $04
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0e81 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0e84 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0e84 $c3 $14 $0a
 
-data_00_0e87:
-    call call_00_0a69                                  ;; 00:0e87 $cd $69 $0a
+Op82_Execute:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0e87 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0e8a $2a
     ld   C, A                                          ;; 00:0e8b $4f
     ld   A, [HL+]                                      ;; 00:0e8c $2a
@@ -1920,43 +1947,67 @@ data_00_0e87:
     ld   DE, $ea1                                      ;; 00:0e9c $11 $a1 $0e
     push DE                                            ;; 00:0e9f $d5
     jp   HL                                            ;; 00:0ea0 $e9
-    jp   jp_00_0a14                                    ;; 00:0ea1 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ea1 $c3 $14 $0a
     db   $3e, $08, $ea, $26, $c3, $c3, $14, $0a        ;; 00:0ea4 ????????
 
-data_00_0eac:
-    call call_00_0a69                                  ;; 00:0eac $cd $69 $0a
+; The fact that this and 5C reference HamJam flags makes me wonder if they're related to the HamChat animations/sounds.
+Op5A:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0eac $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0eaf $2a
     ld   B, A                                          ;; 00:0eb0 $47
     ld   A, [wHamJamFlagsC662]                         ;; 00:0eb1 $fa $62 $c6
     and  A, $01                                        ;; 00:0eb4 $e6 $01
-    jr   NZ, .jr_00_0ebc                               ;; 00:0eb6 $20 $04
+    jr   NZ, .end                                      ;; 00:0eb6 $20 $04
     ld   A, B                                          ;; 00:0eb8 $78
     ld   [wCFF0], A                                    ;; 00:0eb9 $ea $f0 $cf
-.jr_00_0ebc:
+.end:
     ld   A, $01                                        ;; 00:0ebc $3e $01
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ebe $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0ec1 $c3 $14 $0a
-    db   $cd, $69, $0a, $2a, $47, $fa, $62, $c6        ;; 00:0ec4 ????????
-    db   $e6, $02, $20, $04, $78, $ea, $f1, $cf        ;; 00:0ecc ????????
-    db   $3e, $01, $ea, $26, $c3, $c3, $14, $0a        ;; 00:0ed4 ????????
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ec1 $c3 $14 $0a
 
-data_00_0edc:
-    call call_00_0a69                                  ;; 00:0edc $cd $69 $0a
+Op5C:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0ec4 $cd $69 $0a
+    ld   A, [HL+]                                      ;; 00:0ec7 $2a
+    ld   B, A                                          ;; 00:0ec8 $47
+    ld   A, [wHamJamFlagsC662]                         ;; 00:0ec9 $fa $62 $c6
+    and  A, $02                                        ;; 00:0ecc $e6 $02
+    jr   NZ, .end                                      ;; 00:0ece $20 $04
+    ld   A, B                                          ;; 00:0ed0 $78
+    ld   [wCFF1], A                                    ;; 00:0ed1 $ea $f1 $cf
+.end:
+    ld   A, $01                                        ;; 00:0ed4 $3e $01
+    ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ed6 $ea $26 $c3
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ed9 $c3 $14 $0a
+
+Op5E_WriteToCFF9:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0edc $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0edf $2a
     ld   [wCFF9], A                                    ;; 00:0ee0 $ea $f9 $cf
     ld   A, $01                                        ;; 00:0ee3 $3e $01
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ee5 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0ee8 $c3 $14 $0a
-    db   $cd, $69, $0a, $2a, $3e, $80, $ea, $f0        ;; 00:0eeb ????????
-    db   $cf, $3e, $01, $ea, $26, $c3, $c3, $14        ;; 00:0ef3 ????????
-    db   $0a                                           ;; 00:0efb ?
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ee8 $c3 $14 $0a
 
-call_00_0efc:
+Op60:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0eeb $cd $69 $0a
+    ld   A, [HL+]                                      ;; 00:0eee $2a
+    ld   A, $80                                        ;; 00:0eef $3e $80
+    ld   [wCFF0], A                                    ;; 00:0ef1 $ea $f0 $cf
+    ld   A, $01                                        ;; 00:0ef4 $3e $01
+    ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ef6 $ea $26 $c3
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ef9 $c3 $14 $0a
+
+; Under some conditions, this will set C6A0 and return 1 (as C flag).
+; Otherwise returns 0 (as C flag).
+; I've never seen this range have nonzero values (ret 0).
+CopyC625toC640_maybeSetC6A0:
     ld   HL, wC625                                     ;; 00:0efc $21 $25 $c6
+; E is the loop counter.
     ld   E, $04                                        ;; 00:0eff $1e $04
-.jr_00_0f01:
+.loop:
     push HL                                            ;; 00:0f01 $e5
     ld   D, $00                                        ;; 00:0f02 $16 $00
+; Start copying C625-7 to C356-8 D counts nonzero bytes written.
+; In subsequent loops, HL may start further along.
     ld   A, [HL+]                                      ;; 00:0f04 $2a
     ld   [wC356], A                                    ;; 00:0f05 $ea $56 $c3
     and  A, A                                          ;; 00:0f08 $a7
@@ -1972,43 +2023,47 @@ call_00_0efc:
     ld   A, [HL+]                                      ;; 00:0f14 $2a
     ld   [wDupeBitArrayIndexC358], A                   ;; 00:0f15 $ea $58 $c3
     and  A, A                                          ;; 00:0f18 $a7
-    jr   Z, .jr_00_0f1c                                ;; 00:0f19 $28 $01
+    jr   Z, .afterAllCopyingDone                       ;; 00:0f19 $28 $01
     inc  D                                             ;; 00:0f1b $14
-.jr_00_0f1c:
+.afterAllCopyingDone:
     ld   A, D                                          ;; 00:0f1c $7a
     cp   A, $00                                        ;; 00:0f1d $fe $00
-    jr   Z, .jr_00_0f6e                                ;; 00:0f1f $28 $4d
+; If we wrote only zeroes
+    jr   Z, .prepForNextLoop                           ;; 00:0f1f $28 $4d
     ld   A, [HL+]                                      ;; 00:0f21 $2a
     ld   C, A                                          ;; 00:0f22 $4f
     ld   A, [HL+]                                      ;; 00:0f23 $2a
     ld   B, A                                          ;; 00:0f24 $47
     ld   A, [wC6AD]                                    ;; 00:0f25 $fa $ad $c6
     cp   A, B                                          ;; 00:0f28 $b8
-    jr   C, .jr_00_0f6e                                ;; 00:0f29 $38 $43
+; C6AD < B
+    jr   C, .prepForNextLoop                           ;; 00:0f29 $38 $43
+; C6AD == B
     jr   Z, .jr_00_0f38                                ;; 00:0f2b $28 $0b
+; C6AD > B
     cp   A, $e8                                        ;; 00:0f2d $fe $e8
-    jr   C, .jr_00_0f52                                ;; 00:0f2f $38 $21
+    jr   C, .SetC6A0to2_ZeroOutMostRecentCopySource_End ;; 00:0f2f $38 $21
     ld   A, C                                          ;; 00:0f31 $79
     cp   A, $08                                        ;; 00:0f32 $fe $08
-    jr   NC, .jr_00_0f52                               ;; 00:0f34 $30 $1c
-    jr   .jr_00_0f6e                                   ;; 00:0f36 $18 $36
+    jr   NC, .SetC6A0to2_ZeroOutMostRecentCopySource_End ;; 00:0f34 $30 $1c
+    jr   .prepForNextLoop                              ;; 00:0f36 $18 $36
 .jr_00_0f38:
     ld   A, [wC6AC]                                    ;; 00:0f38 $fa $ac $c6
     cp   A, C                                          ;; 00:0f3b $b9
-    jr   C, .jr_00_0f6e                                ;; 00:0f3c $38 $30
-    jr   NZ, .jr_00_0f52                               ;; 00:0f3e $20 $12
+    jr   C, .prepForNextLoop                           ;; 00:0f3c $38 $30
+    jr   NZ, .SetC6A0to2_ZeroOutMostRecentCopySource_End ;; 00:0f3e $20 $12
     ld   A, [HL+]                                      ;; 00:0f40 $2a
     ld   C, A                                          ;; 00:0f41 $4f
     ld   A, [HL+]                                      ;; 00:0f42 $2a
     ld   B, A                                          ;; 00:0f43 $47
     ld   A, [wC6AF]                                    ;; 00:0f44 $fa $af $c6
     cp   A, B                                          ;; 00:0f47 $b8
-    jr   C, .jr_00_0f6e                                ;; 00:0f48 $38 $24
-    jr   NZ, .jr_00_0f52                               ;; 00:0f4a $20 $06
+    jr   C, .prepForNextLoop                           ;; 00:0f48 $38 $24
+    jr   NZ, .SetC6A0to2_ZeroOutMostRecentCopySource_End ;; 00:0f4a $20 $06
     ld   A, [wC6AE]                                    ;; 00:0f4c $fa $ae $c6
     cp   A, C                                          ;; 00:0f4f $b9
-    jr   C, .jr_00_0f6e                                ;; 00:0f50 $38 $1c
-.jr_00_0f52:
+    jr   C, .prepForNextLoop                           ;; 00:0f50 $38 $1c
+.SetC6A0to2_ZeroOutMostRecentCopySource_End:
     ld   A, [wC356]                                    ;; 00:0f52 $fa $56 $c3
     ld   [wArgAddressC6A0], A                          ;; 00:0f55 $ea $a0 $c6
     ld   A, [wC357]                                    ;; 00:0f58 $fa $57 $c3
@@ -2023,12 +2078,14 @@ call_00_0efc:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0f69 $ea $26 $c3
     scf                                                ;; 00:0f6c $37
     ret                                                ;; 00:0f6d $c9
-.jr_00_0f6e:
+.prepForNextLoop:
     pop  HL                                            ;; 00:0f6e $e1
+; Each loop starts 7 bytes after the first one.
+; C625 --> C62C --> C633 -> C63A (whose last byte is C640)
     ld   BC, $07                                       ;; 00:0f6f $01 $07 $00
     add  HL, BC                                        ;; 00:0f72 $09
     dec  E                                             ;; 00:0f73 $1d
-    jr   NZ, .jr_00_0f01                               ;; 00:0f74 $20 $8b
+    jr   NZ, .loop                                     ;; 00:0f74 $20 $8b
     scf                                                ;; 00:0f76 $37
     ccf                                                ;; 00:0f77 $3f
     ret                                                ;; 00:0f78 $c9
@@ -2056,8 +2113,8 @@ call_00_0f79:
     pop  HL                                            ;; 00:0f94 $e1
     ret                                                ;; 00:0f95 $c9
 
-data_00_0f96:
-    call call_00_0a7c                                  ;; 00:0f96 $cd $7c $0a
+Op4E:
+    call LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch ;; 00:0f96 $cd $7c $0a
     sla  A                                             ;; 00:0f99 $cb $27
     ld   C, A                                          ;; 00:0f9b $4f
     ld   B, $00                                        ;; 00:0f9c $06 $00
@@ -2103,7 +2160,7 @@ data_00_0f96:
 .jr_00_0fd0:
     ld   A, $05                                        ;; 00:0fd0 $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0fd2 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:0fd5 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0fd5 $c3 $14 $0a
 
 data_00_0fd8:
     dw   wD857                                         ;; 00:0fd8 pP
@@ -2153,12 +2210,12 @@ data_00_0ff4:
 data_00_0ff6:
     dw   $d90b                                         ;; 00:0ff6 pP
 
-data_00_0ff8:
-    call call_00_0a7c                                  ;; 00:0ff8 $cd $7c $0a
+Op42:
+    call LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch ;; 00:0ff8 $cd $7c $0a
     call call_00_1006                                  ;; 00:0ffb $cd $06 $10
     ld   A, $05                                        ;; 00:0ffe $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1000 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:1003 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:1003 $c3 $14 $0a
 
 call_00_1006:
     push HL                                            ;; 00:1006 $e5
@@ -2273,8 +2330,8 @@ data_00_107b:
 data_00_107d:
     dw   wD82C                                         ;; 00:107d pP
 
-data_00_107f:
-    call call_00_0a69                                  ;; 00:107f $cd $69 $0a
+Op6A:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:107f $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:1082 $2a
     ld   [wC680], A                                    ;; 00:1083 $ea $80 $c6
     ld   A, [HL+]                                      ;; 00:1086 $2a
@@ -2285,10 +2342,10 @@ data_00_107f:
     ld   [wC67E], A                                    ;; 00:108f $ea $7e $c6
     ld   A, $04                                        ;; 00:1092 $3e $04
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1094 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:1097 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:1097 $c3 $14 $0a
 
-data_00_109a:
-    call call_00_0a69                                  ;; 00:109a $cd $69 $0a
+Op40:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:109a $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:109d $2a
     ld   [wC68C], A                                    ;; 00:109e $ea $8c $c6
     ld   A, [HL+]                                      ;; 00:10a1 $2a
@@ -2299,10 +2356,10 @@ data_00_109a:
     ld   [wC68A], A                                    ;; 00:10aa $ea $8a $c6
     ld   A, $04                                        ;; 00:10ad $3e $04
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:10af $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:10b2 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:10b2 $c3 $14 $0a
 
-data_00_10b5:
-    call call_00_0a69                                  ;; 00:10b5 $cd $69 $0a
+Op84:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:10b5 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:10b8 $2a
     ld   [wC356], A                                    ;; 00:10b9 $ea $56 $c3
     ld   A, [HL+]                                      ;; 00:10bc $2a
@@ -2320,10 +2377,10 @@ data_00_10b5:
     call call_00_2914                                  ;; 00:10d5 $cd $14 $29
     ld   A, $00                                        ;; 00:10d8 $3e $00
     ld   [wOpcodeC322], A                              ;; 00:10da $ea $22 $c3
-    jp   jp_00_0a39                                    ;; 00:10dd $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:10dd $c3 $39 $0a
 
-data_00_10e0:
-    call call_00_0a69                                  ;; 00:10e0 $cd $69 $0a
+Op80:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:10e0 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:10e3 $2a
     ld   [wC356], A                                    ;; 00:10e4 $ea $56 $c3
     ld   A, [HL+]                                      ;; 00:10e7 $2a
@@ -2343,10 +2400,10 @@ data_00_10e0:
     ld   A, $08                                        ;; 00:1103 $3e $08
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1105 $ea $26 $c3
     call call_00_2940                                  ;; 00:1108 $cd $40 $29
-    jp   jp_00_0a14                                    ;; 00:110b $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:110b $c3 $14 $0a
 
-data_00_110e:
-    call call_00_0a69                                  ;; 00:110e $cd $69 $0a
+Op4C:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:110e $cd $69 $0a
     call call_00_11fb                                  ;; 00:1111 $cd $fb $11
     inc  HL                                            ;; 00:1114 $23
     ld   A, [HL+]                                      ;; 00:1115 $2a
@@ -2391,7 +2448,7 @@ data_00_110e:
     inc  D                                             ;; 00:1152 $14
 .jr_00_1153:
     ld   A, [HL+]                                      ;; 00:1153 $2a
-    ld   [wC35F], A                                    ;; 00:1154 $ea $5f $c3
+    ld   [wBitArrayIndexC35E.low], A                   ;; 00:1154 $ea $5f $c3
     and  A, A                                          ;; 00:1157 $a7
     jr   Z, .jr_00_115b                                ;; 00:1158 $28 $01
     inc  D                                             ;; 00:115a $14
@@ -2459,9 +2516,9 @@ data_00_110e:
     jr   Z, .jr_00_11c1                                ;; 00:11bc $28 $03
     call call_00_1248                                  ;; 00:11be $cd $48 $12
 .jr_00_11c1:
-    jp   jp_00_0a14                                    ;; 00:11c1 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:11c1 $c3 $14 $0a
 
-data_00_11c4:
+Op58:
     ld   A, $05                                        ;; 00:11c4 $3e $05
     call call_00_11f0                                  ;; 00:11c6 $cd $f0 $11
     ld   A, [HL+]                                      ;; 00:11c9 $2a
@@ -2470,7 +2527,7 @@ data_00_11c4:
     ld   [BC], A                                       ;; 00:11ce $02
     jr   jr_00_11d6                                    ;; 00:11cf $18 $05
 
-data_00_11d1:
+Op56:
     ld   A, $04                                        ;; 00:11d1 $3e $04
     call call_00_11f0                                  ;; 00:11d3 $cd $f0 $11
 
@@ -2492,11 +2549,11 @@ jr_00_11d6:
     ldh  [rSVBK], A                                    ;; 00:11e8 $e0 $70
     call call_00_1248                                  ;; 00:11ea $cd $48 $12
 .jr_00_11ed:
-    jp   jp_00_0a14                                    ;; 00:11ed $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:11ed $c3 $14 $0a
 
 call_00_11f0:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:11f0 $ea $26 $c3
-    call call_00_0a69                                  ;; 00:11f3 $cd $69 $0a
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:11f3 $cd $69 $0a
     call call_00_11fb                                  ;; 00:11f6 $cd $fb $11
     inc  HL                                            ;; 00:11f9 $23
     ret                                                ;; 00:11fa $c9
@@ -2614,7 +2671,7 @@ call_00_1248:
     add  HL, BC                                        ;; 00:124b $09
     ld   A, [wBitArrayIndexC35E]                       ;; 00:124c $fa $5e $c3
     ld   [HL+], A                                      ;; 00:124f $22
-    ld   A, [wC35F]                                    ;; 00:1250 $fa $5f $c3
+    ld   A, [wBitArrayIndexC35E.low]                   ;; 00:1250 $fa $5f $c3
     ld   [HL+], A                                      ;; 00:1253 $22
     ld   A, [wC360]                                    ;; 00:1254 $fa $60 $c3
     ld   [HL+], A                                      ;; 00:1257 $22
@@ -2638,8 +2695,8 @@ call_00_1248:
     jr   NZ, .jr_00_126f                               ;; 00:1271 $20 $fc
     ret                                                ;; 00:1273 $c9
 
-data_00_1274:
-    call call_00_0a69                                  ;; 00:1274 $cd $69 $0a
+Op32:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1274 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:1277 $2a
     ld   [wC356], A                                    ;; 00:1278 $ea $56 $c3
     ld   A, [HL+]                                      ;; 00:127b $2a
@@ -2668,7 +2725,7 @@ data_00_1274:
     call call_00_285c                                  ;; 00:12b0 $cd $5c $28
     ld   A, $00                                        ;; 00:12b3 $3e $00
     ld   [wOpcodeC322], A                              ;; 00:12b5 $ea $22 $c3
-    jp   jp_00_0a39                                    ;; 00:12b8 $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:12b8 $c3 $39 $0a
 
 call_00_12bb:
     cp   A, $04                                        ;; 00:12bb $fe $04
@@ -2690,8 +2747,8 @@ call_00_12bb:
 .jr_00_12d9:
     ret                                                ;; 00:12d9 $c9
 
-data_00_12da:
-    call call_00_0a69                                  ;; 00:12da $cd $69 $0a
+Op34:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:12da $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:12dd $2a
     ld   [wC356], A                                    ;; 00:12de $ea $56 $c3
     ld   A, [HL+]                                      ;; 00:12e1 $2a
@@ -2722,10 +2779,10 @@ data_00_12da:
     call call_00_285c                                  ;; 00:131a $cd $5c $28
     ld   A, $00                                        ;; 00:131d $3e $00
     ld   [wOpcodeC322], A                              ;; 00:131f $ea $22 $c3
-    jp   jp_00_0a39                                    ;; 00:1322 $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1322 $c3 $39 $0a
 
-data_00_1325:
-    call call_00_0a69                                  ;; 00:1325 $cd $69 $0a
+Op36:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1325 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:1328 $2a
     ld   [wC356], A                                    ;; 00:1329 $ea $56 $c3
     ld   A, [HL+]                                      ;; 00:132c $2a
@@ -2743,10 +2800,10 @@ data_00_1325:
     call call_00_2515                                  ;; 00:1345 $cd $15 $25
     ld   A, $00                                        ;; 00:1348 $3e $00
     ld   [wOpcodeC322], A                              ;; 00:134a $ea $22 $c3
-    jp   jp_00_0a39                                    ;; 00:134d $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:134d $c3 $39 $0a
 
-data_00_1350:
-    call call_00_0a69                                  ;; 00:1350 $cd $69 $0a
+Op38:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1350 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:1353 $2a
     ld   [wC356], A                                    ;; 00:1354 $ea $56 $c3
     ld   A, [HL+]                                      ;; 00:1357 $2a
@@ -2766,10 +2823,10 @@ data_00_1350:
     call call_00_25f3                                  ;; 00:1374 $cd $f3 $25
     ld   A, $00                                        ;; 00:1377 $3e $00
     ld   [wOpcodeC322], A                              ;; 00:1379 $ea $22 $c3
-    jp   jp_00_0a39                                    ;; 00:137c $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:137c $c3 $39 $0a
 
-data_00_137f:
-    call call_00_0a69                                  ;; 00:137f $cd $69 $0a
+Op7E:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:137f $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:1382 $2a
     ld   [wC356], A                                    ;; 00:1383 $ea $56 $c3
     ld   A, [HL+]                                      ;; 00:1386 $2a
@@ -2791,10 +2848,10 @@ data_00_137f:
     call call_00_285c                                  ;; 00:13a7 $cd $5c $28
     ld   A, $00                                        ;; 00:13aa $3e $00
     ld   [wOpcodeC322], A                              ;; 00:13ac $ea $22 $c3
-    jp   jp_00_0a39                                    ;; 00:13af $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:13af $c3 $39 $0a
 
-data_00_13b2:
-    call call_00_0a69                                  ;; 00:13b2 $cd $69 $0a
+Op86:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:13b2 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:13b5 $2a
     ld   [wC356], A                                    ;; 00:13b6 $ea $56 $c3
     ld   A, [HL+]                                      ;; 00:13b9 $2a
@@ -2814,10 +2871,10 @@ data_00_13b2:
     ld   A, $08                                        ;; 00:13d5 $3e $08
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:13d7 $ea $26 $c3
     call call_00_285c                                  ;; 00:13da $cd $5c $28
-    jp   jp_00_0a14                                    ;; 00:13dd $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:13dd $c3 $14 $0a
 
-data_00_13e0:
-    call call_00_0a69                                  ;; 00:13e0 $cd $69 $0a
+Op3A:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:13e0 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:13e3 $2a
     ld   [wC339], A                                    ;; 00:13e4 $ea $39 $c3
     ld   A, [HL+]                                      ;; 00:13e7 $2a
@@ -2880,50 +2937,84 @@ data_00_13e0:
     ld   [wC33D], A                                    ;; 00:1456 $ea $3d $c3
     ld   A, $0a                                        ;; 00:1459 $3e $0a
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:145b $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:145e $c3 $14 $0a
-    db   $fa, $24, $c3, $a7, $c2, $1e, $15, $fa        ;; 00:1461 ????????
-    db   $25, $c3, $a7, $c2, $1e, $15, $cd, $8f        ;; 00:1469 ????????
-    db   $0a, $c3, $83, $14, $fa, $24, $c3, $a7        ;; 00:1471 ????????
-    db   $c2, $1e, $15, $fa, $25, $c3, $a7, $c2        ;; 00:1479 ????????
-    db   $1e, $15, $3e, $04, $ea, $26, $c3, $cd        ;; 00:1481 ????????
-    db   $69, $0a, $ea, $9a, $c3, $23, $c3, $c1        ;; 00:1489 ????????
-    db   $14, $fa, $24, $c3, $a7, $c2, $1e, $15        ;; 00:1491 ????????
-    db   $fa, $25, $c3, $a7, $c2, $1e, $15, $cd        ;; 00:1499 ????????
-    db   $8f, $0a, $c3, $b4, $14                       ;; 00:14a1 ?????
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:145e $c3 $14 $0a
 
-data_00_14a6:
+Op30:
+    ld   A, [wReturnAddressC324]                       ;; 00:1461 $fa $24 $c3
+    and  A, A                                          ;; 00:1464 $a7
+    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:1465 $c2 $1e $15
+    ld   A, [wReturnAddressC324.high]                  ;; 00:1468 $fa $25 $c3
+    and  A, A                                          ;; 00:146b $a7
+    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:146c $c2 $1e $15
+    call CopyC6A0AddressToC53CtoE                      ;; 00:146f $cd $8f $0a
+    jp   jp_00_1483                                    ;; 00:1472 $c3 $83 $14
+
+Op2C:
+    ld   A, [wReturnAddressC324]                       ;; 00:1475 $fa $24 $c3
+    and  A, A                                          ;; 00:1478 $a7
+    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:1479 $c2 $1e $15
+    ld   A, [wReturnAddressC324.high]                  ;; 00:147c $fa $25 $c3
+    and  A, A                                          ;; 00:147f $a7
+    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:1480 $c2 $1e $15
+
+jp_00_1483:
+    ld   A, $04                                        ;; 00:1483 $3e $04
+    ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1485 $ea $26 $c3
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1488 $cd $69 $0a
+    ld   [wC39A], A                                    ;; 00:148b $ea $9a $c3
+    inc  HL                                            ;; 00:148e $23
+    jp   Write3ArgBytesToD037to9_AndThenDo2XStuff      ;; 00:148f $c3 $c1 $14
+
+Op2E:
+    ld   A, [wReturnAddressC324]                       ;; 00:1492 $fa $24 $c3
+    and  A, A                                          ;; 00:1495 $a7
+    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:1496 $c2 $1e $15
+    ld   A, [wReturnAddressC324.high]                  ;; 00:1499 $fa $25 $c3
+    and  A, A                                          ;; 00:149c $a7
+    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:149d $c2 $1e $15
+; This call is the only difference between this and op2A
+    call CopyC6A0AddressToC53CtoE                      ;; 00:14a0 $cd $8f $0a
+    jp   twotimesC324to5Empty                          ;; 00:14a3 $c3 $b4 $14
+
+; Jumps to C324-5 (return address?) if they hold a value
+Op2A_FrequentLoop:
     ld   A, [wReturnAddressC324]                       ;; 00:14a6 $fa $24 $c3
     and  A, A                                          ;; 00:14a9 $a7
-    jp   NZ, .jp_00_151e                               ;; 00:14aa $c2 $1e $15
-    ld   A, [wC325]                                    ;; 00:14ad $fa $25 $c3
+    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:14aa $c2 $1e $15
+    ld   A, [wReturnAddressC324.high]                  ;; 00:14ad $fa $25 $c3
     and  A, A                                          ;; 00:14b0 $a7
-    jp   NZ, .jp_00_151e                               ;; 00:14b1 $c2 $1e $15
+    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:14b1 $c2 $1e $15
+
+twotimesC324to5Empty:
     ld   A, $03                                        ;; 00:14b4 $3e $03
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:14b6 $ea $26 $c3
     ld   A, $00                                        ;; 00:14b9 $3e $00
     ld   [wC39A], A                                    ;; 00:14bb $ea $9a $c3
-    call call_00_0a69                                  ;; 00:14be $cd $69 $0a
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:14be $cd $69 $0a
+
+Write3ArgBytesToD037to9_AndThenDo2XStuff:
     ld   A, $01                                        ;; 00:14c1 $3e $01
     ldh  [rSVBK], A                                    ;; 00:14c3 $e0 $70
+; B will count the nonzero writes we do.
     ld   B, $00                                        ;; 00:14c5 $06 $00
     ld   A, [HL+]                                      ;; 00:14c7 $2a
     ld   [wD037], A                                    ;; 00:14c8 $ea $37 $d0
     and  A, A                                          ;; 00:14cb $a7
-    jr   Z, .jr_00_14cf                                ;; 00:14cc $28 $01
+    jr   Z, .afterIncrement1                           ;; 00:14cc $28 $01
     inc  B                                             ;; 00:14ce $04
-.jr_00_14cf:
+.afterIncrement1:
     ld   A, [HL+]                                      ;; 00:14cf $2a
     ld   [wD038], A                                    ;; 00:14d0 $ea $38 $d0
     and  A, A                                          ;; 00:14d3 $a7
-    jr   Z, .jr_00_14d7                                ;; 00:14d4 $28 $01
+    jr   Z, .afterIncrement2                           ;; 00:14d4 $28 $01
     inc  B                                             ;; 00:14d6 $04
-.jr_00_14d7:
+.afterIncrement2:
     ld   A, [HL+]                                      ;; 00:14d7 $2a
     ld   [wD039], A                                    ;; 00:14d8 $ea $39 $d0
     and  A, A                                          ;; 00:14db $a7
-    jr   Z, .jr_00_14df                                ;; 00:14dc $28 $01
+    jr   Z, .afterIncrement3                           ;; 00:14dc $28 $01
     inc  B                                             ;; 00:14de $04
-.jr_00_14df:
+.afterIncrement3:
     ld   A, $04                                        ;; 00:14df $3e $04
     ld   [wD033], A                                    ;; 00:14e1 $ea $33 $d0
     ld   A, $00                                        ;; 00:14e4 $3e $00
@@ -2931,36 +3022,38 @@ data_00_14a6:
     ld   [wD03A], A                                    ;; 00:14e9 $ea $3a $d0
     ld   [wD03B], A                                    ;; 00:14ec $ea $3b $d0
     cp   A, B                                          ;; 00:14ef $b8
-    jr   Z, .jr_00_14fe                                ;; 00:14f0 $28 $0c
-    call call_00_1a5b                                  ;; 00:14f2 $cd $5b $1a
+    jr   Z, .twotimesAfterCodeForIfWeWroteNonzeroStuff ;; 00:14f0 $28 $0c
+    call maybeInputRelatedIdk                          ;; 00:14f2 $cd $5b $1a
     and  A, $0f                                        ;; 00:14f5 $e6 $0f
-    jr   NZ, .jr_00_14fe                               ;; 00:14f7 $20 $05
+    jr   NZ, .twotimesAfterCodeForIfWeWroteNonzeroStuff ;; 00:14f7 $20 $05
     ld   A, $01                                        ;; 00:14f9 $3e $01
     ld   [wD031], A                                    ;; 00:14fb $ea $31 $d0
-.jr_00_14fe:
+.twotimesAfterCodeForIfWeWroteNonzeroStuff:
     ld   A, B                                          ;; 00:14fe $78
     ld   [wC39C], A                                    ;; 00:14ff $ea $9c $c3
     ld   A, [wC39A]                                    ;; 00:1502 $fa $9a $c3
-    jr   Z, .jr_00_150c                                ;; 00:1505 $28 $05
+    jr   Z, .setReturnAddressTo152B_AndJumpTo152B      ;; 00:1505 $28 $05
     ld   A, $01                                        ;; 00:1507 $3e $01
     ld   [wD003], A                                    ;; 00:1509 $ea $03 $d0
-.jr_00_150c:
+.setReturnAddressTo152B_AndJumpTo152B:
     ld   A, $00                                        ;; 00:150c $3e $00
     ld   [wOp1CScriptTableIndexC53A], A                ;; 00:150e $ea $3a $c5
     ld   A, $2b                                        ;; 00:1511 $3e $2b
     ld   [wReturnAddressC324], A                       ;; 00:1513 $ea $24 $c3
     ld   A, $15                                        ;; 00:1516 $3e $15
-    ld   [wC325], A                                    ;; 00:1518 $ea $25 $c3
-    jp   .jp_00_152b                                   ;; 00:151b $c3 $2b $15
-.jp_00_151e:
+    ld   [wReturnAddressC324.high], A                  ;; 00:1518 $ea $25 $c3
+    jp   jp_00_152b                                    ;; 00:151b $c3 $2b $15
+
+twotimesC324to5NotEmpty:
     ld   A, $01                                        ;; 00:151e $3e $01
     ldh  [rSVBK], A                                    ;; 00:1520 $e0 $70
     ld   A, [wReturnAddressC324]                       ;; 00:1522 $fa $24 $c3
     ld   L, A                                          ;; 00:1525 $6f
-    ld   A, [wC325]                                    ;; 00:1526 $fa $25 $c3
+    ld   A, [wReturnAddressC324.high]                  ;; 00:1526 $fa $25 $c3
     ld   H, A                                          ;; 00:1529 $67
     jp   HL                                            ;; 00:152a $e9
-.jp_00_152b:
+
+jp_00_152b:
     ld   A, [wD001]                                    ;; 00:152b $fa $01 $d0
     ld   L, A                                          ;; 00:152e $6f
     ld   A, [wD002]                                    ;; 00:152f $fa $02 $d0
@@ -2968,7 +3061,7 @@ data_00_14a6:
     ld   A, [HL]                                       ;; 00:1533 $7e
     and  A, $80                                        ;; 00:1534 $e6 $80
     jr   Z, .jr_00_153b                                ;; 00:1536 $28 $03
-    jp   jp_00_0a39                                    ;; 00:1538 $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1538 $c3 $39 $0a
 .jr_00_153b:
     call call_00_168f                                  ;; 00:153b $cd $8f $16
     ld   A, $01                                        ;; 00:153e $3e $01
@@ -2985,12 +3078,12 @@ data_00_14a6:
     ld   A, [wC316]                                    ;; 00:1557 $fa $16 $c3
     and  A, $40                                        ;; 00:155a $e6 $40
     jr   NZ, .jr_00_1561                               ;; 00:155c $20 $03
-    jp   jp_00_0a39                                    ;; 00:155e $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:155e $c3 $39 $0a
 .jr_00_1561:
     ld   A, $6b                                        ;; 00:1561 $3e $6b
     ld   [wReturnAddressC324], A                       ;; 00:1563 $ea $24 $c3
     ld   A, $15                                        ;; 00:1566 $3e $15
-    ld   [wC325], A                                    ;; 00:1568 $ea $25 $c3
+    ld   [wReturnAddressC324.high], A                  ;; 00:1568 $ea $25 $c3
     ld   A, [wOp1CScriptTableIndexC53A]                ;; 00:156b $fa $3a $c5
     and  A, $40                                        ;; 00:156e $e6 $40
     jr   NZ, .jr_00_1587                               ;; 00:1570 $20 $15
@@ -3003,7 +3096,7 @@ data_00_14a6:
     ld   H, A                                          ;; 00:1580 $67
     ld   A, [HL]                                       ;; 00:1581 $7e
     cp   A, $80                                        ;; 00:1582 $fe $80
-    jp   NC, jp_00_0a39                                ;; 00:1584 $d2 $39 $0a
+    jp   NC, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:1584 $d2 $39 $0a
 .jr_00_1587:
     ld   A, [wOp1CScriptTableIndexC53A]                ;; 00:1587 $fa $3a $c5
     and  A, $1f                                        ;; 00:158a $e6 $1f
@@ -3013,10 +3106,10 @@ data_00_14a6:
     ld   [wD031], A                                    ;; 00:1594 $ea $31 $d0
     ld   [wOpcodeC322], A                              ;; 00:1597 $ea $22 $c3
     ld   [wDunnoCheckBeforeConsultingJumpArrayC323], A ;; 00:159a $ea $23 $c3
-    jp   jp_00_0a14                                    ;; 00:159d $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:159d $c3 $14 $0a
 
-data_00_15a0:
-    call call_00_0a69                                  ;; 00:15a0 $cd $69 $0a
+Op3C:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:15a0 $cd $69 $0a
     ld   A, $01                                        ;; 00:15a3 $3e $01
     ldh  [rSVBK], A                                    ;; 00:15a5 $e0 $70
     ld   A, [HL+]                                      ;; 00:15a7 $2a
@@ -3147,7 +3240,7 @@ data_00_15a0:
     inc  HL                                            ;; 00:1671 $23
     ld   A, [wC344]                                    ;; 00:1672 $fa $44 $c3
     ld   [HL], A                                       ;; 00:1675 $77
-    jp   jp_00_0a14                                    ;; 00:1676 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:1676 $c3 $14 $0a
     db   $00, $00                                      ;; 00:1679 ??
 
 data_00_167b:
@@ -3263,6 +3356,7 @@ call_00_168f:
     ld   A, $03                                        ;; 00:1732 $3e $03
     ldh  [rSVBK], A                                    ;; 00:1734 $e0 $70
     ld   A, [HL]                                       ;; 00:1736 $7e
+; I observe this getting set to 9 in a loop outside maxwell
     ld   [wOp1CScriptTableIndexC53A], A                ;; 00:1737 $ea $3a $c5
     and  A, $20                                        ;; 00:173a $e6 $20
     jr   NZ, .jp_00_1766                               ;; 00:173c $20 $28
@@ -3332,7 +3426,7 @@ call_00_168f:
     db   $cd, $c5, $19, $c9                            ;; 00:17b7 ????
 
 call_00_17bb:
-    call call_00_1a5b                                  ;; 00:17bb $cd $5b $1a
+    call maybeInputRelatedIdk                          ;; 00:17bb $cd $5b $1a
     and  A, $0f                                        ;; 00:17be $e6 $0f
     jr   NZ, .jr_00_17c5                               ;; 00:17c0 $20 $03
     scf                                                ;; 00:17c2 $37
@@ -3358,7 +3452,7 @@ call_00_17bb:
     ld   L, A                                          ;; 00:17dd $6f
     ld   A, [HL]                                       ;; 00:17de $7e
     ld   B, A                                          ;; 00:17df $47
-    call call_00_1a5b                                  ;; 00:17e0 $cd $5b $1a
+    call maybeInputRelatedIdk                          ;; 00:17e0 $cd $5b $1a
     ld   E, A                                          ;; 00:17e3 $5f
     ld   D, $00                                        ;; 00:17e4 $16 $00
     add  HL, DE                                        ;; 00:17e6 $19
@@ -3423,7 +3517,7 @@ call_00_17bb:
     add  HL, DE                                        ;; 00:184b $19
     ld   A, [BC]                                       ;; 00:184c $0a
     ld   [HL], A                                       ;; 00:184d $77
-    call call_00_1a5b                                  ;; 00:184e $cd $5b $1a
+    call maybeInputRelatedIdk                          ;; 00:184e $cd $5b $1a
     sla  A                                             ;; 00:1851 $cb $27
     ld   [wC35B], A                                    ;; 00:1853 $ea $5b $c3
     call call_00_185b                                  ;; 00:1856 $cd $5b $18
@@ -3478,7 +3572,7 @@ call_00_18ad:
     jr   NZ, .jr_00_18c9                               ;; 00:18b2 $20 $15
     ld   A, [wC35B]                                    ;; 00:18b4 $fa $5b $c3
     ld   B, A                                          ;; 00:18b7 $47
-    call call_00_1a5b                                  ;; 00:18b8 $cd $5b $1a
+    call maybeInputRelatedIdk                          ;; 00:18b8 $cd $5b $1a
     sla  A                                             ;; 00:18bb $cb $27
     cp   A, B                                          ;; 00:18bd $b8
     jr   NZ, .jr_00_18ce                               ;; 00:18be $20 $0e
@@ -3694,52 +3788,98 @@ call_00_1a50:
     ld   [$2000], A                                    ;; 00:1a55 $ea $00 $20
     jp   jp_01_40f1                                    ;; 00:1a58 $c3 $f1 $40
 
-call_00_1a5b:
+; Whacky bit checks and returns on C314 (2 modes depending on C71E)
+; Is this input related?
+;
+; IF C71E
+;   If C314 last bit is set
+;     Return 2
+;   ELSE IF the second to last bit is set
+;     Return 1
+;   ELSE if fourth to last bit is set
+;     Return 4
+;   Else if third to last bit is set
+;     Return 8
+;   ELSE
+;     Return 0
+; ELSE
+;   IF C314 last 2 bits are 11
+;     Return 0
+;   Else IF C314 last 2 bits are 00
+;     If 2 bits before that are 11
+;       Return 0
+;     Else
+;       Return them
+;   Else
+;     Return last 2 bits of C314
+;
+; C314 (With C71e)
+; XXXXXXX1 -> 2
+; XXXXXX10 -> 1
+; XXXX1X00 -> 4
+; XXXX0100 -> 8
+; XXXX0000 -> 8
+;
+; C314 (Without C71E)
+; XXXXXX11 -> 0b0 -> 0
+; XXXXXX01 -> 0b01 -> 1
+; XXXXXX10 -> 0b10 -> 2
+; XXXX1100 -> 0b0 -> 0
+; XXXX0100 -> 0b0100 -> 4
+; XXXX1000 -> 0b1000 -> 8
+; XXXX1100 -> 0b1100 -> 9
+maybeInputRelatedIdk:
     ld   A, [wC71E]                                    ;; 00:1a5b $fa $1e $c7
     and  A, A                                          ;; 00:1a5e $a7
-    jr   NZ, .jr_00_1a7a                               ;; 00:1a5f $20 $19
+    jr   NZ, .ifValueInC71E                            ;; 00:1a5f $20 $19
     ld   A, [wC314]                                    ;; 00:1a61 $fa $14 $c3
     and  A, $03                                        ;; 00:1a64 $e6 $03
     cp   A, $03                                        ;; 00:1a66 $fe $03
-    jr   Z, .jr_00_1a78                                ;; 00:1a68 $28 $0e
+    jr   Z, .returnZero                                ;; 00:1a68 $28 $0e
     and  A, A                                          ;; 00:1a6a $a7
-    jr   NZ, .jr_00_1aa6                               ;; 00:1a6b $20 $39
+    jr   NZ, .return                                   ;; 00:1a6b $20 $39
     ld   A, [wC314]                                    ;; 00:1a6d $fa $14 $c3
     and  A, $0c                                        ;; 00:1a70 $e6 $0c
     cp   A, $0c                                        ;; 00:1a72 $fe $0c
-    jr   Z, .jr_00_1a78                                ;; 00:1a74 $28 $02
-    jr   .jr_00_1aa6                                   ;; 00:1a76 $18 $2e
-.jr_00_1a78:
+    jr   Z, .returnZero                                ;; 00:1a74 $28 $02
+    jr   .return                                       ;; 00:1a76 $18 $2e
+.returnZero:
     xor  A, A                                          ;; 00:1a78 $af
     ret                                                ;; 00:1a79 $c9
-.jr_00_1a7a:
+.ifValueInC71E:
     ld   A, [wC314]                                    ;; 00:1a7a $fa $14 $c3
     and  A, $01                                        ;; 00:1a7d $e6 $01
-    jr   Z, .jr_00_1a85                                ;; 00:1a7f $28 $04
+    jr   Z, .ifValueInC71EBit1NotSet                   ;; 00:1a7f $28 $04
     ld   A, $02                                        ;; 00:1a81 $3e $02
-    jr   .jr_00_1aa6                                   ;; 00:1a83 $18 $21
-.jr_00_1a85:
+    jr   .return                                       ;; 00:1a83 $18 $21
+.ifValueInC71EBit1NotSet:
     ld   A, [wC314]                                    ;; 00:1a85 $fa $14 $c3
     and  A, $02                                        ;; 00:1a88 $e6 $02
-    jr   Z, .jr_00_1a90                                ;; 00:1a8a $28 $04
+    jr   Z, .ifValueInC71EBit2NotSet                   ;; 00:1a8a $28 $04
     ld   A, $01                                        ;; 00:1a8c $3e $01
-    jr   .jr_00_1aa6                                   ;; 00:1a8e $18 $16
-.jr_00_1a90:
+    jr   .return                                       ;; 00:1a8e $18 $16
+.ifValueInC71EBit2NotSet:
     ld   A, [wC314]                                    ;; 00:1a90 $fa $14 $c3
     and  A, $08                                        ;; 00:1a93 $e6 $08
-    jr   Z, .jr_00_1a9b                                ;; 00:1a95 $28 $04
+    jr   Z, .ifValueInC71EBit4NotSet                   ;; 00:1a95 $28 $04
     ld   A, $04                                        ;; 00:1a97 $3e $04
-    jr   .jr_00_1aa6                                   ;; 00:1a99 $18 $0b
-.jr_00_1a9b:
+    jr   .return                                       ;; 00:1a99 $18 $0b
+.ifValueInC71EBit4NotSet:
     ld   A, [wC314]                                    ;; 00:1a9b $fa $14 $c3
     and  A, $04                                        ;; 00:1a9e $e6 $04
-    jr   Z, .jr_00_1aa6                                ;; 00:1aa0 $28 $04
+    jr   Z, .return                                    ;; 00:1aa0 $28 $04
     ld   A, $08                                        ;; 00:1aa2 $3e $08
-    jr   .jr_00_1aa6                                   ;; 00:1aa4 $18 $00
-.jr_00_1aa6:
+    jr   .return                                       ;; 00:1aa4 $18 $00
+.return:
     ret                                                ;; 00:1aa6 $c9
 
-call_00_1aa7:
+; Changes address values in D203-5 to new values based on hardcoded mapping.
+;   76C8 or 771D --> 17:79E6
+;   75BE or 7613 --> 17:79F6
+;   77D2 or 7827 --> 17:7A06
+;   78DC or 7931 --> 17:7A16
+; Also sets D202,6,7 to 0.
+UpdateD203to5AddressesViaHardcodedMap:
     ld   A, $01                                        ;; 00:1aa7 $3e $01
     ldh  [rSVBK], A                                    ;; 00:1aa9 $e0 $70
     ld   DE, wBeginRegionD1FD                          ;; 00:1aab $11 $fd $d1
@@ -3751,81 +3891,81 @@ call_00_1aa7:
     ld   B, A                                          ;; 00:1ab5 $47
     ld   A, $be                                        ;; 00:1ab6 $3e $be
     cp   A, C                                          ;; 00:1ab8 $b9
-    jr   Z, .jr_00_1ae0                                ;; 00:1ab9 $28 $25
+    jr   Z, .ifBE                                      ;; 00:1ab9 $28 $25
     ld   A, $13                                        ;; 00:1abb $3e $13
     cp   A, C                                          ;; 00:1abd $b9
-    jr   Z, .jr_00_1ae7                                ;; 00:1abe $28 $27
+    jr   Z, .if13                                      ;; 00:1abe $28 $27
     ld   A, $c8                                        ;; 00:1ac0 $3e $c8
     cp   A, C                                          ;; 00:1ac2 $b9
-    jr   Z, .jr_00_1af3                                ;; 00:1ac3 $28 $2e
+    jr   Z, .ifC8                                      ;; 00:1ac3 $28 $2e
     ld   A, $1d                                        ;; 00:1ac5 $3e $1d
     cp   A, C                                          ;; 00:1ac7 $b9
-    jr   Z, .jr_00_1afa                                ;; 00:1ac8 $28 $30
+    jr   Z, .if1D                                      ;; 00:1ac8 $28 $30
     ld   A, $d2                                        ;; 00:1aca $3e $d2
     cp   A, C                                          ;; 00:1acc $b9
-    jr   Z, .jr_00_1b06                                ;; 00:1acd $28 $37
+    jr   Z, .ifD2                                      ;; 00:1acd $28 $37
     ld   A, $27                                        ;; 00:1acf $3e $27
     cp   A, C                                          ;; 00:1ad1 $b9
-    jr   Z, .jr_00_1b0d                                ;; 00:1ad2 $28 $39
+    jr   Z, .if27                                      ;; 00:1ad2 $28 $39
     ld   A, $dc                                        ;; 00:1ad4 $3e $dc
     cp   A, C                                          ;; 00:1ad6 $b9
-    jr   Z, .jr_00_1b19                                ;; 00:1ad7 $28 $40
+    jr   Z, .ifDC                                      ;; 00:1ad7 $28 $40
     ld   A, $31                                        ;; 00:1ad9 $3e $31
     cp   A, C                                          ;; 00:1adb $b9
-    jr   Z, .jr_00_1b20                                ;; 00:1adc $28 $42
-    jr   .jr_00_1b3e                                   ;; 00:1ade $18 $5e
-.jr_00_1ae0:
+    jr   Z, .if31                                      ;; 00:1adc $28 $42
+    jr   .return                                       ;; 00:1ade $18 $5e
+.ifBE:
     ld   A, $75                                        ;; 00:1ae0 $3e $75
     cp   A, B                                          ;; 00:1ae2 $b8
-    jr   NZ, .jr_00_1b3e                               ;; 00:1ae3 $20 $59
-    jr   .jr_00_1aec                                   ;; 00:1ae5 $18 $05
-.jr_00_1ae7:
+    jr   NZ, .return                                   ;; 00:1ae3 $20 $59
+    jr   .choose79F6                                   ;; 00:1ae5 $18 $05
+.if13:
     ld   A, $76                                        ;; 00:1ae7 $3e $76
     cp   A, B                                          ;; 00:1ae9 $b8
-    jr   NZ, .jr_00_1b3e                               ;; 00:1aea $20 $52
-.jr_00_1aec:
+    jr   NZ, .return                                   ;; 00:1aea $20 $52
+.choose79F6:
     ld   BC, $79f6                                     ;; 00:1aec $01 $f6 $79
     ld   A, $17                                        ;; 00:1aef $3e $17
-    jr   .jr_00_1b2a                                   ;; 00:1af1 $18 $37
-.jr_00_1af3:
+    jr   .writeChosenValue                             ;; 00:1af1 $18 $37
+.ifC8:
     ld   A, $76                                        ;; 00:1af3 $3e $76
     cp   A, B                                          ;; 00:1af5 $b8
-    jr   NZ, .jr_00_1b3e                               ;; 00:1af6 $20 $46
-    jr   .jr_00_1aff                                   ;; 00:1af8 $18 $05
-.jr_00_1afa:
+    jr   NZ, .return                                   ;; 00:1af6 $20 $46
+    jr   .choose79E6                                   ;; 00:1af8 $18 $05
+.if1D:
     ld   A, $77                                        ;; 00:1afa $3e $77
     cp   A, B                                          ;; 00:1afc $b8
-    jr   NZ, .jr_00_1b3e                               ;; 00:1afd $20 $3f
-.jr_00_1aff:
+    jr   NZ, .return                                   ;; 00:1afd $20 $3f
+.choose79E6:
     ld   BC, $79e6                                     ;; 00:1aff $01 $e6 $79
     ld   A, $17                                        ;; 00:1b02 $3e $17
-    jr   .jr_00_1b2a                                   ;; 00:1b04 $18 $24
-.jr_00_1b06:
+    jr   .writeChosenValue                             ;; 00:1b04 $18 $24
+.ifD2:
     ld   A, $77                                        ;; 00:1b06 $3e $77
     cp   A, B                                          ;; 00:1b08 $b8
-    jr   NZ, .jr_00_1b3e                               ;; 00:1b09 $20 $33
-    jr   .jr_00_1b12                                   ;; 00:1b0b $18 $05
-.jr_00_1b0d:
+    jr   NZ, .return                                   ;; 00:1b09 $20 $33
+    jr   .choose7A06                                   ;; 00:1b0b $18 $05
+.if27:
     ld   A, $78                                        ;; 00:1b0d $3e $78
     cp   A, B                                          ;; 00:1b0f $b8
-    jr   NZ, .jr_00_1b3e                               ;; 00:1b10 $20 $2c
-.jr_00_1b12:
+    jr   NZ, .return                                   ;; 00:1b10 $20 $2c
+.choose7A06:
     ld   BC, $7a06                                     ;; 00:1b12 $01 $06 $7a
     ld   A, $17                                        ;; 00:1b15 $3e $17
-    jr   .jr_00_1b2a                                   ;; 00:1b17 $18 $11
-.jr_00_1b19:
+    jr   .writeChosenValue                             ;; 00:1b17 $18 $11
+.ifDC:
     ld   A, $78                                        ;; 00:1b19 $3e $78
     cp   A, B                                          ;; 00:1b1b $b8
-    jr   NZ, .jr_00_1b3e                               ;; 00:1b1c $20 $20
-    jr   .jr_00_1b25                                   ;; 00:1b1e $18 $05
-.jr_00_1b20:
+    jr   NZ, .return                                   ;; 00:1b1c $20 $20
+    jr   .choose7A16                                   ;; 00:1b1e $18 $05
+.if31:
     ld   A, $79                                        ;; 00:1b20 $3e $79
     cp   A, B                                          ;; 00:1b22 $b8
-    jr   NZ, .jr_00_1b3e                               ;; 00:1b23 $20 $19
-.jr_00_1b25:
+    jr   NZ, .return                                   ;; 00:1b23 $20 $19
+.choose7A16:
     ld   BC, $7a16                                     ;; 00:1b25 $01 $16 $7a
     ld   A, $17                                        ;; 00:1b28 $3e $17
-.jr_00_1b2a:
+.writeChosenValue:
     ld   HL, $08                                       ;; 00:1b2a $21 $08 $00
     add  HL, DE                                        ;; 00:1b2d $19
     ld   [HL-], A                                      ;; 00:1b2e $32
@@ -3840,34 +3980,41 @@ call_00_1aa7:
     add  HL, DE                                        ;; 00:1b3b $19
     ld   [HL+], A                                      ;; 00:1b3c $22
     ld   [HL], A                                       ;; 00:1b3d $77
-.jr_00_1b3e:
+.return:
     ret                                                ;; 00:1b3e $c9
 
-call_00_1b3f:
+; These registers are used as return addresses sometimes.
+ReturnWithCarryFlagSetIfC324to5HasData:
     ld   A, [wReturnAddressC324]                       ;; 00:1b3f $fa $24 $c3
     and  A, A                                          ;; 00:1b42 $a7
-    jp   NZ, .jp_00_1b50                               ;; 00:1b43 $c2 $50 $1b
-    ld   A, [wC325]                                    ;; 00:1b46 $fa $25 $c3
+    jp   NZ, .hadData                                  ;; 00:1b43 $c2 $50 $1b
+    ld   A, [wReturnAddressC324.high]                  ;; 00:1b46 $fa $25 $c3
     and  A, A                                          ;; 00:1b49 $a7
-    jp   NZ, .jp_00_1b50                               ;; 00:1b4a $c2 $50 $1b
+    jp   NZ, .hadData                                  ;; 00:1b4a $c2 $50 $1b
     scf                                                ;; 00:1b4d $37
     ccf                                                ;; 00:1b4e $3f
     ret                                                ;; 00:1b4f $c9
-.jp_00_1b50:
+.hadData:
     scf                                                ;; 00:1b50 $37
     ret                                                ;; 00:1b51 $c9
-    db   $cd, $3f, $1b, $da, $b2, $1b, $3e, $01        ;; 00:1b52 ????????
-    db   $18, $08                                      ;; 00:1b5a ??
 
-data_00_1b5c:
-    call call_00_1b3f                                  ;; 00:1b5c $cd $3f $1b
-    jp   C, jp_00_1bb2                                 ;; 00:1b5f $da $b2 $1b
+Op08:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:1b52 $cd $3f $1b
+    jp   C, CallIfC324to5HadData                       ;; 00:1b55 $da $b2 $1b
+    ld   A, $01                                        ;; 00:1b58 $3e $01
+    jr   jr_00_1b64                                    ;; 00:1b5a $18 $08
+
+Op04_1b5c:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:1b5c $cd $3f $1b
+    jp   C, CallIfC324to5HadData                       ;; 00:1b5f $da $b2 $1b
     ld   A, $00                                        ;; 00:1b62 $3e $00
+
+jr_00_1b64:
     ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:1b64 $ea $8a $c3
     ld   A, $48                                        ;; 00:1b67 $3e $48
     ld   [wReturnAddressC324], A                       ;; 00:1b69 $ea $24 $c3
     ld   A, $1c                                        ;; 00:1b6c $3e $1c
-    ld   [wC325], A                                    ;; 00:1b6e $ea $25 $c3
+    ld   [wReturnAddressC324.high], A                  ;; 00:1b6e $ea $25 $c3
     ld   A, $00                                        ;; 00:1b71 $3e $00
     ld   [wHamChatCursorIndexC38E], A                  ;; 00:1b73 $ea $8e $c3
     ld   [wC32E], A                                    ;; 00:1b76 $ea $2e $c3
@@ -3875,40 +4022,48 @@ data_00_1b5c:
     ld   [wC330], A                                    ;; 00:1b7c $ea $30 $c3
     ld   A, $20                                        ;; 00:1b7f $3e $20
     ld   [wC331], A                                    ;; 00:1b81 $ea $31 $c3
-    call call_00_1aa7                                  ;; 00:1b84 $cd $a7 $1a
-    jp   jp_00_1bb2                                    ;; 00:1b87 $c3 $b2 $1b
-    db   $cd, $3f, $1b, $da, $b2, $1b, $3e, $01        ;; 00:1b8a ????????
-    db   $18, $08                                      ;; 00:1b92 ??
+    call UpdateD203to5AddressesViaHardcodedMap         ;; 00:1b84 $cd $a7 $1a
+    jp   CallIfC324to5HadData                          ;; 00:1b87 $c3 $b2 $1b
 
-data_00_1b94:
-    call call_00_1b3f                                  ;; 00:1b94 $cd $3f $1b
-    jp   C, jp_00_1bb2                                 ;; 00:1b97 $da $b2 $1b
+Op0A:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:1b8a $cd $3f $1b
+    jp   C, CallIfC324to5HadData                       ;; 00:1b8d $da $b2 $1b
+    ld   A, $01                                        ;; 00:1b90 $3e $01
+    jr   jr_00_1b9c                                    ;; 00:1b92 $18 $08
+
+Op06_waitAdvanceText:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:1b94 $cd $3f $1b
+    jp   C, CallIfC324to5HadData                       ;; 00:1b97 $da $b2 $1b
     ld   A, $00                                        ;; 00:1b9a $3e $00
+
+jr_00_1b9c:
     ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:1b9c $ea $8a $c3
     ld   A, [wC32D]                                    ;; 00:1b9f $fa $2d $c3
     ld   [wC332], A                                    ;; 00:1ba2 $ea $32 $c3
+; 1DFE is a place that reads text data
     ld   A, $fe                                        ;; 00:1ba5 $3e $fe
     ld   [wReturnAddressC324], A                       ;; 00:1ba7 $ea $24 $c3
     ld   A, $1d                                        ;; 00:1baa $3e $1d
-    ld   [wC325], A                                    ;; 00:1bac $ea $25 $c3
-    jp   jp_00_1c81                                    ;; 00:1baf $c3 $81 $1c
+    ld   [wReturnAddressC324.high], A                  ;; 00:1bac $ea $25 $c3
+    jp   Write3ArgsToC328toA_AndRunOp_PossibleTextPointer ;; 00:1baf $c3 $81 $1c
 
-jp_00_1bb2:
+; Things jump to here if C324-5 had data
+CallIfC324to5HadData:
     ld   A, [wC314]                                    ;; 00:1bb2 $fa $14 $c3
     and  A, $20                                        ;; 00:1bb5 $e6 $20
-    jr   NZ, .jr_00_1bc7                               ;; 00:1bb7 $20 $0e
+    jr   NZ, .bit5or6ofC314WasSet                      ;; 00:1bb7 $20 $0e
     ld   A, [wC314]                                    ;; 00:1bb9 $fa $14 $c3
     and  A, $10                                        ;; 00:1bbc $e6 $10
-    jr   NZ, .jr_00_1bc7                               ;; 00:1bbe $20 $07
+    jr   NZ, .bit5or6ofC314WasSet                      ;; 00:1bbe $20 $07
     ld   A, $10                                        ;; 00:1bc0 $3e $10
     ld   [wC331], A                                    ;; 00:1bc2 $ea $31 $c3
-    jr   .jr_00_1bd1                                   ;; 00:1bc5 $18 $0a
-.jr_00_1bc7:
+    jr   .afterCheckingBitsOfC314                      ;; 00:1bc5 $18 $0a
+.bit5or6ofC314WasSet:
     ld   A, [wHamChatCursorIndexC38E]                  ;; 00:1bc7 $fa $8e $c3
     and  A, $80                                        ;; 00:1bca $e6 $80
     ld   [wHamChatCursorIndexC38E], A                  ;; 00:1bcc $ea $8e $c3
-    jr   .jr_00_1bd1                                   ;; 00:1bcf $18 $00
-.jr_00_1bd1:
+    jr   .afterCheckingBitsOfC314                      ;; 00:1bcf $18 $00
+.afterCheckingBitsOfC314:
     ld   A, [wHamChatCursorIndexC38E]                  ;; 00:1bd1 $fa $8e $c3
     cp   A, $80                                        ;; 00:1bd4 $fe $80
     jr   NC, .jr_00_1bf0                               ;; 00:1bd6 $30 $18
@@ -3918,23 +4073,24 @@ jp_00_1bb2:
     ld   [wHamChatCursorIndexC38E], A                  ;; 00:1bdc $ea $8e $c3
     ld   A, [wC316]                                    ;; 00:1bdf $fa $16 $c3
     and  A, $10                                        ;; 00:1be2 $e6 $10
-    jp   Z, jp_00_0a39                                 ;; 00:1be4 $ca $39 $0a
+    jp   Z, JumpUsingOpTableUsingIndexFromC322_IfC323  ;; 00:1be4 $ca $39 $0a
     xor  A, A                                          ;; 00:1be7 $af
     ld   [wC38F], A                                    ;; 00:1be8 $ea $8f $c3
     ld   [wHamChatCursorIndexC38E], A                  ;; 00:1beb $ea $8e $c3
     jr   .jr_00_1c31                                   ;; 00:1bee $18 $41
 .jr_00_1bf0:
-    call call_00_0efc                                  ;; 00:1bf0 $cd $fc $0e
-    jr   NC, .jr_00_1c09                               ;; 00:1bf3 $30 $14
+    call CopyC625toC640_maybeSetC6A0                   ;; 00:1bf0 $cd $fc $0e
+    jr   NC, .copyActionReturned0_didNotSetC6A0        ;; 00:1bf3 $30 $14
+; If that above call returned 1 and set C6A0
     xor  A, A                                          ;; 00:1bf5 $af
     ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:1bf6 $ea $8a $c3
     ld   [wHamChatCursorIndexC38E], A                  ;; 00:1bf9 $ea $8e $c3
     ld   A, $cb                                        ;; 00:1bfc $3e $cb
     ld   [wReturnAddressC324], A                       ;; 00:1bfe $ea $24 $c3
     ld   A, $1e                                        ;; 00:1c01 $3e $1e
-    ld   [wC325], A                                    ;; 00:1c03 $ea $25 $c3
-    jp   jp_00_0a39                                    ;; 00:1c06 $c3 $39 $0a
-.jr_00_1c09:
+    ld   [wReturnAddressC324.high], A                  ;; 00:1c03 $ea $25 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1c06 $c3 $39 $0a
+.copyActionReturned0_didNotSetC6A0:
     ld   A, [wC316]                                    ;; 00:1c09 $fa $16 $c3
     and  A, $20                                        ;; 00:1c0c $e6 $20
     jr   NZ, .jr_00_1c17                               ;; 00:1c0e $20 $07
@@ -3952,17 +4108,17 @@ jp_00_1bb2:
     ld   [wCurrentRomBankC677], A                      ;; 00:1c25 $ea $77 $c6
     ld   [$2000], A                                    ;; 00:1c28 $ea $00 $20
     call call_01_47ba                                  ;; 00:1c2b $cd $ba $47
-    jp   jp_00_0a39                                    ;; 00:1c2e $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1c2e $c3 $39 $0a
 .jr_00_1c31:
     ld   A, $01                                        ;; 00:1c31 $3e $01
     ldh  [rSVBK], A                                    ;; 00:1c33 $e0 $70
     ld   A, [wD5C5]                                    ;; 00:1c35 $fa $c5 $d5
     ld   HL, wTextboxIsClosingD5EE                     ;; 00:1c38 $21 $ee $d5
     or   A, [HL]                                       ;; 00:1c3b $b6
-    jp   NZ, jp_00_0a39                                ;; 00:1c3c $c2 $39 $0a
+    jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:1c3c $c2 $39 $0a
     ld   A, [wReturnAddressC324]                       ;; 00:1c3f $fa $24 $c3
     ld   L, A                                          ;; 00:1c42 $6f
-    ld   A, [wC325]                                    ;; 00:1c43 $fa $25 $c3
+    ld   A, [wReturnAddressC324.high]                  ;; 00:1c43 $fa $25 $c3
     ld   H, A                                          ;; 00:1c46 $67
     jp   HL                                            ;; 00:1c47 $e9
     xor  A, A                                          ;; 00:1c48 $af
@@ -3972,18 +4128,19 @@ jp_00_1bb2:
     ld   A, $9d                                        ;; 00:1c52 $3e $9d
     ld   [wReturnAddressC324], A                       ;; 00:1c54 $ea $24 $c3
     ld   A, $1c                                        ;; 00:1c57 $3e $1c
-    ld   [wC325], A                                    ;; 00:1c59 $ea $25 $c3
+    ld   [wReturnAddressC324.high], A                  ;; 00:1c59 $ea $25 $c3
     ld   A, [wC31E]                                    ;; 00:1c5c $fa $1e $c3
     and  A, A                                          ;; 00:1c5f $a7
-    jr   Z, jp_00_1c81                                 ;; 00:1c60 $28 $1f
+    jr   Z, Write3ArgsToC328toA_AndRunOp_PossibleTextPointer ;; 00:1c60 $28 $1f
     dec  A                                             ;; 00:1c62 $3d
     ld   B, A                                          ;; 00:1c63 $47
     ld   A, [wC3F8]                                    ;; 00:1c64 $fa $f8 $c3
     cp   A, B                                          ;; 00:1c67 $b8
-    jr   Z, jp_00_1c81                                 ;; 00:1c68 $28 $17
+    jr   Z, Write3ArgsToC328toA_AndRunOp_PossibleTextPointer ;; 00:1c68 $28 $17
     ld   A, $01                                        ;; 00:1c6a $3e $01
     ld   [wCurrentRomBankC677], A                      ;; 00:1c6c $ea $77 $c6
     ld   [$2000], A                                    ;; 00:1c6f $ea $00 $20
+; I observe this 02 momentarily whenever a textbox closes
     ld   A, $02                                        ;; 00:1c72 $3e $02
     ld   [wTextboxIsClosingD5EE], A                    ;; 00:1c74 $ea $ee $d5
     ld   A, $00                                        ;; 00:1c77 $3e $00
@@ -3991,8 +4148,8 @@ jp_00_1bb2:
     ld   A, $00                                        ;; 00:1c7c $3e $00
     ld   [wC31E], A                                    ;; 00:1c7e $ea $1e $c3
 
-jp_00_1c81:
-    call call_00_0a69                                  ;; 00:1c81 $cd $69 $0a
+Write3ArgsToC328toA_AndRunOp_PossibleTextPointer:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1c81 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:1c84 $2a
     ld   [wTextToPrintC328], A                         ;; 00:1c85 $ea $28 $c3
     ld   A, [HL+]                                      ;; 00:1c88 $2a
@@ -4003,7 +4160,7 @@ jp_00_1c81:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1c92 $ea $26 $c3
     ld   A, $00                                        ;; 00:1c95 $3e $00
     ld   [wC38B], A                                    ;; 00:1c97 $ea $8b $c3
-    jp   jp_00_0a39                                    ;; 00:1c9a $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1c9a $c3 $39 $0a
     ld   A, $06                                        ;; 00:1c9d $3e $06
     ld   [wCurrentRomBankC677], A                      ;; 00:1c9f $ea $77 $c6
     ld   [$2000], A                                    ;; 00:1ca2 $ea $00 $20
@@ -4021,7 +4178,7 @@ jp_00_1c81:
     ld   A, $41                                        ;; 00:1cbf $3e $41
     ld   [wReturnAddressC324], A                       ;; 00:1cc1 $ea $24 $c3
     ld   A, $1d                                        ;; 00:1cc4 $3e $1d
-    ld   [wC325], A                                    ;; 00:1cc6 $ea $25 $c3
+    ld   [wReturnAddressC324.high], A                  ;; 00:1cc6 $ea $25 $c3
     jp   .jp_00_1d41                                   ;; 00:1cc9 $c3 $41 $1d
 .jr_00_1ccc:
     ld   A, [wC3F9]                                    ;; 00:1ccc $fa $f9 $c3
@@ -4054,8 +4211,8 @@ jp_00_1c81:
     ld   A, $23                                        ;; 00:1d16 $3e $23
     ld   [wReturnAddressC324], A                       ;; 00:1d18 $ea $24 $c3
     ld   A, $1d                                        ;; 00:1d1b $3e $1d
-    ld   [wC325], A                                    ;; 00:1d1d $ea $25 $c3
-    jp   jp_00_0a39                                    ;; 00:1d20 $c3 $39 $0a
+    ld   [wReturnAddressC324.high], A                  ;; 00:1d1d $ea $25 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1d20 $c3 $39 $0a
     ld   A, $00                                        ;; 00:1d23 $3e $00
     ld   [wD5C8], A                                    ;; 00:1d25 $ea $c8 $d5
     ld   A, $02                                        ;; 00:1d28 $3e $02
@@ -4066,8 +4223,8 @@ jp_00_1c81:
     ld   A, $fe                                        ;; 00:1d34 $3e $fe
     ld   [wReturnAddressC324], A                       ;; 00:1d36 $ea $24 $c3
     ld   A, $1d                                        ;; 00:1d39 $3e $1d
-    ld   [wC325], A                                    ;; 00:1d3b $ea $25 $c3
-    jp   jp_00_0a39                                    ;; 00:1d3e $c3 $39 $0a
+    ld   [wReturnAddressC324.high], A                  ;; 00:1d3b $ea $25 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1d3e $c3 $39 $0a
 .jp_00_1d41:
     ld   A, [wC394]                                    ;; 00:1d41 $fa $94 $c3
     and  A, A                                          ;; 00:1d44 $a7
@@ -4075,7 +4232,7 @@ jp_00_1c81:
     ld   A, $fe                                        ;; 00:1d47 $3e $fe
     ld   [wReturnAddressC324], A                       ;; 00:1d49 $ea $24 $c3
     ld   A, $1d                                        ;; 00:1d4c $3e $1d
-    ld   [wC325], A                                    ;; 00:1d4e $ea $25 $c3
+    ld   [wReturnAddressC324.high], A                  ;; 00:1d4e $ea $25 $c3
     jp   .jp_00_1dfe                                   ;; 00:1d51 $c3 $fe $1d
 .jr_00_1d54:
     dec  A                                             ;; 00:1d54 $3d
@@ -4086,7 +4243,7 @@ jp_00_1c81:
     ld   A, $69                                        ;; 00:1d5f $3e $69
     ld   [wReturnAddressC324], A                       ;; 00:1d61 $ea $24 $c3
     ld   A, $1d                                        ;; 00:1d64 $3e $1d
-    ld   [wC325], A                                    ;; 00:1d66 $ea $25 $c3
+    ld   [wReturnAddressC324.high], A                  ;; 00:1d66 $ea $25 $c3
     ld   A, $01                                        ;; 00:1d69 $3e $01
     ld   [wCurrentRomBankC677], A                      ;; 00:1d6b $ea $77 $c6
     ld   [$2000], A                                    ;; 00:1d6e $ea $00 $20
@@ -4097,7 +4254,7 @@ jp_00_1c81:
     ld   HL, wC3FC                                     ;; 00:1d7b $21 $fc $c3
     cp   A, [HL]                                       ;; 00:1d7e $be
     jr   Z, .jr_00_1d84                                ;; 00:1d7f $28 $03
-    jp   jp_00_0a39                                    ;; 00:1d81 $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1d81 $c3 $39 $0a
 .jr_00_1d84:
     ld   A, $f9                                        ;; 00:1d84 $3e $f9
     ld   [wC356], A                                    ;; 00:1d86 $ea $56 $c3
@@ -4119,7 +4276,7 @@ jp_00_1c81:
     ld   [wBitArrayIndexC35E], A                       ;; 00:1db0 $ea $5e $c3
     ld   A, [wC3FC]                                    ;; 00:1db3 $fa $fc $c3
     dec  A                                             ;; 00:1db6 $3d
-    ld   [wC35F], A                                    ;; 00:1db7 $ea $5f $c3
+    ld   [wBitArrayIndexC35E.low], A                   ;; 00:1db7 $ea $5f $c3
     call call_01_4897                                  ;; 00:1dba $cd $97 $48
     ld   A, [wC3F9]                                    ;; 00:1dbd $fa $f9 $c3
     ld   [wC356], A                                    ;; 00:1dc0 $ea $56 $c3
@@ -4143,8 +4300,8 @@ jp_00_1c81:
     ld   A, $41                                        ;; 00:1df1 $3e $41
     ld   [wReturnAddressC324], A                       ;; 00:1df3 $ea $24 $c3
     ld   A, $1d                                        ;; 00:1df6 $3e $1d
-    ld   [wC325], A                                    ;; 00:1df8 $ea $25 $c3
-    jp   jp_00_0a39                                    ;; 00:1dfb $c3 $39 $0a
+    ld   [wReturnAddressC324.high], A                  ;; 00:1df8 $ea $25 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1dfb $c3 $39 $0a
 .jp_00_1dfe:
     ld   A, [wTextToPrintC328]                         ;; 00:1dfe $fa $28 $c3
     ld   E, A                                          ;; 00:1e01 $5f
@@ -4158,6 +4315,7 @@ jp_00_1c81:
     jr   .jr_00_1e17                                   ;; 00:1e13 $18 $02
 .jr_00_1e15:
     ldh  [rSVBK], A                                    ;; 00:1e15 $e0 $70
+; I've observed this reading text data
 .jr_00_1e17:
     ld   A, [DE]                                       ;; 00:1e17 $1a
     and  A, A                                          ;; 00:1e18 $a7
@@ -4183,13 +4341,13 @@ jp_00_1c81:
     cp   A, $e0                                        ;; 00:1e43 $fe $e0
     jr   Z, .jr_00_1e4c                                ;; 00:1e45 $28 $05
     cp   A, $e1                                        ;; 00:1e47 $fe $e1
-    jp   NZ, jp_00_0a39                                ;; 00:1e49 $c2 $39 $0a
+    jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:1e49 $c2 $39 $0a
 .jr_00_1e4c:
     ld   A, $cb                                        ;; 00:1e4c $3e $cb
     ld   [wReturnAddressC324], A                       ;; 00:1e4e $ea $24 $c3
     ld   A, $1e                                        ;; 00:1e51 $3e $1e
-    ld   [wC325], A                                    ;; 00:1e53 $ea $25 $c3
-    jp   jp_00_0a39                                    ;; 00:1e56 $c3 $39 $0a
+    ld   [wReturnAddressC324.high], A                  ;; 00:1e53 $ea $25 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1e56 $c3 $39 $0a
 .jr_00_1e59:
     sub  A, $f0                                        ;; 00:1e59 $d6 $f0
     ld   [wC35B], A                                    ;; 00:1e5b $ea $5b $c3
@@ -4250,45 +4408,51 @@ call_00_1ec2:
     ld   A, $ed                                        ;; 00:1ed1 $3e $ed
     ld   [wReturnAddressC324], A                       ;; 00:1ed3 $ea $24 $c3
     ld   A, $1e                                        ;; 00:1ed6 $3e $1e
-    ld   [wC325], A                                    ;; 00:1ed8 $ea $25 $c3
+    ld   [wReturnAddressC324.high], A                  ;; 00:1ed8 $ea $25 $c3
     xor  A, A                                          ;; 00:1edb $af
     ld   [wC396], A                                    ;; 00:1edc $ea $96 $c3
     ld   A, $01                                        ;; 00:1edf $3e $01
     ld   [wCurrentRomBankC677], A                      ;; 00:1ee1 $ea $77 $c6
     ld   [$2000], A                                    ;; 00:1ee4 $ea $00 $20
     call call_01_47ba                                  ;; 00:1ee7 $cd $ba $47
-    jp   jp_00_0a39                                    ;; 00:1eea $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1eea $c3 $39 $0a
+; Chat wheel was closing
     ld   A, [wTextboxIsClosingD5EE]                    ;; 00:1eed $fa $ee $d5
     and  A, A                                          ;; 00:1ef0 $a7
-    jr   Z, .jr_00_1ef6                                ;; 00:1ef1 $28 $03
-    jp   jp_00_0a39                                    ;; 00:1ef3 $c3 $39 $0a
-.jr_00_1ef6:
+    jr   Z, .chatWheelWasNotClosing                    ;; 00:1ef1 $28 $03
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1ef3 $c3 $39 $0a
+.chatWheelWasNotClosing:
     ld   A, [wSubOpsLoopCountdownC38A]                 ;; 00:1ef6 $fa $8a $c3
     and  A, A                                          ;; 00:1ef9 $a7
-    jr   NZ, .jr_00_1f04                               ;; 00:1efa $20 $08
+    jr   NZ, .loopsCountdownWasNotZero                 ;; 00:1efa $20 $08
+; If SubOpsLoopCountdown_C38A is 0,
+;   Run Op 0 ==> CallNextScriptInstruction
     ld   A, $00                                        ;; 00:1efc $3e $00
     ld   [wOpcodeC322], A                              ;; 00:1efe $ea $22 $c3
-    jp   jp_00_0a39                                    ;; 00:1f01 $c3 $39 $0a
-.jr_00_1f04:
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1f01 $c3 $39 $0a
+; If SubOpsLoopCountdown_C38A is NOT 0,
+;   Run Op 02 ==> Use C6AA as an index into a table C6A3-5 points to.
+.loopsCountdownWasNotZero:
     ld   A, $02                                        ;; 00:1f04 $3e $02
     ld   [wOpcodeC322], A                              ;; 00:1f06 $ea $22 $c3
-    jp   jp_00_0a39                                    ;; 00:1f09 $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1f09 $c3 $39 $0a
 
-data_00_1f0c:
-    call call_00_1b3f                                  ;; 00:1f0c $cd $3f $1b
-    jr   C, .jr_00_1f1a                                ;; 00:1f0f $38 $09
+Op92:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:1f0c $cd $3f $1b
+    jr   C, .afterHandleNoDataInC324to5                ;; 00:1f0f $38 $09
+; C324-5 does not have data
     ld   A, $01                                        ;; 00:1f11 $3e $01
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1f13 $ea $26 $c3
-    call call_00_0a69                                  ;; 00:1f16 $cd $69 $0a
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1f16 $cd $69 $0a
     ld   B, A                                          ;; 00:1f19 $47
-.jr_00_1f1a:
+.afterHandleNoDataInC324to5:
     ld   A, $01                                        ;; 00:1f1a $3e $01
     ld   [wCurrentRomBankC677], A                      ;; 00:1f1c $ea $77 $c6
     ld   [$2000], A                                    ;; 00:1f1f $ea $00 $20
     jp   jp_01_483d                                    ;; 00:1f22 $c3 $3d $48
 
-data_00_1f25:
-    call call_00_0a69                                  ;; 00:1f25 $cd $69 $0a
+Op14:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1f25 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:1f28 $2a
     ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:1f29 $ea $8a $c3
     ld   [wC38B], A                                    ;; 00:1f2c $ea $8b $c3
@@ -4296,40 +4460,40 @@ data_00_1f25:
     ld   [wC38C], A                                    ;; 00:1f30 $ea $8c $c3
     ld   A, [HL+]                                      ;; 00:1f33 $2a
     ld   [wC38D], A                                    ;; 00:1f34 $ea $8d $c3
-.jr_00_1f37:
-    call call_00_1f89                                  ;; 00:1f37 $cd $89 $1f
+.loopCalling1F89UntilC38BIs0:
+    call Write3BytesFromHLPointerToC35E_AndUseJumpArray2 ;; 00:1f37 $cd $89 $1f
     ld   A, [wC5C3]                                    ;; 00:1f3a $fa $c3 $c5
     and  A, A                                          ;; 00:1f3d $a7
-    jr   NZ, .jr_00_1f5a                               ;; 00:1f3e $20 $1a
+    jr   NZ, .c53cWasZero                              ;; 00:1f3e $20 $1a
     ld   HL, wC38B                                     ;; 00:1f40 $21 $8b $c3
     dec  [HL]                                          ;; 00:1f43 $35
-    jr   NZ, .jr_00_1f37                               ;; 00:1f44 $20 $f1
+    jr   NZ, .loopCalling1F89UntilC38BIs0              ;; 00:1f44 $20 $f1
     ld   DE, $03                                       ;; 00:1f46 $11 $03 $00
     ld   HL, $03                                       ;; 00:1f49 $21 $03 $00
     ld   A, [wSubOpsLoopCountdownC38A]                 ;; 00:1f4c $fa $8a $c3
-.jr_00_1f4f:
+.loopMultiplyC38ABy3_1:
     add  HL, DE                                        ;; 00:1f4f $19
     dec  A                                             ;; 00:1f50 $3d
-    jr   NZ, .jr_00_1f4f                               ;; 00:1f51 $20 $fc
+    jr   NZ, .loopMultiplyC38ABy3_1                    ;; 00:1f51 $20 $fc
     ld   A, L                                          ;; 00:1f53 $7d
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1f54 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:1f57 $c3 $14 $0a
-.jr_00_1f5a:
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:1f57 $c3 $14 $0a
+.c53cWasZero:
     ld   DE, $03                                       ;; 00:1f5a $11 $03 $00
     ld   HL, $03                                       ;; 00:1f5d $21 $03 $00
     ld   A, [wC38B]                                    ;; 00:1f60 $fa $8b $c3
     ld   C, A                                          ;; 00:1f63 $4f
     ld   A, [wSubOpsLoopCountdownC38A]                 ;; 00:1f64 $fa $8a $c3
     sub  A, C                                          ;; 00:1f67 $91
-.jr_00_1f68:
-    jr   Z, .jr_00_1f6e                                ;; 00:1f68 $28 $04
+.LoopMultiplyC38ABy3_2:
+    jr   Z, .endMultiplyLoop2                          ;; 00:1f68 $28 $04
     add  HL, DE                                        ;; 00:1f6a $19
     dec  A                                             ;; 00:1f6b $3d
-    jr   .jr_00_1f68                                   ;; 00:1f6c $18 $fa
-.jr_00_1f6e:
+    jr   .LoopMultiplyC38ABy3_2                        ;; 00:1f6c $18 $fa
+.endMultiplyLoop2:
     ld   E, L                                          ;; 00:1f6e $5d
     ld   D, $00                                        ;; 00:1f6f $16 $00
-    call call_00_0a69                                  ;; 00:1f71 $cd $69 $0a
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1f71 $cd $69 $0a
     add  HL, DE                                        ;; 00:1f74 $19
     ld   A, [HL+]                                      ;; 00:1f75 $2a
     ld   [wArgAddressC6A0], A                          ;; 00:1f76 $ea $a0 $c6
@@ -4339,16 +4503,16 @@ data_00_1f25:
     ld   [wArgAddressC6A0.bank], A                     ;; 00:1f7e $ea $a2 $c6
     ld   A, $00                                        ;; 00:1f81 $3e $00
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1f83 $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:1f86 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:1f86 $c3 $14 $0a
 
-call_00_1f89:
+Write3BytesFromHLPointerToC35E_AndUseJumpArray2:
     ld   HL, wC5B3                                     ;; 00:1f89 $21 $b3 $c5
     ld   C, $10                                        ;; 00:1f8c $0e $10
     ld   A, $00                                        ;; 00:1f8e $3e $00
-.jr_00_1f90:
+.loop_zero10BytesAtC5B3:
     ld   [HL+], A                                      ;; 00:1f90 $22
     dec  C                                             ;; 00:1f91 $0d
-    jr   NZ, .jr_00_1f90                               ;; 00:1f92 $20 $fc
+    jr   NZ, .loop_zero10BytesAtC5B3                   ;; 00:1f92 $20 $fc
     ld   [wC356], A                                    ;; 00:1f94 $ea $56 $c3
     ld   [wC35A], A                                    ;; 00:1f97 $ea $5a $c3
     ld   [wC35B], A                                    ;; 00:1f9a $ea $5b $c3
@@ -4366,36 +4530,40 @@ jp_00_1f9d:
     ld   C, L                                          ;; 00:1fb2 $4d
     ld   B, H                                          ;; 00:1fb3 $44
     ld   A, [HL+]                                      ;; 00:1fb4 $2a
-    ld   [wC35F], A                                    ;; 00:1fb5 $ea $5f $c3
+    ld   [wBitArrayIndexC35E.low], A                   ;; 00:1fb5 $ea $5f $c3
     ld   A, [HL]                                       ;; 00:1fb8 $7e
     ld   [wC360], A                                    ;; 00:1fb9 $ea $60 $c3
     ld   A, $01                                        ;; 00:1fbc $3e $01
     ld   [wCurrentRomBankC677], A                      ;; 00:1fbe $ea $77 $c6
     ld   [$2000], A                                    ;; 00:1fc1 $ea $00 $20
-    jp   jp_01_4a7c                                    ;; 00:1fc4 $c3 $7c $4a
+    jp   JumpUsing3BitsFromBitArrayIndexHighC35E_AndWriteThatIndexToC35C ;; 00:1fc4 $c3 $7c $4a
 
-data_00_1fc7:
-    call call_00_0a69                                  ;; 00:1fc7 $cd $69 $0a
+; Op 16. Arg from C6A0-1 location. Run N SubOps.
+; Then puts the C6A0 program counter to the correct next script instruction.
+;
+; NOTE: I have local notes going into more detail. Not copied over yet.
+Op16_RunSubOps:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1fc7 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:1fca $2a
     ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:1fcb $ea $8a $c3
     ld   A, L                                          ;; 00:1fce $7d
     ld   [wC38C], A                                    ;; 00:1fcf $ea $8c $c3
     ld   A, H                                          ;; 00:1fd2 $7c
     ld   [wC38D], A                                    ;; 00:1fd3 $ea $8d $c3
-.jr_00_1fd6:
-    call call_00_1ff3                                  ;; 00:1fd6 $cd $f3 $1f
+.loop_runSubOpC38ATimes:
+    call RunSubOp                                      ;; 00:1fd6 $cd $f3 $1f
     ld   HL, wSubOpsLoopCountdownC38A                  ;; 00:1fd9 $21 $8a $c3
     dec  [HL]                                          ;; 00:1fdc $35
-    jr   NZ, .jr_00_1fd6                               ;; 00:1fdd $20 $f7
+    jr   NZ, .loop_runSubOpC38ATimes                   ;; 00:1fdd $20 $f7
     ld   A, [wC38C]                                    ;; 00:1fdf $fa $8c $c3
     ld   [wArgAddressC6A0], A                          ;; 00:1fe2 $ea $a0 $c6
     ld   A, [wC38D]                                    ;; 00:1fe5 $fa $8d $c3
     ld   [wArgAddressC6A0.high], A                     ;; 00:1fe8 $ea $a1 $c6
     ld   A, $00                                        ;; 00:1feb $3e $00
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1fed $ea $26 $c3
-    jp   jp_00_0a14                                    ;; 00:1ff0 $c3 $14 $0a
+    jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:1ff0 $c3 $14 $0a
 
-call_00_1ff3:
+RunSubOp:
     ld   A, [wArgAddressC6A0.bank]                     ;; 00:1ff3 $fa $a2 $c6
     ld   [wCurrentRomBankC677], A                      ;; 00:1ff6 $ea $77 $c6
     ld   [$2000], A                                    ;; 00:1ff9 $ea $00 $20
@@ -4407,7 +4575,7 @@ call_00_1ff3:
     ld   [wBitArrayIndexC35E], A                       ;; 00:2005 $ea $5e $c3
     ld   [wDupeBitArrayIndexC358], A                   ;; 00:2008 $ea $58 $c3
     ld   A, [HL+]                                      ;; 00:200b $2a
-    ld   [wC35F], A                                    ;; 00:200c $ea $5f $c3
+    ld   [wBitArrayIndexC35E.low], A                   ;; 00:200c $ea $5f $c3
     ld   [wC359], A                                    ;; 00:200f $ea $59 $c3
     ld   C, L                                          ;; 00:2012 $4d
     ld   B, H                                          ;; 00:2013 $44
@@ -4421,24 +4589,24 @@ call_00_1ff3:
     ld   A, [wBitArrayIndexC35E]                       ;; 00:2024 $fa $5e $c3
     and  A, $fe                                        ;; 00:2027 $e6 $fe
     cp   A, $3e                                        ;; 00:2029 $fe $3e
-    jp   Z, jp_01_4d5d                                 ;; 00:202b $ca $5d $4d
+    jp   Z, SubOp_Case3E_SetBitArrayBit                ;; 00:202b $ca $5d $4d
     cp   A, $5e                                        ;; 00:202e $fe $5e
-    jp   Z, jp_01_4d64                                 ;; 00:2030 $ca $64 $4d
+    jp   Z, SubOp_Case5E_ClearBitArrayBit              ;; 00:2030 $ca $64 $4d
     cp   A, $7e                                        ;; 00:2033 $fe $7e
-    jp   Z, jp_01_4d6b                                 ;; 00:2035 $ca $6b $4d
+    jp   Z, SubOp_Case7E_SetPlayerStateByteToArg3      ;; 00:2035 $ca $6b $4d
     cp   A, $9e                                        ;; 00:2038 $fe $9e
-    jp   Z, jp_01_4d81                                 ;; 00:203a $ca $81 $4d
+    jp   Z, SubOp_Case9E_SetTwoPlayerStateBytesToArgs3and4 ;; 00:203a $ca $81 $4d
     ld   HL, wC5B3                                     ;; 00:203d $21 $b3 $c5
     ld   E, $10                                        ;; 00:2040 $1e $10
     ld   A, $00                                        ;; 00:2042 $3e $00
-.jr_00_2044:
+.loop_Clear10BytesAtC5B3:
     ld   [HL+], A                                      ;; 00:2044 $22
     dec  E                                             ;; 00:2045 $1d
-    jr   NZ, .jr_00_2044                               ;; 00:2046 $20 $fc
+    jr   NZ, .loop_Clear10BytesAtC5B3                  ;; 00:2046 $20 $fc
     ld   [wC356], A                                    ;; 00:2048 $ea $56 $c3
     ld   [wC35A], A                                    ;; 00:204b $ea $5a $c3
     ld   [wC35B], A                                    ;; 00:204e $ea $5b $c3
-    jp   jp_01_4d9b                                    ;; 00:2051 $c3 $9b $4d
+    jp   JumpInAddressArray4DB0_UsingBitsOfC35E        ;; 00:2051 $c3 $9b $4d
 
 jp_00_2054:
     ld   A, [wC38C]                                    ;; 00:2054 $fa $8c $c3
@@ -4451,7 +4619,7 @@ jp_00_2054:
     ld   A, [HL+]                                      ;; 00:2065 $2a
     ld   [wBitArrayIndexC35E], A                       ;; 00:2066 $ea $5e $c3
     ld   A, [HL+]                                      ;; 00:2069 $2a
-    ld   [wC35F], A                                    ;; 00:206a $ea $5f $c3
+    ld   [wBitArrayIndexC35E.low], A                   ;; 00:206a $ea $5f $c3
     ld   C, L                                          ;; 00:206d $4d
     ld   B, H                                          ;; 00:206e $44
     ld   A, [HL+]                                      ;; 00:206f $2a
@@ -4461,46 +4629,62 @@ jp_00_2054:
     ld   A, $01                                        ;; 00:2077 $3e $01
     ld   [wCurrentRomBankC677], A                      ;; 00:2079 $ea $77 $c6
     ld   [$2000], A                                    ;; 00:207c $ea $00 $20
-    jp   jp_01_4d9b                                    ;; 00:207f $c3 $9b $4d
-    db   $cd, $3f, $1b, $da, $f4, $20, $cd, $13        ;; 00:2082 ????????
-    db   $21, $c3, $bd, $20                            ;; 00:208a ????
+    jp   JumpInAddressArray4DB0_UsingBitsOfC35E        ;; 00:207f $c3 $9b $4d
 
-data_00_208e:
-    call call_00_1b3f                                  ;; 00:208e $cd $3f $1b
-    jp   C, jp_00_20f4                                 ;; 00:2091 $da $f4 $20
+; Op 0C, 0E, 10, and 12 are variants of each other
+; Each either
+;    Calls WriteArgToC39A_andCallOp4E OR writes $00 to [wC39A]
+;    Writes $00 OR $80 wSubOpsLoopCountdownC38A
+Op12:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:2082 $cd $3f $1b
+    jp   C, MaybeLoopUntilTextboxClose                 ;; 00:2085 $da $f4 $20
+    call WriteArgToC39A_andCallOp4E                    ;; 00:2088 $cd $13 $21
+    jp   Op10and12_C324to5DidNotHaveData               ;; 00:208b $c3 $bd $20
+
+Op10_WaitForChatSelect:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:208e $cd $3f $1b
+; Theory: IF there's a C324-5 (a thing to do after getting input)
+; Await input ELSE jump and do stuff
+    jp   C, MaybeLoopUntilTextboxClose                 ;; 00:2091 $da $f4 $20
     ld   A, $00                                        ;; 00:2094 $3e $00
     ld   [wC39A], A                                    ;; 00:2096 $ea $9a $c3
-    jp   jp_00_20bd                                    ;; 00:2099 $c3 $bd $20
-    db   $cd, $3f, $1b, $da, $f4, $20, $cd, $13        ;; 00:209c ????????
-    db   $21, $c3, $b6, $20                            ;; 00:20a4 ????
+    jp   Op10and12_C324to5DidNotHaveData               ;; 00:2099 $c3 $bd $20
 
-data_00_20a8:
-    call call_00_1b3f                                  ;; 00:20a8 $cd $3f $1b
-    jp   C, jp_00_20f4                                 ;; 00:20ab $da $f4 $20
+Op0E:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:209c $cd $3f $1b
+    jp   C, MaybeLoopUntilTextboxClose                 ;; 00:209f $da $f4 $20
+    call WriteArgToC39A_andCallOp4E                    ;; 00:20a2 $cd $13 $21
+    jp   Op0Cand0E_C324to5DidNotHaveData               ;; 00:20a5 $c3 $b6 $20
+
+Op0C:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:20a8 $cd $3f $1b
+    jp   C, MaybeLoopUntilTextboxClose                 ;; 00:20ab $da $f4 $20
     ld   A, $00                                        ;; 00:20ae $3e $00
     ld   [wC39A], A                                    ;; 00:20b0 $ea $9a $c3
-    jp   .jp_00_20b6                                   ;; 00:20b3 $c3 $b6 $20
-.jp_00_20b6:
+    jp   Op0Cand0E_C324to5DidNotHaveData               ;; 00:20b3 $c3 $b6 $20
+
+Op0Cand0E_C324to5DidNotHaveData:
     ld   A, $00                                        ;; 00:20b6 $3e $00
     ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:20b8 $ea $8a $c3
-    jr   jr_00_20c2                                    ;; 00:20bb $18 $05
+    jr   Op0Cand0Eand10and12_C324to5DidNotHaveData_nextStep ;; 00:20bb $18 $05
 
-jp_00_20bd:
+Op10and12_C324to5DidNotHaveData:
     ld   A, $80                                        ;; 00:20bd $3e $80
     ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:20bf $ea $8a $c3
 
-jr_00_20c2:
+Op0Cand0Eand10and12_C324to5DidNotHaveData_nextStep:
     ld   A, $00                                        ;; 00:20c2 $3e $00
     ld   [wC38B], A                                    ;; 00:20c4 $ea $8b $c3
     ld   [wC396], A                                    ;; 00:20c7 $ea $96 $c3
     ld   A, $02                                        ;; 00:20ca $3e $02
     ld   [wReturnAddressC324], A                       ;; 00:20cc $ea $24 $c3
     ld   A, $51                                        ;; 00:20cf $3e $51
-    ld   [wC325], A                                    ;; 00:20d1 $ea $25 $c3
-    call call_00_1aa7                                  ;; 00:20d4 $cd $a7 $1a
+    ld   [wReturnAddressC324.high], A                  ;; 00:20d1 $ea $25 $c3
+    call UpdateD203to5AddressesViaHardcodedMap         ;; 00:20d4 $cd $a7 $1a
+; C31E 0 means we MaybeLoopUntiltextboxClose, else set it closing and run an op
     ld   A, [wC31E]                                    ;; 00:20d7 $fa $1e $c3
     and  A, A                                          ;; 00:20da $a7
-    jr   Z, jp_00_20f4                                 ;; 00:20db $28 $17
+    jr   Z, MaybeLoopUntilTextboxClose                 ;; 00:20db $28 $17
     ld   A, $01                                        ;; 00:20dd $3e $01
     ldh  [rSVBK], A                                    ;; 00:20df $e0 $70
     ld   A, $00                                        ;; 00:20e1 $3e $00
@@ -4509,26 +4693,37 @@ jr_00_20c2:
     ld   [wD5F2], A                                    ;; 00:20e9 $ea $f2 $d5
     ld   A, $02                                        ;; 00:20ec $3e $02
     ld   [wTextboxIsClosingD5EE], A                    ;; 00:20ee $ea $ee $d5
-    jp   jp_00_0a39                                    ;; 00:20f1 $c3 $39 $0a
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:20f1 $c3 $39 $0a
 
-jp_00_20f4:
+MaybeLoopUntilTextboxClose:
     ld   A, $01                                        ;; 00:20f4 $3e $01
     ldh  [rSVBK], A                                    ;; 00:20f6 $e0 $70
     ld   A, [wD5C5]                                    ;; 00:20f8 $fa $c5 $d5
     ld   HL, wTextboxIsClosingD5EE                     ;; 00:20fb $21 $ee $d5
     or   A, [HL]                                       ;; 00:20fe $b6
-    jp   NZ, jp_00_0a39                                ;; 00:20ff $c2 $39 $0a
+; Chat wheel is closing
+    jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:20ff $c2 $39 $0a
+; Chat wheel is not closing.
     ld   A, $01                                        ;; 00:2102 $3e $01
     ld   [wCurrentRomBankC677], A                      ;; 00:2104 $ea $77 $c6
     ld   [$2000], A                                    ;; 00:2107 $ea $00 $20
     ld   A, [wReturnAddressC324]                       ;; 00:210a $fa $24 $c3
     ld   L, A                                          ;; 00:210d $6f
-    ld   A, [wC325]                                    ;; 00:210e $fa $25 $c3
+    ld   A, [wReturnAddressC324.high]                  ;; 00:210e $fa $25 $c3
     ld   H, A                                          ;; 00:2111 $67
+; Jump to C324-5 in bank 1
     jp   HL                                            ;; 00:2112 $e9
-    db   $cd, $69, $0a, $2a, $ea, $9a, $c3, $7d        ;; 00:2113 ????????
-    db   $ea, $a0, $c6, $7c, $ea, $a1, $c6, $cd        ;; 00:211b ????????
-    db   $96, $0f, $c9                                 ;; 00:2123 ???
+
+WriteArgToC39A_andCallOp4E:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:2113 $cd $69 $0a
+    ld   A, [HL+]                                      ;; 00:2116 $2a
+    ld   [wC39A], A                                    ;; 00:2117 $ea $9a $c3
+    ld   A, L                                          ;; 00:211a $7d
+    ld   [wArgAddressC6A0], A                          ;; 00:211b $ea $a0 $c6
+    ld   A, H                                          ;; 00:211e $7c
+    ld   [wArgAddressC6A0.high], A                     ;; 00:211f $ea $a1 $c6
+    call Op4E                                          ;; 00:2122 $cd $96 $0f
+    ret                                                ;; 00:2125 $c9
     ld   A, $00                                        ;; 00:2126 $3e $00
     ld   HL, wC4FA                                     ;; 00:2128 $21 $fa $c4
     ld   E, $20                                        ;; 00:212b $1e $20
@@ -4542,7 +4737,7 @@ jp_00_20f4:
     ld   [HL+], A                                      ;; 00:2136 $22
     dec  E                                             ;; 00:2137 $1d
     jr   NZ, .jr_00_2136                               ;; 00:2138 $20 $fc
-    call call_00_0a69                                  ;; 00:213a $cd $69 $0a
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:213a $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:213d $2a
     ld   [wC398], A                                    ;; 00:213e $ea $98 $c3
     ld   A, $00                                        ;; 00:2141 $3e $00
@@ -4562,7 +4757,7 @@ jp_00_20f4:
     ld   [wC393], A                                    ;; 00:2160 $ea $93 $c3
     ld   [wC38F], A                                    ;; 00:2163 $ea $8f $c3
 .jr_00_2166:
-    call call_00_1f89                                  ;; 00:2166 $cd $89 $1f
+    call Write3BytesFromHLPointerToC35E_AndUseJumpArray2 ;; 00:2166 $cd $89 $1f
     ld   A, [wC5C3]                                    ;; 00:2169 $fa $c3 $c5
     and  A, A                                          ;; 00:216c $a7
     jr   Z, .jr_00_21af                                ;; 00:216d $28 $40
@@ -4696,36 +4891,128 @@ jp_00_20f4:
     ld   HL, wC32E                                     ;; 00:226f $21 $2e $c3
     inc  [HL]                                          ;; 00:2272 $34
     jp   .jp_00_21ef                                   ;; 00:2273 $c3 $ef $21
-    db   $cd, $3f, $1b, $38, $0d, $cd, $f9, $22        ;; 00:2276 ????????
-    db   $af, $ea, $9a, $c3, $ea, $9c, $c3, $ea        ;; 00:227e ????????
-    db   $9d, $c3, $fa, $24, $c3, $fe, $01, $28        ;; 00:2286 ????????
-    db   $06, $fe, $02, $28, $10, $18, $1b, $3e        ;; 00:228e ????????
-    db   $01, $ea, $77, $c6, $ea, $00, $20, $cd        ;; 00:2296 ????????
-    db   $f9, $5b, $c3, $39, $0a, $3e, $08, $ea        ;; 00:229e ????????
-    db   $9a, $c3, $3e, $03, $ea, $24, $c3, $c3        ;; 00:22a6 ????????
-    db   $39, $0a, $fa, $9a, $c3, $3d, $ea, $9a        ;; 00:22ae ????????
-    db   $c3, $c2, $39, $0a, $af, $ea, $06, $c3        ;; 00:22b6 ????????
-    db   $ea, $22, $c3, $c3, $39, $0a, $cd, $3f        ;; 00:22be ????????
-    db   $1b, $38, $0d, $cd, $f9, $22, $3e, $00        ;; 00:22c6 ????????
-    db   $ea, $9c, $c3, $3e, $00, $ea, $9d, $c3        ;; 00:22ce ????????
-    db   $fa, $24, $c3, $fe, $01, $28, $02, $18        ;; 00:22d6 ????????
-    db   $0e, $3e, $01, $ea, $77, $c6, $ea, $00        ;; 00:22de ????????
-    db   $20, $cd, $fa, $5b, $c3, $39, $0a, $3e        ;; 00:22e6 ????????
-    db   $01, $ea, $06, $c3, $af, $ea, $22, $c3        ;; 00:22ee ????????
-    db   $c3, $39, $0a, $cd, $69, $0a, $2a, $ea        ;; 00:22f6 ????????
-    db   $8a, $c3, $47, $2a, $cb, $27, $4f, $ea        ;; 00:22fe ????????
-    db   $8c, $c3, $2a, $57, $3d, $80, $ea, $8b        ;; 00:2306 ????????
-    db   $c3, $cb, $3a, $7a, $80, $ea, $8e, $c3        ;; 00:230e ????????
-    db   $2a, $5f, $3d, $cb, $27, $81, $ea, $8d        ;; 00:2316 ????????
-    db   $c3, $7b, $e6, $fe, $81, $ea, $8f, $c3        ;; 00:231e ????????
-    db   $2a, $ea, $92, $c3, $2a, $ea, $93, $c3        ;; 00:2326 ????????
-    db   $2a, $ea, $94, $c3, $7e, $ea, $95, $c3        ;; 00:232e ????????
-    db   $fa, $86, $c6, $47, $fa, $80, $c6, $80        ;; 00:2336 ????????
-    db   $cb, $3f, $cb, $3f, $cb, $3f, $e6, $1f        ;; 00:233e ????????
-    db   $ea, $90, $c3, $fa, $83, $c6, $47, $fa        ;; 00:2346 ????????
-    db   $7d, $c6, $80, $cb, $3f, $cb, $3f, $e6        ;; 00:234e ????????
-    db   $3e, $ea, $91, $c3, $3e, $08, $ea, $26        ;; 00:2356 ????????
-    db   $c3, $3e, $01, $ea, $24, $c3, $c9             ;; 00:235e ???????
+
+Op94:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:2276 $cd $3f $1b
+    jr   C, .jr_00_2288                                ;; 00:2279 $38 $0d
+    call call_00_22f9                                  ;; 00:227b $cd $f9 $22
+    xor  A, A                                          ;; 00:227e $af
+    ld   [wC39A], A                                    ;; 00:227f $ea $9a $c3
+    ld   [wC39C], A                                    ;; 00:2282 $ea $9c $c3
+    ld   [wC39D], A                                    ;; 00:2285 $ea $9d $c3
+.jr_00_2288:
+    ld   A, [wReturnAddressC324]                       ;; 00:2288 $fa $24 $c3
+    cp   A, $01                                        ;; 00:228b $fe $01
+    jr   Z, .jr_00_2295                                ;; 00:228d $28 $06
+    cp   A, $02                                        ;; 00:228f $fe $02
+    jr   Z, .jr_00_22a3                                ;; 00:2291 $28 $10
+    jr   .jr_00_22b0                                   ;; 00:2293 $18 $1b
+.jr_00_2295:
+    ld   A, $01                                        ;; 00:2295 $3e $01
+    ld   [wCurrentRomBankC677], A                      ;; 00:2297 $ea $77 $c6
+    ld   [$2000], A                                    ;; 00:229a $ea $00 $20
+    call $5bf9                                         ;; 00:229d $cd $f9 $5b
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:22a0 $c3 $39 $0a
+.jr_00_22a3:
+    ld   A, $08                                        ;; 00:22a3 $3e $08
+    ld   [wC39A], A                                    ;; 00:22a5 $ea $9a $c3
+    ld   A, $03                                        ;; 00:22a8 $3e $03
+    ld   [wReturnAddressC324], A                       ;; 00:22aa $ea $24 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:22ad $c3 $39 $0a
+.jr_00_22b0:
+    ld   A, [wC39A]                                    ;; 00:22b0 $fa $9a $c3
+    dec  A                                             ;; 00:22b3 $3d
+    ld   [wC39A], A                                    ;; 00:22b4 $ea $9a $c3
+    jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:22b7 $c2 $39 $0a
+    xor  A, A                                          ;; 00:22ba $af
+    ld   [wC306], A                                    ;; 00:22bb $ea $06 $c3
+    ld   [wOpcodeC322], A                              ;; 00:22be $ea $22 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:22c1 $c3 $39 $0a
+
+Op96:
+    call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:22c4 $cd $3f $1b
+    jr   C, .jr_00_22d6                                ;; 00:22c7 $38 $0d
+    call call_00_22f9                                  ;; 00:22c9 $cd $f9 $22
+    ld   A, $00                                        ;; 00:22cc $3e $00
+    ld   [wC39C], A                                    ;; 00:22ce $ea $9c $c3
+    ld   A, $00                                        ;; 00:22d1 $3e $00
+    ld   [wC39D], A                                    ;; 00:22d3 $ea $9d $c3
+.jr_00_22d6:
+    ld   A, [wReturnAddressC324]                       ;; 00:22d6 $fa $24 $c3
+    cp   A, $01                                        ;; 00:22d9 $fe $01
+    jr   Z, .jr_00_22df                                ;; 00:22db $28 $02
+    jr   .jr_00_22ed                                   ;; 00:22dd $18 $0e
+.jr_00_22df:
+    ld   A, $01                                        ;; 00:22df $3e $01
+    ld   [wCurrentRomBankC677], A                      ;; 00:22e1 $ea $77 $c6
+    ld   [$2000], A                                    ;; 00:22e4 $ea $00 $20
+    call $5bfa                                         ;; 00:22e7 $cd $fa $5b
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:22ea $c3 $39 $0a
+.jr_00_22ed:
+    ld   A, $01                                        ;; 00:22ed $3e $01
+    ld   [wC306], A                                    ;; 00:22ef $ea $06 $c3
+    xor  A, A                                          ;; 00:22f2 $af
+    ld   [wOpcodeC322], A                              ;; 00:22f3 $ea $22 $c3
+    jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:22f6 $c3 $39 $0a
+
+call_00_22f9:
+    call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:22f9 $cd $69 $0a
+    ld   A, [HL+]                                      ;; 00:22fc $2a
+    ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:22fd $ea $8a $c3
+    ld   B, A                                          ;; 00:2300 $47
+    ld   A, [HL+]                                      ;; 00:2301 $2a
+    sla  A                                             ;; 00:2302 $cb $27
+    ld   C, A                                          ;; 00:2304 $4f
+    ld   [wC38C], A                                    ;; 00:2305 $ea $8c $c3
+    ld   A, [HL+]                                      ;; 00:2308 $2a
+    ld   D, A                                          ;; 00:2309 $57
+    dec  A                                             ;; 00:230a $3d
+    add  A, B                                          ;; 00:230b $80
+    ld   [wC38B], A                                    ;; 00:230c $ea $8b $c3
+    srl  D                                             ;; 00:230f $cb $3a
+    ld   A, D                                          ;; 00:2311 $7a
+    add  A, B                                          ;; 00:2312 $80
+    ld   [wHamChatCursorIndexC38E], A                  ;; 00:2313 $ea $8e $c3
+    ld   A, [HL+]                                      ;; 00:2316 $2a
+    ld   E, A                                          ;; 00:2317 $5f
+    dec  A                                             ;; 00:2318 $3d
+    sla  A                                             ;; 00:2319 $cb $27
+    add  A, C                                          ;; 00:231b $81
+    ld   [wC38D], A                                    ;; 00:231c $ea $8d $c3
+    ld   A, E                                          ;; 00:231f $7b
+    and  A, $fe                                        ;; 00:2320 $e6 $fe
+    add  A, C                                          ;; 00:2322 $81
+    ld   [wC38F], A                                    ;; 00:2323 $ea $8f $c3
+    ld   A, [HL+]                                      ;; 00:2326 $2a
+    ld   [wC392], A                                    ;; 00:2327 $ea $92 $c3
+    ld   A, [HL+]                                      ;; 00:232a $2a
+    ld   [wC393], A                                    ;; 00:232b $ea $93 $c3
+    ld   A, [HL+]                                      ;; 00:232e $2a
+    ld   [wC394], A                                    ;; 00:232f $ea $94 $c3
+    ld   A, [HL]                                       ;; 00:2332 $7e
+    ld   [wC395], A                                    ;; 00:2333 $ea $95 $c3
+    ld   A, [wC686]                                    ;; 00:2336 $fa $86 $c6
+    ld   B, A                                          ;; 00:2339 $47
+    ld   A, [wC680]                                    ;; 00:233a $fa $80 $c6
+    add  A, B                                          ;; 00:233d $80
+    srl  A                                             ;; 00:233e $cb $3f
+    srl  A                                             ;; 00:2340 $cb $3f
+    srl  A                                             ;; 00:2342 $cb $3f
+    and  A, $1f                                        ;; 00:2344 $e6 $1f
+    ld   [wC390], A                                    ;; 00:2346 $ea $90 $c3
+    ld   A, [wC683]                                    ;; 00:2349 $fa $83 $c6
+    ld   B, A                                          ;; 00:234c $47
+    ld   A, [wC67D]                                    ;; 00:234d $fa $7d $c6
+    add  A, B                                          ;; 00:2350 $80
+    srl  A                                             ;; 00:2351 $cb $3f
+    srl  A                                             ;; 00:2353 $cb $3f
+    and  A, $3e                                        ;; 00:2355 $e6 $3e
+    ld   [wC391], A                                    ;; 00:2357 $ea $91 $c3
+    ld   A, $08                                        ;; 00:235a $3e $08
+    ld   [wLengthOfPreviousInstructionC326], A         ;; 00:235c $ea $26 $c3
+    ld   A, $01                                        ;; 00:235f $3e $01
+    ld   [wReturnAddressC324], A                       ;; 00:2361 $ea $24 $c3
+    ret                                                ;; 00:2364 $c9
 
 call_00_2365:
     ld   A, [wCurrentRomBankC677]                      ;; 00:2365 $fa $77 $c6
@@ -4774,7 +5061,10 @@ call_00_2390:
     db   $d5, $e9, $e1, $7d, $ea, $77, $c6, $ea        ;; 00:23bb ????????
     db   $00, $20, $c9                                 ;; 00:23c3 ???
 
-call_00_23c6:
+; C6A0-2 holds an address. C6AA holds an array index.
+; That address holds 6 bytes, the first 3 are an address to a table.
+; That table holds addresses. The address at the given index is put in C6A0-2.
+DoubleDerefC6A0to2_AddressIntoSelf:
     ld   A, [wArgAddressC6A0]                          ;; 00:23c6 $fa $a0 $c6
     ld   L, A                                          ;; 00:23c9 $6f
     ld   A, [wArgAddressC6A0.high]                     ;; 00:23ca $fa $a1 $c6
@@ -5658,7 +5948,7 @@ call_00_2940:
     ret                                                ;; 00:29f6 $c9
 .jp_00_29f7:
     ld   A, [wCurrentRomBankC677]                      ;; 00:29f7 $fa $77 $c6
-    ld   [wC35F], A                                    ;; 00:29fa $ea $5f $c3
+    ld   [wBitArrayIndexC35E.low], A                   ;; 00:29fa $ea $5f $c3
     ld   A, B                                          ;; 00:29fd $78
     ld   [wCurrentRomBankC677], A                      ;; 00:29fe $ea $77 $c6
     ld   [$2000], A                                    ;; 00:2a01 $ea $00 $20
@@ -5684,7 +5974,7 @@ call_00_2940:
     jr   NZ, .jr_00_2a18                               ;; 00:2a1c $20 $fa
     dec  B                                             ;; 00:2a1e $05
     jr   NZ, .jr_00_2a18                               ;; 00:2a1f $20 $f7
-    ld   A, [wC35F]                                    ;; 00:2a21 $fa $5f $c3
+    ld   A, [wBitArrayIndexC35E.low]                   ;; 00:2a21 $fa $5f $c3
     ld   [wCurrentRomBankC677], A                      ;; 00:2a24 $ea $77 $c6
     ld   [$2000], A                                    ;; 00:2a27 $ea $00 $20
     ret                                                ;; 00:2a2a $c9
@@ -8101,14 +8391,14 @@ jr_00_390e:
     ret                                                ;; 00:390f $c9
     db   $37, $c9                                      ;; 00:3910 ??
 
-call_00_3912:
+PlayerStateChecksum:
     ld   HL, hFF80                                     ;; 00:3912 $21 $80 $ff
     ld   C, $04                                        ;; 00:3915 $0e $04
     xor  A, A                                          ;; 00:3917 $af
-.jr_00_3918:
+.loop_clearFF80to3:
     ld   [HL+], A                                      ;; 00:3918 $22
     dec  C                                             ;; 00:3919 $0d
-    jr   NZ, .jr_00_3918                               ;; 00:391a $20 $fc
+    jr   NZ, .loop_clearFF80to3                        ;; 00:391a $20 $fc
     ld   A, $9a                                        ;; 00:391c $3e $9a
     ld   [wCAB2], A                                    ;; 00:391e $ea $b2 $ca
     ld   C, A                                          ;; 00:3921 $4f
@@ -8118,9 +8408,9 @@ call_00_3912:
     ld   DE, wPlayerStateRegionStartC718               ;; 00:3928 $11 $18 $c7
     xor  A, A                                          ;; 00:392b $af
     cp   A, C                                          ;; 00:392c $b9
-    jr   NZ, .jr_00_3930                               ;; 00:392d $20 $01
+    jr   NZ, .loop_addPlayerStateBytesToFF80           ;; 00:392d $20 $01
     inc  B                                             ;; 00:392f $04
-.jr_00_3930:
+.loop_addPlayerStateBytesToFF80:
     ld   A, [DE]                                       ;; 00:3930 $1a
     inc  DE                                            ;; 00:3931 $13
     ld   HL, hFF80                                     ;; 00:3932 $21 $80 $ff
@@ -8136,9 +8426,9 @@ call_00_3912:
     adc  A, $00                                        ;; 00:3940 $ce $00
     ld   [HL], A                                       ;; 00:3942 $77
     dec  C                                             ;; 00:3943 $0d
-    jr   NZ, .jr_00_3930                               ;; 00:3944 $20 $ea
+    jr   NZ, .loop_addPlayerStateBytesToFF80           ;; 00:3944 $20 $ea
     dec  B                                             ;; 00:3946 $05
-    jr   NZ, .jr_00_3930                               ;; 00:3947 $20 $e7
+    jr   NZ, .loop_addPlayerStateBytesToFF80           ;; 00:3947 $20 $e7
     ret                                                ;; 00:3949 $c9
     db   $fa, $93, $ca, $ea, $a9, $c6, $fa, $94        ;; 00:394a ????????
     db   $ca, $ea, $aa, $c6, $11, $00, $00, $fa        ;; 00:3952 ????????
@@ -8202,7 +8492,7 @@ data_00_39fd:
     ld   [wCA98], A                                    ;; 00:3a1e $ea $98 $ca
     ld   A, [wC6AF]                                    ;; 00:3a21 $fa $af $c6
     ld   [wCA99], A                                    ;; 00:3a24 $ea $99 $ca
-    call call_00_3912                                  ;; 00:3a27 $cd $12 $39
+    call PlayerStateChecksum                           ;; 00:3a27 $cd $12 $39
     ld   HL, hFF80                                     ;; 00:3a2a $21 $80 $ff
     ld   BC, wCAB4                                     ;; 00:3a2d $01 $b4 $ca
     ld   A, [HL+]                                      ;; 00:3a30 $2a
@@ -8224,23 +8514,23 @@ data_00_39fd:
     ld   A, $0a                                        ;; 00:3a48 $3e $0a
     ld   [$0000], A                                    ;; 00:3a4a $ea $00 $00
     di                                                 ;; 00:3a4d $f3
-.jr_00_3a4e:
+.loop_copyPlayerStateToA020:
     ld   A, [DE]                                       ;; 00:3a4e $1a
     ld   [HL+], A                                      ;; 00:3a4f $22
     inc  DE                                            ;; 00:3a50 $13
     dec  BC                                            ;; 00:3a51 $0b
     ld   A, B                                          ;; 00:3a52 $78
     or   A, C                                          ;; 00:3a53 $b1
-    jr   NZ, .jr_00_3a4e                               ;; 00:3a54 $20 $f8
+    jr   NZ, .loop_copyPlayerStateToA020               ;; 00:3a54 $20 $f8
     ld   HL, sAFC0                                     ;; 00:3a56 $21 $c0 $af
     ld   DE, wCAB2                                     ;; 00:3a59 $11 $b2 $ca
     ld   C, $06                                        ;; 00:3a5c $0e $06
-.jr_00_3a5e:
+.loop_copySizeAndChecksumToAFC0:
     ld   A, [DE]                                       ;; 00:3a5e $1a
     ld   [HL+], A                                      ;; 00:3a5f $22
     inc  DE                                            ;; 00:3a60 $13
     dec  C                                             ;; 00:3a61 $0d
-    jr   NZ, .jr_00_3a5e                               ;; 00:3a62 $20 $fa
+    jr   NZ, .loop_copySizeAndChecksumToAFC0           ;; 00:3a62 $20 $fa
     ei                                                 ;; 00:3a64 $fb
     ld   A, $00                                        ;; 00:3a65 $3e $00
     ld   [$0000], A                                    ;; 00:3a67 $ea $00 $00
@@ -8252,23 +8542,23 @@ data_00_39fd:
     ld   A, $0a                                        ;; 00:3a77 $3e $0a
     ld   [$0000], A                                    ;; 00:3a79 $ea $00 $00
     di                                                 ;; 00:3a7c $f3
-.jr_00_3a7d:
+.loop_copyPlayerStateToB000:
     ld   A, [DE]                                       ;; 00:3a7d $1a
     ld   [HL+], A                                      ;; 00:3a7e $22
     inc  DE                                            ;; 00:3a7f $13
     dec  BC                                            ;; 00:3a80 $0b
     ld   A, B                                          ;; 00:3a81 $78
     or   A, C                                          ;; 00:3a82 $b1
-    jr   NZ, .jr_00_3a7d                               ;; 00:3a83 $20 $f8
+    jr   NZ, .loop_copyPlayerStateToB000               ;; 00:3a83 $20 $f8
     ld   HL, sBFC0                                     ;; 00:3a85 $21 $c0 $bf
     ld   DE, wCAB2                                     ;; 00:3a88 $11 $b2 $ca
     ld   C, $06                                        ;; 00:3a8b $0e $06
-.jr_00_3a8d:
+.loop_copySizeAndChecksumToBFC0:
     ld   A, [DE]                                       ;; 00:3a8d $1a
     ld   [HL+], A                                      ;; 00:3a8e $22
     inc  DE                                            ;; 00:3a8f $13
     dec  C                                             ;; 00:3a90 $0d
-    jr   NZ, .jr_00_3a8d                               ;; 00:3a91 $20 $fa
+    jr   NZ, .loop_copySizeAndChecksumToBFC0           ;; 00:3a91 $20 $fa
     ei                                                 ;; 00:3a93 $fb
     ld   A, $00                                        ;; 00:3a94 $3e $00
     ld   [$0000], A                                    ;; 00:3a96 $ea $00 $00
@@ -8277,24 +8567,24 @@ data_00_39fd:
 call_00_3a9a:
     ld   A, [wCAB8]                                    ;; 00:3a9a $fa $b8 $ca
     dec  A                                             ;; 00:3a9d $3d
-    jr   Z, .jr_00_3aa7                                ;; 00:3a9e $28 $07
+    jr   Z, .caB8_was1                                 ;; 00:3a9e $28 $07
     dec  A                                             ;; 00:3aa0 $3d
-    jr   Z, .jr_00_3aac                                ;; 00:3aa1 $28 $09
+    jr   Z, .caB8_was2                                 ;; 00:3aa1 $28 $09
     dec  A                                             ;; 00:3aa3 $3d
-    jr   Z, .jr_00_3ab1                                ;; 00:3aa4 $28 $0b
+    jr   Z, .caB8_was3                                 ;; 00:3aa4 $28 $0b
     ret                                                ;; 00:3aa6 $c9
-.jr_00_3aa7:
+.caB8_was1:
     rst  rst_00_0020                                   ;; 00:3aa7 $e7
     or   A, [HL]                                       ;; 00:3aa8 $b6
     ld   A, [HL-]                                      ;; 00:3aa9 $3a
     nop                                                ;; 00:3aaa $00
     ret                                                ;; 00:3aab $c9
-.jr_00_3aac:
+.caB8_was2:
     rst  rst_00_0020                                   ;; 00:3aac $e7
     ld   C, $5e                                        ;; 00:3aad $0e $5e
     inc  BC                                            ;; 00:3aaf $03
     ret                                                ;; 00:3ab0 $c9
-.jr_00_3ab1:
+.caB8_was3:
     rst  rst_00_0020                                   ;; 00:3ab1 $e7
     ld   C, $5e                                        ;; 00:3ab2 $0e $5e
     inc  BC                                            ;; 00:3ab4 $03
@@ -8335,7 +8625,7 @@ call_00_3a9a:
     jr   NZ, .jr_00_3aeb                               ;; 00:3aef $20 $fa
     ld   A, $00                                        ;; 00:3af1 $3e $00
     ld   [$0000], A                                    ;; 00:3af3 $ea $00 $00
-    call call_00_3912                                  ;; 00:3af6 $cd $12 $39
+    call PlayerStateChecksum                           ;; 00:3af6 $cd $12 $39
     ld   HL, hFF80                                     ;; 00:3af9 $21 $80 $ff
     ld   DE, wCAB4                                     ;; 00:3afc $11 $b4 $ca
     ld   C, $04                                        ;; 00:3aff $0e $04
@@ -8385,7 +8675,7 @@ call_00_3a9a:
     jr   NZ, .jr_00_3b42                               ;; 00:3b46 $20 $fa
     ld   A, $00                                        ;; 00:3b48 $3e $00
     ld   [$0000], A                                    ;; 00:3b4a $ea $00 $00
-    call call_00_3912                                  ;; 00:3b4d $cd $12 $39
+    call PlayerStateChecksum                           ;; 00:3b4d $cd $12 $39
     ld   HL, hFF80                                     ;; 00:3b50 $21 $80 $ff
     ld   DE, wCAB4                                     ;; 00:3b53 $11 $b4 $ca
     ld   C, $04                                        ;; 00:3b56 $0e $04
@@ -8676,10 +8966,13 @@ call_00_3bf9:
     pop  BC                                            ;; 00:3d02 $c1
     rst  rst_00_0028                                   ;; 00:3d03 $ef
 
-call_00_3d04:
-    ld   A, [wHamChatIndexC715]                        ;; 00:3d04 $fa $15 $c7
+; C715 holds the bitarray index we want.
+; C717 determines whether we clear/set/read the flag.
+InteractWithBitArray:
+    ld   A, [wBitArrayIndexC715]                       ;; 00:3d04 $fa $15 $c7
     ld   C, A                                          ;; 00:3d07 $4f
     ld   B, $00                                        ;; 00:3d08 $06 $00
+; 3 srl+rr calls == divide by 8
     srl  B                                             ;; 00:3d0a $cb $38
     rr   C                                             ;; 00:3d0c $cb $19
     srl  B                                             ;; 00:3d0e $cb $38
@@ -8693,56 +8986,61 @@ call_00_3d04:
     ld   A, B                                          ;; 00:3d1c $78
     adc  A, H                                          ;; 00:3d1d $8c
     ld   H, A                                          ;; 00:3d1e $67
-    ld   A, [wHamChatIndexC715]                        ;; 00:3d1f $fa $15 $c7
+; HL now points to the desired byte of the bitarray now
+    ld   A, [wBitArrayIndexC715]                       ;; 00:3d1f $fa $15 $c7
     ld   B, $07                                        ;; 00:3d22 $06 $07
     and  A, B                                          ;; 00:3d24 $a0
     ld   B, A                                          ;; 00:3d25 $47
-    ld   A, [wC717]                                    ;; 00:3d26 $fa $17 $c7
+; B now has the remainder after div by 8, aka which bit
+; C717 == 0 means we clear a bit.
+; C717 == FF means we read the bit value into C717
+; C717 == anything else means we set the bit
+    ld   A, [wBitArrayModeC717]                        ;; 00:3d26 $fa $17 $c7
     cp   A, $00                                        ;; 00:3d29 $fe $00
-    jr   Z, .jr_00_3d41                                ;; 00:3d2b $28 $14
+    jr   Z, .c717IsZero                                ;; 00:3d2b $28 $14
     cp   A, $ff                                        ;; 00:3d2d $fe $ff
-    jr   Z, .jr_00_3d53                                ;; 00:3d2f $28 $22
+    jr   Z, .c717IsFF                                  ;; 00:3d2f $28 $22
     ld   A, B                                          ;; 00:3d31 $78
     inc  A                                             ;; 00:3d32 $3c
     cp   A, $01                                        ;; 00:3d33 $fe $01
     ld   A, $01                                        ;; 00:3d35 $3e $01
-    jr   Z, .jr_00_3d3e                                ;; 00:3d37 $28 $05
-.jr_00_3d39:
+    jr   Z, .performBitSet                             ;; 00:3d37 $28 $05
+.loop_shiftLeftToGetBitToSet:
     sla  A                                             ;; 00:3d39 $cb $27
     dec  B                                             ;; 00:3d3b $05
-    jr   NZ, .jr_00_3d39                               ;; 00:3d3c $20 $fb
-.jr_00_3d3e:
+    jr   NZ, .loop_shiftLeftToGetBitToSet              ;; 00:3d3c $20 $fb
+.performBitSet:
     or   A, [HL]                                       ;; 00:3d3e $b6
     ld   [HL], A                                       ;; 00:3d3f $77
     ret                                                ;; 00:3d40 $c9
-.jr_00_3d41:
+.c717IsZero:
     ld   A, B                                          ;; 00:3d41 $78
     inc  A                                             ;; 00:3d42 $3c
     cp   A, $01                                        ;; 00:3d43 $fe $01
     ld   A, $01                                        ;; 00:3d45 $3e $01
-    jr   Z, .jr_00_3d4e                                ;; 00:3d47 $28 $05
-.jr_00_3d49:
+    jr   Z, .performBitClear                           ;; 00:3d47 $28 $05
+.loop_shiftLeftToGetBitToClear:
     sla  A                                             ;; 00:3d49 $cb $27
     dec  B                                             ;; 00:3d4b $05
-    jr   NZ, .jr_00_3d49                               ;; 00:3d4c $20 $fb
-.jr_00_3d4e:
+    jr   NZ, .loop_shiftLeftToGetBitToClear            ;; 00:3d4c $20 $fb
+.performBitClear:
     xor  A, $ff                                        ;; 00:3d4e $ee $ff
     and  A, [HL]                                       ;; 00:3d50 $a6
     ld   [HL], A                                       ;; 00:3d51 $77
     ret                                                ;; 00:3d52 $c9
-.jr_00_3d53:
+.c717IsFF:
     ld   A, B                                          ;; 00:3d53 $78
     inc  A                                             ;; 00:3d54 $3c
     cp   A, $01                                        ;; 00:3d55 $fe $01
     ld   A, [HL]                                       ;; 00:3d57 $7e
-    jr   Z, .jr_00_3d5f                                ;; 00:3d58 $28 $05
-.jr_00_3d5a:
+    jr   Z, .performReadIntoC717                       ;; 00:3d58 $28 $05
+.loop_shiftRightToGetBitToRead:
     srl  A                                             ;; 00:3d5a $cb $3f
     dec  B                                             ;; 00:3d5c $05
-    jr   NZ, .jr_00_3d5a                               ;; 00:3d5d $20 $fb
-.jr_00_3d5f:
+    jr   NZ, .loop_shiftRightToGetBitToRead            ;; 00:3d5d $20 $fb
+.performReadIntoC717:
     and  A, $01                                        ;; 00:3d5f $e6 $01
-    ld   [wC717], A                                    ;; 00:3d61 $ea $17 $c7
+    ld   [wBitArrayModeC717], A                        ;; 00:3d61 $ea $17 $c7
     ret                                                ;; 00:3d64 $c9
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:3d65 ????????
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:3d6d ????????

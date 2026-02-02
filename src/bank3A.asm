@@ -209,7 +209,7 @@ data_3a_41fb:
     db   $18, $11, $40, $3a, $50                       ;; 3a:427d ????w
 
 data_3a_4282:
-    dw   wHamChatIndexC715                             ;; 3a:4282 pP
+    dw   wBitArrayIndexC715                            ;; 3a:4282 pP
     db   $00, $17, $82                                 ;; 3a:4284 ..w
 
 data_3a_4287:
@@ -1967,7 +1967,7 @@ data_3a_691a:
     db   $3a, $50                                      ;; 3a:69b4 ?w
 
 data_3a_69b6:
-    dw   wHamChatIndexC715                             ;; 3a:69b6 pP
+    dw   wBitArrayIndexC715                            ;; 3a:69b6 pP
     db   $00, $01, $82                                 ;; 3a:69b8 ..w
 
 data_3a_69bb:
@@ -2682,7 +2682,7 @@ data_3a_6f80:
     db   $3a, $50                                      ;; 3a:701a ?w
 
 data_3a_701c:
-    dw   wHamChatIndexC715                             ;; 3a:701c pP
+    dw   wBitArrayIndexC715                            ;; 3a:701c pP
     db   $00, $01, $82                                 ;; 3a:701e ..w
 
 data_3a_7021:

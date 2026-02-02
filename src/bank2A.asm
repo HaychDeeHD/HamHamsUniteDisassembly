@@ -530,7 +530,7 @@ data_2a_4467:
     db   $43, $20, $18, $1c, $40, $2a, $20, $50        ;; 2a:446f ???????w
 
 data_2a_4477:
-    dw   wHamChatIndexC715                             ;; 2a:4477 pP
+    dw   wBitArrayIndexC715                            ;; 2a:4477 pP
     db   $00, $38, $82                                 ;; 2a:4479 ..w
 
 data_2a_447c:
@@ -565,7 +565,7 @@ data_2a_449d:
     db   $2a, $50                                      ;; 2a:449f .w
 
 data_2a_44a1:
-    dw   wHamChatIndexC715                             ;; 2a:44a1 pP
+    dw   wBitArrayIndexC715                            ;; 2a:44a1 pP
     db   $00, $40, $82                                 ;; 2a:44a3 ..w
 
 data_2a_44a6:
@@ -1282,7 +1282,7 @@ data_2a_49dd:
     db   $b4, $4a, $2a, $92, $00, $50                  ;; 2a:4a3d ???w.w
 
 data_2a_4a43:
-    dw   wHamChatIndexC715                             ;; 2a:4a43 pP
+    dw   wBitArrayIndexC715                            ;; 2a:4a43 pP
     db   $00, $05, $82                                 ;; 2a:4a45 ..w
 
 data_2a_4a48:
@@ -2431,7 +2431,7 @@ data_2a_5635:
     db   $18, $19, $55, $2a, $50                       ;; 2a:563d ????w
 
 data_2a_5642:
-    dw   wHamChatIndexC715                             ;; 2a:5642 pP
+    dw   wBitArrayIndexC715                            ;; 2a:5642 pP
     db   $00, $19, $82                                 ;; 2a:5644 ..w
 
 data_2a_5647:
@@ -2877,7 +2877,7 @@ data_2a_5b5e:
     db   $00, $18, $6a, $4f, $2a, $50                  ;; 2a:5ba6 ?????w
 
 data_2a_5bac:
-    dw   wHamChatIndexC715                             ;; 2a:5bac pP
+    dw   wBitArrayIndexC715                            ;; 2a:5bac pP
     db   $00, $45, $82                                 ;; 2a:5bae ..w
 
 data_2a_5bb1:
@@ -3812,7 +3812,7 @@ data_2a_6350:
     db   $2a, $50                                      ;; 2a:6352 .w
 
 data_2a_6354:
-    dw   wHamChatIndexC715                             ;; 2a:6354 pP
+    dw   wBitArrayIndexC715                            ;; 2a:6354 pP
     db   $00, $00, $82                                 ;; 2a:6356 ..w
 
 data_2a_6359:
@@ -3880,7 +3880,7 @@ data_2a_63bd:
     db   $2a, $18, $62, $5f, $2a, $50                  ;; 2a:63ed ?????w
 
 data_2a_63f3:
-    dw   wHamChatIndexC715                             ;; 2a:63f3 pP
+    dw   wBitArrayIndexC715                            ;; 2a:63f3 pP
     db   $00, $02, $82                                 ;; 2a:63f5 ..w
 
 data_2a_63f8:
@@ -3998,7 +3998,7 @@ data_2a_64e6:
     db   $18, $62, $5f, $2a, $50                       ;; 2a:64ee ????w
 
 data_2a_64f3:
-    dw   wHamChatIndexC715                             ;; 2a:64f3 pP
+    dw   wBitArrayIndexC715                            ;; 2a:64f3 pP
     db   $00, $03, $82                                 ;; 2a:64f5 ..w
 
 data_2a_64f8:
@@ -4025,7 +4025,7 @@ data_2a_650f:
     db   $2a, $50                                      ;; 2a:6511 .w
 
 data_2a_6513:
-    dw   wHamChatIndexC715                             ;; 2a:6513 pP
+    dw   wBitArrayIndexC715                            ;; 2a:6513 pP
     db   $00, $39, $82                                 ;; 2a:6515 ..w
 
 data_2a_6518:
@@ -4060,7 +4060,7 @@ data_2a_6539:
     db   $2a, $50                                      ;; 2a:653b .w
 
 data_2a_653d:
-    dw   wHamChatIndexC715                             ;; 2a:653d pP
+    dw   wBitArrayIndexC715                            ;; 2a:653d pP
     db   $00, $17, $82                                 ;; 2a:653f ..w
 
 data_2a_6542:
@@ -4353,7 +4353,7 @@ data_2a_6795:
     db   $8e, $69, $2a, $3b, $6a, $2a, $50             ;; 2a:67b7 ??????w
 
 data_2a_67be:
-    dw   wHamChatIndexC715                             ;; 2a:67be pP
+    dw   wBitArrayIndexC715                            ;; 2a:67be pP
     db   $00, $00, $82                                 ;; 2a:67c0 ..w
 
 data_2a_67c3:
@@ -4386,7 +4386,7 @@ data_2a_67e9:
     db   $2a, $50                                      ;; 2a:67eb .w
 
 data_2a_67ed:
-    dw   wHamChatIndexC715                             ;; 2a:67ed pP
+    dw   wBitArrayIndexC715                            ;; 2a:67ed pP
     db   $00, $01, $82                                 ;; 2a:67ef ..w
 
 data_2a_67f2:
@@ -4419,7 +4419,7 @@ data_2a_6818:
     db   $2a, $50                                      ;; 2a:681a .w
 
 data_2a_681c:
-    dw   wHamChatIndexC715                             ;; 2a:681c pP
+    dw   wBitArrayIndexC715                            ;; 2a:681c pP
     db   $00, $02, $82                                 ;; 2a:681e ..w
 
 data_2a_6821:
@@ -4595,7 +4595,7 @@ data_2a_6aef:
     db   $5c, $df, $6b, $2a, $50                       ;; 2a:6b67 .???w
 
 data_2a_6b6c:
-    dw   wHamChatIndexC715                             ;; 2a:6b6c pP
+    dw   wBitArrayIndexC715                            ;; 2a:6b6c pP
     db   $00, $1b, $82                                 ;; 2a:6b6e ..w
 
 data_2a_6b71:
@@ -5251,7 +5251,7 @@ data_2a_742c:
     db   $00, $18, $c6, $6d, $2a, $50                  ;; 2a:742c ?????w
 
 data_2a_7432:
-    dw   wHamChatIndexC715                             ;; 2a:7432 pP
+    dw   wBitArrayIndexC715                            ;; 2a:7432 pP
     db   $00, $17, $82                                 ;; 2a:7434 ..w
 
 data_2a_7437:

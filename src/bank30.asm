@@ -904,7 +904,7 @@ data_30_4e91:
     db   $50                                           ;; 30:4ea1 w
 
 data_30_4ea2:
-    dw   wHamChatIndexC715                             ;; 30:4ea2 pP
+    dw   wBitArrayIndexC715                            ;; 30:4ea2 pP
     db   $00, $00, $82                                 ;; 30:4ea4 ..w
 
 data_30_4ea7:
@@ -953,7 +953,7 @@ data_30_4f0c:
     db   $30, $50                                      ;; 30:4f0e .w
 
 data_30_4f10:
-    dw   wHamChatIndexC715                             ;; 30:4f10 pP
+    dw   wBitArrayIndexC715                            ;; 30:4f10 pP
     db   $00, $01, $82                                 ;; 30:4f12 ..w
 
 data_30_4f15:
@@ -1056,7 +1056,7 @@ data_30_5038:
     db   $30, $50                                      ;; 30:503a .w
 
 data_30_503c:
-    dw   wHamChatIndexC715                             ;; 30:503c pP
+    dw   wBitArrayIndexC715                            ;; 30:503c pP
     db   $00, $02, $82                                 ;; 30:503e ..w
 
 data_30_5041:
@@ -1126,7 +1126,7 @@ data_30_5101:
     db   $30, $50                                      ;; 30:5103 .w
 
 data_30_5105:
-    dw   wHamChatIndexC715                             ;; 30:5105 pP
+    dw   wBitArrayIndexC715                            ;; 30:5105 pP
     db   $00, $03, $82                                 ;; 30:5107 ..w
 
 data_30_510a:
@@ -1342,7 +1342,7 @@ data_30_5414:
     db   $30, $50                                      ;; 30:54ce ?w
 
 data_30_54d0:
-    dw   wHamChatIndexC715                             ;; 30:54d0 pP
+    dw   wBitArrayIndexC715                            ;; 30:54d0 pP
     db   $00, $06, $82                                 ;; 30:54d2 ..w
 
 data_30_54d5:
@@ -2223,7 +2223,7 @@ data_30_63ed:
     db   $50                                           ;; 30:6437 w
 
 data_30_6438:
-    dw   wHamChatIndexC715                             ;; 30:6438 pP
+    dw   wBitArrayIndexC715                            ;; 30:6438 pP
     db   $00, $11, $82                                 ;; 30:643a ..w
 
 data_30_643d:
@@ -2288,7 +2288,7 @@ data_30_649e:
     db   $62, $30, $50                                 ;; 30:64a8 ??w
 
 data_30_64ab:
-    dw   wHamChatIndexC715                             ;; 30:64ab pP
+    dw   wBitArrayIndexC715                            ;; 30:64ab pP
     db   $00, $00, $82                                 ;; 30:64ad ..w
 
 data_30_64b0:
@@ -2824,7 +2824,7 @@ data_30_6960:
     db   $01, $3f, $a0, $50                            ;; 30:69ba ...w
 
 data_30_69be:
-    dw   wHamChatIndexC715                             ;; 30:69be pP
+    dw   wBitArrayIndexC715                            ;; 30:69be pP
     db   $00, $19, $82                                 ;; 30:69c0 ..w
 
 data_30_69c3:
@@ -2919,7 +2919,7 @@ data_30_6a3e:
     db   $50                                           ;; 30:6a3e w
 
 data_30_6a3f:
-    dw   wHamChatIndexC715                             ;; 30:6a3f pP
+    dw   wBitArrayIndexC715                            ;; 30:6a3f pP
     db   $00, $10, $82                                 ;; 30:6a41 ..w
 
 data_30_6a44:
@@ -3691,7 +3691,7 @@ data_30_723b:
     db   $92, $00, $50                                 ;; 30:7273 w.w
 
 data_30_7276:
-    dw   wHamChatIndexC715                             ;; 30:7276 pP
+    dw   wBitArrayIndexC715                            ;; 30:7276 pP
     db   $00, $4c, $82                                 ;; 30:7278 ..w
 
 data_30_727b:
@@ -4272,7 +4272,7 @@ data_30_7887:
     db   $30, $50                                      ;; 30:7887 ?w
 
 data_30_7889:
-    dw   wHamChatIndexC715                             ;; 30:7889 pP
+    dw   wBitArrayIndexC715                            ;; 30:7889 pP
     db   $00, $02, $82                                 ;; 30:788b ..w
 
 data_30_788e:
@@ -4386,7 +4386,7 @@ data_30_7959:
     db   $30, $50                                      ;; 30:797b ?w
 
 data_30_797d:
-    dw   wHamChatIndexC715                             ;; 30:797d pP
+    dw   wBitArrayIndexC715                            ;; 30:797d pP
     db   $00, $03, $82                                 ;; 30:797f ..w
 
 data_30_7982:
@@ -4450,7 +4450,7 @@ data_30_79e2:
     db   $30, $88, $78, $30, $a8, $78, $30, $50        ;; 30:79e4 .??????w
 
 data_30_79ec:
-    dw   wHamChatIndexC715                             ;; 30:79ec pP
+    dw   wBitArrayIndexC715                            ;; 30:79ec pP
     db   $00, $00, $82                                 ;; 30:79ee ..w
 
 data_30_79f1:
@@ -4522,7 +4522,7 @@ data_30_7a44:
     db   $50                                           ;; 30:7a5e w
 
 data_30_7a5f:
-    dw   wHamChatIndexC715                             ;; 30:7a5f pP
+    dw   wBitArrayIndexC715                            ;; 30:7a5f pP
     db   $00, $01, $82                                 ;; 30:7a61 ..w
 
 data_30_7a64:
@@ -4583,7 +4583,7 @@ data_30_7ab0:
     db   $30, $50                                      ;; 30:7ab2 .w
 
 data_30_7ab4:
-    dw   wHamChatIndexC715                             ;; 30:7ab4 pP
+    dw   wBitArrayIndexC715                            ;; 30:7ab4 pP
     db   $00, $18, $82                                 ;; 30:7ab6 ..w
 
 data_30_7ab9:
@@ -4632,7 +4632,7 @@ data_30_7af7:
     db   $30, $50                                      ;; 30:7af9 .w
 
 data_30_7afb:
-    dw   wHamChatIndexC715                             ;; 30:7afb pP
+    dw   wBitArrayIndexC715                            ;; 30:7afb pP
     db   $00, $06, $82                                 ;; 30:7afd ..w
 
 data_30_7b00:
@@ -4913,7 +4913,7 @@ data_30_7e51:
     db   $16, $01, $3f, $a5, $50                       ;; 30:7e5b w...w
 
 data_30_7e60:
-    dw   wHamChatIndexC715                             ;; 30:7e60 pP
+    dw   wBitArrayIndexC715                            ;; 30:7e60 pP
     db   $00, $24, $82                                 ;; 30:7e62 ..w
 
 data_30_7e65:

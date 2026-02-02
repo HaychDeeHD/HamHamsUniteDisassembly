@@ -70,25 +70,55 @@ data_02_4139:
     db   $5c, $a0, $7d, $5c, $60, $7d, $5c, $20        ;; 02:4189 ????????
     db   $7d, $5c, $e0, $7c, $5c, $a0, $7c, $5c        ;; 02:4191 ?????...
     db   $60, $7c, $5c                                 ;; 02:4199 ???
-.data_02_419c:
-    db   $61                                           ;; 02:419c .
-.data_02_419d:
-    db   $62, $63, $64, $65, $66, $67, $68, $69        ;; 02:419d ..?..?.?
-    db   $6a, $6b, $6c, $6d, $6e, $6f, $70, $71        ;; 02:41a5 ?....?..
-    db   $72, $73, $74, $75, $76, $77, $78, $79        ;; 02:41ad .??.?...
-    db   $7a, $7b, $7c, $7d, $7e, $7f, $80, $05        ;; 02:41b5 ?????.??
-    db   $06, $08, $0b, $1b, $07, $09, $0f, $15        ;; 02:41bd ????????
-    db   $0a, $0c, $0d, $10, $14, $12, $1a, $1c        ;; 02:41c5 ????????
-    db   $1d, $1e, $0e, $13, $00, $11, $16, $17        ;; 02:41cd ????????
-    db   $18, $19, $1f, $1f, $1f, $1f, $1f, $e7        ;; 02:41d5 ????????
-    db   $18, $42, $02, $06, $00, $21, $07, $42        ;; 02:41dd ????????
-    db   $78, $85, $6f, $3e, $00, $8c, $67, $7e        ;; 02:41e5 ????????
-    db   $fe, $ff, $28, $10, $c5, $ea, $36, $c7        ;; 02:41ed ????????
-    db   $3e, $01, $ea, $37, $c7, $cd, $31, $42        ;; 02:41f5 ????????
-    db   $c1, $04, $18, $e1, $3e, $ff, $ea, $36        ;; 02:41fd ????????
-    db   $c7, $c9, $00, $05, $06, $07, $09, $0a        ;; 02:4205 ????????
-    db   $0b, $0e, $0f, $10, $11, $13, $14, $15        ;; 02:420d ????????
-    db   $16, $1d, $ff                                 ;; 02:4215 ???
+
+;@data format=b amount=32
+data_02_419c:
+    db   $61                                           ;; 02:419c . $00
+
+data_02_419d:
+    db   $62                                           ;; 02:419d . $01
+    db   $63                                           ;; 02:419e . $02
+    db   $64                                           ;; 02:419f ? $03
+    db   $65                                           ;; 02:41a0 . $04
+    db   $66                                           ;; 02:41a1 . $05
+    db   $67                                           ;; 02:41a2 ? $06
+    db   $68                                           ;; 02:41a3 . $07
+    db   $69                                           ;; 02:41a4 ? $08
+    db   $6a                                           ;; 02:41a5 ? $09
+    db   $6b                                           ;; 02:41a6 . $0a
+    db   $6c                                           ;; 02:41a7 . $0b
+    db   $6d                                           ;; 02:41a8 . $0c
+    db   $6e                                           ;; 02:41a9 . $0d
+    db   $6f                                           ;; 02:41aa ? $0e
+    db   $70                                           ;; 02:41ab . $0f
+    db   $71                                           ;; 02:41ac . $10
+    db   $72                                           ;; 02:41ad . $11
+    db   $73                                           ;; 02:41ae ? $12
+    db   $74                                           ;; 02:41af ? $13
+    db   $75                                           ;; 02:41b0 . $14
+    db   $76                                           ;; 02:41b1 ? $15
+    db   $77                                           ;; 02:41b2 . $16
+    db   $78                                           ;; 02:41b3 . $17
+    db   $79                                           ;; 02:41b4 . $18
+    db   $7a                                           ;; 02:41b5 ? $19
+    db   $7b                                           ;; 02:41b6 ? $1a
+    db   $7c                                           ;; 02:41b7 ? $1b
+    db   $7d                                           ;; 02:41b8 ? $1c
+    db   $7e                                           ;; 02:41b9 ? $1d
+    db   $7f                                           ;; 02:41ba . $1e
+    db   $80                                           ;; 02:41bb ? $1f
+    db   $05, $06, $08, $0b, $1b, $07, $09, $0f        ;; 02:41bc ????????
+    db   $15, $0a, $0c, $0d, $10, $14, $12, $1a        ;; 02:41c4 ????????
+    db   $1c, $1d, $1e, $0e, $13, $00, $11, $16        ;; 02:41cc ????????
+    db   $17, $18, $19, $1f, $1f, $1f, $1f, $1f        ;; 02:41d4 ????????
+    db   $e7, $18, $42, $02, $06, $00, $21, $07        ;; 02:41dc ????????
+    db   $42, $78, $85, $6f, $3e, $00, $8c, $67        ;; 02:41e4 ????????
+    db   $7e, $fe, $ff, $28, $10, $c5, $ea, $36        ;; 02:41ec ????????
+    db   $c7, $3e, $01, $ea, $37, $c7, $cd, $31        ;; 02:41f4 ????????
+    db   $42, $c1, $04, $18, $e1, $3e, $ff, $ea        ;; 02:41fc ????????
+    db   $36, $c7, $c9, $00, $05, $06, $07, $09        ;; 02:4204 ????????
+    db   $0a, $0b, $0e, $0f, $10, $11, $13, $14        ;; 02:420c ????????
+    db   $15, $16, $1d, $ff                            ;; 02:4214 ????
     ld   HL, wCA52                                     ;; 02:4218 $21 $52 $ca
     ld   B, $20                                        ;; 02:421b $06 $20
     xor  A, A                                          ;; 02:421d $af
@@ -105,12 +135,14 @@ data_02_4139:
     dec  B                                             ;; 02:422d $05
     jr   NZ, .jr_02_422c                               ;; 02:422e $20 $fc
     rst  rst_00_0028                                   ;; 02:4230 $ef
+
+UpdateCollectibleInventory:
     ld   A, [wC736]                                    ;; 02:4231 $fa $36 $c7
     cp   A, $01                                        ;; 02:4234 $fe $01
-    jr   Z, .jr_02_42a4                                ;; 02:4236 $28 $6c
+    jr   Z, .handleSeedGet                             ;; 02:4236 $28 $6c
     ld   A, [wC737]                                    ;; 02:4238 $fa $37 $c7
     bit  7, A                                          ;; 02:423b $cb $7f
-    jr   NZ, .jr_02_4261                               ;; 02:423d $20 $22
+    jr   NZ, .payCollectibleInstead                    ;; 02:423d $20 $22
     ld   A, [wC736]                                    ;; 02:423f $fa $36 $c7
     ld   HL, wCA52                                     ;; 02:4242 $21 $52 $ca
     add  A, L                                          ;; 02:4245 $85
@@ -120,18 +152,18 @@ data_02_4139:
     ld   H, A                                          ;; 02:424a $67
     ld   A, [HL]                                       ;; 02:424b $7e
     cp   A, $00                                        ;; 02:424c $fe $00
-    jr   NZ, .jr_02_4253                               ;; 02:424e $20 $03
-    call call_02_433c                                  ;; 02:4250 $cd $3c $43
-.jr_02_4253:
+    jr   NZ, .afterHandleFirstCollect                  ;; 02:424e $20 $03
+    call HandleFirstCollect                            ;; 02:4250 $cd $3c $43
+.afterHandleFirstCollect:
     ld   B, A                                          ;; 02:4253 $47
     ld   A, [wC737]                                    ;; 02:4254 $fa $37 $c7
     add  A, B                                          ;; 02:4257 $80
-    jr   C, .jr_02_429a                                ;; 02:4258 $38 $40
+    jr   C, .enforce254Max                             ;; 02:4258 $38 $40
     cp   A, $ff                                        ;; 02:425a $fe $ff
-    jr   Z, .jr_02_429a                                ;; 02:425c $28 $3c
+    jr   Z, .enforce254Max                             ;; 02:425c $28 $3c
     ld   [HL], A                                       ;; 02:425e $77
-    jr   .jr_02_4281                                   ;; 02:425f $18 $20
-.jr_02_4261:
+    jr   .afterInventoryUpdate                         ;; 02:425f $18 $20
+.payCollectibleInstead:
     ld   A, [wC736]                                    ;; 02:4261 $fa $36 $c7
     ld   HL, wCA52                                     ;; 02:4264 $21 $52 $ca
     add  A, L                                          ;; 02:4267 $85
@@ -141,51 +173,51 @@ data_02_4139:
     ld   H, A                                          ;; 02:426c $67
     ld   A, [HL]                                       ;; 02:426d $7e
     cp   A, $ff                                        ;; 02:426e $fe $ff
-    jr   Z, .jr_02_42a3                                ;; 02:4270 $28 $31
+    jr   Z, .return                                    ;; 02:4270 $28 $31
     ld   B, A                                          ;; 02:4272 $47
     ld   A, [wC737]                                    ;; 02:4273 $fa $37 $c7
     add  A, B                                          ;; 02:4276 $80
     jr   NC, .jr_02_429f                               ;; 02:4277 $30 $26
     ld   [HL], A                                       ;; 02:4279 $77
     cp   A, $00                                        ;; 02:427a $fe $00
-    jr   NZ, .jr_02_4281                               ;; 02:427c $20 $03
+    jr   NZ, .afterInventoryUpdate                     ;; 02:427c $20 $03
     call call_02_435f                                  ;; 02:427e $cd $5f $43
-.jr_02_4281:
+.afterInventoryUpdate:
     ld   A, [wC736]                                    ;; 02:4281 $fa $36 $c7
-    ld   HL, .data_02_419c                             ;; 02:4284 $21 $9c $41
+    ld   HL, data_02_419c                              ;; 02:4284 $21 $9c $41
     add  A, L                                          ;; 02:4287 $85
     ld   L, A                                          ;; 02:4288 $6f
     ld   A, $00                                        ;; 02:4289 $3e $00
     adc  A, H                                          ;; 02:428b $8c
     ld   H, A                                          ;; 02:428c $67
     ld   A, [HL]                                       ;; 02:428d $7e
-    ld   [wHamChatIndexC715], A                        ;; 02:428e $ea $15 $c7
+    ld   [wBitArrayIndexC715], A                       ;; 02:428e $ea $15 $c7
     ld   A, $01                                        ;; 02:4291 $3e $01
-    ld   [wC717], A                                    ;; 02:4293 $ea $17 $c7
-    call call_00_3d04                                  ;; 02:4296 $cd $04 $3d
+    ld   [wBitArrayModeC717], A                        ;; 02:4293 $ea $17 $c7
+    call InteractWithBitArray                          ;; 02:4296 $cd $04 $3d
     ret                                                ;; 02:4299 $c9
-.jr_02_429a:
+.enforce254Max:
     ld   A, $fe                                        ;; 02:429a $3e $fe
     ld   [HL], A                                       ;; 02:429c $77
-    jr   .jr_02_4281                                   ;; 02:429d $18 $e2
+    jr   .afterInventoryUpdate                         ;; 02:429d $18 $e2
 .jr_02_429f:
     xor  A, A                                          ;; 02:429f $af
     ld   [HL], A                                       ;; 02:42a0 $77
-    jr   .jr_02_4281                                   ;; 02:42a1 $18 $de
-.jr_02_42a3:
+    jr   .afterInventoryUpdate                         ;; 02:42a1 $18 $de
+.return:
     ret                                                ;; 02:42a3 $c9
-.jr_02_42a4:
+.handleSeedGet:
     ld   A, [wC737]                                    ;; 02:42a4 $fa $37 $c7
     bit  7, A                                          ;; 02:42a7 $cb $7f
-    jr   NZ, .jr_02_42d3                               ;; 02:42a9 $20 $28
+    jr   NZ, .loseSeedsInstead                         ;; 02:42a9 $20 $28
     ld   HL, wSeedCountCA53                            ;; 02:42ab $21 $53 $ca
     ld   L, [HL]                                       ;; 02:42ae $6e
     ld   A, [wC741]                                    ;; 02:42af $fa $41 $c7
     ld   H, A                                          ;; 02:42b2 $67
     cp   A, $ff                                        ;; 02:42b3 $fe $ff
-    jr   NZ, .jr_02_42ba                               ;; 02:42b5 $20 $03
+    jr   NZ, .afterMaybeSetHLto00                      ;; 02:42b5 $20 $03
     ld   HL, $00                                       ;; 02:42b7 $21 $00 $00
-.jr_02_42ba:
+.afterMaybeSetHLto00:
     ld   A, [wC737]                                    ;; 02:42ba $fa $37 $c7
     add  A, L                                          ;; 02:42bd $85
     ld   L, A                                          ;; 02:42be $6f
@@ -194,45 +226,46 @@ data_02_4139:
     ld   H, A                                          ;; 02:42c2 $67
     ld   A, H                                          ;; 02:42c3 $7c
     cp   A, $03                                        ;; 02:42c4 $fe $03
-    jr   C, .jr_02_42e8                                ;; 02:42c6 $38 $20
+    jr   C, .adjustSeedsBasedOnHL_andSetBitArrayIndex98 ;; 02:42c6 $38 $20
     jr   Z, .jr_02_42cc                                ;; 02:42c8 $28 $02
     jr   .jr_02_4300                                   ;; 02:42ca $18 $34
 .jr_02_42cc:
     ld   A, L                                          ;; 02:42cc $7d
     cp   A, $e8                                        ;; 02:42cd $fe $e8
-    jr   C, .jr_02_42e8                                ;; 02:42cf $38 $17
+    jr   C, .adjustSeedsBasedOnHL_andSetBitArrayIndex98 ;; 02:42cf $38 $17
     jr   .jr_02_4300                                   ;; 02:42d1 $18 $2d
-.jr_02_42d3:
+.loseSeedsInstead:
     ld   HL, wSeedCountCA53                            ;; 02:42d3 $21 $53 $ca
     ld   L, [HL]                                       ;; 02:42d6 $6e
     ld   A, [wC741]                                    ;; 02:42d7 $fa $41 $c7
     ld   H, A                                          ;; 02:42da $67
     cp   A, $ff                                        ;; 02:42db $fe $ff
-    jr   Z, .jr_02_430a                                ;; 02:42dd $28 $2b
+    jr   Z, .return2                                   ;; 02:42dd $28 $2b
     ld   A, [wC737]                                    ;; 02:42df $fa $37 $c7
     ld   C, A                                          ;; 02:42e2 $4f
     ld   B, $ff                                        ;; 02:42e3 $06 $ff
     add  HL, BC                                        ;; 02:42e5 $09
     jr   NC, .jr_02_4305                               ;; 02:42e6 $30 $1d
-.jr_02_42e8:
+.adjustSeedsBasedOnHL_andSetBitArrayIndex98:
     ld   A, H                                          ;; 02:42e8 $7c
     ld   [wC741], A                                    ;; 02:42e9 $ea $41 $c7
     ld   A, L                                          ;; 02:42ec $7d
     ld   [wSeedCountCA53], A                           ;; 02:42ed $ea $53 $ca
-    ld   HL, .data_02_419d                             ;; 02:42f0 $21 $9d $41
+    ld   HL, data_02_419d                              ;; 02:42f0 $21 $9d $41
+; This is always index 98 (decimal)
     ld   A, [HL]                                       ;; 02:42f3 $7e
-    ld   [wHamChatIndexC715], A                        ;; 02:42f4 $ea $15 $c7
+    ld   [wBitArrayIndexC715], A                       ;; 02:42f4 $ea $15 $c7
     ld   A, $01                                        ;; 02:42f7 $3e $01
-    ld   [wC717], A                                    ;; 02:42f9 $ea $17 $c7
-    call call_00_3d04                                  ;; 02:42fc $cd $04 $3d
+    ld   [wBitArrayModeC717], A                        ;; 02:42f9 $ea $17 $c7
+    call InteractWithBitArray                          ;; 02:42fc $cd $04 $3d
     ret                                                ;; 02:42ff $c9
 .jr_02_4300:
     ld   HL, $3e7                                      ;; 02:4300 $21 $e7 $03
-    jr   .jr_02_42e8                                   ;; 02:4303 $18 $e3
+    jr   .adjustSeedsBasedOnHL_andSetBitArrayIndex98   ;; 02:4303 $18 $e3
 .jr_02_4305:
     ld   HL, $00                                       ;; 02:4305 $21 $00 $00
-    jr   .jr_02_42e8                                   ;; 02:4308 $18 $de
-.jr_02_430a:
+    jr   .adjustSeedsBasedOnHL_andSetBitArrayIndex98   ;; 02:4308 $18 $de
+.return2:
     ret                                                ;; 02:430a $c9
     ld   A, [wC736]                                    ;; 02:430b $fa $36 $c7
     cp   A, $01                                        ;; 02:430e $fe $01
@@ -265,7 +298,7 @@ data_02_4139:
     xor  A, A                                          ;; 02:4339 $af
     jr   .jr_02_4321                                   ;; 02:433a $18 $e5
 
-call_02_433c:
+HandleFirstCollect:
     push HL                                            ;; 02:433c $e5
     push AF                                            ;; 02:433d $f5
     ld   A, [wC736]                                    ;; 02:433e $fa $36 $c7
@@ -2528,11 +2561,11 @@ call_02_6377:
     adc  A, H                                          ;; 02:6384 $8c
     ld   H, A                                          ;; 02:6385 $67
     ld   A, [HL]                                       ;; 02:6386 $7e
-    ld   [wHamChatIndexC715], A                        ;; 02:6387 $ea $15 $c7
+    ld   [wBitArrayIndexC715], A                       ;; 02:6387 $ea $15 $c7
     ld   A, $ff                                        ;; 02:638a $3e $ff
-    ld   [wC717], A                                    ;; 02:638c $ea $17 $c7
-    call call_00_3d04                                  ;; 02:638f $cd $04 $3d
-    ld   A, [wC717]                                    ;; 02:6392 $fa $17 $c7
+    ld   [wBitArrayModeC717], A                        ;; 02:638c $ea $17 $c7
+    call InteractWithBitArray                          ;; 02:638f $cd $04 $3d
+    ld   A, [wBitArrayModeC717]                        ;; 02:6392 $fa $17 $c7
     pop  BC                                            ;; 02:6395 $c1
     add  A, C                                          ;; 02:6396 $81
     ld   C, A                                          ;; 02:6397 $4f
@@ -3274,13 +3307,17 @@ call_02_659f:
     db   $11, $e0, $ff, $19, $d1, $1a, $13, $d5        ;; 02:6dc6 ????????
     db   $77, $11, $21, $00, $19, $d1, $0d, $20        ;; 02:6dce ????????
     db   $eb, $c9, $c9                                 ;; 02:6dd6 ???
+
+; Obtains in the dictionary.
+ObtainHamChatFromC715:
     ld_long_load A, rSVBK                              ;; 02:6dd9 $fa $70 $ff
     push AF                                            ;; 02:6ddc $f5
     ld   A, $02                                        ;; 02:6ddd $3e $02
     ld_long_store rSVBK, A                             ;; 02:6ddf $ea $70 $ff
-    ld   A, [wHamChatIndexC715]                        ;; 02:6de2 $fa $15 $c7
+    ld   A, [wBitArrayIndexC715]                       ;; 02:6de2 $fa $15 $c7
     ld   C, A                                          ;; 02:6de5 $4f
     ld   B, $00                                        ;; 02:6de6 $06 $00
+; Bit stuff mults Index by 2
     sla  C                                             ;; 02:6de8 $cb $21
     rl   B                                             ;; 02:6dea $cb $10
     ld   HL, wHamChatDictArrayC9A3                     ;; 02:6dec $21 $a3 $c9
@@ -3292,20 +3329,26 @@ call_02_659f:
     ld   H, A                                          ;; 02:6df4 $67
     ld   A, [HL]                                       ;; 02:6df5 $7e
     cp   A, $ff                                        ;; 02:6df6 $fe $ff
-    jr   NZ, .jr_02_6e12                               ;; 02:6df8 $20 $18
+; If you have the chat already, jump
+    jr   NZ, .alreadyHadChat                           ;; 02:6df8 $20 $18
+; Write the collection order to the dictionary slot.
     ld   A, [wNumHamChatsCA45]                         ;; 02:6dfa $fa $4f $ca
     ld   [HL], A                                       ;; 02:6dfd $77
     inc  A                                             ;; 02:6dfe $3c
     ld   [wNumHamChatsCA45], A                         ;; 02:6dff $ea $4f $ca
-    ld   A, [wHamChatIndexC715]                        ;; 02:6e02 $fa $15 $c7
+    ld   A, [wBitArrayIndexC715]                       ;; 02:6e02 $fa $15 $c7
     ld   [wHamChatIndexD0F8], A                        ;; 02:6e05 $ea $f8 $d0
     ld   A, $ff                                        ;; 02:6e08 $3e $ff
     ld   [wSomethingWithHamchatsD0FD], A               ;; 02:6e0a $ea $fd $d0
     pop  AF                                            ;; 02:6e0d $f1
     ld_long_store rSVBK, A                             ;; 02:6e0e $ea $70 $ff
     ret                                                ;; 02:6e11 $c9
-.jr_02_6e12:
-    ld   A, [wHamChatIndexC715]                        ;; 02:6e12 $fa $15 $c7
+; If we already had the chat, we nuke the dict and call some stuff.
+; Looks like a complete freakout?
+; TODO Test doing this.
+; Maybe it's just reloading from backup?
+.alreadyHadChat:
+    ld   A, [wBitArrayIndexC715]                       ;; 02:6e12 $fa $15 $c7
     ld   [wHamChatIndexD0F8], A                        ;; 02:6e15 $ea $f8 $d0
     ld   A, $fe                                        ;; 02:6e18 $3e $fe
     ld   [wSomethingWithHamchatsD0FD], A               ;; 02:6e1a $ea $fd $d0
@@ -3313,13 +3356,14 @@ call_02_659f:
     ld_long_store rSVBK, A                             ;; 02:6e1e $ea $70 $ff
     ret                                                ;; 02:6e21 $c9
     ld   A, $ff                                        ;; 02:6e22 $3e $ff
+; 0x56 == 86, the number of HamChats
     ld   B, $56                                        ;; 02:6e24 $06 $56
     ld   HL, wHamChatDictArrayC9A3                     ;; 02:6e26 $21 $a3 $c9
-.jr_02_6e29:
+.loop_overwriteWholeDictWithFF:
     ld   [HL+], A                                      ;; 02:6e29 $22
     ld   [HL+], A                                      ;; 02:6e2a $22
     dec  B                                             ;; 02:6e2b $05
-    jr   NZ, .jr_02_6e29                               ;; 02:6e2c $20 $fb
+    jr   NZ, .loop_overwriteWholeDictWithFF            ;; 02:6e2c $20 $fb
     xor  A, A                                          ;; 02:6e2e $af
     ld   [wNumHamChatsCA45], A                         ;; 02:6e2f $ea $4f $ca
     ld   [wCA50], A                                    ;; 02:6e32 $ea $50 $ca
@@ -4150,11 +4194,11 @@ call_02_750d:
     ld   A, $02                                        ;; 02:7810 $3e $02
     ld_long_store rSVBK, A                             ;; 02:7812 $ea $70 $ff
     ld   A, $4e                                        ;; 02:7815 $3e $4e
-    ld   [wHamChatIndexC715], A                        ;; 02:7817 $ea $15 $c7
+    ld   [wBitArrayIndexC715], A                       ;; 02:7817 $ea $15 $c7
     ld   A, $ff                                        ;; 02:781a $3e $ff
-    ld   [wC717], A                                    ;; 02:781c $ea $17 $c7
-    call call_00_3d04                                  ;; 02:781f $cd $04 $3d
-    ld   A, [wC717]                                    ;; 02:7822 $fa $17 $c7
+    ld   [wBitArrayModeC717], A                        ;; 02:781c $ea $17 $c7
+    call InteractWithBitArray                          ;; 02:781f $cd $04 $3d
+    ld   A, [wBitArrayModeC717]                        ;; 02:7822 $fa $17 $c7
     ld   B, $05                                        ;; 02:7825 $06 $05
     add  A, B                                          ;; 02:7827 $80
     ld   C, A                                          ;; 02:7828 $4f
@@ -4413,13 +4457,13 @@ call_02_78df:
     ld   A, [HL]                                       ;; 02:7a5d $7e
     ld   B, A                                          ;; 02:7a5e $47
     ld   A, $4e                                        ;; 02:7a5f $3e $4e
-    ld   [wHamChatIndexC715], A                        ;; 02:7a61 $ea $15 $c7
+    ld   [wBitArrayIndexC715], A                       ;; 02:7a61 $ea $15 $c7
     ld   A, $ff                                        ;; 02:7a64 $3e $ff
-    ld   [wC717], A                                    ;; 02:7a66 $ea $17 $c7
+    ld   [wBitArrayModeC717], A                        ;; 02:7a66 $ea $17 $c7
     push BC                                            ;; 02:7a69 $c5
-    call call_00_3d04                                  ;; 02:7a6a $cd $04 $3d
+    call InteractWithBitArray                          ;; 02:7a6a $cd $04 $3d
     pop  BC                                            ;; 02:7a6d $c1
-    ld   A, [wC717]                                    ;; 02:7a6e $fa $17 $c7
+    ld   A, [wBitArrayModeC717]                        ;; 02:7a6e $fa $17 $c7
     cp   A, $01                                        ;; 02:7a71 $fe $01
     ld   A, B                                          ;; 02:7a73 $78
     jr   Z, .jr_02_7a7f                                ;; 02:7a74 $28 $09
@@ -4540,7 +4584,7 @@ call_02_7b34:
     ld_long_store rSVBK, A                             ;; 02:7bf5 $ea $70 $ff
     call call_02_7b34                                  ;; 02:7bf8 $cd $34 $7b
     ld   E, $00                                        ;; 02:7bfb $1e $00
-.jr_02_7bfd:
+.loop_allWordsInDict:
     ld   C, E                                          ;; 02:7bfd $4b
     ld   B, $00                                        ;; 02:7bfe $06 $00
     sla  C                                             ;; 02:7c00 $cb $21
@@ -4554,7 +4598,7 @@ call_02_7b34:
     ld   H, A                                          ;; 02:7c0c $67
     ld   A, [HL]                                       ;; 02:7c0d $7e
     cp   A, $ff                                        ;; 02:7c0e $fe $ff
-    jr   Z, .jr_02_7c23                                ;; 02:7c10 $28 $11
+    jr   Z, .continue                                  ;; 02:7c10 $28 $11
     ld   C, A                                          ;; 02:7c12 $4f
     ld   A, [wNumHamChatsCA45]                         ;; 02:7c13 $fa $4f $ca
     sub  A, C                                          ;; 02:7c16 $91
@@ -4567,11 +4611,11 @@ call_02_7b34:
     ld   H, A                                          ;; 02:7c20 $67
     ld   A, E                                          ;; 02:7c21 $7b
     ld   [HL], A                                       ;; 02:7c22 $77
-.jr_02_7c23:
+.continue:
     ld   A, $56                                        ;; 02:7c23 $3e $56
     inc  E                                             ;; 02:7c25 $1c
     cp   A, E                                          ;; 02:7c26 $bb
-    jr   NZ, .jr_02_7bfd                               ;; 02:7c27 $20 $d4
+    jr   NZ, .loop_allWordsInDict                      ;; 02:7c27 $20 $d4
     pop  AF                                            ;; 02:7c29 $f1
     ld_long_store rSVBK, A                             ;; 02:7c2a $ea $70 $ff
     ret                                                ;; 02:7c2d $c9

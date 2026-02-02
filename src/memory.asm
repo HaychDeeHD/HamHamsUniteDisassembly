@@ -93,8 +93,7 @@ wDunnoCheckBeforeConsultingJumpArrayC323:
 
 wReturnAddressC324:
     ds 1                                               ;; c324
-
-wC325:
+.high:
     ds 1                                               ;; c325
 
 wLengthOfPreviousInstructionC326:
@@ -207,10 +206,10 @@ wC35D:
 
 ; The last bit of this is used as a 9th bit when combined with the low bits.
 ; The other bits in this number are used to switch between handlers (Op 16).
+; These 9 bits are also sometimes used as an index for the PlayerState.
 wBitArrayIndexC35E:
     ds 1                                               ;; c35e
-
-wC35F:
+.low:
     ds 1                                               ;; c35f
 
 wC360:
@@ -875,10 +874,10 @@ wC6B5:
 wC6B6:
     ds 95                                              ;; c6b6
 
-wHamChatIndexC715:
+wBitArrayIndexC715:
     ds 2                                               ;; c715
 
-wC717:
+wBitArrayModeC717:
     ds 1                                               ;; c717
 
 ; -------------------------

@@ -162,7 +162,7 @@ call_04_40fd:
 call_04_4137:
     push DE                                            ;; 04:4137 $d5
     ld   E, A                                          ;; 04:4138 $5f
-    ld   A, [wC35F]                                    ;; 04:4139 $fa $5f $c3
+    ld   A, [wBitArrayIndexC35E.low]                   ;; 04:4139 $fa $5f $c3
 .jr_04_413c:
     and  A, A                                          ;; 04:413c $a7
     jr   Z, .jr_04_4148                                ;; 04:413d $28 $09
