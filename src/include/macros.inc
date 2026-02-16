@@ -2,6 +2,11 @@ MACRO Op1C_TableJump
 db $1c
 db \1
 ENDM
+MACRO Op82_Run
+db $82
+dw \1
+db BANK(\1)
+ENDM
 MACRO SCRIPT_POINTER
 dw \1
 db BANK(\1)

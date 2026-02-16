@@ -6477,6 +6477,8 @@ call_01_7284:
     ld   A, [DE]                                       ;; 01:7413 $1a
     ld   [HL], A                                       ;; 01:7414 $77
     ret                                                ;; 01:7415 $c9
+
+call_01_7416:
     ld   A, [wArgAddressC6A0.bank]                     ;; 01:7416 $fa $a2 $c6
     ld   [wC65C], A                                    ;; 01:7419 $ea $5c $c6
     ld   A, [wLengthOfPreviousInstructionC326]         ;; 01:741c $fa $26 $c3
@@ -6562,13 +6564,15 @@ call_01_7284:
     ret                                                ;; 01:74b0 $c9
     ld   A, [wC314]                                    ;; 01:74b1 $fa $14 $c3
     ld   B, A                                          ;; 01:74b4 $47
-    jr   .jr_01_74d2                                   ;; 01:74b5 $18 $1b
+    jr   jr_01_74d2                                    ;; 01:74b5 $18 $1b
+
+call_01_74b7:
     ld   A, [wC316]                                    ;; 01:74b7 $fa $16 $c3
     ld   B, A                                          ;; 01:74ba $47
-    jr   .jr_01_74d2                                   ;; 01:74bb $18 $15
+    jr   jr_01_74d2                                    ;; 01:74bb $18 $15
     ld   A, [wC317]                                    ;; 01:74bd $fa $17 $c3
     ld   B, A                                          ;; 01:74c0 $47
-    jr   .jr_01_74d2                                   ;; 01:74c1 $18 $0f
+    jr   jr_01_74d2                                    ;; 01:74c1 $18 $0f
     ld   A, [wC314]                                    ;; 01:74c3 $fa $14 $c3
     and  A, $0f                                        ;; 01:74c6 $e6 $0f
     ld   B, A                                          ;; 01:74c8 $47
@@ -6576,8 +6580,9 @@ call_01_7284:
     and  A, $f0                                        ;; 01:74cc $e6 $f0
     or   A, B                                          ;; 01:74ce $b0
     ld   B, A                                          ;; 01:74cf $47
-    jr   .jr_01_74d2                                   ;; 01:74d0 $18 $00
-.jr_01_74d2:
+    jr   jr_01_74d2                                    ;; 01:74d0 $18 $00
+
+jr_01_74d2:
     ld   C, $00                                        ;; 01:74d2 $0e $00
     ld   A, [wC31D]                                    ;; 01:74d4 $fa $1d $c3
     and  A, B                                          ;; 01:74d7 $a0
