@@ -989,7 +989,10 @@ wBitArrayC918:
     ds 48                                              ;; c918
 
 wC948:
-    ds 16                                              ;; c948
+    ds 3                                               ;; c948
+
+wC94B:
+    ds 13                                              ;; c94b
 
 wC958:
     ds 3                                               ;; c958
