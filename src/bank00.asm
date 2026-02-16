@@ -4002,7 +4002,7 @@ Op08:
     call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:1b52 $cd $3f $1b
     jp   C, CallIfC324to5HadData                       ;; 00:1b55 $da $b2 $1b
     ld   A, $01                                        ;; 00:1b58 $3e $01
-    jr   Op04and08elseCase                                    ;; 00:1b5a $18 $08
+    jr   Op04and08elseCase                             ;; 00:1b5a $18 $08
 
 Op04_1b5c:
     call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:1b5c $cd $3f $1b
@@ -4011,7 +4011,7 @@ Op04_1b5c:
 
 Op04and08elseCase:
     ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:1b64 $ea $8a $c3
-    ; 1c48 --> prepareTextboxClose1C48:
+; 1c48 --> prepareTextboxClose1C48:
     ld   A, $48                                        ;; 00:1b67 $3e $48
     ld   [wReturnAddressC324], A                       ;; 00:1b69 $ea $24 $c3
     ld   A, $1c                                        ;; 00:1b6c $3e $1c
@@ -4030,7 +4030,7 @@ Op0A:
     call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:1b8a $cd $3f $1b
     jp   C, CallIfC324to5HadData                       ;; 00:1b8d $da $b2 $1b
     ld   A, $01                                        ;; 00:1b90 $3e $01
-    jr   Op06and0AelseCase                                    ;; 00:1b92 $18 $08
+    jr   Op06and0AelseCase                             ;; 00:1b92 $18 $08
 
 Op06_waitAdvanceText:
     call ReturnWithCarryFlagSetIfC324to5HasData        ;; 00:1b94 $cd $3f $1b
@@ -4124,7 +4124,8 @@ CallIfC324to5HadData:
     ld   A, [wReturnAddressC324.high]                  ;; 00:1c43 $fa $25 $c3
     ld   H, A                                          ;; 00:1c46 $67
     jp   HL                                            ;; 00:1c47 $e9
-    ; 1c48 Jumped to with wReturnAddressC324
+
+; 1c48 Jumped to with wReturnAddressC324
 prepareTextboxClose1C48:
     xor  A, A                                          ;; 00:1c48 $af
     ld   [wC32D], A                                    ;; 00:1c49 $ea $2d $c3
