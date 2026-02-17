@@ -5,7 +5,8 @@ from romInfo import RomInfo
 
 def maybeCreateScriptBlock(memory, addr):
     opcode = memory.byte(addr)
-    if opcode in OPBLOCKS:
+    # If this is an opcode AND it's not already made into some Block.
+    if opcode in OPBLOCKS and memory[addr] is None:
         OPBLOCKS[opcode](memory, addr)
 
 @annotation(priority=1)
