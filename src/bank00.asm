@@ -1177,7 +1177,7 @@ JumpUsingOpTableUsingIndexFromC322:
     dw   Op12                                          ;; 00:098c ?? $09
     dw   Op14                                          ;; 00:098e pP $0a
     dw   Op16_RunSubOps                                ;; 00:0990 pP $0b
-    dw   Op18_Jump                                     ;; 00:0992 pP $0c
+    dw   Op18_Jump_Handler                             ;; 00:0992 pP $0c
     dw   Op1A                                          ;; 00:0994 pP $0d
     dw   Op1C_ExecuteScriptAtAddressC6A0_IndexC53A     ;; 00:0996 pP $0e
     dw   Op1E_Call                                     ;; 00:0998 pP $0f
@@ -1679,7 +1679,7 @@ addressTableJumpHelper:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0cf8 $ea $26 $c3
     ret                                                ;; 00:0cfb $c9
 
-Op18_Jump:
+Op18_Jump_Handler:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0cfc $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0cff $2a
     ld   [wArgAddressC6A0], A                          ;; 00:0d00 $ea $a0 $c6

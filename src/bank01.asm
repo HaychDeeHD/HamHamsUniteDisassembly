@@ -6432,6 +6432,8 @@ call_01_7284:
     and  A, $7f                                        ;; 01:73c8 $e6 $7f
     ld   [BC], A                                       ;; 01:73ca $02
     ret                                                ;; 01:73cb $c9
+
+call_01_73cc:
     ld   A, [wArgAddressC6A0.bank]                     ;; 01:73cc $fa $a2 $c6
     ld   [wC53E], A                                    ;; 01:73cf $ea $3e $c5
     ld   A, [wLengthOfPreviousInstructionC326]         ;; 01:73d2 $fa $26 $c3

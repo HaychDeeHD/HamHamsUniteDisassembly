@@ -7,8 +7,11 @@ INCLUDE "include/constants.inc"
 
 SECTION "bank28", ROMX[$4000], BANK[$28]
 
+;@hamscript
 data_28_4000:
-    db   $16, $01, $3f, $4f, $1e                       ;; 28:4000 w...w
+    Op16_SubOps 1                                      ;; 28:4000 $16 $01
+    SubOp_SetFlag wC941, 7                             ;; 28:4002 $3f $4f
+    db   $1e                                           ;; 28:4004 w
 
 data_28_4005:
     dw   $433e                                         ;; 28:4005 wW
@@ -16,15 +19,14 @@ data_28_4005:
 
 data_28_4009:
     dw   $4099                                         ;; 28:4009 wW
-    db   $28, $16, $01, $5e, $03, $82                  ;; 28:400b .w...w
+    db   $28                                           ;; 28:400b .
 
-data_28_4011:
-    dw   data_28_73cc                                  ;; 28:4011 pP
-    db   $01, $82                                      ;; 28:4013 .w
-
-data_28_4015:
-    dw   data_28_7416                                  ;; 28:4015 pP
-    db   $01, $50                                      ;; 28:4017 .w
+data_28_400c:
+    Op16_SubOps 1                                      ;; 28:400c $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 28:400e $5e $03
+    Op82_Run call_01_73cc                              ;; 28:4010 $82 $cc $73 $01
+    Op82_Run call_01_7416                              ;; 28:4014 $82 $16 $74 $01
+    db   $50                                           ;; 28:4018 w
 
 data_28_4019:
     dw   wC31D                                         ;; 28:4019 pP
@@ -345,8 +347,9 @@ data_28_42dd:
     dw   data_28_407f                                  ;; 28:42dd pP
     db   $10, $4e, $06, $01                            ;; 28:42df .w..
 
+;@data format=w
 data_28_42e3:
-    dw   data_28_4011 + $01                            ;; 28:42e3 pP
+    dw   $4012                                         ;; 28:42e3 pP
     db   $13, $4e, $07, $01                            ;; 28:42e5 .w..
 
 data_28_42e9:
@@ -527,11 +530,8 @@ data_28_4424:
     SCRIPT_POINTER data_28_4067                        ;; 28:4431 $67 $40 $28
     SCRIPT_POINTER data_28_407e                        ;; 28:4434 $7e $40 $28
     SCRIPT_POINTER data_28_443e                        ;; 28:4437 $3e $44 $28
-    db   $18                                           ;; 28:443a w
-
-data_28_443b:
-    dw   $400c                                         ;; 28:443b wW
-    db   $28                                           ;; 28:443d .
+;@hamscript
+    Op18_Jump data_28_400c                             ;; 28:443a $18 $0c $40 $28
 
 data_28_443e:
     Op82_Run call_01_7416                              ;; 28:443e $82 $16 $74 $01
