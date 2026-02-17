@@ -170,7 +170,7 @@ class Op18Block(Block):
         bankNum = memory.byte(addr + 3)
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "data")
-        # Everything pointed to is a script instruction.
+        # The address pointed to is a script instruction.
         maybeCreateScriptBlock(bank, pointer)
 
     def export(self, file):
@@ -180,9 +180,32 @@ class Op18Block(Block):
         label = bank.getLabel(pointer)
         file.asmLine(4, "Op18_Jump", str(label))
 
+class Op1EBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=4)
+        RomInfo.macros["Op1E_Call"] = "db $1e\ndw \\1\ndb BANK(\\1)"
+
+        pointer = memory.word(addr + 1)
+        bankNum = memory.byte(addr + 3)
+        bank = RomInfo.romBank(bankNum)
+        bank.addAutoLabel(pointer, None, "data")
+        # The address pointed to is a script instruction.
+        maybeCreateScriptBlock(bank, pointer)
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        pointer = self.memory.word(file.addr + 1)
+        bankNum = self.memory.byte(file.addr + 3)
+        bank = RomInfo.romBank(bankNum)
+        label = bank.getLabel(pointer)
+        file.asmLine(4, "Op1E_Call", str(label))
+
+
 OPBLOCKS = {
     0x16: Op16Block,
     0x18: Op18Block,
     0x1C: Op1CBlock,
+    0x1E: Op1EBlock,
     0x82: Op82Block,
 }

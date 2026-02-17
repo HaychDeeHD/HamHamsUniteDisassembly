@@ -3888,7 +3888,7 @@ data_1f_749f:
     db   $1f, $68, $01                                 ;; 1f:74a1 .w.
 
 data_1f_74a4:
-    dw   $c763                                         ;; 1f:74a4 pP
+    dw   wC763                                         ;; 1f:74a4 pP
 
 data_1f_74a6:
     dw   wCFFA                                         ;; 1f:74a6 pP
@@ -4056,7 +4056,7 @@ data_1f_772d:
     db   $1f, $68, $01                                 ;; 1f:772f .w.
 
 data_1f_7732:
-    dw   $c763                                         ;; 1f:7732 pP
+    dw   wC763                                         ;; 1f:7732 pP
 
 data_1f_7734:
     dw   wCFFA                                         ;; 1f:7734 pP

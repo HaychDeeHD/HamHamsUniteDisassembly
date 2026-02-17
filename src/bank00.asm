@@ -1180,7 +1180,7 @@ JumpUsingOpTableUsingIndexFromC322:
     dw   Op18_Jump_Handler                             ;; 00:0992 pP $0c
     dw   Op1A                                          ;; 00:0994 pP $0d
     dw   Op1C_ExecuteScriptAtAddressC6A0_IndexC53A     ;; 00:0996 pP $0e
-    dw   Op1E_Call                                     ;; 00:0998 pP $0f
+    dw   Op1E_Call_Handler                             ;; 00:0998 pP $0f
     dw   Op20_PopFromCustomStack_Return                ;; 00:099a pP $10
     dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:099c ?? $11
     dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:099e ?? $12
@@ -1528,7 +1528,7 @@ Op46:
     ld   [wOpcodeC322], A                              ;; 00:0beb $ea $22 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0bee $c3 $14 $0a
 
-Op1E_Call:
+Op1E_Call_Handler:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0bf1 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0bf4 $2a
     ld   [wC356], A                                    ;; 00:0bf5 $ea $56 $c3

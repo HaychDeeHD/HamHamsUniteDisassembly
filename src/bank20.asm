@@ -392,11 +392,11 @@ data_20_42b7:
 
 data_20_42bb:
     dw   $615d                                         ;; 20:42bb wW
-    db   $04, $20, $1e                                 ;; 20:42bd .ww
+    db   $04, $20                                      ;; 20:42bd .w
 
-data_20_42c0:
-    dw   $6acd                                         ;; 20:42c0 wW
-    db   $1d, $4e, $04, $01                            ;; 20:42c2 .w..
+data_20_42bf:
+    Op1E_Call data_1d_6acd                             ;; 20:42bf $1e $cd $6a $1d
+    db   $4e, $04, $01                                 ;; 20:42c3 w..
 
 data_20_42c6:
     dw   data_20_4073                                  ;; 20:42c6 pP
@@ -426,11 +426,11 @@ data_20_42ef:
 
 data_20_42f3:
     dw   $615d                                         ;; 20:42f3 wW
-    db   $04, $20, $1e                                 ;; 20:42f5 .ww
+    db   $04, $20                                      ;; 20:42f5 .w
 
-data_20_42f8:
-    dw   $42bf                                         ;; 20:42f8 wW
-    db   $20, $4a, $3e, $16, $35, $5b, $10             ;; 20:42fa .www...
+data_20_42f7:
+    Op1E_Call data_20_42bf                             ;; 20:42f7 $1e $bf $42 $20
+    db   $4a, $3e, $16, $35, $5b, $10                  ;; 20:42fb www...
 
 data_20_4301:
     dw   $42fb                                         ;; 20:4301 wW

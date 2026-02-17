@@ -2325,7 +2325,7 @@ data_1c_6dbf:
     db   $00, $90, $68, $01                            ;; 1c:6dc1 ..w.
 
 data_1c_6dc5:
-    dw   $c763                                         ;; 1c:6dc5 pP
+    dw   wC763                                         ;; 1c:6dc5 pP
 
 data_1c_6dc7:
     dw   wD20E                                         ;; 1c:6dc7 pP

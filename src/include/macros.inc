@@ -11,6 +11,11 @@ MACRO Op1C_TableJump
 db $1c
 db \1
 ENDM
+MACRO Op1E_Call
+db $1e
+dw \1
+db BANK(\1)
+ENDM
 MACRO Op82_Run
 db $82
 dw \1

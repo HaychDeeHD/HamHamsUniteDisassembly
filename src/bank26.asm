@@ -1619,7 +1619,7 @@ data_26_52e5:
     db   $00, $68, $01                                 ;; 26:52e7 .w.
 
 data_26_52ea:
-    dw   $c763                                         ;; 26:52ea pP
+    dw   wC763                                         ;; 26:52ea pP
 
 data_26_52ec:
     dw   wSomethingWithHamchatsD0FD                    ;; 26:52ec pP
@@ -1627,7 +1627,7 @@ data_26_52ec:
     db   $68, $01                                      ;; 26:52f6 w.
 
 data_26_52f8:
-    dw   $c763                                         ;; 26:52f8 pP
+    dw   wC763                                         ;; 26:52f8 pP
 
 data_26_52fa:
     dw   wSomethingWithHamchatsD0FD                    ;; 26:52fa pP
@@ -1642,7 +1642,7 @@ data_26_5305:
     db   $02, $ff, $68, $01                            ;; 26:5307 ..w.
 
 data_26_530b:
-    dw   $c763                                         ;; 26:530b pP
+    dw   wC763                                         ;; 26:530b pP
 
 data_26_530d:
     dw   wHamChatIndexD0F8                             ;; 26:530d pP
@@ -1681,7 +1681,7 @@ data_26_5338:
     db   $04, $68, $01                                 ;; 26:533a .w.
 
 data_26_533d:
-    dw   $c763                                         ;; 26:533d pP
+    dw   wC763                                         ;; 26:533d pP
 
 data_26_533f:
     dw   wNumHamChatsCA45                              ;; 26:533f pP
@@ -1885,7 +1885,7 @@ data_26_559e:
     db   $1c, $01, $c2, $55, $26, $68, $01             ;; 26:55a0 ww???w.
 
 data_26_55a7:
-    dw   $c763                                         ;; 26:55a7 pP
+    dw   wC763                                         ;; 26:55a7 pP
 
 data_26_55a9:
     dw   wNumHamChatsCA45                              ;; 26:55a9 pP

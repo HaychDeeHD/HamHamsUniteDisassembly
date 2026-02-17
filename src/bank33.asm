@@ -731,19 +731,15 @@ data_33_46fe:
 data_33_48fe:
     db   $1e, $c8, $77, $1c, $20, $4c, $1a, $01        ;; 33:48fe ????????
     db   $04, $30, $00, $48, $00, $22, $57, $15        ;; 33:4906 ????????
-    db   $20, $16, $01, $5e, $01, $82                  ;; 33:490e ?w...w
+    db   $20                                           ;; 33:490e ?
 
-data_33_4914:
-    dw   data_33_754a                                  ;; 33:4914 pP
-    db   $01, $82                                      ;; 33:4916 .w
-
-data_33_4918:
-    dw   data_33_73f8                                  ;; 33:4918 pP
-    db   $01, $82                                      ;; 33:491a .w
-
-data_33_491c:
-    dw   data_33_73cc                                  ;; 33:491c pP
-    db   $01, $14, $01, $6b, $41                       ;; 33:491e .w...
+data_33_490f:
+    Op16_SubOps 1                                      ;; 33:490f $16 $01
+    SubOp_ClearFlag wBitArrayC918, 1                   ;; 33:4911 $5e $01
+    Op82_Run call_01_754a                              ;; 33:4913 $82 $4a $75 $01
+    Op82_Run call_01_73f8                              ;; 33:4917 $82 $f8 $73 $01
+    Op82_Run call_01_73cc                              ;; 33:491b $82 $cc $73 $01
+    db   $14, $01, $6b, $41                            ;; 33:491f w...
 
 data_33_4923:
     dw   $4bec                                         ;; 33:4923 wW
@@ -820,7 +816,7 @@ data_33_498f:
     db   $68, $01                                      ;; 33:4991 w.
 
 data_33_4993:
-    dw   $c763                                         ;; 33:4993 pP
+    dw   wC763                                         ;; 33:4993 pP
 
 data_33_4995:
     dw   wOp1CScriptTableIndexC53A                     ;; 33:4995 pP
@@ -873,7 +869,7 @@ data_33_49d8:
     db   $68, $01                                      ;; 33:49da w.
 
 data_33_49dc:
-    dw   $c763                                         ;; 33:49dc pP
+    dw   wC763                                         ;; 33:49dc pP
 
 data_33_49de:
     dw   wOp1CScriptTableIndexC53A                     ;; 33:49de pP
@@ -927,7 +923,7 @@ data_33_4a26:
     db   $68, $01                                      ;; 33:4a28 w.
 
 data_33_4a2a:
-    dw   $c763                                         ;; 33:4a2a pP
+    dw   wC763                                         ;; 33:4a2a pP
 
 data_33_4a2c:
     dw   wOp1CScriptTableIndexC53A                     ;; 33:4a2c pP
@@ -979,7 +975,7 @@ data_33_4a74:
     db   $68, $01                                      ;; 33:4a76 w.
 
 data_33_4a78:
-    dw   $c763                                         ;; 33:4a78 pP
+    dw   wC763                                         ;; 33:4a78 pP
 
 data_33_4a7a:
     dw   wOp1CScriptTableIndexC53A                     ;; 33:4a7a pP
@@ -1081,7 +1077,7 @@ data_33_4b5e:
     db   $68, $01                                      ;; 33:4b60 w.
 
 data_33_4b62:
-    dw   $c763                                         ;; 33:4b62 pP
+    dw   wC763                                         ;; 33:4b62 pP
 
 data_33_4b64:
     dw   wOp1CScriptTableIndexC53A                     ;; 33:4b64 pP
