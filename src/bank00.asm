@@ -214,11 +214,11 @@ jp_00_02a7:
     ld   A, L                                          ;; 00:02bc $7d
     jr   NZ, .jr_00_02b6                               ;; 00:02bd $20 $f7
     dec  B                                             ;; 00:02bf $05
-    ld   HL, wD000                                     ;; 00:02c0 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 00:02c0 $21 $00 $d0
     jr   NZ, .jr_00_02b2                               ;; 00:02c3 $20 $ed
     ld   A, $01                                        ;; 00:02c5 $3e $01
     ldh  [rSVBK], A                                    ;; 00:02c7 $e0 $70
-    ld   HL, wDE19                                     ;; 00:02c9 $21 $19 $de
+    ld   HL, w1_DE19                                   ;; 00:02c9 $21 $19 $de
     ld   C, $80                                        ;; 00:02cc $0e $80
     ld   A, $ff                                        ;; 00:02ce $3e $ff
 .jr_00_02d0:
@@ -927,7 +927,7 @@ call_00_078f:
     push AF                                            ;; 00:0791 $f5
     ld   A, $01                                        ;; 00:0792 $3e $01
     ldh  [rSVBK], A                                    ;; 00:0794 $e0 $70
-    ld   HL, wDD9A                                     ;; 00:0796 $21 $9a $dd
+    ld   HL, w1_DD9A                                   ;; 00:0796 $21 $9a $dd
     ld   A, $80                                        ;; 00:0799 $3e $80
     ldh  [rBCPS], A                                    ;; 00:079b $e0 $68
     ld   B, $40                                        ;; 00:079d $06 $40
@@ -936,7 +936,7 @@ call_00_078f:
     ldh  [rBCPD], A                                    ;; 00:07a0 $e0 $69
     dec  B                                             ;; 00:07a2 $05
     jr   NZ, .jr_00_079f                               ;; 00:07a3 $20 $fa
-    ld   HL, wDDDA                                     ;; 00:07a5 $21 $da $dd
+    ld   HL, w1_DDDA                                   ;; 00:07a5 $21 $da $dd
     ld   A, $80                                        ;; 00:07a8 $3e $80
     ldh  [rOCPS], A                                    ;; 00:07aa $e0 $6a
     ld   B, $40                                        ;; 00:07ac $06 $40
@@ -1810,20 +1810,20 @@ Op3E_Branch:
 
 ;@data format=p amount=32
 AddressArray_0dbd:
-    dw   wD003                                         ;; 00:0dbd ?? $00
-    dw   wD031                                         ;; 00:0dbf ?? $01
-    dw   wD05F                                         ;; 00:0dc1 ?? $02
-    dw   wD08D                                         ;; 00:0dc3 wW $03
+    dw   w1_D003                                       ;; 00:0dbd ?? $00
+    dw   w1_D031                                       ;; 00:0dbf ?? $01
+    dw   w1_D05F                                       ;; 00:0dc1 ?? $02
+    dw   w1_D08D                                       ;; 00:0dc3 wW $03
     dw   $d0bb                                         ;; 00:0dc5 wW $04
     dw   $d0e9                                         ;; 00:0dc7 wW $05
     dw   $d117                                         ;; 00:0dc9 wW $06
     dw   $d145                                         ;; 00:0dcb wW $07
     dw   $d173                                         ;; 00:0dcd wW $08
-    dw   wD1A1                                         ;; 00:0dcf ?? $09
-    dw   wD1CF                                         ;; 00:0dd1 ?? $0a
-    dw   wBeginRegionD1FD                              ;; 00:0dd3 wW $0b
-    dw   wD22B                                         ;; 00:0dd5 wW $0c
-    dw   wD259                                         ;; 00:0dd7 wW $0d
+    dw   w1_D1A1                                       ;; 00:0dcf ?? $09
+    dw   w1_D1CF                                       ;; 00:0dd1 ?? $0a
+    dw   w1_D1FD                                       ;; 00:0dd3 wW $0b
+    dw   w1_D22B                                       ;; 00:0dd5 wW $0c
+    dw   w1_D259                                       ;; 00:0dd7 wW $0d
     dw   $d287                                         ;; 00:0dd9 wW $0e
     dw   $d2b5                                         ;; 00:0ddb wW $0f
     dw   $d2e3                                         ;; 00:0ddd wW $10
@@ -2159,16 +2159,16 @@ Op4E:
     ld   A, $05                                        ;; 00:0fd0 $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0fd2 $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0fd5 $c3 $14 $0a
-    dw   wD857                                         ;; 00:0fd8 pP
+    dw   w1_D857                                       ;; 00:0fd8 pP
     dw   $d863                                         ;; 00:0fda pP
     dw   $d86f                                         ;; 00:0fdc pP
     dw   $d87b                                         ;; 00:0fde pP
-    dw   wD887                                         ;; 00:0fe0 pP
+    dw   w1_D887                                       ;; 00:0fe0 pP
     dw   $d893                                         ;; 00:0fe2 pP
     dw   $d89f                                         ;; 00:0fe4 pP
     dw   $d8ab                                         ;; 00:0fe6 pP
-    dw   wD8B7                                         ;; 00:0fe8 pP
-    dw   wD8C3                                         ;; 00:0fea pP
+    dw   w1_D8B7                                       ;; 00:0fe8 pP
+    dw   w1_D8C3                                       ;; 00:0fea pP
     dw   $d8cf                                         ;; 00:0fec pP
     dw   $d8db                                         ;; 00:0fee pP
     dw   $d8e7                                         ;; 00:0ff0 pP
@@ -2252,9 +2252,9 @@ call_00_1006:
     pop  DE                                            ;; 00:105c $d1
     pop  HL                                            ;; 00:105d $e1
     ret                                                ;; 00:105e $c9
-    dw   wD5C5                                         ;; 00:105f pP
+    dw   w1_D5C5                                       ;; 00:105f pP
     db   $ee, $d5, $17, $d6                            ;; 00:1061 ????
-    dw   wD640                                         ;; 00:1065 pP
+    dw   w1_D640                                       ;; 00:1065 pP
     dw   $d669                                         ;; 00:1067 pP
     dw   $d692                                         ;; 00:1069 pP
     dw   $d6bb                                         ;; 00:106b pP
@@ -2263,10 +2263,10 @@ call_00_1006:
     dw   $d736                                         ;; 00:1071 pP
     dw   $d75f                                         ;; 00:1073 pP
     dw   $d788                                         ;; 00:1075 pP
-    dw   wD7B1                                         ;; 00:1077 pP
+    dw   w1_D7B1                                       ;; 00:1077 pP
     dw   $d7da                                         ;; 00:1079 pP
     dw   $d803                                         ;; 00:107b pP
-    dw   wD82C                                         ;; 00:107d pP
+    dw   w1_D82C                                       ;; 00:107d pP
 
 Op6A:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:107f $cd $69 $0a
@@ -2507,20 +2507,20 @@ call_00_11fb:
     ld   C, A                                          ;; 00:1205 $4f
     pop  HL                                            ;; 00:1206 $e1
     ret                                                ;; 00:1207 $c9
-    dw   wD003                                         ;; 00:1208 pP
-    dw   wD031                                         ;; 00:120a pP
-    dw   wD05F                                         ;; 00:120c pP
-    dw   wD08D                                         ;; 00:120e pP
+    dw   w1_D003                                       ;; 00:1208 pP
+    dw   w1_D031                                       ;; 00:120a pP
+    dw   w1_D05F                                       ;; 00:120c pP
+    dw   w1_D08D                                       ;; 00:120e pP
     dw   $d0bb                                         ;; 00:1210 pP
     dw   $d0e9                                         ;; 00:1212 pP
     dw   $d117                                         ;; 00:1214 pP
     dw   $d145                                         ;; 00:1216 pP
     dw   $d173                                         ;; 00:1218 pP
-    dw   wD1A1                                         ;; 00:121a pP
-    dw   wD1CF                                         ;; 00:121c pP
-    dw   wBeginRegionD1FD                              ;; 00:121e pP
-    dw   wD22B                                         ;; 00:1220 pP
-    dw   wD259                                         ;; 00:1222 pP
+    dw   w1_D1A1                                       ;; 00:121a pP
+    dw   w1_D1CF                                       ;; 00:121c pP
+    dw   w1_D1FD                                       ;; 00:121e pP
+    dw   w1_D22B                                       ;; 00:1220 pP
+    dw   w1_D259                                       ;; 00:1222 pP
     dw   $d287                                         ;; 00:1224 pP
     dw   $d2b5                                         ;; 00:1226 pP
     dw   $d2e3                                         ;; 00:1228 pP
@@ -2872,43 +2872,43 @@ Write3ArgBytesToD037to9_AndThenDo2XStuff:
 ; B will count the nonzero writes we do.
     ld   B, $00                                        ;; 00:14c5 $06 $00
     ld   A, [HL+]                                      ;; 00:14c7 $2a
-    ld   [wD037], A                                    ;; 00:14c8 $ea $37 $d0
+    ld   [w1_D037], A                                  ;; 00:14c8 $ea $37 $d0
     and  A, A                                          ;; 00:14cb $a7
     jr   Z, .afterIncrement1                           ;; 00:14cc $28 $01
     inc  B                                             ;; 00:14ce $04
 .afterIncrement1:
     ld   A, [HL+]                                      ;; 00:14cf $2a
-    ld   [wD038], A                                    ;; 00:14d0 $ea $38 $d0
+    ld   [w1_D038], A                                  ;; 00:14d0 $ea $38 $d0
     and  A, A                                          ;; 00:14d3 $a7
     jr   Z, .afterIncrement2                           ;; 00:14d4 $28 $01
     inc  B                                             ;; 00:14d6 $04
 .afterIncrement2:
     ld   A, [HL+]                                      ;; 00:14d7 $2a
-    ld   [wD039], A                                    ;; 00:14d8 $ea $39 $d0
+    ld   [w1_D039], A                                  ;; 00:14d8 $ea $39 $d0
     and  A, A                                          ;; 00:14db $a7
     jr   Z, .afterIncrement3                           ;; 00:14dc $28 $01
     inc  B                                             ;; 00:14de $04
 .afterIncrement3:
     ld   A, $04                                        ;; 00:14df $3e $04
-    ld   [wD033], A                                    ;; 00:14e1 $ea $33 $d0
+    ld   [w1_D033], A                                  ;; 00:14e1 $ea $33 $d0
     ld   A, $00                                        ;; 00:14e4 $3e $00
-    ld   [wD036], A                                    ;; 00:14e6 $ea $36 $d0
-    ld   [wD03A], A                                    ;; 00:14e9 $ea $3a $d0
-    ld   [wD03B], A                                    ;; 00:14ec $ea $3b $d0
+    ld   [w1_D036], A                                  ;; 00:14e6 $ea $36 $d0
+    ld   [w1_D03A], A                                  ;; 00:14e9 $ea $3a $d0
+    ld   [w1_D03B], A                                  ;; 00:14ec $ea $3b $d0
     cp   A, B                                          ;; 00:14ef $b8
     jr   Z, .twotimesAfterCodeForIfWeWroteNonzeroStuff ;; 00:14f0 $28 $0c
     call maybeInputRelatedIdk                          ;; 00:14f2 $cd $5b $1a
     and  A, $0f                                        ;; 00:14f5 $e6 $0f
     jr   NZ, .twotimesAfterCodeForIfWeWroteNonzeroStuff ;; 00:14f7 $20 $05
     ld   A, $01                                        ;; 00:14f9 $3e $01
-    ld   [wD031], A                                    ;; 00:14fb $ea $31 $d0
+    ld   [w1_D031], A                                  ;; 00:14fb $ea $31 $d0
 .twotimesAfterCodeForIfWeWroteNonzeroStuff:
     ld   A, B                                          ;; 00:14fe $78
     ld   [wC39C], A                                    ;; 00:14ff $ea $9c $c3
     ld   A, [wC39A]                                    ;; 00:1502 $fa $9a $c3
     jr   Z, .setReturnAddressTo152B_AndJumpTo152B      ;; 00:1505 $28 $05
     ld   A, $01                                        ;; 00:1507 $3e $01
-    ld   [wD003], A                                    ;; 00:1509 $ea $03 $d0
+    ld   [w1_D003], A                                  ;; 00:1509 $ea $03 $d0
 .setReturnAddressTo152B_AndJumpTo152B:
     ld   A, $00                                        ;; 00:150c $3e $00
     ld   [wOp1CScriptTableIndexC53A], A                ;; 00:150e $ea $3a $c5
@@ -2928,9 +2928,9 @@ twotimesC324to5NotEmpty:
     jp   HL                                            ;; 00:152a $e9
 
 jp_00_152b:
-    ld   A, [wD001]                                    ;; 00:152b $fa $01 $d0
+    ld   A, [w1_D001]                                  ;; 00:152b $fa $01 $d0
     ld   L, A                                          ;; 00:152e $6f
-    ld   A, [wD002]                                    ;; 00:152f $fa $02 $d0
+    ld   A, [w1_D002]                                  ;; 00:152f $fa $02 $d0
     ld   H, A                                          ;; 00:1532 $67
     ld   A, [HL]                                       ;; 00:1533 $7e
     and  A, $80                                        ;; 00:1534 $e6 $80
@@ -2964,9 +2964,9 @@ jp_00_152b:
     ld   A, [wC316]                                    ;; 00:1572 $fa $16 $c3
     and  A, $d0                                        ;; 00:1575 $e6 $d0
     jr   NZ, .jr_00_1587                               ;; 00:1577 $20 $0e
-    ld   A, [wD001]                                    ;; 00:1579 $fa $01 $d0
+    ld   A, [w1_D001]                                  ;; 00:1579 $fa $01 $d0
     ld   L, A                                          ;; 00:157c $6f
-    ld   A, [wD002]                                    ;; 00:157d $fa $02 $d0
+    ld   A, [w1_D002]                                  ;; 00:157d $fa $02 $d0
     ld   H, A                                          ;; 00:1580 $67
     ld   A, [HL]                                       ;; 00:1581 $7e
     cp   A, $80                                        ;; 00:1582 $fe $80
@@ -2976,8 +2976,8 @@ jp_00_152b:
     and  A, $1f                                        ;; 00:158a $e6 $1f
     ld   [wOp1CScriptTableIndexC53A], A                ;; 00:158c $ea $3a $c5
     ld   A, $00                                        ;; 00:158f $3e $00
-    ld   [wD003], A                                    ;; 00:1591 $ea $03 $d0
-    ld   [wD031], A                                    ;; 00:1594 $ea $31 $d0
+    ld   [w1_D003], A                                  ;; 00:1591 $ea $03 $d0
+    ld   [w1_D031], A                                  ;; 00:1594 $ea $31 $d0
     ld   [wOpcodeC322], A                              ;; 00:1597 $ea $22 $c3
     ld   [wDunnoCheckBeforeConsultingJumpArrayC323], A ;; 00:159a $ea $23 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:159d $c3 $14 $0a
@@ -2993,10 +2993,10 @@ Op3C:
     ld   A, [HL+]                                      ;; 00:15af $2a
     ld   [wC344], A                                    ;; 00:15b0 $ea $44 $c3
     ld   A, [HL+]                                      ;; 00:15b3 $2a
-    ld   [wD001], A                                    ;; 00:15b4 $ea $01 $d0
+    ld   [w1_D001], A                                  ;; 00:15b4 $ea $01 $d0
     ld   C, A                                          ;; 00:15b7 $4f
     ld   A, [HL+]                                      ;; 00:15b8 $2a
-    ld   [wD002], A                                    ;; 00:15b9 $ea $02 $d0
+    ld   [w1_D002], A                                  ;; 00:15b9 $ea $02 $d0
     ld   B, A                                          ;; 00:15bc $47
     ld   A, [HL+]                                      ;; 00:15bd $2a
     ld   [wC356], A                                    ;; 00:15be $ea $56 $c3
@@ -3127,9 +3127,9 @@ Op3C:
 call_00_168f:
     ld   A, $01                                        ;; 00:168f $3e $01
     ldh  [rSVBK], A                                    ;; 00:1691 $e0 $70
-    ld   A, [wD001]                                    ;; 00:1693 $fa $01 $d0
+    ld   A, [w1_D001]                                  ;; 00:1693 $fa $01 $d0
     ld   C, A                                          ;; 00:1696 $4f
-    ld   A, [wD002]                                    ;; 00:1697 $fa $02 $d0
+    ld   A, [w1_D002]                                  ;; 00:1697 $fa $02 $d0
     ld   B, A                                          ;; 00:169a $47
     ld   L, C                                          ;; 00:169b $69
     ld   H, B                                          ;; 00:169c $60
@@ -3217,7 +3217,7 @@ call_00_168f:
     ld   A, [wC395]                                    ;; 00:1727 $fa $95 $c3
     ld   [wC3ED], A                                    ;; 00:172a $ea $ed $c3
     ld   H, A                                          ;; 00:172d $67
-    ld   DE, wD000                                     ;; 00:172e $11 $00 $d0
+    ld   DE, w1_D000                                   ;; 00:172e $11 $00 $d0
     add  HL, DE                                        ;; 00:1731 $19
     ld   A, $03                                        ;; 00:1732 $3e $03
     ldh  [rSVBK], A                                    ;; 00:1734 $e0 $70
@@ -3250,9 +3250,9 @@ call_00_168f:
     ld   A, [wC35B]                                    ;; 00:176d $fa $5b $c3
     or   A, $80                                        ;; 00:1770 $f6 $80
     ld   [wC35B], A                                    ;; 00:1772 $ea $5b $c3
-    ld   A, [wD001]                                    ;; 00:1775 $fa $01 $d0
+    ld   A, [w1_D001]                                  ;; 00:1775 $fa $01 $d0
     ld   C, A                                          ;; 00:1778 $4f
-    ld   A, [wD002]                                    ;; 00:1779 $fa $02 $d0
+    ld   A, [w1_D002]                                  ;; 00:1779 $fa $02 $d0
     ld   B, A                                          ;; 00:177c $47
     ld   HL, $06                                       ;; 00:177d $21 $06 $00
     add  HL, BC                                        ;; 00:1780 $09
@@ -3367,9 +3367,9 @@ call_00_17bb:
     add  HL, DE                                        ;; 00:1833 $19
     ld   C, L                                          ;; 00:1834 $4d
     ld   B, H                                          ;; 00:1835 $44
-    ld   A, [wD001]                                    ;; 00:1836 $fa $01 $d0
+    ld   A, [w1_D001]                                  ;; 00:1836 $fa $01 $d0
     ld   L, A                                          ;; 00:1839 $6f
-    ld   A, [wD002]                                    ;; 00:183a $fa $02 $d0
+    ld   A, [w1_D002]                                  ;; 00:183a $fa $02 $d0
     ld   H, A                                          ;; 00:183d $67
     push HL                                            ;; 00:183e $e5
     ld   DE, $13                                       ;; 00:183f $11 $13 $00
@@ -3552,9 +3552,9 @@ call_00_19c5:
     add  HL, DE                                        ;; 00:19fc $19
     ld   E, L                                          ;; 00:19fd $5d
     ld   D, H                                          ;; 00:19fe $54
-    ld   A, [wD001]                                    ;; 00:19ff $fa $01 $d0
+    ld   A, [w1_D001]                                  ;; 00:19ff $fa $01 $d0
     ld   C, A                                          ;; 00:1a02 $4f
-    ld   A, [wD002]                                    ;; 00:1a03 $fa $02 $d0
+    ld   A, [w1_D002]                                  ;; 00:1a03 $fa $02 $d0
     ld   B, A                                          ;; 00:1a06 $47
     ld   HL, $16                                       ;; 00:1a07 $21 $16 $00
     add  HL, BC                                        ;; 00:1a0a $09
@@ -3706,7 +3706,7 @@ maybeInputRelatedIdk:
 UpdateD203to5AddressesViaHardcodedMap:
     ld   A, $01                                        ;; 00:1aa7 $3e $01
     ldh  [rSVBK], A                                    ;; 00:1aa9 $e0 $70
-    ld   DE, wBeginRegionD1FD                          ;; 00:1aab $11 $fd $d1
+    ld   DE, w1_D1FD                                   ;; 00:1aab $11 $fd $d1
     ld   HL, $06                                       ;; 00:1aae $21 $06 $00
     add  HL, DE                                        ;; 00:1ab1 $19
     ld   A, [HL+]                                      ;; 00:1ab2 $2a
@@ -3939,8 +3939,8 @@ CallIfC324to5HadData:
 .jr_00_1c31:
     ld   A, $01                                        ;; 00:1c31 $3e $01
     ldh  [rSVBK], A                                    ;; 00:1c33 $e0 $70
-    ld   A, [wD5C5]                                    ;; 00:1c35 $fa $c5 $d5
-    ld   HL, wTextboxIsClosingD5EE                     ;; 00:1c38 $21 $ee $d5
+    ld   A, [w1_D5C5]                                  ;; 00:1c35 $fa $c5 $d5
+    ld   HL, w1_D5EE                                   ;; 00:1c38 $21 $ee $d5
     or   A, [HL]                                       ;; 00:1c3b $b6
     jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:1c3c $c2 $39 $0a
     ld   A, [wReturnAddressC324]                       ;; 00:1c3f $fa $24 $c3
@@ -3972,9 +3972,9 @@ prepareTextboxClose1C48:
     ld   [$2000], A                                    ;; 00:1c6f $ea $00 $20
 ; I observe this 02 momentarily whenever a textbox closes
     ld   A, $02                                        ;; 00:1c72 $3e $02
-    ld   [wTextboxIsClosingD5EE], A                    ;; 00:1c74 $ea $ee $d5
+    ld   [w1_D5EE], A                                  ;; 00:1c74 $ea $ee $d5
     ld   A, $00                                        ;; 00:1c77 $3e $00
-    ld   [wD5F1], A                                    ;; 00:1c79 $ea $f1 $d5
+    ld   [w1_D5F1], A                                  ;; 00:1c79 $ea $f1 $d5
     ld   A, $00                                        ;; 00:1c7c $3e $00
     ld   [wC31E], A                                    ;; 00:1c7e $ea $1e $c3
 
@@ -4044,9 +4044,9 @@ Write3ArgsToC328toA_AndRunOp_PossibleTextPointer:
     ld   [wReturnAddressC324.high], A                  ;; 00:1d1d $ea $25 $c3
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1d20 $c3 $39 $0a
     ld   A, $00                                        ;; 00:1d23 $3e $00
-    ld   [wD5C8], A                                    ;; 00:1d25 $ea $c8 $d5
+    ld   [w1_D5C8], A                                  ;; 00:1d25 $ea $c8 $d5
     ld   A, $02                                        ;; 00:1d28 $3e $02
-    ld   [wD5C5], A                                    ;; 00:1d2a $ea $c5 $d5
+    ld   [w1_D5C5], A                                  ;; 00:1d2a $ea $c5 $d5
     ld   A, [wC3F8]                                    ;; 00:1d2d $fa $f8 $c3
     inc  A                                             ;; 00:1d30 $3c
     ld   [wC31E], A                                    ;; 00:1d31 $ea $1e $c3
@@ -4247,7 +4247,7 @@ call_00_1ec2:
     call call_01_47ba                                  ;; 00:1ee7 $cd $ba $47
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1eea $c3 $39 $0a
 ; Chat wheel was closing
-    ld   A, [wTextboxIsClosingD5EE]                    ;; 00:1eed $fa $ee $d5
+    ld   A, [w1_D5EE]                                  ;; 00:1eed $fa $ee $d5
     and  A, A                                          ;; 00:1ef0 $a7
     jr   Z, .chatWheelWasNotClosing                    ;; 00:1ef1 $28 $03
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1ef3 $c3 $39 $0a
@@ -4519,17 +4519,17 @@ Op0Cand0Eand10and12_C324to5DidNotHaveData_nextStep:
     ldh  [rSVBK], A                                    ;; 00:20df $e0 $70
     ld   A, $00                                        ;; 00:20e1 $3e $00
     ld   [wC31E], A                                    ;; 00:20e3 $ea $1e $c3
-    ld   [wD5F1], A                                    ;; 00:20e6 $ea $f1 $d5
-    ld   [wD5F2], A                                    ;; 00:20e9 $ea $f2 $d5
+    ld   [w1_D5F1], A                                  ;; 00:20e6 $ea $f1 $d5
+    ld   [w1_D5F2], A                                  ;; 00:20e9 $ea $f2 $d5
     ld   A, $02                                        ;; 00:20ec $3e $02
-    ld   [wTextboxIsClosingD5EE], A                    ;; 00:20ee $ea $ee $d5
+    ld   [w1_D5EE], A                                  ;; 00:20ee $ea $ee $d5
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:20f1 $c3 $39 $0a
 
 MaybeLoopUntilTextboxClose:
     ld   A, $01                                        ;; 00:20f4 $3e $01
     ldh  [rSVBK], A                                    ;; 00:20f6 $e0 $70
-    ld   A, [wD5C5]                                    ;; 00:20f8 $fa $c5 $d5
-    ld   HL, wTextboxIsClosingD5EE                     ;; 00:20fb $21 $ee $d5
+    ld   A, [w1_D5C5]                                  ;; 00:20f8 $fa $c5 $d5
+    ld   HL, w1_D5EE                                   ;; 00:20fb $21 $ee $d5
     or   A, [HL]                                       ;; 00:20fe $b6
 ; Chat wheel is closing
     jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:20ff $c2 $39 $0a
@@ -5424,15 +5424,15 @@ call_00_275c:
 
 call_00_27a4:
     ld   A, $ff                                        ;; 00:27a4 $3e $ff
-    ld   [wD5C3], A                                    ;; 00:27a6 $ea $c3 $d5
+    ld   [w1_D5C3], A                                  ;; 00:27a6 $ea $c3 $d5
     ld   A, $03                                        ;; 00:27a9 $3e $03
-    ld   [wD001], A                                    ;; 00:27ab $ea $01 $d0
+    ld   [w1_D001], A                                  ;; 00:27ab $ea $01 $d0
     ld   A, $d0                                        ;; 00:27ae $3e $d0
-    ld   [wD002], A                                    ;; 00:27b0 $ea $02 $d0
+    ld   [w1_D002], A                                  ;; 00:27b0 $ea $02 $d0
     ld   A, $ff                                        ;; 00:27b3 $3e $ff
-    ld   [wD855], A                                    ;; 00:27b5 $ea $55 $d8
+    ld   [w1_D855], A                                  ;; 00:27b5 $ea $55 $d8
     ld   A, $ff                                        ;; 00:27b8 $3e $ff
-    ld   [wD917], A                                    ;; 00:27ba $ea $17 $d9
+    ld   [w1_D917], A                                  ;; 00:27ba $ea $17 $d9
     ret                                                ;; 00:27bd $c9
 
 call_00_27be:
@@ -5457,7 +5457,7 @@ call_00_27be:
 call_00_27dd:
     ld   A, $01                                        ;; 00:27dd $3e $01
     ldh  [rSVBK], A                                    ;; 00:27df $e0 $70
-    ld   HL, wD000                                     ;; 00:27e1 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 00:27e1 $21 $00 $d0
     ld   DE, $d9a                                      ;; 00:27e4 $11 $9a $0d
 .jr_00_27e7:
     xor  A, A                                          ;; 00:27e7 $af
@@ -6014,9 +6014,9 @@ call_00_2b52:
     ld   A, $c2                                        ;; 00:2b5b $3e $c2
     ld   [wC379], A                                    ;; 00:2b5d $ea $79 $c3
     ld   HL, $2ba8                                     ;; 00:2b60 $21 $a8 $2b
-    ld   A, [wD001]                                    ;; 00:2b63 $fa $01 $d0
+    ld   A, [w1_D001]                                  ;; 00:2b63 $fa $01 $d0
     ld   C, A                                          ;; 00:2b66 $4f
-    ld   A, [wD002]                                    ;; 00:2b67 $fa $02 $d0
+    ld   A, [w1_D002]                                  ;; 00:2b67 $fa $02 $d0
     ld   B, A                                          ;; 00:2b6a $47
     or   A, C                                          ;; 00:2b6b $b1
     jr   NZ, jr_00_2b72                                ;; 00:2b6c $20 $04
@@ -6054,28 +6054,28 @@ jp_00_2b95:
     ld   C, A                                          ;; 00:2b97 $4f
     ld   A, [HL+]                                      ;; 00:2b98 $2a
     ld   B, A                                          ;; 00:2b99 $47
-    ld   A, [wD001]                                    ;; 00:2b9a $fa $01 $d0
+    ld   A, [w1_D001]                                  ;; 00:2b9a $fa $01 $d0
     cp   A, C                                          ;; 00:2b9d $b9
     jr   NZ, jr_00_2b72                                ;; 00:2b9e $20 $d2
-    ld   A, [wD002]                                    ;; 00:2ba0 $fa $02 $d0
+    ld   A, [w1_D002]                                  ;; 00:2ba0 $fa $02 $d0
     cp   A, B                                          ;; 00:2ba3 $b8
     jr   NZ, jr_00_2b72                                ;; 00:2ba4 $20 $cc
     jr   .jr_00_2b96                                   ;; 00:2ba6 $18 $ee
-    dw   wD003                                         ;; 00:2ba8 pP
-    dw   wD003                                         ;; 00:2baa pP
-    dw   wD031                                         ;; 00:2bac pP
-    dw   wD05F                                         ;; 00:2bae pP
-    dw   wD08D                                         ;; 00:2bb0 pP
+    dw   w1_D003                                       ;; 00:2ba8 pP
+    dw   w1_D003                                       ;; 00:2baa pP
+    dw   w1_D031                                       ;; 00:2bac pP
+    dw   w1_D05F                                       ;; 00:2bae pP
+    dw   w1_D08D                                       ;; 00:2bb0 pP
     dw   $d0bb                                         ;; 00:2bb2 pP
     dw   $d0e9                                         ;; 00:2bb4 pP
     dw   $d117                                         ;; 00:2bb6 pP
     dw   $d145                                         ;; 00:2bb8 pP
     dw   $d173                                         ;; 00:2bba pP
-    dw   wD1A1                                         ;; 00:2bbc pP
-    dw   wD1CF                                         ;; 00:2bbe pP
-    dw   wBeginRegionD1FD                              ;; 00:2bc0 pP
-    dw   wD22B                                         ;; 00:2bc2 pP
-    dw   wD259                                         ;; 00:2bc4 pP
+    dw   w1_D1A1                                       ;; 00:2bbc pP
+    dw   w1_D1CF                                       ;; 00:2bbe pP
+    dw   w1_D1FD                                       ;; 00:2bc0 pP
+    dw   w1_D22B                                       ;; 00:2bc2 pP
+    dw   w1_D259                                       ;; 00:2bc4 pP
     dw   $d287                                         ;; 00:2bc6 pP
     dw   $d2b5                                         ;; 00:2bc8 pP
     dw   $d2e3                                         ;; 00:2bca pP
@@ -6094,7 +6094,7 @@ jp_00_2b95:
     dw   $d539                                         ;; 00:2be4 pP
     dw   $d567                                         ;; 00:2be6 pP
     dw   $d595                                         ;; 00:2be8 pP
-    dw   wD5C3                                         ;; 00:2bea pP
+    dw   w1_D5C3                                       ;; 00:2bea pP
 
 jr_00_2bec:
     ld   HL, $01                                       ;; 00:2bec $21 $01 $00
@@ -6703,7 +6703,7 @@ jr_00_2bec:
 call_00_2fcf:
     ld   A, $01                                        ;; 00:2fcf $3e $01
     ldh  [rSVBK], A                                    ;; 00:2fd1 $e0 $70
-    ld   HL, wD5C5                                     ;; 00:2fd3 $21 $c5 $d5
+    ld   HL, w1_D5C5                                   ;; 00:2fd3 $21 $c5 $d5
 
 jr_00_2fd6:
     push HL                                            ;; 00:2fd6 $e5
@@ -7608,7 +7608,7 @@ call_00_3649:
 call_00_365c:
     ld   A, $01                                        ;; 00:365c $3e $01
     ldh  [rSVBK], A                                    ;; 00:365e $e0 $70
-    ld   HL, wD857                                     ;; 00:3660 $21 $57 $d8
+    ld   HL, w1_D857                                   ;; 00:3660 $21 $57 $d8
 .jr_00_3663:
     push HL                                            ;; 00:3663 $e5
     ld   A, [HL]                                       ;; 00:3664 $7e
@@ -7617,7 +7617,7 @@ call_00_365c:
     cp   A, $ff                                        ;; 00:3668 $fe $ff
     jr   Z, .jr_00_367f                                ;; 00:366a $28 $13
     xor  A, A                                          ;; 00:366c $af
-    ld   [wDD99], A                                    ;; 00:366d $ea $99 $dd
+    ld   [w1_DD99], A                                  ;; 00:366d $ea $99 $dd
     ld   C, L                                          ;; 00:3670 $4d
     ld   B, H                                          ;; 00:3671 $44
     jr   .jp_00_368c                                   ;; 00:3672 $18 $18

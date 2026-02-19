@@ -103,7 +103,7 @@ jp_01_408a:
     ld   E, A                                          ;; 01:409b $5f
     ld   A, [wC363]                                    ;; 01:409c $fa $63 $c3
     ld   D, A                                          ;; 01:409f $57
-    ld   HL, wD000                                     ;; 01:40a0 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 01:40a0 $21 $00 $d0
     add  HL, DE                                        ;; 01:40a3 $19
     ld   A, $03                                        ;; 01:40a4 $3e $03
     ldh  [rSVBK], A                                    ;; 01:40a6 $e0 $70
@@ -132,7 +132,7 @@ call_01_40d7:
     ld   A, [wC365]                                    ;; 01:40de $fa $65 $c3
     ld   [wC3ED], A                                    ;; 01:40e1 $ea $ed $c3
     ld   D, A                                          ;; 01:40e4 $57
-    ld   HL, wD000                                     ;; 01:40e5 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 01:40e5 $21 $00 $d0
     add  HL, DE                                        ;; 01:40e8 $19
     ld   A, $03                                        ;; 01:40e9 $3e $03
     ldh  [rSVBK], A                                    ;; 01:40eb $e0 $70
@@ -1207,9 +1207,9 @@ data_01_484a:
 data_01_484e:
     ldh  [rSVBK], A                                    ;; 01:484e $e0 $70
     ld   A, $00                                        ;; 01:4850 $3e $00
-    ld   [wD5F1], A                                    ;; 01:4852 $ea $f1 $d5
+    ld   [w1_D5F1], A                                  ;; 01:4852 $ea $f1 $d5
     ld   A, $02                                        ;; 01:4855 $3e $02
-    ld   [wTextboxIsClosingD5EE], A                    ;; 01:4857 $ea $ee $d5
+    ld   [w1_D5EE], A                                  ;; 01:4857 $ea $ee $d5
     ld   A, $00                                        ;; 01:485a $3e $00
     ld   [wC31E], A                                    ;; 01:485c $ea $1e $c3
     jr   jr_01_487c                                    ;; 01:485f $18 $1b
@@ -1221,9 +1221,9 @@ jr_01_4861:
     ld   A, $01                                        ;; 01:4867 $3e $01
     ldh  [rSVBK], A                                    ;; 01:4869 $e0 $70
     ld   A, $00                                        ;; 01:486b $3e $00
-    ld   [wD5C8], A                                    ;; 01:486d $ea $c8 $d5
+    ld   [w1_D5C8], A                                  ;; 01:486d $ea $c8 $d5
     ld   A, $02                                        ;; 01:4870 $3e $02
-    ld   [wD5C5], A                                    ;; 01:4872 $ea $c5 $d5
+    ld   [w1_D5C5], A                                  ;; 01:4872 $ea $c5 $d5
     ld   A, [wC3F8]                                    ;; 01:4875 $fa $f8 $c3
     inc  A                                             ;; 01:4878 $3c
     ld   [wC31E], A                                    ;; 01:4879 $ea $1e $c3
@@ -1235,8 +1235,8 @@ jr_01_487c:
 jr_01_4881:
     ld   A, $01                                        ;; 01:4881 $3e $01
     ldh  [rSVBK], A                                    ;; 01:4883 $e0 $70
-    ld   A, [wD5C5]                                    ;; 01:4885 $fa $c5 $d5
-    ld   HL, wTextboxIsClosingD5EE                     ;; 01:4888 $21 $ee $d5
+    ld   A, [w1_D5C5]                                  ;; 01:4885 $fa $c5 $d5
+    ld   HL, w1_D5EE                                   ;; 01:4888 $21 $ee $d5
     or   A, [HL]                                       ;; 01:488b $b6
     jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 01:488c $c2 $39 $0a
 
@@ -2701,9 +2701,9 @@ OpenHamchatWheel_Maybe:
     ld   A, $01                                        ;; 01:523a $3e $01
     ldh  [rSVBK], A                                    ;; 01:523c $e0 $70
     ld   A, $00                                        ;; 01:523e $3e $00
-    ld   [wD5C8], A                                    ;; 01:5240 $ea $c8 $d5
+    ld   [w1_D5C8], A                                  ;; 01:5240 $ea $c8 $d5
     ld   A, $02                                        ;; 01:5243 $3e $02
-    ld   [wD5C5], A                                    ;; 01:5245 $ea $c5 $d5
+    ld   [w1_D5C5], A                                  ;; 01:5245 $ea $c5 $d5
     ld   A, $55                                        ;; 01:5248 $3e $55
     ld   [wReturnAddressC324], A                       ;; 01:524a $ea $24 $c3
     ld   A, $52                                        ;; 01:524d $3e $52
@@ -2722,7 +2722,7 @@ OpenHamchatWheel_Maybe:
     ld   A, $01                                        ;; 01:526d $3e $01
     ldh  [rSVBK], A                                    ;; 01:526f $e0 $70
     ld   A, $02                                        ;; 01:5271 $3e $02
-    ld   [wD82C], A                                    ;; 01:5273 $ea $2c $d8
+    ld   [w1_D82C], A                                  ;; 01:5273 $ea $2c $d8
 .jr_01_5276:
     ld   A, [wC390]                                    ;; 01:5276 $fa $90 $c3
     ld   [wC39C], A                                    ;; 01:5279 $ea $9c $c3
@@ -2779,7 +2779,7 @@ OpenHamchatWheel_Maybe:
     jp   Z, .jp_01_5450                                ;; 01:52eb $ca $50 $54
     ld   A, $01                                        ;; 01:52ee $3e $01
     ldh  [rSVBK], A                                    ;; 01:52f0 $e0 $70
-    ld   A, [wD82C]                                    ;; 01:52f2 $fa $2c $d8
+    ld   A, [w1_D82C]                                  ;; 01:52f2 $fa $2c $d8
     and  A, A                                          ;; 01:52f5 $a7
     jp   NZ, .jp_01_5450                               ;; 01:52f6 $c2 $50 $54
     ld   A, $76                                        ;; 01:52f9 $3e $76
@@ -2978,14 +2978,14 @@ OpenHamchatWheel_Maybe:
     and  A, A                                          ;; 01:547d $a7
     jr   Z, .jr_01_5485                                ;; 01:547e $28 $05
     ld   A, $00                                        ;; 01:5480 $3e $00
-    ld   [wD82C], A                                    ;; 01:5482 $ea $2c $d8
+    ld   [w1_D82C], A                                  ;; 01:5482 $ea $2c $d8
 .jr_01_5485:
     xor  A, A                                          ;; 01:5485 $af
-    ld   [wD617], A                                    ;; 01:5486 $ea $17 $d6
-    ld   [wD640], A                                    ;; 01:5489 $ea $40 $d6
-    ld   [wD5F1], A                                    ;; 01:548c $ea $f1 $d5
+    ld   [w1_D617], A                                  ;; 01:5486 $ea $17 $d6
+    ld   [w1_D640], A                                  ;; 01:5489 $ea $40 $d6
+    ld   [w1_D5F1], A                                  ;; 01:548c $ea $f1 $d5
     ld   A, $02                                        ;; 01:548f $3e $02
-    ld   [wTextboxIsClosingD5EE], A                    ;; 01:5491 $ea $ee $d5
+    ld   [w1_D5EE], A                                  ;; 01:5491 $ea $ee $d5
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 01:5494 $c3 $14 $0a
     db   $fa, $3a, $c5, $a7, $20, $1a, $fa, $8f        ;; 01:5497 ????????
     db   $c3, $5f, $16, $00, $21, $1a, $c5, $19        ;; 01:549f ????????
@@ -3147,8 +3147,8 @@ call_01_5654:
     ld   A, $01                                        ;; 01:5654 $3e $01
     ldh  [rSVBK], A                                    ;; 01:5656 $e0 $70
     ld   A, $00                                        ;; 01:5658 $3e $00
-    ld   [wD617], A                                    ;; 01:565a $ea $17 $d6
-    ld   [wD640], A                                    ;; 01:565d $ea $40 $d6
+    ld   [w1_D617], A                                  ;; 01:565a $ea $17 $d6
+    ld   [w1_D640], A                                  ;; 01:565d $ea $40 $d6
     ret                                                ;; 01:5660 $c9
 
 call_01_5661:
@@ -3161,16 +3161,16 @@ call_01_5661:
     and  A, A                                          ;; 01:566f $a7
     jr   Z, .jr_01_568e                                ;; 01:5670 $28 $1c
     ld   A, $02                                        ;; 01:5672 $3e $02
-    ld   [wD617], A                                    ;; 01:5674 $ea $17 $d6
+    ld   [w1_D617], A                                  ;; 01:5674 $ea $17 $d6
     ld   A, $06                                        ;; 01:5677 $3e $06
-    ld   [wD61E], A                                    ;; 01:5679 $ea $1e $d6
+    ld   [w1_D61E], A                                  ;; 01:5679 $ea $1e $d6
     ld   A, $c8                                        ;; 01:567c $3e $c8
-    ld   [wD61C], A                                    ;; 01:567e $ea $1c $d6
+    ld   [w1_D61C], A                                  ;; 01:567e $ea $1c $d6
     ld   A, $41                                        ;; 01:5681 $3e $41
-    ld   [wD61D], A                                    ;; 01:5683 $ea $1d $d6
+    ld   [w1_D61D], A                                  ;; 01:5683 $ea $1d $d6
     ld   A, $00                                        ;; 01:5686 $3e $00
-    ld   [wD61A], A                                    ;; 01:5688 $ea $1a $d6
-    ld   [wD61B], A                                    ;; 01:568b $ea $1b $d6
+    ld   [w1_D61A], A                                  ;; 01:5688 $ea $1a $d6
+    ld   [w1_D61B], A                                  ;; 01:568b $ea $1b $d6
 .jr_01_568e:
     ld   A, [wC399]                                    ;; 01:568e $fa $99 $c3
     ld   B, A                                          ;; 01:5691 $47
@@ -3180,43 +3180,43 @@ call_01_5661:
     cp   A, B                                          ;; 01:5699 $b8
     jr   NC, .jr_01_56b8                               ;; 01:569a $30 $1c
     ld   A, $02                                        ;; 01:569c $3e $02
-    ld   [wD640], A                                    ;; 01:569e $ea $40 $d6
+    ld   [w1_D640], A                                  ;; 01:569e $ea $40 $d6
     ld   A, $06                                        ;; 01:56a1 $3e $06
-    ld   [wD647], A                                    ;; 01:56a3 $ea $47 $d6
+    ld   [w1_D647], A                                  ;; 01:56a3 $ea $47 $d6
     ld   A, $fa                                        ;; 01:56a6 $3e $fa
-    ld   [wD645], A                                    ;; 01:56a8 $ea $45 $d6
+    ld   [w1_D645], A                                  ;; 01:56a8 $ea $45 $d6
     ld   A, $41                                        ;; 01:56ab $3e $41
-    ld   [wD646], A                                    ;; 01:56ad $ea $46 $d6
+    ld   [w1_D646], A                                  ;; 01:56ad $ea $46 $d6
     ld   A, $00                                        ;; 01:56b0 $3e $00
-    ld   [wD643], A                                    ;; 01:56b2 $ea $43 $d6
-    ld   [wD644], A                                    ;; 01:56b5 $ea $44 $d6
+    ld   [w1_D643], A                                  ;; 01:56b2 $ea $43 $d6
+    ld   [w1_D644], A                                  ;; 01:56b5 $ea $44 $d6
 .jr_01_56b8:
     ret                                                ;; 01:56b8 $c9
 .jr_01_56b9:
     ld   A, $01                                        ;; 01:56b9 $3e $01
     ldh  [rSVBK], A                                    ;; 01:56bb $e0 $70
     ld   A, $02                                        ;; 01:56bd $3e $02
-    ld   [wD617], A                                    ;; 01:56bf $ea $17 $d6
+    ld   [w1_D617], A                                  ;; 01:56bf $ea $17 $d6
     ld   A, $06                                        ;; 01:56c2 $3e $06
-    ld   [wD61E], A                                    ;; 01:56c4 $ea $1e $d6
+    ld   [w1_D61E], A                                  ;; 01:56c4 $ea $1e $d6
     ld   A, $e1                                        ;; 01:56c7 $3e $e1
-    ld   [wD61C], A                                    ;; 01:56c9 $ea $1c $d6
+    ld   [w1_D61C], A                                  ;; 01:56c9 $ea $1c $d6
     ld   A, $41                                        ;; 01:56cc $3e $41
-    ld   [wD61D], A                                    ;; 01:56ce $ea $1d $d6
+    ld   [w1_D61D], A                                  ;; 01:56ce $ea $1d $d6
     ld   A, $00                                        ;; 01:56d1 $3e $00
-    ld   [wD61A], A                                    ;; 01:56d3 $ea $1a $d6
-    ld   [wD61B], A                                    ;; 01:56d6 $ea $1b $d6
+    ld   [w1_D61A], A                                  ;; 01:56d3 $ea $1a $d6
+    ld   [w1_D61B], A                                  ;; 01:56d6 $ea $1b $d6
     ld   A, $02                                        ;; 01:56d9 $3e $02
-    ld   [wD640], A                                    ;; 01:56db $ea $40 $d6
+    ld   [w1_D640], A                                  ;; 01:56db $ea $40 $d6
     ld   A, $06                                        ;; 01:56de $3e $06
-    ld   [wD647], A                                    ;; 01:56e0 $ea $47 $d6
+    ld   [w1_D647], A                                  ;; 01:56e0 $ea $47 $d6
     ld   A, $13                                        ;; 01:56e3 $3e $13
-    ld   [wD645], A                                    ;; 01:56e5 $ea $45 $d6
+    ld   [w1_D645], A                                  ;; 01:56e5 $ea $45 $d6
     ld   A, $42                                        ;; 01:56e8 $3e $42
-    ld   [wD646], A                                    ;; 01:56ea $ea $46 $d6
+    ld   [w1_D646], A                                  ;; 01:56ea $ea $46 $d6
     ld   A, $00                                        ;; 01:56ed $3e $00
-    ld   [wD643], A                                    ;; 01:56ef $ea $43 $d6
-    ld   [wD644], A                                    ;; 01:56f2 $ea $44 $d6
+    ld   [w1_D643], A                                  ;; 01:56ef $ea $43 $d6
+    ld   [w1_D644], A                                  ;; 01:56f2 $ea $44 $d6
     ret                                                ;; 01:56f5 $c9
 
 call_01_56f6:
@@ -4519,7 +4519,7 @@ jp_01_5bfb:
     ldh  A, [rSVBK]                                    ;; 01:61fb $f0 $70
     push AF                                            ;; 01:61fd $f5
     call call_01_6211                                  ;; 01:61fe $cd $11 $62
-    ld   A, [wD000]                                    ;; 01:6201 $fa $00 $d0
+    ld   A, [w1_D000]                                  ;; 01:6201 $fa $00 $d0
     and  A, A                                          ;; 01:6204 $a7
     jr   NZ, .jr_01_620d                               ;; 01:6205 $20 $06
     call call_01_62cb                                  ;; 01:6207 $cd $cb $62
@@ -5064,14 +5064,14 @@ call_01_6556:
     ld   B, $00                                        ;; 01:655a $06 $00
 .jp_01_655c:
     push BC                                            ;; 01:655c $c5
-    ld   HL, wD919                                     ;; 01:655d $21 $19 $d9
+    ld   HL, w1_D919                                   ;; 01:655d $21 $19 $d9
     add  HL, BC                                        ;; 01:6560 $09
     ld   A, [HL+]                                      ;; 01:6561 $2a
     ld   E, A                                          ;; 01:6562 $5f
     ld   A, [HL]                                       ;; 01:6563 $7e
     ld   [wC36B], A                                    ;; 01:6564 $ea $6b $c3
     ld   D, A                                          ;; 01:6567 $57
-    ld   HL, wDD9B                                     ;; 01:6568 $21 $9b $dd
+    ld   HL, w1_DD9B                                   ;; 01:6568 $21 $9b $dd
     add  HL, BC                                        ;; 01:656b $09
     ld   A, [HL-]                                      ;; 01:656c $3a
     ld   [wC36D], A                                    ;; 01:656d $ea $6d $c3
@@ -5089,13 +5089,13 @@ call_01_6556:
     cp   A, E                                          ;; 01:6582 $bb
     jr   NZ, .jr_01_6590                               ;; 01:6583 $20 $0b
     pop  HL                                            ;; 01:6585 $e1
-    ld   HL, wDB99                                     ;; 01:6586 $21 $99 $db
+    ld   HL, w1_DB99                                   ;; 01:6586 $21 $99 $db
     add  HL, BC                                        ;; 01:6589 $09
     ld   A, $00                                        ;; 01:658a $3e $00
     ld   [HL], A                                       ;; 01:658c $77
     jp   .jp_01_66a8                                   ;; 01:658d $c3 $a8 $66
 .jr_01_6590:
-    ld   HL, wDB99                                     ;; 01:6590 $21 $99 $db
+    ld   HL, w1_DB99                                   ;; 01:6590 $21 $99 $db
     add  HL, BC                                        ;; 01:6593 $09
     ld   A, $01                                        ;; 01:6594 $3e $01
     ld   [HL], A                                       ;; 01:6596 $77
@@ -5215,34 +5215,34 @@ call_01_6556:
     ld   [wC368], A                                    ;; 01:665f $ea $68 $c3
     ld   A, H                                          ;; 01:6662 $7c
     ld   [wC369], A                                    ;; 01:6663 $ea $69 $c3
-    ld   HL, wD99C                                     ;; 01:6666 $21 $9c $d9
+    ld   HL, w1_D99C                                   ;; 01:6666 $21 $9c $d9
     add  HL, BC                                        ;; 01:6669 $09
     ld   A, [wBitArrayIndexC35E.low]                   ;; 01:666a $fa $5f $c3
     ld   [HL-], A                                      ;; 01:666d $32
     ld   [HL], $00                                     ;; 01:666e $36 $00
-    ld   HL, wD99E                                     ;; 01:6670 $21 $9e $d9
+    ld   HL, w1_D99E                                   ;; 01:6670 $21 $9e $d9
     add  HL, BC                                        ;; 01:6673 $09
     ld   A, [wC361]                                    ;; 01:6674 $fa $61 $c3
     ld   [HL-], A                                      ;; 01:6677 $32
     ld   [HL], $00                                     ;; 01:6678 $36 $00
-    ld   HL, wD9A0                                     ;; 01:667a $21 $a0 $d9
+    ld   HL, w1_D9A0                                   ;; 01:667a $21 $a0 $d9
     add  HL, BC                                        ;; 01:667d $09
     ld   A, [wC363]                                    ;; 01:667e $fa $63 $c3
     ld   [HL-], A                                      ;; 01:6681 $32
     ld   [HL], $00                                     ;; 01:6682 $36 $00
-    ld   HL, wDB9B                                     ;; 01:6684 $21 $9b $db
+    ld   HL, w1_DB9B                                   ;; 01:6684 $21 $9b $db
     add  HL, BC                                        ;; 01:6687 $09
     ld   A, [wC364]                                    ;; 01:6688 $fa $64 $c3
     ld   [HL+], A                                      ;; 01:668b $22
     ld   A, [wC365]                                    ;; 01:668c $fa $65 $c3
     ld   [HL], A                                       ;; 01:668f $77
-    ld   HL, wDB9D                                     ;; 01:6690 $21 $9d $db
+    ld   HL, w1_DB9D                                   ;; 01:6690 $21 $9d $db
     add  HL, BC                                        ;; 01:6693 $09
     ld   A, [wC366]                                    ;; 01:6694 $fa $66 $c3
     ld   [HL+], A                                      ;; 01:6697 $22
     ld   A, [wC367]                                    ;; 01:6698 $fa $67 $c3
     ld   [HL], A                                       ;; 01:669b $77
-    ld   HL, wDB9F                                     ;; 01:669c $21 $9f $db
+    ld   HL, w1_DB9F                                   ;; 01:669c $21 $9f $db
     add  HL, BC                                        ;; 01:669f $09
     ld   A, [wC368]                                    ;; 01:66a0 $fa $68 $c3
     ld   [HL+], A                                      ;; 01:66a3 $22
@@ -5268,7 +5268,7 @@ call_01_66b6:
     rl   B                                             ;; 01:66bf $cb $10
     sla  C                                             ;; 01:66c1 $cb $21
     rl   B                                             ;; 01:66c3 $cb $10
-    ld   HL, wDB99                                     ;; 01:66c5 $21 $99 $db
+    ld   HL, w1_DB99                                   ;; 01:66c5 $21 $99 $db
     add  HL, BC                                        ;; 01:66c8 $09
     ld   A, [HL]                                       ;; 01:66c9 $7e
     and  A, A                                          ;; 01:66ca $a7
@@ -5276,12 +5276,12 @@ call_01_66b6:
     pop  BC                                            ;; 01:66cd $c1
     jp   .jp_01_6731                                   ;; 01:66ce $c3 $31 $67
 .jr_01_66d1:
-    ld   HL, wDB9B                                     ;; 01:66d1 $21 $9b $db
+    ld   HL, w1_DB9B                                   ;; 01:66d1 $21 $9b $db
     add  HL, BC                                        ;; 01:66d4 $09
     ld   A, [HL+]                                      ;; 01:66d5 $2a
     ld   E, A                                          ;; 01:66d6 $5f
     ld   D, [HL]                                       ;; 01:66d7 $56
-    ld   HL, wD99B                                     ;; 01:66d8 $21 $9b $d9
+    ld   HL, w1_D99B                                   ;; 01:66d8 $21 $9b $d9
     add  HL, BC                                        ;; 01:66db $09
     ld   A, [HL]                                       ;; 01:66dc $7e
     add  A, E                                          ;; 01:66dd $83
@@ -5290,12 +5290,12 @@ call_01_66b6:
     adc  A, D                                          ;; 01:66e0 $8a
     ld   [HL], A                                       ;; 01:66e1 $77
     ld   [wBitArrayIndexC35E.low], A                   ;; 01:66e2 $ea $5f $c3
-    ld   HL, wDB9F                                     ;; 01:66e5 $21 $9f $db
+    ld   HL, w1_DB9F                                   ;; 01:66e5 $21 $9f $db
     add  HL, BC                                        ;; 01:66e8 $09
     ld   A, [HL+]                                      ;; 01:66e9 $2a
     ld   E, A                                          ;; 01:66ea $5f
     ld   D, [HL]                                       ;; 01:66eb $56
-    ld   HL, wD99F                                     ;; 01:66ec $21 $9f $d9
+    ld   HL, w1_D99F                                   ;; 01:66ec $21 $9f $d9
     add  HL, BC                                        ;; 01:66ef $09
     ld   A, [HL]                                       ;; 01:66f0 $7e
     add  A, E                                          ;; 01:66f1 $83
@@ -5304,12 +5304,12 @@ call_01_66b6:
     adc  A, D                                          ;; 01:66f4 $8a
     ld   [HL], A                                       ;; 01:66f5 $77
     ld   [wC363], A                                    ;; 01:66f6 $ea $63 $c3
-    ld   HL, wDB9D                                     ;; 01:66f9 $21 $9d $db
+    ld   HL, w1_DB9D                                   ;; 01:66f9 $21 $9d $db
     add  HL, BC                                        ;; 01:66fc $09
     ld   A, [HL+]                                      ;; 01:66fd $2a
     ld   E, A                                          ;; 01:66fe $5f
     ld   D, [HL]                                       ;; 01:66ff $56
-    ld   HL, wD99D                                     ;; 01:6700 $21 $9d $d9
+    ld   HL, w1_D99D                                   ;; 01:6700 $21 $9d $d9
     add  HL, BC                                        ;; 01:6703 $09
     ld   A, [HL]                                       ;; 01:6704 $7e
     add  A, E                                          ;; 01:6705 $83
@@ -5338,7 +5338,7 @@ call_01_66b6:
     or   A, E                                          ;; 01:6727 $b3
     ld   E, A                                          ;; 01:6728 $5f
     pop  BC                                            ;; 01:6729 $c1
-    ld   HL, wDD9A                                     ;; 01:672a $21 $9a $dd
+    ld   HL, w1_DD9A                                   ;; 01:672a $21 $9a $dd
     add  HL, BC                                        ;; 01:672d $09
     ld   [HL], E                                       ;; 01:672e $73
     inc  HL                                            ;; 01:672f $23
@@ -5469,10 +5469,10 @@ call_01_692f:
     cp   A, $03                                        ;; 01:6932 $fe $03
     jr   NC, .jr_01_6956                               ;; 01:6934 $30 $20
     xor  A, A                                          ;; 01:6936 $af
-    ld   [wD031], A                                    ;; 01:6937 $ea $31 $d0
-    ld   [wD05F], A                                    ;; 01:693a $ea $5f $d0
+    ld   [w1_D031], A                                  ;; 01:6937 $ea $31 $d0
+    ld   [w1_D05F], A                                  ;; 01:693a $ea $5f $d0
     inc  A                                             ;; 01:693d $3c
-    ld   [wD08D], A                                    ;; 01:693e $ea $8d $d0
+    ld   [w1_D08D], A                                  ;; 01:693e $ea $8d $d0
     ld   A, $02                                        ;; 01:6941 $3e $02
     ld   [wC664], A                                    ;; 01:6943 $ea $64 $c6
     ld   E, A                                          ;; 01:6946 $5f
@@ -5480,7 +5480,7 @@ call_01_692f:
     ld   HL, data_01_6d92                              ;; 01:6949 $21 $92 $6d
     add  HL, DE                                        ;; 01:694c $19
     ld   A, [HL]                                       ;; 01:694d $7e
-    ld   [wD09E], A                                    ;; 01:694e $ea $9e $d0
+    ld   [w1_D09E], A                                  ;; 01:694e $ea $9e $d0
     ld   A, $02                                        ;; 01:6951 $3e $02
     ld   [wC663], A                                    ;; 01:6953 $ea $63 $c6
 .jr_01_6956:
@@ -5519,7 +5519,7 @@ call_01_6957:
     ld   HL, data_01_6d8f                              ;; 01:698b $21 $8f $6d
     add  HL, DE                                        ;; 01:698e $19
     ld   A, [HL]                                       ;; 01:698f $7e
-    ld   [wD070], A                                    ;; 01:6990 $ea $70 $d0
+    ld   [w1_D070], A                                  ;; 01:6990 $ea $70 $d0
     ret                                                ;; 01:6993 $c9
 
 call_01_6994:
@@ -5648,10 +5648,10 @@ call_01_6a90:
     ld   HL, data_01_7156                              ;; 01:6ab1 $21 $56 $71
     add  HL, DE                                        ;; 01:6ab4 $19
     ld   A, [HL]                                       ;; 01:6ab5 $7e
-    ld   HL, wD84B                                     ;; 01:6ab6 $21 $4b $d8
+    ld   HL, w1_D84B                                   ;; 01:6ab6 $21 $4b $d8
     add  HL, DE                                        ;; 01:6ab9 $19
     ld   [HL], A                                       ;; 01:6aba $77
-    ld   HL, wD86B                                     ;; 01:6abb $21 $6b $d8
+    ld   HL, w1_D86B                                   ;; 01:6abb $21 $6b $d8
     add  HL, DE                                        ;; 01:6abe $19
     ldh  A, [hFF81]                                    ;; 01:6abf $f0 $81
     ld   [HL], A                                       ;; 01:6ac1 $77
@@ -5698,14 +5698,14 @@ call_01_6acf:
     ld   [HL], A                                       ;; 01:6b09 $77
     ld   A, $05                                        ;; 01:6b0a $3e $05
     ld_long_store rSVBK, A                             ;; 01:6b0c $ea $70 $ff
-    ld   HL, wD86B                                     ;; 01:6b0f $21 $6b $d8
+    ld   HL, w1_D86B                                   ;; 01:6b0f $21 $6b $d8
     add  HL, DE                                        ;; 01:6b12 $19
     ld   A, $7f                                        ;; 01:6b13 $3e $7f
     ld   [HL], A                                       ;; 01:6b15 $77
     ld   HL, data_01_7156                              ;; 01:6b16 $21 $56 $71
     add  HL, DE                                        ;; 01:6b19 $19
     ld   A, [HL]                                       ;; 01:6b1a $7e
-    ld   HL, wD84B                                     ;; 01:6b1b $21 $4b $d8
+    ld   HL, w1_D84B                                   ;; 01:6b1b $21 $4b $d8
     add  HL, DE                                        ;; 01:6b1e $19
     ld   [HL], A                                       ;; 01:6b1f $77
     ld   A, [wC3EB]                                    ;; 01:6b20 $fa $eb $c3
@@ -5847,19 +5847,19 @@ call_01_6ba8:
     ld   HL, data_01_6d7f                              ;; 01:6cdc $21 $7f $6d
     add  HL, DE                                        ;; 01:6cdf $19
     ld   A, [HL]                                       ;; 01:6ce0 $7e
-    ld   [wD04A], A                                    ;; 01:6ce1 $ea $4a $d0
+    ld   [w1_D04A], A                                  ;; 01:6ce1 $ea $4a $d0
     ld   A, [wC667]                                    ;; 01:6ce4 $fa $67 $c6
     ld   E, A                                          ;; 01:6ce7 $5f
     ld   HL, data_01_6d89                              ;; 01:6ce8 $21 $89 $6d
     add  HL, DE                                        ;; 01:6ceb $19
     ld   A, [HL]                                       ;; 01:6cec $7e
-    ld   [wD042], A                                    ;; 01:6ced $ea $42 $d0
+    ld   [w1_D042], A                                  ;; 01:6ced $ea $42 $d0
     ret                                                ;; 01:6cf0 $c9
 .jr_01_6cf1:
     xor  A, A                                          ;; 01:6cf1 $af
-    ld   [wD031], A                                    ;; 01:6cf2 $ea $31 $d0
+    ld   [w1_D031], A                                  ;; 01:6cf2 $ea $31 $d0
     inc  A                                             ;; 01:6cf5 $3c
-    ld   [wD05F], A                                    ;; 01:6cf6 $ea $5f $d0
+    ld   [w1_D05F], A                                  ;; 01:6cf6 $ea $5f $d0
     ld   A, [wC3E9]                                    ;; 01:6cf9 $fa $e9 $c3
     ld   [wC664], A                                    ;; 01:6cfc $ea $64 $c6
     ld   E, A                                          ;; 01:6cff $5f
@@ -5867,15 +5867,15 @@ call_01_6ba8:
     ld   HL, data_01_6d8f                              ;; 01:6d02 $21 $8f $6d
     add  HL, DE                                        ;; 01:6d05 $19
     ld   A, [HL]                                       ;; 01:6d06 $7e
-    ld   [wD070], A                                    ;; 01:6d07 $ea $70 $d0
+    ld   [w1_D070], A                                  ;; 01:6d07 $ea $70 $d0
     ld   A, $01                                        ;; 01:6d0a $3e $01
     ld   [wC663], A                                    ;; 01:6d0c $ea $63 $c6
     ret                                                ;; 01:6d0f $c9
 .jr_01_6d10:
     xor  A, A                                          ;; 01:6d10 $af
-    ld   [wD031], A                                    ;; 01:6d11 $ea $31 $d0
+    ld   [w1_D031], A                                  ;; 01:6d11 $ea $31 $d0
     inc  A                                             ;; 01:6d14 $3c
-    ld   [wD08D], A                                    ;; 01:6d15 $ea $8d $d0
+    ld   [w1_D08D], A                                  ;; 01:6d15 $ea $8d $d0
     ld   A, [wC667]                                    ;; 01:6d18 $fa $67 $c6
     cp   A, $05                                        ;; 01:6d1b $fe $05
     jr   Z, .jr_01_6d2e                                ;; 01:6d1d $28 $0f
@@ -5897,7 +5897,7 @@ call_01_6ba8:
     ld   HL, data_01_6d92                              ;; 01:6d36 $21 $92 $6d
     add  HL, DE                                        ;; 01:6d39 $19
     ld   A, [HL]                                       ;; 01:6d3a $7e
-    ld   [wD09E], A                                    ;; 01:6d3b $ea $9e $d0
+    ld   [w1_D09E], A                                  ;; 01:6d3b $ea $9e $d0
     ld   A, $02                                        ;; 01:6d3e $3e $02
     ld   [wC663], A                                    ;; 01:6d40 $ea $63 $c6
     ret                                                ;; 01:6d43 $c9
@@ -5965,7 +5965,7 @@ call_01_6dc8:
     ld   HL, .data_01_6ddc                             ;; 01:6dd3 $21 $dc $6d
     add  HL, DE                                        ;; 01:6dd6 $19
     ld   A, [HL]                                       ;; 01:6dd7 $7e
-    ld   [wD01C], A                                    ;; 01:6dd8 $ea $1c $d0
+    ld   [w1_D01C], A                                  ;; 01:6dd8 $ea $1c $d0
     ret                                                ;; 01:6ddb $c9
 .data_01_6ddc:
     db   $5c, $64, $6c, $74, $7c, $84, $8c, $8c        ;; 01:6ddc ?.......
@@ -6103,14 +6103,14 @@ call_01_715e:
     ld   HL, wC95B                                     ;; 01:717c $21 $5b $c9
     ld   B, $00                                        ;; 01:717f $06 $00
     call call_01_71d3                                  ;; 01:7181 $cd $d3 $71
-    ld   HL, wD86B                                     ;; 01:7184 $21 $6b $d8
+    ld   HL, w1_D86B                                   ;; 01:7184 $21 $6b $d8
     ld   B, $7f                                        ;; 01:7187 $06 $7f
     ld_long_load A, rSVBK                              ;; 01:7189 $fa $70 $ff
     push AF                                            ;; 01:718c $f5
     ld   A, $05                                        ;; 01:718d $3e $05
     ld_long_store rSVBK, A                             ;; 01:718f $ea $70 $ff
     call call_01_71c4                                  ;; 01:7192 $cd $c4 $71
-    ld   HL, wD86B                                     ;; 01:7195 $21 $6b $d8
+    ld   HL, w1_D86B                                   ;; 01:7195 $21 $6b $d8
     ld   B, $7f                                        ;; 01:7198 $06 $7f
     push AF                                            ;; 01:719a $f5
     call call_01_71d3                                  ;; 01:719b $cd $d3 $71
@@ -6696,7 +6696,7 @@ call_01_75c7:
     ld   A, $01                                        ;; 01:77e1 $3e $01
     ld_long_store rSVBK, A                             ;; 01:77e3 $ea $70 $ff
     call call_01_7c09                                  ;; 01:77e6 $cd $09 $7c
-    ld   HL, wBeginRegionD1FD                          ;; 01:77e9 $21 $fd $d1
+    ld   HL, w1_D1FD                                   ;; 01:77e9 $21 $fd $d1
     ld   A, [HL]                                       ;; 01:77ec $7e
     rra                                                ;; 01:77ed $1f
     rra                                                ;; 01:77ee $1f
@@ -6720,10 +6720,10 @@ call_01_75c7:
     ld   C, $80                                        ;; 01:7807 $0e $80
     cp   A, $02                                        ;; 01:7809 $fe $02
     jr   C, .jr_01_7812                                ;; 01:780b $38 $05
-    ld   HL, wD216                                     ;; 01:780d $21 $16 $d2
+    ld   HL, w1_D216                                   ;; 01:780d $21 $16 $d2
     jr   .jr_01_7815                                   ;; 01:7810 $18 $03
 .jr_01_7812:
-    ld   HL, wD20E                                     ;; 01:7812 $21 $0e $d2
+    ld   HL, w1_D20E                                   ;; 01:7812 $21 $0e $d2
 .jr_01_7815:
     ld   A, [HL+]                                      ;; 01:7815 $2a
     ldh  [C], A                                        ;; 01:7816 $e2
@@ -6745,7 +6745,7 @@ call_01_75c7:
     ret                                                ;; 01:782a $c9
     ld   A, $01                                        ;; 01:782b $3e $01
     ld_long_store rSVBK, A                             ;; 01:782d $ea $70 $ff
-    ld   HL, wD1FF                                     ;; 01:7830 $21 $ff $d1
+    ld   HL, w1_D1FF                                   ;; 01:7830 $21 $ff $d1
     ld   A, $02                                        ;; 01:7833 $3e $02
     ld   [HL], A                                       ;; 01:7835 $77
     ld   A, [wC73D]                                    ;; 01:7836 $fa $3d $c7
@@ -6792,7 +6792,7 @@ call_01_75c7:
     ldh  [hFF80], A                                    ;; 01:7876 $e0 $80
     ld   A, H                                          ;; 01:7878 $7c
     ldh  [hFF81], A                                    ;; 01:7879 $e0 $81
-    ld   HL, wBeginRegionD1FD                          ;; 01:787b $21 $fd $d1
+    ld   HL, w1_D1FD                                   ;; 01:787b $21 $fd $d1
     ld   A, [wC73C]                                    ;; 01:787e $fa $3c $c7
     and  A, A                                          ;; 01:7881 $a7
     jr   Z, .jr_01_78b1                                ;; 01:7882 $28 $2d
@@ -6802,7 +6802,7 @@ call_01_75c7:
     jr   Z, .jr_01_789a                                ;; 01:788a $28 $0e
     ld   A, $10                                        ;; 01:788c $3e $10
     ld   [HL], A                                       ;; 01:788e $77
-    ld   HL, wD20E                                     ;; 01:788f $21 $0e $d2
+    ld   HL, w1_D20E                                   ;; 01:788f $21 $0e $d2
     ld   A, $f4                                        ;; 01:7892 $3e $f4
     ld   [HL+], A                                      ;; 01:7894 $22
     ld   A, $00                                        ;; 01:7895 $3e $00
@@ -6811,13 +6811,13 @@ call_01_75c7:
 .jr_01_789a:
     ld   A, $08                                        ;; 01:789a $3e $08
     ld   [HL], A                                       ;; 01:789c $77
-    ld   HL, wD20E                                     ;; 01:789d $21 $0e $d2
+    ld   HL, w1_D20E                                   ;; 01:789d $21 $0e $d2
     ld   A, $e4                                        ;; 01:78a0 $3e $e4
     ld   [HL+], A                                      ;; 01:78a2 $22
     ld   A, $ff                                        ;; 01:78a3 $3e $ff
     ld   [HL], A                                       ;; 01:78a5 $77
 .jr_01_78a6:
-    ld   HL, wD216                                     ;; 01:78a6 $21 $16 $d2
+    ld   HL, w1_D216                                   ;; 01:78a6 $21 $16 $d2
     ldh  A, [hFF80]                                    ;; 01:78a9 $f0 $80
     ld   [HL+], A                                      ;; 01:78ab $22
     ldh  A, [hFF81]                                    ;; 01:78ac $f0 $81
@@ -6826,7 +6826,7 @@ call_01_75c7:
 .jr_01_78b1:
     ld   A, $04                                        ;; 01:78b1 $3e $04
     ld   [HL], A                                       ;; 01:78b3 $77
-    ld   HL, wD216                                     ;; 01:78b4 $21 $16 $d2
+    ld   HL, w1_D216                                   ;; 01:78b4 $21 $16 $d2
     ld   A, $f8                                        ;; 01:78b7 $3e $f8
     ld   [HL+], A                                      ;; 01:78b9 $22
     ld   A, $00                                        ;; 01:78ba $3e $00
@@ -6835,13 +6835,13 @@ call_01_75c7:
 .jr_01_78bf:
     ld   A, $02                                        ;; 01:78bf $3e $02
     ld   [HL], A                                       ;; 01:78c1 $77
-    ld   HL, wD216                                     ;; 01:78c2 $21 $16 $d2
+    ld   HL, w1_D216                                   ;; 01:78c2 $21 $16 $d2
     ld   A, $e0                                        ;; 01:78c5 $3e $e0
     ld   [HL+], A                                      ;; 01:78c7 $22
     ld   A, $ff                                        ;; 01:78c8 $3e $ff
     ld   [HL], A                                       ;; 01:78ca $77
 .jr_01_78cb:
-    ld   HL, wD20E                                     ;; 01:78cb $21 $0e $d2
+    ld   HL, w1_D20E                                   ;; 01:78cb $21 $0e $d2
     ldh  A, [hFF80]                                    ;; 01:78ce $f0 $80
     ld   [HL+], A                                      ;; 01:78d0 $22
     ldh  A, [hFF81]                                    ;; 01:78d1 $f0 $81
@@ -6975,7 +6975,7 @@ call_01_7c09:
     ld   A, $01                                        ;; 01:7c09 $3e $01
     ld_long_store rSVBK, A                             ;; 01:7c0b $ea $70 $ff
     ld   B, $00                                        ;; 01:7c0e $06 $00
-    ld   A, [wBeginRegionD1FD]                         ;; 01:7c10 $fa $fd $d1
+    ld   A, [w1_D1FD]                                  ;; 01:7c10 $fa $fd $d1
     rra                                                ;; 01:7c13 $1f
     rra                                                ;; 01:7c14 $1f
     jr   C, .jr_01_7c20                                ;; 01:7c15 $38 $09
@@ -7012,7 +7012,7 @@ jr_01_7c38:
     inc  C                                             ;; 01:7c3f $0c
     ld   A, [HL]                                       ;; 01:7c40 $7e
     ldh  [C], A                                        ;; 01:7c41 $e2
-    ld   HL, wSomeAddressD203                          ;; 01:7c42 $21 $03 $d2
+    ld   HL, w1_D203                                   ;; 01:7c42 $21 $03 $d2
     ld   C, $80                                        ;; 01:7c45 $0e $80
     ldh  A, [C]                                        ;; 01:7c47 $f2
     cp   A, [HL]                                       ;; 01:7c48 $be
@@ -7039,11 +7039,11 @@ jr_01_7c38:
     jr   Z, .jr_01_7c72                                ;; 01:7c5d $28 $13
     ld   [HL+], A                                      ;; 01:7c5f $22
     ld   [HL], A                                       ;; 01:7c60 $77
-    ld   HL, wD1FE                                     ;; 01:7c61 $21 $fe $d1
+    ld   HL, w1_D1FE                                   ;; 01:7c61 $21 $fe $d1
     ld   [HL], A                                       ;; 01:7c64 $77
-    ld   HL, wD202                                     ;; 01:7c65 $21 $02 $d2
+    ld   HL, w1_D202                                   ;; 01:7c65 $21 $02 $d2
     ld   [HL], A                                       ;; 01:7c68 $77
-    ld   HL, wD218                                     ;; 01:7c69 $21 $18 $d2
+    ld   HL, w1_D218                                   ;; 01:7c69 $21 $18 $d2
     ld   B, $13                                        ;; 01:7c6c $06 $13
 .jr_01_7c6e:
     ld   [HL+], A                                      ;; 01:7c6e $22

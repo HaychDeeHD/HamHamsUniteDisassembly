@@ -67,7 +67,7 @@ call_06_40a8:
     and  A, $0f                                        ;; 06:40cc $e6 $0f
     swap A                                             ;; 06:40ce $cb $37
     ld   C, A                                          ;; 06:40d0 $4f
-    ld   HL, wD040                                     ;; 06:40d1 $21 $40 $d0
+    ld   HL, w1_D040                                   ;; 06:40d1 $21 $40 $d0
     add  HL, BC                                        ;; 06:40d4 $09
     push HL                                            ;; 06:40d5 $e5
     ld   A, [wC755]                                    ;; 06:40d6 $fa $55 $c7
@@ -203,17 +203,17 @@ call_06_40a8:
     ld   A, $01                                        ;; 06:4278 $3e $01
     ldh  [rSVBK], A                                    ;; 06:427a $e0 $70
     ld   A, [HL+]                                      ;; 06:427c $2a
-    ld   [wD5CA], A                                    ;; 06:427d $ea $ca $d5
+    ld   [w1_D5CA], A                                  ;; 06:427d $ea $ca $d5
     ld   A, [HL+]                                      ;; 06:4280 $2a
-    ld   [wD5CB], A                                    ;; 06:4281 $ea $cb $d5
+    ld   [w1_D5CB], A                                  ;; 06:4281 $ea $cb $d5
     ld   A, [HL+]                                      ;; 06:4284 $2a
-    ld   [wD5CC], A                                    ;; 06:4285 $ea $cc $d5
+    ld   [w1_D5CC], A                                  ;; 06:4285 $ea $cc $d5
     ld   A, [HL+]                                      ;; 06:4288 $2a
-    ld   [wD5F3], A                                    ;; 06:4289 $ea $f3 $d5
+    ld   [w1_D5F3], A                                  ;; 06:4289 $ea $f3 $d5
     ld   A, [HL+]                                      ;; 06:428c $2a
-    ld   [wD5F4], A                                    ;; 06:428d $ea $f4 $d5
+    ld   [w1_D5F4], A                                  ;; 06:428d $ea $f4 $d5
     ld   A, [HL+]                                      ;; 06:4290 $2a
-    ld   [wD5F5], A                                    ;; 06:4291 $ea $f5 $d5
+    ld   [w1_D5F5], A                                  ;; 06:4291 $ea $f5 $d5
     ld   A, [HL+]                                      ;; 06:4294 $2a
     ld   [wC47A], A                                    ;; 06:4295 $ea $7a $c4
     ld   A, [HL+]                                      ;; 06:4298 $2a
@@ -2889,17 +2889,17 @@ call_06_7406:
     ld   A, $01                                        ;; 06:7414 $3e $01
     ldh  [rSVBK], A                                    ;; 06:7416 $e0 $70
     ld   A, [HL+]                                      ;; 06:7418 $2a
-    ld   [wD5CA], A                                    ;; 06:7419 $ea $ca $d5
+    ld   [w1_D5CA], A                                  ;; 06:7419 $ea $ca $d5
     ld   A, [HL+]                                      ;; 06:741c $2a
-    ld   [wD5CB], A                                    ;; 06:741d $ea $cb $d5
+    ld   [w1_D5CB], A                                  ;; 06:741d $ea $cb $d5
     ld   A, [HL+]                                      ;; 06:7420 $2a
-    ld   [wD5CC], A                                    ;; 06:7421 $ea $cc $d5
+    ld   [w1_D5CC], A                                  ;; 06:7421 $ea $cc $d5
     ld   A, [HL+]                                      ;; 06:7424 $2a
-    ld   [wD5F3], A                                    ;; 06:7425 $ea $f3 $d5
+    ld   [w1_D5F3], A                                  ;; 06:7425 $ea $f3 $d5
     ld   A, [HL+]                                      ;; 06:7428 $2a
-    ld   [wD5F4], A                                    ;; 06:7429 $ea $f4 $d5
+    ld   [w1_D5F4], A                                  ;; 06:7429 $ea $f4 $d5
     ld   A, [HL+]                                      ;; 06:742c $2a
-    ld   [wD5F5], A                                    ;; 06:742d $ea $f5 $d5
+    ld   [w1_D5F5], A                                  ;; 06:742d $ea $f5 $d5
     ld   A, [HL+]                                      ;; 06:7430 $2a
     ld   [wC3F9], A                                    ;; 06:7431 $ea $f9 $c3
     ld   A, [HL+]                                      ;; 06:7434 $2a

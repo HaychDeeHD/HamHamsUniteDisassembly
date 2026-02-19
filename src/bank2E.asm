@@ -75,30 +75,30 @@ data_2e_4000:
     db   $3c, $4a, $32, $c4                            ;; 2e:40b0 .ww.
 .data_2e_40b4:
     db   $58, $64                                      ;; 2e:40b4 ..
-    dw   wD000                                         ;; 2e:40b6 pP
+    dw   w1_D000                                       ;; 2e:40b6 pP
     db   $05, $32, $fe, $59, $7b                       ;; 2e:40b8 .w...
     dw   $df00                                         ;; 2e:40bd pP
     db   $04, $32, $00                                 ;; 2e:40bf .w.
 .data_2e_40c2:
     db   $40, $65                                      ;; 2e:40c2 ..
-    dw   wD000                                         ;; 2e:40c4 pP
+    dw   w1_D000                                       ;; 2e:40c4 pP
 .data_2e_40c6:
     db   $07, $34, $b5, $42, $70                       ;; 2e:40c6 .w...
-    dw   wD800                                         ;; 2e:40cb pP
+    dw   w1_D800                                       ;; 2e:40cb pP
     db   $05, $1e, $34, $f1, $7e                       ;; 2e:40cd ..w..
 .data_2e_40d2:
     db   $67                                           ;; 2e:40d2 .
-    dw   wD800                                         ;; 2e:40d3 pP
+    dw   w1_D800                                       ;; 2e:40d3 pP
     db   $07, $1e, $36                                 ;; 2e:40d5 ..w
 .data_2e_40d8:
     db   $e1, $73, $79                                 ;; 2e:40d8 ...
-    dw   wD000                                         ;; 2e:40db pP
+    dw   w1_D000                                       ;; 2e:40db pP
     db   $03, $32, $0d, $7d, $6d                       ;; 2e:40dd .w...
     dw   $d400                                         ;; 2e:40e2 pP
     db   $06, $32, $de                                 ;; 2e:40e4 .w.
 .data_2e_40e7:
     db   $72, $6d                                      ;; 2e:40e7 ..
-    dw   wD000                                         ;; 2e:40e9 pP
+    dw   w1_D000                                       ;; 2e:40e9 pP
     db   $06, $32, $f6, $55, $7e                       ;; 2e:40eb .w...
     dw   $d200                                         ;; 2e:40f0 pP
     db   $04, $14, $01, $ac, $61                       ;; 2e:40f2 .w...
@@ -642,13 +642,13 @@ data_2e_4000:
     dw   .data_2e_6dd9                                 ;; 2e:49f5 pP
     db   $02, $16, $01, $3e, $2a, $68, $01             ;; 2e:49f7 .w...w.
     dw   $c764                                         ;; 2e:49fe pP
-    dw   wBeginRegionD1FD                              ;; 2e:4a00 pP
+    dw   w1_D1FD                                       ;; 2e:4a00 pP
     db   $01, $68, $02                                 ;; 2e:4a02 .w.
     dw   $c7d8                                         ;; 2e:4a05 pP
-    dw   wD216                                         ;; 2e:4a07 pP
+    dw   w1_D216                                       ;; 2e:4a07 pP
     db   $01, $68, $02                                 ;; 2e:4a09 .w.
     dw   $c7da                                         ;; 2e:4a0c pP
-    dw   wD20E                                         ;; 2e:4a0e pP
+    dw   w1_D20E                                       ;; 2e:4a0e pP
     db   $01, $1e                                      ;; 2e:4a10 .w
     dw   $6fd4                                         ;; 2e:4a12 wW
     db   $1d, $1e                                      ;; 2e:4a14 .w
@@ -752,7 +752,7 @@ data_2e_4000:
 .data_2e_4b59:
     db   $4b, $2e, $68, $01                            ;; 2e:4b59 ..w.
     dw   $c822                                         ;; 2e:4b5d pP
-    dw   wBeginRegionD1FD                              ;; 2e:4b5f pP
+    dw   w1_D1FD                                       ;; 2e:4b5f pP
     db   $01, $16, $01                                 ;; 2e:4b61 .w.
 .data_2e_4b64:
     db   $75, $0a, $65, $0a, $be, $1f, $14, $01        ;; 2e:4b64 .w.w..w.
@@ -826,19 +826,19 @@ data_2e_4000:
     db   $5f, $a1, $20, $1e                            ;; 2e:4cb3 ..ww
     dw   $46d3                                         ;; 2e:4cb7 wW
     db   $3c, $4a, $32, $5b, $6f, $5e                  ;; 2e:4cb9 .ww...
-    dw   wD000                                         ;; 2e:4cbf pP
+    dw   w1_D000                                       ;; 2e:4cbf pP
     db   $05, $32, $bd, $6a, $5f                       ;; 2e:4cc1 .w...
-    dw   wD000                                         ;; 2e:4cc6 pP
+    dw   w1_D000                                       ;; 2e:4cc6 pP
     db   $07, $34, $0a, $50, $70                       ;; 2e:4cc8 .w...
-    dw   wD800                                         ;; 2e:4ccd pP
+    dw   w1_D800                                       ;; 2e:4ccd pP
     db   $05, $1e, $34, $79, $76, $76                  ;; 2e:4ccf ..w...
-    dw   wD800                                         ;; 2e:4cd5 pP
+    dw   w1_D800                                       ;; 2e:4cd5 pP
     db   $07, $1e, $36, $29, $5c, $7b                  ;; 2e:4cd7 ..w...
-    dw   wD000                                         ;; 2e:4cdd pP
+    dw   w1_D000                                       ;; 2e:4cdd pP
     db   $03, $32, $0d, $7d, $6d                       ;; 2e:4cdf .w...
     dw   $d400                                         ;; 2e:4ce4 pP
     db   $06, $32, $de, $72, $6d                       ;; 2e:4ce6 .w...
-    dw   wD000                                         ;; 2e:4ceb pP
+    dw   w1_D000                                       ;; 2e:4ceb pP
     db   $06, $14, $01, $b0, $63                       ;; 2e:4ced .w...
     dw   $4cf9                                         ;; 2e:4cf2 wW
     db   $2e, $1e, $59, $56, $2e, $1e                  ;; 2e:4cf4 .????w
@@ -1359,7 +1359,7 @@ data_2e_4000:
     db   $03, $09, $50                                 ;; 2e:56db ..w
     dw   $d225                                         ;; 2e:56de pP
     db   $03, $09, $50                                 ;; 2e:56e0 ..w
-    dw   wD22B                                         ;; 2e:56e3 pP
+    dw   w1_D22B                                       ;; 2e:56e3 pP
     db   $03, $09, $50                                 ;; 2e:56e5 ..w
     dw   $d1d4                                         ;; 2e:56e8 pP
     db   $03, $09, $14, $01, $08, $64                  ;; 2e:56ea ..w...
@@ -1389,13 +1389,13 @@ data_2e_4000:
     dw   .data_2e_6dd9                                 ;; 2e:576a pP
     db   $02, $16, $01, $3e, $49, $68, $01             ;; 2e:576c .w...w.
     dw   $c764                                         ;; 2e:5773 pP
-    dw   wBeginRegionD1FD                              ;; 2e:5775 pP
+    dw   w1_D1FD                                       ;; 2e:5775 pP
     db   $01, $68, $02                                 ;; 2e:5777 .w.
     dw   $c7d8                                         ;; 2e:577a pP
-    dw   wD216                                         ;; 2e:577c pP
+    dw   w1_D216                                       ;; 2e:577c pP
     db   $01, $68, $02                                 ;; 2e:577e .w.
     dw   $c7da                                         ;; 2e:5781 pP
-    dw   wD20E                                         ;; 2e:5783 pP
+    dw   w1_D20E                                       ;; 2e:5783 pP
     db   $01, $1e                                      ;; 2e:5785 .w
     dw   $6fd4                                         ;; 2e:5787 wW
     db   $1d, $1e                                      ;; 2e:5789 .w
@@ -1496,16 +1496,16 @@ data_2e_4000:
     db   $01, $4a, $32, $bb, $6d, $75                  ;; 2e:5914 .ww...
     dw   $de50                                         ;; 2e:591a pP
     db   $04, $32, $b0, $76, $5e                       ;; 2e:591c .w...
-    dw   wD000                                         ;; 2e:5921 pP
+    dw   w1_D000                                       ;; 2e:5921 pP
     db   $05, $32, $07, $5c, $60                       ;; 2e:5923 .w...
-    dw   wD000                                         ;; 2e:5928 pP
+    dw   w1_D000                                       ;; 2e:5928 pP
     db   $07, $34, $80, $44, $72                       ;; 2e:592a .w...
-    dw   wD800                                         ;; 2e:592f pP
+    dw   w1_D800                                       ;; 2e:592f pP
     db   $05, $1e, $34, $b6, $7e, $73                  ;; 2e:5931 ..w...
-    dw   wD800                                         ;; 2e:5937 pP
+    dw   w1_D800                                       ;; 2e:5937 pP
     db   $07, $1e, $14, $01, $40, $5b, $4d, $59        ;; 2e:5939 ..w...??
     db   $2e, $36, $5e, $58, $79                       ;; 2e:5941 ?w...
-    dw   wD000                                         ;; 2e:5946 pP
+    dw   w1_D000                                       ;; 2e:5946 pP
     db   $03, $18                                      ;; 2e:5948 .w
     dw   $5954                                         ;; 2e:594a wW
     db   $2e, $36, $d9, $40, $7a, $00, $d0, $03        ;; 2e:594c .???????
@@ -1520,7 +1520,7 @@ data_2e_4000:
     db   $04, $32, $22, $57, $6e                       ;; 2e:5968 .w...
     dw   $d300                                         ;; 2e:596d pP
     db   $04, $32, $de, $72, $6d                       ;; 2e:596f .w...
-    dw   wD000                                         ;; 2e:5974 pP
+    dw   w1_D000                                       ;; 2e:5974 pP
     db   $06, $14, $01, $40, $5b, $1f, $5a, $2e        ;; 2e:5976 .w...???
     db   $4c, $1c, $ff, $00, $48, $00, $60, $00        ;; 2e:597e ww......
     db   $00, $00, $00, $14, $01, $9e, $5b             ;; 2e:5986 ...w...
@@ -1617,9 +1617,9 @@ data_2e_4000:
     db   $00, $81, $41, $10, $18, $df, $5a, $2e        ;; 2e:5acc ????????
     db   $4c, $16, $02, $ff, $00, $00, $00, $00        ;; 2e:5ad4 ????????
     db   $c5, $41, $10, $80, $d8, $c7, $00             ;; 2e:5adc ???w...
-    dw   wD216                                         ;; 2e:5ae3 pP
+    dw   w1_D216                                       ;; 2e:5ae3 pP
     db   $01, $02, $00, $80, $da, $c7, $00             ;; 2e:5ae5 ...w...
-    dw   wD20E                                         ;; 2e:5aec pP
+    dw   w1_D20E                                       ;; 2e:5aec pP
     db   $01, $02, $00, $50                            ;; 2e:5aee ...w
     dw   $d215                                         ;; 2e:5af2 pP
     db   $01, $80, $50                                 ;; 2e:5af4 ..w
@@ -1668,13 +1668,13 @@ data_2e_4000:
     db   $17                                           ;; 2e:5b8a .
     dw   $d1fd                                         ;; 2e:5b8b wW
     db   $00, $00, $00, $00, $ff, $52                  ;; 2e:5b8d .....w
-    dw   wD001                                         ;; 2e:5b93 pP
+    dw   w1_D001                                       ;; 2e:5b93 pP
     db   $01                                           ;; 2e:5b95 .
-    dw   wBeginRegionD1FD                              ;; 2e:5b96 pP
+    dw   w1_D1FD                                       ;; 2e:5b96 pP
     db   $50                                           ;; 2e:5b98 w
     dw   wC31D                                         ;; 2e:5b99 pP
     db   $00, $d0, $50                                 ;; 2e:5b9b ..w
-    dw   wSomethingWithHamchatsD0FD                    ;; 2e:5b9e pP
+    dw   w1_D0FD                                       ;; 2e:5b9e pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 2e:5ba0 ..w..w.w
     db   $01, $7e, $0d, $1f, $16, $01, $7e, $12        ;; 2e:5ba8 ..w.w..w
     db   $b0, $16, $01, $7f, $05, $00, $16, $01        ;; 2e:5bb0 .w..w.w.
@@ -1709,7 +1709,7 @@ data_2e_4000:
     db   $2e, $18                                      ;; 2e:5c72 .w
     dw   $58a0                                         ;; 2e:5c74 wW
     db   $2e, $50                                      ;; 2e:5c76 .w
-    dw   wBeginRegionD1FD                              ;; 2e:5c78 pP
+    dw   w1_D1FD                                       ;; 2e:5c78 pP
     db   $01, $02, $82                                 ;; 2e:5c7a ..w
     dw   .data_2e_77e1                                 ;; 2e:5c7d pP
     db   $01, $16, $01, $5e, $c1, $16, $01, $5f        ;; 2e:5c7f .w...w..
@@ -1727,7 +1727,7 @@ data_2e_4000:
     db   $2e, $18                                      ;; 2e:5ca9 .w
     dw   $58a0                                         ;; 2e:5cab wW
     db   $2e, $50                                      ;; 2e:5cad .w
-    dw   wBeginRegionD1FD                              ;; 2e:5caf pP
+    dw   w1_D1FD                                       ;; 2e:5caf pP
     db   $01, $10, $82                                 ;; 2e:5cb1 ..w
     dw   .data_2e_77e1                                 ;; 2e:5cb4 pP
     db   $01, $16, $01, $5e, $c1, $16, $01, $5f        ;; 2e:5cb6 .w...w..
@@ -2044,13 +2044,13 @@ data_2e_4000:
     dw   .data_2e_6dd9                                 ;; 2e:60a2 pP
     db   $02, $16, $01, $3e, $14, $68, $01             ;; 2e:60a4 .w...w.
     dw   $c764                                         ;; 2e:60ab pP
-    dw   wBeginRegionD1FD                              ;; 2e:60ad pP
+    dw   w1_D1FD                                       ;; 2e:60ad pP
     db   $01, $68, $02                                 ;; 2e:60af .w.
     dw   $c7d8                                         ;; 2e:60b2 pP
-    dw   wD216                                         ;; 2e:60b4 pP
+    dw   w1_D216                                       ;; 2e:60b4 pP
     db   $01, $68, $02                                 ;; 2e:60b6 .w.
     dw   $c7da                                         ;; 2e:60b9 pP
-    dw   wD20E                                         ;; 2e:60bb pP
+    dw   w1_D20E                                       ;; 2e:60bb pP
     db   $01, $1e                                      ;; 2e:60bd .w
     dw   $6fd4                                         ;; 2e:60bf wW
     db   $1d, $1e                                      ;; 2e:60c1 .w
@@ -2253,19 +2253,19 @@ data_2e_4000:
     db   $00, $12, $82                                 ;; 2e:6402 ..w
     dw   .data_2e_6844                                 ;; 2e:6405 pP
     db   $01, $4a, $32, $ca, $71, $5f                  ;; 2e:6407 .ww...
-    dw   wD000                                         ;; 2e:640d pP
+    dw   w1_D000                                       ;; 2e:640d pP
     db   $05, $32, $30, $54, $61                       ;; 2e:640f .w...
-    dw   wD000                                         ;; 2e:6414 pP
+    dw   w1_D000                                       ;; 2e:6414 pP
     db   $07, $34, $4e, $6e, $71                       ;; 2e:6416 .w...
-    dw   wD800                                         ;; 2e:641b pP
+    dw   w1_D800                                       ;; 2e:641b pP
     db   $05, $1e, $34, $7d, $50, $74                  ;; 2e:641d ..w...
-    dw   wD800                                         ;; 2e:6423 pP
+    dw   w1_D800                                       ;; 2e:6423 pP
     db   $07, $1e, $36, $c8, $5f, $77                  ;; 2e:6425 ..w...
-    dw   wD000                                         ;; 2e:642b pP
+    dw   w1_D000                                       ;; 2e:642b pP
     db   $03, $32, $b3, $60, $6e                       ;; 2e:642d .w...
     dw   $d200                                         ;; 2e:6432 pP
     db   $04, $32, $de, $72, $6d                       ;; 2e:6434 .w...
-    dw   wD000                                         ;; 2e:6439 pP
+    dw   w1_D000                                       ;; 2e:6439 pP
     db   $06, $32, $0d, $7d, $6d                       ;; 2e:643b .w...
     dw   $d400                                         ;; 2e:6440 pP
     db   $06, $14, $01, $95, $5c                       ;; 2e:6442 .w...
@@ -2346,9 +2346,9 @@ data_2e_4000:
     db   $00, $c5, $41, $10, $18, $4e, $65, $2e        ;; 2e:6546 ????????
     db   $80, $d8, $c7, $00                            ;; 2e:654e w...
 .data_2e_6552:
-    dw   wD216                                         ;; 2e:6552 pP
+    dw   w1_D216                                       ;; 2e:6552 pP
     db   $01, $02, $00, $80, $da, $c7, $00             ;; 2e:6554 ...w...
-    dw   wD20E                                         ;; 2e:655b pP
+    dw   w1_D20E                                       ;; 2e:655b pP
     db   $01, $02, $00                                 ;; 2e:655d ...
 .data_2e_6560:
     db   $50                                           ;; 2e:6560 w
@@ -2403,14 +2403,14 @@ data_2e_4000:
     db   $17                                           ;; 2e:65ef .
     dw   $d1fd                                         ;; 2e:65f0 wW
     db   $00, $00, $00, $00, $ff, $52                  ;; 2e:65f2 .....w
-    dw   wD001                                         ;; 2e:65f8 pP
+    dw   w1_D001                                       ;; 2e:65f8 pP
     db   $01                                           ;; 2e:65fa .
 .data_2e_65fb:
-    dw   wBeginRegionD1FD                              ;; 2e:65fb pP
+    dw   w1_D1FD                                       ;; 2e:65fb pP
     db   $50                                           ;; 2e:65fd w
     dw   wC31D                                         ;; 2e:65fe pP
     db   $00, $d0, $50                                 ;; 2e:6600 ..w
-    dw   wSomethingWithHamchatsD0FD                    ;; 2e:6603 pP
+    dw   w1_D0FD                                       ;; 2e:6603 pP
     db   $02, $fe, $16, $01                            ;; 2e:6605 ..w.
 .data_2e_6609:
     db   $7e, $39, $00, $16, $01, $7e, $0d, $33        ;; 2e:6609 .w.w..w.
@@ -2483,14 +2483,14 @@ data_2e_4000:
     db   $63, $2e, $e4, $63, $2e, $20, $66, $2e        ;; 2e:676c ????????
     dw   $677b                                         ;; 2e:6774 wW
     db   $2e, $18, $8d, $63, $2e, $50                  ;; 2e:6776 .????w
-    dw   wBeginRegionD1FD                              ;; 2e:677c pP
+    dw   w1_D1FD                                       ;; 2e:677c pP
     db   $01, $10, $82                                 ;; 2e:677e ..w
     dw   .data_2e_77e1                                 ;; 2e:6781 pP
     db   $01, $1e                                      ;; 2e:6783 .w
     dw   $7880                                         ;; 2e:6785 wW
     db   $3b, $1a, $0b, $68, $01                       ;; 2e:6787 .www.
     dw   $c81d                                         ;; 2e:678c pP
-    dw   wD216                                         ;; 2e:678e pP
+    dw   w1_D216                                       ;; 2e:678e pP
     db   $01, $50                                      ;; 2e:6790 .w
     dw   $d210                                         ;; 2e:6792 pP
     db   $01, $00, $50                                 ;; 2e:6794 ..w
@@ -2519,7 +2519,7 @@ data_2e_4000:
     db   $10, $4a, $3e, $16, $5e, $79, $10             ;; 2e:67dc .www...
     dw   $67dd                                         ;; 2e:67e3 wW
     db   $2e, $50                                      ;; 2e:67e5 .w
-    dw   wD1FF                                         ;; 2e:67e7 pP
+    dw   w1_D1FF                                       ;; 2e:67e7 pP
     db   $01, $02, $14, $01, $f6, $5c, $79, $69        ;; 2e:67e9 ..w...??
     db   $2e, $14, $01, $1a, $5d, $8d, $63, $2e        ;; 2e:67f1 ?w...???
     db   $14, $01, $28, $5d, $8d, $63, $2e, $16        ;; 2e:67f9 w...???w
@@ -2577,13 +2577,13 @@ data_2e_4000:
     dw   .data_2e_6dd9                                 ;; 2e:68a4 pP
     db   $02, $16, $01, $3e, $2c, $68, $01             ;; 2e:68a6 .w...w.
     dw   $c764                                         ;; 2e:68ad pP
-    dw   wBeginRegionD1FD                              ;; 2e:68af pP
+    dw   w1_D1FD                                       ;; 2e:68af pP
     db   $01, $68, $02                                 ;; 2e:68b1 .w.
     dw   $c7d8                                         ;; 2e:68b4 pP
-    dw   wD216                                         ;; 2e:68b6 pP
+    dw   w1_D216                                       ;; 2e:68b6 pP
     db   $01, $68, $02                                 ;; 2e:68b8 .w.
     dw   $c7da                                         ;; 2e:68bb pP
-    dw   wD20E                                         ;; 2e:68bd pP
+    dw   w1_D20E                                       ;; 2e:68bd pP
     db   $01, $1e                                      ;; 2e:68bf .w
     dw   $6fd4                                         ;; 2e:68c1 wW
     db   $1d, $1e                                      ;; 2e:68c3 .w
@@ -2630,7 +2630,7 @@ data_2e_4000:
     dw   $638d                                         ;; 2e:6946 wW
     db   $2e, $68, $01                                 ;; 2e:6948 .w.
     dw   $c81d                                         ;; 2e:694b pP
-    dw   wD216                                         ;; 2e:694d pP
+    dw   w1_D216                                       ;; 2e:694d pP
     db   $01, $14, $01, $2a, $5d, $8d, $63, $2e        ;; 2e:694f .w...???
     db   $4c, $16, $02, $16, $00, $00, $00, $00        ;; 2e:6957 ww.w....
     dw   .data_2e_799b                                 ;; 2e:695f pP
@@ -2639,7 +2639,7 @@ data_2e_4000:
     db   $2e, $50                                      ;; 2e:696a .w
     dw   wC31D                                         ;; 2e:696c pP
     db   $00, $d0, $50                                 ;; 2e:696e ..w
-    dw   wD1FF                                         ;; 2e:6971 pP
+    dw   w1_D1FF                                       ;; 2e:6971 pP
     db   $01, $02, $18                                 ;; 2e:6973 ..w
     dw   $638d                                         ;; 2e:6976 wW
     db   $2e, $50                                      ;; 2e:6978 .w
@@ -2677,7 +2677,7 @@ data_2e_4000:
     db   $10, $4a, $3e, $16, $5e, $79, $10             ;; 2e:6a08 .www...
     dw   $6a09                                         ;; 2e:6a0f wW
     db   $2e, $50                                      ;; 2e:6a11 .w
-    dw   wD1FF                                         ;; 2e:6a13 pP
+    dw   w1_D1FF                                       ;; 2e:6a13 pP
     db   $01, $02, $18                                 ;; 2e:6a15 ..w
     dw   $638d                                         ;; 2e:6a18 wW
     db   $2e, $4c, $16, $02, $16, $00, $00, $00        ;; 2e:6a1a .ww.w...
@@ -2738,7 +2738,7 @@ data_2e_4000:
     db   $00                                           ;; 2e:6b04 .
     dw   .data_2e_5a31                                 ;; 2e:6b05 pP
     db   $17, $44, $10, $00, $50                       ;; 2e:6b07 .w..w
-    dw   wD1FF                                         ;; 2e:6b0c pP
+    dw   w1_D1FF                                       ;; 2e:6b0c pP
     db   $01, $02, $1e                                 ;; 2e:6b0e .ww
     dw   $6f09                                         ;; 2e:6b11 wW
     db   $2e, $34, $7d, $7b, $7f                       ;; 2e:6b13 .w...
@@ -2747,7 +2747,7 @@ data_2e_4000:
     dw   $638d                                         ;; 2e:6b1d wW
     db   $2e, $68, $01                                 ;; 2e:6b1f .w.
     dw   $c81d                                         ;; 2e:6b22 pP
-    dw   wD216                                         ;; 2e:6b24 pP
+    dw   w1_D216                                       ;; 2e:6b24 pP
     db   $01, $14, $01, $a9, $5c, $3c, $6b, $2e        ;; 2e:6b26 .w...???
     db   $14, $01, $ce, $5c                            ;; 2e:6b2e w...
     dw   $6b45                                         ;; 2e:6b32 wW
@@ -2756,7 +2756,7 @@ data_2e_4000:
     db   $2e, $50, $de, $d0, $03, $80, $18, $6a        ;; 2e:6b3b .???????
     db   $6b, $2e, $68, $01                            ;; 2e:6b43 ??w.
     dw   $c81d                                         ;; 2e:6b47 pP
-    dw   wD20E                                         ;; 2e:6b49 pP
+    dw   w1_D20E                                       ;; 2e:6b49 pP
     db   $01, $14, $01, $2e, $5d                       ;; 2e:6b4b .w...
     dw   $6b5c                                         ;; 2e:6b50 wW
     db   $2e, $50                                      ;; 2e:6b52 .w
@@ -2811,7 +2811,7 @@ data_2e_4000:
     dw   $6acd                                         ;; 2e:6bc9 wW
     db   $1d, $68, $01                                 ;; 2e:6bcb .w.
     dw   $c81d                                         ;; 2e:6bce pP
-    dw   wD216                                         ;; 2e:6bd0 pP
+    dw   w1_D216                                       ;; 2e:6bd0 pP
     db   $01, $14, $01, $a9, $5c, $e8, $6b, $2e        ;; 2e:6bd2 .w...???
     db   $14, $01, $ce, $5c                            ;; 2e:6bda w...
     dw   $6bf7                                         ;; 2e:6bde wW
@@ -2820,7 +2820,7 @@ data_2e_4000:
     db   $71, $42, $10, $18, $1f, $6c, $2e, $68        ;; 2e:6bf0 ???????w
     db   $01                                           ;; 2e:6bf8 .
     dw   $c81d                                         ;; 2e:6bf9 pP
-    dw   wD20E                                         ;; 2e:6bfb pP
+    dw   w1_D20E                                       ;; 2e:6bfb pP
     db   $01, $14, $01, $2e, $5d                       ;; 2e:6bfd .w...
 .data_2e_6c02:
     db   $1f, $6c, $2e, $4c, $16, $10, $ff, $00        ;; 2e:6c02 ???ww...
@@ -2854,13 +2854,13 @@ data_2e_4000:
     dw   .data_2e_6dd9                                 ;; 2e:6c72 pP
     db   $02, $16, $01, $3e, $2b, $68, $01             ;; 2e:6c74 .w...w.
     dw   $c764                                         ;; 2e:6c7b pP
-    dw   wBeginRegionD1FD                              ;; 2e:6c7d pP
+    dw   w1_D1FD                                       ;; 2e:6c7d pP
     db   $01, $68, $02                                 ;; 2e:6c7f .w.
     dw   $c7d8                                         ;; 2e:6c82 pP
-    dw   wD216                                         ;; 2e:6c84 pP
+    dw   w1_D216                                       ;; 2e:6c84 pP
     db   $01, $68, $02                                 ;; 2e:6c86 .w.
     dw   $c7da                                         ;; 2e:6c89 pP
-    dw   wD20E                                         ;; 2e:6c8b pP
+    dw   w1_D20E                                       ;; 2e:6c8b pP
     db   $01, $1e                                      ;; 2e:6c8d .w
     dw   $6fd4                                         ;; 2e:6c8f wW
     db   $1d, $1e                                      ;; 2e:6c91 .w
@@ -2896,7 +2896,7 @@ data_2e_4000:
     db   $04, $4a, $3e, $16, $04, $52, $0f, $ed        ;; 2e:6cec .www....
     db   $6c, $2e, $68, $01                            ;; 2e:6cf4 ..w.
     dw   $c81d                                         ;; 2e:6cf8 pP
-    dw   wD216                                         ;; 2e:6cfa pP
+    dw   w1_D216                                       ;; 2e:6cfa pP
     db   $01, $14, $01, $a9, $5c, $12, $6d, $2e        ;; 2e:6cfc .w...???
     db   $14, $01, $ce, $5c                            ;; 2e:6d04 w...
     dw   $6d21                                         ;; 2e:6d08 wW
@@ -2906,7 +2906,7 @@ data_2e_4000:
     db   $00, $00, $71, $42, $10, $18, $49, $6d        ;; 2e:6d18 ????????
     db   $2e, $68, $01                                 ;; 2e:6d20 ?w.
     dw   $c81d                                         ;; 2e:6d23 pP
-    dw   wD20E                                         ;; 2e:6d25 pP
+    dw   w1_D20E                                       ;; 2e:6d25 pP
     db   $01, $14, $01, $2e, $5d, $49, $6d, $2e        ;; 2e:6d27 .w...???
     db   $4c, $16, $10, $ff, $00, $00, $00, $00        ;; 2e:6d2f ww......
     dw   .data_2e_4235                                 ;; 2e:6d37 pP
@@ -2943,7 +2943,7 @@ data_2e_4000:
     dw   $638d                                         ;; 2e:6d92 wW
     db   $2e, $68, $01                                 ;; 2e:6d94 .w.
     dw   $c81d                                         ;; 2e:6d97 pP
-    dw   wD216                                         ;; 2e:6d99 pP
+    dw   w1_D216                                       ;; 2e:6d99 pP
     db   $01, $14, $01, $2e, $5d, $b1, $6d, $2e        ;; 2e:6d9b .w...???
     db   $14, $01, $a9, $5c, $c0, $6d, $2e, $14        ;; 2e:6da3 w...???w
     db   $01, $ce, $5c                                 ;; 2e:6dab ...
@@ -2964,13 +2964,13 @@ data_2e_4000:
     dw   $638d                                         ;; 2e:6dea wW
     db   $2e, $68, $01                                 ;; 2e:6dec .w.
     dw   $c81d                                         ;; 2e:6def pP
-    dw   wD20E                                         ;; 2e:6df1 pP
+    dw   w1_D20E                                       ;; 2e:6df1 pP
     db   $01, $4c, $16, $08, $ff, $00, $00, $00        ;; 2e:6df3 .ww.....
     db   $00                                           ;; 2e:6dfb .
     dw   .data_2e_7c7c                                 ;; 2e:6dfc pP
     db   $10, $68, $01                                 ;; 2e:6dfe .w.
     dw   $c81d                                         ;; 2e:6e01 pP
-    dw   wD216                                         ;; 2e:6e03 pP
+    dw   w1_D216                                       ;; 2e:6e03 pP
     db   $01, $14, $01, $2e, $5d, $1b, $6e, $2e        ;; 2e:6e05 .w...???
     db   $14, $01, $a9, $5c, $2a, $6e, $2e, $14        ;; 2e:6e0d w...???w
     db   $01, $ce, $5c                                 ;; 2e:6e15 ...
@@ -3081,27 +3081,27 @@ data_2e_4000:
     db   $01, $4a, $1e                                 ;; 2e:6fca .ww
     dw   $61cf                                         ;; 2e:6fcd wW
     db   $04, $32, $ec, $5e, $64                       ;; 2e:6fcf .w...
-    dw   wD000                                         ;; 2e:6fd4 pP
+    dw   w1_D000                                       ;; 2e:6fd4 pP
     db   $05, $32, $0f, $6c, $6d                       ;; 2e:6fd6 .w...
     dw   $dc00                                         ;; 2e:6fdb pP
     db   $04, $32, $08, $47, $60                       ;; 2e:6fdd .w...
-    dw   wD000                                         ;; 2e:6fe2 pP
+    dw   w1_D000                                       ;; 2e:6fe2 pP
     db   $07, $32, $75, $57, $79                       ;; 2e:6fe4 .w...
     dw   $d200                                         ;; 2e:6fe9 pP
     db   $04, $32, $35, $4f, $6d                       ;; 2e:6feb .w...
     dw   $d300                                         ;; 2e:6ff0 pP
     db   $04, $32, $68, $7e, $74                       ;; 2e:6ff2 .w...
-    dw   wD800                                         ;; 2e:6ff7 pP
+    dw   w1_D800                                       ;; 2e:6ff7 pP
     db   $04, $34, $45, $62, $70                       ;; 2e:6ff9 .w...
-    dw   wD800                                         ;; 2e:6ffe pP
+    dw   w1_D800                                       ;; 2e:6ffe pP
     db   $05, $1e, $34, $44, $4e, $75                  ;; 2e:7000 ..w...
-    dw   wD800                                         ;; 2e:7006 pP
+    dw   w1_D800                                       ;; 2e:7006 pP
     db   $07, $1e, $36, $6f, $61, $79                  ;; 2e:7008 ..w...
-    dw   wD000                                         ;; 2e:700e pP
+    dw   w1_D000                                       ;; 2e:700e pP
     db   $03, $32, $0d, $7d, $6d                       ;; 2e:7010 .w...
     dw   $d400                                         ;; 2e:7015 pP
     db   $06, $32, $de, $72, $6d                       ;; 2e:7017 .w...
-    dw   wD000                                         ;; 2e:701c pP
+    dw   w1_D000                                       ;; 2e:701c pP
     db   $06, $32, $b4, $59, $7a                       ;; 2e:701e .w...
     dw   $d2c0                                         ;; 2e:7023 pP
     db   $06, $1e                                      ;; 2e:7025 .w
@@ -3141,9 +3141,9 @@ data_2e_4000:
     db   $10, $18                                      ;; 2e:70b3 .w
     dw   $70b8                                         ;; 2e:70b5 wW
     db   $2e, $80, $d8, $c7, $00                       ;; 2e:70b7 .w...
-    dw   wD216                                         ;; 2e:70bc pP
+    dw   w1_D216                                       ;; 2e:70bc pP
     db   $01, $02, $00, $80, $da, $c7, $00             ;; 2e:70be ...w...
-    dw   wD20E                                         ;; 2e:70c5 pP
+    dw   w1_D20E                                       ;; 2e:70c5 pP
     db   $01, $02, $00, $50                            ;; 2e:70c7 ...w
     dw   $d215                                         ;; 2e:70cb pP
     db   $01, $80, $50                                 ;; 2e:70cd ..w
@@ -3186,13 +3186,13 @@ data_2e_4000:
     db   $17                                           ;; 2e:714b .
     dw   $d1fd                                         ;; 2e:714c wW
     db   $00, $00, $00, $00, $ff, $52                  ;; 2e:714e .....w
-    dw   wD001                                         ;; 2e:7154 pP
+    dw   w1_D001                                       ;; 2e:7154 pP
     db   $01                                           ;; 2e:7156 .
-    dw   wBeginRegionD1FD                              ;; 2e:7157 pP
+    dw   w1_D1FD                                       ;; 2e:7157 pP
     db   $50                                           ;; 2e:7159 w
     dw   wC31D                                         ;; 2e:715a pP
     db   $00, $d0, $50                                 ;; 2e:715c ..w
-    dw   wSomethingWithHamchatsD0FD                    ;; 2e:715f pP
+    dw   w1_D0FD                                       ;; 2e:715f pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 2e:7161 ..w..w.w
     db   $01, $7e, $0d, $1e, $16, $01, $7e, $12        ;; 2e:7169 ..w.w..w
     db   $b0, $16, $01, $7f, $1c, $00, $16, $01        ;; 2e:7171 .w..w.w.
@@ -3226,7 +3226,7 @@ data_2e_4000:
     db   $2e, $18                                      ;; 2e:7215 .w
     dw   $6f49                                         ;; 2e:7217 wW
     db   $2e, $50                                      ;; 2e:7219 .w
-    dw   wBeginRegionD1FD                              ;; 2e:721b pP
+    dw   w1_D1FD                                       ;; 2e:721b pP
     db   $01, $04, $82                                 ;; 2e:721d ..w
     dw   .data_2e_77e1                                 ;; 2e:7220 pP
     db   $01, $1e                                      ;; 2e:7222 .w
@@ -3247,7 +3247,7 @@ data_2e_4000:
     db   $2e, $18                                      ;; 2e:7256 .w
     dw   $6f49                                         ;; 2e:7258 wW
     db   $2e, $50                                      ;; 2e:725a .w
-    dw   wBeginRegionD1FD                              ;; 2e:725c pP
+    dw   w1_D1FD                                       ;; 2e:725c pP
     db   $01, $02, $82                                 ;; 2e:725e ..w
     dw   .data_2e_77e1                                 ;; 2e:7261 pP
     db   $01, $1e                                      ;; 2e:7263 .w
@@ -3516,13 +3516,13 @@ data_2e_4000:
     dw   .data_2e_6dd9                                 ;; 2e:76e8 pP
     db   $02, $16, $01, $3e, $1e, $68, $01             ;; 2e:76ea .w...w.
     dw   $c764                                         ;; 2e:76f1 pP
-    dw   wBeginRegionD1FD                              ;; 2e:76f3 pP
+    dw   w1_D1FD                                       ;; 2e:76f3 pP
     db   $01, $68, $02                                 ;; 2e:76f5 .w.
     dw   $c7d8                                         ;; 2e:76f8 pP
-    dw   wD216                                         ;; 2e:76fa pP
+    dw   w1_D216                                       ;; 2e:76fa pP
     db   $01, $68, $02                                 ;; 2e:76fc .w.
     dw   $c7da                                         ;; 2e:76ff pP
-    dw   wD20E                                         ;; 2e:7701 pP
+    dw   w1_D20E                                       ;; 2e:7701 pP
     db   $01, $1e                                      ;; 2e:7703 .w
     dw   $6fd4                                         ;; 2e:7705 wW
     db   $1d, $1e                                      ;; 2e:7707 .w

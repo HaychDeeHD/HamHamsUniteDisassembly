@@ -56,19 +56,19 @@ data_3b_407f:
     db   $01, $4a, $1e                                 ;; 3b:408a .ww
     dw   $61cf                                         ;; 3b:408d wW
     db   $04, $32, $b6, $68, $6a                       ;; 3b:408f .w...
-    dw   wD000                                         ;; 3b:4094 pP
+    dw   w1_D000                                       ;; 3b:4094 pP
     db   $05, $32, $e9, $5c, $72                       ;; 3b:4096 .w...
-    dw   wD000                                         ;; 3b:409b pP
+    dw   w1_D000                                       ;; 3b:409b pP
     db   $07, $34, $bd, $5d, $76                       ;; 3b:409d .w...
-    dw   wD800                                         ;; 3b:40a2 pP
+    dw   w1_D800                                       ;; 3b:40a2 pP
     db   $05, $1e, $34, $e9, $74, $78                  ;; 3b:40a4 ..w...
-    dw   wD800                                         ;; 3b:40aa pP
+    dw   w1_D800                                       ;; 3b:40aa pP
     db   $07, $1e, $36, $58, $44, $7d                  ;; 3b:40ac ..w...
-    dw   wD000                                         ;; 3b:40b2 pP
+    dw   w1_D000                                       ;; 3b:40b2 pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:40b4 .w...
     dw   $d400                                         ;; 3b:40b9 pP
     db   $06, $32, $de, $72, $6d                       ;; 3b:40bb .w...
-    dw   wD000                                         ;; 3b:40c0 pP
+    dw   w1_D000                                       ;; 3b:40c0 pP
     db   $06, $32, $03, $4d, $7f                       ;; 3b:40c2 .w...
     dw   $d200                                         ;; 3b:40c7 pP
     db   $04, $14, $01, $5a, $76                       ;; 3b:40c9 .w...
@@ -158,7 +158,7 @@ data_3b_407f:
     db   $3b, $18                                      ;; 3b:4243 .w
     dw   $400d                                         ;; 3b:4245 wW
     db   $3b, $50                                      ;; 3b:4247 .w
-    dw   wBeginRegionD1FD                              ;; 3b:4249 pP
+    dw   w1_D1FD                                       ;; 3b:4249 pP
     db   $01, $10, $82                                 ;; 3b:424b ..w
     dw   data_3b_77e1                                  ;; 3b:424e pP
     db   $01, $1e                                      ;; 3b:4250 .w
@@ -175,7 +175,7 @@ data_3b_407f:
     db   $3b, $18                                      ;; 3b:4272 .w
     dw   $400d                                         ;; 3b:4274 wW
     db   $3b, $50                                      ;; 3b:4276 .w
-    dw   wBeginRegionD1FD                              ;; 3b:4278 pP
+    dw   w1_D1FD                                       ;; 3b:4278 pP
     db   $01, $04, $82                                 ;; 3b:427a ..w
     dw   data_3b_77e1                                  ;; 3b:427d pP
     db   $01, $1e                                      ;; 3b:427f .w
@@ -193,7 +193,7 @@ data_3b_407f:
     db   $3b, $18                                      ;; 3b:42ac .w
     dw   $400d                                         ;; 3b:42ae wW
     db   $3b, $50                                      ;; 3b:42b0 .w
-    dw   wBeginRegionD1FD                              ;; 3b:42b2 pP
+    dw   w1_D1FD                                       ;; 3b:42b2 pP
     db   $01, $02, $82                                 ;; 3b:42b4 ..w
     dw   data_3b_77e1                                  ;; 3b:42b7 pP
     db   $01, $1e                                      ;; 3b:42b9 .w
@@ -248,19 +248,19 @@ data_3b_433e:
     db   $01, $4a, $1e                                 ;; 3b:4398 .ww
     dw   $61cf                                         ;; 3b:439b wW
     db   $04, $32, $b6, $68, $6a                       ;; 3b:439d .w...
-    dw   wD000                                         ;; 3b:43a2 pP
+    dw   w1_D000                                       ;; 3b:43a2 pP
     db   $05, $32, $e9, $5c, $72                       ;; 3b:43a4 .w...
-    dw   wD000                                         ;; 3b:43a9 pP
+    dw   w1_D000                                       ;; 3b:43a9 pP
     db   $07, $34, $6f, $6d, $76                       ;; 3b:43ab .w...
-    dw   wD800                                         ;; 3b:43b0 pP
+    dw   w1_D800                                       ;; 3b:43b0 pP
     db   $05, $1e, $34, $58, $52, $7a                  ;; 3b:43b2 ..w...
-    dw   wD800                                         ;; 3b:43b8 pP
+    dw   w1_D800                                       ;; 3b:43b8 pP
     db   $07, $1e, $36, $d1, $44, $7d                  ;; 3b:43ba ..w...
-    dw   wD000                                         ;; 3b:43c0 pP
+    dw   w1_D000                                       ;; 3b:43c0 pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:43c2 .w...
     dw   $d400                                         ;; 3b:43c7 pP
     db   $06, $32, $de, $72, $6d                       ;; 3b:43c9 .w...
-    dw   wD000                                         ;; 3b:43ce pP
+    dw   w1_D000                                       ;; 3b:43ce pP
     db   $06, $32, $03, $4d, $7f                       ;; 3b:43d0 .w...
     dw   $d200                                         ;; 3b:43d5 pP
     db   $04, $14, $01, $42, $76                       ;; 3b:43d7 .w...
@@ -351,7 +351,7 @@ data_3b_450b:
     db   $3b, $18                                      ;; 3b:4551 .w
     dw   $431b                                         ;; 3b:4553 wW
     db   $3b, $50                                      ;; 3b:4555 .w
-    dw   wBeginRegionD1FD                              ;; 3b:4557 pP
+    dw   w1_D1FD                                       ;; 3b:4557 pP
     db   $01, $10, $82                                 ;; 3b:4559 ..w
     dw   data_3b_77e1                                  ;; 3b:455c pP
     db   $01, $1e                                      ;; 3b:455e .w
@@ -368,7 +368,7 @@ data_3b_450b:
     db   $3b, $18                                      ;; 3b:4580 .w
     dw   $431b                                         ;; 3b:4582 wW
     db   $3b, $50                                      ;; 3b:4584 .w
-    dw   wBeginRegionD1FD                              ;; 3b:4586 pP
+    dw   w1_D1FD                                       ;; 3b:4586 pP
     db   $01, $04, $82                                 ;; 3b:4588 ..w
     dw   data_3b_77e1                                  ;; 3b:458b pP
     db   $01, $1e                                      ;; 3b:458d .w
@@ -528,17 +528,17 @@ data_3b_450b:
     db   $00, $17, $82                                 ;; 3b:49ae ..w
     dw   data_3b_6844                                  ;; 3b:49b1 pP
     db   $01, $4a, $32, $08, $62, $6b                  ;; 3b:49b3 .ww...
-    dw   wD000                                         ;; 3b:49b9 pP
+    dw   w1_D000                                       ;; 3b:49b9 pP
     db   $05, $34, $dc, $42, $79                       ;; 3b:49bb .w...
-    dw   wD800                                         ;; 3b:49c0 pP
+    dw   w1_D800                                       ;; 3b:49c0 pP
     db   $05, $15, $34, $c6, $6f, $7d                  ;; 3b:49c2 ..w...
-    dw   wD800                                         ;; 3b:49c8 pP
+    dw   w1_D800                                       ;; 3b:49c8 pP
     db   $07, $15, $36, $2e, $71, $7d                  ;; 3b:49ca ..w...
-    dw   wD000                                         ;; 3b:49d0 pP
+    dw   w1_D000                                       ;; 3b:49d0 pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:49d2 .w...
     dw   $d400                                         ;; 3b:49d7 pP
     db   $06, $32, $de, $72, $6d                       ;; 3b:49d9 .w...
-    dw   wD000                                         ;; 3b:49de pP
+    dw   w1_D000                                       ;; 3b:49de pP
     db   $06, $16, $01, $7e, $25, $34, $14, $01        ;; 3b:49e0 .w..w.w.
     db   $80, $78, $11, $4a, $3b, $14, $01, $82        ;; 3b:49e8 ..???w..
     db   $78                                           ;; 3b:49f0 .
@@ -563,7 +563,7 @@ data_3b_450b:
     db   $3b, $82                                      ;; 3b:4a3a .w
     dw   data_3b_782b                                  ;; 3b:4a3c pP
     db   $01, $52                                      ;; 3b:4a3e .w
-    dw   wD216                                         ;; 3b:4a40 pP
+    dw   w1_D216                                       ;; 3b:4a40 pP
     db   $01, $b0, $00, $1e                            ;; 3b:4a42 ...w
     dw   $593a                                         ;; 3b:4a46 wW
     db   $34, $1e                                      ;; 3b:4a48 .w
@@ -630,7 +630,7 @@ data_3b_450b:
     db   $3b, $18                                      ;; 3b:4b88 .w
     dw   $4936                                         ;; 3b:4b8a wW
     db   $3b, $50                                      ;; 3b:4b8c .w
-    dw   wBeginRegionD1FD                              ;; 3b:4b8e pP
+    dw   w1_D1FD                                       ;; 3b:4b8e pP
     db   $01, $02, $82                                 ;; 3b:4b90 ..w
     dw   data_3b_77e1                                  ;; 3b:4b93 pP
     db   $01, $1e                                      ;; 3b:4b95 .w
@@ -646,7 +646,7 @@ data_3b_450b:
     db   $3b, $18                                      ;; 3b:4bbd .w
     dw   $4936                                         ;; 3b:4bbf wW
     db   $3b, $50                                      ;; 3b:4bc1 .w
-    dw   wBeginRegionD1FD                              ;; 3b:4bc3 pP
+    dw   w1_D1FD                                       ;; 3b:4bc3 pP
     db   $01, $04, $82                                 ;; 3b:4bc5 ..w
     dw   data_3b_77e1                                  ;; 3b:4bc8 pP
     db   $01, $1e                                      ;; 3b:4bca .w
@@ -884,13 +884,13 @@ data_3b_4d11:
     db   $3c, $4a, $1e                                 ;; 3b:5246 .ww
     dw   $61cf                                         ;; 3b:5249 wW
     db   $04, $32, $bb, $57, $6f                       ;; 3b:524b .w...
-    dw   wD000                                         ;; 3b:5250 pP
+    dw   w1_D000                                       ;; 3b:5250 pP
     db   $05, $34, $f0, $51, $7b                       ;; 3b:5252 .w...
-    dw   wD800                                         ;; 3b:5257 pP
+    dw   w1_D800                                       ;; 3b:5257 pP
     db   $05, $15, $34, $5d, $7b, $7d                  ;; 3b:5259 ..w...
-    dw   wD800                                         ;; 3b:525f pP
+    dw   w1_D800                                       ;; 3b:525f pP
     db   $07, $15, $36, $87, $71, $7d                  ;; 3b:5261 ..w...
-    dw   wD000                                         ;; 3b:5267 pP
+    dw   w1_D000                                       ;; 3b:5267 pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:5269 .w...
     dw   $d400                                         ;; 3b:526e pP
     db   $06, $14, $01, $0c, $64                       ;; 3b:5270 .w...
@@ -915,7 +915,7 @@ data_3b_4d11:
     db   $3b, $82                                      ;; 3b:52b4 .w
     dw   data_3b_782b                                  ;; 3b:52b6 pP
     db   $01, $52                                      ;; 3b:52b8 .w
-    dw   wD216                                         ;; 3b:52ba pP
+    dw   w1_D216                                       ;; 3b:52ba pP
     db   $01, $b0, $00, $18                            ;; 3b:52bc ...w
     dw   $52c3                                         ;; 3b:52c0 wW
     db   $3b, $16, $01, $7e, $4c, $ff, $16, $01        ;; 3b:52c2 .w..w.w.
@@ -938,11 +938,11 @@ data_3b_4d11:
     db   $17                                           ;; 3b:5302 .
     dw   $d1fd                                         ;; 3b:5303 wW
     db   $00, $00, $00, $00, $ff, $52                  ;; 3b:5305 .....w
-    dw   wD001                                         ;; 3b:530b pP
+    dw   w1_D001                                       ;; 3b:530b pP
     db   $01                                           ;; 3b:530d .
-    dw   wBeginRegionD1FD                              ;; 3b:530e pP
+    dw   w1_D1FD                                       ;; 3b:530e pP
     db   $50                                           ;; 3b:5310 w
-    dw   wSomethingWithHamchatsD0FD                    ;; 3b:5311 pP
+    dw   w1_D0FD                                       ;; 3b:5311 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 3b:5313 ..w..w.w
     db   $01, $7e, $0d, $51, $16, $01, $7e, $12        ;; 3b:531b ..w.w..w
     db   $60, $16, $01, $5e, $03, $20, $50             ;; 3b:5323 .w...ww
@@ -967,7 +967,7 @@ data_3b_4d11:
     db   $3b, $18                                      ;; 3b:5359 .w
     dw   $522a                                         ;; 3b:535b wW
     db   $3b, $50                                      ;; 3b:535d .w
-    dw   wBeginRegionD1FD                              ;; 3b:535f pP
+    dw   w1_D1FD                                       ;; 3b:535f pP
     db   $01, $04, $82                                 ;; 3b:5361 ..w
     dw   data_3b_77e1                                  ;; 3b:5364 pP
     db   $01, $1e                                      ;; 3b:5366 .w
@@ -981,7 +981,7 @@ data_3b_4d11:
     db   $3b, $18                                      ;; 3b:537a .w
     dw   $522a                                         ;; 3b:537c wW
     db   $3b, $50                                      ;; 3b:537e .w
-    dw   wBeginRegionD1FD                              ;; 3b:5380 pP
+    dw   w1_D1FD                                       ;; 3b:5380 pP
     db   $01, $02, $82                                 ;; 3b:5382 ..w
     dw   data_3b_77e1                                  ;; 3b:5385 pP
     db   $01, $1e                                      ;; 3b:5387 .w
@@ -1164,13 +1164,13 @@ data_3b_57bb:
     db   $3c, $4a, $1e                                 ;; 3b:57f5 .ww
     dw   $61cf                                         ;; 3b:57f8 wW
     db   $04, $32, $bb, $57, $6f                       ;; 3b:57fa .w...
-    dw   wD000                                         ;; 3b:57ff pP
+    dw   w1_D000                                       ;; 3b:57ff pP
     db   $05, $34, $f0, $51, $7b                       ;; 3b:5801 .w...
-    dw   wD800                                         ;; 3b:5806 pP
+    dw   w1_D800                                       ;; 3b:5806 pP
     db   $05, $15, $34, $5d, $7b, $7d                  ;; 3b:5808 ..w...
-    dw   wD800                                         ;; 3b:580e pP
+    dw   w1_D800                                       ;; 3b:580e pP
     db   $07, $15, $36, $87, $71, $7d                  ;; 3b:5810 ..w...
-    dw   wD000                                         ;; 3b:5816 pP
+    dw   w1_D000                                       ;; 3b:5816 pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:5818 .w...
     dw   $d400                                         ;; 3b:581d pP
     db   $06, $14, $01, $0c, $64                       ;; 3b:581f .w...
@@ -1195,7 +1195,7 @@ data_3b_57bb:
     db   $3b, $82                                      ;; 3b:5863 .w
     dw   data_3b_782b                                  ;; 3b:5865 pP
     db   $01, $52                                      ;; 3b:5867 .w
-    dw   wD216                                         ;; 3b:5869 pP
+    dw   w1_D216                                       ;; 3b:5869 pP
     db   $01, $b0, $00, $18                            ;; 3b:586b ...w
     dw   $5872                                         ;; 3b:586f wW
     db   $3b, $16, $01, $7e, $4c, $ff, $16, $01        ;; 3b:5871 .w..w.w.
@@ -1218,11 +1218,11 @@ data_3b_57bb:
     db   $17                                           ;; 3b:58b1 .
     dw   $d1fd                                         ;; 3b:58b2 wW
     db   $00, $00, $00, $00, $ff, $52                  ;; 3b:58b4 .....w
-    dw   wD001                                         ;; 3b:58ba pP
+    dw   w1_D001                                       ;; 3b:58ba pP
     db   $01                                           ;; 3b:58bc .
-    dw   wBeginRegionD1FD                              ;; 3b:58bd pP
+    dw   w1_D1FD                                       ;; 3b:58bd pP
     db   $50                                           ;; 3b:58bf w
-    dw   wSomethingWithHamchatsD0FD                    ;; 3b:58c0 pP
+    dw   w1_D0FD                                       ;; 3b:58c0 pP
     db   $02, $fe, $16, $01, $5e, $03, $16, $01        ;; 3b:58c2 ..w...w.
     db   $7e, $39, $00, $16, $01, $7e, $0d, $56        ;; 3b:58ca .w.w..w.
     db   $16, $01, $7e, $12, $60, $20, $50             ;; 3b:58d2 w..w.ww
@@ -1247,7 +1247,7 @@ data_3b_57bb:
     db   $3b, $18                                      ;; 3b:5908 .w
     dw   $57da                                         ;; 3b:590a wW
     db   $3b, $50                                      ;; 3b:590c .w
-    dw   wBeginRegionD1FD                              ;; 3b:590e pP
+    dw   w1_D1FD                                       ;; 3b:590e pP
     db   $01, $04, $82                                 ;; 3b:5910 ..w
     dw   data_3b_77e1                                  ;; 3b:5913 pP
     db   $01, $1e                                      ;; 3b:5915 .w
@@ -1261,7 +1261,7 @@ data_3b_57bb:
     db   $3b, $18                                      ;; 3b:5929 .w
     dw   $57da                                         ;; 3b:592b wW
     db   $3b, $50                                      ;; 3b:592d .w
-    dw   wBeginRegionD1FD                              ;; 3b:592f pP
+    dw   w1_D1FD                                       ;; 3b:592f pP
     db   $01, $02, $82                                 ;; 3b:5931 ..w
     dw   data_3b_77e1                                  ;; 3b:5934 pP
     db   $01, $1e                                      ;; 3b:5936 .w
@@ -1506,19 +1506,19 @@ data_3b_57bb:
     db   $16, $01, $7e, $20, $01, $16, $01, $7e        ;; 3b:602a w..w.w..
     db   $21, $00, $16, $01, $7e, $22, $00, $16        ;; 3b:6032 w.w..w.w
     db   $01, $7e, $23, $00, $32, $e0, $4c, $74        ;; 3b:603a ..w.w...
-    dw   wD000                                         ;; 3b:6042 pP
+    dw   w1_D000                                       ;; 3b:6042 pP
     db   $04, $36, $9b, $4d, $7e                       ;; 3b:6044 .w...
-    dw   wDDDA                                         ;; 3b:6049 pP
+    dw   w1_DDDA                                       ;; 3b:6049 pP
     db   $01, $32, $e0, $48, $6c                       ;; 3b:604b .w...
-    dw   wD000                                         ;; 3b:6050 pP
+    dw   w1_D000                                       ;; 3b:6050 pP
     db   $05, $32, $6f, $4d, $72                       ;; 3b:6052 .w...
-    dw   wD800                                         ;; 3b:6057 pP
+    dw   w1_D800                                       ;; 3b:6057 pP
     db   $06, $32, $e5, $69, $72                       ;; 3b:6059 .w...
-    dw   wD000                                         ;; 3b:605e pP
+    dw   w1_D000                                       ;; 3b:605e pP
     db   $07, $34, $b5, $45, $79                       ;; 3b:6060 .w...
-    dw   wD800                                         ;; 3b:6065 pP
+    dw   w1_D800                                       ;; 3b:6065 pP
     db   $05, $14, $34, $e6, $45, $7a                  ;; 3b:6067 ..w...
-    dw   wD800                                         ;; 3b:606d pP
+    dw   w1_D800                                       ;; 3b:606d pP
     db   $07, $14, $44, $0a, $00, $52                  ;; 3b:606f ..w..w
     dw   wC689                                         ;; 3b:6075 pP
     db   $00, $00, $00, $52                            ;; 3b:6077 ...w
@@ -1678,13 +1678,13 @@ data_3b_6284:
     db   $3c, $4a, $1e                                 ;; 3b:6340 .ww
     dw   $61cf                                         ;; 3b:6343 wW
     db   $04, $32, $bb, $57, $6f                       ;; 3b:6345 .w...
-    dw   wD000                                         ;; 3b:634a pP
+    dw   w1_D000                                       ;; 3b:634a pP
     db   $05, $34, $1b, $45, $7c                       ;; 3b:634c .w...
-    dw   wD800                                         ;; 3b:6351 pP
+    dw   w1_D800                                       ;; 3b:6351 pP
     db   $05, $15, $34, $41, $43, $7f                  ;; 3b:6353 ..w...
-    dw   wD800                                         ;; 3b:6359 pP
+    dw   w1_D800                                       ;; 3b:6359 pP
     db   $07, $15, $36, $97, $76, $7d                  ;; 3b:635b ..w...
-    dw   wD000                                         ;; 3b:6361 pP
+    dw   w1_D000                                       ;; 3b:6361 pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:6363 .w...
     dw   $d400                                         ;; 3b:6368 pP
     db   $06, $14, $01, $0c, $64                       ;; 3b:636a .w...
@@ -1704,7 +1704,7 @@ data_3b_6284:
     db   $3b, $82                                      ;; 3b:63a3 .w
     dw   data_3b_782b                                  ;; 3b:63a5 pP
     db   $01, $52                                      ;; 3b:63a7 .w
-    dw   wD216                                         ;; 3b:63a9 pP
+    dw   w1_D216                                       ;; 3b:63a9 pP
     db   $01, $b0, $00, $18                            ;; 3b:63ab ...w
     dw   $63b2                                         ;; 3b:63af wW
     db   $3b, $16, $01, $7e, $4c, $ff, $16, $01        ;; 3b:63b1 .w..w.w.
@@ -1727,11 +1727,11 @@ data_3b_6284:
     db   $17                                           ;; 3b:63f1 .
     dw   $d1fd                                         ;; 3b:63f2 wW
     db   $00, $00, $00, $00, $ff, $52                  ;; 3b:63f4 .....w
-    dw   wD001                                         ;; 3b:63fa pP
+    dw   w1_D001                                       ;; 3b:63fa pP
     db   $01                                           ;; 3b:63fc .
-    dw   wBeginRegionD1FD                              ;; 3b:63fd pP
+    dw   w1_D1FD                                       ;; 3b:63fd pP
     db   $50                                           ;; 3b:63ff w
-    dw   wSomethingWithHamchatsD0FD                    ;; 3b:6400 pP
+    dw   w1_D0FD                                       ;; 3b:6400 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 3b:6402 ..w..w.w
     db   $01, $7e, $0d, $58, $16, $01, $7e, $12        ;; 3b:640a ..w.w..w
     db   $60, $16, $01, $5e, $03, $20, $50             ;; 3b:6412 .w...ww
@@ -1743,7 +1743,7 @@ data_3b_6284:
     db   $3b, $18                                      ;; 3b:6425 .w
     dw   $6324                                         ;; 3b:6427 wW
     db   $3b, $50                                      ;; 3b:6429 .w
-    dw   wBeginRegionD1FD                              ;; 3b:642b pP
+    dw   w1_D1FD                                       ;; 3b:642b pP
     db   $01, $04, $82                                 ;; 3b:642d ..w
     dw   data_3b_77e1                                  ;; 3b:6430 pP
     db   $01, $1e                                      ;; 3b:6432 .w
@@ -1757,7 +1757,7 @@ data_3b_6284:
     db   $3b, $18                                      ;; 3b:6446 .w
     dw   $6324                                         ;; 3b:6448 wW
     db   $3b, $50                                      ;; 3b:644a .w
-    dw   wBeginRegionD1FD                              ;; 3b:644c pP
+    dw   w1_D1FD                                       ;; 3b:644c pP
     db   $01, $02, $82                                 ;; 3b:644e ..w
     dw   data_3b_77e1                                  ;; 3b:6451 pP
     db   $01, $1e                                      ;; 3b:6453 .w
@@ -1831,13 +1831,13 @@ data_3b_6284:
     db   $3c, $4a, $1e                                 ;; 3b:65eb .ww
     dw   $61cf                                         ;; 3b:65ee wW
     db   $04, $32, $bb, $57, $6f                       ;; 3b:65f0 .w...
-    dw   wD000                                         ;; 3b:65f5 pP
+    dw   w1_D000                                       ;; 3b:65f5 pP
     db   $05, $34, $0d, $46, $7b                       ;; 3b:65f7 .w...
-    dw   wD800                                         ;; 3b:65fc pP
+    dw   w1_D800                                       ;; 3b:65fc pP
     db   $05, $15, $34, $e6, $7c, $7d                  ;; 3b:65fe ..w...
-    dw   wD800                                         ;; 3b:6604 pP
+    dw   w1_D800                                       ;; 3b:6604 pP
     db   $07, $15, $36, $97, $76, $7d                  ;; 3b:6606 ..w...
-    dw   wD000                                         ;; 3b:660c pP
+    dw   w1_D000                                       ;; 3b:660c pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:660e .w...
     dw   $d400                                         ;; 3b:6613 pP
     db   $06, $14, $01, $0c, $64                       ;; 3b:6615 .w...
@@ -1857,7 +1857,7 @@ data_3b_6284:
     db   $3b, $82                                      ;; 3b:664e .w
     dw   data_3b_782b                                  ;; 3b:6650 pP
     db   $01, $52                                      ;; 3b:6652 .w
-    dw   wD216                                         ;; 3b:6654 pP
+    dw   w1_D216                                       ;; 3b:6654 pP
     db   $01, $b0, $00, $18                            ;; 3b:6656 ...w
     dw   $665d                                         ;; 3b:665a wW
     db   $3b, $16, $01, $7e, $4c, $ff, $16, $01        ;; 3b:665c .w..w.w.
@@ -1880,11 +1880,11 @@ data_3b_6284:
     db   $17                                           ;; 3b:669c .
     dw   $d1fd                                         ;; 3b:669d wW
     db   $00, $00, $00, $00, $ff, $52                  ;; 3b:669f .....w
-    dw   wD001                                         ;; 3b:66a5 pP
+    dw   w1_D001                                       ;; 3b:66a5 pP
     db   $01                                           ;; 3b:66a7 .
-    dw   wBeginRegionD1FD                              ;; 3b:66a8 pP
+    dw   w1_D1FD                                       ;; 3b:66a8 pP
     db   $50                                           ;; 3b:66aa w
-    dw   wSomethingWithHamchatsD0FD                    ;; 3b:66ab pP
+    dw   w1_D0FD                                       ;; 3b:66ab pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 3b:66ad ..w..w.w
     db   $01, $7e, $0d, $57, $16, $01, $7e, $12        ;; 3b:66b5 ..w.w..w
     db   $60, $16, $01, $5e, $03, $20, $50             ;; 3b:66bd .w...ww
@@ -1896,7 +1896,7 @@ data_3b_6284:
     db   $3b, $18                                      ;; 3b:66d0 .w
     dw   $65cf                                         ;; 3b:66d2 wW
     db   $3b, $50                                      ;; 3b:66d4 .w
-    dw   wBeginRegionD1FD                              ;; 3b:66d6 pP
+    dw   w1_D1FD                                       ;; 3b:66d6 pP
     db   $01, $04, $82                                 ;; 3b:66d8 ..w
     dw   data_3b_77e1                                  ;; 3b:66db pP
     db   $01, $1e                                      ;; 3b:66dd .w
@@ -1910,7 +1910,7 @@ data_3b_6284:
     db   $3b, $18                                      ;; 3b:66f1 .w
     dw   $65cf                                         ;; 3b:66f3 wW
     db   $3b, $50                                      ;; 3b:66f5 .w
-    dw   wBeginRegionD1FD                              ;; 3b:66f7 pP
+    dw   w1_D1FD                                       ;; 3b:66f7 pP
     db   $01, $02, $82                                 ;; 3b:66f9 ..w
     dw   data_3b_77e1                                  ;; 3b:66fc pP
     db   $01, $1e                                      ;; 3b:66fe .w
@@ -1990,13 +1990,13 @@ data_3b_6844:
     db   $3c, $4a, $1e                                 ;; 3b:6896 .ww
     dw   $61cf                                         ;; 3b:6899 wW
     db   $04, $32, $bb, $57, $6f                       ;; 3b:689b .w...
-    dw   wD000                                         ;; 3b:68a0 pP
+    dw   w1_D000                                       ;; 3b:68a0 pP
     db   $05, $34, $1b, $45, $7c                       ;; 3b:68a2 .w...
-    dw   wD800                                         ;; 3b:68a7 pP
+    dw   w1_D800                                       ;; 3b:68a7 pP
     db   $05, $15, $34, $41, $43, $7f                  ;; 3b:68a9 ..w...
-    dw   wD800                                         ;; 3b:68af pP
+    dw   w1_D800                                       ;; 3b:68af pP
     db   $07, $15, $36, $97, $76, $7d                  ;; 3b:68b1 ..w...
-    dw   wD000                                         ;; 3b:68b7 pP
+    dw   w1_D000                                       ;; 3b:68b7 pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:68b9 .w...
     dw   $d400                                         ;; 3b:68be pP
     db   $06, $14, $01, $0c, $64                       ;; 3b:68c0 .w...
@@ -2018,7 +2018,7 @@ data_3b_68f9:
     db   $3b, $82                                      ;; 3b:68f9 .w
     dw   data_3b_782b                                  ;; 3b:68fb pP
     db   $01, $52                                      ;; 3b:68fd .w
-    dw   wD216                                         ;; 3b:68ff pP
+    dw   w1_D216                                       ;; 3b:68ff pP
     db   $01, $b0, $00, $18                            ;; 3b:6901 ...w
     dw   $6908                                         ;; 3b:6905 wW
     db   $3b, $16, $01, $7e, $4c, $ff, $16, $01        ;; 3b:6907 .w..w.w.
@@ -2041,11 +2041,11 @@ data_3b_68f9:
     db   $17                                           ;; 3b:6947 .
     dw   $d1fd                                         ;; 3b:6948 wW
     db   $00, $00, $00, $00, $ff, $52                  ;; 3b:694a .....w
-    dw   wD001                                         ;; 3b:6950 pP
+    dw   w1_D001                                       ;; 3b:6950 pP
     db   $01                                           ;; 3b:6952 .
-    dw   wBeginRegionD1FD                              ;; 3b:6953 pP
+    dw   w1_D1FD                                       ;; 3b:6953 pP
     db   $50                                           ;; 3b:6955 w
-    dw   wSomethingWithHamchatsD0FD                    ;; 3b:6956 pP
+    dw   w1_D0FD                                       ;; 3b:6956 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 3b:6958 ..w..w.w
     db   $01, $7e, $0d, $53, $16, $01, $7e, $12        ;; 3b:6960 ..w.w..w
     db   $60, $16, $01, $5e, $03, $20, $50             ;; 3b:6968 .w...ww
@@ -2055,7 +2055,7 @@ data_3b_68f9:
     db   $01, $1c, $01                                 ;; 3b:6976 .w.
     dw   $6980                                         ;; 3b:6979 wW
     db   $3b, $18, $7a, $68, $3b, $50                  ;; 3b:697b .????w
-    dw   wBeginRegionD1FD                              ;; 3b:6981 pP
+    dw   w1_D1FD                                       ;; 3b:6981 pP
     db   $01, $04, $82                                 ;; 3b:6983 ..w
     dw   data_3b_77e1                                  ;; 3b:6986 pP
     db   $01, $1e                                      ;; 3b:6988 .w
@@ -2067,7 +2067,7 @@ data_3b_68f9:
     db   $01, $1c, $01, $a1, $69, $3b, $18             ;; 3b:6997 .ww???w
     dw   $687a                                         ;; 3b:699e wW
     db   $3b, $50                                      ;; 3b:69a0 .w
-    dw   wBeginRegionD1FD                              ;; 3b:69a2 pP
+    dw   w1_D1FD                                       ;; 3b:69a2 pP
     db   $01, $02, $82                                 ;; 3b:69a4 ..w
     dw   data_3b_77e1                                  ;; 3b:69a7 pP
     db   $01, $1e                                      ;; 3b:69a9 .w
@@ -2322,19 +2322,19 @@ data_3b_68f9:
     db   $00, $17, $82                                 ;; 3b:70bf ..w
     dw   data_3b_6844                                  ;; 3b:70c2 pP
     db   $01, $4a, $32, $46, $51, $67                  ;; 3b:70c4 .ww...
-    dw   wD000                                         ;; 3b:70ca pP
+    dw   w1_D000                                       ;; 3b:70ca pP
     db   $05, $32, $25, $6f, $70                       ;; 3b:70cc .w...
-    dw   wD000                                         ;; 3b:70d1 pP
+    dw   w1_D000                                       ;; 3b:70d1 pP
     db   $07, $34, $30, $75, $76                       ;; 3b:70d3 .w...
-    dw   wD800                                         ;; 3b:70d8 pP
+    dw   w1_D800                                       ;; 3b:70d8 pP
     db   $05, $18, $34, $74, $65, $77                  ;; 3b:70da ..w...
-    dw   wD800                                         ;; 3b:70e0 pP
+    dw   w1_D800                                       ;; 3b:70e0 pP
     db   $07, $18, $36, $27, $55, $7d                  ;; 3b:70e2 ..w...
-    dw   wD000                                         ;; 3b:70e8 pP
+    dw   w1_D000                                       ;; 3b:70e8 pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:70ea .w...
     dw   $d400                                         ;; 3b:70ef pP
     db   $06, $32, $de, $72, $6d                       ;; 3b:70f1 .w...
-    dw   wD000                                         ;; 3b:70f6 pP
+    dw   w1_D000                                       ;; 3b:70f6 pP
     db   $06, $16, $01, $7e, $25, $32, $14, $01        ;; 3b:70f8 .w..w.w.
     db   $78, $78                                      ;; 3b:7100 ..
     dw   $711b                                         ;; 3b:7102 wW
@@ -2349,7 +2349,7 @@ data_3b_68f9:
     db   $3b, $82                                      ;; 3b:7129 .w
     dw   data_3b_782b                                  ;; 3b:712b pP
     db   $01, $52                                      ;; 3b:712d .w
-    dw   wD216                                         ;; 3b:712f pP
+    dw   w1_D216                                       ;; 3b:712f pP
     db   $01, $c8, $00, $1e                            ;; 3b:7131 ...w
     dw   $593a                                         ;; 3b:7135 wW
     db   $34, $1e                                      ;; 3b:7137 .w
@@ -2418,7 +2418,7 @@ data_3b_715e:
     db   $3b, $18                                      ;; 3b:726f .w
     dw   $704d                                         ;; 3b:7271 wW
     db   $3b, $50                                      ;; 3b:7273 .w
-    dw   wBeginRegionD1FD                              ;; 3b:7275 pP
+    dw   w1_D1FD                                       ;; 3b:7275 pP
     db   $01, $02, $82                                 ;; 3b:7277 ..w
     dw   data_3b_77e1                                  ;; 3b:727a pP
     db   $01, $1e                                      ;; 3b:727c .w
@@ -2581,13 +2581,13 @@ data_3b_757c:
     db   $3c, $4a, $1e                                 ;; 3b:75c0 .ww
     dw   $61cf                                         ;; 3b:75c3 wW
     db   $04, $32, $bb, $57, $6f                       ;; 3b:75c5 .w...
-    dw   wD000                                         ;; 3b:75ca pP
+    dw   w1_D000                                       ;; 3b:75ca pP
     db   $05, $34, $c2, $71, $7a                       ;; 3b:75cc .w...
-    dw   wD800                                         ;; 3b:75d1 pP
+    dw   w1_D800                                       ;; 3b:75d1 pP
     db   $05, $15, $34, $97, $48, $7d                  ;; 3b:75d3 ..w...
-    dw   wD800                                         ;; 3b:75d9 pP
+    dw   w1_D800                                       ;; 3b:75d9 pP
     db   $07, $15, $36, $ac, $69, $7d                  ;; 3b:75db ..w...
-    dw   wD000                                         ;; 3b:75e1 pP
+    dw   w1_D000                                       ;; 3b:75e1 pP
     db   $03, $32, $0d, $7d, $6d                       ;; 3b:75e3 .w...
     dw   $d400                                         ;; 3b:75e8 pP
     db   $06, $14, $01, $0c, $64                       ;; 3b:75ea .w...
@@ -2632,11 +2632,11 @@ data_3b_7660:
     db   $17                                           ;; 3b:7667 .
     dw   $d1fd                                         ;; 3b:7668 wW
     db   $00, $00, $00, $00, $ff, $52                  ;; 3b:766a .....w
-    dw   wD001                                         ;; 3b:7670 pP
+    dw   w1_D001                                       ;; 3b:7670 pP
     db   $01                                           ;; 3b:7672 .
-    dw   wBeginRegionD1FD                              ;; 3b:7673 pP
+    dw   w1_D1FD                                       ;; 3b:7673 pP
     db   $50                                           ;; 3b:7675 w
-    dw   wSomethingWithHamchatsD0FD                    ;; 3b:7676 pP
+    dw   w1_D0FD                                       ;; 3b:7676 pP
     db   $02, $fe, $16, $01, $5e, $03, $16, $01        ;; 3b:7678 ..w...w.
     db   $7e, $39, $00, $16, $01, $7e, $0d, $54        ;; 3b:7680 .w.w..w.
     db   $16, $01, $7e, $12, $60, $20, $50             ;; 3b:7688 w..w.ww
@@ -2659,7 +2659,7 @@ data_3b_7660:
     db   $01, $1c, $01                                 ;; 3b:76b9 .w.
     dw   $76c3                                         ;; 3b:76bc wW
     db   $3b, $18, $a5, $75, $3b, $50                  ;; 3b:76be .????w
-    dw   wBeginRegionD1FD                              ;; 3b:76c4 pP
+    dw   w1_D1FD                                       ;; 3b:76c4 pP
     db   $01, $04, $82                                 ;; 3b:76c6 ..w
     dw   data_3b_77e1                                  ;; 3b:76c9 pP
     db   $01, $1e                                      ;; 3b:76cb .w

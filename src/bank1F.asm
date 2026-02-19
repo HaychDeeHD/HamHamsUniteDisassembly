@@ -943,7 +943,7 @@ data_1f_4000:
     db   $18, $77, $5a, $1f, $4c, $34, $01, $04        ;; 1f:5a68 ????????
     db   $00, $00, $28, $00, $44, $43, $1b, $16        ;; 1f:5a70 ????????
     db   $01, $7f, $18, $00, $20, $50                  ;; 1f:5a78 ?????w
-    dw   wD000                                         ;; 1f:5a7e pP
+    dw   w1_D000                                       ;; 1f:5a7e pP
     db   $01, $01, $16, $01, $7f, $04, $00, $68        ;; 1f:5a80 ..w..w.w
     db   $01                                           ;; 1f:5a88 .
     dw   $c81c                                         ;; 1f:5a89 pP
@@ -1006,17 +1006,17 @@ data_1f_4000:
     dw   wC676                                         ;; 1f:5b19 pP
     db   $00, $a7, $16, $01, $7e, $0d, $08, $32        ;; 1f:5b1b ..w..w.w
     db   $38, $61, $0a                                 ;; 1f:5b23 ...
-    dw   wD000                                         ;; 1f:5b26 pP
+    dw   w1_D000                                       ;; 1f:5b26 pP
     db   $05, $32, $63, $6c, $0b                       ;; 1f:5b28 .w...
-    dw   wD800                                         ;; 1f:5b2d pP
+    dw   w1_D800                                       ;; 1f:5b2d pP
     db   $04, $32, $61, $7a, $0a                       ;; 1f:5b2f .w...
-    dw   wD000                                         ;; 1f:5b34 pP
+    dw   w1_D000                                       ;; 1f:5b34 pP
     db   $06, $32, $ee, $53, $0e                       ;; 1f:5b36 .w...
-    dw   wD800                                         ;; 1f:5b3b pP
+    dw   w1_D800                                       ;; 1f:5b3b pP
     db   $06, $34, $64, $42, $0c                       ;; 1f:5b3d .w...
-    dw   wD800                                         ;; 1f:5b42 pP
+    dw   w1_D800                                       ;; 1f:5b42 pP
     db   $05, $14, $34, $b8, $44, $0d                  ;; 1f:5b44 ..w...
-    dw   wD800                                         ;; 1f:5b4a pP
+    dw   w1_D800                                       ;; 1f:5b4a pP
     db   $07, $14, $1e                                 ;; 1f:5b4c ..w
     dw   $6da3                                         ;; 1f:5b4f wW
     db   $29, $50                                      ;; 1f:5b51 .w
@@ -1047,12 +1047,12 @@ data_1f_4000:
     dw   $5b75                                         ;; 1f:5b8f wW
     db   $1f, $5a, $8b, $18, $bb, $71, $1f, $5a        ;; 1f:5b91 .??????w
     db   $88, $52                                      ;; 1f:5b99 .w
-    dw   wD643                                         ;; 1f:5b9b pP
+    dw   w1_D643                                       ;; 1f:5b9b pP
     db   $03, $00, $00, $50                            ;; 1f:5b9d ...w
-    dw   wD645                                         ;; 1f:5ba1 pP
+    dw   w1_D645                                       ;; 1f:5ba1 pP
     db   $03, $00, $68, $01                            ;; 1f:5ba3 ..w.
     dw   $c81a                                         ;; 1f:5ba7 pP
-    dw   wD635                                         ;; 1f:5ba9 pP
+    dw   w1_D635                                       ;; 1f:5ba9 pP
     db   $03, $16, $01, $77, $02, $be, $01, $74        ;; 1f:5bab .w..w..w
     dw   $c81a                                         ;; 1f:5bb3 pP
     db   $1c, $04                                      ;; 1f:5bb5 w.
@@ -1064,19 +1064,19 @@ data_1f_4000:
     db   $1f                                           ;; 1f:5bbf .
     dw   $5bec                                         ;; 1f:5bc0 wW
     db   $1f, $18, $75, $5b, $1f, $50                  ;; 1f:5bc2 .????w
-    dw   wD637                                         ;; 1f:5bc8 pP
+    dw   w1_D637                                       ;; 1f:5bc8 pP
     db   $03, $01, $50                                 ;; 1f:5bca .ww
-    dw   wD506                                         ;; 1f:5bcd pP
+    dw   w1_D506                                       ;; 1f:5bcd pP
     db   $03, $01, $18                                 ;; 1f:5bcf .ww
     dw   $5bec                                         ;; 1f:5bd2 wW
     db   $1f, $50                                      ;; 1f:5bd4 .w
-    dw   wD637                                         ;; 1f:5bd6 pP
+    dw   w1_D637                                       ;; 1f:5bd6 pP
     db   $03, $00, $50                                 ;; 1f:5bd8 .ww
-    dw   wD506                                         ;; 1f:5bdb pP
+    dw   w1_D506                                       ;; 1f:5bdb pP
     db   $03, $01, $18                                 ;; 1f:5bdd .ww
     dw   $5bec                                         ;; 1f:5be0 wW
     db   $1f, $50                                      ;; 1f:5be2 .w
-    dw   wD506                                         ;; 1f:5be4 pP
+    dw   w1_D506                                       ;; 1f:5be4 pP
     db   $03, $02, $18                                 ;; 1f:5be6 .ww
     dw   $5bec                                         ;; 1f:5be9 wW
     db   $1f, $1e                                      ;; 1f:5beb .w
@@ -1085,7 +1085,7 @@ data_1f_4000:
     dw   $676c                                         ;; 1f:5bf1 wW
     db   $1f, $68, $01                                 ;; 1f:5bf3 .w.
     dw   wC754                                         ;; 1f:5bf6 pP
-    dw   wD635                                         ;; 1f:5bf8 pP
+    dw   w1_D635                                       ;; 1f:5bf8 pP
     db   $03, $16, $01, $7e, $3d, $01, $82             ;; 1f:5bfa .w..w.w
     dw   .data_1f_5a20                                 ;; 1f:5c01 pP
     db   $03, $14, $01, $83, $41, $75, $5b, $1f        ;; 1f:5c03 .w...???
@@ -1093,7 +1093,7 @@ data_1f_4000:
     dw   $5c80                                         ;; 1f:5c12 wW
     db   $1f, $68, $01                                 ;; 1f:5c14 .w.
     dw   wC754                                         ;; 1f:5c17 pP
-    dw   wD635                                         ;; 1f:5c19 pP
+    dw   w1_D635                                       ;; 1f:5c19 pP
     db   $03, $16, $01, $7e, $3d, $01, $82             ;; 1f:5c1b .w..w.w
     dw   .data_1f_5a20                                 ;; 1f:5c22 pP
     db   $03, $14, $01, $83, $41                       ;; 1f:5c24 .w...
@@ -1103,7 +1103,7 @@ data_1f_4000:
     dw   $5c80                                         ;; 1f:5c37 wW
     db   $1f, $68, $01                                 ;; 1f:5c39 .w.
     dw   wC754                                         ;; 1f:5c3c pP
-    dw   wD635                                         ;; 1f:5c3e pP
+    dw   w1_D635                                       ;; 1f:5c3e pP
     db   $03, $16, $01, $7e, $3d, $02, $82             ;; 1f:5c40 .w..w.w
     dw   .data_1f_5a20                                 ;; 1f:5c47 pP
     db   $03, $14, $01, $83, $41, $75, $5b, $1f        ;; 1f:5c49 .w...???
@@ -1111,7 +1111,7 @@ data_1f_4000:
     dw   $5c80                                         ;; 1f:5c58 wW
     db   $1f, $68, $01                                 ;; 1f:5c5a .w.
     dw   wC754                                         ;; 1f:5c5d pP
-    dw   wD635                                         ;; 1f:5c5f pP
+    dw   w1_D635                                       ;; 1f:5c5f pP
     db   $03, $16, $01, $7e, $3d, $02, $82             ;; 1f:5c61 .w..w.w
     dw   .data_1f_5a20                                 ;; 1f:5c68 pP
     db   $03, $14, $01, $83, $41                       ;; 1f:5c6a .w...
@@ -1122,7 +1122,7 @@ data_1f_4000:
     db   $be, $02, $18                                 ;; 1f:5c7a ..w
     dw   $5c80                                         ;; 1f:5c7d wW
     db   $1f, $80, $54, $c7, $00                       ;; 1f:5c7f .w...
-    dw   wD635                                         ;; 1f:5c84 pP
+    dw   w1_D635                                       ;; 1f:5c84 pP
     db   $03, $01, $00, $5a, $84, $1e                  ;; 1f:5c86 ...w.w
     dw   $6da3                                         ;; 1f:5c8c wW
     db   $29, $18                                      ;; 1f:5c8e .w
@@ -1148,32 +1148,32 @@ data_1f_4000:
     db   $00, $00, $00, $50                            ;; 1f:5cc8 ...w
     dw   wC676                                         ;; 1f:5ccc pP
     db   $00, $a7, $50                                 ;; 1f:5cce ..w
-    dw   wD648                                         ;; 1f:5cd1 pP
+    dw   w1_D648                                       ;; 1f:5cd1 pP
     db   $03, $00, $52                                 ;; 1f:5cd3 ..w
-    dw   wD646                                         ;; 1f:5cd6 pP
+    dw   w1_D646                                       ;; 1f:5cd6 pP
     db   $03, $16, $16, $50                            ;; 1f:5cd8 ...w
-    dw   wD507                                         ;; 1f:5cdc pP
+    dw   w1_D507                                       ;; 1f:5cdc pP
     db   $03, $02, $32, $58, $76, $0b                  ;; 1f:5cde .ww...
-    dw   wD000                                         ;; 1f:5ce4 pP
+    dw   w1_D000                                       ;; 1f:5ce4 pP
     db   $05, $32, $d6, $62, $0b                       ;; 1f:5ce6 .w...
     dw   $d400                                         ;; 1f:5ceb pP
     db   $05, $32, $4b, $6d, $0a                       ;; 1f:5ced .w...
-    dw   wD800                                         ;; 1f:5cf2 pP
+    dw   w1_D800                                       ;; 1f:5cf2 pP
     db   $04, $32, $c5, $71, $0a                       ;; 1f:5cf4 .w...
-    dw   wD000                                         ;; 1f:5cf9 pP
+    dw   w1_D000                                       ;; 1f:5cf9 pP
     db   $07, $32, $26, $60, $0b                       ;; 1f:5cfb .w...
-    dw   wD800                                         ;; 1f:5d00 pP
+    dw   w1_D800                                       ;; 1f:5d00 pP
     db   $06, $32, $69, $4d, $0b                       ;; 1f:5d02 .w...
-    dw   wD000                                         ;; 1f:5d07 pP
+    dw   w1_D000                                       ;; 1f:5d07 pP
     db   $06, $32, $00, $40, $0b                       ;; 1f:5d09 .w...
-    dw   wD000                                         ;; 1f:5d0e pP
+    dw   w1_D000                                       ;; 1f:5d0e pP
     db   $04, $34, $9e, $53, $0e                       ;; 1f:5d10 .w...
     dw   $d880                                         ;; 1f:5d15 pP
     db   $05, $14, $34, $28, $5d, $0e                  ;; 1f:5d17 ..w...
     dw   $d880                                         ;; 1f:5d1d pP
     db   $07, $14, $68, $01                            ;; 1f:5d1f ..w.
     dw   $c81a                                         ;; 1f:5d23 pP
-    dw   wD637                                         ;; 1f:5d25 pP
+    dw   w1_D637                                       ;; 1f:5d25 pP
     db   $03, $16, $01, $77, $02, $be, $01, $74        ;; 1f:5d27 .w..w..w
     dw   $c81a                                         ;; 1f:5d2f pP
     db   $1c, $03                                      ;; 1f:5d31 w.
@@ -1186,7 +1186,7 @@ data_1f_4000:
     dw   .data_1f_4055                                 ;; 1f:5d3d pP
     db   $03, $68, $01                                 ;; 1f:5d3f .w.
     dw   $c81a                                         ;; 1f:5d42 pP
-    dw   wD643                                         ;; 1f:5d44 pP
+    dw   w1_D643                                       ;; 1f:5d44 pP
     db   $03, $14, $01, $3f, $44, $5d, $5d, $1f        ;; 1f:5d46 .w...???
     db   $4c, $1c, $01, $00, $8c, $00, $58, $00        ;; 1f:5d4e ww.w....
     dw   .data_1f_418a                                 ;; 1f:5d56 pP
@@ -1197,7 +1197,7 @@ data_1f_4000:
     db   $08, $8e, $00                                 ;; 1f:5d6c .w.
     dw   .data_1f_5988                                 ;; 1f:5d6f pP
     db   $03, $50                                      ;; 1f:5d71 .w
-    dw   wD887                                         ;; 1f:5d73 pP
+    dw   w1_D887                                       ;; 1f:5d73 pP
     db   $01, $01, $50                                 ;; 1f:5d75 ..w
     dw   $d8ff                                         ;; 1f:5d78 pP
     db   $01, $01, $44, $09, $00, $18                  ;; 1f:5d7a ..w..w
@@ -1205,9 +1205,9 @@ data_1f_4000:
     db   $1f, $32, $e7, $45, $0c                       ;; 1f:5d82 .w...
     dw   $d200                                         ;; 1f:5d87 pP
     db   $05, $34, $ec, $56, $0e                       ;; 1f:5d89 .w...
-    dw   wD800                                         ;; 1f:5d8e pP
+    dw   w1_D800                                       ;; 1f:5d8e pP
     db   $05, $14, $34, $1c, $5f, $0e                  ;; 1f:5d90 ..w...
-    dw   wD800                                         ;; 1f:5d96 pP
+    dw   w1_D800                                       ;; 1f:5d96 pP
     db   $07, $14, $4c, $16, $01, $00, $50, $00        ;; 1f:5d98 ..ww.w..
     db   $13, $00                                      ;; 1f:5da0 ..
     dw   .data_1f_407c                                 ;; 1f:5da2 pP
@@ -1220,9 +1220,9 @@ data_1f_4000:
     db   $1f, $32, $00, $40, $0c                       ;; 1f:5db4 .w...
     dw   $d200                                         ;; 1f:5db9 pP
     db   $05, $34, $e0, $55, $0e                       ;; 1f:5dbb .w...
-    dw   wD800                                         ;; 1f:5dc0 pP
+    dw   w1_D800                                       ;; 1f:5dc0 pP
     db   $05, $14, $34, $00, $5f, $0e                  ;; 1f:5dc2 ..w...
-    dw   wD800                                         ;; 1f:5dc8 pP
+    dw   w1_D800                                       ;; 1f:5dc8 pP
     db   $07, $14, $4c, $16, $01, $00, $50, $00        ;; 1f:5dca ..ww.w..
     db   $13, $00                                      ;; 1f:5dd2 ..
     dw   .data_1f_40ce                                 ;; 1f:5dd4 pP
@@ -1235,9 +1235,9 @@ data_1f_4000:
     db   $1f, $32, $8a, $7e, $0b                       ;; 1f:5de6 .w...
     dw   $d200                                         ;; 1f:5deb pP
     db   $05, $34, $67, $56, $0e                       ;; 1f:5ded .w...
-    dw   wD800                                         ;; 1f:5df2 pP
+    dw   w1_D800                                       ;; 1f:5df2 pP
     db   $05, $14, $34, $38, $5f, $0e                  ;; 1f:5df4 ..w...
-    dw   wD800                                         ;; 1f:5dfa pP
+    dw   w1_D800                                       ;; 1f:5dfa pP
     db   $07, $14, $4c, $16, $01, $00, $50, $00        ;; 1f:5dfc ..ww.w..
     db   $13, $00                                      ;; 1f:5e04 ..
     dw   .data_1f_412c                                 ;; 1f:5e06 pP
@@ -1249,7 +1249,7 @@ data_1f_4000:
     dw   $5d3c                                         ;; 1f:5e16 wW
     db   $1f, $68, $01                                 ;; 1f:5e18 .w.
     dw   $c81a                                         ;; 1f:5e1b pP
-    dw   wD649                                         ;; 1f:5e1d pP
+    dw   w1_D649                                       ;; 1f:5e1d pP
     db   $03, $16, $01, $77, $02, $be, $01, $74        ;; 1f:5e1f .w..w..w
     dw   $c81a                                         ;; 1f:5e27 pP
     db   $1c, $04, $37, $5e, $1f                       ;; 1f:5e29 w.???
@@ -1288,25 +1288,25 @@ data_1f_4000:
     db   $00, $00, $00, $50                            ;; 1f:5e8c ...w
     dw   wC676                                         ;; 1f:5e90 pP
     db   $00, $a7, $32, $06, $49, $0b                  ;; 1f:5e92 ..w...
-    dw   wD000                                         ;; 1f:5e98 pP
+    dw   w1_D000                                       ;; 1f:5e98 pP
     db   $05, $32, $a7, $7a, $0b                       ;; 1f:5e9a .w...
-    dw   wD800                                         ;; 1f:5e9f pP
+    dw   w1_D800                                       ;; 1f:5e9f pP
     db   $04, $32, $fa, $6b, $0c                       ;; 1f:5ea1 .w...
     dw   $ddf0                                         ;; 1f:5ea6 pP
     db   $04, $32, $4d, $5d, $0c                       ;; 1f:5ea8 .w...
-    dw   wD000                                         ;; 1f:5ead pP
+    dw   w1_D000                                       ;; 1f:5ead pP
     db   $04, $32, $16, $6a, $0b                       ;; 1f:5eaf .w...
-    dw   wD000                                         ;; 1f:5eb4 pP
+    dw   w1_D000                                       ;; 1f:5eb4 pP
     db   $06, $32, $6f, $4d, $72                       ;; 1f:5eb6 .w...
-    dw   wD800                                         ;; 1f:5ebb pP
+    dw   w1_D800                                       ;; 1f:5ebb pP
     db   $06, $32, $fa, $4e, $0e                       ;; 1f:5ebd .w...
     dw   $df70                                         ;; 1f:5ec2 pP
     db   $06, $32, $e5, $69, $72                       ;; 1f:5ec4 .w...
-    dw   wD000                                         ;; 1f:5ec9 pP
+    dw   w1_D000                                       ;; 1f:5ec9 pP
     db   $07, $34, $6f, $5c, $0c                       ;; 1f:5ecb .w...
-    dw   wD800                                         ;; 1f:5ed0 pP
+    dw   w1_D800                                       ;; 1f:5ed0 pP
     db   $05, $14, $34, $63, $44, $0e                  ;; 1f:5ed2 ..w...
-    dw   wD800                                         ;; 1f:5ed8 pP
+    dw   w1_D800                                       ;; 1f:5ed8 pP
     db   $07, $14, $82                                 ;; 1f:5eda ..w
     dw   .data_1f_4478                                 ;; 1f:5edd pP
     db   $03, $86, $e0, $d8, $05, $e0, $98, $00        ;; 1f:5edf .w......
@@ -1322,7 +1322,7 @@ data_1f_4000:
     dw   .data_1f_48ed                                 ;; 1f:5f12 pP
     db   $19, $68, $01                                 ;; 1f:5f14 .w.
     dw   $c81a                                         ;; 1f:5f17 pP
-    dw   wD5CF                                         ;; 1f:5f19 pP
+    dw   w1_D5CF                                       ;; 1f:5f19 pP
     db   $03, $16, $01, $77, $02, $be, $01, $74        ;; 1f:5f1b .w..w..w
     dw   $c81a                                         ;; 1f:5f23 pP
     db   $1c, $0a                                      ;; 1f:5f25 w.
@@ -1332,7 +1332,7 @@ data_1f_4000:
     db   $e0, $60, $1f, $eb, $60, $1f, $f6, $60        ;; 1f:5f39 ????????
     db   $1f, $01, $61, $1f, $68, $01                  ;; 1f:5f41 ????w.
     dw   $c81a                                         ;; 1f:5f47 pP
-    dw   wD649                                         ;; 1f:5f49 pP
+    dw   w1_D649                                       ;; 1f:5f49 pP
     db   $03, $16, $01, $77, $02, $be, $01, $74        ;; 1f:5f4b .w..w..w
     dw   $c81a                                         ;; 1f:5f53 pP
     db   $1c, $04, $80, $5f, $1f                       ;; 1f:5f55 w.???
@@ -1437,29 +1437,29 @@ data_1f_4000:
     db   $50                                           ;; 1f:613b w
     dw   wC676                                         ;; 1f:613c pP
     db   $00, $a7, $52                                 ;; 1f:613e ..w
-    dw   wD630                                         ;; 1f:6141 pP
+    dw   w1_D630                                       ;; 1f:6141 pP
     db   $03, $01, $01, $32, $22, $76, $0a             ;; 1f:6143 ...w...
-    dw   wD000                                         ;; 1f:614a pP
+    dw   w1_D000                                       ;; 1f:614a pP
     db   $05, $32, $16, $6a                            ;; 1f:614c .w..
 .data_1f_6150:
     db   $0b                                           ;; 1f:6150 .
-    dw   wD000                                         ;; 1f:6151 pP
+    dw   w1_D000                                       ;; 1f:6151 pP
     db   $06, $32, $6f, $4d, $72                       ;; 1f:6153 .w...
-    dw   wD800                                         ;; 1f:6158 pP
+    dw   w1_D800                                       ;; 1f:6158 pP
     db   $06, $32, $e5, $69, $72                       ;; 1f:615a .w...
-    dw   wD000                                         ;; 1f:615f pP
+    dw   w1_D000                                       ;; 1f:615f pP
     db   $07, $32, $c4, $67, $0b                       ;; 1f:6161 .w...
     dw   $db00                                         ;; 1f:6166 pP
     db   $06, $32, $60, $70, $0d                       ;; 1f:6168 .w...
-    dw   wD000                                         ;; 1f:616d pP
+    dw   w1_D000                                       ;; 1f:616d pP
     db   $07, $32, $fa, $4e, $0e                       ;; 1f:616f .w...
     dw   $df70                                         ;; 1f:6174 pP
     db   $06, $32, $0d, $7d, $6d                       ;; 1f:6176 .w...
     dw   $d400                                         ;; 1f:617b pP
     db   $06, $34, $28, $48, $0c                       ;; 1f:617d .w...
-    dw   wD800                                         ;; 1f:6182 pP
+    dw   w1_D800                                       ;; 1f:6182 pP
     db   $05, $14, $34, $98, $51, $0e                  ;; 1f:6184 ..w...
-    dw   wD800                                         ;; 1f:618a pP
+    dw   w1_D800                                       ;; 1f:618a pP
     db   $07, $14, $4c, $16, $01, $04, $44, $00        ;; 1f:618c ..ww.w..
     db   $22, $00                                      ;; 1f:6194 ..
     dw   .data_1f_4106                                 ;; 1f:6196 pP
@@ -1495,7 +1495,7 @@ data_1f_4000:
     dw   .data_1f_4ccd                                 ;; 1f:6205 pP
     db   $19, $16, $01, $7f, $01, $01, $44, $09        ;; 1f:6207 .w..w.w.
     db   $00, $50                                      ;; 1f:620f .w
-    dw   wD507                                         ;; 1f:6211 pP
+    dw   w1_D507                                       ;; 1f:6211 pP
     db   $03, $01, $18                                 ;; 1f:6213 .ww
     dw   $5ae7                                         ;; 1f:6216 wW
     db   $1f, $5e, $80, $4a, $50                       ;; 1f:6218 .w.ww
@@ -1515,16 +1515,16 @@ data_1f_4000:
     db   $00, $00, $00, $50                            ;; 1f:6240 ...w
     dw   wC676                                         ;; 1f:6244 pP
     db   $00, $a7, $50                                 ;; 1f:6246 ..w
-    dw   wD6E5                                         ;; 1f:6249 pP
+    dw   w1_D6E5                                       ;; 1f:6249 pP
     db   $03, $00, $50                                 ;; 1f:624b ..w
-    dw   wD50D                                         ;; 1f:624e pP
+    dw   w1_D50D                                       ;; 1f:624e pP
     db   $03, $00, $50                                 ;; 1f:6250 .ww
-    dw   wD657                                         ;; 1f:6253 pP
+    dw   w1_D657                                       ;; 1f:6253 pP
     db   $03, $00, $16, $01, $7e, $0d, $08, $8e        ;; 1f:6255 ..w..w.w
     db   $00                                           ;; 1f:625d .
     dw   .data_1f_50fb                                 ;; 1f:625e pP
     db   $03, $52                                      ;; 1f:6260 .w
-    dw   wD630                                         ;; 1f:6262 pP
+    dw   w1_D630                                       ;; 1f:6262 pP
     db   $03, $01, $01, $68, $01                       ;; 1f:6264 ...w.
     dw   $c81a                                         ;; 1f:6269 pP
     dw   $d636                                         ;; 1f:626b pP
@@ -1547,13 +1547,13 @@ data_1f_4000:
     db   $1f, $18, $56, $63, $1f, $50                  ;; 1f:62e4 ?????w
     dw   wC672                                         ;; 1f:62ea pP
     db   $00, $e7, $32, $9f, $44, $0b                  ;; 1f:62ec ..w...
-    dw   wD000                                         ;; 1f:62f2 pP
+    dw   w1_D000                                       ;; 1f:62f2 pP
     db   $05, $32, $0d, $7d, $6d                       ;; 1f:62f4 .w...
     dw   $d400                                         ;; 1f:62f9 pP
     db   $06, $34, $33, $41, $0c                       ;; 1f:62fb .w...
-    dw   wD800                                         ;; 1f:6300 pP
+    dw   w1_D800                                       ;; 1f:6300 pP
     db   $05, $14, $34, $de, $44, $0e                  ;; 1f:6302 ..w...
-    dw   wD800                                         ;; 1f:6308 pP
+    dw   w1_D800                                       ;; 1f:6308 pP
     db   $07, $14, $4c, $16, $01, $00, $44, $00        ;; 1f:630a ..ww.w..
     db   $50, $00                                      ;; 1f:6312 ..
     dw   .data_1f_4209                                 ;; 1f:6314 pP
@@ -1561,7 +1561,7 @@ data_1f_4000:
     dw   .data_1f_4dd8                                 ;; 1f:631a pP
     db   $19, $16, $01, $7f, $01, $02, $68, $01        ;; 1f:631c .w..w.w.
     dw   $c81a                                         ;; 1f:6324 pP
-    dw   wD5CF                                         ;; 1f:6326 pP
+    dw   w1_D5CF                                       ;; 1f:6326 pP
     db   $03, $16, $01, $77, $02, $be, $01, $74        ;; 1f:6328 .w..w..w
     dw   $c81a                                         ;; 1f:6330 pP
     db   $1c, $0a                                      ;; 1f:6332 w.
@@ -1573,7 +1573,7 @@ data_1f_4000:
     db   $4e, $08, $01                                 ;; 1f:6356 w..
     dw   .data_1f_4049                                 ;; 1f:6359 pP
     db   $10, $50                                      ;; 1f:635b .w
-    dw   wD887                                         ;; 1f:635d pP
+    dw   w1_D887                                       ;; 1f:635d pP
     db   $01, $01, $44, $78, $00, $18                  ;; 1f:635f ..w..w
     dw   $5ae7                                         ;; 1f:6365 wW
     db   $1f, $32, $b4, $64, $0c, $70, $d6, $05        ;; 1f:6367 .???????
@@ -1622,28 +1622,28 @@ data_1f_4000:
     db   $50                                           ;; 1f:646b w
     dw   wC676                                         ;; 1f:646c pP
     db   $00, $a7, $50                                 ;; 1f:646e ..w
-    dw   wD7A9                                         ;; 1f:6471 pP
+    dw   w1_D7A9                                       ;; 1f:6471 pP
     db   $03, $00, $32, $06, $49, $0b                  ;; 1f:6473 ..w...
-    dw   wD000                                         ;; 1f:6479 pP
+    dw   w1_D000                                       ;; 1f:6479 pP
     db   $05, $32, $a7, $7a, $0b                       ;; 1f:647b .w...
-    dw   wD800                                         ;; 1f:6480 pP
+    dw   w1_D800                                       ;; 1f:6480 pP
     db   $04, $32, $fa, $6b, $0c                       ;; 1f:6482 .w...
     dw   $ddf0                                         ;; 1f:6487 pP
     db   $04, $32, $16, $6a, $0b                       ;; 1f:6489 .w...
-    dw   wD000                                         ;; 1f:648e pP
+    dw   w1_D000                                       ;; 1f:648e pP
     db   $06, $32, $6f, $4d, $72                       ;; 1f:6490 .w...
-    dw   wD800                                         ;; 1f:6495 pP
+    dw   w1_D800                                       ;; 1f:6495 pP
     db   $06, $32, $fa, $4e, $0e                       ;; 1f:6497 .w...
     dw   $df70                                         ;; 1f:649c pP
     db   $06, $32, $e5, $69, $72                       ;; 1f:649e .w...
-    dw   wD000                                         ;; 1f:64a3 pP
+    dw   w1_D000                                       ;; 1f:64a3 pP
     db   $07, $34, $7f, $65, $0c                       ;; 1f:64a5 .w...
-    dw   wD800                                         ;; 1f:64aa pP
+    dw   w1_D800                                       ;; 1f:64aa pP
     db   $05, $15, $34, $e0, $50, $0e                  ;; 1f:64ac ..w...
-    dw   wD800                                         ;; 1f:64b2 pP
+    dw   w1_D800                                       ;; 1f:64b2 pP
     db   $07, $15, $68, $01                            ;; 1f:64b4 ..w.
     dw   $c81a                                         ;; 1f:64b8 pP
-    dw   wD64A                                         ;; 1f:64ba pP
+    dw   w1_D64A                                       ;; 1f:64ba pP
     db   $03, $16, $01, $77, $02, $be, $01, $74        ;; 1f:64bc .w..w..w
     dw   $c81a                                         ;; 1f:64c4 pP
     db   $1c, $04                                      ;; 1f:64c6 w.
@@ -1750,30 +1750,30 @@ data_1f_4000:
     db   $01, $7f, $01, $00, $1e                       ;; 1f:66a7 ..w.w
     dw   $6e87                                         ;; 1f:66ac wW
     db   $29, $50                                      ;; 1f:66ae .w
-    dw   wD506                                         ;; 1f:66b0 pP
+    dw   w1_D506                                       ;; 1f:66b0 pP
     db   $03, $00, $50                                 ;; 1f:66b2 ..w
-    dw   wD633                                         ;; 1f:66b5 pP
+    dw   w1_D633                                       ;; 1f:66b5 pP
     db   $03, $01, $18                                 ;; 1f:66b7 ..w
     dw   $67e5                                         ;; 1f:66ba wW
     db   $1f, $4c, $16, $01, $04, $44, $00, $00        ;; 1f:66bc .ww.w...
     db   $00                                           ;; 1f:66c4 .
     dw   .data_1f_4106                                 ;; 1f:66c5 pP
     db   $10, $50                                      ;; 1f:66c7 .w
-    dw   wD1A1                                         ;; 1f:66c9 pP
+    dw   w1_D1A1                                       ;; 1f:66c9 pP
     db   $01, $00, $50                                 ;; 1f:66cb ..w
-    dw   wD1CF                                         ;; 1f:66ce pP
+    dw   w1_D1CF                                       ;; 1f:66ce pP
     db   $01, $00, $50                                 ;; 1f:66d0 ..w
-    dw   wD22B                                         ;; 1f:66d3 pP
+    dw   w1_D22B                                       ;; 1f:66d3 pP
     db   $01, $00, $50                                 ;; 1f:66d5 ..w
-    dw   wD259                                         ;; 1f:66d8 pP
+    dw   w1_D259                                       ;; 1f:66d8 pP
     db   $01, $00, $50                                 ;; 1f:66da ..w
-    dw   wD8B7                                         ;; 1f:66dd pP
+    dw   w1_D8B7                                       ;; 1f:66dd pP
     db   $01, $00, $50                                 ;; 1f:66df ..w
-    dw   wD8C3                                         ;; 1f:66e2 pP
+    dw   w1_D8C3                                       ;; 1f:66e2 pP
     db   $01, $00, $50                                 ;; 1f:66e4 ..w
     dw   $d2e3                                         ;; 1f:66e7 pP
     db   $01, $00, $50                                 ;; 1f:66e9 ..w
-    dw   wD6E5                                         ;; 1f:66ec pP
+    dw   w1_D6E5                                       ;; 1f:66ec pP
     db   $03, $00, $4e, $08, $01                       ;; 1f:66ee ..w..
     dw   .data_1f_4049                                 ;; 1f:66f3 pP
     db   $10, $44, $1e, $00, $68, $01                  ;; 1f:66f5 .w..w.
@@ -1793,7 +1793,7 @@ data_1f_4000:
     db   $03, $1e                                      ;; 1f:6733 .w
     dw   $6e87                                         ;; 1f:6735 wW
     db   $29, $50                                      ;; 1f:6737 .w
-    dw   wD506                                         ;; 1f:6739 pP
+    dw   w1_D506                                       ;; 1f:6739 pP
     db   $03, $03, $50                                 ;; 1f:673b .ww
     dw   wC672                                         ;; 1f:673e pP
     db   $00, $e7, $50                                 ;; 1f:6740 ..w
@@ -1806,7 +1806,7 @@ data_1f_4000:
     db   $5a, $1f, $1e, $a3, $6d, $29, $18, $e7        ;; 1f:6762 ????????
     db   $5a, $1f, $68, $01                            ;; 1f:676a ??w.
     dw   $c81a                                         ;; 1f:676e pP
-    dw   wD635                                         ;; 1f:6770 pP
+    dw   w1_D635                                       ;; 1f:6770 pP
     db   $03, $16, $01, $77, $02, $be, $01, $74        ;; 1f:6772 .w..w..w
     dw   $c81a                                         ;; 1f:677a pP
     db   $1c, $04                                      ;; 1f:677c w.
@@ -1838,10 +1838,10 @@ data_1f_4000:
     db   $19, $44, $1e, $00, $18                       ;; 1f:67c1 .w..w
     dw   $71bb                                         ;; 1f:67c6 wW
     db   $1f, $44, $1e, $00, $50                       ;; 1f:67c8 .w..w
-    dw   wD7A9                                         ;; 1f:67cd pP
+    dw   w1_D7A9                                       ;; 1f:67cd pP
     db   $03, $00, $4c, $1c, $00, $00, $00, $00        ;; 1f:67cf ..ww....
     db   $06, $00, $4d, $40, $19, $50                  ;; 1f:67d7 .....w
-    dw   wD633                                         ;; 1f:67dd pP
+    dw   w1_D633                                       ;; 1f:67dd pP
     db   $03, $00, $18                                 ;; 1f:67df ..w
     dw   $67e5                                         ;; 1f:67e2 wW
     db   $1f, $1e                                      ;; 1f:67e4 .w
@@ -1850,7 +1850,7 @@ data_1f_4000:
     dw   $5f51                                         ;; 1f:67ed wW
     db   $04, $68, $01                                 ;; 1f:67ef .w.
     dw   $c81a                                         ;; 1f:67f2 pP
-    dw   wD633                                         ;; 1f:67f4 pP
+    dw   w1_D633                                       ;; 1f:67f4 pP
     db   $03, $14, $01, $8e, $43                       ;; 1f:67f6 .w...
     dw   $5ae7                                         ;; 1f:67fb wW
     db   $1f, $74                                      ;; 1f:67fd .w
@@ -1935,24 +1935,24 @@ data_1f_4000:
     db   $00, $00, $52                                 ;; 1f:6a03 ..w
     dw   wC67D                                         ;; 1f:6a06 pP
     db   $00, $00, $00, $50                            ;; 1f:6a08 ...w
-    dw   wD65D                                         ;; 1f:6a0c pP
+    dw   w1_D65D                                       ;; 1f:6a0c pP
     db   $03, $00, $16, $01, $7e, $0d, $08, $8e        ;; 1f:6a0e ..w..w.w
     db   $00                                           ;; 1f:6a16 .
     dw   .data_1f_5988                                 ;; 1f:6a17 pP
     db   $03, $32, $06, $49, $0b                       ;; 1f:6a19 .w...
-    dw   wD000                                         ;; 1f:6a1e pP
+    dw   w1_D000                                       ;; 1f:6a1e pP
     db   $05, $32, $6f, $4d, $72                       ;; 1f:6a20 .w...
-    dw   wD800                                         ;; 1f:6a25 pP
+    dw   w1_D800                                       ;; 1f:6a25 pP
     db   $06, $32, $e5, $69, $72                       ;; 1f:6a27 .w...
-    dw   wD000                                         ;; 1f:6a2c pP
+    dw   w1_D000                                       ;; 1f:6a2c pP
     db   $07, $32, $fa, $4e, $0e                       ;; 1f:6a2e .w...
     dw   $df70                                         ;; 1f:6a33 pP
     db   $06, $32, $16, $6a, $0b                       ;; 1f:6a35 .w...
-    dw   wD000                                         ;; 1f:6a3a pP
+    dw   w1_D000                                       ;; 1f:6a3a pP
     db   $06, $34, $f4, $69, $0c                       ;; 1f:6a3c .w...
-    dw   wD800                                         ;; 1f:6a41 pP
+    dw   w1_D800                                       ;; 1f:6a41 pP
     db   $05, $14, $34, $c1, $4d, $0e                  ;; 1f:6a43 ..w...
-    dw   wD800                                         ;; 1f:6a49 pP
+    dw   w1_D800                                       ;; 1f:6a49 pP
     db   $07, $14, $68, $01                            ;; 1f:6a4b ..w.
     dw   $c81a                                         ;; 1f:6a4f pP
     dw   hFFFE                                         ;; 1f:6a51 pP
@@ -1981,19 +1981,19 @@ data_1f_4000:
     db   $00, $00, $00                                 ;; 1f:6acf ...
     dw   .data_1f_4c80                                 ;; 1f:6ad2 pP
     db   $19, $44, $3c, $00, $50                       ;; 1f:6ad4 .w..w
-    dw   wD633                                         ;; 1f:6ad9 pP
+    dw   w1_D633                                       ;; 1f:6ad9 pP
     db   $03, $00, $18                                 ;; 1f:6adb ..w
     dw   $67e5                                         ;; 1f:6ade wW
     db   $1f, $68, $01                                 ;; 1f:6ae0 .w.
     dw   $c81a                                         ;; 1f:6ae3 pP
-    dw   wD64A                                         ;; 1f:6ae5 pP
+    dw   w1_D64A                                       ;; 1f:6ae5 pP
     db   $03, $16, $01, $77, $02, $be, $01, $74        ;; 1f:6ae7 .w..w..w
     dw   $c81a                                         ;; 1f:6aef pP
     db   $1c, $04                                      ;; 1f:6af1 w.
     dw   $6b0b                                         ;; 1f:6af3 wW
     db   $1f, $15, $6b, $1f, $1f, $6b, $1f, $29        ;; 1f:6af5 .???????
     db   $6b, $1f, $44, $28, $00, $50                  ;; 1f:6afd ??w..w
-    dw   wD633                                         ;; 1f:6b03 pP
+    dw   w1_D633                                       ;; 1f:6b03 pP
     db   $03, $00, $18                                 ;; 1f:6b05 ..w
     dw   $67e5                                         ;; 1f:6b08 wW
     db   $1f, $42, $0c, $01                            ;; 1f:6b0a .w..
@@ -2016,17 +2016,17 @@ data_1f_4000:
     db   $00, $00, $52                                 ;; 1f:6b4d ..w
     dw   wC67D                                         ;; 1f:6b50 pP
     db   $00, $00, $00, $32, $5f, $6e, $0b             ;; 1f:6b52 ...w...
-    dw   wD000                                         ;; 1f:6b59 pP
+    dw   w1_D000                                       ;; 1f:6b59 pP
     db   $05, $32, $5e, $65, $0b                       ;; 1f:6b5b .w...
-    dw   wD000                                         ;; 1f:6b60 pP
+    dw   w1_D000                                       ;; 1f:6b60 pP
     db   $04, $34, $02, $5c, $0e                       ;; 1f:6b62 .w...
-    dw   wD800                                         ;; 1f:6b67 pP
+    dw   w1_D800                                       ;; 1f:6b67 pP
     db   $05, $14, $34, $49, $6e, $0e                  ;; 1f:6b69 ..w...
-    dw   wD800                                         ;; 1f:6b6f pP
+    dw   w1_D800                                       ;; 1f:6b6f pP
     db   $07, $14, $34, $9b, $55, $0e                  ;; 1f:6b71 ..w...
-    dw   wD9A0                                         ;; 1f:6b77 pP
+    dw   w1_D9A0                                       ;; 1f:6b77 pP
     db   $05, $14, $34, $18, $5e, $0e                  ;; 1f:6b79 ..w...
-    dw   wD9A0                                         ;; 1f:6b7f pP
+    dw   w1_D9A0                                       ;; 1f:6b7f pP
     db   $07, $14, $34, $80, $50, $0e                  ;; 1f:6b81 ..w...
     dw   $d8a0                                         ;; 1f:6b87 pP
     db   $05, $14, $34, $39, $54, $0e                  ;; 1f:6b89 ..w...
@@ -2084,27 +2084,27 @@ data_1f_4000:
     db   $8e, $00                                      ;; 1f:6c31 w.
     dw   .data_1f_5988                                 ;; 1f:6c33 pP
     db   $03, $32, $58, $73, $0b                       ;; 1f:6c35 .w...
-    dw   wD000                                         ;; 1f:6c3a pP
+    dw   w1_D000                                       ;; 1f:6c3a pP
     db   $05, $32, $8f, $59, $0b                       ;; 1f:6c3c .w...
-    dw   wD000                                         ;; 1f:6c41 pP
+    dw   w1_D000                                       ;; 1f:6c41 pP
     db   $04, $32, $de, $74, $0b                       ;; 1f:6c43 .w...
-    dw   wD800                                         ;; 1f:6c48 pP
+    dw   w1_D800                                       ;; 1f:6c48 pP
     db   $04, $32, $6f, $4d, $72                       ;; 1f:6c4a .w...
-    dw   wD800                                         ;; 1f:6c4f pP
+    dw   w1_D800                                       ;; 1f:6c4f pP
     db   $06, $32, $e5, $69, $72                       ;; 1f:6c51 .w...
-    dw   wD000                                         ;; 1f:6c56 pP
+    dw   w1_D000                                       ;; 1f:6c56 pP
     db   $07, $32, $fa, $4e, $0e                       ;; 1f:6c58 .w...
     dw   $df70                                         ;; 1f:6c5d pP
     db   $06, $32, $16, $6a, $0b                       ;; 1f:6c5f .w...
-    dw   wD000                                         ;; 1f:6c64 pP
+    dw   w1_D000                                       ;; 1f:6c64 pP
     db   $06, $34, $4c, $53, $0e                       ;; 1f:6c66 .w...
-    dw   wD920                                         ;; 1f:6c6b pP
+    dw   w1_D920                                       ;; 1f:6c6b pP
     db   $05, $14, $34, $74, $58, $0e                  ;; 1f:6c6d ..w...
-    dw   wD920                                         ;; 1f:6c73 pP
+    dw   w1_D920                                       ;; 1f:6c73 pP
     db   $07, $14, $34, $59, $66, $0e                  ;; 1f:6c75 ..w...
-    dw   wD800                                         ;; 1f:6c7b pP
+    dw   w1_D800                                       ;; 1f:6c7b pP
     db   $05, $14, $34, $73, $5d, $0e                  ;; 1f:6c7d ..w...
-    dw   wD800                                         ;; 1f:6c83 pP
+    dw   w1_D800                                       ;; 1f:6c83 pP
     db   $07, $14, $4e, $04, $01                       ;; 1f:6c85 ..w..
     dw   .data_1f_4b12                                 ;; 1f:6c8a pP
     db   $19, $4e, $0e, $01                            ;; 1f:6c8c .w..
@@ -2112,9 +2112,9 @@ data_1f_4000:
     db   $19, $4e, $0f, $01                            ;; 1f:6c92 .w..
     dw   .data_1f_4ccd                                 ;; 1f:6c96 pP
     db   $19, $44, $1e, $00, $34, $2e, $5c, $0e        ;; 1f:6c98 .w..w...
-    dw   wD800                                         ;; 1f:6ca0 pP
+    dw   w1_D800                                       ;; 1f:6ca0 pP
     db   $05, $14, $34, $d8, $5c, $0e                  ;; 1f:6ca2 ..w...
-    dw   wD800                                         ;; 1f:6ca8 pP
+    dw   w1_D800                                       ;; 1f:6ca8 pP
     db   $07, $14, $84, $5e, $d6, $03, $3b, $00        ;; 1f:6caa ..w.....
     db   $00, $84, $99, $d6, $03, $3b, $00, $00        ;; 1f:6cb2 .w......
     db   $82                                           ;; 1f:6cba w
@@ -2129,9 +2129,9 @@ data_1f_4000:
     db   $82                                           ;; 1f:6cd2 w
     dw   .data_1f_4b1d                                 ;; 1f:6cd3 pP
     db   $02, $48, $34, $f7, $52, $0e                  ;; 1f:6cd5 .ww...
-    dw   wD800                                         ;; 1f:6cdb pP
+    dw   w1_D800                                       ;; 1f:6cdb pP
     db   $05, $14, $34, $24, $56, $0e                  ;; 1f:6cdd ..w...
-    dw   wD800                                         ;; 1f:6ce3 pP
+    dw   w1_D800                                       ;; 1f:6ce3 pP
     db   $07, $14, $4c, $1c, $01, $00, $1d, $00        ;; 1f:6ce5 ..ww.w..
     db   $2d, $00                                      ;; 1f:6ced ..
     dw   .data_1f_4c79                                 ;; 1f:6cef pP
@@ -2150,7 +2150,7 @@ data_1f_4000:
     dw   .data_1f_4c80                                 ;; 1f:6d13 pP
     db   $19, $5a, $88, $44, $28, $00, $68, $01        ;; 1f:6d15 .w.w..w.
     dw   $c81a                                         ;; 1f:6d1d pP
-    dw   wD298                                         ;; 1f:6d1f pP
+    dw   w1_D298                                       ;; 1f:6d1f pP
     db   $01, $14, $01, $5b, $44                       ;; 1f:6d21 .w...
     dw   $6d4f                                         ;; 1f:6d26 wW
     db   $1f, $48, $34, $59, $66, $0e, $00, $d8        ;; 1f:6d28 .???????
@@ -2160,7 +2160,7 @@ data_1f_4000:
     db   $07, $14, $4a, $18, $be, $6c, $1f, $1e        ;; 1f:6d48 ???????w
     dw   $6e87                                         ;; 1f:6d50 wW
     db   $29, $50                                      ;; 1f:6d52 .w
-    dw   wD633                                         ;; 1f:6d54 pP
+    dw   w1_D633                                       ;; 1f:6d54 pP
     db   $03, $01, $18                                 ;; 1f:6d56 ..w
     dw   $67e5                                         ;; 1f:6d59 wW
     db   $1f, $68, $01, $1a, $c8, $98, $d2, $01        ;; 1f:6d5b .???????
@@ -2168,11 +2168,11 @@ data_1f_4000:
     db   $98, $d2, $01, $2d, $5a, $84, $18, $f7        ;; 1f:6d6b ????????
     db   $6c, $1f, $68, $01                            ;; 1f:6d73 ??w.
     dw   $c81a                                         ;; 1f:6d77 pP
-    dw   wD298                                         ;; 1f:6d79 pP
+    dw   w1_D298                                       ;; 1f:6d79 pP
     db   $01, $14, $01, $5b, $44                       ;; 1f:6d7b .w...
     dw   $6cf7                                         ;; 1f:6d80 wW
     db   $1f, $50                                      ;; 1f:6d82 .w
-    dw   wD298                                         ;; 1f:6d84 pP
+    dw   w1_D298                                       ;; 1f:6d84 pP
     db   $01, $3d, $5a, $84, $18                       ;; 1f:6d86 ..w.w
     dw   $6cf7                                         ;; 1f:6d8b wW
     db   $1f, $82, $1d, $4b, $02, $48, $34, $27        ;; 1f:6d8d .???????
@@ -2199,27 +2199,27 @@ data_1f_4000:
     db   $8e, $00                                      ;; 1f:6dec w.
     dw   .data_1f_5988                                 ;; 1f:6dee pP
     db   $03, $32, $58, $73, $0b                       ;; 1f:6df0 .w...
-    dw   wD000                                         ;; 1f:6df5 pP
+    dw   w1_D000                                       ;; 1f:6df5 pP
     db   $05, $32, $8f, $59, $0b                       ;; 1f:6df7 .w...
-    dw   wD000                                         ;; 1f:6dfc pP
+    dw   w1_D000                                       ;; 1f:6dfc pP
     db   $04, $32, $de, $74, $0b                       ;; 1f:6dfe .w...
-    dw   wD800                                         ;; 1f:6e03 pP
+    dw   w1_D800                                       ;; 1f:6e03 pP
     db   $04, $32, $6f, $4d, $72                       ;; 1f:6e05 .w...
-    dw   wD800                                         ;; 1f:6e0a pP
+    dw   w1_D800                                       ;; 1f:6e0a pP
     db   $06, $32, $e5, $69, $72                       ;; 1f:6e0c .w...
-    dw   wD000                                         ;; 1f:6e11 pP
+    dw   w1_D000                                       ;; 1f:6e11 pP
     db   $07, $32, $fa, $4e, $0e                       ;; 1f:6e13 .w...
     dw   $df70                                         ;; 1f:6e18 pP
     db   $06, $32, $16, $6a, $0b                       ;; 1f:6e1a .w...
-    dw   wD000                                         ;; 1f:6e1f pP
+    dw   w1_D000                                       ;; 1f:6e1f pP
     db   $06, $34, $4a, $52, $0e                       ;; 1f:6e21 .w...
-    dw   wD920                                         ;; 1f:6e26 pP
+    dw   w1_D920                                       ;; 1f:6e26 pP
     db   $05, $14, $34, $01, $5d, $0e                  ;; 1f:6e28 ..w...
-    dw   wD920                                         ;; 1f:6e2e pP
+    dw   w1_D920                                       ;; 1f:6e2e pP
     db   $07, $14, $34, $3d, $67, $0e                  ;; 1f:6e30 ..w...
-    dw   wD800                                         ;; 1f:6e36 pP
+    dw   w1_D800                                       ;; 1f:6e36 pP
     db   $05, $14, $34, $fa, $5d, $0e                  ;; 1f:6e38 ..w...
-    dw   wD800                                         ;; 1f:6e3e pP
+    dw   w1_D800                                       ;; 1f:6e3e pP
     db   $07, $14, $4e, $04, $01                       ;; 1f:6e40 ..w..
     dw   .data_1f_4b12                                 ;; 1f:6e45 pP
     db   $19, $4e, $0e, $01                            ;; 1f:6e47 .w..
@@ -2227,9 +2227,9 @@ data_1f_4000:
     db   $19, $4e, $0f, $01                            ;; 1f:6e4d .w..
     dw   .data_1f_4ccd                                 ;; 1f:6e51 pP
     db   $19, $44, $1e, $00, $34, $59, $5c, $0e        ;; 1f:6e53 .w..w...
-    dw   wD800                                         ;; 1f:6e5b pP
+    dw   w1_D800                                       ;; 1f:6e5b pP
     db   $05, $14, $34, $4e, $5d, $0e                  ;; 1f:6e5d ..w...
-    dw   wD800                                         ;; 1f:6e63 pP
+    dw   w1_D800                                       ;; 1f:6e63 pP
     db   $07, $14, $84, $5e, $d6, $03, $38, $00        ;; 1f:6e65 ..w.....
     db   $00, $84, $99, $d6, $03, $38, $00, $00        ;; 1f:6e6d .w......
     db   $82                                           ;; 1f:6e75 w
@@ -2242,9 +2242,9 @@ data_1f_4000:
     db   $82                                           ;; 1f:6e89 w
     dw   .data_1f_4b1d                                 ;; 1f:6e8a pP
     db   $02, $48, $34, $a1, $52, $0e                  ;; 1f:6e8c .ww...
-    dw   wD800                                         ;; 1f:6e92 pP
+    dw   w1_D800                                       ;; 1f:6e92 pP
     db   $05, $14, $34, $f2, $58, $0e                  ;; 1f:6e94 ..w...
-    dw   wD800                                         ;; 1f:6e9a pP
+    dw   w1_D800                                       ;; 1f:6e9a pP
     db   $07, $14, $4c, $1c, $01, $00, $1d, $00        ;; 1f:6e9c ..ww.w..
     db   $2d, $00                                      ;; 1f:6ea4 ..
     dw   .data_1f_4c79                                 ;; 1f:6ea6 pP
@@ -2263,7 +2263,7 @@ data_1f_4000:
     dw   .data_1f_4c80                                 ;; 1f:6eca pP
     db   $19, $5a, $88, $44, $28, $00, $68, $01        ;; 1f:6ecc .w.w..w.
     dw   $c81a                                         ;; 1f:6ed4 pP
-    dw   wD298                                         ;; 1f:6ed6 pP
+    dw   w1_D298                                       ;; 1f:6ed6 pP
     db   $01, $14, $01, $5b, $44                       ;; 1f:6ed8 .w...
     dw   $6f06                                         ;; 1f:6edd wW
     db   $1f, $48, $34, $3d, $67, $0e, $00, $d8        ;; 1f:6edf .???????
@@ -2273,7 +2273,7 @@ data_1f_4000:
     db   $07, $14, $4a, $18, $75, $6e, $1f, $1e        ;; 1f:6eff ???????w
     dw   $6e87                                         ;; 1f:6f07 wW
     db   $29, $50                                      ;; 1f:6f09 .w
-    dw   wD633                                         ;; 1f:6f0b pP
+    dw   w1_D633                                       ;; 1f:6f0b pP
     db   $03, $01, $18                                 ;; 1f:6f0d ..w
     dw   $67e5                                         ;; 1f:6f10 wW
     db   $1f, $68, $01, $1a, $c8, $98, $d2, $01        ;; 1f:6f12 .???????
@@ -2281,11 +2281,11 @@ data_1f_4000:
     db   $98, $d2, $01, $2d, $5a, $84, $18, $ae        ;; 1f:6f22 ????????
     db   $6e, $1f, $68, $01                            ;; 1f:6f2a ??w.
     dw   $c81a                                         ;; 1f:6f2e pP
-    dw   wD298                                         ;; 1f:6f30 pP
+    dw   w1_D298                                       ;; 1f:6f30 pP
     db   $01, $14, $01, $5b, $44                       ;; 1f:6f32 .w...
     dw   $6eae                                         ;; 1f:6f37 wW
     db   $1f, $50                                      ;; 1f:6f39 .w
-    dw   wD298                                         ;; 1f:6f3b pP
+    dw   w1_D298                                       ;; 1f:6f3b pP
     db   $01, $3d, $5a, $84, $18                       ;; 1f:6f3d ..w.w
     dw   $6eae                                         ;; 1f:6f42 wW
     db   $1f, $82, $1d, $4b, $02, $48, $34, $9e        ;; 1f:6f44 .???????
@@ -2391,13 +2391,13 @@ data_1f_4000:
     db   $80, $50                                      ;; 1f:71df .w
     dw   wHamJamFlagsC662                              ;; 1f:71e1 pP
     db   $00, $00, $50                                 ;; 1f:71e3 ..w
-    dw   wD000                                         ;; 1f:71e6 pP
+    dw   w1_D000                                       ;; 1f:71e6 pP
     db   $01, $00, $14, $01, $89, $44                  ;; 1f:71e8 ..w...
     dw   $71f8                                         ;; 1f:71ee wW
     db   $1f, $52                                      ;; 1f:71f0 .w
-    dw   wD001                                         ;; 1f:71f2 pP
+    dw   w1_D001                                       ;; 1f:71f2 pP
     db   $01                                           ;; 1f:71f4 .
-    dw   wBeginRegionD1FD                              ;; 1f:71f5 pP
+    dw   w1_D1FD                                       ;; 1f:71f5 pP
     db   $20, $1a, $01, $1e                            ;; 1f:71f7 wwww
     dw   $5b22                                         ;; 1f:71fb wW
     db   $04, $44, $1e, $00, $1e                       ;; 1f:71fd .w..w
@@ -2407,25 +2407,25 @@ data_1f_4000:
     db   $03, $16, $01, $7f, $02, $00, $16, $01        ;; 1f:7209 .w..w.w.
     db   $7f, $03, $00, $16, $01, $7f, $01, $00        ;; 1f:7211 .w.w..w.
     db   $16, $01, $7f, $00, $00, $50                  ;; 1f:7219 w..w.w
-    dw   wD506                                         ;; 1f:721f pP
+    dw   w1_D506                                       ;; 1f:721f pP
     db   $03, $00, $50                                 ;; 1f:7221 ..w
-    dw   wD507                                         ;; 1f:7224 pP
+    dw   w1_D507                                       ;; 1f:7224 pP
     db   $03, $00, $50                                 ;; 1f:7226 ..w
-    dw   wD508                                         ;; 1f:7229 pP
+    dw   w1_D508                                       ;; 1f:7229 pP
     db   $03, $00, $50                                 ;; 1f:722b ..w
-    dw   wD7A9                                         ;; 1f:722e pP
+    dw   w1_D7A9                                       ;; 1f:722e pP
     db   $03, $00, $50                                 ;; 1f:7230 ..w
-    dw   wD635                                         ;; 1f:7233 pP
+    dw   w1_D635                                       ;; 1f:7233 pP
     db   $03, $00, $50                                 ;; 1f:7235 ..w
-    dw   wD630                                         ;; 1f:7238 pP
+    dw   w1_D630                                       ;; 1f:7238 pP
     db   $03, $01, $50                                 ;; 1f:723a ..w
     dw   $d631                                         ;; 1f:723d pP
     db   $03, $01, $50                                 ;; 1f:723f ..w
     dw   $d632                                         ;; 1f:7242 pP
     db   $03, $00, $52                                 ;; 1f:7244 ..w
-    dw   wD001                                         ;; 1f:7247 pP
+    dw   w1_D001                                       ;; 1f:7247 pP
     db   $01                                           ;; 1f:7249 .
-    dw   wD003                                         ;; 1f:724a pP
+    dw   w1_D003                                       ;; 1f:724a pP
     db   $18                                           ;; 1f:724c w
     dw   $5af6                                         ;; 1f:724d wW
     db   $1f, $74                                      ;; 1f:724f .w
@@ -2437,11 +2437,11 @@ data_1f_4000:
     db   $00, $01, $5e, $80, $4a, $32                  ;; 1f:725b ..w.ww
 .data_1f_7261:
     db   $02, $66, $6f                                 ;; 1f:7261 ...
-    dw   wD000                                         ;; 1f:7264 pP
+    dw   w1_D000                                       ;; 1f:7264 pP
     db   $05, $34, $bd, $7a, $7d                       ;; 1f:7266 .w...
-    dw   wD800                                         ;; 1f:726b pP
+    dw   w1_D800                                       ;; 1f:726b pP
     db   $05, $14, $34, $2d, $79, $7f                  ;; 1f:726d ..w...
-    dw   wD800                                         ;; 1f:7273 pP
+    dw   w1_D800                                       ;; 1f:7273 pP
     db   $07, $14, $4e, $00, $01                       ;; 1f:7275 ..w..
     dw   .data_1f_7d87                                 ;; 1f:727a pP
     db   $14, $44, $5a, $00, $1e                       ;; 1f:727c .w..w
@@ -2514,21 +2514,21 @@ data_1f_4000:
     db   $82, $a7, $02, $00, $82                       ;; 1f:73c3 ????w
     dw   .data_1f_68ab                                 ;; 1f:73c8 pP
     db   $01, $50                                      ;; 1f:73ca .w
-    dw   wD000                                         ;; 1f:73cc pP
+    dw   w1_D000                                       ;; 1f:73cc pP
     db   $01, $01, $32, $f6, $5d, $6d                  ;; 1f:73ce ..w...
     dw   $db60                                         ;; 1f:73d4 pP
     db   $04, $32, $d7, $57, $66                       ;; 1f:73d6 .w...
-    dw   wD000                                         ;; 1f:73db pP
+    dw   w1_D000                                       ;; 1f:73db pP
     db   $05, $32, $1f, $5a, $62                       ;; 1f:73dd .w...
-    dw   wD000                                         ;; 1f:73e2 pP
+    dw   w1_D000                                       ;; 1f:73e2 pP
     db   $07, $32, $fc, $6b, $71                       ;; 1f:73e4 .w...
     dw   $d2e0                                         ;; 1f:73e9 pP
     db   $04, $84, $00, $d8, $05, $00, $04, $00        ;; 1f:73eb .w......
     db   $84, $00, $d8, $07, $00, $04, $00, $34        ;; 1f:73f3 w......w
     db   $02, $61, $7a                                 ;; 1f:73fb ...
-    dw   wD800                                         ;; 1f:73fe pP
+    dw   w1_D800                                       ;; 1f:73fe pP
     db   $05, $14, $34, $b6, $79, $7c                  ;; 1f:7400 ..w...
-    dw   wD800                                         ;; 1f:7406 pP
+    dw   w1_D800                                       ;; 1f:7406 pP
     db   $07, $14, $74                                 ;; 1f:7408 ..w
     dw   $c661                                         ;; 1f:740b pP
     db   $1c, $02                                      ;; 1f:740d ww
@@ -2547,9 +2547,9 @@ data_1f_4000:
     db   $1c, $02                                      ;; 1f:743b ww
     dw   $76bd                                         ;; 1f:743d wW
     db   $1f, $f9, $76, $1f, $34, $ca, $64, $7d        ;; 1f:743f .???w...
-    dw   wD9A0                                         ;; 1f:7447 pP
+    dw   w1_D9A0                                       ;; 1f:7447 pP
     db   $07, $14, $34, $df, $5d, $7c                  ;; 1f:7449 ..w...
-    dw   wD9A0                                         ;; 1f:744f pP
+    dw   w1_D9A0                                       ;; 1f:744f pP
     db   $05, $14, $38, $91, $7c, $7f                  ;; 1f:7451 ..w...
     dw   $d9c0                                         ;; 1f:7457 pP
     db   $05, $02, $4e, $00, $01                       ;; 1f:7459 ..w..
@@ -2607,7 +2607,7 @@ data_1f_4000:
     db   $04, $82                                      ;; 1f:7510 .w
     dw   $385c                                         ;; 1f:7512 pP
     db   $00, $16, $01, $3e, $ec, $50                  ;; 1f:7514 .w...w
-    dw   wD000                                         ;; 1f:751a pP
+    dw   w1_D000                                       ;; 1f:751a pP
     db   $01, $00, $1a, $02, $16, $01, $7e, $07        ;; 1f:751c ..ww????
     db   $80, $16, $01, $7e, $04, $01, $16, $01        ;; 1f:7524 ????????
     db   $7e, $83, $02, $4e, $00, $01, $32, $73        ;; 1f:752c ????????
@@ -2663,9 +2663,9 @@ data_1f_4000:
     db   $1f, $14, $01, $d2, $42, $43, $74, $1f        ;; 1f:76bc ?w...???
     db   $16, $01, $7e, $8d, $01, $34, $ca, $64        ;; 1f:76c4 w..w.w..
     db   $7d                                           ;; 1f:76cc .
-    dw   wD9A0                                         ;; 1f:76cd pP
+    dw   w1_D9A0                                       ;; 1f:76cd pP
     db   $07, $14, $34, $df, $5d, $7c                  ;; 1f:76cf ..w...
-    dw   wD9A0                                         ;; 1f:76d5 pP
+    dw   w1_D9A0                                       ;; 1f:76d5 pP
     db   $05, $14, $4e, $00, $01                       ;; 1f:76d7 ..w..
     dw   .data_1f_7145                                 ;; 1f:76dc pP
     db   $19, $44, $22, $00, $34, $91, $7c, $7f        ;; 1f:76de .w..w...
@@ -2800,7 +2800,7 @@ data_1f_4000:
     db   $00, $01, $32, $73, $19, $44, $0a, $00        ;; 1f:79ec ????????
     db   $1e, $e7, $61, $04, $18, $0a, $5f, $1d        ;; 1f:79f4 ????????
     db   $50                                           ;; 1f:79fc w
-    dw   wD000                                         ;; 1f:79fd pP
+    dw   w1_D000                                       ;; 1f:79fd pP
     db   $01, $01, $1e                                 ;; 1f:79ff ..w
     dw   $5b22                                         ;; 1f:7a02 wW
     db   $04, $44, $0a, $00, $82                       ;; 1f:7a04 .w..w
@@ -2808,9 +2808,9 @@ data_1f_4000:
     db   $01, $32, $f6, $5d, $6d                       ;; 1f:7a0b .w...
     dw   $db60                                         ;; 1f:7a10 pP
     db   $04, $32, $d7, $57, $66                       ;; 1f:7a12 .w...
-    dw   wD000                                         ;; 1f:7a17 pP
+    dw   w1_D000                                       ;; 1f:7a17 pP
     db   $05, $32, $1f, $5a, $62                       ;; 1f:7a19 .w...
-    dw   wD000                                         ;; 1f:7a1e pP
+    dw   w1_D000                                       ;; 1f:7a1e pP
     db   $07, $32, $fc, $6b, $71                       ;; 1f:7a20 .w...
     dw   $d2e0                                         ;; 1f:7a25 pP
     db   $04, $16, $01, $9f, $07, $00, $00, $50        ;; 1f:7a27 .w..w..w
@@ -2824,13 +2824,13 @@ data_1f_4000:
     db   $04, $42, $05, $01                            ;; 1f:7a42 .w..
     dw   .data_1f_6150                                 ;; 1f:7a46 pP
     db   $04, $38, $02, $61, $7a                       ;; 1f:7a48 .w...
-    dw   wD800                                         ;; 1f:7a4d pP
+    dw   w1_D800                                       ;; 1f:7a4d pP
     db   $05, $14, $38, $b6, $79, $7c                  ;; 1f:7a4f ..w...
-    dw   wD800                                         ;; 1f:7a55 pP
+    dw   w1_D800                                       ;; 1f:7a55 pP
     db   $07, $14, $38, $df, $5d, $7c                  ;; 1f:7a57 ..w...
-    dw   wD9A0                                         ;; 1f:7a5d pP
+    dw   w1_D9A0                                       ;; 1f:7a5d pP
     db   $05, $14, $38, $ca, $64, $7d                  ;; 1f:7a5f ..w...
-    dw   wD9A0                                         ;; 1f:7a65 pP
+    dw   w1_D9A0                                       ;; 1f:7a65 pP
     db   $07, $14, $74                                 ;; 1f:7a67 ..w
     dw   $c661                                         ;; 1f:7a6a pP
     db   $1c, $02                                      ;; 1f:7a6c w.

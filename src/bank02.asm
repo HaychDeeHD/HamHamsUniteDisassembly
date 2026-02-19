@@ -504,7 +504,7 @@ call_02_4485:
     ld   A, $02                                        ;; 02:448a $3e $02
     ld_long_store rSVBK, A                             ;; 02:448c $ea $70 $ff
     ld   A, C                                          ;; 02:448f $79
-    ld   HL, wD000                                     ;; 02:4490 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:4490 $21 $00 $d0
     add  A, L                                          ;; 02:4493 $85
     ld   L, A                                          ;; 02:4494 $6f
     ld   A, $00                                        ;; 02:4495 $3e $00
@@ -523,8 +523,8 @@ call_02_44a3:
     push AF                                            ;; 02:44a6 $f5
     ld   A, $02                                        ;; 02:44a7 $3e $02
     ld_long_store rSVBK, A                             ;; 02:44a9 $ea $70 $ff
-    ld   HL, wD000                                     ;; 02:44ac $21 $00 $d0
-    ld   DE, wD078                                     ;; 02:44af $11 $78 $d0
+    ld   HL, w1_D000                                   ;; 02:44ac $21 $00 $d0
+    ld   DE, w1_D078                                   ;; 02:44af $11 $78 $d0
     ld   B, $20                                        ;; 02:44b2 $06 $20
     ld   A, $ff                                        ;; 02:44b4 $3e $ff
 .jr_02_44b6:
@@ -568,12 +568,12 @@ call_02_44a3:
     jr   Z, .jr_02_4505                                ;; 02:44ef $28 $14
     ld   L, C                                          ;; 02:44f1 $69
     ld   H, $00                                        ;; 02:44f2 $26 $00
-    ld   DE, wD078                                     ;; 02:44f4 $11 $78 $d0
+    ld   DE, w1_D078                                   ;; 02:44f4 $11 $78 $d0
     add  HL, DE                                        ;; 02:44f7 $19
     ld   [HL], A                                       ;; 02:44f8 $77
     ld   L, C                                          ;; 02:44f9 $69
     ld   H, $00                                        ;; 02:44fa $26 $00
-    ld   DE, wD000                                     ;; 02:44fc $11 $00 $d0
+    ld   DE, w1_D000                                   ;; 02:44fc $11 $00 $d0
     add  HL, DE                                        ;; 02:44ff $19
     ld   A, B                                          ;; 02:4500 $78
     ld   [HL], A                                       ;; 02:4501 $77
@@ -636,13 +636,13 @@ call_02_45b1:
     ld   A, $01                                        ;; 02:45c9 $3e $01
     ld_long_store rSVBK, A                             ;; 02:45cb $ea $70 $ff
     ld   A, B                                          ;; 02:45ce $78
-    ld   HL, wD0CC                                     ;; 02:45cf $21 $cc $d0
+    ld   HL, w1_D0CC                                   ;; 02:45cf $21 $cc $d0
     ld   [HL], A                                       ;; 02:45d2 $77
-    ld   HL, wD298                                     ;; 02:45d3 $21 $98 $d2
+    ld   HL, w1_D298                                   ;; 02:45d3 $21 $98 $d2
     ld   [HL], A                                       ;; 02:45d6 $77
-    ld   HL, wD0D4                                     ;; 02:45d7 $21 $d4 $d0
+    ld   HL, w1_D0D4                                   ;; 02:45d7 $21 $d4 $d0
     ld   [HL], C                                       ;; 02:45da $71
-    ld   HL, wD2A0                                     ;; 02:45db $21 $a0 $d2
+    ld   HL, w1_D2A0                                   ;; 02:45db $21 $a0 $d2
     ld   [HL], C                                       ;; 02:45de $71
     pop  AF                                            ;; 02:45df $f1
     ld_long_store rSVBK, A                             ;; 02:45e0 $ea $70 $ff
@@ -652,7 +652,7 @@ call_02_45b1:
     ld   A, $02                                        ;; 02:45e8 $3e $02
     ld_long_store rSVBK, A                             ;; 02:45ea $ea $70 $ff
     ld   A, [wC761]                                    ;; 02:45ed $fa $61 $c7
-    ld   HL, wD000                                     ;; 02:45f0 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:45f0 $21 $00 $d0
     add  A, L                                          ;; 02:45f3 $85
     ld   L, A                                          ;; 02:45f4 $6f
     ld   A, $00                                        ;; 02:45f5 $3e $00
@@ -661,12 +661,12 @@ call_02_45b1:
     ld   A, [HL]                                       ;; 02:45f9 $7e
     cp   A, $ff                                        ;; 02:45fa $fe $ff
     inc  A                                             ;; 02:45fc $3c
-    ld   [wD0FB], A                                    ;; 02:45fd $ea $fb $d0
+    ld   [w1_D0FB], A                                  ;; 02:45fd $ea $fb $d0
     ld   A, $00                                        ;; 02:4600 $3e $00
     ld   [wC35A], A                                    ;; 02:4602 $ea $5a $c3
     ld   A, $01                                        ;; 02:4605 $3e $01
     ld   [wC35B], A                                    ;; 02:4607 $ea $5b $c3
-    ld   A, [wD0FB]                                    ;; 02:460a $fa $fb $d0
+    ld   A, [w1_D0FB]                                  ;; 02:460a $fa $fb $d0
     ld   B, A                                          ;; 02:460d $47
     add  A, A                                          ;; 02:460e $87
     add  A, B                                          ;; 02:460f $80
@@ -693,7 +693,7 @@ call_02_45b1:
     ld   [wC35A], A                                    ;; 02:4639 $ea $5a $c3
     ld   A, $00                                        ;; 02:463c $3e $00
     ld   [wC35B], A                                    ;; 02:463e $ea $5b $c3
-    ld   A, [wD0FB]                                    ;; 02:4641 $fa $fb $d0
+    ld   A, [w1_D0FB]                                  ;; 02:4641 $fa $fb $d0
     ld   B, A                                          ;; 02:4644 $47
     add  A, A                                          ;; 02:4645 $87
     add  A, B                                          ;; 02:4646 $80
@@ -724,7 +724,7 @@ call_02_45b1:
     ld   A, $02                                        ;; 02:4677 $3e $02
     ld_long_store rSVBK, A                             ;; 02:4679 $ea $70 $ff
     ld   A, [wC761]                                    ;; 02:467c $fa $61 $c7
-    ld   HL, wD000                                     ;; 02:467f $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:467f $21 $00 $d0
     add  A, L                                          ;; 02:4682 $85
     ld   L, A                                          ;; 02:4683 $6f
     ld   A, $00                                        ;; 02:4684 $3e $00
@@ -733,14 +733,14 @@ call_02_45b1:
     ld   A, [HL]                                       ;; 02:4688 $7e
     cp   A, $ff                                        ;; 02:4689 $fe $ff
     inc  A                                             ;; 02:468b $3c
-    ld   [wD0FB], A                                    ;; 02:468c $ea $fb $d0
+    ld   [w1_D0FB], A                                  ;; 02:468c $ea $fb $d0
     ld   A, $20                                        ;; 02:468f $3e $20
     ld   [wC64D], A                                    ;; 02:4691 $ea $4d $c6
     ld   A, $09                                        ;; 02:4694 $3e $09
     ld   [wC64B], A                                    ;; 02:4696 $ea $4b $c6
     ld   A, $08                                        ;; 02:4699 $3e $08
     ld   [wC64C], A                                    ;; 02:469b $ea $4c $c6
-    ld   A, [wD0FB]                                    ;; 02:469e $fa $fb $d0
+    ld   A, [w1_D0FB]                                  ;; 02:469e $fa $fb $d0
     ld   B, A                                          ;; 02:46a1 $47
     add  A, A                                          ;; 02:46a2 $87
     add  A, B                                          ;; 02:46a3 $80
@@ -756,7 +756,7 @@ call_02_45b1:
     ld   [wC645], A                                    ;; 02:46b2 $ea $45 $c6
     ld   A, [HL+]                                      ;; 02:46b5 $2a
     ld   [wC646], A                                    ;; 02:46b6 $ea $46 $c6
-    ld   HL, wD841                                     ;; 02:46b9 $21 $41 $d8
+    ld   HL, w1_D841                                   ;; 02:46b9 $21 $41 $d8
     ld   A, L                                          ;; 02:46bc $7d
     ld   [wC647], A                                    ;; 02:46bd $ea $47 $c6
     ld   A, H                                          ;; 02:46c0 $7c
@@ -768,7 +768,7 @@ call_02_45b1:
     ld   [wC35A], A                                    ;; 02:46ce $ea $5a $c3
     ld   A, $01                                        ;; 02:46d1 $3e $01
     ld   [wC35B], A                                    ;; 02:46d3 $ea $5b $c3
-    ld   A, [wD0FB]                                    ;; 02:46d6 $fa $fb $d0
+    ld   A, [w1_D0FB]                                  ;; 02:46d6 $fa $fb $d0
     ld   B, A                                          ;; 02:46d9 $47
     add  A, A                                          ;; 02:46da $87
     add  A, B                                          ;; 02:46db $80
@@ -797,7 +797,7 @@ call_02_45b1:
     push AF                                            ;; 02:4709 $f5
     ld   A, $02                                        ;; 02:470a $3e $02
     ld_long_store rSVBK, A                             ;; 02:470c $ea $70 $ff
-    ld   HL, wD000                                     ;; 02:470f $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:470f $21 $00 $d0
     ld   B, $10                                        ;; 02:4712 $06 $10
     ld   C, $00                                        ;; 02:4714 $0e $00
     call call_02_4736                                  ;; 02:4716 $cd $36 $47
@@ -808,7 +808,7 @@ call_02_45b1:
     push AF                                            ;; 02:4721 $f5
     ld   A, $02                                        ;; 02:4722 $3e $02
     ld_long_store rSVBK, A                             ;; 02:4724 $ea $70 $ff
-    ld   HL, wD010                                     ;; 02:4727 $21 $10 $d0
+    ld   HL, w1_D010                                   ;; 02:4727 $21 $10 $d0
     ld   B, $10                                        ;; 02:472a $06 $10
     ld   C, $10                                        ;; 02:472c $0e $10
     call call_02_4736                                  ;; 02:472e $cd $36 $47
@@ -880,7 +880,7 @@ call_02_4736:
     ld   A, $02                                        ;; 02:47b8 $3e $02
     ld_long_store rSVBK, A                             ;; 02:47ba $ea $70 $ff
     ld   A, [wC761]                                    ;; 02:47bd $fa $61 $c7
-    ld   HL, wD000                                     ;; 02:47c0 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:47c0 $21 $00 $d0
     add  A, L                                          ;; 02:47c3 $85
     ld   L, A                                          ;; 02:47c4 $6f
     ld   A, $00                                        ;; 02:47c5 $3e $00
@@ -901,7 +901,7 @@ call_02_4736:
     jr   Z, .jr_02_47f6                                ;; 02:47e2 $28 $12
     ld   C, A                                          ;; 02:47e4 $4f
     ld   B, $00                                        ;; 02:47e5 $06 $00
-    ld   HL, wD000                                     ;; 02:47e7 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:47e7 $21 $00 $d0
 .jr_02_47ea:
     ld   A, [HL+]                                      ;; 02:47ea $2a
     cp   A, C                                          ;; 02:47eb $b9
@@ -2436,10 +2436,10 @@ call_02_4af3:
     ld   A, B                                          ;; 02:629a $78
     cp   A, $00                                        ;; 02:629b $fe $00
     jr   Z, .jr_02_62a3                                ;; 02:629d $28 $04
-    ld   HL, wD244                                     ;; 02:629f $21 $44 $d2
+    ld   HL, w1_D244                                   ;; 02:629f $21 $44 $d2
     ld   [HL], B                                       ;; 02:62a2 $70
 .jr_02_62a3:
-    ld   HL, wD23C                                     ;; 02:62a3 $21 $3c $d2
+    ld   HL, w1_D23C                                   ;; 02:62a3 $21 $3c $d2
     ld   [HL], C                                       ;; 02:62a6 $71
     ld   A, $84                                        ;; 02:62a7 $3e $84
     ld   [wCFF2], A                                    ;; 02:62a9 $ea $f2 $cf
@@ -2498,7 +2498,7 @@ call_02_4af3:
     ld   C, [HL]                                       ;; 02:6311 $4e
     ld   A, $01                                        ;; 02:6312 $3e $01
     ld_long_store rSVBK, A                             ;; 02:6314 $ea $70 $ff
-    ld   HL, wD272                                     ;; 02:6317 $21 $72 $d2
+    ld   HL, w1_D272                                   ;; 02:6317 $21 $72 $d2
     ld   [HL], C                                       ;; 02:631a $71
     ld   A, $84                                        ;; 02:631b $3e $84
     ld   [wCFF2], A                                    ;; 02:631d $ea $f2 $cf
@@ -2527,13 +2527,13 @@ call_02_6341:
     ld_long_store rSVBK, A                             ;; 02:634a $ea $70 $ff
     ld   A, B                                          ;; 02:634d $78
     call call_02_652c                                  ;; 02:634e $cd $2c $65
-    ld   A, [wD100]                                    ;; 02:6351 $fa $00 $d1
+    ld   A, [w1_D100]                                  ;; 02:6351 $fa $00 $d1
     ld   B, A                                          ;; 02:6354 $47
-    ld   A, [wD101]                                    ;; 02:6355 $fa $01 $d1
+    ld   A, [w1_D101]                                  ;; 02:6355 $fa $01 $d1
     ld   C, A                                          ;; 02:6358 $4f
     ld   A, $05                                        ;; 02:6359 $3e $05
     ld_long_store rSVBK, A                             ;; 02:635b $ea $70 $ff
-    ld   HL, wD851                                     ;; 02:635e $21 $51 $d8
+    ld   HL, w1_D851                                   ;; 02:635e $21 $51 $d8
     ld   A, B                                          ;; 02:6361 $78
     cp   A, $00                                        ;; 02:6362 $fe $00
     jr   Z, .jr_02_636b                                ;; 02:6364 $28 $05
@@ -2593,15 +2593,15 @@ call_02_63b2:
     xor  A, A                                          ;; 02:63c2 $af
 .jr_02_63c3:
     call call_02_652c                                  ;; 02:63c3 $cd $2c $65
-    ld   A, [wD0FF]                                    ;; 02:63c6 $fa $ff $d0
+    ld   A, [w1_D0FF]                                  ;; 02:63c6 $fa $ff $d0
     ld   D, A                                          ;; 02:63c9 $57
-    ld   A, [wD100]                                    ;; 02:63ca $fa $00 $d1
+    ld   A, [w1_D100]                                  ;; 02:63ca $fa $00 $d1
     ld   B, A                                          ;; 02:63cd $47
-    ld   A, [wD101]                                    ;; 02:63ce $fa $01 $d1
+    ld   A, [w1_D101]                                  ;; 02:63ce $fa $01 $d1
     ld   C, A                                          ;; 02:63d1 $4f
     ld   A, $05                                        ;; 02:63d2 $3e $05
     ld_long_store rSVBK, A                             ;; 02:63d4 $ea $70 $ff
-    ld   HL, wD851                                     ;; 02:63d7 $21 $51 $d8
+    ld   HL, w1_D851                                   ;; 02:63d7 $21 $51 $d8
     ld   A, B                                          ;; 02:63da $78
     cp   A, $00                                        ;; 02:63db $fe $00
     jr   Z, .jr_02_63e4                                ;; 02:63dd $28 $05
@@ -2623,15 +2623,15 @@ call_02_63f0:
     ld_long_store rSVBK, A                             ;; 02:63f6 $ea $70 $ff
     ld   A, [wNumHamChatsCA45]                         ;; 02:63f9 $fa $4f $ca
     call call_02_652c                                  ;; 02:63fc $cd $2c $65
-    ld   A, [wD100]                                    ;; 02:63ff $fa $00 $d1
+    ld   A, [w1_D100]                                  ;; 02:63ff $fa $00 $d1
     ld   B, A                                          ;; 02:6402 $47
-    ld   A, [wD101]                                    ;; 02:6403 $fa $01 $d1
+    ld   A, [w1_D101]                                  ;; 02:6403 $fa $01 $d1
     ld   C, A                                          ;; 02:6406 $4f
     ld_long_load A, rSVBK                              ;; 02:6407 $fa $70 $ff
     push AF                                            ;; 02:640a $f5
     ld   A, $05                                        ;; 02:640b $3e $05
     ld_long_store rSVBK, A                             ;; 02:640d $ea $70 $ff
-    ld   HL, wD891                                     ;; 02:6410 $21 $91 $d8
+    ld   HL, w1_D891                                   ;; 02:6410 $21 $91 $d8
     ld   A, B                                          ;; 02:6413 $78
     cp   A, $00                                        ;; 02:6414 $fe $00
     jr   Z, .jr_02_641d                                ;; 02:6416 $28 $05
@@ -2658,15 +2658,15 @@ call_02_642a:
     xor  A, A                                          ;; 02:643a $af
 .jr_02_643b:
     call call_02_655a                                  ;; 02:643b $cd $5a $65
-    ld   A, [wD0FF]                                    ;; 02:643e $fa $ff $d0
+    ld   A, [w1_D0FF]                                  ;; 02:643e $fa $ff $d0
     ld   D, A                                          ;; 02:6441 $57
-    ld   A, [wD100]                                    ;; 02:6442 $fa $00 $d1
+    ld   A, [w1_D100]                                  ;; 02:6442 $fa $00 $d1
     ld   B, A                                          ;; 02:6445 $47
-    ld   A, [wD101]                                    ;; 02:6446 $fa $01 $d1
+    ld   A, [w1_D101]                                  ;; 02:6446 $fa $01 $d1
     ld   C, A                                          ;; 02:6449 $4f
     ld   A, $05                                        ;; 02:644a $3e $05
     ld_long_store rSVBK, A                             ;; 02:644c $ea $70 $ff
-    ld   HL, wD8D0                                     ;; 02:644f $21 $d0 $d8
+    ld   HL, w1_D8D0                                   ;; 02:644f $21 $d0 $d8
     ld   A, D                                          ;; 02:6452 $7a
     cp   A, $00                                        ;; 02:6453 $fe $00
     jr   Z, .jr_02_645c                                ;; 02:6455 $28 $05
@@ -2707,15 +2707,15 @@ call_02_6480:
     xor  A, A                                          ;; 02:6490 $af
 .jr_02_6491:
     call call_02_652c                                  ;; 02:6491 $cd $2c $65
-    ld   A, [wD0FF]                                    ;; 02:6494 $fa $ff $d0
+    ld   A, [w1_D0FF]                                  ;; 02:6494 $fa $ff $d0
     ld   D, A                                          ;; 02:6497 $57
-    ld   A, [wD100]                                    ;; 02:6498 $fa $00 $d1
+    ld   A, [w1_D100]                                  ;; 02:6498 $fa $00 $d1
     ld   B, A                                          ;; 02:649b $47
-    ld   A, [wD101]                                    ;; 02:649c $fa $01 $d1
+    ld   A, [w1_D101]                                  ;; 02:649c $fa $01 $d1
     ld   C, A                                          ;; 02:649f $4f
     ld   A, $05                                        ;; 02:64a0 $3e $05
     ld_long_store rSVBK, A                             ;; 02:64a2 $ea $70 $ff
-    ld   HL, wD910                                     ;; 02:64a5 $21 $10 $d9
+    ld   HL, w1_D910                                   ;; 02:64a5 $21 $10 $d9
     ld   A, D                                          ;; 02:64a8 $7a
     cp   A, $00                                        ;; 02:64a9 $fe $00
     jr   Z, .jr_02_64b2                                ;; 02:64ab $28 $05
@@ -2756,15 +2756,15 @@ call_02_64d6:
     xor  A, A                                          ;; 02:64e6 $af
 .jr_02_64e7:
     call call_02_652c                                  ;; 02:64e7 $cd $2c $65
-    ld   A, [wD0FF]                                    ;; 02:64ea $fa $ff $d0
+    ld   A, [w1_D0FF]                                  ;; 02:64ea $fa $ff $d0
     ld   D, A                                          ;; 02:64ed $57
-    ld   A, [wD100]                                    ;; 02:64ee $fa $00 $d1
+    ld   A, [w1_D100]                                  ;; 02:64ee $fa $00 $d1
     ld   B, A                                          ;; 02:64f1 $47
-    ld   A, [wD101]                                    ;; 02:64f2 $fa $01 $d1
+    ld   A, [w1_D101]                                  ;; 02:64f2 $fa $01 $d1
     ld   C, A                                          ;; 02:64f5 $4f
     ld   A, $05                                        ;; 02:64f6 $3e $05
     ld_long_store rSVBK, A                             ;; 02:64f8 $ea $70 $ff
-    ld   HL, wD950                                     ;; 02:64fb $21 $50 $d9
+    ld   HL, w1_D950                                   ;; 02:64fb $21 $50 $d9
     ld   A, D                                          ;; 02:64fe $7a
     cp   A, $00                                        ;; 02:64ff $fe $00
     jr   Z, .jr_02_6508                                ;; 02:6501 $28 $05
@@ -2818,11 +2818,11 @@ call_02_652c:
     jr   .jr_02_6544                                   ;; 02:654b $18 $f7
 .jr_02_654d:
     ld   A, B                                          ;; 02:654d $78
-    ld   [wD0FF], A                                    ;; 02:654e $ea $ff $d0
+    ld   [w1_D0FF], A                                  ;; 02:654e $ea $ff $d0
     ld   A, C                                          ;; 02:6551 $79
-    ld   [wD100], A                                    ;; 02:6552 $ea $00 $d1
+    ld   [w1_D100], A                                  ;; 02:6552 $ea $00 $d1
     ld   A, D                                          ;; 02:6555 $7a
-    ld   [wD101], A                                    ;; 02:6556 $ea $01 $d1
+    ld   [w1_D101], A                                  ;; 02:6556 $ea $01 $d1
     ret                                                ;; 02:6559 $c9
 
 call_02_655a:
@@ -2858,11 +2858,11 @@ call_02_655a:
     inc  A                                             ;; 02:658a $3c
     add  HL, DE                                        ;; 02:658b $19
     jr   C, .jr_02_658a                                ;; 02:658c $38 $fc
-    ld   [wD101], A                                    ;; 02:658e $ea $01 $d1
+    ld   [w1_D101], A                                  ;; 02:658e $ea $01 $d1
     ld   A, B                                          ;; 02:6591 $78
-    ld   [wD0FF], A                                    ;; 02:6592 $ea $ff $d0
+    ld   [w1_D0FF], A                                  ;; 02:6592 $ea $ff $d0
     ld   A, C                                          ;; 02:6595 $79
-    ld   [wD100], A                                    ;; 02:6596 $ea $00 $d1
+    ld   [w1_D100], A                                  ;; 02:6596 $ea $00 $d1
     ret                                                ;; 02:6599 $c9
 
 call_02_659a:
@@ -3061,11 +3061,11 @@ call_02_659f:
     ld   A, $02                                        ;; 02:66f4 $3e $02
     ld_long_store rSVBK, A                             ;; 02:66f6 $ea $70 $ff
     ld   A, B                                          ;; 02:66f9 $78
-    ld   [wD0FF], A                                    ;; 02:66fa $ea $ff $d0
+    ld   [w1_D0FF], A                                  ;; 02:66fa $ea $ff $d0
     ld   A, C                                          ;; 02:66fd $79
-    ld   [wD100], A                                    ;; 02:66fe $ea $00 $d1
+    ld   [w1_D100], A                                  ;; 02:66fe $ea $00 $d1
     ld   A, D                                          ;; 02:6701 $7a
-    ld   [wD101], A                                    ;; 02:6702 $ea $01 $d1
+    ld   [w1_D101], A                                  ;; 02:6702 $ea $01 $d1
     pop  AF                                            ;; 02:6705 $f1
     ld_long_store rSVBK, A                             ;; 02:6706 $ea $70 $ff
     ret                                                ;; 02:6709 $c9
@@ -3073,7 +3073,7 @@ call_02_659f:
     push AF                                            ;; 02:670d $f5
     ld   A, $02                                        ;; 02:670e $3e $02
     ld_long_store rSVBK, A                             ;; 02:6710 $ea $70 $ff
-    ld   A, [wD0FF]                                    ;; 02:6713 $fa $ff $d0
+    ld   A, [w1_D0FF]                                  ;; 02:6713 $fa $ff $d0
     ld   [wC77E], A                                    ;; 02:6716 $ea $7e $c7
     pop  AF                                            ;; 02:6719 $f1
     ld_long_store rSVBK, A                             ;; 02:671a $ea $70 $ff
@@ -3082,7 +3082,7 @@ call_02_659f:
     push AF                                            ;; 02:6721 $f5
     ld   A, $02                                        ;; 02:6722 $3e $02
     ld_long_store rSVBK, A                             ;; 02:6724 $ea $70 $ff
-    ld   A, [wD100]                                    ;; 02:6727 $fa $00 $d1
+    ld   A, [w1_D100]                                  ;; 02:6727 $fa $00 $d1
     ld   [wC77E], A                                    ;; 02:672a $ea $7e $c7
     pop  AF                                            ;; 02:672d $f1
     ld_long_store rSVBK, A                             ;; 02:672e $ea $70 $ff
@@ -3091,7 +3091,7 @@ call_02_659f:
     push AF                                            ;; 02:6735 $f5
     ld   A, $02                                        ;; 02:6736 $3e $02
     ld_long_store rSVBK, A                             ;; 02:6738 $ea $70 $ff
-    ld   A, [wD101]                                    ;; 02:673b $fa $01 $d1
+    ld   A, [w1_D101]                                  ;; 02:673b $fa $01 $d1
     ld   [wC77E], A                                    ;; 02:673e $ea $7e $c7
     pop  AF                                            ;; 02:6741 $f1
     ld_long_store rSVBK, A                             ;; 02:6742 $ea $70 $ff
@@ -3337,9 +3337,9 @@ ObtainHamChatFromC715:
     inc  A                                             ;; 02:6dfe $3c
     ld   [wNumHamChatsCA45], A                         ;; 02:6dff $ea $4f $ca
     ld   A, [wBitArrayIndexC715]                       ;; 02:6e02 $fa $15 $c7
-    ld   [wHamChatIndexD0F8], A                        ;; 02:6e05 $ea $f8 $d0
+    ld   [w1_D0F8], A                                  ;; 02:6e05 $ea $f8 $d0
     ld   A, $ff                                        ;; 02:6e08 $3e $ff
-    ld   [wSomethingWithHamchatsD0FD], A               ;; 02:6e0a $ea $fd $d0
+    ld   [w1_D0FD], A                                  ;; 02:6e0a $ea $fd $d0
     pop  AF                                            ;; 02:6e0d $f1
     ld_long_store rSVBK, A                             ;; 02:6e0e $ea $70 $ff
     ret                                                ;; 02:6e11 $c9
@@ -3349,9 +3349,9 @@ ObtainHamChatFromC715:
 ; Maybe it's just reloading from backup?
 .alreadyHadChat:
     ld   A, [wBitArrayIndexC715]                       ;; 02:6e12 $fa $15 $c7
-    ld   [wHamChatIndexD0F8], A                        ;; 02:6e15 $ea $f8 $d0
+    ld   [w1_D0F8], A                                  ;; 02:6e15 $ea $f8 $d0
     ld   A, $fe                                        ;; 02:6e18 $3e $fe
-    ld   [wSomethingWithHamchatsD0FD], A               ;; 02:6e1a $ea $fd $d0
+    ld   [w1_D0FD], A                                  ;; 02:6e1a $ea $fd $d0
     pop  AF                                            ;; 02:6e1d $f1
     ld_long_store rSVBK, A                             ;; 02:6e1e $ea $70 $ff
     ret                                                ;; 02:6e21 $c9
@@ -3389,7 +3389,7 @@ ObtainHamChatFromC715:
     sla  A                                             ;; 02:6e5a $cb $27
 .jr_02_6e5c:
     push AF                                            ;; 02:6e5c $f5
-    ld   A, [wD0F9]                                    ;; 02:6e5d $fa $f9 $d0
+    ld   A, [w1_D0F9]                                  ;; 02:6e5d $fa $f9 $d0
     cp   A, $00                                        ;; 02:6e60 $fe $00
     pop  BC                                            ;; 02:6e62 $c1
     jr   Z, .jr_02_6e73                                ;; 02:6e63 $28 $0e
@@ -3416,16 +3416,16 @@ ObtainHamChatFromC715:
     ld   A, $02                                        ;; 02:6e85 $3e $02
     ld_long_store rSVBK, A                             ;; 02:6e87 $ea $70 $ff
     ld   A, $ff                                        ;; 02:6e8a $3e $ff
-    ld   [wHamChatIndexD0F8], A                        ;; 02:6e8c $ea $f8 $d0
-    ld   [wSomethingWithHamchatsD0FD], A               ;; 02:6e8f $ea $fd $d0
-    ld   HL, wD0F0                                     ;; 02:6e92 $21 $f0 $d0
+    ld   [w1_D0F8], A                                  ;; 02:6e8c $ea $f8 $d0
+    ld   [w1_D0FD], A                                  ;; 02:6e8f $ea $fd $d0
+    ld   HL, w1_D0F0                                   ;; 02:6e92 $21 $f0 $d0
     ld   A, $ff                                        ;; 02:6e95 $3e $ff
     ld   C, $04                                        ;; 02:6e97 $0e $04
 .jr_02_6e99:
     ld   [HL+], A                                      ;; 02:6e99 $22
     dec  C                                             ;; 02:6e9a $0d
     jr   NZ, .jr_02_6e99                               ;; 02:6e9b $20 $fc
-    ld   HL, wD0F4                                     ;; 02:6e9d $21 $f4 $d0
+    ld   HL, w1_D0F4                                   ;; 02:6e9d $21 $f4 $d0
     ld   A, $ff                                        ;; 02:6ea0 $3e $ff
     ld   C, $04                                        ;; 02:6ea2 $0e $04
 .jr_02_6ea4:
@@ -3686,9 +3686,9 @@ data_02_72d3:
     cp   A, $01                                        ;; 02:73e7 $fe $01
     jr   Z, .jr_02_73f6                                ;; 02:73e9 $28 $0b
     ld   A, $ff                                        ;; 02:73eb $3e $ff
-    ld   [wD0FE], A                                    ;; 02:73ed $ea $fe $d0
-    ld   [wSomethingWithHamchatsD0FD], A               ;; 02:73f0 $ea $fd $d0
-    ld   [wHamChatIndexD0F8], A                        ;; 02:73f3 $ea $f8 $d0
+    ld   [w1_D0FE], A                                  ;; 02:73ed $ea $fe $d0
+    ld   [w1_D0FD], A                                  ;; 02:73f0 $ea $fd $d0
+    ld   [w1_D0F8], A                                  ;; 02:73f3 $ea $f8 $d0
 .jr_02_73f6:
     ld   A, $02                                        ;; 02:73f6 $3e $02
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:73f8 $ea $3a $c5
@@ -3697,7 +3697,7 @@ data_02_72d3:
     ld   A, [wC72F]                                    ;; 02:73fd $fa $2f $c7
     cp   A, $00                                        ;; 02:7400 $fe $00
     jr   Z, .jr_02_73c3                                ;; 02:7402 $28 $bf
-    ld   A, [wSomethingWithHamchatsD0FD]               ;; 02:7404 $fa $fd $d0
+    ld   A, [w1_D0FD]                                  ;; 02:7404 $fa $fd $d0
     cp   A, $00                                        ;; 02:7407 $fe $00
     jr   Z, .jr_02_73c3                                ;; 02:7409 $28 $b8
     dec  A                                             ;; 02:740b $3d
@@ -3706,13 +3706,13 @@ data_02_72d3:
     ld   A, [wC72F]                                    ;; 02:740e $fa $2f $c7
     cp   A, $00                                        ;; 02:7411 $fe $00
     jr   Z, .jr_02_73c3                                ;; 02:7413 $28 $ae
-    ld   A, [wSomethingWithHamchatsD0FD]               ;; 02:7415 $fa $fd $d0
+    ld   A, [w1_D0FD]                                  ;; 02:7415 $fa $fd $d0
     cp   A, $08                                        ;; 02:7418 $fe $08
     jr   Z, .jr_02_73c3                                ;; 02:741a $28 $a7
     inc  A                                             ;; 02:741c $3c
 .jr_02_741d:
-    ld   [wSomethingWithHamchatsD0FD], A               ;; 02:741d $ea $fd $d0
-    ld   [wD0FE], A                                    ;; 02:7420 $ea $fe $d0
+    ld   [w1_D0FD], A                                  ;; 02:741d $ea $fd $d0
+    ld   [w1_D0FE], A                                  ;; 02:7420 $ea $fe $d0
     call call_02_750d                                  ;; 02:7423 $cd $0d $75
     ld   A, $04                                        ;; 02:7426 $3e $04
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:7428 $ea $3a $c5
@@ -3783,7 +3783,7 @@ data_02_72d3:
     ld   A, $02                                        ;; 02:7488 $3e $02
     ld_long_store rSVBK, A                             ;; 02:748a $ea $70 $ff
     ld   A, B                                          ;; 02:748d $78
-    ld   [wD0FE], A                                    ;; 02:748e $ea $fe $d0
+    ld   [w1_D0FE], A                                  ;; 02:748e $ea $fe $d0
     call call_02_74ef                                  ;; 02:7491 $cd $ef $74
     pop  AF                                            ;; 02:7494 $f1
     ld_long_store rSVBK, A                             ;; 02:7495 $ea $70 $ff
@@ -3805,13 +3805,13 @@ call_02_74ef:
     push AF                                            ;; 02:74f2 $f5
     ld   A, $02                                        ;; 02:74f3 $3e $02
     ld_long_store rSVBK, A                             ;; 02:74f5 $ea $70 $ff
-    ld   A, [wD0FE]                                    ;; 02:74f8 $fa $fe $d0
+    ld   A, [w1_D0FE]                                  ;; 02:74f8 $fa $fe $d0
     inc  A                                             ;; 02:74fb $3c
     swap A                                             ;; 02:74fc $cb $37
     ld   B, A                                          ;; 02:74fe $47
     ld   A, $01                                        ;; 02:74ff $3e $01
     ld_long_store rSVBK, A                             ;; 02:7501 $ea $70 $ff
-    ld   HL, wD46C                                     ;; 02:7504 $21 $6c $d4
+    ld   HL, w1_D46C                                   ;; 02:7504 $21 $6c $d4
     ld   [HL], B                                       ;; 02:7507 $70
     pop  AF                                            ;; 02:7508 $f1
     ld_long_store rSVBK, A                             ;; 02:7509 $ea $70 $ff
@@ -3822,13 +3822,13 @@ call_02_750d:
     push AF                                            ;; 02:7510 $f5
     ld   A, $02                                        ;; 02:7511 $3e $02
     ld_long_store rSVBK, A                             ;; 02:7513 $ea $70 $ff
-    ld   A, [wD0FE]                                    ;; 02:7516 $fa $fe $d0
+    ld   A, [w1_D0FE]                                  ;; 02:7516 $fa $fe $d0
     inc  A                                             ;; 02:7519 $3c
     swap A                                             ;; 02:751a $cb $37
     ld   B, A                                          ;; 02:751c $47
     ld   A, $01                                        ;; 02:751d $3e $01
     ld_long_store rSVBK, A                             ;; 02:751f $ea $70 $ff
-    ld   HL, wD2CE                                     ;; 02:7522 $21 $ce $d2
+    ld   HL, w1_D2CE                                   ;; 02:7522 $21 $ce $d2
     ld   [HL], B                                       ;; 02:7525 $70
     pop  AF                                            ;; 02:7526 $f1
     ld_long_store rSVBK, A                             ;; 02:7527 $ea $70 $ff
@@ -3844,10 +3844,10 @@ call_02_750d:
     push AF                                            ;; 02:7563 $f5
     ld   A, $02                                        ;; 02:7564 $3e $02
     ld_long_store rSVBK, A                             ;; 02:7566 $ea $70 $ff
-    ld   A, [wD0F9]                                    ;; 02:7569 $fa $f9 $d0
+    ld   A, [w1_D0F9]                                  ;; 02:7569 $fa $f9 $d0
     add  A, A                                          ;; 02:756c $87
     add  A, A                                          ;; 02:756d $87
-    ld   HL, wD000                                     ;; 02:756e $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:756e $21 $00 $d0
     add  A, L                                          ;; 02:7571 $85
     ld   L, A                                          ;; 02:7572 $6f
     ld   A, $00                                        ;; 02:7573 $3e $00
@@ -3860,13 +3860,13 @@ call_02_750d:
     ld   A, [HL+]                                      ;; 02:757b $2a
     ld   D, A                                          ;; 02:757c $57
     ld   A, [HL+]                                      ;; 02:757d $2a
-    ld   [wD0F3], A                                    ;; 02:757e $ea $f3 $d0
+    ld   [w1_D0F3], A                                  ;; 02:757e $ea $f3 $d0
     ld   A, D                                          ;; 02:7581 $7a
-    ld   [wD0F2], A                                    ;; 02:7582 $ea $f2 $d0
+    ld   [w1_D0F2], A                                  ;; 02:7582 $ea $f2 $d0
     ld   A, C                                          ;; 02:7585 $79
-    ld   [wD0F1], A                                    ;; 02:7586 $ea $f1 $d0
+    ld   [w1_D0F1], A                                  ;; 02:7586 $ea $f1 $d0
     ld   A, B                                          ;; 02:7589 $78
-    ld   [wD0F0], A                                    ;; 02:758a $ea $f0 $d0
+    ld   [w1_D0F0], A                                  ;; 02:758a $ea $f0 $d0
     pop  AF                                            ;; 02:758d $f1
     ld_long_store rSVBK, A                             ;; 02:758e $ea $70 $ff
     ret                                                ;; 02:7591 $c9
@@ -3879,7 +3879,7 @@ call_02_750d:
     ld   A, $00                                        ;; 02:75a0 $3e $00
     ld   [wC35B], A                                    ;; 02:75a2 $ea $5b $c3
     ld   D, $00                                        ;; 02:75a5 $16 $00
-    ld   HL, wD0F0                                     ;; 02:75a7 $21 $f0 $d0
+    ld   HL, w1_D0F0                                   ;; 02:75a7 $21 $f0 $d0
     push HL                                            ;; 02:75aa $e5
 .jr_02_75ab:
     pop  HL                                            ;; 02:75ab $e1
@@ -3952,7 +3952,7 @@ call_02_750d:
     ld   A, $01                                        ;; 02:761b $3e $01
     ld   [wC35B], A                                    ;; 02:761d $ea $5b $c3
     ld   E, $00                                        ;; 02:7620 $1e $00
-    ld   BC, wD0F0                                     ;; 02:7622 $01 $f0 $d0
+    ld   BC, w1_D0F0                                   ;; 02:7622 $01 $f0 $d0
     ld   HL, data_02_72c3                              ;; 02:7625 $21 $c3 $72
     push HL                                            ;; 02:7628 $e5
 .jp_02_7629:
@@ -4068,7 +4068,7 @@ call_02_750d:
     push AF                                            ;; 02:76e1 $f5
     ld   A, $02                                        ;; 02:76e2 $3e $02
     ld_long_store rSVBK, A                             ;; 02:76e4 $ea $70 $ff
-    ld   HL, wD0F0                                     ;; 02:76e7 $21 $f0 $d0
+    ld   HL, w1_D0F0                                   ;; 02:76e7 $21 $f0 $d0
     ld   A, [wC75A]                                    ;; 02:76ea $fa $5a $c7
     add  A, L                                          ;; 02:76ed $85
     ld   L, A                                          ;; 02:76ee $6f
@@ -4130,9 +4130,9 @@ call_02_750d:
     ld_long_store rSVBK, A                             ;; 02:7798 $ea $70 $ff
     ld   A, [wNumHamChatsCA45]                         ;; 02:779b $fa $4f $ca
     call call_02_783f                                  ;; 02:779e $cd $3f $78
-    ld   A, [wD100]                                    ;; 02:77a1 $fa $00 $d1
+    ld   A, [w1_D100]                                  ;; 02:77a1 $fa $00 $d1
     ld   B, A                                          ;; 02:77a4 $47
-    ld   A, [wD101]                                    ;; 02:77a5 $fa $01 $d1
+    ld   A, [w1_D101]                                  ;; 02:77a5 $fa $01 $d1
     ld   C, A                                          ;; 02:77a8 $4f
     ld   A, B                                          ;; 02:77a9 $78
     cp   A, $00                                        ;; 02:77aa $fe $00
@@ -4164,15 +4164,15 @@ call_02_750d:
     ld_long_store rSVBK, A                             ;; 02:77da $ea $70 $ff
     ld   A, [wNumHamChatsCA45]                         ;; 02:77dd $fa $4f $ca
     call call_02_783f                                  ;; 02:77e0 $cd $3f $78
-    ld   A, [wD100]                                    ;; 02:77e3 $fa $00 $d1
+    ld   A, [w1_D100]                                  ;; 02:77e3 $fa $00 $d1
     ld   B, A                                          ;; 02:77e6 $47
-    ld   A, [wD101]                                    ;; 02:77e7 $fa $01 $d1
+    ld   A, [w1_D101]                                  ;; 02:77e7 $fa $01 $d1
     ld   C, A                                          ;; 02:77ea $4f
     ld_long_load A, rSVBK                              ;; 02:77eb $fa $70 $ff
     push AF                                            ;; 02:77ee $f5
     ld   A, $05                                        ;; 02:77ef $3e $05
     ld_long_store rSVBK, A                             ;; 02:77f1 $ea $70 $ff
-    ld   HL, wD842                                     ;; 02:77f4 $21 $42 $d8
+    ld   HL, w1_D842                                   ;; 02:77f4 $21 $42 $d8
     ld   A, B                                          ;; 02:77f7 $78
     cp   A, $00                                        ;; 02:77f8 $fe $00
     jr   Z, .jr_02_7801                                ;; 02:77fa $28 $05
@@ -4206,7 +4206,7 @@ call_02_750d:
     push AF                                            ;; 02:782c $f5
     ld   A, $05                                        ;; 02:782d $3e $05
     ld_long_store rSVBK, A                             ;; 02:782f $ea $70 $ff
-    ld   HL, wD846                                     ;; 02:7832 $21 $46 $d8
+    ld   HL, w1_D846                                   ;; 02:7832 $21 $46 $d8
     ld   A, C                                          ;; 02:7835 $79
     add  A, $f0                                        ;; 02:7836 $c6 $f0
     ld   [HL+], A                                      ;; 02:7838 $22
@@ -4239,11 +4239,11 @@ call_02_783f:
     jr   .jr_02_7857                                   ;; 02:785e $18 $f7
 .jr_02_7860:
     ld   A, B                                          ;; 02:7860 $78
-    ld   [wD0FF], A                                    ;; 02:7861 $ea $ff $d0
+    ld   [w1_D0FF], A                                  ;; 02:7861 $ea $ff $d0
     ld   A, C                                          ;; 02:7864 $79
-    ld   [wD100], A                                    ;; 02:7865 $ea $00 $d1
+    ld   [w1_D100], A                                  ;; 02:7865 $ea $00 $d1
     ld   A, D                                          ;; 02:7868 $7a
-    ld   [wD101], A                                    ;; 02:7869 $ea $01 $d1
+    ld   [w1_D101], A                                  ;; 02:7869 $ea $01 $d1
     ret                                                ;; 02:786c $c9
     ld_long_load A, rSVBK                              ;; 02:786d $fa $70 $ff
     push AF                                            ;; 02:7870 $f5
@@ -4288,7 +4288,7 @@ call_02_783f:
     push AF                                            ;; 02:78b2 $f5
     ld   A, $02                                        ;; 02:78b3 $3e $02
     ld_long_store rSVBK, A                             ;; 02:78b5 $ea $70 $ff
-    ld   A, [wD0F9]                                    ;; 02:78b8 $fa $f9 $d0
+    ld   A, [w1_D0F9]                                  ;; 02:78b8 $fa $f9 $d0
     inc  A                                             ;; 02:78bb $3c
     ld   B, $ff                                        ;; 02:78bc $06 $ff
 .jr_02_78be:
@@ -4370,7 +4370,7 @@ call_02_78df:
     push AF                                            ;; 02:7970 $f5
     ld   A, $02                                        ;; 02:7971 $3e $02
     ld_long_store rSVBK, A                             ;; 02:7973 $ea $70 $ff
-    ld   HL, wD0F0                                     ;; 02:7976 $21 $f0 $d0
+    ld   HL, w1_D0F0                                   ;; 02:7976 $21 $f0 $d0
     ld   A, [wC75A]                                    ;; 02:7979 $fa $5a $c7
     add  A, L                                          ;; 02:797c $85
     ld   L, A                                          ;; 02:797d $6f
@@ -4419,7 +4419,7 @@ call_02_78df:
     push AF                                            ;; 02:7a18 $f5
     ld   A, $02                                        ;; 02:7a19 $3e $02
     ld_long_store rSVBK, A                             ;; 02:7a1b $ea $70 $ff
-    ld   A, [wSomethingWithHamchatsD0FD]               ;; 02:7a1e $fa $fd $d0
+    ld   A, [w1_D0FD]                                  ;; 02:7a1e $fa $fd $d0
     cp   A, $ff                                        ;; 02:7a21 $fe $ff
     jr   Z, .jr_02_7a43                                ;; 02:7a23 $28 $1e
     cp   A, $fe                                        ;; 02:7a25 $fe $fe
@@ -4435,19 +4435,19 @@ call_02_78df:
     ld   A, [HL]                                       ;; 02:7a36 $7e
     jr   .jr_02_7a7f                                   ;; 02:7a37 $18 $46
 .jr_02_7a39:
-    ld   A, [wHamChatIndexD0F8]                        ;; 02:7a39 $fa $f8 $d0
+    ld   A, [w1_D0F8]                                  ;; 02:7a39 $fa $f8 $d0
     jr   .jr_02_7a7f                                   ;; 02:7a3c $18 $41
 .jr_02_7a3e:
     ld   A, $fd                                        ;; 02:7a3e $3e $fd
-    ld   [wSomethingWithHamchatsD0FD], A               ;; 02:7a40 $ea $fd $d0
+    ld   [w1_D0FD], A                                  ;; 02:7a40 $ea $fd $d0
 .jr_02_7a43:
-    ld   A, [wHamChatIndexD0F8]                        ;; 02:7a43 $fa $f8 $d0
+    ld   A, [w1_D0F8]                                  ;; 02:7a43 $fa $f8 $d0
     cp   A, $ff                                        ;; 02:7a46 $fe $ff
     jr   Z, .jr_02_7a92                                ;; 02:7a48 $28 $48
     ld   A, [wC72F]                                    ;; 02:7a4a $fa $2f $c7
     cp   A, $00                                        ;; 02:7a4d $fe $00
     jr   Z, .jr_02_7a96                                ;; 02:7a4f $28 $45
-    ld   A, [wHamChatIndexD0F8]                        ;; 02:7a51 $fa $f8 $d0
+    ld   A, [w1_D0F8]                                  ;; 02:7a51 $fa $f8 $d0
     ld   HL, data_02_72d3                              ;; 02:7a54 $21 $d3 $72
     add  A, L                                          ;; 02:7a57 $85
     ld   L, A                                          ;; 02:7a58 $6f
@@ -4477,17 +4477,17 @@ call_02_78df:
     ld   B, A                                          ;; 02:7a82 $47
     srl  A                                             ;; 02:7a83 $cb $3f
     srl  A                                             ;; 02:7a85 $cb $3f
-    ld   [wD0F9], A                                    ;; 02:7a87 $ea $f9 $d0
+    ld   [w1_D0F9], A                                  ;; 02:7a87 $ea $f9 $d0
     ld   A, B                                          ;; 02:7a8a $78
     and  A, $03                                        ;; 02:7a8b $e6 $03
     ld   [wC75A], A                                    ;; 02:7a8d $ea $5a $c7
     jr   .jr_02_7a96                                   ;; 02:7a90 $18 $04
 .jr_02_7a92:
     xor  A, A                                          ;; 02:7a92 $af
-    ld   [wSomethingWithHamchatsD0FD], A               ;; 02:7a93 $ea $fd $d0
+    ld   [w1_D0FD], A                                  ;; 02:7a93 $ea $fd $d0
 .jr_02_7a96:
     ld   A, $ff                                        ;; 02:7a96 $3e $ff
-    ld   [wHamChatIndexD0F8], A                        ;; 02:7a98 $ea $f8 $d0
+    ld   [w1_D0F8], A                                  ;; 02:7a98 $ea $f8 $d0
     pop  AF                                            ;; 02:7a9b $f1
     ld_long_store rSVBK, A                             ;; 02:7a9c $ea $70 $ff
     ret                                                ;; 02:7a9f $c9
@@ -4500,7 +4500,7 @@ call_02_78df:
     push AF                                            ;; 02:7ab1 $f5
     ld   A, $02                                        ;; 02:7ab2 $3e $02
     ld_long_store rSVBK, A                             ;; 02:7ab4 $ea $70 $ff
-    ld   A, [wSomethingWithHamchatsD0FD]               ;; 02:7ab7 $fa $fd $d0
+    ld   A, [w1_D0FD]                                  ;; 02:7ab7 $fa $fd $d0
     cp   A, $ff                                        ;; 02:7aba $fe $ff
     jr   Z, .jr_02_7ac0                                ;; 02:7abc $28 $02
     jr   .jr_02_7ac4                                   ;; 02:7abe $18 $04
@@ -4509,7 +4509,7 @@ call_02_78df:
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:7ac1 $ea $3a $c5
 .jr_02_7ac4:
     ld   A, $ff                                        ;; 02:7ac4 $3e $ff
-    ld   [wSomethingWithHamchatsD0FD], A               ;; 02:7ac6 $ea $fd $d0
+    ld   [w1_D0FD], A                                  ;; 02:7ac6 $ea $fd $d0
     pop  AF                                            ;; 02:7ac9 $f1
     ld_long_store rSVBK, A                             ;; 02:7aca $ea $70 $ff
     ret                                                ;; 02:7acd $c9
@@ -4528,7 +4528,7 @@ call_02_78df:
     db   $d0, $f1, $ea, $70, $ff, $c9                  ;; 02:7b2e ??????
 
 call_02_7b34:
-    ld   HL, wD000                                     ;; 02:7b34 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:7b34 $21 $00 $d0
     ld   A, $ff                                        ;; 02:7b37 $3e $ff
     ld   C, $78                                        ;; 02:7b39 $0e $78
 .jr_02_7b3b:
@@ -4548,7 +4548,7 @@ call_02_7b34:
     adc  A, H                                          ;; 02:7b4f $8c
     ld   H, A                                          ;; 02:7b50 $67
     ld   A, [HL]                                       ;; 02:7b51 $7e
-    ld   HL, wD000                                     ;; 02:7b52 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:7b52 $21 $00 $d0
     add  A, L                                          ;; 02:7b55 $85
     ld   L, A                                          ;; 02:7b56 $6f
     ld   A, $00                                        ;; 02:7b57 $3e $00
@@ -4603,7 +4603,7 @@ call_02_7b34:
     ld   A, [wNumHamChatsCA45]                         ;; 02:7c13 $fa $4f $ca
     sub  A, C                                          ;; 02:7c16 $91
     dec  A                                             ;; 02:7c17 $3d
-    ld   HL, wD000                                     ;; 02:7c18 $21 $00 $d0
+    ld   HL, w1_D000                                   ;; 02:7c18 $21 $00 $d0
     add  A, L                                          ;; 02:7c1b $85
     ld   L, A                                          ;; 02:7c1c $6f
     ld   A, $00                                        ;; 02:7c1d $3e $00
