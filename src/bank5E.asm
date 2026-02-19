@@ -374,8 +374,6 @@ SECTION "bank5e", ROMX[$4000], BANK[$5e]
     db   %00000000                                     ;; 5e:4969 $00
 
     db   $fc, $0d                                      ;; 5e:496a ..
-
-data_5e_496c:
     dw   $002e                                         ;; 5e:496c wW
     db   $05                                           ;; 5e:496e .
     db   %01100001                                     ;; 5e:496f $61
@@ -384,8 +382,6 @@ data_5e_496c:
     dw   `33122113                                     ;; 5e:4972 $e7 $d9
 
     db   $fc, $14                                      ;; 5e:4974 ..
-
-data_5e_4976:
     dw   $0040                                         ;; 5e:4976 wW
     db   $10                                           ;; 5e:4978 .
     dw   `22231113                                     ;; 5e:4979 $1f $f1
@@ -398,8 +394,6 @@ data_5e_4976:
     dw   `11133313                                     ;; 5e:4987 $ff $1d
 
     db   $fc, $07                                      ;; 5e:4989 ..
-
-data_5e_498b:
     dw   $0064                                         ;; 5e:498b wW
     db   $09                                           ;; 5e:498d .
     db   %11100000                                     ;; 5e:498e $e0
@@ -410,8 +404,6 @@ data_5e_498b:
     dw   `11111111                                     ;; 5e:4995 $ff $00
 
     db   $fc, $06                                      ;; 5e:4997 ..
-
-data_5e_4999:
     dw   $00f2                                         ;; 5e:4999 wW
     db   $26                                           ;; 5e:499b .
     dw   `22211112                                     ;; 5e:499c $1e $e1
@@ -437,27 +429,19 @@ data_5e_4999:
     dw   `30000000                                     ;; 5e:49c0 $80 $80
 
     db   $fc, $0c                                      ;; 5e:49c2 ..
-
-data_5e_49c4:
     dw   $00e0                                         ;; 5e:49c4 wW
     db   $02                                           ;; 5e:49c6 .
     dw   `23111111                                     ;; 5e:49c7 $7f $c0
 
     db   $fc, $0a                                      ;; 5e:49c9 ..
-
-data_5e_49cb:
     dw   $00ee                                         ;; 5e:49cb wW
     db   $fc, $06                                      ;; 5e:49cd ..
-
-data_5e_49cf:
     dw   $00fa                                         ;; 5e:49cf wW
     db   $04                                           ;; 5e:49d1 .
     dw   `00000000                                     ;; 5e:49d2 $00 $00
     dw   `21300000                                     ;; 5e:49d4 $60 $a0
 
     db   $fc, $06                                      ;; 5e:49d6 ..
-
-data_5e_49d8:
     dw   $0102                                         ;; 5e:49d8 wW
     db   $10                                           ;; 5e:49da .
     dw   `13300000                                     ;; 5e:49db $e0 $60
@@ -470,8 +454,6 @@ data_5e_49d8:
     dw   `23000000                                     ;; 5e:49e9 $40 $c0
 
     db   $fc, $06                                      ;; 5e:49eb ..
-
-data_5e_49ed:
     dw   $011a                                         ;; 5e:49ed wW
     db   $80, $14                                      ;; 5e:49ef ..
     db   %00000000                                     ;; 5e:49f1 $00
@@ -489,8 +471,6 @@ data_5e_49ed:
     db   %00000000                                     ;; 5e:4a03 $00
 
     db   $fc, $06                                      ;; 5e:4a04 ..
-
-data_5e_4a06:
     dw   $009a                                         ;; 5e:4a06 wW
     db   $06                                           ;; 5e:4a08 .
     dw   `30000000                                     ;; 5e:4a09 $80 $80
@@ -498,15 +478,11 @@ data_5e_4a06:
     dw   `22311111                                     ;; 5e:4a0d $3f $e0
 
     db   $fc, $0c                                      ;; 5e:4a0f ..
-
-data_5e_4a11:
     dw   $00ee                                         ;; 5e:4a11 wW
     db   $02                                           ;; 5e:4a13 .
     dw   `11111111                                     ;; 5e:4a14 $ff $00
 
     db   $fc, $0e                                      ;; 5e:4a16 ..
-
-data_5e_4a18:
     dw   $006e                                         ;; 5e:4a18 wW
     db   $14                                           ;; 5e:4a1a .
     dw   `33000000                                     ;; 5e:4a1b $c0 $c0
@@ -522,8 +498,6 @@ data_5e_4a18:
     dw   `11330000                                     ;; 5e:4a2d $f0 $30
 
     db   $fc, $1e                                      ;; 5e:4a2f ..
-
-data_5e_4a31:
     dw   $0090                                         ;; 5e:4a31 wW
     db   $0e                                           ;; 5e:4a33 .
     dw   `00000000                                     ;; 5e:4a34 $00 $00
@@ -545,12 +519,8 @@ data_5e_4a31:
     dw   `23333111                                     ;; 5e:4a4e $7f $f8
 
     db   $fc, $0f                                      ;; 5e:4a50 ..
-
-data_5e_4a52:
     dw   $01a2                                         ;; 5e:4a52 wW
     db   $fc, $0d                                      ;; 5e:4a54 ..
-
-data_5e_4a56:
     dw   $006f                                         ;; 5e:4a56 wW
     db   $08                                           ;; 5e:4a58 .
     dw   `30000000                                     ;; 5e:4a59 $80 $80
@@ -559,20 +529,12 @@ data_5e_4a56:
     dw   `13223000                                     ;; 5e:4a5f $c8 $78
 
     db   $fc, $06                                      ;; 5e:4a61 ..
-
-data_5e_4a63:
     dw   $0246                                         ;; 5e:4a63 wW
     db   $fc, $08                                      ;; 5e:4a65 ..
-
-data_5e_4a67:
     dw   $01d0                                         ;; 5e:4a67 wW
     db   $fc, $12                                      ;; 5e:4a69 ..
-
-data_5e_4a6b:
     dw   $0092                                         ;; 5e:4a6b wW
     db   $fc, $08                                      ;; 5e:4a6d ..
-
-data_5e_4a6f:
     dw   $000c                                         ;; 5e:4a6f wW
     db   $10                                           ;; 5e:4a71 .
     dw   `03111322                                     ;; 5e:4a72 $7c $47
@@ -585,16 +547,10 @@ data_5e_4a6f:
     dw   `00311111                                     ;; 5e:4a80 $3f $20
 
     db   $fc, $12                                      ;; 5e:4a82 ..
-
-data_5e_4a84:
     dw   $0024                                         ;; 5e:4a84 wW
     db   $01, $00, $fc, $15                            ;; 5e:4a86 ....
-
-data_5e_4a8a:
     dw   $0033                                         ;; 5e:4a8a wW
     db   $fc, $0a                                      ;; 5e:4a8c ..
-
-data_5e_4a8e:
     dw   $00cc                                         ;; 5e:4a8e wW
     db   $0e                                           ;; 5e:4a90 .
     dw   `22231113                                     ;; 5e:4a91 $1f $f1
@@ -606,8 +562,6 @@ data_5e_4a8e:
     dw   `13311130                                     ;; 5e:4a9d $fe $62
 
     db   $fc, $05                                      ;; 5e:4a9f ..
-
-data_5e_4aa1:
     dw   $0060                                         ;; 5e:4aa1 wW
     db   $03                                           ;; 5e:4aa3 .
     db   %00001110                                     ;; 5e:4aa4 $0e
@@ -615,8 +569,6 @@ data_5e_4aa1:
     dw   `31111111                                     ;; 5e:4aa5 $ff $80
 
     db   $fc, $06                                      ;; 5e:4aa7 ..
-
-data_5e_4aa9:
     dw   $0068                                         ;; 5e:4aa9 wW
     db   $06                                           ;; 5e:4aab .
     dw   `11113121                                     ;; 5e:4aac $fd $0a
@@ -624,12 +576,8 @@ data_5e_4aa9:
     dw   `11111331                                     ;; 5e:4ab0 $ff $06
 
     db   $fc, $08                                      ;; 5e:4ab2 ..
-
-data_5e_4ab4:
     dw   $0138                                         ;; 5e:4ab4 wW
     db   $fc, $05                                      ;; 5e:4ab6 ..
-
-data_5e_4ab8:
     dw   $0048                                         ;; 5e:4ab8 wW
     db   $0a                                           ;; 5e:4aba .
     db   %11111000                                     ;; 5e:4abb $f8
@@ -640,27 +588,17 @@ data_5e_4ab8:
     dw   `13000000                                     ;; 5e:4ac2 $c0 $40
 
     db   $c0, $fc, $06                                 ;; 5e:4ac4 ...
-
-data_5e_4ac7:
     dw   $02e8                                         ;; 5e:4ac7 wW
     db   $01                                           ;; 5e:4ac9 .
     db   %01000000                                     ;; 5e:4aca $40
 
     db   $fc, $1c                                      ;; 5e:4acb ..
-
-data_5e_4acd:
     dw   $0156                                         ;; 5e:4acd wW
     db   $fc, $0f                                      ;; 5e:4acf ..
-
-data_5e_4ad1:
     dw   $002e                                         ;; 5e:4ad1 wW
     db   $fc, $17                                      ;; 5e:4ad3 ..
-
-data_5e_4ad5:
     dw   $00bd                                         ;; 5e:4ad5 wW
     db   $fc, $09                                      ;; 5e:4ad7 ..
-
-data_5e_4ad9:
     dw   $0054                                         ;; 5e:4ad9 wW
     db   $03                                           ;; 5e:4adb .
     db   %11100100                                     ;; 5e:4adc $e4
@@ -668,8 +606,6 @@ data_5e_4ad9:
     dw   `33331230                                     ;; 5e:4add $fa $f6
 
     db   $fc, $0b                                      ;; 5e:4adf ..
-
-data_5e_4ae1:
     dw   $00e0                                         ;; 5e:4ae1 wW
     db   $05                                           ;; 5e:4ae3 .
     db   %10010000                                     ;; 5e:4ae4 $90
@@ -678,8 +614,6 @@ data_5e_4ae1:
     dw   `21111311                                     ;; 5e:4ae7 $7f $84
 
     db   $fc, $3e                                      ;; 5e:4ae9 ..
-
-data_5e_4aeb:
     dw   $0070                                         ;; 5e:4aeb wW
     db   $80, $06                                      ;; 5e:4aed ..
     db   %00000000                                     ;; 5e:4aef $00
@@ -729,8 +663,6 @@ data_5e_4aeb:
     dw   `11300000                                     ;; 5e:4b37 $e0 $20
 
     db   $fc, $05                                      ;; 5e:4b39 ..
-
-data_5e_4b3b:
     dw   $008a                                         ;; 5e:4b3b wW
     db   $0b                                           ;; 5e:4b3d .
     db   %01100000                                     ;; 5e:4b3e $60
@@ -747,8 +679,6 @@ data_5e_4b3b:
     dw   `22300000                                     ;; 5e:4b47 $20 $e0
 
     db   $fc, $18                                      ;; 5e:4b49 ..
-
-data_5e_4b4b:
     dw   $015a                                         ;; 5e:4b4b wW
     db   $0b                                           ;; 5e:4b4d .
     dw   `00000000                                     ;; 5e:4b4e $00 $00
@@ -758,8 +688,6 @@ data_5e_4b4b:
     dw   `33332222                                     ;; 5e:4b56 $f0 $ff
 
     db   $00, $fc, $05                                 ;; 5e:4b58 ...
-
-data_5e_4b5b:
     dw   $007b                                         ;; 5e:4b5b wW
     db   $80, $12                                      ;; 5e:4b5d ..
     db   %00000000                                     ;; 5e:4b5f $00
@@ -789,12 +717,8 @@ data_5e_4b5b:
     dw   `22300000                                     ;; 5e:4b82 $20 $e0
 
     db   $fc, $06                                      ;; 5e:4b84 ..
-
-data_5e_4b86:
     dw   $043a                                         ;; 5e:4b86 wW
     db   $01, $10, $fc, $05                            ;; 5e:4b88 ....
-
-data_5e_4b8c:
     dw   $03f4                                         ;; 5e:4b8c wW
     db   $06                                           ;; 5e:4b8e .
     dw   `21130000                                     ;; 5e:4b8f $70 $90
@@ -802,8 +726,6 @@ data_5e_4b8c:
     dw   `13000000                                     ;; 5e:4b93 $c0 $40
 
     db   $fc, $18                                      ;; 5e:4b95 ..
-
-data_5e_4b97:
     dw   $03fe                                         ;; 5e:4b97 wW
     db   $0a                                           ;; 5e:4b99 .
     dw   `00000000                                     ;; 5e:4b9a $00 $00
@@ -813,8 +735,6 @@ data_5e_4b97:
     dw   `22222223                                     ;; 5e:4ba2 $01 $ff
 
     db   $fc, $0c                                      ;; 5e:4ba4 ..
-
-data_5e_4ba6:
     dw   $0440                                         ;; 5e:4ba6 wW
     db   $22                                           ;; 5e:4ba8 .
     dw   `32222211                                     ;; 5e:4ba9 $83 $fc
@@ -841,12 +761,8 @@ data_5e_4ba6:
     dw   `11300000                                     ;; 5e:4bcd $e0 $20
 
     db   $fc, $08                                      ;; 5e:4bcf ..
-
-data_5e_4bd1:
     dw   $0114                                         ;; 5e:4bd1 wW
     db   $fc, $1c                                      ;; 5e:4bd3 ..
-
-data_5e_4bd5:
     dw   $047c                                         ;; 5e:4bd5 wW
     db   $0f                                           ;; 5e:4bd7 .
     dw   `33330000                                     ;; 5e:4bd8 $f0 $f0
@@ -858,12 +774,8 @@ data_5e_4bd5:
     dw   `22223222                                     ;; 5e:4be4 $08 $ff
 
     db   $10, $fc, $05                                 ;; 5e:4be6 ...
-
-data_5e_4be9:
     dw   $0507                                         ;; 5e:4be9 wW
     db   $fc, $10                                      ;; 5e:4beb ..
-
-data_5e_4bed:
     dw   $0442                                         ;; 5e:4bed wW
     db   $07                                           ;; 5e:4bef .
     db   %11111111                                     ;; 5e:4bf0 $ff
@@ -873,8 +785,6 @@ data_5e_4bed:
     dw   `13000000                                     ;; 5e:4bf4 $c0 $40
 
     db   $c0, $fc, $07                                 ;; 5e:4bf6 ...
-
-data_5e_4bf9:
     dw   $0439                                         ;; 5e:4bf9 wW
     db   $0f                                           ;; 5e:4bfb .
     dw   `22233000                                     ;; 5e:4bfc $18 $f8
@@ -886,8 +796,6 @@ data_5e_4bf9:
     dw   `22230000                                     ;; 5e:4c08 $10 $f0
 
     db   $20, $fc, $1b                                 ;; 5e:4c0a ...
-
-data_5e_4c0d:
     dw   $0379                                         ;; 5e:4c0d wW
     db   $0a                                           ;; 5e:4c0f .
     dw   `00000000                                     ;; 5e:4c10 $00 $00
@@ -903,8 +811,6 @@ data_5e_4c0d:
     dw   `30000000                                     ;; 5e:4c1e $80 $80
 
     db   $fc, $05                                      ;; 5e:4c20 ..
-
-data_5e_4c22:
     dw   $04b2                                         ;; 5e:4c22 wW
     db   $13                                           ;; 5e:4c24 .
     db   %00000000                                     ;; 5e:4c25 $00
@@ -921,8 +827,6 @@ data_5e_4c22:
     dw   `22113222                                     ;; 5e:4c36 $38 $cf
 
     db   $fc, $06                                      ;; 5e:4c38 ..
-
-data_5e_4c3a:
     dw   $050a                                         ;; 5e:4c3a wW
     db   $18                                           ;; 5e:4c3c .
     dw   `33333333                                     ;; 5e:4c3d $ff $ff
@@ -940,8 +844,6 @@ data_5e_4c3a:
     dw   `33000000                                     ;; 5e:4c53 $c0 $c0
 
     db   $fc, $06                                      ;; 5e:4c55 ..
-
-data_5e_4c57:
     dw   $0466                                         ;; 5e:4c57 wW
     db   $22                                           ;; 5e:4c59 .
     dw   `33000000                                     ;; 5e:4c5a $c0 $c0
@@ -965,8 +867,6 @@ data_5e_4c57:
     dw   `00033333                                     ;; 5e:4c7a $1f $1f
 
     db   $fc, $05                                      ;; 5e:4c7c ..
-
-data_5e_4c7e:
     dw   $007c                                         ;; 5e:4c7e wW
     db   $16                                           ;; 5e:4c80 .
     db   %11100000                                     ;; 5e:4c81 $e0
@@ -984,8 +884,6 @@ data_5e_4c7e:
     dw   `23330030                                     ;; 5e:4c94 $72 $f2
 
     db   $e0, $fc, $13                                 ;; 5e:4c96 ...
-
-data_5e_4c99:
     dw   $03fb                                         ;; 5e:4c99 wW
     db   $14                                           ;; 5e:4c9b .
     dw   `33330000                                     ;; 5e:4c9c $f0 $f0
@@ -1001,8 +899,6 @@ data_5e_4c99:
     dw   `11333112                                     ;; 5e:4cae $fe $39
 
     db   $fc, $14                                      ;; 5e:4cb0 ..
-
-data_5e_4cb2:
     dw   $040a                                         ;; 5e:4cb2 wW
     db   $0c                                           ;; 5e:4cb4 .
     dw   `22222223                                     ;; 5e:4cb5 $01 $ff
@@ -1013,8 +909,6 @@ data_5e_4cb2:
     dw   `21113331                                     ;; 5e:4cbf $7f $8e
 
     db   $fc, $12                                      ;; 5e:4cc1 ..
-
-data_5e_4cc3:
     dw   $042a                                         ;; 5e:4cc3 wW
     db   $10                                           ;; 5e:4cc5 .
     dw   `33230000                                     ;; 5e:4cc6 $d0 $f0
@@ -1027,8 +921,6 @@ data_5e_4cc3:
     dw   `11133333                                     ;; 5e:4cd4 $ff $1f
 
     db   $fc, $0a                                      ;; 5e:4cd6 ..
-
-data_5e_4cd8:
     dw   $00e0                                         ;; 5e:4cd8 wW
     db   $0c                                           ;; 5e:4cda .
     dw   `31131112                                     ;; 5e:4cdb $fe $91
@@ -1039,8 +931,6 @@ data_5e_4cd8:
     dw   `22221111                                     ;; 5e:4ce5 $0f $f0
 
     db   $fc, $06                                      ;; 5e:4ce7 ..
-
-data_5e_4ce9:
     dw   $007a                                         ;; 5e:4ce9 wW
     db   $06                                           ;; 5e:4ceb .
     dw   `00000000                                     ;; 5e:4cec $00 $00
@@ -1048,8 +938,6 @@ data_5e_4ce9:
     dw   `11111130                                     ;; 5e:4cf0 $fe $02
 
     db   $fc, $06                                      ;; 5e:4cf2 ..
-
-data_5e_4cf4:
     dw   $0682                                         ;; 5e:4cf4 wW
     db   $10                                           ;; 5e:4cf6 .
     dw   `11111300                                     ;; 5e:4cf7 $fc $04
@@ -1065,8 +953,6 @@ data_5e_4cf4:
     db   %00000000                                     ;; 5e:4d09 $00
 
     db   $fc, $4e                                      ;; 5e:4d0a ..
-
-data_5e_4d0c:
     dw   $060c                                         ;; 5e:4d0c wW
     db   $1e                                           ;; 5e:4d0e .
     dw   `23330000                                     ;; 5e:4d0f $70 $f0
@@ -1087,12 +973,8 @@ data_5e_4d0c:
     dw   `21111122                                     ;; 5e:4d2b $7c $83
 
     db   $fc, $08                                      ;; 5e:4d2d ..
-
-data_5e_4d2f:
     dw   $0678                                         ;; 5e:4d2f wW
     db   $fc, $05                                      ;; 5e:4d31 ..
-
-data_5e_4d33:
     dw   $0660                                         ;; 5e:4d33 wW
     db   $13                                           ;; 5e:4d35 .
     db   %10011101                                     ;; 5e:4d36 $9d
@@ -1109,15 +991,11 @@ data_5e_4d33:
     dw   `22211111                                     ;; 5e:4d47 $1f $e0
 
     db   $fc, $08                                      ;; 5e:4d49 ..
-
-data_5e_4d4b:
     dw   $0678                                         ;; 5e:4d4b wW
     db   $03                                           ;; 5e:4d4d .
     dw   `11211130                                     ;; 5e:4d4e $de $22
 
     db   $fd, $fc, $05                                 ;; 5e:4d50 ...
-
-data_5e_4d53:
     dw   $058b                                         ;; 5e:4d53 wW
     db   $0c                                           ;; 5e:4d55 .
     dw   `11111113                                     ;; 5e:4d56 $ff $01
@@ -1128,12 +1006,8 @@ data_5e_4d53:
     dw   `13323000                                     ;; 5e:4d60 $e8 $78
 
     db   $fc, $18                                      ;; 5e:4d62 ..
-
-data_5e_4d64:
     dw   $0694                                         ;; 5e:4d64 wW
     db   $fc, $09                                      ;; 5e:4d66 ..
-
-data_5e_4d68:
     dw   $0268                                         ;; 5e:4d68 wW
     db   $0b                                           ;; 5e:4d6a .
     db   %01100111                                     ;; 5e:4d6b $67
@@ -1145,8 +1019,6 @@ data_5e_4d68:
     dw   `00031111                                     ;; 5e:4d74 $1f $10
 
     db   $fc, $34                                      ;; 5e:4d76 ..
-
-data_5e_4d78:
     dw   $0020                                         ;; 5e:4d78 wW
     db   $0c                                           ;; 5e:4d7a .
     dw   `22231133                                     ;; 5e:4d7b $1f $f3
@@ -1157,8 +1029,6 @@ data_5e_4d78:
     dw   `13311300                                     ;; 5e:4d85 $fc $64
 
     db   $fc, $0d                                      ;; 5e:4d87 ..
-
-data_5e_4d89:
     dw   $02c0                                         ;; 5e:4d89 wW
     db   $07                                           ;; 5e:4d8b .
     db   %01100100                                     ;; 5e:4d8c $64
@@ -1168,12 +1038,8 @@ data_5e_4d89:
     dw   `22211331                                     ;; 5e:4d91 $1f $e6
 
     db   $fc, $08                                      ;; 5e:4d93 ..
-
-data_5e_4d95:
     dw   $0678                                         ;; 5e:4d95 wW
     db   $fc, $08                                      ;; 5e:4d97 ..
-
-data_5e_4d99:
     dw   $007c                                         ;; 5e:4d99 wW
     db   $0c                                           ;; 5e:4d9b .
     dw   `11233000                                     ;; 5e:4d9c $d8 $38
@@ -1184,12 +1050,8 @@ data_5e_4d99:
     dw   `11322300                                     ;; 5e:4da6 $e4 $3c
 
     db   $fc, $18                                      ;; 5e:4da8 ..
-
-data_5e_4daa:
     dw   $0694                                         ;; 5e:4daa wW
     db   $fc, $64                                      ;; 5e:4dac ..
-
-data_5e_4dae:
     dw   $0008                                         ;; 5e:4dae wW
     db   $0c                                           ;; 5e:4db0 .
     dw   `23311111                                     ;; 5e:4db1 $7f $e0
@@ -1200,16 +1062,10 @@ data_5e_4dae:
     dw   `11133111                                     ;; 5e:4dbb $ff $18
 
     db   $fc, $06                                      ;; 5e:4dbd ..
-
-data_5e_4dbf:
     dw   $0519                                         ;; 5e:4dbf wW
     db   $fc, $16                                      ;; 5e:4dc1 ..
-
-data_5e_4dc3:
     dw   $007e                                         ;; 5e:4dc3 wW
     db   $fc, $16                                      ;; 5e:4dc5 ..
-
-data_5e_4dc7:
     dw   $0092                                         ;; 5e:4dc7 wW
     db   $16                                           ;; 5e:4dc9 .
     dw   `00300000                                     ;; 5e:4dca $20 $20
@@ -1226,8 +1082,6 @@ data_5e_4dc7:
     dw   `03133211                                     ;; 5e:4dde $7b $5c
 
     db   $fc, $1d                                      ;; 5e:4de0 ..
-
-data_5e_4de2:
     dw   $0600                                         ;; 5e:4de2 wW
     db   $03                                           ;; 5e:4de4 .
     db   %11000110                                     ;; 5e:4de5 $c6
@@ -1235,15 +1089,11 @@ data_5e_4de2:
     dw   `11313112                                     ;; 5e:4de6 $fe $29
 
     db   $fc, $16                                      ;; 5e:4de8 ..
-
-data_5e_4dea:
     dw   $0620                                         ;; 5e:4dea wW
     db   $02                                           ;; 5e:4dec .
     dw   `22211223                                     ;; 5e:4ded $19 $e7
 
     db   $fc, $05                                      ;; 5e:4def ..
-
-data_5e_4df1:
     dw   $0638                                         ;; 5e:4df1 wW
     db   $03                                           ;; 5e:4df3 .
     db   %01010001                                     ;; 5e:4df4 $51
@@ -1270,15 +1120,11 @@ data_5e_4df1:
     dw   `11133311                                     ;; 5e:4e13 $ff $1c
 
     db   $fc, $07                                      ;; 5e:4e15 ..
-
-data_5e_4e17:
     dw   $00f0                                         ;; 5e:4e17 wW
     db   $02                                           ;; 5e:4e19 .
     db   %10010000                                     ;; 5e:4e1a $90
 
     db   $7f, $fc, $0b                                 ;; 5e:4e1b ...
-
-data_5e_4e1e:
     dw   $00eb                                         ;; 5e:4e1e wW
     db   $1c                                           ;; 5e:4e20 .
     dw   `22211112                                     ;; 5e:4e21 $1e $e1
@@ -1298,8 +1144,6 @@ data_5e_4e1e:
     dw   `13000000                                     ;; 5e:4e3b $c0 $40
 
     db   $fc, $06                                      ;; 5e:4e3d ..
-
-data_5e_4e3f:
     dw   $0116                                         ;; 5e:4e3f wW
     db   $80, $06                                      ;; 5e:4e41 ..
     db   %00000000                                     ;; 5e:4e43 $00
@@ -1310,8 +1154,6 @@ data_5e_4e3f:
     dw   `00312300                                     ;; 5e:4e49 $34 $2c
 
     db   $18, $fc, $07                                 ;; 5e:4e4b ...
-
-data_5e_4e4e:
     dw   $003f                                         ;; 5e:4e4e wW
     db   $11                                           ;; 5e:4e50 .
     dw   `00000003                                     ;; 5e:4e51 $01 $01
@@ -1324,12 +1166,8 @@ data_5e_4e4e:
     dw   `03111111                                     ;; 5e:4e5f $7f $40
 
     db   $3f, $fc, $0d                                 ;; 5e:4e61 ...
-
-data_5e_4e64:
     dw   $001f                                         ;; 5e:4e64 wW
     db   $fc, $0c                                      ;; 5e:4e66 ..
-
-data_5e_4e68:
     dw   $060c                                         ;; 5e:4e68 wW
     db   $0e                                           ;; 5e:4e6a .
     dw   `22111122                                     ;; 5e:4e6b $3c $c3
@@ -1341,23 +1179,15 @@ data_5e_4e68:
     dw   `00000031                                     ;; 5e:4e77 $03 $02
 
     db   $fc, $06                                      ;; 5e:4e79 ..
-
-data_5e_4e7b:
     dw   $02d8                                         ;; 5e:4e7b wW
     db   $fc, $13                                      ;; 5e:4e7d ..
-
-data_5e_4e7f:
     dw   $08ec                                         ;; 5e:4e7f wW
     db   $01                                           ;; 5e:4e81 .
     db   %10001001                                     ;; 5e:4e82 $89
 
     db   $fc, $06                                      ;; 5e:4e83 ..
-
-data_5e_4e85:
     dw   $002a                                         ;; 5e:4e85 wW
     db   $fc, $0e                                      ;; 5e:4e87 ..
-
-data_5e_4e89:
     dw   $0646                                         ;; 5e:4e89 wW
     db   $1e                                           ;; 5e:4e8b .
     dw   `11230000                                     ;; 5e:4e8c $d0 $30
@@ -1387,8 +1217,6 @@ data_5e_4e89:
     dw   `33333111                                     ;; 5e:4eb1 $ff $f8
 
     db   $fc, $06                                      ;; 5e:4eb3 ..
-
-data_5e_4eb5:
     dw   $0922                                         ;; 5e:4eb5 wW
     db   $14                                           ;; 5e:4eb7 .
     dw   `21111111                                     ;; 5e:4eb8 $7f $80
@@ -1404,12 +1232,8 @@ data_5e_4eb5:
     dw   `00330333                                     ;; 5e:4eca $37 $37
 
     db   $fc, $05                                      ;; 5e:4ecc ..
-
-data_5e_4ece:
     dw   $071c                                         ;; 5e:4ece wW
     db   $fc, $15                                      ;; 5e:4ed0 ..
-
-data_5e_4ed2:
     dw   $0921                                         ;; 5e:4ed2 wW
     db   $1a                                           ;; 5e:4ed4 .
     dw   `11111112                                     ;; 5e:4ed5 $fe $01
@@ -1428,15 +1252,11 @@ data_5e_4ed2:
     dw   `31133000                                     ;; 5e:4eed $f8 $98
 
     db   $fc, $08                                      ;; 5e:4eef ..
-
-data_5e_4ef1:
     dw   $0950                                         ;; 5e:4ef1 wW
     db   $80, $16                                      ;; 5e:4ef3 ..
     db   %00000000                                     ;; 5e:4ef5 $00
 
     db   $fc, $08                                      ;; 5e:4ef6 ..
-
-data_5e_4ef8:
     dw   $096e                                         ;; 5e:4ef8 wW
     db   $14                                           ;; 5e:4efa .
     dw   `00033331                                     ;; 5e:4efb $1f $1e
@@ -1452,8 +1272,6 @@ data_5e_4ef8:
     dw   `00330000                                     ;; 5e:4f0d $30 $30
 
     db   $fc, $11                                      ;; 5e:4f0f ..
-
-data_5e_4f11:
     dw   $060a                                         ;; 5e:4f11 wW
     db   $05                                           ;; 5e:4f13 .
     db   %10000010                                     ;; 5e:4f14 $82
@@ -1462,8 +1280,6 @@ data_5e_4f11:
     dw   `13213112                                     ;; 5e:4f17 $de $69
 
     db   $fc, $1d                                      ;; 5e:4f19 ..
-
-data_5e_4f1b:
     dw   $0620                                         ;; 5e:4f1b wW
     db   $09                                           ;; 5e:4f1d .
     db   %01010001                                     ;; 5e:4f1e $51
@@ -1474,12 +1290,8 @@ data_5e_4f1b:
     dw   `00321300                                     ;; 5e:4f25 $2c $34
 
     db   $fc, $06                                      ;; 5e:4f27 ..
-
-data_5e_4f29:
     dw   $0966                                         ;; 5e:4f29 wW
     db   $fc, $0a                                      ;; 5e:4f2b ..
-
-data_5e_4f2d:
     dw   $09cc                                         ;; 5e:4f2d wW
     db   $10                                           ;; 5e:4f2f .
     dw   `11333300                                     ;; 5e:4f30 $fc $3c
@@ -1492,8 +1304,6 @@ data_5e_4f2d:
     dw   `00000033                                     ;; 5e:4f3e $03 $03
 
     db   $fc, $07                                      ;; 5e:4f40 ..
-
-data_5e_4f42:
     dw   $09e6                                         ;; 5e:4f42 wW
     db   $03                                           ;; 5e:4f44 .
     db   %00001100                                     ;; 5e:4f45 $0c
@@ -1501,15 +1311,11 @@ data_5e_4f42:
     dw   `00003311                                     ;; 5e:4f46 $0f $0c
 
     db   $fc, $06                                      ;; 5e:4f48 ..
-
-data_5e_4f4a:
     dw   $09f0                                         ;; 5e:4f4a wW
     db   $80, $0a                                      ;; 5e:4f4c ..
     db   %00000000                                     ;; 5e:4f4e $00
 
     db   $fc, $12                                      ;; 5e:4f4f ..
-
-data_5e_4f51:
     dw   $0a00                                         ;; 5e:4f51 wW
     db   $0c                                           ;; 5e:4f53 .
     dw   `11111111                                     ;; 5e:4f54 $ff $00
@@ -1520,8 +1326,6 @@ data_5e_4f51:
     dw   `00330000                                     ;; 5e:4f5e $30 $30
 
     db   $fc, $15                                      ;; 5e:4f60 ..
-
-data_5e_4f62:
     dw   $0a1e                                         ;; 5e:4f62 wW
     db   $13                                           ;; 5e:4f64 .
     db   %10001110                                     ;; 5e:4f65 $8e
@@ -1538,8 +1342,6 @@ data_5e_4f62:
     dw   `33300000                                     ;; 5e:4f76 $e0 $e0
 
     db   $fc, $07                                      ;; 5e:4f78 ..
-
-data_5e_4f7a:
     dw   $0a46                                         ;; 5e:4f7a wW
     db   $07                                           ;; 5e:4f7c .
     db   %10011000                                     ;; 5e:4f7d $98
@@ -1549,8 +1351,6 @@ data_5e_4f7a:
     dw   `23000000                                     ;; 5e:4f82 $40 $c0
 
     db   $fc, $06                                      ;; 5e:4f84 ..
-
-data_5e_4f86:
     dw   $02f0                                         ;; 5e:4f86 wW
     db   $80, $1c                                      ;; 5e:4f88 ..
     db   %00000000                                     ;; 5e:4f8a $00
@@ -1563,8 +1363,6 @@ data_5e_4f86:
     dw   `00003111                                     ;; 5e:4f94 $0f $08
 
     db   $fc, $0c                                      ;; 5e:4f96 ..
-
-data_5e_4f98:
     dw   $0a66                                         ;; 5e:4f98 wW
     db   $14                                           ;; 5e:4f9a .
     dw   `00000322                                     ;; 5e:4f9b $04 $07
@@ -1596,8 +1394,6 @@ data_5e_4f98:
     dw   `12223333                                     ;; 5e:4fbf $8f $7f
 
     db   $fc, $05                                      ;; 5e:4fc1 ..
-
-data_5e_4fc3:
     dw   $0bad                                         ;; 5e:4fc3 wW
     db   $05                                           ;; 5e:4fc5 .
     db   %00000000                                     ;; 5e:4fc6 $00
@@ -1625,8 +1421,6 @@ data_5e_4fc3:
     dw   `00000311                                     ;; 5e:4fe7 $07 $04
 
     db   $fc, $08                                      ;; 5e:4fe9 ..
-
-data_5e_4feb:
     dw   $09a4                                         ;; 5e:4feb wW
     db   $08                                           ;; 5e:4fed .
     dw   `00000000                                     ;; 5e:4fee $00 $00
@@ -1635,8 +1429,6 @@ data_5e_4feb:
     dw   `00000032                                     ;; 5e:4ff4 $02 $03
 
     db   $fc, $08                                      ;; 5e:4ff6 ..
-
-data_5e_4ff8:
     dw   $02d8                                         ;; 5e:4ff8 wW
     db   $1a                                           ;; 5e:4ffa .
     dw   `11133111                                     ;; 5e:4ffb $ff $18
@@ -1655,8 +1447,6 @@ data_5e_4ff8:
     dw   `22333333                                     ;; 5e:5013 $3f $ff
 
     db   $fc, $06                                      ;; 5e:5015 ..
-
-data_5e_5017:
     dw   $009a                                         ;; 5e:5017 wW
     db   $0e                                           ;; 5e:5019 .
     dw   `11111113                                     ;; 5e:501a $ff $01
@@ -1668,8 +1458,6 @@ data_5e_5017:
     dw   `11111331                                     ;; 5e:5026 $ff $06
 
     db   $fc, $07                                      ;; 5e:5028 ..
-
-data_5e_502a:
     dw   $00f2                                         ;; 5e:502a wW
     db   $1a                                           ;; 5e:502c .
     db   %00000001                                     ;; 5e:502d $01
@@ -1689,19 +1477,13 @@ data_5e_502a:
     dw   `33330000                                     ;; 5e:5044 $f0 $f0
 
     db   $10, $fc, $05                                 ;; 5e:5046 ...
-
-data_5e_5049:
     dw   $0097                                         ;; 5e:5049 wW
     db   $03                                           ;; 5e:504b .
     dw   `23000000                                     ;; 5e:504c $40 $c0
 
     db   $c0, $fc, $13                                 ;; 5e:504e ...
-
-data_5e_5051:
     dw   $05fb                                         ;; 5e:5051 wW
     db   $fc, $08                                      ;; 5e:5053 ..
-
-data_5e_5055:
     dw   $0baa                                         ;; 5e:5055 wW
     db   $06                                           ;; 5e:5057 .
     dw   `13222233                                     ;; 5e:5058 $c3 $7f
@@ -1709,19 +1491,13 @@ data_5e_5055:
     dw   `13331111                                     ;; 5e:505c $ff $70
 
     db   $fc, $05                                      ;; 5e:505e ..
-
-data_5e_5060:
     dw   $00f0                                         ;; 5e:5060 wW
     db   $01                                           ;; 5e:5062 .
     db   %11110000                                     ;; 5e:5063 $f0
 
     db   $fc, $0a                                      ;; 5e:5064 ..
-
-data_5e_5066:
     dw   $0b9e                                         ;; 5e:5066 wW
     db   $fc, $0a                                      ;; 5e:5068 ..
-
-data_5e_506a:
     dw   $0430                                         ;; 5e:506a wW
     db   $0e                                           ;; 5e:506c .
     dw   `23000000                                     ;; 5e:506d $40 $c0
@@ -1733,15 +1509,11 @@ data_5e_506a:
     dw   `13000030                                     ;; 5e:5079 $c2 $42
 
     db   $fc, $14                                      ;; 5e:507b ..
-
-data_5e_507d:
     dw   $0be0                                         ;; 5e:507d wW
     db   $80, $0c                                      ;; 5e:507f ..
     db   %00000000                                     ;; 5e:5081 $00
 
     db   $fc, $10                                      ;; 5e:5082 ..
-
-data_5e_5084:
     dw   $0c00                                         ;; 5e:5084 wW
     db   $1e                                           ;; 5e:5086 .
     dw   `03111111                                     ;; 5e:5087 $7f $40
@@ -1762,8 +1534,6 @@ data_5e_5084:
     dw   `11111333                                     ;; 5e:50a3 $ff $07
 
     db   $fc, $06                                      ;; 5e:50a5 ..
-
-data_5e_50a7:
     dw   $00f2                                         ;; 5e:50a7 wW
     db   $1e                                           ;; 5e:50a9 .
     dw   `11111112                                     ;; 5e:50aa $fe $01
@@ -1784,8 +1554,6 @@ data_5e_50a7:
     dw   `12230000                                     ;; 5e:50c6 $90 $70
 
     db   $fc, $16                                      ;; 5e:50c8 ..
-
-data_5e_50ca:
     dw   $0098                                         ;; 5e:50ca wW
     db   $07                                           ;; 5e:50cc .
     dw   `33330000                                     ;; 5e:50cd $f0 $f0
@@ -1793,12 +1561,8 @@ data_5e_50ca:
     dw   `22223330                                     ;; 5e:50d1 $0e $fe
 
     db   $31, $fc, $08                                 ;; 5e:50d3 ...
-
-data_5e_50d6:
     dw   $0c6f                                         ;; 5e:50d6 wW
     db   $fc, $06                                      ;; 5e:50d8 ..
-
-data_5e_50da:
     dw   $0bb7                                         ;; 5e:50da wW
     db   $03                                           ;; 5e:50dc .
     db   %10000000                                     ;; 5e:50dd $80
@@ -1816,19 +1580,13 @@ data_5e_50da:
     dw   `11300330                                     ;; 5e:50ec $e6 $26
 
     db   $fc, $1c                                      ;; 5e:50ee ..
-
-data_5e_50f0:
     dw   $0bd8                                         ;; 5e:50f0 wW
     db   $02                                           ;; 5e:50f2 .
     dw   `00000000                                     ;; 5e:50f3 $00 $00
 
     db   $fc, $0b                                      ;; 5e:50f5 ..
-
-data_5e_50f7:
     dw   $09f6                                         ;; 5e:50f7 wW
     db   $fc, $13                                      ;; 5e:50f9 ..
-
-data_5e_50fb:
     dw   $0cc1                                         ;; 5e:50fb wW
     db   $10                                           ;; 5e:50fd .
     dw   `33211111                                     ;; 5e:50fe $df $e0
@@ -1841,15 +1599,11 @@ data_5e_50fb:
     dw   `33321111                                     ;; 5e:510c $ef $f0
 
     db   $fc, $06                                      ;; 5e:510e ..
-
-data_5e_5110:
     dw   $0c24                                         ;; 5e:5110 wW
     db   $02                                           ;; 5e:5112 .
     dw   `11111123                                     ;; 5e:5113 $fd $03
 
     db   $fc, $09                                      ;; 5e:5115 ..
-
-data_5e_5117:
     dw   $0c2c                                         ;; 5e:5117 wW
     db   $04                                           ;; 5e:5119 .
     db   %00000000                                     ;; 5e:511a $00
@@ -1857,8 +1611,6 @@ data_5e_5117:
     dw   `11111112                                     ;; 5e:511b $fe $01
 
     db   $ff, $fc, $07                                 ;; 5e:511d ...
-
-data_5e_5120:
     dw   $02d7                                         ;; 5e:5120 wW
     db   $18                                           ;; 5e:5122 .
     dw   `33333000                                     ;; 5e:5123 $f8 $f8
@@ -1876,8 +1628,6 @@ data_5e_5120:
     dw   `22300000                                     ;; 5e:5139 $20 $e0
 
     db   $fc, $06                                      ;; 5e:513b ..
-
-data_5e_513d:
     dw   $0c46                                         ;; 5e:513d wW
     db   $22                                           ;; 5e:513f .
     dw   `00000000                                     ;; 5e:5140 $00 $00
@@ -1941,12 +1691,8 @@ data_5e_513d:
     db   $47, $c7, $06, $ff, $7b, $fc, $9a, $9d        ;; 5e:5292 ........
     db   $52, $5f, $4b, $7b, $ae, $ef, $81, $c7        ;; 5e:529a ........
     db   $00, $81, $fc, $05                            ;; 5e:52a2 ....
-
-data_5e_52a6:
     dw   $00e0                                         ;; 5e:52a6 wW
     db   $01, $80, $fc, $05                            ;; 5e:52a8 ....
-
-data_5e_52ac:
     dw   $0148                                         ;; 5e:52ac wW
     db   $07, $81, $59, $db, $75, $fe, $08, $74        ;; 5e:52ae ........
     db   $80, $07, $00, $3d, $f8, $e0, $e7, $a7        ;; 5e:52b6 ........
@@ -1958,15 +1704,11 @@ data_5e_52ac:
     db   $ef, $16, $ef, $37, $de, $2d, $de, $ff        ;; 5e:52e6 ........
     db   $f0, $7f, $e0, $ff, $c0, $ff, $80, $ff        ;; 5e:52ee ........
     db   $00, $fc, $06                                 ;; 5e:52f6 ...
-
-data_5e_52f9:
     dw   $0198                                         ;; 5e:52f9 wW
     db   $1b, $79, $e6, $e9, $76, $b9, $76, $f9        ;; 5e:52fb ........
     db   $36, $f1, $3e, $dd, $3a, $fd, $1a, $fb        ;; 5e:5303 ........
     db   $1c, $ba, $75, $ff, $71, $dd, $73, $dd        ;; 5e:530b ........
     db   $73, $df, $73, $de, $fc, $05                  ;; 5e:5313 ......
-
-data_5e_5319:
     dw   $01b9                                         ;; 5e:5319 wW
     db   $7f, $6f, $dc, $6f, $dc, $6f, $dc, $6d        ;; 5e:531b ........
     db   $de, $6d, $de, $ed, $de, $ef, $de, $af        ;; 5e:5323 ........
@@ -1985,8 +1727,6 @@ data_5e_5319:
     db   $fc, $7e, $ff, $bc, $be, $fc, $fe, $f0        ;; 5e:538b ........
     db   $fc, $c0, $f3, $03, $cf, $0a, $3b, $b1        ;; 5e:5393 ........
     db   $04, $7d, $00, $03, $01, $fc, $06             ;; 5e:539b .......
-
-data_5e_53a2:
     dw   $0241                                         ;; 5e:53a2 wW
     db   $47, $c3, $c4, $ff, $28, $bf, $94, $df        ;; 5e:53a4 ........
     db   $91, $f1, $e5, $fd, $9a, $9f, $b9, $bf        ;; 5e:53ac ........
@@ -2000,12 +1740,8 @@ data_5e_53a2:
     db   $84, $08, $ff, $00, $11, $cf, $3c, $fd        ;; 5e:53ec ........
     db   $2e, $fb, $2e, $ab, $7e, $a5, $7e, $ac        ;; 5e:53f4 ........
     db   $77, $ed, $77, $ee, $77, $da, $fc, $05        ;; 5e:53fc ........
-
-data_5e_5404:
     dw   $02af                                         ;; 5e:5404 wW
     db   $04, $de, $77, $fd, $57, $fc, $06             ;; 5e:5406 .......
-
-data_5e_540d:
     dw   $02b8                                         ;; 5e:540d wW
     db   $30, $ab, $de, $aa, $df, $aa, $df, $ab        ;; 5e:540f ........
     db   $df, $bd, $cf, $bd, $cf, $bd, $ef, $fd        ;; 5e:5417 ........
@@ -2017,8 +1753,6 @@ data_5e_540d:
     db   $00, $c0, $c0, $a0, $20, $e0, $20, $19        ;; 5e:5447 ........
     db   $39, $06, $1f, $01, $06, $00, $01, $fc        ;; 5e:544f ........
     db   $07                                           ;; 5e:5457 .
-
-data_5e_5458:
     dw   $0306                                         ;; 5e:5458 wW
     db   $1b, $00, $3c, $ff, $73, $ff, $6f, $ff        ;; 5e:545a ........
     db   $de, $fe, $f9, $f9, $c4, $c7, $00, $fc        ;; 5e:5462 ........
@@ -2037,8 +1771,6 @@ data_5e_5458:
     db   $af, $58, $bd, $5a, $fe, $1b, $56, $bb        ;; 5e:54ca ........
     db   $5e, $b3, $7e, $b3, $ff, $32, $f8, $fc        ;; 5e:54d2 ........
     db   $0d                                           ;; 5e:54da .
-
-data_5e_54db:
     dw   $0291                                         ;; 5e:54db wW
     db   $7f, $00, $00, $00, $00, $ea, $7f, $ea        ;; 5e:54dd ........
     db   $7f, $eb, $7f, $eb, $7f, $ad, $7b, $ad        ;; 5e:54e5 ........
@@ -2068,8 +1800,6 @@ data_5e_54db:
     db   $7e, $ff, $f6, $f6, $3c, $7e, $45, $5d        ;; 5e:55a5 ........
     db   $0a, $0a, $20, $20, $04, $04, $30, $30        ;; 5e:55ad ........
     db   $04, $00, $0a, $04, $0f, $fc, $05             ;; 5e:55b5 .......
-
-data_5e_55bc:
     dw   $0475                                         ;; 5e:55bc wW
     db   $6d, $17, $0c, $15, $0e, $01, $00, $02        ;; 5e:55be ........
     db   $01, $83, $01, $45, $83, $47, $83, $e7        ;; 5e:55c6 ........
@@ -2085,25 +1815,17 @@ data_5e_55bc:
     db   $00, $0d, $03, $97, $0f, $f7, $1e, $6f        ;; 5e:5616 ........
     db   $bc, $df, $b8, $ff, $b0, $00, $00, $a0        ;; 5e:561e ........
     db   $00, $f0, $a0, $f8, $60, $ee, $fc, $07        ;; 5e:5626 ........
-
-data_5e_562e:
     dw   $04b9                                         ;; 5e:562e wW
     db   $17, $10, $00, $28, $10, $2c, $18, $6e        ;; 5e:5630 ........
     db   $1c, $ed, $5e, $fb, $4e, $fc, $6f, $f5        ;; 5e:5638 ........
     db   $6f, $f7, $0e, $fb, $c6, $ff, $e2, $5e        ;; 5e:5640 ........
     db   $fc, $09                                      ;; 5e:5648 ..
-
-data_5e_564a:
     dw   $04c7                                         ;; 5e:564a wW
     db   $08, $7f, $ec, $7f, $e8, $5d, $e3, $17        ;; 5e:564c ........
     db   $ef, $fc, $08                                 ;; 5e:5654 ...
-
-data_5e_5657:
     dw   $04d8                                         ;; 5e:5657 wW
     db   $08, $cd, $3e, $f5, $0e, $f1, $ae, $fb        ;; 5e:5659 ........
     db   $64, $fc, $08                                 ;; 5e:5661 ...
-
-data_5e_5664:
     dw   $04b8                                         ;; 5e:5664 wW
     db   $3c, $3b, $3f, $6f, $6f, $3d, $3f, $6b        ;; 5e:5666 ........
     db   $6f, $3f, $3f, $55, $57, $7f, $7f, $37        ;; 5e:566e ........
@@ -2113,8 +1835,6 @@ data_5e_5664:
     db   $ff, $f6, $f6, $bf, $ff, $ed, $fd, $ff        ;; 5e:568e ........
     db   $ff, $00, $0c, $00, $06, $00, $07, $04        ;; 5e:5696 ........
     db   $03, $00, $03, $02, $01, $fc, $05             ;; 5e:569e .......
-
-data_5e_56a5:
     dw   $0307                                         ;; 5e:56a5 wW
     db   $1f, $ce, $45, $ee, $45, $ee, $45, $ee        ;; 5e:56a7 ........
     db   $65, $fe, $e6, $7f, $f6, $7f, $b6, $7f        ;; 5e:56af ........
@@ -2134,8 +1854,6 @@ data_5e_56a5:
     db   $bf, $71, $af, $78, $eb, $3c, $d7, $3c        ;; 5e:571f ........
     db   $f5, $1e, $fc, $83, $75, $8b, $f6, $19        ;; 5e:5727 ........
     db   $f6, $39, $fc, $08                            ;; 5e:572f ....
-
-data_5e_5733:
     dw   $0418                                         ;; 5e:5733 wW
     db   $7f, $fd, $03, $fa, $9d, $fd, $cf, $be        ;; 5e:5735 ........
     db   $e7, $5a, $f7, $6d, $f3, $a6, $79, $d7        ;; 5e:573d ........
@@ -2154,8 +1872,6 @@ data_5e_5733:
     db   $a8, $40, $68, $18, $dc, $00, $fc, $70        ;; 5e:57a5 ........
     db   $f8, $a0, $f0, $80, $e0, $00, $c0, $00        ;; 5e:57ad ........
     db   $fc, $06                                      ;; 5e:57b5 ..
-
-data_5e_57b7:
     dw   $029b                                         ;; 5e:57b7 wW
     db   $7f, $49, $82, $8e, $5e, $5e, $c1, $ff        ;; 5e:57b9 ........
     db   $82, $83, $71, $71, $e0, $1f, $c9, $3e        ;; 5e:57c1 ........
@@ -2177,8 +1893,6 @@ data_5e_57b7:
     db   $f6, $ef, $b5, $f3, $0f, $ba, $77, $77        ;; 5e:5841 ........
     db   $ee, $56, $fd, $ee, $5d, $dc, $2b, $39        ;; 5e:5849 ........
     db   $e7, $fb, $ff, $af, $ff, $fc, $07             ;; 5e:5851 .......
-
-data_5e_5858:
     dw   $0148                                         ;; 5e:5858 wW
     db   $5d, $80, $0e, $80, $3e, $0c, $7e, $3c        ;; 5e:585a ........
     db   $fe, $0c, $70, $e0, $70, $e0, $5d, $e2        ;; 5e:5862 ........
@@ -2192,8 +1906,6 @@ data_5e_5858:
     db   $10, $ef, $b9, $76, $ad, $76, $ff, $00        ;; 5e:58a2 ........
     db   $ba, $c7, $ed, $f3, $7b, $fd, $ee, $1d        ;; 5e:58aa ........
     db   $ff, $00, $00, $00, $0f, $0f, $fc, $08        ;; 5e:58b2 ........
-
-data_5e_58ba:
     dw   $00e1                                         ;; 5e:58ba wW
     db   $40, $77, $77, $08, $0f, $03, $03, $00        ;; 5e:58bc ........
     db   $01, $cb, $cb, $27, $3f, $1a, $1e, $c2        ;; 5e:58c4 ........
@@ -2204,8 +1916,6 @@ data_5e_58ba:
     db   $fd, $cd, $fd, $04, $8b, $00, $00, $00        ;; 5e:58ec ........
     db   $03, $01, $1f, $08, $78, $20, $e0, $c0        ;; 5e:58f4 ........
     db   $c0, $fc, $05                                 ;; 5e:58fc ...
-
-data_5e_58ff:
     dw   $00e0                                         ;; 5e:58ff wW
     db   $1f, $3f, $1c, $ff, $0c, $0f, $08, $0f        ;; 5e:5901 ........
     db   $08, $0f, $10, $1f, $10, $1f, $20, $3f        ;; 5e:5909 ........
@@ -2469,70 +2179,44 @@ data_5e_58ff:
     db   $00, $13, $0c, $23, $1d, $4b, $3d, $93        ;; 5e:6119 ........
     db   $7d, $23, $fd, $3f, $fd, $c3, $07, $7d        ;; 5e:6121 ........
     db   $00, $00, $81, $09, $40, $80, $fc, $06        ;; 5e:6129 ........
-
-data_5e_6131:
     dw   $0048                                         ;; 5e:6131 wW
     db   $20, $27, $c0, $7d, $e3, $fe, $03, $ff        ;; 5e:6133 ........
     db   $43, $fe, $01, $ff, $11, $ff, $03, $ff        ;; 5e:613b ........
     db   $05, $fe, $23, $fe, $0b, $7f, $7f, $80        ;; 5e:6143 ........
     db   $ff, $bf, $ff, $a0, $e0, $a0, $a0, $ff        ;; 5e:614b ........
     db   $ff, $fc, $05                                 ;; 5e:6153 ...
-
-data_5e_6156:
     dw   $0000                                         ;; 5e:6156 wW
     db   $08, $ff, $00, $ff, $ff, $ff, $00, $00        ;; 5e:6158 ........
     db   $00, $fc, $05                                 ;; 5e:6160 ...
-
-data_5e_6163:
     dw   $00b2                                         ;; 5e:6163 wW
     db   $fc, $05                                      ;; 5e:6165 ..
-
-data_5e_6167:
     dw   $00b5                                         ;; 5e:6167 wW
     db   $03, $00, $ff, $ff, $fc, $05                  ;; 5e:6169 ......
-
-data_5e_616f:
     dw   $00c2                                         ;; 5e:616f wW
     db   $fc, $05                                      ;; 5e:6171 ..
-
-data_5e_6173:
     dw   $00c9                                         ;; 5e:6173 wW
     db   $07, $c7, $00, $ff, $0f, $f0, $7f, $80        ;; 5e:6175 ........
     db   $fc, $07                                      ;; 5e:617d ..
-
-data_5e_617f:
     dw   $00c9                                         ;; 5e:617f wW
     db   $06, $00, $ff, $eb, $08, $e8, $eb, $84        ;; 5e:6181 ........
     db   $06, $08, $e3, $11, $fe, $5f, $fd, $7f        ;; 5e:6189 ........
     db   $ee, $ff, $5c, $ff, $44, $ff, $20, $ff        ;; 5e:6191 ........
     db   $21, $ff, $2b, $ff, $7f, $fc, $05             ;; 5e:6199 .......
-
-data_5e_61a0:
     dw   $0001                                         ;; 5e:61a0 wW
     db   $06, $ef, $90, $7f, $80, $fd, $82, $fc        ;; 5e:61a2 ........
     db   $05                                           ;; 5e:61aa .
-
-data_5e_61ab:
     dw   $0000                                         ;; 5e:61ab wW
     db   $fc, $07                                      ;; 5e:61ad ..
-
-data_5e_61af:
     dw   $00d8                                         ;; 5e:61af wW
     db   $02, $fb, $04, $fc, $06                       ;; 5e:61b1 .....
-
-data_5e_61b6:
     dw   $00c9                                         ;; 5e:61b6 wW
     db   $1a, $8f, $f0, $0f, $f0, $1d, $e2, $3f        ;; 5e:61b8 ........
     db   $c0, $7f, $80, $7f, $80, $5f, $a0, $7f        ;; 5e:61c0 ........
     db   $80, $13, $0f, $11, $0f, $79, $0f, $4f        ;; 5e:61c8 ........
     db   $33, $43, $3d, $fc, $06                       ;; 5e:61d0 .....
-
-data_5e_61d5:
     dw   $006a                                         ;; 5e:61d5 wW
     db   $08, $6e, $c0, $b3, $cc, $63, $dd, $cb        ;; 5e:61d7 ........
     db   $bd, $fc, $08                                 ;; 5e:61df ...
-
-data_5e_61e2:
     dw   $0078                                         ;; 5e:61e2 wW
     db   $58, $52, $3c, $92, $7c, $62, $bc, $66        ;; 5e:61e4 ........
     db   $bc, $6c, $d8, $b8, $c0, $3f, $d8, $7d        ;; 5e:61ec ........
@@ -2546,33 +2230,21 @@ data_5e_61e2:
     db   $17, $fe, $43, $fe, $07, $ff, $27, $ff        ;; 5e:622c ........
     db   $0f, $ff, $ff, $a0, $e0, $a0, $e0, $ff        ;; 5e:6234 ........
     db   $ff, $80, $06, $80, $01, $ff, $fc, $09        ;; 5e:623c ........
-
-data_5e_6244:
     dw   $00b3                                         ;; 5e:6244 wW
     db   $80, $06, $00, $08, $ff, $ff, $00, $ff        ;; 5e:6246 ........
     db   $b7, $48, $f5, $0a, $fc, $06                  ;; 5e:624e ......
-
-data_5e_6254:
     dw   $00ca                                         ;; 5e:6254 wW
     db   $04, $6b, $94, $3b, $c4, $84, $07, $00        ;; 5e:6256 ........
     db   $ff, $02, $00, $c0, $fc, $05                  ;; 5e:625e ......
-
-data_5e_6264:
     dw   $00e4                                         ;; 5e:6264 wW
     db   $1c, $c3, $28, $a1, $6a, $76, $34, $ff        ;; 5e:6266 ........
     db   $00, $07, $f8, $00, $ff, $20, $ff, $70        ;; 5e:626e ........
     db   $ff, $19, $ff, $28, $ff, $06, $ff, $47        ;; 5e:6276 ........
     db   $ff, $04, $ff, $90, $ff, $fc, $09             ;; 5e:627e .......
-
-data_5e_6285:
     dw   $0007                                         ;; 5e:6285 wW
     db   $05, $fd, $82, $ff, $80, $d5, $fc, $07        ;; 5e:6287 ........
-
-data_5e_628f:
     dw   $00c8                                         ;; 5e:628f wW
     db   $02, $fd, $02, $fc, $06                       ;; 5e:6291 .....
-
-data_5e_6296:
     dw   $00c9                                         ;; 5e:6296 wW
     db   $02, $93, $ff, $84, $05, $fe, $01, $56        ;; 5e:6298 ........
     db   $de, $21, $fe, $01, $93, $ff, $7f, $00        ;; 5e:62a0 ........
@@ -2586,24 +2258,16 @@ data_5e_6296:
     db   $ff, $41, $bf, $41, $bf, $41, $ff, $10        ;; 5e:62e0 ........
     db   $e7, $bf, $7a, $67, $78, $4f, $37, $3c        ;; 5e:62e8 ........
     db   $07, $04, $02, $03, $10, $10, $fc, $0f        ;; 5e:62f0 ........
-
-data_5e_62f8:
     dw   $0080                                         ;; 5e:62f8 wW
     db   $17, $e2, $fe, $07, $fe, $9f, $ff, $0f        ;; 5e:62fa ........
     db   $fe, $1f, $ff, $4f, $fe, $17, $ff, $27        ;; 5e:6302 ........
     db   $fe, $0b, $bf, $ff, $bf, $ff, $ff, $c0        ;; 5e:630a ........
     db   $fc, $05                                      ;; 5e:6312 ..
-
-data_5e_6314:
     dw   $0000                                         ;; 5e:6314 wW
     db   $04, $bf, $ff, $ff, $bf, $80, $06, $ff        ;; 5e:6316 ........
     db   $fc, $06                                      ;; 5e:631e ..
-
-data_5e_6320:
     dw   $00ca                                         ;; 5e:6320 wW
     db   $fc, $0d                                      ;; 5e:6322 ..
-
-data_5e_6324:
     dw   $02b0                                         ;; 5e:6324 wW
     db   $80, $06, $3c, $23, $18, $18, $62, $7f        ;; 5e:6326 ........
     db   $46, $7f, $45, $7f, $45, $7e, $45, $7e        ;; 5e:632e ........
@@ -2614,8 +2278,6 @@ data_5e_6324:
     db   $84, $ff, $80, $7f, $00, $7f, $00, $ff        ;; 5e:6356 ........
     db   $80, $7f, $00, $ef, $90, $ff, $00, $ef        ;; 5e:635e ........
     db   $10, $fc, $06                                 ;; 5e:6366 ...
-
-data_5e_6369:
     dw   $00c9                                         ;; 5e:6369 wW
     db   $7f, $fe, $01, $ff, $00, $ff, $00, $7f        ;; 5e:636b ........
     db   $80, $fc, $83, $fd, $82, $fd, $82, $fb        ;; 5e:6373 ........
@@ -2637,45 +2299,27 @@ data_5e_6369:
     db   $c0, $c0, $80, $80, $80, $80, $bf, $bf        ;; 5e:63f3 ........
     db   $ff, $ff, $bf, $bf, $ff, $e0, $ff, $80        ;; 5e:63fb ........
     db   $fc, $08                                      ;; 5e:6403 ..
-
-data_5e_6405:
     dw   $01b8                                         ;; 5e:6405 wW
     db   $fc, $08                                      ;; 5e:6407 ..
-
-data_5e_6409:
     dw   $02b0                                         ;; 5e:6409 wW
     db   $01, $e7, $fc, $05                            ;; 5e:640b ....
-
-data_5e_640f:
     dw   $00ab                                         ;; 5e:640f wW
     db   $fc, $0a                                      ;; 5e:6411 ..
-
-data_5e_6413:
     dw   $0106                                         ;; 5e:6413 wW
     db   $07, $41, $7f, $41, $7f, $41, $7f, $40        ;; 5e:6415 ........
     db   $fc, $06                                      ;; 5e:641d ..
-
-data_5e_641f:
     dw   $03d5                                         ;; 5e:641f wW
     db   $0a, $5f, $60, $6f, $54, $ff, $04, $ff        ;; 5e:6421 ........
     db   $8c, $77, $f8, $fc, $09                       ;; 5e:6429 .....
-
-data_5e_642e:
     dw   $00d7                                         ;; 5e:642e wW
     db   $14, $ff, $02, $ff, $02, $ff, $01, $fe        ;; 5e:6430 ........
     db   $01, $fe, $02, $fc, $02, $fc, $40, $fc        ;; 5e:6438 ........
     db   $44, $80, $ff, $80, $db, $fc, $05             ;; 5e:6440 .......
-
-data_5e_6447:
     dw   $0001                                         ;; 5e:6447 wW
     db   $09, $f5, $80, $ff, $80, $df, $80, $fb        ;; 5e:6449 ........
     db   $00, $db, $fc, $05                            ;; 5e:6451 ....
-
-data_5e_6455:
     dw   $00ca                                         ;; 5e:6455 wW
     db   $01, $f5, $fc, $05                            ;; 5e:6457 ....
-
-data_5e_645b:
     dw   $00ca                                         ;; 5e:645b wW
     db   $7f, $7d, $00, $ef, $f0, $ff, $f8, $fb        ;; 5e:645d ........
     db   $98, $be, $88, $fd, $84, $df, $84, $ad        ;; 5e:6465 ........
@@ -2694,52 +2338,32 @@ data_5e_645b:
     db   $e0, $60, $e0, $e0, $fc, $0f, $ff, $1f        ;; 5e:64cd ........
     db   $fd, $2f, $ff, $9f, $fc, $0f, $fe, $3f        ;; 5e:64d5 ........
     db   $04, $fe, $5f, $fc, $3f, $fc, $07             ;; 5e:64dd .......
-
-data_5e_64e4:
     dw   $02a8                                         ;; 5e:64e4 wW
     db   $09, $bf, $bf, $bf, $9f, $bf, $c0, $ff        ;; 5e:64e6 ........
     db   $7f, $7f, $fc, $08                            ;; 5e:64ee ....
-
-data_5e_64f2:
     dw   $02b8                                         ;; 5e:64f2 wW
     db   $fc, $06                                      ;; 5e:64f4 ..
-
-data_5e_64f6:
     dw   $02b1                                         ;; 5e:64f6 wW
     db   $03, $ff, $ff, $57, $fc, $07                  ;; 5e:64f8 ......
-
-data_5e_64fe:
     dw   $00c8                                         ;; 5e:64fe wW
     db   $fc, $08                                      ;; 5e:6500 ..
-
-data_5e_6502:
     dw   $0118                                         ;; 5e:6502 wW
     db   $10, $00, $80, $20, $a0, $20, $af, $21        ;; 5e:6504 ........
     db   $af, $28, $af, $20, $a0, $3f, $a0, $00        ;; 5e:650c ........
     db   $c0, $fc, $06                                 ;; 5e:6514 ...
-
-data_5e_6517:
     dw   $00bf                                         ;; 5e:6517 wW
     db   $05, $02, $ff, $28, $ff, $00, $fc, $05        ;; 5e:6519 ........
-
-data_5e_6521:
     dw   $00bd                                         ;; 5e:6521 wW
     db   $16, $f8, $44, $f8, $48, $f8, $c8, $f8        ;; 5e:6523 ........
     db   $c8, $f8, $c8, $f0, $c8, $f8, $c8, $f8        ;; 5e:652b ........
     db   $48, $ff, $20, $ff, $20, $ff, $10, $fc        ;; 5e:6533 ........
     db   $05                                           ;; 5e:653b .
-
-data_5e_653c:
     dw   $0504                                         ;; 5e:653c wW
     db   $01, $08, $fc, $05                            ;; 5e:653e ....
-
-data_5e_6542:
     dw   $050a                                         ;; 5e:6542 wW
     db   $0f, $18, $ff, $1c, $ff, $08, $ff, $1c        ;; 5e:6544 ........
     db   $ff, $0c, $f7, $1e, $fb, $0c, $ff, $0e        ;; 5e:654c ........
     db   $fc, $05                                      ;; 5e:6554 ..
-
-data_5e_6556:
     dw   $050e                                         ;; 5e:6556 wW
     db   $1b, $08, $ff, $08, $f7, $0c, $ff, $0c        ;; 5e:6558 ........
     db   $f7, $0c, $fb, $06, $ff, $40, $ff, $00        ;; 5e:6560 ........
@@ -2748,8 +2372,6 @@ data_5e_6556:
     db   $04, $ff, $41, $ff, $41, $84, $05, $ff        ;; 5e:6578 ........
     db   $c1, $08, $ff, $41, $fe, $13, $fe, $13        ;; 5e:6580 ........
     db   $ff, $01, $fc, $05                            ;; 5e:6588 ....
-
-data_5e_658c:
     dw   $0564                                         ;; 5e:658c wW
     db   $4b, $09, $ff, $09, $ff, $01, $ff, $90        ;; 5e:658e ........
     db   $ff, $92, $7f, $93, $7f, $92, $7f, $93        ;; 5e:6596 ........
@@ -2761,16 +2383,12 @@ data_5e_658c:
     db   $00, $00, $01, $01, $07, $06, $1f, $18        ;; 5e:65c6 ........
     db   $38, $27, $40, $7f, $80, $ff, $07, $07        ;; 5e:65ce ........
     db   $3f, $38, $ff, $c0, $fc, $05                  ;; 5e:65d6 ......
-
-data_5e_65dc:
     dw   $04e9                                         ;; 5e:65dc wW
     db   $1e, $ff, $00, $ff, $03, $fc, $ff, $ff        ;; 5e:65de ........
     db   $c1, $3e, $e3, $1c, $ff, $08, $76, $9d        ;; 5e:65e6 ........
     db   $14, $ff, $ff, $08, $f7, $08, $f0, $48        ;; 5e:65ee ........
     db   $f0, $e8, $f0, $e8, $f0, $c8, $f8, $fc        ;; 5e:65f6 ........
     db   $05                                           ;; 5e:65fe .
-
-data_5e_65ff:
     dw   $05d5                                         ;; 5e:65ff wW
     db   $22, $f8, $88, $ff, $05, $ff, $92, $ff        ;; 5e:6601 ........
     db   $2b, $df, $ff, $ff, $ff, $6b, $ff, $b6        ;; 5e:6609 ........
@@ -2778,8 +2396,6 @@ data_5e_65ff:
     db   $cf, $fd, $3f, $ef, $ff, $ff, $ff, $d9        ;; 5e:6619 ........
     db   $ff, $12, $ff, $84, $05, $ff, $04, $fc        ;; 5e:6621 ........
     db   $05                                           ;; 5e:6629 .
-
-data_5e_662a:
     dw   $03f0                                         ;; 5e:662a wW
     db   $7f, $02, $fb, $0c, $ff, $0e, $fb, $0e        ;; 5e:662c ........
     db   $fb, $0e, $ff, $06, $f9, $06, $fd, $06        ;; 5e:6634 ........
@@ -2800,19 +2416,13 @@ data_5e_662a:
     db   $12, $fc, $f8, $de, $fe, $dc, $f8, $b9        ;; 5e:66ac ........
     db   $f9, $72, $e0, $ea, $ca, $80, $00, $42        ;; 5e:66b4 ........
     db   $42, $a8, $a8, $fc, $06                       ;; 5e:66bc .....
-
-data_5e_66c1:
     dw   $03d6                                         ;; 5e:66c1 wW
     db   $0e, $41, $7e, $43, $7c, $47, $78, $4f        ;; 5e:66c3 ........
     db   $70, $5f, $60, $0f, $f0, $3f, $c0, $fc        ;; 5e:66cb ........
     db   $06                                           ;; 5e:66d3 .
-
-data_5e_66d4:
     dw   $0316                                         ;; 5e:66d4 wW
     db   $0c, $fe, $01, $fc, $03, $fc, $03, $e3        ;; 5e:66d6 ........
     db   $1c, $c1, $3e, $80, $7f, $fc, $0a             ;; 5e:66de .......
-
-data_5e_66e5:
     dw   $01d0                                         ;; 5e:66e5 wW
     db   $2f, $f8, $a8, $f8, $f0, $f8, $e0, $f8        ;; 5e:66e7 ........
     db   $f4, $fc, $74, $fc, $e2, $fe, $e3, $ff        ;; 5e:66ef ........
@@ -2821,31 +2431,19 @@ data_5e_66e5:
     db   $ff, $fe, $b7, $fd, $5f, $ee, $ff, $d5        ;; 5e:6707 ........
     db   $ff, $6b, $ff, $f6, $ff, $a9, $ff, $5e        ;; 5e:670f ........
     db   $fc, $07                                      ;; 5e:6717 ..
-
-data_5e_6719:
     dw   $03ef                                         ;; 5e:6719 wW
     db   $fc, $07                                      ;; 5e:671b ..
-
-data_5e_671d:
     dw   $0564                                         ;; 5e:671d wW
     db   $0e, $41, $ff, $41, $ff, $07, $ff, $07        ;; 5e:671f ........
     db   $fd, $07, $fd, $07, $ff, $03, $fd, $fc        ;; 5e:6727 ........
     db   $05                                           ;; 5e:672f .
-
-data_5e_6730:
     dw   $0719                                         ;; 5e:6730 wW
     db   $fc, $05                                      ;; 5e:6732 ..
-
-data_5e_6734:
     dw   $0702                                         ;; 5e:6734 wW
     db   $03, $00, $ff, $01, $fc, $05                  ;; 5e:6736 ......
-
-data_5e_673c:
     dw   $0500                                         ;; 5e:673c wW
     db   $07, $20, $ff, $a0, $ff, $83, $ff, $c3        ;; 5e:673e ........
     db   $fc, $05                                      ;; 5e:6746 ..
-
-data_5e_6748:
     dw   $0730                                         ;; 5e:6748 wW
     db   $55, $a1, $ff, $d3, $ff, $61, $ff, $31        ;; 5e:674a ........
     db   $ef, $34, $ef, $3a, $ff, $15, $e7, $1a        ;; 5e:6752 ........
@@ -2858,29 +2456,19 @@ data_5e_6748:
     db   $00, $00, $02, $02, $28, $28, $00, $00        ;; 5e:678a ........
     db   $f0, $a0, $c0, $40, $18, $08, $18, $10        ;; 5e:6792 ........
     db   $88, $88, $02, $02, $20, $20, $fc, $07        ;; 5e:679a ........
-
-data_5e_67a2:
     dw   $05b7                                         ;; 5e:67a2 wW
     db   $fc, $0b                                      ;; 5e:67a4 ..
-
-data_5e_67a6:
     dw   $01d0                                         ;; 5e:67a6 wW
     db   $01, $bf, $fc, $05                            ;; 5e:67a8 ....
-
-data_5e_67ac:
     dw   $02a5                                         ;; 5e:67ac wW
     db   $1a, $7f, $60, $1f, $18, $07, $04, $03        ;; 5e:67ae ........
     db   $03, $00, $00, $f8, $07, $f8, $07, $f8        ;; 5e:67b6 ........
     db   $07, $f0, $0f, $f0, $0f, $f0, $0f, $f1        ;; 5e:67be ........
     db   $0e, $f7, $cf, $fc, $0c                       ;; 5e:67c6 .....
-
-data_5e_67cb:
     dw   $01d0                                         ;; 5e:67cb wW
     db   $14, $ff, $ff, $1c, $1c, $00, $ff, $00        ;; 5e:67cd ........
     db   $6e, $00, $ff, $00, $fb, $00, $df, $00        ;; 5e:67d5 ........
     db   $ff, $00, $7e, $00, $ff, $fc, $05             ;; 5e:67dd .......
-
-data_5e_67e4:
     dw   $0004                                         ;; 5e:67e4 wW
     db   $1b, $81, $7f, $c3, $3f, $ff, $1f, $fe        ;; 5e:67e6 ........
     db   $79, $ce, $f8, $8f, $00, $00, $02, $12        ;; 5e:67ee ........
@@ -3009,8 +2597,6 @@ data_5e_67e4:
     dw   `23333320                                     ;; 5e:68c6 $7c $fe
 
     db   $c0, $fc, $05                                 ;; 5e:68c8 ...
-
-data_5e_68cb:
     dw   $005e                                         ;; 5e:68cb wW
     db   $08                                           ;; 5e:68cd .
     dw   `00032200                                     ;; 5e:68ce $10 $1c
@@ -3094,8 +2680,6 @@ data_5e_68cb:
     dw   `12332221                                     ;; 5e:6956 $b1 $7e
 
     db   $fc, $05                                      ;; 5e:6958 ..
-
-data_5e_695a:
     dw   $005f                                         ;; 5e:695a wW
     db   $1f                                           ;; 5e:695c .
     db   %10000000                                     ;; 5e:695d $80
@@ -3162,8 +2746,6 @@ data_5e_695a:
     dw   `00000003                                     ;; 5e:69b4 $01 $01
 
     db   $04, $fc, $05                                 ;; 5e:69b6 ...
-
-data_5e_69b9:
     dw   $006f                                         ;; 5e:69b9 wW
     db   $0d                                           ;; 5e:69bb .
     dw   `11112222                                     ;; 5e:69bc $f0 $0f
@@ -3206,8 +2788,6 @@ data_5e_69b9:
     dw   `11122100                                     ;; 5e:69fe $e4 $18
 
     db   $e9, $fc, $0d                                 ;; 5e:6a00 ...
-
-data_5e_6a03:
     dw   $0223                                         ;; 5e:6a03 wW
     db   $58                                           ;; 5e:6a05 .
     dw   `20010111                                     ;; 5e:6a06 $17 $80
@@ -3261,8 +2841,6 @@ data_5e_6a03:
     dw   `00000003                                     ;; 5e:6a5c $01 $01
 
     db   $fc, $05                                      ;; 5e:6a5e ..
-
-data_5e_6a60:
     dw   $01a2                                         ;; 5e:6a60 wW
     db   $4f                                           ;; 5e:6a62 .
     db   %00000001                                     ;; 5e:6a63 $01
@@ -3312,8 +2890,6 @@ data_5e_6a60:
     dw   `11111111                                     ;; 5e:6ab0 $ff $00
 
     db   $fc, $05                                      ;; 5e:6ab2 ..
-
-data_5e_6ab4:
     dw   $005c                                         ;; 5e:6ab4 wW
     db   $01                                           ;; 5e:6ab6 .
     db   %00000010                                     ;; 5e:6ab7 $02
@@ -3334,8 +2910,6 @@ data_5e_6ab4:
     dw   `00011123                                     ;; 5e:6acd $1d $03
 
     db   $1d, $fc, $09                                 ;; 5e:6acf ...
-
-data_5e_6ad2:
     dw   $01c9                                         ;; 5e:6ad2 wW
     db   $4d                                           ;; 5e:6ad4 .
     dw   `00000003                                     ;; 5e:6ad5 $01 $01
@@ -3382,8 +2956,6 @@ data_5e_6ad2:
     dw   `32232323                                     ;; 5e:6b1f $95 $ff
 
     db   $b4, $fc, $05                                 ;; 5e:6b21 ...
-
-data_5e_6b24:
     dw   $0373                                         ;; 5e:6b24 wW
     db   $1a                                           ;; 5e:6b26 .
     dw   `33332222                                     ;; 5e:6b27 $f0 $ff
@@ -3413,8 +2985,6 @@ data_5e_6b24:
     dw   `00111113                                     ;; 5e:6b4d $3f $01
 
     db   $7c, $fc, $05                                 ;; 5e:6b4f ...
-
-data_5e_6b52:
     dw   $006f                                         ;; 5e:6b52 wW
     db   $7a                                           ;; 5e:6b54 .
     dw   `21111111                                     ;; 5e:6b55 $7f $80
@@ -3487,8 +3057,6 @@ data_5e_6b52:
     dw   `00000003                                     ;; 5e:6bcd $01 $01
 
     db   $fc, $06                                      ;; 5e:6bcf ..
-
-data_5e_6bd1:
     dw   $01c8                                         ;; 5e:6bd1 wW
     db   $10                                           ;; 5e:6bd3 .
     dw   `11221111                                     ;; 5e:6bd4 $cf $30
@@ -3544,12 +3112,8 @@ data_5e_6bd1:
     dw   `22210000                                     ;; 5e:6c2b $10 $e0
 
     db   $f0, $fc, $05                                 ;; 5e:6c2d ...
-
-data_5e_6c30:
     dw   $0070                                         ;; 5e:6c30 wW
     db   $fc, $07                                      ;; 5e:6c32 ..
-
-data_5e_6c34:
     dw   $0164                                         ;; 5e:6c34 wW
     db   $05                                           ;; 5e:6c36 .
     db   %10100000                                     ;; 5e:6c37 $a0
@@ -3597,8 +3161,6 @@ data_5e_6c34:
     dw   `11213233                                     ;; 5e:6c7a $db $2f
 
     db   $fc, $06                                      ;; 5e:6c7c ..
-
-data_5e_6c7e:
     dw   $0303                                         ;; 5e:6c7e wW
     db   $49                                           ;; 5e:6c80 .
     dw   `00000001                                     ;; 5e:6c81 $01 $00
@@ -3701,8 +3263,6 @@ data_5e_6c7e:
     dw   `12000000                                     ;; 5e:6d2c $80 $40
 
     db   $fc, $06                                      ;; 5e:6d2e ..
-
-data_5e_6d30:
     dw   $0560                                         ;; 5e:6d30 wW
     db   $0a                                           ;; 5e:6d32 .
     dw   `12212213                                     ;; 5e:6d33 $93 $6d
@@ -3712,8 +3272,6 @@ data_5e_6d30:
     dw   `00000000                                     ;; 5e:6d3b $00 $00
 
     db   $fc, $0a                                      ;; 5e:6d3d ..
-
-data_5e_6d3f:
     dw   $00f0                                         ;; 5e:6d3f wW
     db   $14                                           ;; 5e:6d41 .
     dw   `00222222                                     ;; 5e:6d42 $00 $3f
@@ -3729,12 +3287,8 @@ data_5e_6d3f:
     dw   `00000221                                     ;; 5e:6d54 $01 $06
 
     db   $fc, $06                                      ;; 5e:6d56 ..
-
-data_5e_6d58:
     dw   $04de                                         ;; 5e:6d58 wW
     db   $01, $e3, $fc, $05                            ;; 5e:6d5a ....
-
-data_5e_6d5e:
     dw   $04e5                                         ;; 5e:6d5e wW
     db   $0b                                           ;; 5e:6d60 .
     dw   `11112233                                     ;; 5e:6d61 $f3 $0f
@@ -3744,8 +3298,6 @@ data_5e_6d5e:
     dw   `00000112                                     ;; 5e:6d69 $06 $01
 
     db   $07, $fc, $06                                 ;; 5e:6d6b ...
-
-data_5e_6d6e:
     dw   $04f1                                         ;; 5e:6d6e wW
     db   $26                                           ;; 5e:6d70 .
     db   %00000010                                     ;; 5e:6d71 $02
@@ -3772,12 +3324,8 @@ data_5e_6d6e:
     dw   `11111212                                     ;; 5e:6d94 $fa $05
 
     db   $f9, $fc, $05                                 ;; 5e:6d96 ...
-
-data_5e_6d99:
     dw   $0533                                         ;; 5e:6d99 wW
     db   $01, $fd, $fc, $05                            ;; 5e:6d9b ....
-
-data_5e_6d9f:
     dw   $0537                                         ;; 5e:6d9f wW
     db   $03                                           ;; 5e:6da1 .
     dw   `33333332                                     ;; 5e:6da2 $fe $ff
@@ -3845,8 +3393,6 @@ data_5e_6d9f:
     dw   `33333233                                     ;; 5e:6e0d $fb $ff
 
     db   $fb, $fc, $05                                 ;; 5e:6e0f ...
-
-data_5e_6e12:
     dw   $0537                                         ;; 5e:6e12 wW
     db   $39                                           ;; 5e:6e14 .
     dw   `33233333                                     ;; 5e:6e15 $df $ff
@@ -3882,12 +3428,8 @@ data_5e_6e12:
     dw   `12323323                                     ;; 5e:6e4b $ad $7f
 
     db   $01, $fc, $05                                 ;; 5e:6e4d ...
-
-data_5e_6e50:
     dw   $0082                                         ;; 5e:6e50 wW
     db   $01, $00, $fc, $05                            ;; 5e:6e52 ....
-
-data_5e_6e56:
     dw   $02a7                                         ;; 5e:6e56 wW
     db   $1f                                           ;; 5e:6e58 .
     dw   `00000000                                     ;; 5e:6e59 $00 $00
@@ -3908,8 +3450,6 @@ data_5e_6e56:
     dw   `23322333                                     ;; 5e:6e75 $67 $ff
 
     db   $66, $fc, $05                                 ;; 5e:6e77 ...
-
-data_5e_6e7a:
     dw   $0709                                         ;; 5e:6e7a wW
     db   $0d                                           ;; 5e:6e7c .
     dw   `33332332                                     ;; 5e:6e7d $f6 $ff
@@ -3920,12 +3460,8 @@ data_5e_6e7a:
     dw   `33333232                                     ;; 5e:6e87 $fa $ff
 
     db   $fb, $fc, $05                                 ;; 5e:6e89 ...
-
-data_5e_6e8c:
     dw   $0719                                         ;; 5e:6e8c wW
     db   $fc, $06                                      ;; 5e:6e8e ..
-
-data_5e_6e90:
     dw   $06a2                                         ;; 5e:6e90 wW
     db   $80, $08                                      ;; 5e:6e92 ..
     db   %11111111                                     ;; 5e:6e94 $ff
@@ -3997,8 +3533,6 @@ data_5e_6e90:
     dw   `11112333                                     ;; 5e:6f06 $f7 $0f
 
     db   $a3, $fc, $05                                 ;; 5e:6f08 ...
-
-data_5e_6f0b:
     dw   $04e3                                         ;; 5e:6f0b wW
     db   $33                                           ;; 5e:6f0d .
     dw   `11212233                                     ;; 5e:6f0e $d3 $2f
@@ -4031,8 +3565,6 @@ data_5e_6f0b:
     dw   `22112111                                     ;; 5e:6f3e $37 $c8
 
     db   $c1, $fc, $05                                 ;; 5e:6f40 ...
-
-data_5e_6f43:
     dw   $0392                                         ;; 5e:6f43 wW
     db   $0f                                           ;; 5e:6f45 .
     dw   `33321111                                     ;; 5e:6f46 $ef $f0
@@ -4085,8 +3617,6 @@ data_5e_6f43:
     dw   `00000003                                     ;; 5e:6f87 $01 $01
 
     db   $fc, $06                                      ;; 5e:6f89 ..
-
-data_5e_6f8b:
     dw   $001e                                         ;; 5e:6f8b wW
     db   $16                                           ;; 5e:6f8d .
     dw   `00300003                                     ;; 5e:6f8e $21 $21
@@ -4109,8 +3639,6 @@ data_5e_6f8b:
     dw   `03330000                                     ;; 5e:6fa8 $70 $70
 
     db   $fc, $06                                      ;; 5e:6faa ..
-
-data_5e_6fac:
     dw   $0042                                         ;; 5e:6fac wW
     db   $80, $08, $00, $02                            ;; 5e:6fae ....
     dw   `00003333                                     ;; 5e:6fb2 $0f $0f
@@ -4263,8 +3791,6 @@ data_5e_6fac:
     dw   `33332122                                     ;; 5e:70ad $f4 $fb
 
     db   $f4, $fc, $05                                 ;; 5e:70af ...
-
-data_5e_70b2:
     dw   $0151                                         ;; 5e:70b2 wW
     db   $08                                           ;; 5e:70b4 .
     dw   `33322122                                     ;; 5e:70b5 $e4 $fb
@@ -4280,8 +3806,6 @@ data_5e_70b2:
     dw   `23333333                                     ;; 5e:70c4 $7f $ff
 
     db   $fc, $0a                                      ;; 5e:70c6 ..
-
-data_5e_70c8:
     dw   $0190                                         ;; 5e:70c8 wW
     db   $28                                           ;; 5e:70ca .
     dw   `33321122                                     ;; 5e:70cb $ec $f3
@@ -4308,8 +3832,6 @@ data_5e_70c8:
     dw   `33221123                                     ;; 5e:70f1 $cd $f3
 
     db   $fc, $06                                      ;; 5e:70f3 ..
-
-data_5e_70f5:
     dw   $0162                                         ;; 5e:70f5 wW
     db   $08                                           ;; 5e:70f7 .
     dw   `33321232                                     ;; 5e:70f8 $ea $f7
@@ -4318,8 +3840,6 @@ data_5e_70f5:
     dw   `33221232                                     ;; 5e:70fe $ca $f7
 
     db   $fc, $0c                                      ;; 5e:7100 ..
-
-data_5e_7102:
     dw   $01a2                                         ;; 5e:7102 wW
     db   $0f                                           ;; 5e:7104 .
     dw   `33333333                                     ;; 5e:7105 $ff $ff
@@ -4331,8 +3851,6 @@ data_5e_7102:
     dw   `31233332                                     ;; 5e:7111 $de $bf
 
     db   $de, $fc, $05                                 ;; 5e:7113 ...
-
-data_5e_7116:
     dw   $017b                                         ;; 5e:7116 wW
     db   $0a                                           ;; 5e:7118 .
     dw   `22112233                                     ;; 5e:7119 $33 $cf
@@ -4342,8 +3860,6 @@ data_5e_7116:
     dw   `32123333                                     ;; 5e:7121 $af $df
 
     db   $fc, $06                                      ;; 5e:7123 ..
-
-data_5e_7125:
     dw   $0218                                         ;; 5e:7125 wW
     db   $11                                           ;; 5e:7127 .
     dw   `33222122                                     ;; 5e:7128 $c4 $fb
@@ -4356,8 +3872,6 @@ data_5e_7125:
     dw   `33321222                                     ;; 5e:7136 $e8 $f7
 
     db   $ff, $fc, $05                                 ;; 5e:7138 ...
-
-data_5e_713b:
     dw   $01ab                                         ;; 5e:713b wW
     db   $03                                           ;; 5e:713d .
     dw   `22333333                                     ;; 5e:713e $3f $ff
@@ -4369,8 +3883,6 @@ data_5e_713b:
     dw   `33322222                                     ;; 5e:7145 $e0 $ff
 
     db   $f1, $fc, $05                                 ;; 5e:7147 ...
-
-data_5e_714a:
     dw   $0157                                         ;; 5e:714a wW
     db   $2c                                           ;; 5e:714c .
     dw   `33332222                                     ;; 5e:714d $f0 $ff
@@ -4399,16 +3911,12 @@ data_5e_714a:
     dw   `33321122                                     ;; 5e:7177 $ec $f3
 
     db   $fc, $08                                      ;; 5e:7179 ..
-
-data_5e_717b:
     dw   $0168                                         ;; 5e:717b wW
     db   $04                                           ;; 5e:717d .
     dw   `33322122                                     ;; 5e:717e $e4 $fb
     dw   `33322122                                     ;; 5e:7180 $e4 $fb
 
     db   $fc, $06                                      ;; 5e:7182 ..
-
-data_5e_7184:
     dw   $0232                                         ;; 5e:7184 wW
     db   $01, $8f, $80, $07                            ;; 5e:7186 ....
     db   %11111111                                     ;; 5e:718a $ff
@@ -4424,12 +3932,8 @@ data_5e_7184:
     dw   `33332122                                     ;; 5e:719a $f4 $fb
 
     db   $f0, $fc, $0b                                 ;; 5e:719c ...
-
-data_5e_719f:
     dw   $01f3                                         ;; 5e:719f wW
     db   $01, $bf, $fc, $05                            ;; 5e:71a1 ....
-
-data_5e_71a5:
     dw   $02a9                                         ;; 5e:71a5 wW
     db   $09                                           ;; 5e:71a7 .
     dw   `11233332                                     ;; 5e:71a8 $de $3f
@@ -4438,8 +3942,6 @@ data_5e_71a5:
     dw   `21223332                                     ;; 5e:71ae $4e $bf
 
     db   $de, $fc, $05                                 ;; 5e:71b0 ...
-
-data_5e_71b3:
     dw   $01cb                                         ;; 5e:71b3 wW
     db   $22                                           ;; 5e:71b5 .
     dw   `12333322                                     ;; 5e:71b6 $bc $7f
@@ -4463,12 +3965,8 @@ data_5e_71b3:
     dw   `32221112                                     ;; 5e:71d6 $8e $f1
 
     db   $fc, $06                                      ;; 5e:71d8 ..
-
-data_5e_71da:
     dw   $01f8                                         ;; 5e:71da wW
     db   $01, $7f, $fc, $05                            ;; 5e:71dc ....
-
-data_5e_71e0:
     dw   $0233                                         ;; 5e:71e0 wW
     db   $14                                           ;; 5e:71e2 .
     dw   `22333333                                     ;; 5e:71e3 $3f $ff
@@ -4484,12 +3982,8 @@ data_5e_71e0:
     dw   `33332122                                     ;; 5e:71f5 $f4 $fb
 
     db   $fc, $08                                      ;; 5e:71f7 ..
-
-data_5e_71f9:
     dw   $01a8                                         ;; 5e:71f9 wW
     db   $01, $3f, $fc, $07                            ;; 5e:71fb ....
-
-data_5e_71ff:
     dw   $02e5                                         ;; 5e:71ff wW
     db   $30                                           ;; 5e:7201 .
     dw   `12333322                                     ;; 5e:7202 $bc $7f
@@ -4520,12 +4014,8 @@ data_5e_71ff:
     dw   `33221112                                     ;; 5e:7230 $ce $f1
 
     db   $fc, $06                                      ;; 5e:7232 ..
-
-data_5e_7234:
     dw   $02ea                                         ;; 5e:7234 wW
     db   $03, $3f, $ff, $1f, $fc, $07                  ;; 5e:7236 ......
-
-data_5e_723c:
     dw   $0347                                         ;; 5e:723c wW
     db   $11                                           ;; 5e:723e .
     dw   `33321123                                     ;; 5e:723f $ed $f3
@@ -4538,19 +4028,13 @@ data_5e_723c:
     dw   `33332112                                     ;; 5e:724d $f6 $f9
 
     db   $bf, $fc, $05                                 ;; 5e:724f ...
-
-data_5e_7252:
     dw   $01a9                                         ;; 5e:7252 wW
     db   $03                                           ;; 5e:7254 .
     dw   `32333333                                     ;; 5e:7255 $bf $ff
 
     db   $bf, $fc, $07                                 ;; 5e:7257 ...
-
-data_5e_725a:
     dw   $0343                                         ;; 5e:725a wW
     db   $fc, $07                                      ;; 5e:725c ..
-
-data_5e_725e:
     dw   $0095                                         ;; 5e:725e wW
     db   $3c                                           ;; 5e:7260 .
     db   %00000000                                     ;; 5e:7261 $00
@@ -4589,8 +4073,6 @@ data_5e_725e:
     dw   `22233333                                     ;; 5e:729a $1f $ff
 
     db   $1f, $fc, $07                                 ;; 5e:729c ...
-
-data_5e_729f:
     dw   $02e9                                         ;; 5e:729f wW
     db   $25                                           ;; 5e:72a1 .
     dw   `22332233                                     ;; 5e:72a2 $33 $ff
@@ -4615,12 +4097,8 @@ data_5e_729f:
     dw   `22222323                                     ;; 5e:72c4 $05 $ff
 
     db   $17, $fc, $06                                 ;; 5e:72c6 ...
-
-data_5e_72c9:
     dw   $036f                                         ;; 5e:72c9 wW
     db   $fc, $08                                      ;; 5e:72cb ..
-
-data_5e_72cd:
     dw   $0094                                         ;; 5e:72cd wW
     db   $27, $02                                      ;; 5e:72cf ..
     dw   `00000021                                     ;; 5e:72d1 $01 $02
@@ -4646,8 +4124,6 @@ data_5e_72cd:
     dw   `12233333                                     ;; 5e:72f5 $9f $7f
 
     db   $fc, $06                                      ;; 5e:72f7 ..
-
-data_5e_72f9:
     dw   $02e6                                         ;; 5e:72f9 wW
     db   $29                                           ;; 5e:72fb .
     dw   `12333333                                     ;; 5e:72fc $bf $7f
@@ -4674,15 +4150,11 @@ data_5e_72f9:
     dw   `33333321                                     ;; 5e:7322 $fd $fe
 
     db   $fd, $fc, $05                                 ;; 5e:7324 ...
-
-data_5e_7327:
     dw   $03c9                                         ;; 5e:7327 wW
     db   $03                                           ;; 5e:7329 .
     dw   `33333221                                     ;; 5e:732a $f9 $fe
 
     db   $3d, $fc, $05                                 ;; 5e:732c ...
-
-data_5e_732f:
     dw   $03c9                                         ;; 5e:732f wW
     db   $12                                           ;; 5e:7331 .
     dw   `11222333                                     ;; 5e:7332 $c7 $3f
@@ -4975,8 +4447,6 @@ data_5e_732f:
     dw   `33033303                                     ;; 5e:7517 $dd $dd
 
     db   $fc, $08                                      ;; 5e:7519 ..
-
-data_5e_751b:
     dw   $003e                                         ;; 5e:751b wW
     db   $3e                                           ;; 5e:751d .
     dw   `00000000                                     ;; 5e:751e $00 $00
@@ -5015,8 +4485,6 @@ data_5e_751b:
     dw   `00003311                                     ;; 5e:755a $0f $0c
 
     db   $fc, $07                                      ;; 5e:755c ..
-
-data_5e_755e:
     dw   $0088                                         ;; 5e:755e wW
     db   $3f                                           ;; 5e:7560 .
     db   %11111111                                     ;; 5e:7561 $ff
@@ -5110,8 +4578,6 @@ data_5e_755e:
     dw   `00113313                                     ;; 5e:75f9 $3f $0d
 
     db   $fc, $08                                      ;; 5e:75fb ..
-
-data_5e_75fd:
     dw   $04f0                                         ;; 5e:75fd wW
     db   $32                                           ;; 5e:75ff .
     dw   `13311103                                     ;; 5e:7600 $fd $61
@@ -5144,8 +4610,6 @@ data_5e_75fd:
     dw   `33333333                                     ;; 5e:7630 $ff $ff
 
     db   $fc, $06                                      ;; 5e:7632 ..
-
-data_5e_7634:
     dw   $036f                                         ;; 5e:7634 wW
     db   $0f                                           ;; 5e:7636 .
     dw   `11310323                                     ;; 5e:7637 $f5 $27
@@ -5157,8 +4621,6 @@ data_5e_7634:
     dw   `00113331                                     ;; 5e:7643 $3f $0e
 
     db   $1e, $fc, $0c                                 ;; 5e:7645 ...
-
-data_5e_7648:
     dw   $03e2                                         ;; 5e:7648 wW
     db   $27                                           ;; 5e:764a .
     db   %00000011                                     ;; 5e:764b $03
@@ -5186,8 +4648,6 @@ data_5e_7648:
     dw   `03000000                                     ;; 5e:7670 $40 $40
 
     db   $fc, $05                                      ;; 5e:7672 ..
-
-data_5e_7674:
     dw   $03e9                                         ;; 5e:7674 wW
     db   $03                                           ;; 5e:7676 .
     db   %00000010                                     ;; 5e:7677 $02
@@ -5195,8 +4655,6 @@ data_5e_7674:
     dw   `00000000                                     ;; 5e:7678 $00 $00
 
     db   $fc, $06                                      ;; 5e:767a ..
-
-data_5e_767c:
     dw   $001e                                         ;; 5e:767c wW
     db   $30                                           ;; 5e:767e .
     dw   `03000030                                     ;; 5e:767f $42 $42
@@ -5342,8 +4800,6 @@ data_5e_767c:
     dw   `01332011                                     ;; 5e:7771 $73 $38
 
     db   $fc, $08                                      ;; 5e:7773 ..
-
-data_5e_7775:
     dw   $0018                                         ;; 5e:7775 wW
     db   $20                                           ;; 5e:7777 .
     dw   `10001000                                     ;; 5e:7778 $88 $00
@@ -5381,20 +4837,14 @@ data_5e_7775:
     dw   `00132321                                     ;; 5e:77b0 $35 $1e
 
     db   $18, $fc, $0f                                 ;; 5e:77b2 ...
-
-data_5e_77b5:
     dw   $0011                                         ;; 5e:77b5 wW
     db   $04                                           ;; 5e:77b7 .
     dw   `13331000                                     ;; 5e:77b8 $f8 $70
     dw   `31313100                                     ;; 5e:77ba $fc $a8
 
     db   $fc, $0c                                      ;; 5e:77bc ..
-
-data_5e_77be:
     dw   $00d4                                         ;; 5e:77be wW
     db   $fc, $06                                      ;; 5e:77c0 ..
-
-data_5e_77c2:
     dw   $0090                                         ;; 5e:77c2 wW
     db   $4a                                           ;; 5e:77c4 .
     dw   `33231112                                     ;; 5e:77c5 $de $f1
@@ -5452,8 +4902,6 @@ data_5e_77c2:
     dw   `11213233                                     ;; 5e:7822 $db $2f
 
     db   $fc, $09                                      ;; 5e:7824 ..
-
-data_5e_7826:
     dw   $0070                                         ;; 5e:7826 wW
     db   $11                                           ;; 5e:7828 .
     db   %01100100                                     ;; 5e:7829 $64
@@ -5468,12 +4916,8 @@ data_5e_7826:
     dw   `11111112                                     ;; 5e:7838 $fe $01
 
     db   $fc, $06                                      ;; 5e:783a ..
-
-data_5e_783c:
     dw   $01b8                                         ;; 5e:783c wW
     db   $fc, $0a                                      ;; 5e:783e ..
-
-data_5e_7840:
     dw   $01b2                                         ;; 5e:7840 wW
     db   $84, $08                                      ;; 5e:7842 ..
     db   %11111111                                     ;; 5e:7844 $ff
@@ -5486,8 +4930,6 @@ data_5e_7840:
     dw   `32313232                                     ;; 5e:784f $ba $ef
 
     db   $3a, $fc, $05                                 ;; 5e:7851 ...
-
-data_5e_7854:
     dw   $01e3                                         ;; 5e:7854 wW
     db   $1b                                           ;; 5e:7856 .
     dw   `22212232                                     ;; 5e:7857 $12 $ef
@@ -5506,12 +4948,8 @@ data_5e_7854:
     dw   `33332233                                     ;; 5e:786f $f3 $ff
 
     db   $fb, $fc, $05                                 ;; 5e:7871 ...
-
-data_5e_7874:
     dw   $0203                                         ;; 5e:7874 wW
     db   $01, $7b, $fc, $05                            ;; 5e:7876 ....
-
-data_5e_787a:
     dw   $0209                                         ;; 5e:787a wW
     db   $18                                           ;; 5e:787c .
     dw   `22212212                                     ;; 5e:787d $12 $ed
@@ -5529,8 +4967,6 @@ data_5e_787a:
     dw   `11332112                                     ;; 5e:7893 $f6 $39
 
     db   $fc, $08                                      ;; 5e:7895 ..
-
-data_5e_7897:
     dw   $0018                                         ;; 5e:7897 wW
     db   $0b                                           ;; 5e:7899 .
     dw   `11111123                                     ;; 5e:789a $fd $03
@@ -5540,8 +4976,6 @@ data_5e_7897:
     dw   `23231232                                     ;; 5e:78a2 $5a $f7
 
     db   $6d, $fc, $05                                 ;; 5e:78a4 ...
-
-data_5e_78a7:
     dw   $006b                                         ;; 5e:78a7 wW
     db   $02                                           ;; 5e:78a9 .
     dw   `00000020                                     ;; 5e:78aa $00 $02
@@ -5565,8 +4999,6 @@ data_5e_78a7:
     dw   `12122333                                     ;; 5e:78c7 $a7 $5f
 
     db   $e3, $fc, $05                                 ;; 5e:78c9 ...
-
-data_5e_78cc:
     dw   $0195                                         ;; 5e:78cc wW
     db   $0b                                           ;; 5e:78ce .
     dw   `11112233                                     ;; 5e:78cf $f3 $0f
@@ -5576,24 +5008,14 @@ data_5e_78cc:
     dw   `33333333                                     ;; 5e:78d7 $ff $ff
 
     db   $fe, $fc, $05                                 ;; 5e:78d9 ...
-
-data_5e_78dc:
     dw   $0273                                         ;; 5e:78dc wW
     db   $01, $fa, $fc, $05                            ;; 5e:78de ....
-
-data_5e_78e2:
     dw   $0279                                         ;; 5e:78e2 wW
     db   $fc, $0a                                      ;; 5e:78e4 ..
-
-data_5e_78e6:
     dw   $01c8                                         ;; 5e:78e6 wW
     db   $fc, $08                                      ;; 5e:78e8 ..
-
-data_5e_78ea:
     dw   $01ba                                         ;; 5e:78ea wW
     db   $fc, $0a                                      ;; 5e:78ec ..
-
-data_5e_78ee:
     dw   $01b8                                         ;; 5e:78ee wW
     db   $08                                           ;; 5e:78f0 .
     dw   `11111112                                     ;; 5e:78f1 $fe $01
@@ -5602,8 +5024,6 @@ data_5e_78ee:
     dw   `11111211                                     ;; 5e:78f7 $fb $04
 
     db   $fc, $0a                                      ;; 5e:78f9 ..
-
-data_5e_78fb:
     dw   $01d2                                         ;; 5e:78fb wW
     db   $7f                                           ;; 5e:78fd .
     dw   `11111211                                     ;; 5e:78fe $fb $04
@@ -5759,15 +5179,11 @@ data_5e_78fb:
     dw   `23222211                                     ;; 5e:79fb $43 $fc
 
     db   $63, $fc, $05                                 ;; 5e:79fd ...
-
-data_5e_7a00:
     dw   $03c1                                         ;; 5e:7a00 wW
     db   $03                                           ;; 5e:7a02 .
     dw   `22322221                                     ;; 5e:7a03 $21 $fe
 
     db   $31, $fc, $05                                 ;; 5e:7a05 ...
-
-data_5e_7a08:
     dw   $03c9                                         ;; 5e:7a08 wW
     db   $0b                                           ;; 5e:7a0a .
     dw   `12331212                                     ;; 5e:7a0b $ba $75
@@ -5777,8 +5193,6 @@ data_5e_7a08:
     dw   `13231133                                     ;; 5e:7a13 $df $73
 
     db   $de, $fc, $05                                 ;; 5e:7a15 ...
-
-data_5e_7a18:
     dw   $03d9                                         ;; 5e:7a18 wW
     db   $20                                           ;; 5e:7a1a .
     dw   `23123311                                     ;; 5e:7a1b $6f $dc
@@ -5800,12 +5214,8 @@ data_5e_7a18:
     dw   `13233122                                     ;; 5e:7a39 $dc $7b
 
     db   $fc, $06                                      ;; 5e:7a3b ..
-
-data_5e_7a3d:
     dw   $0243                                         ;; 5e:7a3d wW
     db   $01, $01, $fc, $07                            ;; 5e:7a3f ....
-
-data_5e_7a43:
     dw   $0405                                         ;; 5e:7a43 wW
     db   $41                                           ;; 5e:7a45 .
     dw   `00000000                                     ;; 5e:7a46 $00 $00
@@ -5863,8 +5273,6 @@ data_5e_7a43:
     dw   `13333333                                     ;; 5e:7aa1 $ff $7f
 
     db   $7f, $fc, $05                                 ;; 5e:7aa3 ...
-
-data_5e_7aa6:
     dw   $0273                                         ;; 5e:7aa6 wW
     db   $2c                                           ;; 5e:7aa8 .
     dw   `33333323                                     ;; 5e:7aa9 $fd $ff
@@ -5893,8 +5301,6 @@ data_5e_7aa6:
     dw   `32233122                                     ;; 5e:7ad3 $9c $fb
 
     db   $fc, $06                                      ;; 5e:7ad5 ..
-
-data_5e_7ad7:
     dw   $04a8                                         ;; 5e:7ad7 wW
     db   $0a                                           ;; 5e:7ad9 .
     dw   `13231232                                     ;; 5e:7ada $da $77
@@ -5904,8 +5310,6 @@ data_5e_7ad7:
     dw   `13131323                                     ;; 5e:7ae2 $fd $57
 
     db   $fc, $06                                      ;; 5e:7ae4 ..
-
-data_5e_7ae6:
     dw   $04b8                                         ;; 5e:7ae6 wW
     db   $55                                           ;; 5e:7ae8 .
     dw   `32123231                                     ;; 5e:7ae9 $ab $de
@@ -5957,30 +5361,22 @@ data_5e_7ae6:
     dw   `32323223                                     ;; 5e:7b3b $a9 $ff
 
     db   $2d, $fc, $05                                 ;; 5e:7b3d ...
-
-data_5e_7b40:
     dw   $0513                                         ;; 5e:7b40 wW
     db   $05                                           ;; 5e:7b42 .
     dw   `22223333                                     ;; 5e:7b43 $0f $ff
     dw   `22232323                                     ;; 5e:7b45 $15 $ff
 
     db   $1d, $fc, $05                                 ;; 5e:7b47 ...
-
-data_5e_7b4a:
     dw   $0443                                         ;; 5e:7b4a wW
     db   $03                                           ;; 5e:7b4c .
     dw   `33333223                                     ;; 5e:7b4d $f9 $ff
 
     db   $fd, $fc, $05                                 ;; 5e:7b4f ...
-
-data_5e_7b52:
     dw   $0447                                         ;; 5e:7b52 wW
     db   $03                                           ;; 5e:7b54 .
     dw   `33333332                                     ;; 5e:7b55 $fe $ff
 
     db   $fe, $80, $0d, $ff, $fc, $05                  ;; 5e:7b57 ......
-
-data_5e_7b5d:
     dw   $052e                                         ;; 5e:7b5d wW
     db   $0f                                           ;; 5e:7b5f .
     db   %00000001                                     ;; 5e:7b60 $01
@@ -5994,8 +5390,6 @@ data_5e_7b5d:
     dw   `11112332                                     ;; 5e:7b6d $f6 $0f
 
     db   $fc, $06                                      ;; 5e:7b6f ..
-
-data_5e_7b71:
     dw   $044e                                         ;; 5e:7b71 wW
     db   $1d                                           ;; 5e:7b73 .
     dw   `33333332                                     ;; 5e:7b74 $fe $ff
@@ -6015,15 +5409,11 @@ data_5e_7b71:
     dw   `22132333                                     ;; 5e:7b8e $37 $df
 
     db   $bb, $fc, $05                                 ;; 5e:7b90 ...
-
-data_5e_7b93:
     dw   $0571                                         ;; 5e:7b93 wW
     db   $03                                           ;; 5e:7b95 .
     dw   `32213233                                     ;; 5e:7b96 $9b $ef
 
     db   $9d, $fc, $05                                 ;; 5e:7b98 ...
-
-data_5e_7b9b:
     dw   $0579                                         ;; 5e:7b9b wW
     db   $7b                                           ;; 5e:7b9d .
     dw   `32223212                                     ;; 5e:7b9e $8a $fd
@@ -6096,8 +5486,6 @@ data_5e_7b9b:
     dw   `23322333                                     ;; 5e:7c16 $67 $ff
 
     db   $66, $fc, $05                                 ;; 5e:7c18 ...
-
-data_5e_7c1b:
     dw   $05f9                                         ;; 5e:7c1b wW
     db   $0d                                           ;; 5e:7c1d .
     dw   `33332332                                     ;; 5e:7c1e $f6 $ff
@@ -6108,12 +5496,8 @@ data_5e_7c1b:
     dw   `33333232                                     ;; 5e:7c28 $fa $ff
 
     db   $fb, $fc, $05                                 ;; 5e:7c2a ...
-
-data_5e_7c2d:
     dw   $0609                                         ;; 5e:7c2d wW
     db   $01, $fb, $fc, $07                            ;; 5e:7c2f ....
-
-data_5e_7c33:
     dw   $0447                                         ;; 5e:7c33 wW
     db   $80, $06                                      ;; 5e:7c35 ..
     db   %11111111                                     ;; 5e:7c37 $ff
@@ -6162,8 +5546,6 @@ data_5e_7c33:
     dw   `22222221                                     ;; 5e:7c81 $01 $fe
 
     db   $fc, $07                                      ;; 5e:7c83 ..
-
-data_5e_7c85:
     dw   $01cb                                         ;; 5e:7c85 wW
     db   $64                                           ;; 5e:7c87 .
     db   %00000000                                     ;; 5e:7c88 $00
@@ -6225,16 +5607,10 @@ data_5e_7c85:
     dw   `23111231                                     ;; 5e:7ce9 $7b $c6
 
     db   $7f, $fc, $05                                 ;; 5e:7ceb ...
-
-data_5e_7cee:
     dw   $0095                                         ;; 5e:7cee wW
     db   $01, $6d, $fc, $05                            ;; 5e:7cf0 ....
-
-data_5e_7cf4:
     dw   $013b                                         ;; 5e:7cf4 wW
     db   $fc, $0b                                      ;; 5e:7cf6 ..
-
-data_5e_7cf8:
     dw   $05d0                                         ;; 5e:7cf8 wW
     db   $0b                                           ;; 5e:7cfa .
     db   %00110011                                     ;; 5e:7cfb $33
@@ -6246,8 +5622,6 @@ data_5e_7cf8:
     dw   `00132000                                     ;; 5e:7d04 $30 $18
 
     db   $fc, $0a                                      ;; 5e:7d06 ..
-
-data_5e_7d08:
     dw   $00c6                                         ;; 5e:7d08 wW
     db   $0b                                           ;; 5e:7d0a .
     dw   `00000132                                     ;; 5e:7d0b $06 $03
@@ -6257,8 +5631,6 @@ data_5e_7d08:
     dw   `01323111                                     ;; 5e:7d13 $6f $38
 
     db   $6b, $fc, $05                                 ;; 5e:7d15 ...
-
-data_5e_7d18:
     dw   $00bb                                         ;; 5e:7d18 wW
     db   $17                                           ;; 5e:7d1a .
     dw   `11112331                                     ;; 5e:7d1b $f7 $0e
@@ -6275,8 +5647,6 @@ data_5e_7d18:
     dw   `33310000                                     ;; 5e:7d2f $f0 $e0
 
     db   $5a, $fc, $09                                 ;; 5e:7d31 ...
-
-data_5e_7d34:
     dw   $0097                                         ;; 5e:7d34 wW
     db   $18                                           ;; 5e:7d36 .
     dw   `00000000                                     ;; 5e:7d37 $00 $00
@@ -6294,12 +5664,8 @@ data_5e_7d34:
     dw   `01332211                                     ;; 5e:7d4d $73 $3c
 
     db   $fc, $08                                      ;; 5e:7d4f ..
-
-data_5e_7d51:
     dw   $0018                                         ;; 5e:7d51 wW
     db   $fc, $06                                      ;; 5e:7d53 ..
-
-data_5e_7d55:
     dw   $00f5                                         ;; 5e:7d55 wW
     db   $7a                                           ;; 5e:7d57 .
     dw   `00023200                                     ;; 5e:7d58 $08 $1c
@@ -6375,8 +5741,6 @@ data_5e_7d55:
     dw   `33332332                                     ;; 5e:7dd4 $f6 $ff
 
     db   $01, $f7, $fc, $05                            ;; 5e:7dd6 ....
-
-data_5e_7dda:
     dw   $07d9                                         ;; 5e:7dda wW
     db   $10                                           ;; 5e:7ddc .
     dw   `22223232                                     ;; 5e:7ddd $0a $ff
@@ -6394,8 +5758,6 @@ data_5e_7dda:
     db   $00, $80, $0b, $89, $0c, $52, $51, $50        ;; 5e:7df2 ........
     db   $4f, $4f, $4f, $4f, $06, $08, $08, $08        ;; 5e:7dfa ........
     db   $08, $fc, $05                                 ;; 5e:7e02 ...
-
-data_5e_7e05:
     dw   $0012                                         ;; 5e:7e05 wW
     db   $0d, $08, $08, $89, $89, $89, $89, $58        ;; 5e:7e07 ........
     db   $0c, $57, $56, $55, $54, $53, $80, $07        ;; 5e:7e0f ........

@@ -613,7 +613,7 @@ call_0a_44c0:
     ld   B, $00                                        ;; 0a:44d5 $06 $00
     sla  C                                             ;; 0a:44d7 $cb $21
     rl   B                                             ;; 0a:44d9 $cb $10
-    ld   HL, data_0a_44e5                              ;; 0a:44db $21 $e5 $44
+    ld   HL, .data_0a_44e5                             ;; 0a:44db $21 $e5 $44
     ccf                                                ;; 0a:44de $3f
     add  HL, BC                                        ;; 0a:44df $09
     pop  BC                                            ;; 0a:44e0 $c1
@@ -621,277 +621,136 @@ call_0a_44c0:
     ld   H, [HL]                                       ;; 0a:44e2 $66
     ld   L, A                                          ;; 0a:44e3 $6f
     jp   HL                                            ;; 0a:44e4 $e9
-
-data_0a_44e5:
-    dw   data_0a_46e8                                  ;; 0a:44e5 pP
-
-data_0a_44e7:
-    dw   data_0a_4739                                  ;; 0a:44e7 pP
+.data_0a_44e5:
+    dw   .data_0a_46e8                                 ;; 0a:44e5 pP
+    dw   .data_0a_4739                                 ;; 0a:44e7 pP
     db   $16, $47, $16, $47, $16, $47                  ;; 0a:44e9 ??????
-
-data_0a_44ef:
-    dw   data_0a_4716                                  ;; 0a:44ef pP
+    dw   .data_0a_4716                                 ;; 0a:44ef pP
     db   $16, $47, $16, $47, $16, $47, $16, $47        ;; 0a:44f1 ????????
     db   $16, $47, $16, $47, $16, $47                  ;; 0a:44f9 ??????
-
-data_0a_44ff:
-    dw   data_0a_4716                                  ;; 0a:44ff pP
+    dw   .data_0a_4716                                 ;; 0a:44ff pP
     db   $16, $47, $16, $47, $16, $47, $16, $47        ;; 0a:4501 ????????
     db   $16, $47, $16, $47, $16, $47                  ;; 0a:4509 ??????
-
-data_0a_450f:
-    dw   data_0a_4716                                  ;; 0a:450f pP
+    dw   .data_0a_4716                                 ;; 0a:450f pP
     db   $16, $47, $16, $47, $16, $47, $16, $47        ;; 0a:4511 ????????
     db   $16, $47                                      ;; 0a:4519 ??
-
-data_0a_451b:
-    dw   data_0a_4716                                  ;; 0a:451b pP
+    dw   .data_0a_4716                                 ;; 0a:451b pP
     db   $16, $47, $16, $47, $16, $47, $16, $47        ;; 0a:451d ????????
     db   $16, $47, $16, $47, $16, $47, $16, $47        ;; 0a:4525 ????????
     db   $16, $47, $16, $47, $16, $47, $16, $47        ;; 0a:452d ????????
     db   $16, $47                                      ;; 0a:4535 ??
-
-data_0a_4537:
-    dw   data_0a_4716                                  ;; 0a:4537 pP
+    dw   .data_0a_4716                                 ;; 0a:4537 pP
     db   $16, $47, $16, $47, $16, $47                  ;; 0a:4539 ??????
-
-data_0a_453f:
-    dw   data_0a_4716                                  ;; 0a:453f pP
+    dw   .data_0a_4716                                 ;; 0a:453f pP
     db   $16, $47                                      ;; 0a:4541 ??
-
-data_0a_4543:
-    dw   data_0a_4716                                  ;; 0a:4543 pP
+    dw   .data_0a_4716                                 ;; 0a:4543 pP
     db   $16, $47                                      ;; 0a:4545 ??
-
-data_0a_4547:
-    dw   data_0a_4716                                  ;; 0a:4547 pP
+    dw   .data_0a_4716                                 ;; 0a:4547 pP
     db   $16, $47                                      ;; 0a:4549 ??
-
-data_0a_454b:
-    dw   data_0a_4716                                  ;; 0a:454b pP
+    dw   .data_0a_4716                                 ;; 0a:454b pP
     db   $16, $47, $16, $47, $16, $47                  ;; 0a:454d ??????
-
-data_0a_4553:
-    dw   data_0a_4716                                  ;; 0a:4553 pP
+    dw   .data_0a_4716                                 ;; 0a:4553 pP
     db   $16, $47, $16, $47, $16, $47                  ;; 0a:4555 ??????
-
-data_0a_455b:
-    dw   data_0a_4716                                  ;; 0a:455b pP
+    dw   .data_0a_4716                                 ;; 0a:455b pP
     db   $16, $47                                      ;; 0a:455d ??
-
-data_0a_455f:
-    dw   data_0a_4716                                  ;; 0a:455f pP
+    dw   .data_0a_4716                                 ;; 0a:455f pP
     db   $16, $47                                      ;; 0a:4561 ??
-
-data_0a_4563:
-    dw   data_0a_4716                                  ;; 0a:4563 pP
+    dw   .data_0a_4716                                 ;; 0a:4563 pP
     db   $16, $47, $16, $47, $16, $47                  ;; 0a:4565 ??????
-
-data_0a_456b:
-    dw   data_0a_4716                                  ;; 0a:456b pP
+    dw   .data_0a_4716                                 ;; 0a:456b pP
     db   $16, $47                                      ;; 0a:456d ??
-
-data_0a_456f:
-    dw   data_0a_4716                                  ;; 0a:456f pP
-
-data_0a_4571:
-    dw   data_0a_4716                                  ;; 0a:4571 pP
-
-data_0a_4573:
-    dw   data_0a_4716                                  ;; 0a:4573 pP
+    dw   .data_0a_4716                                 ;; 0a:456f pP
+    dw   .data_0a_4716                                 ;; 0a:4571 pP
+    dw   .data_0a_4716                                 ;; 0a:4573 pP
     db   $16, $47                                      ;; 0a:4575 ??
-
-data_0a_4577:
-    dw   data_0a_4716                                  ;; 0a:4577 pP
+    dw   .data_0a_4716                                 ;; 0a:4577 pP
     db   $16, $47                                      ;; 0a:4579 ??
-
-data_0a_457b:
-    dw   data_0a_4716                                  ;; 0a:457b pP
+    dw   .data_0a_4716                                 ;; 0a:457b pP
     db   $16, $47                                      ;; 0a:457d ??
-
-data_0a_457f:
-    dw   data_0a_4716                                  ;; 0a:457f pP
+    dw   .data_0a_4716                                 ;; 0a:457f pP
     db   $16, $47                                      ;; 0a:4581 ??
-
-data_0a_4583:
-    dw   data_0a_4716                                  ;; 0a:4583 pP
+    dw   .data_0a_4716                                 ;; 0a:4583 pP
     db   $16, $47                                      ;; 0a:4585 ??
-
-data_0a_4587:
-    dw   data_0a_4716                                  ;; 0a:4587 pP
+    dw   .data_0a_4716                                 ;; 0a:4587 pP
     db   $16, $47                                      ;; 0a:4589 ??
-
-data_0a_458b:
-    dw   data_0a_4716                                  ;; 0a:458b pP
+    dw   .data_0a_4716                                 ;; 0a:458b pP
     db   $16, $47                                      ;; 0a:458d ??
-
-data_0a_458f:
-    dw   data_0a_4716                                  ;; 0a:458f pP
+    dw   .data_0a_4716                                 ;; 0a:458f pP
     db   $16, $47                                      ;; 0a:4591 ??
-
-data_0a_4593:
-    dw   data_0a_4716                                  ;; 0a:4593 pP
+    dw   .data_0a_4716                                 ;; 0a:4593 pP
     db   $16, $47                                      ;; 0a:4595 ??
-
-data_0a_4597:
-    dw   data_0a_4716                                  ;; 0a:4597 pP
+    dw   .data_0a_4716                                 ;; 0a:4597 pP
     db   $16, $47                                      ;; 0a:4599 ??
-
-data_0a_459b:
-    dw   data_0a_4716                                  ;; 0a:459b pP
-
-data_0a_459d:
-    dw   data_0a_4716                                  ;; 0a:459d pP
-
-data_0a_459f:
-    dw   data_0a_4716                                  ;; 0a:459f pP
+    dw   .data_0a_4716                                 ;; 0a:459b pP
+    dw   .data_0a_4716                                 ;; 0a:459d pP
+    dw   .data_0a_4716                                 ;; 0a:459f pP
     db   $16, $47                                      ;; 0a:45a1 ??
-
-data_0a_45a3:
-    dw   data_0a_4716                                  ;; 0a:45a3 pP
+    dw   .data_0a_4716                                 ;; 0a:45a3 pP
     db   $16, $47                                      ;; 0a:45a5 ??
-
-data_0a_45a7:
-    dw   data_0a_4716                                  ;; 0a:45a7 pP
-
-data_0a_45a9:
-    dw   data_0a_4716                                  ;; 0a:45a9 pP
-
-data_0a_45ab:
-    dw   data_0a_4716                                  ;; 0a:45ab pP
-
-data_0a_45ad:
-    dw   data_0a_4716                                  ;; 0a:45ad pP
-
-data_0a_45af:
-    dw   data_0a_4716                                  ;; 0a:45af pP
+    dw   .data_0a_4716                                 ;; 0a:45a7 pP
+    dw   .data_0a_4716                                 ;; 0a:45a9 pP
+    dw   .data_0a_4716                                 ;; 0a:45ab pP
+    dw   .data_0a_4716                                 ;; 0a:45ad pP
+    dw   .data_0a_4716                                 ;; 0a:45af pP
     db   $16, $47                                      ;; 0a:45b1 ??
-
-data_0a_45b3:
-    dw   data_0a_4716                                  ;; 0a:45b3 pP
+    dw   .data_0a_4716                                 ;; 0a:45b3 pP
     db   $16, $47, $16, $47                            ;; 0a:45b5 ????
-
-data_0a_45b9:
-    dw   data_0a_4716                                  ;; 0a:45b9 pP
-
-data_0a_45bb:
-    dw   data_0a_4716                                  ;; 0a:45bb pP
+    dw   .data_0a_4716                                 ;; 0a:45b9 pP
+    dw   .data_0a_4716                                 ;; 0a:45bb pP
     db   $16, $47                                      ;; 0a:45bd ??
-
-data_0a_45bf:
-    dw   data_0a_4716                                  ;; 0a:45bf pP
+    dw   .data_0a_4716                                 ;; 0a:45bf pP
     db   $16, $47                                      ;; 0a:45c1 ??
-
-data_0a_45c3:
-    dw   data_0a_4716                                  ;; 0a:45c3 pP
-
-data_0a_45c5:
-    dw   data_0a_4716                                  ;; 0a:45c5 pP
-
-data_0a_45c7:
-    dw   data_0a_4716                                  ;; 0a:45c7 pP
+    dw   .data_0a_4716                                 ;; 0a:45c3 pP
+    dw   .data_0a_4716                                 ;; 0a:45c5 pP
+    dw   .data_0a_4716                                 ;; 0a:45c7 pP
     db   $16, $47                                      ;; 0a:45c9 ??
-
-data_0a_45cb:
-    dw   data_0a_4716                                  ;; 0a:45cb pP
-
-data_0a_45cd:
-    dw   data_0a_4716                                  ;; 0a:45cd pP
-
-data_0a_45cf:
-    dw   data_0a_4716                                  ;; 0a:45cf pP
+    dw   .data_0a_4716                                 ;; 0a:45cb pP
+    dw   .data_0a_4716                                 ;; 0a:45cd pP
+    dw   .data_0a_4716                                 ;; 0a:45cf pP
     db   $16, $47                                      ;; 0a:45d1 ??
-
-data_0a_45d3:
-    dw   data_0a_4716                                  ;; 0a:45d3 pP
+    dw   .data_0a_4716                                 ;; 0a:45d3 pP
     db   $16, $47                                      ;; 0a:45d5 ??
-
-data_0a_45d7:
-    dw   data_0a_4716                                  ;; 0a:45d7 pP
-
-data_0a_45d9:
-    dw   data_0a_4716                                  ;; 0a:45d9 pP
-
-data_0a_45db:
-    dw   data_0a_4716                                  ;; 0a:45db pP
+    dw   .data_0a_4716                                 ;; 0a:45d7 pP
+    dw   .data_0a_4716                                 ;; 0a:45d9 pP
+    dw   .data_0a_4716                                 ;; 0a:45db pP
     db   $16, $47                                      ;; 0a:45dd ??
-
-data_0a_45df:
-    dw   data_0a_4716                                  ;; 0a:45df pP
+    dw   .data_0a_4716                                 ;; 0a:45df pP
     db   $16, $47                                      ;; 0a:45e1 ??
-
-data_0a_45e3:
-    dw   data_0a_4716                                  ;; 0a:45e3 pP
+    dw   .data_0a_4716                                 ;; 0a:45e3 pP
     db   $16, $47                                      ;; 0a:45e5 ??
-
-data_0a_45e7:
-    dw   data_0a_4716                                  ;; 0a:45e7 pP
+    dw   .data_0a_4716                                 ;; 0a:45e7 pP
     db   $16, $47                                      ;; 0a:45e9 ??
-
-data_0a_45eb:
-    dw   data_0a_4716                                  ;; 0a:45eb pP
-
-data_0a_45ed:
-    dw   data_0a_4716                                  ;; 0a:45ed pP
-
-data_0a_45ef:
-    dw   data_0a_4716                                  ;; 0a:45ef pP
+    dw   .data_0a_4716                                 ;; 0a:45eb pP
+    dw   .data_0a_4716                                 ;; 0a:45ed pP
+    dw   .data_0a_4716                                 ;; 0a:45ef pP
     db   $16, $47                                      ;; 0a:45f1 ??
-
-data_0a_45f3:
-    dw   data_0a_4716                                  ;; 0a:45f3 pP
+    dw   .data_0a_4716                                 ;; 0a:45f3 pP
     db   $16, $47                                      ;; 0a:45f5 ??
-
-data_0a_45f7:
-    dw   data_0a_4716                                  ;; 0a:45f7 pP
+    dw   .data_0a_4716                                 ;; 0a:45f7 pP
     db   $16, $47                                      ;; 0a:45f9 ??
-
-data_0a_45fb:
-    dw   data_0a_4716                                  ;; 0a:45fb pP
+    dw   .data_0a_4716                                 ;; 0a:45fb pP
     db   $16, $47                                      ;; 0a:45fd ??
-
-data_0a_45ff:
-    dw   data_0a_4716                                  ;; 0a:45ff pP
+    dw   .data_0a_4716                                 ;; 0a:45ff pP
     db   $16, $47                                      ;; 0a:4601 ??
-
-data_0a_4603:
-    dw   data_0a_4716                                  ;; 0a:4603 pP
+    dw   .data_0a_4716                                 ;; 0a:4603 pP
     db   $16, $47                                      ;; 0a:4605 ??
-
-data_0a_4607:
-    dw   data_0a_4716                                  ;; 0a:4607 pP
+    dw   .data_0a_4716                                 ;; 0a:4607 pP
     db   $16, $47                                      ;; 0a:4609 ??
-
-data_0a_460b:
-    dw   data_0a_4716                                  ;; 0a:460b pP
+    dw   .data_0a_4716                                 ;; 0a:460b pP
     db   $16, $47                                      ;; 0a:460d ??
-
-data_0a_460f:
-    dw   data_0a_4716                                  ;; 0a:460f pP
+    dw   .data_0a_4716                                 ;; 0a:460f pP
     db   $16, $47                                      ;; 0a:4611 ??
-
-data_0a_4613:
-    dw   data_0a_4716                                  ;; 0a:4613 pP
+    dw   .data_0a_4716                                 ;; 0a:4613 pP
     db   $16, $47, $16, $47, $16, $47                  ;; 0a:4615 ??????
-
-data_0a_461b:
-    dw   data_0a_4716                                  ;; 0a:461b pP
+    dw   .data_0a_4716                                 ;; 0a:461b pP
     db   $16, $47                                      ;; 0a:461d ??
-
-data_0a_461f:
-    dw   data_0a_4716                                  ;; 0a:461f pP
+    dw   .data_0a_4716                                 ;; 0a:461f pP
     db   $16, $47                                      ;; 0a:4621 ??
-
-data_0a_4623:
-    dw   data_0a_4716                                  ;; 0a:4623 pP
+    dw   .data_0a_4716                                 ;; 0a:4623 pP
     db   $16, $47                                      ;; 0a:4625 ??
-
-data_0a_4627:
-    dw   data_0a_4716                                  ;; 0a:4627 pP
+    dw   .data_0a_4716                                 ;; 0a:4627 pP
     db   $16, $47                                      ;; 0a:4629 ??
-
-data_0a_462b:
-    dw   data_0a_4716                                  ;; 0a:462b pP
+    dw   .data_0a_4716                                 ;; 0a:462b pP
     db   $16, $47, $16, $47, $16, $47, $16, $47        ;; 0a:462d ????????
     db   $16, $47, $16, $47, $16, $47, $16, $47        ;; 0a:4635 ????????
     db   $e5, $46, $e5, $46, $e5, $46, $e5, $46        ;; 0a:463d ????????
@@ -902,97 +761,44 @@ data_0a_462b:
     db   $e5, $46, $e5, $46, $e5, $46, $e5, $46        ;; 0a:4665 ????????
     db   $e5, $46, $e5, $46, $e5, $46, $e5, $46        ;; 0a:466d ????????
     db   $e5, $46, $e5, $46                            ;; 0a:4675 ????
-
-data_0a_4679:
     dw   data_0a_418a                                  ;; 0a:4679 pP
     db   $8a, $41, $8a, $41, $8a, $41, $8a, $41        ;; 0a:467b ????????
     db   $8a, $41                                      ;; 0a:4683 ??
-
-data_0a_4685:
     dw   data_0a_42a1                                  ;; 0a:4685 pP
-
-data_0a_4687:
     dw   data_0a_42a1                                  ;; 0a:4687 pP
-
-data_0a_4689:
     dw   data_0a_42a1                                  ;; 0a:4689 pP
-
-data_0a_468b:
     dw   data_0a_42a1                                  ;; 0a:468b pP
     db   $a1, $42                                      ;; 0a:468d ??
-
-data_0a_468f:
     dw   data_0a_42a1                                  ;; 0a:468f pP
-
-data_0a_4691:
     dw   data_0a_42a1                                  ;; 0a:4691 pP
-
-data_0a_4693:
     dw   data_0a_42a1                                  ;; 0a:4693 pP
-
-data_0a_4695:
     dw   data_0a_42a1                                  ;; 0a:4695 pP
-
-data_0a_4697:
     dw   data_0a_42a1                                  ;; 0a:4697 pP
-
-data_0a_4699:
     dw   data_0a_42a1                                  ;; 0a:4699 pP
-
-data_0a_469b:
     dw   data_0a_42a1                                  ;; 0a:469b pP
-
-data_0a_469d:
     dw   data_0a_42a1                                  ;; 0a:469d pP
-
-data_0a_469f:
     dw   data_0a_42a1                                  ;; 0a:469f pP
-
-data_0a_46a1:
     dw   data_0a_42a1                                  ;; 0a:46a1 pP
-
-data_0a_46a3:
     dw   data_0a_42a1                                  ;; 0a:46a3 pP
-
-data_0a_46a5:
     dw   data_0a_42a1                                  ;; 0a:46a5 pP
-
-data_0a_46a7:
     dw   data_0a_42a1                                  ;; 0a:46a7 pP
-
-data_0a_46a9:
     dw   data_0a_42a1                                  ;; 0a:46a9 pP
-
-data_0a_46ab:
     dw   data_0a_42a1                                  ;; 0a:46ab pP
     db   $a1, $42, $a1, $42, $a1, $42, $a1, $42        ;; 0a:46ad ????????
     db   $e5, $46, $e5, $46, $e5, $46, $db, $42        ;; 0a:46b5 ????????
     db   $c0, $42                                      ;; 0a:46bd ??
-
-data_0a_46bf:
     dw   data_0a_4068                                  ;; 0a:46bf pP
     db   $48, $42, $1c, $47                            ;; 0a:46c1 ????
-
-data_0a_46c5:
-    dw   data_0a_473f                                  ;; 0a:46c5 pP
-
-data_0a_46c7:
+    dw   .data_0a_473f                                 ;; 0a:46c5 pP
     dw   data_0a_404d                                  ;; 0a:46c7 pP
     db   $68, $42, $33, $42, $f5, $42                  ;; 0a:46c9 ??????
-
-data_0a_46cf:
     dw   data_0a_40ab                                  ;; 0a:46cf pP
-
-data_0a_46d1:
     dw   data_0a_427c                                  ;; 0a:46d1 pP
     db   $92, $42, $e5, $46, $e5, $46, $e5, $46        ;; 0a:46d3 ????????
     db   $e5, $46, $e5, $46, $e5, $46, $e5, $46        ;; 0a:46db ????????
-
-data_0a_46e3:
     dw   data_0a_430d                                  ;; 0a:46e3 pP
     db   $c3, $e5, $46                                 ;; 0a:46e5 ???
-
-data_0a_46e8:
+.data_0a_46e8:
     xor  A, A                                          ;; 0a:46e8 $af
     ld   [BC], A                                       ;; 0a:46e9 $02
     ld   HL, wCEDC                                     ;; 0a:46ea $21 $dc $ce
@@ -1020,8 +826,7 @@ data_0a_46e8:
     and  A, C                                          ;; 0a:4711 $a1
     ld   [wCF15], A                                    ;; 0a:4712 $ea $15 $cf
     ret                                                ;; 0a:4715 $c9
-
-data_0a_4716:
+.data_0a_4716:
     ld   A, $02                                        ;; 0a:4716 $3e $02
     ld   [BC], A                                       ;; 0a:4718 $02
     jp   jp_0a_40ec                                    ;; 0a:4719 $c3 $ec $40
@@ -1029,153 +834,95 @@ data_0a_4716:
     db   $1a, $4f, $13, $1a, $71, $2c, $77, $13        ;; 0a:4724 ????????
     db   $fa, $da, $ce, $c6, $09, $6f, $36, $02        ;; 0a:472c ????????
     db   $2c, $73, $2c, $72, $c9                       ;; 0a:4734 ?????
-
-data_0a_4739:
+.data_0a_4739:
     ld   A, $02                                        ;; 0a:4739 $3e $02
     ld   [BC], A                                       ;; 0a:473b $02
     jp   jp_0a_40c6                                    ;; 0a:473c $c3 $c6 $40
-
-data_0a_473f:
+.data_0a_473f:
     ld   A, $02                                        ;; 0a:473f $3e $02
     ld   [BC], A                                       ;; 0a:4741 $02
     jp   jp_0a_41b5                                    ;; 0a:4742 $c3 $b5 $41
-
-data_0a_4745:
-    dw   data_0a_474d                                  ;; 0a:4745 pP
-
-data_0a_4747:
-    dw   data_0a_477e                                  ;; 0a:4747 pP
-
-data_0a_4749:
-    dw   data_0a_47aa                                  ;; 0a:4749 pP
-
-data_0a_474b:
-    dw   data_0a_47b5                                  ;; 0a:474b pP
-
-data_0a_474d:
+    dw   .data_0a_474d                                 ;; 0a:4745 pP
+    dw   .data_0a_477e                                 ;; 0a:4747 pP
+    dw   .data_0a_47aa                                 ;; 0a:4749 pP
+    dw   .data_0a_47b5                                 ;; 0a:474b pP
+.data_0a_474d:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:474d ........
     db   $41, $00, $ff, $ed, $40                       ;; 0a:4755 .....
-
-data_0a_475a:
     dw   $6bf3                                         ;; 0a:475a wW
     db   $d2, $4b, $4f, $53, $55, $59, $5d, $63        ;; 0a:475c ........
     db   $67, $6b, $6d, $75, $77, $7b, $7f, $83        ;; 0a:4764 ........
     db   $85, $89, $8d, $dd, $8d, $d3, $ca, $d7        ;; 0a:476c ........
     db   $ca, $d8, $01, $f0, $01, $15, $08, $08        ;; 0a:4774 ........
     db   $80, $00                                      ;; 0a:477c ..
-
-data_0a_477e:
+.data_0a_477e:
     db   $f0, $00, $14, $08, $80, $ed, $80             ;; 0a:477e .......
-
-data_0a_4785:
     dw   $6bf3                                         ;; 0a:4785 wW
     db   $d8, $01, $d2, $45, $47, $4b, $4f, $53        ;; 0a:4787 ........
     db   $55, $59, $5d, $63, $67, $6b, $6d, $75        ;; 0a:478f ........
     db   $77, $7b, $7f, $83, $84, $d7, $ca, $e1        ;; 0a:4797 ........
     db   $ca, $db, $ca, $d8, $01, $f0, $01, $14        ;; 0a:479f ........
     db   $08, $80, $00                                 ;; 0a:47a7 ...
-
-data_0a_47aa:
+.data_0a_47aa:
     db   $f0, $00, $01, $80, $e0, $01, $d3, $01        ;; 0a:47aa ........
     db   $d8, $01, $00                                 ;; 0a:47b2 ...
-
-data_0a_47b5:
+.data_0a_47b5:
     db   $f0, $00, $14, $08, $80, $e0, $01, $d3        ;; 0a:47b5 ........
     db   $01, $d8, $01, $f0, $01, $14, $08, $80        ;; 0a:47bd ........
     db   $00                                           ;; 0a:47c5 .
-
-data_0a_47c6:
-    dw   data_0a_47ce                                  ;; 0a:47c6 pP
-
-data_0a_47c8:
-    dw   data_0a_47f5                                  ;; 0a:47c8 pP
-
-data_0a_47ca:
-    dw   data_0a_4817                                  ;; 0a:47ca pP
-
-data_0a_47cc:
-    dw   data_0a_4822                                  ;; 0a:47cc pP
-
-data_0a_47ce:
+    dw   .data_0a_47ce                                 ;; 0a:47c6 pP
+    dw   .data_0a_47f5                                 ;; 0a:47c8 pP
+    dw   .data_0a_4817                                 ;; 0a:47ca pP
+    dw   .data_0a_4822                                 ;; 0a:47cc pP
+.data_0a_47ce:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:47ce ........
     db   $40, $ff, $ed, $c0                            ;; 0a:47d6 ....
-
-data_0a_47da:
     dw   $6dd7                                         ;; 0a:47da wW
     db   $d5, $61, $5f, $65, $61, $5f, $65, $61        ;; 0a:47dc ........
     db   $01, $6b, $01, $f5                            ;; 0a:47e4 ....
-
-data_0a_47e8:
     dw   $6c93                                         ;; 0a:47e8 wW
     db   $df, $73, $d8, $01, $01, $f0, $01, $14        ;; 0a:47ea ........
     db   $08, $80, $00                                 ;; 0a:47f2 ...
-
-data_0a_47f5:
+.data_0a_47f5:
     db   $f0, $00, $14, $08, $80, $ed, $00             ;; 0a:47f5 .......
-
-data_0a_47fc:
     dw   $6dd7                                         ;; 0a:47fc wW
     db   $d5, $5b, $59, $5d, $5b, $59, $5d, $5b        ;; 0a:47fe ........
     db   $01, $61, $01, $f5                            ;; 0a:4806 ....
-
-data_0a_480a:
     dw   $6c93                                         ;; 0a:480a wW
     db   $df, $6b, $d8, $01, $01, $f0, $01, $14        ;; 0a:480c ........
     db   $08, $80, $00                                 ;; 0a:4814 ...
-
-data_0a_4817:
+.data_0a_4817:
     db   $f0, $00, $01, $80, $e0, $01, $de, $01        ;; 0a:4817 ........
     db   $d8, $01, $00                                 ;; 0a:481f ...
-
-data_0a_4822:
+.data_0a_4822:
     db   $f0, $00, $14, $08, $80, $de, $01, $d8        ;; 0a:4822 ........
     db   $01, $df, $70, $d8, $29, $01, $f0, $01        ;; 0a:482a ........
     db   $14, $08, $80, $00                            ;; 0a:4832 ....
-
-data_0a_4836:
-    dw   data_0a_483e                                  ;; 0a:4836 pP
-
-data_0a_4838:
-    dw   data_0a_4863                                  ;; 0a:4838 pP
-
-data_0a_483a:
-    dw   data_0a_4883                                  ;; 0a:483a pP
-
-data_0a_483c:
-    dw   data_0a_488c                                  ;; 0a:483c pP
-
-data_0a_483e:
+    dw   .data_0a_483e                                 ;; 0a:4836 pP
+    dw   .data_0a_4863                                 ;; 0a:4838 pP
+    dw   .data_0a_4883                                 ;; 0a:483a pP
+    dw   .data_0a_488c                                 ;; 0a:483c pP
+.data_0a_483e:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:483e ........
     db   $40, $ff, $ed, $80                            ;; 0a:4846 ....
-
-data_0a_484a:
     dw   $6dd7                                         ;; 0a:484a wW
     db   $d5, $59, $55, $53, $55, $59, $01, $53        ;; 0a:484c ........
     db   $01, $f5                                      ;; 0a:4854 ..
-
-data_0a_4856:
     dw   $6c93                                         ;; 0a:4856 wW
     db   $de, $63, $d8, $01, $01, $f0, $01, $14        ;; 0a:4858 ........
     db   $08, $80, $00                                 ;; 0a:4860 ...
-
-data_0a_4863:
+.data_0a_4863:
     db   $f0, $00, $14, $08, $80, $ed, $80             ;; 0a:4863 .......
-
-data_0a_486a:
     dw   $6dd7                                         ;; 0a:486a wW
     db   $d5, $53, $4f, $4b, $4f, $53, $01, $4b        ;; 0a:486c ........
     db   $01, $f5                                      ;; 0a:4874 ..
-
-data_0a_4876:
     dw   $6c93                                         ;; 0a:4876 wW
     db   $de, $53, $d8, $01, $01, $f0, $01, $14        ;; 0a:4878 ........
     db   $08, $80, $00                                 ;; 0a:4880 ...
-
-data_0a_4883:
+.data_0a_4883:
     db   $f0, $00, $01, $80, $e0, $01, $db, $01        ;; 0a:4883 ........
     db   $00                                           ;; 0a:488b .
-
-data_0a_488c:
+.data_0a_488c:
     db   $f0, $00, $14, $08, $80, $de, $01, $d5        ;; 0a:488c ........
     db   $0d, $05, $05, $05, $d8, $0d, $0d, $d8        ;; 0a:4894 ........
     db   $29, $01, $f0, $01, $15, $08, $08, $80        ;; 0a:489c ........
@@ -1191,96 +938,58 @@ data_0a_488c:
     db   $f0, $00, $01, $80, $e0, $01, $df, $01        ;; 0a:48ec ????????
     db   $00, $f0, $00, $14, $08, $80, $e0, $01        ;; 0a:48f4 ????????
     db   $df, $01, $f0, $01, $14, $08, $80, $00        ;; 0a:48fc ????????
-
-data_0a_4904:
-    dw   data_0a_490c                                  ;; 0a:4904 pP
-
-data_0a_4906:
-    dw   data_0a_492b                                  ;; 0a:4906 pP
-
-data_0a_4908:
-    dw   data_0a_4943                                  ;; 0a:4908 pP
-
-data_0a_490a:
-    dw   data_0a_494a                                  ;; 0a:490a pP
-
-data_0a_490c:
+    dw   .data_0a_490c                                 ;; 0a:4904 pP
+    dw   .data_0a_492b                                 ;; 0a:4906 pP
+    dw   .data_0a_4943                                 ;; 0a:4908 pP
+    dw   .data_0a_494a                                 ;; 0a:490a pP
+.data_0a_490c:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:490c ........
     db   $41, $00, $ff, $ed, $00                       ;; 0a:4914 .....
-
-data_0a_4919:
     dw   $6bf3                                         ;; 0a:4919 wW
     db   $d3, $7b, $7f, $7b, $79, $77, $79, $de        ;; 0a:491b ........
     db   $7b, $f0, $01, $15, $08, $08, $80, $00        ;; 0a:4923 ........
-
-data_0a_492b:
+.data_0a_492b:
     db   $f0, $00, $14, $08, $80, $ed, $80             ;; 0a:492b .......
-
-data_0a_4932:
     dw   $6bf3                                         ;; 0a:4932 wW
     db   $d3, $75, $77, $75, $73, $71, $73, $de        ;; 0a:4934 ........
     db   $75, $f0, $01, $14, $08, $80, $00             ;; 0a:493c .......
-
-data_0a_4943:
+.data_0a_4943:
     db   $f0, $00, $01, $80, $df, $01, $00             ;; 0a:4943 .......
-
-data_0a_494a:
+.data_0a_494a:
     db   $f0, $00, $14, $08, $80, $df, $01, $f0        ;; 0a:494a ........
     db   $01, $14, $08, $80, $00, $5f, $49, $00        ;; 0a:4952 .....???
     db   $00, $00, $00, $00, $00, $f0, $00, $15        ;; 0a:495a ????????
     db   $08, $08, $80, $f0, $00, $40, $ff, $ed        ;; 0a:4962 ????????
     db   $c0, $c3, $6d, $d8, $6b, $de, $63, $f0        ;; 0a:496a ????????
     db   $01, $14, $08, $80, $00                       ;; 0a:4972 ?????
-
-data_0a_4977:
-    dw   data_0a_497f                                  ;; 0a:4977 pP
+    dw   .data_0a_497f                                 ;; 0a:4977 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4979 ......
-
-data_0a_497f:
+.data_0a_497f:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:497f ........
     db   $40, $ff, $ed, $c0                            ;; 0a:4987 ....
-
-data_0a_498b:
     dw   $6d39                                         ;; 0a:498b wW
     db   $d1, $5d, $65, $f0, $01, $14, $08, $80        ;; 0a:498d ........
     db   $00                                           ;; 0a:4995 .
-
-data_0a_4996:
-    dw   data_0a_499e                                  ;; 0a:4996 pP
+    dw   .data_0a_499e                                 ;; 0a:4996 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4998 ......
-
-data_0a_499e:
+.data_0a_499e:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:499e ........
     db   $40, $ff, $ed, $c0                            ;; 0a:49a6 ....
-
-data_0a_49aa:
     dw   $6e03                                         ;; 0a:49aa wW
     db   $d1, $75, $f0, $01, $14, $08, $80, $00        ;; 0a:49ac ........
-
-data_0a_49b4:
-    dw   data_0a_49bc                                  ;; 0a:49b4 pP
+    dw   .data_0a_49bc                                 ;; 0a:49b4 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:49b6 ......
-
-data_0a_49bc:
+.data_0a_49bc:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:49bc ........
     db   $40, $ff, $ed, $80                            ;; 0a:49c4 ....
-
-data_0a_49c8:
     dw   $6e05                                         ;; 0a:49c8 wW
     db   $d1, $45, $f0, $01, $14, $08, $80, $00        ;; 0a:49ca ........
-
-data_0a_49d2:
-    dw   data_0a_49da                                  ;; 0a:49d2 pP
+    dw   .data_0a_49da                                 ;; 0a:49d2 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:49d4 ......
-
-data_0a_49da:
+.data_0a_49da:
     db   $f0, $00, $15, $08, $08, $80, $ed, $80        ;; 0a:49da ........
-
-data_0a_49e2:
     dw   $6d89                                         ;; 0a:49e2 wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:49e4 .....
-
-data_0a_49e9:
     dw   $6a31                                         ;; 0a:49e9 wW
     db   $de, $6f, $f6, $f0, $01, $15, $08, $08        ;; 0a:49eb ........
     db   $80, $00, $fd, $49, $1b, $4a, $00, $00        ;; 0a:49f3 ..??????
@@ -1294,211 +1003,129 @@ data_0a_49e9:
     db   $1c, $f1, $11, $80, $f0, $03, $1c, $b1        ;; 0a:4a33 ????????
     db   $53, $80, $f0, $20, $1c, $c3, $44, $80        ;; 0a:4a3b ????????
     db   $f0, $23, $14, $08, $80, $00                  ;; 0a:4a43 ??????
-
-data_0a_4a49:
-    dw   data_0a_4a51                                  ;; 0a:4a49 pP
+    dw   .data_0a_4a51                                 ;; 0a:4a49 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4a4b ......
-
-data_0a_4a51:
+.data_0a_4a51:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4a51 ........
     db   $40, $ff, $ed, $c0                            ;; 0a:4a59 ....
-
-data_0a_4a5d:
     dw   $6dc3                                         ;; 0a:4a5d wW
     db   $d5, $6d, $e0, $85, $f0, $01, $14, $08        ;; 0a:4a5f ........
     db   $80, $00                                      ;; 0a:4a67 ..
-
-data_0a_4a69:
-    dw   data_0a_4a71                                  ;; 0a:4a69 pP
+    dw   .data_0a_4a71                                 ;; 0a:4a69 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4a6b ......
-
-data_0a_4a71:
+.data_0a_4a71:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4a71 ........
     db   $40, $ff, $ed, $80                            ;; 0a:4a79 ....
-
-data_0a_4a7d:
     dw   $6d97                                         ;; 0a:4a7d wW
     db   $f0, $00, $01, $16, $e2, $5d, $5c, $e1        ;; 0a:4a7f ........
     db   $01, $e2, $6b, $6a, $e1, $01, $e2, $75        ;; 0a:4a87 ........
     db   $74, $e1, $01, $e2, $7b, $7a, $e1, $01        ;; 0a:4a8f ........
     db   $f0, $01, $15, $08, $08, $80, $00             ;; 0a:4a97 .......
-
-data_0a_4a9e:
-    dw   data_0a_4aa6                                  ;; 0a:4a9e pP
+    dw   .data_0a_4aa6                                 ;; 0a:4a9e pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4aa0 ......
-
-data_0a_4aa6:
+.data_0a_4aa6:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4aa6 ........
     db   $40, $ff, $f1                                 ;; 0a:4aae ...
-
-data_0a_4ab1:
     dw   $699c                                         ;; 0a:4ab1 wW
     db   $ed, $80                                      ;; 0a:4ab3 ..
-
-data_0a_4ab5:
     dw   $6da1                                         ;; 0a:4ab5 wW
     db   $d6, $91, $d3, $01, $d6, $83, $f6, $f0        ;; 0a:4ab7 ........
     db   $01, $15, $08, $08, $80, $00                  ;; 0a:4abf ......
-
-data_0a_4ac5:
-    dw   data_0a_4acd                                  ;; 0a:4ac5 pP
+    dw   .data_0a_4acd                                 ;; 0a:4ac5 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4ac7 ......
-
-data_0a_4acd:
+.data_0a_4acd:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4acd ........
     db   $40, $ff, $ed, $40                            ;; 0a:4ad5 ....
-
-data_0a_4ad9:
     dw   $6da5                                         ;; 0a:4ad9 wW
     db   $f1                                           ;; 0a:4adb .
-
-data_0a_4adc:
     dw   $6a3a                                         ;; 0a:4adc wW
     db   $de, $61, $d9, $ca, $d5, $ca, $ed, $c0        ;; 0a:4ade ........
-
-data_0a_4ae6:
     dw   $6da1                                         ;; 0a:4ae6 wW
     db   $f1                                           ;; 0a:4ae8 .
-
-data_0a_4ae9:
     dw   $6941                                         ;; 0a:4ae9 wW
     db   $d5, $7b, $f6, $f0, $01, $15, $08, $08        ;; 0a:4aeb ........
     db   $80, $00, $00, $00, $00, $00, $00, $00        ;; 0a:4af3 ........
-
-data_0a_4afb:
-    dw   data_0a_4afd                                  ;; 0a:4afb pP
-
-data_0a_4afd:
+    dw   .data_0a_4afd                                 ;; 0a:4afb pP
+.data_0a_4afd:
     db   $f0, $00, $14, $08, $80, $f0, $00, $40        ;; 0a:4afd ........
     db   $ff, $f0, $04, $0c, $92, $11, $f0, $08        ;; 0a:4b05 ........
     db   $0c, $ba, $20, $f0, $0c, $14, $08, $80        ;; 0a:4b0d ........
     db   $f0, $04, $0c, $8c, $12, $f0, $07, $0c        ;; 0a:4b15 ........
     db   $d3, $21, $f0, $01, $14, $08, $80, $00        ;; 0a:4b1d ........
-
-data_0a_4b25:
-    dw   data_0a_4b2d                                  ;; 0a:4b25 pP
+    dw   .data_0a_4b2d                                 ;; 0a:4b25 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4b27 ......
-
-data_0a_4b2d:
+.data_0a_4b2d:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4b2d ........
     db   $40, $ff, $ed, $c0                            ;; 0a:4b35 ....
-
-data_0a_4b39:
     dw   $6de9                                         ;; 0a:4b39 wW
     db   $f1                                           ;; 0a:4b3b .
-
-data_0a_4b3c:
     dw   $6840                                         ;; 0a:4b3c wW
     db   $e0, $3d, $f6, $f0, $01, $15, $08, $08        ;; 0a:4b3e ........
     db   $80, $00                                      ;; 0a:4b46 ..
-
-data_0a_4b48:
-    dw   data_0a_4b50                                  ;; 0a:4b48 pP
+    dw   .data_0a_4b50                                 ;; 0a:4b48 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4b4a ......
-
-data_0a_4b50:
+.data_0a_4b50:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4b50 ........
     db   $40, $ff, $ed, $c0                            ;; 0a:4b58 ....
-
-data_0a_4b5c:
     dw   $6bbf                                         ;; 0a:4b5c wW
     db   $f1                                           ;; 0a:4b5e .
-
-data_0a_4b5f:
     dw   $68c9                                         ;; 0a:4b5f wW
     db   $d5, $4b, $f6, $f0, $01, $15, $08, $08        ;; 0a:4b61 ........
     db   $80, $00                                      ;; 0a:4b69 ..
-
-data_0a_4b6b:
-    dw   data_0a_4b73                                  ;; 0a:4b6b pP
+    dw   .data_0a_4b73                                 ;; 0a:4b6b pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4b6d ......
-
-data_0a_4b73:
+.data_0a_4b73:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4b73 ........
     db   $40, $ff, $ed, $00                            ;; 0a:4b7b ....
-
-data_0a_4b7f:
     dw   $6ded                                         ;; 0a:4b7f wW
     db   $f1                                           ;; 0a:4b81 .
-
-data_0a_4b82:
     dw   $6973                                         ;; 0a:4b82 wW
     db   $e0, $7b, $f6, $f0, $01, $15, $08, $08        ;; 0a:4b84 ........
     db   $80, $00                                      ;; 0a:4b8c ..
-
-data_0a_4b8e:
-    dw   data_0a_4b96                                  ;; 0a:4b8e pP
+    dw   .data_0a_4b96                                 ;; 0a:4b8e pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4b90 ......
-
-data_0a_4b96:
+.data_0a_4b96:
     db   $f0, $00, $15, $08, $08, $80, $ed, $00        ;; 0a:4b96 ........
-
-data_0a_4b9e:
     dw   $6dc5                                         ;; 0a:4b9e wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:4ba0 .....
-
-data_0a_4ba5:
     dw   $6af4                                         ;; 0a:4ba5 wW
     db   $e0, $3b, $ca, $ca, $ca, $f6, $f0, $01        ;; 0a:4ba7 ........
     db   $15, $08, $08, $80, $00                       ;; 0a:4baf .....
-
-data_0a_4bb4:
-    dw   data_0a_4bbc                                  ;; 0a:4bb4 pP
+    dw   .data_0a_4bbc                                 ;; 0a:4bb4 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4bb6 ......
-
-data_0a_4bbc:
+.data_0a_4bbc:
     db   $f0, $00, $15, $08, $08, $80, $ed, $80        ;; 0a:4bbc ........
-
-data_0a_4bc4:
     dw   $6de9                                         ;; 0a:4bc4 wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:4bc6 .....
-
-data_0a_4bcb:
     dw   $69e0                                         ;; 0a:4bcb wW
     db   $de, $6f, $f6, $f0, $01, $15, $08, $08        ;; 0a:4bcd ........
     db   $80, $00                                      ;; 0a:4bd5 ..
-
-data_0a_4bd7:
-    dw   data_0a_4bdf                                  ;; 0a:4bd7 pP
+    dw   .data_0a_4bdf                                 ;; 0a:4bd7 pP
     db   $00, $00, $00, $00                            ;; 0a:4bd9 ....
-
-data_0a_4bdd:
-    dw   data_0a_4bfa                                  ;; 0a:4bdd pP
-
-data_0a_4bdf:
+    dw   .data_0a_4bfa                                 ;; 0a:4bdd pP
+.data_0a_4bdf:
     db   $f0, $00, $15, $08, $08, $80, $ed, $80        ;; 0a:4bdf ........
-
-data_0a_4be7:
     dw   $6df3                                         ;; 0a:4be7 wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:4be9 .....
-
-data_0a_4bee:
     dw   $6a5c                                         ;; 0a:4bee wW
     db   $e0, $73, $f6, $f0, $01, $15, $08, $08        ;; 0a:4bf0 ........
     db   $80, $00                                      ;; 0a:4bf8 ..
-
-data_0a_4bfa:
+.data_0a_4bfa:
     db   $f0, $00, $14, $08, $80, $f0, $08, $1c        ;; 0a:4bfa ........
     db   $59, $11, $80, $f0, $60, $1c, $a7, $22        ;; 0a:4c02 ........
     db   $80, $f0, $01, $14, $08, $80, $00, $00        ;; 0a:4c0a ........
     db   $00, $00, $00, $00, $00                       ;; 0a:4c12 .....
-
-data_0a_4c17:
-    dw   data_0a_4c19                                  ;; 0a:4c17 pP
-
-data_0a_4c19:
+    dw   .data_0a_4c19                                 ;; 0a:4c17 pP
+.data_0a_4c19:
     db   $f0, $00, $40, $ff, $f0, $00, $14, $08        ;; 0a:4c19 ........
     db   $80, $f0, $04, $1c, $d1, $32, $80, $f0        ;; 0a:4c21 ........
     db   $01, $14, $08, $80, $00, $00, $00, $00        ;; 0a:4c29 ........
     db   $00, $00, $00                                 ;; 0a:4c31 ...
-
-data_0a_4c34:
-    dw   data_0a_4c4d                                  ;; 0a:4c34 pP
+    dw   .data_0a_4c4d                                 ;; 0a:4c34 pP
     db   $f0, $00, $15, $08, $08, $80, $ed, $00        ;; 0a:4c36 ????????
     db   $51, $6d, $f0, $00, $40, $ff, $e3, $65        ;; 0a:4c3e ????????
     db   $f0, $01, $15, $08, $08, $80, $00             ;; 0a:4c46 ???????
-
-data_0a_4c4d:
+.data_0a_4c4d:
     db   $f0, $00, $14, $08, $80, $f0, $00, $40        ;; 0a:4c4d ........
     db   $ff, $f0, $02, $0c, $a1, $11, $f0, $01        ;; 0a:4c55 ........
     db   $0c, $f1, $22, $f0, $01, $14, $08, $80        ;; 0a:4c5d ........
@@ -1512,59 +1139,41 @@ data_0a_4c4d:
     db   $01, $1c, $53, $66, $80, $f0, $00, $1c        ;; 0a:4c9d ????????
     db   $47, $c6, $80, $f0, $22, $1c, $f6, $75        ;; 0a:4ca5 ????????
     db   $80, $ff, $8d, $4c, $00                       ;; 0a:4cad ?????
-
-data_0a_4cb2:
-    dw   data_0a_4cba                                  ;; 0a:4cb2 pP
+    dw   .data_0a_4cba                                 ;; 0a:4cb2 pP
     db   $00, $00, $00, $00                            ;; 0a:4cb4 ....
-
-data_0a_4cb8:
-    dw   data_0a_4cd5                                  ;; 0a:4cb8 pP
-
-data_0a_4cba:
+    dw   .data_0a_4cd5                                 ;; 0a:4cb8 pP
+.data_0a_4cba:
     db   $f0, $00, $15, $08, $08, $80, $ed, $80        ;; 0a:4cba ........
-
-data_0a_4cc2:
     dw   $6de9                                         ;; 0a:4cc2 wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:4cc4 .....
-
-data_0a_4cc9:
     dw   $69e0                                         ;; 0a:4cc9 wW
     db   $de, $6f, $f6, $f0, $01, $15, $08, $08        ;; 0a:4ccb ........
     db   $80, $00                                      ;; 0a:4cd3 ..
-
-data_0a_4cd5:
+.data_0a_4cd5:
     db   $f0, $00, $14, $08, $80, $f0, $00, $40        ;; 0a:4cd5 ........
     db   $ff, $f0, $08, $1c, $39, $12, $80, $f0        ;; 0a:4cdd ........
     db   $55, $1c, $d5, $21, $80, $f0, $01, $14        ;; 0a:4ce5 .....???
     db   $08, $80, $00, $00, $00, $00, $00, $00        ;; 0a:4ced ???.....
     db   $00                                           ;; 0a:4cf5 .
-
-data_0a_4cf6:
-    dw   data_0a_4cf8                                  ;; 0a:4cf6 pP
-
-data_0a_4cf8:
+    dw   .data_0a_4cf8                                 ;; 0a:4cf6 pP
+.data_0a_4cf8:
     db   $f0, $00, $14, $08, $80, $f0, $00, $40        ;; 0a:4cf8 ........
     db   $ff, $f0, $08, $1c, $39, $12, $80, $f0        ;; 0a:4d00 ........
     db   $15, $1c, $d2, $32, $80, $f0, $01, $14        ;; 0a:4d08 ........
     db   $08, $80, $00, $00, $00, $00, $00, $00        ;; 0a:4d10 ........
     db   $00                                           ;; 0a:4d18 .
-
-data_0a_4d19:
-    dw   data_0a_4d47                                  ;; 0a:4d19 pP
+    dw   .data_0a_4d47                                 ;; 0a:4d19 pP
     db   $f0, $00, $15, $14, $08, $80, $f0, $00        ;; 0a:4d1b ????????
     db   $40, $ff, $ed, $80, $8d, $6d, $d2, $1b        ;; 0a:4d23 ????????
     db   $01, $23, $01, $37, $01, $25, $01, $43        ;; 0a:4d2b ????????
     db   $01, $29, $01, $d2, $25, $01, $2d, $01        ;; 0a:4d33 ????????
     db   $33, $01, $2b, $01, $25, $01, $29, $01        ;; 0a:4d3b ????????
     db   $ff, $1b, $4d, $00                            ;; 0a:4d43 ????
-
-data_0a_4d47:
+.data_0a_4d47:
     db   $f0, $00, $14, $08, $80, $f0, $00, $40        ;; 0a:4d47 ........
     db   $ff, $f0, $08, $1c, $4a, $12, $80, $f0        ;; 0a:4d4f ........
     db   $07, $1c, $84, $11, $80, $ff                  ;; 0a:4d57 ......
-
-data_0a_4d5d:
-    dw   data_0a_4d47                                  ;; 0a:4d5d pP
+    dw   .data_0a_4d47                                 ;; 0a:4d5d pP
     db   $00, $00, $00, $00, $00, $00, $00, $68        ;; 0a:4d5f ????????
     db   $4d, $f0, $00, $14, $08, $80, $f0, $00        ;; 0a:4d67 ????????
     db   $40, $ff, $f0, $04, $1c, $d3, $42, $80        ;; 0a:4d6f ????????
@@ -1576,57 +1185,33 @@ data_0a_4d5d:
     db   $45, $80, $f0, $04, $1c, $d3, $42, $80        ;; 0a:4d9f ????????
     db   $f0, $15, $1c, $c6, $45, $80, $f0, $01        ;; 0a:4da7 ????????
     db   $14, $08, $80, $00                            ;; 0a:4daf ????
-
-data_0a_4db3:
-    dw   data_0a_4dbb                                  ;; 0a:4db3 pP
-
-data_0a_4db5:
-    dw   data_0a_4dd6                                  ;; 0a:4db5 pP
-
-data_0a_4db7:
-    dw   data_0a_4def                                  ;; 0a:4db7 pP
+    dw   .data_0a_4dbb                                 ;; 0a:4db3 pP
+    dw   .data_0a_4dd6                                 ;; 0a:4db5 pP
+    dw   .data_0a_4def                                 ;; 0a:4db7 pP
     db   $00, $00                                      ;; 0a:4db9 ..
-
-data_0a_4dbb:
+.data_0a_4dbb:
     db   $f0, $00, $15, $08, $08, $80, $ed, $c0        ;; 0a:4dbb ........
-
-data_0a_4dc3:
     dw   $6ddf                                         ;; 0a:4dc3 wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:4dc5 .....
-
-data_0a_4dca:
     dw   $696a                                         ;; 0a:4dca wW
     db   $df, $31, $f6, $f0, $01, $15, $08, $08        ;; 0a:4dcc ........
     db   $80, $00                                      ;; 0a:4dd4 ..
-
-data_0a_4dd6:
+.data_0a_4dd6:
     db   $f0, $00, $14, $08, $80, $ed, $c0             ;; 0a:4dd6 .......
-
-data_0a_4ddd:
     dw   $6ddf                                         ;; 0a:4ddd wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:4ddf .....
-
-data_0a_4de4:
     dw   $696a                                         ;; 0a:4de4 wW
     db   $df, $2d, $f6, $f0, $01, $14, $08, $80        ;; 0a:4de6 ........
     db   $00                                           ;; 0a:4dee .
-
-data_0a_4def:
+.data_0a_4def:
     db   $f0, $00, $01, $80, $df, $01, $00             ;; 0a:4def .......
-
-data_0a_4df6:
-    dw   data_0a_4dfe                                  ;; 0a:4df6 pP
+    dw   .data_0a_4dfe                                 ;; 0a:4df6 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4df8 ......
-
-data_0a_4dfe:
+.data_0a_4dfe:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4dfe ........
     db   $40, $ff, $ed, $00                            ;; 0a:4e06 ....
-
-data_0a_4e0a:
     dw   $6da1                                         ;; 0a:4e0a wW
     db   $f1                                           ;; 0a:4e0c .
-
-data_0a_4e0d:
     dw   $6961                                         ;; 0a:4e0d wW
     db   $d1, $81, $01, $e1, $01, $d2, $83, $f6        ;; 0a:4e0f ........
     db   $f0, $01, $15, $08, $08, $80, $00, $26        ;; 0a:4e17 .......?
@@ -1638,119 +1223,73 @@ data_0a_4e0d:
     db   $f0, $00, $40, $ff, $f0, $04, $1c, $f5        ;; 0a:4e47 ????????
     db   $22, $80, $f0, $04, $1c, $c4, $55, $80        ;; 0a:4e4f ????????
     db   $f0, $01, $14, $08, $80, $00                  ;; 0a:4e57 ??????
-
-data_0a_4e5d:
-    dw   data_0a_4e65                                  ;; 0a:4e5d pP
+    dw   .data_0a_4e65                                 ;; 0a:4e5d pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4e5f ......
-
-data_0a_4e65:
+.data_0a_4e65:
     db   $f0, $00, $15, $15, $08, $80, $f0, $00        ;; 0a:4e65 ........
     db   $40, $ff, $ed, $80                            ;; 0a:4e6d ....
-
-data_0a_4e71:
     dw   $6d51                                         ;; 0a:4e71 wW
     db   $d1, $55, $f0, $01, $15, $08, $08, $80        ;; 0a:4e73 ........
     db   $00, $00, $00, $00, $00, $00, $00             ;; 0a:4e7b .......
-
-data_0a_4e82:
-    dw   data_0a_4e84                                  ;; 0a:4e82 pP
-
-data_0a_4e84:
+    dw   .data_0a_4e84                                 ;; 0a:4e82 pP
+.data_0a_4e84:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4e84 ........
     db   $40, $ff, $f0, $01, $0c, $a1, $13, $f0        ;; 0a:4e8c ........
     db   $02, $04, $08, $f0, $02, $0c, $f1, $11        ;; 0a:4e94 ........
     db   $f0, $01, $14, $08, $80, $00                  ;; 0a:4e9c ......
-
-data_0a_4ea2:
-    dw   data_0a_4eaa                                  ;; 0a:4ea2 pP
+    dw   .data_0a_4eaa                                 ;; 0a:4ea2 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4ea4 ......
-
-data_0a_4eaa:
+.data_0a_4eaa:
     db   $f0, $00, $15, $15, $08, $80, $f0, $00        ;; 0a:4eaa ........
     db   $40, $ff, $ed, $80                            ;; 0a:4eb2 ....
-
-data_0a_4eb6:
     dw   $6d51                                         ;; 0a:4eb6 wW
     db   $d2, $5f, $e1, $01, $d3, $63, $f0, $01        ;; 0a:4eb8 ........
     db   $15, $08, $08, $80, $00                       ;; 0a:4ec0 .....
-
-data_0a_4ec5:
-    dw   data_0a_4ecd                                  ;; 0a:4ec5 pP
+    dw   .data_0a_4ecd                                 ;; 0a:4ec5 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4ec7 ......
-
-data_0a_4ecd:
+.data_0a_4ecd:
     db   $f0, $00, $15, $15, $08, $80, $f0, $00        ;; 0a:4ecd ........
     db   $40, $ff, $ed, $80                            ;; 0a:4ed5 ....
-
-data_0a_4ed9:
     dw   $6d51                                         ;; 0a:4ed9 wW
     db   $d2, $57, $e1, $01, $d3, $4b, $f0, $01        ;; 0a:4edb ........
     db   $15, $08, $08, $80, $00                       ;; 0a:4ee3 .....
-
-data_0a_4ee8:
-    dw   data_0a_4ef0                                  ;; 0a:4ee8 pP
+    dw   .data_0a_4ef0                                 ;; 0a:4ee8 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4eea ......
-
-data_0a_4ef0:
+.data_0a_4ef0:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4ef0 ........
     db   $40, $ff, $ed, $c0                            ;; 0a:4ef8 ....
-
-data_0a_4efc:
     dw   $6de5                                         ;; 0a:4efc wW
     db   $f1                                           ;; 0a:4efe .
-
-data_0a_4eff:
     dw   $68ce                                         ;; 0a:4eff wW
     db   $dd, $43, $f6, $f0, $01, $15, $08, $08        ;; 0a:4f01 ........
     db   $80, $00                                      ;; 0a:4f09 ..
-
-data_0a_4f0b:
-    dw   data_0a_4f13                                  ;; 0a:4f0b pP
+    dw   .data_0a_4f13                                 ;; 0a:4f0b pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4f0d ......
-
-data_0a_4f13:
+.data_0a_4f13:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4f13 ........
     db   $40, $ff, $ed, $40                            ;; 0a:4f1b ....
-
-data_0a_4f1f:
     dw   $6de5                                         ;; 0a:4f1f wW
     db   $f1                                           ;; 0a:4f21 .
-
-data_0a_4f22:
     dw   $6993                                         ;; 0a:4f22 wW
     db   $dd, $75, $f6, $f0, $01, $15, $08, $08        ;; 0a:4f24 ........
     db   $80, $00                                      ;; 0a:4f2c ..
-
-data_0a_4f2e:
-    dw   data_0a_4f36                                  ;; 0a:4f2e pP
+    dw   .data_0a_4f36                                 ;; 0a:4f2e pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4f30 ......
-
-data_0a_4f36:
+.data_0a_4f36:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4f36 ........
     db   $40, $ff, $ed, $80                            ;; 0a:4f3e ....
-
-data_0a_4f42:
     dw   $6e65                                         ;; 0a:4f42 wW
     db   $f1                                           ;; 0a:4f44 .
-
-data_0a_4f45:
     dw   $6a69                                         ;; 0a:4f45 wW
     db   $da, $47, $f6, $f0, $01, $15, $08, $08        ;; 0a:4f47 ........
     db   $80, $00                                      ;; 0a:4f4f ..
-
-data_0a_4f51:
-    dw   data_0a_4f59                                  ;; 0a:4f51 pP
+    dw   .data_0a_4f59                                 ;; 0a:4f51 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4f53 ......
-
-data_0a_4f59:
+.data_0a_4f59:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4f59 ........
     db   $40, $ff, $d3, $4d, $ed, $80                  ;; 0a:4f61 ......
-
-data_0a_4f67:
     dw   $6e5b                                         ;; 0a:4f67 wW
     db   $f1                                           ;; 0a:4f69 .
-
-data_0a_4f6a:
     dw   $6a11                                         ;; 0a:4f6a wW
     db   $d3, $49, $f0, $00, $01, $1b, $d3, $4b        ;; 0a:4f6c ........
     db   $f6, $f0, $01, $15, $08, $08, $80, $00        ;; 0a:4f74 ........
@@ -1758,75 +1297,45 @@ data_0a_4f6a:
     db   $01, $00, $f0, $00, $01, $80, $d6, $01        ;; 0a:4f84 ????????
     db   $01, $00, $f0, $00, $14, $08, $80, $d6        ;; 0a:4f8c ????????
     db   $01, $01, $00                                 ;; 0a:4f94 ???
-
-data_0a_4f97:
-    dw   data_0a_4f9f                                  ;; 0a:4f97 pP
+    dw   .data_0a_4f9f                                 ;; 0a:4f97 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4f99 ......
-
-data_0a_4f9f:
+.data_0a_4f9f:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4f9f ........
     db   $40, $ff, $ed, $40                            ;; 0a:4fa7 ....
-
-data_0a_4fab:
     dw   $6de5                                         ;; 0a:4fab wW
     db   $f1                                           ;; 0a:4fad .
-
-data_0a_4fae:
     dw   $69a1                                         ;; 0a:4fae wW
     db   $db, $95, $f6, $f0, $01, $15, $08, $08        ;; 0a:4fb0 ........
     db   $80, $00                                      ;; 0a:4fb8 ..
-
-data_0a_4fba:
-    dw   data_0a_4fc2                                  ;; 0a:4fba pP
+    dw   .data_0a_4fc2                                 ;; 0a:4fba pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4fbc ......
-
-data_0a_4fc2:
+.data_0a_4fc2:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4fc2 ........
     db   $40, $ff, $ed, $80                            ;; 0a:4fca ....
-
-data_0a_4fce:
     dw   $6de9                                         ;; 0a:4fce wW
     db   $f0, $00, $01, $14, $d2, $15, $01, $01        ;; 0a:4fd0 ........
     db   $d5, $47, $f0, $01, $15, $08, $08, $80        ;; 0a:4fd8 ........
     db   $00                                           ;; 0a:4fe0 .
-
-data_0a_4fe1:
-    dw   data_0a_4fe9                                  ;; 0a:4fe1 pP
+    dw   .data_0a_4fe9                                 ;; 0a:4fe1 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:4fe3 ......
-
-data_0a_4fe9:
+.data_0a_4fe9:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:4fe9 ........
     db   $40, $ff, $ed, $40                            ;; 0a:4ff1 ....
-
-data_0a_4ff5:
     dw   $6e41                                         ;; 0a:4ff5 wW
     db   $f1                                           ;; 0a:4ff7 .
-
-data_0a_4ff8:
     dw   $6961                                         ;; 0a:4ff8 wW
     db   $de, $63, $d2, $01, $f6, $00                  ;; 0a:4ffa ......
-
-data_0a_5000:
-    dw   data_0a_5008                                  ;; 0a:5000 pP
+    dw   .data_0a_5008                                 ;; 0a:5000 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5002 ......
-
-data_0a_5008:
+.data_0a_5008:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5008 ........
     db   $40, $ff, $ed, $40                            ;; 0a:5010 ....
-
-data_0a_5014:
     dw   $6da1                                         ;; 0a:5014 wW
     db   $f1                                           ;; 0a:5016 .
-
-data_0a_5017:
     dw   $69a1                                         ;; 0a:5017 wW
     db   $d5, $71, $64, $d8, $01, $ed, $00             ;; 0a:5019 .......
-
-data_0a_5020:
     dw   $6e03                                         ;; 0a:5020 wW
     db   $f1                                           ;; 0a:5022 .
-
-data_0a_5023:
     dw   $6941                                         ;; 0a:5023 wW
     db   $d3, $7f, $f6, $f0, $01, $15, $08, $08        ;; 0a:5025 ........
     db   $80, $00, $37, $50, $00, $00, $00, $00        ;; 0a:502d ..??????
@@ -1834,209 +1343,124 @@ data_0a_5023:
     db   $f0, $00, $40, $ff, $ed, $40, $9d, $6d        ;; 0a:503d ????????
     db   $f1, $58, $69, $dd, $65, $f6, $f0, $01        ;; 0a:5045 ????????
     db   $15, $08, $08, $80, $00                       ;; 0a:504d ?????
-
-data_0a_5052:
-    dw   data_0a_505a                                  ;; 0a:5052 pP
+    dw   .data_0a_505a                                 ;; 0a:5052 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5054 ......
-
-data_0a_505a:
+.data_0a_505a:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:505a ........
     db   $40, $ff, $ed, $00                            ;; 0a:5062 ....
-
-data_0a_5066:
     dw   $6d75                                         ;; 0a:5066 wW
     db   $f1                                           ;; 0a:5068 .
-
-data_0a_5069:
     dw   $68c4                                         ;; 0a:5069 wW
     db   $d5, $67, $f6, $f0, $01, $15, $08, $08        ;; 0a:506b ........
     db   $80, $00                                      ;; 0a:5073 ..
-
-data_0a_5075:
-    dw   data_0a_507d                                  ;; 0a:5075 pP
+    dw   .data_0a_507d                                 ;; 0a:5075 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5077 ......
-
-data_0a_507d:
+.data_0a_507d:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:507d ........
     db   $40, $ff, $ed, $80                            ;; 0a:5085 ....
-
-data_0a_5089:
     dw   $6d9d                                         ;; 0a:5089 wW
     db   $f1                                           ;; 0a:508b .
-
-data_0a_508c:
     dw   $699c                                         ;; 0a:508c wW
     db   $d5, $55, $f1, $c4, $68, $62, $d9, $01        ;; 0a:508e ........
     db   $ed, $80                                      ;; 0a:5096 ..
-
-data_0a_5098:
     dw   $6d8d                                         ;; 0a:5098 wW
     db   $f1                                           ;; 0a:509a .
-
-data_0a_509b:
     dw   $69aa                                         ;; 0a:509b wW
     db   $db, $53, $f6, $f0, $01, $15, $08, $08        ;; 0a:509d ........
     db   $80, $00                                      ;; 0a:50a5 ..
-
-data_0a_50a7:
-    dw   data_0a_50af                                  ;; 0a:50a7 pP
+    dw   .data_0a_50af                                 ;; 0a:50a7 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:50a9 ......
-
-data_0a_50af:
+.data_0a_50af:
     db   $f0, $00, $15, $19, $08, $80, $f0, $00        ;; 0a:50af ........
     db   $40, $ff, $f1                                 ;; 0a:50b7 ...
-
-data_0a_50ba:
     dw   $699c                                         ;; 0a:50ba wW
     db   $ed, $c0                                      ;; 0a:50bc ..
-
-data_0a_50be:
     dw   $6da1                                         ;; 0a:50be wW
     db   $d2, $5d, $e1, $01, $f0, $00, $01, $17        ;; 0a:50c0 ........
     db   $ed, $80                                      ;; 0a:50c8 ..
-
-data_0a_50ca:
     dw   $6d77                                         ;; 0a:50ca wW
     db   $f1                                           ;; 0a:50cc .
-
-data_0a_50cd:
     dw   $68c4                                         ;; 0a:50cd wW
     db   $d3, $61, $f6, $f0, $01, $15, $08, $08        ;; 0a:50cf ........
     db   $80, $00                                      ;; 0a:50d7 ..
-
-data_0a_50d9:
-    dw   data_0a_50e1                                  ;; 0a:50d9 pP
+    dw   .data_0a_50e1                                 ;; 0a:50d9 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:50db ......
-
-data_0a_50e1:
+.data_0a_50e1:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:50e1 ........
     db   $40, $ff, $ed, $80                            ;; 0a:50e9 ....
-
-data_0a_50ed:
     dw   $6d9d                                         ;; 0a:50ed wW
     db   $f1                                           ;; 0a:50ef .
-
-data_0a_50f0:
     dw   $69e0                                         ;; 0a:50f0 wW
     db   $db, $6b, $f6, $ff                            ;; 0a:50f2 ....
-
-data_0a_50f6:
-    dw   data_0a_50e1                                  ;; 0a:50f6 pP
+    dw   .data_0a_50e1                                 ;; 0a:50f6 pP
     db   $f0, $01, $15, $08, $08, $80, $00, $00        ;; 0a:50f8 ???????.
     db   $00, $00, $00, $00, $00                       ;; 0a:5100 .....
-
-data_0a_5105:
-    dw   data_0a_5107                                  ;; 0a:5105 pP
-
-data_0a_5107:
+    dw   .data_0a_5107                                 ;; 0a:5105 pP
+.data_0a_5107:
     db   $f0, $00, $14, $08, $80, $f0, $04, $1c        ;; 0a:5107 ........
     db   $40, $12, $80, $f0, $0b, $1c, $4b, $31        ;; 0a:510f ........
     db   $80, $f0, $05, $1c, $a0, $22, $80, $f0        ;; 0a:5117 ........
     db   $10, $1c, $a2, $42, $80, $ff                  ;; 0a:511f ......
-
-data_0a_5125:
-    dw   data_0a_5107                                  ;; 0a:5125 pP
+    dw   .data_0a_5107                                 ;; 0a:5125 pP
     db   $f0, $01, $14, $08, $80, $00                  ;; 0a:5127 ??????
-
-data_0a_512d:
-    dw   data_0a_5135                                  ;; 0a:512d pP
+    dw   .data_0a_5135                                 ;; 0a:512d pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:512f ......
-
-data_0a_5135:
+.data_0a_5135:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5135 ........
     db   $40, $ff, $f1                                 ;; 0a:513d ...
-
-data_0a_5140:
     dw   $688e                                         ;; 0a:5140 wW
     db   $ed, $40                                      ;; 0a:5142 ..
-
-data_0a_5144:
     dw   $6ded                                         ;; 0a:5144 wW
     db   $db, $91, $d5, $ca, $d2, $01, $d8, $9d        ;; 0a:5146 ........
     db   $df, $95, $f6, $f0, $01, $15, $08, $08        ;; 0a:514e ........
     db   $80, $00                                      ;; 0a:5156 ..
-
-data_0a_5158:
-    dw   data_0a_5160                                  ;; 0a:5158 pP
+    dw   .data_0a_5160                                 ;; 0a:5158 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:515a ......
-
-data_0a_5160:
+.data_0a_5160:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5160 ........
     db   $40, $ff, $ed, $00                            ;; 0a:5168 ....
-
-data_0a_516c:
     dw   $6e07                                         ;; 0a:516c wW
     db   $f1                                           ;; 0a:516e .
-
-data_0a_516f:
     dw   $6851                                         ;; 0a:516f wW
     db   $de, $63, $f6, $f0, $01, $15, $08, $08        ;; 0a:5171 ........
     db   $80, $00                                      ;; 0a:5179 ..
-
-data_0a_517b:
-    dw   data_0a_5183                                  ;; 0a:517b pP
+    dw   .data_0a_5183                                 ;; 0a:517b pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:517d ......
-
-data_0a_5183:
+.data_0a_5183:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5183 ........
     db   $40, $ff, $ed, $00                            ;; 0a:518b ....
-
-data_0a_518f:
     dw   $6e07                                         ;; 0a:518f wW
     db   $f1                                           ;; 0a:5191 .
-
-data_0a_5192:
     dw   $6851                                         ;; 0a:5192 wW
     db   $de, $55, $f6, $f0, $01, $15, $08, $08        ;; 0a:5194 ........
     db   $80, $00                                      ;; 0a:519c ..
-
-data_0a_519e:
-    dw   data_0a_51a6                                  ;; 0a:519e pP
+    dw   .data_0a_51a6                                 ;; 0a:519e pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:51a0 ......
-
-data_0a_51a6:
+.data_0a_51a6:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:51a6 ........
     db   $40, $ff, $ed, $40                            ;; 0a:51ae ....
-
-data_0a_51b2:
     dw   $6e07                                         ;; 0a:51b2 wW
     db   $f1                                           ;; 0a:51b4 .
-
-data_0a_51b5:
     dw   $6851                                         ;; 0a:51b5 wW
     db   $de, $49, $f6, $f0, $01, $15, $08, $08        ;; 0a:51b7 ........
     db   $80, $00                                      ;; 0a:51bf ..
-
-data_0a_51c1:
-    dw   data_0a_51c9                                  ;; 0a:51c1 pP
+    dw   .data_0a_51c9                                 ;; 0a:51c1 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:51c3 ......
-
-data_0a_51c9:
+.data_0a_51c9:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:51c9 ........
     db   $40, $ff, $ed, $c0                            ;; 0a:51d1 ....
-
-data_0a_51d5:
     dw   $6de9                                         ;; 0a:51d5 wW
     db   $f1                                           ;; 0a:51d7 .
-
-data_0a_51d8:
     dw   $68ab                                         ;; 0a:51d8 wW
     db   $e0, $31, $f6, $f0, $01, $15, $08, $08        ;; 0a:51da ........
     db   $80, $00                                      ;; 0a:51e2 ..
-
-data_0a_51e4:
-    dw   data_0a_51ec                                  ;; 0a:51e4 pP
+    dw   .data_0a_51ec                                 ;; 0a:51e4 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:51e6 ......
-
-data_0a_51ec:
+.data_0a_51ec:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:51ec ........
     db   $40, $ff, $ed, $c0                            ;; 0a:51f4 ....
-
-data_0a_51f8:
     dw   $6de9                                         ;; 0a:51f8 wW
     db   $f1                                           ;; 0a:51fa .
-
-data_0a_51fb:
     dw   $68ab                                         ;; 0a:51fb wW
     db   $d5, $29, $f6, $f0, $01, $15, $08, $08        ;; 0a:51fd ........
     db   $80, $00, $0f, $52, $00, $00, $00, $00        ;; 0a:5205 ..??????
@@ -2048,280 +1472,181 @@ data_0a_51fb:
     db   $93, $96, $9a, $9e, $a2, $f0, $01, $14        ;; 0a:5235 ????????
     db   $08, $80, $00, $00, $00, $00, $00, $00        ;; 0a:523d ???.....
     db   $00                                           ;; 0a:5245 .
-
-data_0a_5246:
-    dw   data_0a_5248                                  ;; 0a:5246 pP
-
-data_0a_5248:
+    dw   .data_0a_5248                                 ;; 0a:5246 pP
+.data_0a_5248:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5248 ........
     db   $40, $ff, $f0, $01, $0c, $a1, $06, $f0        ;; 0a:5250 ........
     db   $01, $14, $08, $80, $00                       ;; 0a:5258 .....
-
-data_0a_525d:
-    dw   data_0a_5265                                  ;; 0a:525d pP
+    dw   .data_0a_5265                                 ;; 0a:525d pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:525f ......
-
-data_0a_5265:
+.data_0a_5265:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5265 ........
     db   $40, $ff, $f0, $02, $1e, $80, $f1, $e5        ;; 0a:526d ........
     db   $84, $f0, $02, $18, $89, $85, $f0, $02        ;; 0a:5275 ........
     db   $1c, $f1, $0a, $86, $f0, $02, $18, $72        ;; 0a:527d ........
     db   $86, $f0, $01, $14, $08, $80, $00             ;; 0a:5285 .......
-
-data_0a_528c:
-    dw   data_0a_5294                                  ;; 0a:528c pP
+    dw   .data_0a_5294                                 ;; 0a:528c pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:528e ......
-
-data_0a_5294:
+.data_0a_5294:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5294 ........
     db   $40, $ff, $f0, $02, $1e, $80, $f2, $ed        ;; 0a:529c ........
     db   $85, $f0, $02, $1c, $f2, $5b, $86, $f0        ;; 0a:52a4 ........
     db   $02, $18, $9e, $86, $f0, $02, $18, $d6        ;; 0a:52ac ........
     db   $86, $f0, $01, $14, $08, $80, $00             ;; 0a:52b4 .......
-
-data_0a_52bb:
-    dw   data_0a_52c3                                  ;; 0a:52bb pP
+    dw   .data_0a_52c3                                 ;; 0a:52bb pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:52bd ......
-
-data_0a_52c3:
+.data_0a_52c3:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:52c3 ........
     db   $40, $ff, $f0, $03, $1e, $80, $f1, $0a        ;; 0a:52cb ........
     db   $86, $f0, $01, $14, $08, $80, $00, $f0        ;; 0a:52d3 .......?
     db   $00, $14, $08, $80, $f0, $02, $1e, $80        ;; 0a:52db ????????
     db   $51, $39, $87, $f0, $01, $14, $08, $80        ;; 0a:52e3 ????????
     db   $00                                           ;; 0a:52eb ?
-
-data_0a_52ec:
-    dw   data_0a_52f4                                  ;; 0a:52ec pP
+    dw   .data_0a_52f4                                 ;; 0a:52ec pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:52ee ......
-
-data_0a_52f4:
+.data_0a_52f4:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:52f4 ........
     db   $40, $ff, $f0, $02, $1e, $80, $f2, $ac        ;; 0a:52fc ........
     db   $87, $f0, $02, $1c, $e2, $b6, $87, $f0        ;; 0a:5304 ........
     db   $02, $1c, $e2, $be, $87, $f0, $02, $1c        ;; 0a:530c ........
     db   $e2, $c4, $87, $f0, $01, $14, $08, $80        ;; 0a:5314 ........
     db   $00                                           ;; 0a:531c .
-
-data_0a_531d:
-    dw   data_0a_5325                                  ;; 0a:531d pP
+    dw   .data_0a_5325                                 ;; 0a:531d pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:531f ......
-
-data_0a_5325:
+.data_0a_5325:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5325 ........
     db   $40, $ff, $f0, $02, $1e, $80, $c2, $ac        ;; 0a:532d ........
     db   $87, $f0, $02, $1c, $b2, $a7, $87, $f0        ;; 0a:5335 ........
     db   $02, $1c, $b2, $a2, $87, $f0, $01, $14        ;; 0a:533d ........
     db   $08, $80, $00, $00, $00, $00, $00, $00        ;; 0a:5345 ........
     db   $00                                           ;; 0a:534d .
-
-data_0a_534e:
-    dw   data_0a_5373                                  ;; 0a:534e pP
+    dw   .data_0a_5373                                 ;; 0a:534e pP
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5350 ????????
     db   $40, $ff, $f0, $01, $1e, $80, $f2, $c1        ;; 0a:5358 ????????
     db   $87, $f0, $01, $1c, $e2, $c8, $87, $f0        ;; 0a:5360 ????????
     db   $01, $1c, $e2, $ce, $87, $f0, $01, $14        ;; 0a:5368 ????????
     db   $08, $80, $00                                 ;; 0a:5370 ???
-
-data_0a_5373:
+.data_0a_5373:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5373 ........
     db   $40, $ff, $f0, $01, $0c, $f2, $11, $f0        ;; 0a:537b ........
     db   $01, $14, $08, $80, $00                       ;; 0a:5383 .....
-
-data_0a_5388:
-    dw   data_0a_5390                                  ;; 0a:5388 pP
+    dw   .data_0a_5390                                 ;; 0a:5388 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:538a ......
-
-data_0a_5390:
+.data_0a_5390:
     db   $f0, $00, $15, $25, $08, $80, $f0, $00        ;; 0a:5390 ........
     db   $40, $ff, $ed, $80                            ;; 0a:5398 ....
-
-data_0a_539c:
     dw   $6d45                                         ;; 0a:539c wW
     db   $d3, $1b, $da, $63, $f0, $00, $01, $08        ;; 0a:539e ........
     db   $f0, $01, $14, $08, $80, $00                  ;; 0a:53a6 ......
-
-data_0a_53ac:
-    dw   data_0a_53b4                                  ;; 0a:53ac pP
+    dw   .data_0a_53b4                                 ;; 0a:53ac pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:53ae ......
-
-data_0a_53b4:
+.data_0a_53b4:
     db   $f0, $00, $15, $08, $08, $80, $ed, $80        ;; 0a:53b4 ........
-
-data_0a_53bc:
     dw   $6d8f                                         ;; 0a:53bc wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:53be .....
-
-data_0a_53c3:
     dw   $67e5                                         ;; 0a:53c3 wW
     db   $df, $3b, $f6, $f0, $01, $14, $08, $80        ;; 0a:53c5 ........
     db   $00                                           ;; 0a:53cd .
-
-data_0a_53ce:
-    dw   data_0a_53d6                                  ;; 0a:53ce pP
+    dw   .data_0a_53d6                                 ;; 0a:53ce pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:53d0 ......
-
-data_0a_53d6:
+.data_0a_53d6:
     db   $f0, $00, $15, $25, $08, $80, $f0, $00        ;; 0a:53d6 ........
     db   $40, $ff, $ed, $80                            ;; 0a:53de ....
-
-data_0a_53e2:
     dw   $6d5b                                         ;; 0a:53e2 wW
     db   $d5, $47, $e2, $46, $db, $77, $f0, $00        ;; 0a:53e4 ........
     db   $01, $08, $f0, $01, $14, $08, $80, $00        ;; 0a:53ec ........
-
-data_0a_53f4:
-    dw   data_0a_53fc                                  ;; 0a:53f4 pP
-
-data_0a_53f6:
-    dw   data_0a_5418                                  ;; 0a:53f6 pP
+    dw   .data_0a_53fc                                 ;; 0a:53f4 pP
+    dw   .data_0a_5418                                 ;; 0a:53f6 pP
     db   $00, $00, $00, $00                            ;; 0a:53f8 ....
-
-data_0a_53fc:
+.data_0a_53fc:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:53fc ........
     db   $40, $ff, $ed, $80                            ;; 0a:5404 ....
-
-data_0a_5408:
     dw   $6d4b                                         ;; 0a:5408 wW
     db   $f1                                           ;; 0a:540a .
-
-data_0a_540b:
     dw   $6985                                         ;; 0a:540b wW
     db   $da, $3f, $e2, $ca, $f6, $f0, $01, $14        ;; 0a:540d ........
     db   $08, $80, $00                                 ;; 0a:5415 ...
-
-data_0a_5418:
+.data_0a_5418:
     db   $f0, $00, $15, $08, $08, $80, $ed, $c0        ;; 0a:5418 ........
-
-data_0a_5420:
     dw   $6d4b                                         ;; 0a:5420 wW
     db   $f1                                           ;; 0a:5422 .
-
-data_0a_5423:
     dw   $6985                                         ;; 0a:5423 wW
     db   $da, $29, $e2, $ca, $f6, $f0, $01, $14        ;; 0a:5425 ........
     db   $08, $80, $00                                 ;; 0a:542d ...
-
-data_0a_5430:
-    dw   data_0a_5438                                  ;; 0a:5430 pP
+    dw   .data_0a_5438                                 ;; 0a:5430 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5432 ......
-
-data_0a_5438:
+.data_0a_5438:
     db   $f0, $00, $15, $08, $08, $80, $ed, $80        ;; 0a:5438 ........
-
-data_0a_5440:
     dw   $6d53                                         ;; 0a:5440 wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:5442 .....
-
-data_0a_5447:
     dw   $6a72                                         ;; 0a:5447 wW
     db   $dc, $3f, $d7, $ca, $f6, $f0, $01, $14        ;; 0a:5449 ........
     db   $08, $80, $00                                 ;; 0a:5451 ...
-
-data_0a_5454:
-    dw   data_0a_545c                                  ;; 0a:5454 pP
-
-data_0a_5456:
-    dw   data_0a_5478                                  ;; 0a:5456 pP
+    dw   .data_0a_545c                                 ;; 0a:5454 pP
+    dw   .data_0a_5478                                 ;; 0a:5456 pP
     db   $00, $00, $00, $00                            ;; 0a:5458 ....
-
-data_0a_545c:
+.data_0a_545c:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:545c ........
     db   $40, $ff, $ed, $80                            ;; 0a:5464 ....
-
-data_0a_5468:
     dw   $6d67                                         ;; 0a:5468 wW
     db   $f1                                           ;; 0a:546a .
-
-data_0a_546b:
     dw   $6993                                         ;; 0a:546b wW
     db   $db, $4d, $e3, $ca, $f6, $f0, $01, $14        ;; 0a:546d ........
     db   $08, $80, $00                                 ;; 0a:5475 ...
-
-data_0a_5478:
+.data_0a_5478:
     db   $f0, $00, $15, $08, $08, $80, $ed, $80        ;; 0a:5478 ........
-
-data_0a_5480:
     dw   $6d67                                         ;; 0a:5480 wW
     db   $f1                                           ;; 0a:5482 .
-
-data_0a_5483:
     dw   $6993                                         ;; 0a:5483 wW
     db   $db, $37, $e3, $ca, $f6, $f0, $01, $14        ;; 0a:5485 ........
     db   $08, $80, $00                                 ;; 0a:548d ...
-
-data_0a_5490:
-    dw   data_0a_5498                                  ;; 0a:5490 pP
+    dw   .data_0a_5498                                 ;; 0a:5490 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5492 ......
-
-data_0a_5498:
+.data_0a_5498:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5498 ........
     db   $40, $ff, $ed, $c0                            ;; 0a:54a0 ....
-
-data_0a_54a4:
     dw   $6d51                                         ;; 0a:54a4 wW
     db   $d3, $2f, $01, $dc, $2f, $f0, $01, $14        ;; 0a:54a6 ........
     db   $08, $80, $00, $00, $00, $00, $00, $00        ;; 0a:54ae ........
     db   $00                                           ;; 0a:54b6 .
-
-data_0a_54b7:
-    dw   data_0a_54b9                                  ;; 0a:54b7 pP
-
-data_0a_54b9:
+    dw   .data_0a_54b9                                 ;; 0a:54b7 pP
+.data_0a_54b9:
     db   $f0, $08, $1c, $09, $12, $80, $f0, $00        ;; 0a:54b9 ........
     db   $40, $ff, $f0, $06, $0c, $b7, $23, $f0        ;; 0a:54c1 ........
     db   $05, $0c, $a0, $31, $f0, $05, $0c, $a4        ;; 0a:54c9 ........
     db   $21, $f0, $04, $08, $31, $f0, $04, $08        ;; 0a:54d1 ........
     db   $12, $f0, $01, $14, $08, $80, $00             ;; 0a:54d9 .......
-
-data_0a_54e0:
-    dw   data_0a_54e8                                  ;; 0a:54e0 pP
-
-data_0a_54e2:
-    dw   data_0a_551b                                  ;; 0a:54e2 pP
+    dw   .data_0a_54e8                                 ;; 0a:54e0 pP
+    dw   .data_0a_551b                                 ;; 0a:54e2 pP
     db   $00, $00, $00, $00                            ;; 0a:54e4 ....
-
-data_0a_54e8:
+.data_0a_54e8:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:54e8 ........
     db   $40, $ff, $ed, $c0                            ;; 0a:54f0 ....
-
-data_0a_54f4:
     dw   $6d39                                         ;; 0a:54f4 wW
     db   $d2, $67, $6b, $6f, $73, $77, $7b, $7f        ;; 0a:54f6 ........
     db   $83, $01, $01, $ed, $00                       ;; 0a:54fe .....
-
-data_0a_5503:
     dw   $6d41                                         ;; 0a:5503 wW
     db   $67, $6b, $6f, $73, $77, $7b, $7f, $83        ;; 0a:5505 ........
     db   $87, $8b, $8f, $93, $97, $9b, $9f, $a3        ;; 0a:550d ........
     db   $f0, $01, $14, $08, $80, $00                  ;; 0a:5515 ......
-
-data_0a_551b:
+.data_0a_551b:
     db   $f0, $00, $15, $08, $08, $80, $ed, $00        ;; 0a:551b ........
-
-data_0a_5523:
     dw   $6d3d                                         ;; 0a:5523 wW
     db   $d2, $01, $01, $01, $01, $67, $6b, $6f        ;; 0a:5525 ........
     db   $73, $77, $7b, $7f, $83, $87, $8b, $01        ;; 0a:552d ........
     db   $01, $01, $01, $01, $01, $01, $01, $01        ;; 0a:5535 ........
     db   $01, $01, $01, $f0, $01, $14, $08, $80        ;; 0a:553d ........
     db   $00, $00, $00, $00, $00, $00, $00             ;; 0a:5545 .......
-
-data_0a_554c:
-    dw   data_0a_554e                                  ;; 0a:554c pP
-
-data_0a_554e:
+    dw   .data_0a_554e                                 ;; 0a:554c pP
+.data_0a_554e:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:554e ........
     db   $40, $ff, $f0, $01, $0c, $f1, $31, $f0        ;; 0a:5556 ........
     db   $02, $04, $08, $f0, $02, $0c, $b0, $12        ;; 0a:555e ........
     db   $f0, $01, $0c, $b3, $11, $f0, $01, $14        ;; 0a:5566 ........
     db   $08, $80, $00, $00, $00, $00, $00, $00        ;; 0a:556e ........
     db   $00                                           ;; 0a:5576 .
-
-data_0a_5577:
-    dw   data_0a_5579                                  ;; 0a:5577 pP
-
-data_0a_5579:
+    dw   .data_0a_5579                                 ;; 0a:5577 pP
+.data_0a_5579:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5579 ........
     db   $40, $ff, $f0, $01, $1c, $47, $a6, $80        ;; 0a:5581 ........
     db   $f0, $02, $1c, $f6, $c5, $80, $f0, $01        ;; 0a:5589 ........
@@ -2342,63 +1667,39 @@ data_0a_5579:
     db   $01, $01, $01, $01, $01, $01, $01, $01        ;; 0a:5601 ????????
     db   $01, $01, $01, $01, $f0, $01, $14, $08        ;; 0a:5609 ????????
     db   $80, $00                                      ;; 0a:5611 ??
-
-data_0a_5613:
-    dw   data_0a_561b                                  ;; 0a:5613 pP
-
-data_0a_5615:
-    dw   data_0a_5647                                  ;; 0a:5615 pP
+    dw   .data_0a_561b                                 ;; 0a:5613 pP
+    dw   .data_0a_5647                                 ;; 0a:5615 pP
     db   $00, $00, $00, $00                            ;; 0a:5617 ....
-
-data_0a_561b:
+.data_0a_561b:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:561b ........
     db   $40, $ff, $ed, $c0                            ;; 0a:5623 ....
-
-data_0a_5627:
     dw   $6d39                                         ;; 0a:5627 wW
     db   $d2, $67, $71, $79, $7f, $89, $91, $97        ;; 0a:5629 ........
     db   $a1, $01, $01, $01, $ed, $00                  ;; 0a:5631 ......
-
-data_0a_5637:
     dw   $6d41                                         ;; 0a:5637 wW
     db   $67, $71, $79, $7f, $89, $91, $97, $a1        ;; 0a:5639 ........
     db   $f0, $01, $14, $08, $80, $00                  ;; 0a:5641 ......
-
-data_0a_5647:
+.data_0a_5647:
     db   $f0, $00, $15, $08, $08, $80, $ed, $00        ;; 0a:5647 ........
-
-data_0a_564f:
     dw   $6d3d                                         ;; 0a:564f wW
     db   $d2, $01, $01, $01, $01, $67, $71, $79        ;; 0a:5651 ........
     db   $7f, $89, $91, $97, $a1, $01, $01, $01        ;; 0a:5659 ........
     db   $01, $01, $01, $01, $f0, $01, $14, $08        ;; 0a:5661 ........
     db   $80, $00                                      ;; 0a:5669 ..
-
-data_0a_566b:
-    dw   data_0a_5673                                  ;; 0a:566b pP
-
-data_0a_566d:
-    dw   data_0a_5698                                  ;; 0a:566d pP
+    dw   .data_0a_5673                                 ;; 0a:566b pP
+    dw   .data_0a_5698                                 ;; 0a:566d pP
     db   $00, $00, $00, $00                            ;; 0a:566f ....
-
-data_0a_5673:
+.data_0a_5673:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5673 ........
     db   $40, $ff, $ed, $c0                            ;; 0a:567b ....
-
-data_0a_567f:
     dw   $6d39                                         ;; 0a:567f wW
     db   $d2, $5d, $65, $6b, $75, $7d, $01, $01        ;; 0a:5681 ........
     db   $ed, $00                                      ;; 0a:5689 ..
-
-data_0a_568b:
     dw   $6d41                                         ;; 0a:568b wW
     db   $5d, $65, $6b, $75, $7d, $f0, $01, $14        ;; 0a:568d ........
     db   $08, $80, $00                                 ;; 0a:5695 ...
-
-data_0a_5698:
+.data_0a_5698:
     db   $f0, $00, $15, $08, $08, $80, $ed, $00        ;; 0a:5698 ........
-
-data_0a_56a0:
     dw   $6d3d                                         ;; 0a:56a0 wW
     db   $d2, $01, $01, $01, $5d, $65, $6b, $75        ;; 0a:56a2 ........
     db   $7d, $01, $01, $01, $01, $01, $f0, $01        ;; 0a:56aa ........
@@ -2411,99 +1712,62 @@ data_0a_56a0:
     db   $f0, $00, $01, $16, $d2, $53, $e2, $01        ;; 0a:56e2 ????????
     db   $f0, $00, $15, $15, $08, $80, $d2, $4d        ;; 0a:56ea ????????
     db   $f0, $01, $15, $08, $08, $80, $00             ;; 0a:56f2 ???????
-
-data_0a_56f9:
-    dw   data_0a_5701                                  ;; 0a:56f9 pP
+    dw   .data_0a_5701                                 ;; 0a:56f9 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:56fb ......
-
-data_0a_5701:
+.data_0a_5701:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5701 ........
     db   $40, $ff, $f5                                 ;; 0a:5709 ...
-
-data_0a_570c:
     dw   $6e2d                                         ;; 0a:570c wW
     db   $f0, $00, $01, $17, $d1, $51, $e2, $01        ;; 0a:570e ........
     db   $d2, $6d, $f0, $01, $15, $08, $08, $80        ;; 0a:5716 ........
     db   $00                                           ;; 0a:571e .
-
-data_0a_571f:
-    dw   data_0a_5727                                  ;; 0a:571f pP
+    dw   .data_0a_5727                                 ;; 0a:571f pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5721 ......
-
-data_0a_5727:
+.data_0a_5727:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:5727 ........
     db   $40, $ff, $ed, $80                            ;; 0a:572f ....
-
-data_0a_5733:
     dw   $6d7f                                         ;; 0a:5733 wW
     db   $f1                                           ;; 0a:5735 .
-
-data_0a_5736:
     dw   $68d7                                         ;; 0a:5736 wW
     db   $da, $59, $f6, $f0, $01, $15, $08, $08        ;; 0a:5738 ........
     db   $80, $00                                      ;; 0a:5740 ..
-
-data_0a_5742:
-    dw   data_0a_574a                                  ;; 0a:5742 pP
+    dw   .data_0a_574a                                 ;; 0a:5742 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5744 ......
-
-data_0a_574a:
+.data_0a_574a:
     db   $f0, $00, $15, $08, $08, $80, $f5             ;; 0a:574a .......
-
-data_0a_5751:
     dw   $6e23                                         ;; 0a:5751 wW
     db   $f0, $00, $40, $ff, $f0, $00, $01, $16        ;; 0a:5753 ........
     db   $d8, $59, $f0, $01, $15, $08, $08, $80        ;; 0a:575b ........
     db   $00                                           ;; 0a:5763 .
-
-data_0a_5764:
-    dw   data_0a_576c                                  ;; 0a:5764 pP
+    dw   .data_0a_576c                                 ;; 0a:5764 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5766 ......
-
-data_0a_576c:
+.data_0a_576c:
     db   $f0, $00, $15, $08, $08, $80, $ed, $80        ;; 0a:576c ........
-
-data_0a_5774:
     dw   $6d9f                                         ;; 0a:5774 wW
     db   $f0, $00, $40, $ff, $f1                       ;; 0a:5776 .....
-
-data_0a_577b:
     dw   $6a4b                                         ;; 0a:577b wW
     db   $df, $33, $f6, $f0, $01, $14, $08, $80        ;; 0a:577d ........
     db   $00                                           ;; 0a:5785 .
-
-data_0a_5786:
-    dw   data_0a_578e                                  ;; 0a:5786 pP
+    dw   .data_0a_578e                                 ;; 0a:5786 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5788 ......
-
-data_0a_578e:
+.data_0a_578e:
     db   $f0, $00, $15, $17, $08, $80, $f0, $00        ;; 0a:578e ........
     db   $40, $ff, $ed, $00                            ;; 0a:5796 ....
-
-data_0a_579a:
     dw   $6d71                                         ;; 0a:579a wW
     db   $d0, $67, $f0, $01, $15, $08, $08, $80        ;; 0a:579c ........
     db   $00                                           ;; 0a:57a4 .
-
-data_0a_57a5:
-    dw   data_0a_57ad                                  ;; 0a:57a5 pP
+    dw   .data_0a_57ad                                 ;; 0a:57a5 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:57a7 ......
-
-data_0a_57ad:
+.data_0a_57ad:
     db   $f0, $00, $15, $15, $08, $80, $f0, $00        ;; 0a:57ad ........
     db   $40, $ff, $ed, $80                            ;; 0a:57b5 ....
-
-data_0a_57b9:
     dw   $6d75                                         ;; 0a:57b9 wW
     db   $dc, $01, $e1, $01, $d2, $5b, $e2, $01        ;; 0a:57bb ........
     db   $01, $f0, $00, $01, $16, $d2, $65, $f0        ;; 0a:57c3 ........
     db   $01, $15, $08, $08, $80, $00, $00, $00        ;; 0a:57cb ........
     db   $00, $00, $00, $00                            ;; 0a:57d3 ....
-
-data_0a_57d7:
-    dw   data_0a_57d9                                  ;; 0a:57d7 pP
-
-data_0a_57d9:
+    dw   .data_0a_57d9                                 ;; 0a:57d7 pP
+.data_0a_57d9:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:57d9 ........
     db   $40, $ff, $f0, $03, $1c, $41, $32, $80        ;; 0a:57e1 ........
     db   $f0, $0e, $1c, $c1, $42, $80, $f0, $01        ;; 0a:57e9 ........
@@ -2518,20 +1782,13 @@ data_0a_57d9:
     db   $68, $d6, $01, $d5, $5b, $da, $01, $e3        ;; 0a:5831 ????????
     db   $01, $d6, $01, $d5, $5b, $f6, $f0, $01        ;; 0a:5839 ????????
     db   $15, $08, $08, $80, $00                       ;; 0a:5841 ?????
-
-data_0a_5846:
-    dw   data_0a_584e                                  ;; 0a:5846 pP
+    dw   .data_0a_584e                                 ;; 0a:5846 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 0a:5848 ......
-
-data_0a_584e:
+.data_0a_584e:
     db   $f0, $00, $15, $08, $08, $80, $f0, $00        ;; 0a:584e ........
     db   $40, $ff, $ed, $80                            ;; 0a:5856 ....
-
-data_0a_585a:
     dw   $6d7f                                         ;; 0a:585a wW
     db   $f1                                           ;; 0a:585c .
-
-data_0a_585d:
     dw   $68d7                                         ;; 0a:585d wW
     db   $da, $51, $f6, $f0, $01, $15, $08, $08        ;; 0a:585f ........
     db   $80, $00, $71, $58, $00, $00, $00, $00        ;; 0a:5867 ..??????
@@ -2831,8 +2088,6 @@ data_0a_585d:
     dw   `11133111                                     ;; 0a:6147 $ff $18
 
     db   $fc, $08                                      ;; 0a:6149 ..
-
-data_0a_614b:
     dw   $000c                                         ;; 0a:614b wW
     db   $0c                                           ;; 0a:614d .
     dw   `00000023                                     ;; 0a:614e $01 $03
@@ -2852,12 +2107,8 @@ data_0a_614b:
     dw   `00002311                                     ;; 0a:6164 $07 $0c
 
     db   $fc, $08                                      ;; 0a:6166 ..
-
-data_0a_6168:
     dw   $0028                                         ;; 0a:6168 wW
     db   $fc, $08                                      ;; 0a:616a ..
-
-data_0a_616c:
     dw   $0040                                         ;; 0a:616c wW
     db   $07                                           ;; 0a:616e .
     dw   `00000231                                     ;; 0a:616f $03 $06
@@ -2867,8 +2118,6 @@ data_0a_616c:
     db   %00000000                                     ;; 0a:6175 $00
 
     db   $fc, $06                                      ;; 0a:6176 ..
-
-data_0a_6178:
     dw   $0001                                         ;; 0a:6178 wW
     db   $2b                                           ;; 0a:617a .
     db   %00011000                                     ;; 0a:617b $18
@@ -2898,15 +2147,11 @@ data_0a_6178:
     dw   `11111320                                     ;; 0a:61a4 $fc $06
 
     db   $fc, $08                                      ;; 0a:61a6 ..
-
-data_0a_61a8:
     dw   $0070                                         ;; 0a:61a8 wW
     db   $02                                           ;; 0a:61aa .
     dw   `11322000                                     ;; 0a:61ab $e0 $38
 
     db   $fc, $06                                      ;; 0a:61ad ..
-
-data_0a_61af:
     dw   $008a                                         ;; 0a:61af wW
     db   $2c                                           ;; 0a:61b1 .
     dw   `00020000                                     ;; 0a:61b2 $00 $10
@@ -2938,8 +2183,6 @@ data_0a_61af:
     dw   `02220020                                     ;; 0a:61dc $00 $72
 
     db   $fc, $05                                      ;; 0a:61de ..
-
-data_0a_61e0:
     dw   $000f                                         ;; 0a:61e0 wW
     db   $0f                                           ;; 0a:61e2 .
     db   %01111000                                     ;; 0a:61e3 $78
@@ -2953,22 +2196,16 @@ data_0a_61e0:
     dw   `00022000                                     ;; 0a:61f0 $00 $18
 
     db   $fc, $0d                                      ;; 0a:61f2 ..
-
-data_0a_61f4:
     dw   $00b0                                         ;; 0a:61f4 wW
     db   $01                                           ;; 0a:61f6 .
     db   %01110110                                     ;; 0a:61f7 $76
 
     db   $fc, $05                                      ;; 0a:61f8 ..
-
-data_0a_61fa:
     dw   $00be                                         ;; 0a:61fa wW
     db   $80, $0b                                      ;; 0a:61fc ..
     db   %00000000                                     ;; 0a:61fe $00
 
     db   $fc, $06                                      ;; 0a:61ff ..
-
-data_0a_6201:
     dw   $00ef                                         ;; 0a:6201 wW
     db   $0c                                           ;; 0a:6203 .
     dw   `00001111                                     ;; 0a:6204 $0f $00
@@ -2979,8 +2216,6 @@ data_0a_6201:
     dw   `00133331                                     ;; 0a:620e $3f $1e
 
     db   $fc, $05                                      ;; 0a:6210 ..
-
-data_0a_6212:
     dw   $000f                                         ;; 0a:6212 wW
     db   $0b                                           ;; 0a:6214 .
     db   %10000000                                     ;; 0a:6215 $80
@@ -3057,8 +2292,6 @@ data_0a_6212:
     dw   `33312133                                     ;; 0a:6285 $f7 $eb
 
     db   $fc, $06                                      ;; 0a:6287 ..
-
-data_0a_6289:
     dw   $0198                                         ;; 0a:6289 wW
     db   $20                                           ;; 0a:628b .
     dw   `33333331                                     ;; 0a:628c $ff $fe
@@ -3101,8 +2334,6 @@ data_0a_6289:
     dw   `02133331                                     ;; 0a:62c6 $3f $5e
 
     db   $fc, $05                                      ;; 0a:62c8 ..
-
-data_0a_62ca:
     dw   $01e0                                         ;; 0a:62ca wW
     db   $04                                           ;; 0a:62cc .
     db   %01001100                                     ;; 0a:62cd $4c
@@ -3110,8 +2341,6 @@ data_0a_62ca:
     dw   `00211112                                     ;; 0a:62ce $1e $21
 
     db   $00, $fc, $05                                 ;; 0a:62d0 ...
-
-data_0a_62d3:
     dw   $010f                                         ;; 0a:62d3 wW
     db   $2a                                           ;; 0a:62d5 .
     dw   `21333333                                     ;; 0a:62d6 $7f $bf
@@ -3149,8 +2378,6 @@ data_0a_62d3:
     dw   `20211122                                     ;; 0a:630c $1c $a3
 
     db   $fc, $06                                      ;; 0a:630e ..
-
-data_0a_6310:
     dw   $01ea                                         ;; 0a:6310 wW
     db   $04                                           ;; 0a:6312 .
     dw   `20001111                                     ;; 0a:6313 $0f $80
@@ -3176,8 +2403,6 @@ data_0a_6310:
     db   %00000000                                     ;; 0a:632a $00
 
     db   $01, $c0, $fc, $05                            ;; 0a:632b ....
-
-data_0a_632f:
     dw   $007f                                         ;; 0a:632f wW
     db   $80, $08                                      ;; 0a:6331 ..
     db   %00000000                                     ;; 0a:6333 $00
@@ -3189,8 +2414,6 @@ data_0a_632f:
     dw   `00000031                                     ;; 0a:633b $03 $02
 
     db   $fc, $06                                      ;; 0a:633d ..
-
-data_0a_633f:
     dw   $0292                                         ;; 0a:633f wW
     db   $0c                                           ;; 0a:6341 .
     dw   `00000312                                     ;; 0a:6342 $06 $05
@@ -3201,16 +2424,12 @@ data_0a_633f:
     dw   `22221300                                     ;; 0a:634c $0c $f4
 
     db   $fc, $06                                      ;; 0a:634e ..
-
-data_0a_6350:
     dw   $02a4                                         ;; 0a:6350 wW
     db   $04                                           ;; 0a:6352 .
     dw   `22221303                                     ;; 0a:6353 $0d $f5
     dw   `22221331                                     ;; 0a:6355 $0f $f6
 
     db   $fc, $05                                      ;; 0a:6357 ..
-
-data_0a_6359:
     dw   $0020                                         ;; 0a:6359 wW
     db   $09                                           ;; 0a:635b .
     db   %00000001                                     ;; 0a:635c $01
@@ -3221,8 +2440,6 @@ data_0a_6359:
     dw   `11222222                                     ;; 0a:6363 $c0 $3f
 
     db   $fc, $06                                      ;; 0a:6365 ..
-
-data_0a_6367:
     dw   $000d                                         ;; 0a:6367 wW
     db   $36                                           ;; 0a:6369 .
     dw   `33000000                                     ;; 0a:636a $c0 $c0
@@ -3258,16 +2475,12 @@ data_0a_6367:
     dw   `22213300                                     ;; 0a:639e $1c $ec
 
     db   $fc, $06                                      ;; 0a:63a0 ..
-
-data_0a_63a2:
     dw   $02a4                                         ;; 0a:63a2 wW
     db   $04                                           ;; 0a:63a4 .
     dw   `11221130                                     ;; 0a:63a5 $ce $32
     dw   `12222133                                     ;; 0a:63a7 $87 $7b
 
     db   $fc, $06                                      ;; 0a:63a9 ..
-
-data_0a_63ab:
     dw   $0302                                         ;; 0a:63ab wW
     db   $66                                           ;; 0a:63ad .
     dw   `12222213                                     ;; 0a:63ae $83 $7d
@@ -3329,8 +2542,6 @@ data_0a_63ab:
     dw   `22213122                                     ;; 0a:6412 $1c $eb
 
     db   $fc, $06                                      ;; 0a:6414 ..
-
-data_0a_6416:
     dw   $02a4                                         ;; 0a:6416 wW
     db   $19                                           ;; 0a:6418 .
     dw   `22213300                                     ;; 0a:6419 $1c $ec
@@ -3348,8 +2559,6 @@ data_0a_6416:
     dw   `00000033                                     ;; 0a:642f $03 $03
 
     db   $00, $fc, $05                                 ;; 0a:6431 ...
-
-data_0a_6434:
     dw   $005e                                         ;; 0a:6434 wW
     db   $40                                           ;; 0a:6436 .
     dw   `22222221                                     ;; 0a:6437 $01 $fe
@@ -3397,12 +2606,8 @@ data_0a_6434:
     dw   `33330311                                     ;; 0a:647f $f7 $f4
 
     db   $fc, $05                                      ;; 0a:6481 ..
-
-data_0a_6483:
     dw   $038c                                         ;; 0a:6483 wW
     db   $fc, $05                                      ;; 0a:6485 ..
-
-data_0a_6487:
     dw   $000f                                         ;; 0a:6487 wW
     db   $08                                           ;; 0a:6489 .
     dw   `22133000                                     ;; 0a:648a $38 $d8
@@ -3431,8 +2636,6 @@ data_0a_6493:
     dw   `11110011                                     ;; 0a:64aa $f3 $00
 
     db   $fc, $05                                      ;; 0a:64ac ..
-
-data_0a_64ae:
     dw   $02e5                                         ;; 0a:64ae wW
     db   $0a                                           ;; 0a:64b0 .
     db   %00000000                                     ;; 0a:64b1 $00
@@ -3445,8 +2648,6 @@ data_0a_64ae:
     db   %01111111                                     ;; 0a:64ba $7f
 
     db   $fc, $0a                                      ;; 0a:64bb ..
-
-data_0a_64bd:
     dw   $0001                                         ;; 0a:64bd wW
     db   $06                                           ;; 0a:64bf .
     db   %10000000                                     ;; 0a:64c0 $80
@@ -3455,12 +2656,8 @@ data_0a_64bd:
     dw   `01111000                                     ;; 0a:64c3 $78 $00
 
     db   $a7, $fc, $05                                 ;; 0a:64c5 ...
-
-data_0a_64c8:
     dw   $043d                                         ;; 0a:64c8 wW
     db   $fc, $08                                      ;; 0a:64ca ..
-
-data_0a_64cc:
     dw   $0000                                         ;; 0a:64cc wW
     db   $09                                           ;; 0a:64ce .
     dw   `01111111                                     ;; 0a:64cf $7f $00
@@ -3469,8 +2666,6 @@ data_0a_64cc:
     dw   `11110101                                     ;; 0a:64d5 $f5 $00
 
     db   $fb, $fc, $0b                                 ;; 0a:64d7 ...
-
-data_0a_64da:
     dw   $0001                                         ;; 0a:64da wW
     db   $0b                                           ;; 0a:64dc .
     db   %00011111                                     ;; 0a:64dd $1f
@@ -3482,15 +2677,11 @@ data_0a_64da:
     dw   `11111011                                     ;; 0a:64e5 $fb $00
 
     db   $df, $fc, $05                                 ;; 0a:64e7 ...
-
-data_0a_64ea:
     dw   $0487                                         ;; 0a:64ea wW
     db   $05, $ef, $00                                 ;; 0a:64ec ...
     dw   `11011111                                     ;; 0a:64ef $df $00
 
     db   $bf, $fc, $05                                 ;; 0a:64f1 ...
-
-data_0a_64f4:
     dw   $0499                                         ;; 0a:64f4 wW
     db   $26                                           ;; 0a:64f6 .
     dw   `12221222                                     ;; 0a:64f7 $88 $77
@@ -3516,8 +2707,6 @@ data_0a_64f4:
     dw   `12231231                                     ;; 0a:651b $9b $76
 
     db   $fc, $06                                      ;; 0a:651d ..
-
-data_0a_651f:
     dw   $04c4                                         ;; 0a:651f wW
     db   $08                                           ;; 0a:6521 .
     dw   `13331331                                     ;; 0a:6522 $ff $76
@@ -3526,8 +2715,6 @@ data_0a_651f:
     dw   `23122311                                     ;; 0a:6528 $67 $dc
 
     db   $fc, $06                                      ;; 0a:652a ..
-
-data_0a_652c:
     dw   $04d2                                         ;; 0a:652c wW
     db   $09                                           ;; 0a:652e .
     dw   `32222311                                     ;; 0a:652f $87 $fc
@@ -3536,12 +2723,8 @@ data_0a_652c:
     dw   `11111011                                     ;; 0a:6535 $fb $00
 
     db   $fb, $fc, $05                                 ;; 0a:6537 ...
-
-data_0a_653a:
     dw   $0493                                         ;; 0a:653a wW
     db   $01, $f7, $fc, $05                            ;; 0a:653c ....
-
-data_0a_6540:
     dw   $04df                                         ;; 0a:6540 wW
     db   $09                                           ;; 0a:6542 .
     dw   `11111011                                     ;; 0a:6543 $fb $00
@@ -3550,8 +2733,6 @@ data_0a_6540:
     dw   `11101110                                     ;; 0a:6549 $ee $00
 
     db   $f1, $fc, $0d                                 ;; 0a:654b ...
-
-data_0a_654e:
     dw   $0467                                         ;; 0a:654e wW
     db   $07                                           ;; 0a:6550 .
     dw   `10111111                                     ;; 0a:6551 $bf $00
@@ -3559,16 +2740,12 @@ data_0a_654e:
     dw   `11011110                                     ;; 0a:6555 $de $00
 
     db   $e1, $fc, $09                                 ;; 0a:6557 ...
-
-data_0a_655a:
     dw   $0001                                         ;; 0a:655a wW
     db   $05                                           ;; 0a:655c .
     dw   `11011111                                     ;; 0a:655d $df $00
     dw   `10101111                                     ;; 0a:655f $af $00
 
     db   $73, $fc, $09                                 ;; 0a:6561 ...
-
-data_0a_6564:
     dw   $0445                                         ;; 0a:6564 wW
     db   $07                                           ;; 0a:6566 .
     dw   `11111111                                     ;; 0a:6567 $ff $00
@@ -3576,8 +2753,6 @@ data_0a_6564:
     dw   `11101011                                     ;; 0a:656b $eb $00
 
     db   $9c, $fc, $0b                                 ;; 0a:656d ...
-
-data_0a_6570:
     dw   $0453                                         ;; 0a:6570 wW
     db   $07                                           ;; 0a:6572 .
     dw   `11111101                                     ;; 0a:6573 $fd $00
@@ -3585,26 +2760,18 @@ data_0a_6570:
     dw   `11110111                                     ;; 0a:6577 $f7 $00
 
     db   $0f, $fc, $05                                 ;; 0a:6579 ...
-
-data_0a_657c:
     dw   $0001                                         ;; 0a:657c wW
     db   $fc, $06                                      ;; 0a:657e ..
-
-data_0a_6580:
     dw   $04e2                                         ;; 0a:6580 wW
     db   $01                                           ;; 0a:6582 .
     db   %00011111                                     ;; 0a:6583 $1f
 
     db   $fc, $0d                                      ;; 0a:6584 ..
-
-data_0a_6586:
     dw   $0007                                         ;; 0a:6586 wW
     db   $80, $0b                                      ;; 0a:6588 ..
     db   %00000000                                     ;; 0a:658a $00
 
     db   $fc, $05                                      ;; 0a:658b ..
-
-data_0a_658d:
     dw   $03ab                                         ;; 0a:658d wW
     db   $0b                                           ;; 0a:658f .
     dw   `00000000                                     ;; 0a:6590 $00 $00
@@ -3614,8 +2781,6 @@ data_0a_658d:
     dw   `32222222                                     ;; 0a:6598 $80 $ff
 
     db   $80, $fc, $07                                 ;; 0a:659a ...
-
-data_0a_659d:
     dw   $054e                                         ;; 0a:659d wW
     db   $0a                                           ;; 0a:659f .
     dw   `33200000                                     ;; 0a:65a0 $c0 $e0
@@ -3652,8 +2817,6 @@ data_0a_659d:
     dw   `22222230                                     ;; 0a:65d0 $02 $fe
 
     db   $07, $fc, $06                                 ;; 0a:65d2 ...
-
-data_0a_65d5:
     dw   $0482                                         ;; 0a:65d5 wW
     db   $03                                           ;; 0a:65d7 .
     db   %00011111                                     ;; 0a:65d8 $1f
@@ -3668,8 +2831,6 @@ data_0a_65d5:
     dw   `22233320                                     ;; 0a:65e1 $1c $fe
 
     db   $03, $fc, $05                                 ;; 0a:65e3 ...
-
-data_0a_65e6:
     dw   $0000                                         ;; 0a:65e6 wW
     db   $12                                           ;; 0a:65e8 .
     dw   `00002333                                     ;; 0a:65e9 $07 $0f
@@ -3684,8 +2845,6 @@ data_0a_65e6:
     dw   `33000000                                     ;; 0a:65f9 $c0 $c0
 
     db   $fc, $06                                      ;; 0a:65fb ..
-
-data_0a_65fd:
     dw   $0578                                         ;; 0a:65fd wW
     db   $0f                                           ;; 0a:65ff .
     dw   `22222230                                     ;; 0a:6600 $02 $fe
@@ -3697,15 +2856,11 @@ data_0a_65fd:
     dw   `00001001                                     ;; 0a:660c $09 $00
 
     db   $0a, $fc, $05                                 ;; 0a:660e ...
-
-data_0a_6611:
     dw   $05f5                                         ;; 0a:6611 wW
     db   $03                                           ;; 0a:6613 .
     dw   `00000010                                     ;; 0a:6614 $02 $00
 
     db   $02, $fc, $07                                 ;; 0a:6616 ...
-
-data_0a_6619:
     dw   $0232                                         ;; 0a:6619 wW
     db   $2a                                           ;; 0a:661b .
     dw   `00000033                                     ;; 0a:661c $03 $03
@@ -3733,12 +2888,8 @@ data_0a_6619:
     dw   `33320000                                     ;; 0a:6644 $e0 $f0
 
     db   $fc, $0e                                      ;; 0a:6646 ..
-
-data_0a_6648:
     dw   $0001                                         ;; 0a:6648 wW
     db   $01, $03, $fc, $05                            ;; 0a:664a ....
-
-data_0a_664e:
     dw   $0454                                         ;; 0a:664e wW
     db   $2e                                           ;; 0a:6650 .
     dw   `22222223                                     ;; 0a:6651 $01 $ff
@@ -3768,8 +2919,6 @@ data_0a_664e:
     dw   `02000233                                     ;; 0a:667d $03 $47
 
     db   $fc, $06                                      ;; 0a:667f ..
-
-data_0a_6681:
     dw   $03e6                                         ;; 0a:6681 wW
     db   $80, $06                                      ;; 0a:6683 ..
     db   %00000001                                     ;; 0a:6685 $01
@@ -3842,16 +2991,12 @@ data_0a_6681:
     dw   `02300000                                     ;; 0a:66f5 $20 $60
 
     db   $fc, $0c                                      ;; 0a:66f7 ..
-
-data_0a_66f9:
     dw   $027e                                         ;; 0a:66f9 wW
     db   $04                                           ;; 0a:66fb .
     dw   `00000332                                     ;; 0a:66fc $06 $07
     dw   `00000023                                     ;; 0a:66fe $01 $03
 
     db   $fc, $08                                      ;; 0a:6700 ..
-
-data_0a_6702:
     dw   $0675                                         ;; 0a:6702 wW
     db   $14                                           ;; 0a:6704 .
     dw   `00000000                                     ;; 0a:6705 $00 $00
@@ -3877,8 +3022,6 @@ data_0a_6702:
     dw   `00000311                                     ;; 0a:6725 $07 $04
 
     db   $fc, $0a                                      ;; 0a:6727 ..
-
-data_0a_6729:
     dw   $03e6                                         ;; 0a:6729 wW
     db   $0c                                           ;; 0a:672b .
     dw   `13000000                                     ;; 0a:672c $c0 $40
@@ -3889,8 +3032,6 @@ data_0a_6729:
     dw   `00033332                                     ;; 0a:6736 $1e $1f
 
     db   $fc, $06                                      ;; 0a:6738 ..
-
-data_0a_673a:
     dw   $03aa                                         ;; 0a:673a wW
     db   $80, $09                                      ;; 0a:673c ..
     db   %00000000                                     ;; 0a:673e $00
@@ -3916,8 +3057,6 @@ data_0a_673a:
     dw   `23113000                                     ;; 0a:675a $78 $c8
 
     db   $b0, $fc, $09                                 ;; 0a:675c ...
-
-data_0a_675f:
     dw   $025f                                         ;; 0a:675f wW
     db   $07                                           ;; 0a:6761 .
     dw   `00000001                                     ;; 0a:6762 $01 $00
@@ -3925,8 +3064,6 @@ data_0a_675f:
     dw   `01010000                                     ;; 0a:6766 $50 $00
 
     db   $48, $fc, $05                                 ;; 0a:6768 ...
-
-data_0a_676b:
     dw   $0791                                         ;; 0a:676b wW
     db   $0a                                           ;; 0a:676d .
     dw   `10001000                                     ;; 0a:676e $88 $00
@@ -3936,8 +3073,6 @@ data_0a_676b:
     dw   `00003332                                     ;; 0a:6776 $0e $0f
 
     db   $fc, $0e                                      ;; 0a:6778 ..
-
-data_0a_677a:
     dw   $074c                                         ;; 0a:677a wW
     db   $0c                                           ;; 0a:677c .
     dw   `20002233                                     ;; 0a:677d $03 $8f
@@ -3948,30 +3083,20 @@ data_0a_677a:
     dw   `00003300                                     ;; 0a:6787 $0c $0c
 
     db   $fc, $06                                      ;; 0a:6789 ..
-
-data_0a_678b:
     dw   $06d6                                         ;; 0a:678b wW
     db   $80, $13, $00, $fc, $09                       ;; 0a:678d .....
-
-data_0a_6792:
     dw   $03e7                                         ;; 0a:6792 wW
     db   $02                                           ;; 0a:6794 .
     dw   `00000000                                     ;; 0a:6795 $00 $00
 
     db   $fc, $07                                      ;; 0a:6797 ..
-
-data_0a_6799:
     dw   $0545                                         ;; 0a:6799 wW
     db   $01                                           ;; 0a:679b .
     db   %00111111                                     ;; 0a:679c $3f
 
     db   $fc, $0d                                      ;; 0a:679d ..
-
-data_0a_679f:
     dw   $0427                                         ;; 0a:679f wW
     db   $fc, $0b                                      ;; 0a:67a1 ..
-
-data_0a_67a3:
     dw   $054c                                         ;; 0a:67a3 wW
     db   $00, $80, $10, $00, $10, $5f, $60, $5f        ;; 0a:67a5 .???????
     db   $60, $9f, $e0, $8f, $f0, $8f, $f0, $87        ;; 0a:67ad ????????
@@ -4165,8 +3290,6 @@ data_0a_67a3:
     dw   `33030333                                     ;; 0a:6d57 $d7 $d7
 
     db   $fc, $0a                                      ;; 0a:6d59 ..
-
-data_0a_6d5b:
     dw   $0000                                         ;; 0a:6d5b wW
     db   $1e                                           ;; 0a:6d5d .
     db   %11111111                                     ;; 0a:6d5e $ff
@@ -4190,8 +3313,6 @@ data_0a_6d5b:
     dw   `00333300                                     ;; 0a:6d7a $3c $3c
 
     db   $fc, $08                                      ;; 0a:6d7c ..
-
-data_0a_6d7e:
     dw   $0028                                         ;; 0a:6d7e wW
     db   $09                                           ;; 0a:6d80 .
     db   %11110111                                     ;; 0a:6d81 $f7
@@ -4211,8 +3332,6 @@ data_0a_6d7e:
     dw   `30303033                                     ;; 0a:6d94 $ab $ab
 
     db   $fc, $08                                      ;; 0a:6d96 ..
-
-data_0a_6d98:
     dw   $0028                                         ;; 0a:6d98 wW
     db   $08                                           ;; 0a:6d9a .
     dw   `33303033                                     ;; 0a:6d9b $eb $eb
@@ -4221,8 +3340,6 @@ data_0a_6d98:
     dw   `00003033                                     ;; 0a:6da1 $0b $0b
 
     db   $fc, $08                                      ;; 0a:6da3 ..
-
-data_0a_6da5:
     dw   $0028                                         ;; 0a:6da5 wW
     db   $08                                           ;; 0a:6da7 .
     dw   `30333303                                     ;; 0a:6da8 $bd $bd
@@ -4231,8 +3348,6 @@ data_0a_6da5:
     dw   `30333300                                     ;; 0a:6dae $bc $bc
 
     db   $fc, $08                                      ;; 0a:6db0 ..
-
-data_0a_6db2:
     dw   $0028                                         ;; 0a:6db2 wW
     db   $08                                           ;; 0a:6db4 .
     dw   `33333300                                     ;; 0a:6db5 $fc $fc
@@ -4241,8 +3356,6 @@ data_0a_6db2:
     dw   `00333303                                     ;; 0a:6dbb $3d $3d
 
     db   $fc, $08                                      ;; 0a:6dbd ..
-
-data_0a_6dbf:
     dw   $0028                                         ;; 0a:6dbf wW
     db   $08                                           ;; 0a:6dc1 .
     dw   `00330333                                     ;; 0a:6dc2 $37 $37
@@ -4251,8 +3364,6 @@ data_0a_6dbf:
     dw   `33033000                                     ;; 0a:6dc8 $d8 $d8
 
     db   $fc, $08                                      ;; 0a:6dca ..
-
-data_0a_6dcc:
     dw   $0028                                         ;; 0a:6dcc wW
     db   $08                                           ;; 0a:6dce .
     dw   `03033333                                     ;; 0a:6dcf $5f $5f
@@ -4261,35 +3372,25 @@ data_0a_6dcc:
     dw   `03000033                                     ;; 0a:6dd5 $43 $43
 
     db   $fc, $08                                      ;; 0a:6dd7 ..
-
-data_0a_6dd9:
     dw   $0028                                         ;; 0a:6dd9 wW
     db   $fc, $0a                                      ;; 0a:6ddb ..
-
-data_0a_6ddd:
     dw   $0000                                         ;; 0a:6ddd wW
     db   $80, $06                                      ;; 0a:6ddf ..
     db   %11111101                                     ;; 0a:6de1 $fd
 
     db   $fc, $0c                                      ;; 0a:6de2 ..
-
-data_0a_6de4:
     dw   $0010                                         ;; 0a:6de4 wW
     db   $04                                           ;; 0a:6de6 .
     dw   `33330330                                     ;; 0a:6de7 $f6 $f6
     dw   `33333300                                     ;; 0a:6de9 $fc $fc
 
     db   $fc, $0c                                      ;; 0a:6deb ..
-
-data_0a_6ded:
     dw   $0010                                         ;; 0a:6ded wW
     db   $04                                           ;; 0a:6def .
     dw   `33330333                                     ;; 0a:6df0 $f7 $f7
     dw   `00300003                                     ;; 0a:6df2 $21 $21
 
     db   $fc, $0a                                      ;; 0a:6df4 ..
-
-data_0a_6df6:
     dw   $0000                                         ;; 0a:6df6 wW
     db   $06                                           ;; 0a:6df8 .
     dw   `03333333                                     ;; 0a:6df9 $7f $7f
@@ -4297,22 +3398,16 @@ data_0a_6df6:
     dw   `03300033                                     ;; 0a:6dfd $63 $63
 
     db   $fc, $0a                                      ;; 0a:6dff ..
-
-data_0a_6e01:
     dw   $0000                                         ;; 0a:6e01 wW
     db   $80, $06                                      ;; 0a:6e03 ..
     db   %11011111                                     ;; 0a:6e05 $df
 
     db   $fc, $0e                                      ;; 0a:6e06 ..
-
-data_0a_6e08:
     dw   $0010                                         ;; 0a:6e08 wW
     db   $02                                           ;; 0a:6e0a .
     dw   `30003300                                     ;; 0a:6e0b $8c $8c
 
     db   $fc, $0a                                      ;; 0a:6e0d ..
-
-data_0a_6e0f:
     dw   $0000                                         ;; 0a:6e0f wW
     db   $06                                           ;; 0a:6e11 .
     dw   `33330333                                     ;; 0a:6e12 $f7 $f7
@@ -4320,19 +3415,13 @@ data_0a_6e0f:
     dw   `00330000                                     ;; 0a:6e16 $30 $30
 
     db   $fc, $0e                                      ;; 0a:6e18 ..
-
-data_0a_6e1a:
     dw   $0010                                         ;; 0a:6e1a wW
     db   $fc, $08                                      ;; 0a:6e1c ..
-
-data_0a_6e1e:
     dw   $00b8                                         ;; 0a:6e1e wW
     db   $02                                           ;; 0a:6e20 .
     dw   `33333300                                     ;; 0a:6e21 $fc $fc
 
     db   $fc, $08                                      ;; 0a:6e23 ..
-
-data_0a_6e25:
     dw   $0028                                         ;; 0a:6e25 wW
     db   $80, $06                                      ;; 0a:6e27 ..
     db   %11110110                                     ;; 0a:6e29 $f6
@@ -4341,19 +3430,13 @@ data_0a_6e25:
     dw   `00030333                                     ;; 0a:6e2b $17 $17
 
     db   $fc, $09                                      ;; 0a:6e2d ..
-
-data_0a_6e2f:
     dw   $0038                                         ;; 0a:6e2f wW
     db   $fc, $05                                      ;; 0a:6e31 ..
-
-data_0a_6e33:
     dw   $0150                                         ;; 0a:6e33 wW
     db   $02                                           ;; 0a:6e35 .
     dw   `00333003                                     ;; 0a:6e36 $39 $39
 
     db   $fc, $08                                      ;; 0a:6e38 ..
-
-data_0a_6e3a:
     dw   $0028                                         ;; 0a:6e3a wW
     db   $08                                           ;; 0a:6e3c .
     dw   `03033303                                     ;; 0a:6e3d $5d $5d
@@ -4362,8 +3445,6 @@ data_0a_6e3a:
     dw   `03300003                                     ;; 0a:6e43 $61 $61
 
     db   $fc, $08                                      ;; 0a:6e45 ..
-
-data_0a_6e47:
     dw   $0028                                         ;; 0a:6e47 wW
     db   $80, $06                                      ;; 0a:6e49 ..
     db   %11011111                                     ;; 0a:6e4b $df
@@ -4372,8 +3453,6 @@ data_0a_6e47:
     dw   `33000003                                     ;; 0a:6e4d $c1 $c1
 
     db   $fc, $08                                      ;; 0a:6e4f ..
-
-data_0a_6e51:
     dw   $0028                                         ;; 0a:6e51 wW
     db   $08                                           ;; 0a:6e53 .
     dw   `33330303                                     ;; 0a:6e54 $f5 $f5
@@ -4382,8 +3461,6 @@ data_0a_6e51:
     dw   `30000303                                     ;; 0a:6e5a $85 $85
 
     db   $fc, $08                                      ;; 0a:6e5c ..
-
-data_0a_6e5e:
     dw   $0028                                         ;; 0a:6e5e wW
     db   $80, $06                                      ;; 0a:6e60 ..
     db   %01010111                                     ;; 0a:6e62 $57
@@ -4392,8 +3469,6 @@ data_0a_6e5e:
     dw   `03030000                                     ;; 0a:6e64 $50 $50
 
     db   $fc, $08                                      ;; 0a:6e66 ..
-
-data_0a_6e68:
     dw   $0028                                         ;; 0a:6e68 wW
     db   $80, $06                                      ;; 0a:6e6a ..
     db   %01111111                                     ;; 0a:6e6c $7f
@@ -4402,30 +3477,22 @@ data_0a_6e68:
     db   %11111111                                     ;; 0a:6e6f $ff
 
     db   $fc, $0e                                      ;; 0a:6e70 ..
-
-data_0a_6e72:
     dw   $00ac                                         ;; 0a:6e72 wW
     db   $80, $06                                      ;; 0a:6e74 ..
     db   %11111110                                     ;; 0a:6e76 $fe
 
     db   $fc, $0c                                      ;; 0a:6e77 ..
-
-data_0a_6e79:
     dw   $0010                                         ;; 0a:6e79 wW
     db   $02                                           ;; 0a:6e7b .
     dw   `33333033                                     ;; 0a:6e7c $fb $fb
 
     db   $fc, $0e                                      ;; 0a:6e7e ..
-
-data_0a_6e80:
     dw   $01be                                         ;; 0a:6e80 wW
     db   $04                                           ;; 0a:6e82 .
     dw   `03333033                                     ;; 0a:6e83 $7b $7b
     dw   `00030000                                     ;; 0a:6e85 $10 $10
 
     db   $fc, $0a                                      ;; 0a:6e87 ..
-
-data_0a_6e89:
     dw   $0000                                         ;; 0a:6e89 wW
     db   $06                                           ;; 0a:6e8b .
     dw   `30333333                                     ;; 0a:6e8c $bf $bf
@@ -4433,8 +3500,6 @@ data_0a_6e89:
     dw   `30330003                                     ;; 0a:6e90 $b1 $b1
 
     db   $fc, $0a                                      ;; 0a:6e92 ..
-
-data_0a_6e94:
     dw   $0000                                         ;; 0a:6e94 wW
     db   $06                                           ;; 0a:6e96 .
     dw   `33330003                                     ;; 0a:6e97 $f1 $f1
@@ -4442,16 +3507,12 @@ data_0a_6e94:
     dw   `33303333                                     ;; 0a:6e9b $ef $ef
 
     db   $fc, $0c                                      ;; 0a:6e9d ..
-
-data_0a_6e9f:
     dw   $0010                                         ;; 0a:6e9f wW
     db   $04                                           ;; 0a:6ea1 .
     dw   `33033333                                     ;; 0a:6ea2 $df $df
     dw   `30000330                                     ;; 0a:6ea4 $86 $86
 
     db   $fc, $0e                                      ;; 0a:6ea6 ..
-
-data_0a_6ea8:
     dw   $0010                                         ;; 0a:6ea8 wW
     db   $02                                           ;; 0a:6eaa .
     dw   `00330300                                     ;; 0a:6eab $34 $34
@@ -4460,16 +3521,12 @@ data_0a_6ea8:
     db   %11111110                                     ;; 0a:6eaf $fe
 
     db   $fc, $0a                                      ;; 0a:6eb0 ..
-
-data_0a_6eb2:
     dw   $0028                                         ;; 0a:6eb2 wW
     db   $04                                           ;; 0a:6eb4 .
     dw   `33333033                                     ;; 0a:6eb5 $fb $fb
     dw   `33333033                                     ;; 0a:6eb7 $fb $fb
 
     db   $fc, $0a                                      ;; 0a:6eb9 ..
-
-data_0a_6ebb:
     dw   $0066                                         ;; 0a:6ebb wW
     db   $80, $06                                      ;; 0a:6ebd ..
     db   %01111011                                     ;; 0a:6ebf $7b
@@ -4478,8 +3535,6 @@ data_0a_6ebb:
     dw   `30033300                                     ;; 0a:6ec1 $9c $9c
 
     db   $fc, $08                                      ;; 0a:6ec3 ..
-
-data_0a_6ec5:
     dw   $0028                                         ;; 0a:6ec5 wW
     db   $08                                           ;; 0a:6ec7 .
     dw   `30303330                                     ;; 0a:6ec8 $ae $ae
@@ -4488,8 +3543,6 @@ data_0a_6ec5:
     dw   `30330000                                     ;; 0a:6ece $b0 $b0
 
     db   $fc, $08                                      ;; 0a:6ed0 ..
-
-data_0a_6ed2:
     dw   $0028                                         ;; 0a:6ed2 wW
     db   $08                                           ;; 0a:6ed4 .
     dw   `33330003                                     ;; 0a:6ed5 $f1 $f1
@@ -4498,8 +3551,6 @@ data_0a_6ed2:
     dw   `33330003                                     ;; 0a:6edb $f1 $f1
 
     db   $fc, $0a                                      ;; 0a:6edd ..
-
-data_0a_6edf:
     dw   $0168                                         ;; 0a:6edf wW
     db   $06                                           ;; 0a:6ee1 .
     dw   `33033330                                     ;; 0a:6ee2 $de $de
@@ -4507,8 +3558,6 @@ data_0a_6edf:
     dw   `33300330                                     ;; 0a:6ee6 $e6 $e6
 
     db   $fc, $08                                      ;; 0a:6ee8 ..
-
-data_0a_6eea:
     dw   $0028                                         ;; 0a:6eea wW
     db   $06                                           ;; 0a:6eec .
     dw   `33030033                                     ;; 0a:6eed $d3 $d3
@@ -4516,16 +3565,10 @@ data_0a_6eea:
     dw   `33030333                                     ;; 0a:6ef1 $d7 $d7
 
     db   $fc, $0a                                      ;; 0a:6ef3 ..
-
-data_0a_6ef5:
     dw   $0146                                         ;; 0a:6ef5 wW
     db   $fc, $08                                      ;; 0a:6ef7 ..
-
-data_0a_6ef9:
     dw   $01a4                                         ;; 0a:6ef9 wW
     db   $fc, $0e                                      ;; 0a:6efb ..
-
-data_0a_6efd:
     dw   $00a8                                         ;; 0a:6efd wW
     db   $08                                           ;; 0a:6eff .
     dw   `33333300                                     ;; 0a:6f00 $fc $fc
@@ -4534,52 +3577,38 @@ data_0a_6efd:
     dw   `33303303                                     ;; 0a:6f06 $ed $ed
 
     db   $fc, $0e                                      ;; 0a:6f08 ..
-
-data_0a_6f0a:
     dw   $01fe                                         ;; 0a:6f0a wW
     db   $04                                           ;; 0a:6f0c .
     dw   `33333333                                     ;; 0a:6f0d $ff $ff
     dw   `30000333                                     ;; 0a:6f0f $87 $87
 
     db   $fc, $0a                                      ;; 0a:6f11 ..
-
-data_0a_6f13:
     dw   $0000                                         ;; 0a:6f13 wW
     db   $04                                           ;; 0a:6f15 .
     dw   `30333033                                     ;; 0a:6f16 $bb $bb
     dw   `30333033                                     ;; 0a:6f18 $bb $bb
 
     db   $fc, $10                                      ;; 0a:6f1a ..
-
-data_0a_6f1c:
     dw   $000e                                         ;; 0a:6f1c wW
     db   $02                                           ;; 0a:6f1e .
     dw   `00033033                                     ;; 0a:6f1f $1b $1b
 
     db   $fc, $0e                                      ;; 0a:6f21 ..
-
-data_0a_6f23:
     dw   $0010                                         ;; 0a:6f23 wW
     db   $02                                           ;; 0a:6f25 .
     dw   `30303003                                     ;; 0a:6f26 $a9 $a9
 
     db   $fc, $0a                                      ;; 0a:6f28 ..
-
-data_0a_6f2a:
     dw   $0000                                         ;; 0a:6f2a wW
     db   $80, $06                                      ;; 0a:6f2c ..
     db   %11101110                                     ;; 0a:6f2e $ee
 
     db   $fc, $0e                                      ;; 0a:6f2f ..
-
-data_0a_6f31:
     dw   $0010                                         ;; 0a:6f31 wW
     db   $02                                           ;; 0a:6f33 .
     dw   `33000330                                     ;; 0a:6f34 $c6 $c6
 
     db   $fc, $0e                                      ;; 0a:6f36 ..
-
-data_0a_6f38:
     dw   $0010                                         ;; 0a:6f38 wW
     db   $02                                           ;; 0a:6f3a .
     dw   `00033333                                     ;; 0a:6f3b $1f $1f
@@ -4588,22 +3617,16 @@ data_0a_6f38:
     db   %11101111                                     ;; 0a:6f3f $ef
 
     db   $fc, $08                                      ;; 0a:6f40 ..
-
-data_0a_6f42:
     dw   $0028                                         ;; 0a:6f42 wW
     db   $80, $08                                      ;; 0a:6f44 ..
     db   %10101011                                     ;; 0a:6f46 $ab
 
     db   $fc, $08                                      ;; 0a:6f47 ..
-
-data_0a_6f49:
     dw   $0028                                         ;; 0a:6f49 wW
     db   $80, $06                                      ;; 0a:6f4b ..
     db   %11101110                                     ;; 0a:6f4d $ee
 
     db   $fc, $0a                                      ;; 0a:6f4e ..
-
-data_0a_6f50:
     dw   $0326                                         ;; 0a:6f50 wW
     db   $80, $06                                      ;; 0a:6f52 ..
     db   %11101011                                     ;; 0a:6f54 $eb
@@ -4612,8 +3635,6 @@ data_0a_6f50:
     dw   `00033300                                     ;; 0a:6f56 $1c $1c
 
     db   $fc, $08                                      ;; 0a:6f58 ..
-
-data_0a_6f5a:
     dw   $0028                                         ;; 0a:6f5a wW
     db   $08                                           ;; 0a:6f5c .
     dw   `30300330                                     ;; 0a:6f5d $a6 $a6
@@ -4622,8 +3643,6 @@ data_0a_6f5a:
     dw   `00303333                                     ;; 0a:6f63 $2f $2f
 
     db   $fc, $08                                      ;; 0a:6f65 ..
-
-data_0a_6f67:
     dw   $0028                                         ;; 0a:6f67 wW
     db   $02                                           ;; 0a:6f69 .
     dw   `33300000                                     ;; 0a:6f6a $e0 $e0
@@ -4632,8 +3651,6 @@ data_0a_6f67:
     db   %11101110                                     ;; 0a:6f6e $ee
 
     db   $fc, $08                                      ;; 0a:6f6f ..
-
-data_0a_6f71:
     dw   $0028                                         ;; 0a:6f71 wW
     db   $08                                           ;; 0a:6f73 .
     dw   `33333030                                     ;; 0a:6f74 $fa $fa
@@ -4642,15 +3659,11 @@ data_0a_6f71:
     dw   `33000030                                     ;; 0a:6f7a $c2 $c2
 
     db   $fc, $08                                      ;; 0a:6f7c ..
-
-data_0a_6f7e:
     dw   $0028                                         ;; 0a:6f7e wW
     db   $80, $08                                      ;; 0a:6f80 ..
     db   %10101111                                     ;; 0a:6f82 $af
 
     db   $fc, $12                                      ;; 0a:6f83 ..
-
-data_0a_6f85:
     dw   $00a8                                         ;; 0a:6f85 wW
     db   $06                                           ;; 0a:6f87 .
     dw   `30003333                                     ;; 0a:6f88 $8f $8f
@@ -4658,29 +3671,21 @@ data_0a_6f85:
     dw   `03333303                                     ;; 0a:6f8c $7d $7d
 
     db   $fc, $0e                                      ;; 0a:6f8e ..
-
-data_0a_6f90:
     dw   $0010                                         ;; 0a:6f90 wW
     db   $02                                           ;; 0a:6f92 .
     dw   `33030000                                     ;; 0a:6f93 $d0 $d0
 
     db   $fc, $0a                                      ;; 0a:6f95 ..
-
-data_0a_6f97:
     dw   $0000                                         ;; 0a:6f97 wW
     db   $02                                           ;; 0a:6f99 .
     dw   `33330030                                     ;; 0a:6f9a $f2 $f2
 
     db   $fc, $22                                      ;; 0a:6f9c ..
-
-data_0a_6f9e:
     dw   $02fc                                         ;; 0a:6f9e wW
     db   $02                                           ;; 0a:6fa0 .
     dw   `33303300                                     ;; 0a:6fa1 $ec $ec
 
     db   $fc, $0e                                      ;; 0a:6fa3 ..
-
-data_0a_6fa5:
     dw   $0010                                         ;; 0a:6fa5 wW
     db   $12                                           ;; 0a:6fa7 .
     dw   `03303003                                     ;; 0a:6fa8 $69 $69
@@ -4695,19 +3700,13 @@ data_0a_6fa5:
     dw   `11123333                                     ;; 0a:6fb8 $ef $1f
 
     db   $fc, $10                                      ;; 0a:6fba ..
-
-data_0a_6fbc:
     dw   $0120                                         ;; 0a:6fbc wW
     db   $01, $ef, $fc, $0b                            ;; 0a:6fbe ....
-
-data_0a_6fc2:
     dw   $0403                                         ;; 0a:6fc2 wW
     db   $03                                           ;; 0a:6fc4 .
     dw   `11122222                                     ;; 0a:6fc5 $e0 $1f
 
     db   $ff, $fc, $0d                                 ;; 0a:6fc7 ...
-
-data_0a_6fca:
     dw   $0122                                         ;; 0a:6fca wW
     db   $0c                                           ;; 0a:6fcc .
     dw   `22222222                                     ;; 0a:6fcd $00 $ff
@@ -4718,15 +3717,11 @@ data_0a_6fca:
     dw   `30003330                                     ;; 0a:6fd7 $8e $8e
 
     db   $fc, $08                                      ;; 0a:6fd9 ..
-
-data_0a_6fdb:
     dw   $0028                                         ;; 0a:6fdb wW
     db   $80, $06                                      ;; 0a:6fdd ..
     db   %11010111                                     ;; 0a:6fdf $d7
 
     db   $fc, $0a                                      ;; 0a:6fe0 ..
-
-data_0a_6fe2:
     dw   $0146                                         ;; 0a:6fe2 wW
     db   $02                                           ;; 0a:6fe4 .
     dw   `03000030                                     ;; 0a:6fe5 $42 $42
@@ -4735,8 +3730,6 @@ data_0a_6fe2:
     db   %01101110                                     ;; 0a:6fe9 $6e
 
     db   $fc, $08                                      ;; 0a:6fea ..
-
-data_0a_6fec:
     dw   $0028                                         ;; 0a:6fec wW
     db   $80, $06                                      ;; 0a:6fee ..
     db   %10111010                                     ;; 0a:6ff0 $ba
@@ -4745,8 +3738,6 @@ data_0a_6fec:
     dw   `33000333                                     ;; 0a:6ff2 $c7 $c7
 
     db   $fc, $0a                                      ;; 0a:6ff4 ..
-
-data_0a_6ff6:
     dw   $0328                                         ;; 0a:6ff6 wW
     db   $06                                           ;; 0a:6ff8 .
     dw   `30303000                                     ;; 0a:6ff9 $a8 $a8
@@ -4754,46 +3745,30 @@ data_0a_6ff6:
     dw   `03033300                                     ;; 0a:6ffd $5c $5c
 
     db   $fc, $0a                                      ;; 0a:6fff ..
-
-data_0a_7001:
     dw   $0358                                         ;; 0a:7001 wW
     db   $04                                           ;; 0a:7003 .
     dw   `00303333                                     ;; 0a:7004 $2f $2f
     dw   `33303333                                     ;; 0a:7006 $ef $ef
 
     db   $fc, $0a                                      ;; 0a:7008 ..
-
-data_0a_700a:
     dw   $0366                                         ;; 0a:700a wW
     db   $fc, $0e                                      ;; 0a:700c ..
-
-data_0a_700e:
     dw   $0010                                         ;; 0a:700e wW
     db   $02                                           ;; 0a:7010 .
     dw   `33000033                                     ;; 0a:7011 $c3 $c3
 
     db   $fc, $10                                      ;; 0a:7013 ..
-
-data_0a_7015:
     dw   $0120                                         ;; 0a:7015 wW
     db   $80, $08                                      ;; 0a:7017 ..
     db   %01010101                                     ;; 0a:7019 $55
 
     db   $fc, $09                                      ;; 0a:701a ..
-
-data_0a_701c:
     dw   $00a8                                         ;; 0a:701c wW
     db   $fc, $0f                                      ;; 0a:701e ..
-
-data_0a_7020:
     dw   $0431                                         ;; 0a:7020 wW
     db   $fc, $10                                      ;; 0a:7022 ..
-
-data_0a_7024:
     dw   $0120                                         ;; 0a:7024 wW
     db   $fc, $0a                                      ;; 0a:7026 ..
-
-data_0a_7028:
     dw   $0000                                         ;; 0a:7028 wW
     db   $06                                           ;; 0a:702a .
     dw   `33000330                                     ;; 0a:702b $c6 $c6
@@ -4801,48 +3776,30 @@ data_0a_7028:
     dw   `30333330                                     ;; 0a:702f $be $be
 
     db   $fc, $0e                                      ;; 0a:7031 ..
-
-data_0a_7033:
     dw   $01c0                                         ;; 0a:7033 wW
     db   $01, $1f, $fc, $0b                            ;; 0a:7035 ....
-
-data_0a_7039:
     dw   $040f                                         ;; 0a:7039 wW
     db   $04                                           ;; 0a:703b .
     dw   `33333033                                     ;; 0a:703c $fb $fb
     dw   `33333033                                     ;; 0a:703e $fb $fb
 
     db   $fc, $0e                                      ;; 0a:7040 ..
-
-data_0a_7042:
     dw   $02de                                         ;; 0a:7042 wW
     db   $04                                           ;; 0a:7044 .
     dw   `30333333                                     ;; 0a:7045 $bf $bf
     dw   `03333333                                     ;; 0a:7047 $7f $7f
 
     db   $fc, $0e                                      ;; 0a:7049 ..
-
-data_0a_704b:
     dw   $00b0                                         ;; 0a:704b wW
     db   $fc, $0c                                      ;; 0a:704d ..
-
-data_0a_704f:
     dw   $010e                                         ;; 0a:704f wW
     db   $fc, $06                                      ;; 0a:7051 ..
-
-data_0a_7053:
     dw   $0006                                         ;; 0a:7053 wW
     db   $fc, $0e                                      ;; 0a:7055 ..
-
-data_0a_7057:
     dw   $00f0                                         ;; 0a:7057 wW
     db   $fc, $06                                      ;; 0a:7059 ..
-
-data_0a_705b:
     dw   $0096                                         ;; 0a:705b wW
     db   $fc, $0c                                      ;; 0a:705d ..
-
-data_0a_705f:
     dw   $0294                                         ;; 0a:705f wW
     db   $08                                           ;; 0a:7061 .
     dw   `30333330                                     ;; 0a:7062 $be $be
@@ -4851,8 +3808,6 @@ data_0a_705f:
     dw   `33000330                                     ;; 0a:7068 $c6 $c6
 
     db   $fc, $08                                      ;; 0a:706a ..
-
-data_0a_706c:
     dw   $0028                                         ;; 0a:706c wW
     db   $80, $06                                      ;; 0a:706e ..
     db   %11101010                                     ;; 0a:7070 $ea
@@ -4861,8 +3816,6 @@ data_0a_706c:
     dw   `33303033                                     ;; 0a:7072 $eb $eb
 
     db   $fc, $0a                                      ;; 0a:7074 ..
-
-data_0a_7076:
     dw   $0578                                         ;; 0a:7076 wW
     db   $06                                           ;; 0a:7078 .
     dw   `33333000                                     ;; 0a:7079 $f8 $f8
@@ -4870,8 +3823,6 @@ data_0a_7076:
     dw   `00033033                                     ;; 0a:707d $1b $1b
 
     db   $fc, $08                                      ;; 0a:707f ..
-
-data_0a_7081:
     dw   $0028                                         ;; 0a:7081 wW
     db   $08                                           ;; 0a:7083 .
     dw   `33300003                                     ;; 0a:7084 $e1 $e1
@@ -4880,8 +3831,6 @@ data_0a_7081:
     dw   `30333333                                     ;; 0a:708a $bf $bf
 
     db   $fc, $18                                      ;; 0a:708c ..
-
-data_0a_708e:
     dw   $0178                                         ;; 0a:708e wW
     db   $08                                           ;; 0a:7090 .
     dw   `33033333                                     ;; 0a:7091 $df $df
@@ -4890,8 +3839,6 @@ data_0a_708e:
     dw   `33033330                                     ;; 0a:7097 $de $de
 
     db   $fc, $0a                                      ;; 0a:7099 ..
-
-data_0a_709b:
     dw   $0168                                         ;; 0a:709b wW
     db   $06                                           ;; 0a:709d .
     dw   `33033000                                     ;; 0a:709e $d8 $d8
@@ -4899,8 +3846,6 @@ data_0a_709b:
     dw   `00333000                                     ;; 0a:70a2 $38 $38
 
     db   $fc, $12                                      ;; 0a:70a4 ..
-
-data_0a_70a6:
     dw   $00a8                                         ;; 0a:70a6 wW
     db   $06                                           ;; 0a:70a8 .
     dw   `33033303                                     ;; 0a:70a9 $dd $dd
@@ -4908,15 +3853,11 @@ data_0a_70a6:
     dw   `33303033                                     ;; 0a:70ad $eb $eb
 
     db   $fc, $0e                                      ;; 0a:70af ..
-
-data_0a_70b1:
     dw   $0010                                         ;; 0a:70b1 wW
     db   $02                                           ;; 0a:70b3 .
     dw   `30003303                                     ;; 0a:70b4 $8d $8d
 
     db   $fc, $1a                                      ;; 0a:70b6 ..
-
-data_0a_70b8:
     dw   $03b0                                         ;; 0a:70b8 wW
     db   $06                                           ;; 0a:70ba .
     dw   `33333333                                     ;; 0a:70bb $ff $ff
@@ -4924,24 +3865,18 @@ data_0a_70b8:
     dw   `33300003                                     ;; 0a:70bf $e1 $e1
 
     db   $fc, $0c                                      ;; 0a:70c1 ..
-
-data_0a_70c3:
     dw   $0010                                         ;; 0a:70c3 wW
     db   $04                                           ;; 0a:70c5 .
     dw   `00333333                                     ;; 0a:70c6 $3f $3f
     dw   `30300003                                     ;; 0a:70c8 $a1 $a1
 
     db   $fc, $1a                                      ;; 0a:70ca ..
-
-data_0a_70cc:
     dw   $02f0                                         ;; 0a:70cc wW
     db   $04                                           ;; 0a:70ce .
     dw   `33303333                                     ;; 0a:70cf $ef $ef
     dw   `30303333                                     ;; 0a:70d1 $af $af
 
     db   $fc, $0c                                      ;; 0a:70d3 ..
-
-data_0a_70d5:
     dw   $03ee                                         ;; 0a:70d5 wW
     db   $06                                           ;; 0a:70d7 .
     dw   `30300033                                     ;; 0a:70d8 $a3 $a3
@@ -4949,8 +3884,6 @@ data_0a_70d5:
     dw   `00300033                                     ;; 0a:70dc $23 $23
 
     db   $fc, $12                                      ;; 0a:70de ..
-
-data_0a_70e0:
     dw   $04e0                                         ;; 0a:70e0 wW
     db   $0e                                           ;; 0a:70e2 .
     dw   `22222111                                     ;; 0a:70e3 $07 $f8
@@ -4965,15 +3898,11 @@ data_0a_70e0:
     db   %11110111                                     ;; 0a:70f3 $f7
 
     db   $fc, $08                                      ;; 0a:70f4 ..
-
-data_0a_70f6:
     dw   $0028                                         ;; 0a:70f6 wW
     db   $80, $06                                      ;; 0a:70f8 ..
     db   %01110101                                     ;; 0a:70fa $75
 
     db   $fc, $1a                                      ;; 0a:70fb ..
-
-data_0a_70fd:
     dw   $0446                                         ;; 0a:70fd wW
     db   $0a                                           ;; 0a:70ff .
     dw   `03033303                                     ;; 0a:7100 $5d $5d
@@ -4983,15 +3912,11 @@ data_0a_70fd:
     dw   `33300033                                     ;; 0a:7108 $e3 $e3
 
     db   $fc, $06                                      ;; 0a:710a ..
-
-data_0a_710c:
     dw   $002a                                         ;; 0a:710c wW
     db   $02                                           ;; 0a:710e .
     dw   `03303330                                     ;; 0a:710f $6e $6e
 
     db   $fc, $0e                                      ;; 0a:7111 ..
-
-data_0a_7113:
     dw   $0372                                         ;; 0a:7113 wW
     db   $80, $06                                      ;; 0a:7115 ..
     db   %11101010                                     ;; 0a:7117 $ea
@@ -5000,15 +3925,11 @@ data_0a_7113:
     dw   `33330303                                     ;; 0a:7119 $f5 $f5
 
     db   $fc, $0e                                      ;; 0a:711b ..
-
-data_0a_711d:
     dw   $0328                                         ;; 0a:711d wW
     db   $02                                           ;; 0a:711f .
     dw   `30303300                                     ;; 0a:7120 $ac $ac
 
     db   $fc, $08                                      ;; 0a:7122 ..
-
-data_0a_7124:
     dw   $0028                                         ;; 0a:7124 wW
     db   $08                                           ;; 0a:7126 .
     dw   `30330333                                     ;; 0a:7127 $b7 $b7
@@ -5017,8 +3938,6 @@ data_0a_7124:
     dw   `00300033                                     ;; 0a:712d $23 $23
 
     db   $fc, $08                                      ;; 0a:712f ..
-
-data_0a_7131:
     dw   $0028                                         ;; 0a:7131 wW
     db   $0a                                           ;; 0a:7133 .
     dw   `00330330                                     ;; 0a:7134 $36 $36
@@ -5028,19 +3947,13 @@ data_0a_7131:
     dw   `00333330                                     ;; 0a:713c $3e $3e
 
     db   $fc, $0e                                      ;; 0a:713e ..
-
-data_0a_7140:
     dw   $00aa                                         ;; 0a:7140 wW
     db   $02                                           ;; 0a:7142 .
     dw   `33330303                                     ;; 0a:7143 $f5 $f5
 
     db   $fc, $06                                      ;; 0a:7145 ..
-
-data_0a_7147:
     dw   $06d6                                         ;; 0a:7147 wW
     db   $fc, $08                                      ;; 0a:7149 ..
-
-data_0a_714b:
     dw   $0000                                         ;; 0a:714b wW
     db   $08                                           ;; 0a:714d .
     dw   `33333303                                     ;; 0a:714e $fd $fd
@@ -5049,8 +3962,6 @@ data_0a_714b:
     dw   `03330333                                     ;; 0a:7154 $77 $77
 
     db   $fc, $08                                      ;; 0a:7156 ..
-
-data_0a_7158:
     dw   $0000                                         ;; 0a:7158 wW
     db   $08                                           ;; 0a:715a .
     dw   `03330000                                     ;; 0a:715b $70 $70
@@ -5059,36 +3970,24 @@ data_0a_7158:
     dw   `33330000                                     ;; 0a:7161 $f0 $f0
 
     db   $fc, $0c                                      ;; 0a:7163 ..
-
-data_0a_7165:
     dw   $00e0                                         ;; 0a:7165 wW
     db   $04                                           ;; 0a:7167 .
     dw   `03300033                                     ;; 0a:7168 $63 $63
     dw   `33033303                                     ;; 0a:716a $dd $dd
 
     db   $fc, $0c                                      ;; 0a:716c ..
-
-data_0a_716e:
     dw   $0720                                         ;; 0a:716e wW
     db   $04                                           ;; 0a:7170 .
     dw   `30003303                                     ;; 0a:7171 $8d $8d
     dw   `03330303                                     ;; 0a:7173 $75 $75
 
     db   $fc, $0c                                      ;; 0a:7175 ..
-
-data_0a_7177:
     dw   $00f0                                         ;; 0a:7177 wW
     db   $fc, $05                                      ;; 0a:7179 ..
-
-data_0a_717b:
     dw   $052c                                         ;; 0a:717b wW
     db   $fc, $0f                                      ;; 0a:717d ..
-
-data_0a_717f:
     dw   $0431                                         ;; 0a:717f wW
     db   $01, $f7, $fc, $0b                            ;; 0a:7181 ....
-
-data_0a_7185:
     dw   $0673                                         ;; 0a:7185 wW
     db   $03                                           ;; 0a:7187 .
     dw   `22222111                                     ;; 0a:7188 $07 $f8
@@ -5102,12 +4001,8 @@ data_0a_7185:
     dw   `33033333                                     ;; 0a:7193 $df $df
 
     db   $fc, $0b                                      ;; 0a:7195 ..
-
-data_0a_7197:
     dw   $01a6                                         ;; 0a:7197 wW
     db   $fc, $0f                                      ;; 0a:7199 ..
-
-data_0a_719b:
     dw   $0431                                         ;; 0a:719b wW
     db   $08                                           ;; 0a:719d .
     dw   `03330333                                     ;; 0a:719e $77 $77
@@ -5116,12 +4011,8 @@ data_0a_719b:
     dw   `30003333                                     ;; 0a:71a4 $8f $8f
 
     db   $fc, $0e                                      ;; 0a:71a6 ..
-
-data_0a_71a8:
     dw   $0148                                         ;; 0a:71a8 wW
     db   $fc, $0a                                      ;; 0a:71aa ..
-
-data_0a_71ac:
     dw   $01a6                                         ;; 0a:71ac wW
     db   $06                                           ;; 0a:71ae .
     dw   `03033303                                     ;; 0a:71af $5d $5d
@@ -5129,8 +4020,6 @@ data_0a_71ac:
     dw   `03300033                                     ;; 0a:71b3 $63 $63
 
     db   $fc, $0a                                      ;; 0a:71b5 ..
-
-data_0a_71b7:
     dw   $01a6                                         ;; 0a:71b7 wW
     db   $06                                           ;; 0a:71b9 .
     dw   `03333300                                     ;; 0a:71ba $7c $7c
@@ -5138,8 +4027,6 @@ data_0a_71b7:
     dw   `30003303                                     ;; 0a:71be $8d $8d
 
     db   $fc, $0a                                      ;; 0a:71c0 ..
-
-data_0a_71c2:
     dw   $01a6                                         ;; 0a:71c2 wW
     db   $00, $01, $00, $80, $0b, $ff, $02, $c7        ;; 0a:71c4 ........
     db   $c7, $80, $06, $bb, $1c, $c7, $c7, $ff        ;; 0a:71cc ........
@@ -5147,504 +4034,286 @@ data_0a_71c2:
     db   $00, $c0, $3f, $bf, $7f, $7f, $ff, $7f        ;; 0a:71dc ........
     db   $ff, $7f, $ff, $3f, $ff, $9f, $7f, $df        ;; 0a:71e4 ........
     db   $3f, $fc, $0c                                 ;; 0a:71ec ...
-
-data_0a_71ef:
     dw   $0000                                         ;; 0a:71ef wW
     db   $06, $ff, $ff, $ff, $ff, $7f, $7f, $80        ;; 0a:71f1 ........
     db   $0a, $ff, $fc, $24                            ;; 0a:71f9 ....
-
-data_0a_71fd:
     dw   $001c                                         ;; 0a:71fd wW
     db   $fc, $08                                      ;; 0a:71ff ..
-
-data_0a_7201:
     dw   $0000                                         ;; 0a:7201 wW
     db   $80, $06, $bb, $02, $83, $83, $fc, $0c        ;; 0a:7203 ........
-
-data_0a_720b:
     dw   $0000                                         ;; 0a:720b wW
     db   $04, $18, $18, $ea, $ea, $fc, $0a             ;; 0a:720d .......
-
-data_0a_7214:
     dw   $0000                                         ;; 0a:7214 wW
     db   $06, $f7, $f7, $61, $61, $b7, $b7, $fc        ;; 0a:7216 ........
     db   $0c                                           ;; 0a:721e .
-
-data_0a_721f:
     dw   $0000                                         ;; 0a:721f wW
     db   $04, $8d, $8d, $f4, $f4, $fc, $0c             ;; 0a:7221 .......
-
-data_0a_7228:
     dw   $0000                                         ;; 0a:7228 wW
     db   $04, $38, $38, $d7, $d7, $fc, $08             ;; 0a:722a .......
-
-data_0a_7231:
     dw   $0000                                         ;; 0a:7231 wW
     db   $08, $f0, $f0, $fd, $fd, $fd, $fd, $7d        ;; 0a:7233 ........
     db   $7d, $fc, $08                                 ;; 0a:723b ...
-
-data_0a_723e:
     dw   $0000                                         ;; 0a:723e wW
     db   $08, $7f, $7f, $df, $df, $f0, $f0, $d5        ;; 0a:7240 ........
     db   $d5, $fc, $0c                                 ;; 0a:7248 ...
-
-data_0a_724b:
     dw   $0000                                         ;; 0a:724b wW
     db   $04, $e3, $e3, $5d, $5d, $fc, $10             ;; 0a:724d .......
-
-data_0a_7254:
     dw   $0030                                         ;; 0a:7254 wW
     db   $10, $0f, $f0, $f7, $f8, $fb, $fc, $f9        ;; 0a:7256 ........
     db   $fe, $f9, $fe, $f1, $fe, $e3, $fc, $e7        ;; 0a:725e ........
     db   $f8, $fc, $0a                                 ;; 0a:7266 ...
-
-data_0a_7269:
     dw   $0022                                         ;; 0a:7269 wW
     db   $04, $80, $7f, $c0, $3f, $fc, $09             ;; 0a:726b .......
-
-data_0a_7272:
     dw   $006f                                         ;; 0a:7272 wW
     db   $fc, $09                                      ;; 0a:7274 ..
-
-data_0a_7276:
     dw   $0017                                         ;; 0a:7276 wW
     db   $06, $bb, $bb, $ba, $ba, $bb, $bb, $fc        ;; 0a:7278 ........
     db   $0a                                           ;; 0a:7280 .
-
-data_0a_7281:
     dw   $0016                                         ;; 0a:7281 wW
     db   $06, $0a, $0a, $ea, $ea, $0a, $0a, $fc        ;; 0a:7283 ........
     db   $0a                                           ;; 0a:728b .
-
-data_0a_728c:
     dw   $0016                                         ;; 0a:728c wW
     db   $06, $b7, $b7, $b7, $b7, $b9, $b9, $fc        ;; 0a:728e ........
     db   $0a                                           ;; 0a:7296 .
-
-data_0a_7297:
     dw   $0016                                         ;; 0a:7297 wW
     db   $06, $85, $85, $75, $75, $85, $85, $fc        ;; 0a:7299 ........
     db   $0a                                           ;; 0a:72a1 .
-
-data_0a_72a2:
     dw   $0016                                         ;; 0a:72a2 wW
     db   $06, $f7, $f7, $f7, $f7, $f8, $f8, $fc        ;; 0a:72a4 ........
     db   $0a                                           ;; 0a:72ac .
-
-data_0a_72ad:
     dw   $0016                                         ;; 0a:72ad wW
     db   $06, $7d, $7d, $7d, $7d, $fd, $fd, $fc        ;; 0a:72af ........
     db   $0a                                           ;; 0a:72b7 .
-
-data_0a_72b8:
     dw   $0016                                         ;; 0a:72b8 wW
     db   $80, $06, $d5, $fc, $0a                       ;; 0a:72ba .....
-
-data_0a_72bf:
     dw   $0016                                         ;; 0a:72bf wW
     db   $06, $41, $41, $5f, $5f, $61, $61, $fc        ;; 0a:72c1 ........
     db   $0a                                           ;; 0a:72c9 .
-
-data_0a_72ca:
     dw   $0016                                         ;; 0a:72ca wW
     db   $fc, $10                                      ;; 0a:72cc ..
-
-data_0a_72ce:
     dw   $0120                                         ;; 0a:72ce wW
     db   $fc, $0a                                      ;; 0a:72d0 ..
-
-data_0a_72d2:
     dw   $0102                                         ;; 0a:72d2 wW
     db   $06, $03, $fc, $07, $f8, $ff, $00, $fc        ;; 0a:72d4 ........
     db   $08                                           ;; 0a:72dc .
-
-data_0a_72dd:
     dw   $0000                                         ;; 0a:72dd wW
     db   $80, $08, $fe, $fc, $08                       ;; 0a:72df .....
-
-data_0a_72e4:
     dw   $0000                                         ;; 0a:72e4 wW
     db   $08, $1f, $1f, $ef, $ef, $ec, $ec, $1b        ;; 0a:72e6 ........
     db   $1b, $fc, $08                                 ;; 0a:72ee ...
-
-data_0a_72f1:
     dw   $0000                                         ;; 0a:72f1 wW
     db   $08, $ef, $ef, $ef, $ef, $6c, $6c, $ab        ;; 0a:72f3 ........
     db   $ab, $fc, $0c                                 ;; 0a:72fb ...
-
-data_0a_72fe:
     dw   $0000                                         ;; 0a:72fe wW
     db   $04, $69, $69, $a6, $a6, $80, $06, $fe        ;; 0a:7300 ........
     db   $fc, $0a                                      ;; 0a:7308 ..
-
-data_0a_730a:
     dw   $0016                                         ;; 0a:730a wW
     db   $06, $eb, $eb, $eb, $eb, $1c, $1c, $fc        ;; 0a:730c ........
     db   $0a                                           ;; 0a:7314 .
-
-data_0a_7315:
     dw   $0016                                         ;; 0a:7315 wW
     db   $06, $a8, $a8, $ab, $ab, $6c, $6c, $fc        ;; 0a:7317 ........
     db   $0a                                           ;; 0a:731f .
-
-data_0a_7320:
     dw   $0016                                         ;; 0a:7320 wW
     db   $06, $2f, $2f, $ef, $ef, $2f, $2f, $fc        ;; 0a:7322 ........
     db   $0a                                           ;; 0a:732a .
-
-data_0a_732b:
     dw   $0016                                         ;; 0a:732b wW
     db   $fc, $08                                      ;; 0a:732d ..
-
-data_0a_732f:
     dw   $0000                                         ;; 0a:732f wW
     db   $08, $af, $af, $17, $17, $be, $be, $0e        ;; 0a:7331 ........
     db   $0e, $fc, $0a                                 ;; 0a:7339 ...
-
-data_0a_733c:
     dw   $00d0                                         ;; 0a:733c wW
     db   $06, $77, $77, $f7, $f7, $3a, $3a, $fc        ;; 0a:733e ........
     db   $06                                           ;; 0a:7346 .
-
-data_0a_7347:
     dw   $0000                                         ;; 0a:7347 wW
     db   $12, $f7, $f7, $9b, $9b, $fb, $fb, $3d        ;; 0a:7349 ........
     db   $3d, $fd, $fd, $b6, $b6, $b5, $b5, $b5        ;; 0a:7351 ........
     db   $b5, $2d, $2d, $fc, $08                       ;; 0a:7359 .....
-
-data_0a_735e:
     dw   $0018                                         ;; 0a:735e wW
     db   $08, $dd, $dd, $db, $db, $db, $db, $cc        ;; 0a:7360 ........
     db   $cc, $fc, $08                                 ;; 0a:7368 ...
-
-data_0a_736b:
     dw   $0018                                         ;; 0a:736b wW
     db   $08, $fd, $fd, $fb, $fb, $fb, $fb, $37        ;; 0a:736d ........
     db   $37, $fc, $08                                 ;; 0a:7375 ...
-
-data_0a_7378:
     dw   $0018                                         ;; 0a:7378 wW
     db   $fc, $20                                      ;; 0a:737a ..
-
-data_0a_737c:
     dw   $0110                                         ;; 0a:737c wW
     db   $fc, $10                                      ;; 0a:737e ..
-
-data_0a_7380:
     dw   $0030                                         ;; 0a:7380 wW
     db   $fc, $16                                      ;; 0a:7382 ..
-
-data_0a_7384:
     dw   $02c0                                         ;; 0a:7384 wW
     db   $08, $f7, $f7, $77, $77, $b7, $b7, $d7        ;; 0a:7386 ........
     db   $d7, $fc, $08                                 ;; 0a:738e ...
-
-data_0a_7391:
     dw   $00be                                         ;; 0a:7391 wW
     db   $04, $5f, $5f, $5f, $5f, $80, $06, $ff        ;; 0a:7393 ........
     db   $08, $d7, $d7, $d7, $d7, $bb, $bb, $7c        ;; 0a:739b ........
     db   $7c, $fc, $08                                 ;; 0a:73a3 ...
-
-data_0a_73a6:
     dw   $0018                                         ;; 0a:73a6 wW
     db   $08, $df, $df, $df, $df, $bf, $bf, $7f        ;; 0a:73a8 ........
     db   $7f, $fc, $14                                 ;; 0a:73b0 ...
-
-data_0a_73b3:
     dw   $02c8                                         ;; 0a:73b3 wW
     db   $04, $1c, $1c, $eb, $eb, $fc, $0c             ;; 0a:73b5 .......
-
-data_0a_73bc:
     dw   $0090                                         ;; 0a:73bc wW
     db   $04, $21, $21, $f7, $f7, $fc, $0c             ;; 0a:73be .......
-
-data_0a_73c5:
     dw   $0000                                         ;; 0a:73c5 wW
     db   $04, $0e, $0e, $57, $57, $fc, $0c             ;; 0a:73c7 .......
-
-data_0a_73ce:
     dw   $0000                                         ;; 0a:73ce wW
     db   $02, $30, $30, $fc, $06                       ;; 0a:73d0 .....
-
-data_0a_73d5:
     dw   $00be                                         ;; 0a:73d5 wW
     db   $0c, $cf, $cf, $cf, $cf, $ef, $ef, $df        ;; 0a:73d7 ........
     db   $df, $fc, $fc, $7b, $7b, $fc, $0a             ;; 0a:73df .......
-
-data_0a_73e6:
     dw   $0000                                         ;; 0a:73e6 wW
     db   $06, $fe, $fe, $ff, $ff, $9e, $9e, $fc        ;; 0a:73e8 ........
     db   $08                                           ;; 0a:73f0 .
-
-data_0a_73f1:
     dw   $0000                                         ;; 0a:73f1 wW
     db   $80, $08, $fb, $fc, $0a                       ;; 0a:73f3 .....
-
-data_0a_73f8:
     dw   $0000                                         ;; 0a:73f8 wW
     db   $06, $ed, $ed, $f8, $f8, $ed, $ed, $fc        ;; 0a:73fa ........
     db   $0a                                           ;; 0a:7402 .
-
-data_0a_7403:
     dw   $01d0                                         ;; 0a:7403 wW
     db   $06, $ee, $ee, $42, $42, $ee, $ee, $fc        ;; 0a:7405 ........
     db   $10                                           ;; 0a:740d .
-
-data_0a_740e:
     dw   $0000                                         ;; 0a:740e wW
     db   $fc, $08                                      ;; 0a:7410 ..
-
-data_0a_7412:
     dw   $0000                                         ;; 0a:7412 wW
     db   $80, $08, $bf, $fc, $18                       ;; 0a:7414 .....
-
-data_0a_7419:
     dw   $0080                                         ;; 0a:7419 wW
     db   $08, $ef, $ef, $ef, $ef, $61, $61, $ae        ;; 0a:741b ........
     db   $ae, $fc, $0e                                 ;; 0a:7423 ...
-
-data_0a_7426:
     dw   $0030                                         ;; 0a:7426 wW
     db   $06, $7f, $7f, $fb, $fb, $fb, $fb, $fc        ;; 0a:7428 ........
     db   $0c                                           ;; 0a:7430 .
-
-data_0a_7431:
     dw   $0174                                         ;; 0a:7431 wW
     db   $06, $ed, $ed, $ed, $ed, $2e, $2e, $fc        ;; 0a:7433 ........
     db   $0a                                           ;; 0a:743b .
-
-data_0a_743c:
     dw   $0016                                         ;; 0a:743c wW
     db   $06, $ee, $ee, $ee, $ee, $72, $72, $fc        ;; 0a:743e ........
     db   $0a                                           ;; 0a:7446 .
-
-data_0a_7447:
     dw   $0016                                         ;; 0a:7447 wW
     db   $06, $83, $83, $bf, $bf, $c3, $c3, $fc        ;; 0a:7449 ........
     db   $0a                                           ;; 0a:7451 .
-
-data_0a_7452:
     dw   $0016                                         ;; 0a:7452 wW
     db   $06, $bf, $bf, $be, $be, $83, $83, $fc        ;; 0a:7454 ........
     db   $1a                                           ;; 0a:745c .
-
-data_0a_745d:
     dw   $0136                                         ;; 0a:745d wW
     db   $06, $ae, $ae, $ae, $ae, $a1, $a1, $fc        ;; 0a:745f ........
     db   $0b                                           ;; 0a:7467 .
-
-data_0a_7468:
     dw   $0246                                         ;; 0a:7468 wW
     db   $80, $10, $00, $80, $07, $ff, $80, $08        ;; 0a:746a ........
     db   $fd, $fc, $0a                                 ;; 0a:7472 ...
-
-data_0a_7475:
     dw   $0000                                         ;; 0a:7475 wW
     db   $06, $f6, $f6, $fc, $fc, $f6, $f6, $fc        ;; 0a:7477 ........
     db   $18                                           ;; 0a:747f .
-
-data_0a_7480:
     dw   $0340                                         ;; 0a:7480 wW
     db   $06, $7f, $7f, $7f, $7f, $63, $63, $fc        ;; 0a:7482 ........
     db   $0a                                           ;; 0a:748a .
-
-data_0a_748b:
     dw   $00ee                                         ;; 0a:748b wW
     db   $08, $e3, $e3, $dd, $dd, $df, $df, $e3        ;; 0a:748d ........
     db   $e3, $fc, $0a                                 ;; 0a:7495 ...
-
-data_0a_7498:
     dw   $0000                                         ;; 0a:7498 wW
     db   $04, $bf, $bf, $0c, $0c, $fc, $0e             ;; 0a:749a .......
-
-data_0a_74a1:
     dw   $03de                                         ;; 0a:74a1 wW
     db   $0a, $69, $69, $a6, $a6, $fd, $fd, $fd        ;; 0a:74a3 ........
     db   $fd, $fc, $fc, $fc, $0a                       ;; 0a:74ab .....
-
-data_0a_74b0:
     dw   $0016                                         ;; 0a:74b0 wW
     db   $06, $f6, $f6, $f6, $f6, $17, $17, $fc        ;; 0a:74b2 ........
     db   $0e                                           ;; 0a:74ba .
-
-data_0a_74bb:
     dw   $0166                                         ;; 0a:74bb wW
     db   $02, $39, $39, $fc, $1a                       ;; 0a:74bd .....
-
-data_0a_74c2:
     dw   $0196                                         ;; 0a:74c2 wW
     db   $06, $fd, $fd, $dd, $dd, $e3, $e3, $fc        ;; 0a:74c4 ........
     db   $0a                                           ;; 0a:74cc .
-
-data_0a_74cd:
     dw   $0016                                         ;; 0a:74cd wW
     db   $06, $bc, $bc, $bb, $bb, $cc, $cc, $fc        ;; 0a:74cf ........
     db   $0c                                           ;; 0a:74d7 .
-
-data_0a_74d8:
     dw   $0236                                         ;; 0a:74d8 wW
     db   $02, $af, $af, $fc, $14                       ;; 0a:74da .....
-
-data_0a_74df:
     dw   $0244                                         ;; 0a:74df wW
     db   $fc, $08                                      ;; 0a:74e1 ..
-
-data_0a_74e3:
     dw   $003a                                         ;; 0a:74e3 wW
     db   $10, $00, $ff, $ff, $ff, $f9, $f9, $f9        ;; 0a:74e5 ........
     db   $f9, $dd, $dd, $db, $db, $df, $df, $df        ;; 0a:74ed ........
     db   $df, $fc, $0c                                 ;; 0a:74f5 ...
-
-data_0a_74f8:
     dw   $0000                                         ;; 0a:74f8 wW
     db   $02, $0f, $0f, $fc, $0a                       ;; 0a:74fa .....
-
-data_0a_74ff:
     dw   $035e                                         ;; 0a:74ff wW
     db   $08, $77, $77, $77, $77, $ae, $ae, $dd        ;; 0a:7501 ........
     db   $dd, $fc, $0c                                 ;; 0a:7509 ...
-
-data_0a_750c:
     dw   $0000                                         ;; 0a:750c wW
     db   $02, $37, $37, $fc, $0a                       ;; 0a:750e .....
-
-data_0a_7513:
     dw   $00be                                         ;; 0a:7513 wW
     db   $08, $ff, $ff, $ff, $ff, $53, $53, $4d        ;; 0a:7515 ........
     db   $4d, $fc, $08                                 ;; 0a:751d ...
-
-data_0a_7520:
     dw   $0000                                         ;; 0a:7520 wW
     db   $80, $06, $dd, $02, $c1, $c1, $fc, $0c        ;; 0a:7522 ........
-
-data_0a_752a:
     dw   $0000                                         ;; 0a:752a wW
     db   $04, $8c, $8c, $f5, $f5, $fc, $0c             ;; 0a:752c .......
-
-data_0a_7533:
     dw   $0000                                         ;; 0a:7533 wW
     db   $04, $3f, $3f, $5f, $5f, $80, $06, $df        ;; 0a:7535 ........
     db   $fc, $0a                                      ;; 0a:753d ..
-
-data_0a_753f:
     dw   $0016                                         ;; 0a:753f wW
     db   $80, $06, $57, $fc, $0a                       ;; 0a:7541 .....
-
-data_0a_7546:
     dw   $0016                                         ;; 0a:7546 wW
     db   $06, $dd, $dd, $dd, $dd, $de, $de, $fc        ;; 0a:7548 ........
     db   $0a                                           ;; 0a:7550 .
-
-data_0a_7551:
     dw   $0016                                         ;; 0a:7551 wW
     db   $06, $d7, $d7, $d7, $d7, $38, $38, $fc        ;; 0a:7553 ........
     db   $0a                                           ;; 0a:755b .
-
-data_0a_755c:
     dw   $0016                                         ;; 0a:755c wW
     db   $80, $06, $5f, $fc, $0e                       ;; 0a:755e .....
-
-data_0a_7563:
     dw   $0616                                         ;; 0a:7563 wW
     db   $02, $dd, $dd, $fc, $1a                       ;; 0a:7565 .....
-
-data_0a_756a:
     dw   $0156                                         ;; 0a:756a wW
     db   $fc, $10                                      ;; 0a:756c ..
-
-data_0a_756e:
     dw   $0640                                         ;; 0a:756e wW
     db   $fc, $0c                                      ;; 0a:7570 ..
-
-data_0a_7572:
     dw   $0380                                         ;; 0a:7572 wW
     db   $02, $fe, $fe, $fc, $0a                       ;; 0a:7574 .....
-
-data_0a_7579:
     dw   $006e                                         ;; 0a:7579 wW
     db   $06, $1f, $1f, $ef, $ef, $fb, $fb, $fc        ;; 0a:757b ........
     db   $0a                                           ;; 0a:7583 .
-
-data_0a_7584:
     dw   $01ee                                         ;; 0a:7584 wW
     db   $06, $ff, $ff, $ff, $ff, $a1, $a1, $fc        ;; 0a:7586 ........
     db   $0a                                           ;; 0a:758e .
-
-data_0a_758f:
     dw   $03fe                                         ;; 0a:758f wW
     db   $08, $e5, $e5, $dd, $dd, $dd, $dd, $85        ;; 0a:7591 ........
     db   $85, $fc, $0e                                 ;; 0a:7599 ...
-
-data_0a_759c:
     dw   $00a0                                         ;; 0a:759c wW
     db   $02, $75, $75, $fc, $0c                       ;; 0a:759e .....
-
-data_0a_75a3:
     dw   $0000                                         ;; 0a:75a3 wW
     db   $02, $d8, $d8, $fc, $0e                       ;; 0a:75a5 .....
-
-data_0a_75aa:
     dw   $035e                                         ;; 0a:75aa wW
     db   $04, $d3, $d3, $4d, $4d, $80, $10, $00        ;; 0a:75ac ........
     db   $80, $06, $ab, $fc, $1a                       ;; 0a:75b4 .....
-
-data_0a_75b9:
     dw   $01a6                                         ;; 0a:75b9 wW
     db   $fc, $06                                      ;; 0a:75bb ..
-
-data_0a_75bd:
     dw   $0388                                         ;; 0a:75bd wW
     db   $fc, $1a                                      ;; 0a:75bf ..
-
-data_0a_75c1:
     dw   $0216                                         ;; 0a:75c1 wW
     db   $04, $ae, $ae, $ae, $ae, $fc, $0c             ;; 0a:75c3 .......
-
-data_0a_75ca:
     dw   $0424                                         ;; 0a:75ca wW
     db   $fc, $10                                      ;; 0a:75cc ..
-
-data_0a_75ce:
     dw   $0650                                         ;; 0a:75ce wW
     db   $06, $75, $75, $75, $75, $8e, $8e, $fc        ;; 0a:75d0 ........
     db   $0a                                           ;; 0a:75d8 .
-
-data_0a_75d9:
     dw   $0016                                         ;; 0a:75d9 wW
     db   $06, $50, $50, $57, $57, $b8, $b8, $fc        ;; 0a:75db ........
     db   $0c                                           ;; 0a:75e3 .
-
-data_0a_75e4:
     dw   $0636                                         ;; 0a:75e4 wW
     db   $02, $df, $df, $fc, $16                       ;; 0a:75e6 .....
-
-data_0a_75eb:
     dw   $0674                                         ;; 0a:75eb wW
     db   $04, $ff, $ff, $87, $87, $fc, $0e             ;; 0a:75ed .......
-
-data_0a_75f4:
     dw   $01fe                                         ;; 0a:75f4 wW
     db   $fc, $05                                      ;; 0a:75f6 ..
-
-data_0a_75f8:
     dw   $0016                                         ;; 0a:75f8 wW
     db   $fc, $17                                      ;; 0a:75fa ..
-
-data_0a_75fc:
     dw   $0481                                         ;; 0a:75fc wW
     db   $fc, $10                                      ;; 0a:75fe ..
-
-data_0a_7600:
     dw   $0068                                         ;; 0a:7600 wW
     db   $06, $8d, $8d, $75, $75, $7c, $7c, $fc        ;; 0a:7602 ........
     db   $0a                                           ;; 0a:760a .
-
-data_0a_760b:
     dw   $00ce                                         ;; 0a:760b wW
     db   $06, $ff, $ff, $f7, $f7, $3e, $3e, $fc        ;; 0a:760d ........
     db   $0a                                           ;; 0a:7615 .
-
-data_0a_7616:
     dw   $00de                                         ;; 0a:7616 wW
     db   $08, $f7, $f7, $f7, $f7, $36, $36, $d5        ;; 0a:7618 ........
     db   $d5, $00, $80, $1e                            ;; 0a:7620 ....
@@ -5667,19 +4336,13 @@ data_0a_7616:
     dw   `00311111                                     ;; 0a:7634 $3f $20
 
     db   $fc, $05                                      ;; 0a:7636 ..
-
-data_0a_7638:
     dw   $0020                                         ;; 0a:7638 wW
     db   $01, $ff, $fc, $09                            ;; 0a:763a ....
-
-data_0a_763e:
     dw   $0018                                         ;; 0a:763e wW
     db   $01                                           ;; 0a:7640 .
     db   %00000000                                     ;; 0a:7641 $00
 
     db   $fc, $0c                                      ;; 0a:7642 ..
-
-data_0a_7644:
     dw   $0030                                         ;; 0a:7644 wW
     db   $22                                           ;; 0a:7646 .
     dw   `33333200                                     ;; 0a:7647 $f8 $fc
@@ -5703,8 +4366,6 @@ data_0a_7644:
     dw   `11113200                                     ;; 0a:7667 $f8 $0c
 
     db   $fc, $05                                      ;; 0a:7669 ..
-
-data_0a_766b:
     dw   $004e                                         ;; 0a:766b wW
     db   $03                                           ;; 0a:766d .
     db   %00111111                                     ;; 0a:766e $3f
@@ -5715,8 +4376,6 @@ data_0a_766b:
     db   %00000000                                     ;; 0a:7673 $00
 
     db   $fc, $07                                      ;; 0a:7674 ..
-
-data_0a_7676:
     dw   $003e                                         ;; 0a:7676 wW
     db   $80, $09                                      ;; 0a:7678 ..
     db   %00000000                                     ;; 0a:767a $00
@@ -5737,12 +4396,8 @@ data_0a_7676:
     dw   `00000023                                     ;; 0a:7694 $01 $03
 
     db   $fc, $06                                      ;; 0a:7696 ..
-
-data_0a_7698:
     dw   $001f                                         ;; 0a:7698 wW
     db   $fc, $0a                                      ;; 0a:769a ..
-
-data_0a_769c:
     dw   $00b2                                         ;; 0a:769c wW
     db   $10                                           ;; 0a:769e .
     dw   `32000000                                     ;; 0a:769f $80 $c0
@@ -5766,8 +4421,6 @@ data_0a_769c:
     dw   `11111112                                     ;; 0a:76ba $fe $01
 
     db   $fc, $05                                      ;; 0a:76bc ..
-
-data_0a_76be:
     dw   $0031                                         ;; 0a:76be wW
     db   $12                                           ;; 0a:76c0 .
     db   %11111111                                     ;; 0a:76c1 $ff
@@ -5782,8 +4435,6 @@ data_0a_76be:
     dw   `33333330                                     ;; 0a:76d0 $fe $fe
 
     db   $fe, $fc, $06                                 ;; 0a:76d2 ...
-
-data_0a_76d5:
     dw   $0095                                         ;; 0a:76d5 wW
     db   $01                                           ;; 0a:76d7 .
     db   %00000011                                     ;; 0a:76d8 $03
@@ -5792,36 +4443,24 @@ data_0a_76d5:
     dw   `00000021                                     ;; 0a:76db $01 $02
 
     db   $fc, $07                                      ;; 0a:76dd ..
-
-data_0a_76df:
     dw   $0019                                         ;; 0a:76df wW
     db   $fc, $05                                      ;; 0a:76e1 ..
-
-data_0a_76e3:
     dw   $0032                                         ;; 0a:76e3 wW
     db   $04                                           ;; 0a:76e5 .
     dw   `11111122                                     ;; 0a:76e6 $fc $03
     dw   `11111122                                     ;; 0a:76e8 $fc $03
 
     db   $fc, $0c                                      ;; 0a:76ea ..
-
-data_0a_76ec:
     dw   $0110                                         ;; 0a:76ec wW
     db   $04                                           ;; 0a:76ee .
     dw   `22112211                                     ;; 0a:76ef $33 $cc
     dw   `11212211                                     ;; 0a:76f1 $d3 $2c
 
     db   $fc, $0c                                      ;; 0a:76f3 ..
-
-data_0a_76f5:
     dw   $0110                                         ;; 0a:76f5 wW
     db   $fc, $0b                                      ;; 0a:76f7 ..
-
-data_0a_76f9:
     dw   $0033                                         ;; 0a:76f9 wW
     db   $fc, $0e                                      ;; 0a:76fb ..
-
-data_0a_76fd:
     dw   $0137                                         ;; 0a:76fd wW
     db   $0b                                           ;; 0a:76ff .
     db   %11111110                                     ;; 0a:7700 $fe
@@ -5842,8 +4481,6 @@ data_0a_76fd:
     db   %00000011                                     ;; 0a:7716 $03
 
     db   $fc, $05                                      ;; 0a:7717 ..
-
-data_0a_7719:
     dw   $0033                                         ;; 0a:7719 wW
     db   $0b                                           ;; 0a:771b .
     db   %11111111                                     ;; 0a:771c $ff
@@ -5855,8 +4492,6 @@ data_0a_7719:
     dw   `11112211                                     ;; 0a:7725 $f3 $0c
 
     db   $fc, $06                                      ;; 0a:7727 ..
-
-data_0a_7729:
     dw   $017a                                         ;; 0a:7729 wW
     db   $1a                                           ;; 0a:772b .
     dw   `22211211                                     ;; 0a:772c $1b $e4
@@ -5875,8 +4510,6 @@ data_0a_7729:
     dw   `21111111                                     ;; 0a:7744 $7f $80
 
     db   $fc, $06                                      ;; 0a:7746 ..
-
-data_0a_7748:
     dw   $017a                                         ;; 0a:7748 wW
     db   $0e                                           ;; 0a:774a .
     dw   `22222120                                     ;; 0a:774b $04 $fa
@@ -5888,27 +4521,19 @@ data_0a_7748:
     dw   `11111120                                     ;; 0a:7757 $fc $02
 
     db   $fc, $07                                      ;; 0a:7759 ..
-
-data_0a_775b:
     dw   $0094                                         ;; 0a:775b wW
     db   $fc, $19                                      ;; 0a:775d ..
-
-data_0a_775f:
     dw   $0105                                         ;; 0a:775f wW
     db   $02                                           ;; 0a:7761 .
     dw   `11111221                                     ;; 0a:7762 $f9 $06
 
     db   $fc, $0c                                      ;; 0a:7764 ..
-
-data_0a_7766:
     dw   $0110                                         ;; 0a:7766 wW
     db   $04                                           ;; 0a:7768 .
     dw   `21111111                                     ;; 0a:7769 $7f $80
     dw   `12112211                                     ;; 0a:776b $b3 $4c
 
     db   $fc, $2a                                      ;; 0a:776d ..
-
-data_0a_776f:
     dw   $0130                                         ;; 0a:776f wW
     db   $06                                           ;; 0a:7771 .
     dw   `11111120                                     ;; 0a:7772 $fc $02
@@ -5916,8 +4541,6 @@ data_0a_776f:
     dw   `22222120                                     ;; 0a:7776 $04 $fa
 
     db   $fc, $10                                      ;; 0a:7778 ..
-
-data_0a_777a:
     dw   $0160                                         ;; 0a:777a wW
     db   $08                                           ;; 0a:777c .
     dw   `11111221                                     ;; 0a:777d $f9 $06
@@ -5926,8 +4549,6 @@ data_0a_777a:
     dw   `11111211                                     ;; 0a:7783 $fb $04
 
     db   $fc, $08                                      ;; 0a:7785 ..
-
-data_0a_7787:
     dw   $0178                                         ;; 0a:7787 wW
     db   $0a                                           ;; 0a:7789 .
     dw   `11122221                                     ;; 0a:778a $e1 $1e
@@ -5937,8 +4558,6 @@ data_0a_7787:
     dw   `21111221                                     ;; 0a:7792 $79 $86
 
     db   $fc, $06                                      ;; 0a:7794 ..
-
-data_0a_7796:
     dw   $017a                                         ;; 0a:7796 wW
     db   $18                                           ;; 0a:7798 .
     dw   `12221122                                     ;; 0a:7799 $8c $73
@@ -5956,51 +4575,33 @@ data_0a_7796:
     dw   `22111111                                     ;; 0a:77af $3f $c0
 
     db   $fc, $07                                      ;; 0a:77b1 ..
-
-data_0a_77b3:
     dw   $0031                                         ;; 0a:77b3 wW
     db   $fc, $05                                      ;; 0a:77b5 ..
-
-data_0a_77b7:
     dw   $01af                                         ;; 0a:77b7 wW
     db   $04                                           ;; 0a:77b9 .
     dw   `22222120                                     ;; 0a:77ba $04 $fa
     dw   `22222120                                     ;; 0a:77bc $04 $fa
 
     db   $fc, $06                                      ;; 0a:77be ..
-
-data_0a_77c0:
     dw   $0216                                         ;; 0a:77c0 wW
     db   $fc, $1e                                      ;; 0a:77c2 ..
-
-data_0a_77c4:
     dw   $01be                                         ;; 0a:77c4 wW
     db   $fc, $10                                      ;; 0a:77c6 ..
-
-data_0a_77c8:
     dw   $013c                                         ;; 0a:77c8 wW
     db   $04                                           ;; 0a:77ca .
     dw   `22222111                                     ;; 0a:77cb $07 $f8
 
     db   $3f, $c0, $fc, $0c                            ;; 0a:77cd ....
-
-data_0a_77d1:
     dw   $0110                                         ;; 0a:77d1 wW
     db   $04                                           ;; 0a:77d3 .
     dw   `12211111                                     ;; 0a:77d4 $9f $60
     dw   `12212211                                     ;; 0a:77d6 $93 $6c
 
     db   $fc, $0e                                      ;; 0a:77d8 ..
-
-data_0a_77da:
     dw   $0130                                         ;; 0a:77da wW
     db   $fc, $07                                      ;; 0a:77dc ..
-
-data_0a_77de:
     dw   $02ae                                         ;; 0a:77de wW
     db   $fc, $09                                      ;; 0a:77e0 ..
-
-data_0a_77e2:
     dw   $0215                                         ;; 0a:77e2 wW
     db   $01, $fc, $84, $07                            ;; 0a:77e4 ....
     db   %00000010                                     ;; 0a:77e8 $02
@@ -6009,12 +4610,8 @@ data_0a_77e2:
     db   %00000010                                     ;; 0a:77eb $02
 
     db   $00, $fc, $05                                 ;; 0a:77ec ...
-
-data_0a_77ef:
     dw   $0179                                         ;; 0a:77ef wW
     db   $fc, $0b                                      ;; 0a:77f1 ..
-
-data_0a_77f3:
     dw   $0136                                         ;; 0a:77f3 wW
     db   $0b                                           ;; 0a:77f5 .
     db   %11111111                                     ;; 0a:77f6 $ff
@@ -6026,8 +4623,6 @@ data_0a_77f3:
     dw   `22222112                                     ;; 0a:77ff $06 $f9
 
     db   $fc, $06                                      ;; 0a:7801 ..
-
-data_0a_7803:
     dw   $017a                                         ;; 0a:7803 wW
     db   $0a                                           ;; 0a:7805 .
     dw   `22211112                                     ;; 0a:7806 $1e $e1
@@ -6037,8 +4632,6 @@ data_0a_7803:
     dw   `22212211                                     ;; 0a:780e $13 $ec
 
     db   $fc, $06                                      ;; 0a:7810 ..
-
-data_0a_7812:
     dw   $017a                                         ;; 0a:7812 wW
     db   $0a                                           ;; 0a:7814 .
     dw   `22211111                                     ;; 0a:7815 $1f $e0
@@ -6048,29 +4641,21 @@ data_0a_7812:
     dw   `12211111                                     ;; 0a:781d $9f $60
 
     db   $fc, $06                                      ;; 0a:781f ..
-
-data_0a_7821:
     dw   $017a                                         ;; 0a:7821 wW
     db   $84, $07                                      ;; 0a:7823 ..
     dw   `11111120                                     ;; 0a:7825 $fc $02
 
     db   $fc, $2e                                      ;; 0a:7827 ..
-
-data_0a_7829:
     dw   $027e                                         ;; 0a:7829 wW
     db   $04                                           ;; 0a:782b .
     dw   `12222211                                     ;; 0a:782c $83 $7c
 
     db   $9f, $60, $fc, $1c                            ;; 0a:782e ....
-
-data_0a_7832:
     dw   $0130                                         ;; 0a:7832 wW
     db   $02                                           ;; 0a:7834 .
     dw   `22111111                                     ;; 0a:7835 $3f $c0
 
     db   $fc, $32                                      ;; 0a:7837 ..
-
-data_0a_7839:
     dw   $02ce                                         ;; 0a:7839 wW
     db   $0a                                           ;; 0a:783b .
     dw   `12211112                                     ;; 0a:783c $9e $61
@@ -6080,8 +4665,6 @@ data_0a_7839:
     dw   `12222212                                     ;; 0a:7844 $82 $7d
 
     db   $fc, $06                                      ;; 0a:7846 ..
-
-data_0a_7848:
     dw   $017a                                         ;; 0a:7848 wW
     db   $0a                                           ;; 0a:784a .
     dw   `22211122                                     ;; 0a:784b $1c $e3
@@ -6091,15 +4674,11 @@ data_0a_7848:
     dw   `21121122                                     ;; 0a:7853 $6c $93
 
     db   $fc, $06                                      ;; 0a:7855 ..
-
-data_0a_7857:
     dw   $017a                                         ;; 0a:7857 wW
     db   $84, $05                                      ;; 0a:7859 ..
     dw   `22111111                                     ;; 0a:785b $3f $c0
 
     db   $fc, $1b                                      ;; 0a:785d ..
-
-data_0a_785f:
     dw   $032a                                         ;; 0a:785f wW
     db   $80, $08, $00, $03                            ;; 0a:7861 ....
     db   %00011000                                     ;; 0a:7865 $18
@@ -6118,8 +4697,6 @@ data_0a_785f:
     dw   `20222222                                     ;; 0a:7876 $00 $bf
 
     db   $fc, $06                                      ;; 0a:7878 ..
-
-data_0a_787a:
     dw   $00db                                         ;; 0a:787a wW
     db   $02, $00, $3c, $80, $0c, $00, $14             ;; 0a:787c .......
     dw   `00111100                                     ;; 0a:7883 $3c $00
@@ -6179,8 +4756,6 @@ data_0a_787a:
     dw   `32100000                                     ;; 0a:78dd $a0 $c0
 
     db   $fc, $06                                      ;; 0a:78df ..
-
-data_0a_78e1:
     dw   $02af                                         ;; 0a:78e1 wW
     db   $80, $06                                      ;; 0a:78e3 ..
     db   %00000000                                     ;; 0a:78e5 $00
@@ -6199,8 +4774,6 @@ data_0a_78e1:
     dw   `12210000                                     ;; 0a:78f9 $90 $60
 
     db   $fc, $06                                      ;; 0a:78fb ..
-
-data_0a_78fd:
     dw   $036f                                         ;; 0a:78fd wW
     db   $80, $0e                                      ;; 0a:78ff ..
     db   %00000000                                     ;; 0a:7901 $00
@@ -6209,12 +4782,8 @@ data_0a_78fd:
     dw   `00111100                                     ;; 0a:7903 $3c $00
 
     db   $24, $fc, $05                                 ;; 0a:7905 ...
-
-data_0a_7908:
     dw   $04ff                                         ;; 0a:7908 wW
     db   $fc, $0b                                      ;; 0a:790a ..
-
-data_0a_790c:
     dw   $0449                                         ;; 0a:790c wW
     db   $2b                                           ;; 0a:790e .
     db   %00010000                                     ;; 0a:790f $10
@@ -6244,8 +4813,6 @@ data_0a_790c:
     dw   `02220020                                     ;; 0a:7938 $00 $72
 
     db   $fc, $05                                      ;; 0a:793a ..
-
-data_0a_793c:
     dw   $0000                                         ;; 0a:793c wW
     db   $0d                                           ;; 0a:793e .
     db   %01111000                                     ;; 0a:793f $78
@@ -6258,12 +4825,8 @@ data_0a_793c:
     dw   `00022200                                     ;; 0a:794a $00 $1c
 
     db   $fc, $05                                      ;; 0a:794c ..
-
-data_0a_794e:
     dw   $0468                                         ;; 0a:794e wW
     db   $fc, $10                                      ;; 0a:7950 ..
-
-data_0a_7952:
     dw   $0523                                         ;; 0a:7952 wW
     db   $80, $07                                      ;; 0a:7954 ..
     db   %00000000                                     ;; 0a:7956 $00
@@ -6273,8 +4836,6 @@ data_0a_7952:
     dw   `00000122                                     ;; 0a:795a $04 $03
 
     db   $04, $fc, $06                                 ;; 0a:795c ...
-
-data_0a_795f:
     dw   $011f                                         ;; 0a:795f wW
     db   $28                                           ;; 0a:7961 .
     db   %00000000                                     ;; 0a:7962 $00
@@ -6302,8 +4863,6 @@ data_0a_795f:
     dw   `12212210                                     ;; 0a:7987 $92 $6c
 
     db   $14, $fc, $05                                 ;; 0a:7989 ...
-
-data_0a_798c:
     dw   $04e9                                         ;; 0a:798c wW
     db   $02                                           ;; 0a:798e .
     dw   `00000333                                     ;; 0a:798f $07 $07
@@ -6312,8 +4871,6 @@ data_0a_798c:
     dw   `00000311                                     ;; 0a:7993 $07 $04
 
     db   $fc, $07                                      ;; 0a:7995 ..
-
-data_0a_7997:
     dw   $003a                                         ;; 0a:7997 wW
     db   $09                                           ;; 0a:7999 .
     db   %00000000                                     ;; 0a:799a $00
@@ -6324,8 +4881,6 @@ data_0a_7997:
     dw   `11112211                                     ;; 0a:79a1 $f3 $0c
 
     db   $fc, $0a                                      ;; 0a:79a3 ..
-
-data_0a_79a5:
     dw   $05b0                                         ;; 0a:79a5 wW
     db   $06                                           ;; 0a:79a7 .
     dw   `11221111                                     ;; 0a:79a8 $cf $30
@@ -6333,8 +4888,6 @@ data_0a_79a5:
     dw   `21221122                                     ;; 0a:79ac $4c $b3
 
     db   $fc, $0a                                      ;; 0a:79ae ..
-
-data_0a_79b0:
     dw   $05b0                                         ;; 0a:79b0 wW
     db   $06                                           ;; 0a:79b2 .
     dw   `11111111                                     ;; 0a:79b3 $ff $00
@@ -6342,12 +4895,8 @@ data_0a_79b0:
     dw   `21121112                                     ;; 0a:79b7 $6e $91
 
     db   $fc, $08                                      ;; 0a:79b9 ..
-
-data_0a_79bb:
     dw   $05b0                                         ;; 0a:79bb wW
     db   $fc, $06                                      ;; 0a:79bd ..
-
-data_0a_79bf:
     dw   $00e2                                         ;; 0a:79bf wW
     db   $12                                           ;; 0a:79c1 .
     dw   `21111112                                     ;; 0a:79c2 $7e $81
@@ -6362,20 +4911,14 @@ data_0a_79bf:
     dw   `22221330                                     ;; 0a:79d2 $0e $f6
 
     db   $fc, $0c                                      ;; 0a:79d4 ..
-
-data_0a_79d6:
     dw   $05a4                                         ;; 0a:79d6 wW
     db   $04                                           ;; 0a:79d8 .
     dw   `00000333                                     ;; 0a:79d9 $07 $07
     dw   `00000033                                     ;; 0a:79db $03 $03
 
     db   $fc, $06                                      ;; 0a:79dd ..
-
-data_0a_79df:
     dw   $05ba                                         ;; 0a:79df wW
     db   $fc, $06                                      ;; 0a:79e1 ..
-
-data_0a_79e3:
     dw   $0188                                         ;; 0a:79e3 wW
     db   $0c                                           ;; 0a:79e5 .
     dw   `33333333                                     ;; 0a:79e6 $ff $ff
@@ -6386,8 +4929,6 @@ data_0a_79e3:
     dw   `11221122                                     ;; 0a:79f0 $cc $33
 
     db   $fc, $08                                      ;; 0a:79f2 ..
-
-data_0a_79f4:
     dw   $00e8                                         ;; 0a:79f4 wW
     db   $0a                                           ;; 0a:79f6 .
     dw   `22121112                                     ;; 0a:79f7 $2e $d1
@@ -6397,8 +4938,6 @@ data_0a_79f4:
     dw   `11122211                                     ;; 0a:79ff $e3 $1c
 
     db   $fc, $06                                      ;; 0a:7a01 ..
-
-data_0a_7a03:
     dw   $00ea                                         ;; 0a:7a03 wW
     db   $80, $46                                      ;; 0a:7a05 ..
     db   %00000000                                     ;; 0a:7a07 $00
@@ -6433,8 +4972,6 @@ data_0a_7a03:
     dw   `00030222                                     ;; 0a:7a35 $10 $17
 
     db   $fc, $08                                      ;; 0a:7a37 ..
-
-data_0a_7a39:
     dw   $0688                                         ;; 0a:7a39 wW
     db   $04                                           ;; 0a:7a3b .
     dw   `00302222                                     ;; 0a:7a3c $20 $2f
@@ -6455,8 +4992,6 @@ data_0a_7a39:
     dw   `22203000                                     ;; 0a:7a55 $08 $e8
 
     db   $fc, $08                                      ;; 0a:7a57 ..
-
-data_0a_7a59:
     dw   $0738                                         ;; 0a:7a59 wW
     db   $04                                           ;; 0a:7a5b .
     dw   `22220300                                     ;; 0a:7a5c $04 $f4
@@ -6466,8 +5001,6 @@ data_0a_7a59:
     db   $01, $07, $03, $0f, $07, $0f, $07, $1f        ;; 0a:7a68 ........
     db   $0f, $1f, $0f, $1f, $0f, $3c, $1f, $fc        ;; 0a:7a70 ........
     db   $07                                           ;; 0a:7a78 .
-
-data_0a_7a79:
     dw   $0017                                         ;; 0a:7a79 wW
     db   $07, $00, $07, $03, $3f, $1f, $ff, $7f        ;; 0a:7a7b ........
     db   $80, $10, $ff, $0e, $33, $ff, $d3, $ff        ;; 0a:7a83 ........
@@ -6493,130 +5026,72 @@ data_0a_7a79:
     db   $fc, $f0, $fc, $f0, $f8, $e0, $f8, $c0        ;; 0a:7b23 ........
     db   $f0, $80, $e0, $00, $c0, $00, $80, $fc        ;; 0a:7b2b ........
     db   $1f                                           ;; 0a:7b33 .
-
-data_0a_7b34:
     dw   $00c0                                         ;; 0a:7b34 wW
     db   $01, $7e, $fc, $25                            ;; 0a:7b36 ....
-
-data_0a_7b3a:
     dw   $00e0                                         ;; 0a:7b3a wW
     db   $0d, $7e, $fc, $3e, $fc, $9e, $fc, $9e        ;; 0a:7b3c ........
     db   $f8, $9e, $f8, $3c, $f8, $7c, $fc, $0e        ;; 0a:7b44 ........
-
-data_0a_7b4c:
     dw   $0112                                         ;; 0a:7b4c wW
     db   $fc, $17                                      ;; 0a:7b4e ..
-
-data_0a_7b50:
     dw   $0000                                         ;; 0a:7b50 wW
     db   $02, $3e, $1f, $fc, $07                       ;; 0a:7b52 .....
-
-data_0a_7b57:
     dw   $0197                                         ;; 0a:7b57 wW
     db   $fc, $17                                      ;; 0a:7b59 ..
-
-data_0a_7b5b:
     dw   $0020                                         ;; 0a:7b5b wW
     db   $09, $0f, $ff, $7f, $ff, $7c, $ff, $1b        ;; 0a:7b5d ........
     db   $ff, $7b, $fc, $17                            ;; 0a:7b65 ....
-
-data_0a_7b69:
     dw   $0040                                         ;; 0a:7b69 wW
     db   $0d, $27, $ff, $26, $ff, $3c, $ff, $26        ;; 0a:7b6b ........
     db   $ff, $26, $1f, $3e, $0f, $3e, $fc, $1d        ;; 0a:7b73 ........
-
-data_0a_7b7b:
     dw   $0064                                         ;; 0a:7b7b wW
     db   $03, $7b, $ff, $0c, $fc, $1d                  ;; 0a:7b7d ......
-
-data_0a_7b83:
     dw   $0084                                         ;; 0a:7b83 wW
     db   $03, $26, $ff, $27, $80, $10, $ff, $fc        ;; 0a:7b85 ........
     db   $0c                                           ;; 0a:7b8d .
-
-data_0a_7b8e:
     dw   $00b4                                         ;; 0a:7b8e wW
     db   $fc, $07                                      ;; 0a:7b90 ..
-
-data_0a_7b92:
     dw   $0162                                         ;; 0a:7b92 wW
     db   $07, $7e, $fc, $7e, $fc, $7e, $f8, $3e        ;; 0a:7b94 ........
     db   $fc, $12                                      ;; 0a:7b9c ..
-
-data_0a_7b9e:
     dw   $010e                                         ;; 0a:7b9e wW
     db   $fc, $0a                                      ;; 0a:7ba0 ..
-
-data_0a_7ba2:
     dw   $0000                                         ;; 0a:7ba2 wW
     db   $01, $03, $fc, $0c                            ;; 0a:7ba4 ....
-
-data_0a_7ba8:
     dw   $000b                                         ;; 0a:7ba8 wW
     db   $01, $38, $fc, $1f                            ;; 0a:7baa ....
-
-data_0a_7bae:
     dw   $0018                                         ;; 0a:7bae wW
     db   $09, $7f, $ff, $ff, $ff, $ca, $ff, $c7        ;; 0a:7bb0 ........
     db   $ff, $ce, $fc, $17                            ;; 0a:7bb8 ....
-
-data_0a_7bbc:
     dw   $0040                                         ;; 0a:7bbc wW
     db   $09, $f9, $ff, $f9, $ff, $71, $ff, $29        ;; 0a:7bbe ........
     db   $ff, $29, $fc, $21                            ;; 0a:7bc6 ....
-
-data_0a_7bca:
     dw   $0060                                         ;; 0a:7bca wW
     db   $03, $cd, $ff, $ce, $fc, $1d                  ;; 0a:7bcc ......
-
-data_0a_7bd2:
     dw   $0084                                         ;; 0a:7bd2 wW
     db   $03, $29, $ff, $31, $fc, $1f                  ;; 0a:7bd4 ......
-
-data_0a_7bda:
     dw   $0224                                         ;; 0a:7bda wW
     db   $0b, $fe, $fc, $9e, $fc, $2e, $fc, $0e        ;; 0a:7bdc ........
     db   $fc, $3e, $f8, $8e, $fc, $1c                  ;; 0a:7be4 ......
-
-data_0a_7bea:
     dw   $024e                                         ;; 0a:7bea wW
     db   $fc, $0d                                      ;; 0a:7bec ..
-
-data_0a_7bee:
     dw   $000a                                         ;; 0a:7bee wW
     db   $02, $3f, $1f, $fc, $07                       ;; 0a:7bf0 .....
-
-data_0a_7bf5:
     dw   $0357                                         ;; 0a:7bf5 wW
     db   $fc, $17                                      ;; 0a:7bf7 ..
-
-data_0a_7bf9:
     dw   $0020                                         ;; 0a:7bf9 wW
     db   $09, $07, $ff, $3f, $ff, $3c, $ff, $0c        ;; 0a:7bfb ........
     db   $ff, $3c, $fc, $17                            ;; 0a:7c03 ....
-
-data_0a_7c07:
     dw   $0040                                         ;; 0a:7c07 wW
     db   $0d, $fe, $ff, $fe, $ff, $38, $ff, $d6        ;; 0a:7c09 ........
     db   $ff, $d6, $1f, $3f, $0f, $3f, $fc, $1d        ;; 0a:7c11 ........
-
-data_0a_7c19:
     dw   $0064                                         ;; 0a:7c19 wW
     db   $03, $3c, $ff, $04, $fc, $1d                  ;; 0a:7c1b ......
-
-data_0a_7c21:
     dw   $0084                                         ;; 0a:7c21 wW
     db   $03, $d6, $ff, $d8, $fc, $1d                  ;; 0a:7c23 ......
-
-data_0a_7c29:
     dw   $0224                                         ;; 0a:7c29 wW
     db   $84, $05, $7e, $fc, $01, $7e, $fc, $14        ;; 0a:7c2b ........
-
-data_0a_7c33:
     dw   $010c                                         ;; 0a:7c33 wW
     db   $fc, $08                                      ;; 0a:7c35 ..
-
-data_0a_7c37:
     dw   $0002                                         ;; 0a:7c37 wW
     db   $1f, $00, $07, $01, $0f, $03, $1f, $07        ;; 0a:7c39 ........
     db   $3f, $0f, $3f, $0f, $7f, $1f, $7f, $1f        ;; 0a:7c41 ........
@@ -6625,29 +5100,21 @@ data_0a_7c37:
     db   $80, $12, $ff, $0d, $67, $ff, $a7, $ff        ;; 0a:7c59 ........
     db   $a6, $ff, $67, $00, $f0, $00, $fe, $e0        ;; 0a:7c61 ........
     db   $ff, $fc, $17                                 ;; 0a:7c69 ...
-
-data_0a_7c6c:
     dw   $0044                                         ;; 0a:7c6c wW
     db   $16, $37, $ff, $97, $07, $07, $07, $07        ;; 0a:7c6e ........
     db   $07, $87, $07, $c7, $07, $e7, $87, $f7        ;; 0a:7c76 ........
     db   $c7, $ff, $e7, $ff, $f3, $ff, $f3, $fc        ;; 0a:7c7e ........
     db   $05                                           ;; 0a:7c86 .
-
-data_0a_7c87:
     dw   $02b6                                         ;; 0a:7c87 wW
     db   $14, $f8, $ff, $fc, $ff, $fc, $3f, $fc        ;; 0a:7c89 ........
     db   $3f, $e0, $f0, $f0, $f0, $f0, $f8, $38        ;; 0a:7c91 ........
     db   $38, $18, $1c, $0c, $1c, $80, $08, $0c        ;; 0a:7c99 ........
     db   $0c, $08, $0c, $10, $18, $30, $30, $00        ;; 0a:7ca1 ........
     db   $20, $00, $00, $00, $00, $fc, $05             ;; 0a:7ca9 .......
-
-data_0a_7cb0:
     dw   $043a                                         ;; 0a:7cb0 wW
     db   $12, $f9, $1f, $ff, $1f, $7f, $1f, $7f        ;; 0a:7cb2 ........
     db   $0f, $7f, $0f, $3f, $07, $3f, $03, $1f        ;; 0a:7cba ........
     db   $01, $0f, $00, $fc, $09                       ;; 0a:7cc2 .....
-
-data_0a_7cc7:
     dw   $006f                                         ;; 0a:7cc7 wW
     db   $06, $ff, $e6, $ff, $e5, $ff, $e6, $80        ;; 0a:7cc9 ........
     db   $12, $ff, $10, $3f, $ff, $0f, $ff, $00        ;; 0a:7cd1 ........
@@ -6657,132 +5124,70 @@ data_0a_7cc7:
     db   $7f, $fc, $7f, $fc, $ff, $f8, $ff, $f8        ;; 0a:7cf1 ........
     db   $fe, $f8, $fe, $f0, $fe, $f0, $fc, $e0        ;; 0a:7cf9 ........
     db   $fc, $c0, $f8, $80, $f0, $00, $fc, $0c        ;; 0a:7d01 ........
-
-data_0a_7d09:
     dw   $017b                                         ;; 0a:7d09 wW
     db   $80, $13, $00, $0a, $20, $30, $30, $38        ;; 0a:7d0b ........
     db   $38, $3c, $3c, $3e, $3e, $3f, $fc, $19        ;; 0a:7d13 ........
-
-data_0a_7d1b:
     dw   $0420                                         ;; 0a:7d1b wW
     db   $07, $ff, $3f, $fe, $3f, $fe, $3f, $fe        ;; 0a:7d1d ........
     db   $fc, $19                                      ;; 0a:7d25 ..
-
-data_0a_7d27:
     dw   $0440                                         ;; 0a:7d27 wW
     db   $fc, $07                                      ;; 0a:7d29 ..
-
-data_0a_7d2b:
     dw   $01b5                                         ;; 0a:7d2b wW
     db   $fc, $1b                                      ;; 0a:7d2d ..
-
-data_0a_7d2f:
     dw   $0460                                         ;; 0a:7d2f wW
     db   $fc, $05                                      ;; 0a:7d31 ..
-
-data_0a_7d33:
     dw   $01d7                                         ;; 0a:7d33 wW
     db   $fc, $0c                                      ;; 0a:7d35 ..
-
-data_0a_7d37:
     dw   $0480                                         ;; 0a:7d37 wW
     db   $01, $e7, $fc, $10                            ;; 0a:7d39 ....
-
-data_0a_7d3d:
     dw   $048d                                         ;; 0a:7d3d wW
     db   $03, $7f, $fc, $3f, $fc, $06                  ;; 0a:7d3f ......
-
-data_0a_7d45:
     dw   $057a                                         ;; 0a:7d45 wW
     db   $02, $1f, $fe, $fc, $19                       ;; 0a:7d47 .....
-
-data_0a_7d4c:
     dw   $04c8                                         ;; 0a:7d4c wW
     db   $03, $1b, $ff, $7b, $fc, $12                  ;; 0a:7d4e ......
-
-data_0a_7d54:
     dw   $0200                                         ;; 0a:7d54 wW
     db   $fc, $0b                                      ;; 0a:7d56 ..
-
-data_0a_7d58:
     dw   $04f6                                         ;; 0a:7d58 wW
     db   $01, $26, $fc, $05                            ;; 0a:7d5a ....
-
-data_0a_7d5e:
     dw   $0620                                         ;; 0a:7d5e wW
     db   $fc, $13                                      ;; 0a:7d60 ..
-
-data_0a_7d62:
     dw   $0223                                         ;; 0a:7d62 wW
     db   $fc, $0b                                      ;; 0a:7d64 ..
-
-data_0a_7d66:
     dw   $051a                                         ;; 0a:7d66 wW
     db   $03, $7f, $f8, $3f, $fc, $1d                  ;; 0a:7d68 ......
-
-data_0a_7d6e:
     dw   $0528                                         ;; 0a:7d6e wW
     db   $fc, $16                                      ;; 0a:7d70 ..
-
-data_0a_7d72:
     dw   $0565                                         ;; 0a:7d72 wW
     db   $05, $f0, $3f, $f9, $3f, $f9, $fc, $1b        ;; 0a:7d74 ........
-
-data_0a_7d7c:
     dw   $0580                                         ;; 0a:7d7c wW
     db   $05, $ff, $ff, $ff, $ff, $94, $fc, $1b        ;; 0a:7d7e ........
-
-data_0a_7d86:
     dw   $0460                                         ;; 0a:7d86 wW
     db   $05, $f3, $ff, $f3, $ff, $e3, $fc, $1d        ;; 0a:7d88 ........
-
-data_0a_7d90:
     dw   $05c0                                         ;; 0a:7d90 wW
     db   $03, $ff, $fc, $3f, $fc, $07                  ;; 0a:7d92 ......
-
-data_0a_7d98:
     dw   $04c0                                         ;; 0a:7d98 wW
     db   $01, $f9, $fc, $19                            ;; 0a:7d9a ....
-
-data_0a_7d9e:
     dw   $04c8                                         ;; 0a:7d9e wW
     db   $07, $8e, $ff, $9c, $ff, $9a, $ff, $9c        ;; 0a:7da0 ........
     db   $fc, $19                                      ;; 0a:7da8 ..
-
-data_0a_7daa:
     dw   $04e8                                         ;; 0a:7daa wW
     db   $01, $52, $fc, $05                            ;; 0a:7dac ....
-
-data_0a_7db0:
     dw   $0720                                         ;; 0a:7db0 wW
     db   $01, $63, $fc, $19                            ;; 0a:7db2 ....
-
-data_0a_7db6:
     dw   $0508                                         ;; 0a:7db6 wW
     db   $07, $5f, $fc, $1f, $fc, $7f, $f8, $1f        ;; 0a:7db8 ........
     db   $fc, $33                                      ;; 0a:7dc0 ..
-
-data_0a_7dc2:
     dw   $0648                                         ;; 0a:7dc2 wW
     db   $fc, $24                                      ;; 0a:7dc4 ..
-
-data_0a_7dc6:
     dw   $057b                                         ;; 0a:7dc6 wW
     db   $01, $78, $fc, $1b                            ;; 0a:7dc8 ....
-
-data_0a_7dcc:
     dw   $0460                                         ;; 0a:7dcc wW
     db   $05, $fc, $ff, $fc, $ff, $70, $fc, $1d        ;; 0a:7dce ........
-
-data_0a_7dd6:
     dw   $0480                                         ;; 0a:7dd6 wW
     db   $02, $ff, $fc, $fc, $07                       ;; 0a:7dd8 .....
-
-data_0a_7ddd:
     dw   $0579                                         ;; 0a:7ddd wW
     db   $fc, $1a                                      ;; 0a:7ddf ..
-
-data_0a_7de1:
     dw   $05e6                                         ;; 0a:7de1 wW
     db   $00, $7f, $71, $72, $73, $bb, $bc, $bd        ;; 0a:7de3 .???????
     db   $be, $bf, $c0, $c1, $c2, $c3, $c4, $c5        ;; 0a:7deb ????????

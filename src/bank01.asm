@@ -19,22 +19,13 @@ jp_01_4000:
     jp   HL                                            ;; 01:400d $e9
 .data_01_400e:
     db   $00, $00                                      ;; 01:400e ??
-
-data_01_4010:
-    dw   data_01_4020                                  ;; 01:4010 pP
-
-data_01_4012:
-    dw   data_01_4039                                  ;; 01:4012 pP
+    dw   .data_01_4020                                 ;; 01:4010 pP
+    dw   .data_01_4039                                 ;; 01:4012 pP
     db   $00, $00                                      ;; 01:4014 ??
-
-data_01_4016:
-    dw   data_01_4050                                  ;; 01:4016 pP
+    dw   .data_01_4050                                 ;; 01:4016 pP
     db   $00, $00, $00, $00, $00, $00                  ;; 01:4018 ??????
-
-data_01_401e:
-    dw   data_01_4069                                  ;; 01:401e pP
-
-data_01_4020:
+    dw   .data_01_4069                                 ;; 01:401e pP
+.data_01_4020:
     ld   A, [wC394]                                    ;; 01:4020 $fa $94 $c3
     ld   L, A                                          ;; 01:4023 $6f
     ld   A, [wC395]                                    ;; 01:4024 $fa $95 $c3
@@ -49,9 +40,8 @@ data_01_4020:
     inc  HL                                            ;; 01:4033 $23
     ld   E, L                                          ;; 01:4034 $5d
     ld   D, H                                          ;; 01:4035 $54
-    jp   jp_01_4075                                    ;; 01:4036 $c3 $75 $40
-
-data_01_4039:
+    jp   .jp_01_4075                                   ;; 01:4036 $c3 $75 $40
+.data_01_4039:
     ld   A, [wC394]                                    ;; 01:4039 $fa $94 $c3
     ld   L, A                                          ;; 01:403c $6f
     ld   A, [wC395]                                    ;; 01:403d $fa $95 $c3
@@ -64,9 +54,8 @@ data_01_4039:
     dec  HL                                            ;; 01:404a $2b
     ld   E, L                                          ;; 01:404b $5d
     ld   D, H                                          ;; 01:404c $54
-    jp   jp_01_4075                                    ;; 01:404d $c3 $75 $40
-
-data_01_4050:
+    jp   .jp_01_4075                                   ;; 01:404d $c3 $75 $40
+.data_01_4050:
     ld   A, [wC394]                                    ;; 01:4050 $fa $94 $c3
     ld   L, A                                          ;; 01:4053 $6f
     ld   A, [wC395]                                    ;; 01:4054 $fa $95 $c3
@@ -81,17 +70,15 @@ data_01_4050:
     inc  HL                                            ;; 01:4063 $23
     ld   E, L                                          ;; 01:4064 $5d
     ld   D, H                                          ;; 01:4065 $54
-    jp   jp_01_4075                                    ;; 01:4066 $c3 $75 $40
-
-data_01_4069:
+    jp   .jp_01_4075                                   ;; 01:4066 $c3 $75 $40
+.data_01_4069:
     ld   A, [wC356]                                    ;; 01:4069 $fa $56 $c3
     ld   E, A                                          ;; 01:406c $5f
     ld   A, [wC357]                                    ;; 01:406d $fa $57 $c3
     ld   D, A                                          ;; 01:4070 $57
     inc  DE                                            ;; 01:4071 $13
-    jp   jp_01_4075                                    ;; 01:4072 $c3 $75 $40
-
-jp_01_4075:
+    jp   .jp_01_4075                                   ;; 01:4072 $c3 $75 $40
+.jp_01_4075:
     ld   A, E                                          ;; 01:4075 $7b
     ld   [wC362], A                                    ;; 01:4076 $ea $62 $c3
     ld   A, D                                          ;; 01:4079 $7a
@@ -325,51 +312,28 @@ call_01_423c:
     rlca                                               ;; 01:4241 $07
     ld   E, A                                          ;; 01:4242 $5f
     ld   D, $00                                        ;; 01:4243 $16 $00
-    ld   HL, data_01_424d                              ;; 01:4245 $21 $4d $42
+    ld   HL, .data_01_424d                             ;; 01:4245 $21 $4d $42
     add  HL, DE                                        ;; 01:4248 $19
     ld   A, [HL+]                                      ;; 01:4249 $2a
     ld   H, [HL]                                       ;; 01:424a $66
     ld   L, A                                          ;; 01:424b $6f
     jp   HL                                            ;; 01:424c $e9
-
-data_01_424d:
+.data_01_424d:
     dw   data_01_4278                                  ;; 01:424d pP
-
-data_01_424f:
     dw   data_01_4294                                  ;; 01:424f pP
-
-data_01_4251:
     dw   data_01_42a3                                  ;; 01:4251 pP
-
-data_01_4253:
     dw   data_01_42b0                                  ;; 01:4253 pP
-
-data_01_4255:
     dw   data_01_42ba                                  ;; 01:4255 pP
-
-data_01_4257:
     dw   jr_01_42c0                                    ;; 01:4257 pP
     db   $09, $43                                      ;; 01:4259 ??
-
-data_01_425b:
     dw   data_01_4312                                  ;; 01:425b pP
-
-data_01_425d:
     dw   data_01_42ce                                  ;; 01:425d pP
     db   $c6, $42                                      ;; 01:425f ??
-
-data_01_4261:
     dw   data_01_42ca                                  ;; 01:4261 pP
-
-data_01_4263:
     dw   data_01_42e5                                  ;; 01:4263 pP
     db   $ed, $42                                      ;; 01:4265 ??
-
-data_01_4267:
     dw   data_01_42f1                                  ;; 01:4267 pP
     db   $f9, $42                                      ;; 01:4269 ??
-
-data_01_426b:
     dw   data_01_4301                                  ;; 01:426b pP
     db   $f5, $42, $fd, $42, $05, $43                  ;; 01:426d ??????
 
@@ -1679,50 +1643,28 @@ jp_01_4b0f:
     and  A, $1e                                        ;; 01:4b12 $e6 $1e
     ld   E, A                                          ;; 01:4b14 $5f
     ld   D, $00                                        ;; 01:4b15 $16 $00
-    ld   HL, data_01_4b1f                              ;; 01:4b17 $21 $1f $4b
+    ld   HL, .data_01_4b1f                             ;; 01:4b17 $21 $1f $4b
     add  HL, DE                                        ;; 01:4b1a $19
     ld   A, [HL+]                                      ;; 01:4b1b $2a
     ld   H, [HL]                                       ;; 01:4b1c $66
     ld   L, A                                          ;; 01:4b1d $6f
     jp   HL                                            ;; 01:4b1e $e9
-
-data_01_4b1f:
-    dw   data_01_4b3f                                  ;; 01:4b1f pP
-
-data_01_4b21:
-    dw   data_01_4b58                                  ;; 01:4b21 pP
-
-data_01_4b23:
-    dw   data_01_4b85                                  ;; 01:4b23 pP
-
-data_01_4b25:
-    dw   data_01_4b85                                  ;; 01:4b25 pP
+.data_01_4b1f:
+    dw   .data_01_4b3f                                 ;; 01:4b1f pP
+    dw   .data_01_4b58                                 ;; 01:4b21 pP
+    dw   .data_01_4b85                                 ;; 01:4b23 pP
+    dw   .data_01_4b85                                 ;; 01:4b25 pP
     db   $85, $4b                                      ;; 01:4b27 ??
-
-data_01_4b29:
-    dw   data_01_4b85                                  ;; 01:4b29 pP
-
-data_01_4b2b:
-    dw   data_01_4b85                                  ;; 01:4b2b pP
-
-data_01_4b2d:
-    dw   data_01_4b85                                  ;; 01:4b2d pP
-
-data_01_4b2f:
-    dw   data_01_4b85                                  ;; 01:4b2f pP
-
-data_01_4b31:
-    dw   data_01_4b85                                  ;; 01:4b31 pP
+    dw   .data_01_4b85                                 ;; 01:4b29 pP
+    dw   .data_01_4b85                                 ;; 01:4b2b pP
+    dw   .data_01_4b85                                 ;; 01:4b2d pP
+    dw   .data_01_4b85                                 ;; 01:4b2f pP
+    dw   .data_01_4b85                                 ;; 01:4b31 pP
     db   $85, $4b, $85, $4b, $85, $4b                  ;; 01:4b33 ??????
-
-data_01_4b39:
-    dw   data_01_4b99                                  ;; 01:4b39 pP
+    dw   .data_01_4b99                                 ;; 01:4b39 pP
     db   $a2, $4b                                      ;; 01:4b3b ??
-
-data_01_4b3d:
-    dw   data_01_4baa                                  ;; 01:4b3d pP
-
-data_01_4b3f:
+    dw   .data_01_4baa                                 ;; 01:4b3d pP
+.data_01_4b3f:
     ld   HL, wC356                                     ;; 01:4b3f $21 $56 $c3
     inc  [HL]                                          ;; 01:4b42 $34
     ld   E, [HL]                                       ;; 01:4b43 $5e
@@ -1737,8 +1679,7 @@ data_01_4b3f:
     add  HL, DE                                        ;; 01:4b53 $19
     ld   [HL], D                                       ;; 01:4b54 $72
     jp   jp_00_1f9d                                    ;; 01:4b55 $c3 $9d $1f
-
-data_01_4b58:
+.data_01_4b58:
     ld   HL, wC356                                     ;; 01:4b58 $21 $56 $c3
     ld   E, [HL]                                       ;; 01:4b5b $5e
     ld   D, $00                                        ;; 01:4b5c $16 $00
@@ -1763,8 +1704,7 @@ data_01_4b58:
     ld   [HL], D                                       ;; 01:4b7e $72
     call call_01_4bab                                  ;; 01:4b7f $cd $ab $4b
     jp   jp_00_1f9d                                    ;; 01:4b82 $c3 $9d $1f
-
-data_01_4b85:
+.data_01_4b85:
     ld   HL, wC356                                     ;; 01:4b85 $21 $56 $c3
     ld   E, [HL]                                       ;; 01:4b88 $5e
     ld   D, $00                                        ;; 01:4b89 $16 $00
@@ -1775,15 +1715,13 @@ data_01_4b85:
     inc  A                                             ;; 01:4b94 $3c
     ld   [HL], A                                       ;; 01:4b95 $77
     jp   jp_00_1f9d                                    ;; 01:4b96 $c3 $9d $1f
-
-data_01_4b99:
+.data_01_4b99:
     ld   A, $ff                                        ;; 01:4b99 $3e $ff
     ld   [wC5C3], A                                    ;; 01:4b9b $ea $c3 $c5
     ld   [wC5D3], A                                    ;; 01:4b9e $ea $d3 $c5
     ret                                                ;; 01:4ba1 $c9
     db   $3e, $00, $ea, $c3, $c5, $ea, $d3, $c5        ;; 01:4ba2 ????????
-
-data_01_4baa:
+.data_01_4baa:
     ret                                                ;; 01:4baa $c9
 
 call_01_4bab:
@@ -1831,32 +1769,17 @@ call_01_4bab:
     jp   HL                                            ;; 01:4bf6 $e9
 .data_01_4bf7:
     db   $ca, $4c, $ca, $4c                            ;; 01:4bf7 ????
-
-data_01_4bfb:
-    dw   data_01_4c17                                  ;; 01:4bfb pP
-
-data_01_4bfd:
-    dw   data_01_4c40                                  ;; 01:4bfd pP
+    dw   .data_01_4c17                                 ;; 01:4bfb pP
+    dw   .data_01_4c40                                 ;; 01:4bfd pP
     db   $56, $4c                                      ;; 01:4bff ??
-
-data_01_4c01:
-    dw   data_01_4c2d                                  ;; 01:4c01 pP
-
-data_01_4c03:
-    dw   data_01_4c67                                  ;; 01:4c03 pP
-
-data_01_4c05:
-    dw   data_01_4cb6                                  ;; 01:4c05 pP
-
-data_01_4c07:
-    dw   data_01_4c7a                                  ;; 01:4c07 pP
-
-data_01_4c09:
-    dw   data_01_4ca2                                  ;; 01:4c09 pP
+    dw   .data_01_4c2d                                 ;; 01:4c01 pP
+    dw   .data_01_4c67                                 ;; 01:4c03 pP
+    dw   .data_01_4cb6                                 ;; 01:4c05 pP
+    dw   .data_01_4c7a                                 ;; 01:4c07 pP
+    dw   .data_01_4ca2                                 ;; 01:4c09 pP
     db   $ca, $4c, $ca, $4c, $ca, $4c, $ca, $4c        ;; 01:4c0b ????????
     db   $ca, $4c, $ca, $4c                            ;; 01:4c13 ????
-
-data_01_4c17:
+.data_01_4c17:
     ld   A, $00                                        ;; 01:4c17 $3e $00
     ld   [wC35C], A                                    ;; 01:4c19 $ea $5c $c3
     ld   HL, wC5C3                                     ;; 01:4c1c $21 $c3 $c5
@@ -1869,9 +1792,8 @@ data_01_4c17:
     ld   A, [HL]                                       ;; 01:4c27 $7e
     and  A, B                                          ;; 01:4c28 $a0
     ld   [HL], A                                       ;; 01:4c29 $77
-    jp   jp_01_4cca                                    ;; 01:4c2a $c3 $ca $4c
-
-data_01_4c2d:
+    jp   .jp_01_4cca                                   ;; 01:4c2a $c3 $ca $4c
+.data_01_4c2d:
     ld   HL, wC5D3                                     ;; 01:4c2d $21 $d3 $c5
     add  HL, DE                                        ;; 01:4c30 $19
     push HL                                            ;; 01:4c31 $e5
@@ -1884,9 +1806,8 @@ data_01_4c2d:
     ld   A, [HL]                                       ;; 01:4c3a $7e
     adc  A, B                                          ;; 01:4c3b $88
     ld   [HL], A                                       ;; 01:4c3c $77
-    jp   jp_01_4cca                                    ;; 01:4c3d $c3 $ca $4c
-
-data_01_4c40:
+    jp   .jp_01_4cca                                   ;; 01:4c3d $c3 $ca $4c
+.data_01_4c40:
     ld   A, $00                                        ;; 01:4c40 $3e $00
     ld   [wC35C], A                                    ;; 01:4c42 $ea $5c $c3
     ld   HL, wC5C3                                     ;; 01:4c45 $21 $c3 $c5
@@ -1899,12 +1820,11 @@ data_01_4c40:
     ld   A, [HL]                                       ;; 01:4c50 $7e
     or   A, B                                          ;; 01:4c51 $b0
     ld   [HL], A                                       ;; 01:4c52 $77
-    jp   jp_01_4cca                                    ;; 01:4c53 $c3 $ca $4c
+    jp   .jp_01_4cca                                   ;; 01:4c53 $c3 $ca $4c
     db   $21, $c3, $c5, $19, $7e, $a9, $77, $21        ;; 01:4c56 ????????
     db   $d3, $c5, $19, $7e, $a8, $77, $c3, $ca        ;; 01:4c5e ????????
     db   $4c                                           ;; 01:4c66 ?
-
-data_01_4c67:
+.data_01_4c67:
     ld   HL, wC5D3                                     ;; 01:4c67 $21 $d3 $c5
     add  HL, DE                                        ;; 01:4c6a $19
     push HL                                            ;; 01:4c6b $e5
@@ -1917,28 +1837,24 @@ data_01_4c67:
     ld   A, [HL]                                       ;; 01:4c74 $7e
     sbc  A, B                                          ;; 01:4c75 $98
     ld   [HL], A                                       ;; 01:4c76 $77
-    jp   jp_01_4cca                                    ;; 01:4c77 $c3 $ca $4c
-
-data_01_4c7a:
+    jp   .jp_01_4cca                                   ;; 01:4c77 $c3 $ca $4c
+.data_01_4c7a:
     ld   HL, wC5D3                                     ;; 01:4c7a $21 $d3 $c5
     add  HL, DE                                        ;; 01:4c7d $19
     ld   A, [HL]                                       ;; 01:4c7e $7e
     cp   A, B                                          ;; 01:4c7f $b8
-    jr   NZ, jr_01_4c8e                                ;; 01:4c80 $20 $0c
+    jr   NZ, .jr_01_4c8e                               ;; 01:4c80 $20 $0c
     ld   HL, wC5C3                                     ;; 01:4c82 $21 $c3 $c5
     add  HL, DE                                        ;; 01:4c85 $19
     ld   A, [HL]                                       ;; 01:4c86 $7e
     cp   A, C                                          ;; 01:4c87 $b9
-    jr   NZ, jr_01_4c8e                                ;; 01:4c88 $20 $04
-
-jr_01_4c8a:
+    jr   NZ, .jr_01_4c8e                               ;; 01:4c88 $20 $04
+.jr_01_4c8a:
     ld   A, $ff                                        ;; 01:4c8a $3e $ff
-    jr   jr_01_4c90                                    ;; 01:4c8c $18 $02
-
-jr_01_4c8e:
+    jr   .jr_01_4c90                                   ;; 01:4c8c $18 $02
+.jr_01_4c8e:
     ld   A, $00                                        ;; 01:4c8e $3e $00
-
-jr_01_4c90:
+.jr_01_4c90:
     ld   HL, wC5C3                                     ;; 01:4c90 $21 $c3 $c5
     add  HL, DE                                        ;; 01:4c93 $19
     ld   [HL], A                                       ;; 01:4c94 $77
@@ -1947,37 +1863,34 @@ jr_01_4c90:
     ld   [HL], A                                       ;; 01:4c99 $77
     ld   A, $00                                        ;; 01:4c9a $3e $00
     ld   [wC35C], A                                    ;; 01:4c9c $ea $5c $c3
-    jp   jp_01_4cca                                    ;; 01:4c9f $c3 $ca $4c
-
-data_01_4ca2:
+    jp   .jp_01_4cca                                   ;; 01:4c9f $c3 $ca $4c
+.data_01_4ca2:
     ld   HL, wC5D3                                     ;; 01:4ca2 $21 $d3 $c5
     add  HL, DE                                        ;; 01:4ca5 $19
     ld   A, [HL]                                       ;; 01:4ca6 $7e
     cp   A, B                                          ;; 01:4ca7 $b8
-    jr   C, jr_01_4c8a                                 ;; 01:4ca8 $38 $e0
-    jr   NZ, jr_01_4c8e                                ;; 01:4caa $20 $e2
+    jr   C, .jr_01_4c8a                                ;; 01:4ca8 $38 $e0
+    jr   NZ, .jr_01_4c8e                               ;; 01:4caa $20 $e2
     ld   HL, wC5C3                                     ;; 01:4cac $21 $c3 $c5
     add  HL, DE                                        ;; 01:4caf $19
     ld   A, [HL]                                       ;; 01:4cb0 $7e
     cp   A, C                                          ;; 01:4cb1 $b9
-    jr   C, jr_01_4c8a                                 ;; 01:4cb2 $38 $d6
-    jr   jr_01_4c8e                                    ;; 01:4cb4 $18 $d8
-
-data_01_4cb6:
+    jr   C, .jr_01_4c8a                                ;; 01:4cb2 $38 $d6
+    jr   .jr_01_4c8e                                   ;; 01:4cb4 $18 $d8
+.data_01_4cb6:
     ld   HL, wC5D3                                     ;; 01:4cb6 $21 $d3 $c5
     add  HL, DE                                        ;; 01:4cb9 $19
     ld   A, [HL]                                       ;; 01:4cba $7e
     cp   A, B                                          ;; 01:4cbb $b8
-    jr   C, jr_01_4c8e                                 ;; 01:4cbc $38 $d0
-    jr   NZ, jr_01_4c8a                                ;; 01:4cbe $20 $ca
+    jr   C, .jr_01_4c8e                                ;; 01:4cbc $38 $d0
+    jr   NZ, .jr_01_4c8a                               ;; 01:4cbe $20 $ca
     ld   HL, wC5C3                                     ;; 01:4cc0 $21 $c3 $c5
     add  HL, DE                                        ;; 01:4cc3 $19
     ld   A, [HL]                                       ;; 01:4cc4 $7e
     cp   A, C                                          ;; 01:4cc5 $b9
-    jr   NC, jr_01_4c8a                                ;; 01:4cc6 $30 $c2
-    jr   jr_01_4c8e                                    ;; 01:4cc8 $18 $c4
-
-jp_01_4cca:
+    jr   NC, .jr_01_4c8a                               ;; 01:4cc6 $30 $c2
+    jr   .jr_01_4c8e                                   ;; 01:4cc8 $18 $c4
+.jp_01_4cca:
     ld   A, [wC356]                                    ;; 01:4cca $fa $56 $c3
     ld   E, A                                          ;; 01:4ccd $5f
     ld   D, $00                                        ;; 01:4cce $16 $00
@@ -3448,39 +3361,19 @@ call_01_57ec:
     ret                                                ;; 01:580e $c9
 .data_01_580f:
     db   $dc, $c4, $d3, $c4                            ;; 01:580f ....
-
-data_01_5813:
     dw   wC4E2                                         ;; 01:5813 pP
-
-data_01_5815:
     dw   wC4D9                                         ;; 01:5815 pP
     db   $d5, $c4, $dc, $c4                            ;; 01:5817 ....
-
-data_01_581b:
     dw   wC4DA                                         ;; 01:581b pP
-
-data_01_581d:
     dw   wC4E2                                         ;; 01:581d pP
     db   $de, $c4, $d5, $c4                            ;; 01:581f ....
-
-data_01_5823:
     dw   wC4E3                                         ;; 01:5823 pP
-
-data_01_5825:
     dw   wC4DA                                         ;; 01:5825 pP
     db   $d7, $c4, $de, $c4                            ;; 01:5827 ....
-
-data_01_582b:
     dw   wC4DB                                         ;; 01:582b pP
-
-data_01_582d:
     dw   wC4E3                                         ;; 01:582d pP
     db   $e0, $c4, $d7, $c4                            ;; 01:582f ....
-
-data_01_5833:
     dw   wC4E4                                         ;; 01:5833 pP
-
-data_01_5835:
     dw   wC4DB                                         ;; 01:5835 pP
 
 call_01_5837:
@@ -3504,39 +3397,19 @@ call_01_5837:
     ret                                                ;; 01:5859 $c9
 .data_01_585a:
     db   $d7, $c4, $e0, $c4                            ;; 01:585a ....
-
-data_01_585e:
     dw   wC4DB                                         ;; 01:585e pP
-
-data_01_5860:
     dw   wC4E4                                         ;; 01:5860 pP
     db   $de, $c4, $d7, $c4                            ;; 01:5862 ....
-
-data_01_5866:
     dw   wC4E3                                         ;; 01:5866 pP
-
-data_01_5868:
     dw   wC4DB                                         ;; 01:5868 pP
     db   $d5, $c4, $de, $c4                            ;; 01:586a ....
-
-data_01_586e:
     dw   wC4DA                                         ;; 01:586e pP
-
-data_01_5870:
     dw   wC4E3                                         ;; 01:5870 pP
     db   $dc, $c4, $d5, $c4                            ;; 01:5872 ....
-
-data_01_5876:
     dw   wC4E2                                         ;; 01:5876 pP
-
-data_01_5878:
     dw   wC4DA                                         ;; 01:5878 pP
     db   $d3, $c4, $dc, $c4                            ;; 01:587a ....
-
-data_01_587e:
     dw   wC4D9                                         ;; 01:587e pP
-
-data_01_5880:
     dw   wC4E2                                         ;; 01:5880 pP
 
 call_01_5882:
@@ -4202,36 +4075,24 @@ jp_01_5bfb:
     add  HL, BC                                        ;; 01:5ccb $09
     ld   E, [HL]                                       ;; 01:5ccc $5e
     ld   D, $00                                        ;; 01:5ccd $16 $00
-    ld   HL, data_01_5cd7                              ;; 01:5ccf $21 $d7 $5c
+    ld   HL, .data_01_5cd7                             ;; 01:5ccf $21 $d7 $5c
     add  HL, DE                                        ;; 01:5cd2 $19
     ld   A, [HL+]                                      ;; 01:5cd3 $2a
     ld   H, [HL]                                       ;; 01:5cd4 $66
     ld   L, A                                          ;; 01:5cd5 $6f
     jp   HL                                            ;; 01:5cd6 $e9
-
-data_01_5cd7:
-    dw   data_01_5d12                                  ;; 01:5cd7 pP
-
-data_01_5cd9:
-    dw   data_01_5ec5                                  ;; 01:5cd9 pP
-
-data_01_5cdb:
-    dw   jp_01_5f65                                    ;; 01:5cdb pP
+.data_01_5cd7:
+    dw   .data_01_5d12                                 ;; 01:5cd7 pP
+    dw   .data_01_5ec5                                 ;; 01:5cd9 pP
+    dw   .jp_01_5f65                                   ;; 01:5cdb pP
     db   $2c, $61, $cc, $61, $cc, $61                  ;; 01:5cdd ??????
-
-data_01_5ce3:
-    dw   data_01_5f15                                  ;; 01:5ce3 pP
+    dw   .data_01_5f15                                 ;; 01:5ce3 pP
     db   $7c, $61, $1d, $60                            ;; 01:5ce5 ????
-
-data_01_5ce9:
-    dw   data_01_5db6                                  ;; 01:5ce9 pP
+    dw   .data_01_5db6                                 ;; 01:5ce9 pP
     db   $a3, $60                                      ;; 01:5ceb ??
-
-data_01_5ced:
-    dw   data_01_5e3c                                  ;; 01:5ced pP
+    dw   .data_01_5e3c                                 ;; 01:5ced pP
     db   $94, $5f, $2d, $5d                            ;; 01:5cef ????
-
-jp_01_5cf3:
+.jp_01_5cf3:
     ld   HL, $27                                       ;; 01:5cf3 $21 $27 $00
     add  HL, BC                                        ;; 01:5cf6 $09
     ld   A, [wC36E]                                    ;; 01:5cf7 $fa $6e $c3
@@ -4247,8 +4108,7 @@ jp_01_5cf3:
     adc  A, $00                                        ;; 01:5d0c $ce $00
     ld   [HL], A                                       ;; 01:5d0e $77
     jp   jp_00_2b95                                    ;; 01:5d0f $c3 $95 $2b
-
-data_01_5d12:
+.data_01_5d12:
     ld   A, [wC382]                                    ;; 01:5d12 $fa $82 $c3
     ld   [wC36E], A                                    ;; 01:5d15 $ea $6e $c3
     ld   A, [wC383]                                    ;; 01:5d18 $fa $83 $c3
@@ -4257,7 +4117,7 @@ data_01_5d12:
     ld   [wC370], A                                    ;; 01:5d21 $ea $70 $c3
     ld   A, [wC385]                                    ;; 01:5d24 $fa $85 $c3
     ld   [wC371], A                                    ;; 01:5d27 $ea $71 $c3
-    jp   jp_01_5cf3                                    ;; 01:5d2a $c3 $f3 $5c
+    jp   .jp_01_5cf3                                   ;; 01:5d2a $c3 $f3 $5c
     db   $c5, $fa, $7d, $c6, $4f, $fa, $7e, $c6        ;; 01:5d2d ????????
     db   $47, $fa, $82, $c3, $5f, $fa, $83, $c3        ;; 01:5d35 ????????
     db   $57, $fa, $36, $c3, $6f, $26, $00, $7d        ;; 01:5d3d ????????
@@ -4276,8 +4136,7 @@ data_01_5d12:
     db   $3d, $c3, $47, $18, $00, $79, $ea, $7d        ;; 01:5da5 ????????
     db   $c6, $78, $ea, $7e, $c6, $c1, $c3, $15        ;; 01:5dad ????????
     db   $5f                                           ;; 01:5db5 ?
-
-data_01_5db6:
+.data_01_5db6:
     push BC                                            ;; 01:5db6 $c5
     ld   A, [wC67D]                                    ;; 01:5db7 $fa $7d $c6
     ld   C, A                                          ;; 01:5dba $4f
@@ -4368,8 +4227,7 @@ data_01_5db6:
     ld   A, B                                          ;; 01:5e37 $78
     ld   [wC67E], A                                    ;; 01:5e38 $ea $7e $c6
     pop  BC                                            ;; 01:5e3b $c1
-
-data_01_5e3c:
+.data_01_5e3c:
     push BC                                            ;; 01:5e3c $c5
     ld   A, [wC680]                                    ;; 01:5e3d $fa $80 $c6
     ld   C, A                                          ;; 01:5e40 $4f
@@ -4460,9 +4318,8 @@ data_01_5e3c:
     ld   A, B                                          ;; 01:5ebd $78
     ld   [wC681], A                                    ;; 01:5ebe $ea $81 $c6
     pop  BC                                            ;; 01:5ec1 $c1
-    jp   jp_01_5f65                                    ;; 01:5ec2 $c3 $65 $5f
-
-data_01_5ec5:
+    jp   .jp_01_5f65                                   ;; 01:5ec2 $c3 $65 $5f
+.data_01_5ec5:
     ld   A, [wC382]                                    ;; 01:5ec5 $fa $82 $c3
     ld   E, A                                          ;; 01:5ec8 $5f
     ld   A, [wC383]                                    ;; 01:5ec9 $fa $83 $c3
@@ -4511,8 +4368,7 @@ data_01_5ec5:
     ld   [wC67D], A                                    ;; 01:5f0e $ea $7d $c6
     ld   A, D                                          ;; 01:5f11 $7a
     ld   [wC67E], A                                    ;; 01:5f12 $ea $7e $c6
-
-data_01_5f15:
+.data_01_5f15:
     ld   A, [wC384]                                    ;; 01:5f15 $fa $84 $c3
     ld   E, A                                          ;; 01:5f18 $5f
     ld   A, [wC385]                                    ;; 01:5f19 $fa $85 $c3
@@ -4561,8 +4417,7 @@ data_01_5f15:
     ld   [wC680], A                                    ;; 01:5f5e $ea $80 $c6
     ld   A, D                                          ;; 01:5f61 $7a
     ld   [wC681], A                                    ;; 01:5f62 $ea $81 $c6
-
-jp_01_5f65:
+.jp_01_5f65:
     ld   A, [wC382]                                    ;; 01:5f65 $fa $82 $c3
     ld   E, A                                          ;; 01:5f68 $5f
     ld   A, [wC67D]                                    ;; 01:5f69 $fa $7d $c6
@@ -4583,7 +4438,7 @@ jp_01_5f65:
     ld   A, [wC681]                                    ;; 01:5f8a $fa $81 $c6
     adc  A, E                                          ;; 01:5f8d $8b
     ld   [wC371], A                                    ;; 01:5f8e $ea $71 $c3
-    jp   jp_01_5cf3                                    ;; 01:5f91 $c3 $f3 $5c
+    jp   .jp_01_5cf3                                   ;; 01:5f91 $c3 $f3 $5c
     db   $c5, $fa, $89, $c6, $4f, $fa, $8a, $c6        ;; 01:5f94 ????????
     db   $47, $fa, $82, $c3, $5f, $fa, $83, $c3        ;; 01:5f9c ????????
     db   $57, $fa, $36, $c3, $6f, $26, $00, $7d        ;; 01:5fa4 ????????
@@ -4827,7 +4682,7 @@ call_01_62cb:
     ld   A, [DE]                                       ;; 01:62ed $1a
     cp   A, $ff                                        ;; 01:62ee $fe $ff
     jr   Z, .jr_01_6314                                ;; 01:62f0 $28 $22
-    ld   HL, data_00_2bda + $01                        ;; 01:62f2 $21 $db $2b
+    ld   HL, $2bda + $01                               ;; 01:62f2 $21 $db $2b
     add  HL, DE                                        ;; 01:62f5 $19
     ld   A, H                                          ;; 01:62f6 $7c
     and  A, $80                                        ;; 01:62f7 $e6 $80
@@ -4928,7 +4783,7 @@ call_01_6368:
     inc  DE                                            ;; 01:637a $13
     ld   A, [DE]                                       ;; 01:637b $1a
     ld   H, A                                          ;; 01:637c $67
-    ld   DE, data_00_2bda + $01                        ;; 01:637d $11 $db $2b
+    ld   DE, $2bda + $01                               ;; 01:637d $11 $db $2b
     add  HL, DE                                        ;; 01:6380 $19
     ld   A, H                                          ;; 01:6381 $7c
     and  A, $80                                        ;; 01:6382 $e6 $80
@@ -5683,12 +5538,8 @@ call_01_6994:
     db   $c9                                           ;; 01:69a9 ?
 .data_01_69aa:
     db   $b2, $69, $a9, $69                            ;; 01:69aa ????
-
-data_01_69ae:
-    dw   data_01_6a04                                  ;; 01:69ae pP
-
-data_01_69b0:
-    dw   data_01_6a65                                  ;; 01:69b0 pP
+    dw   .data_01_6a04                                 ;; 01:69ae pP
+    dw   .data_01_6a65                                 ;; 01:69b0 pP
     db   $fa, $e9, $c3, $cb, $27, $5f, $16, $00        ;; 01:69b2 ????????
     db   $21, $fe, $69, $19, $2a, $e0, $82, $7e        ;; 01:69ba ????????
     db   $e0, $83, $21, $f8, $69, $19, $2a, $66        ;; 01:69c2 ????????
@@ -5700,8 +5551,7 @@ data_01_69b0:
     db   $3e, $07, $ea, $3a, $c5, $c9, $e4, $6d        ;; 01:69f2 ????????
     db   $20, $6e, $5c, $6e, $98, $6e, $d4, $6e        ;; 01:69fa ????????
     db   $10, $6f                                      ;; 01:6a02 ??
-
-data_01_6a04:
+.data_01_6a04:
     ld   A, [wC664]                                    ;; 01:6a04 $fa $64 $c6
     cp   A, $02                                        ;; 01:6a07 $fe $02
     jr   Z, .jr_01_6a4a                                ;; 01:6a09 $28 $3f
@@ -5754,8 +5604,7 @@ data_01_6a04:
     ld   A, $04                                        ;; 01:6a5f $3e $04
     ld   [wOp1CScriptTableIndexC53A], A                ;; 01:6a61 $ea $3a $c5
     ret                                                ;; 01:6a64 $c9
-
-data_01_6a65:
+.data_01_6a65:
     ld   A, [wC664]                                    ;; 01:6a65 $fa $64 $c6
     and  A, A                                          ;; 01:6a68 $a7
     jr   Z, .jr_01_6a7e                                ;; 01:6a69 $28 $13
@@ -5821,20 +5670,18 @@ call_01_6acf:
     sla  A                                             ;; 01:6ad7 $cb $27
     ld   E, A                                          ;; 01:6ad9 $5f
     ld   D, $00                                        ;; 01:6ada $16 $00
-    ld   HL, data_01_6ae5                              ;; 01:6adc $21 $e5 $6a
+    ld   HL, .data_01_6ae5                             ;; 01:6adc $21 $e5 $6a
     add  HL, DE                                        ;; 01:6adf $19
     ld   A, [HL+]                                      ;; 01:6ae0 $2a
     ld   H, [HL]                                       ;; 01:6ae1 $66
     ld   L, A                                          ;; 01:6ae2 $6f
     jp   HL                                            ;; 01:6ae3 $e9
     db   $c9                                           ;; 01:6ae4 ?
-
-data_01_6ae5:
-    dw   data_01_6af1                                  ;; 01:6ae5 pP
+.data_01_6ae5:
+    dw   .data_01_6af1                                 ;; 01:6ae5 pP
     db   $f1, $6a, $f1, $6a, $63, $6b, $93, $6b        ;; 01:6ae7 ????????
     db   $76, $6b                                      ;; 01:6aef ??
-
-data_01_6af1:
+.data_01_6af1:
     ld_long_load A, rSVBK                              ;; 01:6af1 $fa $70 $ff
     push AF                                            ;; 01:6af4 $f5
     ld   A, [wC3EB]                                    ;; 01:6af5 $fa $eb $c3
@@ -5913,7 +5760,7 @@ call_01_6ba8:
     sla  A                                             ;; 01:6bab $cb $27
     ld   E, A                                          ;; 01:6bad $5f
     ld   D, $00                                        ;; 01:6bae $16 $00
-    ld   HL, data_01_6bba                              ;; 01:6bb0 $21 $ba $6b
+    ld   HL, .data_01_6bba                             ;; 01:6bb0 $21 $ba $6b
     add  HL, DE                                        ;; 01:6bb3 $19
     ld   A, [HL+]                                      ;; 01:6bb4 $2a
     ld   E, A                                          ;; 01:6bb5 $5f
@@ -5921,9 +5768,8 @@ call_01_6ba8:
     ld   H, A                                          ;; 01:6bb7 $67
     ld   L, E                                          ;; 01:6bb8 $6b
     jp   HL                                            ;; 01:6bb9 $e9
-
-data_01_6bba:
-    dw   data_01_6c86                                  ;; 01:6bba pP
+.data_01_6bba:
+    dw   .data_01_6c86                                 ;; 01:6bba pP
     db   $c2, $6b, $14, $6c, $95, $6d, $fa, $17        ;; 01:6bbc ????????
     db   $c3, $cb, $5f, $20, $09, $cb, $57, $20        ;; 01:6bc4 ????????
     db   $11, $cb, $47, $20, $19, $c9, $fa, $64        ;; 01:6bcc ????????
@@ -5950,8 +5796,7 @@ data_01_6bba:
     db   $00, $21, $92, $6d, $19, $7e, $ea, $9e        ;; 01:6c74 ????????
     db   $d0, $3e, $84, $ea, $f2, $cf, $c9, $00        ;; 01:6c7c ????????
     db   $01, $05                                      ;; 01:6c84 ??
-
-data_01_6c86:
+.data_01_6c86:
     ld   A, $84                                        ;; 01:6c86 $3e $84
     ld   [wCFF2], A                                    ;; 01:6c88 $ea $f2 $cf
     ld   A, [wC317]                                    ;; 01:6c8b $fa $17 $c3
@@ -7210,52 +7055,30 @@ jr_01_7c38:
 data_01_7c73:
     dw   $4890                                         ;; 01:7c73 pP
     db   $10, $00                                      ;; 01:7c75 .?
-
-data_01_7c77:
     dw   data_01_484a                                  ;; 01:7c77 pP
     db   $10, $00                                      ;; 01:7c79 .?
-
-data_01_7c7b:
     dw   $46f3                                         ;; 01:7c7b pP
     db   $10, $00, $9b, $46, $10, $00                  ;; 01:7c7d .?????
-
-data_01_7c83:
     dw   jr_01_42d0                                    ;; 01:7c83 pP
     db   $10, $00, $81, $42, $10, $00                  ;; 01:7c85 .?????
-
-data_01_7c8b:
     dw   data_01_450b                                  ;; 01:7c8b pP
     db   $10, $00                                      ;; 01:7c8d .?
-
-data_01_7c8f:
     dw   $44bc                                         ;; 01:7c8f pP
     db   $10, $00                                      ;; 01:7c91 .?
 
 data_01_7c93:
     dw   $4890                                         ;; 01:7c93 pP
     db   $10, $00                                      ;; 01:7c95 .?
-
-data_01_7c97:
     dw   data_01_484e                                  ;; 01:7c97 pP
     db   $10, $00                                      ;; 01:7c99 .?
-
-data_01_7c9b:
     dw   $46f3                                         ;; 01:7c9b pP
     db   $10, $00                                      ;; 01:7c9d .?
-
-data_01_7c9f:
     dw   $469f                                         ;; 01:7c9f pP
     db   $10, $00                                      ;; 01:7ca1 .?
-
-data_01_7ca3:
     dw   jr_01_42d0                                    ;; 01:7ca3 pP
     db   $10, $00, $85, $42, $10, $00                  ;; 01:7ca5 .?????
-
-data_01_7cab:
     dw   data_01_450b                                  ;; 01:7cab pP
     db   $10, $00                                      ;; 01:7cad .?
-
-data_01_7caf:
     dw   $44c0                                         ;; 01:7caf pP
     db   $10, $00, $ff, $ff, $ff, $ff, $ff, $ff        ;; 01:7cb1 .???????
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 01:7cb9 ????????
