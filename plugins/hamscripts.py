@@ -208,19 +208,17 @@ class Op50Block(Block):
 
         pointer = memory.word(addr + 1)
         bankNum = memory.byte(addr + 3)
-        if bankNum != 0:
-            # Can't use this yet because we need banked WRAM.
-            raise Exception('Op50 encountered non-zero bank. Unimplemented!', "$%02x" % bankNum, "$%04x" % pointer, "$%04x" % addr)
-        RomInfo.getWRam().addAutoLabel(pointer, None, None) # WRam ignores source and type args.
+        RomInfo.getWRam(bankNum).addAutoLabel(pointer, None, None) # WRam ignores source and type args.
 
         # Should be followed by a script instruction.
         maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
-        payload = self.memory.word(file.addr + 4)
-        label = RomInfo.getWRam().getLabel(pointer)
-        file.asmLine(4, "Op50_WriteByte", str(label), "$%02x" % payload)
+        bankNum = self.memory.byte(file.addr + 3)
+        payload = self.memory.byte(file.addr + 4)
+        label = RomInfo.getWRam(bankNum).getLabel(pointer)
+        file.asmLine(5, "Op50_WriteByte", str(label), "$%02x" % payload)
 
 
 OPBLOCKS = {
@@ -228,7 +226,6 @@ OPBLOCKS = {
     0x18: Op18Block,
     0x1C: Op1CBlock,
     0x1E: Op1EBlock,
-    # Can't use this yet because we need banked WRAM.
-    # 0x50: Op50Block,
+    0x50: Op50Block,
     0x82: Op82Block,
 }

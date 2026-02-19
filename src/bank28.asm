@@ -19,9 +19,8 @@ data_28_400c:
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 28:400e $5e $03
     Op82_Run call_01_73cc                              ;; 28:4010 $82 $cc $73 $01
     Op82_Run call_01_7416                              ;; 28:4014 $82 $16 $74 $01
-    db   $50                                           ;; 28:4018 w
-    dw   wC31D                                         ;; 28:4019 pP
-    db   $00, $d0, $2a, $00, $00, $00, $68, $01        ;; 28:401b ..w...w.
+    Op50_WriteByte wC31D, $d0                          ;; 28:4018 $50 $1d $c3 $00 $d0
+    db   $2a, $00, $00, $00, $68, $01                  ;; 28:401d w...w.
     dw   $c81c                                         ;; 28:4023 pP
     dw   wOp1CScriptTableIndexC53A                     ;; 28:4025 pP
     db   $00                                           ;; 28:4027 .
@@ -67,11 +66,9 @@ data_28_407e:
     db   $42, $74, $01, $18, $0c, $40, $28             ;; 28:4092 ???????
 
 data_28_4099:
-    db   $50                                           ;; 28:4099 w
-    dw   wC720                                         ;; 28:409a pP
-    db   $00, $12, $82                                 ;; 28:409c ..w
-    dw   data_28_6844                                  ;; 28:409f pP
-    db   $01, $4a, $32, $7b, $55, $5f                  ;; 28:40a1 .ww...
+    Op50_WriteByte wC720, $12                          ;; 28:4099 $50 $20 $c7 $00 $12
+    Op82_Run call_01_6844                              ;; 28:409e $82 $44 $68 $01
+    db   $4a, $32, $7b, $55, $5f                       ;; 28:40a2 ww...
     dw   w1_D000                                       ;; 28:40a7 pP
     db   $05, $32, $7d, $70, $65                       ;; 28:40a9 .w...
     dw   w1_D000                                       ;; 28:40ae pP
@@ -268,38 +265,39 @@ data_28_4353:
     db   $18, $0c, $40, $28                            ;; 28:4369 ????
 
 data_28_436d:
-    db   $50                                           ;; 28:436d w
-    dw   wC31D                                         ;; 28:436e pP
-    db   $00, $d1, $82                                 ;; 28:4370 ..w
-    dw   data_28_74c3                                  ;; 28:4373 pP
-    db   $01, $50                                      ;; 28:4375 .w
-    dw   wC31D                                         ;; 28:4377 pP
-    db   $00, $d0, $1c, $04, $67, $40, $28, $7e        ;; 28:4379 ..ww????
-    db   $40, $28, $9a, $4c, $28                       ;; 28:4381 ?????
-    dw   $438d                                         ;; 28:4386 wW
-    db   $28, $18                                      ;; 28:4388 .w
+    Op50_WriteByte wC31D, $d1                          ;; 28:436d $50 $1d $c3 $00 $d1
+    Op82_Run call_01_74c3                              ;; 28:4372 $82 $c3 $74 $01
+    Op50_WriteByte wC31D, $d0                          ;; 28:4376 $50 $1d $c3 $00 $d0
+    Op1C_TableJump 4                                   ;; 28:437b $1c $04
+    SCRIPT_POINTER data_28_4067                        ;; 28:437d $67 $40 $28
+    SCRIPT_POINTER data_28_407e                        ;; 28:4380 $7e $40 $28
+    SCRIPT_POINTER data_28_4c9a                        ;; 28:4383 $9a $4c $28
+    SCRIPT_POINTER data_28_438d                        ;; 28:4386 $8d $43 $28
+    db   $18                                           ;; 28:4389 w
     dw   $400c                                         ;; 28:438a wW
-    db   $28, $50                                      ;; 28:438c .w
-    dw   w1_BeginRegionD1FD                            ;; 28:438e pP
-    db   $01, $02, $82                                 ;; 28:4390 ..w
-    dw   data_28_77e1                                  ;; 28:4393 pP
-    db   $01, $1e                                      ;; 28:4395 .w
-    dw   $7880                                         ;; 28:4397 wW
-    db   $3b, $1a, $14                                 ;; 28:4399 .ww
+    db   $28                                           ;; 28:438c .
+
+data_28_438d:
+    Op50_WriteByte w1_BeginRegionD1FD, $02             ;; 28:438d $50 $fd $d1 $01 $02
+    Op82_Run call_01_77e1                              ;; 28:4392 $82 $e1 $77 $01
+    Op1E_Call data_3b_7880                             ;; 28:4396 $1e $80 $78 $3b
+    db   $1a, $14                                      ;; 28:439a ww
 
 data_28_439c:
-    db   $50                                           ;; 28:439c w
-    dw   wC31D                                         ;; 28:439d pP
-    db   $00, $d8, $82                                 ;; 28:439f ..w
-    dw   data_28_74c3                                  ;; 28:43a2 pP
-    db   $01, $50                                      ;; 28:43a4 .w
-    dw   wC31D                                         ;; 28:43a6 pP
-    db   $00, $d0, $1c, $04, $67, $40, $28, $7e        ;; 28:43a8 ..ww????
-    db   $40, $28, $9a, $4c, $28                       ;; 28:43b0 ?????
-    dw   $43bc                                         ;; 28:43b5 wW
-    db   $28, $18                                      ;; 28:43b7 .w
+    Op50_WriteByte wC31D, $d8                          ;; 28:439c $50 $1d $c3 $00 $d8
+    Op82_Run call_01_74c3                              ;; 28:43a1 $82 $c3 $74 $01
+    Op50_WriteByte wC31D, $d0                          ;; 28:43a5 $50 $1d $c3 $00 $d0
+    Op1C_TableJump 4                                   ;; 28:43aa $1c $04
+    SCRIPT_POINTER data_28_4067                        ;; 28:43ac $67 $40 $28
+    SCRIPT_POINTER data_28_407e                        ;; 28:43af $7e $40 $28
+    SCRIPT_POINTER data_28_4c9a                        ;; 28:43b2 $9a $4c $28
+    SCRIPT_POINTER data_28_43bc                        ;; 28:43b5 $bc $43 $28
+    db   $18                                           ;; 28:43b8 w
     dw   $400c                                         ;; 28:43b9 wW
-    db   $28, $68, $01                                 ;; 28:43bb .w.
+    db   $28                                           ;; 28:43bb .
+
+data_28_43bc:
+    db   $68, $01                                      ;; 28:43bc w.
     dw   $c73b                                         ;; 28:43be pP
     dw   w1_D216                                       ;; 28:43c0 pP
     db   $01, $14, $01, $c6, $5c                       ;; 28:43c2 .w...
@@ -312,18 +310,23 @@ data_28_439c:
     db   $3b, $1a, $0a                                 ;; 28:43dc .ww
 
 data_28_43df:
-    db   $50                                           ;; 28:43df w
-    dw   wC31D                                         ;; 28:43e0 pP
-    db   $00, $d4, $82                                 ;; 28:43e2 ..w
-    dw   data_28_74c3                                  ;; 28:43e5 pP
-    db   $01, $50                                      ;; 28:43e7 .w
-    dw   wC31D                                         ;; 28:43e9 pP
-    db   $00, $d0, $1c, $04, $67, $40, $28, $7e        ;; 28:43eb ..ww????
-    db   $40, $28, $9a, $4c, $28, $ff, $43, $28        ;; 28:43f3 ????????
+    Op50_WriteByte wC31D, $d4                          ;; 28:43df $50 $1d $c3 $00 $d4
+    Op82_Run call_01_74c3                              ;; 28:43e4 $82 $c3 $74 $01
+    Op50_WriteByte wC31D, $d0                          ;; 28:43e8 $50 $1d $c3 $00 $d0
+    Op1C_TableJump 4                                   ;; 28:43ed $1c $04
+    SCRIPT_POINTER data_28_4067                        ;; 28:43ef $67 $40 $28
+    SCRIPT_POINTER data_28_407e                        ;; 28:43f2 $7e $40 $28
+    SCRIPT_POINTER data_28_4c9a                        ;; 28:43f5 $9a $4c $28
+    SCRIPT_POINTER data_28_43ff                        ;; 28:43f8 $ff $43 $28
     db   $18                                           ;; 28:43fb w
     dw   $400c                                         ;; 28:43fc wW
-    db   $28, $50, $fd, $d1, $01, $08, $82, $e1        ;; 28:43fe .???????
-    db   $77, $01, $1e, $80, $78, $3b, $1a, $13        ;; 28:4406 ????????
+    db   $28                                           ;; 28:43fe .
+
+data_28_43ff:
+    Op50_WriteByte w1_BeginRegionD1FD, $08             ;; 28:43ff $50 $fd $d1 $01 $08
+    Op82_Run call_01_77e1                              ;; 28:4404 $82 $e1 $77 $01
+    Op1E_Call data_3b_7880                             ;; 28:4408 $1e $80 $78 $3b
+    db   $1a, $13                                      ;; 28:440c ??
 
 data_28_440e:
     db   $14, $01, $ea, $5d                            ;; 28:440e w...

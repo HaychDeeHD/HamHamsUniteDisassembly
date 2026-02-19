@@ -16,6 +16,12 @@ db $1e
 dw \1
 db BANK(\1)
 ENDM
+MACRO Op50_WriteByte
+db $50
+dw \1
+db BANK(\1)
+db \2
+ENDM
 MACRO Op82_Run
 db $82
 dw \1
