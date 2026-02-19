@@ -1162,11 +1162,11 @@ data_2b_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 2b:51bd .....w
     dw   w1_D001                                       ;; 2b:51c3 pP
     db   $01                                           ;; 2b:51c5 .
-    dw   w1_D1FD                                       ;; 2b:51c6 pP
+    dw   w1_BeginRegionD1FD                            ;; 2b:51c6 pP
     db   $50                                           ;; 2b:51c8 w
     dw   wC31D                                         ;; 2b:51c9 pP
     db   $00, $d0, $50                                 ;; 2b:51cb ..w
-    dw   w1_D0FD                                       ;; 2b:51ce pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 2b:51ce pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 2b:51d0 ..w..w.w
     db   $01, $74, $21, $7e, $0d, $16, $01, $7e        ;; 2b:51d8 ..w.ww..
     db   $0d, $3c, $16, $01, $7e, $12, $b0, $16        ;; 2b:51e0 w.w..w.w
@@ -1200,7 +1200,7 @@ data_2b_4000:
     db   $2b, $18                                      ;; 2b:52a3 .w
     dw   $4ee4                                         ;; 2b:52a5 wW
     db   $2b, $16, $01, $7f, $01, $00, $50             ;; 2b:52a7 .w..w.w
-    dw   w1_D1FD                                       ;; 2b:52ae pP
+    dw   w1_BeginRegionD1FD                            ;; 2b:52ae pP
     db   $01, $04, $82                                 ;; 2b:52b0 ..w
     dw   .data_2b_77e1                                 ;; 2b:52b3 pP
     db   $01, $14, $01, $82, $5d, $c2, $52, $2b        ;; 2b:52b5 .w...???
@@ -1410,7 +1410,7 @@ data_2b_4000:
     dw   .data_2b_6dd9                                 ;; 2b:5710 pP
     db   $02, $16, $01, $3e, $31, $68, $01             ;; 2b:5712 .w...w.
     dw   $c764                                         ;; 2b:5719 pP
-    dw   w1_D1FD                                       ;; 2b:571b pP
+    dw   w1_BeginRegionD1FD                            ;; 2b:571b pP
     db   $01, $68, $02                                 ;; 2b:571d .w.
     dw   $c7d8                                         ;; 2b:5720 pP
     dw   w1_D216                                       ;; 2b:5722 pP
@@ -1698,7 +1698,7 @@ data_2b_4000:
     db   $9b, $5b, $2b, $18, $e4, $4e, $2b, $68        ;; 2b:5ba1 ???????w
     db   $01                                           ;; 2b:5ba9 .
     dw   $c81d                                         ;; 2b:5baa pP
-    dw   w1_D1FD                                       ;; 2b:5bac pP
+    dw   w1_BeginRegionD1FD                            ;; 2b:5bac pP
     db   $01, $82                                      ;; 2b:5bae .w
     dw   .data_2b_73bf                                 ;; 2b:5bb0 pP
     db   $01                                           ;; 2b:5bb2 .
@@ -2775,10 +2775,10 @@ data_2b_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 2b:6e35 .....w
     dw   w1_D001                                       ;; 2b:6e3b pP
     db   $01                                           ;; 2b:6e3d .
-    dw   w1_D1FD                                       ;; 2b:6e3e pP
+    dw   w1_BeginRegionD1FD                            ;; 2b:6e3e pP
 .data_2b_6e40:
     db   $50                                           ;; 2b:6e40 w
-    dw   w1_D0FD                                       ;; 2b:6e41 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 2b:6e41 pP
     db   $02, $fe, $16, $01, $5e, $03, $16, $01        ;; 2b:6e43 ..w...w.
     db   $7e, $0d, $50, $16, $01, $7e, $12             ;; 2b:6e4b .w.w..w
 .data_2b_6e52:
@@ -3043,7 +3043,7 @@ data_2b_4000:
     dw   .data_2b_6dd9                                 ;; 2b:7209 pP
     db   $02, $16, $01, $3e, $5d, $68, $01             ;; 2b:720b .w...w.
     dw   $c764                                         ;; 2b:7212 pP
-    dw   w1_D1FD                                       ;; 2b:7214 pP
+    dw   w1_BeginRegionD1FD                            ;; 2b:7214 pP
     db   $01, $68, $02                                 ;; 2b:7216 .w.
     dw   $c7d8                                         ;; 2b:7219 pP
     dw   w1_D216                                       ;; 2b:721b pP

@@ -225,11 +225,11 @@ data_27_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 27:440d .....w
     dw   w1_D001                                       ;; 27:4413 pP
     db   $01                                           ;; 27:4415 .
-    dw   w1_D1FD                                       ;; 27:4416 pP
+    dw   w1_BeginRegionD1FD                            ;; 27:4416 pP
     db   $50                                           ;; 27:4418 w
     dw   wC31D                                         ;; 27:4419 pP
     db   $00, $d0, $50                                 ;; 27:441b ..w
-    dw   w1_D0FD                                       ;; 27:441e pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 27:441e pP
     db   $02, $fe, $16, $01, $5e, $03, $16, $01        ;; 27:4420 ..w...w.
     db   $7e, $0d, $32                                 ;; 27:4428 .w.
 .data_27_442b:
@@ -1943,7 +1943,7 @@ data_27_4000:
     db   $27, $1e                                      ;; 27:6537 .w
     dw   $6556                                         ;; 27:6539 wW
     db   $27, $50                                      ;; 27:653b .w
-    dw   w1_D1FD                                       ;; 27:653d pP
+    dw   w1_BeginRegionD1FD                            ;; 27:653d pP
     db   $01, $02, $82                                 ;; 27:653f ..w
     dw   .data_27_77e1                                 ;; 27:6542 pP
     db   $01, $1e                                      ;; 27:6544 .w
@@ -2523,7 +2523,7 @@ data_27_4000:
     dw   .data_27_6dd9                                 ;; 27:7215 pP
     db   $02, $16, $01, $3e, $39, $68, $01             ;; 27:7217 .w...w.
     dw   $c764                                         ;; 27:721e pP
-    dw   w1_D1FD                                       ;; 27:7220 pP
+    dw   w1_BeginRegionD1FD                            ;; 27:7220 pP
     db   $01, $68, $02                                 ;; 27:7222 .w.
     dw   $c7d8                                         ;; 27:7225 pP
     dw   w1_D216                                       ;; 27:7227 pP
@@ -2750,11 +2750,11 @@ data_27_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 27:7559 .....w
     dw   w1_D001                                       ;; 27:755f pP
     db   $01                                           ;; 27:7561 .
-    dw   w1_D1FD                                       ;; 27:7562 pP
+    dw   w1_BeginRegionD1FD                            ;; 27:7562 pP
     db   $50                                           ;; 27:7564 w
     dw   wC31D                                         ;; 27:7565 pP
     db   $00, $d0, $50                                 ;; 27:7567 ..w
-    dw   w1_D0FD                                       ;; 27:756a pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 27:756a pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 27:756c ..w..w.w
     db   $01, $7e, $0d, $0b, $16, $01, $7e, $12        ;; 27:7574 ..w.w..w
     db   $b0, $16, $01, $7f, $1c, $00, $16, $01        ;; 27:757c .w..w.w.
@@ -3052,7 +3052,7 @@ data_27_4000:
     dw   .data_27_6dd9                                 ;; 27:7af0 pP
     db   $02, $16, $01, $3e, $36, $68, $01             ;; 27:7af2 .w...w.
     dw   $c764                                         ;; 27:7af9 pP
-    dw   w1_D1FD                                       ;; 27:7afb pP
+    dw   w1_BeginRegionD1FD                            ;; 27:7afb pP
     db   $01, $68, $02                                 ;; 27:7afd .w.
     dw   $c7d8                                         ;; 27:7b00 pP
     dw   w1_D216                                       ;; 27:7b02 pP
@@ -3354,7 +3354,7 @@ data_27_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 27:7e84 .....w
     dw   w1_D001                                       ;; 27:7e8a pP
     db   $01                                           ;; 27:7e8c .
-    dw   w1_D1FD                                       ;; 27:7e8d pP
+    dw   w1_BeginRegionD1FD                            ;; 27:7e8d pP
     db   $16, $01, $7e, $0d, $0b, $16, $01, $7e        ;; 27:7e8f w..w.w..
     db   $12, $b0, $4c, $1a, $01, $04, $00, $00        ;; 27:7e97 w.ww.w..
     db   $00, $00                                      ;; 27:7e9f ..

@@ -242,11 +242,11 @@ data_28_42d0:
     db   $00, $00, $00, $00, $ff, $52                  ;; 28:4310 .....w
     dw   w1_D001                                       ;; 28:4316 pP
     db   $01                                           ;; 28:4318 .
-    dw   w1_D1FD                                       ;; 28:4319 pP
+    dw   w1_BeginRegionD1FD                            ;; 28:4319 pP
     db   $50                                           ;; 28:431b w
     dw   wC31D                                         ;; 28:431c pP
     db   $00, $d0, $50                                 ;; 28:431e ..w
-    dw   w1_D0FD                                       ;; 28:4321 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 28:4321 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 28:4323 ..w..w.w
     db   $01, $7e, $0d, $3d, $16, $01, $7e, $12        ;; 28:432b ..w.w..w
     db   $b0, $16, $01, $7f, $05, $00, $16, $01        ;; 28:4333 .w..w.w.
@@ -280,7 +280,7 @@ data_28_436d:
     db   $28, $18                                      ;; 28:4388 .w
     dw   $400c                                         ;; 28:438a wW
     db   $28, $50                                      ;; 28:438c .w
-    dw   w1_D1FD                                       ;; 28:438e pP
+    dw   w1_BeginRegionD1FD                            ;; 28:438e pP
     db   $01, $02, $82                                 ;; 28:4390 ..w
     dw   data_28_77e1                                  ;; 28:4393 pP
     db   $01, $1e                                      ;; 28:4395 .w
@@ -1054,7 +1054,7 @@ data_28_4de5:
     dw   data_28_6dd9                                  ;; 28:4ea7 pP
     db   $02, $16, $01, $3e, $34, $68, $01             ;; 28:4ea9 .w...w.
     dw   $c764                                         ;; 28:4eb0 pP
-    dw   w1_D1FD                                       ;; 28:4eb2 pP
+    dw   w1_BeginRegionD1FD                            ;; 28:4eb2 pP
     db   $01, $68, $02                                 ;; 28:4eb4 .w.
     dw   $c7d8                                         ;; 28:4eb7 pP
     dw   w1_D216                                       ;; 28:4eb9 pP
@@ -2901,11 +2901,11 @@ data_28_6dd9:
     db   $00, $00, $00, $00, $ff, $52                  ;; 28:732e .....w
     dw   w1_D001                                       ;; 28:7334 pP
     db   $01                                           ;; 28:7336 .
-    dw   w1_D1FD                                       ;; 28:7337 pP
+    dw   w1_BeginRegionD1FD                            ;; 28:7337 pP
     db   $50                                           ;; 28:7339 w
     dw   wC31D                                         ;; 28:733a pP
     db   $00, $d0, $50                                 ;; 28:733c ..w
-    dw   w1_D0FD                                       ;; 28:733f pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 28:733f pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 28:7341 ..w..w.w
     db   $01, $7e, $0d, $32, $16, $01, $7e, $12        ;; 28:7349 ..w.w..w
     db   $b0, $16, $01, $7f, $1e, $00, $16, $01        ;; 28:7351 .w..w.w.
@@ -3465,7 +3465,7 @@ data_28_79d1:
     dw   data_28_6dd9                                  ;; 28:7cab pP
     db   $02, $16, $01, $3e, $56, $68, $01             ;; 28:7cad .w...w.
     dw   $c764                                         ;; 28:7cb4 pP
-    dw   w1_D1FD                                       ;; 28:7cb6 pP
+    dw   w1_BeginRegionD1FD                            ;; 28:7cb6 pP
     db   $01, $68, $02                                 ;; 28:7cb8 .w.
     dw   $c7d8                                         ;; 28:7cbb pP
     dw   w1_D216                                       ;; 28:7cbd pP

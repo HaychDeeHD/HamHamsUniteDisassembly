@@ -940,11 +940,11 @@ data_35_4012:
     db   $00, $00, $00, $00, $ff, $52                  ;; 35:5222 .....w
     dw   w1_D001                                       ;; 35:5228 pP
     db   $01                                           ;; 35:522a .
-    dw   w1_D1FD                                       ;; 35:522b pP
+    dw   w1_BeginRegionD1FD                            ;; 35:522b pP
     db   $50                                           ;; 35:522d w
     dw   wC31D                                         ;; 35:522e pP
     db   $00, $d0, $50                                 ;; 35:5230 ..w
-    dw   w1_D0FD                                       ;; 35:5233 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 35:5233 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 35:5235 ..w..w.w
     db   $01, $7e, $0d, $2b, $16, $01, $7e, $12        ;; 35:523d ..w.w..w
     db   $b0, $16, $01, $7f, $05, $00, $16, $01        ;; 35:5245 .w..w.w.
@@ -976,7 +976,7 @@ data_35_4012:
     db   $35, $18                                      ;; 35:52c0 .w
     dw   $5029                                         ;; 35:52c2 wW
     db   $35, $50                                      ;; 35:52c4 .w
-    dw   w1_D1FD                                       ;; 35:52c6 pP
+    dw   w1_BeginRegionD1FD                            ;; 35:52c6 pP
     db   $01, $04, $82                                 ;; 35:52c8 ..w
     dw   .data_35_77e1                                 ;; 35:52cb pP
     db   $01, $1e                                      ;; 35:52cd .w
@@ -994,7 +994,7 @@ data_35_4012:
     db   $35, $18                                      ;; 35:52ef .w
     dw   $5029                                         ;; 35:52f1 wW
     db   $35, $50                                      ;; 35:52f3 .w
-    dw   w1_D1FD                                       ;; 35:52f5 pP
+    dw   w1_BeginRegionD1FD                            ;; 35:52f5 pP
     db   $01, $02, $82                                 ;; 35:52f7 ..w
     dw   .data_35_77e1                                 ;; 35:52fa pP
     db   $01, $1e                                      ;; 35:52fc .w
@@ -1314,7 +1314,7 @@ data_35_4012:
     dw   .data_35_6dd9                                 ;; 35:56ee pP
     db   $02, $16, $01, $3e, $23, $68, $01             ;; 35:56f0 .w...w.
     dw   $c764                                         ;; 35:56f7 pP
-    dw   w1_D1FD                                       ;; 35:56f9 pP
+    dw   w1_BeginRegionD1FD                            ;; 35:56f9 pP
     db   $01, $68, $02                                 ;; 35:56fb .w.
     dw   $c7d8                                         ;; 35:56fe pP
     dw   w1_D216                                       ;; 35:5700 pP
@@ -2206,7 +2206,7 @@ data_35_4012:
     dw   .data_35_6dd9                                 ;; 35:6743 pP
     db   $02, $16, $01, $3e, $3d, $68, $01             ;; 35:6745 .w...w.
     dw   $c764                                         ;; 35:674c pP
-    dw   w1_D1FD                                       ;; 35:674e pP
+    dw   w1_BeginRegionD1FD                            ;; 35:674e pP
     db   $01, $68, $02                                 ;; 35:6750 .w.
     dw   $c7d8                                         ;; 35:6753 pP
     dw   w1_D216                                       ;; 35:6755 pP
@@ -2957,7 +2957,7 @@ data_35_4012:
     dw   .data_35_6dd9                                 ;; 35:7679 pP
     db   $02, $16, $01, $3e, $40, $68, $01             ;; 35:767b .w...w.
     dw   $c764                                         ;; 35:7682 pP
-    dw   w1_D1FD                                       ;; 35:7684 pP
+    dw   w1_BeginRegionD1FD                            ;; 35:7684 pP
     db   $01, $68, $02                                 ;; 35:7686 .w.
     dw   $c7d8                                         ;; 35:7689 pP
     dw   w1_D216                                       ;; 35:768b pP

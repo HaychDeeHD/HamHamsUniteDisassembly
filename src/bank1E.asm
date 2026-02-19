@@ -177,11 +177,11 @@ data_1e_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 1e:4250 .....w
     dw   w1_D001                                       ;; 1e:4256 pP
     db   $01                                           ;; 1e:4258 .
-    dw   w1_D1FD                                       ;; 1e:4259 pP
+    dw   w1_BeginRegionD1FD                            ;; 1e:4259 pP
     db   $50                                           ;; 1e:425b w
     dw   wC31D                                         ;; 1e:425c pP
     db   $00, $d0, $50                                 ;; 1e:425e ..w
-    dw   w1_D0FD                                       ;; 1e:4261 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 1e:4261 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 1e:4263 ..w..w.w
     db   $01, $7e, $0d, $50, $16, $01, $7e, $12        ;; 1e:426b ..w.w..w
     db   $b0, $16, $01, $7f, $1c, $00, $16, $01        ;; 1e:4273 .w..w.w.

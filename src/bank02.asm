@@ -3337,9 +3337,9 @@ ObtainHamChatFromC715:
     inc  A                                             ;; 02:6dfe $3c
     ld   [wNumHamChatsCA45], A                         ;; 02:6dff $ea $4f $ca
     ld   A, [wBitArrayIndexC715]                       ;; 02:6e02 $fa $15 $c7
-    ld   [w1_D0F8], A                                  ;; 02:6e05 $ea $f8 $d0
+    ld   [w1_HamChatIndexD0F8], A                      ;; 02:6e05 $ea $f8 $d0
     ld   A, $ff                                        ;; 02:6e08 $3e $ff
-    ld   [w1_D0FD], A                                  ;; 02:6e0a $ea $fd $d0
+    ld   [w1_SomethingWithHamchatsD0FD], A             ;; 02:6e0a $ea $fd $d0
     pop  AF                                            ;; 02:6e0d $f1
     ld_long_store rSVBK, A                             ;; 02:6e0e $ea $70 $ff
     ret                                                ;; 02:6e11 $c9
@@ -3349,9 +3349,9 @@ ObtainHamChatFromC715:
 ; Maybe it's just reloading from backup?
 .alreadyHadChat:
     ld   A, [wBitArrayIndexC715]                       ;; 02:6e12 $fa $15 $c7
-    ld   [w1_D0F8], A                                  ;; 02:6e15 $ea $f8 $d0
+    ld   [w1_HamChatIndexD0F8], A                      ;; 02:6e15 $ea $f8 $d0
     ld   A, $fe                                        ;; 02:6e18 $3e $fe
-    ld   [w1_D0FD], A                                  ;; 02:6e1a $ea $fd $d0
+    ld   [w1_SomethingWithHamchatsD0FD], A             ;; 02:6e1a $ea $fd $d0
     pop  AF                                            ;; 02:6e1d $f1
     ld_long_store rSVBK, A                             ;; 02:6e1e $ea $70 $ff
     ret                                                ;; 02:6e21 $c9
@@ -3416,8 +3416,8 @@ ObtainHamChatFromC715:
     ld   A, $02                                        ;; 02:6e85 $3e $02
     ld_long_store rSVBK, A                             ;; 02:6e87 $ea $70 $ff
     ld   A, $ff                                        ;; 02:6e8a $3e $ff
-    ld   [w1_D0F8], A                                  ;; 02:6e8c $ea $f8 $d0
-    ld   [w1_D0FD], A                                  ;; 02:6e8f $ea $fd $d0
+    ld   [w1_HamChatIndexD0F8], A                      ;; 02:6e8c $ea $f8 $d0
+    ld   [w1_SomethingWithHamchatsD0FD], A             ;; 02:6e8f $ea $fd $d0
     ld   HL, w1_D0F0                                   ;; 02:6e92 $21 $f0 $d0
     ld   A, $ff                                        ;; 02:6e95 $3e $ff
     ld   C, $04                                        ;; 02:6e97 $0e $04
@@ -3687,8 +3687,8 @@ data_02_72d3:
     jr   Z, .jr_02_73f6                                ;; 02:73e9 $28 $0b
     ld   A, $ff                                        ;; 02:73eb $3e $ff
     ld   [w1_D0FE], A                                  ;; 02:73ed $ea $fe $d0
-    ld   [w1_D0FD], A                                  ;; 02:73f0 $ea $fd $d0
-    ld   [w1_D0F8], A                                  ;; 02:73f3 $ea $f8 $d0
+    ld   [w1_SomethingWithHamchatsD0FD], A             ;; 02:73f0 $ea $fd $d0
+    ld   [w1_HamChatIndexD0F8], A                      ;; 02:73f3 $ea $f8 $d0
 .jr_02_73f6:
     ld   A, $02                                        ;; 02:73f6 $3e $02
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:73f8 $ea $3a $c5
@@ -3697,7 +3697,7 @@ data_02_72d3:
     ld   A, [wC72F]                                    ;; 02:73fd $fa $2f $c7
     cp   A, $00                                        ;; 02:7400 $fe $00
     jr   Z, .jr_02_73c3                                ;; 02:7402 $28 $bf
-    ld   A, [w1_D0FD]                                  ;; 02:7404 $fa $fd $d0
+    ld   A, [w1_SomethingWithHamchatsD0FD]             ;; 02:7404 $fa $fd $d0
     cp   A, $00                                        ;; 02:7407 $fe $00
     jr   Z, .jr_02_73c3                                ;; 02:7409 $28 $b8
     dec  A                                             ;; 02:740b $3d
@@ -3706,12 +3706,12 @@ data_02_72d3:
     ld   A, [wC72F]                                    ;; 02:740e $fa $2f $c7
     cp   A, $00                                        ;; 02:7411 $fe $00
     jr   Z, .jr_02_73c3                                ;; 02:7413 $28 $ae
-    ld   A, [w1_D0FD]                                  ;; 02:7415 $fa $fd $d0
+    ld   A, [w1_SomethingWithHamchatsD0FD]             ;; 02:7415 $fa $fd $d0
     cp   A, $08                                        ;; 02:7418 $fe $08
     jr   Z, .jr_02_73c3                                ;; 02:741a $28 $a7
     inc  A                                             ;; 02:741c $3c
 .jr_02_741d:
-    ld   [w1_D0FD], A                                  ;; 02:741d $ea $fd $d0
+    ld   [w1_SomethingWithHamchatsD0FD], A             ;; 02:741d $ea $fd $d0
     ld   [w1_D0FE], A                                  ;; 02:7420 $ea $fe $d0
     call call_02_750d                                  ;; 02:7423 $cd $0d $75
     ld   A, $04                                        ;; 02:7426 $3e $04
@@ -4419,7 +4419,7 @@ call_02_78df:
     push AF                                            ;; 02:7a18 $f5
     ld   A, $02                                        ;; 02:7a19 $3e $02
     ld_long_store rSVBK, A                             ;; 02:7a1b $ea $70 $ff
-    ld   A, [w1_D0FD]                                  ;; 02:7a1e $fa $fd $d0
+    ld   A, [w1_SomethingWithHamchatsD0FD]             ;; 02:7a1e $fa $fd $d0
     cp   A, $ff                                        ;; 02:7a21 $fe $ff
     jr   Z, .jr_02_7a43                                ;; 02:7a23 $28 $1e
     cp   A, $fe                                        ;; 02:7a25 $fe $fe
@@ -4435,19 +4435,19 @@ call_02_78df:
     ld   A, [HL]                                       ;; 02:7a36 $7e
     jr   .jr_02_7a7f                                   ;; 02:7a37 $18 $46
 .jr_02_7a39:
-    ld   A, [w1_D0F8]                                  ;; 02:7a39 $fa $f8 $d0
+    ld   A, [w1_HamChatIndexD0F8]                      ;; 02:7a39 $fa $f8 $d0
     jr   .jr_02_7a7f                                   ;; 02:7a3c $18 $41
 .jr_02_7a3e:
     ld   A, $fd                                        ;; 02:7a3e $3e $fd
-    ld   [w1_D0FD], A                                  ;; 02:7a40 $ea $fd $d0
+    ld   [w1_SomethingWithHamchatsD0FD], A             ;; 02:7a40 $ea $fd $d0
 .jr_02_7a43:
-    ld   A, [w1_D0F8]                                  ;; 02:7a43 $fa $f8 $d0
+    ld   A, [w1_HamChatIndexD0F8]                      ;; 02:7a43 $fa $f8 $d0
     cp   A, $ff                                        ;; 02:7a46 $fe $ff
     jr   Z, .jr_02_7a92                                ;; 02:7a48 $28 $48
     ld   A, [wC72F]                                    ;; 02:7a4a $fa $2f $c7
     cp   A, $00                                        ;; 02:7a4d $fe $00
     jr   Z, .jr_02_7a96                                ;; 02:7a4f $28 $45
-    ld   A, [w1_D0F8]                                  ;; 02:7a51 $fa $f8 $d0
+    ld   A, [w1_HamChatIndexD0F8]                      ;; 02:7a51 $fa $f8 $d0
     ld   HL, data_02_72d3                              ;; 02:7a54 $21 $d3 $72
     add  A, L                                          ;; 02:7a57 $85
     ld   L, A                                          ;; 02:7a58 $6f
@@ -4484,10 +4484,10 @@ call_02_78df:
     jr   .jr_02_7a96                                   ;; 02:7a90 $18 $04
 .jr_02_7a92:
     xor  A, A                                          ;; 02:7a92 $af
-    ld   [w1_D0FD], A                                  ;; 02:7a93 $ea $fd $d0
+    ld   [w1_SomethingWithHamchatsD0FD], A             ;; 02:7a93 $ea $fd $d0
 .jr_02_7a96:
     ld   A, $ff                                        ;; 02:7a96 $3e $ff
-    ld   [w1_D0F8], A                                  ;; 02:7a98 $ea $f8 $d0
+    ld   [w1_HamChatIndexD0F8], A                      ;; 02:7a98 $ea $f8 $d0
     pop  AF                                            ;; 02:7a9b $f1
     ld_long_store rSVBK, A                             ;; 02:7a9c $ea $70 $ff
     ret                                                ;; 02:7a9f $c9
@@ -4500,7 +4500,7 @@ call_02_78df:
     push AF                                            ;; 02:7ab1 $f5
     ld   A, $02                                        ;; 02:7ab2 $3e $02
     ld_long_store rSVBK, A                             ;; 02:7ab4 $ea $70 $ff
-    ld   A, [w1_D0FD]                                  ;; 02:7ab7 $fa $fd $d0
+    ld   A, [w1_SomethingWithHamchatsD0FD]             ;; 02:7ab7 $fa $fd $d0
     cp   A, $ff                                        ;; 02:7aba $fe $ff
     jr   Z, .jr_02_7ac0                                ;; 02:7abc $28 $02
     jr   .jr_02_7ac4                                   ;; 02:7abe $18 $04
@@ -4509,7 +4509,7 @@ call_02_78df:
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:7ac1 $ea $3a $c5
 .jr_02_7ac4:
     ld   A, $ff                                        ;; 02:7ac4 $3e $ff
-    ld   [w1_D0FD], A                                  ;; 02:7ac6 $ea $fd $d0
+    ld   [w1_SomethingWithHamchatsD0FD], A             ;; 02:7ac6 $ea $fd $d0
     pop  AF                                            ;; 02:7ac9 $f1
     ld_long_store rSVBK, A                             ;; 02:7aca $ea $70 $ff
     ret                                                ;; 02:7acd $c9

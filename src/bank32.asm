@@ -264,7 +264,7 @@ data_32_42d0:
     db   $32, $14, $01, $38, $6e                       ;; 32:42f5 .w...
     dw   $4301                                         ;; 32:42fa wW
     db   $32, $16, $01, $5f, $84, $50                  ;; 32:42fc .w...w
-    dw   w1_D1FD                                       ;; 32:4302 pP
+    dw   w1_BeginRegionD1FD                            ;; 32:4302 pP
     db   $01, $08, $82                                 ;; 32:4304 ..w
     dw   data_32_77e1                                  ;; 32:4307 pP
     db   $01, $1e                                      ;; 32:4309 .w
@@ -281,7 +281,7 @@ data_32_430b:
     db   $32, $18                                      ;; 32:4326 .w
     dw   $400c                                         ;; 32:4328 wW
     db   $32, $16, $01, $5f, $84, $50                  ;; 32:432a .w...w
-    dw   w1_D1FD                                       ;; 32:4330 pP
+    dw   w1_BeginRegionD1FD                            ;; 32:4330 pP
     db   $01, $04, $82                                 ;; 32:4332 ..w
     dw   data_32_77e1                                  ;; 32:4335 pP
 
@@ -722,7 +722,7 @@ data_32_48fe:
     dw   data_32_6dd9                                  ;; 32:4960 pP
     db   $02, $16, $01, $3e, $4f, $68, $01             ;; 32:4962 .w...w.
     dw   $c764                                         ;; 32:4969 pP
-    dw   w1_D1FD                                       ;; 32:496b pP
+    dw   w1_BeginRegionD1FD                            ;; 32:496b pP
     db   $01, $68, $02                                 ;; 32:496d .w.
     dw   $c7d8                                         ;; 32:4970 pP
     dw   w1_D216                                       ;; 32:4972 pP
@@ -929,11 +929,11 @@ data_32_4b90:
     db   $00, $00, $00, $00, $ff, $52                  ;; 32:4c4d .....w
     dw   w1_D001                                       ;; 32:4c53 pP
     db   $01                                           ;; 32:4c55 .
-    dw   w1_D1FD                                       ;; 32:4c56 pP
+    dw   w1_BeginRegionD1FD                            ;; 32:4c56 pP
     db   $50                                           ;; 32:4c58 w
     dw   wC31D                                         ;; 32:4c59 pP
     db   $00, $d0, $50                                 ;; 32:4c5b ..w
-    dw   w1_D0FD                                       ;; 32:4c5e pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 32:4c5e pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 32:4c60 ..w..w.w
     db   $01, $7e, $0d, $14, $16, $01, $7e, $12        ;; 32:4c68 ..w.w..w
     db   $b0, $16, $01, $7f, $0a, $00, $16, $01        ;; 32:4c70 .w..w.w.
@@ -965,7 +965,7 @@ data_32_4b90:
     db   $32, $18                                      ;; 32:4d14 .w
     dw   $49cf                                         ;; 32:4d16 wW
     db   $32, $50                                      ;; 32:4d18 .w
-    dw   w1_D1FD                                       ;; 32:4d1a pP
+    dw   w1_BeginRegionD1FD                            ;; 32:4d1a pP
     db   $01, $08, $82                                 ;; 32:4d1c ..w
     dw   data_32_77e1                                  ;; 32:4d1f pP
     db   $01, $1e                                      ;; 32:4d21 .w
@@ -982,11 +982,11 @@ data_32_4b90:
     db   $32, $18                                      ;; 32:4d47 .w
     dw   $49cf                                         ;; 32:4d49 wW
     db   $32, $50                                      ;; 32:4d4b .w
-    dw   w1_D1FD                                       ;; 32:4d4d pP
+    dw   w1_BeginRegionD1FD                            ;; 32:4d4d pP
     db   $01, $10, $82                                 ;; 32:4d4f ..w
     dw   data_32_77e1                                  ;; 32:4d52 pP
     db   $01, $52                                      ;; 32:4d54 .w
-    dw   w1_D203                                       ;; 32:4d56 pP
+    dw   w1_SomeAddressD203                            ;; 32:4d56 pP
     db   $01                                           ;; 32:4d58 .
     dw   data_32_450b                                  ;; 32:4d59 pP
     db   $50                                           ;; 32:4d5b w
@@ -1377,11 +1377,11 @@ data_32_557e:
     db   $00, $00, $00, $00, $ff, $52                  ;; 32:5592 .....w
     dw   w1_D001                                       ;; 32:5598 pP
     db   $01                                           ;; 32:559a .
-    dw   w1_D1FD                                       ;; 32:559b pP
+    dw   w1_BeginRegionD1FD                            ;; 32:559b pP
     db   $50                                           ;; 32:559d w
     dw   wC31D                                         ;; 32:559e pP
     db   $00, $d0, $50                                 ;; 32:55a0 ..w
-    dw   w1_D0FD                                       ;; 32:55a3 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 32:55a3 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 32:55a5 ..w..w.w
     db   $01, $7e, $0d, $0a, $16, $01, $7e, $12        ;; 32:55ad ..w.w..w
     db   $b0, $16, $01, $7f, $1c, $00, $16, $01        ;; 32:55b5 .w..w.w.
@@ -1415,7 +1415,7 @@ data_32_5601:
     db   $32, $18                                      ;; 32:5655 .w
     dw   $5366                                         ;; 32:5657 wW
     db   $32, $50                                      ;; 32:5659 .w
-    dw   w1_D1FD                                       ;; 32:565b pP
+    dw   w1_BeginRegionD1FD                            ;; 32:565b pP
     db   $01, $10, $82                                 ;; 32:565d ..w
     dw   data_32_77e1                                  ;; 32:5660 pP
     db   $01, $1e                                      ;; 32:5662 .w
@@ -1690,7 +1690,7 @@ data_32_5afc:
     dw   data_32_6dd9                                  ;; 32:5b26 pP
     db   $02, $16, $01, $3e, $33, $68, $01             ;; 32:5b28 .w...w.
     dw   $c764                                         ;; 32:5b2f pP
-    dw   w1_D1FD                                       ;; 32:5b31 pP
+    dw   w1_BeginRegionD1FD                            ;; 32:5b31 pP
     db   $01, $68, $02                                 ;; 32:5b33 .w.
     dw   $c7d8                                         ;; 32:5b36 pP
     dw   w1_D216                                       ;; 32:5b38 pP
@@ -2373,11 +2373,11 @@ data_32_6844:
     db   $00, $00, $00, $00, $ff, $52                  ;; 32:6947 .....w
     dw   w1_D001                                       ;; 32:694d pP
     db   $01                                           ;; 32:694f .
-    dw   w1_D1FD                                       ;; 32:6950 pP
+    dw   w1_BeginRegionD1FD                            ;; 32:6950 pP
     db   $50                                           ;; 32:6952 w
     dw   wC31D                                         ;; 32:6953 pP
     db   $00, $d0, $50                                 ;; 32:6955 ..w
-    dw   w1_D0FD                                       ;; 32:6958 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 32:6958 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 32:695a ..w..w.w
     db   $01, $7e, $0d, $3c, $16, $01, $7e, $12        ;; 32:6962 ..w.w..w
     db   $b0, $16, $01, $7f, $11, $00, $16, $01        ;; 32:696a .w..w.w.
@@ -2412,7 +2412,7 @@ data_32_69d2:
     db   $32, $18                                      ;; 32:69f9 .w
     dw   $662b                                         ;; 32:69fb wW
     db   $32, $50                                      ;; 32:69fd .w
-    dw   w1_D1FD                                       ;; 32:69ff pP
+    dw   w1_BeginRegionD1FD                            ;; 32:69ff pP
     db   $01, $10, $82                                 ;; 32:6a01 ..w
     dw   data_32_77e1                                  ;; 32:6a04 pP
     db   $01, $1e                                      ;; 32:6a06 .w
@@ -2432,7 +2432,7 @@ data_32_6a29:
     db   $18                                           ;; 32:6a29 w
     dw   $662b                                         ;; 32:6a2a wW
     db   $32, $50                                      ;; 32:6a2c .w
-    dw   w1_D1FD                                       ;; 32:6a2e pP
+    dw   w1_BeginRegionD1FD                            ;; 32:6a2e pP
     db   $01, $02, $82                                 ;; 32:6a30 ..w
     dw   data_32_77e1                                  ;; 32:6a33 pP
     db   $01, $1e                                      ;; 32:6a35 .w
@@ -2714,7 +2714,7 @@ data_32_6e30:
     dw   data_32_6dd9                                  ;; 32:6e42 pP
     db   $02, $16, $01, $3e, $18, $68, $01             ;; 32:6e44 .w...w.
     dw   $c764                                         ;; 32:6e4b pP
-    dw   w1_D1FD                                       ;; 32:6e4d pP
+    dw   w1_BeginRegionD1FD                            ;; 32:6e4d pP
     db   $01, $68, $02                                 ;; 32:6e4f .w.
     dw   $c7d8                                         ;; 32:6e52 pP
     dw   w1_D216                                       ;; 32:6e54 pP
@@ -2984,11 +2984,11 @@ data_32_6f63:
     db   $00, $00, $00, $00, $ff, $52                  ;; 32:71d8 .....w
     dw   w1_D001                                       ;; 32:71de pP
     db   $01                                           ;; 32:71e0 .
-    dw   w1_D1FD                                       ;; 32:71e1 pP
+    dw   w1_BeginRegionD1FD                            ;; 32:71e1 pP
     db   $50                                           ;; 32:71e3 w
     dw   wC31D                                         ;; 32:71e4 pP
     db   $00, $d0, $50                                 ;; 32:71e6 ..w
-    dw   w1_D0FD                                       ;; 32:71e9 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 32:71e9 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 32:71eb ..w..w.w
     db   $01, $7e, $0d, $32, $16, $01, $7e, $12        ;; 32:71f3 ..w.w..w
     db   $b0, $16, $01, $7f, $11, $00, $16, $01        ;; 32:71fb .w..w.w.
@@ -3094,7 +3094,7 @@ data_32_72c6:
     db   $32, $68, $01, $29, $c8, $0e, $d2, $01        ;; 32:73b6 .???????
     db   $14, $01, $4f, $67, $4c, $72, $32, $18        ;; 32:73be ????????
     db   $1f, $72, $32, $50                            ;; 32:73c6 ???w
-    dw   w1_D1FD                                       ;; 32:73ca pP
+    dw   w1_BeginRegionD1FD                            ;; 32:73ca pP
 
 data_32_73cc:
     db   $01, $02, $82                                 ;; 32:73cc ..w
@@ -3113,7 +3113,7 @@ data_32_73cc:
     db   $32, $18                                      ;; 32:73f3 .w
     dw   $6f8c                                         ;; 32:73f5 wW
     db   $32, $50                                      ;; 32:73f7 .w
-    dw   w1_D1FD                                       ;; 32:73f9 pP
+    dw   w1_BeginRegionD1FD                            ;; 32:73f9 pP
     db   $01, $08, $82                                 ;; 32:73fb ..w
     dw   data_32_77e1                                  ;; 32:73fe pP
     db   $01, $1e                                      ;; 32:7400 .w
@@ -3257,7 +3257,7 @@ data_32_7618:
     db   $14, $01, $6d, $67, $6c, $76, $32, $18        ;; 32:763a ????????
     db   $78, $76, $32, $20, $68, $01                  ;; 32:7642 ????w.
     dw   $c829                                         ;; 32:7648 pP
-    dw   w1_D1FD                                       ;; 32:764a pP
+    dw   w1_BeginRegionD1FD                            ;; 32:764a pP
     db   $01, $14, $01, $2d, $67                       ;; 32:764c .w...
     dw   $7660                                         ;; 32:7651 wW
     db   $32, $4c, $16, $10, $02, $00, $00, $00        ;; 32:7653 .ww.w...
@@ -3945,7 +3945,7 @@ data_32_7f80:
     dw   data_32_6dd9                                  ;; 32:7f87 pP
     db   $02, $16, $01, $3e, $60, $68, $01             ;; 32:7f89 .w...w.
     dw   $c764                                         ;; 32:7f90 pP
-    dw   w1_D1FD                                       ;; 32:7f92 pP
+    dw   w1_BeginRegionD1FD                            ;; 32:7f92 pP
     db   $01, $68, $02                                 ;; 32:7f94 .w.
     dw   $c7d8                                         ;; 32:7f97 pP
     dw   w1_D216                                       ;; 32:7f99 pP

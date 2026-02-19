@@ -194,13 +194,13 @@ data_2c_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 2c:4285 .....w
     dw   w1_D001                                       ;; 2c:428b pP
     db   $01                                           ;; 2c:428d .
-    dw   w1_D1FD                                       ;; 2c:428e pP
+    dw   w1_BeginRegionD1FD                            ;; 2c:428e pP
     db   $50                                           ;; 2c:4290 w
     dw   wC31D                                         ;; 2c:4291 pP
     db   $00, $d0                                      ;; 2c:4293 ..
 .data_2c_4295:
     db   $50                                           ;; 2c:4295 w
-    dw   w1_D0FD                                       ;; 2c:4296 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 2c:4296 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 2c:4298 ..w..w.w
     db   $01, $7e, $0d, $1e, $16, $01, $7e, $12        ;; 2c:42a0 ..w.w..w
     db   $b0, $16, $01, $7f, $05, $00, $16, $01        ;; 2c:42a8 .w..w.w.
@@ -262,7 +262,7 @@ data_2c_4000:
     dw   $43d4                                         ;; 2c:43cd wW
     db   $2c, $18, $0f, $40, $2c, $16, $01, $7e        ;; 2c:43cf .????w..
     db   $86, $00, $16, $01, $5f, $89, $50             ;; 2c:43d7 w.w...w
-    dw   w1_D1FD                                       ;; 2c:43de pP
+    dw   w1_BeginRegionD1FD                            ;; 2c:43de pP
     db   $01, $10, $82                                 ;; 2c:43e0 ..w
     dw   .data_2c_77e1                                 ;; 2c:43e3 pP
     db   $01, $1e                                      ;; 2c:43e5 .w
@@ -521,7 +521,7 @@ data_2c_4000:
     dw   .data_2c_6dd9                                 ;; 2c:47ff pP
     db   $02, $16, $01, $3e, $13, $68, $01             ;; 2c:4801 .w...w.
     dw   $c764                                         ;; 2c:4808 pP
-    dw   w1_D1FD                                       ;; 2c:480a pP
+    dw   w1_BeginRegionD1FD                            ;; 2c:480a pP
     db   $01, $68, $02                                 ;; 2c:480c .w.
     dw   $c7d8                                         ;; 2c:480f pP
     dw   w1_D216                                       ;; 2c:4811 pP
@@ -1259,7 +1259,7 @@ data_2c_4000:
     db   $01, $16, $01, $5e, $03, $2a, $00, $00        ;; 2c:5c1c .w...w..
     db   $00, $68, $01                                 ;; 2c:5c24 .w.
     dw   $c829                                         ;; 2c:5c27 pP
-    dw   w1_D1FD                                       ;; 2c:5c29 pP
+    dw   w1_BeginRegionD1FD                            ;; 2c:5c29 pP
     db   $01, $82                                      ;; 2c:5c2b .w
     dw   .data_2c_73bf                                 ;; 2c:5c2d pP
     db   $01                                           ;; 2c:5c2f .
@@ -1456,7 +1456,7 @@ data_2c_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 2c:5efb .....w
     dw   w1_D001                                       ;; 2c:5f01 pP
     db   $01                                           ;; 2c:5f03 .
-    dw   w1_D1FD                                       ;; 2c:5f04 pP
+    dw   w1_BeginRegionD1FD                            ;; 2c:5f04 pP
     db   $16, $01, $5e, $03, $16, $01, $7e, $39        ;; 2c:5f06 w...w..w
     db   $00, $16, $01, $7e, $0d, $11, $16, $01        ;; 2c:5f0e .w..w.w.
     db   $7e, $12, $b0, $20, $1e                       ;; 2c:5f16 .w.ww
@@ -1807,7 +1807,7 @@ data_2c_4000:
     db   $82                                           ;; 2c:6434 w
     dw   .data_2c_6dd9                                 ;; 2c:6435 pP
     db   $02, $16, $01, $3e, $53, $50                  ;; 2c:6437 .w...w
-    dw   w1_D0F8                                       ;; 2c:643d pP
+    dw   w1_HamChatIndexD0F8                           ;; 2c:643d pP
 .data_2c_643f:
     db   $02, $ff, $50                                 ;; 2c:643f ..w
     dw   $d145                                         ;; 2c:6442 pP
@@ -2072,7 +2072,7 @@ data_2c_4000:
     dw   .data_2c_6dd9                                 ;; 2c:6833 pP
     db   $02, $16, $01, $3e, $0e, $68, $01             ;; 2c:6835 .w...w.
     dw   $c764                                         ;; 2c:683c pP
-    dw   w1_D1FD                                       ;; 2c:683e pP
+    dw   w1_BeginRegionD1FD                            ;; 2c:683e pP
     db   $01, $68, $02                                 ;; 2c:6840 .w.
     dw   $c7d8                                         ;; 2c:6843 pP
     dw   w1_D216                                       ;; 2c:6845 pP
@@ -2263,11 +2263,11 @@ data_2c_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 2c:6b55 .....w
     dw   w1_D001                                       ;; 2c:6b5b pP
     db   $01                                           ;; 2c:6b5d .
-    dw   w1_D1FD                                       ;; 2c:6b5e pP
+    dw   w1_BeginRegionD1FD                            ;; 2c:6b5e pP
     db   $50                                           ;; 2c:6b60 w
     dw   wC31D                                         ;; 2c:6b61 pP
     db   $00, $d0, $50                                 ;; 2c:6b63 ..w
-    dw   w1_D0FD                                       ;; 2c:6b66 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 2c:6b66 pP
     db   $02, $fe, $14, $01, $fe, $4d, $74, $6b        ;; 2c:6b68 ..w...??
     db   $2c, $44, $48, $00, $16, $01, $7e, $39        ;; 2c:6b70 ?w..w..w
     db   $00, $16, $01, $7e, $0c, $01, $16, $01        ;; 2c:6b78 .w..w.w.
@@ -3400,7 +3400,7 @@ data_2c_4000:
     dw   .data_2c_6dd9                                 ;; 2c:7ea0 pP
     db   $02, $16, $01, $3e, $3e, $68, $01             ;; 2c:7ea2 .w...w.
     dw   $c764                                         ;; 2c:7ea9 pP
-    dw   w1_D1FD                                       ;; 2c:7eab pP
+    dw   w1_BeginRegionD1FD                            ;; 2c:7eab pP
     db   $01, $68, $02                                 ;; 2c:7ead .w.
     dw   $c7d8                                         ;; 2c:7eb0 pP
     dw   w1_D216                                       ;; 2c:7eb2 pP

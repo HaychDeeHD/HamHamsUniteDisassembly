@@ -143,11 +143,11 @@ data_31_4209:
     db   $00, $00, $00, $00, $ff, $52                  ;; 31:4222 .....w
     dw   w1_D001                                       ;; 31:4228 pP
     db   $01                                           ;; 31:422a .
-    dw   w1_D1FD                                       ;; 31:422b pP
+    dw   w1_BeginRegionD1FD                            ;; 31:422b pP
     db   $50                                           ;; 31:422d w
     dw   wC31D                                         ;; 31:422e pP
     db   $00, $d0, $50                                 ;; 31:4230 ..w
-    dw   w1_D0FD                                       ;; 31:4233 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 31:4233 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 31:4235 ..w..w.w
     db   $01, $7e, $0d, $16, $16, $01, $7e, $12        ;; 31:423d ..w.w..w
     db   $48, $16, $01, $7f, $0a, $00, $16, $01        ;; 31:4245 .w..w.w.
@@ -658,11 +658,11 @@ data_31_462d:
     db   $00, $00, $00, $00, $ff, $52                  ;; 31:4d03 .....w
     dw   w1_D001                                       ;; 31:4d09 pP
     db   $01                                           ;; 31:4d0b .
-    dw   w1_D1FD                                       ;; 31:4d0c pP
+    dw   w1_BeginRegionD1FD                            ;; 31:4d0c pP
     db   $50                                           ;; 31:4d0e w
     dw   wC31D                                         ;; 31:4d0f pP
     db   $00, $d0, $50                                 ;; 31:4d11 ..w
-    dw   w1_D0FD                                       ;; 31:4d14 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 31:4d14 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 31:4d16 ..w..w.w
     db   $01, $7e, $0d, $34, $16, $01, $7e, $12        ;; 31:4d1e ..w.w..w
     db   $b0, $16, $01, $7f, $11, $00, $16, $01        ;; 31:4d26 .w..w.w.
@@ -749,7 +749,7 @@ data_31_462d:
     db   $31, $68, $01, $29, $c8, $0e, $d2, $01        ;; 31:4f16 .???????
     db   $14, $01, $4f, $67, $85, $4d, $31, $18        ;; 31:4f1e ????????
     db   $4e, $4d, $31, $50                            ;; 31:4f26 ???w
-    dw   w1_D1FD                                       ;; 31:4f2a pP
+    dw   w1_BeginRegionD1FD                            ;; 31:4f2a pP
     db   $01, $04, $82                                 ;; 31:4f2c ..w
     dw   data_31_77e1                                  ;; 31:4f2f pP
     db   $01, $1e                                      ;; 31:4f31 .w
@@ -768,7 +768,7 @@ data_31_462d:
     db   $31, $18                                      ;; 31:4f58 .w
     dw   $4ab3                                         ;; 31:4f5a wW
     db   $31, $50                                      ;; 31:4f5c .w
-    dw   w1_D1FD                                       ;; 31:4f5e pP
+    dw   w1_BeginRegionD1FD                            ;; 31:4f5e pP
     db   $01, $08, $82                                 ;; 31:4f60 ..w
     dw   data_31_77e1                                  ;; 31:4f63 pP
     db   $01, $1e                                      ;; 31:4f65 .w
@@ -781,7 +781,7 @@ data_31_462d:
     db   $01, $14, $01, $ad, $67, $95, $4f, $31        ;; 31:4f77 .w...???
     db   $68, $01                                      ;; 31:4f7f w.
     dw   $c829                                         ;; 31:4f81 pP
-    dw   w1_D1FD                                       ;; 31:4f83 pP
+    dw   w1_BeginRegionD1FD                            ;; 31:4f83 pP
     db   $01, $16, $01, $75, $11, $65, $11, $be        ;; 31:4f85 .w..w.w.
     db   $1f, $14, $01, $2d, $67                       ;; 31:4f8d .w...
     dw   $4fa4                                         ;; 31:4f92 wW
@@ -797,7 +797,7 @@ data_31_462d:
     db   $01, $14, $01, $ad, $67, $d4, $4f, $31        ;; 31:4fbe .w...???
     db   $68, $01                                      ;; 31:4fc6 w.
     dw   $c829                                         ;; 31:4fc8 pP
-    dw   w1_D1FD                                       ;; 31:4fca pP
+    dw   w1_BeginRegionD1FD                            ;; 31:4fca pP
     db   $01, $14, $01, $2d, $67                       ;; 31:4fcc .w...
     dw   $4fec                                         ;; 31:4fd1 wW
     db   $31, $4c, $16, $08, $02, $00, $00, $00        ;; 31:4fd3 .???????
@@ -1233,11 +1233,11 @@ data_31_55d7:
     db   $00, $00, $00, $00, $ff, $52                  ;; 31:580f .....w
     dw   w1_D001                                       ;; 31:5815 pP
     db   $01                                           ;; 31:5817 .
-    dw   w1_D1FD                                       ;; 31:5818 pP
+    dw   w1_BeginRegionD1FD                            ;; 31:5818 pP
     db   $50                                           ;; 31:581a w
     dw   wC31D                                         ;; 31:581b pP
     db   $00, $d0, $50                                 ;; 31:581d ..w
-    dw   w1_D0FD                                       ;; 31:5820 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 31:5820 pP
     db   $02, $fe, $16, $01, $5e, $03, $16, $01        ;; 31:5822 ..w...w.
     db   $7e, $0d, $a0, $16, $01, $7e, $12, $78        ;; 31:582a .w.w..w.
     db   $16, $01, $7f, $2f, $00, $16, $01, $7e        ;; 31:5832 w..w.w..
@@ -1987,11 +1987,11 @@ data_31_6649:
     db   $00, $00, $00, $00, $ff, $52                  ;; 31:6674 .....w
     dw   w1_D001                                       ;; 31:667a pP
     db   $01                                           ;; 31:667c .
-    dw   w1_D1FD                                       ;; 31:667d pP
+    dw   w1_BeginRegionD1FD                            ;; 31:667d pP
     db   $50                                           ;; 31:667f w
     dw   wC31D                                         ;; 31:6680 pP
     db   $00, $d0, $50                                 ;; 31:6682 ..w
-    dw   w1_D0FD                                       ;; 31:6685 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 31:6685 pP
     db   $02, $fe, $16, $01, $7e, $4c, $ff, $16        ;; 31:6687 ..w..w.w
     db   $01, $9e, $c0, $00, $00, $16, $01, $9e        ;; 31:668f ..w..w..
     db   $c2, $00, $00, $16, $01, $7e, $12, $b0        ;; 31:6697 w..w..w.
@@ -2303,11 +2303,11 @@ data_31_6bb1:
     db   $00, $00, $00, $00, $ff, $52                  ;; 31:6bd5 .....w
     dw   w1_D001                                       ;; 31:6bdb pP
     db   $01                                           ;; 31:6bdd .
-    dw   w1_D1FD                                       ;; 31:6bde pP
+    dw   w1_BeginRegionD1FD                            ;; 31:6bde pP
     db   $50                                           ;; 31:6be0 w
     dw   wC31D                                         ;; 31:6be1 pP
     db   $00, $d0, $50                                 ;; 31:6be3 ..w
-    dw   w1_D0FD                                       ;; 31:6be6 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 31:6be6 pP
     db   $02, $fe, $16, $01, $5e                       ;; 31:6be8 ..w..
 
 data_31_6bed:

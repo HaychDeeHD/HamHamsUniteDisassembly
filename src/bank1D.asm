@@ -166,11 +166,11 @@ data_1d_4079:
     db   $00, $00, $00, $00, $ff, $52                  ;; 1d:4211 .....w
     dw   w1_D001                                       ;; 1d:4217 pP
     db   $01                                           ;; 1d:4219 .
-    dw   w1_D1FD                                       ;; 1d:421a pP
+    dw   w1_BeginRegionD1FD                            ;; 1d:421a pP
     db   $50                                           ;; 1d:421c w
     dw   wC31D                                         ;; 1d:421d pP
     db   $00, $d0, $50                                 ;; 1d:421f ..w
-    dw   w1_D0FD                                       ;; 1d:4222 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 1d:4222 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 1d:4224 ..w..w.w
     db   $01, $7e, $0d, $1f, $16                       ;; 1d:422c ..w.w
 
@@ -228,7 +228,7 @@ data_1d_433e:
     db   $1d, $18                                      ;; 1d:436a .w
     dw   $401f                                         ;; 1d:436c wW
     db   $1d, $50                                      ;; 1d:436e .w
-    dw   w1_D1FD                                       ;; 1d:4370 pP
+    dw   w1_BeginRegionD1FD                            ;; 1d:4370 pP
     db   $01, $04, $82                                 ;; 1d:4372 ..w
     dw   data_1d_77e1                                  ;; 1d:4375 pP
     db   $01, $1e                                      ;; 1d:4377 .w
@@ -2073,7 +2073,7 @@ data_1d_6941:
     SubOp_SetByte wC751, $02                           ;; 1d:6943 $7e $39 $02
     db   $68, $01                                      ;; 1d:6946 w.
     dw   $c764                                         ;; 1d:6948 pP
-    dw   w1_D1FD                                       ;; 1d:694a pP
+    dw   w1_BeginRegionD1FD                            ;; 1d:694a pP
     db   $01, $82                                      ;; 1d:694c .w
     dw   data_1d_73bf                                  ;; 1d:694e pP
     db   $01                                           ;; 1d:6950 .
@@ -2088,9 +2088,9 @@ data_1d_6941:
     db   $14, $01, $6d, $41                            ;; 1d:6968 w...
     dw   $697d                                         ;; 1d:696c wW
     db   $1d, $50                                      ;; 1d:696e .w
-    dw   w1_D0F8                                       ;; 1d:6970 pP
+    dw   w1_HamChatIndexD0F8                           ;; 1d:6970 pP
     db   $02, $ff, $50                                 ;; 1d:6972 ..w
-    dw   w1_D0FD                                       ;; 1d:6975 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 1d:6975 pP
     db   $02, $ff, $18                                 ;; 1d:6977 ..w
     dw   $6982                                         ;; 1d:697a wW
     db   $1d, $50                                      ;; 1d:697c .w
@@ -2137,7 +2137,7 @@ data_1d_6a40:
     SubOp_SetByte wC751, $02                           ;; 1d:6a42 $7e $39 $02
     db   $68, $01                                      ;; 1d:6a45 w.
     dw   $c764                                         ;; 1d:6a47 pP
-    dw   w1_D1FD                                       ;; 1d:6a49 pP
+    dw   w1_BeginRegionD1FD                            ;; 1d:6a49 pP
     db   $01, $82                                      ;; 1d:6a4b .w
     dw   data_1d_73bf                                  ;; 1d:6a4d pP
     db   $01                                           ;; 1d:6a4f .
@@ -2160,7 +2160,7 @@ data_1d_6a40:
     db   $01, $20, $16, $01, $7e, $39, $02, $68        ;; 1d:6a76 .ww..w.w
     db   $01                                           ;; 1d:6a7e .
     dw   $c764                                         ;; 1d:6a7f pP
-    dw   w1_D1FD                                       ;; 1d:6a81 pP
+    dw   w1_BeginRegionD1FD                            ;; 1d:6a81 pP
     db   $01, $82                                      ;; 1d:6a83 .w
     dw   data_1d_73bf                                  ;; 1d:6a85 pP
     db   $01                                           ;; 1d:6a87 .
@@ -2176,7 +2176,7 @@ data_1d_6a40:
     db   $2b, $20, $16, $01, $7e, $39, $02, $68        ;; 1d:6a9f .ww..w.w
     db   $01                                           ;; 1d:6aa7 .
     dw   $c764                                         ;; 1d:6aa8 pP
-    dw   w1_D1FD                                       ;; 1d:6aaa pP
+    dw   w1_BeginRegionD1FD                            ;; 1d:6aaa pP
     db   $01, $82                                      ;; 1d:6aac .w
     dw   data_1d_73bf                                  ;; 1d:6aae pP
     db   $01                                           ;; 1d:6ab0 .

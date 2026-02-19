@@ -1821,7 +1821,7 @@ AddressArray_0dbd:
     dw   $d173                                         ;; 00:0dcd wW $08
     dw   w1_D1A1                                       ;; 00:0dcf ?? $09
     dw   w1_D1CF                                       ;; 00:0dd1 ?? $0a
-    dw   w1_D1FD                                       ;; 00:0dd3 wW $0b
+    dw   w1_BeginRegionD1FD                            ;; 00:0dd3 wW $0b
     dw   w1_D22B                                       ;; 00:0dd5 wW $0c
     dw   w1_D259                                       ;; 00:0dd7 wW $0d
     dw   $d287                                         ;; 00:0dd9 wW $0e
@@ -2518,7 +2518,7 @@ call_00_11fb:
     dw   $d173                                         ;; 00:1218 pP
     dw   w1_D1A1                                       ;; 00:121a pP
     dw   w1_D1CF                                       ;; 00:121c pP
-    dw   w1_D1FD                                       ;; 00:121e pP
+    dw   w1_BeginRegionD1FD                            ;; 00:121e pP
     dw   w1_D22B                                       ;; 00:1220 pP
     dw   w1_D259                                       ;; 00:1222 pP
     dw   $d287                                         ;; 00:1224 pP
@@ -3706,7 +3706,7 @@ maybeInputRelatedIdk:
 UpdateD203to5AddressesViaHardcodedMap:
     ld   A, $01                                        ;; 00:1aa7 $3e $01
     ldh  [rSVBK], A                                    ;; 00:1aa9 $e0 $70
-    ld   DE, w1_D1FD                                   ;; 00:1aab $11 $fd $d1
+    ld   DE, w1_BeginRegionD1FD                        ;; 00:1aab $11 $fd $d1
     ld   HL, $06                                       ;; 00:1aae $21 $06 $00
     add  HL, DE                                        ;; 00:1ab1 $19
     ld   A, [HL+]                                      ;; 00:1ab2 $2a
@@ -3940,7 +3940,7 @@ CallIfC324to5HadData:
     ld   A, $01                                        ;; 00:1c31 $3e $01
     ldh  [rSVBK], A                                    ;; 00:1c33 $e0 $70
     ld   A, [w1_D5C5]                                  ;; 00:1c35 $fa $c5 $d5
-    ld   HL, w1_D5EE                                   ;; 00:1c38 $21 $ee $d5
+    ld   HL, w1_TextboxIsClosingD5EE                   ;; 00:1c38 $21 $ee $d5
     or   A, [HL]                                       ;; 00:1c3b $b6
     jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:1c3c $c2 $39 $0a
     ld   A, [wReturnAddressC324]                       ;; 00:1c3f $fa $24 $c3
@@ -3972,7 +3972,7 @@ prepareTextboxClose1C48:
     ld   [$2000], A                                    ;; 00:1c6f $ea $00 $20
 ; I observe this 02 momentarily whenever a textbox closes
     ld   A, $02                                        ;; 00:1c72 $3e $02
-    ld   [w1_D5EE], A                                  ;; 00:1c74 $ea $ee $d5
+    ld   [w1_TextboxIsClosingD5EE], A                  ;; 00:1c74 $ea $ee $d5
     ld   A, $00                                        ;; 00:1c77 $3e $00
     ld   [w1_D5F1], A                                  ;; 00:1c79 $ea $f1 $d5
     ld   A, $00                                        ;; 00:1c7c $3e $00
@@ -4247,7 +4247,7 @@ call_00_1ec2:
     call call_01_47ba                                  ;; 00:1ee7 $cd $ba $47
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1eea $c3 $39 $0a
 ; Chat wheel was closing
-    ld   A, [w1_D5EE]                                  ;; 00:1eed $fa $ee $d5
+    ld   A, [w1_TextboxIsClosingD5EE]                  ;; 00:1eed $fa $ee $d5
     and  A, A                                          ;; 00:1ef0 $a7
     jr   Z, .chatWheelWasNotClosing                    ;; 00:1ef1 $28 $03
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1ef3 $c3 $39 $0a
@@ -4522,14 +4522,14 @@ Op0Cand0Eand10and12_C324to5DidNotHaveData_nextStep:
     ld   [w1_D5F1], A                                  ;; 00:20e6 $ea $f1 $d5
     ld   [w1_D5F2], A                                  ;; 00:20e9 $ea $f2 $d5
     ld   A, $02                                        ;; 00:20ec $3e $02
-    ld   [w1_D5EE], A                                  ;; 00:20ee $ea $ee $d5
+    ld   [w1_TextboxIsClosingD5EE], A                  ;; 00:20ee $ea $ee $d5
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:20f1 $c3 $39 $0a
 
 MaybeLoopUntilTextboxClose:
     ld   A, $01                                        ;; 00:20f4 $3e $01
     ldh  [rSVBK], A                                    ;; 00:20f6 $e0 $70
     ld   A, [w1_D5C5]                                  ;; 00:20f8 $fa $c5 $d5
-    ld   HL, w1_D5EE                                   ;; 00:20fb $21 $ee $d5
+    ld   HL, w1_TextboxIsClosingD5EE                   ;; 00:20fb $21 $ee $d5
     or   A, [HL]                                       ;; 00:20fe $b6
 ; Chat wheel is closing
     jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 00:20ff $c2 $39 $0a
@@ -6073,7 +6073,7 @@ jp_00_2b95:
     dw   $d173                                         ;; 00:2bba pP
     dw   w1_D1A1                                       ;; 00:2bbc pP
     dw   w1_D1CF                                       ;; 00:2bbe pP
-    dw   w1_D1FD                                       ;; 00:2bc0 pP
+    dw   w1_BeginRegionD1FD                            ;; 00:2bc0 pP
     dw   w1_D22B                                       ;; 00:2bc2 pP
     dw   w1_D259                                       ;; 00:2bc4 pP
     dw   $d287                                         ;; 00:2bc6 pP

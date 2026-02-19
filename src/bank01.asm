@@ -1209,7 +1209,7 @@ data_01_484e:
     ld   A, $00                                        ;; 01:4850 $3e $00
     ld   [w1_D5F1], A                                  ;; 01:4852 $ea $f1 $d5
     ld   A, $02                                        ;; 01:4855 $3e $02
-    ld   [w1_D5EE], A                                  ;; 01:4857 $ea $ee $d5
+    ld   [w1_TextboxIsClosingD5EE], A                  ;; 01:4857 $ea $ee $d5
     ld   A, $00                                        ;; 01:485a $3e $00
     ld   [wC31E], A                                    ;; 01:485c $ea $1e $c3
     jr   jr_01_487c                                    ;; 01:485f $18 $1b
@@ -1236,7 +1236,7 @@ jr_01_4881:
     ld   A, $01                                        ;; 01:4881 $3e $01
     ldh  [rSVBK], A                                    ;; 01:4883 $e0 $70
     ld   A, [w1_D5C5]                                  ;; 01:4885 $fa $c5 $d5
-    ld   HL, w1_D5EE                                   ;; 01:4888 $21 $ee $d5
+    ld   HL, w1_TextboxIsClosingD5EE                   ;; 01:4888 $21 $ee $d5
     or   A, [HL]                                       ;; 01:488b $b6
     jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 01:488c $c2 $39 $0a
 
@@ -2985,7 +2985,7 @@ OpenHamchatWheel_Maybe:
     ld   [w1_D640], A                                  ;; 01:5489 $ea $40 $d6
     ld   [w1_D5F1], A                                  ;; 01:548c $ea $f1 $d5
     ld   A, $02                                        ;; 01:548f $3e $02
-    ld   [w1_D5EE], A                                  ;; 01:5491 $ea $ee $d5
+    ld   [w1_TextboxIsClosingD5EE], A                  ;; 01:5491 $ea $ee $d5
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 01:5494 $c3 $14 $0a
     db   $fa, $3a, $c5, $a7, $20, $1a, $fa, $8f        ;; 01:5497 ????????
     db   $c3, $5f, $16, $00, $21, $1a, $c5, $19        ;; 01:549f ????????
@@ -6696,7 +6696,7 @@ call_01_75c7:
     ld   A, $01                                        ;; 01:77e1 $3e $01
     ld_long_store rSVBK, A                             ;; 01:77e3 $ea $70 $ff
     call call_01_7c09                                  ;; 01:77e6 $cd $09 $7c
-    ld   HL, w1_D1FD                                   ;; 01:77e9 $21 $fd $d1
+    ld   HL, w1_BeginRegionD1FD                        ;; 01:77e9 $21 $fd $d1
     ld   A, [HL]                                       ;; 01:77ec $7e
     rra                                                ;; 01:77ed $1f
     rra                                                ;; 01:77ee $1f
@@ -6792,7 +6792,7 @@ call_01_75c7:
     ldh  [hFF80], A                                    ;; 01:7876 $e0 $80
     ld   A, H                                          ;; 01:7878 $7c
     ldh  [hFF81], A                                    ;; 01:7879 $e0 $81
-    ld   HL, w1_D1FD                                   ;; 01:787b $21 $fd $d1
+    ld   HL, w1_BeginRegionD1FD                        ;; 01:787b $21 $fd $d1
     ld   A, [wC73C]                                    ;; 01:787e $fa $3c $c7
     and  A, A                                          ;; 01:7881 $a7
     jr   Z, .jr_01_78b1                                ;; 01:7882 $28 $2d
@@ -6975,7 +6975,7 @@ call_01_7c09:
     ld   A, $01                                        ;; 01:7c09 $3e $01
     ld_long_store rSVBK, A                             ;; 01:7c0b $ea $70 $ff
     ld   B, $00                                        ;; 01:7c0e $06 $00
-    ld   A, [w1_D1FD]                                  ;; 01:7c10 $fa $fd $d1
+    ld   A, [w1_BeginRegionD1FD]                       ;; 01:7c10 $fa $fd $d1
     rra                                                ;; 01:7c13 $1f
     rra                                                ;; 01:7c14 $1f
     jr   C, .jr_01_7c20                                ;; 01:7c15 $38 $09
@@ -7012,7 +7012,7 @@ jr_01_7c38:
     inc  C                                             ;; 01:7c3f $0c
     ld   A, [HL]                                       ;; 01:7c40 $7e
     ldh  [C], A                                        ;; 01:7c41 $e2
-    ld   HL, w1_D203                                   ;; 01:7c42 $21 $03 $d2
+    ld   HL, w1_SomeAddressD203                        ;; 01:7c42 $21 $03 $d2
     ld   C, $80                                        ;; 01:7c45 $0e $80
     ldh  A, [C]                                        ;; 01:7c47 $f2
     cp   A, [HL]                                       ;; 01:7c48 $be

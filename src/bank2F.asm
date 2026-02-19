@@ -805,7 +805,7 @@ data_2f_4036:
     dw   $6dd8 + $01                                   ;; 2f:56c9 pP
     db   $02, $16, $01, $3e, $1a, $68, $01             ;; 2f:56cb .w...w.
     dw   $c764                                         ;; 2f:56d2 pP
-    dw   w1_D1FD                                       ;; 2f:56d4 pP
+    dw   w1_BeginRegionD1FD                            ;; 2f:56d4 pP
     db   $01, $68, $02                                 ;; 2f:56d6 .w.
     dw   $c7d8                                         ;; 2f:56d9 pP
     dw   w1_D216                                       ;; 2f:56db pP
@@ -2487,7 +2487,7 @@ data_2f_4036:
     dw   $6dd8 + $01                                   ;; 2f:7728 pP
     db   $02, $16, $01, $3e, $0f, $68, $01             ;; 2f:772a .w...w.
     dw   $c764                                         ;; 2f:7731 pP
-    dw   w1_D1FD                                       ;; 2f:7733 pP
+    dw   w1_BeginRegionD1FD                            ;; 2f:7733 pP
     db   $01, $68, $02                                 ;; 2f:7735 .w.
     dw   $c7d8                                         ;; 2f:7738 pP
     dw   w1_D216                                       ;; 2f:773a pP
@@ -2632,9 +2632,9 @@ data_2f_4036:
     db   $00, $00, $00, $ff, $52                       ;; 2f:7910 ????w
     dw   w1_D001                                       ;; 2f:7915 pP
     db   $01                                           ;; 2f:7917 .
-    dw   w1_D1FD                                       ;; 2f:7918 pP
+    dw   w1_BeginRegionD1FD                            ;; 2f:7918 pP
     db   $16, $01, $5e, $03, $50                       ;; 2f:791a w...w
-    dw   w1_D0FD                                       ;; 2f:791f pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 2f:791f pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 2f:7921 ..w..w.w
     db   $01, $7e, $0d, $e0, $16, $01, $7e, $12        ;; 2f:7929 ..w.w..w
     db   $60, $14, $01, $64, $52                       ;; 2f:7931 .w...
@@ -2834,7 +2834,7 @@ data_2f_4036:
     db   $04, $3c                                      ;; 2f:7b55 .w
     dw   $710e                                         ;; 2f:7b57 wW
     db   $17                                           ;; 2f:7b59 .
-    dw   w1_D1FD                                       ;; 2f:7b5a pP
+    dw   w1_BeginRegionD1FD                            ;; 2f:7b5a pP
     db   $00, $00, $00, $00, $ff, $16, $01, $3f        ;; 2f:7b5c .....w..
     db   $09, $14                                      ;; 2f:7b64 .w
 .data_2f_7b66:

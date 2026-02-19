@@ -97,7 +97,7 @@ w1_D0F3:
 w1_D0F4:
     ds 4                                               ;; d0f4
 
-w1_D0F8:
+w1_HamChatIndexD0F8:
     ds 1                                               ;; d0f8
 
 w1_D0F9:
@@ -106,7 +106,7 @@ w1_D0F9:
 w1_D0FB:
     ds 2                                               ;; d0fb
 
-w1_D0FD:
+w1_SomethingWithHamchatsD0FD:
     ds 1                                               ;; d0fd
 
 w1_D0FE:
@@ -133,7 +133,7 @@ w1_D1CF:
 w1_D1E0:
     ds 29                                              ;; d1e0
 
-w1_D1FD:
+w1_BeginRegionD1FD:
     ds 1                                               ;; d1fd
 
 w1_D1FE:
@@ -145,7 +145,7 @@ w1_D1FF:
 w1_D202:
     ds 1                                               ;; d202
 
-w1_D203:
+w1_SomeAddressD203:
     ds 11                                              ;; d203
 
 w1_D20E:
@@ -250,7 +250,8 @@ w1_D5CF:
 w1_D5D0:
     ds 30                                              ;; d5d0
 
-w1_D5EE:
+; This value is 02 when a text box is closing.
+w1_TextboxIsClosingD5EE:
     ds 3                                               ;; d5ee
 
 w1_D5F1:

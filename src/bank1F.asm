@@ -2397,7 +2397,7 @@ data_1f_4000:
     db   $1f, $52                                      ;; 1f:71f0 .w
     dw   w1_D001                                       ;; 1f:71f2 pP
     db   $01                                           ;; 1f:71f4 .
-    dw   w1_D1FD                                       ;; 1f:71f5 pP
+    dw   w1_BeginRegionD1FD                            ;; 1f:71f5 pP
     db   $20, $1a, $01, $1e                            ;; 1f:71f7 wwww
     dw   $5b22                                         ;; 1f:71fb wW
     db   $04, $44, $1e, $00, $1e                       ;; 1f:71fd .w..w

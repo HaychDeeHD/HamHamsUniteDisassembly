@@ -1768,11 +1768,11 @@ data_20_5980:
     db   $00, $00, $00, $00, $ff, $52                  ;; 20:59a2 .....w
     dw   w1_D001                                       ;; 20:59a8 pP
     db   $01                                           ;; 20:59aa .
-    dw   w1_D1FD                                       ;; 20:59ab pP
+    dw   w1_BeginRegionD1FD                            ;; 20:59ab pP
     db   $50                                           ;; 20:59ad w
     dw   wC31D                                         ;; 20:59ae pP
     db   $00, $d0, $50                                 ;; 20:59b0 ..w
-    dw   w1_D0FD                                       ;; 20:59b3 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 20:59b3 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 20:59b5 ..w..w.w
     db   $01, $7e, $0d, $0a, $16, $01, $7e, $12        ;; 20:59bd ..w.w..w
     db   $b0, $16, $01, $7f, $1c                       ;; 20:59c5 .w..w
@@ -2764,7 +2764,7 @@ data_20_6a45:
     db   $4c, $16, $08, $02, $00, $00, $00, $00        ;; 20:6a45 ????????
     db   $09, $42, $10, $20, $68, $01                  ;; 20:6a4d ????w.
     dw   $c834                                         ;; 20:6a53 pP
-    dw   w1_D1FD                                       ;; 20:6a55 pP
+    dw   w1_BeginRegionD1FD                            ;; 20:6a55 pP
     db   $01, $14, $01, $04, $74                       ;; 20:6a57 .w...
     dw   $6a6b                                         ;; 20:6a5c wW
     db   $20, $4c, $16, $10, $02, $00, $00, $00        ;; 20:6a5e .ww.w...
@@ -2823,7 +2823,7 @@ data_20_6add:
     dw   data_20_6dd9                                  ;; 20:6b4a pP
     db   $02, $16, $01, $3e, $58, $68, $01             ;; 20:6b4c .w...w.
     dw   $c764                                         ;; 20:6b53 pP
-    dw   w1_D1FD                                       ;; 20:6b55 pP
+    dw   w1_BeginRegionD1FD                            ;; 20:6b55 pP
     db   $01, $68, $02                                 ;; 20:6b57 .w.
     dw   $c7d8                                         ;; 20:6b5a pP
     dw   w1_D216                                       ;; 20:6b5c pP
@@ -3131,11 +3131,11 @@ data_20_7007:
     db   $00, $00, $00, $00, $ff, $52                  ;; 20:7028 .....w
     dw   w1_D001                                       ;; 20:702e pP
     db   $01                                           ;; 20:7030 .
-    dw   w1_D1FD                                       ;; 20:7031 pP
+    dw   w1_BeginRegionD1FD                            ;; 20:7031 pP
     db   $50                                           ;; 20:7033 w
     dw   wC31D                                         ;; 20:7034 pP
     db   $00, $d0, $50                                 ;; 20:7036 ..w
-    dw   w1_D0FD                                       ;; 20:7039 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 20:7039 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 20:703b ..w..w.w
     db   $01, $7e, $0d, $28, $16, $01, $7e, $12        ;; 20:7043 ..w.w..w
     db   $b0, $16, $01, $7f, $0a, $00, $16, $01        ;; 20:704b .w..w.w.
@@ -3174,7 +3174,7 @@ data_20_70d2:
     db   $20, $18                                      ;; 20:70fb .w
     dw   $6e0f                                         ;; 20:70fd wW
     db   $20, $50                                      ;; 20:70ff .w
-    dw   w1_D1FD                                       ;; 20:7101 pP
+    dw   w1_BeginRegionD1FD                            ;; 20:7101 pP
     db   $01, $08, $82                                 ;; 20:7103 ..w
     dw   data_20_77e1                                  ;; 20:7106 pP
     db   $01, $1e                                      ;; 20:7108 .w
@@ -3892,7 +3892,7 @@ data_20_7a93:
     dw   data_20_6dd9                                  ;; 20:7c41 pP
     db   $02, $16, $01, $3e, $4c, $68, $01             ;; 20:7c43 .w...w.
     dw   $c764                                         ;; 20:7c4a pP
-    dw   w1_D1FD                                       ;; 20:7c4c pP
+    dw   w1_BeginRegionD1FD                            ;; 20:7c4c pP
     db   $01, $68, $02                                 ;; 20:7c4e .w.
     dw   $c7d8                                         ;; 20:7c51 pP
     dw   w1_D216                                       ;; 20:7c53 pP
@@ -3935,7 +3935,7 @@ data_20_7cae:
     dw   data_20_6dd9                                  ;; 20:7caf pP
     db   $02, $16, $01, $3e, $4d, $68, $01             ;; 20:7cb1 .w...w.
     dw   $c764                                         ;; 20:7cb8 pP
-    dw   w1_D1FD                                       ;; 20:7cba pP
+    dw   w1_BeginRegionD1FD                            ;; 20:7cba pP
     db   $01, $68, $02                                 ;; 20:7cbc .w.
     dw   $c7d8                                         ;; 20:7cbf pP
     dw   w1_D216                                       ;; 20:7cc1 pP

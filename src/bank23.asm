@@ -198,11 +198,11 @@ data_23_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 23:42ea .....w
     dw   w1_D001                                       ;; 23:42f0 pP
     db   $01                                           ;; 23:42f2 .
-    dw   w1_D1FD                                       ;; 23:42f3 pP
+    dw   w1_BeginRegionD1FD                            ;; 23:42f3 pP
     db   $50                                           ;; 23:42f5 w
     dw   wC31D                                         ;; 23:42f6 pP
     db   $00, $d0, $50                                 ;; 23:42f8 ..w
-    dw   w1_D0FD                                       ;; 23:42fb pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 23:42fb pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 23:42fd ..w..w.w
     db   $01, $7e, $0d, $14, $16, $01, $7e, $12        ;; 23:4305 ..w.w..w
     db   $b0, $16, $01, $7f, $1e, $00, $16, $01        ;; 23:430d .w..w.w.
@@ -235,7 +235,7 @@ data_23_4000:
     db   $23, $18                                      ;; 23:43af .w
     dw   $401b                                         ;; 23:43b1 wW
     db   $23, $50                                      ;; 23:43b3 .w
-    dw   w1_D1FD                                       ;; 23:43b5 pP
+    dw   w1_BeginRegionD1FD                            ;; 23:43b5 pP
     db   $01, $10, $82                                 ;; 23:43b7 ..w
     dw   .data_23_77e1                                 ;; 23:43ba pP
     db   $01, $1e                                      ;; 23:43bc .w
@@ -254,7 +254,7 @@ data_23_4000:
     db   $23, $68, $01, $36, $c8, $0e, $d2, $01        ;; 23:43e2 .???????
     db   $14, $01, $44, $6d, $3c, $43, $23, $18        ;; 23:43ea ????????
     db   $56, $43, $23, $50                            ;; 23:43f2 ???w
-    dw   w1_D1FD                                       ;; 23:43f6 pP
+    dw   w1_BeginRegionD1FD                            ;; 23:43f6 pP
     db   $01, $02, $82                                 ;; 23:43f8 ..w
     dw   .data_23_77e1                                 ;; 23:43fb pP
     db   $01, $1e                                      ;; 23:43fd .w
@@ -1198,11 +1198,11 @@ data_23_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 23:58ca .....w
     dw   w1_D001                                       ;; 23:58d0 pP
     db   $01                                           ;; 23:58d2 .
-    dw   w1_D1FD                                       ;; 23:58d3 pP
+    dw   w1_BeginRegionD1FD                            ;; 23:58d3 pP
     db   $50                                           ;; 23:58d5 w
     dw   wC31D                                         ;; 23:58d6 pP
     db   $00, $d0, $50                                 ;; 23:58d8 ..w
-    dw   w1_D0FD                                       ;; 23:58db pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 23:58db pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 23:58dd ..w..w.w
     db   $01, $7e, $0d                                 ;; 23:58e5 ..w
 .data_23_58e8:
@@ -1263,7 +1263,7 @@ data_23_4000:
     db   $23, $18                                      ;; 23:59af .w
     dw   $55dd                                         ;; 23:59b1 wW
     db   $23, $16, $01, $5f, $8e, $50                  ;; 23:59b3 .w...w
-    dw   w1_D1FD                                       ;; 23:59b9 pP
+    dw   w1_BeginRegionD1FD                            ;; 23:59b9 pP
     db   $01, $08, $82                                 ;; 23:59bb ..w
     dw   .data_23_77e1                                 ;; 23:59be pP
     db   $01, $1e                                      ;; 23:59c0 .w
@@ -1333,7 +1333,7 @@ data_23_4000:
     dw   $4230 + $01                                   ;; 23:5ae4 pP
     db   $02, $16, $01, $7e, $39, $02, $68, $01        ;; 23:5ae6 .w..w.w.
     dw   $c764                                         ;; 23:5aee pP
-    dw   w1_D1FD                                       ;; 23:5af0 pP
+    dw   w1_BeginRegionD1FD                            ;; 23:5af0 pP
     db   $01, $82                                      ;; 23:5af2 .w
     dw   .data_23_73bf                                 ;; 23:5af4 pP
     db   $01                                           ;; 23:5af6 .
@@ -1998,7 +1998,7 @@ data_23_4000:
     dw   w1_D216                                       ;; 23:6791 pP
     db   $01, $68, $01                                 ;; 23:6793 .w.
     dw   $c764                                         ;; 23:6796 pP
-    dw   w1_D1FD                                       ;; 23:6798 pP
+    dw   w1_BeginRegionD1FD                            ;; 23:6798 pP
     db   $01, $68, $02                                 ;; 23:679a .w.
     dw   $c7d8                                         ;; 23:679d pP
     dw   w1_D216                                       ;; 23:679f pP

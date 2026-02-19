@@ -237,12 +237,12 @@ data_26_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 26:43ed .....w
     dw   w1_D001                                       ;; 26:43f3 pP
     db   $01                                           ;; 26:43f5 .
-    dw   w1_D1FD                                       ;; 26:43f6 pP
+    dw   w1_BeginRegionD1FD                            ;; 26:43f6 pP
     db   $50                                           ;; 26:43f8 w
     dw   wC31D                                         ;; 26:43f9 pP
     db   $00, $d0, $50                                 ;; 26:43fb ..w
 .data_26_43fe:
-    dw   w1_D0FD                                       ;; 26:43fe pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 26:43fe pP
     db   $02, $fe, $16, $01, $5e, $03, $16, $01        ;; 26:4400 ..w...w.
     db   $7e, $0d, $b0, $16, $01, $7e, $12, $78        ;; 26:4408 .w.w..w.
     db   $16, $01, $7f, $2f, $00, $16, $01, $7f        ;; 26:4410 w..w.w..
@@ -436,7 +436,7 @@ data_26_4000:
     dw   .data_26_6dd9                                 ;; 26:4895 pP
     db   $02, $16, $01, $3e, $35, $68, $01             ;; 26:4897 .w...w.
     dw   $c764                                         ;; 26:489e pP
-    dw   w1_D1FD                                       ;; 26:48a0 pP
+    dw   w1_BeginRegionD1FD                            ;; 26:48a0 pP
     db   $01, $68, $02                                 ;; 26:48a2 .w.
     dw   $c7d8                                         ;; 26:48a5 pP
     dw   w1_D216                                       ;; 26:48a7 pP
@@ -909,7 +909,7 @@ data_26_4000:
     dw   $6773                                         ;; 26:5053 wW
     db   $04, $20, $68, $01                            ;; 26:5055 .ww.
     dw   $c848                                         ;; 26:5059 pP
-    dw   w1_D1FD                                       ;; 26:505b pP
+    dw   w1_BeginRegionD1FD                            ;; 26:505b pP
     db   $01, $82                                      ;; 26:505d .w
     dw   .data_26_73bf                                 ;; 26:505f pP
     db   $01                                           ;; 26:5061 .
@@ -1036,22 +1036,22 @@ data_26_4000:
     dw   wC72F                                         ;; 26:52e5 pP
     db   $00, $68, $01                                 ;; 26:52e7 .w.
     dw   wC763                                         ;; 26:52ea pP
-    dw   w1_D0FD                                       ;; 26:52ec pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 26:52ec pP
     db   $02, $14, $01, $00, $43, $c0, $54, $26        ;; 26:52ee .w...???
     db   $68, $01                                      ;; 26:52f6 w.
     dw   wC763                                         ;; 26:52f8 pP
-    dw   w1_D0FD                                       ;; 26:52fa pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 26:52fa pP
     db   $02, $14, $01, $08, $43                       ;; 26:52fc .w...
     dw   $54c9                                         ;; 26:5301 wW
     db   $26, $50                                      ;; 26:5303 .w
-    dw   w1_D0FD                                       ;; 26:5305 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 26:5305 pP
     db   $02, $ff, $68, $01                            ;; 26:5307 ..w.
     dw   wC763                                         ;; 26:530b pP
-    dw   w1_D0F8                                       ;; 26:530d pP
+    dw   w1_HamChatIndexD0F8                           ;; 26:530d pP
     db   $02, $14, $01, $10, $43                       ;; 26:530f .w...
     dw   $54d3                                         ;; 26:5314 wW
     db   $26, $50                                      ;; 26:5316 .w
-    dw   w1_D0FD                                       ;; 26:5318 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 26:5318 pP
     db   $02, $00, $50                                 ;; 26:531a ..w
     dw   w1_D0F9                                       ;; 26:531d pP
     db   $02, $ff, $32, $fe, $4b, $6f                  ;; 26:531f ..w...
@@ -1139,7 +1139,7 @@ data_26_4000:
     db   $44, $0a, $00, $18, $d3, $54, $26, $16        ;; 26:54b9 ????????
     db   $01, $7e, $17, $01, $18, $d3, $54, $26        ;; 26:54c1 ????????
     db   $16, $01, $7e, $17, $00, $50                  ;; 26:54c9 w..w.w
-    dw   w1_D0FD                                       ;; 26:54cf pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 26:54cf pP
     db   $02, $fe, $50                                 ;; 26:54d1 ..w
     dw   w1_D0F9                                       ;; 26:54d4 pP
     db   $02, $00, $32, $fe, $4b, $6f                  ;; 26:54d6 ..w...
@@ -2002,11 +2002,11 @@ data_26_4000:
     db   $00, $00, $00, $00, $ff, $52                  ;; 26:6667 .....w
     dw   w1_D001                                       ;; 26:666d pP
     db   $01                                           ;; 26:666f .
-    dw   w1_D1FD                                       ;; 26:6670 pP
+    dw   w1_BeginRegionD1FD                            ;; 26:6670 pP
     db   $50                                           ;; 26:6672 w
     dw   wC31D                                         ;; 26:6673 pP
     db   $00, $d0, $50                                 ;; 26:6675 ..w
-    dw   w1_D0FD                                       ;; 26:6678 pP
+    dw   w1_SomethingWithHamchatsD0FD                  ;; 26:6678 pP
     db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 26:667a ..w..w.w
     db   $01, $7e, $0d, $14, $16, $01, $7e, $12        ;; 26:6682 ..w.w..w
     db   $b0, $16, $01, $7f, $05, $00, $16, $01        ;; 26:668a .w..w.w.
@@ -2051,7 +2051,7 @@ data_26_4000:
     db   $64, $26, $95, $66, $26                       ;; 26:6774 ?????
     dw   $6780                                         ;; 26:6779 wW
     db   $26, $18, $dd, $63, $26, $50                  ;; 26:677b .????w
-    dw   w1_D1FD                                       ;; 26:6781 pP
+    dw   w1_BeginRegionD1FD                            ;; 26:6781 pP
     db   $01, $02, $82                                 ;; 26:6783 ..w
     dw   .data_26_77e1                                 ;; 26:6786 pP
     db   $01, $1e                                      ;; 26:6788 .w
@@ -2066,7 +2066,7 @@ data_26_4000:
     db   $64, $26, $95, $66, $26                       ;; 26:67a3 ?????
     dw   $67af                                         ;; 26:67a8 wW
     db   $26, $18, $dd, $63, $26, $50                  ;; 26:67aa .????w
-    dw   w1_D1FD                                       ;; 26:67b0 pP
+    dw   w1_BeginRegionD1FD                            ;; 26:67b0 pP
     db   $01, $10, $82                                 ;; 26:67b2 ..w
     dw   .data_26_77e1                                 ;; 26:67b5 pP
     db   $01, $4c, $16, $10, $02, $00, $00, $00        ;; 26:67b7 .ww.w...
@@ -2599,7 +2599,7 @@ data_26_4000:
     dw   .data_26_6dd9                                 ;; 26:724d pP
     db   $02, $16, $01, $3e, $15, $68, $01             ;; 26:724f .w...w.
     dw   $c764                                         ;; 26:7256 pP
-    dw   w1_D1FD                                       ;; 26:7258 pP
+    dw   w1_BeginRegionD1FD                            ;; 26:7258 pP
     db   $01, $68, $02                                 ;; 26:725a .w.
     dw   $c7d8                                         ;; 26:725d pP
     dw   w1_D216                                       ;; 26:725f pP
