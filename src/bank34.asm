@@ -27,7 +27,7 @@ SECTION "bank34", ROMX[$4000], BANK[$34]
     db   $06, $00, $20                                 ;; 34:407f ???
 
 data_34_4082:
-    SCRIPT_RETURN                                      ;; 34:4082 $20
+    SCRIPT_RETURN_20                                   ;; 34:4082 $20
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 34:4083 $68 $01 $34 $c8 $0e $d2 $01
     Op14_Unknown 1, $aa, $75                           ;; 34:408a $14 $01 $aa $75
     SCRIPT_POINTER data_34_40a4                        ;; 34:408e $a4 $40 $34

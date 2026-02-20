@@ -265,14 +265,26 @@ class Op14Block(Block):
 class Op20Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 1)
-        RomInfo.macros["SCRIPT_RETURN"] = "db $20"
+        RomInfo.macros["SCRIPT_RETURN_20"] = "db $20"
 
         # I think we can safely assume that whatever follows is a script, but will keep an eye out.
         # Also might need to be wary of this being the last byte in the bank.
         maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
-        file.asmLine(1, "SCRIPT_RETURN")
+        file.asmLine(1, "SCRIPT_RETURN_20")
+
+class Op4ABlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 1)
+        RomInfo.macros["SCRIPT_RETURN_4A"] = "db $4a"
+
+        # I think we can safely assume that whatever follows is a script, but will keep an eye out.
+        # Also might need to be wary of this being the last byte in the bank.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        file.asmLine(1, "SCRIPT_RETURN_4A")
 
 OPBLOCKS = {
     0x14: Op14Block,
@@ -281,6 +293,7 @@ OPBLOCKS = {
     0x1C: Op1CBlock,
     0x1E: Op1EBlock,
     0x20: Op20Block,
+    0x4A: Op4ABlock,
     0x50: Op50Block,
     0x68: Op68Block,
     0x82: Op82Block,

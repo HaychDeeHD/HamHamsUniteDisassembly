@@ -287,7 +287,7 @@ data_3c_4692:
     SubOp_SetFlag wC94A, 3                             ;; 3c:469b $3f $93
 
 data_3c_469d:
-    SCRIPT_RETURN                                      ;; 3c:469d $20
+    SCRIPT_RETURN_20                                   ;; 3c:469d $20
 
 data_3c_469e:
     Op14_Unknown 1, $72, $60                           ;; 3c:469e $14 $01 $72 $60
@@ -312,12 +312,12 @@ data_3c_46c1:
     Op18_Jump data_3c_46d2                             ;; 3c:46ce $18 $d2 $46 $3c
 
 data_3c_46d2:
-    SCRIPT_RETURN                                      ;; 3c:46d2 $20
+    SCRIPT_RETURN_20                                   ;; 3c:46d2 $20
     Op14_Unknown 1, $78, $60                           ;; 3c:46d3 $14 $01 $78 $60
     SCRIPT_POINTER data_3c_469e                        ;; 3c:46d7 $9e $46 $3c
     Op50_WriteByte wC720, $20                          ;; 3c:46da $50 $20 $c7 $00 $20
     Op82_Run call_01_6844                              ;; 3c:46df $82 $44 $68 $01
-    SCRIPT_RETURN                                      ;; 3c:46e3 $20
+    SCRIPT_RETURN_20                                   ;; 3c:46e3 $20
     db   $13, $65, $79, $d8, $e4, $00, $e7, $d9        ;; 3c:46e4 ????????
     db   $e4, $00, $22, $61, $68, $68, $d8, $01        ;; 3c:46ec ????????
     db   $1a, $75, $63, $68, $d8, $00, $ea, $13        ;; 3c:46f4 ??????..

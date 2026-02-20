@@ -1385,6 +1385,8 @@ data_04_5e37:
     db   $00, $00, $00, $01, $52, $94, $c6, $00        ;; 04:61b7 ????????
     db   $00, $00, $32, $47, $74, $7d, $a0, $dd        ;; 04:61bf ????????
     db   $06, $4e, $00, $01, $08, $5b, $04, $20        ;; 04:61c7 ????????
+
+data_04_61cf:
     db   $6a, $00, $00, $00, $00, $40, $00, $00        ;; 04:61cf w....w..
     db   $00, $01, $52                                 ;; 04:61d7 ..w
     dw   wC694                                         ;; 04:61da pP
@@ -1532,17 +1534,17 @@ data_04_5e37:
 
 data_04_660d:
     Op50_WriteByte wC479, $03                          ;; 04:660d $50 $79 $c4 $00 $03
-    SCRIPT_RETURN                                      ;; 04:6612 $20
+    SCRIPT_RETURN_20                                   ;; 04:6612 $20
     Op50_WriteByte wC479, $04                          ;; 04:6613 $50 $79 $c4 $00 $04
-    SCRIPT_RETURN                                      ;; 04:6618 $20
+    SCRIPT_RETURN_20                                   ;; 04:6618 $20
     Op50_WriteByte wC479, $05                          ;; 04:6619 $50 $79 $c4 $00 $05
-    SCRIPT_RETURN                                      ;; 04:661e $20
+    SCRIPT_RETURN_20                                   ;; 04:661e $20
     Op50_WriteByte wC479, $08                          ;; 04:661f $50 $79 $c4 $00 $08
-    SCRIPT_RETURN                                      ;; 04:6624 $20
+    SCRIPT_RETURN_20                                   ;; 04:6624 $20
     Op50_WriteByte wC479, $09                          ;; 04:6625 $50 $79 $c4 $00 $09
-    SCRIPT_RETURN                                      ;; 04:662a $20
+    SCRIPT_RETURN_20                                   ;; 04:662a $20
     Op50_WriteByte wC479, $0a                          ;; 04:662b $50 $79 $c4 $00 $0a
-    SCRIPT_RETURN                                      ;; 04:6630 $20
+    SCRIPT_RETURN_20                                   ;; 04:6630 $20
     db   $36, $fd, $77, $7f                            ;; 04:6631 w...
     dw   w1_DD9A                                       ;; 04:6635 pP
     db   $01, $4a, $50                                 ;; 04:6637 .ww
