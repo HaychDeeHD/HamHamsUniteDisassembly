@@ -22,6 +22,15 @@ db $1e
 dw \1
 db BANK(\1)
 ENDM
+MACRO Op32_Unknown
+db $32
+db \1
+db \2
+db \3
+db \4
+db \5
+db \6
+ENDM
 MACRO Op3E_Compare_Branch
 db $3E
 db \1

@@ -311,6 +311,23 @@ class Op3EBlock(Block):
         label = bank.getLabel(pointer)
         file.asmLine(8, "Op3E_Compare_Branch", str(offset), "$%02x" % golden1, "$%02x" % golden2, "$%02x" % golden3, str(label))
 
+class Op32Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 7)
+        RomInfo.macros["Op32_Unknown"] = "db $32\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        arg1 = self.memory.byte(file.addr + 1)
+        arg2 = self.memory.byte(file.addr + 2)
+        arg3 = self.memory.byte(file.addr + 3)
+        arg4 = self.memory.byte(file.addr + 4)
+        arg5 = self.memory.byte(file.addr + 5)
+        arg6 = self.memory.byte(file.addr + 6)
+        file.asmLine(7, "Op32_Unknown", "$%02x" % arg1, "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5, "$%02x" % arg6)
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
@@ -318,6 +335,7 @@ OPBLOCKS = {
     0x1C: Op1CBlock,
     0x1E: Op1EBlock,
     0x20: Op20Block,
+    0x32: Op32Block,
     0x3E: Op3EBlock,
     0x4A: Op4ABlock,
     0x50: Op50Block,
