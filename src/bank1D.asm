@@ -2071,13 +2071,9 @@ data_1d_692c:
 data_1d_6941:
     Op16_SubOps 1                                      ;; 1d:6941 $16 $01
     SubOp_SetByte wC751, $02                           ;; 1d:6943 $7e $39 $02
-    db   $68, $01                                      ;; 1d:6946 w.
-    dw   $c764                                         ;; 1d:6948 pP
-    dw   w1_BeginRegionD1FD                            ;; 1d:694a pP
-    db   $01, $82                                      ;; 1d:694c .w
-    dw   data_1d_73bf                                  ;; 1d:694e pP
-    db   $01                                           ;; 1d:6950 .
-    dw   $c764                                         ;; 1d:6951 pP
+    Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 1d:6946 $68 $01 $64 $c7 $fd $d1 $01
+    Op82_Run call_01_73bf                              ;; 1d:694d $82 $bf $73 $01
+    dw   wC764                                         ;; 1d:6951 pP
     db   $68, $02                                      ;; 1d:6953 w.
     dw   $c7d8                                         ;; 1d:6955 pP
     dw   w1_D216                                       ;; 1d:6957 pP
@@ -2135,13 +2131,9 @@ data_1d_69f1:
 data_1d_6a40:
     Op16_SubOps 1                                      ;; 1d:6a40 $16 $01
     SubOp_SetByte wC751, $02                           ;; 1d:6a42 $7e $39 $02
-    db   $68, $01                                      ;; 1d:6a45 w.
-    dw   $c764                                         ;; 1d:6a47 pP
-    dw   w1_BeginRegionD1FD                            ;; 1d:6a49 pP
-    db   $01, $82                                      ;; 1d:6a4b .w
-    dw   data_1d_73bf                                  ;; 1d:6a4d pP
-    db   $01                                           ;; 1d:6a4f .
-    dw   $c764                                         ;; 1d:6a50 pP
+    Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 1d:6a45 $68 $01 $64 $c7 $fd $d1 $01
+    Op82_Run call_01_73bf                              ;; 1d:6a4c $82 $bf $73 $01
+    dw   wC764                                         ;; 1d:6a50 pP
     db   $68, $02                                      ;; 1d:6a52 w.
     dw   $c7d8                                         ;; 1d:6a54 pP
     dw   w1_D216                                       ;; 1d:6a56 pP
@@ -2159,12 +2151,12 @@ data_1d_6a40:
     dw   data_1d_756c                                  ;; 1d:6a74 pP
     db   $01, $20, $16, $01, $7e, $39, $02, $68        ;; 1d:6a76 .ww..w.w
     db   $01                                           ;; 1d:6a7e .
-    dw   $c764                                         ;; 1d:6a7f pP
+    dw   wC764                                         ;; 1d:6a7f pP
     dw   w1_BeginRegionD1FD                            ;; 1d:6a81 pP
     db   $01, $82                                      ;; 1d:6a83 .w
     dw   data_1d_73bf                                  ;; 1d:6a85 pP
     db   $01                                           ;; 1d:6a87 .
-    dw   $c764                                         ;; 1d:6a88 pP
+    dw   wC764                                         ;; 1d:6a88 pP
     db   $68, $02                                      ;; 1d:6a8a w.
     dw   $c7d8                                         ;; 1d:6a8c pP
     dw   w1_D216                                       ;; 1d:6a8e pP
@@ -2175,12 +2167,12 @@ data_1d_6a40:
     dw   $5d51                                         ;; 1d:6a9d wW
     db   $2b, $20, $16, $01, $7e, $39, $02, $68        ;; 1d:6a9f .ww..w.w
     db   $01                                           ;; 1d:6aa7 .
-    dw   $c764                                         ;; 1d:6aa8 pP
+    dw   wC764                                         ;; 1d:6aa8 pP
     dw   w1_BeginRegionD1FD                            ;; 1d:6aaa pP
     db   $01, $82                                      ;; 1d:6aac .w
     dw   data_1d_73bf                                  ;; 1d:6aae pP
     db   $01                                           ;; 1d:6ab0 .
-    dw   $c764                                         ;; 1d:6ab1 pP
+    dw   wC764                                         ;; 1d:6ab1 pP
     db   $68, $02                                      ;; 1d:6ab3 w.
     dw   $c7d8                                         ;; 1d:6ab5 pP
     dw   w1_D216                                       ;; 1d:6ab7 pP
@@ -2195,10 +2187,8 @@ data_1d_6a40:
 data_1d_6acd:
     Op16_SubOps 1                                      ;; 1d:6acd $16 $01
     SubOp_SetByte wC763, $00                           ;; 1d:6acf $7e $4b $00
-    db   $68, $01                                      ;; 1d:6ad2 w.
-    dw   wC763                                         ;; 1d:6ad4 pP
-    dw   w1_D20E                                       ;; 1d:6ad6 pP
-    db   $01, $14, $01, $6f, $41                       ;; 1d:6ad8 .w...
+    Op68_CopyBytes 1, wC763, w1_D20E, $01              ;; 1d:6ad2 $68 $01 $63 $c7 $0e $d2 $01
+    db   $14, $01, $6f, $41                            ;; 1d:6ad9 w...
     dw   $6ae4                                         ;; 1d:6add wW
     db   $1d, $18                                      ;; 1d:6adf .w
     dw   $6833                                         ;; 1d:6ae1 wW

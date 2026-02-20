@@ -22,6 +22,13 @@ dw \1
 db BANK(\1)
 db \2
 ENDM
+MACRO Op68_CopyBytes
+db $68
+db \1
+dw \2
+dw \3
+db \4
+ENDM
 MACRO Op82_Run
 db $82
 dw \1

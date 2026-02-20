@@ -773,7 +773,7 @@ data_36_4000:
     db   $00, $15, $82                                 ;; 36:4da8 ..w
     dw   .data_36_6dd9                                 ;; 36:4dab pP
     db   $02, $16, $01, $3e, $20, $68, $01             ;; 36:4dad .w...w.
-    dw   $c764                                         ;; 36:4db4 pP
+    dw   wC764                                         ;; 36:4db4 pP
     dw   w1_BeginRegionD1FD                            ;; 36:4db6 pP
     db   $01, $68, $02                                 ;; 36:4db8 .w.
     dw   $c7d8                                         ;; 36:4dbb pP

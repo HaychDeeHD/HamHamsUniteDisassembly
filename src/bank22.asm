@@ -1618,7 +1618,7 @@ data_22_4000:
     db   $00, $2c, $82                                 ;; 22:6899 ..w
     dw   .data_22_6dd9                                 ;; 22:689c pP
     db   $02, $16, $01, $3e, $37, $68, $01             ;; 22:689e .w...w.
-    dw   $c764                                         ;; 22:68a5 pP
+    dw   wC764                                         ;; 22:68a5 pP
     dw   w1_BeginRegionD1FD                            ;; 22:68a7 pP
     db   $01, $68, $02                                 ;; 22:68a9 .w.
     dw   $c7d8                                         ;; 22:68ac pP
@@ -2699,7 +2699,7 @@ data_22_4000:
     db   $00, $31, $82                                 ;; 22:7b95 ..w
     dw   .data_22_6dd9                                 ;; 22:7b98 pP
     db   $02, $16, $01, $3e, $3c, $68, $01             ;; 22:7b9a .w...w.
-    dw   $c764                                         ;; 22:7ba1 pP
+    dw   wC764                                         ;; 22:7ba1 pP
     dw   w1_BeginRegionD1FD                            ;; 22:7ba3 pP
     db   $01, $68, $02                                 ;; 22:7ba5 .w.
     dw   $c7d8                                         ;; 22:7ba8 pP
@@ -2740,7 +2740,7 @@ data_22_4000:
     db   $00, $30, $82                                 ;; 22:7c0a ..w
     dw   .data_22_6dd9                                 ;; 22:7c0d pP
     db   $02, $16, $01, $3e, $3b, $68, $01             ;; 22:7c0f .w...w.
-    dw   $c764                                         ;; 22:7c16 pP
+    dw   wC764                                         ;; 22:7c16 pP
     dw   w1_BeginRegionD1FD                            ;; 22:7c18 pP
     db   $01, $68, $02                                 ;; 22:7c1a .w.
     dw   $c7d8                                         ;; 22:7c1d pP

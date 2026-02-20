@@ -756,7 +756,7 @@ data_37_4771:
     db   $00, $3f, $82                                 ;; 37:4ca2 ..w
     dw   data_37_6dd9                                  ;; 37:4ca5 pP
     db   $02, $16, $01, $3e, $4a, $68, $01             ;; 37:4ca7 .w...w.
-    dw   $c764                                         ;; 37:4cae pP
+    dw   wC764                                         ;; 37:4cae pP
     dw   w1_BeginRegionD1FD                            ;; 37:4cb0 pP
     db   $01, $68, $02                                 ;; 37:4cb2 .w.
     dw   $c7d8                                         ;; 37:4cb5 pP

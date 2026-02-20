@@ -984,7 +984,7 @@ data_30_4000:
     db   $00, $06, $82                                 ;; 30:54d2 ..w
     dw   .data_30_6dd9                                 ;; 30:54d5 pP
     db   $02, $16, $01, $3e, $11, $68, $01             ;; 30:54d7 .w...w.
-    dw   $c764                                         ;; 30:54de pP
+    dw   wC764                                         ;; 30:54de pP
     dw   w1_BeginRegionD1FD                            ;; 30:54e0 pP
     db   $01, $68, $02                                 ;; 30:54e2 .w.
     dw   $c7d8                                         ;; 30:54e5 pP
@@ -1426,7 +1426,7 @@ data_30_4000:
     db   $01, $82                                      ;; 30:609c .w
     dw   .data_30_7416                                 ;; 30:609e pP
     db   $01, $2a, $00, $00, $00, $68, $01             ;; 30:60a0 .w...w.
-    dw   $c81d                                         ;; 30:60a7 pP
+    dw   wC81D                                         ;; 30:60a7 pP
     dw   wOp1CScriptTableIndexC53A                     ;; 30:60a9 pP
     db   $00, $1c, $07                                 ;; 30:60ab .w.
     dw   $631d                                         ;; 30:60ae wW
@@ -1994,7 +1994,7 @@ data_30_4000:
     db   $00, $19, $82                                 ;; 30:69c0 ..w
     dw   .data_30_6dd9                                 ;; 30:69c3 pP
     db   $02, $16, $01, $3e, $24, $68, $01             ;; 30:69c5 .w...w.
-    dw   $c764                                         ;; 30:69cc pP
+    dw   wC764                                         ;; 30:69cc pP
     dw   w1_BeginRegionD1FD                            ;; 30:69ce pP
     db   $01, $68, $02                                 ;; 30:69d0 .w.
     dw   $c7d8                                         ;; 30:69d3 pP
@@ -2043,7 +2043,7 @@ data_30_4000:
     db   $00, $10, $82                                 ;; 30:6a41 ..w
     dw   .data_30_6dd9                                 ;; 30:6a44 pP
     db   $02, $16, $01, $3e, $1b, $68, $01             ;; 30:6a46 .w...w.
-    dw   $c764                                         ;; 30:6a4d pP
+    dw   wC764                                         ;; 30:6a4d pP
     dw   w1_BeginRegionD1FD                            ;; 30:6a4f pP
     db   $01, $68, $02                                 ;; 30:6a51 .w.
     dw   $c7d8                                         ;; 30:6a54 pP
@@ -2513,7 +2513,7 @@ data_30_4000:
     db   $00, $4c, $82                                 ;; 30:7278 ..w
     dw   .data_30_6dd9                                 ;; 30:727b pP
     db   $02, $16, $01, $3e, $57, $68, $01             ;; 30:727d .w...w.
-    dw   $c764                                         ;; 30:7284 pP
+    dw   wC764                                         ;; 30:7284 pP
     dw   w1_BeginRegionD1FD                            ;; 30:7286 pP
     db   $01, $68, $02                                 ;; 30:7288 .w.
     dw   $c7d8                                         ;; 30:728b pP
@@ -3241,7 +3241,7 @@ data_30_4000:
     db   $00, $24, $82                                 ;; 30:7e62 ..w
     dw   .data_30_6dd9                                 ;; 30:7e65 pP
     db   $02, $16, $01, $3e, $2f, $68, $01             ;; 30:7e67 .w...w.
-    dw   $c764                                         ;; 30:7e6e pP
+    dw   wC764                                         ;; 30:7e6e pP
     dw   w1_BeginRegionD1FD                            ;; 30:7e70 pP
     db   $01, $68, $02                                 ;; 30:7e72 .w.
     dw   $c7d8                                         ;; 30:7e75 pP

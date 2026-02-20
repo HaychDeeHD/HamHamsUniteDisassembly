@@ -220,6 +220,31 @@ class Op50Block(Block):
         label = RomInfo.getWRam(bankNum).getLabel(pointer)
         file.asmLine(5, "Op50_WriteByte", str(label), "$%02x" % payload)
 
+class Op68Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=7)
+        # There may be a way to determine the final byte from the 2 labels without needing an explicit arg.
+        # It needs to be MAX( BANK(\2), BANK(\3) ), but idk if that can be done in macro because BANK(lbl) gets evaluated too soon.
+        RomInfo.macros["Op68_CopyBytes"] = "db $68\ndb \\1\ndw \\2\ndw \\3\ndb \\4"
+
+        targetPtr = memory.word(addr + 2)
+        sourcePtr = memory.word(addr + 4)
+        activeWramBankNum = memory.byte(addr + 6)
+        RomInfo.getWRam(activeWramBankNum if targetPtr >= 0xD000 else 0).addAutoLabel(targetPtr, None, None) # WRam ignores source and type args.
+        RomInfo.getWRam(activeWramBankNum if sourcePtr >= 0xD000 else 0).addAutoLabel(sourcePtr, None, None) # WRam ignores source and type args.
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        count = self.memory.byte(file.addr + 1)
+        targetPtr = self.memory.word(file.addr + 2)
+        sourcePtr = self.memory.word(file.addr + 4)
+        activeWramBankNum = self.memory.byte(file.addr + 6)
+        targetLabel = RomInfo.getWRam(activeWramBankNum if targetPtr >= 0xD000 else 0).getLabel(targetPtr)
+        sourceLabel = RomInfo.getWRam(activeWramBankNum if sourcePtr >= 0xD000 else 0).getLabel(sourcePtr)
+        file.asmLine(7, "Op68_CopyBytes", str(count), str(targetLabel), str(sourceLabel), "$%02x" % activeWramBankNum)
+        
 
 OPBLOCKS = {
     0x16: Op16Block,
@@ -227,5 +252,6 @@ OPBLOCKS = {
     0x1C: Op1CBlock,
     0x1E: Op1EBlock,
     0x50: Op50Block,
+    0x68: Op68Block,
     0x82: Op82Block,
 }

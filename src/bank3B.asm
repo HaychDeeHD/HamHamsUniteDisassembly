@@ -219,7 +219,7 @@ data_3b_42d0:
     db   $01, $82                                      ;; 3b:4322 .w
     dw   data_3b_7416                                  ;; 3b:4324 pP
     db   $01, $2a, $00, $00, $00, $68, $01             ;; 3b:4326 .w...w.
-    dw   $c81d                                         ;; 3b:432d pP
+    dw   wC81D                                         ;; 3b:432d pP
     dw   wOp1CScriptTableIndexC53A                     ;; 3b:432f pP
     db   $00, $1c, $06                                 ;; 3b:4331 .w.
     dw   $4565                                         ;; 3b:4334 wW
@@ -2723,7 +2723,7 @@ data_3b_77e1:
 data_3b_782b:
     dw   wC479                                         ;; 3b:782b pP
     db   $00, $03, $68, $01                            ;; 3b:782d ..w.
-    dw   $c81d                                         ;; 3b:7831 pP
+    dw   wC81D                                         ;; 3b:7831 pP
     dw   wCA92                                         ;; 3b:7833 pP
     db   $00, $50                                      ;; 3b:7835 .w
     dw   wCA92                                         ;; 3b:7837 pP

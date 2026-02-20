@@ -741,7 +741,7 @@ data_2a_4000:
     db   $00, $05, $82                                 ;; 2a:4a45 ..w
     dw   .data_2a_6dd9                                 ;; 2a:4a48 pP
     db   $02, $16, $01, $3e, $10, $68, $01             ;; 2a:4a4a .w...w.
-    dw   $c764                                         ;; 2a:4a51 pP
+    dw   wC764                                         ;; 2a:4a51 pP
     dw   w1_BeginRegionD1FD                            ;; 2a:4a53 pP
     db   $01, $68, $02                                 ;; 2a:4a55 .w.
     dw   $c7d8                                         ;; 2a:4a58 pP
@@ -2761,7 +2761,7 @@ data_2a_4000:
     db   $00, $1b, $82                                 ;; 2a:6b6e ..w
     dw   .data_2a_6dd9                                 ;; 2a:6b71 pP
     db   $02, $16, $01, $3e, $26, $68, $01             ;; 2a:6b73 .w...w.
-    dw   $c764                                         ;; 2a:6b7a pP
+    dw   wC764                                         ;; 2a:6b7a pP
     dw   w1_BeginRegionD1FD                            ;; 2a:6b7c pP
     db   $01, $68, $02                                 ;; 2a:6b7e .w.
     dw   $c7d8                                         ;; 2a:6b81 pP

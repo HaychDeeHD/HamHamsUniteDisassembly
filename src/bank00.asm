@@ -1217,7 +1217,7 @@ JumpUsingOpTableUsingIndexFromC322:
     dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09dc ?? $31
     dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09de ?? $32
     dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09e0 ?? $33
-    dw   Op68_CopyBytes                                ;; 00:09e2 pP $34
+    dw   Op68_CopyBytes_Handler                        ;; 00:09e2 pP $34
     dw   Op6A                                          ;; 00:09e4 pP $35
     dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09e6 ?? $36
     dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09e8 ?? $37
@@ -1843,7 +1843,7 @@ AddressArray_0dbd:
     dw   $d567                                         ;; 00:0df9 ?? $1e
     dw   $d595                                         ;; 00:0dfb ?? $1f
 
-Op68_CopyBytes:
+Op68_CopyBytes_Handler:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0dfd $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0e00 $2a
     ld   [wC35A], A                                    ;; 00:0e01 $ea $5a $c3

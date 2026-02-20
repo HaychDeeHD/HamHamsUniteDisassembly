@@ -1536,7 +1536,7 @@ data_33_5a20:
 
 data_33_5a8d:
     db   $01                                           ;; 33:5a8d .
-    dw   $c764                                         ;; 33:5a8e pP
+    dw   wC764                                         ;; 33:5a8e pP
     dw   w1_BeginRegionD1FD                            ;; 33:5a90 pP
     db   $01, $68, $02                                 ;; 33:5a92 .w.
     dw   $c7d8                                         ;; 33:5a95 pP

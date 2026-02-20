@@ -804,7 +804,7 @@ data_2f_4036:
     db   $00, $0f, $82                                 ;; 2f:56c6 ..w
     dw   $6dd8 + $01                                   ;; 2f:56c9 pP
     db   $02, $16, $01, $3e, $1a, $68, $01             ;; 2f:56cb .w...w.
-    dw   $c764                                         ;; 2f:56d2 pP
+    dw   wC764                                         ;; 2f:56d2 pP
     dw   w1_BeginRegionD1FD                            ;; 2f:56d4 pP
     db   $01, $68, $02                                 ;; 2f:56d6 .w.
     dw   $c7d8                                         ;; 2f:56d9 pP
@@ -2486,7 +2486,7 @@ data_2f_4036:
     db   $00, $04, $82                                 ;; 2f:7725 ..w
     dw   $6dd8 + $01                                   ;; 2f:7728 pP
     db   $02, $16, $01, $3e, $0f, $68, $01             ;; 2f:772a .w...w.
-    dw   $c764                                         ;; 2f:7731 pP
+    dw   wC764                                         ;; 2f:7731 pP
     dw   w1_BeginRegionD1FD                            ;; 2f:7733 pP
     db   $01, $68, $02                                 ;; 2f:7735 .w.
     dw   $c7d8                                         ;; 2f:7738 pP
