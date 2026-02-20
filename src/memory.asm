@@ -308,7 +308,7 @@ wC388:
 wSubOpsLoopCountdownC38A:
     ds 1                                               ;; c38a
 
-wC38B:
+wSomeLoopCounterC38B:
     ds 1                                               ;; c38b
 
 wC38C:
@@ -902,13 +902,19 @@ wC720:
     ds 1                                               ;; c720
 
 wC721:
-    ds 3                                               ;; c721
+    ds 1                                               ;; c721
+
+wC722:
+    ds 2                                               ;; c722
 
 wC724:
     ds 4                                               ;; c724
 
 wC728:
-    ds 7                                               ;; c728
+    ds 2                                               ;; c728
+
+wC72A:
+    ds 5                                               ;; c72a
 
 wC72F:
     ds 5                                               ;; c72f
@@ -980,10 +986,25 @@ wC77D:
     ds 1                                               ;; c77d
 
 wC77E:
-    ds 6                                               ;; c77e
+    ds 3                                               ;; c77e
+
+wC781:
+    ds 3                                               ;; c781
 
 wC784:
-    ds 92                                              ;; c784
+    ds 2                                               ;; c784
+
+wC786:
+    ds 7                                               ;; c786
+
+wC78D:
+    ds 4                                               ;; c78d
+
+wC791:
+    ds 1                                               ;; c791
+
+wC792:
+    ds 78                                              ;; c792
 
 wC7E0:
     ds 1                                               ;; c7e0
@@ -995,28 +1016,118 @@ wC818:
     ds 1                                               ;; c818
 
 wC819:
-    ds 4                                               ;; c819
+    ds 1                                               ;; c819
+
+wC81A:
+    ds 1                                               ;; c81a
+
+wC81B:
+    ds 1                                               ;; c81b
+
+wC81C:
+    ds 1                                               ;; c81c
 
 wC81D:
     ds 1                                               ;; c81d
 
 wC81E:
-    ds 250                                             ;; c81e
+    ds 1                                               ;; c81e
+
+wC81F:
+    ds 2                                               ;; c81f
+
+wC821:
+    ds 1                                               ;; c821
+
+wC822:
+    ds 1                                               ;; c822
+
+wC823:
+    ds 1                                               ;; c823
+
+wC824:
+    ds 10                                              ;; c824
+
+wC82E:
+    ds 1                                               ;; c82e
+
+wC82F:
+    ds 1                                               ;; c82f
+
+wC830:
+    ds 1                                               ;; c830
+
+wC831:
+    ds 1                                               ;; c831
+
+wC832:
+    ds 1                                               ;; c832
+
+wC833:
+    ds 1                                               ;; c833
+
+wC834:
+    ds 1                                               ;; c834
+
+wC835:
+    ds 1                                               ;; c835
+
+wC836:
+    ds 1                                               ;; c836
+
+wC837:
+    ds 1                                               ;; c837
+
+wC838:
+    ds 1                                               ;; c838
+
+wC839:
+    ds 7                                               ;; c839
+
+wC840:
+    ds 216                                             ;; c840
 
 wBitArrayC918:
-    ds 41                                              ;; c918
+    ds 19                                              ;; c918
+
+wC92B:
+    ds 2                                               ;; c92b
+
+wC92D:
+    ds 1                                               ;; c92d
+
+wC92E:
+    ds 7                                               ;; c92e
+
+wC935:
+    ds 12                                              ;; c935
 
 wC941:
     ds 1                                               ;; c941
 
 wC942:
-    ds 6                                               ;; c942
+    ds 2                                               ;; c942
+
+wC944:
+    ds 4                                               ;; c944
 
 wC948:
-    ds 3                                               ;; c948
+    ds 1                                               ;; c948
+
+wC949:
+    ds 1                                               ;; c949
+
+wC94A:
+    ds 1                                               ;; c94a
 
 wC94B:
-    ds 13                                              ;; c94b
+    ds 1                                               ;; c94b
+
+wC94C:
+    ds 4                                               ;; c94c
+
+wC950:
+    ds 8                                               ;; c950
 
 wC958:
     ds 3                                               ;; c958

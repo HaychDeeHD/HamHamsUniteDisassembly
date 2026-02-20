@@ -1,3 +1,9 @@
+MACRO Op14_Unknown
+db $14
+db \1
+db \2
+db \3
+ENDM
 MACRO Op16_SubOps
 db $16
 db \1

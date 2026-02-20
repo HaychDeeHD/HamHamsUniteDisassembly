@@ -347,7 +347,7 @@ jp_01_4276:
     ret                                                ;; 01:4277 $c9
 
 data_01_4278:
-    ld   A, [wC38B]                                    ;; 01:4278 $fa $8b $c3
+    ld   A, [wSomeLoopCounterC38B]                     ;; 01:4278 $fa $8b $c3
     and  A, A                                          ;; 01:427b $a7
     jr   Z, .jr_01_4284                                ;; 01:427c $28 $06
     call call_01_4369                                  ;; 01:427e $cd $69 $43
@@ -361,7 +361,7 @@ data_01_4278:
     jp   jp_01_4276                                    ;; 01:4291 $c3 $76 $42
 
 data_01_4294:
-    ld   A, [wC38B]                                    ;; 01:4294 $fa $8b $c3
+    ld   A, [wSomeLoopCounterC38B]                     ;; 01:4294 $fa $8b $c3
     and  A, A                                          ;; 01:4297 $a7
     jr   Z, .jr_01_42a0                                ;; 01:4298 $28 $06
     call call_01_4369                                  ;; 01:429a $cd $69 $43
@@ -449,9 +449,9 @@ call_01_4317:
     ret                                                ;; 01:4335 $c9
 
 call_01_4336:
-    ld   A, [wC38B]                                    ;; 01:4336 $fa $8b $c3
+    ld   A, [wSomeLoopCounterC38B]                     ;; 01:4336 $fa $8b $c3
     inc  A                                             ;; 01:4339 $3c
-    ld   [wC38B], A                                    ;; 01:433a $ea $8b $c3
+    ld   [wSomeLoopCounterC38B], A                     ;; 01:433a $ea $8b $c3
     push HL                                            ;; 01:433d $e5
     ld   A, [wStackHeadAddressC5E3]                    ;; 01:433e $fa $e3 $c5
     ld   L, A                                          ;; 01:4341 $6f
@@ -477,9 +477,9 @@ call_01_4336:
     ret                                                ;; 01:4368 $c9
 
 call_01_4369:
-    ld   A, [wC38B]                                    ;; 01:4369 $fa $8b $c3
+    ld   A, [wSomeLoopCounterC38B]                     ;; 01:4369 $fa $8b $c3
     dec  A                                             ;; 01:436c $3d
-    ld   [wC38B], A                                    ;; 01:436d $ea $8b $c3
+    ld   [wSomeLoopCounterC38B], A                     ;; 01:436d $ea $8b $c3
     ld   A, [wStackHeadAddressC5E3]                    ;; 01:4370 $fa $e3 $c5
     ld   L, A                                          ;; 01:4373 $6f
     ld   A, [wStackStartC5E5]                          ;; 01:4374 $fa $e4 $c5
@@ -6319,6 +6319,8 @@ call_01_73f8:
     ld   A, [HL]                                       ;; 01:7404 $7e
     ld   [DE], A                                       ;; 01:7405 $12
     ret                                                ;; 01:7406 $c9
+
+call_01_7407:
     ld   HL, wC53C                                     ;; 01:7407 $21 $3c $c5
     ld   DE, wC53F                                     ;; 01:740a $11 $3f $c5
     ld   A, [DE]                                       ;; 01:740d $1a
@@ -6355,6 +6357,8 @@ call_01_7416:
     ld   A, H                                          ;; 01:743d $7c
     ld   [wC65B], A                                    ;; 01:743e $ea $5b $c6
     ret                                                ;; 01:7441 $c9
+
+call_01_7442:
     ld   A, [wC65B]                                    ;; 01:7442 $fa $5b $c6
     ld   B, A                                          ;; 01:7445 $47
     ld   A, [wC65A]                                    ;; 01:7446 $fa $5a $c6
@@ -6487,6 +6491,8 @@ call_01_754a:
     ld   A, $05                                        ;; 01:7566 $3e $05
     ld   [wPossibleBankSourceC6A8], A                  ;; 01:7568 $ea $a8 $c6
     ret                                                ;; 01:756b $c9
+
+call_01_756c:
     ld   A, [wC641]                                    ;; 01:756c $fa $41 $c6
     ld   [wC6A6], A                                    ;; 01:756f $ea $a6 $c6
     ld   A, [wC642]                                    ;; 01:7572 $fa $42 $c6

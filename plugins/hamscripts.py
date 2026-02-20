@@ -245,8 +245,25 @@ class Op68Block(Block):
         sourceLabel = RomInfo.getWRam(activeWramBankNum if sourcePtr >= 0xD000 else 0).getLabel(sourcePtr)
         file.asmLine(7, "Op68_CopyBytes", str(count), str(targetLabel), str(sourceLabel), "$%02x" % activeWramBankNum)
         
+class Op14Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 4)
+        RomInfo.macros["Op14_Unknown"] = "db $14\ndb \\1\ndb \\2\ndb \\3"
+
+        count = memory.byte(addr + 1)
+        scriptBlock = ScriptPointersBlock(memory, addr + len(self), amount=count)
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self) + len(scriptBlock))
+
+    def export(self, file):
+        count = self.memory.byte(file.addr + 1)
+        arg1 = self.memory.byte(file.addr + 2)
+        arg2 = self.memory.byte(file.addr + 3)
+        file.asmLine(4, "Op14_Unknown", str(count), "$%02x" % arg1, "$%02x" % arg2)
 
 OPBLOCKS = {
+    0x14: Op14Block,
     0x16: Op16Block,
     0x18: Op18Block,
     0x1C: Op1CBlock,

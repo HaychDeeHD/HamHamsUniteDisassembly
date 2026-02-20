@@ -32,12 +32,30 @@ SECTION "bank32", ROMX[$4000], BANK[$32]
     db   $74, $01, $18, $0c, $40, $32                  ;; 32:4090 ??????
 
 data_32_4096:
-    db   $14, $01, $06, $6d, $bf, $40, $32, $16        ;; 32:4096 ????????
-    db   $01, $5f, $82, $16, $01, $5f, $81, $14        ;; 32:409e ????????
-    db   $01, $1a, $6e, $b3, $40, $32, $14, $01        ;; 32:40a6 ????????
-    db   $e7, $6c, $bb, $40, $32, $16, $01, $5f        ;; 32:40ae ????????
-    db   $83, $18, $bf, $40, $32, $16, $01, $3f        ;; 32:40b6 ????????
-    db   $83, $16, $01, $7f, $0c, $00, $20             ;; 32:40be ???????
+    Op14_Unknown 1, $06, $6d                           ;; 32:4096 $14 $01 $06 $6d
+    SCRIPT_POINTER data_32_40bf                        ;; 32:409a $bf $40 $32
+    Op16_SubOps 1                                      ;; 32:409d $16 $01
+    SubOp_ClearFlag wC948, 2                           ;; 32:409f $5f $82
+    Op16_SubOps 1                                      ;; 32:40a1 $16 $01
+    SubOp_ClearFlag wC948, 1                           ;; 32:40a3 $5f $81
+    Op14_Unknown 1, $1a, $6e                           ;; 32:40a5 $14 $01 $1a $6e
+    SCRIPT_POINTER data_32_40b3                        ;; 32:40a9 $b3 $40 $32
+    Op14_Unknown 1, $e7, $6c                           ;; 32:40ac $14 $01 $e7 $6c
+    SCRIPT_POINTER data_32_40bb                        ;; 32:40b0 $bb $40 $32
+
+data_32_40b3:
+    Op16_SubOps 1                                      ;; 32:40b3 $16 $01
+    SubOp_ClearFlag wC948, 3                           ;; 32:40b5 $5f $83
+    Op18_Jump data_32_40bf                             ;; 32:40b7 $18 $bf $40 $32
+
+data_32_40bb:
+    Op16_SubOps 1                                      ;; 32:40bb $16 $01
+    SubOp_SetFlag wC948, 3                             ;; 32:40bd $3f $83
+
+data_32_40bf:
+    Op16_SubOps 1                                      ;; 32:40bf $16 $01
+    SubOp_SetByte wC824, $00                           ;; 32:40c1 $7f $0c $00
+    db   $20                                           ;; 32:40c4 ?
 
 data_32_40c5:
     Op50_WriteByte wC720, $16                          ;; 32:40c5 $50 $20 $c7 $00 $16

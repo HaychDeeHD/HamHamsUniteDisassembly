@@ -172,7 +172,7 @@ data_3c_4209:
     db   $00, $03, $14, $01, $54, $60                  ;; 3c:44c3 ..w...
     dw   $452c                                         ;; 3c:44c9 wW
     db   $3c, $16, $01, $7f, $0a, $00, $68, $01        ;; 3c:44cb .w..w.w.
-    dw   $c822                                         ;; 3c:44d3 pP
+    dw   wC822                                         ;; 3c:44d3 pP
     dw   wCA92                                         ;; 3c:44d5 pP
     db   $00, $50                                      ;; 3c:44d7 .w
     dw   wCA92                                         ;; 3c:44d9 pP
@@ -281,29 +281,39 @@ data_3c_4209:
     db   $09, $00, $50, $61, $04, $20                  ;; 3c:468c .....w
 
 data_3c_4692:
-    db   $14, $01, $6e, $60                            ;; 3c:4692 w...
-    dw   $469d                                         ;; 3c:4696 wW
-    db   $3c, $16, $01, $3f, $93, $20                  ;; 3c:4698 .????w
+    Op14_Unknown 1, $6e, $60                           ;; 3c:4692 $14 $01 $6e $60
+    SCRIPT_POINTER data_3c_469d                        ;; 3c:4696 $9d $46 $3c
+    Op16_SubOps 1                                      ;; 3c:4699 $16 $01
+    SubOp_SetFlag wC94A, 3                             ;; 3c:469b $3f $93
+
+data_3c_469d:
+    db   $20                                           ;; 3c:469d w
 
 data_3c_469e:
-    db   $14, $01, $72, $60                            ;; 3c:469e w...
-    dw   $46b0                                         ;; 3c:46a2 wW
-    db   $3c, $14, $01, $74, $60                       ;; 3c:46a4 .w...
-    dw   $46c1                                         ;; 3c:46a9 wW
-    db   $3c, $16, $01, $3f, $93, $50                  ;; 3c:46ab .w...w
-    dw   wC720                                         ;; 3c:46b1 pP
-    db   $00, $14, $82                                 ;; 3c:46b3 ..w
-    dw   data_3c_6844                                  ;; 3c:46b6 pP
-    db   $01, $16, $01, $5e, $e9, $18                  ;; 3c:46b8 .w...w
-    dw   $46d2                                         ;; 3c:46be wW
-    db   $3c, $50                                      ;; 3c:46c0 .w
-    dw   wC720                                         ;; 3c:46c2 pP
-    db   $00, $13, $82                                 ;; 3c:46c4 ..w
-    dw   data_3c_6844                                  ;; 3c:46c7 pP
-    db   $01, $16, $01, $3e, $e9, $18                  ;; 3c:46c9 .w...w
-    dw   $46d2                                         ;; 3c:46cf wW
-    db   $3c, $20, $14, $01, $78, $60, $9e, $46        ;; 3c:46d1 .ww...??
-    db   $3c, $50                                      ;; 3c:46d9 ?w
+    Op14_Unknown 1, $72, $60                           ;; 3c:469e $14 $01 $72 $60
+    SCRIPT_POINTER data_3c_46b0                        ;; 3c:46a2 $b0 $46 $3c
+    Op14_Unknown 1, $74, $60                           ;; 3c:46a5 $14 $01 $74 $60
+    SCRIPT_POINTER data_3c_46c1                        ;; 3c:46a9 $c1 $46 $3c
+    Op16_SubOps 1                                      ;; 3c:46ac $16 $01
+    SubOp_SetFlag wC94A, 3                             ;; 3c:46ae $3f $93
+
+data_3c_46b0:
+    Op50_WriteByte wC720, $14                          ;; 3c:46b0 $50 $20 $c7 $00 $14
+    Op82_Run call_01_6844                              ;; 3c:46b5 $82 $44 $68 $01
+    Op16_SubOps 1                                      ;; 3c:46b9 $16 $01
+    SubOp_ClearFlag wC935, 1                           ;; 3c:46bb $5e $e9
+    Op18_Jump data_3c_46d2                             ;; 3c:46bd $18 $d2 $46 $3c
+
+data_3c_46c1:
+    Op50_WriteByte wC720, $13                          ;; 3c:46c1 $50 $20 $c7 $00 $13
+    Op82_Run call_01_6844                              ;; 3c:46c6 $82 $44 $68 $01
+    Op16_SubOps 1                                      ;; 3c:46ca $16 $01
+    SubOp_SetFlag wC935, 1                             ;; 3c:46cc $3e $e9
+    Op18_Jump data_3c_46d2                             ;; 3c:46ce $18 $d2 $46 $3c
+
+data_3c_46d2:
+    db   $20, $14, $01, $78, $60, $9e, $46, $3c        ;; 3c:46d2 ww...???
+    db   $50                                           ;; 3c:46da w
     dw   wC720                                         ;; 3c:46db pP
     db   $00, $20, $82                                 ;; 3c:46dd ..w
     dw   data_3c_6844                                  ;; 3c:46e0 pP
@@ -785,7 +795,7 @@ data_3c_469e:
     dw   wC479                                         ;; 3c:53d4 pP
     db   $00, $03, $16, $01, $7f, $1e, $00, $68        ;; 3c:53d6 ..w..w.w
     db   $01                                           ;; 3c:53de .
-    dw   $c836                                         ;; 3c:53df pP
+    dw   wC836                                         ;; 3c:53df pP
     dw   wCA92                                         ;; 3c:53e1 pP
     db   $00, $50                                      ;; 3c:53e3 .w
     dw   wCA92                                         ;; 3c:53e5 pP
@@ -904,7 +914,7 @@ data_3c_469e:
     dw   wC479                                         ;; 3c:55d3 pP
     db   $00, $03, $16, $01, $7f, $1c, $00, $68        ;; 3c:55d5 ..w..w.w
     db   $01                                           ;; 3c:55dd .
-    dw   $c834                                         ;; 3c:55de pP
+    dw   wC834                                         ;; 3c:55de pP
     dw   wCA92                                         ;; 3c:55e0 pP
     db   $00, $50                                      ;; 3c:55e2 .w
     dw   wCA92                                         ;; 3c:55e4 pP

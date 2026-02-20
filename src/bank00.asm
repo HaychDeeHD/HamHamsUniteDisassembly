@@ -3989,7 +3989,7 @@ Write3ArgsToC328toA_AndRunOp_PossibleTextPointer:
     ld   A, $03                                        ;; 00:1c90 $3e $03
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1c92 $ea $26 $c3
     ld   A, $00                                        ;; 00:1c95 $3e $00
-    ld   [wC38B], A                                    ;; 00:1c97 $ea $8b $c3
+    ld   [wSomeLoopCounterC38B], A                     ;; 00:1c97 $ea $8b $c3
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1c9a $c3 $39 $0a
     ld   A, $06                                        ;; 00:1c9d $3e $06
     ld   [wCurrentRomBankC677], A                      ;; 00:1c9f $ea $77 $c6
@@ -4281,45 +4281,54 @@ Op92:
     ld   [$2000], A                                    ;; 00:1f1f $ea $00 $20
     jp   jp_01_483d                                    ;; 00:1f22 $c3 $3d $48
 
+; $14 count byte byte [3-byte-address list]
+; Calls 1f89 N times. That must use the input bytes somehow.
+; If invocation # x 'fails'(?) then go to the xth address in the list.
+; Else next address.
 Op14:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:1f25 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:1f28 $2a
     ld   [wSubOpsLoopCountdownC38A], A                 ;; 00:1f29 $ea $8a $c3
-    ld   [wC38B], A                                    ;; 00:1f2c $ea $8b $c3
+    ld   [wSomeLoopCounterC38B], A                     ;; 00:1f2c $ea $8b $c3
     ld   A, [HL+]                                      ;; 00:1f2f $2a
     ld   [wC38C], A                                    ;; 00:1f30 $ea $8c $c3
     ld   A, [HL+]                                      ;; 00:1f33 $2a
     ld   [wC38D], A                                    ;; 00:1f34 $ea $8d $c3
-.loopCalling1F89UntilC38BIs0:
+.loop_Call1F89NTimes:
     call Write3BytesFromHLPointerToC35E_AndUseJumpArray2 ;; 00:1f37 $cd $89 $1f
     ld   A, [wC5C3]                                    ;; 00:1f3a $fa $c3 $c5
     and  A, A                                          ;; 00:1f3d $a7
-    jr   NZ, .c53cWasZero                              ;; 00:1f3e $20 $1a
-    ld   HL, wC38B                                     ;; 00:1f40 $21 $8b $c3
+    jr   NZ, .c5c3WasZero                              ;; 00:1f3e $20 $1a
+    ld   HL, wSomeLoopCounterC38B                      ;; 00:1f40 $21 $8b $c3
     dec  [HL]                                          ;; 00:1f43 $35
-    jr   NZ, .loopCalling1F89UntilC38BIs0              ;; 00:1f44 $20 $f1
+    jr   NZ, .loop_Call1F89NTimes                      ;; 00:1f44 $20 $f1
+; Begin multiplying input count by 3
+; to get lengthPrevInstruction and call next
     ld   DE, $03                                       ;; 00:1f46 $11 $03 $00
     ld   HL, $03                                       ;; 00:1f49 $21 $03 $00
     ld   A, [wSubOpsLoopCountdownC38A]                 ;; 00:1f4c $fa $8a $c3
-.loopMultiplyC38ABy3_1:
+.loopMultiplyCountBy3:
     add  HL, DE                                        ;; 00:1f4f $19
     dec  A                                             ;; 00:1f50 $3d
-    jr   NZ, .loopMultiplyC38ABy3_1                    ;; 00:1f51 $20 $fc
+    jr   NZ, .loopMultiplyCountBy3                     ;; 00:1f51 $20 $fc
     ld   A, L                                          ;; 00:1f53 $7d
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1f54 $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:1f57 $c3 $14 $0a
-.c53cWasZero:
+; Early break if something returned 0?
+; We calculate the instruction length but need to
+;  compare how far we got with how much we planned.
+.c5c3WasZero:
     ld   DE, $03                                       ;; 00:1f5a $11 $03 $00
     ld   HL, $03                                       ;; 00:1f5d $21 $03 $00
-    ld   A, [wC38B]                                    ;; 00:1f60 $fa $8b $c3
+    ld   A, [wSomeLoopCounterC38B]                     ;; 00:1f60 $fa $8b $c3
     ld   C, A                                          ;; 00:1f63 $4f
     ld   A, [wSubOpsLoopCountdownC38A]                 ;; 00:1f64 $fa $8a $c3
     sub  A, C                                          ;; 00:1f67 $91
-.LoopMultiplyC38ABy3_2:
+.LoopMultiplyCompletedCountBy3:
     jr   Z, .endMultiplyLoop2                          ;; 00:1f68 $28 $04
     add  HL, DE                                        ;; 00:1f6a $19
     dec  A                                             ;; 00:1f6b $3d
-    jr   .LoopMultiplyC38ABy3_2                        ;; 00:1f6c $18 $fa
+    jr   .LoopMultiplyCompletedCountBy3                ;; 00:1f6c $18 $fa
 .endMultiplyLoop2:
     ld   E, L                                          ;; 00:1f6e $5d
     ld   D, $00                                        ;; 00:1f6f $16 $00
@@ -4504,7 +4513,7 @@ Op10and12_C324to5DidNotHaveData:
 
 Op0Cand0Eand10and12_C324to5DidNotHaveData_nextStep:
     ld   A, $00                                        ;; 00:20c2 $3e $00
-    ld   [wC38B], A                                    ;; 00:20c4 $ea $8b $c3
+    ld   [wSomeLoopCounterC38B], A                     ;; 00:20c4 $ea $8b $c3
     ld   [wC396], A                                    ;; 00:20c7 $ea $96 $c3
     ld   A, $02                                        ;; 00:20ca $3e $02
     ld   [wReturnAddressC324], A                       ;; 00:20cc $ea $24 $c3
@@ -4798,7 +4807,7 @@ call_00_22f9:
     ld   D, A                                          ;; 00:2309 $57
     dec  A                                             ;; 00:230a $3d
     add  A, B                                          ;; 00:230b $80
-    ld   [wC38B], A                                    ;; 00:230c $ea $8b $c3
+    ld   [wSomeLoopCounterC38B], A                     ;; 00:230c $ea $8b $c3
     srl  D                                             ;; 00:230f $cb $3a
     ld   A, D                                          ;; 00:2311 $7a
     add  A, B                                          ;; 00:2312 $80

@@ -752,7 +752,7 @@ data_39_4000:
     db   $01, $82                                      ;; 39:56d4 .w
     dw   .data_39_7416                                 ;; 39:56d6 pP
     db   $01, $2a, $00, $00, $00, $68, $01             ;; 39:56d8 .w...w.
-    dw   $c81b                                         ;; 39:56df pP
+    dw   wC81B                                         ;; 39:56df pP
     dw   wOp1CScriptTableIndexC53A                     ;; 39:56e1 pP
     db   $00, $1c, $09                                 ;; 39:56e3 .w.
     dw   $587b                                         ;; 39:56e6 wW
