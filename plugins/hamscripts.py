@@ -286,6 +286,31 @@ class Op4ABlock(Block):
     def export(self, file):
         file.asmLine(1, "SCRIPT_RETURN_4A")
 
+class Op3EBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 8)
+        RomInfo.macros["Op3E_Compare_Branch"] = "db $3E\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndw \\5\ndb BANK(\\5)"
+
+        pointer = memory.word(addr + 5)
+        bankNum = memory.byte(addr + 7)
+        bank = RomInfo.romBank(bankNum)
+        bank.addAutoLabel(pointer, None, "data")
+        # The address pointed to is a script instruction.
+        maybeCreateScriptBlock(bank, pointer)
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        offset = self.memory.byte(file.addr + 1)
+        golden1 = self.memory.byte(file.addr + 2)
+        golden2 = self.memory.byte(file.addr + 3)
+        golden3 = self.memory.byte(file.addr + 4)
+        pointer = self.memory.word(file.addr + 5)
+        bankNum = self.memory.byte(file.addr + 7)
+        bank = RomInfo.romBank(bankNum)
+        label = bank.getLabel(pointer)
+        file.asmLine(8, "Op3E_Compare_Branch", str(offset), "$%02x" % golden1, "$%02x" % golden2, "$%02x" % golden3, str(label))
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
@@ -293,6 +318,7 @@ OPBLOCKS = {
     0x1C: Op1CBlock,
     0x1E: Op1EBlock,
     0x20: Op20Block,
+    0x3E: Op3EBlock,
     0x4A: Op4ABlock,
     0x50: Op50Block,
     0x68: Op68Block,

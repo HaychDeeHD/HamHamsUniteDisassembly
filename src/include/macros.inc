@@ -22,6 +22,15 @@ db $1e
 dw \1
 db BANK(\1)
 ENDM
+MACRO Op3E_Compare_Branch
+db $3E
+db \1
+db \2
+db \3
+db \4
+dw \5
+db BANK(\5)
+ENDM
 MACRO Op50_WriteByte
 db $50
 dw \1

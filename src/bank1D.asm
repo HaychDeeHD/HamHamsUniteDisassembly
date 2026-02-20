@@ -1515,6 +1515,8 @@ data_1d_6ae8:
     Op1C_TableJump 1                                   ;; 1d:6b88 $1c $01
     SCRIPT_POINTER data_04_678d                        ;; 1d:6b8a $8d $67 $04
     Op18_Jump data_04_6795                             ;; 1d:6b8d $18 $95 $67 $04
+
+data_1d_6b91:
     Op1E_Call data_1d_6f05                             ;; 1d:6b91 $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6b95 $1c $01
     SCRIPT_POINTER data_04_67af                        ;; 1d:6b97 $af $67 $04
