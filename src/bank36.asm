@@ -40,7 +40,7 @@ data_36_4081:
 data_36_4090:
     Op16_SubOps 1                                      ;; 36:4090 $16 $01
     SubOp_SetByte wC81A, $00                           ;; 36:4092 $7f $02 $00
-    db   $20                                           ;; 36:4095 ?
+    SCRIPT_RETURN                                      ;; 36:4095 $20
 
 data_36_4096:
     Op50_WriteByte wC720, $15                          ;; 36:4096 $50 $20 $c7 $00 $15

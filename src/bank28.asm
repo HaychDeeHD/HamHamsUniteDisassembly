@@ -168,7 +168,7 @@ data_28_433e:
     SubOp_ClearFlag wC948, 7                           ;; 28:4350 $5f $87
 
 data_28_4352:
-    db   $20                                           ;; 28:4352 ?
+    SCRIPT_RETURN                                      ;; 28:4352 $20
 
 data_28_4353:
     Op82_Run call_01_7416                              ;; 28:4353 $82 $16 $74 $01

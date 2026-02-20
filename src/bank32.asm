@@ -55,7 +55,7 @@ data_32_40bb:
 data_32_40bf:
     Op16_SubOps 1                                      ;; 32:40bf $16 $01
     SubOp_SetByte wC824, $00                           ;; 32:40c1 $7f $0c $00
-    db   $20                                           ;; 32:40c4 ?
+    SCRIPT_RETURN                                      ;; 32:40c4 $20
 
 data_32_40c5:
     Op50_WriteByte wC720, $16                          ;; 32:40c5 $50 $20 $c7 $00 $16

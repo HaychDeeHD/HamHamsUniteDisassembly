@@ -44,6 +44,9 @@ MACRO SCRIPT_POINTER
 dw \1
 db BANK(\1)
 ENDM
+MACRO SCRIPT_RETURN
+db $20
+ENDM
 MACRO SubOp_ClearFlag
 
 db ($5e + (((\1 - $c918) * 8 + \2) >> 8))

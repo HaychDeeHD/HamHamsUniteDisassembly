@@ -57,7 +57,7 @@ data_25_40cd:
     SubOp_SetByte wC78D, $03                           ;; 25:40d6 $7e $75 $03
 
 data_25_40d9:
-    db   $20                                           ;; 25:40d9 ?
+    SCRIPT_RETURN                                      ;; 25:40d9 $20
 
 data_25_40da:
     Op50_WriteByte wC720, $17                          ;; 25:40da $50 $20 $c7 $00 $17

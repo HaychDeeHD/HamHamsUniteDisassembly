@@ -44,7 +44,7 @@ data_2e_40a3:
     SubOp_SetByte wC81C, $00                           ;; 2e:40a5 $7f $04 $00
     Op16_SubOps 1                                      ;; 2e:40a8 $16 $01
     SubOp_ClearFlag wC94B, 2                           ;; 2e:40aa $5f $9a
-    db   $20                                           ;; 2e:40ac ?
+    SCRIPT_RETURN                                      ;; 2e:40ac $20
 
 data_2e_40ad:
     Op1E_Call data_3c_469e                             ;; 2e:40ad $1e $9e $46 $3c
