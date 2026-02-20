@@ -992,16 +992,25 @@ wC7E1:
     ds 55                                              ;; c7e1
 
 wC818:
-    ds 5                                               ;; c818
+    ds 1                                               ;; c818
+
+wC819:
+    ds 4                                               ;; c819
 
 wC81D:
-    ds 251                                             ;; c81d
+    ds 1                                               ;; c81d
+
+wC81E:
+    ds 250                                             ;; c81e
 
 wBitArrayC918:
     ds 41                                              ;; c918
 
 wC941:
-    ds 7                                               ;; c941
+    ds 1                                               ;; c941
+
+wC942:
+    ds 6                                               ;; c942
 
 wC948:
     ds 3                                               ;; c948

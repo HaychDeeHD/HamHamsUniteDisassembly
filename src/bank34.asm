@@ -6,6 +6,7 @@ INCLUDE "include/charmaps.inc"
 INCLUDE "include/constants.inc"
 
 SECTION "bank34", ROMX[$4000], BANK[$34]
+;@hamscript
     db   $14, $01, $a1, $77, $82, $40, $34, $92        ;; 34:4000 ????????
     db   $00, $50, $15, $c7, $00, $1c, $82, $d9        ;; 34:4008 ????????
     db   $6d, $02, $16, $01, $3e, $27, $68, $01        ;; 34:4010 ????????
