@@ -13,25 +13,21 @@ def maybeCreateScriptBlock(memory, addr):
 def hamscript(memory, addr):
     maybeCreateScriptBlock(memory, addr)
 
-# @annotation(priority=1)
-# def op1c(memory, addr):
-#     Op1CBlock(memory, addr)
-
 class Op1CBlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=2)
         RomInfo.macros["Op1C_TableJump"] = "db $1c\ndb \\1"
 
         tableSize = memory.byte(addr + 1)
-        ScriptPointersBlock(memory, addr + 2, amount=tableSize)
+        scriptBlock = ScriptPointersBlock(memory, addr + 2, amount=tableSize)
+
+        # I think we can safely assume that whatever follows is a script, but will keep an eye out.
+        # Also might need to be wary of this being the last byte in the bank.
+        maybeCreateScriptBlock(memory, addr + len(self) + len(scriptBlock))
 
     def export(self, file):
         tableSize = self.memory.byte(file.addr + 1)
         file.asmLine(2, "Op1C_TableJump", str(tableSize))
-
-# @annotation(priority=1)
-# def scriptpointers(memory, addr, *, amount):
-#     ScriptPointersBlock(memory, addr, amount=int(amount))
 
 class ScriptPointersBlock(Block):
     def __init__(self, memory, addr, amount):
@@ -172,6 +168,10 @@ class Op18Block(Block):
         bank.addAutoLabel(pointer, None, "data")
         # The address pointed to is a script instruction.
         maybeCreateScriptBlock(bank, pointer)
+
+        # I think we can safely assume that whatever follows is a script, but will keep an eye out.
+        # Also might need to be wary of this being the last byte in the bank.
+        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)

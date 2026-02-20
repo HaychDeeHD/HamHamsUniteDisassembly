@@ -1004,7 +1004,13 @@ wC791:
     ds 1                                               ;; c791
 
 wC792:
-    ds 78                                              ;; c792
+    ds 70                                              ;; c792
+
+wC7D8:
+    ds 2                                               ;; c7d8
+
+wC7DA:
+    ds 6                                               ;; c7da
 
 wC7E0:
     ds 1                                               ;; c7e0
@@ -1088,7 +1094,10 @@ wC840:
     ds 216                                             ;; c840
 
 wBitArrayC918:
-    ds 19                                              ;; c918
+    ds 6                                               ;; c918
+
+wC91E:
+    ds 13                                              ;; c91e
 
 wC92B:
     ds 2                                               ;; c92b

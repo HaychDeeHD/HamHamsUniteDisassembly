@@ -1621,10 +1621,10 @@ data_22_4000:
     dw   wC764                                         ;; 22:68a5 pP
     dw   w1_BeginRegionD1FD                            ;; 22:68a7 pP
     db   $01, $68, $02                                 ;; 22:68a9 .w.
-    dw   $c7d8                                         ;; 22:68ac pP
+    dw   wC7D8                                         ;; 22:68ac pP
     dw   w1_D216                                       ;; 22:68ae pP
     db   $01, $68, $02                                 ;; 22:68b0 .w.
-    dw   $c7da                                         ;; 22:68b3 pP
+    dw   wC7DA                                         ;; 22:68b3 pP
     dw   w1_D20E                                       ;; 22:68b5 pP
     db   $01, $1e                                      ;; 22:68b7 .w
     dw   $6fd4                                         ;; 22:68b9 wW
@@ -2702,10 +2702,10 @@ data_22_4000:
     dw   wC764                                         ;; 22:7ba1 pP
     dw   w1_BeginRegionD1FD                            ;; 22:7ba3 pP
     db   $01, $68, $02                                 ;; 22:7ba5 .w.
-    dw   $c7d8                                         ;; 22:7ba8 pP
+    dw   wC7D8                                         ;; 22:7ba8 pP
     dw   w1_D216                                       ;; 22:7baa pP
     db   $01, $68, $02                                 ;; 22:7bac .w.
-    dw   $c7da                                         ;; 22:7baf pP
+    dw   wC7DA                                         ;; 22:7baf pP
     dw   w1_D20E                                       ;; 22:7bb1 pP
     db   $01, $1e                                      ;; 22:7bb3 .w
     dw   $6fd4                                         ;; 22:7bb5 wW
@@ -2743,10 +2743,10 @@ data_22_4000:
     dw   wC764                                         ;; 22:7c16 pP
     dw   w1_BeginRegionD1FD                            ;; 22:7c18 pP
     db   $01, $68, $02                                 ;; 22:7c1a .w.
-    dw   $c7d8                                         ;; 22:7c1d pP
+    dw   wC7D8                                         ;; 22:7c1d pP
     dw   w1_D216                                       ;; 22:7c1f pP
     db   $01, $68, $02                                 ;; 22:7c21 .w.
-    dw   $c7da                                         ;; 22:7c24 pP
+    dw   wC7DA                                         ;; 22:7c24 pP
     dw   w1_D20E                                       ;; 22:7c26 pP
     db   $01, $1e                                      ;; 22:7c28 .w
     dw   $6fd4                                         ;; 22:7c2a wW

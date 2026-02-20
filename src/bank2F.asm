@@ -850,10 +850,10 @@ data_2f_557c:
     dw   wC764                                         ;; 2f:56d2 pP
     dw   w1_BeginRegionD1FD                            ;; 2f:56d4 pP
     db   $01, $68, $02                                 ;; 2f:56d6 .w.
-    dw   $c7d8                                         ;; 2f:56d9 pP
+    dw   wC7D8                                         ;; 2f:56d9 pP
     dw   w1_D216                                       ;; 2f:56db pP
     db   $01, $68, $02                                 ;; 2f:56dd .w.
-    dw   $c7da                                         ;; 2f:56e0 pP
+    dw   wC7DA                                         ;; 2f:56e0 pP
     dw   w1_D20E                                       ;; 2f:56e2 pP
     db   $01, $1e                                      ;; 2f:56e4 .w
     dw   $6fd4                                         ;; 2f:56e6 wW
@@ -2611,10 +2611,10 @@ data_2f_76f6:
     dw   wC764                                         ;; 2f:7731 pP
     dw   w1_BeginRegionD1FD                            ;; 2f:7733 pP
     db   $01, $68, $02                                 ;; 2f:7735 .w.
-    dw   $c7d8                                         ;; 2f:7738 pP
+    dw   wC7D8                                         ;; 2f:7738 pP
     dw   w1_D216                                       ;; 2f:773a pP
     db   $01, $68, $02                                 ;; 2f:773c .w.
-    dw   $c7da                                         ;; 2f:773f pP
+    dw   wC7DA                                         ;; 2f:773f pP
     dw   w1_D20E                                       ;; 2f:7741 pP
     db   $01, $1e                                      ;; 2f:7743 .w
     dw   $6fd4                                         ;; 2f:7745 wW

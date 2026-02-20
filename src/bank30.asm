@@ -1053,10 +1053,10 @@ data_30_4dcd:
     dw   wC764                                         ;; 30:54de pP
     dw   w1_BeginRegionD1FD                            ;; 30:54e0 pP
     db   $01, $68, $02                                 ;; 30:54e2 .w.
-    dw   $c7d8                                         ;; 30:54e5 pP
+    dw   wC7D8                                         ;; 30:54e5 pP
     dw   w1_D216                                       ;; 30:54e7 pP
     db   $01, $68, $02                                 ;; 30:54e9 .w.
-    dw   $c7da                                         ;; 30:54ec pP
+    dw   wC7DA                                         ;; 30:54ec pP
     dw   w1_D20E                                       ;; 30:54ee pP
     db   $01, $1e                                      ;; 30:54f0 .w
     dw   $6fd4                                         ;; 30:54f2 wW
@@ -2104,10 +2104,10 @@ data_30_6852:
     dw   wC764                                         ;; 30:69cc pP
     dw   w1_BeginRegionD1FD                            ;; 30:69ce pP
     db   $01, $68, $02                                 ;; 30:69d0 .w.
-    dw   $c7d8                                         ;; 30:69d3 pP
+    dw   wC7D8                                         ;; 30:69d3 pP
     dw   w1_D216                                       ;; 30:69d5 pP
     db   $01, $68, $02                                 ;; 30:69d7 .w.
-    dw   $c7da                                         ;; 30:69da pP
+    dw   wC7DA                                         ;; 30:69da pP
     dw   w1_D20E                                       ;; 30:69dc pP
     db   $01, $1e                                      ;; 30:69de .w
     dw   $6fd4                                         ;; 30:69e0 wW
@@ -2157,10 +2157,10 @@ data_30_6a3e:
     dw   wC764                                         ;; 30:6a4d pP
     dw   w1_BeginRegionD1FD                            ;; 30:6a4f pP
     db   $01, $68, $02                                 ;; 30:6a51 .w.
-    dw   $c7d8                                         ;; 30:6a54 pP
+    dw   wC7D8                                         ;; 30:6a54 pP
     dw   w1_D216                                       ;; 30:6a56 pP
     db   $01, $68, $02                                 ;; 30:6a58 .w.
-    dw   $c7da                                         ;; 30:6a5b pP
+    dw   wC7DA                                         ;; 30:6a5b pP
     dw   w1_D20E                                       ;; 30:6a5d pP
     db   $01, $1e                                      ;; 30:6a5f .w
     dw   $6fd4                                         ;; 30:6a61 wW
@@ -2639,10 +2639,10 @@ data_30_723b:
     dw   wC764                                         ;; 30:7284 pP
     dw   w1_BeginRegionD1FD                            ;; 30:7286 pP
     db   $01, $68, $02                                 ;; 30:7288 .w.
-    dw   $c7d8                                         ;; 30:728b pP
+    dw   wC7D8                                         ;; 30:728b pP
     dw   w1_D216                                       ;; 30:728d pP
     db   $01, $68, $02                                 ;; 30:728f .w.
-    dw   $c7da                                         ;; 30:7292 pP
+    dw   wC7DA                                         ;; 30:7292 pP
     dw   w1_D20E                                       ;; 30:7294 pP
     db   $01, $1e                                      ;; 30:7296 .w
     dw   $6fd4                                         ;; 30:7298 wW
@@ -3391,10 +3391,10 @@ data_30_7df8:
     dw   wC764                                         ;; 30:7e6e pP
     dw   w1_BeginRegionD1FD                            ;; 30:7e70 pP
     db   $01, $68, $02                                 ;; 30:7e72 .w.
-    dw   $c7d8                                         ;; 30:7e75 pP
+    dw   wC7D8                                         ;; 30:7e75 pP
     dw   w1_D216                                       ;; 30:7e77 pP
     db   $01, $68, $02                                 ;; 30:7e79 .w.
-    dw   $c7da                                         ;; 30:7e7c pP
+    dw   wC7DA                                         ;; 30:7e7c pP
     dw   w1_D20E                                       ;; 30:7e7e pP
     db   $01, $1e                                      ;; 30:7e80 .w
     dw   $6fd4                                         ;; 30:7e82 wW
