@@ -62,8 +62,15 @@ ENDM
 MACRO Op50_WriteByte
 db $50
 dw \1
-db BANK(\1)
 db \2
+db \3
+ENDM
+MACRO Op52_WriteBytes
+db $52
+dw \1
+db \2
+db \3
+db \4
 ENDM
 MACRO Op68_CopyBytes
 db $68

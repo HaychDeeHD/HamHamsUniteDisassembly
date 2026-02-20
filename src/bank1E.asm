@@ -46,7 +46,7 @@ data_1e_4054:
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 1e:4056 $5e $03
     Op82_Run call_01_73cc                              ;; 1e:4058 $82 $cc $73 $01
     Op82_Run call_01_7416                              ;; 1e:405c $82 $16 $74 $01
-    Op50_WriteByte wC31D, $d0                          ;; 1e:4060 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, 0, $d0                       ;; 1e:4060 $50 $1d $c3 $00 $d0
     db   $2a, $00, $00, $00, $1c, $09, $04, $43        ;; 1e:4065 ????????
     db   $1e, $c6, $42, $1e, $3c, $43, $1e, $c1        ;; 1e:406d ????????
     db   $48, $1e, $52, $4b, $1e, $2a, $50, $1e        ;; 1e:4075 ????????
@@ -72,7 +72,7 @@ data_1e_40b0:
     Op18_Jump data_1e_4054                             ;; 1e:40c3 $18 $54 $40 $1e
 
 data_1e_40c7:
-    Op50_WriteByte wC720, $17                          ;; 1e:40c7 $50 $20 $c7 $00 $17
+    Op50_WriteByte wC720, 0, $17                       ;; 1e:40c7 $50 $20 $c7 $00 $17
     Op82_Run call_01_6844                              ;; 1e:40cc $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 1e:40d0 $4a
     Op14_Unknown 1, $cb, $77                           ;; 1e:40d1 $14 $01 $cb $77
@@ -199,9 +199,9 @@ data_1e_42d9:
 data_1e_42fc:
     Op1E_Call data_20_42f7                             ;; 1e:42fc $1e $f7 $42 $20
     Op18_Jump data_1e_4054                             ;; 1e:4300 $18 $54 $40 $1e
-    Op50_WriteByte wC31D, $d4                          ;; 1e:4304 $50 $1d $c3 $00 $d4
+    Op50_WriteByte wC31D, 0, $d4                       ;; 1e:4304 $50 $1d $c3 $00 $d4
     Op82_Run call_01_74c3                              ;; 1e:4309 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $d0                          ;; 1e:430d $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, 0, $d0                       ;; 1e:430d $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 1e:4312 $1c $04
     SCRIPT_POINTER data_1e_4099                        ;; 1e:4314 $99 $40 $1e
     SCRIPT_POINTER data_1e_40b0                        ;; 1e:4317 $b0 $40 $1e

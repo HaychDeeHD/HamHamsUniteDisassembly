@@ -60,7 +60,7 @@ data_25_40d9:
     SCRIPT_RETURN_20                                   ;; 25:40d9 $20
 
 data_25_40da:
-    Op50_WriteByte wC720, $17                          ;; 25:40da $50 $20 $c7 $00 $17
+    Op50_WriteByte wC720, 0, $17                       ;; 25:40da $50 $20 $c7 $00 $17
     Op82_Run call_01_6844                              ;; 25:40df $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 25:40e3 $4a
     Op32_Unknown $42, $60, $69, $00, $d0, $05          ;; 25:40e4 $32 $42 $60 $69 $00 $d0 $05

@@ -14,7 +14,7 @@ SECTION "bank1f", ROMX[$4000], BANK[$1f]
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 1f:400e $5e $03
     Op82_Run call_01_73cc                              ;; 1f:4010 $82 $cc $73 $01
     Op82_Run call_01_7416                              ;; 1f:4014 $82 $16 $74 $01
-    Op50_WriteByte wC31D, $d0                          ;; 1f:4018 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, 0, $d0                       ;; 1f:4018 $50 $1d $c3 $00 $d0
     Op14_Unknown 1, $27, $71                           ;; 1f:401d $14 $01 $27 $71
     SCRIPT_POINTER data_1f_402c                        ;; 1f:4021 $2c $40 $1f
     Op16_SubOps 1                                      ;; 1f:4024 $16 $01
@@ -22,7 +22,7 @@ SECTION "bank1f", ROMX[$4000], BANK[$1f]
     Op1E_Call data_04_660d                             ;; 1f:4028 $1e $0d $66 $04
 
 data_1f_402c:
-    Op50_WriteByte w1_DD99, $01                        ;; 1f:402c $50 $99 $dd $01 $01
+    Op50_WriteByte w1_DD99, 1, $01                     ;; 1f:402c $50 $99 $dd $01 $01
     db   $2a, $00, $00, $00, $1c, $0c, $e3, $44        ;; 1f:4031 ????????
     db   $1f, $a5, $44, $1f, $28, $45, $1f, $c7        ;; 1f:4039 ????????
     db   $46, $1f, $89, $47, $1f, $8b, $44, $1f        ;; 1f:4041 ????????
@@ -51,7 +51,7 @@ data_1f_402c:
     db   $1f                                           ;; 1f:40f9 ?
 
 data_1f_40fa:
-    Op50_WriteByte wC720, $16                          ;; 1f:40fa $50 $20 $c7 $00 $16
+    Op50_WriteByte wC720, 0, $16                       ;; 1f:40fa $50 $20 $c7 $00 $16
     Op82_Run call_01_6844                              ;; 1f:40ff $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 1f:4103 $4a
     Op14_Unknown 1, $2d, $6f                           ;; 1f:4104 $14 $01 $2d $6f

@@ -140,19 +140,43 @@ w1_D1FE:
     ds 1                                               ;; d1fe
 
 w1_D1FF:
-    ds 3                                               ;; d1ff
+    ds 1                                               ;; d1ff
+
+w1_D200:
+    ds 1                                               ;; d200
+
+w1_D201:
+    ds 1                                               ;; d201
 
 w1_D202:
     ds 1                                               ;; d202
 
 w1_SomeAddressD203:
-    ds 11                                              ;; d203
+    ds 8                                               ;; d203
+
+w1_D20B:
+    ds 1                                               ;; d20b
+
+w1_D20C:
+    ds 2                                               ;; d20c
 
 w1_D20E:
-    ds 8                                               ;; d20e
+    ds 1                                               ;; d20e
+
+w1_D20F:
+    ds 4                                               ;; d20f
+
+w1_D213:
+    ds 1                                               ;; d213
+
+w1_D214:
+    ds 2                                               ;; d214
 
 w1_D216:
-    ds 2                                               ;; d216
+    ds 1                                               ;; d216
+
+w1_D217:
+    ds 1                                               ;; d217
 
 w1_D218:
     ds 19                                              ;; d218

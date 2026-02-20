@@ -21,7 +21,7 @@ data_21_401c:
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 21:401e $5e $03
     Op82_Run call_01_73cc                              ;; 21:4020 $82 $cc $73 $01
     Op82_Run call_01_7416                              ;; 21:4024 $82 $16 $74 $01
-    Op50_WriteByte wC31D, $d0                          ;; 21:4028 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, 0, $d0                       ;; 21:4028 $50 $1d $c3 $00 $d0
     db   $2a, $00, $00, $00, $16, $01, $7e, $12        ;; 21:402d ????????
     db   $b0, $68, $01, $31, $c8, $3a, $c5, $00        ;; 21:4035 ????????
     db   $1c, $0f, $19, $43, $21, $60, $43, $21        ;; 21:403d ????????
@@ -53,7 +53,7 @@ data_21_40a5:
     Op18_Jump data_21_401c                             ;; 21:40a9 $18 $1c $40 $21
 
 data_21_40ad:
-    Op50_WriteByte wC720, $11                          ;; 21:40ad $50 $20 $c7 $00 $11
+    Op50_WriteByte wC720, 0, $11                       ;; 21:40ad $50 $20 $c7 $00 $11
     Op82_Run call_01_6844                              ;; 21:40b2 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 21:40b6 $4a
     Op14_Unknown 1, $44, $55                           ;; 21:40b7 $14 $01 $44 $55
@@ -176,9 +176,9 @@ data_21_42ee:
 data_21_4311:
     Op1E_Call data_20_42f7                             ;; 21:4311 $1e $f7 $42 $20
     Op18_Jump data_21_401c                             ;; 21:4315 $18 $1c $40 $21
-    Op50_WriteByte wC31D, $d2                          ;; 21:4319 $50 $1d $c3 $00 $d2
+    Op50_WriteByte wC31D, 0, $d2                       ;; 21:4319 $50 $1d $c3 $00 $d2
     Op82_Run call_01_74c3                              ;; 21:431e $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $d0                          ;; 21:4322 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, 0, $d0                       ;; 21:4322 $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 21:4327 $1c $04
     SCRIPT_POINTER data_21_407f                        ;; 21:4329 $7f $40 $21
     SCRIPT_POINTER data_21_4096                        ;; 21:432c $96 $40 $21

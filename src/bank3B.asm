@@ -31,7 +31,7 @@ SECTION "bank3b", ROMX[$4000], BANK[$3b]
     db   $3b                                           ;; 3b:4081 ?
 
 data_3b_4082:
-    Op50_WriteByte wC720, $17                          ;; 3b:4082 $50 $20 $c7 $00 $17
+    Op50_WriteByte wC720, 0, $17                       ;; 3b:4082 $50 $20 $c7 $00 $17
     Op82_Run call_01_6844                              ;; 3b:4087 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3b:408b $4a
     Op1E_Call data_04_61cf                             ;; 3b:408c $1e $cf $61 $04

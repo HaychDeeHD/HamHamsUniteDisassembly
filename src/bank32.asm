@@ -58,7 +58,7 @@ data_32_40bf:
     SCRIPT_RETURN_20                                   ;; 32:40c4 $20
 
 data_32_40c5:
-    Op50_WriteByte wC720, $16                          ;; 32:40c5 $50 $20 $c7 $00 $16
+    Op50_WriteByte wC720, 0, $16                       ;; 32:40c5 $50 $20 $c7 $00 $16
     Op82_Run call_01_6844                              ;; 32:40ca $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 32:40ce $4a
     Op32_Unknown $ef, $51, $66, $00, $d0, $05          ;; 32:40cf $32 $ef $51 $66 $00 $d0 $05

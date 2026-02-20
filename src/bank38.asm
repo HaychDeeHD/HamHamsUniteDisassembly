@@ -42,7 +42,7 @@ data_38_4094:
     SCRIPT_RETURN_20                                   ;; 38:4099 $20
 
 data_38_409a:
-    Op50_WriteByte wC720, $15                          ;; 38:409a $50 $20 $c7 $00 $15
+    Op50_WriteByte wC720, 0, $15                       ;; 38:409a $50 $20 $c7 $00 $15
     Op82_Run call_01_6844                              ;; 38:409f $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 38:40a3 $4a
     Op32_Unknown $b9, $5c, $67, $00, $d0, $05          ;; 38:40a4 $32 $b9 $5c $67 $00 $d0 $05

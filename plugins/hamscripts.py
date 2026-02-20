@@ -204,11 +204,15 @@ class Op1EBlock(Block):
 class Op50Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=5)
-        RomInfo.macros["Op50_WriteByte"] = "db $50\ndw \\1\ndb BANK(\\1)\ndb \\2"
+        # Can't use BANK(\1). Example: The label is in VRAM but the bank arg is 1.
+        RomInfo.macros["Op50_WriteByte"] = "db $50\ndw \\1\ndb \\2\ndb \\3"
 
         pointer = memory.word(addr + 1)
         bankNum = memory.byte(addr + 3)
-        RomInfo.getWRam(bankNum).addAutoLabel(pointer, None, None) # WRam ignores source and type args.
+        # This might be WRAM0 instead of the active WRAM bank. But if it is it won't be used anyway since the pointer will be < $D000.
+        possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
+        targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
+        targetMemory.addAutoLabel(pointer, None, None) # WRam ignores source and type args.
 
         # Should be followed by a script instruction.
         maybeCreateScriptBlock(memory, addr + len(self))
@@ -217,8 +221,38 @@ class Op50Block(Block):
         pointer = self.memory.word(file.addr + 1)
         bankNum = self.memory.byte(file.addr + 3)
         payload = self.memory.byte(file.addr + 4)
-        label = RomInfo.getWRam(bankNum).getLabel(pointer)
-        file.asmLine(5, "Op50_WriteByte", str(label), "$%02x" % payload)
+        possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
+        targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
+        label = targetMemory.getLabel(pointer)
+        file.asmLine(5, "Op50_WriteByte", str(label), str(bankNum), "$%02x" % payload)
+
+class Op52Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=6)
+        # Can't use BANK(\1). Example: The label is in VRAM but the bank arg is 1.
+        RomInfo.macros["Op52_WriteBytes"] = "db $52\ndw \\1\ndb \\2\ndb \\3\ndb \\4"
+
+        pointer = memory.word(addr + 1)
+        bankNum = memory.byte(addr + 3)
+        # This might be WRAM0 instead of the active WRAM bank. But if it is it won't be used anyway since the pointer will be < $D000.
+        possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
+        targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
+        targetMemory.addAutoLabel(pointer, None, None) # WRam ignores source and type args.
+        # Giving the second byte written to a label also.
+        targetMemory.addAutoLabel(pointer + 1, None, None) # WRam ignores source and type args.
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        pointer = self.memory.word(file.addr + 1)
+        bankNum = self.memory.byte(file.addr + 3)
+        payload1 = self.memory.byte(file.addr + 4)
+        payload2 = self.memory.byte(file.addr + 5)
+        possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
+        targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
+        label = targetMemory.getLabel(pointer)
+        file.asmLine(6, "Op52_WriteBytes", str(label), str(bankNum), "$%02x" % payload1, "$%02x" % payload2)
 
 class Op68Block(Block):
     def __init__(self, memory, addr):
@@ -376,6 +410,7 @@ OPBLOCKS = {
     0x3E: Op3EBlock,
     0x4A: Op4ABlock,
     0x50: Op50Block,
+    0x52: Op52Block,
     0x68: Op68Block,
     0x82: Op82Block,
 }

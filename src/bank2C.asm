@@ -17,7 +17,7 @@ data_2c_400f:
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 2c:4011 $5e $03
     Op82_Run call_01_73cc                              ;; 2c:4013 $82 $cc $73 $01
     Op82_Run call_01_7416                              ;; 2c:4017 $82 $16 $74 $01
-    Op50_WriteByte wC31D, $d0                          ;; 2c:401b $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, 0, $d0                       ;; 2c:401b $50 $1d $c3 $00 $d0
     db   $2a, $00, $00, $00, $1c, $09, $4f, $43        ;; 2c:4020 ????????
     db   $2c, $b9, $43, $2c, $ec, $43, $2c, $cb        ;; 2c:4028 ????????
     db   $45, $2c, $d0, $46, $2c, $1c, $4c, $2c        ;; 2c:4030 ????????
@@ -33,7 +33,7 @@ data_2c_400f:
     db   $74, $01, $18, $0f, $40, $2c                  ;; 2c:4080 ??????
 
 data_2c_4086:
-    Op50_WriteByte wC720, $12                          ;; 2c:4086 $50 $20 $c7 $00 $12
+    Op50_WriteByte wC720, 0, $12                       ;; 2c:4086 $50 $20 $c7 $00 $12
     Op82_Run call_01_6844                              ;; 2c:408b $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 2c:408f $4a
     Op32_Unknown $bb, $6d, $75, $50, $de, $04          ;; 2c:4090 $32 $bb $6d $75 $50 $de $04

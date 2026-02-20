@@ -23,7 +23,7 @@ data_31_401f:
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 31:4021 $5e $03
     Op82_Run call_01_73cc                              ;; 31:4023 $82 $cc $73 $01
     Op82_Run call_01_7416                              ;; 31:4027 $82 $16 $74 $01
-    Op50_WriteByte wC31D, $d0                          ;; 31:402b $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, 0, $d0                       ;; 31:402b $50 $1d $c3 $00 $d0
     db   $2a, $00, $00, $00, $1c, $03, $bd, $42        ;; 31:4030 ????????
     db   $31, $7f, $42, $31, $f5, $42, $31, $82        ;; 31:4038 ????????
     db   $c3, $74, $01, $1c, $03, $52, $40, $31        ;; 31:4040 ????????
@@ -47,7 +47,7 @@ data_31_4069:
     Op18_Jump data_31_401f                             ;; 31:407c $18 $1f $40 $31
 
 data_31_4080:
-    Op50_WriteByte wC720, $1f                          ;; 31:4080 $50 $20 $c7 $00 $1f
+    Op50_WriteByte wC720, 0, $1f                       ;; 31:4080 $50 $20 $c7 $00 $1f
     Op82_Run call_01_6844                              ;; 31:4085 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 31:4089 $4a
     Op14_Unknown 1, $6e, $61                           ;; 31:408a $14 $01 $6e $61
@@ -164,9 +164,9 @@ data_31_4292:
 data_31_42b5:
     Op1E_Call data_20_42f7                             ;; 31:42b5 $1e $f7 $42 $20
     Op18_Jump data_31_401f                             ;; 31:42b9 $18 $1f $40 $31
-    Op50_WriteByte wC31D, $d4                          ;; 31:42bd $50 $1d $c3 $00 $d4
+    Op50_WriteByte wC31D, 0, $d4                       ;; 31:42bd $50 $1d $c3 $00 $d4
     Op82_Run call_01_74c3                              ;; 31:42c2 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $d0                          ;; 31:42c6 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, 0, $d0                       ;; 31:42c6 $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 31:42cb $1c $04
     SCRIPT_POINTER data_31_4052                        ;; 31:42cd $52 $40 $31
     SCRIPT_POINTER data_31_4069                        ;; 31:42d0 $69 $40 $31

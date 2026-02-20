@@ -1535,21 +1535,21 @@ data_04_6223:
     db   $20                                           ;; 04:660c ?
 
 data_04_660d:
-    Op50_WriteByte wC479, $03                          ;; 04:660d $50 $79 $c4 $00 $03
+    Op50_WriteByte wC479, 0, $03                       ;; 04:660d $50 $79 $c4 $00 $03
     SCRIPT_RETURN_20                                   ;; 04:6612 $20
-    Op50_WriteByte wC479, $04                          ;; 04:6613 $50 $79 $c4 $00 $04
+    Op50_WriteByte wC479, 0, $04                       ;; 04:6613 $50 $79 $c4 $00 $04
     SCRIPT_RETURN_20                                   ;; 04:6618 $20
-    Op50_WriteByte wC479, $05                          ;; 04:6619 $50 $79 $c4 $00 $05
+    Op50_WriteByte wC479, 0, $05                       ;; 04:6619 $50 $79 $c4 $00 $05
     SCRIPT_RETURN_20                                   ;; 04:661e $20
-    Op50_WriteByte wC479, $08                          ;; 04:661f $50 $79 $c4 $00 $08
+    Op50_WriteByte wC479, 0, $08                       ;; 04:661f $50 $79 $c4 $00 $08
     SCRIPT_RETURN_20                                   ;; 04:6624 $20
-    Op50_WriteByte wC479, $09                          ;; 04:6625 $50 $79 $c4 $00 $09
+    Op50_WriteByte wC479, 0, $09                       ;; 04:6625 $50 $79 $c4 $00 $09
     SCRIPT_RETURN_20                                   ;; 04:662a $20
-    Op50_WriteByte wC479, $0a                          ;; 04:662b $50 $79 $c4 $00 $0a
+    Op50_WriteByte wC479, 0, $0a                       ;; 04:662b $50 $79 $c4 $00 $0a
     SCRIPT_RETURN_20                                   ;; 04:6630 $20
     Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 04:6631 $36 $fd $77 $7f $9a $dd $01
     SCRIPT_RETURN_4A                                   ;; 04:6638 $4a
-    Op50_WriteByte wC728, $09                          ;; 04:6639 $50 $28 $c7 $00 $09
+    Op50_WriteByte wC728, 0, $09                       ;; 04:6639 $50 $28 $c7 $00 $09
     SCRIPT_RETURN_20                                   ;; 04:663e $20
 
 data_04_663f:
@@ -2550,7 +2550,7 @@ data_04_6f38:
     db   $00, $01, $20                                 ;; 04:6f40 ..w
 
 data_04_6f43:
-    Op50_WriteByte w1_DD99, $00                        ;; 04:6f43 $50 $99 $dd $01 $00
+    Op50_WriteByte w1_DD99, 1, $00                     ;; 04:6f43 $50 $99 $dd $01 $00
     Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 04:6f48 $36 $fd $77 $7f $9a $dd $01
     SCRIPT_RETURN_4A                                   ;; 04:6f4f $4a
     SCRIPT_RETURN_20                                   ;; 04:6f50 $20

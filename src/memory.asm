@@ -995,7 +995,10 @@ wC784:
     ds 2                                               ;; c784
 
 wC786:
-    ds 7                                               ;; c786
+    ds 6                                               ;; c786
+
+wC78C:
+    ds 1                                               ;; c78c
 
 wC78D:
     ds 3                                               ;; c78d
@@ -1010,7 +1013,10 @@ wC792:
     ds 12                                              ;; c792
 
 wC79E:
-    ds 58                                              ;; c79e
+    ds 2                                               ;; c79e
+
+wC7A0:
+    ds 56                                              ;; c7a0
 
 wC7D8:
     ds 2                                               ;; c7d8
@@ -1046,7 +1052,10 @@ wC81E:
     ds 1                                               ;; c81e
 
 wC81F:
-    ds 2                                               ;; c81f
+    ds 1                                               ;; c81f
+
+wC820:
+    ds 1                                               ;; c820
 
 wC821:
     ds 1                                               ;; c821
@@ -1727,7 +1736,10 @@ hFFFE:
     ds 1                                               ;; fffe
 
 SECTION "vram", VRAM[$8000]
-    ds 8192                                            ;; 8000
+    ds 6799                                            ;; 8000
+
+v9A8F:
+    ds 1393                                            ;; 9a8f
 
 SECTION "sram", SRAM[$a000]
 

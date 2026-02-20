@@ -32,7 +32,7 @@ SECTION "bank3a", ROMX[$4000], BANK[$3a]
     db   $11, $40, $3a                                 ;; 3a:407d ???
 
 data_3a_4080:
-    Op50_WriteByte wC720, $15                          ;; 3a:4080 $50 $20 $c7 $00 $15
+    Op50_WriteByte wC720, 0, $15                       ;; 3a:4080 $50 $20 $c7 $00 $15
     Op82_Run call_01_6844                              ;; 3a:4085 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3a:4089 $4a
     Op32_Unknown $ee, $70, $60, $00, $d0, $05          ;; 3a:408a $32 $ee $70 $60 $00 $d0 $05
