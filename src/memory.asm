@@ -998,13 +998,19 @@ wC786:
     ds 7                                               ;; c786
 
 wC78D:
-    ds 4                                               ;; c78d
+    ds 3                                               ;; c78d
+
+wC790:
+    ds 1                                               ;; c790
 
 wC791:
     ds 1                                               ;; c791
 
 wC792:
-    ds 70                                              ;; c792
+    ds 12                                              ;; c792
+
+wC79E:
+    ds 58                                              ;; c79e
 
 wC7D8:
     ds 2                                               ;; c7d8
