@@ -2340,9 +2340,10 @@ Op80:
     call call_00_2940                                  ;; 00:1108 $cd $40 $29
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:110b $c3 $14 $0a
 
+; 10 args get written to wC357-60 (but not c359?)
 Op4C:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:110e $cd $69 $0a
-    call call_00_11fb                                  ;; 00:1111 $cd $fb $11
+    call consultTableOfWramAddresses                                  ;; 00:1111 $cd $fb $11
     inc  HL                                            ;; 00:1114 $23
     ld   A, [HL+]                                      ;; 00:1115 $2a
     ld   [wC357], A                                    ;; 00:1116 $ea $57 $c3
@@ -2352,51 +2353,51 @@ Op4C:
     ld   A, [HL+]                                      ;; 00:111f $2a
     ld   [wC35A], A                                    ;; 00:1120 $ea $5a $c3
     and  A, A                                          ;; 00:1123 $a7
-    jr   Z, .jr_00_1127                                ;; 00:1124 $28 $01
+    jr   Z, .afterMaybeIncD_1                                ;; 00:1124 $28 $01
     inc  D                                             ;; 00:1126 $14
-.jr_00_1127:
+.afterMaybeIncD_1:
     ld   A, [HL+]                                      ;; 00:1127 $2a
     ld   [wC35B], A                                    ;; 00:1128 $ea $5b $c3
     and  A, A                                          ;; 00:112b $a7
-    jr   Z, .jr_00_112f                                ;; 00:112c $28 $01
+    jr   Z, .afterMaybeIncD_2                                ;; 00:112c $28 $01
     inc  D                                             ;; 00:112e $14
-.jr_00_112f:
+.afterMaybeIncD_2:
     ld   A, D                                          ;; 00:112f $7a
     ld   [wC362], A                                    ;; 00:1130 $ea $62 $c3
     ld   D, $00                                        ;; 00:1133 $16 $00
     ld   A, [HL+]                                      ;; 00:1135 $2a
     ld   [wC35C], A                                    ;; 00:1136 $ea $5c $c3
     and  A, A                                          ;; 00:1139 $a7
-    jr   Z, .jr_00_113d                                ;; 00:113a $28 $01
+    jr   Z, .afterMaybeIncD_3                                ;; 00:113a $28 $01
     inc  D                                             ;; 00:113c $14
-.jr_00_113d:
+.afterMaybeIncD_3:
     ld   A, [HL+]                                      ;; 00:113d $2a
     ld   [wC35D], A                                    ;; 00:113e $ea $5d $c3
     and  A, A                                          ;; 00:1141 $a7
-    jr   Z, .jr_00_1145                                ;; 00:1142 $28 $01
+    jr   Z, .afterMaybeIncD_4                                ;; 00:1142 $28 $01
     inc  D                                             ;; 00:1144 $14
-.jr_00_1145:
+.afterMaybeIncD_4:
     ld   A, D                                          ;; 00:1145 $7a
     ld   [wC363], A                                    ;; 00:1146 $ea $63 $c3
     ld   D, $00                                        ;; 00:1149 $16 $00
     ld   A, [HL+]                                      ;; 00:114b $2a
     ld   [wBitArrayIndexC35E], A                       ;; 00:114c $ea $5e $c3
     and  A, A                                          ;; 00:114f $a7
-    jr   Z, .jr_00_1153                                ;; 00:1150 $28 $01
+    jr   Z, .afterMaybeIncD_5                                ;; 00:1150 $28 $01
     inc  D                                             ;; 00:1152 $14
-.jr_00_1153:
+.afterMaybeIncD_5:
     ld   A, [HL+]                                      ;; 00:1153 $2a
     ld   [wBitArrayIndexC35E.low], A                   ;; 00:1154 $ea $5f $c3
     and  A, A                                          ;; 00:1157 $a7
-    jr   Z, .jr_00_115b                                ;; 00:1158 $28 $01
+    jr   Z, .afterMaybeIncD_6                                ;; 00:1158 $28 $01
     inc  D                                             ;; 00:115a $14
-.jr_00_115b:
+.afterMaybeIncD_6:
     ld   A, [HL+]                                      ;; 00:115b $2a
     ld   [wC360], A                                    ;; 00:115c $ea $60 $c3
     and  A, A                                          ;; 00:115f $a7
-    jr   Z, .jr_00_1163                                ;; 00:1160 $28 $01
+    jr   Z, .afterMaybeIncD_7                                ;; 00:1160 $28 $01
     inc  D                                             ;; 00:1162 $14
-.jr_00_1163:
+.afterMaybeIncD_7:
     ld   A, D                                          ;; 00:1163 $7a
     ld   [wC364], A                                    ;; 00:1164 $ea $64 $c3
     ld   A, $0a                                        ;; 00:1167 $3e $0a
@@ -2405,9 +2406,10 @@ Op4C:
     ldh  [rSVBK], A                                    ;; 00:116e $e0 $70
     ld   A, [wC357]                                    ;; 00:1170 $fa $57 $c3
     cp   A, $ff                                        ;; 00:1173 $fe $ff
-    jr   Z, .jr_00_1178                                ;; 00:1175 $28 $01
+    jr   Z, .afterMaybeIncD_8                                ;; 00:1175 $28 $01
+    ; BC set by consultTableOfWramAddresses at the start.
     ld   [BC], A                                       ;; 00:1177 $02
-.jr_00_1178:
+.afterMaybeIncD_8:
     ld   A, [wDupeBitArrayIndexC358]                   ;; 00:1178 $fa $58 $c3
     cp   A, $ff                                        ;; 00:117b $fe $ff
     jr   Z, .jr_00_1184                                ;; 00:117d $28 $05
@@ -2492,11 +2494,13 @@ jr_00_11d6:
 call_00_11f0:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:11f0 $ea $26 $c3
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:11f3 $cd $69 $0a
-    call call_00_11fb                                  ;; 00:11f6 $cd $fb $11
+    call consultTableOfWramAddresses                                  ;; 00:11f6 $cd $fb $11
     inc  HL                                            ;; 00:11f9 $23
     ret                                                ;; 00:11fa $c9
 
-call_00_11fb:
+; Input A is in index into the following table.
+; The value there is returned in BC.
+consultTableOfWramAddresses:
     push HL                                            ;; 00:11fb $e5
     ld   E, A                                          ;; 00:11fc $5f
     ld   D, $00                                        ;; 00:11fd $16 $00

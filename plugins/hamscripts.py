@@ -147,7 +147,7 @@ dw \2
                     size += 4
                 case _:
                     # TODO handle other case. (There's game code for other values of subopcode.)
-                    raise Exception("SubOp not yet implemented", "$%02x" % subOpCode)
+                    raise Exception("SubOp not yet implemented", "$%02x" % subOpCode, "$%04x" % addr, "$%02x" % memory.bankNumber)
 
         self.resize(size)
         # Should be followed by a script instruction.
@@ -397,6 +397,27 @@ class Op36Block(Block):
         arg6 = self.memory.byte(file.addr + 6)
         file.asmLine(7, "Op36_Unknown", "$%02x" % arg1, "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5, "$%02x" % arg6)
 
+class Op4CBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 11)
+        RomInfo.macros["Op4c_Unknown"] = "db $4c\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6\ndb \\7\ndb \\8\ndb \\9\ndb \\<10>"
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        arg1 = self.memory.byte(file.addr + 1)
+        arg2 = self.memory.byte(file.addr + 2)
+        arg3 = self.memory.byte(file.addr + 3)
+        arg4 = self.memory.byte(file.addr + 4)
+        arg5 = self.memory.byte(file.addr + 5)
+        arg6 = self.memory.byte(file.addr + 6)
+        arg7 = self.memory.byte(file.addr + 7)
+        arg8 = self.memory.byte(file.addr + 9)
+        arg9 = self.memory.byte(file.addr + 9)
+        arg10 = self.memory.byte(file.addr + 10)
+        file.asmLine(11, "Op4c_Unknown", "$%02x" % arg1, "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5, "$%02x" % arg6, "$%02x" % arg7, "$%02x" % arg8, "$%02x" % arg9, "$%02x" % arg10)
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
@@ -409,6 +430,7 @@ OPBLOCKS = {
     0x36: Op36Block,
     0x3E: Op3EBlock,
     0x4A: Op4ABlock,
+    # 0x4C: Op4CBlock,
     0x50: Op50Block,
     0x52: Op52Block,
     0x68: Op68Block,
