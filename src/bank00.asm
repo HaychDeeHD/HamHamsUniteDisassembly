@@ -2146,57 +2146,71 @@ call_00_0f79:
     pop  HL                                            ;; 00:0f94 $e1
     ret                                                ;; 00:0f95 $c9
 
-; DE will do what HL usually does in this op.
+; Use arg1 as an index into a list of Wram bank 1 slots.
+; At that wram address:
+; Target: [arg2] [00] [00] [arg3] [arg4] [arg5]
+; (I may have swapped args 3 and 4)
 Op4E:
+; DE will do what HL usually does in this op.
     call LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch ;; 00:0f96 $cd $7c $0a
-; Mult arg1 of the 4E op by 2.
+; Mult arg1 of the 4E op by 2. Used as index in table of 2-byte wram slots.
     sla  A                                             ;; 00:0f99 $cb $27
     ld   C, A                                          ;; 00:0f9b $4f
     ld   B, $00                                        ;; 00:0f9c $06 $00
-    ld   HL, $fd8                                      ;; 00:0f9e $21 $d8 $0f
+    ld   HL, Op4E_AddressTable ;@=ptr Op4E_AddressTable ;; 00:0f9e $21 $d8 $0f
     add  HL, BC                                        ;; 00:0fa1 $09
     ld   A, [HL+]                                      ;; 00:0fa2 $2a
     ld   B, [HL]                                       ;; 00:0fa3 $46
     ld   C, A                                          ;; 00:0fa4 $4f
+; WRAM bank 1.
     ld   A, $01                                        ;; 00:0fa5 $3e $01
     ldh  [rSVBK], A                                    ;; 00:0fa7 $e0 $70
     inc  DE                                            ;; 00:0fa9 $13
     ld   A, [DE]                                       ;; 00:0faa $1a
+; Write arg2 to the wram slot pulled from the table.
     ld   [BC], A                                       ;; 00:0fab $02
     inc  DE                                            ;; 00:0fac $13
     ld   A, [DE]                                       ;; 00:0fad $1a
     ld   L, A                                          ;; 00:0fae $6f
     inc  DE                                            ;; 00:0faf $13
     ld   A, [DE]                                       ;; 00:0fb0 $1a
+; Args 3 and 4 into HL
     ld   H, A                                          ;; 00:0fb1 $67
     inc  DE                                            ;; 00:0fb2 $13
     ld   A, [DE]                                       ;; 00:0fb3 $1a
     inc  DE                                            ;; 00:0fb4 $13
+; If arg 3-5 are all zero, skip to end.
     and  A, A                                          ;; 00:0fb5 $a7
-    jr   NZ, .jr_00_0fbe                               ;; 00:0fb6 $20 $06
+    jr   NZ, .perform                               ;; 00:0fb6 $20 $06
     cp   A, L                                          ;; 00:0fb8 $bd
-    jr   NZ, .jr_00_0fbe                               ;; 00:0fb9 $20 $03
+    jr   NZ, .perform                               ;; 00:0fb9 $20 $03
     cp   A, H                                          ;; 00:0fbb $bc
-    jr   Z, .jr_00_0fd0                                ;; 00:0fbc $28 $12
-.jr_00_0fbe:
+    jr   Z, .end                                ;; 00:0fbc $28 $12
+.perform:
     push HL                                            ;; 00:0fbe $e5
     ld   HL, $05                                       ;; 00:0fbf $21 $05 $00
+; Add 5 to the wram slot pulled from the table
     add  HL, BC                                        ;; 00:0fc2 $09
+; Write arg 5 there
     ld   [HL-], A                                      ;; 00:0fc3 $32
     pop  DE                                            ;; 00:0fc4 $d1
     ld   [HL], D                                       ;; 00:0fc5 $72
     dec  HL                                            ;; 00:0fc6 $2b
+    ; Write args 3-4 to the 2 slots before it.
     ld   [HL], E                                       ;; 00:0fc7 $73
     ld   HL, $01                                       ;; 00:0fc8 $21 $01 $00
     add  HL, BC                                        ;; 00:0fcb $09
     ld   A, $00                                        ;; 00:0fcc $3e $00
+    ; And then write 00 in the remaining slots
     ld   [HL+], A                                      ;; 00:0fce $22
     ld   [HL], A                                       ;; 00:0fcf $77
-.jr_00_0fd0:
+.end:
     ld   A, $05                                        ;; 00:0fd0 $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0fd2 $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0fd5 $c3 $14 $0a
+
 ;@jumptable amount=16
+Op4E_AddressTable:
     dw   $d857                                         ;; 00:0fd8 pP $00
     dw   $d863                                         ;; 00:0fda pP $01
     dw   $d86f                                         ;; 00:0fdc pP $02

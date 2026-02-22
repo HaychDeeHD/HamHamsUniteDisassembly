@@ -522,6 +522,23 @@ class Op98Block(Block):
 
         file.asmLine(5, "Op98_StoreAddress", str(index), str(label))
 
+class Op4CBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 6)
+        RomInfo.macros["Op4C_Unknown_StoreValue"] = "db $4c\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5"
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        arg2 = self.memory.byte(file.addr + 2)
+        arg3 = self.memory.byte(file.addr + 3)
+        arg4 = self.memory.byte(file.addr + 4)
+        arg5 = self.memory.byte(file.addr + 5)
+        file.asmLine(6, "Op4C_Unknown_StoreValue", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
+
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
@@ -534,7 +551,7 @@ OPBLOCKS = {
     0x36: Op36Block,
     0x3E: Op3EBlock,
     0x4A: Op4ABlock,
-    0x4C: Op4CBlock,
+    # 0x4C: Op4CBlock,
     0x50: Op50Block,
     0x52: Op52Block,
     0x68: Op68Block,
