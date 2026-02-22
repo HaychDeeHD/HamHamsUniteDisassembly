@@ -206,7 +206,10 @@ w1_D2C6:
     ds 8                                               ;; d2c6
 
 w1_D2CE:
-    ds 227                                             ;; d2ce
+    ds 21                                              ;; d2ce
+
+w1_D2E3:
+    ds 206                                             ;; d2e3
 
 w1_D3B1:
     ds 187                                             ;; d3b1

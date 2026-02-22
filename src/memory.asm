@@ -916,7 +916,10 @@ wC722:
     ds 2                                               ;; c722
 
 wC724:
-    ds 4                                               ;; c724
+    ds 1                                               ;; c724
+
+wC725:
+    ds 3                                               ;; c725
 
 wC728:
     ds 2                                               ;; c728
@@ -1024,7 +1027,13 @@ wC79E:
     ds 2                                               ;; c79e
 
 wC7A0:
-    ds 56                                              ;; c7a0
+    ds 1                                               ;; c7a0
+
+wC7A1:
+    ds 1                                               ;; c7a1
+
+wC7A2:
+    ds 54                                              ;; c7a2
 
 wC7D8:
     ds 2                                               ;; c7d8
@@ -1111,28 +1120,46 @@ wC838:
     ds 1                                               ;; c838
 
 wC839:
-    ds 7                                               ;; c839
+    ds 6                                               ;; c839
+
+wC83F:
+    ds 1                                               ;; c83f
 
 wC840:
-    ds 216                                             ;; c840
+    ds 8                                               ;; c840
+
+wC848:
+    ds 208                                             ;; c848
 
 wBitArrayC918:
-    ds 6                                               ;; c918
+    ds 5                                               ;; c918
+
+wC91D:
+    ds 1                                               ;; c91d
 
 wC91E:
     ds 13                                              ;; c91e
 
 wC92B:
-    ds 2                                               ;; c92b
+    ds 1                                               ;; c92b
+
+wC92C:
+    ds 1                                               ;; c92c
 
 wC92D:
     ds 1                                               ;; c92d
 
 wC92E:
-    ds 7                                               ;; c92e
+    ds 3                                               ;; c92e
+
+wC931:
+    ds 4                                               ;; c931
 
 wC935:
-    ds 12                                              ;; c935
+    ds 10                                              ;; c935
+
+wC93F:
+    ds 2                                               ;; c93f
 
 wC941:
     ds 1                                               ;; c941

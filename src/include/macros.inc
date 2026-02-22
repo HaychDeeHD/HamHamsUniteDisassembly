@@ -59,6 +59,19 @@ db \4
 dw \5
 db BANK(\5)
 ENDM
+MACRO Op4c_Unknown
+db $4c
+db \1
+db \2
+db \3
+db \4
+db \5
+db \6
+db \7
+db \8
+db \9
+db \<10>
+ENDM
 MACRO Op50_WriteByte
 db $50
 dw \1
@@ -98,6 +111,12 @@ MACRO SubOp_ClearFlag
 
 db ($5e + (((\1 - $c918) * 8 + \2) >> 8))
 db (((\1 - $c918) * 8 + \2) & $FF)
+ENDM
+MACRO SubOp_DefaultCase
+db \1
+db \2
+db \3
+db \4
 ENDM
 MACRO SubOp_SetByte
 

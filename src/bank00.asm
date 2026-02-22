@@ -1826,7 +1826,7 @@ AddressArray_0dbd:
     dw   w1_D259                                       ;; 00:0dd7 wW $0d
     dw   $d287                                         ;; 00:0dd9 wW $0e
     dw   $d2b5                                         ;; 00:0ddb wW $0f
-    dw   $d2e3                                         ;; 00:0ddd wW $10
+    dw   w1_D2E3                                       ;; 00:0ddd wW $10
     dw   $d311                                         ;; 00:0ddf wW $11
     dw   $d33f                                         ;; 00:0de1 wW $12
     dw   $d36d                                         ;; 00:0de3 ?? $13
@@ -2527,7 +2527,7 @@ consultTableOfWramAddresses:
     dw   w1_D259                                       ;; 00:1222 pP
     dw   $d287                                         ;; 00:1224 pP
     dw   $d2b5                                         ;; 00:1226 pP
-    dw   $d2e3                                         ;; 00:1228 pP
+    dw   w1_D2E3                                       ;; 00:1228 pP
     dw   $d311                                         ;; 00:122a pP
     dw   $d33f                                         ;; 00:122c pP
     dw   $d36d                                         ;; 00:122e pP
@@ -6094,7 +6094,7 @@ jp_00_2b95:
     dw   w1_D259                                       ;; 00:2bc4 pP
     dw   $d287                                         ;; 00:2bc6 pP
     dw   $d2b5                                         ;; 00:2bc8 pP
-    dw   $d2e3                                         ;; 00:2bca pP
+    dw   w1_D2E3                                       ;; 00:2bca pP
     dw   $d311                                         ;; 00:2bcc pP
     dw   $d33f                                         ;; 00:2bce pP
     dw   $d36d                                         ;; 00:2bd0 pP

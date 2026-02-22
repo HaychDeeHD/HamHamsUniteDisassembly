@@ -106,7 +106,7 @@ db ($9e + ((\1 - $c718) >> 8))
 db ((\1 - $c718) & $FF)
 dw \2
 """
-        # RomInfo.macros["SubOp_Other"] = "db \\1"
+        RomInfo.macros["SubOp_DefaultCase"] = "db \\1\ndb \\2\ndb \\3\ndb \\4\n"
 
         self.subOpArgsList = []
         size = 0
@@ -146,8 +146,13 @@ dw \2
                     self.subOpArgsList.append((4, "SubOp_SetWord", str(label), "$%04x" % memory.word(addr + size + 2)))
                     size += 4
                 case _:
-                    # TODO handle other case. (There's game code for other values of subopcode.)
-                    raise Exception("SubOp not yet implemented", "$%02x" % subOpCode, "$%04x" % addr, "$%02x" % memory.bankNumber)
+                    # The "Default Case" is mysterious, but I *think* it will always take the opcode byte + 3 args.
+                    byte1 = memory.byte(addr + size)
+                    byte2 = memory.byte(addr + size + 1)
+                    byte3 = memory.byte(addr + size + 2)
+                    byte4 = memory.byte(addr + size + 3)
+                    self.subOpArgsList.append((4, "SubOp_DefaultCase", "$%02x" % byte1, "$%02x" % byte2, "$%02x" % byte3, "$%02x" % byte4))
+                    size += 4
 
         self.resize(size)
         # Should be followed by a script instruction.
@@ -413,7 +418,7 @@ class Op4CBlock(Block):
         arg5 = self.memory.byte(file.addr + 5)
         arg6 = self.memory.byte(file.addr + 6)
         arg7 = self.memory.byte(file.addr + 7)
-        arg8 = self.memory.byte(file.addr + 9)
+        arg8 = self.memory.byte(file.addr + 8)
         arg9 = self.memory.byte(file.addr + 9)
         arg10 = self.memory.byte(file.addr + 10)
         file.asmLine(11, "Op4c_Unknown", "$%02x" % arg1, "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5, "$%02x" % arg6, "$%02x" % arg7, "$%02x" % arg8, "$%02x" % arg9, "$%02x" % arg10)
@@ -430,7 +435,7 @@ OPBLOCKS = {
     0x36: Op36Block,
     0x3E: Op3EBlock,
     0x4A: Op4ABlock,
-    # 0x4C: Op4CBlock,
+    0x4C: Op4CBlock,
     0x50: Op50Block,
     0x52: Op52Block,
     0x68: Op68Block,
