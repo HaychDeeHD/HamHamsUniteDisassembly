@@ -1852,9 +1852,16 @@ data_1d_6e1b:
     Op18_Jump data_04_6f17                             ;; 1d:6f01 $18 $17 $6f $04
 
 data_1d_6f05:
-    db   $76, $00, $16, $01, $7e, $4b, $00, $68        ;; 1d:6f05 ????????
-    db   $01, $63, $c7, $0e, $d2, $01, $14, $01        ;; 1d:6f0d ????????
-    db   $6f, $41, $1c, $6f, $1d, $76, $01, $20        ;; 1d:6f15 ????????
+    Op76_PrepTableJumpIndex_Write $00                  ;; 1d:6f05 $76 $00
+    Op16_SubOps 1                                      ;; 1d:6f07 $16 $01
+    SubOp_SetByte wC763, $00                           ;; 1d:6f09 $7e $4b $00
+    Op68_CopyBytes 1, wC763, w1_D20E, $01              ;; 1d:6f0c $68 $01 $63 $c7 $0e $d2 $01
+    Op14_Unknown 1, $6f, $41                           ;; 1d:6f13 $14 $01 $6f $41
+    SCRIPT_POINTER data_1d_6f1c                        ;; 1d:6f17 $1c $6f $1d
+    Op76_PrepTableJumpIndex_Write $01                  ;; 1d:6f1a $76 $01
+
+data_1d_6f1c:
+    SCRIPT_RETURN_20                                   ;; 1d:6f1c $20
 
 data_1d_6f1d:
     Op1E_Call data_1d_7cde                             ;; 1d:6f1d $1e $de $7c $1d

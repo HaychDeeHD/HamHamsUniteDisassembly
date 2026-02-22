@@ -441,6 +441,18 @@ class Op74Block(Block):
         label = RomInfo.getWRam().getLabel(pointer)
         file.asmLine(3, "Op74_PrepTableJumpIndex_Copy", str(label))
 
+class Op76Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 2)
+        RomInfo.macros["Op76_PrepTableJumpIndex_Write"] = "db $76\ndb \\1"
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        byte = self.memory.byte(file.addr + 1)
+        file.asmLine(2, "Op76_PrepTableJumpIndex_Write", "$%02x" % byte)
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
@@ -458,5 +470,6 @@ OPBLOCKS = {
     0x52: Op52Block,
     0x68: Op68Block,
     0x74: Op74Block,
+    0x76: Op76Block,
     0x82: Op82Block,
 }
