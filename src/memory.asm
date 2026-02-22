@@ -393,13 +393,19 @@ wC3A4:
 wC3AE:
     ds 22                                              ;; c3ae
 
-wC3C4:
+; Op 8e indexes into this region.
+; It's an array of 4 3-byte slots.
+wOp80_3ByteRegionC3C4:
     ds 12                                              ;; c3c4
 
-wC3D0:
+; Op 90 indexes into this region.
+; It's an array of 4 3-byte slots.
+wOp90_3ByteRegionC3D0:
     ds 12                                              ;; c3d0
 
-wC3DC:
+; Op 98 indexes into this region.
+; It's an array of 4 3-byte slots.
+wOp98_3ByteRegionC3DC:
     ds 13                                              ;; c3dc
 
 wC3E9:

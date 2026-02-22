@@ -1877,6 +1877,12 @@ Op68_CopyBytes_Handler:
     jr   NZ, .loop                                     ;; 00:0e25 $20 $f9
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0e27 $c3 $14 $0a
 
+; Arg 1 is an index into a size 4 array of wram locations.
+; Write Args 2,3,4 to that wram location.
+; Ops 8E, 90, and 98 work together.
+; [C3C4, C3E8) is a region containing 12 3-byte slots.
+; Each of these ops gets 4 of them.
+; (Why is it 3 separate ops? Maybe it's 3 regions of 4 because they do different things?)
 Op8E:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0e2a $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0e2d $2a
@@ -1884,11 +1890,22 @@ Op8E:
     ld   E, A                                          ;; 00:0e30 $5f
     ld   D, $00                                        ;; 00:0e31 $16 $00
     push HL                                            ;; 00:0e33 $e5
-    ld   HL, $e3a                                      ;; 00:0e34 $21 $3a $0e
-    jp   jp_00_0e72                                    ;; 00:0e37 $c3 $72 $0e
-    dw   wC3C4                                         ;; 00:0e3a pP
-    db   $c7, $c3, $ca, $c3, $cd, $c3                  ;; 00:0e3c ??????
+    ld   HL, Op8E_addressTable ;@=ptr Op8E_addressTable ;; 00:0e34 $21 $3a $0e
+    jp   PerformOp8E_90_98                             ;; 00:0e37 $c3 $72 $0e
 
+;@data format=p amount=4
+Op8E_addressTable:
+    dw   wOp80_3ByteRegionC3C4                         ;; 00:0e3a pP $00
+    dw   $c3c7                                         ;; 00:0e3c ?? $01
+    dw   $c3ca                                         ;; 00:0e3e ?? $02
+    dw   $c3cd                                         ;; 00:0e40 ?? $03
+
+; Arg 1 is an index into a size 4 array of wram locations.
+; Write Args 2,3,4 to that wram location.
+; Ops 8E, 90, and 98 work together.
+; [C3C4, C3E8) is a region containing 12 3-byte slots.
+; Each of these ops gets 4 of them.
+; (Why is it 3 separate ops? Maybe it's 3 regions of 4 because they do different things?)
 Op90:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0e42 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0e45 $2a
@@ -1896,10 +1913,22 @@ Op90:
     ld   E, A                                          ;; 00:0e48 $5f
     ld   D, $00                                        ;; 00:0e49 $16 $00
     push HL                                            ;; 00:0e4b $e5
-    ld   HL, $e52                                      ;; 00:0e4c $21 $52 $0e
-    jp   jp_00_0e72                                    ;; 00:0e4f $c3 $72 $0e
-    db   $d0, $c3, $d3, $c3, $d6, $c3, $d9, $c3        ;; 00:0e52 ????????
+    ld   HL, Op90_addressTable ;@=ptr Op90_addressTable ;; 00:0e4c $21 $52 $0e
+    jp   PerformOp8E_90_98                             ;; 00:0e4f $c3 $72 $0e
 
+;@data format=p amount=4
+Op90_addressTable:
+    dw   wOp90_3ByteRegionC3D0                         ;; 00:0e52 ?? $00
+    dw   $c3d3                                         ;; 00:0e54 ?? $01
+    dw   $c3d6                                         ;; 00:0e56 ?? $02
+    dw   $c3d9                                         ;; 00:0e58 ?? $03
+
+; Arg 1 is an index into a size 4 array of wram locations.
+; Write Args 2,3,4 to that wram location.
+; Ops 8E, 90, and 98 work together.
+; [C3C4, C3E8) is a region containing 12 3-byte slots.
+; Each of these ops gets 4 of them.
+; (Why is it 3 separate ops? Maybe it's 3 regions of 4 because they do different things?)
 Op98:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0e5a $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0e5d $2a
@@ -1907,11 +1936,17 @@ Op98:
     ld   E, A                                          ;; 00:0e60 $5f
     ld   D, $00                                        ;; 00:0e61 $16 $00
     push HL                                            ;; 00:0e63 $e5
-    ld   HL, $e6a                                      ;; 00:0e64 $21 $6a $0e
-    jp   jp_00_0e72                                    ;; 00:0e67 $c3 $72 $0e
-    db   $dc, $c3, $df, $c3, $e2, $c3, $e5, $c3        ;; 00:0e6a ????????
+    ld   HL, Op98_addressTable ;@=ptr Op98_addressTable ;; 00:0e64 $21 $6a $0e
+    jp   PerformOp8E_90_98                             ;; 00:0e67 $c3 $72 $0e
 
-jp_00_0e72:
+;@data format=p amount=4
+Op98_addressTable:
+    dw   wOp98_3ByteRegionC3DC                         ;; 00:0e6a ?? $00
+    dw   $c3df                                         ;; 00:0e6c ?? $01
+    dw   $c3e2                                         ;; 00:0e6e ?? $02
+    dw   $c3e5                                         ;; 00:0e70 ?? $03
+
+PerformOp8E_90_98:
     add  HL, DE                                        ;; 00:0e72 $19
     ld   A, [HL+]                                      ;; 00:0e73 $2a
     ld   B, [HL]                                       ;; 00:0e74 $46
@@ -2111,8 +2146,10 @@ call_00_0f79:
     pop  HL                                            ;; 00:0f94 $e1
     ret                                                ;; 00:0f95 $c9
 
+; DE will do what HL usually does in this op.
 Op4E:
     call LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch ;; 00:0f96 $cd $7c $0a
+; Mult arg1 of the 4E op by 2.
     sla  A                                             ;; 00:0f99 $cb $27
     ld   C, A                                          ;; 00:0f9b $4f
     ld   B, $00                                        ;; 00:0f9c $06 $00
@@ -2159,22 +2196,23 @@ Op4E:
     ld   A, $05                                        ;; 00:0fd0 $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0fd2 $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0fd5 $c3 $14 $0a
-    dw   w1_D857                                       ;; 00:0fd8 pP
-    dw   $d863                                         ;; 00:0fda pP
-    dw   $d86f                                         ;; 00:0fdc pP
-    dw   $d87b                                         ;; 00:0fde pP
-    dw   w1_D887                                       ;; 00:0fe0 pP
-    dw   $d893                                         ;; 00:0fe2 pP
-    dw   $d89f                                         ;; 00:0fe4 pP
-    dw   $d8ab                                         ;; 00:0fe6 pP
-    dw   w1_D8B7                                       ;; 00:0fe8 pP
-    dw   w1_D8C3                                       ;; 00:0fea pP
-    dw   $d8cf                                         ;; 00:0fec pP
-    dw   $d8db                                         ;; 00:0fee pP
-    dw   $d8e7                                         ;; 00:0ff0 pP
-    dw   $d8f3                                         ;; 00:0ff2 pP
-    dw   $d8ff                                         ;; 00:0ff4 pP
-    dw   $d90b                                         ;; 00:0ff6 pP
+;@jumptable amount=16
+    dw   $d857                                         ;; 00:0fd8 pP $00
+    dw   $d863                                         ;; 00:0fda pP $01
+    dw   $d86f                                         ;; 00:0fdc pP $02
+    dw   $d87b                                         ;; 00:0fde pP $03
+    dw   $d887                                         ;; 00:0fe0 pP $04
+    dw   $d893                                         ;; 00:0fe2 pP $05
+    dw   $d89f                                         ;; 00:0fe4 pP $06
+    dw   $d8ab                                         ;; 00:0fe6 pP $07
+    dw   $d8b7                                         ;; 00:0fe8 pP $08
+    dw   $d8c3                                         ;; 00:0fea pP $09
+    dw   $d8cf                                         ;; 00:0fec pP $0a
+    dw   $d8db                                         ;; 00:0fee pP $0b
+    dw   $d8e7                                         ;; 00:0ff0 pP $0c
+    dw   $d8f3                                         ;; 00:0ff2 pP $0d
+    dw   $d8ff                                         ;; 00:0ff4 pP $0e
+    dw   $d90b                                         ;; 00:0ff6 pP $0f
 
 Op42:
     call LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch ;; 00:0ff8 $cd $7c $0a
@@ -2252,20 +2290,22 @@ call_00_1006:
     pop  DE                                            ;; 00:105c $d1
     pop  HL                                            ;; 00:105d $e1
     ret                                                ;; 00:105e $c9
-    dw   w1_D5C5                                       ;; 00:105f pP
-    db   $ee, $d5, $17, $d6                            ;; 00:1061 ????
-    dw   w1_D640                                       ;; 00:1065 pP
-    dw   $d669                                         ;; 00:1067 pP
-    dw   $d692                                         ;; 00:1069 pP
-    dw   $d6bb                                         ;; 00:106b pP
-    dw   $d6e4                                         ;; 00:106d pP
-    dw   $d70d                                         ;; 00:106f pP
-    dw   $d736                                         ;; 00:1071 pP
-    dw   $d75f                                         ;; 00:1073 pP
-    dw   $d788                                         ;; 00:1075 pP
-    dw   w1_D7B1                                       ;; 00:1077 pP
-    dw   $d7da                                         ;; 00:1079 pP
-    dw   $d803                                         ;; 00:107b pP
+;@jumptable amount=15
+    dw   $d5c5                                         ;; 00:105f pP $00
+    dw   $d5ee                                         ;; 00:1061 ?? $01
+    dw   $d617                                         ;; 00:1063 ?? $02
+    dw   $d640                                         ;; 00:1065 pP $03
+    dw   $d669                                         ;; 00:1067 pP $04
+    dw   $d692                                         ;; 00:1069 pP $05
+    dw   $d6bb                                         ;; 00:106b pP $06
+    dw   $d6e4                                         ;; 00:106d pP $07
+    dw   $d70d                                         ;; 00:106f pP $08
+    dw   $d736                                         ;; 00:1071 pP $09
+    dw   $d75f                                         ;; 00:1073 pP $0a
+    dw   $d788                                         ;; 00:1075 pP $0b
+    dw   $d7b1                                         ;; 00:1077 pP $0c
+    dw   $d7da                                         ;; 00:1079 pP $0d
+    dw   $d803                                         ;; 00:107b pP $0e
     dw   w1_D82C                                       ;; 00:107d pP
 
 Op6A:
@@ -2504,13 +2544,15 @@ consultTableOfWramAddresses:
     push HL                                            ;; 00:11fb $e5
     ld   E, A                                          ;; 00:11fc $5f
     ld   D, $00                                        ;; 00:11fd $16 $00
-    ld   HL, $1208                                     ;; 00:11ff $21 $08 $12
+    ld   HL, WramAddressTable                          ;; 00:11ff $21 $08 $12
     add  HL, DE                                        ;; 00:1202 $19
     ld   A, [HL+]                                      ;; 00:1203 $2a
     ld   B, [HL]                                       ;; 00:1204 $46
     ld   C, A                                          ;; 00:1205 $4f
     pop  HL                                            ;; 00:1206 $e1
     ret                                                ;; 00:1207 $c9
+
+WramAddressTable:
     dw   w1_D003                                       ;; 00:1208 pP
     dw   w1_D031                                       ;; 00:120a pP
     dw   w1_D05F                                       ;; 00:120c pP
@@ -4961,15 +5003,15 @@ DoubleDerefC6A0to2_AddressIntoSelf:
     ret                                                ;; 00:242e $c9
 
 call_00_242f:
-    ld   HL, wC3C4                                     ;; 00:242f $21 $c4 $c3
+    ld   HL, wOp80_3ByteRegionC3C4                     ;; 00:242f $21 $c4 $c3
     jr   jr_00_243c                                    ;; 00:2432 $18 $08
 
 call_00_2434:
-    ld   HL, wC3D0                                     ;; 00:2434 $21 $d0 $c3
+    ld   HL, wOp90_3ByteRegionC3D0                     ;; 00:2434 $21 $d0 $c3
     jr   jr_00_243c                                    ;; 00:2437 $18 $03
 
 call_00_2439:
-    ld   HL, wC3DC                                     ;; 00:2439 $21 $dc $c3
+    ld   HL, wOp98_3ByteRegionC3DC                     ;; 00:2439 $21 $dc $c3
 
 jr_00_243c:
     ld   D, $04                                        ;; 00:243c $16 $04
