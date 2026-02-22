@@ -1874,33 +1874,33 @@ call_03_4f06:
     ld   DE, w1_D920                                   ;; 03:5052 $11 $20 $d9
     ld   BC, $05                                       ;; 03:5055 $01 $05 $00
     ld   A, $20                                        ;; 03:5058 $3e $20
-    ld   [wC35A], A                                    ;; 03:505a $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:505a $ea $5a $c3
     ld   A, $00                                        ;; 03:505d $3e $00
-    ld   [wC35B], A                                    ;; 03:505f $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:505f $ea $5b $c3
     call call_03_5b04                                  ;; 03:5062 $cd $04 $5b
     ld   HL, $9940                                     ;; 03:5065 $21 $40 $99
     ld   DE, w1_D940                                   ;; 03:5068 $11 $40 $d9
     ld   BC, $05                                       ;; 03:506b $01 $05 $00
     ld   A, $20                                        ;; 03:506e $3e $20
-    ld   [wC35A], A                                    ;; 03:5070 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:5070 $ea $5a $c3
     ld   A, $00                                        ;; 03:5073 $3e $00
-    ld   [wC35B], A                                    ;; 03:5075 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:5075 $ea $5b $c3
     call call_03_5b04                                  ;; 03:5078 $cd $04 $5b
     ld   HL, $9920                                     ;; 03:507b $21 $20 $99
     ld   DE, w1_D920                                   ;; 03:507e $11 $20 $d9
     ld   BC, $107                                      ;; 03:5081 $01 $07 $01
     ld   A, $20                                        ;; 03:5084 $3e $20
-    ld   [wC35A], A                                    ;; 03:5086 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:5086 $ea $5a $c3
     ld   A, $00                                        ;; 03:5089 $3e $00
-    ld   [wC35B], A                                    ;; 03:508b $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:508b $ea $5b $c3
     call call_03_5b04                                  ;; 03:508e $cd $04 $5b
     ld   HL, $9940                                     ;; 03:5091 $21 $40 $99
     ld   DE, w1_D940                                   ;; 03:5094 $11 $40 $d9
     ld   BC, $107                                      ;; 03:5097 $01 $07 $01
     ld   A, $20                                        ;; 03:509a $3e $20
-    ld   [wC35A], A                                    ;; 03:509c $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:509c $ea $5a $c3
     ld   A, $00                                        ;; 03:509f $3e $00
-    ld   [wC35B], A                                    ;; 03:50a1 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:50a1 $ea $5b $c3
     call call_03_5b04                                  ;; 03:50a4 $cd $04 $5b
     ret                                                ;; 03:50a7 $c9
     ld   A, $46                                        ;; 03:50a8 $3e $46
@@ -2105,9 +2105,9 @@ call_03_51b3:
     ld   DE, w1_D800                                   ;; 03:5209 $11 $00 $d8
     ld   BC, $04                                       ;; 03:520c $01 $04 $00
     ld   A, $c0                                        ;; 03:520f $3e $c0
-    ld   [wC35A], A                                    ;; 03:5211 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:5211 $ea $5a $c3
     ld   A, $06                                        ;; 03:5214 $3e $06
-    ld   [wC35B], A                                    ;; 03:5216 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:5216 $ea $5b $c3
     call call_03_5b04                                  ;; 03:5219 $cd $04 $5b
     ld   B, $0c                                        ;; 03:521c $06 $0c
     ld   A, [w1_D509]                                  ;; 03:521e $fa $09 $d5
@@ -2150,26 +2150,26 @@ call_03_51b3:
     ld   BC, data_03_6101                              ;; 03:5255 $01 $01 $61
     add  HL, BC                                        ;; 03:5258 $09
     ld   A, [HL+]                                      ;; 03:5259 $2a
-    ld   [wC356], A                                    ;; 03:525a $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:525a $ea $56 $c3
     ld   A, [HL+]                                      ;; 03:525d $2a
     ld   [wC357], A                                    ;; 03:525e $ea $57 $c3
     ld   A, [HL]                                       ;; 03:5261 $7e
     ld   [wDupeBitArrayIndexC358], A                   ;; 03:5262 $ea $58 $c3
     ld   A, $c0                                        ;; 03:5265 $3e $c0
-    ld   [wC35A], A                                    ;; 03:5267 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:5267 $ea $5a $c3
     ld   A, $de                                        ;; 03:526a $3e $de
-    ld   [wC35B], A                                    ;; 03:526c $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:526c $ea $5b $c3
     ld   A, $04                                        ;; 03:526f $3e $04
-    ld   [wC35C], A                                    ;; 03:5271 $ea $5c $c3
+    ld   [wLessImportantBitArrayThingC35C], A          ;; 03:5271 $ea $5c $c3
     jp   call_00_3bd1                                  ;; 03:5274 $c3 $d1 $3b
 .data_03_5277:
     ld   HL, $8ec0                                     ;; 03:5277 $21 $c0 $8e
     ld   DE, w1_DEC0                                   ;; 03:527a $11 $c0 $de
     ld   BC, $04                                       ;; 03:527d $01 $04 $00
     ld   A, $a0                                        ;; 03:5280 $3e $a0
-    ld   [wC35A], A                                    ;; 03:5282 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:5282 $ea $5a $c3
     ld   A, $00                                        ;; 03:5285 $3e $00
-    ld   [wC35B], A                                    ;; 03:5287 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:5287 $ea $5b $c3
     call call_03_5b04                                  ;; 03:528a $cd $04 $5b
     ld   B, $00                                        ;; 03:528d $06 $00
     ld   HL, w1_D509                                   ;; 03:528f $21 $09 $d5
@@ -2197,17 +2197,17 @@ call_03_51b3:
 .jr_03_52b5:
     push BC                                            ;; 03:52b5 $c5
     ld   A, [HL+]                                      ;; 03:52b6 $2a
-    ld   [wC356], A                                    ;; 03:52b7 $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:52b7 $ea $56 $c3
     ld   A, [HL+]                                      ;; 03:52ba $2a
     ld   [wC357], A                                    ;; 03:52bb $ea $57 $c3
     ld   A, [HL+]                                      ;; 03:52be $2a
     ld   [wDupeBitArrayIndexC358], A                   ;; 03:52bf $ea $58 $c3
     ld   A, E                                          ;; 03:52c2 $7b
-    ld   [wC35A], A                                    ;; 03:52c3 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:52c3 $ea $5a $c3
     ld   A, D                                          ;; 03:52c6 $7a
-    ld   [wC35B], A                                    ;; 03:52c7 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:52c7 $ea $5b $c3
     ld   A, $05                                        ;; 03:52ca $3e $05
-    ld   [wC35C], A                                    ;; 03:52cc $ea $5c $c3
+    ld   [wLessImportantBitArrayThingC35C], A          ;; 03:52cc $ea $5c $c3
     ld   A, $06                                        ;; 03:52cf $3e $06
     ld   [wC36A], A                                    ;; 03:52d1 $ea $6a $c3
     push HL                                            ;; 03:52d4 $e5
@@ -2216,17 +2216,17 @@ call_03_51b3:
     pop  DE                                            ;; 03:52d9 $d1
     pop  HL                                            ;; 03:52da $e1
     ld   A, [HL+]                                      ;; 03:52db $2a
-    ld   [wC356], A                                    ;; 03:52dc $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:52dc $ea $56 $c3
     ld   A, [HL+]                                      ;; 03:52df $2a
     ld   [wC357], A                                    ;; 03:52e0 $ea $57 $c3
     ld   A, [HL+]                                      ;; 03:52e3 $2a
     ld   [wDupeBitArrayIndexC358], A                   ;; 03:52e4 $ea $58 $c3
     ld   A, E                                          ;; 03:52e7 $7b
-    ld   [wC35A], A                                    ;; 03:52e8 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:52e8 $ea $5a $c3
     ld   A, D                                          ;; 03:52eb $7a
-    ld   [wC35B], A                                    ;; 03:52ec $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:52ec $ea $5b $c3
     ld   A, $07                                        ;; 03:52ef $3e $07
-    ld   [wC35C], A                                    ;; 03:52f1 $ea $5c $c3
+    ld   [wLessImportantBitArrayThingC35C], A          ;; 03:52f1 $ea $5c $c3
     ld   A, $06                                        ;; 03:52f4 $3e $06
     ld   [wC36A], A                                    ;; 03:52f6 $ea $6a $c3
     push HL                                            ;; 03:52f9 $e5
@@ -2257,17 +2257,17 @@ call_03_51b3:
     ld   DE, w1_D840                                   ;; 03:5324 $11 $40 $d8
     ld   BC, $05                                       ;; 03:5327 $01 $05 $00
     ld   A, $c0                                        ;; 03:532a $3e $c0
-    ld   [wC35A], A                                    ;; 03:532c $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:532c $ea $5a $c3
     ld   A, $00                                        ;; 03:532f $3e $00
-    ld   [wC35B], A                                    ;; 03:5331 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:5331 $ea $5b $c3
     call call_03_5b04                                  ;; 03:5334 $cd $04 $5b
     ld   HL, $9840                                     ;; 03:5337 $21 $40 $98
     ld   DE, w1_D840                                   ;; 03:533a $11 $40 $d8
     ld   BC, $107                                      ;; 03:533d $01 $07 $01
     ld   A, $c0                                        ;; 03:5340 $3e $c0
-    ld   [wC35A], A                                    ;; 03:5342 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:5342 $ea $5a $c3
     ld   A, $00                                        ;; 03:5345 $3e $00
-    ld   [wC35B], A                                    ;; 03:5347 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:5347 $ea $5b $c3
     call call_03_5b04                                  ;; 03:534a $cd $04 $5b
     ld   A, [w1_D65C]                                  ;; 03:534d $fa $5c $d6
     and  A, $7f                                        ;; 03:5350 $e6 $7f
@@ -2356,7 +2356,7 @@ call_03_53a8:
 
 call_03_53d7:
     ld   A, [HL+]                                      ;; 03:53d7 $2a
-    ld   [wC356], A                                    ;; 03:53d8 $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:53d8 $ea $56 $c3
     ld   A, [HL+]                                      ;; 03:53db $2a
     ld   [wC357], A                                    ;; 03:53dc $ea $57 $c3
     ld   A, [HL]                                       ;; 03:53df $7e
@@ -2375,11 +2375,11 @@ call_03_53d7:
     ld   C, A                                          ;; 03:53f5 $4f
     add  HL, BC                                        ;; 03:53f6 $09
     ld   A, L                                          ;; 03:53f7 $7d
-    ld   [wC35A], A                                    ;; 03:53f8 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:53f8 $ea $5a $c3
     ld   A, H                                          ;; 03:53fb $7c
-    ld   [wC35B], A                                    ;; 03:53fc $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:53fc $ea $5b $c3
     ld   A, $04                                        ;; 03:53ff $3e $04
-    ld   [wC35C], A                                    ;; 03:5401 $ea $5c $c3
+    ld   [wLessImportantBitArrayThingC35C], A          ;; 03:5401 $ea $5c $c3
     jp   call_00_3bd1                                  ;; 03:5404 $c3 $d1 $3b
 
 call_03_5407:
@@ -2389,7 +2389,7 @@ call_03_5407:
     push BC                                            ;; 03:540b $c5
     push DE                                            ;; 03:540c $d5
     ld   A, $95                                        ;; 03:540d $3e $95
-    ld   [wC356], A                                    ;; 03:540f $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:540f $ea $56 $c3
     ld   A, $4e                                        ;; 03:5412 $3e $4e
     ld   [wC357], A                                    ;; 03:5414 $ea $57 $c3
     ld   A, $0e                                        ;; 03:5417 $3e $0e
@@ -2408,11 +2408,11 @@ call_03_5407:
     ld   C, A                                          ;; 03:542e $4f
     add  HL, BC                                        ;; 03:542f $09
     ld   A, L                                          ;; 03:5430 $7d
-    ld   [wC35A], A                                    ;; 03:5431 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:5431 $ea $5a $c3
     ld   A, H                                          ;; 03:5434 $7c
-    ld   [wC35B], A                                    ;; 03:5435 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:5435 $ea $5b $c3
     ld   A, $04                                        ;; 03:5438 $3e $04
-    ld   [wC35C], A                                    ;; 03:543a $ea $5c $c3
+    ld   [wLessImportantBitArrayThingC35C], A          ;; 03:543a $ea $5c $c3
     call call_00_3bd1                                  ;; 03:543d $cd $d1 $3b
     pop  DE                                            ;; 03:5440 $d1
     inc  DE                                            ;; 03:5441 $13
@@ -2492,33 +2492,33 @@ call_03_5482:
     ld   DE, w1_D920                                   ;; 03:54d0 $11 $20 $d9
     ld   BC, $05                                       ;; 03:54d3 $01 $05 $00
     ld   A, $20                                        ;; 03:54d6 $3e $20
-    ld   [wC35A], A                                    ;; 03:54d8 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:54d8 $ea $5a $c3
     ld   A, $00                                        ;; 03:54db $3e $00
-    ld   [wC35B], A                                    ;; 03:54dd $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:54dd $ea $5b $c3
     call call_03_5b04                                  ;; 03:54e0 $cd $04 $5b
     ld   HL, $9940                                     ;; 03:54e3 $21 $40 $99
     ld   DE, w1_D940                                   ;; 03:54e6 $11 $40 $d9
     ld   BC, $05                                       ;; 03:54e9 $01 $05 $00
     ld   A, $20                                        ;; 03:54ec $3e $20
-    ld   [wC35A], A                                    ;; 03:54ee $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:54ee $ea $5a $c3
     ld   A, $00                                        ;; 03:54f1 $3e $00
-    ld   [wC35B], A                                    ;; 03:54f3 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:54f3 $ea $5b $c3
     call call_03_5b04                                  ;; 03:54f6 $cd $04 $5b
     ld   HL, $9920                                     ;; 03:54f9 $21 $20 $99
     ld   DE, w1_D920                                   ;; 03:54fc $11 $20 $d9
     ld   BC, $107                                      ;; 03:54ff $01 $07 $01
     ld   A, $20                                        ;; 03:5502 $3e $20
-    ld   [wC35A], A                                    ;; 03:5504 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:5504 $ea $5a $c3
     ld   A, $00                                        ;; 03:5507 $3e $00
-    ld   [wC35B], A                                    ;; 03:5509 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:5509 $ea $5b $c3
     call call_03_5b04                                  ;; 03:550c $cd $04 $5b
     ld   HL, $9940                                     ;; 03:550f $21 $40 $99
     ld   DE, w1_D940                                   ;; 03:5512 $11 $40 $d9
     ld   BC, $107                                      ;; 03:5515 $01 $07 $01
     ld   A, $20                                        ;; 03:5518 $3e $20
-    ld   [wC35A], A                                    ;; 03:551a $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 03:551a $ea $5a $c3
     ld   A, $00                                        ;; 03:551d $3e $00
-    ld   [wC35B], A                                    ;; 03:551f $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 03:551f $ea $5b $c3
     call call_03_5b04                                  ;; 03:5522 $cd $04 $5b
     ret                                                ;; 03:5525 $c9
 
@@ -3482,7 +3482,7 @@ call_03_5ab9:
 
 call_03_5ad9:
     push HL                                            ;; 03:5ad9 $e5
-    ld   HL, wC356                                     ;; 03:5ada $21 $56 $c3
+    ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 03:5ada $21 $56 $c3
     ld   A, E                                          ;; 03:5add $7b
     ld   [HL+], A                                      ;; 03:5ade $22
     ld   A, D                                          ;; 03:5adf $7a
@@ -3501,7 +3501,7 @@ call_03_5ad9:
 call_03_5aed:
     ld   [wC36A], A                                    ;; 03:5aed $ea $6a $c3
     push HL                                            ;; 03:5af0 $e5
-    ld   HL, wC356                                     ;; 03:5af1 $21 $56 $c3
+    ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 03:5af1 $21 $56 $c3
     ld   A, E                                          ;; 03:5af4 $7b
     ld   [HL+], A                                      ;; 03:5af5 $22
     ld   A, D                                          ;; 03:5af6 $7a
@@ -3519,7 +3519,7 @@ call_03_5aed:
 
 call_03_5b04:
     push HL                                            ;; 03:5b04 $e5
-    ld   HL, wC356                                     ;; 03:5b05 $21 $56 $c3
+    ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 03:5b05 $21 $56 $c3
     ld   A, E                                          ;; 03:5b08 $7b
     ld   [HL+], A                                      ;; 03:5b09 $22
     ld   A, D                                          ;; 03:5b0a $7a
@@ -3527,7 +3527,7 @@ call_03_5b04:
     ld   A, C                                          ;; 03:5b0c $79
     ld   [HL+], A                                      ;; 03:5b0d $22
     pop  DE                                            ;; 03:5b0e $d1
-    ld   HL, wC35C                                     ;; 03:5b0f $21 $5c $c3
+    ld   HL, wLessImportantBitArrayThingC35C           ;; 03:5b0f $21 $5c $c3
     ld   A, E                                          ;; 03:5b12 $7b
     ld   [HL+], A                                      ;; 03:5b13 $22
     ld   A, D                                          ;; 03:5b14 $7a
@@ -3539,7 +3539,7 @@ call_03_5b1a:
     add  A, A                                          ;; 03:5b1a $87
     ld   L, A                                          ;; 03:5b1b $6f
     ld   A, H                                          ;; 03:5b1c $7c
-    ld   [wC356], A                                    ;; 03:5b1d $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:5b1d $ea $56 $c3
     ld   A, L                                          ;; 03:5b20 $7d
     ld   HL, $2baa                                     ;; 03:5b21 $21 $aa $2b
     call call_03_5a53                                  ;; 03:5b24 $cd $53 $5a
@@ -3567,7 +3567,7 @@ call_03_5b1a:
     ld   [HL+], A                                      ;; 03:5b49 $22
     ld   A, D                                          ;; 03:5b4a $7a
     ld   [HL+], A                                      ;; 03:5b4b $22
-    ld   A, [wC356]                                    ;; 03:5b4c $fa $56 $c3
+    ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 03:5b4c $fa $56 $c3
     ld   [HL], A                                       ;; 03:5b4f $77
     pop  BC                                            ;; 03:5b50 $c1
     ld   A, $09                                        ;; 03:5b51 $3e $09
@@ -3581,7 +3581,7 @@ call_03_5b1a:
 jp_03_5b60:
     push AF                                            ;; 03:5b60 $f5
     ld   A, L                                          ;; 03:5b61 $7d
-    ld   [wC356], A                                    ;; 03:5b62 $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:5b62 $ea $56 $c3
     ld   A, H                                          ;; 03:5b65 $7c
     ld   [wC357], A                                    ;; 03:5b66 $ea $57 $c3
     pop  AF                                            ;; 03:5b69 $f1
@@ -3608,7 +3608,7 @@ jp_03_5b60:
     ld   [HL], A                                       ;; 03:5b8c $77
     ld   A, $04                                        ;; 03:5b8d $3e $04
     call call_03_5a53                                  ;; 03:5b8f $cd $53 $5a
-    ld   A, [wC356]                                    ;; 03:5b92 $fa $56 $c3
+    ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 03:5b92 $fa $56 $c3
     ld   [HL+], A                                      ;; 03:5b95 $22
     ld   A, [wC357]                                    ;; 03:5b96 $fa $57 $c3
     ld   [HL+], A                                      ;; 03:5b99 $22
@@ -3631,7 +3631,7 @@ jp_03_5bb2:
     add  A, A                                          ;; 03:5bb2 $87
     ld   L, A                                          ;; 03:5bb3 $6f
     ld   A, H                                          ;; 03:5bb4 $7c
-    ld   [wC356], A                                    ;; 03:5bb5 $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:5bb5 $ea $56 $c3
     ld   A, L                                          ;; 03:5bb8 $7d
     ld   HL, $2baa                                     ;; 03:5bb9 $21 $aa $2b
     call call_03_5a53                                  ;; 03:5bbc $cd $53 $5a
@@ -3665,7 +3665,7 @@ jp_03_5bb2:
     ld   [HL+], A                                      ;; 03:5bee $22
     ld   A, D                                          ;; 03:5bef $7a
     ld   [HL+], A                                      ;; 03:5bf0 $22
-    ld   A, [wC356]                                    ;; 03:5bf1 $fa $56 $c3
+    ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 03:5bf1 $fa $56 $c3
     ld   [HL], A                                       ;; 03:5bf4 $77
     jp   jp_03_5a58                                    ;; 03:5bf5 $c3 $58 $5a
 
@@ -3870,7 +3870,7 @@ call_03_5d1b:
 
 call_03_5d2f:
     ld   A, C                                          ;; 03:5d2f $79
-    ld   [wC356], A                                    ;; 03:5d30 $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:5d30 $ea $56 $c3
     ld   A, B                                          ;; 03:5d33 $78
     ld   [wC357], A                                    ;; 03:5d34 $ea $57 $c3
     xor  A, A                                          ;; 03:5d37 $af
@@ -3879,7 +3879,7 @@ call_03_5d2f:
     ld   C, A                                          ;; 03:5d3a $4f
     ld   B, A                                          ;; 03:5d3b $47
 .jr_03_5d3c:
-    ld   A, [wC356]                                    ;; 03:5d3c $fa $56 $c3
+    ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 03:5d3c $fa $56 $c3
     and  A, A                                          ;; 03:5d3f $a7
     jr   NZ, .jr_03_5d4b                               ;; 03:5d40 $20 $09
     ld   A, [wC357]                                    ;; 03:5d42 $fa $57 $c3
@@ -3900,9 +3900,9 @@ call_03_5d2f:
     ld   A, D                                          ;; 03:5d56 $7a
     adc  A, $00                                        ;; 03:5d57 $ce $00
     ld   D, A                                          ;; 03:5d59 $57
-    ld   A, [wC356]                                    ;; 03:5d5a $fa $56 $c3
+    ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 03:5d5a $fa $56 $c3
     dec  A                                             ;; 03:5d5d $3d
-    ld   [wC356], A                                    ;; 03:5d5e $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 03:5d5e $ea $56 $c3
     jr   .jr_03_5d3c                                   ;; 03:5d61 $18 $d9
     ld_long_load A, rSVBK                              ;; 03:5d63 $fa $70 $ff
     push AF                                            ;; 03:5d66 $f5
@@ -5078,7 +5078,7 @@ call_03_7397:
     ld   D, A                                          ;; 03:73d6 $57
     ld   E, $0a                                        ;; 03:73d7 $1e $0a
     call call_03_5a6d                                  ;; 03:73d9 $cd $6d $5a
-    ld   HL, wC356                                     ;; 03:73dc $21 $56 $c3
+    ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 03:73dc $21 $56 $c3
     ld   [HL+], A                                      ;; 03:73df $22
     ld   [HL], D                                       ;; 03:73e0 $72
     xor  A, A                                          ;; 03:73e1 $af
@@ -5096,7 +5096,7 @@ call_03_7397:
     ld   [wDupeBitArrayIndexC358], A                   ;; 03:73f7 $ea $58 $c3
     ld   E, $0a                                        ;; 03:73fa $1e $0a
     call call_03_5a6d                                  ;; 03:73fc $cd $6d $5a
-    ld   HL, wC356                                     ;; 03:73ff $21 $56 $c3
+    ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 03:73ff $21 $56 $c3
     ld   [HL+], A                                      ;; 03:7402 $22
     ld   [HL], D                                       ;; 03:7403 $72
     ld   HL, w1_D94E                                   ;; 03:7404 $21 $4e $d9

@@ -12,16 +12,16 @@ SECTION "bank04", ROMX[$4000], BANK[$04]
     db   $00, $00, $00, $00, $00, $00, $00, $00        ;; 04:4018 ????????
 
 call_04_4020:
-    ld   A, [wC35B]                                    ;; 04:4020 $fa $5b $c3
+    ld   A, [wImportantBitArrayThingC35B]              ;; 04:4020 $fa $5b $c3
     sla  A                                             ;; 04:4023 $cb $27
     sla  A                                             ;; 04:4025 $cb $27
     ld   C, A                                          ;; 04:4027 $4f
     ld   B, $00                                        ;; 04:4028 $06 $00
     ld   HL, .data_04_4040                             ;; 04:402a $21 $40 $40
     add  HL, BC                                        ;; 04:402d $09
-    ld   A, [wC35B]                                    ;; 04:402e $fa $5b $c3
+    ld   A, [wImportantBitArrayThingC35B]              ;; 04:402e $fa $5b $c3
     sub  A, [HL]                                       ;; 04:4031 $96
-    ld   [wC35B], A                                    ;; 04:4032 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 04:4032 $ea $5b $c3
     inc  HL                                            ;; 04:4035 $23
     ld   C, [HL]                                       ;; 04:4036 $4e
     inc  HL                                            ;; 04:4037 $23
@@ -75,9 +75,9 @@ call_04_4020:
     ld   [wC362], A                                    ;; 04:40b6 $ea $62 $c3
 .jr_04_40b9:
     call call_04_414b                                  ;; 04:40b9 $cd $4b $41
-    ld   A, [wC35A]                                    ;; 04:40bc $fa $5a $c3
+    ld   A, [wImportantBitArrayThingC35A]              ;; 04:40bc $fa $5a $c3
     ld   L, A                                          ;; 04:40bf $6f
-    ld   A, [wC35B]                                    ;; 04:40c0 $fa $5b $c3
+    ld   A, [wImportantBitArrayThingC35B]              ;; 04:40c0 $fa $5b $c3
     ld   H, A                                          ;; 04:40c3 $67
     ld   A, [wC365]                                    ;; 04:40c4 $fa $65 $c3
     ld   C, A                                          ;; 04:40c7 $4f
@@ -86,7 +86,7 @@ call_04_4020:
     add  HL, BC                                        ;; 04:40cb $09
     ld   C, L                                          ;; 04:40cc $4d
     ld   B, H                                          ;; 04:40cd $44
-    ld   A, [wC356]                                    ;; 04:40ce $fa $56 $c3
+    ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 04:40ce $fa $56 $c3
     ld   E, A                                          ;; 04:40d1 $5f
     ld   A, [wC357]                                    ;; 04:40d2 $fa $57 $c3
     ld   D, A                                          ;; 04:40d5 $57
@@ -103,7 +103,7 @@ call_04_4020:
     ld   [wC362], A                                    ;; 04:40e8 $ea $62 $c3
     ld   A, $00                                        ;; 04:40eb $3e $00
     ld   A, [wC363]                                    ;; 04:40ed $fa $63 $c3
-    ld   A, [wC35C]                                    ;; 04:40f0 $fa $5c $c3
+    ld   A, [wLessImportantBitArrayThingC35C]          ;; 04:40f0 $fa $5c $c3
     ld   L, A                                          ;; 04:40f3 $6f
     ld   A, [wC35D]                                    ;; 04:40f4 $fa $5d $c3
     ld   H, A                                          ;; 04:40f7 $67
@@ -114,7 +114,7 @@ call_04_4020:
 
 call_04_40fd:
     push DE                                            ;; 04:40fd $d5
-    ld   A, [wC360]                                    ;; 04:40fe $fa $60 $c3
+    ld   A, [wAlsoBitArrayIndexRelatedC360]            ;; 04:40fe $fa $60 $c3
     and  A, A                                          ;; 04:4101 $a7
     jr   NZ, .jr_04_4105                               ;; 04:4102 $20 $01
     inc  DE                                            ;; 04:4104 $13
@@ -128,7 +128,7 @@ call_04_40fd:
     ld   A, $00                                        ;; 04:410b $3e $00
     call call_04_4137                                  ;; 04:410d $cd $37 $41
     cpl                                                ;; 04:4110 $2f
-    ld   [wC361], A                                    ;; 04:4111 $ea $61 $c3
+    ld   [wAlsoBitArrayIndexRelatedC361], A            ;; 04:4111 $ea $61 $c3
     ld   A, L                                          ;; 04:4114 $7d
     cpl                                                ;; 04:4115 $2f
     ld   L, A                                          ;; 04:4116 $6f
@@ -143,7 +143,7 @@ call_04_40fd:
     add  HL, DE                                        ;; 04:4121 $19
     and  A, [HL]                                       ;; 04:4122 $a6
     ld   [HL], A                                       ;; 04:4123 $77
-    ld   A, [wC361]                                    ;; 04:4124 $fa $61 $c3
+    ld   A, [wAlsoBitArrayIndexRelatedC361]            ;; 04:4124 $fa $61 $c3
     ld   HL, $20                                       ;; 04:4127 $21 $20 $00
     add  HL, DE                                        ;; 04:412a $19
     and  A, [HL]                                       ;; 04:412b $a6
@@ -174,7 +174,7 @@ call_04_4137:
     ret                                                ;; 04:414a $c9
 
 call_04_414b:
-    ld   A, [wC35A]                                    ;; 04:414b $fa $5a $c3
+    ld   A, [wImportantBitArrayThingC35A]              ;; 04:414b $fa $5a $c3
     ld   BC, $16                                       ;; 04:414e $01 $16 $00
     ld   HL, $00                                       ;; 04:4151 $21 $00 $00
     ld   E, A                                          ;; 04:4154 $5f
@@ -187,7 +187,7 @@ call_04_414b:
     jr   .jr_04_4157                                   ;; 04:415c $18 $f9
 .jr_04_415e:
     push HL                                            ;; 04:415e $e5
-    ld   A, [wC35B]                                    ;; 04:415f $fa $5b $c3
+    ld   A, [wImportantBitArrayThingC35B]              ;; 04:415f $fa $5b $c3
     rlca                                               ;; 04:4162 $07
     ld   E, A                                          ;; 04:4163 $5f
     ld   D, $00                                        ;; 04:4164 $16 $00
@@ -199,9 +199,9 @@ call_04_414b:
     pop  DE                                            ;; 04:416d $d1
     add  HL, DE                                        ;; 04:416e $19
     ld   A, L                                          ;; 04:416f $7d
-    ld   [wC35A], A                                    ;; 04:4170 $ea $5a $c3
+    ld   [wImportantBitArrayThingC35A], A              ;; 04:4170 $ea $5a $c3
     ld   A, H                                          ;; 04:4173 $7c
-    ld   [wC35B], A                                    ;; 04:4174 $ea $5b $c3
+    ld   [wImportantBitArrayThingC35B], A              ;; 04:4174 $ea $5b $c3
     ret                                                ;; 04:4177 $c9
 .data_04_4178:
     dw   $417e                                         ;; 04:4178 wW

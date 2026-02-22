@@ -180,7 +180,7 @@ wC344:
 wC346:
     ds 16                                              ;; c346
 
-wC356:
+wUsedAsAnOffsetIntoSomeRegionC356:
     ds 1                                               ;; c356
 
 wC357:
@@ -192,13 +192,13 @@ wDupeBitArrayIndexC358:
 wC359:
     ds 1                                               ;; c359
 
-wC35A:
+wImportantBitArrayThingC35A:
     ds 1                                               ;; c35a
 
-wC35B:
+wImportantBitArrayThingC35B:
     ds 1                                               ;; c35b
 
-wC35C:
+wLessImportantBitArrayThingC35C:
     ds 1                                               ;; c35c
 
 wC35D:
@@ -212,10 +212,12 @@ wBitArrayIndexC35E:
 .low:
     ds 1                                               ;; c35f
 
-wC360:
+; SubOp arg2 gets put here
+wAlsoBitArrayIndexRelatedC360:
     ds 1                                               ;; c360
 
-wC361:
+; SubOp arg3 gets put here
+wAlsoBitArrayIndexRelatedC361:
     ds 1                                               ;; c361
 
 wC362:
@@ -311,10 +313,12 @@ wSubOpsLoopCountdownC38A:
 wSomeLoopCounterC38B:
     ds 1                                               ;; c38b
 
-wC38C:
+; We use these 2 as an address to read 4 bytes from.
+; Those get written to C35E-C361
+wTempHoldsBC_1_C38C:
     ds 1                                               ;; c38c
 
-wC38D:
+wTempHoldsBC_2_C38D:
     ds 1                                               ;; c38d
 
 wHamChatCursorIndexC38E:
@@ -581,16 +585,20 @@ wHamChatWheelValueC582:
 wC5A2:
     ds 1                                               ;; c5a2
 
-wC5A3:
+wBeginningOfSomeRegionC5A3:
     ds 16                                              ;; c5a3
 
-wC5B3:
+; This one has operations to perform on the others?
+; It all gets cleared at the start of Op16 default case.
+wBeginningOfSomeRegionC5B3:
     ds 16                                              ;; c5b3
 
-wC5C3:
+; The Two Slots
+wBeginningOfSomeRegionC5C3:
     ds 16                                              ;; c5c3
 
-wC5D3:
+; The Two Slots
+wBeginningOfSomeRegionC5D3:
     ds 16                                              ;; c5d3
 
 wStackHeadAddressC5E3:

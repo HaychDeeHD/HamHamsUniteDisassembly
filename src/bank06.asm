@@ -37,7 +37,7 @@ call_06_4086:
 
 call_06_40a8:
     push HL                                            ;; 06:40a8 $e5
-    ld   HL, wC356                                     ;; 06:40a9 $21 $56 $c3
+    ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 06:40a9 $21 $56 $c3
     ld   A, E                                          ;; 06:40ac $7b
     ld   [HL+], A                                      ;; 06:40ad $22
     ld   A, D                                          ;; 06:40ae $7a
@@ -177,7 +177,7 @@ call_06_40a8:
     ld   A, $07                                        ;; 06:4250 $3e $07
 .jr_06_4252:
     rlca                                               ;; 06:4252 $07
-    ld   [wC356], A                                    ;; 06:4253 $ea $56 $c3
+    ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 06:4253 $ea $56 $c3
     ld   A, [wSubOpsLoopCountdownC38A]                 ;; 06:4256 $fa $8a $c3
     and  A, $80                                        ;; 06:4259 $e6 $80
     jr   NZ, .jr_06_4262                               ;; 06:425b $20 $05
@@ -194,7 +194,7 @@ call_06_40a8:
     ld   A, [HL+]                                      ;; 06:426d $2a
     ld   H, [HL]                                       ;; 06:426e $66
     ld   L, A                                          ;; 06:426f $6f
-    ld   A, [wC356]                                    ;; 06:4270 $fa $56 $c3
+    ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 06:4270 $fa $56 $c3
     ld   E, A                                          ;; 06:4273 $5f
     add  HL, DE                                        ;; 06:4274 $19
     ld   A, [HL+]                                      ;; 06:4275 $2a
