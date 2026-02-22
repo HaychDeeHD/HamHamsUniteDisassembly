@@ -113,6 +113,20 @@ db $82
 dw \1
 db BANK(\1)
 ENDM
+MACRO Op8E_StoreAddress
+db $8e
+db \1
+db \2
+db \3
+db \4
+ENDM
+MACRO Op90_StoreAddress
+db $90
+db \1
+db \2
+db \3
+db \4
+ENDM
 MACRO SCRIPT_POINTER
 dw \1
 db BANK(\1)
