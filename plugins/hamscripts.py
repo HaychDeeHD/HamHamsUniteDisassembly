@@ -423,6 +423,24 @@ class Op4CBlock(Block):
         arg10 = self.memory.byte(file.addr + 10)
         file.asmLine(11, "Op4c_Unknown", "$%02x" % arg1, "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5, "$%02x" % arg6, "$%02x" % arg7, "$%02x" % arg8, "$%02x" % arg9, "$%02x" % arg10)
 
+class Op74Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 3)
+        RomInfo.macros["Op74_PrepTableJumpIndex_Copy"] = "db $74\ndw \\1"
+
+        pointer = memory.word(addr + 1)
+        # There's no bank arg so I *think* this willa lways be wram bank 0.
+        # But there could also be a separate bank switch instruction I don't know about.
+        RomInfo.getWRam().addAutoLabel(pointer, None, None) # WRam ignores source and type args.
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        pointer = self.memory.word(file.addr + 1)
+        label = RomInfo.getWRam().getLabel(pointer)
+        file.asmLine(3, "Op74_PrepTableJumpIndex_Copy", str(label))
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
@@ -439,5 +457,6 @@ OPBLOCKS = {
     0x50: Op50Block,
     0x52: Op52Block,
     0x68: Op68Block,
+    0x74: Op74Block,
     0x82: Op82Block,
 }

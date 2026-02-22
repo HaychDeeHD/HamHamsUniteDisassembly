@@ -152,7 +152,13 @@ w1_D202:
     ds 1                                               ;; d202
 
 w1_SomeAddressD203:
-    ds 8                                               ;; d203
+    ds 6                                               ;; d203
+
+w1_D209:
+    ds 1                                               ;; d209
+
+w1_D20A:
+    ds 1                                               ;; d20a
 
 w1_D20B:
     ds 1                                               ;; d20b
@@ -164,7 +170,13 @@ w1_D20E:
     ds 1                                               ;; d20e
 
 w1_D20F:
-    ds 4                                               ;; d20f
+    ds 2                                               ;; d20f
+
+w1_D211:
+    ds 1                                               ;; d211
+
+w1_D212:
+    ds 1                                               ;; d212
 
 w1_D213:
     ds 1                                               ;; d213

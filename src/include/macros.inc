@@ -92,6 +92,10 @@ dw \2
 dw \3
 db \4
 ENDM
+MACRO Op74_PrepTableJumpIndex_Copy
+db $74
+dw \1
+ENDM
 MACRO Op82_Run
 db $82
 dw \1
