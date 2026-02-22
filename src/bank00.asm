@@ -2150,8 +2150,8 @@ call_00_0f79:
 ; At that wram address:
 ; Target: [arg2] [00] [00] [arg3] [arg4] [arg5]
 ; (I may have swapped args 3 and 4)
-Op4E:
 ; DE will do what HL usually does in this op.
+Op4E:
     call LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch ;; 00:0f96 $cd $7c $0a
 ; Mult arg1 of the 4E op by 2. Used as index in table of 2-byte wram slots.
     sla  A                                             ;; 00:0f99 $cb $27
@@ -2181,11 +2181,11 @@ Op4E:
     inc  DE                                            ;; 00:0fb4 $13
 ; If arg 3-5 are all zero, skip to end.
     and  A, A                                          ;; 00:0fb5 $a7
-    jr   NZ, .perform                               ;; 00:0fb6 $20 $06
+    jr   NZ, .perform                                  ;; 00:0fb6 $20 $06
     cp   A, L                                          ;; 00:0fb8 $bd
-    jr   NZ, .perform                               ;; 00:0fb9 $20 $03
+    jr   NZ, .perform                                  ;; 00:0fb9 $20 $03
     cp   A, H                                          ;; 00:0fbb $bc
-    jr   Z, .end                                ;; 00:0fbc $28 $12
+    jr   Z, .end                                       ;; 00:0fbc $28 $12
 .perform:
     push HL                                            ;; 00:0fbe $e5
     ld   HL, $05                                       ;; 00:0fbf $21 $05 $00
@@ -2196,12 +2196,12 @@ Op4E:
     pop  DE                                            ;; 00:0fc4 $d1
     ld   [HL], D                                       ;; 00:0fc5 $72
     dec  HL                                            ;; 00:0fc6 $2b
-    ; Write args 3-4 to the 2 slots before it.
+; Write args 3-4 to the 2 slots before it.
     ld   [HL], E                                       ;; 00:0fc7 $73
     ld   HL, $01                                       ;; 00:0fc8 $21 $01 $00
     add  HL, BC                                        ;; 00:0fcb $09
     ld   A, $00                                        ;; 00:0fcc $3e $00
-    ; And then write 00 in the remaining slots
+; And then write 00 in the remaining slots
     ld   [HL+], A                                      ;; 00:0fce $22
     ld   [HL], A                                       ;; 00:0fcf $77
 .end:

@@ -4,10 +4,23 @@ from romInfo import RomInfo
 
 
 def maybeCreateScriptBlock(memory, addr):
-    opcode = memory.byte(addr)
-    # If this is an opcode AND it's not already made into some Block.
-    if opcode in OPBLOCKS and memory[addr] is None:
-        OPBLOCKS[opcode](memory, addr)
+    while True:
+        opcode = memory.byte(addr)
+        # If this is an opcode AND it's not already made into some Block.
+        # TODO condition for hitting end of file?
+        if opcode not in OPBLOCKS or memory[addr] is not None:
+            break
+
+        try: 
+            block = OPBLOCKS[opcode](memory, addr)
+        except Exception as e:
+            raise Exception('Could not make Script Block. Op%02x at %02x:%04x --> %s' % (opcode, memory.bankNumber, addr, e)) from e
+
+        addr += len(block)
+        
+        subBlock = getattr(block, 'subBlock', None)
+        if subBlock:
+            addr += len(subBlock)
 
 @annotation(priority=1)
 def hamscript(memory, addr):
@@ -19,11 +32,7 @@ class Op1CBlock(Block):
         RomInfo.macros["Op1C_TableJump"] = "db $1c\ndb \\1"
 
         tableSize = memory.byte(addr + 1)
-        scriptBlock = ScriptPointersBlock(memory, addr + 2, amount=tableSize)
-
-        # I think we can safely assume that whatever follows is a script, but will keep an eye out.
-        # Also might need to be wary of this being the last byte in the bank.
-        maybeCreateScriptBlock(memory, addr + len(self) + len(scriptBlock))
+        self.subBlock = ScriptPointersBlock(memory, addr + 2, amount=tableSize)
 
     def export(self, file):
         tableSize = self.memory.byte(file.addr + 1)
@@ -63,8 +72,6 @@ class Op82Block(Block):
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -79,7 +86,7 @@ class Op16Block(Block):
         RomInfo.macros["Op16_SubOps"] = "db $16\ndb \\1"
 
         numSubOps = memory.byte(addr + 1)
-        SubOpsBlock(memory, addr + 2, amount=numSubOps)
+        self.subBlock = SubOpsBlock(memory, addr + 2, amount=numSubOps)
 
     def export(self, file):
         numSubOps = self.memory.byte(file.addr + 1)
@@ -155,8 +162,6 @@ dw \2
                     size += 4
 
         self.resize(size)
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         for subOpArgs in self.subOpArgsList:
@@ -173,10 +178,6 @@ class Op18Block(Block):
         bank.addAutoLabel(pointer, None, "data")
         # The address pointed to is a script instruction.
         maybeCreateScriptBlock(bank, pointer)
-
-        # I think we can safely assume that whatever follows is a script, but will keep an eye out.
-        # Also might need to be wary of this being the last byte in the bank.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -196,8 +197,6 @@ class Op1EBlock(Block):
         bank.addAutoLabel(pointer, None, "data")
         # The address pointed to is a script instruction.
         maybeCreateScriptBlock(bank, pointer)
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -219,8 +218,6 @@ class Op50Block(Block):
         targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
         targetMemory.addAutoLabel(pointer, None, None) # WRam ignores source and type args.
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -246,8 +243,6 @@ class Op52Block(Block):
         # Giving the second byte written to a label also.
         targetMemory.addAutoLabel(pointer + 1, None, None) # WRam ignores source and type args.
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -272,8 +267,6 @@ class Op68Block(Block):
         RomInfo.getWRam(activeWramBankNum if targetPtr >= 0xD000 else 0).addAutoLabel(targetPtr, None, None) # WRam ignores source and type args.
         RomInfo.getWRam(activeWramBankNum if sourcePtr >= 0xD000 else 0).addAutoLabel(sourcePtr, None, None) # WRam ignores source and type args.
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         count = self.memory.byte(file.addr + 1)
@@ -290,10 +283,7 @@ class Op14Block(Block):
         RomInfo.macros["Op14_Unknown"] = "db $14\ndb \\1\ndb \\2\ndb \\3"
 
         count = memory.byte(addr + 1)
-        scriptBlock = ScriptPointersBlock(memory, addr + len(self), amount=count)
-
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self) + len(scriptBlock))
+        self.subBlock = ScriptPointersBlock(memory, addr + len(self), amount=count)
 
     def export(self, file):
         count = self.memory.byte(file.addr + 1)
@@ -306,10 +296,6 @@ class Op20Block(Block):
         super().__init__(memory, addr, size = 1)
         RomInfo.macros["SCRIPT_RETURN_20"] = "db $20"
 
-        # I think we can safely assume that whatever follows is a script, but will keep an eye out.
-        # Also might need to be wary of this being the last byte in the bank.
-        maybeCreateScriptBlock(memory, addr + len(self))
-
     def export(self, file):
         file.asmLine(1, "SCRIPT_RETURN_20")
 
@@ -317,10 +303,6 @@ class Op4ABlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 1)
         RomInfo.macros["SCRIPT_RETURN_4A"] = "db $4a"
-
-        # I think we can safely assume that whatever follows is a script, but will keep an eye out.
-        # Also might need to be wary of this being the last byte in the bank.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         file.asmLine(1, "SCRIPT_RETURN_4A")
@@ -336,8 +318,6 @@ class Op3EBlock(Block):
         bank.addAutoLabel(pointer, None, "data")
         # The address pointed to is a script instruction.
         maybeCreateScriptBlock(bank, pointer)
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         offset = self.memory.byte(file.addr + 1)
@@ -355,9 +335,6 @@ class Op32Block(Block):
         super().__init__(memory, addr, size = 7)
         RomInfo.macros["Op32_Unknown"] = "db $32\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
-
     def export(self, file):
         arg1 = self.memory.byte(file.addr + 1)
         arg2 = self.memory.byte(file.addr + 2)
@@ -371,9 +348,6 @@ class Op34Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 8)
         RomInfo.macros["Op34_Unknown"] = "db $34\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6\ndb \\7"
-
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         arg1 = self.memory.byte(file.addr + 1)
@@ -390,9 +364,6 @@ class Op36Block(Block):
         super().__init__(memory, addr, size = 7)
         RomInfo.macros["Op36_Unknown"] = "db $36\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
-
     def export(self, file):
         arg1 = self.memory.byte(file.addr + 1)
         arg2 = self.memory.byte(file.addr + 2)
@@ -406,9 +377,6 @@ class Op4CBlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 11)
         RomInfo.macros["Op4c_Unknown"] = "db $4c\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6\ndb \\7\ndb \\8\ndb \\9\ndb \\<10>"
-
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         arg1 = self.memory.byte(file.addr + 1)
@@ -433,8 +401,6 @@ class Op74Block(Block):
         # But there could also be a separate bank switch instruction I don't know about.
         RomInfo.getWRam().addAutoLabel(pointer, None, None) # WRam ignores source and type args.
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -445,9 +411,6 @@ class Op76Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 2)
         RomInfo.macros["Op76_PrepTableJumpIndex_Write"] = "db $76\ndb \\1"
-
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         byte = self.memory.byte(file.addr + 1)
@@ -464,8 +427,6 @@ class Op8EBlock(Block):
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         index = self.memory.byte(file.addr + 1)
@@ -487,8 +448,6 @@ class Op90Block(Block):
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         index = self.memory.byte(file.addr + 1)
@@ -510,8 +469,6 @@ class Op98Block(Block):
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
 
     def export(self, file):
         index = self.memory.byte(file.addr + 1)
@@ -522,21 +479,19 @@ class Op98Block(Block):
 
         file.asmLine(5, "Op98_StoreAddress", str(index), str(label))
 
-class Op4CBlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 6)
-        RomInfo.macros["Op4C_Unknown_StoreValue"] = "db $4c\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5"
+# This was supposed to be 4E
+# class Op4CBlock(Block):
+#     def __init__(self, memory, addr):
+#         super().__init__(memory, addr, size = 6)
+#         RomInfo.macros["Op4C_Unknown_StoreValue"] = "db $4c\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5"
 
-        # Should be followed by a script instruction.
-        maybeCreateScriptBlock(memory, addr + len(self))
-
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        arg5 = self.memory.byte(file.addr + 5)
-        file.asmLine(6, "Op4C_Unknown_StoreValue", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
+#     def export(self, file):
+#         index = self.memory.byte(file.addr + 1)
+#         arg2 = self.memory.byte(file.addr + 2)
+#         arg3 = self.memory.byte(file.addr + 3)
+#         arg4 = self.memory.byte(file.addr + 4)
+#         arg5 = self.memory.byte(file.addr + 5)
+#         file.asmLine(6, "Op4C_Unknown_StoreValue", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
 
 
 OPBLOCKS = {
@@ -551,7 +506,7 @@ OPBLOCKS = {
     0x36: Op36Block,
     0x3E: Op3EBlock,
     0x4A: Op4ABlock,
-    # 0x4C: Op4CBlock,
+    0x4C: Op4CBlock,
     0x50: Op50Block,
     0x52: Op52Block,
     0x68: Op68Block,
