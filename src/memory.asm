@@ -395,16 +395,19 @@ wC3AE:
 
 ; Op 8e indexes into this region.
 ; It's an array of 4 3-byte slots.
+; The values that go here look like 3byte rom addresses.
 wOp80_3ByteRegionC3C4:
     ds 12                                              ;; c3c4
 
 ; Op 90 indexes into this region.
 ; It's an array of 4 3-byte slots.
+; The values that go here look like 3byte rom addresses.
 wOp90_3ByteRegionC3D0:
     ds 12                                              ;; c3d0
 
 ; Op 98 indexes into this region.
 ; It's an array of 4 3-byte slots.
+; The values that go here look like 3byte rom addresses.
 wOp98_3ByteRegionC3DC:
     ds 13                                              ;; c3dc
 

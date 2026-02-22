@@ -561,7 +561,10 @@ w1_D8D0:
     ds 20                                              ;; d8d0
 
 w1_D8E4:
-    ds 44                                              ;; d8e4
+    ds 27                                              ;; d8e4
+
+w1_D8FF:
+    ds 17                                              ;; d8ff
 
 w1_D910:
     ds 7                                               ;; d910

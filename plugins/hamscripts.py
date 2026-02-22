@@ -453,6 +453,75 @@ class Op76Block(Block):
         byte = self.memory.byte(file.addr + 1)
         file.asmLine(2, "Op76_PrepTableJumpIndex_Write", "$%02x" % byte)
 
+class Op8EBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 5)
+        RomInfo.macros["Op8E_StoreAddress"] = "db $8e\ndb \\1\ndw \\2\ndb BANK(\\2)"
+
+        # It looks like the payloads are 3-byte rom addresses. 
+        pointer = memory.word(addr + 2)
+        bankNum = memory.byte(addr + 4)
+        bank = RomInfo.romBank(bankNum)
+        bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        pointer = self.memory.word(file.addr + 2)
+        bankNum = self.memory.byte(file.addr + 4)
+        bank = RomInfo.romBank(bankNum)
+        label = bank.getLabel(pointer)
+
+        file.asmLine(5, "Op8E_StoreAddress", str(index), str(label))
+
+class Op90Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 5)
+        RomInfo.macros["Op90_StoreAddress"] = "db $90\ndb \\1\ndw \\2\ndb BANK(\\2)"
+
+        # It looks like the payloads are 3-byte rom addresses. 
+        pointer = memory.word(addr + 2)
+        bankNum = memory.byte(addr + 4)
+        bank = RomInfo.romBank(bankNum)
+        bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        pointer = self.memory.word(file.addr + 2)
+        bankNum = self.memory.byte(file.addr + 4)
+        bank = RomInfo.romBank(bankNum)
+        label = bank.getLabel(pointer)
+
+        file.asmLine(5, "Op90_StoreAddress", str(index), str(label))
+
+class Op98Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 5)
+        RomInfo.macros["Op98_StoreAddress"] = "db $98\ndb \\1\ndw \\2\ndb BANK(\\2)"
+
+        # It looks like the payloads are 3-byte rom addresses. 
+        pointer = memory.word(addr + 2)
+        bankNum = memory.byte(addr + 4)
+        bank = RomInfo.romBank(bankNum)
+        bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
+
+        # Should be followed by a script instruction.
+        maybeCreateScriptBlock(memory, addr + len(self))
+
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        pointer = self.memory.word(file.addr + 2)
+        bankNum = self.memory.byte(file.addr + 4)
+        bank = RomInfo.romBank(bankNum)
+        label = bank.getLabel(pointer)
+
+        file.asmLine(5, "Op98_StoreAddress", str(index), str(label))
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
@@ -472,4 +541,7 @@ OPBLOCKS = {
     0x74: Op74Block,
     0x76: Op76Block,
     0x82: Op82Block,
+    0x8E: Op8EBlock,
+    0x90: Op90Block,
+    0x98: Op98Block,
 }
