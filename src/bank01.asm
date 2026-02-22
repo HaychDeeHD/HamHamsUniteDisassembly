@@ -6479,6 +6479,8 @@ call_01_7442:
 .jr_01_74ad:
     ld   [wOp1CScriptTableIndexC53A], A                ;; 01:74ad $ea $3a $c5
     ret                                                ;; 01:74b0 $c9
+
+call_01_74b1:
     ld   A, [wC314]                                    ;; 01:74b1 $fa $14 $c3
     ld   B, A                                          ;; 01:74b4 $47
     jr   jr_01_74d2                                    ;; 01:74b5 $18 $1b

@@ -554,14 +554,19 @@ data_3c_46d2:
     db   $3c, $06, $4e, $3c, $0c, $4e, $3c, $0a        ;; 3c:4df2 ????????
     db   $4e, $3c, $1a, $01, $1a, $02, $1a, $03        ;; 3c:4dfa ????????
     db   $1a, $04, $1a, $05, $1a, $06, $1a, $07        ;; 3c:4e02 ????????
-    db   $1a, $08, $1a, $09, $14, $01, $96, $66        ;; 3c:4e0a ????w...
-    dw   $4e1c                                         ;; 3c:4e12 wW
-    db   $3c, $4e, $09, $01                            ;; 3c:4e14 .w..
-    dw   data_3c_7ce2                                  ;; 3c:4e18 pP
-    db   $12, $20, $4e, $09, $01                       ;; 3c:4e1a .ww..
-    dw   data_3c_7cbb                                  ;; 3c:4e1f pP
-    db   $12, $20, $5a, $a4, $4e, $09, $00, $00        ;; 3c:4e21 .ww.w...
-    db   $00, $00, $1e                                 ;; 3c:4e29 ..w
+    db   $1a, $08, $1a, $09                            ;; 3c:4e0a ????
+
+data_3c_4e0e:
+    Op14_Unknown 1, $96, $66                           ;; 3c:4e0e $14 $01 $96 $66
+    SCRIPT_POINTER data_3c_4e1c                        ;; 3c:4e12 $1c $4e $3c
+    Op4E_Unknown_StoreValue 9, $01, $e2, $7c, $12      ;; 3c:4e15 $4e $09 $01 $e2 $7c $12
+    SCRIPT_RETURN_20                                   ;; 3c:4e1b $20
+
+data_3c_4e1c:
+    Op4E_Unknown_StoreValue 9, $01, $bb, $7c, $12      ;; 3c:4e1c $4e $09 $01 $bb $7c $12
+    SCRIPT_RETURN_20                                   ;; 3c:4e22 $20
+    db   $5a, $a4, $4e, $09, $00, $00, $00, $00        ;; 3c:4e23 w.w.....
+    db   $1e                                           ;; 3c:4e2b w
     dw   $5b22                                         ;; 3c:4e2c wW
     db   $04, $44, $09, $00, $4c, $08, $01, $00        ;; 3c:4e2e .w..ww..
     db   $00, $00, $00, $00                            ;; 3c:4e36 ....
@@ -2411,112 +2416,108 @@ data_3c_782b:
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ca3 ????????
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cab ????????
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cb3 ????????
-
-data_3c_7cbb:
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cbb ????????
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cc3 ????????
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ccb ????????
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cd3 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff             ;; 3c:7cdb ???????
-
-data_3c_7ce2:
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ce2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cea ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cf2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cfa ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d02 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d0a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d12 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d1a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d22 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d2a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d32 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d3a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d42 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d4a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d52 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d5a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d62 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d6a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d72 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d7a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d82 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d8a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d92 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d9a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7da2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7daa ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7db2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dba ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dc2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dca ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dd2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dda ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7de2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dea ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7df2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dfa ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e02 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e0a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e12 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e1a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e22 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e2a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e32 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e3a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e42 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e4a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e52 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e5a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e62 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e6a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e72 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e7a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e82 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e8a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e92 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e9a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ea2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7eaa ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7eb2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7eba ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ec2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7eca ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ed2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7eda ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ee2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7eea ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ef2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7efa ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f02 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f0a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f12 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f1a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f22 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f2a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f32 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f3a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f42 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f4a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f52 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f5a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f62 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f6a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f72 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f7a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f82 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f8a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f92 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f9a ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fa2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7faa ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fb2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fba ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fc2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fca ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fd2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fda ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fe2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fea ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ff2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff                  ;; 3c:7ffa ??????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cdb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ce3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ceb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cf3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7cfb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d03 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d0b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d13 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d1b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d23 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d2b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d33 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d3b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d43 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d4b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d53 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d5b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d63 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d6b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d73 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d7b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d83 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d8b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d93 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7d9b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7da3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dab ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7db3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dbb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dc3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dcb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dd3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ddb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7de3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7deb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7df3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7dfb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e03 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e0b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e13 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e1b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e23 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e2b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e33 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e3b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e43 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e4b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e53 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e5b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e63 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e6b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e73 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e7b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e83 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e8b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e93 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7e9b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ea3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7eab ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7eb3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ebb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ec3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ecb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ed3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7edb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ee3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7eeb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ef3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7efb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f03 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f0b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f13 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f1b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f23 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f2b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f33 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f3b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f43 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f4b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f53 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f5b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f63 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f6b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f73 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f7b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f83 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f8b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f93 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7f9b ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fa3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fab ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fb3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fbb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fc3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fcb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fd3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fdb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7fe3 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7feb ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 3c:7ff3 ????????
+    db   $ff, $ff, $ff, $ff, $ff                       ;; 3c:7ffb ?????

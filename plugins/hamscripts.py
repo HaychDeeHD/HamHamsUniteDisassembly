@@ -421,6 +421,7 @@ class Op8EBlock(Block):
         super().__init__(memory, addr, size = 5)
         RomInfo.macros["Op8E_StoreAddress"] = "db $8e\ndb \\1\ndw \\2\ndb BANK(\\2)"
 
+        # TODO maybe not?
         # It looks like the payloads are 3-byte rom addresses. 
         pointer = memory.word(addr + 2)
         bankNum = memory.byte(addr + 4)
@@ -442,6 +443,7 @@ class Op90Block(Block):
         super().__init__(memory, addr, size = 5)
         RomInfo.macros["Op90_StoreAddress"] = "db $90\ndb \\1\ndw \\2\ndb BANK(\\2)"
 
+        # TODO maybe not?
         # It looks like the payloads are 3-byte rom addresses. 
         pointer = memory.word(addr + 2)
         bankNum = memory.byte(addr + 4)
@@ -463,6 +465,7 @@ class Op98Block(Block):
         super().__init__(memory, addr, size = 5)
         RomInfo.macros["Op98_StoreAddress"] = "db $98\ndb \\1\ndw \\2\ndb BANK(\\2)"
 
+        # TODO maybe not?
         # It looks like the payloads are 3-byte rom addresses. 
         pointer = memory.word(addr + 2)
         bankNum = memory.byte(addr + 4)
@@ -479,19 +482,21 @@ class Op98Block(Block):
 
         file.asmLine(5, "Op98_StoreAddress", str(index), str(label))
 
-# This was supposed to be 4E
-# class Op4CBlock(Block):
-#     def __init__(self, memory, addr):
-#         super().__init__(memory, addr, size = 6)
-#         RomInfo.macros["Op4C_Unknown_StoreValue"] = "db $4c\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5"
+class Op4EBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 6)
+        RomInfo.macros["Op4E_Unknown_StoreValue"] = "db $4e\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5"
 
-#     def export(self, file):
-#         index = self.memory.byte(file.addr + 1)
-#         arg2 = self.memory.byte(file.addr + 2)
-#         arg3 = self.memory.byte(file.addr + 3)
-#         arg4 = self.memory.byte(file.addr + 4)
-#         arg5 = self.memory.byte(file.addr + 5)
-#         file.asmLine(6, "Op4C_Unknown_StoreValue", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
+        # TODO args 3-5 look like a rom address. (When not all zeroes.)
+        # Could make 2 macros, one for zero case and one otherwise to use labels.
+
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        arg2 = self.memory.byte(file.addr + 2)
+        arg3 = self.memory.byte(file.addr + 3)
+        arg4 = self.memory.byte(file.addr + 4)
+        arg5 = self.memory.byte(file.addr + 5)
+        file.asmLine(6, "Op4E_Unknown_StoreValue", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
 
 
 OPBLOCKS = {
@@ -507,13 +512,14 @@ OPBLOCKS = {
     0x3E: Op3EBlock,
     0x4A: Op4ABlock,
     0x4C: Op4CBlock,
+    0x4E: Op4EBlock,
     0x50: Op50Block,
     0x52: Op52Block,
     0x68: Op68Block,
     0x74: Op74Block,
     0x76: Op76Block,
     0x82: Op82Block,
-    0x8E: Op8EBlock,
-    0x90: Op90Block,
-    0x98: Op98Block,
+    # 0x8E: Op8EBlock,
+    # 0x90: Op90Block,
+    # 0x98: Op98Block,
 }
