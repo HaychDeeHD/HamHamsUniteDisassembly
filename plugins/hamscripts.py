@@ -3,18 +3,42 @@ from block.base import Block
 from romInfo import RomInfo
 
 
+def serializeAddress(memory, addr):
+    return  "%02x:%04x." % (memory.bankNumber, addr)
+
+# A heatmap of all the opcodes that stop script decoding and their counts.
+# Used to assess which opcodes are most valuable to implement.
+blockingOpcodes = {}
+# Set of addresses that have blocking ops. Just used to avoid double counting the above.
+blockingAddresses = set()
+# Stack used for unrolled formerly recursive script decoding.
+# Avoiding recursion improves error messages and means we can decode with unlimited jump depth.
+scriptAddressesStack = []
+
+def addKnownScriptAddress(memory, addr):
+    scriptAddressesStack.append((memory, addr))
+
 def maybeCreateScriptBlock(memory, addr):
     while True:
+        serializedAddr = serializeAddress(memory, addr)
         opcode = memory.byte(addr)
-        # If this is an opcode AND it's not already made into some Block.
+
+        # If this addr is already handled.
+        if memory[addr] is not None:
+            break
         # TODO condition for hitting end of file?
-        if opcode not in OPBLOCKS or memory[addr] is not None:
+        # If the opcode is not recognized.
+        if opcode not in OPBLOCKS:
+            if serializedAddr not in blockingAddresses:
+                blockingAddresses.add(serializedAddr)
+                hexOpcode = "%02x" % opcode
+                blockingOpcodes[hexOpcode] = blockingOpcodes.get(hexOpcode, 0) + 1
             break
 
         try: 
             block = OPBLOCKS[opcode](memory, addr)
         except Exception as e:
-            raise Exception('Could not make Script Block. Op%02x at %02x:%04x --> %s' % (opcode, memory.bankNumber, addr, e)) from e
+            raise Exception('Could not make Script Block. Op%02x at %s --> %s' % (opcode, serializedAddr, e)) from e
 
         addr += len(block)
         
@@ -24,7 +48,12 @@ def maybeCreateScriptBlock(memory, addr):
 
 @annotation(priority=1)
 def hamscript(memory, addr):
-    maybeCreateScriptBlock(memory, addr)
+    scriptAddressesStack.append((memory, addr))
+    while len(scriptAddressesStack):
+        memory, addr = scriptAddressesStack.pop()
+        maybeCreateScriptBlock(memory, addr)
+    print("Done processing @hamscript for %02x:%04x." % (memory.bankNumber, addr))
+    print(sorted(blockingOpcodes.items(), key=lambda item: item[1], reverse=True))
 
 class Op1CBlock(Block):
     def __init__(self, memory, addr):
@@ -50,7 +79,7 @@ class ScriptPointersBlock(Block):
             bank = RomInfo.romBank(bankNum)
             bank.addAutoLabel(pointer, None, "data")
             # Everything pointed to is a script instruction.
-            maybeCreateScriptBlock(bank, pointer)
+            addKnownScriptAddress(bank, pointer)
 
     def export(self, file):
         for n in range(len(self) // 3):
@@ -177,7 +206,7 @@ class Op18Block(Block):
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "data")
         # The address pointed to is a script instruction.
-        maybeCreateScriptBlock(bank, pointer)
+        addKnownScriptAddress(bank, pointer)
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -196,7 +225,7 @@ class Op1EBlock(Block):
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "data")
         # The address pointed to is a script instruction.
-        maybeCreateScriptBlock(bank, pointer)
+        addKnownScriptAddress(bank, pointer)
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -317,7 +346,7 @@ class Op3EBlock(Block):
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "data")
         # The address pointed to is a script instruction.
-        maybeCreateScriptBlock(bank, pointer)
+        addKnownScriptAddress(bank, pointer)
 
     def export(self, file):
         offset = self.memory.byte(file.addr + 1)
