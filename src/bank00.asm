@@ -2228,14 +2228,21 @@ Op4E_AddressTable:
     dw   $d8ff                                         ;; 00:0ff4 pP $0e
     dw   $d90b                                         ;; 00:0ff6 pP $0f
 
+; Use arg1 as an index into a list of Wram bank 1 slots.
+; At that wram address:
+; Target     : [arg2] [    ] [    ] [ 00 ] [ 00 ] [arg3] [arg4] [arg5]
+; Target + 8 : [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ]
+; Target + 16: [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ]
+; Target + 24: [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [    ] [    ] [    ]
 Op42:
     call LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch ;; 00:0ff8 $cd $7c $0a
-    call call_00_1006                                  ;; 00:0ffb $cd $06 $10
+    call Op42_Perform                                  ;; 00:0ffb $cd $06 $10
     ld   A, $05                                        ;; 00:0ffe $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1000 $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:1003 $c3 $14 $0a
 
-call_00_1006:
+; DE will do what HL usually does in this op.
+Op42_Perform:
     push HL                                            ;; 00:1006 $e5
     push DE                                            ;; 00:1007 $d5
     push BC                                            ;; 00:1008 $c5
@@ -2243,7 +2250,7 @@ call_00_1006:
     sla  A                                             ;; 00:100a $cb $27
     ld   C, A                                          ;; 00:100c $4f
     ld   B, $00                                        ;; 00:100d $06 $00
-    ld   HL, $105f                                     ;; 00:100f $21 $5f $10
+    ld   HL, Op42_AddressTable                         ;; 00:100f $21 $5f $10
     add  HL, BC                                        ;; 00:1012 $09
     ld   A, [HL+]                                      ;; 00:1013 $2a
     ld   B, [HL]                                       ;; 00:1014 $46
@@ -2269,6 +2276,10 @@ call_00_1006:
     add  HL, BC                                        ;; 00:102f $09
     ld   [HL+], A                                      ;; 00:1030 $22
     ld   [HL], A                                       ;; 00:1031 $77
+; Set 4 bytes to zero starting 08 ahead from BC
+; Then do 4 from 0C. Then 4 from 10.
+; Not sure why it's not just one big batch; They're contiguous.
+; Maybe these regions represent something.
     ld   HL, $08                                       ;; 00:1032 $21 $08 $00
     add  HL, BC                                        ;; 00:1035 $09
     ld   [HL+], A                                      ;; 00:1036 $22
@@ -2304,7 +2315,9 @@ call_00_1006:
     pop  DE                                            ;; 00:105c $d1
     pop  HL                                            ;; 00:105d $e1
     ret                                                ;; 00:105e $c9
+
 ;@jumptable amount=15
+Op42_AddressTable:
     dw   $d5c5                                         ;; 00:105f pP $00
     dw   $d5ee                                         ;; 00:1061 ?? $01
     dw   $d617                                         ;; 00:1063 ?? $02

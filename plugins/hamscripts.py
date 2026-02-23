@@ -504,6 +504,7 @@ class Op4EBlock(Block):
 
         # TODO args 3-5 look like a rom address. (When not all zeroes.)
         # Could make 2 macros, one for zero case and one otherwise to use labels.
+        # Same might apply to Op42.
 
     def export(self, file):
         index = self.memory.byte(file.addr + 1)
@@ -512,6 +513,19 @@ class Op4EBlock(Block):
         arg4 = self.memory.byte(file.addr + 4)
         arg5 = self.memory.byte(file.addr + 5)
         file.asmLine(6, "Op4E_Unknown_StoreValue", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
+
+class Op42Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 6)
+        RomInfo.macros["Op42_Unknown_StoreValue"] = "db $42\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5"
+
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        arg2 = self.memory.byte(file.addr + 2)
+        arg3 = self.memory.byte(file.addr + 3)
+        arg4 = self.memory.byte(file.addr + 4)
+        arg5 = self.memory.byte(file.addr + 5)
+        file.asmLine(6, "Op42_Unknown_StoreValue", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
 
 class Op58Block(Block):
     def __init__(self, memory, addr):
@@ -549,6 +563,7 @@ OPBLOCKS = {
     0x34: Op34Block,
     0x36: Op36Block,
     0x3E: Op3EBlock,
+    0x42: Op42Block,
     0x4A: Op4ABlock,
     0x4C: Op4CBlock,
     0x4E: Op4EBlock,

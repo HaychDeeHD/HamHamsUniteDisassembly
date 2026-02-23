@@ -1162,7 +1162,13 @@ wC91D:
     ds 1                                               ;; c91d
 
 wC91E:
-    ds 13                                              ;; c91e
+    ds 1                                               ;; c91e
+
+wC91F:
+    ds 2                                               ;; c91f
+
+wC921:
+    ds 10                                              ;; c921
 
 wC92B:
     ds 1                                               ;; c92b
