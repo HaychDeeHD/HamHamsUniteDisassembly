@@ -513,6 +513,30 @@ class Op4EBlock(Block):
         arg5 = self.memory.byte(file.addr + 5)
         file.asmLine(6, "Op4E_Unknown_StoreValue", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
 
+class Op58Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 6)
+        RomInfo.macros["Op58_WriteBitArrayIndex"] = "db $58\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb 5"
+    
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        arg2 = self.memory.byte(file.addr + 2)
+        arg3 = self.memory.byte(file.addr + 3)
+        arg4 = self.memory.byte(file.addr + 4)
+        arg5 = self.memory.byte(file.addr + 5)
+        file.asmLine(6, "Op58_WriteBitArrayIndex", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
+
+class Op56Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 5)
+        RomInfo.macros["Op56_WriteBitArrayIndex"] = "db $56\ndb \\1\ndb \\2\ndb \\3\ndb \\4"
+    
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        arg2 = self.memory.byte(file.addr + 2)
+        arg3 = self.memory.byte(file.addr + 3)
+        arg4 = self.memory.byte(file.addr + 4)
+        file.asmLine(5, "Op56_WriteBitArrayIndex", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4)
 
 OPBLOCKS = {
     0x14: Op14Block,
@@ -530,6 +554,8 @@ OPBLOCKS = {
     0x4E: Op4EBlock,
     0x50: Op50Block,
     0x52: Op52Block,
+    0x56: Op56Block,
+    0x58: Op58Block,
     0x68: Op68Block,
     0x74: Op74Block,
     0x76: Op76Block,

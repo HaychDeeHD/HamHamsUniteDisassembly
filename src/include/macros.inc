@@ -93,6 +93,13 @@ db \2
 db \3
 db \4
 ENDM
+MACRO Op56_WriteBitArrayIndex
+db $56
+db \1
+db \2
+db \3
+db \4
+ENDM
 MACRO Op68_CopyBytes
 db $68
 db \1

@@ -2508,28 +2508,37 @@ Op4C:
     ld   A, [wC364]                                    ;; 00:11b8 $fa $64 $c3
     and  A, A                                          ;; 00:11bb $a7
     jr   Z, .jr_00_11c1                                ;; 00:11bc $28 $03
-    call call_00_1248                                  ;; 00:11be $cd $48 $12
+    call WriteLotsToBC                                 ;; 00:11be $cd $48 $12
 .jr_00_11c1:
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:11c1 $c3 $14 $0a
 
+; Arg1 is offset for wram table to decide BC,
+; writes arg2 to BC (unless FF),
+; writes next 3 arg bytes to bitarrayindex.
 Op58:
     ld   A, $05                                        ;; 00:11c4 $3e $05
-    call call_00_11f0                                  ;; 00:11c6 $cd $f0 $11
+; Increments HL (why?)
+    call GetBCFromArg1                                 ;; 00:11c6 $cd $f0 $11
     ld   A, [HL+]                                      ;; 00:11c9 $2a
     cp   A, $ff                                        ;; 00:11ca $fe $ff
-    jr   Z, jr_00_11d6                                 ;; 00:11cc $28 $08
+    jr   Z, Write3ArgsToBitArrayIndexSlots             ;; 00:11cc $28 $08
     ld   [BC], A                                       ;; 00:11ce $02
-    jr   jr_00_11d6                                    ;; 00:11cf $18 $05
+    jr   Write3ArgsToBitArrayIndexSlots                ;; 00:11cf $18 $05
 
+; Arg1 is offset for wram table to decide BC,
+; writes next 3 arg bytes to bitarrayindex.
 Op56:
     ld   A, $04                                        ;; 00:11d1 $3e $04
-    call call_00_11f0                                  ;; 00:11d3 $cd $f0 $11
+; Increments HL (why?)
+    call GetBCFromArg1                                 ;; 00:11d3 $cd $f0 $11
 
-jr_00_11d6:
+Write3ArgsToBitArrayIndexSlots:
     ld   A, [HL+]                                      ;; 00:11d6 $2a
     or   A, [HL]                                       ;; 00:11d7 $b6
-    jr   Z, .jr_00_11ed                                ;; 00:11d8 $28 $13
+; Abort if first 2 values zero.
+    jr   Z, .end                                       ;; 00:11d8 $28 $13
     dec  HL                                            ;; 00:11da $2b
+; Write 3 values to wBitArrayIndexC35E
     ld   A, [HL+]                                      ;; 00:11db $2a
     ld   DE, wBitArrayIndexC35E                        ;; 00:11dc $11 $5e $c3
     ld   [DE], A                                       ;; 00:11df $12
@@ -2541,11 +2550,11 @@ jr_00_11d6:
     ld   [DE], A                                       ;; 00:11e5 $12
     ld   A, $01                                        ;; 00:11e6 $3e $01
     ldh  [rSVBK], A                                    ;; 00:11e8 $e0 $70
-    call call_00_1248                                  ;; 00:11ea $cd $48 $12
-.jr_00_11ed:
+    call WriteLotsToBC                                 ;; 00:11ea $cd $48 $12
+.end:
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:11ed $c3 $14 $0a
 
-call_00_11f0:
+GetBCFromArg1:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:11f0 $ea $26 $c3
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:11f3 $cd $69 $0a
     call consultTableOfWramAddresses                   ;; 00:11f6 $cd $fb $11
@@ -2600,7 +2609,13 @@ WramAddressTable:
     dw   $d567                                         ;; 00:1244 pP
     dw   $d595                                         ;; 00:1246 pP
 
-call_00_1248:
+; BC points to a Wram Bank 1 address based on the above table.
+; The first slot can be written to by Op58 (arg2) but not Op56.
+; BC     : [ ** ] [ 00 ] [    ] [    ] [    ] [ 00 ] [C35E] [C35F]
+; BC + 8 : [C360] [ 00 ] [ 00 ] [    ] [    ] [    ] [    ] [ 00 ]
+; BC + 16: [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ] [ 00 ]
+; BC + 24: [ 00 ] [ 00 ] [ 00 ] [ 00 ] [    ] [    ] [    ] [    ]
+WriteLotsToBC:
     ld   HL, $06                                       ;; 00:1248 $21 $06 $00
     add  HL, BC                                        ;; 00:124b $09
     ld   A, [wBitArrayIndexC35E]                       ;; 00:124c $fa $5e $c3
@@ -2623,10 +2638,10 @@ call_00_1248:
     ld   HL, $1b                                       ;; 00:1269 $21 $1b $00
     add  HL, BC                                        ;; 00:126c $09
     ld   E, $13                                        ;; 00:126d $1e $13
-.jr_00_126f:
+.loop:
     ld   [HL+], A                                      ;; 00:126f $22
     dec  E                                             ;; 00:1270 $1d
-    jr   NZ, .jr_00_126f                               ;; 00:1271 $20 $fc
+    jr   NZ, .loop                                     ;; 00:1271 $20 $fc
     ret                                                ;; 00:1273 $c9
 
 Op32:

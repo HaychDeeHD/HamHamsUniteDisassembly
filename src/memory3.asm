@@ -9,10 +9,25 @@ SECTION "wram3", WRAMX[$d000], BANK[$3]
     ds 192                                             ;; d000
 
 w3_D0C0:
-    ds 61                                              ;; d0c0
+    ds 7                                               ;; d0c0
+
+w3_D0C7:
+    ds 29                                              ;; d0c7
+
+w3_D0E4:
+    ds 2                                               ;; d0e4
+
+w3_D0E6:
+    ds 23                                              ;; d0e6
 
 w3_D0FD:
-    ds 35                                              ;; d0fd
+    ds 6                                               ;; d0fd
+
+w3_D103:
+    ds 23                                              ;; d103
+
+w3_D11A:
+    ds 6                                               ;; d11a
 
 w3_D120:
     ds 6                                               ;; d120
@@ -57,7 +72,10 @@ w3_D1EE:
     ds 29                                              ;; d1ee
 
 w3_D20B:
-    ds 29                                              ;; d20b
+    ds 20                                              ;; d20b
+
+w3_D21F:
+    ds 9                                               ;; d21f
 
 w3_D228:
     ds 9                                               ;; d228
@@ -66,7 +84,10 @@ w3_D231:
     ds 15                                              ;; d231
 
 w3_D240:
-    ds 72                                              ;; d240
+    ds 57                                              ;; d240
+
+w3_D279:
+    ds 15                                              ;; d279
 
 w3_D288:
     ds 4                                               ;; d288
@@ -87,7 +108,10 @@ w3_D2AB:
     ds 29                                              ;; d2ab
 
 w3_D2C8:
-    ds 29                                              ;; d2c8
+    ds 11                                              ;; d2c8
+
+w3_D2D3:
+    ds 18                                              ;; d2d3
 
 w3_D2E5:
     ds 545                                             ;; d2e5
@@ -99,7 +123,13 @@ w3_D507:
     ds 1                                               ;; d507
 
 w3_D508:
-    ds 295                                             ;; d508
+    ds 292                                             ;; d508
+
+w3_D62C:
+    ds 1                                               ;; d62c
+
+w3_D62D:
+    ds 2                                               ;; d62d
 
 w3_D62F:
     ds 1                                               ;; d62f

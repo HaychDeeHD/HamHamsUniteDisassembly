@@ -6434,6 +6434,8 @@ call_01_7442:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 01:7460 $ea $26 $c3
 .jr_01_7463:
     ret                                                ;; 01:7463 $c9
+
+call_01_7464:
     call call_00_27ef                                  ;; 01:7464 $cd $ef $27
     call call_00_2365                                  ;; 01:7467 $cd $65 $23
     ld   A, $05                                        ;; 01:746a $3e $05
