@@ -139,14 +139,11 @@ db \<1>
 ENDM
 MACRO Op80_CopyNBytes
 db $80
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
-db \<6>
-db \<7>
-db \<8>
+dw \1
+db \2
+dw \3
+db \4
+dw \5
 ENDM
 MACRO Op82_Run
 db $82

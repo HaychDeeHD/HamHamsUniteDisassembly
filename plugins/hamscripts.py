@@ -542,7 +542,9 @@ class Op84Block(Block):
 class Op80Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 9)
-        RomInfo.macros["Op80_CopyNBytes"] = "db $80\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)\ndw \\3"
+        # The BANK version of this breaks the checksum for some reason. Might be like Op50/52?
+        # RomInfo.macros["Op80_CopyNBytes"] = "db $80\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)\ndw \\3"
+        RomInfo.macros["Op80_CopyNBytes"] = "db $80\ndw \\1\ndb \\2\ndw \\3\ndb \\4\ndw \\5"
 
         pointer1 = memory.word(addr + 1)
         bankNum1 = memory.byte(addr + 3)
@@ -579,7 +581,8 @@ class Op80Block(Block):
 
         amount = self.memory.word(file.addr + 7)
 
-        file.asmLine(9, "Op80_CopyNBytes", str(label1), str(label2), str(amount))
+        # file.asmLine(9, "Op80_CopyNBytes", str(label1), str(label2), str(amount))
+        file.asmLine(9, "Op80_CopyNBytes", str(label1), str(bankNum1), str(label2), str(bankNum2), str(amount))
 
 class Op04Block(Block):
     def __init__(self, memory, addr):
@@ -624,8 +627,7 @@ OPBLOCKS = {
     0x68: Op68Block,
     0x74: Op74Block,
     0x76: makeGenericBlockClass(0x76, 2, "Op76_PrepTableJumpIndex_Write"),
-    # 0x80: Op80Block,
-    0x80: makeGenericBlockClass(0x80, 9, "Op80_CopyNBytes"),
+    0x80: Op80Block,
     0x82: Op82Block,
     0x84: Op84Block,
     0x8E: Op8EBlock,

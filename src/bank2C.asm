@@ -131,8 +131,8 @@ data_2c_41d5:
     Op18_Jump data_2c_41e4                             ;; 2c:41e0 $18 $e4 $41 $2c
 
 data_2c_41e4:
-    Op80_CopyNBytes $d8, $c7, $00, $16, $d2, $01, $02, $00 ;; 2c:41e4 $80 $d8 $c7 $00 $16 $d2 $01 $02 $00
-    Op80_CopyNBytes $da, $c7, $00, $0e, $d2, $01, $02, $00 ;; 2c:41ed $80 $da $c7 $00 $0e $d2 $01 $02 $00
+    Op80_CopyNBytes wC7D8, 0, w1_D216, 1, 2            ;; 2c:41e4 $80 $d8 $c7 $00 $16 $d2 $01 $02 $00
+    Op80_CopyNBytes wC7DA, 0, w1_D20E, 1, 2            ;; 2c:41ed $80 $da $c7 $00 $0e $d2 $01 $02 $00
     Op50_WriteByte w1_D215, 1, $80                     ;; 2c:41f6 $50 $15 $d2 $01 $80
     Op50_WriteByte w1_D20D, 1, $80                     ;; 2c:41fb $50 $0d $d2 $01 $80
     Op14_Unknown 1, $64, $5b                           ;; 2c:4200 $14 $01 $64 $5b

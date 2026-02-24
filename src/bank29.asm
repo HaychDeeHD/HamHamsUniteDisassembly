@@ -2600,15 +2600,15 @@ data_29_7b8b:
     SCRIPT_RETURN_20                                   ;; 29:7ba0 $20
 
 data_29_7ba1:
-    Op80_CopyNBytes $54, $c8, $00, $9d, $d2, $01, $02, $00 ;; 29:7ba1 $80 $54 $c8 $00 $9d $d2 $01 $02 $00
+    Op80_CopyNBytes wC854, 0, w1_D29D, 1, 2            ;; 29:7ba1 $80 $54 $c8 $00 $9d $d2 $01 $02 $00
     SCRIPT_RETURN_20                                   ;; 29:7baa $20
 
 data_29_7bab:
-    Op80_CopyNBytes $54, $c8, $00, $6f, $d2, $01, $02, $00 ;; 29:7bab $80 $54 $c8 $00 $6f $d2 $01 $02 $00
+    Op80_CopyNBytes wC854, 0, w1_D26F, 1, 2            ;; 29:7bab $80 $54 $c8 $00 $6f $d2 $01 $02 $00
     SCRIPT_RETURN_20                                   ;; 29:7bb4 $20
 
 data_29_7bb5:
-    Op80_CopyNBytes $54, $c8, $00, $cb, $d2, $01, $02, $00 ;; 29:7bb5 $80 $54 $c8 $00 $cb $d2 $01 $02 $00
+    Op80_CopyNBytes wC854, 0, w1_D2CB, 1, 2            ;; 29:7bb5 $80 $54 $c8 $00 $cb $d2 $01 $02 $00
     SCRIPT_RETURN_20                                   ;; 29:7bbe $20
     Op16_SubOps 1                                      ;; 29:7bbf $16 $01
     SubOp_SetByte wC754, $00                           ;; 29:7bc1 $7e $3c $00
