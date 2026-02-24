@@ -212,7 +212,7 @@ data_2a_42e6:
     Op50_WriteByte w1_BeginRegionD1FD, 1, $04          ;; 2a:42e6 $50 $fd $d1 $01 $04
     Op82_Run call_01_77e1                              ;; 2a:42eb $82 $e1 $77 $01
     Op1E_Call data_36_7e92                             ;; 2a:42ef $1e $92 $7e $36
-    db   $1a, $02                                      ;; 2a:42f3 ??
+    Op1A_Unknown $02                                   ;; 2a:42f3 $1a $02
 
 data_2a_42f5:
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 2a:42f5 $68 $01 $34 $c8 $0e $d2 $01
@@ -233,7 +233,7 @@ data_2a_4327:
     Op50_WriteByte w1_BeginRegionD1FD, 1, $02          ;; 2a:4327 $50 $fd $d1 $01 $02
     Op82_Run call_01_77e1                              ;; 2a:432c $82 $e1 $77 $01
     Op1E_Call data_36_7e92                             ;; 2a:4330 $1e $92 $7e $36
-    db   $1a, $0a                                      ;; 2a:4334 ??
+    Op1A_Unknown $0a                                   ;; 2a:4334 $1a $0a
 
 data_2a_4336:
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 2a:4336 $68 $01 $34 $c8 $0e $d2 $01
@@ -254,7 +254,7 @@ data_2a_4368:
     Op50_WriteByte w1_BeginRegionD1FD, 1, $08          ;; 2a:4368 $50 $fd $d1 $01 $08
     Op82_Run call_01_77e1                              ;; 2a:436d $82 $e1 $77 $01
     Op1E_Call data_36_7e92                             ;; 2a:4371 $1e $92 $7e $36
-    db   $1a, $0b                                      ;; 2a:4375 ??
+    Op1A_Unknown $0b                                   ;; 2a:4375 $1a $0b
 
 data_2a_4377:
     Op18_Jump data_2a_4266                             ;; 2a:4377 $18 $66 $42 $2a
@@ -273,13 +273,13 @@ data_2a_439e:
     Op50_WriteByte w1_BeginRegionD1FD, 1, $02          ;; 2a:439e $50 $fd $d1 $01 $02
     Op82_Run call_01_77e1                              ;; 2a:43a3 $82 $e1 $77 $01
     Op1E_Call data_36_7e92                             ;; 2a:43a7 $1e $92 $7e $36
-    db   $1a, $0a                                      ;; 2a:43ab ??
+    Op1A_Unknown $0a                                   ;; 2a:43ab $1a $0a
 
 data_2a_43ad:
     Op50_WriteByte w1_BeginRegionD1FD, 1, $08          ;; 2a:43ad $50 $fd $d1 $01 $08
     Op82_Run call_01_77e1                              ;; 2a:43b2 $82 $e1 $77 $01
     Op1E_Call data_36_7e92                             ;; 2a:43b6 $1e $92 $7e $36
-    db   $1a, $0b                                      ;; 2a:43ba ??
+    Op1A_Unknown $0b                                   ;; 2a:43ba $1a $0b
 
 data_2a_43bc:
     Op18_Jump data_2a_4266                             ;; 2a:43bc $18 $66 $42 $2a

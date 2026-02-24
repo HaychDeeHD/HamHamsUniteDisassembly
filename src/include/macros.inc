@@ -13,6 +13,10 @@ db $18
 dw \1
 db BANK(\1)
 ENDM
+MACRO Op1A_Unknown
+db $1a
+db \1
+ENDM
 MACRO Op1C_TableJump
 db $1c
 db \1

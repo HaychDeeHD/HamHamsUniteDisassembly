@@ -262,7 +262,7 @@ data_28_438d:
     Op50_WriteByte w1_BeginRegionD1FD, 1, $02          ;; 28:438d $50 $fd $d1 $01 $02
     Op82_Run call_01_77e1                              ;; 28:4392 $82 $e1 $77 $01
     Op1E_Call data_3b_7880                             ;; 28:4396 $1e $80 $78 $3b
-    db   $1a, $14                                      ;; 28:439a ??
+    Op1A_Unknown $14                                   ;; 28:439a $1a $14
 
 data_28_439c:
     Op50_WriteByte wC31D, 0, $d8                       ;; 28:439c $50 $1d $c3 $00 $d8
@@ -284,7 +284,7 @@ data_28_43bc:
 data_28_43ce:
     Op4c_Unknown $16, $10, $02, $00, $00, $00, $00, $0b, $45, $10 ;; 28:43ce $4c $16 $10 $02 $00 $00 $00 $00 $0b $45 $10
     Op1E_Call data_3b_7880                             ;; 28:43d9 $1e $80 $78 $3b
-    db   $1a, $0a                                      ;; 28:43dd ??
+    Op1A_Unknown $0a                                   ;; 28:43dd $1a $0a
 
 data_28_43df:
     Op50_WriteByte wC31D, 0, $d4                       ;; 28:43df $50 $1d $c3 $00 $d4
@@ -301,7 +301,7 @@ data_28_43ff:
     Op50_WriteByte w1_BeginRegionD1FD, 1, $08          ;; 28:43ff $50 $fd $d1 $01 $08
     Op82_Run call_01_77e1                              ;; 28:4404 $82 $e1 $77 $01
     Op1E_Call data_3b_7880                             ;; 28:4408 $1e $80 $78 $3b
-    db   $1a, $13                                      ;; 28:440c ??
+    Op1A_Unknown $13                                   ;; 28:440c $1a $13
 
 data_28_440e:
     Op14_Unknown 1, $ea, $5d                           ;; 28:440e $14 $01 $ea $5d
@@ -309,7 +309,6 @@ data_28_440e:
     Op14_Unknown 1, $f2, $5d                           ;; 28:4415 $14 $01 $f2 $5d
     SCRIPT_POINTER data_28_442b                        ;; 28:4419 $2b $44 $28
     Op4c_Unknown $32, $01, $04, $48, $00, $90, $00, $1f, $60, $17 ;; 28:441c $4c $32 $01 $04 $48 $00 $90 $00 $1f $60 $17
-;@hamscript
     Op16_SubOps 1                                      ;; 28:4427 $16 $01
     SubOp_SetFlag wC94B, 1                             ;; 28:4429 $3f $99
 

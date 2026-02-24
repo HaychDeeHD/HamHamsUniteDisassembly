@@ -457,7 +457,7 @@ data_38_4873:
     Op50_WriteByte w1_BeginRegionD1FD, 1, $08          ;; 38:4873 $50 $fd $d1 $01 $08
     Op82_Run call_01_77e1                              ;; 38:4878 $82 $e1 $77 $01
     Op1E_Call data_3c_4530                             ;; 38:487c $1e $30 $45 $3c
-    db   $1a, $01                                      ;; 38:4880 ??
+    Op1A_Unknown $01                                   ;; 38:4880 $1a $01
 
 data_38_4882:
     Op14_Unknown 1, $46, $64                           ;; 38:4882 $14 $01 $46 $64
@@ -482,7 +482,7 @@ data_38_48bb:
     Op52_WriteBytes w1_SomeAddressD203, 1, $0b, $45    ;; 38:48c4 $52 $03 $d2 $01 $0b $45
     Op50_WriteByte w1_D205, 1, $10                     ;; 38:48ca $50 $05 $d2 $01 $10
     Op1E_Call data_3c_4530                             ;; 38:48cf $1e $30 $45 $3c
-    db   $1a, $0b                                      ;; 38:48d3 ??
+    Op1A_Unknown $0b                                   ;; 38:48d3 $1a $0b
 
 data_38_48d5:
     Op14_Unknown 1, $46, $64                           ;; 38:48d5 $14 $01 $46 $64
@@ -803,7 +803,7 @@ data_38_4df3:
     Op50_WriteByte w1_BeginRegionD1FD, 1, $04          ;; 38:4df3 $50 $fd $d1 $01 $04
     Op82_Run call_01_77e1                              ;; 38:4df8 $82 $e1 $77 $01
     Op1E_Call data_36_7e92                             ;; 38:4dfc $1e $92 $7e $36
-    db   $1a, $0b                                      ;; 38:4e00 ??
+    Op1A_Unknown $0b                                   ;; 38:4e00 $1a $0b
 
 data_38_4e02:
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 38:4e02 $68 $01 $34 $c8 $0e $d2 $01

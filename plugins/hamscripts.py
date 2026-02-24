@@ -646,10 +646,20 @@ class Op44Block(Block):
         arg2 = self.memory.byte(file.addr + 2)
         file.asmLine(3, "Op44_Unknown", "$%02x" % arg1, "$%02x" % arg2)
 
+class Op1ABlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 2)
+        RomInfo.macros["Op1A_Unknown"] = "db $1a\ndb \\1"
+
+    def export(self, file):
+        arg = self.memory.byte(file.addr + 1)
+        file.asmLine(2, "Op1A_Unknown", "$%02x" % arg)
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
     0x18: Op18Block,
+    0x1A: Op1ABlock,
     0x1C: Op1CBlock,
     0x1E: Op1EBlock,
     0x20: Op20Block,

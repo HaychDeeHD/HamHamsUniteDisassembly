@@ -308,7 +308,7 @@ data_2b_432e:
     db   $54, $07                                      ;; 2b:432e ??
 
 data_2b_4330:
-    db   $1a, $03                                      ;; 2b:4330 ??
+    Op1A_Unknown $03                                   ;; 2b:4330 $1a $03
 
 data_2b_4332:
     Op1E_Call data_2b_48d6                             ;; 2b:4332 $1e $d6 $48 $2b

@@ -2100,7 +2100,7 @@ data_1f_71bb:
     SCRIPT_RETURN_20                                   ;; 1f:71f7 $20
 
 data_1f_71f8:
-    db   $1a, $01                                      ;; 1f:71f8 ??
+    Op1A_Unknown $01                                   ;; 1f:71f8 $1a $01
 
 data_1f_71fa:
     Op1E_Call data_04_5b22                             ;; 1f:71fa $1e $22 $5b $04
