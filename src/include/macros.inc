@@ -20,7 +20,7 @@ db BANK(\1)
 ENDM
 MACRO Op1A_Unknown
 db $1a
-db \1
+db \<1>
 ENDM
 MACRO Op1C_TableJump
 db $1c
@@ -33,31 +33,31 @@ db BANK(\1)
 ENDM
 MACRO Op32_Unknown
 db $32
-db \1
-db \2
-db \3
-db \4
-db \5
-db \6
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+db \<5>
+db \<6>
 ENDM
 MACRO Op34_Unknown
 db $34
-db \1
-db \2
-db \3
-db \4
-db \5
-db \6
-db \7
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+db \<5>
+db \<6>
+db \<7>
 ENDM
 MACRO Op36_Unknown
 db $36
-db \1
-db \2
-db \3
-db \4
-db \5
-db \6
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+db \<5>
+db \<6>
 ENDM
 MACRO Op3E_Compare_Branch
 db $3E
@@ -78,8 +78,21 @@ db \5
 ENDM
 MACRO Op44_Unknown
 db $44
-db \1
-db \2
+db \<1>
+db \<2>
+ENDM
+MACRO Op4C_Unknown
+db $4c
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+db \<5>
+db \<6>
+db \<7>
+db \<8>
+db \<9>
+db \<10>
 ENDM
 MACRO Op4E_Unknown_StoreValue
 db $4e
@@ -88,19 +101,6 @@ db \2
 db \3
 db \4
 db \5
-ENDM
-MACRO Op4c_Unknown
-db $4c
-db \1
-db \2
-db \3
-db \4
-db \5
-db \6
-db \7
-db \8
-db \9
-db \<10>
 ENDM
 MACRO Op50_WriteByte
 db $50
@@ -135,7 +135,7 @@ dw \1
 ENDM
 MACRO Op76_PrepTableJumpIndex_Write
 db $76
-db \1
+db \<1>
 ENDM
 MACRO Op80_CopyNBytes
 db $80

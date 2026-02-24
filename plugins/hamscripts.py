@@ -55,7 +55,10 @@ def hamscript(memory, addr):
     print("Done processing @hamscript for %02x:%04x." % (memory.bankNumber, addr))
     print(sorted(blockingOpcodes.items(), key=lambda item: item[1], reverse=True))
 
-def makeGenericBlockClass(className, opcode, macroName, size):
+def makeGenericBlockClass(opcode, size, macroName=None):
+    className = "Op%02xBlock" % opcode
+    if macroName is None:
+        macroName = "Op%02X_Unknown" % opcode
     __class__ = type(className, (Block,), {})
     def basicInit(self, memory, addr):
         super().__init__(memory, addr, size=size)
@@ -107,13 +110,10 @@ class Op82Block(Block):
         super().__init__(memory, addr, size=4)
         RomInfo.macros["Op82_Run"] = "db $82\ndw \\1\ndb BANK(\\1)"
 
-        # TODO verify opcode (Or change pattern to use a single script block class)
-
         pointer = memory.word(addr + 1)
         bankNum = memory.byte(addr + 3)
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
-
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -285,7 +285,6 @@ class Op52Block(Block):
         # Giving the second byte written to a label also.
         targetMemory.addAutoLabel(pointer + 1, None, None)
 
-
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
         bankNum = self.memory.byte(file.addr + 3)
@@ -308,7 +307,6 @@ class Op68Block(Block):
         activeWramBankNum = memory.byte(addr + 6)
         RomInfo.getWRam(activeWramBankNum if targetPtr >= 0xD000 else 0).addAutoLabel(targetPtr, None, None)
         RomInfo.getWRam(activeWramBankNum if sourcePtr >= 0xD000 else 0).addAutoLabel(sourcePtr, None, None)
-
 
     def export(self, file):
         count = self.memory.byte(file.addr + 1)
@@ -372,67 +370,6 @@ class Op3EBlock(Block):
         label = bank.getLabel(pointer)
         file.asmLine(8, "Op3E_Compare_Branch", str(offset), "$%02x" % golden1, "$%02x" % golden2, "$%02x" % golden3, str(label))
 
-class Op32Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 7)
-        RomInfo.macros["Op32_Unknown"] = "db $32\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
-
-    def export(self, file):
-        arg1 = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        arg5 = self.memory.byte(file.addr + 5)
-        arg6 = self.memory.byte(file.addr + 6)
-        file.asmLine(7, "Op32_Unknown", "$%02x" % arg1, "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5, "$%02x" % arg6)
-
-class Op34Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 8)
-        RomInfo.macros["Op34_Unknown"] = "db $34\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6\ndb \\7"
-
-    def export(self, file):
-        arg1 = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        arg5 = self.memory.byte(file.addr + 5)
-        arg6 = self.memory.byte(file.addr + 6)
-        arg7 = self.memory.byte(file.addr + 7)
-        file.asmLine(8, "Op34_Unknown", "$%02x" % arg1, "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5, "$%02x" % arg6, "$%02x" % arg7)
-
-class Op36Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 7)
-        RomInfo.macros["Op36_Unknown"] = "db $36\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
-
-    def export(self, file):
-        arg1 = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        arg5 = self.memory.byte(file.addr + 5)
-        arg6 = self.memory.byte(file.addr + 6)
-        file.asmLine(7, "Op36_Unknown", "$%02x" % arg1, "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5, "$%02x" % arg6)
-
-class Op4CBlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 11)
-        RomInfo.macros["Op4c_Unknown"] = "db $4c\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6\ndb \\7\ndb \\8\ndb \\9\ndb \\<10>"
-
-    def export(self, file):
-        arg1 = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        arg5 = self.memory.byte(file.addr + 5)
-        arg6 = self.memory.byte(file.addr + 6)
-        arg7 = self.memory.byte(file.addr + 7)
-        arg8 = self.memory.byte(file.addr + 8)
-        arg9 = self.memory.byte(file.addr + 9)
-        arg10 = self.memory.byte(file.addr + 10)
-        file.asmLine(11, "Op4c_Unknown", "$%02x" % arg1, "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5, "$%02x" % arg6, "$%02x" % arg7, "$%02x" % arg8, "$%02x" % arg9, "$%02x" % arg10)
-
 class Op74Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 3)
@@ -443,20 +380,10 @@ class Op74Block(Block):
         # But there could also be a separate bank switch instruction I don't know about.
         RomInfo.getWRam().addAutoLabel(pointer, None, None)
 
-
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
         label = RomInfo.getWRam().getLabel(pointer)
         file.asmLine(3, "Op74_PrepTableJumpIndex_Copy", str(label))
-
-class Op76Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 2)
-        RomInfo.macros["Op76_PrepTableJumpIndex_Write"] = "db $76\ndb \\1"
-
-    def export(self, file):
-        byte = self.memory.byte(file.addr + 1)
-        file.asmLine(2, "Op76_PrepTableJumpIndex_Write", "$%02x" % byte)
 
 class Op8EBlock(Block):
     def __init__(self, memory, addr):
@@ -471,7 +398,6 @@ class Op8EBlock(Block):
         # bankNum = memory.byte(addr + 4)
         # bank = RomInfo.romBank(bankNum)
         # bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
-
 
     def export(self, file):
         index = self.memory.byte(file.addr + 1)
@@ -499,7 +425,6 @@ class Op90Block(Block):
         # bank = RomInfo.romBank(bankNum)
         # bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
 
-
     def export(self, file):
         index = self.memory.byte(file.addr + 1)
         # pointer = self.memory.word(file.addr + 2)
@@ -525,7 +450,6 @@ class Op98Block(Block):
         # bankNum = memory.byte(addr + 4)
         # bank = RomInfo.romBank(bankNum)
         # bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
-
 
     def export(self, file):
         index = self.memory.byte(file.addr + 1)
@@ -657,25 +581,6 @@ class Op80Block(Block):
 
         file.asmLine(9, "Op80_CopyNBytes", str(label1), str(label2), str(amount))
 
-class Op44Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 3)
-        RomInfo.macros["Op44_Unknown"] = "db $44\ndb \\1\ndb \\2"
-
-    def export(self, file):
-        arg1 = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        file.asmLine(3, "Op44_Unknown", "$%02x" % arg1, "$%02x" % arg2)
-
-class Op1ABlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 2)
-        RomInfo.macros["Op1A_Unknown"] = "db $1a\ndb \\1"
-
-    def export(self, file):
-        arg = self.memory.byte(file.addr + 1)
-        file.asmLine(2, "Op1A_Unknown", "$%02x" % arg)
-
 class Op04Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=4)
@@ -699,18 +604,18 @@ OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
     0x18: Op18Block,
-    0x1A: Op1ABlock,
+    0x1A: makeGenericBlockClass(0x1A, 2),
     0x1C: Op1CBlock,
     0x1E: Op1EBlock,
     0x20: Op20Block,
-    0x32: Op32Block,
-    0x34: Op34Block,
-    0x36: Op36Block,
+    0x32: makeGenericBlockClass(0x32, 7),
+    0x34: makeGenericBlockClass(0x34, 8),
+    0x36: makeGenericBlockClass(0x36, 7),
     0x3E: Op3EBlock,
     0x42: Op42Block,
-    0x44: Op44Block,
+    0x44: makeGenericBlockClass(0x44, 3),
     0x4A: Op4ABlock,
-    0x4C: Op4CBlock,
+    0x4C: makeGenericBlockClass(0x4C, 11),
     0x4E: Op4EBlock,
     0x50: Op50Block,
     0x52: Op52Block,
@@ -718,9 +623,9 @@ OPBLOCKS = {
     0x58: Op58Block,
     0x68: Op68Block,
     0x74: Op74Block,
-    0x76: Op76Block,
+    0x76: makeGenericBlockClass(0x76, 2, "Op76_PrepTableJumpIndex_Write"),
     # 0x80: Op80Block,
-    0x80: makeGenericBlockClass("Op80Block", 0x80, "Op80_CopyNBytes", 9),
+    0x80: makeGenericBlockClass(0x80, 9, "Op80_CopyNBytes"),
     0x82: Op82Block,
     0x84: Op84Block,
     0x8E: Op8EBlock,
