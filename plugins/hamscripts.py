@@ -602,8 +602,35 @@ class Op04Block(Block):
         label = bank.getLabel(pointer)
         file.asmLine(4, "Op04_Unknown_Text", str(label))
 
+class Op06Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=4)
+        RomInfo.macros["Op06_Unknown_Text"] = "db $06\ndw \\1\ndb BANK(\\1)"
+        # RomInfo.macros["Op06_Unknown_Text"] = "db $06\ndw \\1\ndb \\2"
+
+        pointer = memory.word(addr + 1)
+        bankNum = memory.byte(addr + 3)
+        bank = RomInfo.romBank(bankNum)
+        bank.addAutoLabel(pointer, None, "data")
+        # I suspect this address may be text.
+
+    def export(self, file):
+        pointer = self.memory.word(file.addr + 1)
+        bankNum = self.memory.byte(file.addr + 3)
+        bank = RomInfo.romBank(bankNum)
+        label = bank.getLabel(pointer)
+        file.asmLine(4, "Op06_Unknown_Text", str(label))
+        # file.asmLine(4, "Op06_Unknown_Text", str(label), str(bankNum))
+
+# TODO can't add 6, checksum doesn't match.
+#  I suspect I am hitting the end of scripts and interpretting nonscripts as script.
+# TODO check this theory. 
+# TODO add a tool for determining WHERE the roms differ.
+# TODO possibly end assumption that returns/jumps etc are followed by code.
+
 OPBLOCKS = {
     0x04: Op04Block,
+    # 0x06: makeGenericBlockClass(0x06, 4),
     0x14: Op14Block,
     0x16: Op16Block,
     0x18: Op18Block,
