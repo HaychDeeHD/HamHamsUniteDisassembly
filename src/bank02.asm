@@ -4199,6 +4199,8 @@ data_02_773e:
     pop  AF                                            ;; 02:77cf $f1
     ld_long_store rSVBK, A                             ;; 02:77d0 $ea $70 $ff
     ret                                                ;; 02:77d3 $c9
+
+call_02_77d4:
     ld_long_load A, rSVBK                              ;; 02:77d4 $fa $70 $ff
     push AF                                            ;; 02:77d7 $f5
     ld   A, $02                                        ;; 02:77d8 $3e $02
@@ -4230,6 +4232,8 @@ data_02_773e:
     pop  AF                                            ;; 02:7807 $f1
     ld_long_store rSVBK, A                             ;; 02:7808 $ea $70 $ff
     ret                                                ;; 02:780b $c9
+
+call_02_780c:
     ld_long_load A, rSVBK                              ;; 02:780c $fa $70 $ff
     push AF                                            ;; 02:780f $f5
     ld   A, $02                                        ;; 02:7810 $3e $02
@@ -4286,6 +4290,8 @@ call_02_783f:
     ld   A, D                                          ;; 02:7868 $7a
     ld   [w1_D101], A                                  ;; 02:7869 $ea $01 $d1
     ret                                                ;; 02:786c $c9
+
+call_02_786d:
     ld_long_load A, rSVBK                              ;; 02:786d $fa $70 $ff
     push AF                                            ;; 02:7870 $f5
     ld   A, $02                                        ;; 02:7871 $3e $02
@@ -4609,6 +4615,8 @@ call_02_7b34:
     cp   A, B                                          ;; 02:7b60 $b8
     jr   NZ, .jr_02_7b47                               ;; 02:7b61 $20 $e4
     ret                                                ;; 02:7b63 $c9
+
+call_02_7b64:
     db   $fa, $70, $ff, $f5, $3e, $02, $ea, $70        ;; 02:7b64 ????????
     db   $ff, $cd, $34, $7b, $1e, $00, $7b, $21        ;; 02:7b6c ????????
     db   $d3, $72, $85, $6f, $3e, $00, $8c, $67        ;; 02:7b74 ????????
@@ -4627,13 +4635,16 @@ call_02_7b34:
     db   $85, $6f, $3e, $00, $8c, $67, $7b, $77        ;; 02:7bdc ????????
     db   $3e, $56, $1c, $bb, $20, $da, $f1, $ea        ;; 02:7be4 ????????
     db   $70, $ff, $c9                                 ;; 02:7bec ???
+
+call_02_7bef:
     ld_long_load A, rSVBK                              ;; 02:7bef $fa $70 $ff
     push AF                                            ;; 02:7bf2 $f5
     ld   A, $02                                        ;; 02:7bf3 $3e $02
     ld_long_store rSVBK, A                             ;; 02:7bf5 $ea $70 $ff
     call call_02_7b34                                  ;; 02:7bf8 $cd $34 $7b
     ld   E, $00                                        ;; 02:7bfb $1e $00
-.loop_allWordsInDict:
+
+Loop_allWordsInDict:
     ld   C, E                                          ;; 02:7bfd $4b
     ld   B, $00                                        ;; 02:7bfe $06 $00
     sla  C                                             ;; 02:7c00 $cb $21
@@ -4664,7 +4675,7 @@ call_02_7b34:
     ld   A, $56                                        ;; 02:7c23 $3e $56
     inc  E                                             ;; 02:7c25 $1c
     cp   A, E                                          ;; 02:7c26 $bb
-    jr   NZ, .loop_allWordsInDict                      ;; 02:7c27 $20 $d4
+    jr   NZ, Loop_allWordsInDict                       ;; 02:7c27 $20 $d4
     pop  AF                                            ;; 02:7c29 $f1
     ld_long_store rSVBK, A                             ;; 02:7c2a $ea $70 $ff
     ret                                                ;; 02:7c2d $c9

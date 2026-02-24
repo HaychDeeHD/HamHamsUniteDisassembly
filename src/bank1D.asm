@@ -1068,6 +1068,8 @@ data_1d_5e5d:
 data_1d_5eaf:
     Op4c_Unknown $30, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 1d:5eaf $4c $30 $00 $00 $00 $00 $00 $00 $00 $00 $00
     SCRIPT_RETURN_20                                   ;; 1d:5eba $20
+
+data_1d_5ebb:
     Op16_SubOps 1                                      ;; 1d:5ebb $16 $01
     SubOp_SetByte wC71D, $00                           ;; 1d:5ebd $7e $05 $00
     Op14_Unknown 1, $57, $41                           ;; 1d:5ec0 $14 $01 $57 $41
@@ -1535,6 +1537,8 @@ data_1d_6ae8:
     Op1C_TableJump 1                                   ;; 1d:6b13 $1c $01
     SCRIPT_POINTER data_04_665b                        ;; 1d:6b15 $5b $66 $04
     Op18_Jump data_04_6663                             ;; 1d:6b18 $18 $63 $66 $04
+
+data_1d_6b1c:
     Op1E_Call data_1d_6f05                             ;; 1d:6b1c $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6b20 $1c $01
     SCRIPT_POINTER data_04_667d                        ;; 1d:6b22 $7d $66 $04

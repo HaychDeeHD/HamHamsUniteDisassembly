@@ -72,7 +72,10 @@ w3_D0AC:
     ds 1                                               ;; d0ac
 
 w3_D0AD:
-    ds 13                                              ;; d0ad
+    ds 10                                              ;; d0ad
+
+w3_D0B7:
+    ds 3                                               ;; d0b7
 
 w3_D0BA:
     ds 3                                               ;; d0ba
@@ -117,7 +120,10 @@ w3_D0DB:
     ds 3                                               ;; d0db
 
 w3_D0DE:
-    ds 6                                               ;; d0de
+    ds 2                                               ;; d0de
+
+w3_D0E0:
+    ds 4                                               ;; d0e0
 
 w3_D0E4:
     ds 2                                               ;; d0e4
@@ -138,7 +144,10 @@ w3_D0F0:
     ds 3                                               ;; d0f0
 
 w3_D0F3:
-    ds 6                                               ;; d0f3
+    ds 3                                               ;; d0f3
+
+w3_D0F6:
+    ds 3                                               ;; d0f6
 
 w3_D0F9:
     ds 3                                               ;; d0f9
@@ -324,7 +333,10 @@ w3_D164:
     ds 1                                               ;; d164
 
 w3_D165:
-    ds 9                                               ;; d165
+    ds 6                                               ;; d165
+
+w3_D16B:
+    ds 3                                               ;; d16b
 
 w3_D16E:
     ds 3                                               ;; d16e
@@ -714,7 +726,10 @@ w3_D62F:
     ds 1                                               ;; d62f
 
 w3_D630:
-    ds 2                                               ;; d630
+    ds 1                                               ;; d630
+
+w3_D631:
+    ds 1                                               ;; d631
 
 w3_D632:
     ds 1                                               ;; d632

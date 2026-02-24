@@ -9,4 +9,22 @@ SECTION "wram2", WRAMX[$d000], BANK[$2]
     ds 248                                             ;; d000
 
 w2_D0F8:
-    ds 3848                                            ;; d0f8
+    ds 1                                               ;; d0f8
+
+w2_D0F9:
+    ds 1                                               ;; d0f9
+
+w2_D0FA:
+    ds 1                                               ;; d0fa
+
+w2_D0FB:
+    ds 1                                               ;; d0fb
+
+w2_D0FC:
+    ds 1                                               ;; d0fc
+
+w2_D0FD:
+    ds 1                                               ;; d0fd
+
+w2_D0FE:
+    ds 3842                                            ;; d0fe

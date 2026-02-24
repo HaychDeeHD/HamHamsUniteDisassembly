@@ -67,6 +67,11 @@ db \3
 db \4
 db \5
 ENDM
+MACRO Op44_Unknown
+db $44
+db \1
+db \2
+ENDM
 MACRO Op4E_Unknown_StoreValue
 db $4e
 db \1
