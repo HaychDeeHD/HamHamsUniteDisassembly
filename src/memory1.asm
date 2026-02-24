@@ -170,7 +170,10 @@ w1_D20B:
     ds 1                                               ;; d20b
 
 w1_D20C:
-    ds 2                                               ;; d20c
+    ds 1                                               ;; d20c
+
+w1_D20D:
+    ds 1                                               ;; d20d
 
 w1_D20E:
     ds 1                                               ;; d20e
@@ -188,7 +191,10 @@ w1_D213:
     ds 1                                               ;; d213
 
 w1_D214:
-    ds 2                                               ;; d214
+    ds 1                                               ;; d214
+
+w1_D215:
+    ds 1                                               ;; d215
 
 w1_D216:
     ds 1                                               ;; d216
@@ -209,19 +215,28 @@ w1_D244:
     ds 21                                              ;; d244
 
 w1_D259:
-    ds 25                                              ;; d259
+    ds 22                                              ;; d259
+
+w1_D26F:
+    ds 3                                               ;; d26f
 
 w1_D272:
     ds 38                                              ;; d272
 
 w1_D298:
-    ds 8                                               ;; d298
+    ds 5                                               ;; d298
+
+w1_D29D:
+    ds 3                                               ;; d29d
 
 w1_D2A0:
     ds 38                                              ;; d2a0
 
 w1_D2C6:
-    ds 8                                               ;; d2c6
+    ds 5                                               ;; d2c6
+
+w1_D2CB:
+    ds 3                                               ;; d2cb
 
 w1_D2CE:
     ds 21                                              ;; d2ce

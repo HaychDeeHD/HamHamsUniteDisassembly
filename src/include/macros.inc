@@ -123,6 +123,14 @@ MACRO Op76_PrepTableJumpIndex_Write
 db $76
 db \1
 ENDM
+MACRO Op80_CopyNBytes
+db $80
+dw \1
+db BANK(\1)
+dw \2
+db BANK(\2)
+dw \3
+ENDM
 MACRO Op82_Run
 db $82
 dw \1

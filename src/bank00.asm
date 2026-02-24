@@ -2386,6 +2386,9 @@ Op84:
     ld   [wOpcodeC322], A                              ;; 00:10da $ea $22 $c3
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:10dd $c3 $39 $0a
 
+; Copy bytes operation.
+; I think arg1-3 is a source, arg4-6 is a dest. arg7-8 is a count.
+; (Source and target might be swapped)
 Op80:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:10e0 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:10e3 $2a
@@ -2406,7 +2409,7 @@ Op80:
     ld   [wImportantBitArrayThingC35B], A              ;; 00:1100 $ea $5b $c3
     ld   A, $08                                        ;; 00:1103 $3e $08
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1105 $ea $26 $c3
-    call call_00_2940                                  ;; 00:1108 $cd $40 $29
+    call WriteBytesBasedOn_C35AtoE_and_C356to8         ;; 00:1108 $cd $40 $29
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:110b $c3 $14 $0a
 
 ; 10 args get written to wC357-60 (but not c359?)
@@ -5750,6 +5753,7 @@ WriteBytesBasedOn_C35AtoC_and_C356to8:
     jr   C, .vramCase                                  ;; 00:2921 $38 $04
     ldh  [rSVBK], A                                    ;; 00:2923 $e0 $70
     jr   .afterHandleBankSwitch                        ;; 00:2925 $18 $02
+; TODO is it vram or sram?
 .vramCase:
     ldh  [rVBK], A                                     ;; 00:2927 $e0 $4f
 ; C35B - A are a number of bytes to write.
@@ -5773,7 +5777,10 @@ WriteBytesBasedOn_C35AtoC_and_C356to8:
     jr   NZ, .loop_BCtimes                             ;; 00:293d $20 $f9
     ret                                                ;; 00:293f $c9
 
-call_00_2940:
+; The main function of this is to copy bytes between 2 places.
+; There's lots of logic for managing any combo of source/dest bank.
+; C356-8, C35A-B. C35C-E
+WriteBytesBasedOn_C35AtoE_and_C356to8:
     ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 00:2940 $fa $56 $c3
     ld   L, A                                          ;; 00:2943 $6f
     ld   A, [wC357]                                    ;; 00:2944 $fa $57 $c3
@@ -5791,7 +5798,7 @@ call_00_2940:
     ld   B, A                                          ;; 00:295c $47
     ld   A, H                                          ;; 00:295d $7c
     cp   A, $80                                        ;; 00:295e $fe $80
-    jp   C, .jp_00_29f7                                ;; 00:2960 $da $f7 $29
+    jp   C, .doIt_SwitchBanksBeforeAndSwitchBackAfter  ;; 00:2960 $da $f7 $29
     cp   A, $a0                                        ;; 00:2963 $fe $a0
     jr   C, .jr_00_29a8                                ;; 00:2965 $38 $41
     ld   A, [wBitArrayIndexC35E]                       ;; 00:2967 $fa $5e $c3
@@ -5803,13 +5810,13 @@ call_00_2940:
     jr   NZ, .jr_00_2988                               ;; 00:2971 $20 $15
     ld   A, [wDupeBitArrayIndexC358]                   ;; 00:2973 $fa $58 $c3
     ldh  [rSVBK], A                                    ;; 00:2976 $e0 $70
-    jp   .jp_00_29e7                                   ;; 00:2978 $c3 $e7 $29
+    jp   .doIt                                         ;; 00:2978 $c3 $e7 $29
 .jr_00_297b:
     ld   A, [wDupeBitArrayIndexC358]                   ;; 00:297b $fa $58 $c3
     ldh  [rSVBK], A                                    ;; 00:297e $e0 $70
     ld   A, [wBitArrayIndexC35E]                       ;; 00:2980 $fa $5e $c3
     ldh  [rVBK], A                                     ;; 00:2983 $e0 $4f
-    jp   .jp_00_29e7                                   ;; 00:2985 $c3 $e7 $29
+    jp   .doIt                                         ;; 00:2985 $c3 $e7 $29
 .jr_00_2988:
     pop  BC                                            ;; 00:2988 $c1
     xor  A, A                                          ;; 00:2989 $af
@@ -5838,23 +5845,23 @@ call_00_2940:
     cp   A, $a0                                        ;; 00:29ad $fe $a0
     jr   NC, .jr_00_29bb                               ;; 00:29af $30 $0a
     cp   A, B                                          ;; 00:29b1 $b8
-    jr   NZ, .jr_00_29c7                               ;; 00:29b2 $20 $13
+    jr   NZ, .doIt_BetweenBanks                        ;; 00:29b2 $20 $13
     ld   A, [wDupeBitArrayIndexC358]                   ;; 00:29b4 $fa $58 $c3
     ldh  [rVBK], A                                     ;; 00:29b7 $e0 $4f
-    jr   .jp_00_29e7                                   ;; 00:29b9 $18 $2c
+    jr   .doIt                                         ;; 00:29b9 $18 $2c
 .jr_00_29bb:
     ld   A, [wDupeBitArrayIndexC358]                   ;; 00:29bb $fa $58 $c3
     ldh  [rVBK], A                                     ;; 00:29be $e0 $4f
     ld   A, [wBitArrayIndexC35E]                       ;; 00:29c0 $fa $5e $c3
     ldh  [rSVBK], A                                    ;; 00:29c3 $e0 $70
-    jr   .jp_00_29e7                                   ;; 00:29c5 $18 $20
-.jr_00_29c7:
+    jr   .doIt                                         ;; 00:29c5 $18 $20
+.doIt_BetweenBanks:
     pop  BC                                            ;; 00:29c7 $c1
     xor  A, A                                          ;; 00:29c8 $af
     cp   A, C                                          ;; 00:29c9 $b9
-    jr   Z, .jr_00_29cd                                ;; 00:29ca $28 $01
+    jr   Z, .loopWriteHLbytesToDE_BCtimes_BetweenBanks ;; 00:29ca $28 $01
     inc  B                                             ;; 00:29cc $04
-.jr_00_29cd:
+.loopWriteHLbytesToDE_BCtimes_BetweenBanks:
     ld   A, [wDupeBitArrayIndexC358]                   ;; 00:29cd $fa $58 $c3
     ldh  [rVBK], A                                     ;; 00:29d0 $e0 $4f
     ld   A, [HL+]                                      ;; 00:29d2 $2a
@@ -5865,26 +5872,26 @@ call_00_2940:
     ld   [DE], A                                       ;; 00:29de $12
     inc  DE                                            ;; 00:29df $13
     dec  C                                             ;; 00:29e0 $0d
-    jr   NZ, .jr_00_29cd                               ;; 00:29e1 $20 $ea
+    jr   NZ, .loopWriteHLbytesToDE_BCtimes_BetweenBanks ;; 00:29e1 $20 $ea
     dec  B                                             ;; 00:29e3 $05
-    jr   NZ, .jr_00_29cd                               ;; 00:29e4 $20 $e7
+    jr   NZ, .loopWriteHLbytesToDE_BCtimes_BetweenBanks ;; 00:29e4 $20 $e7
     ret                                                ;; 00:29e6 $c9
-.jp_00_29e7:
+.doIt:
     pop  BC                                            ;; 00:29e7 $c1
     xor  A, A                                          ;; 00:29e8 $af
     cp   A, C                                          ;; 00:29e9 $b9
-    jr   Z, .jr_00_29ed                                ;; 00:29ea $28 $01
+    jr   Z, .loopWriteHLbytesToDE_BCtimes_1            ;; 00:29ea $28 $01
     inc  B                                             ;; 00:29ec $04
-.jr_00_29ed:
+.loopWriteHLbytesToDE_BCtimes_1:
     ld   A, [HL+]                                      ;; 00:29ed $2a
     ld   [DE], A                                       ;; 00:29ee $12
     inc  DE                                            ;; 00:29ef $13
     dec  C                                             ;; 00:29f0 $0d
-    jr   NZ, .jr_00_29ed                               ;; 00:29f1 $20 $fa
+    jr   NZ, .loopWriteHLbytesToDE_BCtimes_1           ;; 00:29f1 $20 $fa
     dec  B                                             ;; 00:29f3 $05
-    jr   NZ, .jr_00_29ed                               ;; 00:29f4 $20 $f7
+    jr   NZ, .loopWriteHLbytesToDE_BCtimes_1           ;; 00:29f4 $20 $f7
     ret                                                ;; 00:29f6 $c9
-.jp_00_29f7:
+.doIt_SwitchBanksBeforeAndSwitchBackAfter:
     ld   A, [wCurrentRomBankC677]                      ;; 00:29f7 $fa $77 $c6
     ld   [wBitArrayIndexC35E.low], A                   ;; 00:29fa $ea $5f $c3
     ld   A, B                                          ;; 00:29fd $78
@@ -5893,25 +5900,26 @@ call_00_2940:
     ld   A, D                                          ;; 00:2a04 $7a
     cp   A, $a0                                        ;; 00:2a05 $fe $a0
     ld   A, [wBitArrayIndexC35E]                       ;; 00:2a07 $fa $5e $c3
-    jr   C, .jr_00_2a10                                ;; 00:2a0a $38 $04
+    jr   C, .vramCase                                  ;; 00:2a0a $38 $04
     ldh  [rSVBK], A                                    ;; 00:2a0c $e0 $70
-    jr   .jr_00_2a12                                   ;; 00:2a0e $18 $02
-.jr_00_2a10:
+    jr   .afterHandleBankSwitch                        ;; 00:2a0e $18 $02
+; TODO is it vram or sram?
+.vramCase:
     ldh  [rVBK], A                                     ;; 00:2a10 $e0 $4f
-.jr_00_2a12:
+.afterHandleBankSwitch:
     pop  BC                                            ;; 00:2a12 $c1
     xor  A, A                                          ;; 00:2a13 $af
     cp   A, C                                          ;; 00:2a14 $b9
-    jr   Z, .jr_00_2a18                                ;; 00:2a15 $28 $01
+    jr   Z, .loopWriteHLbytesToDE_BCtimes_2            ;; 00:2a15 $28 $01
     inc  B                                             ;; 00:2a17 $04
-.jr_00_2a18:
+.loopWriteHLbytesToDE_BCtimes_2:
     ld   A, [HL+]                                      ;; 00:2a18 $2a
     ld   [DE], A                                       ;; 00:2a19 $12
     inc  DE                                            ;; 00:2a1a $13
     dec  C                                             ;; 00:2a1b $0d
-    jr   NZ, .jr_00_2a18                               ;; 00:2a1c $20 $fa
+    jr   NZ, .loopWriteHLbytesToDE_BCtimes_2           ;; 00:2a1c $20 $fa
     dec  B                                             ;; 00:2a1e $05
-    jr   NZ, .jr_00_2a18                               ;; 00:2a1f $20 $f7
+    jr   NZ, .loopWriteHLbytesToDE_BCtimes_2           ;; 00:2a1f $20 $f7
     ld   A, [wBitArrayIndexC35E.low]                   ;; 00:2a21 $fa $5f $c3
     ld   [wCurrentRomBankC677], A                      ;; 00:2a24 $ea $77 $c6
     ld   [$2000], A                                    ;; 00:2a27 $ea $00 $20
@@ -7575,7 +7583,7 @@ data_00_3537:
     call call_00_363e                                  ;; 00:353d $cd $3e $36
     call call_00_30d1                                  ;; 00:3540 $cd $d1 $30
     push BC                                            ;; 00:3543 $c5
-    call call_00_2940                                  ;; 00:3544 $cd $40 $29
+    call WriteBytesBasedOn_C35AtoE_and_C356to8         ;; 00:3544 $cd $40 $29
     pop  BC                                            ;; 00:3547 $c1
     ld   A, $01                                        ;; 00:3548 $3e $01
     ldh  [rSVBK], A                                    ;; 00:354a $e0 $70
@@ -7588,7 +7596,7 @@ data_00_354f:
     call call_00_363e                                  ;; 00:3558 $cd $3e $36
     call call_00_30d1                                  ;; 00:355b $cd $d1 $30
     push BC                                            ;; 00:355e $c5
-    call call_00_2940                                  ;; 00:355f $cd $40 $29
+    call WriteBytesBasedOn_C35AtoE_and_C356to8         ;; 00:355f $cd $40 $29
     pop  BC                                            ;; 00:3562 $c1
     ld   A, $01                                        ;; 00:3563 $3e $01
     ldh  [rSVBK], A                                    ;; 00:3565 $e0 $70

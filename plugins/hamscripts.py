@@ -602,6 +602,40 @@ class Op84Block(Block):
         label = targetMemory.getLabel(pointer)
         file.asmLine(7, "Op84_WriteByteNTimes", str(label), str(amount), "$%02x" % payload)
 
+class Op80Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 9)
+        RomInfo.macros["Op80_CopyNBytes"] = "db $80\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)\ndw \\3"
+
+        pointer1 = memory.word(addr + 1)
+        bankNum1 = memory.byte(addr + 3)
+        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1)
+        targetMemory1 = RomInfo.memoryAt(pointer1, None, active_wram_bank=possiblyRelevantWramBank1)
+        targetMemory1.addAutoLabel(pointer1, None, None)
+
+        pointer2 = memory.word(addr + 4)
+        bankNum2 = memory.byte(addr + 6)
+        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2)
+        targetMemory2 = RomInfo.memoryAt(pointer2, None, active_wram_bank=possiblyRelevantWramBank2)
+        targetMemory2.addAutoLabel(pointer2, None, None)
+
+    def export(self, file):
+        pointer1 = self.memory.word(file.addr + 1)
+        bankNum1 = self.memory.byte(file.addr + 3)
+        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1)
+        targetMemory1 = RomInfo.memoryAt(pointer1, None, active_wram_bank=possiblyRelevantWramBank1)
+        label1 = targetMemory1.getLabel(pointer1)
+
+        pointer2 = self.memory.word(file.addr + 4)
+        bankNum2 = self.memory.byte(file.addr + 6)
+        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2)
+        targetMemory2 = RomInfo.memoryAt(pointer2, None, active_wram_bank=possiblyRelevantWramBank2)
+        label2 = targetMemory2.getLabel(pointer2)
+
+        amount = self.memory.word(file.addr + 7)
+
+        file.asmLine(9, "Op80_CopyNBytes", str(label1), str(label2), str(amount))
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
@@ -624,6 +658,7 @@ OPBLOCKS = {
     0x68: Op68Block,
     0x74: Op74Block,
     0x76: Op76Block,
+    0x80: Op80Block,
     0x82: Op82Block,
     0x84: Op84Block,
     0x8E: Op8EBlock,

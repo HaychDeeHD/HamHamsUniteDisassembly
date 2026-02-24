@@ -5218,6 +5218,8 @@ call_03_7468:
     pop  HL                                            ;; 03:749c $e1
     ld   A, [wC754]                                    ;; 03:749d $fa $54 $c7
     jp   jp_03_5b60                                    ;; 03:74a0 $c3 $60 $5b
+
+call_03_74a3:
     ld   A, [wC755]                                    ;; 03:74a3 $fa $55 $c7
     dec  A                                             ;; 03:74a6 $3d
     srl  A                                             ;; 03:74a7 $cb $3f
@@ -5302,6 +5304,8 @@ call_03_754c:
     ld   A, [HL]                                       ;; 03:755e $7e
     ld   [wC755], A                                    ;; 03:755f $ea $55 $c7
     jp   jp_03_5a58                                    ;; 03:7562 $c3 $58 $5a
+
+call_03_7565:
     ld_long_load A, rSVBK                              ;; 03:7565 $fa $70 $ff
     push AF                                            ;; 03:7568 $f5
     ld   A, $03                                        ;; 03:7569 $3e $03
