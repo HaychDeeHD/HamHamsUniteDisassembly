@@ -1824,12 +1824,12 @@ AddressArray_0dbd:
     dw   w1_BeginRegionD1FD                            ;; 00:0dd3 wW $0b
     dw   w1_D22B                                       ;; 00:0dd5 wW $0c
     dw   w1_D259                                       ;; 00:0dd7 wW $0d
-    dw   $d287                                         ;; 00:0dd9 wW $0e
-    dw   $d2b5                                         ;; 00:0ddb wW $0f
+    dw   w1_D287                                       ;; 00:0dd9 wW $0e
+    dw   w1_D2B5                                       ;; 00:0ddb wW $0f
     dw   w1_D2E3                                       ;; 00:0ddd wW $10
-    dw   $d311                                         ;; 00:0ddf wW $11
-    dw   $d33f                                         ;; 00:0de1 wW $12
-    dw   $d36d                                         ;; 00:0de3 ?? $13
+    dw   w1_D311                                       ;; 00:0ddf wW $11
+    dw   w1_D33F                                       ;; 00:0de1 wW $12
+    dw   w1_D36D                                       ;; 00:0de3 ?? $13
     dw   $d39b                                         ;; 00:0de5 ?? $14
     dw   $d3c9                                         ;; 00:0de7 ?? $15
     dw   $d3f7                                         ;; 00:0de9 ?? $16
@@ -2608,12 +2608,12 @@ WramAddressTable:
     dw   w1_BeginRegionD1FD                            ;; 00:121e pP
     dw   w1_D22B                                       ;; 00:1220 pP
     dw   w1_D259                                       ;; 00:1222 pP
-    dw   $d287                                         ;; 00:1224 pP
-    dw   $d2b5                                         ;; 00:1226 pP
+    dw   w1_D287                                       ;; 00:1224 pP
+    dw   w1_D2B5                                       ;; 00:1226 pP
     dw   w1_D2E3                                       ;; 00:1228 pP
-    dw   $d311                                         ;; 00:122a pP
-    dw   $d33f                                         ;; 00:122c pP
-    dw   $d36d                                         ;; 00:122e pP
+    dw   w1_D311                                       ;; 00:122a pP
+    dw   w1_D33F                                       ;; 00:122c pP
+    dw   w1_D36D                                       ;; 00:122e pP
     dw   $d39b                                         ;; 00:1230 pP
     dw   $d3c9                                         ;; 00:1232 pP
     dw   $d3f7                                         ;; 00:1234 pP
@@ -6192,12 +6192,12 @@ jp_00_2b95:
     dw   w1_BeginRegionD1FD                            ;; 00:2bc0 pP
     dw   w1_D22B                                       ;; 00:2bc2 pP
     dw   w1_D259                                       ;; 00:2bc4 pP
-    dw   $d287                                         ;; 00:2bc6 pP
-    dw   $d2b5                                         ;; 00:2bc8 pP
+    dw   w1_D287                                       ;; 00:2bc6 pP
+    dw   w1_D2B5                                       ;; 00:2bc8 pP
     dw   w1_D2E3                                       ;; 00:2bca pP
-    dw   $d311                                         ;; 00:2bcc pP
-    dw   $d33f                                         ;; 00:2bce pP
-    dw   $d36d                                         ;; 00:2bd0 pP
+    dw   w1_D311                                       ;; 00:2bcc pP
+    dw   w1_D33F                                       ;; 00:2bce pP
+    dw   w1_D36D                                       ;; 00:2bd0 pP
     dw   $d39b                                         ;; 00:2bd2 pP
     dw   $d3c9                                         ;; 00:2bd4 pP
     dw   $d3f7                                         ;; 00:2bd6 pP

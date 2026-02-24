@@ -1,3 +1,8 @@
+MACRO Op04_Unknown_Text
+db $04
+dw \1
+db BANK(\1)
+ENDM
 MACRO Op14_Unknown
 db $14
 db \1
@@ -134,11 +139,14 @@ db \1
 ENDM
 MACRO Op80_CopyNBytes
 db $80
-dw \1
-db BANK(\1)
-dw \2
-db BANK(\2)
-dw \3
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+db \<5>
+db \<6>
+db \<7>
+db \<8>
 ENDM
 MACRO Op82_Run
 db $82

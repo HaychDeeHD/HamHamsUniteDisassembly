@@ -267,6 +267,8 @@ UpdateCollectibleInventory:
     jr   .adjustSeedsBasedOnHL_andSetBitArrayIndex98   ;; 02:4308 $18 $de
 .return2:
     ret                                                ;; 02:430a $c9
+
+call_02_430b:
     ld   A, [wC736]                                    ;; 02:430b $fa $36 $c7
     cp   A, $01                                        ;; 02:430e $fe $01
     jr   Z, .jr_02_4325                                ;; 02:4310 $28 $13

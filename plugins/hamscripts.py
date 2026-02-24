@@ -55,6 +55,19 @@ def hamscript(memory, addr):
     print("Done processing @hamscript for %02x:%04x." % (memory.bankNumber, addr))
     print(sorted(blockingOpcodes.items(), key=lambda item: item[1], reverse=True))
 
+def makeGenericBlockClass(className, opcode, macroName, size):
+    __class__ = type(className, (Block,), {})
+    def basicInit(self, memory, addr):
+        super().__init__(memory, addr, size=size)
+        RomInfo.macros[macroName] = "db $%02x" % opcode + "".join(["\ndb \\<%s>" % str(n) for n in range(1, size)])
+
+    def basicExport(self, file):
+        file.asmLine(size, macroName, *["$%02x" % self.memory.byte(file.addr + n) for n in range(1, size)])
+    
+    __class__.__init__ = basicInit
+    __class__.export = basicExport
+    return __class__
+
 class Op1CBlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=2)
@@ -609,27 +622,35 @@ class Op80Block(Block):
 
         pointer1 = memory.word(addr + 1)
         bankNum1 = memory.byte(addr + 3)
-        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1)
-        targetMemory1 = RomInfo.memoryAt(pointer1, None, active_wram_bank=possiblyRelevantWramBank1)
+        # This could also be a ROM bank, so check bankNum value to avoid out of bounds error.
+        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1) if bankNum1 < 7 else None
+        possiblyRelevantRomBank1 = RomInfo.romBank(bankNum1)
+        targetMemory1 = RomInfo.memoryAt(pointer1, active_rom_bank=possiblyRelevantRomBank1, active_wram_bank=possiblyRelevantWramBank1)
         targetMemory1.addAutoLabel(pointer1, None, None)
 
         pointer2 = memory.word(addr + 4)
         bankNum2 = memory.byte(addr + 6)
-        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2)
-        targetMemory2 = RomInfo.memoryAt(pointer2, None, active_wram_bank=possiblyRelevantWramBank2)
+        # This could also be a ROM bank, so check bankNum value to avoid out of bounds error.
+        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2) if bankNum2 < 7 else None
+        possiblyRelevantRomBank2 = RomInfo.romBank(bankNum2)
+        targetMemory2 = RomInfo.memoryAt(pointer2, active_rom_bank=possiblyRelevantRomBank2, active_wram_bank=possiblyRelevantWramBank2)
         targetMemory2.addAutoLabel(pointer2, None, None)
 
     def export(self, file):
         pointer1 = self.memory.word(file.addr + 1)
         bankNum1 = self.memory.byte(file.addr + 3)
-        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1)
-        targetMemory1 = RomInfo.memoryAt(pointer1, None, active_wram_bank=possiblyRelevantWramBank1)
+        # This could also be a ROM bank, so check bankNum value to avoid out of bounds error.
+        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1) if bankNum1 < 7 else None
+        possiblyRelevantRomBank1 = RomInfo.romBank(bankNum1)
+        targetMemory1 = RomInfo.memoryAt(pointer1, active_rom_bank=possiblyRelevantRomBank1, active_wram_bank=possiblyRelevantWramBank1)
         label1 = targetMemory1.getLabel(pointer1)
 
         pointer2 = self.memory.word(file.addr + 4)
         bankNum2 = self.memory.byte(file.addr + 6)
-        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2)
-        targetMemory2 = RomInfo.memoryAt(pointer2, None, active_wram_bank=possiblyRelevantWramBank2)
+        # This could also be a ROM bank, so check bankNum value to avoid out of bounds error.
+        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2) if bankNum2 < 7 else None
+        possiblyRelevantRomBank2 = RomInfo.romBank(bankNum2)
+        targetMemory2 = RomInfo.memoryAt(pointer2, active_rom_bank=possiblyRelevantRomBank2, active_wram_bank=possiblyRelevantWramBank2)
         label2 = targetMemory2.getLabel(pointer2)
 
         amount = self.memory.word(file.addr + 7)
@@ -655,7 +676,26 @@ class Op1ABlock(Block):
         arg = self.memory.byte(file.addr + 1)
         file.asmLine(2, "Op1A_Unknown", "$%02x" % arg)
 
+class Op04Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=4)
+        RomInfo.macros["Op04_Unknown_Text"] = "db $04\ndw \\1\ndb BANK(\\1)"
+
+        pointer = memory.word(addr + 1)
+        bankNum = memory.byte(addr + 3)
+        bank = RomInfo.romBank(bankNum)
+        bank.addAutoLabel(pointer, None, "data")
+        # I suspect this address may be text.
+
+    def export(self, file):
+        pointer = self.memory.word(file.addr + 1)
+        bankNum = self.memory.byte(file.addr + 3)
+        bank = RomInfo.romBank(bankNum)
+        label = bank.getLabel(pointer)
+        file.asmLine(4, "Op04_Unknown_Text", str(label))
+
 OPBLOCKS = {
+    0x04: Op04Block,
     0x14: Op14Block,
     0x16: Op16Block,
     0x18: Op18Block,
@@ -679,7 +719,8 @@ OPBLOCKS = {
     0x68: Op68Block,
     0x74: Op74Block,
     0x76: Op76Block,
-    0x80: Op80Block,
+    # 0x80: Op80Block,
+    0x80: makeGenericBlockClass("Op80Block", 0x80, "Op80_CopyNBytes", 9),
     0x82: Op82Block,
     0x84: Op84Block,
     0x8E: Op8EBlock,
