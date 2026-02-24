@@ -2363,6 +2363,8 @@ Op40:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:10af $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:10b2 $c3 $14 $0a
 
+; Writes the byte [arg6] to [arg5-4] consecutive bytes
+; starting at wram location [arg2-1] (in bank [arg3]).
 Op84:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:10b5 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:10b8 $2a
@@ -2379,7 +2381,7 @@ Op84:
     ld   [wLessImportantBitArrayThingC35C], A          ;; 00:10cd $ea $5c $c3
     ld   A, $06                                        ;; 00:10d0 $3e $06
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:10d2 $ea $26 $c3
-    call call_00_2914                                  ;; 00:10d5 $cd $14 $29
+    call WriteBytesBasedOn_C35AtoC_and_C356to8         ;; 00:10d5 $cd $14 $29
     ld   A, $00                                        ;; 00:10d8 $3e $00
     ld   [wOpcodeC322], A                              ;; 00:10da $ea $22 $c3
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:10dd $c3 $39 $0a
@@ -4111,7 +4113,7 @@ Write3ArgsToC328toA_AndRunOp_PossibleTextPointer:
     ld   [wImportantBitArrayThingC35B], A              ;; 00:1ce7 $ea $5b $c3
     ld   A, $ff                                        ;; 00:1cea $3e $ff
     ld   [wLessImportantBitArrayThingC35C], A          ;; 00:1cec $ea $5c $c3
-    call call_00_2914                                  ;; 00:1cef $cd $14 $29
+    call WriteBytesBasedOn_C35AtoC_and_C356to8         ;; 00:1cef $cd $14 $29
     ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 00:1cf2 $fa $56 $c3
     ld   [wLessImportantBitArrayThingC35C], A          ;; 00:1cf5 $ea $5c $c3
     ld   A, [wDupeBitArrayIndexC358]                   ;; 00:1cf8 $fa $58 $c3
@@ -5735,34 +5737,40 @@ call_00_28e6:
     ld   [wC304], A                                    ;; 00:2910 $ea $04 $c3
     ret                                                ;; 00:2913 $c9
 
-call_00_2914:
+; Writes the byte [C35C] to [C35B-A] consecutive bytes
+; starting at wram location [C356-7] (in bank [C358]).
+; C356-7 contain a wram/vram address (C358 is bank).
+WriteBytesBasedOn_C35AtoC_and_C356to8:
     ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 00:2914 $fa $56 $c3
     ld   L, A                                          ;; 00:2917 $6f
     ld   A, [wC357]                                    ;; 00:2918 $fa $57 $c3
     ld   H, A                                          ;; 00:291b $67
     cp   A, $a0                                        ;; 00:291c $fe $a0
     ld   A, [wDupeBitArrayIndexC358]                   ;; 00:291e $fa $58 $c3
-    jr   C, .jr_00_2927                                ;; 00:2921 $38 $04
+    jr   C, .vramCase                                  ;; 00:2921 $38 $04
     ldh  [rSVBK], A                                    ;; 00:2923 $e0 $70
-    jr   .jr_00_2929                                   ;; 00:2925 $18 $02
-.jr_00_2927:
+    jr   .afterHandleBankSwitch                        ;; 00:2925 $18 $02
+.vramCase:
     ldh  [rVBK], A                                     ;; 00:2927 $e0 $4f
-.jr_00_2929:
+; C35B - A are a number of bytes to write.
+.afterHandleBankSwitch:
     ld   A, [wImportantBitArrayThingC35B]              ;; 00:2929 $fa $5b $c3
     ld   B, A                                          ;; 00:292c $47
     ld   A, [wImportantBitArrayThingC35A]              ;; 00:292d $fa $5a $c3
     ld   C, A                                          ;; 00:2930 $4f
     and  A, A                                          ;; 00:2931 $a7
-    jr   Z, .jr_00_2935                                ;; 00:2932 $28 $01
+    jr   Z, .afterMaybeIncB                            ;; 00:2932 $28 $01
     inc  B                                             ;; 00:2934 $04
-.jr_00_2935:
+; C35C is the value to write.
+.afterMaybeIncB:
     ld   A, [wLessImportantBitArrayThingC35C]          ;; 00:2935 $fa $5c $c3
-.jr_00_2938:
+; Write BC times.
+.loop_BCtimes:
     ld   [HL+], A                                      ;; 00:2938 $22
     dec  C                                             ;; 00:2939 $0d
-    jr   NZ, .jr_00_2938                               ;; 00:293a $20 $fc
+    jr   NZ, .loop_BCtimes                             ;; 00:293a $20 $fc
     dec  B                                             ;; 00:293c $05
-    jr   NZ, .jr_00_2938                               ;; 00:293d $20 $f9
+    jr   NZ, .loop_BCtimes                             ;; 00:293d $20 $f9
     ret                                                ;; 00:293f $c9
 
 call_00_2940:

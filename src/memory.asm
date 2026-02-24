@@ -180,12 +180,15 @@ wC344:
 wC346:
     ds 16                                              ;; c346
 
+; Also used as wram/vram address low byte
 wUsedAsAnOffsetIntoSomeRegionC356:
     ds 1                                               ;; c356
 
+; Also used as wram/vram address high byte
 wC357:
     ds 1                                               ;; c357
 
+; Also used as wram/vram address bank
 wDupeBitArrayIndexC358:
     ds 1                                               ;; c358
 
@@ -1048,7 +1051,10 @@ wC7A1:
     ds 1                                               ;; c7a1
 
 wC7A2:
-    ds 54                                              ;; c7a2
+    ds 1                                               ;; c7a2
+
+wC7A3:
+    ds 53                                              ;; c7a3
 
 wC7D8:
     ds 2                                               ;; c7d8
@@ -1099,7 +1105,16 @@ wC823:
     ds 1                                               ;; c823
 
 wC824:
-    ds 10                                              ;; c824
+    ds 3                                               ;; c824
+
+wC827:
+    ds 4                                               ;; c827
+
+wC82B:
+    ds 1                                               ;; c82b
+
+wC82C:
+    ds 2                                               ;; c82c
 
 wC82E:
     ds 1                                               ;; c82e
@@ -1153,10 +1168,22 @@ wC843:
     ds 5                                               ;; c843
 
 wC848:
-    ds 208                                             ;; c848
+    ds 10                                              ;; c848
+
+wC852:
+    ds 2                                               ;; c852
+
+wC854:
+    ds 2                                               ;; c854
+
+wC856:
+    ds 194                                             ;; c856
 
 wBitArrayC918:
-    ds 5                                               ;; c918
+    ds 3                                               ;; c918
+
+wC91B:
+    ds 2                                               ;; c91b
 
 wC91D:
     ds 1                                               ;; c91d
@@ -1168,7 +1195,10 @@ wC91F:
     ds 2                                               ;; c91f
 
 wC921:
-    ds 10                                              ;; c921
+    ds 9                                               ;; c921
+
+wC92A:
+    ds 1                                               ;; c92a
 
 wC92B:
     ds 1                                               ;; c92b
@@ -1180,7 +1210,10 @@ wC92D:
     ds 1                                               ;; c92d
 
 wC92E:
-    ds 3                                               ;; c92e
+    ds 2                                               ;; c92e
+
+wC930:
+    ds 1                                               ;; c930
 
 wC931:
     ds 4                                               ;; c931
@@ -1807,6 +1840,7 @@ hFFFE:
     ds 1                                               ;; fffe
 
 SECTION "vram", VRAM[$8000]
+; TODO: Is vram also supposed to be banked?
     ds 6799                                            ;; 8000
 
 v9A8F:

@@ -155,27 +155,27 @@ dw \2
             match subOpCode:
                 case 0x3E:
                     byteContainingFlag = 0xC918 + (arg1 // 8)
-                    RomInfo.getWRam().addAutoLabel(byteContainingFlag, None, None) # WRam ignores source and type args.
+                    RomInfo.getWRam().addAutoLabel(byteContainingFlag, None, None)
                     label = RomInfo.getWRam().getLabel(byteContainingFlag)
                     bitOfFlag = arg1 % 8
                     self.subOpArgsList.append((2, "SubOp_SetFlag", str(label), str(bitOfFlag)))
                     size += 2
                 case 0x5E:
                     byteContainingFlag = 0xC918 + (arg1 // 8)
-                    RomInfo.getWRam().addAutoLabel(byteContainingFlag, None, None) # WRam ignores source and type args.
+                    RomInfo.getWRam().addAutoLabel(byteContainingFlag, None, None)
                     label = RomInfo.getWRam().getLabel(byteContainingFlag)
                     bitOfFlag = arg1 % 8
                     self.subOpArgsList.append((2, "SubOp_ClearFlag", str(label), str(bitOfFlag)))
                     size += 2
                 case 0x7E:
                     addressToWrite = 0xC718 + arg1
-                    RomInfo.getWRam().addAutoLabel(addressToWrite, None, None) # WRam ignores source and type args.
+                    RomInfo.getWRam().addAutoLabel(addressToWrite, None, None)
                     label = RomInfo.getWRam().getLabel(addressToWrite)
                     self.subOpArgsList.append((3, "SubOp_SetByte", str(label), "$%02x" % memory.byte(addr + size + 2)))
                     size += 3
                 case 0x9E:
                     addressToWrite = 0xC718 + arg1
-                    RomInfo.getWRam().addAutoLabel(addressToWrite, None, None) # WRam ignores source and type args.
+                    RomInfo.getWRam().addAutoLabel(addressToWrite, None, None)
                     label = RomInfo.getWRam().getLabel(addressToWrite)
                     if label == None:
                         raise Exception("No label for ram address", "$%04x" % addressToWrite)
@@ -245,7 +245,7 @@ class Op50Block(Block):
         # This might be WRAM0 instead of the active WRAM bank. But if it is it won't be used anyway since the pointer will be < $D000.
         possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
         targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
-        targetMemory.addAutoLabel(pointer, None, None) # WRam ignores source and type args.
+        targetMemory.addAutoLabel(pointer, None, None)
 
 
     def export(self, file):
@@ -268,9 +268,9 @@ class Op52Block(Block):
         # This might be WRAM0 instead of the active WRAM bank. But if it is it won't be used anyway since the pointer will be < $D000.
         possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
         targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
-        targetMemory.addAutoLabel(pointer, None, None) # WRam ignores source and type args.
+        targetMemory.addAutoLabel(pointer, None, None)
         # Giving the second byte written to a label also.
-        targetMemory.addAutoLabel(pointer + 1, None, None) # WRam ignores source and type args.
+        targetMemory.addAutoLabel(pointer + 1, None, None)
 
 
     def export(self, file):
@@ -293,8 +293,8 @@ class Op68Block(Block):
         targetPtr = memory.word(addr + 2)
         sourcePtr = memory.word(addr + 4)
         activeWramBankNum = memory.byte(addr + 6)
-        RomInfo.getWRam(activeWramBankNum if targetPtr >= 0xD000 else 0).addAutoLabel(targetPtr, None, None) # WRam ignores source and type args.
-        RomInfo.getWRam(activeWramBankNum if sourcePtr >= 0xD000 else 0).addAutoLabel(sourcePtr, None, None) # WRam ignores source and type args.
+        RomInfo.getWRam(activeWramBankNum if targetPtr >= 0xD000 else 0).addAutoLabel(targetPtr, None, None)
+        RomInfo.getWRam(activeWramBankNum if sourcePtr >= 0xD000 else 0).addAutoLabel(sourcePtr, None, None)
 
 
     def export(self, file):
@@ -428,7 +428,7 @@ class Op74Block(Block):
         pointer = memory.word(addr + 1)
         # There's no bank arg so I *think* this willa lways be wram bank 0.
         # But there could also be a separate bank switch instruction I don't know about.
-        RomInfo.getWRam().addAutoLabel(pointer, None, None) # WRam ignores source and type args.
+        RomInfo.getWRam().addAutoLabel(pointer, None, None)
 
 
     def export(self, file):
@@ -581,6 +581,27 @@ class Op56Block(Block):
         arg4 = self.memory.byte(file.addr + 4)
         file.asmLine(5, "Op56_WriteBitArrayIndex", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4)
 
+class Op84Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 7)
+        RomInfo.macros["Op84_WriteByteNTimes"] = "db $84\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb \\3"
+
+        pointer = memory.word(addr + 1)
+        bankNum = memory.byte(addr + 3)
+        possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
+        targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
+        targetMemory.addAutoLabel(pointer, None, None)
+
+    def export(self, file):
+        pointer = self.memory.word(file.addr + 1)
+        bankNum = self.memory.byte(file.addr + 3)
+        amount = self.memory.word(file.addr + 4)
+        payload = self.memory.byte(file.addr + 6)
+        possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
+        targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
+        label = targetMemory.getLabel(pointer)
+        file.asmLine(7, "Op84_WriteByteNTimes", str(label), str(amount), "$%02x" % payload)
+
 OPBLOCKS = {
     0x14: Op14Block,
     0x16: Op16Block,
@@ -604,6 +625,7 @@ OPBLOCKS = {
     0x74: Op74Block,
     0x76: Op76Block,
     0x82: Op82Block,
+    0x84: Op84Block,
     0x8E: Op8EBlock,
     0x90: Op90Block,
     0x98: Op98Block,

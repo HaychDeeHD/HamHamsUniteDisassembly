@@ -2649,7 +2649,7 @@ OpenHamchatWheel_Maybe:
     ld   [wImportantBitArrayThingC35B], A              ;; 01:514c $ea $5b $c3
     ld   A, $ff                                        ;; 01:514f $3e $ff
     ld   [wLessImportantBitArrayThingC35C], A          ;; 01:5151 $ea $5c $c3
-    call call_00_2914                                  ;; 01:5154 $cd $14 $29
+    call WriteBytesBasedOn_C35AtoC_and_C356to8         ;; 01:5154 $cd $14 $29
     call call_01_5619                                  ;; 01:5157 $cd $19 $56
     ld   A, $67                                        ;; 01:515a $3e $67
     ld   [wReturnAddressC324], A                       ;; 01:515c $ea $24 $c3

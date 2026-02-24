@@ -1053,16 +1053,17 @@ data_1d_4263:
 data_1d_5e5d:
     Op14_Unknown 1, $2c, $75                           ;; 1d:5e5d $14 $01 $2c $75
     SCRIPT_POINTER data_1d_5eaf                        ;; 1d:5e61 $af $5e $1d
-    db   $84, $1a, $d1, $03, $03, $00, $80, $84        ;; 1d:5e64 ????????
-    db   $38, $d1, $03, $03, $00, $80, $84, $56        ;; 1d:5e6c ????????
-    db   $d1, $03, $03, $00, $80, $84, $17, $d1        ;; 1d:5e74 ????????
-    db   $03, $03, $00, $0e, $84, $35, $d1, $03        ;; 1d:5e7c ????????
-    db   $03, $00, $0e, $84, $53, $d1, $03, $03        ;; 1d:5e84 ????????
-    db   $00, $0e, $84, $c0, $d0, $03, $03, $00        ;; 1d:5e8c ????????
-    db   $0e, $84, $de, $d0, $03, $03, $00, $0e        ;; 1d:5e94 ????????
-    db   $84, $fc, $d0, $03, $03, $00, $0e, $4c        ;; 1d:5e9c ????????
-    db   $30, $01, $04, $60, $00, $48, $00, $3a        ;; 1d:5ea4 ????????
-    db   $66, $15, $20                                 ;; 1d:5eac ???
+    Op84_WriteByteNTimes w3_D11A, 3, $80               ;; 1d:5e64 $84 $1a $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D138, 3, $80               ;; 1d:5e6b $84 $38 $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D156, 3, $80               ;; 1d:5e72 $84 $56 $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D117, 3, $0e               ;; 1d:5e79 $84 $17 $d1 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D135, 3, $0e               ;; 1d:5e80 $84 $35 $d1 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D153, 3, $0e               ;; 1d:5e87 $84 $53 $d1 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D0C0, 3, $0e               ;; 1d:5e8e $84 $c0 $d0 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D0DE, 3, $0e               ;; 1d:5e95 $84 $de $d0 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D0FC, 3, $0e               ;; 1d:5e9c $84 $fc $d0 $03 $03 $00 $0e
+    Op4c_Unknown $30, $01, $04, $60, $00, $48, $00, $3a, $66, $15 ;; 1d:5ea3 $4c $30 $01 $04 $60 $00 $48 $00 $3a $66 $15
+    SCRIPT_RETURN_20                                   ;; 1d:5eae $20
 
 data_1d_5eaf:
     Op4c_Unknown $30, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 1d:5eaf $4c $30 $00 $00 $00 $00 $00 $00 $00 $00 $00
@@ -1618,6 +1619,8 @@ data_1d_6b9e:
     Op1C_TableJump 1                                   ;; 1d:6bfd $1c $01
     SCRIPT_POINTER data_04_68e9                        ;; 1d:6bff $e9 $68 $04
     Op18_Jump data_04_68f1                             ;; 1d:6c02 $18 $f1 $68 $04
+
+data_1d_6c06:
     Op1E_Call data_1d_6f05                             ;; 1d:6c06 $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6c0a $1c $01
     SCRIPT_POINTER data_04_6900                        ;; 1d:6c0c $00 $69 $04

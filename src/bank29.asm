@@ -2019,17 +2019,33 @@ data_29_6eae:
     Op18_Jump data_29_6fd9                             ;; 29:6eb7 $18 $d9 $6f $29
 
 data_29_6ebb:
-    db   $84, $e6, $d6, $03, $63, $00, $00, $82        ;; 29:6ebb ????????
-    db   $50, $72, $03, $82, $e1, $72, $03, $50        ;; 29:6ec3 ????????
-    db   $1a, $c3, $00, $18, $50, $20, $00, $00        ;; 29:6ecb ????????
-    db   $05, $16, $01, $5f, $95, $16, $01, $5f        ;; 29:6ed3 ????????
-    db   $93, $16, $01, $5f, $94, $16, $01, $7f        ;; 29:6edb ????????
-    db   $1b, $01, $16, $01, $7f, $19, $00, $16        ;; 29:6ee3 ????????
-    db   $01, $7f, $18, $01, $16, $01, $7f, $1a        ;; 29:6eeb ????????
-    db   $00, $16, $01, $9f, $3e, $00, $00, $16        ;; 29:6ef3 ????????
-    db   $01, $9f, $3c, $00, $00, $16, $01, $9f        ;; 29:6efb ????????
-    db   $3a, $00, $00, $50, $00, $d0, $01, $01        ;; 29:6f03 ????????
-    db   $20                                           ;; 29:6f0b ?
+    Op84_WriteByteNTimes w3_D6E6, 99, $00              ;; 29:6ebb $84 $e6 $d6 $03 $63 $00 $00
+    Op82_Run call_03_7250                              ;; 29:6ec2 $82 $50 $72 $03
+    Op82_Run call_03_72e1                              ;; 29:6ec6 $82 $e1 $72 $03
+    Op50_WriteByte wC31A, 0, $18                       ;; 29:6eca $50 $1a $c3 $00 $18
+    Op50_WriteByte rst_00_0020, 0, $05                 ;; 29:6ecf $50 $20 $00 $00 $05
+    Op16_SubOps 1                                      ;; 29:6ed4 $16 $01
+    SubOp_ClearFlag wC94A, 5                           ;; 29:6ed6 $5f $95
+    Op16_SubOps 1                                      ;; 29:6ed8 $16 $01
+    SubOp_ClearFlag wC94A, 3                           ;; 29:6eda $5f $93
+    Op16_SubOps 1                                      ;; 29:6edc $16 $01
+    SubOp_ClearFlag wC94A, 4                           ;; 29:6ede $5f $94
+    Op16_SubOps 1                                      ;; 29:6ee0 $16 $01
+    SubOp_SetByte wC833, $01                           ;; 29:6ee2 $7f $1b $01
+    Op16_SubOps 1                                      ;; 29:6ee5 $16 $01
+    SubOp_SetByte wC831, $00                           ;; 29:6ee7 $7f $19 $00
+    Op16_SubOps 1                                      ;; 29:6eea $16 $01
+    SubOp_SetByte wC830, $01                           ;; 29:6eec $7f $18 $01
+    Op16_SubOps 1                                      ;; 29:6eef $16 $01
+    SubOp_SetByte wC832, $00                           ;; 29:6ef1 $7f $1a $00
+    Op16_SubOps 1                                      ;; 29:6ef4 $16 $01
+    SubOp_SetWord wC856, $0000                         ;; 29:6ef6 $9f $3e $00 $00
+    Op16_SubOps 1                                      ;; 29:6efa $16 $01
+    SubOp_SetWord wC854, $0000                         ;; 29:6efc $9f $3c $00 $00
+    Op16_SubOps 1                                      ;; 29:6f00 $16 $01
+    SubOp_SetWord wC852, $0000                         ;; 29:6f02 $9f $3a $00 $00
+    Op50_WriteByte w1_D000, 1, $01                     ;; 29:6f06 $50 $00 $d0 $01 $01
+    SCRIPT_RETURN_20                                   ;; 29:6f0b $20
 
 data_29_6f0c:
     Op50_WriteByte wC720, 0, $18                       ;; 29:6f0c $50 $20 $c7 $00 $18

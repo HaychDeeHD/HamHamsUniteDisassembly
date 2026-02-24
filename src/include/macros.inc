@@ -128,6 +128,13 @@ db $82
 dw \1
 db BANK(\1)
 ENDM
+MACRO Op84_WriteByteNTimes
+db $84
+dw \1
+db BANK(\1)
+dw \2
+db \3
+ENDM
 MACRO Op8E_StoreAddress
 db $8e
 db \1
