@@ -496,7 +496,7 @@ class Op42Block(Block):
 class Op58Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 6)
-        RomInfo.macros["Op58_WriteBitArrayIndex"] = "db $58\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb 5"
+        RomInfo.macros["Op58_WriteBitArrayIndex"] = "db $58\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5"
     
     def export(self, file):
         index = self.memory.byte(file.addr + 1)
@@ -606,7 +606,6 @@ class Op06Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=4)
         RomInfo.macros["Op06_Unknown_Text"] = "db $06\ndw \\1\ndb BANK(\\1)"
-        # RomInfo.macros["Op06_Unknown_Text"] = "db $06\ndw \\1\ndb \\2"
 
         pointer = memory.word(addr + 1)
         bankNum = memory.byte(addr + 3)
@@ -620,17 +619,10 @@ class Op06Block(Block):
         bank = RomInfo.romBank(bankNum)
         label = bank.getLabel(pointer)
         file.asmLine(4, "Op06_Unknown_Text", str(label))
-        # file.asmLine(4, "Op06_Unknown_Text", str(label), str(bankNum))
-
-# TODO can't add 6, checksum doesn't match.
-#  I suspect I am hitting the end of scripts and interpretting nonscripts as script.
-# TODO check this theory. 
-# TODO add a tool for determining WHERE the roms differ.
-# TODO possibly end assumption that returns/jumps etc are followed by code.
 
 OPBLOCKS = {
     0x04: Op04Block,
-    # 0x06: makeGenericBlockClass(0x06, 4),
+    0x06: Op06Block,
     0x14: Op14Block,
     0x16: Op16Block,
     0x18: Op18Block,

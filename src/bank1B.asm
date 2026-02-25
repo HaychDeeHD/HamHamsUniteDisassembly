@@ -2984,7 +2984,7 @@ data_1b_4235:
     db   $79, $04                                      ;; 1b:7a1d ..
     dw   .data_1b_5d07                                 ;; 1b:7a1f pP
     db   $79, $ba                                      ;; 1b:7a21 ..
-    dw   $d269                                         ;; 1b:7a23 pP
+    dw   w1_D269                                       ;; 1b:7a23 pP
     db   $01, $80, $82                                 ;; 1b:7a25 ...
     dw   .data_1b_79a1                                 ;; 1b:7a28 pP
     db   $1b, $90, $00                                 ;; 1b:7a2a ...

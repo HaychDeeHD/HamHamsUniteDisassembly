@@ -1834,10 +1834,10 @@ AddressArray_0dbd:
     dw   $d3c9                                         ;; 00:0de7 ?? $15
     dw   $d3f7                                         ;; 00:0de9 ?? $16
     dw   $d425                                         ;; 00:0deb ?? $17
-    dw   $d453                                         ;; 00:0ded ?? $18
-    dw   $d481                                         ;; 00:0def wW $19
+    dw   w1_D453                                       ;; 00:0ded ?? $18
+    dw   w1_D481                                       ;; 00:0def wW $19
     dw   $d4af                                         ;; 00:0df1 wW $1a
-    dw   $d4dd                                         ;; 00:0df3 wW $1b
+    dw   w1_D4DD                                       ;; 00:0df3 wW $1b
     dw   $d50b                                         ;; 00:0df5 wW $1c
     dw   $d539                                         ;; 00:0df7 wW $1d
     dw   $d567                                         ;; 00:0df9 ?? $1e
@@ -2618,10 +2618,10 @@ WramAddressTable:
     dw   $d3c9                                         ;; 00:1232 pP
     dw   $d3f7                                         ;; 00:1234 pP
     dw   $d425                                         ;; 00:1236 pP
-    dw   $d453                                         ;; 00:1238 pP
-    dw   $d481                                         ;; 00:123a pP
+    dw   w1_D453                                       ;; 00:1238 pP
+    dw   w1_D481                                       ;; 00:123a pP
     dw   $d4af                                         ;; 00:123c pP
-    dw   $d4dd                                         ;; 00:123e pP
+    dw   w1_D4DD                                       ;; 00:123e pP
     dw   $d50b                                         ;; 00:1240 pP
     dw   $d539                                         ;; 00:1242 pP
     dw   $d567                                         ;; 00:1244 pP
@@ -6202,10 +6202,10 @@ jp_00_2b95:
     dw   $d3c9                                         ;; 00:2bd4 pP
     dw   $d3f7                                         ;; 00:2bd6 pP
     dw   $d425                                         ;; 00:2bd8 pP
-    dw   $d453                                         ;; 00:2bda pP
-    dw   $d481                                         ;; 00:2bdc pP
+    dw   w1_D453                                       ;; 00:2bda pP
+    dw   w1_D481                                       ;; 00:2bdc pP
     dw   $d4af                                         ;; 00:2bde pP
-    dw   $d4dd                                         ;; 00:2be0 pP
+    dw   w1_D4DD                                       ;; 00:2be0 pP
     dw   $d50b                                         ;; 00:2be2 pP
     dw   $d539                                         ;; 00:2be4 pP
     dw   $d567                                         ;; 00:2be6 pP
