@@ -222,6 +222,10 @@ db ($9e + ((\1 - $c718) >> 8))
 db ((\1 - $c718) & $FF)
 dw \2
 ENDM
+MACRO TXT
+SETCHARMAP HAMTEXT
+db \#
+ENDM
 MACRO ld_long_load
 db $FA
 dw \2
