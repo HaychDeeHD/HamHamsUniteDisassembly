@@ -33,13 +33,41 @@ for n in range(len(symbols)):
 # EA begin red text
 # E7 player name?
 # E8 end red text
-for n in range(9): # E0 to E8 for now
+for n in range(14): # E0 to ED for now
     charmap[0xE0 + n] = "<%02X>" % (0xE0 + n)
 
+def serializeAddress(memory, addr):
+    return  "%02x:%04x." % (memory.bankNumber, addr)
+
+textAddressesStack = []
+
+def addKnownTextAddress(memory, addr):
+    textAddressesStack.append((memory, addr))
+
+def maybeCreateTextBlocks():
+    while len(textAddressesStack):
+        memory, addr = textAddressesStack.pop()
+        maybeCreateTextBlock(memory, addr)
+
+
+def maybeCreateTextBlock(memory, addr):
+    # Unlike maybeCreateScript block, don't assume that TextBlocks follow TextBlocks.
+
+    serializedAddr = serializeAddress(memory, addr)
+
+    # If this addr is already handled.
+    if memory[addr] is not None:
+        return
+
+    try: 
+        TextBlock(memory, addr)
+    except Exception as e:
+        raise Exception('Could not make Text Block. At %s --> %s' % (serializedAddr, e)) from e
 
 @annotation(priority=1)
 def hamstring(memory, addr):
-    TextBlock(memory, addr)
+    addKnownTextAddress(memory, addr)
+    maybeCreateTextBlocks()
 
 class TextBlock(Block):
     def __init__(self, memory, addr):
@@ -47,27 +75,34 @@ class TextBlock(Block):
         RomInfo.charmap["HAMTEXT"] = charmap
         RomInfo.macros["TXT"] = "SETCHARMAP HAMTEXT\ndb \\#"
 
-        # Go until you hit a 0x00 terminating byte
+        # Go until you hit a 0xE0 eol byte or a 0x00 terminating byte
         size = 0
-        while memory.byte(addr + size) != 0x00:
+        while addr + size < memory.base_address + 0x4000: 
+            byte = memory.byte(addr + size)
             size += 1
-        size += 1
+            if byte == 0xE0: # E0 bytes are followed by more text
+                # TODO Looks like E0 isn't always followed by text?
+                # Saw text ending in e0 followed by a possible script instruction.
+
+                # Saw a location that is -- label: e0 ff ff ff ff <eof>
+                # if memory.byte(addr + size) != 0xFF:
+                #     addKnownTextAddress(memory, addr + size)
+                break
+            if byte == 0x00:
+                break
+
         self.resize(size)
 
     def export(self, file):
         size = len(self)
-        currentText = ""
-        currentSize = 0
+        text = ""
         for n in range(size):
-            byte = self.memory.byte(file.addr + currentSize)
+            byte = self.memory.byte(file.addr + n)
             try:
-                currentText += charmap[byte]
+                text += charmap[byte]
             except KeyError:
-                currentText += "🤭"
-            currentSize += 1
-            if byte == 0xE0 or byte == 00:
-                file.asmLine(currentSize, "TXT", "\"%s\"" % (currentText), is_data=True)
-                currentText = ""
-                currentSize = 0
+                text += "🤭" # Referred to as "F0" in build warnings.
+        file.asmLine(size, "TXT", "\"%s\"" % (text), is_data=True)
+             
 
         

@@ -2,6 +2,8 @@ from annotation.annotation import annotation
 from block.base import Block
 from romInfo import RomInfo
 
+from hamtext import maybeCreateTextBlocks, addKnownTextAddress
+
 
 def serializeAddress(memory, addr):
     return  "%02x:%04x." % (memory.bankNumber, addr)
@@ -17,6 +19,13 @@ scriptAddressesStack = []
 
 def addKnownScriptAddress(memory, addr):
     scriptAddressesStack.append((memory, addr))
+
+def maybeCreateScriptBlocks():
+    while len(scriptAddressesStack):
+        memory, addr = scriptAddressesStack.pop()
+        maybeCreateScriptBlock(memory, addr)
+    print("Done processing @hamscript for %02x:%04x." % (memory.bankNumber, addr))
+    print(sorted(blockingOpcodes.items(), key=lambda item: item[1], reverse=True))
 
 def maybeCreateScriptBlock(memory, addr):
     while True:
@@ -48,12 +57,10 @@ def maybeCreateScriptBlock(memory, addr):
 
 @annotation(priority=1)
 def hamscript(memory, addr):
-    scriptAddressesStack.append((memory, addr))
-    while len(scriptAddressesStack):
-        memory, addr = scriptAddressesStack.pop()
-        maybeCreateScriptBlock(memory, addr)
-    print("Done processing @hamscript for %02x:%04x." % (memory.bankNumber, addr))
-    print(sorted(blockingOpcodes.items(), key=lambda item: item[1], reverse=True))
+    addKnownScriptAddress(memory, addr)
+    maybeCreateScriptBlocks()
+    # Some script blocks mark text blocks, so process those.
+    maybeCreateTextBlocks()
 
 def makeGenericBlockClass(opcode, size, macroName=None):
     className = "Op%02xBlock" % opcode
@@ -593,7 +600,7 @@ class Op04Block(Block):
         bankNum = memory.byte(addr + 3)
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "data")
-        # I suspect this address may be text.
+        addKnownTextAddress(bank, pointer)
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
@@ -611,7 +618,7 @@ class Op06Block(Block):
         bankNum = memory.byte(addr + 3)
         bank = RomInfo.romBank(bankNum)
         bank.addAutoLabel(pointer, None, "data")
-        # I suspect this address may be text.
+        addKnownTextAddress(bank, pointer)
 
     def export(self, file):
         pointer = self.memory.word(file.addr + 1)
