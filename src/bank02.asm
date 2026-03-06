@@ -119,6 +119,8 @@ data_02_419d:
     db   $36, $c7, $c9, $00, $05, $06, $07, $09        ;; 02:4204 ????????
     db   $0a, $0b, $0e, $0f, $10, $11, $13, $14        ;; 02:420c ????????
     db   $15, $16, $1d, $ff                            ;; 02:4214 ????
+
+call_02_4218:
     ld   HL, wCA52                                     ;; 02:4218 $21 $52 $ca
     ld   B, $20                                        ;; 02:421b $06 $20
     xor  A, A                                          ;; 02:421d $af
@@ -2578,7 +2580,7 @@ call_02_6377:
     ld   A, C                                          ;; 02:639e $79
     add  A, $02                                        ;; 02:639f $c6 $02
     ld   B, A                                          ;; 02:63a1 $47
-    ld   [rst_00_0038], A                              ;; 02:63a2 $ea $38 $00
+    ld   [$0038], A                                    ;; 02:63a2 $ea $38 $00
     ret                                                ;; 02:63a5 $c9
 .data_02_63a6:
     db   $81, $82, $83, $84, $85, $86, $87, $88        ;; 02:63a6 ........
@@ -3364,15 +3366,18 @@ ObtainHamChatFromC715:
     pop  AF                                            ;; 02:6e1d $f1
     ld_long_store rSVBK, A                             ;; 02:6e1e $ea $70 $ff
     ret                                                ;; 02:6e21 $c9
+
+call_02_6e22:
     ld   A, $ff                                        ;; 02:6e22 $3e $ff
 ; 0x56 == 86, the number of HamChats
     ld   B, $56                                        ;; 02:6e24 $06 $56
     ld   HL, wHamChatDictArrayC9A3                     ;; 02:6e26 $21 $a3 $c9
-.loop_overwriteWholeDictWithFF:
+
+ObtainHamChatFromC715.loop_overwriteWholeDictWithFF:
     ld   [HL+], A                                      ;; 02:6e29 $22
     ld   [HL+], A                                      ;; 02:6e2a $22
     dec  B                                             ;; 02:6e2b $05
-    jr   NZ, .loop_overwriteWholeDictWithFF            ;; 02:6e2c $20 $fb
+    jr   NZ, ObtainHamChatFromC715.loop_overwriteWholeDictWithFF ;; 02:6e2c $20 $fb
     xor  A, A                                          ;; 02:6e2e $af
     ld   [wNumHamChatsCA45], A                         ;; 02:6e2f $ea $4f $ca
     ld   [wCA50], A                                    ;; 02:6e32 $ea $50 $ca

@@ -7,29 +7,11 @@ INCLUDE "include/constants.inc"
 
 SECTION "bank00", ROM0[$0000]
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0000 ........
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0008 ........
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0010 ????????
+    db   $c3, $56, $2a, $ff, $ff, $ff, $ff, $ff        ;; 00:0018 ????????
 
-rst_00_0008:
-    rst  rst_00_0038                                   ;; 00:0008 $ff
-    rst  rst_00_0038                                   ;; 00:0009 $ff
-    rst  rst_00_0038                                   ;; 00:000a $ff
-    rst  rst_00_0038                                   ;; 00:000b $ff
-    rst  rst_00_0038                                   ;; 00:000c $ff
-    rst  rst_00_0038                                   ;; 00:000d $ff
-    rst  rst_00_0038                                   ;; 00:000e $ff
-    rst  rst_00_0038                                   ;; 00:000f $ff
-    rst  rst_00_0038                                   ;; 00:0010 $ff
-    rst  rst_00_0038                                   ;; 00:0011 $ff
-    rst  rst_00_0038                                   ;; 00:0012 $ff
-    rst  rst_00_0038                                   ;; 00:0013 $ff
-    rst  rst_00_0038                                   ;; 00:0014 $ff
-    rst  rst_00_0038                                   ;; 00:0015 $ff
-    rst  rst_00_0038                                   ;; 00:0016 $ff
-    rst  rst_00_0038                                   ;; 00:0017 $ff
-
-rst_00_0018:
-    jp   jp_00_2a56                                    ;; 00:0018 $c3 $56 $2a
-    db   $ff, $ff, $ff, $ff, $ff                       ;; 00:001b ?????
-
+;@rst20
 rst_00_0020:
     jp   jp_00_2a62                                    ;; 00:0020 $c3 $62 $2a
     db   $ff, $ff, $ff, $ff, $ff                       ;; 00:0023 ?????
@@ -37,17 +19,8 @@ rst_00_0020:
 rst_00_0028:
     jp   jp_00_2a77                                    ;; 00:0028 $c3 $77 $2a
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:002b ????????
-    db   $ff, $ff, $ff, $ff, $ff                       ;; 00:0033 ?????
-
-rst_00_0038:
-    rst  rst_00_0038                                   ;; 00:0038 $ff
-    rst  rst_00_0038                                   ;; 00:0039 $ff
-    rst  rst_00_0038                                   ;; 00:003a $ff
-    rst  rst_00_0038                                   ;; 00:003b $ff
-    rst  rst_00_0038                                   ;; 00:003c $ff
-    rst  rst_00_0038                                   ;; 00:003d $ff
-    rst  rst_00_0038                                   ;; 00:003e $ff
-    rst  rst_00_0038                                   ;; 00:003f $ff
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0033 ????????
+    db   $ff, $ff, $ff, $ff, $ff                       ;; 00:003b ?????
 
 SECTION "isrVBlank", ROM0[$0040]
 
@@ -275,17 +248,11 @@ jp_00_02a7:
     dec  B                                             ;; 00:0321 $05
     jr   NZ, .jr_00_031d                               ;; 00:0322 $20 $f9
     rst  rst_00_0020                                   ;; 00:0324 $e7
-    adc  A, C                                          ;; 00:0325 $89
-    jr   C, .jr_00_0328                                ;; 00:0326 $38 $00
-.jr_00_0328:
+    ThreeByteAddress call_00_3889                      ;; 00:0325 $89 $38 $00
     rst  rst_00_0020                                   ;; 00:0328 $e7
-    ld   H, E                                          ;; 00:0329 $63
-    ld   E, L                                          ;; 00:032a $5d
-    inc  BC                                            ;; 00:032b $03
+    ThreeByteAddress call_03_5d63                      ;; 00:0329 $63 $5d $03
     rst  rst_00_0020                                   ;; 00:032c $e7
-    ld   H, E                                          ;; 00:032d $63
-    ld   E, L                                          ;; 00:032e $5d
-    inc  BC                                            ;; 00:032f $03
+    ThreeByteAddress call_03_5d63                      ;; 00:032d $63 $5d $03
     ld   A, $04                                        ;; 00:0330 $3e $04
     ld   [$2000], A                                    ;; 00:0332 $ea $00 $20
     ld   HL, $579f                                     ;; 00:0335 $21 $9f $57
@@ -5062,12 +5029,9 @@ call_00_2439:
 
 jr_00_243c:
     ld   D, $04                                        ;; 00:243c $16 $04
-
-jr_00_243e:
+.jr_00_243e:
     ld   E, $00                                        ;; 00:243e $1e $00
     ld   A, [HL+]                                      ;; 00:2440 $2a
-
-data_00_2441:
     ld   C, A                                          ;; 00:2441 $4f
     and  A, A                                          ;; 00:2442 $a7
     jr   Z, .jr_00_2446                                ;; 00:2443 $28 $01
@@ -5100,7 +5064,7 @@ data_00_2441:
     pop  DE                                            ;; 00:2464 $d1
     pop  HL                                            ;; 00:2465 $e1
     dec  D                                             ;; 00:2466 $15
-    jr   NZ, jr_00_243e                                ;; 00:2467 $20 $d5
+    jr   NZ, .jr_00_243e                               ;; 00:2467 $20 $d5
     ret                                                ;; 00:2469 $c9
     db   $fa, $5a, $c3, $5f, $e6, $0f, $28, $10        ;; 00:246a ????????
     db   $7b, $e6, $f0, $c6, $10, $ea, $5a, $c3        ;; 00:2472 ????????
@@ -5939,18 +5903,8 @@ call_00_2a47:
     ei                                                 ;; 00:2a53 $fb
     pop  AF                                            ;; 00:2a54 $f1
     ret                                                ;; 00:2a55 $c9
-
-jp_00_2a56:
-    pop  HL                                            ;; 00:2a56 $e1
-    ld   A, [HL+]                                      ;; 00:2a57 $2a
-    ld   E, A                                          ;; 00:2a58 $5f
-    ld   A, [HL+]                                      ;; 00:2a59 $2a
-    ld   D, A                                          ;; 00:2a5a $57
-    ld   A, [HL+]                                      ;; 00:2a5b $2a
-    call call_00_2a47                                  ;; 00:2a5c $cd $47 $2a
-    ld   L, E                                          ;; 00:2a5f $6b
-    ld   H, D                                          ;; 00:2a60 $62
-    jp   HL                                            ;; 00:2a61 $e9
+    db   $e1, $2a, $5f, $2a, $57, $2a, $cd, $47        ;; 00:2a56 ????????
+    db   $2a, $6b, $62, $e9                            ;; 00:2a5e ????
 
 jp_00_2a62:
     pop  HL                                            ;; 00:2a62 $e1
@@ -6159,9 +6113,9 @@ jr_00_2b72:
     ld   [wC379], A                                    ;; 00:2b8a $ea $79 $c3
     jr   NZ, jr_00_2bec                                ;; 00:2b8d $20 $5d
     rst  rst_00_0020                                   ;; 00:2b8f $e7
-    ei                                                 ;; 00:2b90 $fb
-    ld   H, C                                          ;; 00:2b91 $61
-    ld   BC, wC9E1                                     ;; 00:2b92 $01 $e1 $c9
+    ThreeByteAddress call_01_61fb                      ;; 00:2b90 $fb $61 $01
+    pop  HL                                            ;; 00:2b93 $e1
+    ret                                                ;; 00:2b94 $c9
 
 jp_00_2b95:
     pop  HL                                            ;; 00:2b95 $e1
@@ -6726,9 +6680,7 @@ jr_00_2bec:
     ld   A, H                                          ;; 00:2f51 $7c
     ldh  [hFF81], A                                    ;; 00:2f52 $e0 $81
     rst  rst_00_0020                                   ;; 00:2f54 $e7
-    ld   E, C                                          ;; 00:2f55 $59
-    inc  A                                             ;; 00:2f56 $3c
-    nop                                                ;; 00:2f57 $00
+    ThreeByteAddress call_00_3c59                      ;; 00:2f55 $59 $3c $00
     ld   HL, $16                                       ;; 00:2f58 $21 $16 $00
     add  HL, BC                                        ;; 00:2f5b $09
     ldh  A, [hFF86]                                    ;; 00:2f5c $f0 $86
@@ -6773,9 +6725,7 @@ jr_00_2bec:
     ld   A, H                                          ;; 00:2f91 $7c
     ldh  [hFF81], A                                    ;; 00:2f92 $e0 $81
     rst  rst_00_0020                                   ;; 00:2f94 $e7
-    ld   E, C                                          ;; 00:2f95 $59
-    inc  A                                             ;; 00:2f96 $3c
-    nop                                                ;; 00:2f97 $00
+    ThreeByteAddress call_00_3c59                      ;; 00:2f95 $59 $3c $00
     ld   HL, $0e                                       ;; 00:2f98 $21 $0e $00
     add  HL, BC                                        ;; 00:2f9b $09
     ldh  A, [hFF86]                                    ;; 00:2f9c $f0 $86
@@ -8026,22 +7976,18 @@ call_00_386d:
     ret                                                ;; 00:3879 $c9
 .jr_00_387a:
     rst  rst_00_0020                                   ;; 00:387a $e7
-    adc  A, C                                          ;; 00:387b $89
-    jr   C, .jr_00_387e                                ;; 00:387c $38 $00
-.jr_00_387e:
+    ThreeByteAddress call_00_3889                      ;; 00:387b $89 $38 $00
     ret                                                ;; 00:387e $c9
 .jr_00_387f:
     rst  rst_00_0020                                   ;; 00:387f $e7
-    ld   H, E                                          ;; 00:3880 $63
-    ld   E, L                                          ;; 00:3881 $5d
-    inc  BC                                            ;; 00:3882 $03
+    ThreeByteAddress call_03_5d63                      ;; 00:3880 $63 $5d $03
     ret                                                ;; 00:3883 $c9
 .jr_00_3884:
     rst  rst_00_0020                                   ;; 00:3884 $e7
-    ld   A, A                                          ;; 00:3885 $7f
-    ld   E, L                                          ;; 00:3886 $5d
-    inc  BC                                            ;; 00:3887 $03
+    ThreeByteAddress call_03_5d7f                      ;; 00:3885 $7f $5d $03
     ret                                                ;; 00:3888 $c9
+
+call_00_3889:
     ld   HL, sA020                                     ;; 00:3889 $21 $20 $a0
     ld   BC, $4e0                                      ;; 00:388c $01 $e0 $04
     xor  A, A                                          ;; 00:388f $af
@@ -8075,15 +8021,11 @@ call_00_386d:
     ld   [wC736], A                                    ;; 00:38bf $ea $36 $c7
     ld   [wC721], A                                    ;; 00:38c2 $ea $21 $c7
     rst  rst_00_0020                                   ;; 00:38c5 $e7
-    ld   [HL+], A                                      ;; 00:38c6 $22
-    ld   L, [HL]                                       ;; 00:38c7 $6e
-    ld   [BC], A                                       ;; 00:38c8 $02
+    ThreeByteAddress call_02_6e22                      ;; 00:38c6 $22 $6e $02
     rst  rst_00_0020                                   ;; 00:38c9 $e7
-    jr   jr_00_390e                                    ;; 00:38ca $18 $42
-    db   $02                                           ;; 00:38cc .
+    ThreeByteAddress call_02_4218                      ;; 00:38ca $18 $42 $02
     rst  rst_00_0020                                   ;; 00:38cd $e7
-    dw   data_00_39fd                                  ;; 00:38ce pP
-    db   $00                                           ;; 00:38d0 .
+    ThreeByteAddress someFunction39fd                  ;; 00:38ce $fd $39 $00
     rst  rst_00_0028                                   ;; 00:38d1 $ef
 
 call_00_38d2:
@@ -8104,12 +8046,8 @@ call_00_38d2:
     db   $21, $8a, $03, $19, $5d, $54, $3e, $01        ;; 00:38f1 ????????
     db   $ea, $77, $c6, $ea, $00, $20, $21, $3a        ;; 00:38f9 ????????
     db   $75, $0e, $10, $1a, $be, $20, $08, $13        ;; 00:3901 ????????
-    db   $23, $0d, $20, $f7, $37                       ;; 00:3909 ?????
-
-jr_00_390e:
-    ccf                                                ;; 00:390e $3f
-    ret                                                ;; 00:390f $c9
-    db   $37, $c9                                      ;; 00:3910 ??
+    db   $23, $0d, $20, $f7, $37, $3f, $c9, $37        ;; 00:3909 ????????
+    db   $c9                                           ;; 00:3911 ?
 
 PlayerStateChecksum:
     ld   HL, hFF80                                     ;; 00:3912 $21 $80 $ff
@@ -8181,19 +8119,18 @@ call_00_39e1:
     ret                                                ;; 00:39ed $c9
 .jr_00_39ee:
     rst  rst_00_0020                                   ;; 00:39ee $e7
-    dw   data_00_39fd                                  ;; 00:39ef pP
-    db   $00                                           ;; 00:39f1 .
+    ThreeByteAddress someFunction39fd                  ;; 00:39ef $fd $39 $00
     ret                                                ;; 00:39f2 $c9
 .jr_00_39f3:
     rst  rst_00_0020                                   ;; 00:39f3 $e7
-    ld   [$035d], A                                    ;; 00:39f4 $ea $5d $03
+    ThreeByteAddress call_03_5dea                      ;; 00:39f4 $ea $5d $03
     ret                                                ;; 00:39f7 $c9
 .jr_00_39f8:
     rst  rst_00_0020                                   ;; 00:39f8 $e7
-    ld   [$035d], A                                    ;; 00:39f9 $ea $5d $03
+    ThreeByteAddress call_03_5dea                      ;; 00:39f9 $ea $5d $03
     ret                                                ;; 00:39fc $c9
 
-data_00_39fd:
+someFunction39fd:
     ld   A, [wC6A9]                                    ;; 00:39fd $fa $a9 $c6
     ld   [wCA93], A                                    ;; 00:3a00 $ea $93 $ca
     ld   A, [wSomeOffsetOfAddressArrayC6AA]            ;; 00:3a03 $fa $aa $c6
@@ -8291,20 +8228,18 @@ call_00_3a9a:
     ret                                                ;; 00:3aa6 $c9
 .caB8_was1:
     rst  rst_00_0020                                   ;; 00:3aa7 $e7
-    or   A, [HL]                                       ;; 00:3aa8 $b6
-    ld   A, [HL-]                                      ;; 00:3aa9 $3a
-    nop                                                ;; 00:3aaa $00
+    ThreeByteAddress call_00_3ab6                      ;; 00:3aa8 $b6 $3a $00
     ret                                                ;; 00:3aab $c9
 .caB8_was2:
     rst  rst_00_0020                                   ;; 00:3aac $e7
-    ld   C, $5e                                        ;; 00:3aad $0e $5e
-    inc  BC                                            ;; 00:3aaf $03
+    ThreeByteAddress call_03_5e0e                      ;; 00:3aad $0e $5e $03
     ret                                                ;; 00:3ab0 $c9
 .caB8_was3:
     rst  rst_00_0020                                   ;; 00:3ab1 $e7
-    ld   C, $5e                                        ;; 00:3ab2 $0e $5e
-    inc  BC                                            ;; 00:3ab4 $03
+    ThreeByteAddress call_03_5e0e                      ;; 00:3ab2 $0e $5e $03
     ret                                                ;; 00:3ab5 $c9
+
+call_00_3ab6:
     ld   HL, wPlayerStateRegionStartC718               ;; 00:3ab6 $21 $18 $c7
     ld   DE, sA020                                     ;; 00:3ab9 $11 $20 $a0
     ld   BC, $39a                                      ;; 00:3abc $01 $9a $03
@@ -8561,6 +8496,8 @@ call_00_3bf9:
     ld   [$2000], A                                    ;; 00:3c52 $ea $00 $20
     ld   [wCurrentRomBankC677], A                      ;; 00:3c55 $ea $77 $c6
     ret                                                ;; 00:3c58 $c9
+
+call_00_3c59:
     xor  A, A                                          ;; 00:3c59 $af
     ldh  [hFF88], A                                    ;; 00:3c5a $e0 $88
     ldh  A, [hFF81]                                    ;; 00:3c5c $f0 $81
@@ -8580,9 +8517,7 @@ call_00_3bf9:
     ldh  [hFF81], A                                    ;; 00:3c71 $e0 $81
 .jr_00_3c73:
     rst  rst_00_0020                                   ;; 00:3c73 $e7
-    sbc  A, E                                          ;; 00:3c74 $9b
-    inc  A                                             ;; 00:3c75 $3c
-    nop                                                ;; 00:3c76 $00
+    ThreeByteAddress call_00_3c9b                      ;; 00:3c74 $9b $3c $00
     ldh  A, [hFF88]                                    ;; 00:3c77 $f0 $88
     and  A, A                                          ;; 00:3c79 $a7
     jr   Z, .jr_00_3c9a                                ;; 00:3c7a $28 $1e
@@ -8610,6 +8545,8 @@ call_00_3bf9:
     ldh  [hFF87], A                                    ;; 00:3c98 $e0 $87
 .jr_00_3c9a:
     rst  rst_00_0028                                   ;; 00:3c9a $ef
+
+call_00_3c9b:
     push BC                                            ;; 00:3c9b $c5
     push DE                                            ;; 00:3c9c $d5
     ld   HL, hFF84                                     ;; 00:3c9d $21 $84 $ff

@@ -8,10 +8,7 @@ INCLUDE "include/constants.inc"
 SECTION "wram0", WRAM0[$c000]
 
 wC000:
-    ds 585                                             ;; c000
-
-wC249:
-    ds 87                                              ;; c249
+    ds 672                                             ;; c000
 
 wC2A0:
     ds 96                                              ;; c2a0
@@ -1406,10 +1403,7 @@ wC993:
 
 ; 86 * 2 = 172 bytes. Every other byte is FF. Value is obtain order.
 wHamChatDictArrayC9A3:
-    ds 62                                              ;; c9a3
-
-wC9E1:
-    ds 110                                             ;; c9e1
+    ds 172                                             ;; c9a3
 
 wNumHamChatsCA45:
     ds 1                                               ;; ca4f

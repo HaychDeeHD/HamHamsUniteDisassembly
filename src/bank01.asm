@@ -4576,6 +4576,8 @@ jp_01_5bfb:
     db   $c3, $5f, $fa, $8c, $c6, $83, $ea, $70        ;; 01:61e4 ????????
     db   $c3, $fa, $85, $c3, $5f, $fa, $8d, $c6        ;; 01:61ec ????????
     db   $8b, $ea, $71, $c3, $c3, $f3, $5c             ;; 01:61f4 ???????
+
+call_01_61fb:
     ldh  A, [rSVBK]                                    ;; 01:61fb $f0 $70
     push AF                                            ;; 01:61fd $f5
     call call_01_6211                                  ;; 01:61fe $cd $11 $62
@@ -6830,9 +6832,7 @@ call_01_77e1:
     xor  A, A                                          ;; 01:781f $af
     ldh  [C], A                                        ;; 01:7820 $e2
     rst  rst_00_0020                                   ;; 01:7821 $e7
-    ld   E, C                                          ;; 01:7822 $59
-    inc  A                                             ;; 01:7823 $3c
-    nop                                                ;; 01:7824 $00
+    ThreeByteAddress call_00_3c59                      ;; 01:7822 $59 $3c $00
     ldh  A, [hFF86]                                    ;; 01:7825 $f0 $86
     ld   [wC73E], A                                    ;; 01:7827 $ea $3e $c7
     ret                                                ;; 01:782a $c9

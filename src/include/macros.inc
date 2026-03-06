@@ -226,6 +226,10 @@ MACRO TXT
 SETCHARMAP HAMTEXT
 db \#
 ENDM
+MACRO ThreeByteAddress
+dw \1
+db BANK(\1)
+ENDM
 MACRO ld_long_load
 db $FA
 dw \2
