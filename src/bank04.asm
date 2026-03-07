@@ -1038,7 +1038,7 @@ data_04_48fe:
     dw   data_04_5c02                                  ;; 04:5b1e pP
     db   $04, $20                                      ;; 04:5b20 .w
 
-data_04_5b22:
+call_04_5b22:
     Op4E_Unknown_StoreValue 4, $01, $7b, $5c, $04      ;; 04:5b22 $4e $04 $01 $7b $5c $04
     Op4E_Unknown_StoreValue 5, $01, $be, $5c, $04      ;; 04:5b28 $4e $05 $01 $be $5c $04
     SCRIPT_RETURN_20                                   ;; 04:5b2e $20
@@ -1059,7 +1059,7 @@ data_04_5b22:
     Op4E_Unknown_StoreValue 5, $01, $69, $5d, $04      ;; 04:5b6f $4e $05 $01 $69 $5d $04
     SCRIPT_RETURN_20                                   ;; 04:5b75 $20
 
-data_04_5b76:
+call_04_5b76:
     Op4E_Unknown_StoreValue 4, $01, $d0, $5c, $04      ;; 04:5b76 $4e $04 $01 $d0 $5c $04
     Op4E_Unknown_StoreValue 5, $01, $e2, $5c, $04      ;; 04:5b7c $4e $05 $01 $e2 $5c $04
     SCRIPT_RETURN_20                                   ;; 04:5b82 $20
@@ -1250,7 +1250,7 @@ data_04_5e37:
     dw   wC333                                         ;; 04:5f4c pP
     db   $00, $00, $20                                 ;; 04:5f4e ..w
 
-data_04_5f51:
+call_04_5f51:
     Op4C_Unknown $00, $ff, $00, $00, $00, $00, $00, $43, $61, $04 ;; 04:5f51 $4c $00 $ff $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $02, $ff, $00, $00, $00, $00, $00, $43, $61, $04 ;; 04:5f5c $4c $02 $ff $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $04, $ff, $00, $00, $00, $00, $00, $43, $61, $04 ;; 04:5f67 $4c $04 $ff $00 $00 $00 $00 $00 $43 $61 $04
@@ -1314,7 +1314,7 @@ data_04_5f51:
     db   $88, $00, $00, $8e, $00, $00, $8c, $00        ;; 04:6153 ........
     db   $00, $80                                      ;; 04:615b ..
 
-data_04_615d:
+call_04_615d:
     db   $92, $00, $20, $1e, $69, $61, $04, $1e        ;; 04:615d w.w?????
     db   $e7, $61, $04, $20, $1e, $51, $5f, $04        ;; 04:6165 ????????
     db   $1e, $38, $5e, $04, $20, $84, $9a, $dd        ;; 04:616d ????????
@@ -1323,7 +1323,7 @@ data_04_615d:
     db   $00, $00, $00, $00, $40, $00, $00, $00        ;; 04:6185 ????????
     db   $01, $52, $94, $c6, $00, $00, $00, $20        ;; 04:618d ????????
 
-data_04_6195:
+call_04_6195:
     db   $6a, $00, $00, $00, $00, $40, $00, $00        ;; 04:6195 w....w..
     db   $00, $01, $52                                 ;; 04:619d ..w
     dw   wC694                                         ;; 04:61a0 pP
@@ -1336,7 +1336,7 @@ data_04_6195:
     db   $00, $00, $32, $47, $74, $7d, $a0, $dd        ;; 04:61bf ????????
     db   $06, $4e, $00, $01, $08, $5b, $04, $20        ;; 04:61c7 ????????
 
-data_04_61cf:
+call_04_61cf:
     db   $6a, $00, $00, $00, $00, $40, $00, $00        ;; 04:61cf w....w..
     db   $00, $01, $52                                 ;; 04:61d7 ..w
     dw   wC694                                         ;; 04:61da pP
@@ -1351,23 +1351,23 @@ data_04_61cf:
     db   $77, $7f, $9a, $dd, $01, $20, $36, $0f        ;; 04:6215 ????????
     db   $5c, $7f, $9a, $dd, $01, $20                  ;; 04:621d ??????
 
-data_04_6223:
+call_04_6223:
     Op4E_Unknown_StoreValue 0, $01, $08, $5b, $04      ;; 04:6223 $4e $00 $01 $08 $5b $04
     Op50_WriteByte wC306, $00, $00                     ;; 04:6229 $50 $06 $c3 $00 $00
     SCRIPT_RETURN_20                                   ;; 04:622e $20
-    Op1E_Call data_04_6238                             ;; 04:622f $1e $38 $62 $04
-    Op1E_Call data_04_64ad                             ;; 04:6233 $1e $ad $64 $04
+    Op1E_Call call_04_6238                             ;; 04:622f $1e $38 $62 $04
+    Op1E_Call call_04_64ad                             ;; 04:6233 $1e $ad $64 $04
     SCRIPT_RETURN_20                                   ;; 04:6237 $20
 
-data_04_6238:
+call_04_6238:
     SCRIPT_RETURN_20                                   ;; 04:6238 $20
-    Op1E_Call data_04_6242                             ;; 04:6239 $1e $42 $62 $04
-    Op1E_Call data_04_6576                             ;; 04:623d $1e $76 $65 $04
+    Op1E_Call call_04_6242                             ;; 04:6239 $1e $42 $62 $04
+    Op1E_Call call_04_6576                             ;; 04:623d $1e $76 $65 $04
     SCRIPT_RETURN_20                                   ;; 04:6241 $20
 
-data_04_6242:
+call_04_6242:
     SCRIPT_RETURN_20                                   ;; 04:6242 $20
-    Op1E_Call data_04_6576                             ;; 04:6243 $1e $76 $65 $04
+    Op1E_Call call_04_6576                             ;; 04:6243 $1e $76 $65 $04
     SCRIPT_RETURN_20                                   ;; 04:6247 $20
     db   $6a, $00, $00, $00, $00, $92, $00, $4a        ;; 04:6248 ????????
     db   $1e, $1b, $62, $04, $94, $00, $00, $14        ;; 04:6250 ????????
@@ -1447,7 +1447,7 @@ data_04_6242:
     db   $00, $c0, $00, $7e, $c0, $d8, $07, $c0        ;; 04:64a0 ????????
     db   $98, $01, $c0, $00, $20                       ;; 04:64a8 ?????
 
-data_04_64ad:
+call_04_64ad:
     db   $86, $00, $d8, $05, $00, $98, $00, $c0        ;; 04:64ad ????????
     db   $00, $7e, $00, $d8, $07, $00, $98, $01        ;; 04:64b5 ????????
     db   $c0, $00, $86, $c0, $d8, $05, $c0, $98        ;; 04:64bd ????????
@@ -1475,7 +1475,7 @@ data_04_64ad:
     db   $c0, $dc, $07, $c0, $9c, $01, $c0, $00        ;; 04:656d ????????
     db   $20                                           ;; 04:6575 ?
 
-data_04_6576:
+call_04_6576:
     db   $86, $00, $dc, $05, $00, $9c, $00, $c0        ;; 04:6576 ????????
     db   $00, $7e, $00, $dc, $07, $00, $9c, $01        ;; 04:657e ????????
     db   $c0, $00, $86, $c0, $dc, $05, $c0, $9c        ;; 04:6586 ????????
@@ -1499,7 +1499,7 @@ data_04_6576:
     db   $00, $04, $20, $50, $78, $c4, $00, $05        ;; 04:6604 ..w?????
     db   $20                                           ;; 04:660c ?
 
-data_04_660d:
+call_04_660d:
     Op50_WriteByte wC479, $00, $03                     ;; 04:660d $50 $79 $c4 $00 $03
     SCRIPT_RETURN_20                                   ;; 04:6612 $20
     Op50_WriteByte wC479, $00, $04                     ;; 04:6613 $50 $79 $c4 $00 $04
@@ -1517,1010 +1517,1010 @@ data_04_660d:
     Op50_WriteByte wC728, $00, $09                     ;; 04:6639 $50 $28 $c7 $00 $09
     SCRIPT_RETURN_20                                   ;; 04:663e $20
 
-data_04_663f:
+call_04_663f:
     db   $92, $00, $44, $08, $00, $50                  ;; 04:663f w.w..w
     dw   wC3F8                                         ;; 04:6645 pP
     db   $00, $03, $18                                 ;; 04:6647 ..w
     dw   $6631                                         ;; 04:664a wW
     db   $04                                           ;; 04:664c .
 
-data_04_664d:
+call_04_664d:
     db   $92, $00, $44, $08, $00, $50                  ;; 04:664d w.w..w
     dw   wC3F8                                         ;; 04:6653 pP
     db   $00, $00, $18                                 ;; 04:6655 ..w
     dw   $6631                                         ;; 04:6658 wW
     db   $04                                           ;; 04:665a .
 
-data_04_665b:
-    Op1E_Call data_04_6f2d                             ;; 04:665b $1e $2d $6f $04
-    Op18_Jump data_04_666b                             ;; 04:665f $18 $6b $66 $04
+call_04_665b:
+    Op1E_Call call_04_6f2d                             ;; 04:665b $1e $2d $6f $04
+    Op18_Jump call_04_666b                             ;; 04:665f $18 $6b $66 $04
 
-data_04_6663:
-    Op1E_Call data_04_6f38                             ;; 04:6663 $1e $38 $6f $04
-    Op18_Jump data_04_666b                             ;; 04:6667 $18 $6b $66 $04
+call_04_6663:
+    Op1E_Call call_04_6f38                             ;; 04:6663 $1e $38 $6f $04
+    Op18_Jump call_04_666b                             ;; 04:6667 $18 $6b $66 $04
 
-data_04_666b:
+call_04_666b:
     Op36_Unknown $c3, $70, $7f, $a2, $dd, $01          ;; 04:666b $36 $c3 $70 $7f $a2 $dd $01
     Op32_Unknown $e3, $74, $7a, $60, $dc, $06          ;; 04:6672 $32 $e3 $74 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6679 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6679 $18 $43 $6f $04
 
-data_04_667d:
-    Op1E_Call data_04_6f2d                             ;; 04:667d $1e $2d $6f $04
-    Op18_Jump data_04_668d                             ;; 04:6681 $18 $8d $66 $04
+call_04_667d:
+    Op1E_Call call_04_6f2d                             ;; 04:667d $1e $2d $6f $04
+    Op18_Jump call_04_668d                             ;; 04:6681 $18 $8d $66 $04
 
-data_04_6685:
-    Op1E_Call data_04_6f38                             ;; 04:6685 $1e $38 $6f $04
-    Op18_Jump data_04_668d                             ;; 04:6689 $18 $8d $66 $04
+call_04_6685:
+    Op1E_Call call_04_6f38                             ;; 04:6685 $1e $38 $6f $04
+    Op18_Jump call_04_668d                             ;; 04:6689 $18 $8d $66 $04
 
-data_04_668d:
+call_04_668d:
     Op36_Unknown $b9, $70, $7f, $a2, $dd, $01          ;; 04:668d $36 $b9 $70 $7f $a2 $dd $01
     Op32_Unknown $fe, $71, $78, $60, $dc, $06          ;; 04:6694 $32 $fe $71 $78 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:669b $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:669b $18 $43 $6f $04
 
-data_04_669f:
-    Op1E_Call data_04_6f2d                             ;; 04:669f $1e $2d $6f $04
-    Op18_Jump data_04_66af                             ;; 04:66a3 $18 $af $66 $04
+call_04_669f:
+    Op1E_Call call_04_6f2d                             ;; 04:669f $1e $2d $6f $04
+    Op18_Jump call_04_66af                             ;; 04:66a3 $18 $af $66 $04
 
-data_04_66a7:
-    Op1E_Call data_04_6f38                             ;; 04:66a7 $1e $38 $6f $04
-    Op18_Jump data_04_66af                             ;; 04:66ab $18 $af $66 $04
+call_04_66a7:
+    Op1E_Call call_04_6f38                             ;; 04:66a7 $1e $38 $6f $04
+    Op18_Jump call_04_66af                             ;; 04:66ab $18 $af $66 $04
 
-data_04_66af:
+call_04_66af:
     Op36_Unknown $eb, $70, $7f, $a2, $dd, $01          ;; 04:66af $36 $eb $70 $7f $a2 $dd $01
     Op32_Unknown $f0, $6c, $79, $60, $dc, $06          ;; 04:66b6 $32 $f0 $6c $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:66bd $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:66bd $18 $43 $6f $04
 
-data_04_66c1:
-    Op1E_Call data_04_6f2d                             ;; 04:66c1 $1e $2d $6f $04
-    Op18_Jump data_04_66d1                             ;; 04:66c5 $18 $d1 $66 $04
+call_04_66c1:
+    Op1E_Call call_04_6f2d                             ;; 04:66c1 $1e $2d $6f $04
+    Op18_Jump call_04_66d1                             ;; 04:66c5 $18 $d1 $66 $04
 
-data_04_66c9:
-    Op1E_Call data_04_6f38                             ;; 04:66c9 $1e $38 $6f $04
-    Op18_Jump data_04_66d1                             ;; 04:66cd $18 $d1 $66 $04
+call_04_66c9:
+    Op1E_Call call_04_6f38                             ;; 04:66c9 $1e $38 $6f $04
+    Op18_Jump call_04_66d1                             ;; 04:66cd $18 $d1 $66 $04
 
-data_04_66d1:
+call_04_66d1:
     Op36_Unknown $cd, $70, $7f, $a2, $dd, $01          ;; 04:66d1 $36 $cd $70 $7f $a2 $dd $01
     Op32_Unknown $aa, $67, $79, $60, $dc, $06          ;; 04:66d8 $32 $aa $67 $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:66df $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:66df $18 $43 $6f $04
 
-data_04_66e3:
-    Op1E_Call data_04_6f2d                             ;; 04:66e3 $1e $2d $6f $04
-    Op18_Jump data_04_66f3                             ;; 04:66e7 $18 $f3 $66 $04
+call_04_66e3:
+    Op1E_Call call_04_6f2d                             ;; 04:66e3 $1e $2d $6f $04
+    Op18_Jump call_04_66f3                             ;; 04:66e7 $18 $f3 $66 $04
 
-data_04_66eb:
-    Op1E_Call data_04_6f38                             ;; 04:66eb $1e $38 $6f $04
-    Op18_Jump data_04_66f3                             ;; 04:66ef $18 $f3 $66 $04
+call_04_66eb:
+    Op1E_Call call_04_6f38                             ;; 04:66eb $1e $38 $6f $04
+    Op18_Jump call_04_66f3                             ;; 04:66ef $18 $f3 $66 $04
 
-data_04_66f3:
+call_04_66f3:
     Op36_Unknown $af, $70, $7f, $a2, $dd, $01          ;; 04:66f3 $36 $af $70 $7f $a2 $dd $01
     Op32_Unknown $95, $7b, $79, $60, $dc, $06          ;; 04:66fa $32 $95 $7b $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6701 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6701 $18 $43 $6f $04
 
-data_04_6705:
-    Op1E_Call data_04_6f2d                             ;; 04:6705 $1e $2d $6f $04
-    Op18_Jump data_04_6715                             ;; 04:6709 $18 $15 $67 $04
+call_04_6705:
+    Op1E_Call call_04_6f2d                             ;; 04:6705 $1e $2d $6f $04
+    Op18_Jump call_04_6715                             ;; 04:6709 $18 $15 $67 $04
 
-data_04_670d:
-    Op1E_Call data_04_6f38                             ;; 04:670d $1e $38 $6f $04
-    Op18_Jump data_04_6715                             ;; 04:6711 $18 $15 $67 $04
+call_04_670d:
+    Op1E_Call call_04_6f38                             ;; 04:670d $1e $38 $6f $04
+    Op18_Jump call_04_6715                             ;; 04:6711 $18 $15 $67 $04
 
-data_04_6715:
+call_04_6715:
     Op36_Unknown $7d, $70, $7f, $a2, $dd, $01          ;; 04:6715 $36 $7d $70 $7f $a2 $dd $01
     Op32_Unknown $2a, $78, $79, $60, $dc, $06          ;; 04:671c $32 $2a $78 $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6723 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6723 $18 $43 $6f $04
 
-data_04_6727:
-    Op1E_Call data_04_6f2d                             ;; 04:6727 $1e $2d $6f $04
-    Op18_Jump data_04_6737                             ;; 04:672b $18 $37 $67 $04
+call_04_6727:
+    Op1E_Call call_04_6f2d                             ;; 04:6727 $1e $2d $6f $04
+    Op18_Jump call_04_6737                             ;; 04:672b $18 $37 $67 $04
 
-data_04_672f:
-    Op1E_Call data_04_6f38                             ;; 04:672f $1e $38 $6f $04
-    Op18_Jump data_04_6737                             ;; 04:6733 $18 $37 $67 $04
+call_04_672f:
+    Op1E_Call call_04_6f38                             ;; 04:672f $1e $38 $6f $04
+    Op18_Jump call_04_6737                             ;; 04:6733 $18 $37 $67 $04
 
-data_04_6737:
+call_04_6737:
     Op36_Unknown $91, $70, $7f, $a2, $dd, $01          ;; 04:6737 $36 $91 $70 $7f $a2 $dd $01
     Op32_Unknown $c8, $66, $79, $60, $dc, $06          ;; 04:673e $32 $c8 $66 $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6745 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6745 $18 $43 $6f $04
 
-data_04_6749:
-    Op1E_Call data_04_6f2d                             ;; 04:6749 $1e $2d $6f $04
-    Op18_Jump data_04_6759                             ;; 04:674d $18 $59 $67 $04
+call_04_6749:
+    Op1E_Call call_04_6f2d                             ;; 04:6749 $1e $2d $6f $04
+    Op18_Jump call_04_6759                             ;; 04:674d $18 $59 $67 $04
 
-data_04_6751:
-    Op1E_Call data_04_6f38                             ;; 04:6751 $1e $38 $6f $04
-    Op18_Jump data_04_6759                             ;; 04:6755 $18 $59 $67 $04
+call_04_6751:
+    Op1E_Call call_04_6f38                             ;; 04:6751 $1e $38 $6f $04
+    Op18_Jump call_04_6759                             ;; 04:6755 $18 $59 $67 $04
 
-data_04_6759:
+call_04_6759:
     Op36_Unknown $87, $70, $7f, $a2, $dd, $01          ;; 04:6759 $36 $87 $70 $7f $a2 $dd $01
     Op32_Unknown $10, $6c, $79, $60, $dc, $06          ;; 04:6760 $32 $10 $6c $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6767 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6767 $18 $43 $6f $04
 
-data_04_676b:
-    Op1E_Call data_04_6f2d                             ;; 04:676b $1e $2d $6f $04
-    Op18_Jump data_04_677b                             ;; 04:676f $18 $7b $67 $04
+call_04_676b:
+    Op1E_Call call_04_6f2d                             ;; 04:676b $1e $2d $6f $04
+    Op18_Jump call_04_677b                             ;; 04:676f $18 $7b $67 $04
 
-data_04_6773:
-    Op1E_Call data_04_6f38                             ;; 04:6773 $1e $38 $6f $04
-    Op18_Jump data_04_677b                             ;; 04:6777 $18 $7b $67 $04
+call_04_6773:
+    Op1E_Call call_04_6f38                             ;; 04:6773 $1e $38 $6f $04
+    Op18_Jump call_04_677b                             ;; 04:6777 $18 $7b $67 $04
 
-data_04_677b:
+call_04_677b:
     Op36_Unknown $9d, $73, $7f, $a2, $dd, $01          ;; 04:677b $36 $9d $73 $7f $a2 $dd $01
     Op32_Unknown $62, $4b, $79, $60, $dc, $06          ;; 04:6782 $32 $62 $4b $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6789 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6789 $18 $43 $6f $04
 
-data_04_678d:
-    Op1E_Call data_04_6f2d                             ;; 04:678d $1e $2d $6f $04
-    Op18_Jump data_04_679d                             ;; 04:6791 $18 $9d $67 $04
+call_04_678d:
+    Op1E_Call call_04_6f2d                             ;; 04:678d $1e $2d $6f $04
+    Op18_Jump call_04_679d                             ;; 04:6791 $18 $9d $67 $04
 
-data_04_6795:
-    Op1E_Call data_04_6f38                             ;; 04:6795 $1e $38 $6f $04
-    Op18_Jump data_04_679d                             ;; 04:6799 $18 $9d $67 $04
+call_04_6795:
+    Op1E_Call call_04_6f38                             ;; 04:6795 $1e $38 $6f $04
+    Op18_Jump call_04_679d                             ;; 04:6799 $18 $9d $67 $04
 
-data_04_679d:
+call_04_679d:
     Op36_Unknown $f5, $70, $7f, $a2, $dd, $01          ;; 04:679d $36 $f5 $70 $7f $a2 $dd $01
     Op32_Unknown $bc, $46, $7a, $60, $dc, $06          ;; 04:67a4 $32 $bc $46 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:67ab $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:67ab $18 $43 $6f $04
 
-data_04_67af:
-    Op1E_Call data_04_6f2d                             ;; 04:67af $1e $2d $6f $04
-    Op18_Jump data_04_67bf                             ;; 04:67b3 $18 $bf $67 $04
+call_04_67af:
+    Op1E_Call call_04_6f2d                             ;; 04:67af $1e $2d $6f $04
+    Op18_Jump call_04_67bf                             ;; 04:67b3 $18 $bf $67 $04
 
-data_04_67b7:
-    Op1E_Call data_04_6f38                             ;; 04:67b7 $1e $38 $6f $04
-    Op18_Jump data_04_67bf                             ;; 04:67bb $18 $bf $67 $04
+call_04_67b7:
+    Op1E_Call call_04_6f38                             ;; 04:67b7 $1e $38 $6f $04
+    Op18_Jump call_04_67bf                             ;; 04:67bb $18 $bf $67 $04
 
-data_04_67bf:
+call_04_67bf:
     Op36_Unknown $e1, $70, $7f, $a2, $dd, $01          ;; 04:67bf $36 $e1 $70 $7f $a2 $dd $01
     Op32_Unknown $d1, $61, $7a, $60, $dc, $06          ;; 04:67c6 $32 $d1 $61 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:67cd $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:67cd $18 $43 $6f $04
 
-data_04_67d1:
-    Op1E_Call data_04_6f2d                             ;; 04:67d1 $1e $2d $6f $04
-    Op18_Jump data_04_67e1                             ;; 04:67d5 $18 $e1 $67 $04
+call_04_67d1:
+    Op1E_Call call_04_6f2d                             ;; 04:67d1 $1e $2d $6f $04
+    Op18_Jump call_04_67e1                             ;; 04:67d5 $18 $e1 $67 $04
 
-data_04_67d9:
-    Op1E_Call data_04_6f38                             ;; 04:67d9 $1e $38 $6f $04
-    Op18_Jump data_04_67e1                             ;; 04:67dd $18 $e1 $67 $04
+call_04_67d9:
+    Op1E_Call call_04_6f38                             ;; 04:67d9 $1e $38 $6f $04
+    Op18_Jump call_04_67e1                             ;; 04:67dd $18 $e1 $67 $04
 
-data_04_67e1:
+call_04_67e1:
     Op36_Unknown $d7, $70, $7f, $a2, $dd, $01          ;; 04:67e1 $36 $d7 $70 $7f $a2 $dd $01
     Op32_Unknown $fa, $7e, $79, $60, $dc, $06          ;; 04:67e8 $32 $fa $7e $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:67ef $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:67ef $18 $43 $6f $04
 
-data_04_67f3:
-    Op1E_Call data_04_6f2d                             ;; 04:67f3 $1e $2d $6f $04
-    Op18_Jump data_04_6803                             ;; 04:67f7 $18 $03 $68 $04
+call_04_67f3:
+    Op1E_Call call_04_6f2d                             ;; 04:67f3 $1e $2d $6f $04
+    Op18_Jump call_04_6803                             ;; 04:67f7 $18 $03 $68 $04
 
-data_04_67fb:
-    Op1E_Call data_04_6f38                             ;; 04:67fb $1e $38 $6f $04
-    Op18_Jump data_04_6803                             ;; 04:67ff $18 $03 $68 $04
+call_04_67fb:
+    Op1E_Call call_04_6f38                             ;; 04:67fb $1e $38 $6f $04
+    Op18_Jump call_04_6803                             ;; 04:67ff $18 $03 $68 $04
 
-data_04_6803:
+call_04_6803:
     Op36_Unknown $9b, $70, $7f, $a2, $dd, $01          ;; 04:6803 $36 $9b $70 $7f $a2 $dd $01
     Op32_Unknown $c8, $53, $79, $60, $dc, $06          ;; 04:680a $32 $c8 $53 $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6811 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6811 $18 $43 $6f $04
 
-data_04_6815:
-    Op1E_Call data_04_6f2d                             ;; 04:6815 $1e $2d $6f $04
-    Op18_Jump data_04_6821                             ;; 04:6819 $18 $21 $68 $04
+call_04_6815:
+    Op1E_Call call_04_6f2d                             ;; 04:6815 $1e $2d $6f $04
+    Op18_Jump call_04_6821                             ;; 04:6819 $18 $21 $68 $04
 
-data_04_681d:
-    Op1E_Call data_04_6f38                             ;; 04:681d $1e $38 $6f $04
+call_04_681d:
+    Op1E_Call call_04_6f38                             ;; 04:681d $1e $38 $6f $04
 
-data_04_6821:
+call_04_6821:
     Op36_Unknown $a5, $70, $7f, $a2, $dd, $01          ;; 04:6821 $36 $a5 $70 $7f $a2 $dd $01
     Op32_Unknown $db, $7b, $7a, $60, $dc, $06          ;; 04:6828 $32 $db $7b $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:682f $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:682f $18 $43 $6f $04
 
-data_04_6833:
-    Op1E_Call data_04_6f2d                             ;; 04:6833 $1e $2d $6f $04
-    Op18_Jump data_04_683f                             ;; 04:6837 $18 $3f $68 $04
+call_04_6833:
+    Op1E_Call call_04_6f2d                             ;; 04:6833 $1e $2d $6f $04
+    Op18_Jump call_04_683f                             ;; 04:6837 $18 $3f $68 $04
 
-data_04_683b:
-    Op1E_Call data_04_6f38                             ;; 04:683b $1e $38 $6f $04
+call_04_683b:
+    Op1E_Call call_04_6f38                             ;; 04:683b $1e $38 $6f $04
 
-data_04_683f:
+call_04_683f:
     Op36_Unknown $ff, $70, $7f, $a2, $dd, $01          ;; 04:683f $36 $ff $70 $7f $a2 $dd $01
     Op32_Unknown $e3, $58, $7a, $60, $dc, $06          ;; 04:6846 $32 $e3 $58 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:684d $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:684d $18 $43 $6f $04
 
-data_04_6851:
-    Op1E_Call data_04_6f2d                             ;; 04:6851 $1e $2d $6f $04
-    Op18_Jump data_04_685d                             ;; 04:6855 $18 $5d $68 $04
+call_04_6851:
+    Op1E_Call call_04_6f2d                             ;; 04:6851 $1e $2d $6f $04
+    Op18_Jump call_04_685d                             ;; 04:6855 $18 $5d $68 $04
 
-data_04_6859:
-    Op1E_Call data_04_6f38                             ;; 04:6859 $1e $38 $6f $04
+call_04_6859:
+    Op1E_Call call_04_6f38                             ;; 04:6859 $1e $38 $6f $04
 
-data_04_685d:
+call_04_685d:
     Op36_Unknown $d5, $72, $7f, $a2, $dd, $01          ;; 04:685d $36 $d5 $72 $7f $a2 $dd $01
 
-data_04_6864:
+call_04_6864:
     Op32_Unknown $85, $51, $7a, $60, $dc, $06          ;; 04:6864 $32 $85 $51 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:686b $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:686b $18 $43 $6f $04
 
-data_04_686f:
-    Op1E_Call data_04_6f2d                             ;; 04:686f $1e $2d $6f $04
-    Op18_Jump data_04_687b                             ;; 04:6873 $18 $7b $68 $04
+call_04_686f:
+    Op1E_Call call_04_6f2d                             ;; 04:686f $1e $2d $6f $04
+    Op18_Jump call_04_687b                             ;; 04:6873 $18 $7b $68 $04
 
-data_04_6877:
-    Op1E_Call data_04_6f38                             ;; 04:6877 $1e $38 $6f $04
+call_04_6877:
+    Op1E_Call call_04_6f38                             ;; 04:6877 $1e $38 $6f $04
 
-data_04_687b:
+call_04_687b:
     Op36_Unknown $e9, $72, $7f, $a2, $dd, $01          ;; 04:687b $36 $e9 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6864                             ;; 04:6882 $18 $64 $68 $04
+    Op18_Jump call_04_6864                             ;; 04:6882 $18 $64 $68 $04
 
-data_04_6886:
-    Op1E_Call data_04_6f2d                             ;; 04:6886 $1e $2d $6f $04
-    Op18_Jump data_04_6892                             ;; 04:688a $18 $92 $68 $04
+call_04_6886:
+    Op1E_Call call_04_6f2d                             ;; 04:6886 $1e $2d $6f $04
+    Op18_Jump call_04_6892                             ;; 04:688a $18 $92 $68 $04
 
-data_04_688e:
-    Op1E_Call data_04_6f38                             ;; 04:688e $1e $38 $6f $04
+call_04_688e:
+    Op1E_Call call_04_6f38                             ;; 04:688e $1e $38 $6f $04
 
-data_04_6892:
+call_04_6892:
     Op36_Unknown $df, $72, $7f, $a2, $dd, $01          ;; 04:6892 $36 $df $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6864                             ;; 04:6899 $18 $64 $68 $04
+    Op18_Jump call_04_6864                             ;; 04:6899 $18 $64 $68 $04
 
-data_04_689d:
-    Op1E_Call data_04_6f2d                             ;; 04:689d $1e $2d $6f $04
-    Op18_Jump data_04_68a9                             ;; 04:68a1 $18 $a9 $68 $04
+call_04_689d:
+    Op1E_Call call_04_6f2d                             ;; 04:689d $1e $2d $6f $04
+    Op18_Jump call_04_68a9                             ;; 04:68a1 $18 $a9 $68 $04
 
-data_04_68a5:
-    Op1E_Call data_04_6f38                             ;; 04:68a5 $1e $38 $6f $04
+call_04_68a5:
+    Op1E_Call call_04_6f38                             ;; 04:68a5 $1e $38 $6f $04
 
-data_04_68a9:
+call_04_68a9:
     Op36_Unknown $ad, $72, $7f, $a2, $dd, $01          ;; 04:68a9 $36 $ad $72 $7f $a2 $dd $01
 
-data_04_68b0:
+call_04_68b0:
     Op32_Unknown $c3, $40, $7b, $60, $dc, $06          ;; 04:68b0 $32 $c3 $40 $7b $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:68b7 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:68b7 $18 $43 $6f $04
 
-data_04_68bb:
-    Op1E_Call data_04_6f2d                             ;; 04:68bb $1e $2d $6f $04
-    Op18_Jump data_04_68c7                             ;; 04:68bf $18 $c7 $68 $04
+call_04_68bb:
+    Op1E_Call call_04_6f2d                             ;; 04:68bb $1e $2d $6f $04
+    Op18_Jump call_04_68c7                             ;; 04:68bf $18 $c7 $68 $04
 
-data_04_68c3:
-    Op1E_Call data_04_6f38                             ;; 04:68c3 $1e $38 $6f $04
+call_04_68c3:
+    Op1E_Call call_04_6f38                             ;; 04:68c3 $1e $38 $6f $04
 
-data_04_68c7:
+call_04_68c7:
     Op36_Unknown $cb, $72, $7f, $a2, $dd, $01          ;; 04:68c7 $36 $cb $72 $7f $a2 $dd $01
-    Op18_Jump data_04_68b0                             ;; 04:68ce $18 $b0 $68 $04
+    Op18_Jump call_04_68b0                             ;; 04:68ce $18 $b0 $68 $04
 
-data_04_68d2:
-    Op1E_Call data_04_6f2d                             ;; 04:68d2 $1e $2d $6f $04
-    Op18_Jump data_04_68de                             ;; 04:68d6 $18 $de $68 $04
+call_04_68d2:
+    Op1E_Call call_04_6f2d                             ;; 04:68d2 $1e $2d $6f $04
+    Op18_Jump call_04_68de                             ;; 04:68d6 $18 $de $68 $04
 
-data_04_68da:
-    Op1E_Call data_04_6f38                             ;; 04:68da $1e $38 $6f $04
+call_04_68da:
+    Op1E_Call call_04_6f38                             ;; 04:68da $1e $38 $6f $04
 
-data_04_68de:
+call_04_68de:
     Op36_Unknown $c1, $72, $7f, $a2, $dd, $01          ;; 04:68de $36 $c1 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_68b0                             ;; 04:68e5 $18 $b0 $68 $04
+    Op18_Jump call_04_68b0                             ;; 04:68e5 $18 $b0 $68 $04
 
-data_04_68e9:
-    Op1E_Call data_04_6f2d                             ;; 04:68e9 $1e $2d $6f $04
-    Op18_Jump data_04_68f5                             ;; 04:68ed $18 $f5 $68 $04
+call_04_68e9:
+    Op1E_Call call_04_6f2d                             ;; 04:68e9 $1e $2d $6f $04
+    Op18_Jump call_04_68f5                             ;; 04:68ed $18 $f5 $68 $04
 
-data_04_68f1:
-    Op1E_Call data_04_6f38                             ;; 04:68f1 $1e $38 $6f $04
+call_04_68f1:
+    Op1E_Call call_04_6f38                             ;; 04:68f1 $1e $38 $6f $04
 
-data_04_68f5:
+call_04_68f5:
     Op36_Unknown $b7, $72, $7f, $a2, $dd, $01          ;; 04:68f5 $36 $b7 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_68b0                             ;; 04:68fc $18 $b0 $68 $04
+    Op18_Jump call_04_68b0                             ;; 04:68fc $18 $b0 $68 $04
 
-data_04_6900:
-    Op1E_Call data_04_6f2d                             ;; 04:6900 $1e $2d $6f $04
-    Op18_Jump data_04_690c                             ;; 04:6904 $18 $0c $69 $04
+call_04_6900:
+    Op1E_Call call_04_6f2d                             ;; 04:6900 $1e $2d $6f $04
+    Op18_Jump call_04_690c                             ;; 04:6904 $18 $0c $69 $04
 
-data_04_6908:
-    Op1E_Call data_04_6f38                             ;; 04:6908 $1e $38 $6f $04
+call_04_6908:
+    Op1E_Call call_04_6f38                             ;; 04:6908 $1e $38 $6f $04
 
-data_04_690c:
+call_04_690c:
     Op36_Unknown $5d, $72, $7f, $a2, $dd, $01          ;; 04:690c $36 $5d $72 $7f $a2 $dd $01
 
-data_04_6913:
+call_04_6913:
     Op32_Unknown $00, $40, $7b, $60, $dc, $06          ;; 04:6913 $32 $00 $40 $7b $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:691a $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:691a $18 $43 $6f $04
 
-data_04_691e:
-    Op1E_Call data_04_6f2d                             ;; 04:691e $1e $2d $6f $04
-    Op18_Jump data_04_692a                             ;; 04:6922 $18 $2a $69 $04
+call_04_691e:
+    Op1E_Call call_04_6f2d                             ;; 04:691e $1e $2d $6f $04
+    Op18_Jump call_04_692a                             ;; 04:6922 $18 $2a $69 $04
 
-data_04_6926:
-    Op1E_Call data_04_6f38                             ;; 04:6926 $1e $38 $6f $04
+call_04_6926:
+    Op1E_Call call_04_6f38                             ;; 04:6926 $1e $38 $6f $04
 
-data_04_692a:
+call_04_692a:
     Op36_Unknown $a3, $72, $7f, $a2, $dd, $01          ;; 04:692a $36 $a3 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6913                             ;; 04:6931 $18 $13 $69 $04
+    Op18_Jump call_04_6913                             ;; 04:6931 $18 $13 $69 $04
 
-data_04_6935:
-    Op1E_Call data_04_6f2d                             ;; 04:6935 $1e $2d $6f $04
-    Op18_Jump data_04_6941                             ;; 04:6939 $18 $41 $69 $04
+call_04_6935:
+    Op1E_Call call_04_6f2d                             ;; 04:6935 $1e $2d $6f $04
+    Op18_Jump call_04_6941                             ;; 04:6939 $18 $41 $69 $04
 
-data_04_693d:
-    Op1E_Call data_04_6f38                             ;; 04:693d $1e $38 $6f $04
+call_04_693d:
+    Op1E_Call call_04_6f38                             ;; 04:693d $1e $38 $6f $04
 
-data_04_6941:
+call_04_6941:
     Op36_Unknown $99, $72, $7f, $a2, $dd, $01          ;; 04:6941 $36 $99 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6913                             ;; 04:6948 $18 $13 $69 $04
+    Op18_Jump call_04_6913                             ;; 04:6948 $18 $13 $69 $04
 
-data_04_694c:
-    Op1E_Call data_04_6f2d                             ;; 04:694c $1e $2d $6f $04
-    Op18_Jump data_04_6958                             ;; 04:6950 $18 $58 $69 $04
+call_04_694c:
+    Op1E_Call call_04_6f2d                             ;; 04:694c $1e $2d $6f $04
+    Op18_Jump call_04_6958                             ;; 04:6950 $18 $58 $69 $04
 
-data_04_6954:
-    Op1E_Call data_04_6f38                             ;; 04:6954 $1e $38 $6f $04
+call_04_6954:
+    Op1E_Call call_04_6f38                             ;; 04:6954 $1e $38 $6f $04
 
-data_04_6958:
+call_04_6958:
     Op36_Unknown $8f, $72, $7f, $a2, $dd, $01          ;; 04:6958 $36 $8f $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6913                             ;; 04:695f $18 $13 $69 $04
+    Op18_Jump call_04_6913                             ;; 04:695f $18 $13 $69 $04
 
-data_04_6963:
-    Op1E_Call data_04_6f2d                             ;; 04:6963 $1e $2d $6f $04
-    Op18_Jump data_04_696f                             ;; 04:6967 $18 $6f $69 $04
+call_04_6963:
+    Op1E_Call call_04_6f2d                             ;; 04:6963 $1e $2d $6f $04
+    Op18_Jump call_04_696f                             ;; 04:6967 $18 $6f $69 $04
 
-data_04_696b:
-    Op1E_Call data_04_6f38                             ;; 04:696b $1e $38 $6f $04
+call_04_696b:
+    Op1E_Call call_04_6f38                             ;; 04:696b $1e $38 $6f $04
 
-data_04_696f:
+call_04_696f:
     Op36_Unknown $85, $72, $7f, $a2, $dd, $01          ;; 04:696f $36 $85 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6913                             ;; 04:6976 $18 $13 $69 $04
+    Op18_Jump call_04_6913                             ;; 04:6976 $18 $13 $69 $04
 
-data_04_697a:
-    Op1E_Call data_04_6f2d                             ;; 04:697a $1e $2d $6f $04
-    Op18_Jump data_04_6986                             ;; 04:697e $18 $86 $69 $04
+call_04_697a:
+    Op1E_Call call_04_6f2d                             ;; 04:697a $1e $2d $6f $04
+    Op18_Jump call_04_6986                             ;; 04:697e $18 $86 $69 $04
 
-data_04_6982:
-    Op1E_Call data_04_6f38                             ;; 04:6982 $1e $38 $6f $04
+call_04_6982:
+    Op1E_Call call_04_6f38                             ;; 04:6982 $1e $38 $6f $04
 
-data_04_6986:
+call_04_6986:
     Op36_Unknown $7b, $72, $7f, $a2, $dd, $01          ;; 04:6986 $36 $7b $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6913                             ;; 04:698d $18 $13 $69 $04
+    Op18_Jump call_04_6913                             ;; 04:698d $18 $13 $69 $04
 
-data_04_6991:
-    Op1E_Call data_04_6f2d                             ;; 04:6991 $1e $2d $6f $04
-    Op18_Jump data_04_699d                             ;; 04:6995 $18 $9d $69 $04
+call_04_6991:
+    Op1E_Call call_04_6f2d                             ;; 04:6991 $1e $2d $6f $04
+    Op18_Jump call_04_699d                             ;; 04:6995 $18 $9d $69 $04
 
-data_04_6999:
-    Op1E_Call data_04_6f38                             ;; 04:6999 $1e $38 $6f $04
+call_04_6999:
+    Op1E_Call call_04_6f38                             ;; 04:6999 $1e $38 $6f $04
 
-data_04_699d:
+call_04_699d:
     Op36_Unknown $71, $72, $7f, $a2, $dd, $01          ;; 04:699d $36 $71 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6913                             ;; 04:69a4 $18 $13 $69 $04
+    Op18_Jump call_04_6913                             ;; 04:69a4 $18 $13 $69 $04
 
-data_04_69a8:
-    Op1E_Call data_04_6f2d                             ;; 04:69a8 $1e $2d $6f $04
-    Op18_Jump data_04_69b4                             ;; 04:69ac $18 $b4 $69 $04
+call_04_69a8:
+    Op1E_Call call_04_6f2d                             ;; 04:69a8 $1e $2d $6f $04
+    Op18_Jump call_04_69b4                             ;; 04:69ac $18 $b4 $69 $04
 
-data_04_69b0:
-    Op1E_Call data_04_6f38                             ;; 04:69b0 $1e $38 $6f $04
+call_04_69b0:
+    Op1E_Call call_04_6f38                             ;; 04:69b0 $1e $38 $6f $04
 
-data_04_69b4:
+call_04_69b4:
     Op36_Unknown $67, $72, $7f, $a2, $dd, $01          ;; 04:69b4 $36 $67 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6913                             ;; 04:69bb $18 $13 $69 $04
+    Op18_Jump call_04_6913                             ;; 04:69bb $18 $13 $69 $04
 
-data_04_69bf:
-    Op1E_Call data_04_6f2d                             ;; 04:69bf $1e $2d $6f $04
-    Op18_Jump data_04_69cb                             ;; 04:69c3 $18 $cb $69 $04
+call_04_69bf:
+    Op1E_Call call_04_6f2d                             ;; 04:69bf $1e $2d $6f $04
+    Op18_Jump call_04_69cb                             ;; 04:69c3 $18 $cb $69 $04
 
-data_04_69c7:
-    Op1E_Call data_04_6f38                             ;; 04:69c7 $1e $38 $6f $04
+call_04_69c7:
+    Op1E_Call call_04_6f38                             ;; 04:69c7 $1e $38 $6f $04
 
-data_04_69cb:
+call_04_69cb:
     Op36_Unknown $53, $72, $7f, $a2, $dd, $01          ;; 04:69cb $36 $53 $72 $7f $a2 $dd $01
     Op32_Unknown $f5, $5c, $7a, $60, $dc, $06          ;; 04:69d2 $32 $f5 $5c $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:69d9 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:69d9 $18 $43 $6f $04
 
-data_04_69dd:
-    Op1E_Call data_04_6f2d                             ;; 04:69dd $1e $2d $6f $04
-    Op18_Jump data_04_69e9                             ;; 04:69e1 $18 $e9 $69 $04
+call_04_69dd:
+    Op1E_Call call_04_6f2d                             ;; 04:69dd $1e $2d $6f $04
+    Op18_Jump call_04_69e9                             ;; 04:69e1 $18 $e9 $69 $04
 
-data_04_69e5:
-    Op1E_Call data_04_6f38                             ;; 04:69e5 $1e $38 $6f $04
+call_04_69e5:
+    Op1E_Call call_04_6f38                             ;; 04:69e5 $1e $38 $6f $04
 
-data_04_69e9:
+call_04_69e9:
     Op36_Unknown $3f, $72, $7f, $a2, $dd, $01          ;; 04:69e9 $36 $3f $72 $7f $a2 $dd $01
 
-data_04_69f0:
+call_04_69f0:
     Op32_Unknown $ab, $75, $7a, $60, $dc, $06          ;; 04:69f0 $32 $ab $75 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:69f7 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:69f7 $18 $43 $6f $04
 
-data_04_69fb:
-    Op1E_Call data_04_6f2d                             ;; 04:69fb $1e $2d $6f $04
-    Op18_Jump data_04_6a07                             ;; 04:69ff $18 $07 $6a $04
+call_04_69fb:
+    Op1E_Call call_04_6f2d                             ;; 04:69fb $1e $2d $6f $04
+    Op18_Jump call_04_6a07                             ;; 04:69ff $18 $07 $6a $04
 
-data_04_6a03:
-    Op1E_Call data_04_6f38                             ;; 04:6a03 $1e $38 $6f $04
+call_04_6a03:
+    Op1E_Call call_04_6f38                             ;; 04:6a03 $1e $38 $6f $04
 
-data_04_6a07:
+call_04_6a07:
     Op36_Unknown $49, $72, $7f, $a2, $dd, $01          ;; 04:6a07 $36 $49 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_69f0                             ;; 04:6a0e $18 $f0 $69 $04
+    Op18_Jump call_04_69f0                             ;; 04:6a0e $18 $f0 $69 $04
 
-data_04_6a12:
-    Op1E_Call data_04_6f2d                             ;; 04:6a12 $1e $2d $6f $04
-    Op18_Jump data_04_6a1e                             ;; 04:6a16 $18 $1e $6a $04
+call_04_6a12:
+    Op1E_Call call_04_6f2d                             ;; 04:6a12 $1e $2d $6f $04
+    Op18_Jump call_04_6a1e                             ;; 04:6a16 $18 $1e $6a $04
 
-data_04_6a1a:
-    Op1E_Call data_04_6f38                             ;; 04:6a1a $1e $38 $6f $04
+call_04_6a1a:
+    Op1E_Call call_04_6f38                             ;; 04:6a1a $1e $38 $6f $04
 
-data_04_6a1e:
+call_04_6a1e:
     Op36_Unknown $c7, $71, $7f, $a2, $dd, $01          ;; 04:6a1e $36 $c7 $71 $7f $a2 $dd $01
 
-data_04_6a25:
+call_04_6a25:
     Op32_Unknown $8d, $47, $7b, $60, $dc, $06          ;; 04:6a25 $32 $8d $47 $7b $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6a2c $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6a2c $18 $43 $6f $04
 
-data_04_6a30:
-    Op1E_Call data_04_6f2d                             ;; 04:6a30 $1e $2d $6f $04
-    Op18_Jump data_04_6a3c                             ;; 04:6a34 $18 $3c $6a $04
+call_04_6a30:
+    Op1E_Call call_04_6f2d                             ;; 04:6a30 $1e $2d $6f $04
+    Op18_Jump call_04_6a3c                             ;; 04:6a34 $18 $3c $6a $04
 
-data_04_6a38:
-    Op1E_Call data_04_6f38                             ;; 04:6a38 $1e $38 $6f $04
+call_04_6a38:
+    Op1E_Call call_04_6f38                             ;; 04:6a38 $1e $38 $6f $04
 
-data_04_6a3c:
+call_04_6a3c:
     Op36_Unknown $35, $72, $7f, $a2, $dd, $01          ;; 04:6a3c $36 $35 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6a43 $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6a43 $18 $25 $6a $04
 
-data_04_6a47:
-    Op1E_Call data_04_6f2d                             ;; 04:6a47 $1e $2d $6f $04
-    Op18_Jump data_04_6a53                             ;; 04:6a4b $18 $53 $6a $04
+call_04_6a47:
+    Op1E_Call call_04_6f2d                             ;; 04:6a47 $1e $2d $6f $04
+    Op18_Jump call_04_6a53                             ;; 04:6a4b $18 $53 $6a $04
 
-data_04_6a4f:
-    Op1E_Call data_04_6f38                             ;; 04:6a4f $1e $38 $6f $04
+call_04_6a4f:
+    Op1E_Call call_04_6f38                             ;; 04:6a4f $1e $38 $6f $04
 
-data_04_6a53:
+call_04_6a53:
     Op36_Unknown $2b, $72, $7f, $a2, $dd, $01          ;; 04:6a53 $36 $2b $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6a5a $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6a5a $18 $25 $6a $04
 
-data_04_6a5e:
-    Op1E_Call data_04_6f2d                             ;; 04:6a5e $1e $2d $6f $04
-    Op18_Jump data_04_6a6a                             ;; 04:6a62 $18 $6a $6a $04
+call_04_6a5e:
+    Op1E_Call call_04_6f2d                             ;; 04:6a5e $1e $2d $6f $04
+    Op18_Jump call_04_6a6a                             ;; 04:6a62 $18 $6a $6a $04
 
-data_04_6a66:
-    Op1E_Call data_04_6f38                             ;; 04:6a66 $1e $38 $6f $04
+call_04_6a66:
+    Op1E_Call call_04_6f38                             ;; 04:6a66 $1e $38 $6f $04
 
-data_04_6a6a:
+call_04_6a6a:
     Op36_Unknown $21, $72, $7f, $a2, $dd, $01          ;; 04:6a6a $36 $21 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6a71 $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6a71 $18 $25 $6a $04
 
-data_04_6a75:
-    Op1E_Call data_04_6f2d                             ;; 04:6a75 $1e $2d $6f $04
-    Op18_Jump data_04_6a81                             ;; 04:6a79 $18 $81 $6a $04
+call_04_6a75:
+    Op1E_Call call_04_6f2d                             ;; 04:6a75 $1e $2d $6f $04
+    Op18_Jump call_04_6a81                             ;; 04:6a79 $18 $81 $6a $04
 
-data_04_6a7d:
-    Op1E_Call data_04_6f38                             ;; 04:6a7d $1e $38 $6f $04
+call_04_6a7d:
+    Op1E_Call call_04_6f38                             ;; 04:6a7d $1e $38 $6f $04
 
-data_04_6a81:
+call_04_6a81:
     Op36_Unknown $17, $72, $7f, $a2, $dd, $01          ;; 04:6a81 $36 $17 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6a88 $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6a88 $18 $25 $6a $04
 
-data_04_6a8c:
-    Op1E_Call data_04_6f2d                             ;; 04:6a8c $1e $2d $6f $04
-    Op18_Jump data_04_6a98                             ;; 04:6a90 $18 $98 $6a $04
+call_04_6a8c:
+    Op1E_Call call_04_6f2d                             ;; 04:6a8c $1e $2d $6f $04
+    Op18_Jump call_04_6a98                             ;; 04:6a90 $18 $98 $6a $04
 
-data_04_6a94:
-    Op1E_Call data_04_6f38                             ;; 04:6a94 $1e $38 $6f $04
+call_04_6a94:
+    Op1E_Call call_04_6f38                             ;; 04:6a94 $1e $38 $6f $04
 
-data_04_6a98:
+call_04_6a98:
     Op36_Unknown $0d, $72, $7f, $a2, $dd, $01          ;; 04:6a98 $36 $0d $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6a9f $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6a9f $18 $25 $6a $04
 
-data_04_6aa3:
-    Op1E_Call data_04_6f2d                             ;; 04:6aa3 $1e $2d $6f $04
-    Op18_Jump data_04_6aaf                             ;; 04:6aa7 $18 $af $6a $04
+call_04_6aa3:
+    Op1E_Call call_04_6f2d                             ;; 04:6aa3 $1e $2d $6f $04
+    Op18_Jump call_04_6aaf                             ;; 04:6aa7 $18 $af $6a $04
 
-data_04_6aab:
-    Op1E_Call data_04_6f38                             ;; 04:6aab $1e $38 $6f $04
+call_04_6aab:
+    Op1E_Call call_04_6f38                             ;; 04:6aab $1e $38 $6f $04
 
-data_04_6aaf:
+call_04_6aaf:
     Op36_Unknown $03, $72, $7f, $a2, $dd, $01          ;; 04:6aaf $36 $03 $72 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6ab6 $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6ab6 $18 $25 $6a $04
 
-data_04_6aba:
-    Op1E_Call data_04_6f2d                             ;; 04:6aba $1e $2d $6f $04
-    Op18_Jump data_04_6ac6                             ;; 04:6abe $18 $c6 $6a $04
+call_04_6aba:
+    Op1E_Call call_04_6f2d                             ;; 04:6aba $1e $2d $6f $04
+    Op18_Jump call_04_6ac6                             ;; 04:6abe $18 $c6 $6a $04
 
-data_04_6ac2:
-    Op1E_Call data_04_6f38                             ;; 04:6ac2 $1e $38 $6f $04
+call_04_6ac2:
+    Op1E_Call call_04_6f38                             ;; 04:6ac2 $1e $38 $6f $04
 
-data_04_6ac6:
+call_04_6ac6:
     Op36_Unknown $f9, $71, $7f, $a2, $dd, $01          ;; 04:6ac6 $36 $f9 $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6acd $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6acd $18 $25 $6a $04
 
-data_04_6ad1:
-    Op1E_Call data_04_6f2d                             ;; 04:6ad1 $1e $2d $6f $04
-    Op18_Jump data_04_6add                             ;; 04:6ad5 $18 $dd $6a $04
+call_04_6ad1:
+    Op1E_Call call_04_6f2d                             ;; 04:6ad1 $1e $2d $6f $04
+    Op18_Jump call_04_6add                             ;; 04:6ad5 $18 $dd $6a $04
 
-data_04_6ad9:
-    Op1E_Call data_04_6f38                             ;; 04:6ad9 $1e $38 $6f $04
+call_04_6ad9:
+    Op1E_Call call_04_6f38                             ;; 04:6ad9 $1e $38 $6f $04
 
-data_04_6add:
+call_04_6add:
     Op36_Unknown $ef, $71, $7f, $a2, $dd, $01          ;; 04:6add $36 $ef $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6ae4 $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6ae4 $18 $25 $6a $04
 
-data_04_6ae8:
-    Op1E_Call data_04_6f2d                             ;; 04:6ae8 $1e $2d $6f $04
-    Op18_Jump data_04_6af4                             ;; 04:6aec $18 $f4 $6a $04
+call_04_6ae8:
+    Op1E_Call call_04_6f2d                             ;; 04:6ae8 $1e $2d $6f $04
+    Op18_Jump call_04_6af4                             ;; 04:6aec $18 $f4 $6a $04
 
-data_04_6af0:
-    Op1E_Call data_04_6f38                             ;; 04:6af0 $1e $38 $6f $04
+call_04_6af0:
+    Op1E_Call call_04_6f38                             ;; 04:6af0 $1e $38 $6f $04
 
-data_04_6af4:
+call_04_6af4:
     Op36_Unknown $e5, $71, $7f, $a2, $dd, $01          ;; 04:6af4 $36 $e5 $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6913                             ;; 04:6afb $18 $13 $69 $04
+    Op18_Jump call_04_6913                             ;; 04:6afb $18 $13 $69 $04
 
-data_04_6aff:
-    Op1E_Call data_04_6f2d                             ;; 04:6aff $1e $2d $6f $04
-    Op18_Jump data_04_6b0b                             ;; 04:6b03 $18 $0b $6b $04
+call_04_6aff:
+    Op1E_Call call_04_6f2d                             ;; 04:6aff $1e $2d $6f $04
+    Op18_Jump call_04_6b0b                             ;; 04:6b03 $18 $0b $6b $04
 
-data_04_6b07:
-    Op1E_Call data_04_6f38                             ;; 04:6b07 $1e $38 $6f $04
+call_04_6b07:
+    Op1E_Call call_04_6f38                             ;; 04:6b07 $1e $38 $6f $04
 
-data_04_6b0b:
+call_04_6b0b:
     Op36_Unknown $db, $71, $7f, $a2, $dd, $01          ;; 04:6b0b $36 $db $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6b12 $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6b12 $18 $25 $6a $04
 
-data_04_6b16:
-    Op1E_Call data_04_6f2d                             ;; 04:6b16 $1e $2d $6f $04
-    Op18_Jump data_04_6b22                             ;; 04:6b1a $18 $22 $6b $04
+call_04_6b16:
+    Op1E_Call call_04_6f2d                             ;; 04:6b16 $1e $2d $6f $04
+    Op18_Jump call_04_6b22                             ;; 04:6b1a $18 $22 $6b $04
 
-data_04_6b1e:
-    Op1E_Call data_04_6f38                             ;; 04:6b1e $1e $38 $6f $04
+call_04_6b1e:
+    Op1E_Call call_04_6f38                             ;; 04:6b1e $1e $38 $6f $04
 
-data_04_6b22:
+call_04_6b22:
     Op36_Unknown $d1, $71, $7f, $a2, $dd, $01          ;; 04:6b22 $36 $d1 $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6a25                             ;; 04:6b29 $18 $25 $6a $04
+    Op18_Jump call_04_6a25                             ;; 04:6b29 $18 $25 $6a $04
 
-data_04_6b2d:
-    Op1E_Call data_04_6f2d                             ;; 04:6b2d $1e $2d $6f $04
-    Op18_Jump data_04_6b39                             ;; 04:6b31 $18 $39 $6b $04
+call_04_6b2d:
+    Op1E_Call call_04_6f2d                             ;; 04:6b2d $1e $2d $6f $04
+    Op18_Jump call_04_6b39                             ;; 04:6b31 $18 $39 $6b $04
 
-data_04_6b35:
-    Op1E_Call data_04_6f38                             ;; 04:6b35 $1e $38 $6f $04
+call_04_6b35:
+    Op1E_Call call_04_6f38                             ;; 04:6b35 $1e $38 $6f $04
 
-data_04_6b39:
+call_04_6b39:
     Op36_Unknown $bd, $71, $7f, $a2, $dd, $01          ;; 04:6b39 $36 $bd $71 $7f $a2 $dd $01
     Op32_Unknown $92, $47, $7a, $60, $dc, $06          ;; 04:6b40 $32 $92 $47 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6b47 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6b47 $18 $43 $6f $04
 
-data_04_6b4b:
-    Op1E_Call data_04_6f2d                             ;; 04:6b4b $1e $2d $6f $04
-    Op18_Jump data_04_6b57                             ;; 04:6b4f $18 $57 $6b $04
+call_04_6b4b:
+    Op1E_Call call_04_6f2d                             ;; 04:6b4b $1e $2d $6f $04
+    Op18_Jump call_04_6b57                             ;; 04:6b4f $18 $57 $6b $04
 
-data_04_6b53:
-    Op1E_Call data_04_6f38                             ;; 04:6b53 $1e $38 $6f $04
+call_04_6b53:
+    Op1E_Call call_04_6f38                             ;; 04:6b53 $1e $38 $6f $04
 
-data_04_6b57:
+call_04_6b57:
     Op36_Unknown $b3, $71, $7f, $a2, $dd, $01          ;; 04:6b57 $36 $b3 $71 $7f $a2 $dd $01
     Op32_Unknown $d7, $69, $7a, $60, $dc, $06          ;; 04:6b5e $32 $d7 $69 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6b65 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6b65 $18 $43 $6f $04
 
-data_04_6b69:
-    Op1E_Call data_04_6f2d                             ;; 04:6b69 $1e $2d $6f $04
-    Op18_Jump data_04_6b75                             ;; 04:6b6d $18 $75 $6b $04
+call_04_6b69:
+    Op1E_Call call_04_6f2d                             ;; 04:6b69 $1e $2d $6f $04
+    Op18_Jump call_04_6b75                             ;; 04:6b6d $18 $75 $6b $04
 
-data_04_6b71:
-    Op1E_Call data_04_6f38                             ;; 04:6b71 $1e $38 $6f $04
+call_04_6b71:
+    Op1E_Call call_04_6f38                             ;; 04:6b71 $1e $38 $6f $04
 
-data_04_6b75:
+call_04_6b75:
     Op36_Unknown $9f, $71, $7f, $a2, $dd, $01          ;; 04:6b75 $36 $9f $71 $7f $a2 $dd $01
 
-data_04_6b7c:
+call_04_6b7c:
     Op32_Unknown $b1, $41, $7a, $60, $dc, $06          ;; 04:6b7c $32 $b1 $41 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6b83 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6b83 $18 $43 $6f $04
 
-data_04_6b87:
-    Op1E_Call data_04_6f2d                             ;; 04:6b87 $1e $2d $6f $04
-    Op18_Jump data_04_6b93                             ;; 04:6b8b $18 $93 $6b $04
+call_04_6b87:
+    Op1E_Call call_04_6f2d                             ;; 04:6b87 $1e $2d $6f $04
+    Op18_Jump call_04_6b93                             ;; 04:6b8b $18 $93 $6b $04
 
-data_04_6b8f:
-    Op1E_Call data_04_6f38                             ;; 04:6b8f $1e $38 $6f $04
+call_04_6b8f:
+    Op1E_Call call_04_6f38                             ;; 04:6b8f $1e $38 $6f $04
 
-data_04_6b93:
+call_04_6b93:
     Op36_Unknown $a9, $71, $7f, $a2, $dd, $01          ;; 04:6b93 $36 $a9 $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6b7c                             ;; 04:6b9a $18 $7c $6b $04
+    Op18_Jump call_04_6b7c                             ;; 04:6b9a $18 $7c $6b $04
 
-data_04_6b9e:
-    Op1E_Call data_04_6f2d                             ;; 04:6b9e $1e $2d $6f $04
-    Op18_Jump data_04_6baa                             ;; 04:6ba2 $18 $aa $6b $04
+call_04_6b9e:
+    Op1E_Call call_04_6f2d                             ;; 04:6b9e $1e $2d $6f $04
+    Op18_Jump call_04_6baa                             ;; 04:6ba2 $18 $aa $6b $04
 
-data_04_6ba6:
-    Op1E_Call data_04_6f38                             ;; 04:6ba6 $1e $38 $6f $04
+call_04_6ba6:
+    Op1E_Call call_04_6f38                             ;; 04:6ba6 $1e $38 $6f $04
 
-data_04_6baa:
+call_04_6baa:
     Op36_Unknown $8b, $71, $7f, $a2, $dd, $01          ;; 04:6baa $36 $8b $71 $7f $a2 $dd $01
 
-data_04_6bb1:
+call_04_6bb1:
     Op32_Unknown $0b, $69, $7a, $60, $dc, $06          ;; 04:6bb1 $32 $0b $69 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6bb8 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6bb8 $18 $43 $6f $04
 
-data_04_6bbc:
-    Op1E_Call data_04_6f2d                             ;; 04:6bbc $1e $2d $6f $04
-    Op18_Jump data_04_6bc8                             ;; 04:6bc0 $18 $c8 $6b $04
+call_04_6bbc:
+    Op1E_Call call_04_6f2d                             ;; 04:6bbc $1e $2d $6f $04
+    Op18_Jump call_04_6bc8                             ;; 04:6bc0 $18 $c8 $6b $04
 
-data_04_6bc4:
-    Op1E_Call data_04_6f38                             ;; 04:6bc4 $1e $38 $6f $04
+call_04_6bc4:
+    Op1E_Call call_04_6f38                             ;; 04:6bc4 $1e $38 $6f $04
 
-data_04_6bc8:
+call_04_6bc8:
     Op36_Unknown $95, $71, $7f, $a2, $dd, $01          ;; 04:6bc8 $36 $95 $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6bb1                             ;; 04:6bcf $18 $b1 $6b $04
+    Op18_Jump call_04_6bb1                             ;; 04:6bcf $18 $b1 $6b $04
 
-data_04_6bd3:
-    Op1E_Call data_04_6f2d                             ;; 04:6bd3 $1e $2d $6f $04
-    Op18_Jump data_04_6bdf                             ;; 04:6bd7 $18 $df $6b $04
+call_04_6bd3:
+    Op1E_Call call_04_6f2d                             ;; 04:6bd3 $1e $2d $6f $04
+    Op18_Jump call_04_6bdf                             ;; 04:6bd7 $18 $df $6b $04
 
-data_04_6bdb:
-    Op1E_Call data_04_6f38                             ;; 04:6bdb $1e $38 $6f $04
+call_04_6bdb:
+    Op1E_Call call_04_6f38                             ;; 04:6bdb $1e $38 $6f $04
 
-data_04_6bdf:
+call_04_6bdf:
     Op36_Unknown $6d, $71, $7f, $a2, $dd, $01          ;; 04:6bdf $36 $6d $71 $7f $a2 $dd $01
 
-data_04_6be6:
+call_04_6be6:
     Op32_Unknown $0f, $45, $7a, $60, $dc, $06          ;; 04:6be6 $32 $0f $45 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6bed $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6bed $18 $43 $6f $04
 
-data_04_6bf1:
-    Op1E_Call data_04_6f2d                             ;; 04:6bf1 $1e $2d $6f $04
-    Op18_Jump data_04_6bfd                             ;; 04:6bf5 $18 $fd $6b $04
+call_04_6bf1:
+    Op1E_Call call_04_6f2d                             ;; 04:6bf1 $1e $2d $6f $04
+    Op18_Jump call_04_6bfd                             ;; 04:6bf5 $18 $fd $6b $04
 
-data_04_6bf9:
-    Op1E_Call data_04_6f38                             ;; 04:6bf9 $1e $38 $6f $04
+call_04_6bf9:
+    Op1E_Call call_04_6f38                             ;; 04:6bf9 $1e $38 $6f $04
 
-data_04_6bfd:
+call_04_6bfd:
     Op36_Unknown $81, $71, $7f, $a2, $dd, $01          ;; 04:6bfd $36 $81 $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6be6                             ;; 04:6c04 $18 $e6 $6b $04
+    Op18_Jump call_04_6be6                             ;; 04:6c04 $18 $e6 $6b $04
 
-data_04_6c08:
-    Op1E_Call data_04_6f2d                             ;; 04:6c08 $1e $2d $6f $04
-    Op18_Jump data_04_6c14                             ;; 04:6c0c $18 $14 $6c $04
+call_04_6c08:
+    Op1E_Call call_04_6f2d                             ;; 04:6c08 $1e $2d $6f $04
+    Op18_Jump call_04_6c14                             ;; 04:6c0c $18 $14 $6c $04
 
-data_04_6c10:
-    Op1E_Call data_04_6f38                             ;; 04:6c10 $1e $38 $6f $04
+call_04_6c10:
+    Op1E_Call call_04_6f38                             ;; 04:6c10 $1e $38 $6f $04
 
-data_04_6c14:
+call_04_6c14:
     Op36_Unknown $77, $71, $7f, $a2, $dd, $01          ;; 04:6c14 $36 $77 $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6be6                             ;; 04:6c1b $18 $e6 $6b $04
+    Op18_Jump call_04_6be6                             ;; 04:6c1b $18 $e6 $6b $04
 
-data_04_6c1f:
-    Op1E_Call data_04_6f2d                             ;; 04:6c1f $1e $2d $6f $04
-    Op18_Jump data_04_6c2b                             ;; 04:6c23 $18 $2b $6c $04
+call_04_6c1f:
+    Op1E_Call call_04_6f2d                             ;; 04:6c1f $1e $2d $6f $04
+    Op18_Jump call_04_6c2b                             ;; 04:6c23 $18 $2b $6c $04
 
-data_04_6c27:
-    Op1E_Call data_04_6f38                             ;; 04:6c27 $1e $38 $6f $04
+call_04_6c27:
+    Op1E_Call call_04_6f38                             ;; 04:6c27 $1e $38 $6f $04
 
-data_04_6c2b:
+call_04_6c2b:
     Op36_Unknown $59, $71, $7f, $a2, $dd, $01          ;; 04:6c2b $36 $59 $71 $7f $a2 $dd $01
     Op32_Unknown $47, $59, $79, $60, $dc, $06          ;; 04:6c32 $32 $47 $59 $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6c39 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6c39 $18 $43 $6f $04
 
-data_04_6c3d:
-    Op1E_Call data_04_6f2d                             ;; 04:6c3d $1e $2d $6f $04
-    Op18_Jump data_04_6c49                             ;; 04:6c41 $18 $49 $6c $04
+call_04_6c3d:
+    Op1E_Call call_04_6f2d                             ;; 04:6c3d $1e $2d $6f $04
+    Op18_Jump call_04_6c49                             ;; 04:6c41 $18 $49 $6c $04
 
-data_04_6c45:
-    Op1E_Call data_04_6f38                             ;; 04:6c45 $1e $38 $6f $04
+call_04_6c45:
+    Op1E_Call call_04_6f38                             ;; 04:6c45 $1e $38 $6f $04
 
-data_04_6c49:
+call_04_6c49:
     Op36_Unknown $63, $71, $7f, $a2, $dd, $01          ;; 04:6c49 $36 $63 $71 $7f $a2 $dd $01
     Op32_Unknown $38, $44, $7a, $60, $dc, $06          ;; 04:6c50 $32 $38 $44 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6c57 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6c57 $18 $43 $6f $04
 
-data_04_6c5b:
-    Op1E_Call data_04_6f2d                             ;; 04:6c5b $1e $2d $6f $04
-    Op18_Jump data_04_6c67                             ;; 04:6c5f $18 $67 $6c $04
+call_04_6c5b:
+    Op1E_Call call_04_6f2d                             ;; 04:6c5b $1e $2d $6f $04
+    Op18_Jump call_04_6c67                             ;; 04:6c5f $18 $67 $6c $04
 
-data_04_6c63:
-    Op1E_Call data_04_6f38                             ;; 04:6c63 $1e $38 $6f $04
+call_04_6c63:
+    Op1E_Call call_04_6f38                             ;; 04:6c63 $1e $38 $6f $04
 
-data_04_6c67:
+call_04_6c67:
     Op36_Unknown $31, $71, $7f, $a2, $dd, $01          ;; 04:6c67 $36 $31 $71 $7f $a2 $dd $01
 
-data_04_6c6e:
+call_04_6c6e:
     Op32_Unknown $05, $79, $79, $60, $dc, $06          ;; 04:6c6e $32 $05 $79 $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6c75 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6c75 $18 $43 $6f $04
 
-data_04_6c79:
-    Op1E_Call data_04_6f2d                             ;; 04:6c79 $1e $2d $6f $04
-    Op18_Jump data_04_6c85                             ;; 04:6c7d $18 $85 $6c $04
+call_04_6c79:
+    Op1E_Call call_04_6f2d                             ;; 04:6c79 $1e $2d $6f $04
+    Op18_Jump call_04_6c85                             ;; 04:6c7d $18 $85 $6c $04
 
-data_04_6c81:
-    Op1E_Call data_04_6f38                             ;; 04:6c81 $1e $38 $6f $04
+call_04_6c81:
+    Op1E_Call call_04_6f38                             ;; 04:6c81 $1e $38 $6f $04
 
-data_04_6c85:
+call_04_6c85:
     Op36_Unknown $4f, $71, $7f, $a2, $dd, $01          ;; 04:6c85 $36 $4f $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6c6e                             ;; 04:6c8c $18 $6e $6c $04
+    Op18_Jump call_04_6c6e                             ;; 04:6c8c $18 $6e $6c $04
 
-data_04_6c90:
-    Op1E_Call data_04_6f2d                             ;; 04:6c90 $1e $2d $6f $04
-    Op18_Jump data_04_6c9c                             ;; 04:6c94 $18 $9c $6c $04
+call_04_6c90:
+    Op1E_Call call_04_6f2d                             ;; 04:6c90 $1e $2d $6f $04
+    Op18_Jump call_04_6c9c                             ;; 04:6c94 $18 $9c $6c $04
 
-data_04_6c98:
-    Op1E_Call data_04_6f38                             ;; 04:6c98 $1e $38 $6f $04
+call_04_6c98:
+    Op1E_Call call_04_6f38                             ;; 04:6c98 $1e $38 $6f $04
 
-data_04_6c9c:
+call_04_6c9c:
     Op36_Unknown $45, $71, $7f, $a2, $dd, $01          ;; 04:6c9c $36 $45 $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6c6e                             ;; 04:6ca3 $18 $6e $6c $04
+    Op18_Jump call_04_6c6e                             ;; 04:6ca3 $18 $6e $6c $04
 
-data_04_6ca7:
-    Op1E_Call data_04_6f2d                             ;; 04:6ca7 $1e $2d $6f $04
-    Op18_Jump data_04_6cb3                             ;; 04:6cab $18 $b3 $6c $04
+call_04_6ca7:
+    Op1E_Call call_04_6f2d                             ;; 04:6ca7 $1e $2d $6f $04
+    Op18_Jump call_04_6cb3                             ;; 04:6cab $18 $b3 $6c $04
 
-data_04_6caf:
-    Op1E_Call data_04_6f38                             ;; 04:6caf $1e $38 $6f $04
+call_04_6caf:
+    Op1E_Call call_04_6f38                             ;; 04:6caf $1e $38 $6f $04
 
-data_04_6cb3:
+call_04_6cb3:
     Op36_Unknown $3b, $71, $7f, $a2, $dd, $01          ;; 04:6cb3 $36 $3b $71 $7f $a2 $dd $01
     Op32_Unknown $00, $40, $7a, $60, $dc, $06          ;; 04:6cba $32 $00 $40 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6cc1 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6cc1 $18 $43 $6f $04
 
-data_04_6cc5:
-    Op1E_Call data_04_6f2d                             ;; 04:6cc5 $1e $2d $6f $04
-    Op18_Jump data_04_6cd1                             ;; 04:6cc9 $18 $d1 $6c $04
+call_04_6cc5:
+    Op1E_Call call_04_6f2d                             ;; 04:6cc5 $1e $2d $6f $04
+    Op18_Jump call_04_6cd1                             ;; 04:6cc9 $18 $d1 $6c $04
 
-data_04_6ccd:
-    Op1E_Call data_04_6f38                             ;; 04:6ccd $1e $38 $6f $04
+call_04_6ccd:
+    Op1E_Call call_04_6f38                             ;; 04:6ccd $1e $38 $6f $04
 
-data_04_6cd1:
+call_04_6cd1:
     Op36_Unknown $27, $71, $7f, $a2, $dd, $01          ;; 04:6cd1 $36 $27 $71 $7f $a2 $dd $01
     Op32_Unknown $f4, $40, $79, $60, $dc, $06          ;; 04:6cd8 $32 $f4 $40 $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6cdf $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6cdf $18 $43 $6f $04
 
-data_04_6ce3:
-    Op1E_Call data_04_6f2d                             ;; 04:6ce3 $1e $2d $6f $04
-    Op18_Jump data_04_6cef                             ;; 04:6ce7 $18 $ef $6c $04
+call_04_6ce3:
+    Op1E_Call call_04_6f2d                             ;; 04:6ce3 $1e $2d $6f $04
+    Op18_Jump call_04_6cef                             ;; 04:6ce7 $18 $ef $6c $04
 
-data_04_6ceb:
-    Op1E_Call data_04_6f38                             ;; 04:6ceb $1e $38 $6f $04
+call_04_6ceb:
+    Op1E_Call call_04_6f38                             ;; 04:6ceb $1e $38 $6f $04
 
-data_04_6cef:
+call_04_6cef:
     Op36_Unknown $09, $71, $7f, $a2, $dd, $01          ;; 04:6cef $36 $09 $71 $7f $a2 $dd $01
 
-data_04_6cf6:
+call_04_6cf6:
     Op32_Unknown $05, $6d, $7a, $60, $dc, $06          ;; 04:6cf6 $32 $05 $6d $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6cfd $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6cfd $18 $43 $6f $04
 
-data_04_6d01:
-    Op1E_Call data_04_6f2d                             ;; 04:6d01 $1e $2d $6f $04
-    Op18_Jump data_04_6d0d                             ;; 04:6d05 $18 $0d $6d $04
+call_04_6d01:
+    Op1E_Call call_04_6f2d                             ;; 04:6d01 $1e $2d $6f $04
+    Op18_Jump call_04_6d0d                             ;; 04:6d05 $18 $0d $6d $04
 
-data_04_6d09:
-    Op1E_Call data_04_6f38                             ;; 04:6d09 $1e $38 $6f $04
+call_04_6d09:
+    Op1E_Call call_04_6f38                             ;; 04:6d09 $1e $38 $6f $04
 
-data_04_6d0d:
+call_04_6d0d:
     Op36_Unknown $1d, $71, $7f, $a2, $dd, $01          ;; 04:6d0d $36 $1d $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6cf6                             ;; 04:6d14 $18 $f6 $6c $04
+    Op18_Jump call_04_6cf6                             ;; 04:6d14 $18 $f6 $6c $04
 
-data_04_6d18:
-    Op1E_Call data_04_6f2d                             ;; 04:6d18 $1e $2d $6f $04
-    Op18_Jump data_04_6d24                             ;; 04:6d1c $18 $24 $6d $04
+call_04_6d18:
+    Op1E_Call call_04_6f2d                             ;; 04:6d18 $1e $2d $6f $04
+    Op18_Jump call_04_6d24                             ;; 04:6d1c $18 $24 $6d $04
 
-data_04_6d20:
-    Op1E_Call data_04_6f38                             ;; 04:6d20 $1e $38 $6f $04
+call_04_6d20:
+    Op1E_Call call_04_6f38                             ;; 04:6d20 $1e $38 $6f $04
 
-data_04_6d24:
+call_04_6d24:
     Op36_Unknown $13, $71, $7f, $a2, $dd, $01          ;; 04:6d24 $36 $13 $71 $7f $a2 $dd $01
-    Op18_Jump data_04_6cf6                             ;; 04:6d2b $18 $f6 $6c $04
+    Op18_Jump call_04_6cf6                             ;; 04:6d2b $18 $f6 $6c $04
 
-data_04_6d2f:
-    Op1E_Call data_04_6f2d                             ;; 04:6d2f $1e $2d $6f $04
-    Op18_Jump data_04_6d3b                             ;; 04:6d33 $18 $3b $6d $04
+call_04_6d2f:
+    Op1E_Call call_04_6f2d                             ;; 04:6d2f $1e $2d $6f $04
+    Op18_Jump call_04_6d3b                             ;; 04:6d33 $18 $3b $6d $04
 
-data_04_6d37:
-    Op1E_Call data_04_6f38                             ;; 04:6d37 $1e $38 $6f $04
+call_04_6d37:
+    Op1E_Call call_04_6f38                             ;; 04:6d37 $1e $38 $6f $04
 
-data_04_6d3b:
+call_04_6d3b:
     Op36_Unknown $93, $73, $7f, $a2, $dd, $01          ;; 04:6d3b $36 $93 $73 $7f $a2 $dd $01
     Op32_Unknown $65, $65, $7b, $60, $dc, $06          ;; 04:6d42 $32 $65 $65 $7b $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6d49 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6d49 $18 $43 $6f $04
 
-data_04_6d4d:
-    Op1E_Call data_04_6f2d                             ;; 04:6d4d $1e $2d $6f $04
-    Op18_Jump data_04_6d59                             ;; 04:6d51 $18 $59 $6d $04
+call_04_6d4d:
+    Op1E_Call call_04_6f2d                             ;; 04:6d4d $1e $2d $6f $04
+    Op18_Jump call_04_6d59                             ;; 04:6d51 $18 $59 $6d $04
 
-data_04_6d55:
-    Op1E_Call data_04_6f38                             ;; 04:6d55 $1e $38 $6f $04
+call_04_6d55:
+    Op1E_Call call_04_6f38                             ;; 04:6d55 $1e $38 $6f $04
 
-data_04_6d59:
+call_04_6d59:
     Op36_Unknown $89, $73, $7f, $a2, $dd, $01          ;; 04:6d59 $36 $89 $73 $7f $a2 $dd $01
     Op32_Unknown $c7, $78, $7a, $60, $dc, $06          ;; 04:6d60 $32 $c7 $78 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6d67 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6d67 $18 $43 $6f $04
 
-data_04_6d6b:
-    Op1E_Call data_04_6f2d                             ;; 04:6d6b $1e $2d $6f $04
-    Op18_Jump data_04_6d77                             ;; 04:6d6f $18 $77 $6d $04
+call_04_6d6b:
+    Op1E_Call call_04_6f2d                             ;; 04:6d6b $1e $2d $6f $04
+    Op18_Jump call_04_6d77                             ;; 04:6d6f $18 $77 $6d $04
 
-data_04_6d73:
-    Op1E_Call data_04_6f38                             ;; 04:6d73 $1e $38 $6f $04
+call_04_6d73:
+    Op1E_Call call_04_6f38                             ;; 04:6d73 $1e $38 $6f $04
 
-data_04_6d77:
+call_04_6d77:
     Op36_Unknown $7f, $73, $7f, $a2, $dd, $01          ;; 04:6d77 $36 $7f $73 $7f $a2 $dd $01
     Op32_Unknown $9f, $7c, $7a, $60, $dc, $06          ;; 04:6d7e $32 $9f $7c $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6d85 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6d85 $18 $43 $6f $04
 
-data_04_6d89:
-    Op1E_Call data_04_6f2d                             ;; 04:6d89 $1e $2d $6f $04
-    Op18_Jump data_04_6d95                             ;; 04:6d8d $18 $95 $6d $04
+call_04_6d89:
+    Op1E_Call call_04_6f2d                             ;; 04:6d89 $1e $2d $6f $04
+    Op18_Jump call_04_6d95                             ;; 04:6d8d $18 $95 $6d $04
 
-data_04_6d91:
-    Op1E_Call data_04_6f38                             ;; 04:6d91 $1e $38 $6f $04
+call_04_6d91:
+    Op1E_Call call_04_6f38                             ;; 04:6d91 $1e $38 $6f $04
 
-data_04_6d95:
+call_04_6d95:
     Op36_Unknown $75, $73, $7f, $a2, $dd, $01          ;; 04:6d95 $36 $75 $73 $7f $a2 $dd $01
     Op32_Unknown $65, $4d, $7a, $60, $dc, $06          ;; 04:6d9c $32 $65 $4d $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6da3 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6da3 $18 $43 $6f $04
 
-data_04_6da7:
-    Op1E_Call data_04_6f2d                             ;; 04:6da7 $1e $2d $6f $04
-    Op18_Jump data_04_6db3                             ;; 04:6dab $18 $b3 $6d $04
+call_04_6da7:
+    Op1E_Call call_04_6f2d                             ;; 04:6da7 $1e $2d $6f $04
+    Op18_Jump call_04_6db3                             ;; 04:6dab $18 $b3 $6d $04
 
-data_04_6daf:
-    Op1E_Call data_04_6f38                             ;; 04:6daf $1e $38 $6f $04
+call_04_6daf:
+    Op1E_Call call_04_6f38                             ;; 04:6daf $1e $38 $6f $04
 
-data_04_6db3:
+call_04_6db3:
     Op36_Unknown $6b, $73, $7f, $a2, $dd, $01          ;; 04:6db3 $36 $6b $73 $7f $a2 $dd $01
     Op32_Unknown $da, $65, $7a, $60, $dc, $06          ;; 04:6dba $32 $da $65 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6dc1 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6dc1 $18 $43 $6f $04
 
-data_04_6dc5:
-    Op1E_Call data_04_6f2d                             ;; 04:6dc5 $1e $2d $6f $04
-    Op18_Jump data_04_6dd1                             ;; 04:6dc9 $18 $d1 $6d $04
+call_04_6dc5:
+    Op1E_Call call_04_6f2d                             ;; 04:6dc5 $1e $2d $6f $04
+    Op18_Jump call_04_6dd1                             ;; 04:6dc9 $18 $d1 $6d $04
 
-data_04_6dcd:
-    Op1E_Call data_04_6f38                             ;; 04:6dcd $1e $38 $6f $04
+call_04_6dcd:
+    Op1E_Call call_04_6f38                             ;; 04:6dcd $1e $38 $6f $04
 
-data_04_6dd1:
+call_04_6dd1:
     Op36_Unknown $61, $73, $7f, $a2, $dd, $01          ;; 04:6dd1 $36 $61 $73 $7f $a2 $dd $01
     Op32_Unknown $6f, $63, $7a, $60, $dc, $06          ;; 04:6dd8 $32 $6f $63 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6ddf $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6ddf $18 $43 $6f $04
 
-data_04_6de3:
-    Op1E_Call data_04_6f2d                             ;; 04:6de3 $1e $2d $6f $04
-    Op18_Jump data_04_6def                             ;; 04:6de7 $18 $ef $6d $04
+call_04_6de3:
+    Op1E_Call call_04_6f2d                             ;; 04:6de3 $1e $2d $6f $04
+    Op18_Jump call_04_6def                             ;; 04:6de7 $18 $ef $6d $04
 
-data_04_6deb:
-    Op1E_Call data_04_6f38                             ;; 04:6deb $1e $38 $6f $04
+call_04_6deb:
+    Op1E_Call call_04_6f38                             ;; 04:6deb $1e $38 $6f $04
 
-data_04_6def:
+call_04_6def:
     Op36_Unknown $57, $73, $7f, $a2, $dd, $01          ;; 04:6def $36 $57 $73 $7f $a2 $dd $01
     Op32_Unknown $21, $4f, $79, $60, $dc, $06          ;; 04:6df6 $32 $21 $4f $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6dfd $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6dfd $18 $43 $6f $04
 
-data_04_6e01:
-    Op1E_Call data_04_6f2d                             ;; 04:6e01 $1e $2d $6f $04
-    Op18_Jump data_04_6e0d                             ;; 04:6e05 $18 $0d $6e $04
+call_04_6e01:
+    Op1E_Call call_04_6f2d                             ;; 04:6e01 $1e $2d $6f $04
+    Op18_Jump call_04_6e0d                             ;; 04:6e05 $18 $0d $6e $04
 
-data_04_6e09:
-    Op1E_Call data_04_6f38                             ;; 04:6e09 $1e $38 $6f $04
+call_04_6e09:
+    Op1E_Call call_04_6f38                             ;; 04:6e09 $1e $38 $6f $04
 
-data_04_6e0d:
+call_04_6e0d:
     Op36_Unknown $4d, $73, $7f, $a2, $dd, $01          ;; 04:6e0d $36 $4d $73 $7f $a2 $dd $01
     Op32_Unknown $c5, $5d, $7a, $60, $dc, $06          ;; 04:6e14 $32 $c5 $5d $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6e1b $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6e1b $18 $43 $6f $04
 
-data_04_6e1f:
-    Op1E_Call data_04_6f2d                             ;; 04:6e1f $1e $2d $6f $04
-    Op18_Jump data_04_6e2b                             ;; 04:6e23 $18 $2b $6e $04
+call_04_6e1f:
+    Op1E_Call call_04_6f2d                             ;; 04:6e1f $1e $2d $6f $04
+    Op18_Jump call_04_6e2b                             ;; 04:6e23 $18 $2b $6e $04
 
-data_04_6e27:
-    Op1E_Call data_04_6f38                             ;; 04:6e27 $1e $38 $6f $04
+call_04_6e27:
+    Op1E_Call call_04_6f38                             ;; 04:6e27 $1e $38 $6f $04
 
-data_04_6e2b:
+call_04_6e2b:
     Op36_Unknown $43, $73, $7f, $a2, $dd, $01          ;; 04:6e2b $36 $43 $73 $7f $a2 $dd $01
     Op32_Unknown $8c, $74, $7c, $60, $dc, $06          ;; 04:6e32 $32 $8c $74 $7c $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6e39 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6e39 $18 $43 $6f $04
 
-data_04_6e3d:
-    Op1E_Call data_04_6f2d                             ;; 04:6e3d $1e $2d $6f $04
-    Op18_Jump data_04_6e49                             ;; 04:6e41 $18 $49 $6e $04
+call_04_6e3d:
+    Op1E_Call call_04_6f2d                             ;; 04:6e3d $1e $2d $6f $04
+    Op18_Jump call_04_6e49                             ;; 04:6e41 $18 $49 $6e $04
 
-data_04_6e45:
-    Op1E_Call data_04_6f38                             ;; 04:6e45 $1e $38 $6f $04
+call_04_6e45:
+    Op1E_Call call_04_6f38                             ;; 04:6e45 $1e $38 $6f $04
 
-data_04_6e49:
+call_04_6e49:
     Op36_Unknown $39, $73, $7f, $a2, $dd, $01          ;; 04:6e49 $36 $39 $73 $7f $a2 $dd $01
     Op32_Unknown $96, $69, $7b, $60, $dc, $06          ;; 04:6e50 $32 $96 $69 $7b $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6e57 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6e57 $18 $43 $6f $04
 
-data_04_6e5b:
-    Op1E_Call data_04_6f2d                             ;; 04:6e5b $1e $2d $6f $04
-    Op18_Jump data_04_6e67                             ;; 04:6e5f $18 $67 $6e $04
+call_04_6e5b:
+    Op1E_Call call_04_6f2d                             ;; 04:6e5b $1e $2d $6f $04
+    Op18_Jump call_04_6e67                             ;; 04:6e5f $18 $67 $6e $04
 
-data_04_6e63:
-    Op1E_Call data_04_6f38                             ;; 04:6e63 $1e $38 $6f $04
+call_04_6e63:
+    Op1E_Call call_04_6f38                             ;; 04:6e63 $1e $38 $6f $04
 
-data_04_6e67:
+call_04_6e67:
     Op36_Unknown $2f, $73, $7f, $a2, $dd, $01          ;; 04:6e67 $36 $2f $73 $7f $a2 $dd $01
     Op32_Unknown $19, $5b, $79, $60, $dc, $06          ;; 04:6e6e $32 $19 $5b $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6e75 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6e75 $18 $43 $6f $04
 
-data_04_6e79:
-    Op1E_Call data_04_6f2d                             ;; 04:6e79 $1e $2d $6f $04
-    Op18_Jump data_04_6e85                             ;; 04:6e7d $18 $85 $6e $04
+call_04_6e79:
+    Op1E_Call call_04_6f2d                             ;; 04:6e79 $1e $2d $6f $04
+    Op18_Jump call_04_6e85                             ;; 04:6e7d $18 $85 $6e $04
 
-data_04_6e81:
-    Op1E_Call data_04_6f38                             ;; 04:6e81 $1e $38 $6f $04
+call_04_6e81:
+    Op1E_Call call_04_6f38                             ;; 04:6e81 $1e $38 $6f $04
 
-data_04_6e85:
+call_04_6e85:
     Op36_Unknown $25, $73, $7f, $a2, $dd, $01          ;; 04:6e85 $36 $25 $73 $7f $a2 $dd $01
     Op32_Unknown $a8, $46, $79, $60, $dc, $06          ;; 04:6e8c $32 $a8 $46 $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6e93 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6e93 $18 $43 $6f $04
 
-data_04_6e97:
-    Op1E_Call data_04_6f2d                             ;; 04:6e97 $1e $2d $6f $04
-    Op18_Jump data_04_6ea3                             ;; 04:6e9b $18 $a3 $6e $04
+call_04_6e97:
+    Op1E_Call call_04_6f2d                             ;; 04:6e97 $1e $2d $6f $04
+    Op18_Jump call_04_6ea3                             ;; 04:6e9b $18 $a3 $6e $04
 
-data_04_6e9f:
-    Op1E_Call data_04_6f38                             ;; 04:6e9f $1e $38 $6f $04
+call_04_6e9f:
+    Op1E_Call call_04_6f38                             ;; 04:6e9f $1e $38 $6f $04
 
-data_04_6ea3:
+call_04_6ea3:
     Op36_Unknown $1b, $73, $7f, $a2, $dd, $01          ;; 04:6ea3 $36 $1b $73 $7f $a2 $dd $01
     Op32_Unknown $e0, $79, $79, $60, $dc, $06          ;; 04:6eaa $32 $e0 $79 $79 $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6eb1 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6eb1 $18 $43 $6f $04
 
-data_04_6eb5:
-    Op1E_Call data_04_6f2d                             ;; 04:6eb5 $1e $2d $6f $04
-    Op18_Jump data_04_6ec1                             ;; 04:6eb9 $18 $c1 $6e $04
+call_04_6eb5:
+    Op1E_Call call_04_6f2d                             ;; 04:6eb5 $1e $2d $6f $04
+    Op18_Jump call_04_6ec1                             ;; 04:6eb9 $18 $c1 $6e $04
 
-data_04_6ebd:
-    Op1E_Call data_04_6f38                             ;; 04:6ebd $1e $38 $6f $04
+call_04_6ebd:
+    Op1E_Call call_04_6f38                             ;; 04:6ebd $1e $38 $6f $04
 
-data_04_6ec1:
+call_04_6ec1:
     Op36_Unknown $11, $73, $7f, $a2, $dd, $01          ;; 04:6ec1 $36 $11 $73 $7f $a2 $dd $01
     Op32_Unknown $fc, $53, $7a, $60, $dc, $06          ;; 04:6ec8 $32 $fc $53 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6ecf $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6ecf $18 $43 $6f $04
 
-data_04_6ed3:
-    Op1E_Call data_04_6f2d                             ;; 04:6ed3 $1e $2d $6f $04
-    Op18_Jump data_04_6edf                             ;; 04:6ed7 $18 $df $6e $04
+call_04_6ed3:
+    Op1E_Call call_04_6f2d                             ;; 04:6ed3 $1e $2d $6f $04
+    Op18_Jump call_04_6edf                             ;; 04:6ed7 $18 $df $6e $04
 
-data_04_6edb:
-    Op1E_Call data_04_6f38                             ;; 04:6edb $1e $38 $6f $04
+call_04_6edb:
+    Op1E_Call call_04_6f38                             ;; 04:6edb $1e $38 $6f $04
 
-data_04_6edf:
+call_04_6edf:
     Op36_Unknown $07, $73, $7f, $a2, $dd, $01          ;; 04:6edf $36 $07 $73 $7f $a2 $dd $01
     Op32_Unknown $01, $78, $7a, $60, $dc, $06          ;; 04:6ee6 $32 $01 $78 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6eed $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6eed $18 $43 $6f $04
 
-data_04_6ef1:
-    Op1E_Call data_04_6f2d                             ;; 04:6ef1 $1e $2d $6f $04
-    Op18_Jump data_04_6efd                             ;; 04:6ef5 $18 $fd $6e $04
+call_04_6ef1:
+    Op1E_Call call_04_6f2d                             ;; 04:6ef1 $1e $2d $6f $04
+    Op18_Jump call_04_6efd                             ;; 04:6ef5 $18 $fd $6e $04
 
-data_04_6ef9:
-    Op1E_Call data_04_6f38                             ;; 04:6ef9 $1e $38 $6f $04
+call_04_6ef9:
+    Op1E_Call call_04_6f38                             ;; 04:6ef9 $1e $38 $6f $04
 
-data_04_6efd:
+call_04_6efd:
     Op36_Unknown $fd, $72, $7f, $a2, $dd, $01          ;; 04:6efd $36 $fd $72 $7f $a2 $dd $01
     Op32_Unknown $a0, $62, $7a, $60, $dc, $06          ;; 04:6f04 $32 $a0 $62 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6f0b $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6f0b $18 $43 $6f $04
 
-data_04_6f0f:
-    Op1E_Call data_04_6f2d                             ;; 04:6f0f $1e $2d $6f $04
-    Op18_Jump data_04_6f1b                             ;; 04:6f13 $18 $1b $6f $04
+call_04_6f0f:
+    Op1E_Call call_04_6f2d                             ;; 04:6f0f $1e $2d $6f $04
+    Op18_Jump call_04_6f1b                             ;; 04:6f13 $18 $1b $6f $04
 
-data_04_6f17:
-    Op1E_Call data_04_6f38                             ;; 04:6f17 $1e $38 $6f $04
+call_04_6f17:
+    Op1E_Call call_04_6f38                             ;; 04:6f17 $1e $38 $6f $04
 
-data_04_6f1b:
+call_04_6f1b:
     Op36_Unknown $f3, $72, $7f, $a2, $dd, $01          ;; 04:6f1b $36 $f3 $72 $7f $a2 $dd $01
     Op32_Unknown $3a, $77, $7a, $60, $dc, $06          ;; 04:6f22 $32 $3a $77 $7a $60 $dc $06
-    Op18_Jump data_04_6f43                             ;; 04:6f29 $18 $43 $6f $04
+    Op18_Jump call_04_6f43                             ;; 04:6f29 $18 $43 $6f $04
 
-data_04_6f2d:
+call_04_6f2d:
     db   $92, $00, $44, $08, $00, $50                  ;; 04:6f2d w.w..w
     dw   wC3F8                                         ;; 04:6f33 pP
     db   $00, $02, $20                                 ;; 04:6f35 ..w
 
-data_04_6f38:
+call_04_6f38:
     db   $92, $00, $44, $08, $00, $50                  ;; 04:6f38 w.w..w
     dw   wC3F8                                         ;; 04:6f3e pP
     db   $00, $01, $20                                 ;; 04:6f40 ..w
 
-data_04_6f43:
+call_04_6f43:
     Op50_WriteByte w1_DD99, $01, $00                   ;; 04:6f43 $50 $99 $dd $01 $00
     Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 04:6f48 $36 $fd $77 $7f $9a $dd $01
     SCRIPT_RETURN_4A                                   ;; 04:6f4f $4a
     SCRIPT_RETURN_20                                   ;; 04:6f50 $20
     SCRIPT_RETURN_4A                                   ;; 04:6f51 $4a
-    Op82_Run call_01_7511                              ;; 04:6f52 $82 $11 $75 $01
+    Op82_Run data_01_7511                              ;; 04:6f52 $82 $11 $75 $01
     db   $a1, $d1, $1c, $01, $51, $6f, $04, $20        ;; 04:6f56 ????????
     db   $4a, $82, $11, $75, $01, $cf, $d1, $1c        ;; 04:6f5e ????????
     db   $01, $5e, $6f, $04, $20, $4a, $82, $11        ;; 04:6f66 ????????

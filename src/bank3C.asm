@@ -187,7 +187,7 @@ data_3c_407f:
     db   $06, $1a, $07, $1a, $08, $1a, $09, $1a        ;; 3c:4527 ?????ww?
     db   $0a                                           ;; 3c:452f ?
 
-data_3c_4530:
+call_3c_4530:
     db   $5a, $a4, $1e                                 ;; 3c:4530 w.w
     dw   $5b22                                         ;; 3c:4533 wW
     db   $04, $44, $09, $00, $4c, $08, $01, $00        ;; 3c:4535 .w..ww..
@@ -280,45 +280,45 @@ data_3c_4530:
     db   $04, $42, $08, $00, $50, $61, $04, $42        ;; 3c:4684 .w.....w
     db   $09, $00, $50, $61, $04, $20                  ;; 3c:468c .....w
 
-data_3c_4692:
+call_3c_4692:
     Op14_Unknown 1, $6e, $60                           ;; 3c:4692 $14 $01 $6e $60
-    SCRIPT_POINTER data_3c_469d                        ;; 3c:4696 $9d $46 $3c
+    SCRIPT_POINTER call_3c_469d                        ;; 3c:4696 $9d $46 $3c
     Op16_SubOps 1                                      ;; 3c:4699 $16 $01
     SubOp_SetFlag wC94A, 3                             ;; 3c:469b $3f $93
 
-data_3c_469d:
+call_3c_469d:
     SCRIPT_RETURN_20                                   ;; 3c:469d $20
 
-data_3c_469e:
+call_3c_469e:
     Op14_Unknown 1, $72, $60                           ;; 3c:469e $14 $01 $72 $60
-    SCRIPT_POINTER data_3c_46b0                        ;; 3c:46a2 $b0 $46 $3c
+    SCRIPT_POINTER call_3c_46b0                        ;; 3c:46a2 $b0 $46 $3c
     Op14_Unknown 1, $74, $60                           ;; 3c:46a5 $14 $01 $74 $60
-    SCRIPT_POINTER data_3c_46c1                        ;; 3c:46a9 $c1 $46 $3c
+    SCRIPT_POINTER call_3c_46c1                        ;; 3c:46a9 $c1 $46 $3c
     Op16_SubOps 1                                      ;; 3c:46ac $16 $01
     SubOp_SetFlag wC94A, 3                             ;; 3c:46ae $3f $93
 
-data_3c_46b0:
+call_3c_46b0:
     Op50_WriteByte wC720, $00, $14                     ;; 3c:46b0 $50 $20 $c7 $00 $14
-    Op82_Run call_01_6844                              ;; 3c:46b5 $82 $44 $68 $01
+    Op82_Run data_01_6844                              ;; 3c:46b5 $82 $44 $68 $01
     Op16_SubOps 1                                      ;; 3c:46b9 $16 $01
     SubOp_ClearFlag wC935, 1                           ;; 3c:46bb $5e $e9
-    Op18_Jump data_3c_46d2                             ;; 3c:46bd $18 $d2 $46 $3c
+    Op18_Jump call_3c_46d2                             ;; 3c:46bd $18 $d2 $46 $3c
 
-data_3c_46c1:
+call_3c_46c1:
     Op50_WriteByte wC720, $00, $13                     ;; 3c:46c1 $50 $20 $c7 $00 $13
-    Op82_Run call_01_6844                              ;; 3c:46c6 $82 $44 $68 $01
+    Op82_Run data_01_6844                              ;; 3c:46c6 $82 $44 $68 $01
     Op16_SubOps 1                                      ;; 3c:46ca $16 $01
     SubOp_SetFlag wC935, 1                             ;; 3c:46cc $3e $e9
-    Op18_Jump data_3c_46d2                             ;; 3c:46ce $18 $d2 $46 $3c
+    Op18_Jump call_3c_46d2                             ;; 3c:46ce $18 $d2 $46 $3c
 
-data_3c_46d2:
+call_3c_46d2:
     SCRIPT_RETURN_20                                   ;; 3c:46d2 $20
 
-data_3c_46d3:
+call_3c_46d3:
     Op14_Unknown 1, $78, $60                           ;; 3c:46d3 $14 $01 $78 $60
-    SCRIPT_POINTER data_3c_469e                        ;; 3c:46d7 $9e $46 $3c
+    SCRIPT_POINTER call_3c_469e                        ;; 3c:46d7 $9e $46 $3c
     Op50_WriteByte wC720, $00, $20                     ;; 3c:46da $50 $20 $c7 $00 $20
-    Op82_Run call_01_6844                              ;; 3c:46df $82 $44 $68 $01
+    Op82_Run data_01_6844                              ;; 3c:46df $82 $44 $68 $01
     SCRIPT_RETURN_20                                   ;; 3c:46e3 $20
 
 data_3c_46e4:
@@ -532,17 +532,17 @@ data_3c_4d76:
     db   $1a, $04, $1a, $05, $1a, $06, $1a, $07        ;; 3c:4e02 ????????
     db   $1a, $08, $1a, $09                            ;; 3c:4e0a ????
 
-data_3c_4e0e:
+call_3c_4e0e:
     Op14_Unknown 1, $96, $66                           ;; 3c:4e0e $14 $01 $96 $66
-    SCRIPT_POINTER data_3c_4e1c                        ;; 3c:4e12 $1c $4e $3c
+    SCRIPT_POINTER call_3c_4e1c                        ;; 3c:4e12 $1c $4e $3c
     Op4E_Unknown_StoreValue 9, $01, $e2, $7c, $12      ;; 3c:4e15 $4e $09 $01 $e2 $7c $12
     SCRIPT_RETURN_20                                   ;; 3c:4e1b $20
 
-data_3c_4e1c:
+call_3c_4e1c:
     Op4E_Unknown_StoreValue 9, $01, $bb, $7c, $12      ;; 3c:4e1c $4e $09 $01 $bb $7c $12
     SCRIPT_RETURN_20                                   ;; 3c:4e22 $20
 
-data_3c_4e23:
+call_3c_4e23:
     db   $5a, $a4, $4e, $09, $00, $00, $00, $00        ;; 3c:4e23 w.w.....
     db   $1e                                           ;; 3c:4e2b w
     dw   $5b22                                         ;; 3c:4e2c wW
@@ -636,8 +636,8 @@ data_3c_4e23:
     db   $04, $42, $08, $00, $50, $61, $04, $42        ;; 3c:4f7d .w.....w
     db   $09, $00, $50, $61, $04, $20                  ;; 3c:4f85 .....w
 
-data_3c_4f8b:
-    Op82_Run call_01_782b                              ;; 3c:4f8b $82 $2b $78 $01
+call_3c_4f8b:
+    Op82_Run data_01_782b                              ;; 3c:4f8b $82 $2b $78 $01
     Op4C_Unknown $16, $01, $12, $00, $00, $00, $00, $09, $42, $10 ;; 3c:4f8f $4c $16 $01 $12 $00 $00 $00 $00 $09 $42 $10
     Op44_Unknown $30, $00                              ;; 3c:4f9a $44 $30 $00
     SCRIPT_RETURN_20                                   ;; 3c:4f9d $20
@@ -802,7 +802,7 @@ data_3c_4f8b:
     db   $1a, $05, $1a, $06, $1a, $07, $1a, $08        ;; 3c:543f ????????
     db   $1a, $09, $1a, $0a, $1a, $0b                  ;; 3c:5447 ??ww??
 
-data_3c_544d:
+call_3c_544d:
     db   $5a, $a4, $4e, $09, $00, $00, $00, $00        ;; 3c:544d w.w.....
     db   $1e                                           ;; 3c:5455 w
     dw   $5b22                                         ;; 3c:5456 wW
@@ -922,7 +922,7 @@ data_3c_544d:
     db   $06, $1a, $07, $1a, $08, $16, $01, $7f        ;; 3c:5639 ????????
     db   $1c, $03, $1a, $09, $1a, $0a                  ;; 3c:5641 ??????
 
-data_3c_5647:
+call_3c_5647:
     db   $5a, $a4, $1e                                 ;; 3c:5647 w.w
     dw   $5b22                                         ;; 3c:564a wW
     db   $04, $44, $09, $00, $4c, $08, $01, $00        ;; 3c:564c .w..ww..

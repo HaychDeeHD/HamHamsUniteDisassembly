@@ -5447,7 +5447,7 @@ call_01_66b6:
     db   $00, $7c, $00, $7c, $00, $7c, $00, $7c        ;; 01:6836 ????????
     db   $3e, $80, $ea, $f9, $cf, $c9                  ;; 01:683e ??????
 
-call_01_6844:
+data_01_6844:
     ld   A, [wCFFA]                                    ;; 01:6844 $fa $fa $cf
     ld   B, A                                          ;; 01:6847 $47
     ld   A, [wC720]                                    ;; 01:6848 $fa $20 $c7
@@ -5477,14 +5477,14 @@ call_01_6844:
     db   $fc, $cf, $c9, $3e, $20, $ea, $fd, $cf        ;; 01:689d ????????
     db   $3e, $20, $ea, $fc, $cf, $c9                  ;; 01:68a5 ??????
 
-call_01_68ab:
+data_01_68ab:
     ld   A, $10                                        ;; 01:68ab $3e $10
     ld   [wCFFC], A                                    ;; 01:68ad $ea $fc $cf
     ret                                                ;; 01:68b0 $c9
     db   $fa, $fa, $cf, $47, $fa, $20, $c7, $b8        ;; 01:68b1 ????????
     db   $c8                                           ;; 01:68b9 ?
 
-call_01_68ba:
+data_01_68ba:
     ld   A, [wC720]                                    ;; 01:68ba $fa $20 $c7
     ld   [wCFF9], A                                    ;; 01:68bd $ea $f9 $cf
     ld   A, $08                                        ;; 01:68c0 $3e $08
@@ -6339,7 +6339,7 @@ call_01_7284:
     db   $c9, $cd, $65, $23, $3e, $05, $ea, $26        ;; 01:73b1 ????????
     db   $c3, $0a, $f6, $80, $02, $c9                  ;; 01:73b9 ??????
 
-call_01_73bf:
+data_01_73bf:
     call call_00_2365                                  ;; 01:73bf $cd $65 $23
     ld   A, $05                                        ;; 01:73c2 $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 01:73c4 $ea $26 $c3
@@ -6348,7 +6348,7 @@ call_01_73bf:
     ld   [BC], A                                       ;; 01:73ca $02
     ret                                                ;; 01:73cb $c9
 
-call_01_73cc:
+data_01_73cc:
     ld   A, [wArgAddressC6A0.bank]                     ;; 01:73cc $fa $a2 $c6
     ld   [wC53E], A                                    ;; 01:73cf $ea $3e $c5
     ld   A, [wLengthOfPreviousInstructionC326]         ;; 01:73d2 $fa $26 $c3
@@ -6373,7 +6373,7 @@ call_01_73cc:
     ld   [wC53D], A                                    ;; 01:73f4 $ea $3d $c5
     ret                                                ;; 01:73f7 $c9
 
-call_01_73f8:
+data_01_73f8:
     ld   HL, wC53C                                     ;; 01:73f8 $21 $3c $c5
     ld   DE, wC53F                                     ;; 01:73fb $11 $3f $c5
     ld   A, [HL+]                                      ;; 01:73fe $2a
@@ -6386,7 +6386,7 @@ call_01_73f8:
     ld   [DE], A                                       ;; 01:7405 $12
     ret                                                ;; 01:7406 $c9
 
-call_01_7407:
+data_01_7407:
     ld   HL, wC53C                                     ;; 01:7407 $21 $3c $c5
     ld   DE, wC53F                                     ;; 01:740a $11 $3f $c5
     ld   A, [DE]                                       ;; 01:740d $1a
@@ -6399,7 +6399,7 @@ call_01_7407:
     ld   [HL], A                                       ;; 01:7414 $77
     ret                                                ;; 01:7415 $c9
 
-call_01_7416:
+data_01_7416:
     ld   A, [wArgAddressC6A0.bank]                     ;; 01:7416 $fa $a2 $c6
     ld   [wC65C], A                                    ;; 01:7419 $ea $5c $c6
     ld   A, [wLengthOfPreviousInstructionC326]         ;; 01:741c $fa $26 $c3
@@ -6424,7 +6424,7 @@ call_01_7416:
     ld   [wC65B], A                                    ;; 01:743e $ea $5b $c6
     ret                                                ;; 01:7441 $c9
 
-call_01_7442:
+data_01_7442:
     ld   A, [wC65B]                                    ;; 01:7442 $fa $5b $c6
     ld   B, A                                          ;; 01:7445 $47
     ld   A, [wC65A]                                    ;; 01:7446 $fa $5a $c6
@@ -6441,7 +6441,7 @@ call_01_7442:
 .jr_01_7463:
     ret                                                ;; 01:7463 $c9
 
-call_01_7464:
+data_01_7464:
     call call_00_27ef                                  ;; 01:7464 $cd $ef $27
     call call_00_2365                                  ;; 01:7467 $cd $65 $23
     ld   A, $05                                        ;; 01:746a $3e $05
@@ -6488,22 +6488,22 @@ call_01_7464:
     ld   [wOp1CScriptTableIndexC53A], A                ;; 01:74ad $ea $3a $c5
     ret                                                ;; 01:74b0 $c9
 
-call_01_74b1:
+data_01_74b1:
     ld   A, [wC314]                                    ;; 01:74b1 $fa $14 $c3
     ld   B, A                                          ;; 01:74b4 $47
     jr   jr_01_74d2                                    ;; 01:74b5 $18 $1b
 
-call_01_74b7:
+data_01_74b7:
     ld   A, [wC316]                                    ;; 01:74b7 $fa $16 $c3
     ld   B, A                                          ;; 01:74ba $47
     jr   jr_01_74d2                                    ;; 01:74bb $18 $15
 
-call_01_74bd:
+data_01_74bd:
     ld   A, [wC317]                                    ;; 01:74bd $fa $17 $c3
     ld   B, A                                          ;; 01:74c0 $47
     jr   jr_01_74d2                                    ;; 01:74c1 $18 $0f
 
-call_01_74c3:
+data_01_74c3:
     ld   A, [wC314]                                    ;; 01:74c3 $fa $14 $c3
     and  A, $0f                                        ;; 01:74c6 $e6 $0f
     ld   B, A                                          ;; 01:74c8 $47
@@ -6542,7 +6542,7 @@ jr_01_74d2:
     db   $38, $01, $0c, $0c, $0c, $0c, $79, $ea        ;; 01:7506 ????????
     db   $3a, $c5, $c9                                 ;; 01:750e ???
 
-call_01_7511:
+data_01_7511:
     db   $cd, $65, $23, $3e, $05, $ea, $26, $c3        ;; 01:7511 ????????
     db   $3e, $01, $e0, $70, $21, $03, $00, $09        ;; 01:7519 ????????
     db   $2a, $b6, $a7, $28, $02, $3e, $01, $ea        ;; 01:7521 ????????
@@ -6552,7 +6552,7 @@ call_01_7511:
     db   $30, $30, $31, $2f, $30, $33, $2f, $32        ;; 01:7541 ........
     db   $32                                           ;; 01:7549 .
 
-call_01_754a:
+data_01_754a:
     ld   A, [wC6A6]                                    ;; 01:754a $fa $a6 $c6
     ld   [wC641], A                                    ;; 01:754d $ea $41 $c6
     ld   A, [wC6A7]                                    ;; 01:7550 $fa $a7 $c6
@@ -6567,7 +6567,7 @@ call_01_754a:
     ld   [wPossibleBankSourceC6A8], A                  ;; 01:7568 $ea $a8 $c6
     ret                                                ;; 01:756b $c9
 
-call_01_756c:
+data_01_756c:
     ld   A, [wC641]                                    ;; 01:756c $fa $41 $c6
     ld   [wC6A6], A                                    ;; 01:756f $ea $a6 $c6
     ld   A, [wC642]                                    ;; 01:7572 $fa $42 $c6
@@ -6599,7 +6599,7 @@ call_01_75c7:
     ld   H, A                                          ;; 01:75d9 $67
     ret                                                ;; 01:75da $c9
 
-call_01_75db:
+data_01_75db:
     call call_01_75c7                                  ;; 01:75db $cd $c7 $75
     ld   A, $20                                        ;; 01:75de $3e $20
     ld   [wC64D], A                                    ;; 01:75e0 $ea $4d $c6
@@ -6622,7 +6622,7 @@ call_01_75db:
     call call_00_3bf9                                  ;; 01:7608 $cd $f9 $3b
     ret                                                ;; 01:760b $c9
 
-call_01_760c:
+data_01_760c:
     call call_01_75c7                                  ;; 01:760c $cd $c7 $75
     ld   A, $03                                        ;; 01:760f $3e $03
     add  A, L                                          ;; 01:7611 $85
@@ -6651,7 +6651,7 @@ call_01_760c:
     call call_00_3bf9                                  ;; 01:7641 $cd $f9 $3b
     ret                                                ;; 01:7644 $c9
 
-call_01_7645:
+data_01_7645:
     ld   A, [wC784]                                    ;; 01:7645 $fa $84 $c7
     dec  A                                             ;; 01:7648 $3d
     add  A, A                                          ;; 01:7649 $87
@@ -6735,7 +6735,7 @@ call_01_7645:
     db   $07, $07, $07, $07, $07, $07, $07, $07        ;; 01:7734 ????????
     db   $87, $87, $87, $87                            ;; 01:773c ????
 
-call_01_7740:
+data_01_7740:
     ld   A, [wC71C]                                    ;; 01:7740 $fa $1c $c7
     cp   A, $00                                        ;; 01:7743 $fe $00
     jr   Z, .jr_01_7762                                ;; 01:7745 $28 $1b
@@ -6787,7 +6787,7 @@ call_01_7740:
     call call_00_39e1                                  ;; 01:77dd $cd $e1 $39
     ret                                                ;; 01:77e0 $c9
 
-call_01_77e1:
+data_01_77e1:
     ld   A, $01                                        ;; 01:77e1 $3e $01
     ld_long_store rSVBK, A                             ;; 01:77e3 $ea $70 $ff
     call call_01_7c09                                  ;; 01:77e6 $cd $09 $7c
@@ -6837,7 +6837,7 @@ call_01_77e1:
     ld   [wC73E], A                                    ;; 01:7827 $ea $3e $c7
     ret                                                ;; 01:782a $c9
 
-call_01_782b:
+data_01_782b:
     ld   A, $01                                        ;; 01:782b $3e $01
     ld_long_store rSVBK, A                             ;; 01:782d $ea $70 $ff
     ld   HL, w1_D1FF                                   ;; 01:7830 $21 $ff $d1

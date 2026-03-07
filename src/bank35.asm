@@ -7,9 +7,9 @@ INCLUDE "include/constants.inc"
 
 SECTION "bank35", ROMX[$4000], BANK[$35]
 ;@hamscript
-    Op1E_Call data_04_5b22                             ;; 35:4000 $1e $22 $5b $04
+    Op1E_Call call_04_5b22                             ;; 35:4000 $1e $22 $5b $04
     Op44_Unknown $0a, $00                              ;; 35:4004 $44 $0a $00
-    Op1E_Call data_04_5f51                             ;; 35:4007 $1e $51 $5f $04
+    Op1E_Call call_04_5f51                             ;; 35:4007 $1e $51 $5f $04
     db   $6a, $00, $00, $00, $00, $4a, $16, $01        ;; 35:400b ????????
     db   $7e, $08, $1a, $82, $ba, $68, $01, $32        ;; 35:4013 ????????
     db   $c7, $66, $6b, $00, $d8, $04, $32, $3e        ;; 35:401b ????????

@@ -270,7 +270,7 @@ UpdateCollectibleInventory:
 .return2:
     ret                                                ;; 02:430a $c9
 
-call_02_430b:
+data_02_430b:
     ld   A, [wC736]                                    ;; 02:430b $fa $36 $c7
     cp   A, $01                                        ;; 02:430e $fe $01
     jr   Z, .jr_02_4325                                ;; 02:4310 $28 $13
@@ -3113,19 +3113,19 @@ call_02_659f:
     db   $04, $04, $04, $18, $02, $06, $1e, $78        ;; 02:6796 ????????
     db   $ea, $01, $d1, $f1, $ea, $70, $ff, $c9        ;; 02:679e ????????
 
-call_02_67a6:
+data_02_67a6:
     db   $fa, $70, $ff, $f5, $3e, $01, $ea, $70        ;; 02:67a6 ????????
     db   $ff, $fa, $7d, $c7, $ea, $6c, $d4, $fa        ;; 02:67ae ????????
     db   $7e, $c7, $ea, $6d, $d4, $f1, $ea, $70        ;; 02:67b6 ????????
     db   $ff, $c9                                      ;; 02:67be ??
 
-call_02_67c0:
+data_02_67c0:
     db   $fa, $70, $ff, $f5, $3e, $01, $ea, $70        ;; 02:67c0 ????????
     db   $ff, $fa, $7d, $c7, $ea, $9a, $d4, $fa        ;; 02:67c8 ????????
     db   $7e, $c7, $ea, $9b, $d4, $f1, $ea, $70        ;; 02:67d0 ????????
     db   $ff, $c9                                      ;; 02:67d8 ??
 
-call_02_67da:
+data_02_67da:
     db   $fa, $70, $ff, $f5, $3e, $01, $ea, $70        ;; 02:67da ????????
     db   $ff, $fa, $7d, $c7, $ea, $c8, $d4, $fa        ;; 02:67e2 ????????
     db   $7e, $c7, $ea, $c9, $d4, $f1, $ea, $70        ;; 02:67ea ????????
@@ -3384,7 +3384,7 @@ ObtainHamChatFromC715.loop_overwriteWholeDictWithFF:
     ld   [wCA51], A                                    ;; 02:6e35 $ea $51 $ca
     rst  rst_00_0028                                   ;; 02:6e38 $ef
 
-call_02_6e39:
+data_02_6e39:
     ld_long_load A, rSVBK                              ;; 02:6e39 $fa $70 $ff
     push AF                                            ;; 02:6e3c $f5
     ld   A, $02                                        ;; 02:6e3d $3e $02
@@ -3474,7 +3474,7 @@ call_02_6e39:
     ld_long_store rSVBK, A                             ;; 02:6ec8 $ea $70 $ff
     ret                                                ;; 02:6ecb $c9
 
-call_02_6ecc:
+data_02_6ecc:
     ld   A, [wNumHamChatsCA45]                         ;; 02:6ecc $fa $4f $ca
     cp   A, $00                                        ;; 02:6ecf $fe $00
     jr   Z, .jr_02_6ed9                                ;; 02:6ed1 $28 $06
@@ -3497,7 +3497,7 @@ call_02_6ecc:
     db   $fe, $04, $30, $05, $c6, $04, $ea, $4f        ;; 02:6f22 ????????
     db   $ca, $f1, $ea, $70, $ff, $c9                  ;; 02:6f2a ??????
 
-call_02_6f30:
+data_02_6f30:
     db   $fa, $70, $ff, $f5, $3e, $02, $ea, $70        ;; 02:6f30 ????????
     db   $ff, $21, $f0, $d0, $3e, $ff, $0e, $04        ;; 02:6f38 ????????
     db   $22, $0d, $20, $fc, $21, $f4, $d0, $3e        ;; 02:6f40 ????????
@@ -3648,21 +3648,21 @@ data_02_72d3:
     db   $60, $5b, $07, $08, $23, $0f, $15, $46        ;; 02:731b ????????
     db   $06, $49, $16, $20, $18, $24                  ;; 02:7323 ??????
 
-call_02_7329:
+data_02_7329:
     db   $fa, $70, $ff, $f5, $3e, $02, $ea, $70        ;; 02:7329 ????????
     db   $ff, $fa, $f9, $d0, $3d, $ea, $f9, $d0        ;; 02:7331 ????????
     db   $cd, $60, $75, $f1, $ea, $70, $ff, $c9        ;; 02:7339 ????????
 
-call_02_7341:
+data_02_7341:
     db   $fa, $70, $ff, $f5, $3e, $02, $ea, $70        ;; 02:7341 ????????
     db   $ff, $fa, $f9, $d0, $3c, $ea, $f9, $d0        ;; 02:7349 ????????
     db   $cd, $60, $75, $f1, $ea, $70, $ff, $c9        ;; 02:7351 ????????
 
-call_02_7359:
+data_02_7359:
     db   $3e, $01, $ea, $5b, $c7, $fa, $61, $c7        ;; 02:7359 ????????
     db   $fe, $04, $d8, $af, $ea, $5b, $c7, $c9        ;; 02:7361 ????????
 
-call_02_7369:
+data_02_7369:
     db   $fa, $70, $ff, $f5, $3e, $02, $ea, $70        ;; 02:7369 ????????
     db   $ff, $fa, $2f, $c7, $fe, $01, $28, $0b        ;; 02:7371 ????????
     db   $fa, $4f, $ca, $3d, $cb, $2f, $cb, $2f        ;; 02:7379 ????????
@@ -3746,7 +3746,7 @@ call_02_7369:
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:7428 $ea $3a $c5
     jr   .jr_02_73c3                                   ;; 02:742b $18 $96
 
-call_02_742d:
+data_02_742d:
     ld   A, [wC317]                                    ;; 02:742d $fa $17 $c3
     ld   B, A                                          ;; 02:7430 $47
     ld   A, [wC31D]                                    ;; 02:7431 $fa $1d $c3
@@ -3773,7 +3773,7 @@ call_02_742d:
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:7451 $ea $3a $c5
     ret                                                ;; 02:7454 $c9
 
-call_02_7455:
+data_02_7455:
     ld   B, $00                                        ;; 02:7455 $06 $00
     ld   A, [wC761]                                    ;; 02:7457 $fa $61 $c7
     cp   A, $60                                        ;; 02:745a $fe $60
@@ -3821,7 +3821,7 @@ call_02_7455:
     ld_long_store rSVBK, A                             ;; 02:7495 $ea $70 $ff
     ret                                                ;; 02:7498 $c9
 
-call_02_7499:
+data_02_7499:
     db   $af, $ea, $3a, $c5, $fa, $70, $ff, $f5        ;; 02:7499 ????????
     db   $3e, $02, $ea, $70, $ff, $fa, $fe, $d0        ;; 02:74a1 ????????
     db   $fe, $00, $28, $12, $3d, $ea, $fe, $d0        ;; 02:74a9 ????????
@@ -3829,7 +3829,7 @@ call_02_7499:
     db   $74, $3e, $01, $ea, $3a, $c5, $f1, $ea        ;; 02:74b9 ????????
     db   $70, $ff, $c9                                 ;; 02:74c1 ???
 
-call_02_74c4:
+data_02_74c4:
     db   $af, $ea, $3a, $c5, $fa, $70, $ff, $f5        ;; 02:74c4 ????????
     db   $3e, $02, $ea, $70, $ff, $fa, $fe, $d0        ;; 02:74cc ????????
     db   $fe, $08, $28, $12, $3c, $ea, $fe, $d0        ;; 02:74d4 ????????
@@ -3878,7 +3878,7 @@ call_02_750d:
     db   $f2, $d0, $fa, $03, $d0, $ea, $f3, $d0        ;; 02:7553 ????????
     db   $f1, $ea, $70, $ff, $c9                       ;; 02:755b ?????
 
-call_02_7560:
+data_02_7560:
     ld_long_load A, rSVBK                              ;; 02:7560 $fa $70 $ff
     push AF                                            ;; 02:7563 $f5
     ld   A, $02                                        ;; 02:7564 $3e $02
@@ -3910,7 +3910,7 @@ call_02_7560:
     ld_long_store rSVBK, A                             ;; 02:758e $ea $70 $ff
     ret                                                ;; 02:7591 $c9
 
-call_02_7592:
+data_02_7592:
     ld_long_load A, rSVBK                              ;; 02:7592 $fa $70 $ff
     push AF                                            ;; 02:7595 $f5
     ld   A, $02                                        ;; 02:7596 $3e $02
@@ -3985,7 +3985,7 @@ call_02_7592:
     ld_long_store rSVBK, A                             ;; 02:7609 $ea $70 $ff
     ret                                                ;; 02:760c $c9
 
-call_02_760d:
+data_02_760d:
     ld_long_load A, rSVBK                              ;; 02:760d $fa $70 $ff
     push AF                                            ;; 02:7610 $f5
     ld   A, $02                                        ;; 02:7611 $3e $02
@@ -4063,7 +4063,7 @@ call_02_760d:
     ld_long_store rSVBK, A                             ;; 02:7685 $ea $70 $ff
     ret                                                ;; 02:7688 $c9
 
-call_02_7689:
+data_02_7689:
     ld_long_load A, rSVBK                              ;; 02:7689 $fa $70 $ff
     push AF                                            ;; 02:768c $f5
     ld   A, $02                                        ;; 02:768d $3e $02
@@ -4110,7 +4110,7 @@ call_02_7689:
     ld_long_store rSVBK, A                             ;; 02:76da $ea $70 $ff
     ret                                                ;; 02:76dd $c9
 
-call_02_76de:
+data_02_76de:
     ld_long_load A, rSVBK                              ;; 02:76de $fa $70 $ff
     push AF                                            ;; 02:76e1 $f5
     ld   A, $02                                        ;; 02:76e2 $3e $02
@@ -4207,7 +4207,7 @@ data_02_773e:
     ld_long_store rSVBK, A                             ;; 02:77d0 $ea $70 $ff
     ret                                                ;; 02:77d3 $c9
 
-call_02_77d4:
+data_02_77d4:
     ld_long_load A, rSVBK                              ;; 02:77d4 $fa $70 $ff
     push AF                                            ;; 02:77d7 $f5
     ld   A, $02                                        ;; 02:77d8 $3e $02
@@ -4240,7 +4240,7 @@ call_02_77d4:
     ld_long_store rSVBK, A                             ;; 02:7808 $ea $70 $ff
     ret                                                ;; 02:780b $c9
 
-call_02_780c:
+data_02_780c:
     ld_long_load A, rSVBK                              ;; 02:780c $fa $70 $ff
     push AF                                            ;; 02:780f $f5
     ld   A, $02                                        ;; 02:7810 $3e $02
@@ -4298,7 +4298,7 @@ call_02_783f:
     ld   [w1_D101], A                                  ;; 02:7869 $ea $01 $d1
     ret                                                ;; 02:786c $c9
 
-call_02_786d:
+data_02_786d:
     ld_long_load A, rSVBK                              ;; 02:786d $fa $70 $ff
     push AF                                            ;; 02:7870 $f5
     ld   A, $02                                        ;; 02:7871 $3e $02
@@ -4339,7 +4339,7 @@ call_02_786d:
     ld_long_store rSVBK, A                             ;; 02:78ab $ea $70 $ff
     ret                                                ;; 02:78ae $c9
 
-call_02_78af:
+data_02_78af:
     ld_long_load A, rSVBK                              ;; 02:78af $fa $70 $ff
     push AF                                            ;; 02:78b2 $f5
     ld   A, $02                                        ;; 02:78b3 $3e $02
@@ -4423,7 +4423,7 @@ call_02_78df:
     db   $00, $83, $00, $20, $83, $00, $40, $83        ;; 02:7961 ........
     db   $00, $60, $83, $00                            ;; 02:7969 ....
 
-call_02_796d:
+data_02_796d:
     ld_long_load A, rSVBK                              ;; 02:796d $fa $70 $ff
     push AF                                            ;; 02:7970 $f5
     ld   A, $02                                        ;; 02:7971 $3e $02
@@ -4461,7 +4461,7 @@ call_02_796d:
     ld_long_store rSVBK, A                             ;; 02:79ab $ea $70 $ff
     ret                                                ;; 02:79ae $c9
 
-call_02_79af:
+data_02_79af:
     db   $fa, $70, $ff, $f5, $3e, $02, $ea, $70        ;; 02:79af ????????
     db   $ff, $21, $f0, $d0, $fa, $5a, $c7, $85        ;; 02:79b7 ????????
     db   $6f, $3e, $00, $8c, $67, $7e, $fe, $ff        ;; 02:79bf ????????
@@ -4476,7 +4476,7 @@ call_02_79af:
     db   $ea, $3a, $c5, $18, $04, $af, $ea, $3a        ;; 02:7a07 ????????
     db   $c5, $f1, $ea, $70, $ff, $c9                  ;; 02:7a0f ??????
 
-call_02_7a15:
+data_02_7a15:
     ld_long_load A, rSVBK                              ;; 02:7a15 $fa $70 $ff
     push AF                                            ;; 02:7a18 $f5
     ld   A, $02                                        ;; 02:7a19 $3e $02
@@ -4623,7 +4623,7 @@ call_02_7b34:
     jr   NZ, .jr_02_7b47                               ;; 02:7b61 $20 $e4
     ret                                                ;; 02:7b63 $c9
 
-call_02_7b64:
+data_02_7b64:
     db   $fa, $70, $ff, $f5, $3e, $02, $ea, $70        ;; 02:7b64 ????????
     db   $ff, $cd, $34, $7b, $1e, $00, $7b, $21        ;; 02:7b6c ????????
     db   $d3, $72, $85, $6f, $3e, $00, $8c, $67        ;; 02:7b74 ????????
@@ -4643,7 +4643,7 @@ call_02_7b64:
     db   $3e, $56, $1c, $bb, $20, $da, $f1, $ea        ;; 02:7be4 ????????
     db   $70, $ff, $c9                                 ;; 02:7bec ???
 
-call_02_7bef:
+data_02_7bef:
     ld_long_load A, rSVBK                              ;; 02:7bef $fa $70 $ff
     push AF                                            ;; 02:7bf2 $f5
     ld   A, $02                                        ;; 02:7bf3 $3e $02

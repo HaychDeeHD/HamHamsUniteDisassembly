@@ -79,6 +79,22 @@ def makeGenericBlockClass(opcode, size, macroName=None):
     __class__.export = basicExport
     return __class__
 
+def label3ByteRomAddressArg(memory, addr, addrType=None):
+    pointer = memory.word(addr)
+    bankNum = memory.byte(addr + 2)
+    bank = RomInfo.romBank(bankNum)
+    
+    labelType = None
+    if addrType == "script":
+        labelType = "call" # "call" makes the label nonlocal and prefixes with "call".
+        addKnownScriptAddress(bank, pointer)
+    elif addrType == "text":
+        labelType = "data"
+        addKnownTextAddress(bank, pointer)
+    
+    bank.addAutoLabel(pointer, None, labelType) 
+    return bank.getLabel(pointer)
+
 class Op1CBlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=2)
@@ -97,14 +113,7 @@ class ScriptPointersBlock(Block):
 
         self.labels = []
         for n in range(amount):
-            pointer = memory.word(addr + n * 3)
-            bankNum = memory.byte(addr + n * 3 + 2)
-
-            bank = RomInfo.romBank(bankNum)
-            bank.addAutoLabel(pointer, None, "data")
-            self.labels.append(bank.getLabel(pointer))
-            # Everything pointed to is a script instruction.
-            addKnownScriptAddress(bank, pointer)
+            self.labels.append(label3ByteRomAddressArg(memory, addr + n * 3, "script"))
 
     def export(self, file):
         for label in self.labels:
@@ -115,11 +124,7 @@ class Op82Block(Block):
         super().__init__(memory, addr, size=4)
         RomInfo.macros["Op82_Run"] = "db $82\ndw \\1\ndb BANK(\\1)"
 
-        pointer = memory.word(addr + 1)
-        bankNum = memory.byte(addr + 3)
-        bank = RomInfo.romBank(bankNum)
-        bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
-        self.label = bank.getLabel(pointer)
+        self.label = label3ByteRomAddressArg(memory, addr + 1)
 
     def export(self, file):
         file.asmLine(4, "Op82_Run", str(self.label))
@@ -215,13 +220,8 @@ class Op18Block(Block):
         super().__init__(memory, addr, size=4)
         RomInfo.macros["Op18_Jump"] = "db $18\ndw \\1\ndb BANK(\\1)"
 
-        pointer = memory.word(addr + 1)
-        bankNum = memory.byte(addr + 3)
-        bank = RomInfo.romBank(bankNum)
-        bank.addAutoLabel(pointer, None, "data")
-        self.label = bank.getLabel(pointer)
-        # The address pointed to is a script instruction.
-        addKnownScriptAddress(bank, pointer)
+        self.label = label3ByteRomAddressArg(memory, addr + 1, "script")
+
 
     def export(self, file):
         file.asmLine(4, "Op18_Jump", str(self.label))
@@ -231,13 +231,7 @@ class Op1EBlock(Block):
         super().__init__(memory, addr, size=4)
         RomInfo.macros["Op1E_Call"] = "db $1e\ndw \\1\ndb BANK(\\1)"
 
-        pointer = memory.word(addr + 1)
-        bankNum = memory.byte(addr + 3)
-        bank = RomInfo.romBank(bankNum)
-        bank.addAutoLabel(pointer, None, "data")
-        self.label = bank.getLabel(pointer)
-        # The address pointed to is a script instruction.
-        addKnownScriptAddress(bank, pointer)
+        self.label = label3ByteRomAddressArg(memory, addr + 1, "script")
 
     def export(self, file):
         file.asmLine(4, "Op1E_Call", str(self.label))
@@ -337,13 +331,7 @@ class Op3EBlock(Block):
         super().__init__(memory, addr, size = 8)
         RomInfo.macros["Op3E_Compare_Branch"] = "db $3E\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndw \\5\ndb BANK(\\5)"
 
-        pointer = memory.word(addr + 5)
-        bankNum = memory.byte(addr + 7)
-        bank = RomInfo.romBank(bankNum)
-        bank.addAutoLabel(pointer, None, "data")
-        self.label = bank.getLabel(pointer)
-        # The address pointed to is a script instruction.
-        addKnownScriptAddress(bank, pointer)
+        self.label = label3ByteRomAddressArg(memory, addr + 5, "script")
 
     def export(self, file):
         offset = self.memory.byte(file.addr + 1)
@@ -558,12 +546,7 @@ class Op04Block(Block):
         super().__init__(memory, addr, size=4)
         RomInfo.macros["Op04_Unknown_Text"] = "db $04\ndw \\1\ndb BANK(\\1)"
 
-        pointer = memory.word(addr + 1)
-        bankNum = memory.byte(addr + 3)
-        bank = RomInfo.romBank(bankNum)
-        bank.addAutoLabel(pointer, None, "data")
-        self.label = bank.getLabel(pointer)
-        addKnownTextAddress(bank, pointer)
+        self.label = label3ByteRomAddressArg(memory, addr + 1, "text")
 
     def export(self, file):
         file.asmLine(4, "Op04_Unknown_Text", str(self.label))
@@ -573,12 +556,7 @@ class Op06Block(Block):
         super().__init__(memory, addr, size=4)
         RomInfo.macros["Op06_Unknown_Text"] = "db $06\ndw \\1\ndb BANK(\\1)"
 
-        pointer = memory.word(addr + 1)
-        bankNum = memory.byte(addr + 3)
-        bank = RomInfo.romBank(bankNum)
-        bank.addAutoLabel(pointer, None, "data")
-        self.label = bank.getLabel(pointer)
-        addKnownTextAddress(bank, pointer)
+        self.label = label3ByteRomAddressArg(memory, addr + 1, "text")
 
     def export(self, file):
         file.asmLine(4, "Op06_Unknown_Text", str(self.label))

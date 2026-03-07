@@ -7,22 +7,22 @@ INCLUDE "include/constants.inc"
 
 SECTION "bank31", ROMX[$4000], BANK[$31]
 ;@hamscript
-    Op1E_Call data_3c_4692                             ;; 31:4000 $1e $92 $46 $3c
-    Op1E_Call data_3a_63ee                             ;; 31:4004 $1e $ee $63 $3a
-    Op1E_Call data_31_4250                             ;; 31:4008 $1e $50 $42 $31
-    Op1E_Call data_31_4080                             ;; 31:400c $1e $80 $40 $31
+    Op1E_Call call_3c_4692                             ;; 31:4000 $1e $92 $46 $3c
+    Op1E_Call call_3a_63ee                             ;; 31:4004 $1e $ee $63 $3a
+    Op1E_Call call_31_4250                             ;; 31:4008 $1e $50 $42 $31
+    Op1E_Call call_31_4080                             ;; 31:400c $1e $80 $40 $31
     Op14_Unknown 1, $6c, $61                           ;; 31:4010 $14 $01 $6c $61
-    SCRIPT_POINTER data_31_401b                        ;; 31:4014 $1b $40 $31
-    Op18_Jump data_31_401f                             ;; 31:4017 $18 $1f $40 $31
+    SCRIPT_POINTER call_31_401b                        ;; 31:4014 $1b $40 $31
+    Op18_Jump call_31_401f                             ;; 31:4017 $18 $1f $40 $31
 
-data_31_401b:
-    Op18_Jump data_31_490b                             ;; 31:401b $18 $0b $49 $31
+call_31_401b:
+    Op18_Jump call_31_490b                             ;; 31:401b $18 $0b $49 $31
 
-data_31_401f:
+call_31_401f:
     Op16_SubOps 1                                      ;; 31:401f $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 31:4021 $5e $03
-    Op82_Run call_01_73cc                              ;; 31:4023 $82 $cc $73 $01
-    Op82_Run call_01_7416                              ;; 31:4027 $82 $16 $74 $01
+    Op82_Run data_01_73cc                              ;; 31:4023 $82 $cc $73 $01
+    Op82_Run data_01_7416                              ;; 31:4027 $82 $16 $74 $01
     Op50_WriteByte wC31D, $00, $d0                     ;; 31:402b $50 $1d $c3 $00 $d0
     db   $2a, $00, $00, $00, $1c, $03, $bd, $42        ;; 31:4030 ????????
     db   $31, $7f, $42, $31, $f5, $42, $31, $82        ;; 31:4038 ????????
@@ -30,31 +30,31 @@ data_31_401f:
     db   $69, $40, $31, $65, $42, $31, $18, $1f        ;; 31:4048 ????????
     db   $40, $31                                      ;; 31:4050 ??
 
-data_31_4052:
-    Op1E_Call data_1d_68f9                             ;; 31:4052 $1e $f9 $68 $1d
+call_31_4052:
+    Op1E_Call call_1d_68f9                             ;; 31:4052 $1e $f9 $68 $1d
     Op14_Unknown 1, $7c, $60                           ;; 31:4056 $14 $01 $7c $60
-    SCRIPT_POINTER data_31_401f                        ;; 31:405a $1f $40 $31
-    Op1E_Call data_31_4080                             ;; 31:405d $1e $80 $40 $31
-    Op82_Run call_01_7442                              ;; 31:4061 $82 $42 $74 $01
-    Op18_Jump data_31_401f                             ;; 31:4065 $18 $1f $40 $31
+    SCRIPT_POINTER call_31_401f                        ;; 31:405a $1f $40 $31
+    Op1E_Call call_31_4080                             ;; 31:405d $1e $80 $40 $31
+    Op82_Run data_01_7442                              ;; 31:4061 $82 $42 $74 $01
+    Op18_Jump call_31_401f                             ;; 31:4065 $18 $1f $40 $31
 
-data_31_4069:
-    Op1E_Call data_1d_69f1                             ;; 31:4069 $1e $f1 $69 $1d
+call_31_4069:
+    Op1E_Call call_1d_69f1                             ;; 31:4069 $1e $f1 $69 $1d
     Op14_Unknown 1, $7c, $60                           ;; 31:406d $14 $01 $7c $60
-    SCRIPT_POINTER data_31_401f                        ;; 31:4071 $1f $40 $31
-    Op1E_Call data_31_4080                             ;; 31:4074 $1e $80 $40 $31
-    Op82_Run call_01_7442                              ;; 31:4078 $82 $42 $74 $01
-    Op18_Jump data_31_401f                             ;; 31:407c $18 $1f $40 $31
+    SCRIPT_POINTER call_31_401f                        ;; 31:4071 $1f $40 $31
+    Op1E_Call call_31_4080                             ;; 31:4074 $1e $80 $40 $31
+    Op82_Run data_01_7442                              ;; 31:4078 $82 $42 $74 $01
+    Op18_Jump call_31_401f                             ;; 31:407c $18 $1f $40 $31
 
-data_31_4080:
+call_31_4080:
     Op50_WriteByte wC720, $00, $1f                     ;; 31:4080 $50 $20 $c7 $00 $1f
-    Op82_Run call_01_6844                              ;; 31:4085 $82 $44 $68 $01
+    Op82_Run data_01_6844                              ;; 31:4085 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 31:4089 $4a
     Op14_Unknown 1, $6e, $61                           ;; 31:408a $14 $01 $6e $61
-    SCRIPT_POINTER data_31_4095                        ;; 31:408e $95 $40 $31
-    Op1E_Call data_04_61cf                             ;; 31:4091 $1e $cf $61 $04
+    SCRIPT_POINTER call_31_4095                        ;; 31:408e $95 $40 $31
+    Op1E_Call call_04_61cf                             ;; 31:4091 $1e $cf $61 $04
 
-data_31_4095:
+call_31_4095:
     Op32_Unknown $73, $44, $6c, $00, $d0, $05          ;; 31:4095 $32 $73 $44 $6c $00 $d0 $05
     Op32_Unknown $96, $50, $6e, $00, $d0, $07          ;; 31:409c $32 $96 $50 $6e $00 $d0 $07
     Op34_Unknown $13, $75, $7c, $00, $d8, $05, $15     ;; 31:40a3 $34 $13 $75 $7c $00 $d8 $05 $15
@@ -62,62 +62,62 @@ data_31_4095:
     Op36_Unknown $d5, $62, $7d, $00, $d0, $03          ;; 31:40b3 $36 $d5 $62 $7d $00 $d0 $03
     Op32_Unknown $0d, $7d, $6d, $00, $d4, $06          ;; 31:40ba $32 $0d $7d $6d $00 $d4 $06
     Op32_Unknown $de, $72, $6d, $00, $d0, $06          ;; 31:40c1 $32 $de $72 $6d $00 $d0 $06
-    Op1E_Call data_31_48d5                             ;; 31:40c8 $1e $d5 $48 $31
+    Op1E_Call call_31_48d5                             ;; 31:40c8 $1e $d5 $48 $31
     Op14_Unknown 1, $6e, $61                           ;; 31:40cc $14 $01 $6e $61
-    SCRIPT_POINTER data_31_40f8                        ;; 31:40d0 $f8 $40 $31
+    SCRIPT_POINTER call_31_40f8                        ;; 31:40d0 $f8 $40 $31
     Op14_Unknown 1, $04, $61                           ;; 31:40d3 $14 $01 $04 $61
-    SCRIPT_POINTER data_31_40e9                        ;; 31:40d7 $e9 $40 $31
+    SCRIPT_POINTER call_31_40e9                        ;; 31:40d7 $e9 $40 $31
     Op4C_Unknown $16, $08, $02, $30, $00, $60, $00, $c2, $40, $10 ;; 31:40da $4c $16 $08 $02 $30 $00 $60 $00 $c2 $40 $10
-    Op18_Jump data_31_4106                             ;; 31:40e5 $18 $06 $41 $31
+    Op18_Jump call_31_4106                             ;; 31:40e5 $18 $06 $41 $31
 
-data_31_40e9:
+call_31_40e9:
     Op4C_Unknown $16, $10, $02, $30, $00, $91, $00, $b1, $6b, $11 ;; 31:40e9 $4c $16 $10 $02 $30 $00 $91 $00 $b1 $6b $11
-    Op18_Jump data_31_4106                             ;; 31:40f4 $18 $06 $41 $31
+    Op18_Jump call_31_4106                             ;; 31:40f4 $18 $06 $41 $31
 
-data_31_40f8:
+call_31_40f8:
     Op56_WriteBitArrayIndex 22, $24, $62, $12          ;; 31:40f8 $56 $16 $24 $62 $12
     Op16_SubOps 1                                      ;; 31:40fd $16 $01
     SubOp_SetByte wC742, $00                           ;; 31:40ff $7e $2a $00
-    Op18_Jump data_31_419b                             ;; 31:4102 $18 $9b $41 $31
+    Op18_Jump call_31_419b                             ;; 31:4102 $18 $9b $41 $31
 
-data_31_4106:
+call_31_4106:
     Op14_Unknown 1, $de, $60                           ;; 31:4106 $14 $01 $de $60
-    SCRIPT_POINTER data_31_4126                        ;; 31:410a $26 $41 $31
+    SCRIPT_POINTER call_31_4126                        ;; 31:410a $26 $41 $31
     Op14_Unknown 1, $e2, $60                           ;; 31:410d $14 $01 $e2 $60
-    SCRIPT_POINTER data_31_4135                        ;; 31:4111 $35 $41 $31
+    SCRIPT_POINTER call_31_4135                        ;; 31:4111 $35 $41 $31
     Op14_Unknown 1, $e6, $60                           ;; 31:4114 $14 $01 $e6 $60
-    SCRIPT_POINTER data_31_4144                        ;; 31:4118 $44 $41 $31
+    SCRIPT_POINTER call_31_4144                        ;; 31:4118 $44 $41 $31
     Op14_Unknown 1, $ea, $60                           ;; 31:411b $14 $01 $ea $60
-    SCRIPT_POINTER data_31_4153                        ;; 31:411f $53 $41 $31
-    Op18_Jump data_31_419b                             ;; 31:4122 $18 $9b $41 $31
+    SCRIPT_POINTER call_31_4153                        ;; 31:411f $53 $41 $31
+    Op18_Jump call_31_419b                             ;; 31:4122 $18 $9b $41 $31
 
-data_31_4126:
+call_31_4126:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $3d, $41, $10 ;; 31:4126 $4c $16 $10 $ff $00 $00 $00 $00 $3d $41 $10
-    Op18_Jump data_31_4162                             ;; 31:4131 $18 $62 $41 $31
+    Op18_Jump call_31_4162                             ;; 31:4131 $18 $62 $41 $31
 
-data_31_4135:
+call_31_4135:
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, $c2, $40, $10 ;; 31:4135 $4c $16 $08 $ff $00 $00 $00 $00 $c2 $40 $10
-    Op18_Jump data_31_4162                             ;; 31:4140 $18 $62 $41 $31
+    Op18_Jump call_31_4162                             ;; 31:4140 $18 $62 $41 $31
 
-data_31_4144:
+call_31_4144:
     Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, $81, $41, $10 ;; 31:4144 $4c $16 $04 $ff $00 $00 $00 $00 $81 $41 $10
-    Op18_Jump data_31_4162                             ;; 31:414f $18 $62 $41 $31
+    Op18_Jump call_31_4162                             ;; 31:414f $18 $62 $41 $31
 
-data_31_4153:
+call_31_4153:
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, $c5, $41, $10 ;; 31:4153 $4c $16 $02 $ff $00 $00 $00 $00 $c5 $41 $10
-    Op18_Jump data_31_4162                             ;; 31:415e $18 $62 $41 $31
+    Op18_Jump call_31_4162                             ;; 31:415e $18 $62 $41 $31
 
-data_31_4162:
+call_31_4162:
     Op80_CopyNBytes wC7D8, $00, w1_D216, $01, 2        ;; 31:4162 $80 $d8 $c7 $00 $16 $d2 $01 $02 $00
     Op80_CopyNBytes wC7DA, $00, w1_D20E, $01, 2        ;; 31:416b $80 $da $c7 $00 $0e $d2 $01 $02 $00
     Op50_WriteByte w1_D215, $01, $80                   ;; 31:4174 $50 $15 $d2 $01 $80
     Op50_WriteByte w1_D20D, $01, $80                   ;; 31:4179 $50 $0d $d2 $01 $80
     Op14_Unknown 1, $ee, $60                           ;; 31:417e $14 $01 $ee $60
-    SCRIPT_POINTER data_31_419b                        ;; 31:4182 $9b $41 $31
+    SCRIPT_POINTER call_31_419b                        ;; 31:4182 $9b $41 $31
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, $7e, $55, $10 ;; 31:4185 $4c $16 $08 $ff $00 $00 $00 $00 $7e $55 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $01, $56, $10 ;; 31:4190 $4c $08 $01 $04 $00 $00 $00 $00 $01 $56 $10
 
-data_31_419b:
+call_31_419b:
     Op16_SubOps 1                                      ;; 31:419b $16 $01
     SubOp_SetByte wC764, $ff                           ;; 31:419d $7e $4c $ff
     Op16_SubOps 1                                      ;; 31:41a0 $16 $01
@@ -125,7 +125,7 @@ data_31_419b:
     Op16_SubOps 1                                      ;; 31:41a6 $16 $01
     SubOp_SetWord wC7DA, $0000                         ;; 31:41a8 $9e $c2 $00 $00
     Op52_WriteBytes wC694, $00, $00, $00               ;; 31:41ac $52 $94 $c6 $00 $00 $00
-    Op1E_Call data_04_6223                             ;; 31:41b2 $1e $23 $62 $04
+    Op1E_Call call_04_6223                             ;; 31:41b2 $1e $23 $62 $04
     Op4E_Unknown_StoreValue 4, $01, $49, $40, $10      ;; 31:41b6 $4e $04 $01 $49 $40 $10
     Op4E_Unknown_StoreValue 5, $01, $7f, $40, $10      ;; 31:41bc $4e $05 $01 $7f $40 $10
     Op4E_Unknown_StoreValue 6, $01, $3c, $65, $1b      ;; 31:41c2 $4e $06 $01 $3c $65 $1b
@@ -133,14 +133,14 @@ data_31_419b:
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $a8, $00, $90, $00 ;; 31:41ce $3a $00 $00 $a0 $90 $50 $48 $a8 $00 $90 $00
     Op44_Unknown $08, $00                              ;; 31:41d9 $44 $08 $00
 
-data_31_41dc:
+call_31_41dc:
     SCRIPT_RETURN_4A                                   ;; 31:41dc $4a
-    Op3E_Compare_Branch 22, $b1, $6b, $11, data_31_41e9 ;; 31:41dd $3e $16 $b1 $6b $11 $e9 $41 $31
-    Op18_Jump data_31_421c                             ;; 31:41e5 $18 $1c $42 $31
+    Op3E_Compare_Branch 22, $b1, $6b, $11, call_31_41e9 ;; 31:41dd $3e $16 $b1 $6b $11 $e9 $41 $31
+    Op18_Jump call_31_421c                             ;; 31:41e5 $18 $1c $42 $31
 
-data_31_41e9:
+call_31_41e9:
     Op14_Unknown 1, $fc, $60                           ;; 31:41e9 $14 $01 $fc $60
-    SCRIPT_POINTER data_31_41dc                        ;; 31:41ed $dc $41 $31
+    SCRIPT_POINTER call_31_41dc                        ;; 31:41ed $dc $41 $31
     Op16_SubOps 1                                      ;; 31:41f0 $16 $01
     SubOp_SetByte wC74F, $00                           ;; 31:41f2 $7e $37 $00
     Op16_SubOps 1                                      ;; 31:41f5 $16 $01
@@ -151,7 +151,7 @@ data_31_41e9:
     db   $4a, $3e, $16, $02, $6c, $11, $13, $42        ;; 31:4213 ????????
     db   $31                                           ;; 31:421b ?
 
-data_31_421c:
+call_31_421c:
     db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 31:421c ????????
     db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 31:4224 ????????
     db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 31:422c ????????
@@ -160,9 +160,9 @@ data_31_421c:
     db   $12, $48, $16, $01, $7f, $0a, $00, $16        ;; 31:4244 ????????
     db   $01, $5e, $03, $20                            ;; 31:424c ????
 
-data_31_4250:
+call_31_4250:
     Op14_Unknown 1, $d8, $60                           ;; 31:4250 $14 $01 $d8 $60
-    SCRIPT_POINTER data_31_4264                        ;; 31:4254 $64 $42 $31
+    SCRIPT_POINTER call_31_4264                        ;; 31:4254 $64 $42 $31
     Op16_SubOps 1                                      ;; 31:4257 $16 $01
     SubOp_SetByte wC822, $00                           ;; 31:4259 $7f $0a $00
     Op16_SubOps 1                                      ;; 31:425c $16 $01
@@ -170,87 +170,87 @@ data_31_4250:
     Op16_SubOps 1                                      ;; 31:4260 $16 $01
     SubOp_ClearFlag wC94B, 1                           ;; 31:4262 $5f $99
 
-data_31_4264:
+call_31_4264:
     SCRIPT_RETURN_20                                   ;; 31:4264 $20
 
-data_31_4265:
-    Op82_Run call_01_7416                              ;; 31:4265 $82 $16 $74 $01
+call_31_4265:
+    Op82_Run data_01_7416                              ;; 31:4265 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 31:4269 $16 $01
     SubOp_SetWord wC752, $0080                         ;; 31:426b $9e $3a $80 $00
-    Op1E_Call data_33_490f                             ;; 31:426f $1e $0f $49 $33
+    Op1E_Call call_33_490f                             ;; 31:426f $1e $0f $49 $33
     Op1C_TableJump 2                                   ;; 31:4273 $1c $02
-    SCRIPT_POINTER data_31_4052                        ;; 31:4275 $52 $40 $31
-    SCRIPT_POINTER data_31_401f                        ;; 31:4278 $1f $40 $31
-    Op18_Jump data_31_401f                             ;; 31:427b $18 $1f $40 $31
-    Op82_Run call_01_74c3                              ;; 31:427f $82 $c3 $74 $01
+    SCRIPT_POINTER call_31_4052                        ;; 31:4275 $52 $40 $31
+    SCRIPT_POINTER call_31_401f                        ;; 31:4278 $1f $40 $31
+    Op18_Jump call_31_401f                             ;; 31:427b $18 $1f $40 $31
+    Op82_Run data_01_74c3                              ;; 31:427f $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 31:4283 $1c $03
-    SCRIPT_POINTER data_31_4052                        ;; 31:4285 $52 $40 $31
-    SCRIPT_POINTER data_31_4069                        ;; 31:4288 $69 $40 $31
-    SCRIPT_POINTER data_31_4292                        ;; 31:428b $92 $42 $31
-    Op18_Jump data_31_401f                             ;; 31:428e $18 $1f $40 $31
+    SCRIPT_POINTER call_31_4052                        ;; 31:4285 $52 $40 $31
+    SCRIPT_POINTER call_31_4069                        ;; 31:4288 $69 $40 $31
+    SCRIPT_POINTER call_31_4292                        ;; 31:428b $92 $42 $31
+    Op18_Jump call_31_401f                             ;; 31:428e $18 $1f $40 $31
 
-data_31_4292:
-    Op82_Run call_01_7416                              ;; 31:4292 $82 $16 $74 $01
+call_31_4292:
+    Op82_Run data_01_7416                              ;; 31:4292 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 31:4296 $16 $01
     SubOp_SetWord wC752, $0d00                         ;; 31:4298 $9e $3a $00 $0d
-    Op1E_Call data_33_490f                             ;; 31:429c $1e $0f $49 $33
+    Op1E_Call call_33_490f                             ;; 31:429c $1e $0f $49 $33
     Op1C_TableJump 5                                   ;; 31:42a0 $1c $05
-    SCRIPT_POINTER data_31_4052                        ;; 31:42a2 $52 $40 $31
-    SCRIPT_POINTER data_31_401f                        ;; 31:42a5 $1f $40 $31
-    SCRIPT_POINTER data_31_401f                        ;; 31:42a8 $1f $40 $31
-    SCRIPT_POINTER data_31_42b5                        ;; 31:42ab $b5 $42 $31
-    SCRIPT_POINTER data_31_401f                        ;; 31:42ae $1f $40 $31
-    Op18_Jump data_31_401f                             ;; 31:42b1 $18 $1f $40 $31
+    SCRIPT_POINTER call_31_4052                        ;; 31:42a2 $52 $40 $31
+    SCRIPT_POINTER call_31_401f                        ;; 31:42a5 $1f $40 $31
+    SCRIPT_POINTER call_31_401f                        ;; 31:42a8 $1f $40 $31
+    SCRIPT_POINTER call_31_42b5                        ;; 31:42ab $b5 $42 $31
+    SCRIPT_POINTER call_31_401f                        ;; 31:42ae $1f $40 $31
+    Op18_Jump call_31_401f                             ;; 31:42b1 $18 $1f $40 $31
 
-data_31_42b5:
-    Op1E_Call data_20_42f7                             ;; 31:42b5 $1e $f7 $42 $20
-    Op18_Jump data_31_401f                             ;; 31:42b9 $18 $1f $40 $31
+call_31_42b5:
+    Op1E_Call call_20_42f7                             ;; 31:42b5 $1e $f7 $42 $20
+    Op18_Jump call_31_401f                             ;; 31:42b9 $18 $1f $40 $31
     Op50_WriteByte wC31D, $00, $d4                     ;; 31:42bd $50 $1d $c3 $00 $d4
-    Op82_Run call_01_74c3                              ;; 31:42c2 $82 $c3 $74 $01
+    Op82_Run data_01_74c3                              ;; 31:42c2 $82 $c3 $74 $01
     Op50_WriteByte wC31D, $00, $d0                     ;; 31:42c6 $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 31:42cb $1c $04
-    SCRIPT_POINTER data_31_4052                        ;; 31:42cd $52 $40 $31
-    SCRIPT_POINTER data_31_4069                        ;; 31:42d0 $69 $40 $31
-    SCRIPT_POINTER data_31_42f1                        ;; 31:42d3 $f1 $42 $31
-    SCRIPT_POINTER data_31_42dd                        ;; 31:42d6 $dd $42 $31
-    Op18_Jump data_31_401f                             ;; 31:42d9 $18 $1f $40 $31
+    SCRIPT_POINTER call_31_4052                        ;; 31:42cd $52 $40 $31
+    SCRIPT_POINTER call_31_4069                        ;; 31:42d0 $69 $40 $31
+    SCRIPT_POINTER call_31_42f1                        ;; 31:42d3 $f1 $42 $31
+    SCRIPT_POINTER call_31_42dd                        ;; 31:42d6 $dd $42 $31
+    Op18_Jump call_31_401f                             ;; 31:42d9 $18 $1f $40 $31
 
-data_31_42dd:
+call_31_42dd:
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $83, $6c, $11 ;; 31:42dd $4c $16 $10 $02 $00 $00 $00 $00 $83 $6c $11
     Op44_Unknown $58, $00                              ;; 31:42e8 $44 $58 $00
-    Op1E_Call data_3c_4530                             ;; 31:42eb $1e $30 $45 $3c
+    Op1E_Call call_3c_4530                             ;; 31:42eb $1e $30 $45 $3c
     Op1A_Unknown $0b                                   ;; 31:42ef $1a $0b
 
-data_31_42f1:
-    Op18_Jump data_31_4265                             ;; 31:42f1 $18 $65 $42 $31
-    Op82_Run call_01_74c3                              ;; 31:42f5 $82 $c3 $74 $01
+call_31_42f1:
+    Op18_Jump call_31_4265                             ;; 31:42f1 $18 $65 $42 $31
+    Op82_Run data_01_74c3                              ;; 31:42f5 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 31:42f9 $1c $03
-    SCRIPT_POINTER data_31_4052                        ;; 31:42fb $52 $40 $31
-    SCRIPT_POINTER data_31_4069                        ;; 31:42fe $69 $40 $31
-    SCRIPT_POINTER data_31_4308                        ;; 31:4301 $08 $43 $31
-    Op18_Jump data_31_401f                             ;; 31:4304 $18 $1f $40 $31
+    SCRIPT_POINTER call_31_4052                        ;; 31:42fb $52 $40 $31
+    SCRIPT_POINTER call_31_4069                        ;; 31:42fe $69 $40 $31
+    SCRIPT_POINTER call_31_4308                        ;; 31:4301 $08 $43 $31
+    Op18_Jump call_31_401f                             ;; 31:4304 $18 $1f $40 $31
 
-data_31_4308:
-    Op82_Run call_01_7416                              ;; 31:4308 $82 $16 $74 $01
+call_31_4308:
+    Op82_Run data_01_7416                              ;; 31:4308 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 31:430c $16 $01
     SubOp_SetWord wC752, $0900                         ;; 31:430e $9e $3a $00 $09
-    Op1E_Call data_33_490f                             ;; 31:4312 $1e $0f $49 $33
+    Op1E_Call call_33_490f                             ;; 31:4312 $1e $0f $49 $33
     Op1C_TableJump 5                                   ;; 31:4316 $1c $05
-    SCRIPT_POINTER data_31_4052                        ;; 31:4318 $52 $40 $31
-    SCRIPT_POINTER data_31_432b                        ;; 31:431b $2b $43 $31
-    SCRIPT_POINTER data_31_4763                        ;; 31:431e $63 $47 $31
-    SCRIPT_POINTER data_31_47b3                        ;; 31:4321 $b3 $47 $31
-    SCRIPT_POINTER data_31_4852                        ;; 31:4324 $52 $48 $31
-    Op18_Jump data_31_401f                             ;; 31:4327 $18 $1f $40 $31
+    SCRIPT_POINTER call_31_4052                        ;; 31:4318 $52 $40 $31
+    SCRIPT_POINTER call_31_432b                        ;; 31:431b $2b $43 $31
+    SCRIPT_POINTER call_31_4763                        ;; 31:431e $63 $47 $31
+    SCRIPT_POINTER call_31_47b3                        ;; 31:4321 $b3 $47 $31
+    SCRIPT_POINTER call_31_4852                        ;; 31:4324 $52 $48 $31
+    Op18_Jump call_31_401f                             ;; 31:4327 $18 $1f $40 $31
 
-data_31_432b:
-    Op1E_Call data_31_48af                             ;; 31:432b $1e $af $48 $31
+call_31_432b:
+    Op1E_Call call_31_48af                             ;; 31:432b $1e $af $48 $31
     Op14_Unknown 1, $72, $61                           ;; 31:432f $14 $01 $72 $61
-    SCRIPT_POINTER data_31_4371                        ;; 31:4333 $71 $43 $31
+    SCRIPT_POINTER call_31_4371                        ;; 31:4333 $71 $43 $31
     Op16_SubOps 1                                      ;; 31:4336 $16 $01
     SubOp_SetFlag wC92B, 3                             ;; 31:4338 $3e $9b
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $7c, $52, $15 ;; 31:433a $4c $1a $01 $04 $00 $00 $00 $00 $7c $52 $15
-    Op1E_Call data_04_6d09                             ;; 31:4345 $1e $09 $6d $04
+    Op1E_Call call_04_6d09                             ;; 31:4345 $1e $09 $6d $04
     Op04_Unknown_Text data_2e_7ae1                     ;; 31:4349 $04 $e1 $7a $2e
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $d7, $55, $15 ;; 31:434d $4c $1a $01 $04 $00 $00 $00 $00 $d7 $55 $15
     Op06_Unknown_Text data_2e_7b08                     ;; 31:4358 $06 $08 $7b $2e
@@ -258,9 +258,9 @@ data_31_432b:
     Op06_Unknown_Text data_2e_7b10                     ;; 31:4367 $06 $10 $7b $2e
     db   $92, $00, $18, $86, $43, $31                  ;; 31:436b ??????
 
-data_31_4371:
+call_31_4371:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $03, $53, $15 ;; 31:4371 $4c $1a $01 $04 $00 $00 $00 $00 $03 $53 $15
-    Op1E_Call data_04_6d09                             ;; 31:437c $1e $09 $6d $04
+    Op1E_Call call_04_6d09                             ;; 31:437c $1e $09 $6d $04
     Op04_Unknown_Text data_2e_7bb5                     ;; 31:4380 $04 $b5 $7b $2e
     db   $92, $00, $82, $16, $74, $01, $82, $cc        ;; 31:4384 ????????
     db   $73, $01, $16, $01, $3f, $99, $1e, $1d        ;; 31:438c ????????
@@ -387,17 +387,17 @@ data_31_4371:
     db   $15, $1e, $09, $6d, $04, $04, $b9, $7d        ;; 31:4754 ????????
     db   $2e, $92, $00, $18, $1f, $40, $31             ;; 31:475c ???????
 
-data_31_4763:
-    Op1E_Call data_20_465b                             ;; 31:4763 $1e $5b $46 $20
-    Op1E_Call data_31_48af                             ;; 31:4767 $1e $af $48 $31
-    Op1E_Call data_04_6d09                             ;; 31:476b $1e $09 $6d $04
+call_31_4763:
+    Op1E_Call call_20_465b                             ;; 31:4763 $1e $5b $46 $20
+    Op1E_Call call_31_48af                             ;; 31:4767 $1e $af $48 $31
+    Op1E_Call call_04_6d09                             ;; 31:476b $1e $09 $6d $04
     Op04_Unknown_Text data_2e_7dec                     ;; 31:476f $04 $ec $7d $2e
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $6e, $54, $15 ;; 31:4773 $4c $1a $01 $04 $00 $00 $00 $00 $6e $54 $15
     Op06_Unknown_Text data_2e_7e05                     ;; 31:477e $06 $05 $7e $2e
 
-data_31_4782:
+call_31_4782:
     SCRIPT_RETURN_4A                                   ;; 31:4782 $4a
-    Op3E_Compare_Branch 26, $6e, $54, $15, data_31_4782 ;; 31:4783 $3e $1a $6e $54 $15 $82 $47 $31
+    Op3E_Compare_Branch 26, $6e, $54, $15, call_31_4782 ;; 31:4783 $3e $1a $6e $54 $15 $82 $47 $31
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $9c, $52, $15 ;; 31:478b $4c $1a $01 $04 $00 $00 $00 $00 $9c $52 $15
     Op06_Unknown_Text data_2e_7e0f                     ;; 31:4796 $06 $0f $7e $2e
     db   $92, $00, $16, $01, $3e, $9d, $4c, $1a        ;; 31:479a ????????
@@ -405,27 +405,27 @@ data_31_4782:
     db   $15, $16, $01, $5f, $98, $18, $1f, $40        ;; 31:47aa ????????
     db   $31                                           ;; 31:47b2 ?
 
-data_31_47b3:
+call_31_47b3:
     Op68_CopyBytes 1, wC822, w1_D216, $01              ;; 31:47b3 $68 $01 $22 $c8 $16 $d2 $01
     Op14_Unknown 1, $8c, $61                           ;; 31:47ba $14 $01 $8c $61
-    SCRIPT_POINTER data_31_484a                        ;; 31:47be $4a $48 $31
-    Op1E_Call data_20_42bf                             ;; 31:47c1 $1e $bf $42 $20
+    SCRIPT_POINTER call_31_484a                        ;; 31:47be $4a $48 $31
+    Op1E_Call call_20_42bf                             ;; 31:47c1 $1e $bf $42 $20
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $74, $55, $15 ;; 31:47c5 $4c $1a $01 $04 $00 $00 $00 $00 $74 $55 $15
-    Op1E_Call data_04_6d09                             ;; 31:47d0 $1e $09 $6d $04
+    Op1E_Call call_04_6d09                             ;; 31:47d0 $1e $09 $6d $04
     Op04_Unknown_Text data_2e_7e10                     ;; 31:47d4 $04 $10 $7e $2e
 
-data_31_47d8:
+call_31_47d8:
     SCRIPT_RETURN_4A                                   ;; 31:47d8 $4a
-    Op3E_Compare_Branch 22, $35, $5b, $10, data_31_47d8 ;; 31:47d9 $3e $16 $35 $5b $10 $d8 $47 $31
+    Op3E_Compare_Branch 22, $35, $5b, $10, call_31_47d8 ;; 31:47d9 $3e $16 $35 $5b $10 $d8 $47 $31
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, $00, $00, $00 ;; 31:47e1 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
 
-data_31_47ec:
+call_31_47ec:
     SCRIPT_RETURN_4A                                   ;; 31:47ec $4a
-    Op3E_Compare_Branch 26, $74, $55, $15, data_31_47ec ;; 31:47ed $3e $1a $74 $55 $15 $ec $47 $31
+    Op3E_Compare_Branch 26, $74, $55, $15, call_31_47ec ;; 31:47ed $3e $1a $74 $55 $15 $ec $47 $31
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $9c, $55, $15 ;; 31:47f5 $4c $1a $01 $04 $00 $00 $00 $00 $9c $55 $15
     Op06_Unknown_Text data_2e_7e1a                     ;; 31:4800 $06 $1a $7e $2e
     Op14_Unknown 1, $94, $61                           ;; 31:4804 $14 $01 $94 $61
-    SCRIPT_POINTER data_31_4831                        ;; 31:4808 $31 $48 $31
+    SCRIPT_POINTER call_31_4831                        ;; 31:4808 $31 $48 $31
     Op06_Unknown_Text data_2e_7e33                     ;; 31:480b $06 $33 $7e $2e
     Op16_SubOps 1                                      ;; 31:480f $16 $01
     SubOp_SetFlag wC92B, 6                             ;; 31:4811 $3e $9e
@@ -434,23 +434,23 @@ data_31_47ec:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $12, $56, $15 ;; 31:4822 $4c $1a $01 $04 $00 $00 $00 $00 $12 $56 $15
     Op06_Unknown_Text data_2e_7e46                     ;; 31:482d $06 $46 $7e $2e
 
-data_31_4831:
+call_31_4831:
     Op06_Unknown_Text data_2e_7e4f                     ;; 31:4831 $06 $4f $7e $2e
     db   $92, $00, $4c, $1a, $01, $04, $78, $00        ;; 31:4835 ????????
     db   $30, $00, $cc, $52, $15, $16, $01, $5f        ;; 31:483d ????????
     db   $98, $18, $1f, $40, $31                       ;; 31:4845 ?????
 
-data_31_484a:
-    Op1E_Call data_20_4294                             ;; 31:484a $1e $94 $42 $20
-    Op18_Jump data_31_401f                             ;; 31:484e $18 $1f $40 $31
+call_31_484a:
+    Op1E_Call call_20_4294                             ;; 31:484a $1e $94 $42 $20
+    Op18_Jump call_31_401f                             ;; 31:484e $18 $1f $40 $31
 
-data_31_4852:
-    Op1E_Call data_31_48af                             ;; 31:4852 $1e $af $48 $31
-    Op1E_Call data_04_6d09                             ;; 31:4856 $1e $09 $6d $04
+call_31_4852:
+    Op1E_Call call_31_48af                             ;; 31:4852 $1e $af $48 $31
+    Op1E_Call call_04_6d09                             ;; 31:4856 $1e $09 $6d $04
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $6c, $52, $15 ;; 31:485a $4c $1a $01 $04 $00 $00 $00 $00 $6c $52 $15
     Op04_Unknown_Text data_2e_7e50                     ;; 31:4865 $04 $50 $7e $2e
     Op14_Unknown 1, $96, $61                           ;; 31:4869 $14 $01 $96 $61
-    SCRIPT_POINTER data_31_4896                        ;; 31:486d $96 $48 $31
+    SCRIPT_POINTER call_31_4896                        ;; 31:486d $96 $48 $31
     Op06_Unknown_Text data_2e_7e87                     ;; 31:4870 $06 $87 $7e $2e
     Op16_SubOps 1                                      ;; 31:4874 $16 $01
     SubOp_SetFlag wC92B, 7                             ;; 31:4876 $3e $9f
@@ -459,46 +459,46 @@ data_31_4852:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $12, $56, $15 ;; 31:4887 $4c $1a $01 $04 $00 $00 $00 $00 $12 $56 $15
     Op06_Unknown_Text data_2e_7e9a                     ;; 31:4892 $06 $9a $7e $2e
 
-data_31_4896:
+call_31_4896:
     Op06_Unknown_Text data_2e_7ea3                     ;; 31:4896 $06 $a3 $7e $2e
     db   $92, $00, $4c, $1a, $01, $04, $78, $00        ;; 31:489a ????????
     db   $30, $00, $cc, $52, $15, $16, $01, $5f        ;; 31:48a2 ????????
     db   $98, $18, $1f, $40, $31                       ;; 31:48aa ?????
 
-data_31_48af:
+call_31_48af:
     Op68_CopyBytes 1, wC822, w1_D20E, $01              ;; 31:48af $68 $01 $22 $c8 $0e $d2 $01
     Op14_Unknown 1, $98, $61                           ;; 31:48b6 $14 $01 $98 $61
-    SCRIPT_POINTER data_31_48c9                        ;; 31:48ba $c9 $48 $31
+    SCRIPT_POINTER call_31_48c9                        ;; 31:48ba $c9 $48 $31
     Op4C_Unknown $16, $02, $02, $00, $00, $00, $00, $71, $42, $10 ;; 31:48bd $4c $16 $02 $02 $00 $00 $00 $00 $71 $42 $10
     SCRIPT_RETURN_20                                   ;; 31:48c8 $20
 
-data_31_48c9:
+call_31_48c9:
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $87, $78, $17 ;; 31:48c9 $4c $16 $10 $02 $00 $00 $00 $00 $87 $78 $17
     SCRIPT_RETURN_20                                   ;; 31:48d4 $20
 
-data_31_48d5:
+call_31_48d5:
     Op14_Unknown 1, $a0, $61                           ;; 31:48d5 $14 $01 $a0 $61
-    SCRIPT_POINTER data_31_48fb                        ;; 31:48d9 $fb $48 $31
+    SCRIPT_POINTER call_31_48fb                        ;; 31:48d9 $fb $48 $31
     Op14_Unknown 1, $a2, $61                           ;; 31:48dc $14 $01 $a2 $61
-    SCRIPT_POINTER data_31_48ef                        ;; 31:48e0 $ef $48 $31
+    SCRIPT_POINTER call_31_48ef                        ;; 31:48e0 $ef $48 $31
     Op4C_Unknown $1a, $01, $04, $78, $00, $30, $00, $cc, $52, $15 ;; 31:48e3 $4c $1a $01 $04 $78 $00 $30 $00 $cc $52 $15
     SCRIPT_RETURN_20                                   ;; 31:48ee $20
 
-data_31_48ef:
+call_31_48ef:
     Op4C_Unknown $1a, $01, $04, $78, $00, $30, $00, $13, $53, $15 ;; 31:48ef $4c $1a $01 $04 $78 $00 $30 $00 $13 $53 $15
     SCRIPT_RETURN_20                                   ;; 31:48fa $20
 
-data_31_48fb:
+call_31_48fb:
     Op4C_Unknown $1a, $01, $04, $78, $00, $30, $00, $03, $53, $15 ;; 31:48fb $4c $1a $01 $04 $78 $00 $30 $00 $03 $53 $15
     Op16_SubOps 1                                      ;; 31:4906 $16 $01
     SubOp_ClearFlag wC94B, 1                           ;; 31:4908 $5f $99
     SCRIPT_RETURN_20                                   ;; 31:490a $20
 
-data_31_490b:
+call_31_490b:
     Op16_SubOps 1                                      ;; 31:490b $16 $01
     SubOp_SetFlag wC92B, 2                             ;; 31:490d $3e $9a
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $9c, $52, $15 ;; 31:490f $4c $1a $01 $04 $00 $00 $00 $00 $9c $52 $15
-    Op1E_Call data_1d_6e0e                             ;; 31:491a $1e $0e $6e $1d
+    Op1E_Call call_1d_6e0e                             ;; 31:491a $1e $0e $6e $1d
     Op04_Unknown_Text data_2e_7ea4                     ;; 31:491e $04 $a4 $7e $2e
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $03, $53, $15 ;; 31:4922 $4c $1a $01 $04 $00 $00 $00 $00 $03 $53 $15
     Op06_Unknown_Text data_2e_7ec8                     ;; 31:492d $06 $c8 $7e $2e

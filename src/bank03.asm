@@ -7,7 +7,7 @@ INCLUDE "include/constants.inc"
 
 SECTION "bank03", ROMX[$4000], BANK[$03]
 
-call_03_4000:
+data_03_4000:
     xor  A, A                                          ;; 03:4000 $af
     ld   [wOp1CScriptTableIndexC53A], A                ;; 03:4001 $ea $3a $c5
     ld_long_load A, rSVBK                              ;; 03:4004 $fa $70 $ff
@@ -675,7 +675,7 @@ call_03_4442:
     ld   H, $19                                        ;; 03:4473 $26 $19
     jp   call_03_5bb2                                  ;; 03:4475 $c3 $b2 $5b
 
-call_03_4478:
+data_03_4478:
     ld_long_load A, rSVBK                              ;; 03:4478 $fa $70 $ff
     push AF                                            ;; 03:447b $f5
     ld   A, $03                                        ;; 03:447c $3e $03
@@ -893,7 +893,7 @@ call_03_455c:
     call call_03_5a42                                  ;; 03:45f0 $cd $42 $5a
     jp   jp_03_5a58                                    ;; 03:45f3 $c3 $58 $5a
 
-call_03_45f6:
+data_03_45f6:
     db   $fa, $70, $ff, $f5, $3e, $03, $ea, $70        ;; 03:45f6 ????????
     db   $ff, $fa, $4a, $d6, $47, $fa, $99, $d6        ;; 03:45fe ????????
     db   $3d, $ea, $cf, $d5, $cd, $d8, $58, $01        ;; 03:4606 ????????
@@ -3347,7 +3347,7 @@ call_03_572e:
     add  HL, DE                                        ;; 03:5738 $19
     ret                                                ;; 03:5739 $c9
 
-call_03_573a:
+data_03_573a:
     ld_long_load A, rSVBK                              ;; 03:573a $fa $70 $ff
     push AF                                            ;; 03:573d $f5
     ld   A, $03                                        ;; 03:573e $3e $03
@@ -3763,7 +3763,7 @@ call_03_59bc:
     and  A, B                                          ;; 03:59c9 $a0
     ret                                                ;; 03:59ca $c9
 
-call_03_59cb:
+data_03_59cb:
     ld   HL, wC754                                     ;; 03:59cb $21 $54 $c7
     ld   A, [HL+]                                      ;; 03:59ce $2a
     ld   D, A                                          ;; 03:59cf $57
@@ -3779,7 +3779,7 @@ call_03_59cb:
     ld   [HL], A                                       ;; 03:59de $77
     ret                                                ;; 03:59df $c9
 
-call_03_59e0:
+data_03_59e0:
     ld   HL, wC756                                     ;; 03:59e0 $21 $56 $c7
     ld   A, [HL+]                                      ;; 03:59e3 $2a
     ld   B, [HL]                                       ;; 03:59e4 $46
@@ -3804,7 +3804,7 @@ call_03_59e0:
     db   $2b, $fa, $54, $c7, $be, $38, $04, $3e        ;; 03:5a10 ????????
     db   $01, $18, $01, $af, $ea, $52, $c7, $c9        ;; 03:5a18 ????????
 
-call_03_5a20:
+data_03_5a20:
     ld   B, $00                                        ;; 03:5a20 $06 $00
     ld   HL, wC754                                     ;; 03:5a22 $21 $54 $c7
     ld   A, [HL+]                                      ;; 03:5a25 $2a
@@ -5360,7 +5360,7 @@ data_03_6f82:
     db   $01, $01, $01, $01, $01, $01, $01, $01        ;; 03:7242 ????????
     db   $01, $01, $01, $01, $01, $01                  ;; 03:724a ??????
 
-call_03_7250:
+data_03_7250:
     ld_long_load A, rSVBK                              ;; 03:7250 $fa $70 $ff
     push AF                                            ;; 03:7253 $f5
     ld   A, $03                                        ;; 03:7254 $3e $03
@@ -5437,7 +5437,7 @@ call_03_7293:
     ld   [HL+], A                                      ;; 03:72df $22
     ret                                                ;; 03:72e0 $c9
 
-call_03_72e1:
+data_03_72e1:
     ld_long_load A, rSVBK                              ;; 03:72e1 $fa $70 $ff
     push AF                                            ;; 03:72e4 $f5
     ld   A, $03                                        ;; 03:72e5 $3e $03
@@ -5482,7 +5482,7 @@ call_03_72e1:
     db   $22, $13, $0e, $0f, $1a, $b6, $22, $13        ;; 03:7321 ????????
     db   $0d, $20, $f9, $c9                            ;; 03:7329 ????
 
-call_03_732d:
+data_03_732d:
     ld_long_load A, rSVBK                              ;; 03:732d $fa $70 $ff
     push AF                                            ;; 03:7330 $f5
     ld   A, $03                                        ;; 03:7331 $3e $03
@@ -5650,7 +5650,7 @@ call_03_7397:
     jr   NZ, .jr_03_7416                               ;; 03:7437 $20 $dd
     jp   jp_03_5a58                                    ;; 03:7439 $c3 $58 $5a
 
-call_03_743c:
+data_03_743c:
     ld_long_load A, rSVBK                              ;; 03:743c $fa $70 $ff
     push AF                                            ;; 03:743f $f5
     ld   A, $03                                        ;; 03:7440 $3e $03
@@ -5713,7 +5713,7 @@ call_03_7468:
     ld   A, [wC754]                                    ;; 03:749d $fa $54 $c7
     jp   jp_03_5b60                                    ;; 03:74a0 $c3 $60 $5b
 
-call_03_74a3:
+data_03_74a3:
     ld   A, [wC755]                                    ;; 03:74a3 $fa $55 $c7
     dec  A                                             ;; 03:74a6 $3d
     srl  A                                             ;; 03:74a7 $cb $3f
@@ -5787,7 +5787,7 @@ call_03_74a3:
     call call_00_2390                                  ;; 03:7548 $cd $90 $23
     ret                                                ;; 03:754b $c9
 
-call_03_754c:
+data_03_754c:
     ld_long_load A, rSVBK                              ;; 03:754c $fa $70 $ff
     push AF                                            ;; 03:754f $f5
     ld   A, $03                                        ;; 03:7550 $3e $03
@@ -5799,7 +5799,7 @@ call_03_754c:
     ld   [wC755], A                                    ;; 03:755f $ea $55 $c7
     jp   jp_03_5a58                                    ;; 03:7562 $c3 $58 $5a
 
-call_03_7565:
+data_03_7565:
     ld_long_load A, rSVBK                              ;; 03:7565 $fa $70 $ff
     push AF                                            ;; 03:7568 $f5
     ld   A, $03                                        ;; 03:7569 $3e $03
@@ -6165,7 +6165,7 @@ data_03_7a4d:
     db   $01, $fb, $01, $fb, $01, $fb, $01, $fc        ;; 03:7a7d ????????
     db   $01, $fc, $01, $f9                            ;; 03:7a85 ????
 
-call_03_7a89:
+data_03_7a89:
     db   $fa, $70, $ff, $f5, $3e, $03, $ea, $70        ;; 03:7a89 ????????
     db   $ff, $3e, $02, $ea, $b8, $ca, $cd, $9a        ;; 03:7a91 ????????
     db   $3a, $af, $ea, $4a, $d6, $3e, $08, $ea        ;; 03:7a99 ????????
