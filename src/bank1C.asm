@@ -1462,7 +1462,7 @@ data_1c_79d9:
     SCRIPT_POINTER data_1c_79f4                        ;; 1c:79dd $f4 $79 $1c
     Op14_Unknown 1, $c8, $75                           ;; 1c:79e0 $14 $01 $c8 $75
     SCRIPT_POINTER data_1c_7a46                        ;; 1c:79e4 $46 $7a $1c
-    Op50_WriteByte wC720, 0, $17                       ;; 1c:79e7 $50 $20 $c7 $00 $17
+    Op50_WriteByte wC720, $00, $17                     ;; 1c:79e7 $50 $20 $c7 $00 $17
     Op82_Run call_01_6844                              ;; 1c:79ec $82 $44 $68 $01
     Op18_Jump data_1c_7b16                             ;; 1c:79f0 $18 $16 $7b $1c
 
@@ -1594,7 +1594,7 @@ data_1c_7c61:
 
 data_1c_7c70:
     Op82_Run call_01_782b                              ;; 1c:7c70 $82 $2b $78 $01
-    Op52_WriteBytes w1_D20E, 1, $c4, $00               ;; 1c:7c74 $52 $0e $d2 $01 $c4 $00
+    Op52_WriteBytes w1_D20E, $01, $c4, $00             ;; 1c:7c74 $52 $0e $d2 $01 $c4 $00
     Op18_Jump data_1c_7c86                             ;; 1c:7c7a $18 $86 $7c $1c
 
 data_1c_7c7e:
@@ -1608,7 +1608,7 @@ data_1c_7c86:
     SubOp_SetWord wC7D8, $0000                         ;; 1c:7c8d $9e $c0 $00 $00
     Op16_SubOps 1                                      ;; 1c:7c91 $16 $01
     SubOp_SetWord wC7DA, $0000                         ;; 1c:7c93 $9e $c2 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 1c:7c97 $52 $94 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 1c:7c97 $52 $94 $c6 $00 $00 $00
     Op1E_Call data_04_6223                             ;; 1c:7c9d $1e $23 $62 $04
     Op4E_Unknown_StoreValue 4, $01, $49, $40, $10      ;; 1c:7ca1 $4e $04 $01 $49 $40 $10
     Op4E_Unknown_StoreValue 5, $01, $7f, $40, $10      ;; 1c:7ca7 $4e $05 $01 $7f $40 $10

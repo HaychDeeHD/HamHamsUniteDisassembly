@@ -14,7 +14,7 @@ SECTION "bank1f", ROMX[$4000], BANK[$1f]
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 1f:400e $5e $03
     Op82_Run call_01_73cc                              ;; 1f:4010 $82 $cc $73 $01
     Op82_Run call_01_7416                              ;; 1f:4014 $82 $16 $74 $01
-    Op50_WriteByte wC31D, 0, $d0                       ;; 1f:4018 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, $00, $d0                     ;; 1f:4018 $50 $1d $c3 $00 $d0
     Op14_Unknown 1, $27, $71                           ;; 1f:401d $14 $01 $27 $71
     SCRIPT_POINTER data_1f_402c                        ;; 1f:4021 $2c $40 $1f
     Op16_SubOps 1                                      ;; 1f:4024 $16 $01
@@ -22,7 +22,7 @@ SECTION "bank1f", ROMX[$4000], BANK[$1f]
     Op1E_Call data_04_660d                             ;; 1f:4028 $1e $0d $66 $04
 
 data_1f_402c:
-    Op50_WriteByte w1_DD99, 1, $01                     ;; 1f:402c $50 $99 $dd $01 $01
+    Op50_WriteByte w1_DD99, $01, $01                   ;; 1f:402c $50 $99 $dd $01 $01
     db   $2a, $00, $00, $00, $1c, $0c, $e3, $44        ;; 1f:4031 ????????
     db   $1f, $a5, $44, $1f, $28, $45, $1f, $c7        ;; 1f:4039 ????????
     db   $46, $1f, $89, $47, $1f, $8b, $44, $1f        ;; 1f:4041 ????????
@@ -51,7 +51,7 @@ data_1f_402c:
     db   $1f                                           ;; 1f:40f9 ?
 
 data_1f_40fa:
-    Op50_WriteByte wC720, 0, $16                       ;; 1f:40fa $50 $20 $c7 $00 $16
+    Op50_WriteByte wC720, $00, $16                     ;; 1f:40fa $50 $20 $c7 $00 $16
     Op82_Run call_01_6844                              ;; 1f:40ff $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 1f:4103 $4a
     Op14_Unknown 1, $2d, $6f                           ;; 1f:4104 $14 $01 $2d $6f
@@ -175,10 +175,10 @@ data_1f_42aa:
     Op18_Jump data_1f_42b9                             ;; 1f:42b5 $18 $b9 $42 $1f
 
 data_1f_42b9:
-    Op80_CopyNBytes wC7D8, 0, w1_D216, 1, 2            ;; 1f:42b9 $80 $d8 $c7 $00 $16 $d2 $01 $02 $00
-    Op80_CopyNBytes wC7DA, 0, w1_D20E, 1, 2            ;; 1f:42c2 $80 $da $c7 $00 $0e $d2 $01 $02 $00
-    Op50_WriteByte w1_D215, 1, $80                     ;; 1f:42cb $50 $15 $d2 $01 $80
-    Op50_WriteByte w1_D20D, 1, $80                     ;; 1f:42d0 $50 $0d $d2 $01 $80
+    Op80_CopyNBytes wC7D8, $00, w1_D216, $01, 2        ;; 1f:42b9 $80 $d8 $c7 $00 $16 $d2 $01 $02 $00
+    Op80_CopyNBytes wC7DA, $00, w1_D20E, $01, 2        ;; 1f:42c2 $80 $da $c7 $00 $0e $d2 $01 $02 $00
+    Op50_WriteByte w1_D215, $01, $80                   ;; 1f:42cb $50 $15 $d2 $01 $80
+    Op50_WriteByte w1_D20D, $01, $80                   ;; 1f:42d0 $50 $0d $d2 $01 $80
     Op14_Unknown 1, $20, $6d                           ;; 1f:42d5 $14 $01 $20 $6d
     SCRIPT_POINTER data_1f_42f2                        ;; 1f:42d9 $f2 $42 $1f
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, $7e, $55, $10 ;; 1f:42dc $4c $16 $08 $ff $00 $00 $00 $00 $7e $55 $10
@@ -191,7 +191,7 @@ data_1f_42f2:
     SubOp_SetWord wC7D8, $0000                         ;; 1f:42f9 $9e $c0 $00 $00
     Op16_SubOps 1                                      ;; 1f:42fd $16 $01
     SubOp_SetWord wC7DA, $0000                         ;; 1f:42ff $9e $c2 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 1f:4303 $52 $94 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 1f:4303 $52 $94 $c6 $00 $00 $00
     Op44_Unknown $08, $00                              ;; 1f:4309 $44 $08 $00
     Op1E_Call data_04_6223                             ;; 1f:430c $1e $23 $62 $04
     Op4E_Unknown_StoreValue 4, $01, $49, $40, $10      ;; 1f:4310 $4e $04 $01 $49 $40 $10
@@ -258,7 +258,7 @@ data_1f_43d5:
 
 data_1f_43db:
     Op4C_Unknown $16, $08, $02, $18, $00, $e8, $ff, $5e, $51, $12 ;; 1f:43db $4c $16 $08 $02 $18 $00 $e8 $ff $5e $51 $12
-    Op52_WriteBytes w1_D20B, 1, $00, $02               ;; 1f:43e6 $52 $0b $d2 $01 $00 $02
+    Op52_WriteBytes w1_D20B, $01, $00, $02             ;; 1f:43e6 $52 $0b $d2 $01 $00 $02
     Op4C_Unknown $1e, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 1f:43ec $4c $1e $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $38, $01, $04, $18, $00, $70, $00, $eb, $41, $1b ;; 1f:43f7 $4c $38 $01 $04 $18 $00 $70 $00 $eb $41 $1b
     Op16_SubOps 1                                      ;; 1f:4402 $16 $01
@@ -267,7 +267,7 @@ data_1f_43db:
     SubOp_SetWord wC7D8, $0000                         ;; 1f:4409 $9e $c0 $00 $00
     Op16_SubOps 1                                      ;; 1f:440d $16 $01
     SubOp_SetWord wC7DA, $0000                         ;; 1f:440f $9e $c2 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 1f:4413 $52 $94 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 1f:4413 $52 $94 $c6 $00 $00 $00
     Op1E_Call data_04_6223                             ;; 1f:4419 $1e $23 $62 $04
     Op4E_Unknown_StoreValue 4, $01, $49, $40, $10      ;; 1f:441d $4e $04 $01 $49 $40 $10
     Op4E_Unknown_StoreValue 5, $01, $7f, $40, $10      ;; 1f:4423 $4e $05 $01 $7f $40 $10
@@ -1043,7 +1043,7 @@ data_1f_5a77:
     Op16_SubOps 1                                      ;; 1f:5a77 $16 $01
     SubOp_SetByte wC830, $00                           ;; 1f:5a79 $7f $18 $00
     SCRIPT_RETURN_20                                   ;; 1f:5a7c $20
-    Op50_WriteByte w1_D000, 1, $01                     ;; 1f:5a7d $50 $00 $d0 $01 $01
+    Op50_WriteByte w1_D000, $01, $01                   ;; 1f:5a7d $50 $00 $d0 $01 $01
     Op16_SubOps 1                                      ;; 1f:5a82 $16 $01
     SubOp_SetByte wC81C, $00                           ;; 1f:5a84 $7f $04 $00
     Op68_CopyBytes 1, wC81C, wC754, $00                ;; 1f:5a87 $68 $01 $1c $c8 $54 $c7 $00
@@ -1089,13 +1089,13 @@ data_1f_5ae7:
     Op18_Jump data_1f_5a92                             ;; 1f:5af2 $18 $92 $5a $1f
 
 data_1f_5af6:
-    Op52_WriteBytes wC689, 0, $00, $00                 ;; 1f:5af6 $52 $89 $c6 $00 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 1f:5afc $52 $94 $c6 $00 $00 $00
-    Op50_WriteByte wC67F, 0, $00                       ;; 1f:5b02 $50 $7f $c6 $00 $00
-    Op52_WriteBytes wC680, 0, $00, $00                 ;; 1f:5b07 $52 $80 $c6 $00 $00 $00
-    Op50_WriteByte wC67C, 0, $00                       ;; 1f:5b0d $50 $7c $c6 $00 $00
-    Op52_WriteBytes wC67D, 0, $00, $00                 ;; 1f:5b12 $52 $7d $c6 $00 $00 $00
-    Op50_WriteByte wC676, 0, $a7                       ;; 1f:5b18 $50 $76 $c6 $00 $a7
+    Op52_WriteBytes wC689, $00, $00, $00               ;; 1f:5af6 $52 $89 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 1f:5afc $52 $94 $c6 $00 $00 $00
+    Op50_WriteByte wC67F, $00, $00                     ;; 1f:5b02 $50 $7f $c6 $00 $00
+    Op52_WriteBytes wC680, $00, $00, $00               ;; 1f:5b07 $52 $80 $c6 $00 $00 $00
+    Op50_WriteByte wC67C, $00, $00                     ;; 1f:5b0d $50 $7c $c6 $00 $00
+    Op52_WriteBytes wC67D, $00, $00, $00               ;; 1f:5b12 $52 $7d $c6 $00 $00 $00
+    Op50_WriteByte wC676, $00, $a7                     ;; 1f:5b18 $50 $76 $c6 $00 $a7
     Op16_SubOps 1                                      ;; 1f:5b1d $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:5b1f $7e $0d $08
     Op32_Unknown $38, $61, $0a, $00, $d0, $05          ;; 1f:5b22 $32 $38 $61 $0a $00 $d0 $05
@@ -1105,13 +1105,13 @@ data_1f_5af6:
     Op34_Unknown $64, $42, $0c, $00, $d8, $05, $14     ;; 1f:5b3e $34 $64 $42 $0c $00 $d8 $05 $14
     Op34_Unknown $b8, $44, $0d, $00, $d8, $07, $14     ;; 1f:5b46 $34 $b8 $44 $0d $00 $d8 $07 $14
     Op1E_Call data_29_6da3                             ;; 1f:5b4e $1e $a3 $6d $29
-    Op50_WriteByte wCFFC, 0, $80                       ;; 1f:5b52 $50 $fc $cf $00 $80
-    Op50_WriteByte wCFF9, 0, $19                       ;; 1f:5b57 $50 $f9 $cf $00 $19
+    Op50_WriteByte wCFFC, $00, $80                     ;; 1f:5b52 $50 $fc $cf $00 $80
+    Op50_WriteByte wCFF9, $00, $19                     ;; 1f:5b57 $50 $f9 $cf $00 $19
     Op4E_Unknown_StoreValue 4, $01, $58, $40, $19      ;; 1f:5b5c $4e $04 $01 $58 $40 $19
     Op4E_Unknown_StoreValue 14, $01, $6a, $40, $19     ;; 1f:5b62 $4e $0e $01 $6a $40 $19
     Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:5b68 $8e $00 $88 $59 $03
     Op44_Unknown $09, $00                              ;; 1f:5b6d $44 $09 $00
-    Op50_WriteByte wC31D, 0, $3f                       ;; 1f:5b70 $50 $1d $c3 $00 $3f
+    Op50_WriteByte wC31D, $00, $3f                     ;; 1f:5b70 $50 $1d $c3 $00 $3f
 
 data_1f_5b75:
     SCRIPT_RETURN_4A                                   ;; 1f:5b75 $4a
@@ -1193,7 +1193,7 @@ data_1f_5c76:
     Op18_Jump data_1f_5c80                             ;; 1f:5c7c $18 $80 $5c $1f
 
 data_1f_5c80:
-    Op80_CopyNBytes wC754, 0, w3_D635, 3, 1            ;; 1f:5c80 $80 $54 $c7 $00 $35 $d6 $03 $01 $00
+    Op80_CopyNBytes wC754, $00, w3_D635, $03, 1        ;; 1f:5c80 $80 $54 $c7 $00 $35 $d6 $03 $01 $00
     db   $5a, $84, $1e, $a3, $6d, $29, $18, $75        ;; 1f:5c89 ????????
     db   $5b, $1f                                      ;; 1f:5c91 ??
 
@@ -1204,16 +1204,16 @@ data_1f_5c93:
     db   $5e, $80, $4a, $50, $fc, $cf, $00, $80        ;; 1f:5ca1 ????????
 
 data_1f_5ca9:
-    Op52_WriteBytes wC689, 0, $00, $00                 ;; 1f:5ca9 $52 $89 $c6 $00 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 1f:5caf $52 $94 $c6 $00 $00 $00
-    Op50_WriteByte wC67F, 0, $00                       ;; 1f:5cb5 $50 $7f $c6 $00 $00
-    Op52_WriteBytes wC680, 0, $00, $00                 ;; 1f:5cba $52 $80 $c6 $00 $00 $00
-    Op50_WriteByte wC67C, 0, $00                       ;; 1f:5cc0 $50 $7c $c6 $00 $00
-    Op52_WriteBytes wC67D, 0, $00, $00                 ;; 1f:5cc5 $52 $7d $c6 $00 $00 $00
-    Op50_WriteByte wC676, 0, $a7                       ;; 1f:5ccb $50 $76 $c6 $00 $a7
-    Op50_WriteByte w3_D648, 3, $00                     ;; 1f:5cd0 $50 $48 $d6 $03 $00
-    Op52_WriteBytes w3_D646, 3, $16, $16               ;; 1f:5cd5 $52 $46 $d6 $03 $16 $16
-    Op50_WriteByte w3_D507, 3, $02                     ;; 1f:5cdb $50 $07 $d5 $03 $02
+    Op52_WriteBytes wC689, $00, $00, $00               ;; 1f:5ca9 $52 $89 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 1f:5caf $52 $94 $c6 $00 $00 $00
+    Op50_WriteByte wC67F, $00, $00                     ;; 1f:5cb5 $50 $7f $c6 $00 $00
+    Op52_WriteBytes wC680, $00, $00, $00               ;; 1f:5cba $52 $80 $c6 $00 $00 $00
+    Op50_WriteByte wC67C, $00, $00                     ;; 1f:5cc0 $50 $7c $c6 $00 $00
+    Op52_WriteBytes wC67D, $00, $00, $00               ;; 1f:5cc5 $52 $7d $c6 $00 $00 $00
+    Op50_WriteByte wC676, $00, $a7                     ;; 1f:5ccb $50 $76 $c6 $00 $a7
+    Op50_WriteByte w3_D648, $03, $00                   ;; 1f:5cd0 $50 $48 $d6 $03 $00
+    Op52_WriteBytes w3_D646, $03, $16, $16             ;; 1f:5cd5 $52 $46 $d6 $03 $16 $16
+    Op50_WriteByte w3_D507, $03, $02                   ;; 1f:5cdb $50 $07 $d5 $03 $02
     Op32_Unknown $58, $76, $0b, $00, $d0, $05          ;; 1f:5ce0 $32 $58 $76 $0b $00 $d0 $05
     Op32_Unknown $d6, $62, $0b, $00, $d4, $05          ;; 1f:5ce7 $32 $d6 $62 $0b $00 $d4 $05
     Op32_Unknown $4b, $6d, $0a, $00, $d8, $04          ;; 1f:5cee $32 $4b $6d $0a $00 $d8 $04
@@ -1247,8 +1247,8 @@ data_1f_5d68:
     Op16_SubOps 1                                      ;; 1f:5d68 $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:5d6a $7e $0d $08
     Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:5d6d $8e $00 $88 $59 $03
-    Op50_WriteByte w1_D887, 1, $01                     ;; 1f:5d72 $50 $87 $d8 $01 $01
-    Op50_WriteByte w1_D8FF, 1, $01                     ;; 1f:5d77 $50 $ff $d8 $01 $01
+    Op50_WriteByte w1_D887, $01, $01                   ;; 1f:5d72 $50 $87 $d8 $01 $01
+    Op50_WriteByte w1_D8FF, $01, $01                   ;; 1f:5d77 $50 $ff $d8 $01 $01
     Op44_Unknown $09, $00                              ;; 1f:5d7c $44 $09 $00
     Op18_Jump data_1f_5ae7                             ;; 1f:5d7f $18 $e7 $5a $1f
 
@@ -1291,34 +1291,34 @@ data_1f_5e19:
     SCRIPT_POINTER data_1f_5e5e                        ;; 1f:5e34 $5e $5e $1f
 
 data_1f_5e37:
-    Op50_WriteByte wC720, 0, $1a                       ;; 1f:5e37 $50 $20 $c7 $00 $1a
+    Op50_WriteByte wC720, $00, $1a                     ;; 1f:5e37 $50 $20 $c7 $00 $1a
     Op82_Run call_01_6844                              ;; 1f:5e3c $82 $44 $68 $01
     Op18_Jump data_1f_5e67                             ;; 1f:5e40 $18 $67 $5e $1f
 
 data_1f_5e44:
-    Op50_WriteByte wC720, 0, $1a                       ;; 1f:5e44 $50 $20 $c7 $00 $1a
+    Op50_WriteByte wC720, $00, $1a                     ;; 1f:5e44 $50 $20 $c7 $00 $1a
     Op82_Run call_01_6844                              ;; 1f:5e49 $82 $44 $68 $01
     Op18_Jump data_1f_5e67                             ;; 1f:5e4d $18 $67 $5e $1f
 
 data_1f_5e51:
-    Op50_WriteByte wC720, 0, $1a                       ;; 1f:5e51 $50 $20 $c7 $00 $1a
+    Op50_WriteByte wC720, $00, $1a                     ;; 1f:5e51 $50 $20 $c7 $00 $1a
     Op82_Run call_01_6844                              ;; 1f:5e56 $82 $44 $68 $01
     Op18_Jump data_1f_5e67                             ;; 1f:5e5a $18 $67 $5e $1f
 
 data_1f_5e5e:
-    Op50_WriteByte wC720, 0, $1a                       ;; 1f:5e5e $50 $20 $c7 $00 $1a
+    Op50_WriteByte wC720, $00, $1a                     ;; 1f:5e5e $50 $20 $c7 $00 $1a
     Op82_Run call_01_6844                              ;; 1f:5e63 $82 $44 $68 $01
 
 data_1f_5e67:
     SCRIPT_RETURN_4A                                   ;; 1f:5e67 $4a
-    Op50_WriteByte wCFFC, 0, $80                       ;; 1f:5e68 $50 $fc $cf $00 $80
-    Op52_WriteBytes wC689, 0, $00, $00                 ;; 1f:5e6d $52 $89 $c6 $00 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 1f:5e73 $52 $94 $c6 $00 $00 $00
-    Op50_WriteByte wC67F, 0, $00                       ;; 1f:5e79 $50 $7f $c6 $00 $00
-    Op52_WriteBytes wC680, 0, $00, $00                 ;; 1f:5e7e $52 $80 $c6 $00 $00 $00
-    Op50_WriteByte wC67C, 0, $00                       ;; 1f:5e84 $50 $7c $c6 $00 $00
-    Op52_WriteBytes wC67D, 0, $00, $00                 ;; 1f:5e89 $52 $7d $c6 $00 $00 $00
-    Op50_WriteByte wC676, 0, $a7                       ;; 1f:5e8f $50 $76 $c6 $00 $a7
+    Op50_WriteByte wCFFC, $00, $80                     ;; 1f:5e68 $50 $fc $cf $00 $80
+    Op52_WriteBytes wC689, $00, $00, $00               ;; 1f:5e6d $52 $89 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 1f:5e73 $52 $94 $c6 $00 $00 $00
+    Op50_WriteByte wC67F, $00, $00                     ;; 1f:5e79 $50 $7f $c6 $00 $00
+    Op52_WriteBytes wC680, $00, $00, $00               ;; 1f:5e7e $52 $80 $c6 $00 $00 $00
+    Op50_WriteByte wC67C, $00, $00                     ;; 1f:5e84 $50 $7c $c6 $00 $00
+    Op52_WriteBytes wC67D, $00, $00, $00               ;; 1f:5e89 $52 $7d $c6 $00 $00 $00
+    Op50_WriteByte wC676, $00, $a7                     ;; 1f:5e8f $50 $76 $c6 $00 $a7
     Op32_Unknown $06, $49, $0b, $00, $d0, $05          ;; 1f:5e94 $32 $06 $49 $0b $00 $d0 $05
     Op32_Unknown $a7, $7a, $0b, $00, $d8, $04          ;; 1f:5e9b $32 $a7 $7a $0b $00 $d8 $04
     Op32_Unknown $fa, $6b, $0c, $f0, $dd, $04          ;; 1f:5ea2 $32 $fa $6b $0c $f0 $dd $04
@@ -1510,12 +1510,12 @@ data_1f_6219:
     db   $56, $63, $1f                                 ;; 1f:6441 ???
 
 data_1f_6444:
-    Op52_WriteBytes wC689, 0, $00, $00                 ;; 1f:6444 $52 $89 $c6 $00 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 1f:644a $52 $94 $c6 $00 $00 $00
-    Op50_WriteByte wC67F, 0, $00                       ;; 1f:6450 $50 $7f $c6 $00 $00
-    Op52_WriteBytes wC680, 0, $00, $00                 ;; 1f:6455 $52 $80 $c6 $00 $00 $00
-    Op50_WriteByte wC67C, 0, $00                       ;; 1f:645b $50 $7c $c6 $00 $00
-    Op52_WriteBytes wC67D, 0, $00, $00                 ;; 1f:6460 $52 $7d $c6 $00 $00 $00
+    Op52_WriteBytes wC689, $00, $00, $00               ;; 1f:6444 $52 $89 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 1f:644a $52 $94 $c6 $00 $00 $00
+    Op50_WriteByte wC67F, $00, $00                     ;; 1f:6450 $50 $7f $c6 $00 $00
+    Op52_WriteBytes wC680, $00, $00, $00               ;; 1f:6455 $52 $80 $c6 $00 $00 $00
+    Op50_WriteByte wC67C, $00, $00                     ;; 1f:645b $50 $7c $c6 $00 $00
+    Op52_WriteBytes wC67D, $00, $00, $00               ;; 1f:6460 $52 $7d $c6 $00 $00 $00
     db   $6a, $fc, $ff, $00, $00, $50, $76, $c6        ;; 1f:6466 ????????
     db   $00, $a7, $50, $a9, $d7, $03, $00, $32        ;; 1f:646e ????????
     db   $06, $49, $0b, $00, $d0, $05, $32, $a7        ;; 1f:6476 ????????
@@ -1597,21 +1597,21 @@ data_1f_6531:
 
 data_1f_66bd:
     Op4C_Unknown $16, $01, $04, $44, $00, $00, $00, $06, $41, $10 ;; 1f:66bd $4c $16 $01 $04 $44 $00 $00 $00 $06 $41 $10
-    Op50_WriteByte w1_D1A1, 1, $00                     ;; 1f:66c8 $50 $a1 $d1 $01 $00
-    Op50_WriteByte w1_D1CF, 1, $00                     ;; 1f:66cd $50 $cf $d1 $01 $00
-    Op50_WriteByte w1_D22B, 1, $00                     ;; 1f:66d2 $50 $2b $d2 $01 $00
-    Op50_WriteByte w1_D259, 1, $00                     ;; 1f:66d7 $50 $59 $d2 $01 $00
-    Op50_WriteByte w1_D8B7, 1, $00                     ;; 1f:66dc $50 $b7 $d8 $01 $00
-    Op50_WriteByte w1_D8C3, 1, $00                     ;; 1f:66e1 $50 $c3 $d8 $01 $00
-    Op50_WriteByte w1_D2E3, 1, $00                     ;; 1f:66e6 $50 $e3 $d2 $01 $00
-    Op50_WriteByte w3_D6E5, 3, $00                     ;; 1f:66eb $50 $e5 $d6 $03 $00
+    Op50_WriteByte w1_D1A1, $01, $00                   ;; 1f:66c8 $50 $a1 $d1 $01 $00
+    Op50_WriteByte w1_D1CF, $01, $00                   ;; 1f:66cd $50 $cf $d1 $01 $00
+    Op50_WriteByte w1_D22B, $01, $00                   ;; 1f:66d2 $50 $2b $d2 $01 $00
+    Op50_WriteByte w1_D259, $01, $00                   ;; 1f:66d7 $50 $59 $d2 $01 $00
+    Op50_WriteByte w1_D8B7, $01, $00                   ;; 1f:66dc $50 $b7 $d8 $01 $00
+    Op50_WriteByte w1_D8C3, $01, $00                   ;; 1f:66e1 $50 $c3 $d8 $01 $00
+    Op50_WriteByte w1_D2E3, $01, $00                   ;; 1f:66e6 $50 $e3 $d2 $01 $00
+    Op50_WriteByte w3_D6E5, $03, $00                   ;; 1f:66eb $50 $e5 $d6 $03 $00
     Op4E_Unknown_StoreValue 8, $01, $49, $40, $10      ;; 1f:66f0 $4e $08 $01 $49 $40 $10
     Op44_Unknown $1e, $00                              ;; 1f:66f6 $44 $1e $00
     Op68_CopyBytes 1, wC81A, wCFFA, $00                ;; 1f:66f9 $68 $01 $1a $c8 $fa $cf $00
     Op14_Unknown 1, $8e, $43                           ;; 1f:6700 $14 $01 $8e $43
     SCRIPT_POINTER data_1f_6711                        ;; 1f:6704 $11 $67 $1f
-    Op50_WriteByte wCFFD, 0, $03                       ;; 1f:6707 $50 $fd $cf $00 $03
-    Op50_WriteByte wCFFC, 0, $20                       ;; 1f:670c $50 $fc $cf $00 $20
+    Op50_WriteByte wCFFD, $00, $03                     ;; 1f:6707 $50 $fd $cf $00 $03
+    Op50_WriteByte wCFFC, $00, $20                     ;; 1f:670c $50 $fc $cf $00 $20
 
 data_1f_6711:
     Op44_Unknown $1e, $00                              ;; 1f:6711 $44 $1e $00
@@ -1623,15 +1623,15 @@ data_1f_6711:
     Op4C_Unknown $16, $00, $00, $00, $00, $00, $00, $06, $41, $10 ;; 1f:6724 $4c $16 $00 $00 $00 $00 $00 $00 $06 $41 $10
     Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:672f $8e $00 $88 $59 $03
     Op1E_Call data_29_6e87                             ;; 1f:6734 $1e $87 $6e $29
-    Op50_WriteByte w3_D506, 3, $03                     ;; 1f:6738 $50 $06 $d5 $03 $03
-    Op50_WriteByte wC672, 0, $e7                       ;; 1f:673d $50 $72 $c6 $00 $e7
-    Op50_WriteByte wHamJamFlagsC662, 0, $00            ;; 1f:6742 $50 $62 $c6 $00 $00
+    Op50_WriteByte w3_D506, $03, $03                   ;; 1f:6738 $50 $06 $d5 $03 $03
+    Op50_WriteByte wC672, $00, $e7                     ;; 1f:673d $50 $72 $c6 $00 $e7
+    Op50_WriteByte wHamJamFlagsC662, $00, $00          ;; 1f:6742 $50 $62 $c6 $00 $00
     Op18_Jump data_1f_5ae7                             ;; 1f:6747 $18 $e7 $5a $1f
 
 data_1f_674b:
     Op4C_Unknown $2a, $00, $00, $00, $00, $00, $00, $79, $4c, $19 ;; 1f:674b $4c $2a $00 $00 $00 $00 $00 $00 $79 $4c $19
-    Op50_WriteByte wC676, 0, $a7                       ;; 1f:6756 $50 $76 $c6 $00 $a7
-    Op50_WriteByte wC675, 0, $9e                       ;; 1f:675b $50 $75 $c6 $00 $9e
+    Op50_WriteByte wC676, $00, $a7                     ;; 1f:6756 $50 $76 $c6 $00 $a7
+    Op50_WriteByte wC675, $00, $9e                     ;; 1f:675b $50 $75 $c6 $00 $9e
     Op18_Jump data_1f_5ae7                             ;; 1f:6760 $18 $e7 $5a $1f
 
 data_1f_6764:
@@ -1668,9 +1668,9 @@ data_1f_67b7:
 
 data_1f_67c9:
     Op44_Unknown $1e, $00                              ;; 1f:67c9 $44 $1e $00
-    Op50_WriteByte w3_D7A9, 3, $00                     ;; 1f:67cc $50 $a9 $d7 $03 $00
+    Op50_WriteByte w3_D7A9, $03, $00                   ;; 1f:67cc $50 $a9 $d7 $03 $00
     Op4C_Unknown $1c, $00, $00, $00, $00, $06, $00, $4d, $40, $19 ;; 1f:67d1 $4c $1c $00 $00 $00 $00 $06 $00 $4d $40 $19
-    Op50_WriteByte w3_D633, 3, $00                     ;; 1f:67dc $50 $33 $d6 $03 $00
+    Op50_WriteByte w3_D633, $03, $00                   ;; 1f:67dc $50 $33 $d6 $03 $00
     Op18_Jump data_1f_67e5                             ;; 1f:67e1 $18 $e5 $67 $1f
 
 data_1f_67e5:
@@ -1808,7 +1808,7 @@ data_1f_69df:
 data_1f_6aca:
     Op4C_Unknown $1c, $01, $04, $00, $00, $00, $00, $80, $4c, $19 ;; 1f:6aca $4c $1c $01 $04 $00 $00 $00 $00 $80 $4c $19
     Op44_Unknown $3c, $00                              ;; 1f:6ad5 $44 $3c $00
-    Op50_WriteByte w3_D633, 3, $00                     ;; 1f:6ad8 $50 $33 $d6 $03 $00
+    Op50_WriteByte w3_D633, $03, $00                   ;; 1f:6ad8 $50 $33 $d6 $03 $00
     Op18_Jump data_1f_67e5                             ;; 1f:6add $18 $e5 $67 $1f
 
 data_1f_6ae1:
@@ -1824,7 +1824,7 @@ data_1f_6ae1:
 
 data_1f_6aff:
     Op44_Unknown $28, $00                              ;; 1f:6aff $44 $28 $00
-    Op50_WriteByte w3_D633, 3, $00                     ;; 1f:6b02 $50 $33 $d6 $03 $00
+    Op50_WriteByte w3_D633, $03, $00                   ;; 1f:6b02 $50 $33 $d6 $03 $00
     Op18_Jump data_1f_67e5                             ;; 1f:6b07 $18 $e5 $67 $1f
 
 data_1f_6b0b:
@@ -1844,12 +1844,12 @@ data_1f_6b29:
     Op18_Jump data_1f_6aff                             ;; 1f:6b2f $18 $ff $6a $1f
 
 data_1f_6b33:
-    Op52_WriteBytes wC689, 0, $00, $00                 ;; 1f:6b33 $52 $89 $c6 $00 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 1f:6b39 $52 $94 $c6 $00 $00 $00
-    Op50_WriteByte wC67F, 0, $00                       ;; 1f:6b3f $50 $7f $c6 $00 $00
-    Op52_WriteBytes wC680, 0, $00, $00                 ;; 1f:6b44 $52 $80 $c6 $00 $00 $00
-    Op50_WriteByte wC67C, 0, $00                       ;; 1f:6b4a $50 $7c $c6 $00 $00
-    Op52_WriteBytes wC67D, 0, $00, $00                 ;; 1f:6b4f $52 $7d $c6 $00 $00 $00
+    Op52_WriteBytes wC689, $00, $00, $00               ;; 1f:6b33 $52 $89 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 1f:6b39 $52 $94 $c6 $00 $00 $00
+    Op50_WriteByte wC67F, $00, $00                     ;; 1f:6b3f $50 $7f $c6 $00 $00
+    Op52_WriteBytes wC680, $00, $00, $00               ;; 1f:6b44 $52 $80 $c6 $00 $00 $00
+    Op50_WriteByte wC67C, $00, $00                     ;; 1f:6b4a $50 $7c $c6 $00 $00
+    Op52_WriteBytes wC67D, $00, $00, $00               ;; 1f:6b4f $52 $7d $c6 $00 $00 $00
     Op32_Unknown $5f, $6e, $0b, $00, $d0, $05          ;; 1f:6b55 $32 $5f $6e $0b $00 $d0 $05
     Op32_Unknown $5e, $65, $0b, $00, $d0, $04          ;; 1f:6b5c $32 $5e $65 $0b $00 $d0 $04
     Op34_Unknown $02, $5c, $0e, $00, $d8, $05, $14     ;; 1f:6b63 $34 $02 $5c $0e $00 $d8 $05 $14
@@ -1871,7 +1871,7 @@ data_1f_6bba:
     Op3E_Compare_Branch 28, $e3, $49, $19, data_1f_6bba ;; 1f:6bbb $3e $1c $e3 $49 $19 $ba $6b $1f
     Op44_Unknown $1e, $00                              ;; 1f:6bc3 $44 $1e $00
     Op4C_Unknown $1e, $01, $00, $84, $00, $75, $00, $23, $4a, $19 ;; 1f:6bc6 $4c $1e $01 $00 $84 $00 $75 $00 $23 $4a $19
-    Op50_WriteByte wC31D, 0, $10                       ;; 1f:6bd1 $50 $1d $c3 $00 $10
+    Op50_WriteByte wC31D, $00, $10                     ;; 1f:6bd1 $50 $1d $c3 $00 $10
 
 data_1f_6bd6:
     SCRIPT_RETURN_4A                                   ;; 1f:6bd6 $4a
@@ -2009,9 +2009,9 @@ data_1f_6dbd:
 data_1f_6f99:
     Op82_Run call_03_45f6                              ;; 1f:6f99 $82 $f6 $45 $03
     Op1E_Call data_29_6e87                             ;; 1f:6f9d $1e $87 $6e $29
-    Op50_WriteByte w3_D649, 3, $03                     ;; 1f:6fa1 $50 $49 $d6 $03 $03
-    Op50_WriteByte w3_D506, 3, $03                     ;; 1f:6fa6 $50 $06 $d5 $03 $03
-    Op50_WriteByte w3_D633, 3, $00                     ;; 1f:6fab $50 $33 $d6 $03 $00
+    Op50_WriteByte w3_D649, $03, $03                   ;; 1f:6fa1 $50 $49 $d6 $03 $03
+    Op50_WriteByte w3_D506, $03, $03                   ;; 1f:6fa6 $50 $06 $d5 $03 $03
+    Op50_WriteByte w3_D633, $03, $00                   ;; 1f:6fab $50 $33 $d6 $03 $00
     Op18_Jump data_1f_67e5                             ;; 1f:6fb0 $18 $e5 $67 $1f
 
 data_1f_6fb4:
@@ -2087,16 +2087,16 @@ data_1f_71bb:
     Op1E_Call data_04_5b22                             ;; 1f:71bb $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 1f:71bf $44 $09 $00
     Op8E_StoreAddress 0, $00, $00, $00                 ;; 1f:71c2 $8e $00 $00 $00 $00
-    Op52_WriteBytes wC679, 0, $de, $08                 ;; 1f:71c7 $52 $79 $c6 $00 $de $08
-    Op50_WriteByte wC67B, 0, $00                       ;; 1f:71cd $50 $7b $c6 $00 $00
+    Op52_WriteBytes wC679, $00, $de, $08               ;; 1f:71c7 $52 $79 $c6 $00 $de $08
+    Op50_WriteByte wC67B, $00, $00                     ;; 1f:71cd $50 $7b $c6 $00 $00
     Op1E_Call data_04_5f51                             ;; 1f:71d2 $1e $51 $5f $04
-    Op50_WriteByte wCFFC, 0, $80                       ;; 1f:71d6 $50 $fc $cf $00 $80
-    Op50_WriteByte wCFF9, 0, $80                       ;; 1f:71db $50 $f9 $cf $00 $80
-    Op50_WriteByte wHamJamFlagsC662, 0, $00            ;; 1f:71e0 $50 $62 $c6 $00 $00
-    Op50_WriteByte w1_D000, 1, $00                     ;; 1f:71e5 $50 $00 $d0 $01 $00
+    Op50_WriteByte wCFFC, $00, $80                     ;; 1f:71d6 $50 $fc $cf $00 $80
+    Op50_WriteByte wCFF9, $00, $80                     ;; 1f:71db $50 $f9 $cf $00 $80
+    Op50_WriteByte wHamJamFlagsC662, $00, $00          ;; 1f:71e0 $50 $62 $c6 $00 $00
+    Op50_WriteByte w1_D000, $01, $00                   ;; 1f:71e5 $50 $00 $d0 $01 $00
     Op14_Unknown 1, $89, $44                           ;; 1f:71ea $14 $01 $89 $44
     SCRIPT_POINTER data_1f_71f8                        ;; 1f:71ee $f8 $71 $1f
-    Op52_WriteBytes w1_D001, 1, $fd, $d1               ;; 1f:71f1 $52 $01 $d0 $01 $fd $d1
+    Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 1f:71f1 $52 $01 $d0 $01 $fd $d1
     SCRIPT_RETURN_20                                   ;; 1f:71f7 $20
 
 data_1f_71f8:
@@ -2115,20 +2115,20 @@ data_1f_71fa:
     SubOp_SetByte wC819, $00                           ;; 1f:7216 $7f $01 $00
     Op16_SubOps 1                                      ;; 1f:7219 $16 $01
     SubOp_SetByte wC818, $00                           ;; 1f:721b $7f $00 $00
-    Op50_WriteByte w3_D506, 3, $00                     ;; 1f:721e $50 $06 $d5 $03 $00
-    Op50_WriteByte w3_D507, 3, $00                     ;; 1f:7223 $50 $07 $d5 $03 $00
-    Op50_WriteByte w3_D508, 3, $00                     ;; 1f:7228 $50 $08 $d5 $03 $00
-    Op50_WriteByte w3_D7A9, 3, $00                     ;; 1f:722d $50 $a9 $d7 $03 $00
-    Op50_WriteByte w3_D635, 3, $00                     ;; 1f:7232 $50 $35 $d6 $03 $00
-    Op50_WriteByte w3_D630, 3, $01                     ;; 1f:7237 $50 $30 $d6 $03 $01
-    Op50_WriteByte w3_D631, 3, $01                     ;; 1f:723c $50 $31 $d6 $03 $01
-    Op50_WriteByte w3_D632, 3, $00                     ;; 1f:7241 $50 $32 $d6 $03 $00
-    Op52_WriteBytes w1_D001, 1, $03, $d0               ;; 1f:7246 $52 $01 $d0 $01 $03 $d0
+    Op50_WriteByte w3_D506, $03, $00                   ;; 1f:721e $50 $06 $d5 $03 $00
+    Op50_WriteByte w3_D507, $03, $00                   ;; 1f:7223 $50 $07 $d5 $03 $00
+    Op50_WriteByte w3_D508, $03, $00                   ;; 1f:7228 $50 $08 $d5 $03 $00
+    Op50_WriteByte w3_D7A9, $03, $00                   ;; 1f:722d $50 $a9 $d7 $03 $00
+    Op50_WriteByte w3_D635, $03, $00                   ;; 1f:7232 $50 $35 $d6 $03 $00
+    Op50_WriteByte w3_D630, $03, $01                   ;; 1f:7237 $50 $30 $d6 $03 $01
+    Op50_WriteByte w3_D631, $03, $01                   ;; 1f:723c $50 $31 $d6 $03 $01
+    Op50_WriteByte w3_D632, $03, $00                   ;; 1f:7241 $50 $32 $d6 $03 $00
+    Op52_WriteBytes w1_D001, $01, $03, $d0             ;; 1f:7246 $52 $01 $d0 $01 $03 $d0
     Op18_Jump data_1f_5af6                             ;; 1f:724c $18 $f6 $5a $1f
     Op74_PrepTableJumpIndex_Copy wC660                 ;; 1f:7250 $74 $60 $c6
     Op1C_TableJump 1                                   ;; 1f:7253 $1c $01
     SCRIPT_POINTER data_1f_79fc                        ;; 1f:7255 $fc $79 $1f
-    Op50_WriteByte wC660, 0, $01                       ;; 1f:7258 $50 $60 $c6 $00 $01
+    Op50_WriteByte wC660, $00, $01                     ;; 1f:7258 $50 $60 $c6 $00 $01
     db   $5e, $80, $4a, $32, $02, $66, $6f, $00        ;; 1f:725d ????????
     db   $d0, $05, $34, $bd, $7a, $7d, $00, $d8        ;; 1f:7265 ????????
     db   $05, $14, $34, $2d, $79, $7f, $00, $d8        ;; 1f:726d ????????
@@ -2375,7 +2375,7 @@ data_1f_71fa:
     db   $e7, $61, $04, $18, $0a, $5f, $1d             ;; 1f:79f5 ???????
 
 data_1f_79fc:
-    Op50_WriteByte w1_D000, 1, $01                     ;; 1f:79fc $50 $00 $d0 $01 $01
+    Op50_WriteByte w1_D000, $01, $01                   ;; 1f:79fc $50 $00 $d0 $01 $01
     Op1E_Call data_04_5b22                             ;; 1f:7a01 $1e $22 $5b $04
     Op44_Unknown $0a, $00                              ;; 1f:7a05 $44 $0a $00
     Op82_Run call_01_68ab                              ;; 1f:7a08 $82 $ab $68 $01
@@ -2385,7 +2385,7 @@ data_1f_79fc:
     Op32_Unknown $fc, $6b, $71, $e0, $d2, $04          ;; 1f:7a21 $32 $fc $6b $71 $e0 $d2 $04
     Op16_SubOps 1                                      ;; 1f:7a28 $16 $01
     SubOp_SetWord wC81F, $0000                         ;; 1f:7a2a $9f $07 $00 $00
-    Op50_WriteByte wC720, 0, $02                       ;; 1f:7a2e $50 $20 $c7 $00 $02
+    Op50_WriteByte wC720, $00, $02                     ;; 1f:7a2e $50 $20 $c7 $00 $02
     Op82_Run call_01_68ba                              ;; 1f:7a33 $82 $ba $68 $01
     Op42_Unknown_StoreValue 0, $01, $50, $61, $04      ;; 1f:7a37 $42 $00 $01 $50 $61 $04
     Op42_Unknown_StoreValue 4, $01, $50, $61, $04      ;; 1f:7a3d $42 $04 $01 $50 $61 $04

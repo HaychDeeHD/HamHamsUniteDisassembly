@@ -39,7 +39,7 @@ data_37_4033:
     db   $37                                           ;; 37:4057 ?
 
 data_37_4058:
-    Op50_WriteByte wC31D, 0, $d0                       ;; 37:4058 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wC31D, $00, $d0                     ;; 37:4058 $50 $1d $c3 $00 $d0
     Op82_Run call_01_74c3                              ;; 37:405d $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 37:4061 $1c $03
     SCRIPT_POINTER data_37_43b5                        ;; 37:4063 $b5 $43 $37
@@ -49,7 +49,7 @@ data_37_4058:
 
 data_37_4070:
     SCRIPT_RETURN_4A                                   ;; 37:4070 $4a
-    Op50_WriteByte wC720, 0, $0f                       ;; 37:4071 $50 $20 $c7 $00 $0f
+    Op50_WriteByte wC720, $00, $0f                     ;; 37:4071 $50 $20 $c7 $00 $0f
     Op82_Run call_01_6844                              ;; 37:4076 $82 $44 $68 $01
     Op32_Unknown $76, $7a, $7b, $00, $df, $04          ;; 37:407a $32 $76 $7a $7b $00 $df $04
     Op32_Unknown $f9, $73, $62, $00, $d0, $05          ;; 37:4081 $32 $f9 $73 $62 $00 $d0 $05
@@ -93,8 +93,8 @@ data_37_411a:
     Op18_Jump data_37_4133                             ;; 37:4125 $18 $33 $41 $37
 
 data_37_4129:
-    Op50_WriteByte w3_D0FD, 3, $00                     ;; 37:4129 $50 $fd $d0 $03 $00
-    Op50_WriteByte w3_D0C0, 3, $04                     ;; 37:412e $50 $c0 $d0 $03 $04
+    Op50_WriteByte w3_D0FD, $03, $00                   ;; 37:4129 $50 $fd $d0 $03 $00
+    Op50_WriteByte w3_D0C0, $03, $04                   ;; 37:412e $50 $c0 $d0 $03 $04
 
 data_37_4133:
     Op14_Unknown 1, $2a, $50                           ;; 37:4133 $14 $01 $2a $50
@@ -136,7 +136,7 @@ data_37_41a4:
     SubOp_SetWord wC7D8, $0000                         ;; 37:41ab $9e $c0 $00 $00
     Op16_SubOps 1                                      ;; 37:41af $16 $01
     SubOp_SetWord wC7DA, $0000                         ;; 37:41b1 $9e $c2 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 37:41b5 $52 $94 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 37:41b5 $52 $94 $c6 $00 $00 $00
     db   $3a, $00, $00, $a0, $90, $50, $48, $f0        ;; 37:41bb ????????
     db   $00, $a8, $00, $44, $04, $00, $1e, $23        ;; 37:41c3 ????????
     db   $62, $04, $4e, $02, $01, $d9, $7f, $12        ;; 37:41cb ????????
@@ -174,7 +174,7 @@ data_37_426b:
     Op3E_Compare_Branch 30, $9d, $7f, $12, data_37_426b ;; 37:426c $3e $1e $9d $7f $12 $6b $42 $37
     Op34_Unknown $8d, $52, $7f, $4b, $d8, $05, $05     ;; 37:4274 $34 $8d $52 $7f $4b $d8 $05 $05
     Op34_Unknown $ff, $68, $7f, $4b, $d8, $07, $05     ;; 37:427c $34 $ff $68 $7f $4b $d8 $07 $05
-    Op50_WriteByte w1_D2B5, 1, $00                     ;; 37:4284 $50 $b5 $d2 $01 $00
+    Op50_WriteByte w1_D2B5, $01, $00                   ;; 37:4284 $50 $b5 $d2 $01 $00
     Op56_WriteBitArrayIndex 26, $55, $7c, $04          ;; 37:4289 $56 $1a $55 $7c $04
     Op06_Unknown_Text data_3c_46ee                     ;; 37:428e $06 $ee $46 $3c
 
@@ -332,7 +332,7 @@ data_37_4460:
     Op1E_Call data_04_615d                             ;; 37:4478 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $fc, $7b, $04          ;; 37:447c $56 $1a $fc $7b $04
     Op18_Jump data_37_4033                             ;; 37:4481 $18 $33 $40 $37
-    Op50_WriteByte wBitArrayIndexC715, 0, $49          ;; 37:4485 $50 $15 $c7 $00 $49
+    Op50_WriteByte wBitArrayIndexC715, $00, $49        ;; 37:4485 $50 $15 $c7 $00 $49
     Op82_Run ObtainHamChatFromC715                     ;; 37:448a $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 37:448e $16 $01
     SubOp_SetFlag wBitArrayC918, 3                     ;; 37:4490 $3e $03
@@ -344,7 +344,7 @@ data_37_4460:
 data_37_449d:
     Op1E_Call data_20_5708                             ;; 37:449d $1e $08 $57 $20
     Op18_Jump data_37_45e4                             ;; 37:44a1 $18 $e4 $45 $37
-    Op50_WriteByte wBitArrayIndexC715, 0, $3e          ;; 37:44a5 $50 $15 $c7 $00 $3e
+    Op50_WriteByte wBitArrayIndexC715, $00, $3e        ;; 37:44a5 $50 $15 $c7 $00 $3e
     Op82_Run ObtainHamChatFromC715                     ;; 37:44aa $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 37:44ae $16 $01
     SubOp_SetFlag wBitArrayC918, 3                     ;; 37:44b0 $3e $03
@@ -356,7 +356,7 @@ data_37_449d:
 data_37_44bd:
     Op1E_Call data_20_4fac                             ;; 37:44bd $1e $ac $4f $20
     Op18_Jump data_37_45e4                             ;; 37:44c1 $18 $e4 $45 $37
-    Op50_WriteByte wBitArrayIndexC715, 0, $37          ;; 37:44c5 $50 $15 $c7 $00 $37
+    Op50_WriteByte wBitArrayIndexC715, $00, $37        ;; 37:44c5 $50 $15 $c7 $00 $37
     Op82_Run ObtainHamChatFromC715                     ;; 37:44ca $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 37:44ce $16 $01
     SubOp_SetFlag wBitArrayC918, 3                     ;; 37:44d0 $3e $03
@@ -380,7 +380,7 @@ data_37_44fe:
     Op06_Unknown_Text data_3c_47c8                     ;; 37:4506 $06 $c8 $47 $3c
     Op06_Unknown_Text data_3c_47d6                     ;; 37:450a $06 $d6 $47 $3c
     Op1E_Call data_04_615d                             ;; 37:450e $1e $5d $61 $04
-    Op50_WriteByte wBitArrayIndexC715, 0, $0c          ;; 37:4512 $50 $15 $c7 $00 $0c
+    Op50_WriteByte wBitArrayIndexC715, $00, $0c        ;; 37:4512 $50 $15 $c7 $00 $0c
     Op82_Run ObtainHamChatFromC715                     ;; 37:4517 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 37:451b $16 $01
     SubOp_SetFlag wC91A, 7                             ;; 37:451d $3e $17
@@ -424,7 +424,7 @@ data_37_45a5:
     Op1E_Call data_04_615d                             ;; 37:45b7 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $0b, $7b, $04          ;; 37:45bb $56 $1a $0b $7b $04
     Op18_Jump data_37_4033                             ;; 37:45c0 $18 $33 $40 $37
-    Op50_WriteByte wBitArrayIndexC715, 0, $11          ;; 37:45c4 $50 $15 $c7 $00 $11
+    Op50_WriteByte wBitArrayIndexC715, $00, $11        ;; 37:45c4 $50 $15 $c7 $00 $11
     Op82_Run ObtainHamChatFromC715                     ;; 37:45c9 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 37:45cd $16 $01
     SubOp_SetFlag wBitArrayC918, 3                     ;; 37:45cf $3e $03
@@ -528,7 +528,7 @@ data_37_46f9:
     SCRIPT_RETURN_20                                   ;; 37:4716 $20
 
 data_37_4717:
-    Op50_WriteByte wC720, 0, $11                       ;; 37:4717 $50 $20 $c7 $00 $11
+    Op50_WriteByte wC720, $00, $11                     ;; 37:4717 $50 $20 $c7 $00 $11
     Op82_Run call_01_6844                              ;; 37:471c $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 37:4720 $4a
     Op1E_Call data_04_61cf                             ;; 37:4721 $1e $cf $61 $04
@@ -611,7 +611,7 @@ data_37_4833:
     SubOp_SetWord wC7D8, $0000                         ;; 37:483a $9e $c0 $00 $00
     Op16_SubOps 1                                      ;; 37:483e $16 $01
     SubOp_SetWord wC7DA, $0000                         ;; 37:4840 $9e $c2 $00 $00
-    Op52_WriteBytes wC694, 0, $00, $00                 ;; 37:4844 $52 $94 $c6 $00 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 37:4844 $52 $94 $c6 $00 $00 $00
     Op44_Unknown $03, $00                              ;; 37:484a $44 $03 $00
     Op1E_Call data_04_6223                             ;; 37:484d $1e $23 $62 $04
     Op4E_Unknown_StoreValue 4, $01, $49, $40, $10      ;; 37:4851 $4e $04 $01 $49 $40 $10
@@ -774,17 +774,17 @@ data_37_48f5:
     db   $00, $00, $00, $00, $71, $42, $10, $20        ;; 37:4c72 ????????
 
 data_37_4c7a:
-    Op50_WriteByte w3_D123, 3, $00                     ;; 37:4c7a $50 $23 $d1 $03 $00
-    Op50_WriteByte w3_D0C9, 3, $00                     ;; 37:4c7f $50 $c9 $d0 $03 $00
-    Op50_WriteByte w3_D17D, 3, $00                     ;; 37:4c84 $50 $7d $d1 $03 $00
-    Op50_WriteByte w3_D120, 3, $00                     ;; 37:4c89 $50 $20 $d1 $03 $00
-    Op50_WriteByte w3_D126, 3, $00                     ;; 37:4c8e $50 $26 $d1 $03 $00
+    Op50_WriteByte w3_D123, $03, $00                   ;; 37:4c7a $50 $23 $d1 $03 $00
+    Op50_WriteByte w3_D0C9, $03, $00                   ;; 37:4c7f $50 $c9 $d0 $03 $00
+    Op50_WriteByte w3_D17D, $03, $00                   ;; 37:4c84 $50 $7d $d1 $03 $00
+    Op50_WriteByte w3_D120, $03, $00                   ;; 37:4c89 $50 $20 $d1 $03 $00
+    Op50_WriteByte w3_D126, $03, $00                   ;; 37:4c8e $50 $26 $d1 $03 $00
     SCRIPT_RETURN_20                                   ;; 37:4c93 $20
     Op14_Unknown 1, $50, $58                           ;; 37:4c94 $14 $01 $50 $58
     SCRIPT_POINTER data_37_4d0d                        ;; 37:4c98 $0d $4d $37
     Op16_SubOps 1                                      ;; 37:4c9b $16 $01
     SubOp_SetFlag wC94D, 0                             ;; 37:4c9d $3f $a8
-    Op50_WriteByte wBitArrayIndexC715, 0, $3f          ;; 37:4c9f $50 $15 $c7 $00 $3f
+    Op50_WriteByte wBitArrayIndexC715, $00, $3f        ;; 37:4c9f $50 $15 $c7 $00 $3f
     Op82_Run ObtainHamChatFromC715                     ;; 37:4ca4 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 37:4ca8 $16 $01
     SubOp_SetFlag wC921, 2                             ;; 37:4caa $3e $4a

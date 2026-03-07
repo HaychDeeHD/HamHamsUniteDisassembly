@@ -1,6 +1,7 @@
 from annotation.annotation import annotation
 from block.base import Block
 from romInfo import RomInfo
+from memory.rom import RomMemory
 
 from hamtext import maybeCreateTextBlocks, addKnownTextAddress
 
@@ -275,7 +276,7 @@ class Op50Block(Block):
         possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
         targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
         label = targetMemory.getLabel(pointer)
-        file.asmLine(5, "Op50_WriteByte", str(label), str(bankNum), "$%02x" % payload)
+        file.asmLine(5, "Op50_WriteByte", str(label), "$%02x" % bankNum, "$%02x" % payload)
 
 class Op52Block(Block):
     def __init__(self, memory, addr):
@@ -300,7 +301,7 @@ class Op52Block(Block):
         possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
         targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
         label = targetMemory.getLabel(pointer)
-        file.asmLine(6, "Op52_WriteBytes", str(label), str(bankNum), "$%02x" % payload1, "$%02x" % payload2)
+        file.asmLine(6, "Op52_WriteBytes", str(label), "$%02x" % bankNum, "$%02x" % payload1, "$%02x" % payload2)
 
 class Op68Block(Block):
     def __init__(self, memory, addr):
@@ -553,43 +554,52 @@ class Op80Block(Block):
         # RomInfo.macros["Op80_CopyNBytes"] = "db $80\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)\ndw \\3"
         RomInfo.macros["Op80_CopyNBytes"] = "db $80\ndw \\1\ndb \\2\ndw \\3\ndb \\4\ndw \\5"
 
+        # Source
         pointer1 = memory.word(addr + 1)
         bankNum1 = memory.byte(addr + 3)
         # This could also be a ROM bank, so check bankNum value to avoid out of bounds error.
-        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1) if bankNum1 < 7 else None
+        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1) if bankNum1 <= 7 else None
         possiblyRelevantRomBank1 = RomInfo.romBank(bankNum1)
         targetMemory1 = RomInfo.memoryAt(pointer1, active_rom_bank=possiblyRelevantRomBank1, active_wram_bank=possiblyRelevantWramBank1)
         targetMemory1.addAutoLabel(pointer1, None, None)
 
+        # Dest
         pointer2 = memory.word(addr + 4)
         bankNum2 = memory.byte(addr + 6)
         # This could also be a ROM bank, so check bankNum value to avoid out of bounds error.
-        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2) if bankNum2 < 7 else None
+        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2) if bankNum2 <= 7 else None
         possiblyRelevantRomBank2 = RomInfo.romBank(bankNum2)
+        # RomMemory should not be writable. But 34:71b2 seems to write to the RomHeader?
+        # That can't be labeled so skip making a label for RomMemory. For now I assume that's a mistake?
         targetMemory2 = RomInfo.memoryAt(pointer2, active_rom_bank=possiblyRelevantRomBank2, active_wram_bank=possiblyRelevantWramBank2)
-        targetMemory2.addAutoLabel(pointer2, None, None)
+        if not isinstance(targetMemory2, RomMemory):
+            targetMemory2.addAutoLabel(pointer2, None, None)
 
     def export(self, file):
+        # Source
         pointer1 = self.memory.word(file.addr + 1)
         bankNum1 = self.memory.byte(file.addr + 3)
         # This could also be a ROM bank, so check bankNum value to avoid out of bounds error.
-        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1) if bankNum1 < 7 else None
+        possiblyRelevantWramBank1 = RomInfo.getWRam(bankNum1) if bankNum1 <= 7 else None
         possiblyRelevantRomBank1 = RomInfo.romBank(bankNum1)
         targetMemory1 = RomInfo.memoryAt(pointer1, active_rom_bank=possiblyRelevantRomBank1, active_wram_bank=possiblyRelevantWramBank1)
         label1 = targetMemory1.getLabel(pointer1)
 
+        # Dest
         pointer2 = self.memory.word(file.addr + 4)
         bankNum2 = self.memory.byte(file.addr + 6)
         # This could also be a ROM bank, so check bankNum value to avoid out of bounds error.
-        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2) if bankNum2 < 7 else None
+        possiblyRelevantWramBank2 = RomInfo.getWRam(bankNum2) if bankNum2 <= 7 else None
         possiblyRelevantRomBank2 = RomInfo.romBank(bankNum2)
+        # RomMemory should not be writable. But 34:71b2 seems to write to the RomHeader?
+        # That can't be labeled so skip making a label for RomMemory. For now I assume that's a mistake?
         targetMemory2 = RomInfo.memoryAt(pointer2, active_rom_bank=possiblyRelevantRomBank2, active_wram_bank=possiblyRelevantWramBank2)
-        label2 = targetMemory2.getLabel(pointer2)
+        label2 = targetMemory2.getLabel(pointer2) if not isinstance(targetMemory2, RomMemory) else "$%04x" % pointer2
 
         amount = self.memory.word(file.addr + 7)
 
         # file.asmLine(9, "Op80_CopyNBytes", str(label1), str(label2), str(amount))
-        file.asmLine(9, "Op80_CopyNBytes", str(label1), str(bankNum1), str(label2), str(bankNum2), str(amount))
+        file.asmLine(9, "Op80_CopyNBytes", str(label1), "$%02x" % bankNum1, str(label2), "$%02x" % bankNum2, str(amount))
 
 class Op04Block(Block):
     def __init__(self, memory, addr):
