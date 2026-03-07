@@ -2064,26 +2064,63 @@ data_2f_6e9f:
     Op4E_Unknown_StoreValue 8, $01, $36, $40, $13      ;; 2f:6ec2 $4e $08 $01 $36 $40 $13
     Op1E_Call data_3c_4e0e                             ;; 2f:6ec8 $1e $0e $4e $3c
     Op4E_Unknown_StoreValue 10, $01, $15, $7e, $12     ;; 2f:6ecc $4e $0a $01 $15 $7e $12
-    db   $3a, $00, $00, $a0, $90, $50, $48, $f0        ;; 2f:6ed2 ????????
-    db   $00, $f0, $00, $14, $01, $a2, $66, $e7        ;; 2f:6eda ????????
-    db   $6e, $2f, $44, $08, $00, $1e, $29, $4d        ;; 2f:6ee2 ????????
-    db   $33, $3e, $22, $20, $7e, $11, $e7, $6e        ;; 2f:6eea ????????
-    db   $2f, $3e, $22, $f3, $7e, $11, $e7, $6e        ;; 2f:6ef2 ????????
-    db   $2f, $14, $01, $68, $69, $4e, $6f, $2f        ;; 2f:6efa ????????
-    db   $14, $01, $29, $68, $1b, $6f, $2f, $14        ;; 2f:6f02 ????????
-    db   $01, $3f, $67, $2c, $6f, $2f, $14, $01        ;; 2f:6f0a ????????
-    db   $a1, $67, $3d, $6f, $2f, $18, $4a, $6f        ;; 2f:6f12 ????????
-    db   $2f, $16, $01, $7e, $88, $07, $1e, $8b        ;; 2f:6f1a ????????
-    db   $4f, $3c, $82, $2b, $78, $01, $18, $4a        ;; 2f:6f22 ????????
-    db   $6f, $2f, $16, $01, $7e, $88, $07, $1e        ;; 2f:6f2a ????????
-    db   $8b, $4f, $3c, $82, $2b, $78, $01, $18        ;; 2f:6f32 ????????
-    db   $4a, $6f, $2f, $16, $01, $7e, $88, $01        ;; 2f:6f3a ????????
-    db   $1e, $8b, $4f, $3c, $82, $2b, $78, $01        ;; 2f:6f42 ????????
-    db   $1e, $29, $4d, $33, $1e, $1e, $59, $34        ;; 2f:6f4a ????????
-    db   $16, $01, $5e, $03, $16, $01, $7e, $39        ;; 2f:6f52 ????????
-    db   $00, $16, $01, $7e, $0d, $44, $16, $01        ;; 2f:6f5a ????????
-    db   $7e, $12, $b0, $16, $01, $7f, $11, $00        ;; 2f:6f62 ????????
-    db   $16, $01, $5f, $a4, $20                       ;; 2f:6f6a ?????
+    Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 2f:6ed2 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
+    Op14_Unknown 1, $a2, $66                           ;; 2f:6edd $14 $01 $a2 $66
+    SCRIPT_POINTER data_2f_6ee7                        ;; 2f:6ee1 $e7 $6e $2f
+    Op44_Unknown $08, $00                              ;; 2f:6ee4 $44 $08 $00
+
+data_2f_6ee7:
+    Op1E_Call data_33_4d29                             ;; 2f:6ee7 $1e $29 $4d $33
+    Op3E_Compare_Branch 34, $20, $7e, $11, data_2f_6ee7 ;; 2f:6eeb $3e $22 $20 $7e $11 $e7 $6e $2f
+    Op3E_Compare_Branch 34, $f3, $7e, $11, data_2f_6ee7 ;; 2f:6ef3 $3e $22 $f3 $7e $11 $e7 $6e $2f
+    Op14_Unknown 1, $68, $69                           ;; 2f:6efb $14 $01 $68 $69
+    SCRIPT_POINTER data_2f_6f4e                        ;; 2f:6eff $4e $6f $2f
+    Op14_Unknown 1, $29, $68                           ;; 2f:6f02 $14 $01 $29 $68
+    SCRIPT_POINTER data_2f_6f1b                        ;; 2f:6f06 $1b $6f $2f
+    Op14_Unknown 1, $3f, $67                           ;; 2f:6f09 $14 $01 $3f $67
+    SCRIPT_POINTER data_2f_6f2c                        ;; 2f:6f0d $2c $6f $2f
+    Op14_Unknown 1, $a1, $67                           ;; 2f:6f10 $14 $01 $a1 $67
+    SCRIPT_POINTER data_2f_6f3d                        ;; 2f:6f14 $3d $6f $2f
+    Op18_Jump data_2f_6f4a                             ;; 2f:6f17 $18 $4a $6f $2f
+
+data_2f_6f1b:
+    Op16_SubOps 1                                      ;; 2f:6f1b $16 $01
+    SubOp_SetByte wC7A0, $07                           ;; 2f:6f1d $7e $88 $07
+    Op1E_Call data_3c_4f8b                             ;; 2f:6f20 $1e $8b $4f $3c
+    Op82_Run call_01_782b                              ;; 2f:6f24 $82 $2b $78 $01
+    Op18_Jump data_2f_6f4a                             ;; 2f:6f28 $18 $4a $6f $2f
+
+data_2f_6f2c:
+    Op16_SubOps 1                                      ;; 2f:6f2c $16 $01
+    SubOp_SetByte wC7A0, $07                           ;; 2f:6f2e $7e $88 $07
+    Op1E_Call data_3c_4f8b                             ;; 2f:6f31 $1e $8b $4f $3c
+    Op82_Run call_01_782b                              ;; 2f:6f35 $82 $2b $78 $01
+    Op18_Jump data_2f_6f4a                             ;; 2f:6f39 $18 $4a $6f $2f
+
+data_2f_6f3d:
+    Op16_SubOps 1                                      ;; 2f:6f3d $16 $01
+    SubOp_SetByte wC7A0, $01                           ;; 2f:6f3f $7e $88 $01
+    Op1E_Call data_3c_4f8b                             ;; 2f:6f42 $1e $8b $4f $3c
+    Op82_Run call_01_782b                              ;; 2f:6f46 $82 $2b $78 $01
+
+data_2f_6f4a:
+    Op1E_Call data_33_4d29                             ;; 2f:6f4a $1e $29 $4d $33
+
+data_2f_6f4e:
+    Op1E_Call data_34_591e                             ;; 2f:6f4e $1e $1e $59 $34
+    Op16_SubOps 1                                      ;; 2f:6f52 $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2f:6f54 $5e $03
+    Op16_SubOps 1                                      ;; 2f:6f56 $16 $01
+    SubOp_SetByte wC751, $00                           ;; 2f:6f58 $7e $39 $00
+    Op16_SubOps 1                                      ;; 2f:6f5b $16 $01
+    SubOp_SetByte wC725, $44                           ;; 2f:6f5d $7e $0d $44
+    Op16_SubOps 1                                      ;; 2f:6f60 $16 $01
+    SubOp_SetByte wC72A, $b0                           ;; 2f:6f62 $7e $12 $b0
+    Op16_SubOps 1                                      ;; 2f:6f65 $16 $01
+    SubOp_SetByte wC829, $00                           ;; 2f:6f67 $7f $11 $00
+    Op16_SubOps 1                                      ;; 2f:6f6a $16 $01
+    SubOp_ClearFlag wC94C, 4                           ;; 2f:6f6c $5f $a4
+    SCRIPT_RETURN_20                                   ;; 2f:6f6e $20
 
 data_2f_6f6f:
     Op14_Unknown 1, $60, $69                           ;; 2f:6f6f $14 $01 $60 $69
@@ -2665,23 +2702,46 @@ data_2f_78b4:
     Op16_SubOps 1                                      ;; 2f:78bf $16 $01
     SubOp_SetWord wC7DA, $0000                         ;; 2f:78c1 $9e $c2 $00 $00
     Op52_WriteBytes wC694, $00, $00, $00               ;; 2f:78c5 $52 $94 $c6 $00 $00 $00
-    db   $3a, $00, $00, $a0, $90, $50, $48, $f0        ;; 2f:78cb ????????
-    db   $00, $a8, $00, $44, $04, $00, $1e, $23        ;; 2f:78d3 ????????
-    db   $62, $04, $4e, $02, $01, $27, $7e, $12        ;; 2f:78db ????????
-    db   $4e, $08, $01, $49, $40, $10, $4e, $09        ;; 2f:78e3 ????????
-    db   $01, $7f, $40, $10, $4e, $0a, $01, $58        ;; 2f:78eb ????????
-    db   $69, $09, $4e, $0f, $01, $b6, $62, $14        ;; 2f:78f3 ????????
-    db   $44, $08, $00, $1e, $12, $4d, $33, $14        ;; 2f:78fb ????????
-    db   $01, $64, $52, $14, $79, $2f, $3c, $0e        ;; 2f:7903 ????????
-    db   $71, $17, $fd, $d1, $00, $00, $00, $00        ;; 2f:790b ????????
-    db   $ff, $52, $01, $d0, $01, $fd, $d1, $16        ;; 2f:7913 ????????
-    db   $01, $5e, $03, $50, $fd, $d0, $02, $fe        ;; 2f:791b ????????
-    db   $16, $01, $7e, $39, $00, $16, $01, $7e        ;; 2f:7923 ????????
-    db   $0d, $e0, $16, $01, $7e, $12, $60, $14        ;; 2f:792b ????????
-    db   $01, $64, $52, $3a, $79, $2f, $20, $16        ;; 2f:7933 ????????
-    db   $01, $7e, $4d, $00, $16, $01, $3e, $8b        ;; 2f:793b ????????
-    db   $16, $01, $3e, $8c, $16, $01, $3f, $a2        ;; 2f:7943 ????????
-    db   $20                                           ;; 2f:794b ?
+    Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $a8, $00 ;; 2f:78cb $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $a8 $00
+    Op44_Unknown $04, $00                              ;; 2f:78d6 $44 $04 $00
+    Op1E_Call data_04_6223                             ;; 2f:78d9 $1e $23 $62 $04
+    Op4E_Unknown_StoreValue 2, $01, $27, $7e, $12      ;; 2f:78dd $4e $02 $01 $27 $7e $12
+    Op4E_Unknown_StoreValue 8, $01, $49, $40, $10      ;; 2f:78e3 $4e $08 $01 $49 $40 $10
+    Op4E_Unknown_StoreValue 9, $01, $7f, $40, $10      ;; 2f:78e9 $4e $09 $01 $7f $40 $10
+    Op4E_Unknown_StoreValue 10, $01, $58, $69, $09     ;; 2f:78ef $4e $0a $01 $58 $69 $09
+    Op4E_Unknown_StoreValue 15, $01, $b6, $62, $14     ;; 2f:78f5 $4e $0f $01 $b6 $62 $14
+    Op44_Unknown $08, $00                              ;; 2f:78fb $44 $08 $00
+    Op1E_Call data_33_4d12                             ;; 2f:78fe $1e $12 $4d $33
+    Op14_Unknown 1, $64, $52                           ;; 2f:7902 $14 $01 $64 $52
+    SCRIPT_POINTER data_2f_7914                        ;; 2f:7906 $14 $79 $2f
+    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 2f:7909 ????????
+    db   $00, $00, $ff                                 ;; 2f:7911 ???
+
+data_2f_7914:
+    Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2f:7914 $52 $01 $d0 $01 $fd $d1
+    Op16_SubOps 1                                      ;; 2f:791a $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2f:791c $5e $03
+    Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2f:791e $50 $fd $d0 $02 $fe
+    Op16_SubOps 1                                      ;; 2f:7923 $16 $01
+    SubOp_SetByte wC751, $00                           ;; 2f:7925 $7e $39 $00
+    Op16_SubOps 1                                      ;; 2f:7928 $16 $01
+    SubOp_SetByte wC725, $e0                           ;; 2f:792a $7e $0d $e0
+    Op16_SubOps 1                                      ;; 2f:792d $16 $01
+    SubOp_SetByte wC72A, $60                           ;; 2f:792f $7e $12 $60
+    Op14_Unknown 1, $64, $52                           ;; 2f:7932 $14 $01 $64 $52
+    SCRIPT_POINTER data_2f_793a                        ;; 2f:7936 $3a $79 $2f
+    SCRIPT_RETURN_20                                   ;; 2f:7939 $20
+
+data_2f_793a:
+    Op16_SubOps 1                                      ;; 2f:793a $16 $01
+    SubOp_SetByte wC765, $00                           ;; 2f:793c $7e $4d $00
+    Op16_SubOps 1                                      ;; 2f:793f $16 $01
+    SubOp_SetFlag wC929, 3                             ;; 2f:7941 $3e $8b
+    Op16_SubOps 1                                      ;; 2f:7943 $16 $01
+    SubOp_SetFlag wC929, 4                             ;; 2f:7945 $3e $8c
+    Op16_SubOps 1                                      ;; 2f:7947 $16 $01
+    SubOp_SetFlag wC94C, 2                             ;; 2f:7949 $3f $a2
+    SCRIPT_RETURN_20                                   ;; 2f:794b $20
 
 data_2f_794c:
     SCRIPT_RETURN_4A                                   ;; 2f:794c $4a

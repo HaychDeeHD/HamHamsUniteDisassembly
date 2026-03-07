@@ -122,15 +122,15 @@ data_1d_41b7:
     Op4E_Unknown_StoreValue 8, $01, $58, $69, $09      ;; 1d:41ea $4e $08 $01 $58 $69 $09
     Op4E_Unknown_StoreValue 9, $01, $b6, $62, $14      ;; 1d:41f0 $4e $09 $01 $b6 $62 $14
     Op4E_Unknown_StoreValue 10, $01, $63, $63, $15     ;; 1d:41f6 $4e $0a $01 $63 $63 $15
-    db   $3a, $00, $00, $a0, $90, $50, $48, $f0        ;; 1d:41fc ????????
-    db   $00, $f0, $00, $1e, $12, $4d, $33, $3c        ;; 1d:4204 ????????
-    db   $0e, $71, $17, $fd, $d1, $00, $00, $00        ;; 1d:420c ????????
-    db   $00, $ff, $52, $01, $d0, $01, $fd, $d1        ;; 1d:4214 ????????
-    db   $50, $1d, $c3, $00, $d0, $50, $fd, $d0        ;; 1d:421c ????????
-    db   $02, $fe, $16, $01, $7e, $39, $00, $16        ;; 1d:4224 ????????
-    db   $01, $7e, $0d, $1f, $16, $01, $7e, $12        ;; 1d:422c ????????
-    db   $b0, $16, $01, $7f, $1c, $00, $16, $01        ;; 1d:4234 ????????
-    db   $5e, $03, $20                                 ;; 1d:423c ???
+    Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 1d:41fc $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
+    Op1E_Call data_33_4d12                             ;; 1d:4207 $1e $12 $4d $33
+    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 1d:420b ????????
+    db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 1d:4213 ????????
+    db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 1d:421b ????????
+    db   $d0, $02, $fe, $16, $01, $7e, $39, $00        ;; 1d:4223 ????????
+    db   $16, $01, $7e, $0d, $1f, $16, $01, $7e        ;; 1d:422b ????????
+    db   $12, $b0, $16, $01, $7f, $1c, $00, $16        ;; 1d:4233 ????????
+    db   $01, $5e, $03, $20                            ;; 1d:423b ????
 
 data_1d_423f:
     Op14_Unknown 1, $d0, $74                           ;; 1d:423f $14 $01 $d0 $74
@@ -1752,6 +1752,8 @@ data_1d_6d24:
     Op1C_TableJump 1                                   ;; 1d:6d69 $1c $01
     SCRIPT_POINTER data_04_6b9e                        ;; 1d:6d6b $9e $6b $04
     Op18_Jump data_04_6ba6                             ;; 1d:6d6e $18 $a6 $6b $04
+
+data_1d_6d72:
     Op1E_Call data_1d_6f05                             ;; 1d:6d72 $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6d76 $1c $01
     SCRIPT_POINTER data_04_6bbc                        ;; 1d:6d78 $bc $6b $04
@@ -1850,6 +1852,8 @@ data_1d_6e4f:
     Op1C_TableJump 1                                   ;; 1d:6e87 $1c $01
     SCRIPT_POINTER data_04_6e01                        ;; 1d:6e89 $01 $6e $04
     Op18_Jump data_04_6e09                             ;; 1d:6e8c $18 $09 $6e $04
+
+data_1d_6e90:
     Op1E_Call data_1d_6f05                             ;; 1d:6e90 $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6e94 $1c $01
     SCRIPT_POINTER data_04_6e1f                        ;; 1d:6e96 $1f $6e $04
@@ -1876,6 +1880,8 @@ data_1d_6ed1:
     Op1C_TableJump 1                                   ;; 1d:6ed5 $1c $01
     SCRIPT_POINTER data_04_6eb5                        ;; 1d:6ed7 $b5 $6e $04
     Op18_Jump data_04_6ebd                             ;; 1d:6eda $18 $bd $6e $04
+
+data_1d_6ede:
     Op1E_Call data_1d_6f05                             ;; 1d:6ede $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6ee2 $1c $01
     SCRIPT_POINTER data_04_6ed3                        ;; 1d:6ee4 $d3 $6e $04
@@ -1884,6 +1890,8 @@ data_1d_6ed1:
     Op1C_TableJump 1                                   ;; 1d:6eef $1c $01
     SCRIPT_POINTER data_04_6ef1                        ;; 1d:6ef1 $f1 $6e $04
     Op18_Jump data_04_6ef9                             ;; 1d:6ef4 $18 $f9 $6e $04
+
+data_1d_6ef8:
     Op1E_Call data_1d_6f05                             ;; 1d:6ef8 $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6efc $1c $01
     SCRIPT_POINTER data_04_6f0f                        ;; 1d:6efe $0f $6f $04
@@ -2033,6 +2041,8 @@ data_1d_7101:
     Op3E_Compare_Branch 22, $8f, $55, $10, data_1d_7101 ;; 1d:7102 $3e $16 $8f $55 $10 $01 $71 $1d
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, $00, $00, $00 ;; 1d:710a $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     SCRIPT_RETURN_20                                   ;; 1d:7115 $20
+
+data_1d_7116:
     Op1E_Call data_33_4dfd                             ;; 1d:7116 $1e $fd $4d $33
     Op18_Jump data_1d_713e                             ;; 1d:711a $18 $3e $71 $1d
 

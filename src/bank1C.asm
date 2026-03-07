@@ -1616,11 +1616,14 @@ data_1c_7c86:
     Op4E_Unknown_StoreValue 7, $01, $6c, $40, $15      ;; 1c:7cb3 $4e $07 $01 $6c $40 $15
     Op4E_Unknown_StoreValue 8, $01, $58, $69, $09      ;; 1c:7cb9 $4e $08 $01 $58 $69 $09
     Op4E_Unknown_StoreValue 9, $01, $b6, $62, $14      ;; 1c:7cbf $4e $09 $01 $b6 $62 $14
-    db   $3a, $00, $00, $a0, $90, $50, $48, $f0        ;; 1c:7cc5 ????????
-    db   $00, $c0, $00, $1e, $12, $4d, $33, $4a        ;; 1c:7ccd ????????
-    db   $3e, $16, $d0, $42, $10, $d4, $7c, $1c        ;; 1c:7cd5 ????????
-    db   $3e, $16, $0b, $45, $10, $d4, $7c, $1c        ;; 1c:7cdd ????????
-    db   $3e, $16, $90, $48, $10, $d4, $7c, $1c        ;; 1c:7ce5 ????????
+    Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $c0, $00 ;; 1c:7cc5 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $c0 $00
+    Op1E_Call data_33_4d12                             ;; 1c:7cd0 $1e $12 $4d $33
+
+data_1c_7cd4:
+    SCRIPT_RETURN_4A                                   ;; 1c:7cd4 $4a
+    Op3E_Compare_Branch 22, $d0, $42, $10, data_1c_7cd4 ;; 1c:7cd5 $3e $16 $d0 $42 $10 $d4 $7c $1c
+    Op3E_Compare_Branch 22, $0b, $45, $10, data_1c_7cd4 ;; 1c:7cdd $3e $16 $0b $45 $10 $d4 $7c $1c
+    Op3E_Compare_Branch 22, $90, $48, $10, data_1c_7cd4 ;; 1c:7ce5 $3e $16 $90 $48 $10 $d4 $7c $1c
     db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 1c:7ced ????????
     db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 1c:7cf5 ????????
     db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 1c:7cfd ????????
