@@ -5124,7 +5124,8 @@ call_01_6556:
     ld   A, [wDupeBitArrayIndexC358]                   ;; 01:6556 $fa $58 $c3
     ld   C, A                                          ;; 01:6559 $4f
     ld   B, $00                                        ;; 01:655a $06 $00
-.jp_01_655c:
+
+jp_01_655c:
     push BC                                            ;; 01:655c $c5
     ld   HL, w1_D919                                   ;; 01:655d $21 $19 $d9
     add  HL, BC                                        ;; 01:6560 $09
@@ -5141,6 +5142,8 @@ call_01_6556:
     ld   A, [wC36D]                                    ;; 01:6571 $fa $6d $c3
     ld   H, A                                          ;; 01:6574 $67
     push HL                                            ;; 01:6575 $e5
+
+call_01_6576:
     sla  C                                             ;; 01:6576 $cb $21
     rl   B                                             ;; 01:6578 $cb $10
     sla  C                                             ;; 01:657a $cb $21
@@ -5317,7 +5320,7 @@ call_01_6556:
     ld   A, [wImportantBitArrayThingC35A]              ;; 01:66ab $fa $5a $c3
     dec  A                                             ;; 01:66ae $3d
     ld   [wImportantBitArrayThingC35A], A              ;; 01:66af $ea $5a $c3
-    jp   NZ, .jp_01_655c                               ;; 01:66b2 $c2 $5c $65
+    jp   NZ, jp_01_655c                                ;; 01:66b2 $c2 $5c $65
     ret                                                ;; 01:66b5 $c9
 
 call_01_66b6:

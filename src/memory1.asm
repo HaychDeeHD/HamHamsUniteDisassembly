@@ -272,7 +272,13 @@ w1_D2A0:
     ds 21                                              ;; d2a0
 
 w1_D2B5:
-    ds 17                                              ;; d2b5
+    ds 14                                              ;; d2b5
+
+w1_D2C3:
+    ds 1                                               ;; d2c3
+
+w1_D2C4:
+    ds 2                                               ;; d2c4
 
 w1_D2C6:
     ds 5                                               ;; d2c6

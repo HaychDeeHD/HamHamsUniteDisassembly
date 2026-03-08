@@ -27,4 +27,7 @@ w2_D0FD:
     ds 1                                               ;; d0fd
 
 w2_D0FE:
-    ds 3842                                            ;; d0fe
+    ds 1                                               ;; d0fe
+
+w2_D0FF:
+    ds 3841                                            ;; d0ff

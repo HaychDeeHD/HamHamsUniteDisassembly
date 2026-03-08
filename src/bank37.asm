@@ -501,6 +501,8 @@ call_37_4660:
     Op04_Unknown_Text data_3c_48fe                     ;; 37:4668 $04 $fe $48 $3c
     Op1E_Call call_04_615d                             ;; 37:466c $1e $5d $61 $04
     Op18_Jump call_37_4033                             ;; 37:4670 $18 $33 $40 $37
+
+call_37_4674:
     Op14_Unknown 1, $06, $4c                           ;; 37:4674 $14 $01 $06 $4c
     SCRIPT_POINTER call_37_469c                        ;; 37:4678 $9c $46 $37
     Op14_Unknown 1, $fe, $4b                           ;; 37:467b $14 $01 $fe $4b

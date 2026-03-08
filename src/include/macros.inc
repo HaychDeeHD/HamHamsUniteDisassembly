@@ -205,6 +205,10 @@ db \2
 db \3
 db \4
 ENDM
+MACRO Op92_Unknown
+db $92
+db \<1>
+ENDM
 MACRO SCRIPT_POINTER
 dw \1
 db BANK(\1)

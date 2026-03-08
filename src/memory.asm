@@ -1042,7 +1042,10 @@ wC766:
     ds 6                                               ;; c766
 
 wC76C:
-    ds 3                                               ;; c76c
+    ds 2                                               ;; c76c
+
+wC76E:
+    ds 1                                               ;; c76e
 
 wC76F:
     ds 3                                               ;; c76f
@@ -1054,7 +1057,10 @@ wC77D:
     ds 1                                               ;; c77d
 
 wC77E:
-    ds 3                                               ;; c77e
+    ds 2                                               ;; c77e
+
+wC780:
+    ds 1                                               ;; c780
 
 wC781:
     ds 1                                               ;; c781
@@ -1261,7 +1267,10 @@ wC83A:
     ds 2                                               ;; c83a
 
 wC83C:
-    ds 2                                               ;; c83c
+    ds 1                                               ;; c83c
+
+wC83D:
+    ds 1                                               ;; c83d
 
 wC83E:
     ds 1                                               ;; c83e

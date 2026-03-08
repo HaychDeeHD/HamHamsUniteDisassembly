@@ -36,4 +36,7 @@ w7_DA4E:
     ds 65                                              ;; da4e
 
 w7_DA8F:
-    ds 1393                                            ;; da8f
+    ds 369                                             ;; da8f
+
+w7_DC00:
+    ds 1024                                            ;; dc00

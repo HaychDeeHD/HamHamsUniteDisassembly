@@ -9,4 +9,7 @@ SECTION "wram5", WRAMX[$d000], BANK[$5]
     ds 2048                                            ;; d000
 
 w5_D800:
-    ds 2048                                            ;; d800
+    ds 1024                                            ;; d800
+
+w5_DC00:
+    ds 1024                                            ;; dc00
