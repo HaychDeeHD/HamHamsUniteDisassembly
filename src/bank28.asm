@@ -503,39 +503,40 @@ call_28_46bc:
     SCRIPT_POINTER call_28_46cf                        ;; 28:46c8 $cf $46 $28
     Op18_Jump call_28_400c                             ;; 28:46cb $18 $0c $40 $28
 
+; Maxwell stuff is here.
 call_28_46cf:
     Op82_Run data_01_7416                              ;; 28:46cf $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:46d3 $1e $1d $6f $1d
     Op10_Unknown $0c, $39, $5a, $44, $5e               ;; 28:46d7 $10 $0c $39 $5a $44 $5e
     Op1C_TableJump 12                                  ;; 28:46dd $1c $0c
-    SCRIPT_POINTER call_28_4723                        ;; 28:46df $23 $47 $28
-    SCRIPT_POINTER call_28_476e                        ;; 28:46e2 $6e $47 $28
-    SCRIPT_POINTER call_28_478e                        ;; 28:46e5 $8e $47 $28
-    SCRIPT_POINTER call_28_47ef                        ;; 28:46e8 $ef $47 $28
-    SCRIPT_POINTER call_28_480f                        ;; 28:46eb $0f $48 $28
-    SCRIPT_POINTER call_28_4703                        ;; 28:46ee $03 $47 $28
-    SCRIPT_POINTER call_28_485a                        ;; 28:46f1 $5a $48 $28
-    SCRIPT_POINTER call_28_4703                        ;; 28:46f4 $03 $47 $28
-    SCRIPT_POINTER call_28_48a5                        ;; 28:46f7 $a5 $48 $28
-    SCRIPT_POINTER call_28_4703                        ;; 28:46fa $03 $47 $28
-    SCRIPT_POINTER call_28_4a9b                        ;; 28:46fd $9b $4a $28
-    SCRIPT_POINTER call_28_4703                        ;; 28:4700 $03 $47 $28
+    SCRIPT_POINTER SadMaxwellHamha                     ;; 28:46df $23 $47 $28
+    SCRIPT_POINTER SadMaxwellHifHif                    ;; 28:46e2 $6e $47 $28
+    SCRIPT_POINTER SadMaxwellTackQ                     ;; 28:46e5 $8e $47 $28
+    SCRIPT_POINTER SadMaxwellDigdig                    ;; 28:46e8 $ef $47 $28
+    SCRIPT_POINTER SadMaxwellTeenie                    ;; 28:46eb $0f $48 $28
+    SCRIPT_POINTER SadMaxwellDefaultMaybe              ;; 28:46ee $03 $47 $28
+    SCRIPT_POINTER SadMaxwellSparklie                  ;; 28:46f1 $5a $48 $28
+    SCRIPT_POINTER SadMaxwellDefaultMaybe              ;; 28:46f4 $03 $47 $28
+    SCRIPT_POINTER SadMaxwellNopibloo                  ;; 28:46f7 $a5 $48 $28
+    SCRIPT_POINTER SadMaxwellDefaultMaybe              ;; 28:46fa $03 $47 $28
+    SCRIPT_POINTER SadMaxwellOopsie                    ;; 28:46fd $9b $4a $28
+    SCRIPT_POINTER SadMaxwellDefaultMaybe              ;; 28:4700 $03 $47 $28
 
-call_28_4703:
+SadMaxwellDefaultMaybe:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 28:4703 $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 28:4708 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:470c $16 $01
     SubOp_SetFlag wBitArrayC918, 3                     ;; 28:470e $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 28:4710 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 28:4713 $1c $02
-    SCRIPT_POINTER call_28_471b                        ;; 28:4715 $1b $47 $28
-    SCRIPT_POINTER call_28_471b                        ;; 28:4718 $1b $47 $28
+    SCRIPT_POINTER SadMaxwellYouDontKnowThis           ;; 28:4715 $1b $47 $28
+    SCRIPT_POINTER SadMaxwellYouDontKnowThis           ;; 28:4718 $1b $47 $28
 
-call_28_471b:
+SadMaxwellYouDontKnowThis:
     Op1E_Call call_33_4e1d                             ;; 28:471b $1e $1d $4e $33
     Op18_Jump call_28_400c                             ;; 28:471f $18 $0c $40 $28
 
-call_28_4723:
+SadMaxwellHamha:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 28:4723 $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 28:4728 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:472c $16 $01
@@ -555,7 +556,7 @@ call_28_473b:
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:475f $4c $1a $ff $04 $00 $00 $00 $00 $ec $64 $19
     Op18_Jump call_28_400c                             ;; 28:476a $18 $0c $40 $28
 
-call_28_476e:
+SadMaxwellHifHif:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 28:476e $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 28:4773 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:4777 $16 $01
@@ -569,7 +570,7 @@ call_28_4786:
     Op1E_Call call_20_465b                             ;; 28:4786 $1e $5b $46 $20
     Op18_Jump call_28_400c                             ;; 28:478a $18 $0c $40 $28
 
-call_28_478e:
+SadMaxwellTackQ:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 28:478e $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 28:4793 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:4797 $16 $01
@@ -598,7 +599,7 @@ call_28_47d1:
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:47e0 $4c $1a $ff $04 $00 $00 $00 $00 $ec $64 $19
     Op18_Jump call_28_400c                             ;; 28:47eb $18 $0c $40 $28
 
-call_28_47ef:
+SadMaxwellDigdig:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 28:47ef $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 28:47f4 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:47f8 $16 $01
@@ -612,7 +613,7 @@ call_28_4807:
     Op1E_Call call_20_4310                             ;; 28:4807 $1e $10 $43 $20
     Op18_Jump call_28_400c                             ;; 28:480b $18 $0c $40 $28
 
-call_28_480f:
+SadMaxwellTeenie:
     Op50_WriteByte wBitArrayIndexC715, $00, $09        ;; 28:480f $50 $15 $c7 $00 $09
     Op82_Run ObtainHamChatFromC715                     ;; 28:4814 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:4818 $16 $01
@@ -632,7 +633,7 @@ call_28_4827:
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:484b $4c $1a $ff $04 $00 $00 $00 $00 $ec $64 $19
     Op18_Jump call_28_400c                             ;; 28:4856 $18 $0c $40 $28
 
-call_28_485a:
+SadMaxwellSparklie:
     Op50_WriteByte wBitArrayIndexC715, $00, $1b        ;; 28:485a $50 $15 $c7 $00 $1b
     Op82_Run ObtainHamChatFromC715                     ;; 28:485f $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:4863 $16 $01
@@ -652,7 +653,7 @@ call_28_4872:
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:4896 $4c $1a $ff $04 $00 $00 $00 $00 $ec $64 $19
     Op18_Jump call_28_400c                             ;; 28:48a1 $18 $0c $40 $28
 
-call_28_48a5:
+SadMaxwellNopibloo:
     Op50_WriteByte wBitArrayIndexC715, $00, $21        ;; 28:48a5 $50 $15 $c7 $00 $21
     Op82_Run ObtainHamChatFromC715                     ;; 28:48aa $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:48ae $16 $01
@@ -743,7 +744,7 @@ call_28_4986:
     db   $99, $4a, $28, $44, $30, $00, $16, $01        ;; 28:4a8c ????????
     db   $7e, $4d, $02, $54, $01, $54, $00             ;; 28:4a94 ???????
 
-call_28_4a9b:
+SadMaxwellOopsie:
     Op50_WriteByte wBitArrayIndexC715, $00, $1e        ;; 28:4a9b $50 $15 $c7 $00 $1e
     Op82_Run ObtainHamChatFromC715                     ;; 28:4aa0 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:4aa4 $16 $01
