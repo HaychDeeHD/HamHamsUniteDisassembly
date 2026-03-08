@@ -967,7 +967,10 @@ wC73D:
     ds 1                                               ;; c73d
 
 wC73E:
-    ds 3                                               ;; c73e
+    ds 2                                               ;; c73e
+
+wC740:
+    ds 1                                               ;; c740
 
 wC741:
     ds 1                                               ;; c741
@@ -1036,7 +1039,10 @@ wC765:
     ds 1                                               ;; c765
 
 wC766:
-    ds 9                                               ;; c766
+    ds 6                                               ;; c766
+
+wC76C:
+    ds 3                                               ;; c76c
 
 wC76F:
     ds 3                                               ;; c76f
@@ -1051,16 +1057,25 @@ wC77E:
     ds 3                                               ;; c77e
 
 wC781:
-    ds 2                                               ;; c781
+    ds 1                                               ;; c781
+
+wC782:
+    ds 1                                               ;; c782
 
 wC783:
     ds 1                                               ;; c783
 
 wC784:
-    ds 2                                               ;; c784
+    ds 1                                               ;; c784
+
+wC785:
+    ds 1                                               ;; c785
 
 wC786:
-    ds 5                                               ;; c786
+    ds 1                                               ;; c786
+
+wC787:
+    ds 4                                               ;; c787
 
 wC78B:
     ds 1                                               ;; c78b
@@ -1069,7 +1084,13 @@ wC78C:
     ds 1                                               ;; c78c
 
 wC78D:
-    ds 3                                               ;; c78d
+    ds 1                                               ;; c78d
+
+wC78E:
+    ds 1                                               ;; c78e
+
+wC78F:
+    ds 1                                               ;; c78f
 
 wC790:
     ds 1                                               ;; c790
@@ -1117,7 +1138,10 @@ wC7A2:
     ds 1                                               ;; c7a2
 
 wC7A3:
-    ds 53                                              ;; c7a3
+    ds 3                                               ;; c7a3
+
+wC7A6:
+    ds 50                                              ;; c7a6
 
 wC7D8:
     ds 2                                               ;; c7d8
@@ -1231,7 +1255,10 @@ wC838:
     ds 1                                               ;; c838
 
 wC839:
-    ds 3                                               ;; c839
+    ds 1                                               ;; c839
+
+wC83A:
+    ds 2                                               ;; c83a
 
 wC83C:
     ds 2                                               ;; c83c
@@ -1306,10 +1333,16 @@ wC921:
     ds 1                                               ;; c921
 
 wC922:
-    ds 2                                               ;; c922
+    ds 1                                               ;; c922
+
+wC923:
+    ds 1                                               ;; c923
 
 wC924:
-    ds 5                                               ;; c924
+    ds 4                                               ;; c924
+
+wC928:
+    ds 1                                               ;; c928
 
 wC929:
     ds 1                                               ;; c929
@@ -1327,7 +1360,10 @@ wC92D:
     ds 1                                               ;; c92d
 
 wC92E:
-    ds 2                                               ;; c92e
+    ds 1                                               ;; c92e
+
+wC92F:
+    ds 1                                               ;; c92f
 
 wC930:
     ds 1                                               ;; c930
@@ -1336,7 +1372,10 @@ wC931:
     ds 1                                               ;; c931
 
 wC932:
-    ds 2                                               ;; c932
+    ds 1                                               ;; c932
+
+wC933:
+    ds 1                                               ;; c933
 
 wC934:
     ds 1                                               ;; c934
@@ -1351,7 +1390,19 @@ wC937:
     ds 1                                               ;; c937
 
 wC938:
-    ds 5                                               ;; c938
+    ds 1                                               ;; c938
+
+wC939:
+    ds 1                                               ;; c939
+
+wC93A:
+    ds 1                                               ;; c93a
+
+wC93B:
+    ds 1                                               ;; c93b
+
+wC93C:
+    ds 1                                               ;; c93c
 
 wC93D:
     ds 1                                               ;; c93d
@@ -1393,7 +1444,10 @@ wC94D:
     ds 1                                               ;; c94d
 
 wC94E:
-    ds 2                                               ;; c94e
+    ds 1                                               ;; c94e
+
+wC94F:
+    ds 1                                               ;; c94f
 
 wC950:
     ds 8                                               ;; c950

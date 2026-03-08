@@ -2624,7 +2624,7 @@ OpenHamchatWheel_Maybe:
     ld   A, $00                                        ;; 01:5108 $3e $00
     ld   [wOp1CScriptTableIndexC53A], A                ;; 01:510a $ea $3a $c5
     ld   A, $00                                        ;; 01:510d $3e $00
-    ld   HL, $2126                                     ;; 01:510f $21 $26 $21
+    ld   HL, SomeFiveArgOp                             ;; 01:510f $21 $26 $21
     call call_00_2390                                  ;; 01:5112 $cd $90 $23
     ld   A, [wC399]                                    ;; 01:5115 $fa $99 $c3
     and  A, A                                          ;; 01:5118 $a7

@@ -564,6 +564,8 @@ class Op06Block(Block):
 OPBLOCKS = {
     0x04: Op04Block,
     0x06: Op06Block,
+    # I think 00:2126 is the eventual Op10 handler. Something about textboxes.
+    0x10: makeGenericBlockClass(0x10, 6), 
     0x14: Op14Block,
     0x16: Op16Block,
     0x18: Op18Block,

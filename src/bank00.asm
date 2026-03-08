@@ -4626,6 +4626,8 @@ WriteArgToC39A_andCallOp4E:
     ld   [wArgAddressC6A0.high], A                     ;; 00:211f $ea $a1 $c6
     call Op4E                                          ;; 00:2122 $cd $96 $0f
     ret                                                ;; 00:2125 $c9
+
+SomeFiveArgOp:
     ld   A, $00                                        ;; 00:2126 $3e $00
     ld   HL, wC4FA                                     ;; 00:2128 $21 $fa $c4
     ld   E, $20                                        ;; 00:212b $1e $20
@@ -7957,6 +7959,8 @@ call_00_365c:
     ld   A, $01                                        ;; 00:3856 $3e $01
     ld   [BC], A                                       ;; 00:3858 $02
     jp   .jp_00_3674                                   ;; 00:3859 $c3 $74 $36
+
+data_00_385c:
     ld   A, $01                                        ;; 00:385c $3e $01
     ld   [wCAB8], A                                    ;; 00:385e $ea $b8 $ca
     call call_00_386d                                  ;; 00:3861 $cd $6d $38

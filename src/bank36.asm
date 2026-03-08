@@ -1247,14 +1247,25 @@ call_36_5119:
     SCRIPT_POINTER call_36_4edd                        ;; 36:511f $dd $4e $36
     Op14_Unknown 1, $10, $52                           ;; 36:5122 $14 $01 $10 $52
     SCRIPT_POINTER call_36_515d                        ;; 36:5126 $5d $51 $36
+
+call_36_5129:
     Op82_Run data_01_7416                              ;; 36:5129 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 36:512d $1e $1d $6f $1d
-    db   $10, $08, $4b, $48, $12, $52, $1c, $08        ;; 36:5131 ????????
-    db   $6e, $53, $36, $55, $51, $36, $af, $53        ;; 36:5139 ????????
-    db   $36, $55, $51, $36, $f0, $53, $36, $55        ;; 36:5141 ????????
-    db   $51, $36, $31, $54, $36, $55, $51, $36        ;; 36:5149 ????????
-    db   $18, $29, $51, $36, $1e, $1d, $4e, $33        ;; 36:5151 ????????
-    db   $18, $b0, $4e, $36                            ;; 36:5159 ????
+    Op10_Unknown $08, $4b, $48, $12, $52               ;; 36:5131 $10 $08 $4b $48 $12 $52
+    Op1C_TableJump 8                                   ;; 36:5137 $1c $08
+    SCRIPT_POINTER call_36_536e                        ;; 36:5139 $6e $53 $36
+    SCRIPT_POINTER call_36_5155                        ;; 36:513c $55 $51 $36
+    SCRIPT_POINTER call_36_53af                        ;; 36:513f $af $53 $36
+    SCRIPT_POINTER call_36_5155                        ;; 36:5142 $55 $51 $36
+    SCRIPT_POINTER call_36_53f0                        ;; 36:5145 $f0 $53 $36
+    SCRIPT_POINTER call_36_5155                        ;; 36:5148 $55 $51 $36
+    SCRIPT_POINTER call_36_5431                        ;; 36:514b $31 $54 $36
+    SCRIPT_POINTER call_36_5155                        ;; 36:514e $55 $51 $36
+    Op18_Jump call_36_5129                             ;; 36:5151 $18 $29 $51 $36
+
+call_36_5155:
+    Op1E_Call call_33_4e1d                             ;; 36:5155 $1e $1d $4e $33
+    Op18_Jump call_36_4eb0                             ;; 36:5159 $18 $b0 $4e $36
 
 call_36_515d:
     Op82_Run data_01_7416                              ;; 36:515d $82 $16 $74 $01
@@ -1409,6 +1420,8 @@ call_36_533e:
     Op1E_Call call_04_615d                             ;; 36:5361 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $a8, $78, $18          ;; 36:5365 $56 $1a $a8 $78 $18
     Op18_Jump call_36_4eb0                             ;; 36:536a $18 $b0 $4e $36
+
+call_36_536e:
     Op50_WriteByte wBitArrayIndexC715, $00, $2d        ;; 36:536e $50 $15 $c7 $00 $2d
     Op82_Run ObtainHamChatFromC715                     ;; 36:5373 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 36:5377 $16 $01
@@ -1427,6 +1440,8 @@ call_36_5386:
     Op1E_Call call_04_615d                             ;; 36:53a2 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $a8, $78, $18          ;; 36:53a6 $56 $1a $a8 $78 $18
     Op18_Jump call_36_4eb0                             ;; 36:53ab $18 $b0 $4e $36
+
+call_36_53af:
     Op50_WriteByte wBitArrayIndexC715, $00, $48        ;; 36:53af $50 $15 $c7 $00 $48
     Op82_Run ObtainHamChatFromC715                     ;; 36:53b4 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 36:53b8 $16 $01
@@ -1445,6 +1460,8 @@ call_36_53c7:
     Op1E_Call call_04_615d                             ;; 36:53e3 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $a8, $78, $18          ;; 36:53e7 $56 $1a $a8 $78 $18
     Op18_Jump call_36_4eb0                             ;; 36:53ec $18 $b0 $4e $36
+
+call_36_53f0:
     Op50_WriteByte wBitArrayIndexC715, $00, $40        ;; 36:53f0 $50 $15 $c7 $00 $40
     Op82_Run ObtainHamChatFromC715                     ;; 36:53f5 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 36:53f9 $16 $01
@@ -1463,6 +1480,8 @@ call_36_5408:
     Op1E_Call call_04_615d                             ;; 36:5424 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $a8, $78, $18          ;; 36:5428 $56 $1a $a8 $78 $18
     Op18_Jump call_36_4eb0                             ;; 36:542d $18 $b0 $4e $36
+
+call_36_5431:
     Op50_WriteByte wBitArrayIndexC715, $00, $15        ;; 36:5431 $50 $15 $c7 $00 $15
     Op82_Run ObtainHamChatFromC715                     ;; 36:5436 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 36:543a $16 $01

@@ -218,49 +218,117 @@ call_2d_4297:
 call_2d_42ff:
     Op82_Run data_01_7416                              ;; 2d:42ff $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:4303 $1e $1d $6f $1d
-    db   $10, $08, $e7, $47, $a6, $4e, $1c, $08        ;; 2d:4307 ????????
-    db   $4d, $45, $2d, $2b, $43, $2d, $84, $45        ;; 2d:430f ????????
-    db   $2d, $2b, $43, $2d, $dd, $45, $2d, $2b        ;; 2d:4317 ????????
-    db   $43, $2d, $1e, $46, $2d, $2b, $43, $2d        ;; 2d:431f ????????
-    db   $18, $ff, $42, $2d, $1e, $1d, $4e, $33        ;; 2d:4327 ????????
-    db   $18, $5b, $40, $2d                            ;; 2d:432f ????
+    Op10_Unknown $08, $e7, $47, $a6, $4e               ;; 2d:4307 $10 $08 $e7 $47 $a6 $4e
+    Op1C_TableJump 8                                   ;; 2d:430d $1c $08
+    SCRIPT_POINTER call_2d_454d                        ;; 2d:430f $4d $45 $2d
+    SCRIPT_POINTER call_2d_432b                        ;; 2d:4312 $2b $43 $2d
+    SCRIPT_POINTER call_2d_4584                        ;; 2d:4315 $84 $45 $2d
+    SCRIPT_POINTER call_2d_432b                        ;; 2d:4318 $2b $43 $2d
+    SCRIPT_POINTER call_2d_45dd                        ;; 2d:431b $dd $45 $2d
+    SCRIPT_POINTER call_2d_432b                        ;; 2d:431e $2b $43 $2d
+    SCRIPT_POINTER call_2d_461e                        ;; 2d:4321 $1e $46 $2d
+    SCRIPT_POINTER call_2d_432b                        ;; 2d:4324 $2b $43 $2d
+    Op18_Jump call_2d_42ff                             ;; 2d:4327 $18 $ff $42 $2d
+
+call_2d_432b:
+    Op1E_Call call_33_4e1d                             ;; 2d:432b $1e $1d $4e $33
+    Op18_Jump call_2d_405b                             ;; 2d:432f $18 $5b $40 $2d
 
 call_2d_4333:
     Op82_Run data_01_7416                              ;; 2d:4333 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:4337 $1e $1d $6f $1d
-    db   $10, $08, $ef, $47, $b6, $4e, $1c, $08        ;; 2d:433b ????????
-    db   $5d, $46, $2d, $5f, $43, $2d, $a2, $46        ;; 2d:4343 ????????
-    db   $2d, $5f, $43, $2d, $e7, $46, $2d, $5f        ;; 2d:434b ????????
-    db   $43, $2d, $28, $47, $2d, $5f, $43, $2d        ;; 2d:4353 ????????
-    db   $18, $33, $43, $2d, $1e, $1d, $4e, $33        ;; 2d:435b ????????
-    db   $18, $5b, $40, $2d, $1e, $7b, $4d, $33        ;; 2d:4363 ????????
-    db   $1c, $01, $86, $40, $2d, $82, $16, $74        ;; 2d:436b ????????
-    db   $01, $16, $01, $9e, $3a, $00, $0d, $1e        ;; 2d:4373 ????????
-    db   $0f, $49, $33, $1c, $05, $3e, $44, $2d        ;; 2d:437b ????????
-    db   $5b, $40, $2d, $5b, $40, $2d, $86, $44        ;; 2d:4383 ????????
-    db   $2d, $5b, $40, $2d, $18, $5b, $40, $2d        ;; 2d:438b ????????
-    db   $1e, $7b, $4d, $33, $1c, $01, $86, $40        ;; 2d:4393 ????????
-    db   $2d, $16, $01, $7f, $1e, $01, $18, $c5        ;; 2d:439b ????????
-    db   $43, $2d, $1e, $7b, $4d, $33, $1c, $01        ;; 2d:43a3 ????????
-    db   $86, $40, $2d, $16, $01, $7f, $1e, $02        ;; 2d:43ab ????????
-    db   $18, $c5, $43, $2d, $1e, $7b, $4d, $33        ;; 2d:43b3 ????????
-    db   $1c, $01, $86, $40, $2d, $16, $01, $7f        ;; 2d:43bb ????????
-    db   $1e, $03, $14, $01, $b6, $4b, $05, $44        ;; 2d:43c3 ????????
-    db   $2d, $82, $16, $74, $01, $1e, $1d, $6f        ;; 2d:43cb ????????
-    db   $1d, $10, $08, $f7, $47, $c6, $4e, $1c        ;; 2d:43d3 ????????
-    db   $08, $36, $48, $2d, $f8, $43, $2d, $8c        ;; 2d:43db ????????
-    db   $48, $2d, $f8, $43, $2d, $d0, $48, $2d        ;; 2d:43e3 ????????
-    db   $f8, $43, $2d, $1d, $49, $2d, $f8, $43        ;; 2d:43eb ????????
-    db   $2d, $18, $cc, $43, $2d, $1e, $1d, $4e        ;; 2d:43f3 ????????
-    db   $33, $16, $01, $7f, $1e, $00, $18, $5b        ;; 2d:43fb ????????
-    db   $40, $2d, $82, $16, $74, $01, $1e, $1d        ;; 2d:4403 ????????
-    db   $6f, $1d, $10, $08, $ff, $47, $d6, $4e        ;; 2d:440b ????????
-    db   $1c, $08, $14, $4a, $2d, $31, $44, $2d        ;; 2d:4413 ????????
-    db   $58, $4a, $2d, $31, $44, $2d, $ae, $4a        ;; 2d:441b ????????
-    db   $2d, $31, $44, $2d, $f2, $4a, $2d, $31        ;; 2d:4423 ????????
-    db   $44, $2d, $18, $05, $44, $2d, $1e, $1d        ;; 2d:442b ????????
-    db   $4e, $33, $16, $01, $7f, $1e, $00, $18        ;; 2d:4433 ????????
-    db   $5b, $40, $2d                                 ;; 2d:443b ???
+    Op10_Unknown $08, $ef, $47, $b6, $4e               ;; 2d:433b $10 $08 $ef $47 $b6 $4e
+    Op1C_TableJump 8                                   ;; 2d:4341 $1c $08
+    SCRIPT_POINTER call_2d_465d                        ;; 2d:4343 $5d $46 $2d
+    SCRIPT_POINTER call_2d_435f                        ;; 2d:4346 $5f $43 $2d
+    SCRIPT_POINTER call_2d_46a2                        ;; 2d:4349 $a2 $46 $2d
+    SCRIPT_POINTER call_2d_435f                        ;; 2d:434c $5f $43 $2d
+    SCRIPT_POINTER call_2d_46e7                        ;; 2d:434f $e7 $46 $2d
+    SCRIPT_POINTER call_2d_435f                        ;; 2d:4352 $5f $43 $2d
+    SCRIPT_POINTER call_2d_4728                        ;; 2d:4355 $28 $47 $2d
+    SCRIPT_POINTER call_2d_435f                        ;; 2d:4358 $5f $43 $2d
+    Op18_Jump call_2d_4333                             ;; 2d:435b $18 $33 $43 $2d
+
+call_2d_435f:
+    Op1E_Call call_33_4e1d                             ;; 2d:435f $1e $1d $4e $33
+    Op18_Jump call_2d_405b                             ;; 2d:4363 $18 $5b $40 $2d
+    Op1E_Call call_33_4d7b                             ;; 2d:4367 $1e $7b $4d $33
+    Op1C_TableJump 1                                   ;; 2d:436b $1c $01
+    SCRIPT_POINTER call_2d_4086                        ;; 2d:436d $86 $40 $2d
+    Op82_Run data_01_7416                              ;; 2d:4370 $82 $16 $74 $01
+    Op16_SubOps 1                                      ;; 2d:4374 $16 $01
+    SubOp_SetWord wC752, $0d00                         ;; 2d:4376 $9e $3a $00 $0d
+    Op1E_Call call_33_490f                             ;; 2d:437a $1e $0f $49 $33
+    Op1C_TableJump 5                                   ;; 2d:437e $1c $05
+    SCRIPT_POINTER call_2d_443e                        ;; 2d:4380 $3e $44 $2d
+    SCRIPT_POINTER call_2d_405b                        ;; 2d:4383 $5b $40 $2d
+    SCRIPT_POINTER call_2d_405b                        ;; 2d:4386 $5b $40 $2d
+    SCRIPT_POINTER call_2d_4486                        ;; 2d:4389 $86 $44 $2d
+    SCRIPT_POINTER call_2d_405b                        ;; 2d:438c $5b $40 $2d
+    Op18_Jump call_2d_405b                             ;; 2d:438f $18 $5b $40 $2d
+    Op1E_Call call_33_4d7b                             ;; 2d:4393 $1e $7b $4d $33
+    Op1C_TableJump 1                                   ;; 2d:4397 $1c $01
+    SCRIPT_POINTER call_2d_4086                        ;; 2d:4399 $86 $40 $2d
+    Op16_SubOps 1                                      ;; 2d:439c $16 $01
+    SubOp_SetByte wC836, $01                           ;; 2d:439e $7f $1e $01
+    Op18_Jump call_2d_43c5                             ;; 2d:43a1 $18 $c5 $43 $2d
+    Op1E_Call call_33_4d7b                             ;; 2d:43a5 $1e $7b $4d $33
+    Op1C_TableJump 1                                   ;; 2d:43a9 $1c $01
+    SCRIPT_POINTER call_2d_4086                        ;; 2d:43ab $86 $40 $2d
+    Op16_SubOps 1                                      ;; 2d:43ae $16 $01
+    SubOp_SetByte wC836, $02                           ;; 2d:43b0 $7f $1e $02
+    Op18_Jump call_2d_43c5                             ;; 2d:43b3 $18 $c5 $43 $2d
+    Op1E_Call call_33_4d7b                             ;; 2d:43b7 $1e $7b $4d $33
+    Op1C_TableJump 1                                   ;; 2d:43bb $1c $01
+    SCRIPT_POINTER call_2d_4086                        ;; 2d:43bd $86 $40 $2d
+    Op16_SubOps 1                                      ;; 2d:43c0 $16 $01
+    SubOp_SetByte wC836, $03                           ;; 2d:43c2 $7f $1e $03
+
+call_2d_43c5:
+    Op14_Unknown 1, $b6, $4b                           ;; 2d:43c5 $14 $01 $b6 $4b
+    SCRIPT_POINTER call_2d_4405                        ;; 2d:43c9 $05 $44 $2d
+
+call_2d_43cc:
+    Op82_Run data_01_7416                              ;; 2d:43cc $82 $16 $74 $01
+    Op1E_Call call_1d_6f1d                             ;; 2d:43d0 $1e $1d $6f $1d
+    Op10_Unknown $08, $f7, $47, $c6, $4e               ;; 2d:43d4 $10 $08 $f7 $47 $c6 $4e
+    Op1C_TableJump 8                                   ;; 2d:43da $1c $08
+    SCRIPT_POINTER call_2d_4836                        ;; 2d:43dc $36 $48 $2d
+    SCRIPT_POINTER call_2d_43f8                        ;; 2d:43df $f8 $43 $2d
+    SCRIPT_POINTER call_2d_488c                        ;; 2d:43e2 $8c $48 $2d
+    SCRIPT_POINTER call_2d_43f8                        ;; 2d:43e5 $f8 $43 $2d
+    SCRIPT_POINTER call_2d_48d0                        ;; 2d:43e8 $d0 $48 $2d
+    SCRIPT_POINTER call_2d_43f8                        ;; 2d:43eb $f8 $43 $2d
+    SCRIPT_POINTER call_2d_491d                        ;; 2d:43ee $1d $49 $2d
+    SCRIPT_POINTER call_2d_43f8                        ;; 2d:43f1 $f8 $43 $2d
+    Op18_Jump call_2d_43cc                             ;; 2d:43f4 $18 $cc $43 $2d
+
+call_2d_43f8:
+    Op1E_Call call_33_4e1d                             ;; 2d:43f8 $1e $1d $4e $33
+    Op16_SubOps 1                                      ;; 2d:43fc $16 $01
+    SubOp_SetByte wC836, $00                           ;; 2d:43fe $7f $1e $00
+    Op18_Jump call_2d_405b                             ;; 2d:4401 $18 $5b $40 $2d
+
+call_2d_4405:
+    Op82_Run data_01_7416                              ;; 2d:4405 $82 $16 $74 $01
+    Op1E_Call call_1d_6f1d                             ;; 2d:4409 $1e $1d $6f $1d
+    Op10_Unknown $08, $ff, $47, $d6, $4e               ;; 2d:440d $10 $08 $ff $47 $d6 $4e
+    Op1C_TableJump 8                                   ;; 2d:4413 $1c $08
+    SCRIPT_POINTER call_2d_4a14                        ;; 2d:4415 $14 $4a $2d
+    SCRIPT_POINTER call_2d_4431                        ;; 2d:4418 $31 $44 $2d
+    SCRIPT_POINTER call_2d_4a58                        ;; 2d:441b $58 $4a $2d
+    SCRIPT_POINTER call_2d_4431                        ;; 2d:441e $31 $44 $2d
+    SCRIPT_POINTER call_2d_4aae                        ;; 2d:4421 $ae $4a $2d
+    SCRIPT_POINTER call_2d_4431                        ;; 2d:4424 $31 $44 $2d
+    SCRIPT_POINTER call_2d_4af2                        ;; 2d:4427 $f2 $4a $2d
+    SCRIPT_POINTER call_2d_4431                        ;; 2d:442a $31 $44 $2d
+    Op18_Jump call_2d_4405                             ;; 2d:442d $18 $05 $44 $2d
+
+call_2d_4431:
+    Op1E_Call call_33_4e1d                             ;; 2d:4431 $1e $1d $4e $33
+    Op16_SubOps 1                                      ;; 2d:4435 $16 $01
+    SubOp_SetByte wC836, $00                           ;; 2d:4437 $7f $1e $00
+    Op18_Jump call_2d_405b                             ;; 2d:443a $18 $5b $40 $2d
 
 call_2d_443e:
     Op1E_Call call_1d_68f9                             ;; 2d:443e $1e $f9 $68 $1d
@@ -290,6 +358,8 @@ call_2d_446c:
     SCRIPT_POINTER call_2d_443e                        ;; 2d:447c $3e $44 $2d
     SCRIPT_POINTER call_2d_405b                        ;; 2d:447f $5b $40 $2d
     Op18_Jump call_2d_405b                             ;; 2d:4482 $18 $5b $40 $2d
+
+call_2d_4486:
     Op1E_Call call_20_42f7                             ;; 2d:4486 $1e $f7 $42 $20
     Op18_Jump call_2d_405b                             ;; 2d:448a $18 $5b $40 $2d
 
@@ -343,6 +413,8 @@ call_2d_4528:
     Op1E_Call call_04_615d                             ;; 2d:4540 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $82, $6b, $19          ;; 2d:4544 $56 $1a $82 $6b $19
     Op18_Jump call_2d_405b                             ;; 2d:4549 $18 $5b $40 $2d
+
+call_2d_454d:
     Op50_WriteByte wBitArrayIndexC715, $00, $08        ;; 2d:454d $50 $15 $c7 $00 $08
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4552 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4556 $16 $01
@@ -359,6 +431,8 @@ call_2d_4565:
     Op04_Unknown_Text data_35_696d                     ;; 2d:4578 $04 $6d $69 $35
     Op1E_Call call_04_615d                             ;; 2d:457c $1e $5d $61 $04
     Op18_Jump call_2d_405b                             ;; 2d:4580 $18 $5b $40 $2d
+
+call_2d_4584:
     Op50_WriteByte wBitArrayIndexC715, $00, $1a        ;; 2d:4584 $50 $15 $c7 $00 $1a
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4589 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:458d $16 $01
@@ -381,6 +455,8 @@ call_2d_459c:
     Op1E_Call call_04_615d                             ;; 2d:45ca $1e $5d $61 $04
     Op4C_Unknown $1a, $08, $04, $a8, $00, $28, $00, $82, $6b, $19 ;; 2d:45ce $4c $1a $08 $04 $a8 $00 $28 $00 $82 $6b $19
     Op18_Jump call_2d_405b                             ;; 2d:45d9 $18 $5b $40 $2d
+
+call_2d_45dd:
     Op50_WriteByte wBitArrayIndexC715, $00, $25        ;; 2d:45dd $50 $15 $c7 $00 $25
     Op82_Run ObtainHamChatFromC715                     ;; 2d:45e2 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:45e6 $16 $01
@@ -399,6 +475,8 @@ call_2d_45f5:
     Op1E_Call call_04_615d                             ;; 2d:4611 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $82, $6b, $19          ;; 2d:4615 $56 $1a $82 $6b $19
     Op18_Jump call_2d_405b                             ;; 2d:461a $18 $5b $40 $2d
+
+call_2d_461e:
     Op50_WriteByte wBitArrayIndexC715, $00, $3a        ;; 2d:461e $50 $15 $c7 $00 $3a
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4623 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4627 $16 $01
@@ -418,6 +496,8 @@ call_2d_4636:
     Op1E_Call call_04_615d                             ;; 2d:4650 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $82, $6b, $19          ;; 2d:4654 $56 $1a $82 $6b $19
     Op18_Jump call_2d_405b                             ;; 2d:4659 $18 $5b $40 $2d
+
+call_2d_465d:
     Op50_WriteByte wBitArrayIndexC715, $00, $0e        ;; 2d:465d $50 $15 $c7 $00 $0e
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4662 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4666 $16 $01
@@ -437,6 +517,8 @@ call_2d_4675:
     Op1E_Call call_04_615d                             ;; 2d:4695 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $92, $6b, $19          ;; 2d:4699 $56 $1a $92 $6b $19
     Op18_Jump call_2d_405b                             ;; 2d:469e $18 $5b $40 $2d
+
+call_2d_46a2:
     Op50_WriteByte wBitArrayIndexC715, $00, $37        ;; 2d:46a2 $50 $15 $c7 $00 $37
     Op82_Run ObtainHamChatFromC715                     ;; 2d:46a7 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:46ab $16 $01
@@ -456,6 +538,8 @@ call_2d_46ba:
     Op06_Unknown_Text data_35_6b50                     ;; 2d:46db $06 $50 $6b $35
     Op1E_Call call_04_615d                             ;; 2d:46df $1e $5d $61 $04
     Op18_Jump call_2d_405b                             ;; 2d:46e3 $18 $5b $40 $2d
+
+call_2d_46e7:
     Op50_WriteByte wBitArrayIndexC715, $00, $36        ;; 2d:46e7 $50 $15 $c7 $00 $36
     Op82_Run ObtainHamChatFromC715                     ;; 2d:46ec $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:46f0 $16 $01
@@ -474,6 +558,8 @@ call_2d_46ff:
     Op1E_Call call_04_615d                             ;; 2d:471b $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $92, $6b, $19          ;; 2d:471f $56 $1a $92 $6b $19
     Op18_Jump call_2d_405b                             ;; 2d:4724 $18 $5b $40 $2d
+
+call_2d_4728:
     Op50_WriteByte wBitArrayIndexC715, $00, $29        ;; 2d:4728 $50 $15 $c7 $00 $29
     Op82_Run ObtainHamChatFromC715                     ;; 2d:472d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4731 $16 $01
@@ -543,6 +629,8 @@ call_2d_481e:
     Op3E_Compare_Branch 22, $c2, $71, $12, call_2d_481e ;; 2d:481f $3e $16 $c2 $71 $12 $1e $48 $2d
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $87, $78, $17 ;; 2d:4827 $4c $16 $10 $02 $00 $00 $00 $00 $87 $78 $17
     Op18_Jump call_2d_405b                             ;; 2d:4832 $18 $5b $40 $2d
+
+call_2d_4836:
     Op50_WriteByte wBitArrayIndexC715, $00, $11        ;; 2d:4836 $50 $15 $c7 $00 $11
     Op82_Run ObtainHamChatFromC715                     ;; 2d:483b $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:483f $16 $01
@@ -573,6 +661,8 @@ call_2d_4868:
     Op16_SubOps 1                                      ;; 2d:4883 $16 $01
     SubOp_SetByte wC836, $00                           ;; 2d:4885 $7f $1e $00
     Op18_Jump call_2d_405b                             ;; 2d:4888 $18 $5b $40 $2d
+
+call_2d_488c:
     Op50_WriteByte wBitArrayIndexC715, $00, $28        ;; 2d:488c $50 $15 $c7 $00 $28
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4891 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4895 $16 $01
@@ -594,6 +684,8 @@ call_2d_48a4:
     Op16_SubOps 1                                      ;; 2d:48c7 $16 $01
     SubOp_SetByte wC836, $00                           ;; 2d:48c9 $7f $1e $00
     Op18_Jump call_2d_405b                             ;; 2d:48cc $18 $5b $40 $2d
+
+call_2d_48d0:
     Op50_WriteByte wBitArrayIndexC715, $00, $32        ;; 2d:48d0 $50 $15 $c7 $00 $32
     Op82_Run ObtainHamChatFromC715                     ;; 2d:48d5 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:48d9 $16 $01
@@ -617,6 +709,8 @@ call_2d_48e8:
     Op16_SubOps 1                                      ;; 2d:4914 $16 $01
     SubOp_SetByte wC836, $00                           ;; 2d:4916 $7f $1e $00
     Op18_Jump call_2d_405b                             ;; 2d:4919 $18 $5b $40 $2d
+
+call_2d_491d:
     Op50_WriteByte wBitArrayIndexC715, $00, $21        ;; 2d:491d $50 $15 $c7 $00 $21
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4922 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4926 $16 $01
@@ -679,6 +773,8 @@ call_2d_4a05:
     Op16_SubOps 1                                      ;; 2d:4a0b $16 $01
     SubOp_SetByte wC836, $00                           ;; 2d:4a0d $7f $1e $00
     Op18_Jump call_2d_405b                             ;; 2d:4a10 $18 $5b $40 $2d
+
+call_2d_4a14:
     Op50_WriteByte wBitArrayIndexC715, $00, $14        ;; 2d:4a14 $50 $15 $c7 $00 $14
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4a19 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4a1d $16 $01
@@ -700,6 +796,8 @@ call_2d_4a2c:
     Op16_SubOps 1                                      ;; 2d:4a4f $16 $01
     SubOp_SetByte wC836, $00                           ;; 2d:4a51 $7f $1e $00
     Op18_Jump call_2d_405b                             ;; 2d:4a54 $18 $5b $40 $2d
+
+call_2d_4a58:
     Op50_WriteByte wBitArrayIndexC715, $00, $11        ;; 2d:4a58 $50 $15 $c7 $00 $11
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4a5d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4a61 $16 $01
@@ -730,6 +828,8 @@ call_2d_4a8a:
     Op16_SubOps 1                                      ;; 2d:4aa5 $16 $01
     SubOp_SetByte wC836, $00                           ;; 2d:4aa7 $7f $1e $00
     Op18_Jump call_2d_405b                             ;; 2d:4aaa $18 $5b $40 $2d
+
+call_2d_4aae:
     Op50_WriteByte wBitArrayIndexC715, $00, $21        ;; 2d:4aae $50 $15 $c7 $00 $21
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4ab3 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4ab7 $16 $01
@@ -751,6 +851,8 @@ call_2d_4ac6:
     Op16_SubOps 1                                      ;; 2d:4ae9 $16 $01
     SubOp_SetByte wC836, $00                           ;; 2d:4aeb $7f $1e $00
     Op18_Jump call_2d_405b                             ;; 2d:4aee $18 $5b $40 $2d
+
+call_2d_4af2:
     Op50_WriteByte wBitArrayIndexC715, $00, $22        ;; 2d:4af2 $50 $15 $c7 $00 $22
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4af7 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4afb $16 $01
@@ -2089,22 +2191,36 @@ call_2d_5e80:
     SubOp_SetByte wC828, $02                           ;; 2d:5e89 $7f $10 $02
     Op82_Run data_01_7416                              ;; 2d:5e8c $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:5e90 $1e $1d $6f $1d
-    db   $10, $04, $5a, $54, $8e, $54, $1c, $04        ;; 2d:5e94 ????????
-    db   $cf, $60, $2d, $ef, $60, $2d, $0f, $61        ;; 2d:5e9c ????????
-    db   $2d, $50, $61, $2d                            ;; 2d:5ea4 ????
+    Op10_Unknown $04, $5a, $54, $8e, $54               ;; 2d:5e94 $10 $04 $5a $54 $8e $54
+    Op1C_TableJump 4                                   ;; 2d:5e9a $1c $04
+    SCRIPT_POINTER call_2d_60cf                        ;; 2d:5e9c $cf $60 $2d
+    SCRIPT_POINTER call_2d_60ef                        ;; 2d:5e9f $ef $60 $2d
+    SCRIPT_POINTER call_2d_610f                        ;; 2d:5ea2 $0f $61 $2d
+    SCRIPT_POINTER call_2d_6150                        ;; 2d:5ea5 $50 $61 $2d
 
 call_2d_5ea8:
     Op16_SubOps 1                                      ;; 2d:5ea8 $16 $01
     SubOp_SetByte wC828, $01                           ;; 2d:5eaa $7f $10 $01
     Op82_Run data_01_7416                              ;; 2d:5ead $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:5eb1 $1e $1d $6f $1d
-    db   $10, $0c, $6a, $54, $c2, $58, $1c, $0c        ;; 2d:5eb5 ????????
-    db   $cf, $60, $2d, $ef, $60, $2d, $0f, $61        ;; 2d:5ebd ????????
-    db   $2d, $50, $61, $2d, $90, $61, $2d, $e1        ;; 2d:5ec5 ????????
-    db   $5e, $2d, $b0, $61, $2d, $e1, $5e, $2d        ;; 2d:5ecd ????????
-    db   $f7, $61, $2d, $e1, $5e, $2d, $88, $62        ;; 2d:5ed5 ????????
-    db   $2d, $e1, $5e, $2d, $1e, $1d, $4e, $33        ;; 2d:5edd ????????
-    db   $18, $3b, $59, $2d                            ;; 2d:5ee5 ????
+    Op10_Unknown $0c, $6a, $54, $c2, $58               ;; 2d:5eb5 $10 $0c $6a $54 $c2 $58
+    Op1C_TableJump 12                                  ;; 2d:5ebb $1c $0c
+    SCRIPT_POINTER call_2d_60cf                        ;; 2d:5ebd $cf $60 $2d
+    SCRIPT_POINTER call_2d_60ef                        ;; 2d:5ec0 $ef $60 $2d
+    SCRIPT_POINTER call_2d_610f                        ;; 2d:5ec3 $0f $61 $2d
+    SCRIPT_POINTER call_2d_6150                        ;; 2d:5ec6 $50 $61 $2d
+    SCRIPT_POINTER call_2d_6190                        ;; 2d:5ec9 $90 $61 $2d
+    SCRIPT_POINTER call_2d_5ee1                        ;; 2d:5ecc $e1 $5e $2d
+    SCRIPT_POINTER call_2d_61b0                        ;; 2d:5ecf $b0 $61 $2d
+    SCRIPT_POINTER call_2d_5ee1                        ;; 2d:5ed2 $e1 $5e $2d
+    SCRIPT_POINTER call_2d_61f7                        ;; 2d:5ed5 $f7 $61 $2d
+    SCRIPT_POINTER call_2d_5ee1                        ;; 2d:5ed8 $e1 $5e $2d
+    SCRIPT_POINTER call_2d_6288                        ;; 2d:5edb $88 $62 $2d
+    SCRIPT_POINTER call_2d_5ee1                        ;; 2d:5ede $e1 $5e $2d
+
+call_2d_5ee1:
+    Op1E_Call call_33_4e1d                             ;; 2d:5ee1 $1e $1d $4e $33
+    Op18_Jump call_2d_593b                             ;; 2d:5ee5 $18 $3b $59 $2d
 
 call_2d_5ee9:
     Op82_Run data_01_73cc                              ;; 2d:5ee9 $82 $cc $73 $01
@@ -2126,11 +2242,20 @@ call_2d_5f11:
     SubOp_SetByte wC828, $03                           ;; 2d:5f13 $7f $10 $03
     Op82_Run data_01_7416                              ;; 2d:5f16 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:5f1a $1e $1d $6f $1d
-    db   $10, $08, $76, $54, $d6, $58, $1c, $08        ;; 2d:5f1e ????????
-    db   $61, $62, $2d, $3e, $5f, $2d, $17, $65        ;; 2d:5f26 ????????
-    db   $2d, $3e, $5f, $2d, $d0, $61, $2d, $3e        ;; 2d:5f2e ????????
-    db   $5f, $2d, $3e, $65, $2d, $3e, $5f, $2d        ;; 2d:5f36 ????????
-    db   $1e, $1d, $4e, $33, $18, $e9, $5e, $2d        ;; 2d:5f3e ????????
+    Op10_Unknown $08, $76, $54, $d6, $58               ;; 2d:5f1e $10 $08 $76 $54 $d6 $58
+    Op1C_TableJump 8                                   ;; 2d:5f24 $1c $08
+    SCRIPT_POINTER call_2d_6261                        ;; 2d:5f26 $61 $62 $2d
+    SCRIPT_POINTER call_2d_5f3e                        ;; 2d:5f29 $3e $5f $2d
+    SCRIPT_POINTER call_2d_6517                        ;; 2d:5f2c $17 $65 $2d
+    SCRIPT_POINTER call_2d_5f3e                        ;; 2d:5f2f $3e $5f $2d
+    SCRIPT_POINTER call_2d_61d0                        ;; 2d:5f32 $d0 $61 $2d
+    SCRIPT_POINTER call_2d_5f3e                        ;; 2d:5f35 $3e $5f $2d
+    SCRIPT_POINTER call_2d_653e                        ;; 2d:5f38 $3e $65 $2d
+    SCRIPT_POINTER call_2d_5f3e                        ;; 2d:5f3b $3e $5f $2d
+
+call_2d_5f3e:
+    Op1E_Call call_33_4e1d                             ;; 2d:5f3e $1e $1d $4e $33
+    Op18_Jump call_2d_5ee9                             ;; 2d:5f42 $18 $e9 $5e $2d
 
 call_2d_5f46:
     Op82_Run data_01_73cc                              ;; 2d:5f46 $82 $cc $73 $01
@@ -2251,6 +2376,8 @@ call_2d_60c0:
     Op14_Unknown 1, $98, $54                           ;; 2d:60c4 $14 $01 $98 $54
     SCRIPT_POINTER call_2d_593b                        ;; 2d:60c8 $3b $59 $2d
     Op18_Jump call_2d_5930                             ;; 2d:60cb $18 $30 $59 $2d
+
+call_2d_60cf:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:60cf $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:60d4 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:60d8 $16 $01
@@ -2263,6 +2390,8 @@ call_2d_60c0:
 call_2d_60e7:
     Op1E_Call call_20_4042                             ;; 2d:60e7 $1e $42 $40 $20
     Op18_Jump call_2d_6170                             ;; 2d:60eb $18 $70 $61 $2d
+
+call_2d_60ef:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:60ef $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 2d:60f4 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:60f8 $16 $01
@@ -2275,6 +2404,8 @@ call_2d_60e7:
 call_2d_6107:
     Op1E_Call call_20_463a                             ;; 2d:6107 $1e $3a $46 $20
     Op18_Jump call_2d_6170                             ;; 2d:610b $18 $70 $61 $2d
+
+call_2d_610f:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:610f $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6114 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6118 $16 $01
@@ -2298,6 +2429,8 @@ call_2d_613e:
     SubOp_SetFlag wC94D, 4                             ;; 2d:6148 $3f $ac
     Op1E_Call call_3c_5647                             ;; 2d:614a $1e $47 $56 $3c
     Op1A_Unknown $0b                                   ;; 2d:614e $1a $0b
+
+call_2d_6150:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:6150 $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6155 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6159 $16 $01
@@ -2319,6 +2452,8 @@ call_2d_6170:
     Op16_SubOps 1                                      ;; 2d:6187 $16 $01
     SubOp_SetByte wC827, $00                           ;; 2d:6189 $7f $0f $00
     Op18_Jump call_2d_5e46                             ;; 2d:618c $18 $46 $5e $2d
+
+call_2d_6190:
     Op50_WriteByte wBitArrayIndexC715, $00, $06        ;; 2d:6190 $50 $15 $c7 $00 $06
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6195 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6199 $16 $01
@@ -2331,6 +2466,8 @@ call_2d_6170:
 call_2d_61a8:
     Op1E_Call call_20_4796                             ;; 2d:61a8 $1e $96 $47 $20
     Op18_Jump call_2d_6217                             ;; 2d:61ac $18 $17 $62 $2d
+
+call_2d_61b0:
     Op50_WriteByte wBitArrayIndexC715, $00, $2b        ;; 2d:61b0 $50 $15 $c7 $00 $2b
     Op82_Run ObtainHamChatFromC715                     ;; 2d:61b5 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:61b9 $16 $01
@@ -2343,6 +2480,8 @@ call_2d_61a8:
 call_2d_61c8:
     Op1E_Call call_20_48ec                             ;; 2d:61c8 $1e $ec $48 $20
     Op18_Jump call_2d_6217                             ;; 2d:61cc $18 $17 $62 $2d
+
+call_2d_61d0:
     Op50_WriteByte wBitArrayIndexC715, $00, $2b        ;; 2d:61d0 $50 $15 $c7 $00 $2b
     Op82_Run ObtainHamChatFromC715                     ;; 2d:61d5 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:61d9 $16 $01
@@ -2357,6 +2496,8 @@ call_2d_61e8:
     Op14_Unknown 1, $e6, $58                           ;; 2d:61ec $14 $01 $e6 $58
     SCRIPT_POINTER call_2d_6011                        ;; 2d:61f0 $11 $60 $2d
     Op18_Jump call_2d_5ee9                             ;; 2d:61f3 $18 $e9 $5e $2d
+
+call_2d_61f7:
     Op50_WriteByte wBitArrayIndexC715, $00, $3a        ;; 2d:61f7 $50 $15 $c7 $00 $3a
     Op82_Run ObtainHamChatFromC715                     ;; 2d:61fc $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6200 $16 $01
@@ -2400,6 +2541,8 @@ call_2d_6251:
 call_2d_6259:
     Op1E_Call call_04_615d                             ;; 2d:6259 $1e $5d $61 $04
     Op18_Jump call_2d_5e46                             ;; 2d:625d $18 $46 $5e $2d
+
+call_2d_6261:
     Op50_WriteByte wBitArrayIndexC715, $00, $3a        ;; 2d:6261 $50 $15 $c7 $00 $3a
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6266 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:626a $16 $01
@@ -2414,6 +2557,8 @@ call_2d_6279:
     Op14_Unknown 1, $ee, $58                           ;; 2d:627d $14 $01 $ee $58
     SCRIPT_POINTER call_2d_6011                        ;; 2d:6281 $11 $60 $2d
     Op18_Jump call_2d_5ee9                             ;; 2d:6284 $18 $e9 $5e $2d
+
+call_2d_6288:
     Op50_WriteByte wBitArrayIndexC715, $00, $22        ;; 2d:6288 $50 $15 $c7 $00 $22
     Op82_Run ObtainHamChatFromC715                     ;; 2d:628d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6291 $16 $01
@@ -2503,865 +2648,970 @@ call_2d_62a0:
     db   $06, $c3, $51, $39, $20, $06, $ea, $51        ;; 2d:64fa ????????
     db   $39, $1e, $5d, $61, $04, $1e, $4f, $6e        ;; 2d:6502 ????????
     db   $1d, $5a, $bf, $04, $eb, $51, $39, $20        ;; 2d:650a ????????
-    db   $06, $21, $52, $39, $20, $50, $15, $c7        ;; 2d:6512 ????????
-    db   $00, $26, $82, $d9, $6d, $02, $16, $01        ;; 2d:651a ????????
-    db   $3e, $03, $74, $5e, $c6, $1c, $02, $a9        ;; 2d:6522 ????????
-    db   $60, $2d, $2f, $65, $2d, $1e, $3e, $48        ;; 2d:652a ????????
-    db   $20, $14, $01, $f2, $58, $11, $60, $2d        ;; 2d:6532 ????????
-    db   $18, $e9, $5e, $2d, $50, $15, $c7, $00        ;; 2d:653a ????????
-    db   $24, $82, $d9, $6d, $02, $16, $01, $3e        ;; 2d:6542 ????????
-    db   $03, $74, $5e, $c6, $1c, $02, $a9, $60        ;; 2d:654a ????????
-    db   $2d, $56, $65, $2d, $1e, $13, $4a, $20        ;; 2d:6552 ????????
-    db   $14, $01, $f6, $58, $11, $60, $2d, $18        ;; 2d:655a ????????
-    db   $e9, $5e, $2d, $1e, $e6, $65, $2d, $14        ;; 2d:6562 ????????
-    db   $01, $e2, $5b, $74, $65, $2d, $1e, $5f        ;; 2d:656a ????????
-    db   $55, $30, $16, $01, $5e, $03, $82, $cc        ;; 2d:6572 ????????
-    db   $73, $01, $82, $16, $74, $01, $2a, $00        ;; 2d:657a ????????
-    db   $00, $00, $1c, $09, $02, $69, $2d, $35        ;; 2d:6582 ????????
-    db   $69, $2d, $75, $69, $2d, $a8, $69, $2d        ;; 2d:658a ????????
-    db   $db, $69, $2d, $39, $6a, $2d, $22, $6c        ;; 2d:6592 ????????
-    db   $2d, $86, $6c, $2d, $61, $70, $2d, $82        ;; 2d:659a ????????
-    db   $b7, $74, $01, $1c, $03, $b4, $65, $2d        ;; 2d:65a2 ????????
-    db   $cb, $65, $2d, $42, $68, $2d, $18, $74        ;; 2d:65aa ????????
-    db   $65, $2d, $1e, $f9, $68, $1d, $14, $01        ;; 2d:65b2 ????????
-    db   $5a, $5a, $74, $65, $2d, $1e, $e6, $65        ;; 2d:65ba ????????
-    db   $2d, $82, $42, $74, $01, $18, $74, $65        ;; 2d:65c2 ????????
-    db   $2d, $1e, $f1, $69, $1d, $14, $01, $5a        ;; 2d:65ca ????????
-    db   $5a, $74, $65, $2d, $16, $01, $5e, $03        ;; 2d:65d2 ????????
-    db   $1e, $e6, $65, $2d, $82, $42, $74, $01        ;; 2d:65da ????????
-    db   $18, $74, $65, $2d, $50, $20, $c7, $00        ;; 2d:65e2 ????????
-    db   $12, $82, $44, $68, $01, $4a, $32, $ca        ;; 2d:65ea ????????
-    db   $71, $5f, $00, $d0, $05, $32, $30, $54        ;; 2d:65f2 ????????
-    db   $61, $00, $d0, $07, $34, $d7, $7c, $72        ;; 2d:65fa ????????
-    db   $00, $d8, $05, $1e, $34, $47, $7d, $75        ;; 2d:6602 ????????
-    db   $00, $d8, $07, $1e, $36, $ea, $54, $78        ;; 2d:660a ????????
-    db   $00, $d0, $03, $32, $0d, $7d, $6d, $00        ;; 2d:6612 ????????
-    db   $d4, $06, $32, $90, $4a, $78, $00, $d3        ;; 2d:661a ????????
-    db   $04, $32, $40, $61, $72, $00, $d8, $04        ;; 2d:6622 ????????
-    db   $32, $de, $72, $6d, $00, $d0, $06, $14        ;; 2d:662a ????????
-    db   $01, $95, $5c, $4b, $66, $2d, $34, $58        ;; 2d:6632 ????????
-    db   $66, $7f, $00, $d9, $07, $0c, $36, $dd        ;; 2d:663a ????????
-    db   $7f, $69, $c2, $d1, $03, $18, $5a, $66        ;; 2d:6642 ????????
-    db   $2d, $34, $4c, $66, $7f, $00, $d9, $07        ;; 2d:664a ????????
-    db   $0c, $36, $21, $7c, $7e, $c2, $d1, $03        ;; 2d:6652 ????????
-    db   $14, $01, $97, $5c, $75, $66, $2d, $16        ;; 2d:665a ????????
-    db   $01, $7e, $54, $00, $4c, $0c, $01, $04        ;; 2d:6662 ????????
-    db   $49, $00, $ac, $00, $4b, $51, $17, $18        ;; 2d:666a ????????
-    db   $80, $66, $2d, $4c, $36, $01, $04, $50        ;; 2d:6672 ????????
-    db   $00, $90, $00, $57, $55, $17, $14, $01        ;; 2d:667a ????????
-    db   $9b, $5c, $a8, $66, $2d, $14, $01, $9f        ;; 2d:6682 ????????
-    db   $5c, $9d, $66, $2d, $4c, $1a, $01, $04        ;; 2d:668a ????????
-    db   $48, $00, $60, $00, $7e, $40, $16, $18        ;; 2d:6692 ????????
-    db   $a8, $66, $2d, $4c, $1a, $01, $04, $48        ;; 2d:669a ????????
-    db   $00, $60, $00, $7f, $49, $16, $16, $01        ;; 2d:66a2 ????????
-    db   $7e, $25, $16, $14, $01, $a1, $5c, $d8        ;; 2d:66aa ????????
-    db   $66, $2d, $14, $01, $c4, $5b, $05, $67        ;; 2d:66b2 ????????
-    db   $2d, $14, $01, $a5, $5c, $0d, $67, $2d        ;; 2d:66ba ????????
-    db   $14, $01, $34, $5b, $15, $67, $2d, $4c        ;; 2d:66c2 ????????
-    db   $16, $08, $02, $60, $00, $60, $00, $c2        ;; 2d:66ca ????????
-    db   $40, $10, $18, $19, $67, $2d, $14, $01        ;; 2d:66d2 ????????
-    db   $95, $5c, $e7, $66, $2d, $82, $2b, $78        ;; 2d:66da ????????
-    db   $01, $18, $19, $67, $2d, $50, $15, $d2        ;; 2d:66e2 ????????
-    db   $01, $80, $50, $0d, $d2, $01, $80, $6a        ;; 2d:66ea ????????
-    db   $00, $00, $d0, $ff, $4c, $16, $02, $0c        ;; 2d:66f2 ????????
-    db   $e8, $ff, $79, $00, $9b, $79, $10, $18        ;; 2d:66fa ????????
-    db   $19, $67, $2d, $82, $2b, $78, $01, $18        ;; 2d:6702 ????????
-    db   $19, $67, $2d, $82, $2b, $78, $01, $18        ;; 2d:670a ????????
-    db   $19, $67, $2d, $82, $2b, $78, $01, $14        ;; 2d:6712 ????????
-    db   $01, $6e, $5a, $39, $67, $2d, $14, $01        ;; 2d:671a ????????
-    db   $72, $5a, $48, $67, $2d, $14, $01, $76        ;; 2d:6722 ????????
-    db   $5a, $57, $67, $2d, $14, $01, $7a, $5a        ;; 2d:672a ????????
-    db   $66, $67, $2d, $18, $ae, $67, $2d, $4c        ;; 2d:6732 ????????
-    db   $16, $10, $ff, $00, $00, $00, $00, $3d        ;; 2d:673a ????????
-    db   $41, $10, $18, $75, $67, $2d, $4c, $16        ;; 2d:6742 ????????
-    db   $08, $ff, $00, $00, $00, $00, $c2, $40        ;; 2d:674a ????????
-    db   $10, $18, $75, $67, $2d, $4c, $16, $04        ;; 2d:6752 ????????
-    db   $ff, $00, $00, $00, $00, $81, $41, $10        ;; 2d:675a ????????
-    db   $18, $75, $67, $2d, $4c, $16, $02, $ff        ;; 2d:6762 ????????
-    db   $00, $00, $00, $00, $c5, $41, $10, $18        ;; 2d:676a ????????
-    db   $75, $67, $2d, $80, $d8, $c7, $00, $16        ;; 2d:6772 ????????
-    db   $d2, $01, $02, $00, $80, $da, $c7, $00        ;; 2d:677a ????????
-    db   $0e, $d2, $01, $02, $00, $50, $15, $d2        ;; 2d:6782 ????????
-    db   $01, $80, $50, $0d, $d2, $01, $80, $14        ;; 2d:678a ????????
-    db   $01, $64, $5b, $ae, $67, $2d, $4c, $16        ;; 2d:6792 ????????
-    db   $08, $ff, $00, $00, $00, $00, $7e, $55        ;; 2d:679a ????????
-    db   $10, $4c, $08, $01, $04, $00, $00, $00        ;; 2d:67a2 ????????
-    db   $00, $01, $56, $10, $16, $01, $7e, $4c        ;; 2d:67aa ????????
-    db   $ff, $16, $01, $9e, $c0, $00, $00, $16        ;; 2d:67b2 ????????
-    db   $01, $9e, $c2, $00, $00, $52, $94, $c6        ;; 2d:67ba ????????
-    db   $00, $00, $00, $1e, $23, $62, $04, $4e        ;; 2d:67c2 ????????
-    db   $04, $01, $49, $40, $10, $4e, $05, $01        ;; 2d:67ca ????????
-    db   $7f, $40, $10, $4e, $06, $01, $12, $40        ;; 2d:67d2 ????????
-    db   $16, $4e, $07, $01, $7e, $40, $17, $4e        ;; 2d:67da ????????
-    db   $08, $01, $0e, $41, $17, $4e, $09, $01        ;; 2d:67e2 ????????
-    db   $fc, $40, $17, $3a, $00, $00, $a0, $90        ;; 2d:67ea ????????
-    db   $50, $48, $f0, $00, $f0, $00, $14, $01        ;; 2d:67f2 ????????
-    db   $7e, $5a, $02, $68, $2d, $44, $08, $00        ;; 2d:67fa ????????
-    db   $1e, $29, $4d, $33, $3e, $16, $9b, $79        ;; 2d:6802 ????????
-    db   $10, $02, $68, $2d, $3c, $0e, $71, $17        ;; 2d:680a ????????
-    db   $fd, $d1, $00, $00, $00, $00, $ff, $52        ;; 2d:6812 ????????
-    db   $01, $d0, $01, $fd, $d1, $50, $1d, $c3        ;; 2d:681a ????????
-    db   $00, $d0, $50, $fd, $d0, $02, $fe, $16        ;; 2d:6822 ????????
-    db   $01, $7e, $39, $00, $16, $01, $7e, $0d        ;; 2d:682a ????????
-    db   $32, $16, $01, $7e, $12, $b0, $16, $01        ;; 2d:6832 ????????
-    db   $7f, $05, $00, $16, $01, $5e, $03, $20        ;; 2d:683a ????????
-    db   $82, $16, $74, $01, $1e, $1d, $6f, $1d        ;; 2d:6842 ????????
-    db   $10, $04, $f2, $59, $55, $5a, $1c, $04        ;; 2d:684a ????????
-    db   $5e, $68, $2d, $7e, $68, $2d, $9e, $68        ;; 2d:6852 ????????
-    db   $2d, $be, $68, $2d, $50, $15, $c7, $00        ;; 2d:685a ????????
-    db   $00, $82, $d9, $6d, $02, $16, $01, $3e        ;; 2d:6862 ????????
-    db   $03, $74, $5e, $c6, $1c, $02, $b4, $65        ;; 2d:686a ????????
-    db   $2d, $76, $68, $2d, $1e, $42, $40, $20        ;; 2d:6872 ????????
-    db   $18, $74, $65, $2d, $50, $15, $c7, $00        ;; 2d:687a ????????
-    db   $01, $82, $d9, $6d, $02, $16, $01, $3e        ;; 2d:6882 ????????
-    db   $03, $74, $5e, $c6, $1c, $02, $b4, $65        ;; 2d:688a ????????
-    db   $2d, $96, $68, $2d, $1e, $3a, $46, $20        ;; 2d:6892 ????????
-    db   $18, $74, $65, $2d, $50, $15, $c7, $00        ;; 2d:689a ????????
-    db   $02, $82, $d9, $6d, $02, $16, $01, $3e        ;; 2d:68a2 ????????
-    db   $03, $74, $5e, $c6, $1c, $02, $b4, $65        ;; 2d:68aa ????????
-    db   $2d, $b6, $68, $2d, $1e, $94, $42, $20        ;; 2d:68b2 ????????
-    db   $18, $74, $65, $2d, $50, $15, $c7, $00        ;; 2d:68ba ????????
-    db   $03, $82, $d9, $6d, $02, $16, $01, $3e        ;; 2d:68c2 ????????
-    db   $03, $74, $5e, $c6, $1c, $02, $b4, $65        ;; 2d:68ca ????????
-    db   $2d, $d6, $68, $2d, $68, $01, $3b, $c7        ;; 2d:68d2 ????????
-    db   $16, $d2, $01, $68, $01, $1d, $c8, $0e        ;; 2d:68da ????????
-    db   $d2, $01, $14, $01, $a9, $5c, $f3, $68        ;; 2d:68e2 ????????
-    db   $2d, $1e, $10, $43, $20, $18, $74, $65        ;; 2d:68ea ????????
-    db   $2d, $14, $01, $ad, $5c, $eb, $68, $2d        ;; 2d:68f2 ????????
-    db   $1e, $2b, $71, $2d, $18, $74, $65, $2d        ;; 2d:68fa ????????
-    db   $50, $1d, $c3, $00, $d2, $82, $c3, $74        ;; 2d:6902 ????????
-    db   $01, $50, $1d, $c3, $00, $d0, $1c, $04        ;; 2d:690a ????????
-    db   $b4, $65, $2d, $cb, $65, $2d, $42, $68        ;; 2d:6912 ????????
-    db   $2d, $22, $69, $2d, $18, $74, $65, $2d        ;; 2d:691a ????????
-    db   $16, $01, $5e, $c0, $50, $fd, $d1, $01        ;; 2d:6922 ????????
-    db   $04, $82, $e1, $77, $01, $1e, $80, $78        ;; 2d:692a ????????
-    db   $3b, $1a, $13, $50, $1d, $c3, $00, $d1        ;; 2d:6932 ????????
-    db   $82, $c3, $74, $01, $1c, $04, $b4, $65        ;; 2d:693a ????????
-    db   $2d, $cb, $65, $2d, $63, $69, $2d, $50        ;; 2d:6942 ????????
-    db   $69, $2d, $18, $74, $65, $2d, $16, $01        ;; 2d:694a ????????
-    db   $5e, $c0, $50, $fd, $d1, $01, $02, $82        ;; 2d:6952 ????????
-    db   $e1, $77, $01, $1e, $80, $78, $3b, $1a        ;; 2d:695a ????????
-    db   $0c, $68, $01, $3b, $c7, $0e, $d2, $01        ;; 2d:6962 ????????
-    db   $14, $01, $b1, $5c, $22, $6c, $2d, $18        ;; 2d:696a ????????
-    db   $db, $69, $2d, $50, $1d, $c3, $00, $d8        ;; 2d:6972 ????????
-    db   $82, $c3, $74, $01, $50, $1d, $c3, $00        ;; 2d:697a ????????
-    db   $d0, $1c, $04, $b4, $65, $2d, $cb, $65        ;; 2d:6982 ????????
-    db   $2d, $42, $68, $2d, $95, $69, $2d, $18        ;; 2d:698a ????????
-    db   $74, $65, $2d, $16, $01, $5e, $c0, $50        ;; 2d:6992 ????????
-    db   $fd, $d1, $01, $10, $82, $e1, $77, $01        ;; 2d:699a ????????
-    db   $1e, $80, $78, $3b, $1a, $14, $50, $1d        ;; 2d:69a2 ????????
-    db   $c3, $00, $d4, $82, $c3, $74, $01, $50        ;; 2d:69aa ????????
-    db   $1d, $c3, $00, $d0, $1c, $04, $b4, $65        ;; 2d:69b2 ????????
-    db   $2d, $cb, $65, $2d, $42, $68, $2d, $c8        ;; 2d:69ba ????????
-    db   $69, $2d, $18, $74, $65, $2d, $16, $01        ;; 2d:69c2 ????????
-    db   $5e, $c0, $50, $fd, $d1, $01, $08, $82        ;; 2d:69ca ????????
-    db   $e1, $77, $01, $1e, $80, $78, $3b, $1a        ;; 2d:69d2 ????????
-    db   $01, $82, $b7, $74, $01, $1c, $03, $b4        ;; 2d:69da ????????
-    db   $65, $2d, $cb, $65, $2d, $ee, $69, $2d        ;; 2d:69e2 ????????
-    db   $18, $74, $65, $2d, $82, $16, $74, $01        ;; 2d:69ea ????????
-    db   $1e, $1d, $6f, $1d, $10, $04, $f2, $59        ;; 2d:69f2 ????????
-    db   $55, $5a, $1c, $04, $5e, $68, $2d, $7e        ;; 2d:69fa ????????
-    db   $68, $2d, $9e, $68, $2d, $0a, $6a, $2d        ;; 2d:6a02 ????????
-    db   $50, $15, $c7, $00, $03, $82, $d9, $6d        ;; 2d:6a0a ????????
-    db   $02, $16, $01, $3e, $03, $74, $5e, $c6        ;; 2d:6a12 ????????
-    db   $1c, $02, $b4, $65, $2d, $22, $6a, $2d        ;; 2d:6a1a ????????
-    db   $14, $01, $b6, $5c, $be, $68, $2d, $16        ;; 2d:6a22 ????????
-    db   $01, $3e, $c0, $1e, $df, $43, $20, $1e        ;; 2d:6a2a ????????
-    db   $16, $71, $1d, $18, $74, $65, $2d, $68        ;; 2d:6a32 ????????
-    db   $01, $3b, $c7, $16, $d2, $01, $14, $01        ;; 2d:6a3a ????????
-    db   $b8, $5c, $c5, $6a, $2d, $50, $1d, $c3        ;; 2d:6a42 ????????
-    db   $00, $08, $82, $c3, $74, $01, $1c, $01        ;; 2d:6a4a ????????
-    db   $59, $6a, $2d, $18, $c5, $6a, $2d, $50        ;; 2d:6a52 ????????
-    db   $1d, $c3, $00, $d0, $14, $01, $96, $5b        ;; 2d:6a5a ????????
-    db   $69, $6a, $2d, $18, $74, $65, $2d, $16        ;; 2d:6a62 ????????
-    db   $01, $3e, $e4, $4c, $16, $10, $ff, $00        ;; 2d:6a6a ????????
-    db   $00, $00, $00, $d4, $77, $10, $34, $4c        ;; 2d:6a72 ????????
-    db   $66, $7f, $00, $d9, $07, $0c, $36, $21        ;; 2d:6a7a ????????
-    db   $7c, $7e, $c2, $d1, $03, $4a, $3e, $16        ;; 2d:6a82 ????????
-    db   $d4, $77, $10, $87, $6a, $2d, $14, $01        ;; 2d:6a8a ????????
-    db   $9b, $5c, $74, $65, $2d, $4a, $14, $01        ;; 2d:6a92 ????????
-    db   $da, $5a, $97, $6a, $2d, $1e, $13, $6c        ;; 2d:6a9a ????????
-    db   $1d, $4c, $1a, $01, $04, $48, $00, $60        ;; 2d:6aa2 ????????
-    db   $00, $d2, $40, $16, $04, $43, $7e, $39        ;; 2d:6aaa ????????
-    db   $1e, $5d, $61, $04, $4c, $1a, $01, $04        ;; 2d:6ab2 ????????
-    db   $00, $00, $00, $00, $7e, $40, $16, $18        ;; 2d:6aba ????????
-    db   $74, $65, $2d, $50, $1d, $c3, $00, $d0        ;; 2d:6ac2 ????????
-    db   $82, $c3, $74, $01, $1c, $03, $b4, $65        ;; 2d:6aca ????????
-    db   $2d, $cb, $65, $2d, $dd, $6a, $2d, $18        ;; 2d:6ad2 ????????
-    db   $74, $65, $2d, $82, $16, $74, $01, $1e        ;; 2d:6ada ????????
-    db   $1d, $6f, $1d, $10, $04, $f2, $59, $55        ;; 2d:6ae2 ????????
-    db   $5a, $1c, $04, $f9, $6a, $2d, $7e, $68        ;; 2d:6aea ????????
-    db   $2d, $6c, $6b, $2d, $be, $68, $2d, $14        ;; 2d:6af2 ????????
-    db   $01, $c6, $5c, $5e, $68, $2d, $50, $15        ;; 2d:6afa ????????
-    db   $c7, $00, $00, $82, $d9, $6d, $02, $16        ;; 2d:6b02 ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:6b0a ????????
-    db   $b4, $65, $2d, $18, $6b, $2d, $1e, $42        ;; 2d:6b12 ????????
-    db   $40, $20, $14, $01, $ca, $5c, $74, $65        ;; 2d:6b1a ????????
-    db   $2d, $16, $01, $7e, $54, $02, $4c, $16        ;; 2d:6b22 ????????
-    db   $10, $ff, $00, $00, $00, $00, $87, $78        ;; 2d:6b2a ????????
-    db   $17, $4c, $0c, $01, $04, $00, $00, $00        ;; 2d:6b32 ????????
-    db   $00, $f5, $52, $17, $44, $68, $00, $4c        ;; 2d:6b3a ????????
-    db   $16, $08, $ff, $00, $00, $00, $00, $91        ;; 2d:6b42 ????????
-    db   $79, $17, $44, $58, $00, $4c, $16, $10        ;; 2d:6b4a ????????
-    db   $ff, $00, $00, $00, $00, $87, $78, $17        ;; 2d:6b52 ????????
-    db   $4a, $3e, $0c, $f5, $52, $17, $5a, $6b        ;; 2d:6b5a ????????
-    db   $2d, $16, $01, $7e, $54, $00, $18, $74        ;; 2d:6b62 ????????
-    db   $65, $2d, $50, $15, $c7, $00, $02, $82        ;; 2d:6b6a ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:6b72 ????????
-    db   $5e, $c6, $1c, $02, $b4, $65, $2d, $84        ;; 2d:6b7a ????????
-    db   $6b, $2d, $14, $01, $97, $5c, $c5, $6b        ;; 2d:6b82 ????????
-    db   $2d, $16, $01, $7e, $54, $01, $1e, $bf        ;; 2d:6b8a ????????
-    db   $42, $20, $4c, $0c, $01, $04, $00, $00        ;; 2d:6b92 ????????
-    db   $00, $00, $52, $51, $17, $4c, $36, $01        ;; 2d:6b9a ????????
-    db   $04, $50, $00, $90, $00, $5e, $55, $17        ;; 2d:6ba2 ????????
-    db   $44, $90, $00, $4a, $3e, $16, $35, $5b        ;; 2d:6baa ????????
-    db   $10, $ad, $6b, $2d, $4c, $16, $ff, $02        ;; 2d:6bb2 ????????
-    db   $00, $00, $00, $00, $00, $00, $00, $18        ;; 2d:6bba ????????
-    db   $74, $65, $2d, $1e, $cd, $6a, $1d, $4e        ;; 2d:6bc2 ????????
-    db   $04, $01, $73, $40, $10, $42, $03, $00        ;; 2d:6bca ????????
-    db   $00, $40, $10, $4c, $16, $10, $04, $00        ;; 2d:6bd2 ????????
-    db   $00, $00, $00, $9b, $5a, $10, $4c, $08        ;; 2d:6bda ????????
-    db   $01, $04, $00, $00, $00, $00, $ee, $5b        ;; 2d:6be2 ????????
-    db   $10, $04, $46, $7e, $39, $44, $1c, $00        ;; 2d:6bea ????????
-    db   $4c, $36, $01, $04, $50, $00, $90, $00        ;; 2d:6bf2 ????????
-    db   $8a, $55, $17, $1e, $5d, $61, $04, $4a        ;; 2d:6bfa ????????
-    db   $3e, $16, $9b, $5a, $10, $01, $6c, $2d        ;; 2d:6c02 ????????
-    db   $4a, $3e, $16, $35, $5b, $10, $0a, $6c        ;; 2d:6c0a ????????
-    db   $2d, $4c, $16, $ff, $02, $00, $00, $00        ;; 2d:6c12 ????????
-    db   $00, $00, $00, $00, $18, $74, $65, $2d        ;; 2d:6c1a ????????
-    db   $82, $b7, $74, $01, $1c, $03, $b4, $65        ;; 2d:6c22 ????????
-    db   $2d, $cb, $65, $2d, $35, $6c, $2d, $18        ;; 2d:6c2a ????????
-    db   $74, $65, $2d, $82, $16, $74, $01, $1e        ;; 2d:6c32 ????????
-    db   $1d, $6f, $1d, $10, $04, $f2, $59, $55        ;; 2d:6c3a ????????
-    db   $5a, $1c, $04, $5e, $68, $2d, $7e, $68        ;; 2d:6c42 ????????
-    db   $2d, $51, $6c, $2d, $be, $68, $2d, $50        ;; 2d:6c4a ????????
-    db   $15, $c7, $00, $02, $82, $d9, $6d, $02        ;; 2d:6c52 ????????
-    db   $16, $01, $3e, $03, $74, $5e, $c6, $1c        ;; 2d:6c5a ????????
-    db   $02, $b4, $65, $2d, $69, $6c, $2d, $68        ;; 2d:6c62 ????????
-    db   $01, $3b, $c7, $16, $d2, $01, $14, $01        ;; 2d:6c6a ????????
-    db   $aa, $5a, $7e, $6c, $2d, $14, $01, $97        ;; 2d:6c72 ????????
-    db   $5c, $c5, $6b, $2d, $1e, $f7, $42, $20        ;; 2d:6c7a ????????
-    db   $18, $74, $65, $2d, $68, $01, $1d, $c8        ;; 2d:6c82 ????????
-    db   $16, $d2, $01, $14, $01, $ce, $5c, $af        ;; 2d:6c8a ????????
-    db   $6c, $2d, $50, $1d, $c3, $00, $0f, $82        ;; 2d:6c92 ????????
-    db   $c3, $74, $01, $1c, $04, $0c, $71, $2d        ;; 2d:6c9a ????????
-    db   $1b, $71, $2d, $18, $6d, $2d, $3a, $6d        ;; 2d:6ca2 ????????
-    db   $2d, $18, $7a, $6d, $2d, $50, $1d, $c3        ;; 2d:6caa ????????
-    db   $00, $0f, $82, $c3, $74, $01, $1c, $04        ;; 2d:6cb2 ????????
-    db   $0c, $71, $2d, $ca, $6c, $2d, $18, $6d        ;; 2d:6cba ????????
-    db   $2d, $3a, $6d, $2d, $18, $7a, $6d, $2d        ;; 2d:6cc2 ????????
-    db   $50, $1d, $c3, $00, $d0, $14, $01, $d2        ;; 2d:6cca ????????
-    db   $5c, $74, $65, $2d, $16, $01, $5e, $e4        ;; 2d:6cd2 ????????
-    db   $50, $1d, $c3, $00, $d0, $4c, $16, $10        ;; 2d:6cda ????????
-    db   $02, $00, $00, $00, $00, $90, $78, $10        ;; 2d:6ce2 ????????
-    db   $34, $58, $66, $7f, $00, $d9, $07, $0c        ;; 2d:6cea ????????
-    db   $36, $dd, $7f, $69, $c2, $d1, $03, $4a        ;; 2d:6cf2 ????????
-    db   $3e, $16, $90, $78, $10, $f9, $6c, $2d        ;; 2d:6cfa ????????
-    db   $14, $01, $9b, $5c, $74, $65, $2d, $4c        ;; 2d:6d02 ????????
-    db   $1a, $01, $04, $48, $00, $60, $00, $7f        ;; 2d:6d0a ????????
-    db   $49, $16, $18, $74, $65, $2d, $50, $1d        ;; 2d:6d12 ????????
-    db   $c3, $00, $d0, $4c, $16, $04, $16, $00        ;; 2d:6d1a ????????
-    db   $00, $00, $00, $5e, $79, $10, $4a, $3e        ;; 2d:6d22 ????????
-    db   $16, $5e, $79, $10, $28, $6d, $2d, $50        ;; 2d:6d2a ????????
-    db   $ff, $d1, $01, $02, $18, $74, $65, $2d        ;; 2d:6d32 ????????
-    db   $50, $1d, $c3, $00, $d0, $68, $01, $1d        ;; 2d:6d3a ????????
-    db   $c8, $16, $d2, $01, $14, $01, $da, $5c        ;; 2d:6d42 ????????
-    db   $5d, $6d, $2d, $4c, $16, $02, $16, $00        ;; 2d:6d4a ????????
-    db   $00, $00, $00, $c5, $41, $10, $4a, $18        ;; 2d:6d52 ????????
-    db   $74, $65, $2d, $4c, $16, $02, $16, $00        ;; 2d:6d5a ????????
-    db   $00, $00, $00, $9b, $79, $10, $4a, $3e        ;; 2d:6d62 ????????
-    db   $16, $9b, $79, $10, $68, $6d, $2d, $50        ;; 2d:6d6a ????????
-    db   $ff, $d1, $01, $02, $18, $74, $65, $2d        ;; 2d:6d72 ????????
-    db   $50, $1d, $c3, $00, $d0, $82, $c3, $74        ;; 2d:6d7a ????????
-    db   $01, $1c, $03, $b4, $65, $2d, $cb, $65        ;; 2d:6d82 ????????
-    db   $2d, $92, $6d, $2d, $18, $74, $65, $2d        ;; 2d:6d8a ????????
-    db   $14, $01, $9b, $5c, $1f, $70, $2d, $14        ;; 2d:6d92 ????????
-    db   $01, $de, $5c, $1f, $70, $2d, $82, $16        ;; 2d:6d9a ????????
-    db   $74, $01, $1e, $1d, $6f, $1d, $10, $04        ;; 2d:6da2 ????????
-    db   $f2, $59, $55, $5a, $1c, $04, $bc, $6d        ;; 2d:6daa ????????
-    db   $2d, $a6, $6e, $2d, $08, $6f, $2d, $c8        ;; 2d:6db2 ????????
-    db   $6f, $2d, $50, $15, $c7, $00, $00, $82        ;; 2d:6dba ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:6dc2 ????????
-    db   $5e, $c6, $1c, $02, $b4, $65, $2d, $d4        ;; 2d:6dca ????????
-    db   $6d, $2d, $14, $01, $ec, $5c, $66, $6e        ;; 2d:6dd2 ????????
-    db   $2d, $16, $01, $7e, $55, $02, $4c, $1a        ;; 2d:6dda ????????
-    db   $01, $04, $00, $00, $00, $00, $c2, $40        ;; 2d:6de2 ????????
-    db   $16, $1e, $42, $40, $20, $1e, $13, $6c        ;; 2d:6dea ????????
-    db   $1d, $4c, $16, $10, $ff, $00, $00, $00        ;; 2d:6df2 ????????
-    db   $00, $35, $42, $10, $4c, $1a, $ff, $ff        ;; 2d:6dfa ????????
-    db   $00, $00, $00, $00, $40, $45, $16, $04        ;; 2d:6e02 ????????
-    db   $51, $7e, $39, $4a, $3e, $1a, $40, $45        ;; 2d:6e0a ????????
-    db   $16, $0d, $6e, $2d, $4c, $1a, $01, $04        ;; 2d:6e12 ????????
-    db   $00, $00, $00, $00, $e7, $40, $16, $06        ;; 2d:6e1a ????????
-    db   $5b, $7e, $39, $92, $00, $4c, $1a, $01        ;; 2d:6e22 ????????
-    db   $04, $00, $00, $00, $00, $46, $4a, $16        ;; 2d:6e2a ????????
-    db   $4a, $14, $01, $da, $5a, $32, $6e, $2d        ;; 2d:6e32 ????????
-    db   $4c, $1a, $01, $04, $00, $00, $00, $00        ;; 2d:6e3a ????????
-    db   $e7, $40, $16, $16, $01, $7e, $36, $00        ;; 2d:6e42 ????????
-    db   $1e, $13, $6c, $1d, $04, $81, $7e, $39        ;; 2d:6e4a ????????
-    db   $92, $00, $4c, $1a, $01, $04, $00, $00        ;; 2d:6e52 ????????
-    db   $00, $00, $11, $4b, $16, $44, $3c, $00        ;; 2d:6e5a ????????
-    db   $18, $74, $65, $2d, $4c, $1a, $01, $04        ;; 2d:6e62 ????????
-    db   $00, $00, $00, $00, $c2, $40, $16, $1e        ;; 2d:6e6a ????????
-    db   $42, $40, $20, $1e, $13, $6c, $1d, $4c        ;; 2d:6e72 ????????
-    db   $16, $10, $ff, $00, $00, $00, $00, $35        ;; 2d:6e7a ????????
-    db   $42, $10, $4c, $1a, $ff, $ff, $00, $00        ;; 2d:6e82 ????????
-    db   $00, $00, $40, $45, $16, $04, $9d, $7e        ;; 2d:6e8a ????????
-    db   $39, $4a, $3e, $1a, $40, $45, $16, $93        ;; 2d:6e92 ????????
-    db   $6e, $2d, $06, $a7, $7e, $39, $92, $00        ;; 2d:6e9a ????????
-    db   $18, $74, $65, $2d, $50, $15, $c7, $00        ;; 2d:6ea2 ????????
-    db   $01, $82, $d9, $6d, $02, $16, $01, $3e        ;; 2d:6eaa ????????
-    db   $03, $74, $5e, $c6, $1c, $02, $b4, $65        ;; 2d:6eb2 ????????
-    db   $2d, $be, $6e, $2d, $14, $01, $f0, $5c        ;; 2d:6eba ????????
-    db   $ca, $6e, $2d, $16, $01, $7e, $55, $01        ;; 2d:6ec2 ????????
-    db   $4c, $1a, $01, $04, $00, $00, $00, $00        ;; 2d:6eca ????????
-    db   $c2, $40, $16, $1e, $96, $46, $20, $4c        ;; 2d:6ed2 ????????
-    db   $16, $10, $ff, $00, $00, $00, $00, $35        ;; 2d:6eda ????????
-    db   $42, $10, $4c, $1a, $ff, $ff, $00, $00        ;; 2d:6ee2 ????????
-    db   $00, $00, $d2, $46, $16, $1e, $13, $6c        ;; 2d:6eea ????????
-    db   $1d, $04, $bd, $7e, $39, $92, $00, $4c        ;; 2d:6ef2 ????????
-    db   $1a, $01, $04, $00, $00, $00, $00, $7e        ;; 2d:6efa ????????
-    db   $40, $16, $18, $74, $65, $2d, $50, $15        ;; 2d:6f02 ????????
-    db   $c7, $00, $02, $82, $d9, $6d, $02, $16        ;; 2d:6f0a ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:6f12 ????????
-    db   $b4, $65, $2d, $20, $6f, $2d, $14, $01        ;; 2d:6f1a ????????
-    db   $f0, $5c, $2c, $6f, $2d, $16, $01, $7e        ;; 2d:6f22 ????????
-    db   $55, $01, $1e, $e8, $6a, $1d, $04, $e0        ;; 2d:6f2a ????????
-    db   $7e, $39, $92, $00, $18, $74, $65, $2d        ;; 2d:6f32 ????????
-    db   $1e, $cd, $6a, $1d, $4e, $04, $01, $73        ;; 2d:6f3a ????????
-    db   $40, $10, $42, $03, $00, $00, $40, $10        ;; 2d:6f42 ????????
-    db   $4c, $16, $10, $04, $00, $00, $00, $00        ;; 2d:6f4a ????????
-    db   $9b, $5a, $10, $4c, $08, $01, $04, $00        ;; 2d:6f52 ????????
-    db   $00, $00, $00, $ee, $5b, $10, $04, $00        ;; 2d:6f5a ????????
-    db   $7f, $39, $4a, $3e, $16, $9b, $5a, $10        ;; 2d:6f62 ????????
-    db   $64, $6f, $2d, $4c, $1a, $ff, $ff, $00        ;; 2d:6f6a ????????
-    db   $00, $00, $00, $f4, $45, $16, $1e, $13        ;; 2d:6f72 ????????
-    db   $6c, $1d, $04, $0b, $7f, $39, $44, $10        ;; 2d:6f7a ????????
-    db   $00, $06, $12, $7f, $39, $4a, $3e, $16        ;; 2d:6f82 ????????
-    db   $35, $5b, $10, $87, $6f, $2d, $06, $24        ;; 2d:6f8a ????????
-    db   $7f, $39, $4c, $1a, $ff, $ff, $00, $00        ;; 2d:6f92 ????????
-    db   $00, $00, $2b, $46, $16, $4a, $3e, $1a        ;; 2d:6f9a ????????
-    db   $2b, $46, $16, $9f, $6f, $2d, $04, $25        ;; 2d:6fa2 ????????
-    db   $7f, $39, $92, $00, $4c, $1a, $01, $04        ;; 2d:6faa ????????
-    db   $00, $00, $00, $00, $7e, $40, $16, $4c        ;; 2d:6fb2 ????????
-    db   $16, $ff, $02, $00, $00, $00, $00, $00        ;; 2d:6fba ????????
-    db   $00, $00, $18, $74, $65, $2d, $50, $15        ;; 2d:6fc2 ????????
-    db   $c7, $00, $03, $82, $d9, $6d, $02, $16        ;; 2d:6fca ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:6fd2 ????????
-    db   $b4, $65, $2d, $e0, $6f, $2d, $14, $01        ;; 2d:6fda ????????
-    db   $f0, $5c, $ec, $6f, $2d, $16, $01, $7e        ;; 2d:6fe2 ????????
-    db   $55, $01, $4c, $1a, $01, $04, $00, $00        ;; 2d:6fea ????????
-    db   $00, $00, $d2, $40, $16, $1e, $10, $43        ;; 2d:6ff2 ????????
-    db   $20, $4c, $16, $10, $ff, $00, $00, $00        ;; 2d:6ffa ????????
-    db   $00, $35, $42, $10, $1e, $13, $6c, $1d        ;; 2d:7002 ????????
-    db   $04, $3e, $7f, $39, $92, $00, $4c, $1a        ;; 2d:700a ????????
-    db   $01, $04, $00, $00, $00, $00, $7e, $40        ;; 2d:7012 ????????
-    db   $16, $18, $74, $65, $2d, $82, $16, $74        ;; 2d:701a ????????
-    db   $01, $1e, $1d, $6f, $1d, $10, $04, $f2        ;; 2d:7022 ????????
-    db   $59, $55, $5a, $1c, $04, $5e, $68, $2d        ;; 2d:702a ????????
-    db   $7e, $68, $2d, $3b, $70, $2d, $be, $68        ;; 2d:7032 ????????
-    db   $2d, $50, $15, $c7, $00, $02, $82, $d9        ;; 2d:703a ????????
-    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:7042 ????????
-    db   $c6, $1c, $02, $b4, $65, $2d, $53, $70        ;; 2d:704a ????????
-    db   $2d, $1e, $e8, $6a, $1d, $04, $61, $7f        ;; 2d:7052 ????????
-    db   $39, $92, $00, $18, $74, $65, $2d, $50        ;; 2d:705a ????????
-    db   $1d, $c3, $00, $0f, $82, $c3, $74, $01        ;; 2d:7062 ????????
-    db   $1c, $04, $0c, $71, $2d, $1b, $71, $2d        ;; 2d:706a ????????
-    db   $7c, $70, $2d, $90, $70, $2d, $18, $b2        ;; 2d:7072 ????????
-    db   $70, $2d, $4c, $16, $04, $16, $00, $00        ;; 2d:707a ????????
-    db   $00, $00, $5e, $79, $10, $44, $01, $00        ;; 2d:7082 ????????
-    db   $1e, $80, $78, $3b, $1a, $13, $50, $1d        ;; 2d:708a ????????
-    db   $c3, $00, $d0, $4c, $16, $02, $16, $00        ;; 2d:7092 ????????
-    db   $00, $00, $00, $9b, $79, $10, $4a, $3e        ;; 2d:709a ????????
-    db   $16, $9b, $79, $10, $a0, $70, $2d, $50        ;; 2d:70a2 ????????
-    db   $ff, $d1, $01, $02, $18, $74, $65, $2d        ;; 2d:70aa ????????
-    db   $50, $1d, $c3, $00, $d0, $82, $c3, $74        ;; 2d:70b2 ????????
-    db   $01, $1c, $03, $b4, $65, $2d, $cb, $65        ;; 2d:70ba ????????
-    db   $2d, $ca, $70, $2d, $18, $74, $65, $2d        ;; 2d:70c2 ????????
-    db   $82, $16, $74, $01, $1e, $1d, $6f, $1d        ;; 2d:70ca ????????
-    db   $10, $04, $f2, $59, $55, $5a, $1c, $04        ;; 2d:70d2 ????????
-    db   $5e, $68, $2d, $7e, $68, $2d, $e6, $70        ;; 2d:70da ????????
-    db   $2d, $be, $68, $2d, $50, $15, $c7, $00        ;; 2d:70e2 ????????
-    db   $02, $82, $d9, $6d, $02, $16, $01, $3e        ;; 2d:70ea ????????
-    db   $03, $74, $5e, $c6, $1c, $02, $b4, $65        ;; 2d:70f2 ????????
-    db   $2d, $fe, $70, $2d, $1e, $e8, $6a, $1d        ;; 2d:70fa ????????
-    db   $04, $81, $7f, $39, $92, $00, $18, $74        ;; 2d:7102 ????????
-    db   $65, $2d, $4c, $16, $10, $16, $00, $00        ;; 2d:710a ????????
-    db   $00, $00, $3d, $41, $10, $18, $26, $71        ;; 2d:7112 ????????
-    db   $2d, $4c, $16, $08, $16, $00, $00, $00        ;; 2d:711a ????????
-    db   $00, $c2, $40, $10, $4a, $18, $74, $65        ;; 2d:7122 ????????
-    db   $2d, $1e, $cd, $6a, $1d, $4e, $04, $01        ;; 2d:712a ????????
-    db   $61, $40, $10, $4c, $16, $08, $04, $00        ;; 2d:7132 ????????
-    db   $00, $00, $00, $bc, $5c, $10, $4c, $08        ;; 2d:713a ????????
-    db   $01, $04, $00, $00, $00, $00, $9f, $5f        ;; 2d:7142 ????????
-    db   $10, $04, $a1, $7f, $39, $4a, $3e, $16        ;; 2d:714a ????????
-    db   $bc, $5c, $10, $4f, $71, $2d, $1e, $5d        ;; 2d:7152 ????????
-    db   $61, $04, $1e, $cd, $6a, $1d, $04, $ac        ;; 2d:715a ????????
-    db   $7f, $39, $4a, $3e, $16, $fe, $5c, $10        ;; 2d:7162 ????????
-    db   $64, $71, $2d, $1e, $5d, $61, $04, $4e        ;; 2d:716a ????????
-    db   $04, $01, $67, $40, $10, $4c, $08, $01        ;; 2d:7172 ????????
-    db   $04, $00, $00, $00, $00, $a6, $5d, $10        ;; 2d:717a ????????
-    db   $4a, $3e, $16, $2c, $5d, $10, $82, $71        ;; 2d:7182 ????????
-    db   $2d, $4c, $16, $ff, $02, $00, $00, $00        ;; 2d:718a ????????
-    db   $00, $00, $00, $00, $20, $1e, $ee, $63        ;; 2d:7192 ????????
-    db   $3a, $1e, $21, $72, $2d, $1e, $3b, $72        ;; 2d:719a ????????
-    db   $2d, $16, $01, $5e, $03, $82, $cc, $73        ;; 2d:71a2 ????????
-    db   $01, $82, $16, $74, $01, $2a, $00, $00        ;; 2d:71aa ????????
-    db   $00, $68, $01, $1b, $c8, $3a, $c5, $00        ;; 2d:71b2 ????????
-    db   $1c, $09, $76, $74, $2d, $43, $74, $2d        ;; 2d:71ba ????????
-    db   $ab, $74, $2d, $76, $74, $2d, $ff, $74        ;; 2d:71c2 ????????
-    db   $2d, $0a, $78, $2d, $a4, $78, $2d, $a4        ;; 2d:71ca ????????
-    db   $78, $2d, $a4, $78, $2d, $50, $1d, $c3        ;; 2d:71d2 ????????
-    db   $00, $d0, $82, $c3, $74, $01, $1c, $03        ;; 2d:71da ????????
-    db   $ef, $71, $2d, $06, $72, $2d, $a7, $73        ;; 2d:71e2 ????????
-    db   $2d, $18, $a3, $71, $2d, $1e, $f9, $68        ;; 2d:71ea ????????
-    db   $1d, $14, $01, $aa, $73, $a3, $71, $2d        ;; 2d:71f2 ????????
-    db   $1e, $3b, $72, $2d, $82, $42, $74, $01        ;; 2d:71fa ????????
-    db   $18, $a3, $71, $2d, $1e, $f1, $69, $1d        ;; 2d:7202 ????????
-    db   $14, $01, $aa, $73, $a3, $71, $2d, $16        ;; 2d:720a ????????
-    db   $01, $5e, $03, $1e, $3b, $72, $2d, $82        ;; 2d:7212 ????????
-    db   $42, $74, $01, $18, $a3, $71, $2d, $14        ;; 2d:721a ????????
-    db   $01, $30, $74, $35, $72, $2d, $16, $01        ;; 2d:7222 ????????
-    db   $7f, $02, $00, $16, $01, $5f, $80, $16        ;; 2d:722a ????????
-    db   $01, $5f, $81, $16, $01, $7f, $03, $00        ;; 2d:7232 ????????
-    db   $20, $50, $20, $c7, $00, $17, $82, $44        ;; 2d:723a ????????
-    db   $68, $01, $4a, $32, $9a, $55, $69, $00        ;; 2d:7242 ????????
-    db   $d0, $05, $32, $66, $50, $76, $60, $de        ;; 2d:724a ????????
-    db   $04, $32, $37, $6b, $64, $00, $d0, $07        ;; 2d:7252 ????????
-    db   $34, $37, $77, $73, $00, $d8, $05, $1e        ;; 2d:725a ????????
-    db   $34, $81, $5d, $77, $00, $d8, $07, $1e        ;; 2d:7262 ????????
-    db   $36, $9c, $58, $7c, $00, $d0, $03, $32        ;; 2d:726a ????????
-    db   $0d, $7d, $6d, $00, $d4, $06, $32, $de        ;; 2d:7272 ????????
-    db   $72, $6d, $00, $d0, $06, $14, $01, $34        ;; 2d:727a ????????
-    db   $74, $9c, $72, $2d, $14, $01, $38, $74        ;; 2d:7282 ????????
-    db   $ab, $72, $2d, $4c, $1a, $01, $04, $78        ;; 2d:728a ????????
-    db   $00, $72, $00, $ad, $45, $13, $18, $ba        ;; 2d:7292 ????????
-    db   $72, $2d, $4c, $1a, $01, $04, $78, $00        ;; 2d:729a ????????
-    db   $72, $00, $7d, $46, $13, $18, $ba, $72        ;; 2d:72a2 ????????
-    db   $2d, $4c, $1a, $01, $04, $60, $00, $90        ;; 2d:72aa ????????
-    db   $00, $c1, $47, $13, $1e, $ed, $7c, $2d        ;; 2d:72b2 ????????
-    db   $16, $01, $7e, $25, $2b, $14, $01, $b2        ;; 2d:72ba ????????
-    db   $73, $dc, $72, $2d, $14, $01, $3c, $74        ;; 2d:72c2 ????????
-    db   $eb, $72, $2d, $4c, $16, $08, $02, $48        ;; 2d:72ca ????????
-    db   $00, $a8, $00, $c2, $40, $10, $18, $ef        ;; 2d:72d2 ????????
-    db   $72, $2d, $4c, $16, $02, $02, $f8, $ff        ;; 2d:72da ????????
-    db   $90, $00, $9c, $5e, $12, $18, $ef, $72        ;; 2d:72e2 ????????
-    db   $2d, $82, $2b, $78, $01, $1e, $3a, $59        ;; 2d:72ea ????????
-    db   $34, $14, $01, $40, $74, $1e, $73, $2d        ;; 2d:72f2 ????????
-    db   $14, $01, $4c, $74, $1e, $73, $2d, $4c        ;; 2d:72fa ????????
-    db   $1a, $01, $04, $60, $00, $90, $00, $cc        ;; 2d:7302 ????????
-    db   $41, $13, $14, $01, $4e, $74, $1e, $73        ;; 2d:730a ????????
-    db   $2d, $4c, $10, $01, $04, $60, $00, $90        ;; 2d:7312 ????????
-    db   $00, $91, $67, $1a, $1e, $d0, $59, $34        ;; 2d:731a ????????
-    db   $44, $04, $00, $1e, $23, $62, $04, $4e        ;; 2d:7322 ????????
-    db   $04, $01, $49, $40, $10, $4e, $05, $01        ;; 2d:732a ????????
-    db   $dd, $6a, $1a, $4e, $06, $01, $c6, $40        ;; 2d:7332 ????????
-    db   $13, $4e, $07, $01, $7f, $40, $10, $14        ;; 2d:733a ????????
-    db   $01, $4e, $74, $52, $73, $2d, $4e, $08        ;; 2d:7342 ????????
-    db   $01, $06, $62, $15, $18, $58, $73, $2d        ;; 2d:734a ????????
-    db   $4e, $08, $01, $3c, $62, $15, $3a, $00        ;; 2d:7352 ????????
-    db   $00, $a0, $90, $50, $48, $f0, $00, $f0        ;; 2d:735a ????????
-    db   $00, $14, $01, $50, $74, $6d, $73, $2d        ;; 2d:7362 ????????
-    db   $44, $08, $00, $4a, $3e, $16, $9c, $5e        ;; 2d:736a ????????
-    db   $12, $6d, $73, $2d, $3e, $16, $9b, $46        ;; 2d:7372 ????????
-    db   $10, $6d, $73, $2d, $3e, $16, $f3, $46        ;; 2d:737a ????????
-    db   $10, $6d, $73, $2d, $1e, $1e, $59, $34        ;; 2d:7382 ????????
-    db   $16, $01, $5e, $03, $16, $01, $7e, $39        ;; 2d:738a ????????
-    db   $00, $16, $01, $7e, $0d, $14, $16, $01        ;; 2d:7392 ????????
-    db   $7e, $12, $b0, $16, $01, $7f, $1c, $00        ;; 2d:739a ????????
-    db   $16, $01, $5f, $94, $20, $82, $16, $74        ;; 2d:73a2 ????????
-    db   $01, $1e, $1d, $6f, $1d, $10, $04, $3f        ;; 2d:73aa ????????
-    db   $73, $a2, $73, $1c, $04, $c3, $73, $2d        ;; 2d:73b2 ????????
-    db   $e3, $73, $2d, $03, $74, $2d, $23, $74        ;; 2d:73ba ????????
-    db   $2d, $50, $15, $c7, $00, $00, $82, $d9        ;; 2d:73c2 ????????
-    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:73ca ????????
-    db   $c6, $1c, $02, $ef, $71, $2d, $db, $73        ;; 2d:73d2 ????????
-    db   $2d, $1e, $42, $40, $20, $18, $a3, $71        ;; 2d:73da ????????
-    db   $2d, $50, $15, $c7, $00, $01, $82, $d9        ;; 2d:73e2 ????????
-    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:73ea ????????
-    db   $c6, $1c, $02, $ef, $71, $2d, $fb, $73        ;; 2d:73f2 ????????
-    db   $2d, $1e, $3a, $46, $20, $18, $a3, $71        ;; 2d:73fa ????????
-    db   $2d, $50, $15, $c7, $00, $02, $82, $d9        ;; 2d:7402 ????????
-    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:740a ????????
-    db   $c6, $1c, $02, $ef, $71, $2d, $1b, $74        ;; 2d:7412 ????????
-    db   $2d, $1e, $94, $42, $20, $18, $a3, $71        ;; 2d:741a ????????
-    db   $2d, $50, $15, $c7, $00, $03, $82, $d9        ;; 2d:7422 ????????
-    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:742a ????????
-    db   $c6, $1c, $02, $ef, $71, $2d, $3b, $74        ;; 2d:7432 ????????
-    db   $2d, $1e, $10, $43, $20, $18, $a3, $71        ;; 2d:743a ????????
-    db   $2d, $50, $1d, $c3, $00, $d2, $82, $c3        ;; 2d:7442 ????????
-    db   $74, $01, $1c, $04, $ef, $71, $2d, $06        ;; 2d:744a ????????
-    db   $72, $2d, $a7, $73, $2d, $5e, $74, $2d        ;; 2d:7452 ????????
-    db   $18, $a3, $71, $2d, $4c, $16, $04, $04        ;; 2d:745a ????????
-    db   $00, $00, $00, $00, $39, $5e, $12, $44        ;; 2d:7462 ????????
-    db   $3c, $00, $82, $e1, $77, $01, $1e, $92        ;; 2d:746a ????????
-    db   $7e, $36, $1a, $01, $50, $1d, $c3, $00        ;; 2d:7472 ????????
-    db   $d1, $82, $c3, $74, $01, $1c, $04, $ef        ;; 2d:747a ????????
-    db   $71, $2d, $06, $72, $2d, $a0, $74, $2d        ;; 2d:7482 ????????
-    db   $91, $74, $2d, $18, $a3, $71, $2d, $50        ;; 2d:748a ????????
-    db   $fd, $d1, $01, $02, $82, $e1, $77, $01        ;; 2d:7492 ????????
-    db   $1e, $92, $7e, $36, $1a, $09, $14, $01        ;; 2d:749a ????????
-    db   $52, $74, $ab, $74, $2d, $18, $a7, $73        ;; 2d:74a2 ????????
-    db   $2d, $50, $1d, $c3, $00, $d0, $82, $c3        ;; 2d:74aa ????????
-    db   $74, $01, $1c, $03, $ef, $71, $2d, $06        ;; 2d:74b2 ????????
-    db   $72, $2d, $c3, $74, $2d, $18, $a3, $71        ;; 2d:74ba ????????
-    db   $2d, $82, $16, $74, $01, $1e, $1d, $6f        ;; 2d:74c2 ????????
-    db   $1d, $10, $04, $3f, $73, $a2, $73, $1c        ;; 2d:74ca ????????
-    db   $04, $c3, $73, $2d, $e3, $73, $2d, $df        ;; 2d:74d2 ????????
-    db   $74, $2d, $23, $74, $2d, $50, $15, $c7        ;; 2d:74da ????????
-    db   $00, $02, $82, $d9, $6d, $02, $16, $01        ;; 2d:74e2 ????????
-    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:74ea ????????
-    db   $71, $2d, $f7, $74, $2d, $1e, $f7, $42        ;; 2d:74f2 ????????
-    db   $20, $18, $a3, $71, $2d, $50, $1d, $c3        ;; 2d:74fa ????????
-    db   $00, $d0, $82, $c3, $74, $01, $1c, $03        ;; 2d:7502 ????????
-    db   $ef, $71, $2d, $06, $72, $2d, $17, $75        ;; 2d:750a ????????
-    db   $2d, $18, $a3, $71, $2d, $82, $16, $74        ;; 2d:7512 ????????
-    db   $01, $1e, $1d, $6f, $1d, $10, $08, $43        ;; 2d:751a ????????
-    db   $73, $56, $74, $1c, $08, $47, $75, $2d        ;; 2d:7522 ????????
-    db   $6f, $75, $2d, $93, $75, $2d, $24, $76        ;; 2d:752a ????????
-    db   $2d, $48, $76, $2d, $3f, $75, $2d, $7c        ;; 2d:7532 ????????
-    db   $76, $2d, $3f, $75, $2d, $1e, $1d, $4e        ;; 2d:753a ????????
-    db   $33, $18, $a3, $71, $2d, $50, $15, $c7        ;; 2d:7542 ????????
-    db   $00, $00, $82, $d9, $6d, $02, $16, $01        ;; 2d:754a ????????
-    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:7552 ????????
-    db   $71, $2d, $5f, $75, $2d, $1e, $42, $40        ;; 2d:755a ????????
-    db   $20, $1e, $12, $7d, $2d, $1e, $4f, $7b        ;; 2d:7562 ????????
-    db   $2d, $18, $a3, $71, $2d, $50, $15, $c7        ;; 2d:756a ????????
-    db   $00, $01, $82, $d9, $6d, $02, $16, $01        ;; 2d:7572 ????????
-    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:757a ????????
-    db   $71, $2d, $87, $75, $2d, $1e, $96, $46        ;; 2d:7582 ????????
-    db   $20, $1e, $4f, $7b, $2d, $18, $a3, $71        ;; 2d:758a ????????
-    db   $2d, $50, $15, $c7, $00, $02, $82, $d9        ;; 2d:7592 ????????
-    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:759a ????????
-    db   $c6, $1c, $02, $ef, $71, $2d, $ab, $75        ;; 2d:75a2 ????????
-    db   $2d, $1e, $bf, $42, $20, $14, $01, $34        ;; 2d:75aa ????????
-    db   $74, $ea, $75, $2d, $4c, $1a, $01, $04        ;; 2d:75b2 ????????
-    db   $78, $00, $72, $00, $e4, $45, $13, $4a        ;; 2d:75ba ????????
-    db   $3e, $1a, $e4, $45, $13, $c1, $75, $2d        ;; 2d:75c2 ????????
-    db   $4c, $1a, $01, $04, $78, $00, $72, $00        ;; 2d:75ca ????????
-    db   $b7, $46, $13, $1e, $b8, $6b, $1d, $04        ;; 2d:75d2 ????????
-    db   $00, $40, $39, $1e, $5d, $61, $04, $16        ;; 2d:75da ????????
-    db   $01, $7f, $02, $01, $18, $01, $76, $2d        ;; 2d:75e2 ????????
-    db   $4c, $1a, $01, $04, $78, $00, $72, $00        ;; 2d:75ea ????????
-    db   $b7, $46, $13, $1e, $b8, $6b, $1d, $04        ;; 2d:75f2 ????????
-    db   $0f, $40, $39, $1e, $5d, $61, $04, $4a        ;; 2d:75fa ????????
-    db   $3e, $16, $35, $5b, $10, $01, $76, $2d        ;; 2d:7602 ????????
-    db   $4c, $16, $ff, $02, $00, $00, $00, $00        ;; 2d:760a ????????
-    db   $00, $00, $00, $4c, $1a, $01, $04, $78        ;; 2d:7612 ????????
-    db   $00, $72, $00, $7d, $46, $13, $18, $a3        ;; 2d:761a ????????
-    db   $71, $2d, $50, $15, $c7, $00, $03, $82        ;; 2d:7622 ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:762a ????????
-    db   $5e, $c6, $1c, $02, $ef, $71, $2d, $3c        ;; 2d:7632 ????????
-    db   $76, $2d, $1e, $10, $43, $20, $1e, $4f        ;; 2d:763a ????????
-    db   $7b, $2d, $18, $a3, $71, $2d, $50, $15        ;; 2d:7642 ????????
-    db   $c7, $00, $11, $82, $d9, $6d, $02, $16        ;; 2d:764a ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:7652 ????????
-    db   $ef, $71, $2d, $60, $76, $2d, $1e, $0c        ;; 2d:765a ????????
-    db   $4f, $20, $1e, $77, $7b, $2d, $1e, $b8        ;; 2d:7662 ????????
-    db   $6b, $1d, $04, $1f, $40, $39, $1e, $5d        ;; 2d:766a ????????
-    db   $61, $04, $1e, $99, $7b, $2d, $18, $a3        ;; 2d:7672 ????????
-    db   $71, $2d, $50, $15, $c7, $00, $45, $82        ;; 2d:767a ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:7682 ????????
-    db   $5e, $c6, $1c, $02, $ef, $71, $2d, $94        ;; 2d:768a ????????
-    db   $76, $2d, $1e, $bb, $7b, $2d, $14, $01        ;; 2d:7692 ????????
-    db   $34, $74, $df, $77, $2d, $4c, $16, $04        ;; 2d:769a ????????
-    db   $02, $00, $00, $00, $00, $3c, $68, $1a        ;; 2d:76a2 ????????
-    db   $4a, $3e, $16, $3c, $68, $1a, $aa, $76        ;; 2d:76aa ????????
-    db   $2d, $16, $01, $7f, $02, $02, $1e, $ed        ;; 2d:76b2 ????????
-    db   $7c, $2d, $1e, $b8, $6b, $1d, $04, $2d        ;; 2d:76ba ????????
-    db   $40, $39, $4c, $1a, $01, $04, $60, $00        ;; 2d:76c2 ????????
-    db   $90, $00, $cc, $41, $13, $14, $01, $4e        ;; 2d:76ca ????????
-    db   $74, $60, $77, $2d, $56, $1a, $f8, $47        ;; 2d:76d2 ????????
-    db   $13, $06, $53, $40, $39, $56, $1a, $cc        ;; 2d:76da ????????
-    db   $41, $13, $06, $bc, $40, $39, $56, $1a        ;; 2d:76e2 ????????
-    db   $15, $48, $13, $06, $fb, $40, $39, $56        ;; 2d:76ea ????????
-    db   $1a, $dc, $41, $13, $06, $17, $41, $39        ;; 2d:76f2 ????????
-    db   $56, $1a, $fc, $41, $13, $06, $21, $41        ;; 2d:76fa ????????
-    db   $39, $56, $1a, $cc, $41, $13, $06, $34        ;; 2d:7702 ????????
-    db   $41, $39, $1e, $6d, $7b, $2d, $06, $7d        ;; 2d:770a ????????
-    db   $41, $39, $4a, $3e, $1a, $25, $48, $13        ;; 2d:7712 ????????
-    db   $14, $77, $2d, $1e, $5d, $61, $04, $1e        ;; 2d:771a ????????
-    db   $4d, $7d, $2d, $4c, $10, $01, $04, $00        ;; 2d:7722 ????????
-    db   $00, $00, $00, $a3, $67, $1a, $56, $1a        ;; 2d:772a ????????
-    db   $fd, $48, $13, $4a, $3e, $1a, $fd, $48        ;; 2d:7732 ????????
-    db   $13, $35, $77, $2d, $16, $01, $7e, $1e        ;; 2d:773a ????????
-    db   $00, $16, $01, $7e, $1f, $01, $82, $31        ;; 2d:7742 ????????
-    db   $42, $02, $16, $01, $3f, $94, $1e, $7c        ;; 2d:774a ????????
-    db   $7c, $2d, $1e, $78, $6a, $1d, $1e, $3b        ;; 2d:7752 ????????
-    db   $72, $2d, $18, $d6, $77, $2d, $56, $1a        ;; 2d:775a ????????
-    db   $f8, $47, $13, $06, $7f, $41, $39, $56        ;; 2d:7762 ????????
-    db   $1a, $cc, $41, $13, $06, $df, $41, $39        ;; 2d:776a ????????
-    db   $56, $1a, $15, $48, $13, $06, $fd, $41        ;; 2d:7772 ????????
-    db   $39, $56, $1a, $dc, $41, $13, $06, $30        ;; 2d:777a ????????
-    db   $42, $39, $56, $1a, $fc, $41, $13, $06        ;; 2d:7782 ????????
-    db   $39, $42, $39, $56, $1a, $cc, $41, $13        ;; 2d:778a ????????
-    db   $06, $42, $42, $39, $1e, $6d, $7b, $2d        ;; 2d:7792 ????????
-    db   $06, $a4, $42, $39, $4a, $3e, $1a, $25        ;; 2d:779a ????????
-    db   $48, $13, $9e, $77, $2d, $1e, $5d, $61        ;; 2d:77a2 ????????
-    db   $04, $4c, $10, $01, $04, $00, $00, $00        ;; 2d:77aa ????????
-    db   $00, $22, $68, $1a, $56, $1a, $fd, $48        ;; 2d:77b2 ????????
-    db   $13, $4a, $3e, $1a, $fd, $48, $13, $bb        ;; 2d:77ba ????????
-    db   $77, $2d, $44, $14, $00, $4c, $10, $00        ;; 2d:77c2 ????????
-    db   $00, $00, $00, $00, $00, $00, $00, $00        ;; 2d:77ca ????????
-    db   $1e, $16, $71, $1d, $56, $1a, $c1, $47        ;; 2d:77d2 ????????
-    db   $13, $18, $a3, $71, $2d, $4c, $1a, $01        ;; 2d:77da ????????
-    db   $04, $78, $00, $72, $00, $22, $46, $13        ;; 2d:77e2 ????????
-    db   $1e, $b8, $6b, $1d, $04, $a6, $42, $39        ;; 2d:77ea ????????
-    db   $1e, $5d, $61, $04, $4c, $1a, $01, $04        ;; 2d:77f2 ????????
-    db   $78, $00, $72, $00, $ad, $45, $13, $16        ;; 2d:77fa ????????
-    db   $01, $7f, $02, $00, $18, $a3, $71, $2d        ;; 2d:7802 ????????
-    db   $50, $1d, $c3, $00, $d0, $82, $c3, $74        ;; 2d:780a ????????
-    db   $01, $1c, $03, $ef, $71, $2d, $06, $72        ;; 2d:7812 ????????
-    db   $2d, $22, $78, $2d, $18, $a3, $71, $2d        ;; 2d:781a ????????
-    db   $82, $16, $74, $01, $1e, $1d, $6f, $1d        ;; 2d:7822 ????????
-    db   $10, $04, $3f, $73, $a2, $73, $1c, $04        ;; 2d:782a ????????
-    db   $c3, $73, $2d, $e3, $73, $2d, $03, $74        ;; 2d:7832 ????????
-    db   $2d, $3e, $78, $2d, $50, $15, $c7, $00        ;; 2d:783a ????????
-    db   $03, $82, $d9, $6d, $02, $16, $01, $3e        ;; 2d:7842 ????????
-    db   $03, $74, $5e, $c6, $1c, $02, $ef, $71        ;; 2d:784a ????????
-    db   $2d, $56, $78, $2d, $1e, $8d, $45, $20        ;; 2d:7852 ????????
-    db   $44, $3c, $00, $14, $01, $62, $74, $74        ;; 2d:785a ????????
-    db   $78, $2d, $16, $01, $3f, $80, $1e, $ce        ;; 2d:7862 ????????
-    db   $45, $20, $1e, $1e, $71, $1d, $18, $a3        ;; 2d:786a ????????
-    db   $71, $2d, $1e, $ae, $45, $20, $4e, $04        ;; 2d:7872 ????????
-    db   $01, $67, $40, $10, $4c, $16, $08, $ff        ;; 2d:787a ????????
-    db   $00, $00, $00, $00, $9c, $5c, $10, $4c        ;; 2d:7882 ????????
-    db   $12, $01, $04, $00, $00, $00, $00, $a6        ;; 2d:788a ????????
-    db   $5d, $10, $1e, $e8, $6a, $1d, $04, $ac        ;; 2d:7892 ????????
-    db   $42, $39, $1e, $5d, $61, $04, $18, $a3        ;; 2d:789a ????????
-    db   $71, $2d, $50, $1d, $c3, $00, $d0, $82        ;; 2d:78a2 ????????
-    db   $c3, $74, $01, $1c, $03, $ef, $71, $2d        ;; 2d:78aa ????????
-    db   $06, $72, $2d, $bc, $78, $2d, $18, $a3        ;; 2d:78b2 ????????
-    db   $71, $2d, $14, $01, $64, $74, $df, $78        ;; 2d:78ba ????????
-    db   $2d, $82, $16, $74, $01, $1e, $1d, $6f        ;; 2d:78c2 ????????
-    db   $1d, $10, $04, $3f, $73, $a2, $73, $1c        ;; 2d:78ca ????????
-    db   $04, $0f, $79, $2d, $b0, $79, $2d, $f3        ;; 2d:78d2 ????????
-    db   $79, $2d, $23, $74, $2d, $82, $16, $74        ;; 2d:78da ????????
-    db   $01, $1e, $1d, $6f, $1d, $10, $08, $43        ;; 2d:78e2 ????????
-    db   $73, $56, $74, $1c, $08, $0f, $79, $2d        ;; 2d:78ea ????????
-    db   $b0, $79, $2d, $f3, $79, $2d, $23, $74        ;; 2d:78f2 ????????
-    db   $2d, $4c, $7a, $2d, $07, $79, $2d, $97        ;; 2d:78fa ????????
-    db   $7a, $2d, $07, $79, $2d, $1e, $1d, $4e        ;; 2d:7902 ????????
-    db   $33, $18, $a3, $71, $2d, $50, $15, $c7        ;; 2d:790a ????????
-    db   $00, $00, $82, $d9, $6d, $02, $16, $01        ;; 2d:7912 ????????
-    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:791a ????????
-    db   $71, $2d, $27, $79, $2d, $1e, $42, $40        ;; 2d:7922 ????????
-    db   $20, $1e, $12, $7d, $2d, $56, $1a, $7b        ;; 2d:792a ????????
-    db   $43, $13, $1e, $b8, $6b, $1d, $04, $bc        ;; 2d:7932 ????????
-    db   $42, $39, $4a, $3e, $1a, $7b, $43, $13        ;; 2d:793a ????????
-    db   $3c, $79, $2d, $14, $01, $68, $74, $73        ;; 2d:7942 ????????
-    db   $79, $2d, $16, $01, $3f, $81, $56, $1a        ;; 2d:794a ????????
-    db   $15, $48, $13, $06, $c5, $42, $39, $1e        ;; 2d:7952 ????????
-    db   $6d, $7b, $2d, $06, $09, $43, $39, $4a        ;; 2d:795a ????????
-    db   $3e, $1a, $25, $48, $13, $61, $79, $2d        ;; 2d:7962 ????????
-    db   $56, $1a, $cc, $41, $13, $18, $a3, $79        ;; 2d:796a ????????
-    db   $2d, $16, $01, $5f, $81, $56, $1a, $cc        ;; 2d:7972 ????????
-    db   $41, $13, $06, $0b, $43, $39, $1e, $63        ;; 2d:797a ????????
-    db   $7b, $2d, $06, $39, $43, $39, $4a, $3e        ;; 2d:7982 ????????
-    db   $1a, $25, $48, $13, $88, $79, $2d, $56        ;; 2d:798a ????????
-    db   $1a, $fc, $41, $13, $06, $52, $43, $39        ;; 2d:7992 ????????
-    db   $56, $1a, $15, $48, $13, $06, $83, $43        ;; 2d:799a ????????
-    db   $39, $1e, $5d, $61, $04, $56, $1a, $c1        ;; 2d:79a2 ????????
-    db   $47, $13, $18, $a3, $71, $2d, $50, $15        ;; 2d:79aa ????????
-    db   $c7, $00, $01, $82, $d9, $6d, $02, $16        ;; 2d:79b2 ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:79ba ????????
-    db   $ef, $71, $2d, $c8, $79, $2d, $1e, $96        ;; 2d:79c2 ????????
-    db   $46, $20, $1e, $12, $7d, $2d, $56, $1a        ;; 2d:79ca ????????
-    db   $f8, $47, $13, $1e, $b8, $6b, $1d, $04        ;; 2d:79d2 ????????
-    db   $af, $43, $39, $56, $1a, $cc, $41, $13        ;; 2d:79da ????????
-    db   $06, $c7, $43, $39, $1e, $5d, $61, $04        ;; 2d:79e2 ????????
-    db   $56, $1a, $c1, $47, $13, $18, $a3, $71        ;; 2d:79ea ????????
-    db   $2d, $50, $15, $c7, $00, $02, $82, $d9        ;; 2d:79f2 ????????
-    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:79fa ????????
-    db   $c6, $1c, $02, $ef, $71, $2d, $0b, $7a        ;; 2d:7a02 ????????
-    db   $2d, $14, $01, $6a, $74, $1a, $7a, $2d        ;; 2d:7a0a ????????
-    db   $1e, $f7, $42, $20, $18, $a3, $71, $2d        ;; 2d:7a12 ????????
-    db   $1e, $bf, $42, $20, $56, $1a, $28, $49        ;; 2d:7a1a ????????
-    db   $13, $1e, $b8, $6b, $1d, $04, $0e, $44        ;; 2d:7a22 ????????
-    db   $39, $1e, $5d, $61, $04, $4a, $3e, $16        ;; 2d:7a2a ????????
-    db   $35, $5b, $10, $2f, $7a, $2d, $4c, $16        ;; 2d:7a32 ????????
-    db   $ff, $02, $00, $00, $00, $00, $00, $00        ;; 2d:7a3a ????????
-    db   $00, $56, $1a, $c1, $47, $13, $18, $a3        ;; 2d:7a42 ????????
-    db   $71, $2d, $50, $15, $c7, $00, $11, $82        ;; 2d:7a4a ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:7a52 ????????
-    db   $5e, $c6, $1c, $02, $ef, $71, $2d, $64        ;; 2d:7a5a ????????
-    db   $7a, $2d, $14, $01, $6e, $74, $8f, $7a        ;; 2d:7a62 ????????
-    db   $2d, $56, $1a, $5f, $49, $13, $1e, $0c        ;; 2d:7a6a ????????
-    db   $4f, $20, $1e, $b8, $6b, $1d, $04, $1d        ;; 2d:7a72 ????????
-    db   $44, $39, $1e, $5d, $61, $04, $4c, $1a        ;; 2d:7a7a ????????
-    db   $01, $04, $60, $00, $90, $00, $c1, $47        ;; 2d:7a82 ????????
-    db   $13, $18, $a3, $71, $2d, $1e, $0c, $4f        ;; 2d:7a8a ????????
-    db   $20, $18, $a3, $71, $2d, $50, $15, $c7        ;; 2d:7a92 ????????
-    db   $00, $45, $82, $d9, $6d, $02, $16, $01        ;; 2d:7a9a ????????
-    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:7aa2 ????????
-    db   $71, $2d, $af, $7a, $2d, $14, $01, $6e        ;; 2d:7aaa ????????
-    db   $74, $47, $7b, $2d, $56, $1a, $cc, $41        ;; 2d:7ab2 ????????
-    db   $13, $4c, $16, $ff, $04, $00, $00, $00        ;; 2d:7aba ????????
-    db   $00, $aa, $68, $1a, $4a, $3e, $16, $aa        ;; 2d:7ac2 ????????
-    db   $68, $1a, $c6, $7a, $2d, $56, $1a, $8f        ;; 2d:7aca ????????
-    db   $49, $13, $4c, $16, $ff, $04, $00, $00        ;; 2d:7ad2 ????????
-    db   $00, $00, $6d, $67, $0f, $1e, $cd, $6a        ;; 2d:7ada ????????
-    db   $1d, $04, $36, $44, $39, $4a, $3e, $16        ;; 2d:7ae2 ????????
-    db   $6d, $67, $0f, $e7, $7a, $2d, $4c, $16        ;; 2d:7aea ????????
-    db   $ff, $04, $00, $00, $00, $00, $ce, $67        ;; 2d:7af2 ????????
-    db   $0f, $4a, $3e, $16, $ce, $67, $0f, $fb        ;; 2d:7afa ????????
-    db   $7a, $2d, $4c, $16, $ff, $04, $00, $00        ;; 2d:7b02 ????????
-    db   $00, $00, $18, $69, $1a, $4a, $3e, $16        ;; 2d:7b0a ????????
-    db   $18, $69, $1a, $0f, $7b, $2d, $1e, $5d        ;; 2d:7b12 ????????
-    db   $61, $04, $1e, $b8, $6b, $1d, $04, $41        ;; 2d:7b1a ????????
-    db   $44, $39, $1e, $5d, $61, $04, $56, $1a        ;; 2d:7b22 ????????
-    db   $cc, $41, $13, $4c, $16, $10, $02, $00        ;; 2d:7b2a ????????
-    db   $00, $00, $00, $00, $00, $00, $4c, $1a        ;; 2d:7b32 ????????
-    db   $01, $04, $60, $00, $90, $00, $c1, $47        ;; 2d:7b3a ????????
-    db   $13, $18, $a3, $71, $2d, $1e, $4d, $4e        ;; 2d:7b42 ????????
-    db   $20, $18, $a3, $71, $2d, $1e, $77, $7b        ;; 2d:7b4a ????????
-    db   $2d, $1e, $b8, $6b, $1d, $04, $58, $44        ;; 2d:7b52 ????????
-    db   $39, $1e, $5d, $61, $04, $18, $99, $7b        ;; 2d:7b5a ????????
-    db   $2d, $56, $1a, $25, $48, $13, $06, $69        ;; 2d:7b62 ????????
-    db   $44, $39, $20, $56, $1a, $25, $48, $13        ;; 2d:7b6a ????????
-    db   $06, $cc, $44, $39, $20, $14, $01, $34        ;; 2d:7b72 ????????
-    db   $74, $8d, $7b, $2d, $4c, $1a, $01, $04        ;; 2d:7b7a ????????
-    db   $78, $00, $72, $00, $22, $46, $13, $18        ;; 2d:7b82 ????????
-    db   $98, $7b, $2d, $4c, $1a, $01, $04, $78        ;; 2d:7b8a ????????
-    db   $00, $72, $00, $b7, $46, $13, $20, $14        ;; 2d:7b92 ????????
-    db   $01, $34, $74, $af, $7b, $2d, $4c, $1a        ;; 2d:7b9a ????????
-    db   $01, $04, $78, $00, $72, $00, $ad, $45        ;; 2d:7ba2 ????????
-    db   $13, $18, $ba, $7b, $2d, $4c, $1a, $01        ;; 2d:7baa ????????
-    db   $04, $78, $00, $72, $00, $7d, $46, $13        ;; 2d:7bb2 ????????
-    db   $20, $4c, $16, $ff, $02, $00, $00, $00        ;; 2d:7bba ????????
-    db   $00, $60, $68, $11, $4a, $3e, $16, $60        ;; 2d:7bc2 ????????
-    db   $68, $11, $c6, $7b, $2d, $1e, $cd, $6a        ;; 2d:7bca ????????
-    db   $1d, $4c, $16, $ff, $04, $00, $00, $00        ;; 2d:7bd2 ????????
-    db   $00, $07, $66, $1a, $04, $72, $44, $39        ;; 2d:7bda ????????
-    db   $4a, $3e, $16, $07, $66, $1a, $e2, $7b        ;; 2d:7be2 ????????
-    db   $2d, $1e, $5d, $61, $04, $14, $01, $34        ;; 2d:7bea ????????
-    db   $74, $2d, $7c, $2d, $14, $01, $4e, $74        ;; 2d:7bf2 ????????
-    db   $13, $7c, $2d, $36, $55, $75, $7f, $f2        ;; 2d:7bfa ????????
-    db   $dd, $01, $4c, $10, $01, $04, $60, $00        ;; 2d:7c02 ????????
-    db   $90, $00, $6b, $67, $1a, $18, $1e, $7c        ;; 2d:7c0a ????????
-    db   $2d, $4c, $10, $01, $04, $60, $00, $90        ;; 2d:7c12 ????????
-    db   $00, $ea, $67, $1a, $4c, $1a, $01, $04        ;; 2d:7c1a ????????
-    db   $78, $00, $72, $00, $f1, $46, $13, $18        ;; 2d:7c22 ????????
-    db   $38, $7c, $2d, $4c, $1a, $01, $04, $78        ;; 2d:7c2a ????????
-    db   $00, $72, $00, $0b, $46, $13, $4c, $16        ;; 2d:7c32 ????????
-    db   $08, $02, $00, $00, $00, $00, $63, $66        ;; 2d:7c3a ????????
-    db   $1a, $4a, $3e, $16, $63, $66, $1a, $43        ;; 2d:7c42 ????????
-    db   $7c, $2d, $3e, $10, $6b, $67, $1a, $43        ;; 2d:7c4a ????????
-    db   $7c, $2d, $3e, $10, $ea, $67, $1a, $43        ;; 2d:7c52 ????????
-    db   $7c, $2d, $4a, $3e, $1a, $f1, $46, $13        ;; 2d:7c5a ????????
-    db   $5c, $7c, $2d, $3e, $1a, $0b, $46, $13        ;; 2d:7c62 ????????
-    db   $5c, $7c, $2d, $4c, $16, $10, $ff, $00        ;; 2d:7c6a ????????
-    db   $00, $00, $00, $87, $78, $17, $44, $06        ;; 2d:7c72 ????????
-    db   $00, $20, $36, $55, $75, $7f, $f2, $dd        ;; 2d:7c7a ????????
-    db   $01, $4c, $10, $01, $04, $00, $00, $00        ;; 2d:7c82 ????????
-    db   $00, $3e, $67, $1a, $4a, $3e, $10, $3e        ;; 2d:7c8a ????????
-    db   $67, $1a, $8e, $7c, $2d, $4c, $16, $08        ;; 2d:7c92 ????????
-    db   $04, $00, $00, $00, $00, $3f, $55, $10        ;; 2d:7c9a ????????
-    db   $4c, $10, $01, $04, $00, $00, $00, $00        ;; 2d:7ca2 ????????
-    db   $6b, $66, $15, $1e, $e8, $6a, $1d, $04        ;; 2d:7caa ????????
-    db   $7d, $44, $39, $4a, $3e, $16, $3f, $55        ;; 2d:7cb2 ????????
-    db   $10, $b5, $7c, $2d, $4c, $16, $08, $04        ;; 2d:7cba ????????
-    db   $00, $00, $00, $00, $8f, $55, $10, $4c        ;; 2d:7cc2 ????????
-    db   $10, $01, $04, $00, $00, $00, $00, $b0        ;; 2d:7cca ????????
-    db   $66, $15, $1e, $5d, $61, $04, $4a, $3e        ;; 2d:7cd2 ????????
-    db   $16, $8f, $55, $10, $d8, $7c, $2d, $4c        ;; 2d:7cda ????????
-    db   $16, $ff, $02, $00, $00, $00, $00, $00        ;; 2d:7ce2 ????????
-    db   $00, $00, $20, $84, $28, $d2, $03, $03        ;; 2d:7cea ????????
-    db   $00, $80, $84, $46, $d2, $03, $03, $00        ;; 2d:7cf2 ????????
-    db   $80, $84, $64, $d2, $03, $03, $00, $80        ;; 2d:7cfa ????????
-    db   $50, $82, $d2, $03, $07, $50, $25, $d2        ;; 2d:7d02 ????????
-    db   $03, $08, $50, $2b, $d2, $03, $09, $20        ;; 2d:7d0a ????????
-    db   $14, $01, $72, $74, $3e, $7d, $2d, $14        ;; 2d:7d12 ????????
-    db   $01, $76, $74, $2f, $7d, $2d, $4c, $16        ;; 2d:7d1a ????????
-    db   $10, $ff, $00, $00, $00, $00, $87, $78        ;; 2d:7d22 ????????
-    db   $17, $18, $49, $7d, $2d, $4c, $16, $04        ;; 2d:7d2a ????????
-    db   $ff, $00, $00, $00, $00, $61, $42, $10        ;; 2d:7d32 ????????
-    db   $18, $49, $7d, $2d, $4c, $16, $02, $ff        ;; 2d:7d3a ????????
-    db   $00, $00, $00, $00, $71, $42, $10, $44        ;; 2d:7d42 ????????
-    db   $06, $00, $20, $14, $01, $7a, $74, $c2        ;; 2d:7d4a ????????
-    db   $7d, $2d, $16, $01, $3f, $94, $50, $15        ;; 2d:7d52 ????????
-    db   $c7, $00, $4e, $82, $d9, $6d, $02, $16        ;; 2d:7d5a ????????
-    db   $01, $3e, $59, $68, $01, $64, $c7, $fd        ;; 2d:7d62 ????????
-    db   $d1, $01, $68, $02, $d8, $c7, $16, $d2        ;; 2d:7d6a ????????
-    db   $01, $68, $02, $da, $c7, $0e, $d2, $01        ;; 2d:7d72 ????????
-    db   $1e, $d4, $6f, $1d, $1e, $3b, $72, $2d        ;; 2d:7d7a ????????
-    db   $1e, $0b, $70, $1d, $1e, $e8, $6a, $1d        ;; 2d:7d82 ????????
-    db   $04, $b2, $44, $39, $4c, $16, $ff, $04        ;; 2d:7d8a ????????
-    db   $00, $00, $00, $00, $56, $7b, $0f, $06        ;; 2d:7d92 ????????
-    db   $c0, $44, $39, $4a, $3e, $16, $56, $7b        ;; 2d:7d9a ????????
-    db   $0f, $9d, $7d, $2d, $4c, $16, $08, $02        ;; 2d:7da2 ????????
-    db   $00, $00, $00, $00, $21, $7c, $0f, $4a        ;; 2d:7daa ????????
-    db   $3e, $16, $21, $7c, $0f, $b1, $7d, $2d        ;; 2d:7db2 ????????
-    db   $06, $cb, $44, $39, $1e, $5d, $61, $04        ;; 2d:7dba ????????
-    db   $1e, $ed, $7c, $2d, $20, $e7, $d8, $e4        ;; 2d:7dc2 ????????
-    db   $13, $6f, $77, $01, $64, $69, $64, $01        ;; 2d:7dca ????????
-    db   $79, $6f, $75, $01, $67, $65, $74, $e4        ;; 2d:7dd2 ????????
-    db   $68, $65, $72, $65, $d9, $01, $e5, $22        ;; 2d:7dda ????????
-    db   $61, $73, $6e, $d0, $74, $01, $74, $68        ;; 2d:7de2 ????????
-    db   $65, $e4, $77, $61, $74, $65, $72, $01        ;; 2d:7dea ????????
-    db   $74, $6f, $6f, $01, $68, $69, $67, $68        ;; 2d:7df2 ????????
-    db   $01, $66, $6f, $72, $e4, $79, $6f, $75        ;; 2d:7dfa ????????
-    db   $01, $74, $6f, $01, $63, $72, $6f, $73        ;; 2d:7e02 ????????
-    db   $73, $d9, $e0, $ea, $13, $61, $6d, $68        ;; 2d:7e0a ????????
-    db   $61, $e8, $d8, $e0, $14, $74, $d0, $73        ;; 2d:7e12 ????????
-    db   $01, $6a, $75, $73, $74, $01, $6d, $65        ;; 2d:7e1a ????????
-    db   $01, $68, $65, $72, $65, $ca, $e0, $18        ;; 2d:7e22 ????????
-    db   $79, $01, $62, $72, $6f, $74, $68, $65        ;; 2d:7e2a ????????
-    db   $72, $d0, $73, $01, $69, $6e, $01, $61        ;; 2d:7e32 ????????
-    db   $e4, $00, $ea, $68, $75, $6c, $61, $68        ;; 2d:7e3a ????????
-    db   $75, $6c, $61, $e8, $01, $61, $67, $61        ;; 2d:7e42 ????????
-    db   $69, $6e, $d8, $01, $e5, $00, $14, $e4        ;; 2d:7e4a ????????
-    db   $68, $61, $76, $65, $01, $6e, $6f, $01        ;; 2d:7e52 ????????
-    db   $69, $64, $65, $61, $01, $77, $68, $65        ;; 2d:7e5a ????????
-    db   $72, $65, $e4, $68, $65, $01, $77, $65        ;; 2d:7e62 ????????
-    db   $6e, $74, $01, $74, $68, $69, $73, $01        ;; 2d:7e6a ????????
-    db   $74, $69, $6d, $65, $ca, $e3, $c7, $1e        ;; 2d:7e72 ????????
-    db   $69, $67, $68, $c7, $d1, $e0, $0f, $69        ;; 2d:7e7a ????????
-    db   $64, $01, $79, $6f, $75, $01, $6e, $65        ;; 2d:7e82 ????????
-    db   $65, $64, $01, $74, $6f, $e4, $74, $65        ;; 2d:7e8a ????????
-    db   $6c, $6c, $01, $6d, $65, $01, $73, $6f        ;; 2d:7e92 ????????
-    db   $6d, $65, $74, $68, $69, $6e, $67, $d9        ;; 2d:7e9a ????????
-    db   $e3, $1a, $68, $cf, $01, $77, $65, $d0        ;; 2d:7ea2 ????????
-    db   $72, $65, $01, $6d, $65, $65, $74, $69        ;; 2d:7eaa ????????
-    db   $6e, $67, $e4, $74, $68, $65, $01, $6f        ;; 2d:7eb2 ????????
-    db   $74, $68, $65, $72, $73, $01, $61, $74        ;; 2d:7eba ????????
-    db   $01, $74, $68, $65, $e4, $0e, $6c, $75        ;; 2d:7ec2 ????????
-    db   $62, $68, $6f, $75, $73, $65, $d9, $e3        ;; 2d:7eca ????????
-    db   $1a, $16, $cf, $01, $6c, $65, $74, $d0        ;; 2d:7ed2 ????????
-    db   $73, $01, $67, $6f, $ca, $e0, $22, $65        ;; 2d:7eda ????????
-    db   $01, $6e, $65, $65, $64, $01, $74, $6f        ;; 2d:7ee2 ????????
-    db   $01, $66, $69, $6e, $64, $e4, $6d, $79        ;; 2d:7eea ????????
-    db   $01, $62, $72, $6f, $74, $68, $65, $72        ;; 2d:7ef2 ????????
-    db   $cf, $01, $74, $68, $65, $6e, $ca, $e3        ;; 2d:7efa ????????
-    db   $e7, $cf, $e3, $68, $65, $6c, $70, $01        ;; 2d:7f02 ????????
-    db   $6d, $65, $01, $6c, $6f, $6f, $6b, $01        ;; 2d:7f0a ????????
-    db   $66, $6f, $72, $e4, $68, $69, $6d, $01        ;; 2d:7f12 ????????
-    db   $61, $72, $6f, $75, $6e, $64, $e4, $68        ;; 2d:7f1a ????????
-    db   $65, $72, $65, $ca, $e0, $14, $01, $64        ;; 2d:7f22 ????????
-    db   $69, $64, $6e, $d0, $74, $01, $6b, $6e        ;; 2d:7f2a ????????
-    db   $6f, $77, $01, $74, $68, $65, $e4, $70        ;; 2d:7f32 ????????
-    db   $6c, $75, $67, $cb, $69, $6e, $01, $77        ;; 2d:7f3a ????????
-    db   $61, $73, $01, $62, $65, $68, $69, $6e        ;; 2d:7f42 ????????
-    db   $64, $e4, $74, $68, $65, $01, $63, $6f        ;; 2d:7f4a ????????
-    db   $75, $6e, $74, $65, $72, $ca, $e0, $14        ;; 2d:7f52 ????????
-    db   $d0, $6d, $01, $67, $6c, $61, $64, $01        ;; 2d:7f5a ????????
-    db   $79, $6f, $75, $01, $74, $72, $69, $65        ;; 2d:7f62 ????????
-    db   $64, $e4, $61, $01, $ea, $74, $75, $67        ;; 2d:7f6a ????????
-    db   $67, $69, $65, $e8, $01, $6f, $6e, $01        ;; 2d:7f72 ????????
-    db   $74, $68, $65, $e4, $70, $6c, $75, $67        ;; 2d:7f7a ????????
-    db   $ca, $01, $e5, $0d, $75, $74, $01, $14        ;; 2d:7f82 ????????
-    db   $d0, $6d, $01, $67, $6f, $cb, $e4, $69        ;; 2d:7f8a ????????
-    db   $6e, $67, $01, $74, $6f, $01, $73, $74        ;; 2d:7f92 ????????
-    db   $61, $79, $01, $68, $65, $72, $65, $e4        ;; 2d:7f9a ????????
-    db   $66, $6f, $72, $01, $61, $01, $62, $69        ;; 2d:7fa2 ????????
-    db   $74, $01, $6c, $6f, $6e, $67, $65, $72        ;; 2d:7faa ????????
-    db   $dc, $e0, $e4, $00, $19, $6f, $74, $68        ;; 2d:7fb2 ????????
-    db   $69, $6e, $67, $01, $79, $65, $74, $ca        ;; 2d:7fba ????????
-    db   $00, $1e, $74, $69, $6c, $6c, $01, $6e        ;; 2d:7fc2 ????????
-    db   $6f, $74, $68, $69, $6e, $67, $ca, $00        ;; 2d:7fca ????????
-    db   $e0, $24, $6f, $75, $01, $6c, $65, $61        ;; 2d:7fd2 ????????
-    db   $72, $6e, $65, $64, $e4, $00, $e4, $eb        ;; 2d:7fda ????????
-    db   $ea, $68, $75, $6c, $61, $68, $75, $6c        ;; 2d:7fe2 ????????
-    db   $61, $e8, $ca, $00, $e0, $ff, $ff, $ff        ;; 2d:7fea ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 2d:7ff2 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff                  ;; 2d:7ffa ??????
+    db   $06, $21, $52, $39, $20                       ;; 2d:6512 ?????
+
+call_2d_6517:
+    Op50_WriteByte wBitArrayIndexC715, $00, $26        ;; 2d:6517 $50 $15 $c7 $00 $26
+    Op82_Run ObtainHamChatFromC715                     ;; 2d:651c $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 2d:6520 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6522 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6524 $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 2d:6527 $1c $02
+    SCRIPT_POINTER call_2d_60a9                        ;; 2d:6529 $a9 $60 $2d
+    SCRIPT_POINTER call_2d_652f                        ;; 2d:652c $2f $65 $2d
+
+call_2d_652f:
+    Op1E_Call call_20_483e                             ;; 2d:652f $1e $3e $48 $20
+    Op14_Unknown 1, $f2, $58                           ;; 2d:6533 $14 $01 $f2 $58
+    SCRIPT_POINTER call_2d_6011                        ;; 2d:6537 $11 $60 $2d
+    Op18_Jump call_2d_5ee9                             ;; 2d:653a $18 $e9 $5e $2d
+
+call_2d_653e:
+    Op50_WriteByte wBitArrayIndexC715, $00, $24        ;; 2d:653e $50 $15 $c7 $00 $24
+    Op82_Run ObtainHamChatFromC715                     ;; 2d:6543 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 2d:6547 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6549 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:654b $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 2d:654e $1c $02
+    SCRIPT_POINTER call_2d_60a9                        ;; 2d:6550 $a9 $60 $2d
+    SCRIPT_POINTER call_2d_6556                        ;; 2d:6553 $56 $65 $2d
+
+call_2d_6556:
+    Op1E_Call call_20_4a13                             ;; 2d:6556 $1e $13 $4a $20
+    Op14_Unknown 1, $f6, $58                           ;; 2d:655a $14 $01 $f6 $58
+    SCRIPT_POINTER call_2d_6011                        ;; 2d:655e $11 $60 $2d
+    Op18_Jump call_2d_5ee9                             ;; 2d:6561 $18 $e9 $5e $2d
+    Op1E_Call call_2d_65e6                             ;; 2d:6565 $1e $e6 $65 $2d
+    Op14_Unknown 1, $e2, $5b                           ;; 2d:6569 $14 $01 $e2 $5b
+    SCRIPT_POINTER call_2d_6574                        ;; 2d:656d $74 $65 $2d
+    Op1E_Call call_30_555f                             ;; 2d:6570 $1e $5f $55 $30
+
+call_2d_6574:
+    Op16_SubOps 1                                      ;; 2d:6574 $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:6576 $5e $03
+    Op82_Run data_01_73cc                              ;; 2d:6578 $82 $cc $73 $01
+    Op82_Run data_01_7416                              ;; 2d:657c $82 $16 $74 $01
+    db   $2a, $00, $00, $00, $1c, $09, $02, $69        ;; 2d:6580 ????????
+    db   $2d, $35, $69, $2d, $75, $69, $2d, $a8        ;; 2d:6588 ????????
+    db   $69, $2d, $db, $69, $2d, $39, $6a, $2d        ;; 2d:6590 ????????
+    db   $22, $6c, $2d, $86, $6c, $2d, $61, $70        ;; 2d:6598 ????????
+    db   $2d, $82, $b7, $74, $01, $1c, $03, $b4        ;; 2d:65a0 ????????
+    db   $65, $2d, $cb, $65, $2d, $42, $68, $2d        ;; 2d:65a8 ????????
+    db   $18, $74, $65, $2d, $1e, $f9, $68, $1d        ;; 2d:65b0 ????????
+    db   $14, $01, $5a, $5a, $74, $65, $2d, $1e        ;; 2d:65b8 ????????
+    db   $e6, $65, $2d, $82, $42, $74, $01, $18        ;; 2d:65c0 ????????
+    db   $74, $65, $2d, $1e, $f1, $69, $1d, $14        ;; 2d:65c8 ????????
+    db   $01, $5a, $5a, $74, $65, $2d, $16, $01        ;; 2d:65d0 ????????
+    db   $5e, $03, $1e, $e6, $65, $2d, $82, $42        ;; 2d:65d8 ????????
+    db   $74, $01, $18, $74, $65, $2d                  ;; 2d:65e0 ??????
+
+call_2d_65e6:
+    Op50_WriteByte wC720, $00, $12                     ;; 2d:65e6 $50 $20 $c7 $00 $12
+    Op82_Run data_01_6844                              ;; 2d:65eb $82 $44 $68 $01
+    SCRIPT_RETURN_4A                                   ;; 2d:65ef $4a
+    Op32_Unknown $ca, $71, $5f, $00, $d0, $05          ;; 2d:65f0 $32 $ca $71 $5f $00 $d0 $05
+    Op32_Unknown $30, $54, $61, $00, $d0, $07          ;; 2d:65f7 $32 $30 $54 $61 $00 $d0 $07
+    Op34_Unknown $d7, $7c, $72, $00, $d8, $05, $1e     ;; 2d:65fe $34 $d7 $7c $72 $00 $d8 $05 $1e
+    Op34_Unknown $47, $7d, $75, $00, $d8, $07, $1e     ;; 2d:6606 $34 $47 $7d $75 $00 $d8 $07 $1e
+    Op36_Unknown $ea, $54, $78, $00, $d0, $03          ;; 2d:660e $36 $ea $54 $78 $00 $d0 $03
+    Op32_Unknown $0d, $7d, $6d, $00, $d4, $06          ;; 2d:6615 $32 $0d $7d $6d $00 $d4 $06
+    Op32_Unknown $90, $4a, $78, $00, $d3, $04          ;; 2d:661c $32 $90 $4a $78 $00 $d3 $04
+    Op32_Unknown $40, $61, $72, $00, $d8, $04          ;; 2d:6623 $32 $40 $61 $72 $00 $d8 $04
+    Op32_Unknown $de, $72, $6d, $00, $d0, $06          ;; 2d:662a $32 $de $72 $6d $00 $d0 $06
+    Op14_Unknown 1, $95, $5c                           ;; 2d:6631 $14 $01 $95 $5c
+    SCRIPT_POINTER call_2d_664b                        ;; 2d:6635 $4b $66 $2d
+    Op34_Unknown $58, $66, $7f, $00, $d9, $07, $0c     ;; 2d:6638 $34 $58 $66 $7f $00 $d9 $07 $0c
+    Op36_Unknown $dd, $7f, $69, $c2, $d1, $03          ;; 2d:6640 $36 $dd $7f $69 $c2 $d1 $03
+    Op18_Jump call_2d_665a                             ;; 2d:6647 $18 $5a $66 $2d
+
+call_2d_664b:
+    Op34_Unknown $4c, $66, $7f, $00, $d9, $07, $0c     ;; 2d:664b $34 $4c $66 $7f $00 $d9 $07 $0c
+    Op36_Unknown $21, $7c, $7e, $c2, $d1, $03          ;; 2d:6653 $36 $21 $7c $7e $c2 $d1 $03
+
+call_2d_665a:
+    Op14_Unknown 1, $97, $5c                           ;; 2d:665a $14 $01 $97 $5c
+    SCRIPT_POINTER call_2d_6675                        ;; 2d:665e $75 $66 $2d
+    Op16_SubOps 1                                      ;; 2d:6661 $16 $01
+    SubOp_SetByte wC76C, $00                           ;; 2d:6663 $7e $54 $00
+    Op4C_Unknown $0c, $01, $04, $49, $00, $ac, $00, $4b, $51, $17 ;; 2d:6666 $4c $0c $01 $04 $49 $00 $ac $00 $4b $51 $17
+    Op18_Jump call_2d_6680                             ;; 2d:6671 $18 $80 $66 $2d
+
+call_2d_6675:
+    Op4C_Unknown $36, $01, $04, $50, $00, $90, $00, $57, $55, $17 ;; 2d:6675 $4c $36 $01 $04 $50 $00 $90 $00 $57 $55 $17
+
+call_2d_6680:
+    Op14_Unknown 1, $9b, $5c                           ;; 2d:6680 $14 $01 $9b $5c
+    SCRIPT_POINTER call_2d_66a8                        ;; 2d:6684 $a8 $66 $2d
+    Op14_Unknown 1, $9f, $5c                           ;; 2d:6687 $14 $01 $9f $5c
+    SCRIPT_POINTER call_2d_669d                        ;; 2d:668b $9d $66 $2d
+    Op4C_Unknown $1a, $01, $04, $48, $00, $60, $00, $7e, $40, $16 ;; 2d:668e $4c $1a $01 $04 $48 $00 $60 $00 $7e $40 $16
+    Op18_Jump call_2d_66a8                             ;; 2d:6699 $18 $a8 $66 $2d
+
+call_2d_669d:
+    Op4C_Unknown $1a, $01, $04, $48, $00, $60, $00, $7f, $49, $16 ;; 2d:669d $4c $1a $01 $04 $48 $00 $60 $00 $7f $49 $16
+
+call_2d_66a8:
+    Op16_SubOps 1                                      ;; 2d:66a8 $16 $01
+    SubOp_SetByte wC73D, $16                           ;; 2d:66aa $7e $25 $16
+    Op14_Unknown 1, $a1, $5c                           ;; 2d:66ad $14 $01 $a1 $5c
+    SCRIPT_POINTER call_2d_66d8                        ;; 2d:66b1 $d8 $66 $2d
+    Op14_Unknown 1, $c4, $5b                           ;; 2d:66b4 $14 $01 $c4 $5b
+    SCRIPT_POINTER call_2d_6705                        ;; 2d:66b8 $05 $67 $2d
+    Op14_Unknown 1, $a5, $5c                           ;; 2d:66bb $14 $01 $a5 $5c
+    SCRIPT_POINTER call_2d_670d                        ;; 2d:66bf $0d $67 $2d
+    Op14_Unknown 1, $34, $5b                           ;; 2d:66c2 $14 $01 $34 $5b
+    SCRIPT_POINTER call_2d_6715                        ;; 2d:66c6 $15 $67 $2d
+    Op4C_Unknown $16, $08, $02, $60, $00, $60, $00, $c2, $40, $10 ;; 2d:66c9 $4c $16 $08 $02 $60 $00 $60 $00 $c2 $40 $10
+    Op18_Jump call_2d_6719                             ;; 2d:66d4 $18 $19 $67 $2d
+
+call_2d_66d8:
+    Op14_Unknown 1, $95, $5c                           ;; 2d:66d8 $14 $01 $95 $5c
+    SCRIPT_POINTER call_2d_66e7                        ;; 2d:66dc $e7 $66 $2d
+    Op82_Run data_01_782b                              ;; 2d:66df $82 $2b $78 $01
+    Op18_Jump call_2d_6719                             ;; 2d:66e3 $18 $19 $67 $2d
+
+call_2d_66e7:
+    Op50_WriteByte w1_D215, $01, $80                   ;; 2d:66e7 $50 $15 $d2 $01 $80
+    Op50_WriteByte w1_D20D, $01, $80                   ;; 2d:66ec $50 $0d $d2 $01 $80
+    db   $6a, $00, $00, $d0, $ff, $4c, $16, $02        ;; 2d:66f1 ????????
+    db   $0c, $e8, $ff, $79, $00, $9b, $79, $10        ;; 2d:66f9 ????????
+    db   $18, $19, $67, $2d                            ;; 2d:6701 ????
+
+call_2d_6705:
+    Op82_Run data_01_782b                              ;; 2d:6705 $82 $2b $78 $01
+    Op18_Jump call_2d_6719                             ;; 2d:6709 $18 $19 $67 $2d
+
+call_2d_670d:
+    Op82_Run data_01_782b                              ;; 2d:670d $82 $2b $78 $01
+    Op18_Jump call_2d_6719                             ;; 2d:6711 $18 $19 $67 $2d
+
+call_2d_6715:
+    Op82_Run data_01_782b                              ;; 2d:6715 $82 $2b $78 $01
+
+call_2d_6719:
+    Op14_Unknown 1, $6e, $5a                           ;; 2d:6719 $14 $01 $6e $5a
+    SCRIPT_POINTER call_2d_6739                        ;; 2d:671d $39 $67 $2d
+    Op14_Unknown 1, $72, $5a                           ;; 2d:6720 $14 $01 $72 $5a
+    SCRIPT_POINTER call_2d_6748                        ;; 2d:6724 $48 $67 $2d
+    Op14_Unknown 1, $76, $5a                           ;; 2d:6727 $14 $01 $76 $5a
+    SCRIPT_POINTER call_2d_6757                        ;; 2d:672b $57 $67 $2d
+    Op14_Unknown 1, $7a, $5a                           ;; 2d:672e $14 $01 $7a $5a
+    SCRIPT_POINTER call_2d_6766                        ;; 2d:6732 $66 $67 $2d
+    Op18_Jump call_2d_67ae                             ;; 2d:6735 $18 $ae $67 $2d
+
+call_2d_6739:
+    Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $3d, $41, $10 ;; 2d:6739 $4c $16 $10 $ff $00 $00 $00 $00 $3d $41 $10
+    Op18_Jump call_2d_6775                             ;; 2d:6744 $18 $75 $67 $2d
+
+call_2d_6748:
+    Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, $c2, $40, $10 ;; 2d:6748 $4c $16 $08 $ff $00 $00 $00 $00 $c2 $40 $10
+    Op18_Jump call_2d_6775                             ;; 2d:6753 $18 $75 $67 $2d
+
+call_2d_6757:
+    Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, $81, $41, $10 ;; 2d:6757 $4c $16 $04 $ff $00 $00 $00 $00 $81 $41 $10
+    Op18_Jump call_2d_6775                             ;; 2d:6762 $18 $75 $67 $2d
+
+call_2d_6766:
+    Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, $c5, $41, $10 ;; 2d:6766 $4c $16 $02 $ff $00 $00 $00 $00 $c5 $41 $10
+    Op18_Jump call_2d_6775                             ;; 2d:6771 $18 $75 $67 $2d
+
+call_2d_6775:
+    Op80_CopyNBytes wC7D8, $00, w1_D216, $01, 2        ;; 2d:6775 $80 $d8 $c7 $00 $16 $d2 $01 $02 $00
+    Op80_CopyNBytes wC7DA, $00, w1_D20E, $01, 2        ;; 2d:677e $80 $da $c7 $00 $0e $d2 $01 $02 $00
+    Op50_WriteByte w1_D215, $01, $80                   ;; 2d:6787 $50 $15 $d2 $01 $80
+    Op50_WriteByte w1_D20D, $01, $80                   ;; 2d:678c $50 $0d $d2 $01 $80
+    Op14_Unknown 1, $64, $5b                           ;; 2d:6791 $14 $01 $64 $5b
+    SCRIPT_POINTER call_2d_67ae                        ;; 2d:6795 $ae $67 $2d
+    Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, $7e, $55, $10 ;; 2d:6798 $4c $16 $08 $ff $00 $00 $00 $00 $7e $55 $10
+    Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $01, $56, $10 ;; 2d:67a3 $4c $08 $01 $04 $00 $00 $00 $00 $01 $56 $10
+
+call_2d_67ae:
+    Op16_SubOps 1                                      ;; 2d:67ae $16 $01
+    SubOp_SetByte wC764, $ff                           ;; 2d:67b0 $7e $4c $ff
+    Op16_SubOps 1                                      ;; 2d:67b3 $16 $01
+    SubOp_SetWord wC7D8, $0000                         ;; 2d:67b5 $9e $c0 $00 $00
+    Op16_SubOps 1                                      ;; 2d:67b9 $16 $01
+    SubOp_SetWord wC7DA, $0000                         ;; 2d:67bb $9e $c2 $00 $00
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 2d:67bf $52 $94 $c6 $00 $00 $00
+    Op1E_Call call_04_6223                             ;; 2d:67c5 $1e $23 $62 $04
+    Op4E_Unknown_StoreValue 4, $01, $49, $40, $10      ;; 2d:67c9 $4e $04 $01 $49 $40 $10
+    Op4E_Unknown_StoreValue 5, $01, $7f, $40, $10      ;; 2d:67cf $4e $05 $01 $7f $40 $10
+    Op4E_Unknown_StoreValue 6, $01, $12, $40, $16      ;; 2d:67d5 $4e $06 $01 $12 $40 $16
+    Op4E_Unknown_StoreValue 7, $01, $7e, $40, $17      ;; 2d:67db $4e $07 $01 $7e $40 $17
+    Op4E_Unknown_StoreValue 8, $01, $0e, $41, $17      ;; 2d:67e1 $4e $08 $01 $0e $41 $17
+    Op4E_Unknown_StoreValue 9, $01, $fc, $40, $17      ;; 2d:67e7 $4e $09 $01 $fc $40 $17
+    Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 2d:67ed $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
+    Op14_Unknown 1, $7e, $5a                           ;; 2d:67f8 $14 $01 $7e $5a
+    SCRIPT_POINTER call_2d_6802                        ;; 2d:67fc $02 $68 $2d
+    Op44_Unknown $08, $00                              ;; 2d:67ff $44 $08 $00
+
+call_2d_6802:
+    Op1E_Call call_33_4d29                             ;; 2d:6802 $1e $29 $4d $33
+    Op3E_Compare_Branch 22, $9b, $79, $10, call_2d_6802 ;; 2d:6806 $3e $16 $9b $79 $10 $02 $68 $2d
+    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 2d:680e ????????
+    db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 2d:6816 ????????
+    db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 2d:681e ????????
+    db   $d0, $02, $fe, $16, $01, $7e, $39, $00        ;; 2d:6826 ????????
+    db   $16, $01, $7e, $0d, $32, $16, $01, $7e        ;; 2d:682e ????????
+    db   $12, $b0, $16, $01, $7f, $05, $00, $16        ;; 2d:6836 ????????
+    db   $01, $5e, $03, $20, $82, $16, $74, $01        ;; 2d:683e ????????
+    db   $1e, $1d, $6f, $1d, $10, $04, $f2, $59        ;; 2d:6846 ????????
+    db   $55, $5a, $1c, $04, $5e, $68, $2d, $7e        ;; 2d:684e ????????
+    db   $68, $2d, $9e, $68, $2d, $be, $68, $2d        ;; 2d:6856 ????????
+    db   $50, $15, $c7, $00, $00, $82, $d9, $6d        ;; 2d:685e ????????
+    db   $02, $16, $01, $3e, $03, $74, $5e, $c6        ;; 2d:6866 ????????
+    db   $1c, $02, $b4, $65, $2d, $76, $68, $2d        ;; 2d:686e ????????
+    db   $1e, $42, $40, $20, $18, $74, $65, $2d        ;; 2d:6876 ????????
+    db   $50, $15, $c7, $00, $01, $82, $d9, $6d        ;; 2d:687e ????????
+    db   $02, $16, $01, $3e, $03, $74, $5e, $c6        ;; 2d:6886 ????????
+    db   $1c, $02, $b4, $65, $2d, $96, $68, $2d        ;; 2d:688e ????????
+    db   $1e, $3a, $46, $20, $18, $74, $65, $2d        ;; 2d:6896 ????????
+    db   $50, $15, $c7, $00, $02, $82, $d9, $6d        ;; 2d:689e ????????
+    db   $02, $16, $01, $3e, $03, $74, $5e, $c6        ;; 2d:68a6 ????????
+    db   $1c, $02, $b4, $65, $2d, $b6, $68, $2d        ;; 2d:68ae ????????
+    db   $1e, $94, $42, $20, $18, $74, $65, $2d        ;; 2d:68b6 ????????
+    db   $50, $15, $c7, $00, $03, $82, $d9, $6d        ;; 2d:68be ????????
+    db   $02, $16, $01, $3e, $03, $74, $5e, $c6        ;; 2d:68c6 ????????
+    db   $1c, $02, $b4, $65, $2d, $d6, $68, $2d        ;; 2d:68ce ????????
+    db   $68, $01, $3b, $c7, $16, $d2, $01, $68        ;; 2d:68d6 ????????
+    db   $01, $1d, $c8, $0e, $d2, $01, $14, $01        ;; 2d:68de ????????
+    db   $a9, $5c, $f3, $68, $2d, $1e, $10, $43        ;; 2d:68e6 ????????
+    db   $20, $18, $74, $65, $2d, $14, $01, $ad        ;; 2d:68ee ????????
+    db   $5c, $eb, $68, $2d, $1e, $2b, $71, $2d        ;; 2d:68f6 ????????
+    db   $18, $74, $65, $2d, $50, $1d, $c3, $00        ;; 2d:68fe ????????
+    db   $d2, $82, $c3, $74, $01, $50, $1d, $c3        ;; 2d:6906 ????????
+    db   $00, $d0, $1c, $04, $b4, $65, $2d, $cb        ;; 2d:690e ????????
+    db   $65, $2d, $42, $68, $2d, $22, $69, $2d        ;; 2d:6916 ????????
+    db   $18, $74, $65, $2d, $16, $01, $5e, $c0        ;; 2d:691e ????????
+    db   $50, $fd, $d1, $01, $04, $82, $e1, $77        ;; 2d:6926 ????????
+    db   $01, $1e, $80, $78, $3b, $1a, $13, $50        ;; 2d:692e ????????
+    db   $1d, $c3, $00, $d1, $82, $c3, $74, $01        ;; 2d:6936 ????????
+    db   $1c, $04, $b4, $65, $2d, $cb, $65, $2d        ;; 2d:693e ????????
+    db   $63, $69, $2d, $50, $69, $2d, $18, $74        ;; 2d:6946 ????????
+    db   $65, $2d, $16, $01, $5e, $c0, $50, $fd        ;; 2d:694e ????????
+    db   $d1, $01, $02, $82, $e1, $77, $01, $1e        ;; 2d:6956 ????????
+    db   $80, $78, $3b, $1a, $0c, $68, $01, $3b        ;; 2d:695e ????????
+    db   $c7, $0e, $d2, $01, $14, $01, $b1, $5c        ;; 2d:6966 ????????
+    db   $22, $6c, $2d, $18, $db, $69, $2d, $50        ;; 2d:696e ????????
+    db   $1d, $c3, $00, $d8, $82, $c3, $74, $01        ;; 2d:6976 ????????
+    db   $50, $1d, $c3, $00, $d0, $1c, $04, $b4        ;; 2d:697e ????????
+    db   $65, $2d, $cb, $65, $2d, $42, $68, $2d        ;; 2d:6986 ????????
+    db   $95, $69, $2d, $18, $74, $65, $2d, $16        ;; 2d:698e ????????
+    db   $01, $5e, $c0, $50, $fd, $d1, $01, $10        ;; 2d:6996 ????????
+    db   $82, $e1, $77, $01, $1e, $80, $78, $3b        ;; 2d:699e ????????
+    db   $1a, $14, $50, $1d, $c3, $00, $d4, $82        ;; 2d:69a6 ????????
+    db   $c3, $74, $01, $50, $1d, $c3, $00, $d0        ;; 2d:69ae ????????
+    db   $1c, $04, $b4, $65, $2d, $cb, $65, $2d        ;; 2d:69b6 ????????
+    db   $42, $68, $2d, $c8, $69, $2d, $18, $74        ;; 2d:69be ????????
+    db   $65, $2d, $16, $01, $5e, $c0, $50, $fd        ;; 2d:69c6 ????????
+    db   $d1, $01, $08, $82, $e1, $77, $01, $1e        ;; 2d:69ce ????????
+    db   $80, $78, $3b, $1a, $01, $82, $b7, $74        ;; 2d:69d6 ????????
+    db   $01, $1c, $03, $b4, $65, $2d, $cb, $65        ;; 2d:69de ????????
+    db   $2d, $ee, $69, $2d, $18, $74, $65, $2d        ;; 2d:69e6 ????????
+    db   $82, $16, $74, $01, $1e, $1d, $6f, $1d        ;; 2d:69ee ????????
+    db   $10, $04, $f2, $59, $55, $5a, $1c, $04        ;; 2d:69f6 ????????
+    db   $5e, $68, $2d, $7e, $68, $2d, $9e, $68        ;; 2d:69fe ????????
+    db   $2d, $0a, $6a, $2d, $50, $15, $c7, $00        ;; 2d:6a06 ????????
+    db   $03, $82, $d9, $6d, $02, $16, $01, $3e        ;; 2d:6a0e ????????
+    db   $03, $74, $5e, $c6, $1c, $02, $b4, $65        ;; 2d:6a16 ????????
+    db   $2d, $22, $6a, $2d, $14, $01, $b6, $5c        ;; 2d:6a1e ????????
+    db   $be, $68, $2d, $16, $01, $3e, $c0, $1e        ;; 2d:6a26 ????????
+    db   $df, $43, $20, $1e, $16, $71, $1d, $18        ;; 2d:6a2e ????????
+    db   $74, $65, $2d, $68, $01, $3b, $c7, $16        ;; 2d:6a36 ????????
+    db   $d2, $01, $14, $01, $b8, $5c, $c5, $6a        ;; 2d:6a3e ????????
+    db   $2d, $50, $1d, $c3, $00, $08, $82, $c3        ;; 2d:6a46 ????????
+    db   $74, $01, $1c, $01, $59, $6a, $2d, $18        ;; 2d:6a4e ????????
+    db   $c5, $6a, $2d, $50, $1d, $c3, $00, $d0        ;; 2d:6a56 ????????
+    db   $14, $01, $96, $5b, $69, $6a, $2d, $18        ;; 2d:6a5e ????????
+    db   $74, $65, $2d, $16, $01, $3e, $e4, $4c        ;; 2d:6a66 ????????
+    db   $16, $10, $ff, $00, $00, $00, $00, $d4        ;; 2d:6a6e ????????
+    db   $77, $10, $34, $4c, $66, $7f, $00, $d9        ;; 2d:6a76 ????????
+    db   $07, $0c, $36, $21, $7c, $7e, $c2, $d1        ;; 2d:6a7e ????????
+    db   $03, $4a, $3e, $16, $d4, $77, $10, $87        ;; 2d:6a86 ????????
+    db   $6a, $2d, $14, $01, $9b, $5c, $74, $65        ;; 2d:6a8e ????????
+    db   $2d, $4a, $14, $01, $da, $5a, $97, $6a        ;; 2d:6a96 ????????
+    db   $2d, $1e, $13, $6c, $1d, $4c, $1a, $01        ;; 2d:6a9e ????????
+    db   $04, $48, $00, $60, $00, $d2, $40, $16        ;; 2d:6aa6 ????????
+    db   $04, $43, $7e, $39, $1e, $5d, $61, $04        ;; 2d:6aae ????????
+    db   $4c, $1a, $01, $04, $00, $00, $00, $00        ;; 2d:6ab6 ????????
+    db   $7e, $40, $16, $18, $74, $65, $2d, $50        ;; 2d:6abe ????????
+    db   $1d, $c3, $00, $d0, $82, $c3, $74, $01        ;; 2d:6ac6 ????????
+    db   $1c, $03, $b4, $65, $2d, $cb, $65, $2d        ;; 2d:6ace ????????
+    db   $dd, $6a, $2d, $18, $74, $65, $2d, $82        ;; 2d:6ad6 ????????
+    db   $16, $74, $01, $1e, $1d, $6f, $1d, $10        ;; 2d:6ade ????????
+    db   $04, $f2, $59, $55, $5a, $1c, $04, $f9        ;; 2d:6ae6 ????????
+    db   $6a, $2d, $7e, $68, $2d, $6c, $6b, $2d        ;; 2d:6aee ????????
+    db   $be, $68, $2d, $14, $01, $c6, $5c, $5e        ;; 2d:6af6 ????????
+    db   $68, $2d, $50, $15, $c7, $00, $00, $82        ;; 2d:6afe ????????
+    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:6b06 ????????
+    db   $5e, $c6, $1c, $02, $b4, $65, $2d, $18        ;; 2d:6b0e ????????
+    db   $6b, $2d, $1e, $42, $40, $20, $14, $01        ;; 2d:6b16 ????????
+    db   $ca, $5c, $74, $65, $2d, $16, $01, $7e        ;; 2d:6b1e ????????
+    db   $54, $02, $4c, $16, $10, $ff, $00, $00        ;; 2d:6b26 ????????
+    db   $00, $00, $87, $78, $17, $4c, $0c, $01        ;; 2d:6b2e ????????
+    db   $04, $00, $00, $00, $00, $f5, $52, $17        ;; 2d:6b36 ????????
+    db   $44, $68, $00, $4c, $16, $08, $ff, $00        ;; 2d:6b3e ????????
+    db   $00, $00, $00, $91, $79, $17, $44, $58        ;; 2d:6b46 ????????
+    db   $00, $4c, $16, $10, $ff, $00, $00, $00        ;; 2d:6b4e ????????
+    db   $00, $87, $78, $17, $4a, $3e, $0c, $f5        ;; 2d:6b56 ????????
+    db   $52, $17, $5a, $6b, $2d, $16, $01, $7e        ;; 2d:6b5e ????????
+    db   $54, $00, $18, $74, $65, $2d, $50, $15        ;; 2d:6b66 ????????
+    db   $c7, $00, $02, $82, $d9, $6d, $02, $16        ;; 2d:6b6e ????????
+    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:6b76 ????????
+    db   $b4, $65, $2d, $84, $6b, $2d, $14, $01        ;; 2d:6b7e ????????
+    db   $97, $5c, $c5, $6b, $2d, $16, $01, $7e        ;; 2d:6b86 ????????
+    db   $54, $01, $1e, $bf, $42, $20, $4c, $0c        ;; 2d:6b8e ????????
+    db   $01, $04, $00, $00, $00, $00, $52, $51        ;; 2d:6b96 ????????
+    db   $17, $4c, $36, $01, $04, $50, $00, $90        ;; 2d:6b9e ????????
+    db   $00, $5e, $55, $17, $44, $90, $00, $4a        ;; 2d:6ba6 ????????
+    db   $3e, $16, $35, $5b, $10, $ad, $6b, $2d        ;; 2d:6bae ????????
+    db   $4c, $16, $ff, $02, $00, $00, $00, $00        ;; 2d:6bb6 ????????
+    db   $00, $00, $00, $18, $74, $65, $2d, $1e        ;; 2d:6bbe ????????
+    db   $cd, $6a, $1d, $4e, $04, $01, $73, $40        ;; 2d:6bc6 ????????
+    db   $10, $42, $03, $00, $00, $40, $10, $4c        ;; 2d:6bce ????????
+    db   $16, $10, $04, $00, $00, $00, $00, $9b        ;; 2d:6bd6 ????????
+    db   $5a, $10, $4c, $08, $01, $04, $00, $00        ;; 2d:6bde ????????
+    db   $00, $00, $ee, $5b, $10, $04, $46, $7e        ;; 2d:6be6 ????????
+    db   $39, $44, $1c, $00, $4c, $36, $01, $04        ;; 2d:6bee ????????
+    db   $50, $00, $90, $00, $8a, $55, $17, $1e        ;; 2d:6bf6 ????????
+    db   $5d, $61, $04, $4a, $3e, $16, $9b, $5a        ;; 2d:6bfe ????????
+    db   $10, $01, $6c, $2d, $4a, $3e, $16, $35        ;; 2d:6c06 ????????
+    db   $5b, $10, $0a, $6c, $2d, $4c, $16, $ff        ;; 2d:6c0e ????????
+    db   $02, $00, $00, $00, $00, $00, $00, $00        ;; 2d:6c16 ????????
+    db   $18, $74, $65, $2d, $82, $b7, $74, $01        ;; 2d:6c1e ????????
+    db   $1c, $03, $b4, $65, $2d, $cb, $65, $2d        ;; 2d:6c26 ????????
+    db   $35, $6c, $2d, $18, $74, $65, $2d, $82        ;; 2d:6c2e ????????
+    db   $16, $74, $01, $1e, $1d, $6f, $1d, $10        ;; 2d:6c36 ????????
+    db   $04, $f2, $59, $55, $5a, $1c, $04, $5e        ;; 2d:6c3e ????????
+    db   $68, $2d, $7e, $68, $2d, $51, $6c, $2d        ;; 2d:6c46 ????????
+    db   $be, $68, $2d, $50, $15, $c7, $00, $02        ;; 2d:6c4e ????????
+    db   $82, $d9, $6d, $02, $16, $01, $3e, $03        ;; 2d:6c56 ????????
+    db   $74, $5e, $c6, $1c, $02, $b4, $65, $2d        ;; 2d:6c5e ????????
+    db   $69, $6c, $2d, $68, $01, $3b, $c7, $16        ;; 2d:6c66 ????????
+    db   $d2, $01, $14, $01, $aa, $5a, $7e, $6c        ;; 2d:6c6e ????????
+    db   $2d, $14, $01, $97, $5c, $c5, $6b, $2d        ;; 2d:6c76 ????????
+    db   $1e, $f7, $42, $20, $18, $74, $65, $2d        ;; 2d:6c7e ????????
+    db   $68, $01, $1d, $c8, $16, $d2, $01, $14        ;; 2d:6c86 ????????
+    db   $01, $ce, $5c, $af, $6c, $2d, $50, $1d        ;; 2d:6c8e ????????
+    db   $c3, $00, $0f, $82, $c3, $74, $01, $1c        ;; 2d:6c96 ????????
+    db   $04, $0c, $71, $2d, $1b, $71, $2d, $18        ;; 2d:6c9e ????????
+    db   $6d, $2d, $3a, $6d, $2d, $18, $7a, $6d        ;; 2d:6ca6 ????????
+    db   $2d, $50, $1d, $c3, $00, $0f, $82, $c3        ;; 2d:6cae ????????
+    db   $74, $01, $1c, $04, $0c, $71, $2d, $ca        ;; 2d:6cb6 ????????
+    db   $6c, $2d, $18, $6d, $2d, $3a, $6d, $2d        ;; 2d:6cbe ????????
+    db   $18, $7a, $6d, $2d, $50, $1d, $c3, $00        ;; 2d:6cc6 ????????
+    db   $d0, $14, $01, $d2, $5c, $74, $65, $2d        ;; 2d:6cce ????????
+    db   $16, $01, $5e, $e4, $50, $1d, $c3, $00        ;; 2d:6cd6 ????????
+    db   $d0, $4c, $16, $10, $02, $00, $00, $00        ;; 2d:6cde ????????
+    db   $00, $90, $78, $10, $34, $58, $66, $7f        ;; 2d:6ce6 ????????
+    db   $00, $d9, $07, $0c, $36, $dd, $7f, $69        ;; 2d:6cee ????????
+    db   $c2, $d1, $03, $4a, $3e, $16, $90, $78        ;; 2d:6cf6 ????????
+    db   $10, $f9, $6c, $2d, $14, $01, $9b, $5c        ;; 2d:6cfe ????????
+    db   $74, $65, $2d, $4c, $1a, $01, $04, $48        ;; 2d:6d06 ????????
+    db   $00, $60, $00, $7f, $49, $16, $18, $74        ;; 2d:6d0e ????????
+    db   $65, $2d, $50, $1d, $c3, $00, $d0, $4c        ;; 2d:6d16 ????????
+    db   $16, $04, $16, $00, $00, $00, $00, $5e        ;; 2d:6d1e ????????
+    db   $79, $10, $4a, $3e, $16, $5e, $79, $10        ;; 2d:6d26 ????????
+    db   $28, $6d, $2d, $50, $ff, $d1, $01, $02        ;; 2d:6d2e ????????
+    db   $18, $74, $65, $2d, $50, $1d, $c3, $00        ;; 2d:6d36 ????????
+    db   $d0, $68, $01, $1d, $c8, $16, $d2, $01        ;; 2d:6d3e ????????
+    db   $14, $01, $da, $5c, $5d, $6d, $2d, $4c        ;; 2d:6d46 ????????
+    db   $16, $02, $16, $00, $00, $00, $00, $c5        ;; 2d:6d4e ????????
+    db   $41, $10, $4a, $18, $74, $65, $2d, $4c        ;; 2d:6d56 ????????
+    db   $16, $02, $16, $00, $00, $00, $00, $9b        ;; 2d:6d5e ????????
+    db   $79, $10, $4a, $3e, $16, $9b, $79, $10        ;; 2d:6d66 ????????
+    db   $68, $6d, $2d, $50, $ff, $d1, $01, $02        ;; 2d:6d6e ????????
+    db   $18, $74, $65, $2d, $50, $1d, $c3, $00        ;; 2d:6d76 ????????
+    db   $d0, $82, $c3, $74, $01, $1c, $03, $b4        ;; 2d:6d7e ????????
+    db   $65, $2d, $cb, $65, $2d, $92, $6d, $2d        ;; 2d:6d86 ????????
+    db   $18, $74, $65, $2d, $14, $01, $9b, $5c        ;; 2d:6d8e ????????
+    db   $1f, $70, $2d, $14, $01, $de, $5c, $1f        ;; 2d:6d96 ????????
+    db   $70, $2d, $82, $16, $74, $01, $1e, $1d        ;; 2d:6d9e ????????
+    db   $6f, $1d, $10, $04, $f2, $59, $55, $5a        ;; 2d:6da6 ????????
+    db   $1c, $04, $bc, $6d, $2d, $a6, $6e, $2d        ;; 2d:6dae ????????
+    db   $08, $6f, $2d, $c8, $6f, $2d, $50, $15        ;; 2d:6db6 ????????
+    db   $c7, $00, $00, $82, $d9, $6d, $02, $16        ;; 2d:6dbe ????????
+    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:6dc6 ????????
+    db   $b4, $65, $2d, $d4, $6d, $2d, $14, $01        ;; 2d:6dce ????????
+    db   $ec, $5c, $66, $6e, $2d, $16, $01, $7e        ;; 2d:6dd6 ????????
+    db   $55, $02, $4c, $1a, $01, $04, $00, $00        ;; 2d:6dde ????????
+    db   $00, $00, $c2, $40, $16, $1e, $42, $40        ;; 2d:6de6 ????????
+    db   $20, $1e, $13, $6c, $1d, $4c, $16, $10        ;; 2d:6dee ????????
+    db   $ff, $00, $00, $00, $00, $35, $42, $10        ;; 2d:6df6 ????????
+    db   $4c, $1a, $ff, $ff, $00, $00, $00, $00        ;; 2d:6dfe ????????
+    db   $40, $45, $16, $04, $51, $7e, $39, $4a        ;; 2d:6e06 ????????
+    db   $3e, $1a, $40, $45, $16, $0d, $6e, $2d        ;; 2d:6e0e ????????
+    db   $4c, $1a, $01, $04, $00, $00, $00, $00        ;; 2d:6e16 ????????
+    db   $e7, $40, $16, $06, $5b, $7e, $39, $92        ;; 2d:6e1e ????????
+    db   $00, $4c, $1a, $01, $04, $00, $00, $00        ;; 2d:6e26 ????????
+    db   $00, $46, $4a, $16, $4a, $14, $01, $da        ;; 2d:6e2e ????????
+    db   $5a, $32, $6e, $2d, $4c, $1a, $01, $04        ;; 2d:6e36 ????????
+    db   $00, $00, $00, $00, $e7, $40, $16, $16        ;; 2d:6e3e ????????
+    db   $01, $7e, $36, $00, $1e, $13, $6c, $1d        ;; 2d:6e46 ????????
+    db   $04, $81, $7e, $39, $92, $00, $4c, $1a        ;; 2d:6e4e ????????
+    db   $01, $04, $00, $00, $00, $00, $11, $4b        ;; 2d:6e56 ????????
+    db   $16, $44, $3c, $00, $18, $74, $65, $2d        ;; 2d:6e5e ????????
+    db   $4c, $1a, $01, $04, $00, $00, $00, $00        ;; 2d:6e66 ????????
+    db   $c2, $40, $16, $1e, $42, $40, $20, $1e        ;; 2d:6e6e ????????
+    db   $13, $6c, $1d, $4c, $16, $10, $ff, $00        ;; 2d:6e76 ????????
+    db   $00, $00, $00, $35, $42, $10, $4c, $1a        ;; 2d:6e7e ????????
+    db   $ff, $ff, $00, $00, $00, $00, $40, $45        ;; 2d:6e86 ????????
+    db   $16, $04, $9d, $7e, $39, $4a, $3e, $1a        ;; 2d:6e8e ????????
+    db   $40, $45, $16, $93, $6e, $2d, $06, $a7        ;; 2d:6e96 ????????
+    db   $7e, $39, $92, $00, $18, $74, $65, $2d        ;; 2d:6e9e ????????
+    db   $50, $15, $c7, $00, $01, $82, $d9, $6d        ;; 2d:6ea6 ????????
+    db   $02, $16, $01, $3e, $03, $74, $5e, $c6        ;; 2d:6eae ????????
+    db   $1c, $02, $b4, $65, $2d, $be, $6e, $2d        ;; 2d:6eb6 ????????
+    db   $14, $01, $f0, $5c, $ca, $6e, $2d, $16        ;; 2d:6ebe ????????
+    db   $01, $7e, $55, $01, $4c, $1a, $01, $04        ;; 2d:6ec6 ????????
+    db   $00, $00, $00, $00, $c2, $40, $16, $1e        ;; 2d:6ece ????????
+    db   $96, $46, $20, $4c, $16, $10, $ff, $00        ;; 2d:6ed6 ????????
+    db   $00, $00, $00, $35, $42, $10, $4c, $1a        ;; 2d:6ede ????????
+    db   $ff, $ff, $00, $00, $00, $00, $d2, $46        ;; 2d:6ee6 ????????
+    db   $16, $1e, $13, $6c, $1d, $04, $bd, $7e        ;; 2d:6eee ????????
+    db   $39, $92, $00, $4c, $1a, $01, $04, $00        ;; 2d:6ef6 ????????
+    db   $00, $00, $00, $7e, $40, $16, $18, $74        ;; 2d:6efe ????????
+    db   $65, $2d, $50, $15, $c7, $00, $02, $82        ;; 2d:6f06 ????????
+    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:6f0e ????????
+    db   $5e, $c6, $1c, $02, $b4, $65, $2d, $20        ;; 2d:6f16 ????????
+    db   $6f, $2d, $14, $01, $f0, $5c, $2c, $6f        ;; 2d:6f1e ????????
+    db   $2d, $16, $01, $7e, $55, $01, $1e, $e8        ;; 2d:6f26 ????????
+    db   $6a, $1d, $04, $e0, $7e, $39, $92, $00        ;; 2d:6f2e ????????
+    db   $18, $74, $65, $2d, $1e, $cd, $6a, $1d        ;; 2d:6f36 ????????
+    db   $4e, $04, $01, $73, $40, $10, $42, $03        ;; 2d:6f3e ????????
+    db   $00, $00, $40, $10, $4c, $16, $10, $04        ;; 2d:6f46 ????????
+    db   $00, $00, $00, $00, $9b, $5a, $10, $4c        ;; 2d:6f4e ????????
+    db   $08, $01, $04, $00, $00, $00, $00, $ee        ;; 2d:6f56 ????????
+    db   $5b, $10, $04, $00, $7f, $39, $4a, $3e        ;; 2d:6f5e ????????
+    db   $16, $9b, $5a, $10, $64, $6f, $2d, $4c        ;; 2d:6f66 ????????
+    db   $1a, $ff, $ff, $00, $00, $00, $00, $f4        ;; 2d:6f6e ????????
+    db   $45, $16, $1e, $13, $6c, $1d, $04, $0b        ;; 2d:6f76 ????????
+    db   $7f, $39, $44, $10, $00, $06, $12, $7f        ;; 2d:6f7e ????????
+    db   $39, $4a, $3e, $16, $35, $5b, $10, $87        ;; 2d:6f86 ????????
+    db   $6f, $2d, $06, $24, $7f, $39, $4c, $1a        ;; 2d:6f8e ????????
+    db   $ff, $ff, $00, $00, $00, $00, $2b, $46        ;; 2d:6f96 ????????
+    db   $16, $4a, $3e, $1a, $2b, $46, $16, $9f        ;; 2d:6f9e ????????
+    db   $6f, $2d, $04, $25, $7f, $39, $92, $00        ;; 2d:6fa6 ????????
+    db   $4c, $1a, $01, $04, $00, $00, $00, $00        ;; 2d:6fae ????????
+    db   $7e, $40, $16, $4c, $16, $ff, $02, $00        ;; 2d:6fb6 ????????
+    db   $00, $00, $00, $00, $00, $00, $18, $74        ;; 2d:6fbe ????????
+    db   $65, $2d, $50, $15, $c7, $00, $03, $82        ;; 2d:6fc6 ????????
+    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:6fce ????????
+    db   $5e, $c6, $1c, $02, $b4, $65, $2d, $e0        ;; 2d:6fd6 ????????
+    db   $6f, $2d, $14, $01, $f0, $5c, $ec, $6f        ;; 2d:6fde ????????
+    db   $2d, $16, $01, $7e, $55, $01, $4c, $1a        ;; 2d:6fe6 ????????
+    db   $01, $04, $00, $00, $00, $00, $d2, $40        ;; 2d:6fee ????????
+    db   $16, $1e, $10, $43, $20, $4c, $16, $10        ;; 2d:6ff6 ????????
+    db   $ff, $00, $00, $00, $00, $35, $42, $10        ;; 2d:6ffe ????????
+    db   $1e, $13, $6c, $1d, $04, $3e, $7f, $39        ;; 2d:7006 ????????
+    db   $92, $00, $4c, $1a, $01, $04, $00, $00        ;; 2d:700e ????????
+    db   $00, $00, $7e, $40, $16, $18, $74, $65        ;; 2d:7016 ????????
+    db   $2d, $82, $16, $74, $01, $1e, $1d, $6f        ;; 2d:701e ????????
+    db   $1d, $10, $04, $f2, $59, $55, $5a, $1c        ;; 2d:7026 ????????
+    db   $04, $5e, $68, $2d, $7e, $68, $2d, $3b        ;; 2d:702e ????????
+    db   $70, $2d, $be, $68, $2d, $50, $15, $c7        ;; 2d:7036 ????????
+    db   $00, $02, $82, $d9, $6d, $02, $16, $01        ;; 2d:703e ????????
+    db   $3e, $03, $74, $5e, $c6, $1c, $02, $b4        ;; 2d:7046 ????????
+    db   $65, $2d, $53, $70, $2d, $1e, $e8, $6a        ;; 2d:704e ????????
+    db   $1d, $04, $61, $7f, $39, $92, $00, $18        ;; 2d:7056 ????????
+    db   $74, $65, $2d, $50, $1d, $c3, $00, $0f        ;; 2d:705e ????????
+    db   $82, $c3, $74, $01, $1c, $04, $0c, $71        ;; 2d:7066 ????????
+    db   $2d, $1b, $71, $2d, $7c, $70, $2d, $90        ;; 2d:706e ????????
+    db   $70, $2d, $18, $b2, $70, $2d, $4c, $16        ;; 2d:7076 ????????
+    db   $04, $16, $00, $00, $00, $00, $5e, $79        ;; 2d:707e ????????
+    db   $10, $44, $01, $00, $1e, $80, $78, $3b        ;; 2d:7086 ????????
+    db   $1a, $13, $50, $1d, $c3, $00, $d0, $4c        ;; 2d:708e ????????
+    db   $16, $02, $16, $00, $00, $00, $00, $9b        ;; 2d:7096 ????????
+    db   $79, $10, $4a, $3e, $16, $9b, $79, $10        ;; 2d:709e ????????
+    db   $a0, $70, $2d, $50, $ff, $d1, $01, $02        ;; 2d:70a6 ????????
+    db   $18, $74, $65, $2d, $50, $1d, $c3, $00        ;; 2d:70ae ????????
+    db   $d0, $82, $c3, $74, $01, $1c, $03, $b4        ;; 2d:70b6 ????????
+    db   $65, $2d, $cb, $65, $2d, $ca, $70, $2d        ;; 2d:70be ????????
+    db   $18, $74, $65, $2d, $82, $16, $74, $01        ;; 2d:70c6 ????????
+    db   $1e, $1d, $6f, $1d, $10, $04, $f2, $59        ;; 2d:70ce ????????
+    db   $55, $5a, $1c, $04, $5e, $68, $2d, $7e        ;; 2d:70d6 ????????
+    db   $68, $2d, $e6, $70, $2d, $be, $68, $2d        ;; 2d:70de ????????
+    db   $50, $15, $c7, $00, $02, $82, $d9, $6d        ;; 2d:70e6 ????????
+    db   $02, $16, $01, $3e, $03, $74, $5e, $c6        ;; 2d:70ee ????????
+    db   $1c, $02, $b4, $65, $2d, $fe, $70, $2d        ;; 2d:70f6 ????????
+    db   $1e, $e8, $6a, $1d, $04, $81, $7f, $39        ;; 2d:70fe ????????
+    db   $92, $00, $18, $74, $65, $2d, $4c, $16        ;; 2d:7106 ????????
+    db   $10, $16, $00, $00, $00, $00, $3d, $41        ;; 2d:710e ????????
+    db   $10, $18, $26, $71, $2d, $4c, $16, $08        ;; 2d:7116 ????????
+    db   $16, $00, $00, $00, $00, $c2, $40, $10        ;; 2d:711e ????????
+    db   $4a, $18, $74, $65, $2d, $1e, $cd, $6a        ;; 2d:7126 ????????
+    db   $1d, $4e, $04, $01, $61, $40, $10, $4c        ;; 2d:712e ????????
+    db   $16, $08, $04, $00, $00, $00, $00, $bc        ;; 2d:7136 ????????
+    db   $5c, $10, $4c, $08, $01, $04, $00, $00        ;; 2d:713e ????????
+    db   $00, $00, $9f, $5f, $10, $04, $a1, $7f        ;; 2d:7146 ????????
+    db   $39, $4a, $3e, $16, $bc, $5c, $10, $4f        ;; 2d:714e ????????
+    db   $71, $2d, $1e, $5d, $61, $04, $1e, $cd        ;; 2d:7156 ????????
+    db   $6a, $1d, $04, $ac, $7f, $39, $4a, $3e        ;; 2d:715e ????????
+    db   $16, $fe, $5c, $10, $64, $71, $2d, $1e        ;; 2d:7166 ????????
+    db   $5d, $61, $04, $4e, $04, $01, $67, $40        ;; 2d:716e ????????
+    db   $10, $4c, $08, $01, $04, $00, $00, $00        ;; 2d:7176 ????????
+    db   $00, $a6, $5d, $10, $4a, $3e, $16, $2c        ;; 2d:717e ????????
+    db   $5d, $10, $82, $71, $2d, $4c, $16, $ff        ;; 2d:7186 ????????
+    db   $02, $00, $00, $00, $00, $00, $00, $00        ;; 2d:718e ????????
+    db   $20, $1e, $ee, $63, $3a, $1e, $21, $72        ;; 2d:7196 ????????
+    db   $2d, $1e, $3b, $72, $2d, $16, $01, $5e        ;; 2d:719e ????????
+    db   $03, $82, $cc, $73, $01, $82, $16, $74        ;; 2d:71a6 ????????
+    db   $01, $2a, $00, $00, $00, $68, $01, $1b        ;; 2d:71ae ????????
+    db   $c8, $3a, $c5, $00, $1c, $09, $76, $74        ;; 2d:71b6 ????????
+    db   $2d, $43, $74, $2d, $ab, $74, $2d, $76        ;; 2d:71be ????????
+    db   $74, $2d, $ff, $74, $2d, $0a, $78, $2d        ;; 2d:71c6 ????????
+    db   $a4, $78, $2d, $a4, $78, $2d, $a4, $78        ;; 2d:71ce ????????
+    db   $2d, $50, $1d, $c3, $00, $d0, $82, $c3        ;; 2d:71d6 ????????
+    db   $74, $01, $1c, $03, $ef, $71, $2d, $06        ;; 2d:71de ????????
+    db   $72, $2d, $a7, $73, $2d, $18, $a3, $71        ;; 2d:71e6 ????????
+    db   $2d, $1e, $f9, $68, $1d, $14, $01, $aa        ;; 2d:71ee ????????
+    db   $73, $a3, $71, $2d, $1e, $3b, $72, $2d        ;; 2d:71f6 ????????
+    db   $82, $42, $74, $01, $18, $a3, $71, $2d        ;; 2d:71fe ????????
+    db   $1e, $f1, $69, $1d, $14, $01, $aa, $73        ;; 2d:7206 ????????
+    db   $a3, $71, $2d, $16, $01, $5e, $03, $1e        ;; 2d:720e ????????
+    db   $3b, $72, $2d, $82, $42, $74, $01, $18        ;; 2d:7216 ????????
+    db   $a3, $71, $2d, $14, $01, $30, $74, $35        ;; 2d:721e ????????
+    db   $72, $2d, $16, $01, $7f, $02, $00, $16        ;; 2d:7226 ????????
+    db   $01, $5f, $80, $16, $01, $5f, $81, $16        ;; 2d:722e ????????
+    db   $01, $7f, $03, $00, $20, $50, $20, $c7        ;; 2d:7236 ????????
+    db   $00, $17, $82, $44, $68, $01, $4a, $32        ;; 2d:723e ????????
+    db   $9a, $55, $69, $00, $d0, $05, $32, $66        ;; 2d:7246 ????????
+    db   $50, $76, $60, $de, $04, $32, $37, $6b        ;; 2d:724e ????????
+    db   $64, $00, $d0, $07, $34, $37, $77, $73        ;; 2d:7256 ????????
+    db   $00, $d8, $05, $1e, $34, $81, $5d, $77        ;; 2d:725e ????????
+    db   $00, $d8, $07, $1e, $36, $9c, $58, $7c        ;; 2d:7266 ????????
+    db   $00, $d0, $03, $32, $0d, $7d, $6d, $00        ;; 2d:726e ????????
+    db   $d4, $06, $32, $de, $72, $6d, $00, $d0        ;; 2d:7276 ????????
+    db   $06, $14, $01, $34, $74, $9c, $72, $2d        ;; 2d:727e ????????
+    db   $14, $01, $38, $74, $ab, $72, $2d, $4c        ;; 2d:7286 ????????
+    db   $1a, $01, $04, $78, $00, $72, $00, $ad        ;; 2d:728e ????????
+    db   $45, $13, $18, $ba, $72, $2d, $4c, $1a        ;; 2d:7296 ????????
+    db   $01, $04, $78, $00, $72, $00, $7d, $46        ;; 2d:729e ????????
+    db   $13, $18, $ba, $72, $2d, $4c, $1a, $01        ;; 2d:72a6 ????????
+    db   $04, $60, $00, $90, $00, $c1, $47, $13        ;; 2d:72ae ????????
+    db   $1e, $ed, $7c, $2d, $16, $01, $7e, $25        ;; 2d:72b6 ????????
+    db   $2b, $14, $01, $b2, $73, $dc, $72, $2d        ;; 2d:72be ????????
+    db   $14, $01, $3c, $74, $eb, $72, $2d, $4c        ;; 2d:72c6 ????????
+    db   $16, $08, $02, $48, $00, $a8, $00, $c2        ;; 2d:72ce ????????
+    db   $40, $10, $18, $ef, $72, $2d, $4c, $16        ;; 2d:72d6 ????????
+    db   $02, $02, $f8, $ff, $90, $00, $9c, $5e        ;; 2d:72de ????????
+    db   $12, $18, $ef, $72, $2d, $82, $2b, $78        ;; 2d:72e6 ????????
+    db   $01, $1e, $3a, $59, $34, $14, $01, $40        ;; 2d:72ee ????????
+    db   $74, $1e, $73, $2d, $14, $01, $4c, $74        ;; 2d:72f6 ????????
+    db   $1e, $73, $2d, $4c, $1a, $01, $04, $60        ;; 2d:72fe ????????
+    db   $00, $90, $00, $cc, $41, $13, $14, $01        ;; 2d:7306 ????????
+    db   $4e, $74, $1e, $73, $2d, $4c, $10, $01        ;; 2d:730e ????????
+    db   $04, $60, $00, $90, $00, $91, $67, $1a        ;; 2d:7316 ????????
+    db   $1e, $d0, $59, $34, $44, $04, $00, $1e        ;; 2d:731e ????????
+    db   $23, $62, $04, $4e, $04, $01, $49, $40        ;; 2d:7326 ????????
+    db   $10, $4e, $05, $01, $dd, $6a, $1a, $4e        ;; 2d:732e ????????
+    db   $06, $01, $c6, $40, $13, $4e, $07, $01        ;; 2d:7336 ????????
+    db   $7f, $40, $10, $14, $01, $4e, $74, $52        ;; 2d:733e ????????
+    db   $73, $2d, $4e, $08, $01, $06, $62, $15        ;; 2d:7346 ????????
+    db   $18, $58, $73, $2d, $4e, $08, $01, $3c        ;; 2d:734e ????????
+    db   $62, $15, $3a, $00, $00, $a0, $90, $50        ;; 2d:7356 ????????
+    db   $48, $f0, $00, $f0, $00, $14, $01, $50        ;; 2d:735e ????????
+    db   $74, $6d, $73, $2d, $44, $08, $00, $4a        ;; 2d:7366 ????????
+    db   $3e, $16, $9c, $5e, $12, $6d, $73, $2d        ;; 2d:736e ????????
+    db   $3e, $16, $9b, $46, $10, $6d, $73, $2d        ;; 2d:7376 ????????
+    db   $3e, $16, $f3, $46, $10, $6d, $73, $2d        ;; 2d:737e ????????
+    db   $1e, $1e, $59, $34, $16, $01, $5e, $03        ;; 2d:7386 ????????
+    db   $16, $01, $7e, $39, $00, $16, $01, $7e        ;; 2d:738e ????????
+    db   $0d, $14, $16, $01, $7e, $12, $b0, $16        ;; 2d:7396 ????????
+    db   $01, $7f, $1c, $00, $16, $01, $5f, $94        ;; 2d:739e ????????
+    db   $20, $82, $16, $74, $01, $1e, $1d, $6f        ;; 2d:73a6 ????????
+    db   $1d, $10, $04, $3f, $73, $a2, $73, $1c        ;; 2d:73ae ????????
+    db   $04, $c3, $73, $2d, $e3, $73, $2d, $03        ;; 2d:73b6 ????????
+    db   $74, $2d, $23, $74, $2d, $50, $15, $c7        ;; 2d:73be ????????
+    db   $00, $00, $82, $d9, $6d, $02, $16, $01        ;; 2d:73c6 ????????
+    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:73ce ????????
+    db   $71, $2d, $db, $73, $2d, $1e, $42, $40        ;; 2d:73d6 ????????
+    db   $20, $18, $a3, $71, $2d, $50, $15, $c7        ;; 2d:73de ????????
+    db   $00, $01, $82, $d9, $6d, $02, $16, $01        ;; 2d:73e6 ????????
+    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:73ee ????????
+    db   $71, $2d, $fb, $73, $2d, $1e, $3a, $46        ;; 2d:73f6 ????????
+    db   $20, $18, $a3, $71, $2d, $50, $15, $c7        ;; 2d:73fe ????????
+    db   $00, $02, $82, $d9, $6d, $02, $16, $01        ;; 2d:7406 ????????
+    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:740e ????????
+    db   $71, $2d, $1b, $74, $2d, $1e, $94, $42        ;; 2d:7416 ????????
+    db   $20, $18, $a3, $71, $2d, $50, $15, $c7        ;; 2d:741e ????????
+    db   $00, $03, $82, $d9, $6d, $02, $16, $01        ;; 2d:7426 ????????
+    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:742e ????????
+    db   $71, $2d, $3b, $74, $2d, $1e, $10, $43        ;; 2d:7436 ????????
+    db   $20, $18, $a3, $71, $2d, $50, $1d, $c3        ;; 2d:743e ????????
+    db   $00, $d2, $82, $c3, $74, $01, $1c, $04        ;; 2d:7446 ????????
+    db   $ef, $71, $2d, $06, $72, $2d, $a7, $73        ;; 2d:744e ????????
+    db   $2d, $5e, $74, $2d, $18, $a3, $71, $2d        ;; 2d:7456 ????????
+    db   $4c, $16, $04, $04, $00, $00, $00, $00        ;; 2d:745e ????????
+    db   $39, $5e, $12, $44, $3c, $00, $82, $e1        ;; 2d:7466 ????????
+    db   $77, $01, $1e, $92, $7e, $36, $1a, $01        ;; 2d:746e ????????
+    db   $50, $1d, $c3, $00, $d1, $82, $c3, $74        ;; 2d:7476 ????????
+    db   $01, $1c, $04, $ef, $71, $2d, $06, $72        ;; 2d:747e ????????
+    db   $2d, $a0, $74, $2d, $91, $74, $2d, $18        ;; 2d:7486 ????????
+    db   $a3, $71, $2d, $50, $fd, $d1, $01, $02        ;; 2d:748e ????????
+    db   $82, $e1, $77, $01, $1e, $92, $7e, $36        ;; 2d:7496 ????????
+    db   $1a, $09, $14, $01, $52, $74, $ab, $74        ;; 2d:749e ????????
+    db   $2d, $18, $a7, $73, $2d, $50, $1d, $c3        ;; 2d:74a6 ????????
+    db   $00, $d0, $82, $c3, $74, $01, $1c, $03        ;; 2d:74ae ????????
+    db   $ef, $71, $2d, $06, $72, $2d, $c3, $74        ;; 2d:74b6 ????????
+    db   $2d, $18, $a3, $71, $2d, $82, $16, $74        ;; 2d:74be ????????
+    db   $01, $1e, $1d, $6f, $1d, $10, $04, $3f        ;; 2d:74c6 ????????
+    db   $73, $a2, $73, $1c, $04, $c3, $73, $2d        ;; 2d:74ce ????????
+    db   $e3, $73, $2d, $df, $74, $2d, $23, $74        ;; 2d:74d6 ????????
+    db   $2d, $50, $15, $c7, $00, $02, $82, $d9        ;; 2d:74de ????????
+    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:74e6 ????????
+    db   $c6, $1c, $02, $ef, $71, $2d, $f7, $74        ;; 2d:74ee ????????
+    db   $2d, $1e, $f7, $42, $20, $18, $a3, $71        ;; 2d:74f6 ????????
+    db   $2d, $50, $1d, $c3, $00, $d0, $82, $c3        ;; 2d:74fe ????????
+    db   $74, $01, $1c, $03, $ef, $71, $2d, $06        ;; 2d:7506 ????????
+    db   $72, $2d, $17, $75, $2d, $18, $a3, $71        ;; 2d:750e ????????
+    db   $2d, $82, $16, $74, $01, $1e, $1d, $6f        ;; 2d:7516 ????????
+    db   $1d, $10, $08, $43, $73, $56, $74, $1c        ;; 2d:751e ????????
+    db   $08, $47, $75, $2d, $6f, $75, $2d, $93        ;; 2d:7526 ????????
+    db   $75, $2d, $24, $76, $2d, $48, $76, $2d        ;; 2d:752e ????????
+    db   $3f, $75, $2d, $7c, $76, $2d, $3f, $75        ;; 2d:7536 ????????
+    db   $2d, $1e, $1d, $4e, $33, $18, $a3, $71        ;; 2d:753e ????????
+    db   $2d, $50, $15, $c7, $00, $00, $82, $d9        ;; 2d:7546 ????????
+    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:754e ????????
+    db   $c6, $1c, $02, $ef, $71, $2d, $5f, $75        ;; 2d:7556 ????????
+    db   $2d, $1e, $42, $40, $20, $1e, $12, $7d        ;; 2d:755e ????????
+    db   $2d, $1e, $4f, $7b, $2d, $18, $a3, $71        ;; 2d:7566 ????????
+    db   $2d, $50, $15, $c7, $00, $01, $82, $d9        ;; 2d:756e ????????
+    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:7576 ????????
+    db   $c6, $1c, $02, $ef, $71, $2d, $87, $75        ;; 2d:757e ????????
+    db   $2d, $1e, $96, $46, $20, $1e, $4f, $7b        ;; 2d:7586 ????????
+    db   $2d, $18, $a3, $71, $2d, $50, $15, $c7        ;; 2d:758e ????????
+    db   $00, $02, $82, $d9, $6d, $02, $16, $01        ;; 2d:7596 ????????
+    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:759e ????????
+    db   $71, $2d, $ab, $75, $2d, $1e, $bf, $42        ;; 2d:75a6 ????????
+    db   $20, $14, $01, $34, $74, $ea, $75, $2d        ;; 2d:75ae ????????
+    db   $4c, $1a, $01, $04, $78, $00, $72, $00        ;; 2d:75b6 ????????
+    db   $e4, $45, $13, $4a, $3e, $1a, $e4, $45        ;; 2d:75be ????????
+    db   $13, $c1, $75, $2d, $4c, $1a, $01, $04        ;; 2d:75c6 ????????
+    db   $78, $00, $72, $00, $b7, $46, $13, $1e        ;; 2d:75ce ????????
+    db   $b8, $6b, $1d, $04, $00, $40, $39, $1e        ;; 2d:75d6 ????????
+    db   $5d, $61, $04, $16, $01, $7f, $02, $01        ;; 2d:75de ????????
+    db   $18, $01, $76, $2d, $4c, $1a, $01, $04        ;; 2d:75e6 ????????
+    db   $78, $00, $72, $00, $b7, $46, $13, $1e        ;; 2d:75ee ????????
+    db   $b8, $6b, $1d, $04, $0f, $40, $39, $1e        ;; 2d:75f6 ????????
+    db   $5d, $61, $04, $4a, $3e, $16, $35, $5b        ;; 2d:75fe ????????
+    db   $10, $01, $76, $2d, $4c, $16, $ff, $02        ;; 2d:7606 ????????
+    db   $00, $00, $00, $00, $00, $00, $00, $4c        ;; 2d:760e ????????
+    db   $1a, $01, $04, $78, $00, $72, $00, $7d        ;; 2d:7616 ????????
+    db   $46, $13, $18, $a3, $71, $2d, $50, $15        ;; 2d:761e ????????
+    db   $c7, $00, $03, $82, $d9, $6d, $02, $16        ;; 2d:7626 ????????
+    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:762e ????????
+    db   $ef, $71, $2d, $3c, $76, $2d, $1e, $10        ;; 2d:7636 ????????
+    db   $43, $20, $1e, $4f, $7b, $2d, $18, $a3        ;; 2d:763e ????????
+    db   $71, $2d, $50, $15, $c7, $00, $11, $82        ;; 2d:7646 ????????
+    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:764e ????????
+    db   $5e, $c6, $1c, $02, $ef, $71, $2d, $60        ;; 2d:7656 ????????
+    db   $76, $2d, $1e, $0c, $4f, $20, $1e, $77        ;; 2d:765e ????????
+    db   $7b, $2d, $1e, $b8, $6b, $1d, $04, $1f        ;; 2d:7666 ????????
+    db   $40, $39, $1e, $5d, $61, $04, $1e, $99        ;; 2d:766e ????????
+    db   $7b, $2d, $18, $a3, $71, $2d, $50, $15        ;; 2d:7676 ????????
+    db   $c7, $00, $45, $82, $d9, $6d, $02, $16        ;; 2d:767e ????????
+    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:7686 ????????
+    db   $ef, $71, $2d, $94, $76, $2d, $1e, $bb        ;; 2d:768e ????????
+    db   $7b, $2d, $14, $01, $34, $74, $df, $77        ;; 2d:7696 ????????
+    db   $2d, $4c, $16, $04, $02, $00, $00, $00        ;; 2d:769e ????????
+    db   $00, $3c, $68, $1a, $4a, $3e, $16, $3c        ;; 2d:76a6 ????????
+    db   $68, $1a, $aa, $76, $2d, $16, $01, $7f        ;; 2d:76ae ????????
+    db   $02, $02, $1e, $ed, $7c, $2d, $1e, $b8        ;; 2d:76b6 ????????
+    db   $6b, $1d, $04, $2d, $40, $39, $4c, $1a        ;; 2d:76be ????????
+    db   $01, $04, $60, $00, $90, $00, $cc, $41        ;; 2d:76c6 ????????
+    db   $13, $14, $01, $4e, $74, $60, $77, $2d        ;; 2d:76ce ????????
+    db   $56, $1a, $f8, $47, $13, $06, $53, $40        ;; 2d:76d6 ????????
+    db   $39, $56, $1a, $cc, $41, $13, $06, $bc        ;; 2d:76de ????????
+    db   $40, $39, $56, $1a, $15, $48, $13, $06        ;; 2d:76e6 ????????
+    db   $fb, $40, $39, $56, $1a, $dc, $41, $13        ;; 2d:76ee ????????
+    db   $06, $17, $41, $39, $56, $1a, $fc, $41        ;; 2d:76f6 ????????
+    db   $13, $06, $21, $41, $39, $56, $1a, $cc        ;; 2d:76fe ????????
+    db   $41, $13, $06, $34, $41, $39, $1e, $6d        ;; 2d:7706 ????????
+    db   $7b, $2d, $06, $7d, $41, $39, $4a, $3e        ;; 2d:770e ????????
+    db   $1a, $25, $48, $13, $14, $77, $2d, $1e        ;; 2d:7716 ????????
+    db   $5d, $61, $04, $1e, $4d, $7d, $2d, $4c        ;; 2d:771e ????????
+    db   $10, $01, $04, $00, $00, $00, $00, $a3        ;; 2d:7726 ????????
+    db   $67, $1a, $56, $1a, $fd, $48, $13, $4a        ;; 2d:772e ????????
+    db   $3e, $1a, $fd, $48, $13, $35, $77, $2d        ;; 2d:7736 ????????
+    db   $16, $01, $7e, $1e, $00, $16, $01, $7e        ;; 2d:773e ????????
+    db   $1f, $01, $82, $31, $42, $02, $16, $01        ;; 2d:7746 ????????
+    db   $3f, $94, $1e, $7c, $7c, $2d, $1e, $78        ;; 2d:774e ????????
+    db   $6a, $1d, $1e, $3b, $72, $2d, $18, $d6        ;; 2d:7756 ????????
+    db   $77, $2d, $56, $1a, $f8, $47, $13, $06        ;; 2d:775e ????????
+    db   $7f, $41, $39, $56, $1a, $cc, $41, $13        ;; 2d:7766 ????????
+    db   $06, $df, $41, $39, $56, $1a, $15, $48        ;; 2d:776e ????????
+    db   $13, $06, $fd, $41, $39, $56, $1a, $dc        ;; 2d:7776 ????????
+    db   $41, $13, $06, $30, $42, $39, $56, $1a        ;; 2d:777e ????????
+    db   $fc, $41, $13, $06, $39, $42, $39, $56        ;; 2d:7786 ????????
+    db   $1a, $cc, $41, $13, $06, $42, $42, $39        ;; 2d:778e ????????
+    db   $1e, $6d, $7b, $2d, $06, $a4, $42, $39        ;; 2d:7796 ????????
+    db   $4a, $3e, $1a, $25, $48, $13, $9e, $77        ;; 2d:779e ????????
+    db   $2d, $1e, $5d, $61, $04, $4c, $10, $01        ;; 2d:77a6 ????????
+    db   $04, $00, $00, $00, $00, $22, $68, $1a        ;; 2d:77ae ????????
+    db   $56, $1a, $fd, $48, $13, $4a, $3e, $1a        ;; 2d:77b6 ????????
+    db   $fd, $48, $13, $bb, $77, $2d, $44, $14        ;; 2d:77be ????????
+    db   $00, $4c, $10, $00, $00, $00, $00, $00        ;; 2d:77c6 ????????
+    db   $00, $00, $00, $00, $1e, $16, $71, $1d        ;; 2d:77ce ????????
+    db   $56, $1a, $c1, $47, $13, $18, $a3, $71        ;; 2d:77d6 ????????
+    db   $2d, $4c, $1a, $01, $04, $78, $00, $72        ;; 2d:77de ????????
+    db   $00, $22, $46, $13, $1e, $b8, $6b, $1d        ;; 2d:77e6 ????????
+    db   $04, $a6, $42, $39, $1e, $5d, $61, $04        ;; 2d:77ee ????????
+    db   $4c, $1a, $01, $04, $78, $00, $72, $00        ;; 2d:77f6 ????????
+    db   $ad, $45, $13, $16, $01, $7f, $02, $00        ;; 2d:77fe ????????
+    db   $18, $a3, $71, $2d, $50, $1d, $c3, $00        ;; 2d:7806 ????????
+    db   $d0, $82, $c3, $74, $01, $1c, $03, $ef        ;; 2d:780e ????????
+    db   $71, $2d, $06, $72, $2d, $22, $78, $2d        ;; 2d:7816 ????????
+    db   $18, $a3, $71, $2d, $82, $16, $74, $01        ;; 2d:781e ????????
+    db   $1e, $1d, $6f, $1d, $10, $04, $3f, $73        ;; 2d:7826 ????????
+    db   $a2, $73, $1c, $04, $c3, $73, $2d, $e3        ;; 2d:782e ????????
+    db   $73, $2d, $03, $74, $2d, $3e, $78, $2d        ;; 2d:7836 ????????
+    db   $50, $15, $c7, $00, $03, $82, $d9, $6d        ;; 2d:783e ????????
+    db   $02, $16, $01, $3e, $03, $74, $5e, $c6        ;; 2d:7846 ????????
+    db   $1c, $02, $ef, $71, $2d, $56, $78, $2d        ;; 2d:784e ????????
+    db   $1e, $8d, $45, $20, $44, $3c, $00, $14        ;; 2d:7856 ????????
+    db   $01, $62, $74, $74, $78, $2d, $16, $01        ;; 2d:785e ????????
+    db   $3f, $80, $1e, $ce, $45, $20, $1e, $1e        ;; 2d:7866 ????????
+    db   $71, $1d, $18, $a3, $71, $2d, $1e, $ae        ;; 2d:786e ????????
+    db   $45, $20, $4e, $04, $01, $67, $40, $10        ;; 2d:7876 ????????
+    db   $4c, $16, $08, $ff, $00, $00, $00, $00        ;; 2d:787e ????????
+    db   $9c, $5c, $10, $4c, $12, $01, $04, $00        ;; 2d:7886 ????????
+    db   $00, $00, $00, $a6, $5d, $10, $1e, $e8        ;; 2d:788e ????????
+    db   $6a, $1d, $04, $ac, $42, $39, $1e, $5d        ;; 2d:7896 ????????
+    db   $61, $04, $18, $a3, $71, $2d, $50, $1d        ;; 2d:789e ????????
+    db   $c3, $00, $d0, $82, $c3, $74, $01, $1c        ;; 2d:78a6 ????????
+    db   $03, $ef, $71, $2d, $06, $72, $2d, $bc        ;; 2d:78ae ????????
+    db   $78, $2d, $18, $a3, $71, $2d, $14, $01        ;; 2d:78b6 ????????
+    db   $64, $74, $df, $78, $2d, $82, $16, $74        ;; 2d:78be ????????
+    db   $01, $1e, $1d, $6f, $1d, $10, $04, $3f        ;; 2d:78c6 ????????
+    db   $73, $a2, $73, $1c, $04, $0f, $79, $2d        ;; 2d:78ce ????????
+    db   $b0, $79, $2d, $f3, $79, $2d, $23, $74        ;; 2d:78d6 ????????
+    db   $2d, $82, $16, $74, $01, $1e, $1d, $6f        ;; 2d:78de ????????
+    db   $1d, $10, $08, $43, $73, $56, $74, $1c        ;; 2d:78e6 ????????
+    db   $08, $0f, $79, $2d, $b0, $79, $2d, $f3        ;; 2d:78ee ????????
+    db   $79, $2d, $23, $74, $2d, $4c, $7a, $2d        ;; 2d:78f6 ????????
+    db   $07, $79, $2d, $97, $7a, $2d, $07, $79        ;; 2d:78fe ????????
+    db   $2d, $1e, $1d, $4e, $33, $18, $a3, $71        ;; 2d:7906 ????????
+    db   $2d, $50, $15, $c7, $00, $00, $82, $d9        ;; 2d:790e ????????
+    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:7916 ????????
+    db   $c6, $1c, $02, $ef, $71, $2d, $27, $79        ;; 2d:791e ????????
+    db   $2d, $1e, $42, $40, $20, $1e, $12, $7d        ;; 2d:7926 ????????
+    db   $2d, $56, $1a, $7b, $43, $13, $1e, $b8        ;; 2d:792e ????????
+    db   $6b, $1d, $04, $bc, $42, $39, $4a, $3e        ;; 2d:7936 ????????
+    db   $1a, $7b, $43, $13, $3c, $79, $2d, $14        ;; 2d:793e ????????
+    db   $01, $68, $74, $73, $79, $2d, $16, $01        ;; 2d:7946 ????????
+    db   $3f, $81, $56, $1a, $15, $48, $13, $06        ;; 2d:794e ????????
+    db   $c5, $42, $39, $1e, $6d, $7b, $2d, $06        ;; 2d:7956 ????????
+    db   $09, $43, $39, $4a, $3e, $1a, $25, $48        ;; 2d:795e ????????
+    db   $13, $61, $79, $2d, $56, $1a, $cc, $41        ;; 2d:7966 ????????
+    db   $13, $18, $a3, $79, $2d, $16, $01, $5f        ;; 2d:796e ????????
+    db   $81, $56, $1a, $cc, $41, $13, $06, $0b        ;; 2d:7976 ????????
+    db   $43, $39, $1e, $63, $7b, $2d, $06, $39        ;; 2d:797e ????????
+    db   $43, $39, $4a, $3e, $1a, $25, $48, $13        ;; 2d:7986 ????????
+    db   $88, $79, $2d, $56, $1a, $fc, $41, $13        ;; 2d:798e ????????
+    db   $06, $52, $43, $39, $56, $1a, $15, $48        ;; 2d:7996 ????????
+    db   $13, $06, $83, $43, $39, $1e, $5d, $61        ;; 2d:799e ????????
+    db   $04, $56, $1a, $c1, $47, $13, $18, $a3        ;; 2d:79a6 ????????
+    db   $71, $2d, $50, $15, $c7, $00, $01, $82        ;; 2d:79ae ????????
+    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 2d:79b6 ????????
+    db   $5e, $c6, $1c, $02, $ef, $71, $2d, $c8        ;; 2d:79be ????????
+    db   $79, $2d, $1e, $96, $46, $20, $1e, $12        ;; 2d:79c6 ????????
+    db   $7d, $2d, $56, $1a, $f8, $47, $13, $1e        ;; 2d:79ce ????????
+    db   $b8, $6b, $1d, $04, $af, $43, $39, $56        ;; 2d:79d6 ????????
+    db   $1a, $cc, $41, $13, $06, $c7, $43, $39        ;; 2d:79de ????????
+    db   $1e, $5d, $61, $04, $56, $1a, $c1, $47        ;; 2d:79e6 ????????
+    db   $13, $18, $a3, $71, $2d, $50, $15, $c7        ;; 2d:79ee ????????
+    db   $00, $02, $82, $d9, $6d, $02, $16, $01        ;; 2d:79f6 ????????
+    db   $3e, $03, $74, $5e, $c6, $1c, $02, $ef        ;; 2d:79fe ????????
+    db   $71, $2d, $0b, $7a, $2d, $14, $01, $6a        ;; 2d:7a06 ????????
+    db   $74, $1a, $7a, $2d, $1e, $f7, $42, $20        ;; 2d:7a0e ????????
+    db   $18, $a3, $71, $2d, $1e, $bf, $42, $20        ;; 2d:7a16 ????????
+    db   $56, $1a, $28, $49, $13, $1e, $b8, $6b        ;; 2d:7a1e ????????
+    db   $1d, $04, $0e, $44, $39, $1e, $5d, $61        ;; 2d:7a26 ????????
+    db   $04, $4a, $3e, $16, $35, $5b, $10, $2f        ;; 2d:7a2e ????????
+    db   $7a, $2d, $4c, $16, $ff, $02, $00, $00        ;; 2d:7a36 ????????
+    db   $00, $00, $00, $00, $00, $56, $1a, $c1        ;; 2d:7a3e ????????
+    db   $47, $13, $18, $a3, $71, $2d, $50, $15        ;; 2d:7a46 ????????
+    db   $c7, $00, $11, $82, $d9, $6d, $02, $16        ;; 2d:7a4e ????????
+    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 2d:7a56 ????????
+    db   $ef, $71, $2d, $64, $7a, $2d, $14, $01        ;; 2d:7a5e ????????
+    db   $6e, $74, $8f, $7a, $2d, $56, $1a, $5f        ;; 2d:7a66 ????????
+    db   $49, $13, $1e, $0c, $4f, $20, $1e, $b8        ;; 2d:7a6e ????????
+    db   $6b, $1d, $04, $1d, $44, $39, $1e, $5d        ;; 2d:7a76 ????????
+    db   $61, $04, $4c, $1a, $01, $04, $60, $00        ;; 2d:7a7e ????????
+    db   $90, $00, $c1, $47, $13, $18, $a3, $71        ;; 2d:7a86 ????????
+    db   $2d, $1e, $0c, $4f, $20, $18, $a3, $71        ;; 2d:7a8e ????????
+    db   $2d, $50, $15, $c7, $00, $45, $82, $d9        ;; 2d:7a96 ????????
+    db   $6d, $02, $16, $01, $3e, $03, $74, $5e        ;; 2d:7a9e ????????
+    db   $c6, $1c, $02, $ef, $71, $2d, $af, $7a        ;; 2d:7aa6 ????????
+    db   $2d, $14, $01, $6e, $74, $47, $7b, $2d        ;; 2d:7aae ????????
+    db   $56, $1a, $cc, $41, $13, $4c, $16, $ff        ;; 2d:7ab6 ????????
+    db   $04, $00, $00, $00, $00, $aa, $68, $1a        ;; 2d:7abe ????????
+    db   $4a, $3e, $16, $aa, $68, $1a, $c6, $7a        ;; 2d:7ac6 ????????
+    db   $2d, $56, $1a, $8f, $49, $13, $4c, $16        ;; 2d:7ace ????????
+    db   $ff, $04, $00, $00, $00, $00, $6d, $67        ;; 2d:7ad6 ????????
+    db   $0f, $1e, $cd, $6a, $1d, $04, $36, $44        ;; 2d:7ade ????????
+    db   $39, $4a, $3e, $16, $6d, $67, $0f, $e7        ;; 2d:7ae6 ????????
+    db   $7a, $2d, $4c, $16, $ff, $04, $00, $00        ;; 2d:7aee ????????
+    db   $00, $00, $ce, $67, $0f, $4a, $3e, $16        ;; 2d:7af6 ????????
+    db   $ce, $67, $0f, $fb, $7a, $2d, $4c, $16        ;; 2d:7afe ????????
+    db   $ff, $04, $00, $00, $00, $00, $18, $69        ;; 2d:7b06 ????????
+    db   $1a, $4a, $3e, $16, $18, $69, $1a, $0f        ;; 2d:7b0e ????????
+    db   $7b, $2d, $1e, $5d, $61, $04, $1e, $b8        ;; 2d:7b16 ????????
+    db   $6b, $1d, $04, $41, $44, $39, $1e, $5d        ;; 2d:7b1e ????????
+    db   $61, $04, $56, $1a, $cc, $41, $13, $4c        ;; 2d:7b26 ????????
+    db   $16, $10, $02, $00, $00, $00, $00, $00        ;; 2d:7b2e ????????
+    db   $00, $00, $4c, $1a, $01, $04, $60, $00        ;; 2d:7b36 ????????
+    db   $90, $00, $c1, $47, $13, $18, $a3, $71        ;; 2d:7b3e ????????
+    db   $2d, $1e, $4d, $4e, $20, $18, $a3, $71        ;; 2d:7b46 ????????
+    db   $2d, $1e, $77, $7b, $2d, $1e, $b8, $6b        ;; 2d:7b4e ????????
+    db   $1d, $04, $58, $44, $39, $1e, $5d, $61        ;; 2d:7b56 ????????
+    db   $04, $18, $99, $7b, $2d, $56, $1a, $25        ;; 2d:7b5e ????????
+    db   $48, $13, $06, $69, $44, $39, $20, $56        ;; 2d:7b66 ????????
+    db   $1a, $25, $48, $13, $06, $cc, $44, $39        ;; 2d:7b6e ????????
+    db   $20, $14, $01, $34, $74, $8d, $7b, $2d        ;; 2d:7b76 ????????
+    db   $4c, $1a, $01, $04, $78, $00, $72, $00        ;; 2d:7b7e ????????
+    db   $22, $46, $13, $18, $98, $7b, $2d, $4c        ;; 2d:7b86 ????????
+    db   $1a, $01, $04, $78, $00, $72, $00, $b7        ;; 2d:7b8e ????????
+    db   $46, $13, $20, $14, $01, $34, $74, $af        ;; 2d:7b96 ????????
+    db   $7b, $2d, $4c, $1a, $01, $04, $78, $00        ;; 2d:7b9e ????????
+    db   $72, $00, $ad, $45, $13, $18, $ba, $7b        ;; 2d:7ba6 ????????
+    db   $2d, $4c, $1a, $01, $04, $78, $00, $72        ;; 2d:7bae ????????
+    db   $00, $7d, $46, $13, $20, $4c, $16, $ff        ;; 2d:7bb6 ????????
+    db   $02, $00, $00, $00, $00, $60, $68, $11        ;; 2d:7bbe ????????
+    db   $4a, $3e, $16, $60, $68, $11, $c6, $7b        ;; 2d:7bc6 ????????
+    db   $2d, $1e, $cd, $6a, $1d, $4c, $16, $ff        ;; 2d:7bce ????????
+    db   $04, $00, $00, $00, $00, $07, $66, $1a        ;; 2d:7bd6 ????????
+    db   $04, $72, $44, $39, $4a, $3e, $16, $07        ;; 2d:7bde ????????
+    db   $66, $1a, $e2, $7b, $2d, $1e, $5d, $61        ;; 2d:7be6 ????????
+    db   $04, $14, $01, $34, $74, $2d, $7c, $2d        ;; 2d:7bee ????????
+    db   $14, $01, $4e, $74, $13, $7c, $2d, $36        ;; 2d:7bf6 ????????
+    db   $55, $75, $7f, $f2, $dd, $01, $4c, $10        ;; 2d:7bfe ????????
+    db   $01, $04, $60, $00, $90, $00, $6b, $67        ;; 2d:7c06 ????????
+    db   $1a, $18, $1e, $7c, $2d, $4c, $10, $01        ;; 2d:7c0e ????????
+    db   $04, $60, $00, $90, $00, $ea, $67, $1a        ;; 2d:7c16 ????????
+    db   $4c, $1a, $01, $04, $78, $00, $72, $00        ;; 2d:7c1e ????????
+    db   $f1, $46, $13, $18, $38, $7c, $2d, $4c        ;; 2d:7c26 ????????
+    db   $1a, $01, $04, $78, $00, $72, $00, $0b        ;; 2d:7c2e ????????
+    db   $46, $13, $4c, $16, $08, $02, $00, $00        ;; 2d:7c36 ????????
+    db   $00, $00, $63, $66, $1a, $4a, $3e, $16        ;; 2d:7c3e ????????
+    db   $63, $66, $1a, $43, $7c, $2d, $3e, $10        ;; 2d:7c46 ????????
+    db   $6b, $67, $1a, $43, $7c, $2d, $3e, $10        ;; 2d:7c4e ????????
+    db   $ea, $67, $1a, $43, $7c, $2d, $4a, $3e        ;; 2d:7c56 ????????
+    db   $1a, $f1, $46, $13, $5c, $7c, $2d, $3e        ;; 2d:7c5e ????????
+    db   $1a, $0b, $46, $13, $5c, $7c, $2d, $4c        ;; 2d:7c66 ????????
+    db   $16, $10, $ff, $00, $00, $00, $00, $87        ;; 2d:7c6e ????????
+    db   $78, $17, $44, $06, $00, $20, $36, $55        ;; 2d:7c76 ????????
+    db   $75, $7f, $f2, $dd, $01, $4c, $10, $01        ;; 2d:7c7e ????????
+    db   $04, $00, $00, $00, $00, $3e, $67, $1a        ;; 2d:7c86 ????????
+    db   $4a, $3e, $10, $3e, $67, $1a, $8e, $7c        ;; 2d:7c8e ????????
+    db   $2d, $4c, $16, $08, $04, $00, $00, $00        ;; 2d:7c96 ????????
+    db   $00, $3f, $55, $10, $4c, $10, $01, $04        ;; 2d:7c9e ????????
+    db   $00, $00, $00, $00, $6b, $66, $15, $1e        ;; 2d:7ca6 ????????
+    db   $e8, $6a, $1d, $04, $7d, $44, $39, $4a        ;; 2d:7cae ????????
+    db   $3e, $16, $3f, $55, $10, $b5, $7c, $2d        ;; 2d:7cb6 ????????
+    db   $4c, $16, $08, $04, $00, $00, $00, $00        ;; 2d:7cbe ????????
+    db   $8f, $55, $10, $4c, $10, $01, $04, $00        ;; 2d:7cc6 ????????
+    db   $00, $00, $00, $b0, $66, $15, $1e, $5d        ;; 2d:7cce ????????
+    db   $61, $04, $4a, $3e, $16, $8f, $55, $10        ;; 2d:7cd6 ????????
+    db   $d8, $7c, $2d, $4c, $16, $ff, $02, $00        ;; 2d:7cde ????????
+    db   $00, $00, $00, $00, $00, $00, $20, $84        ;; 2d:7ce6 ????????
+    db   $28, $d2, $03, $03, $00, $80, $84, $46        ;; 2d:7cee ????????
+    db   $d2, $03, $03, $00, $80, $84, $64, $d2        ;; 2d:7cf6 ????????
+    db   $03, $03, $00, $80, $50, $82, $d2, $03        ;; 2d:7cfe ????????
+    db   $07, $50, $25, $d2, $03, $08, $50, $2b        ;; 2d:7d06 ????????
+    db   $d2, $03, $09, $20, $14, $01, $72, $74        ;; 2d:7d0e ????????
+    db   $3e, $7d, $2d, $14, $01, $76, $74, $2f        ;; 2d:7d16 ????????
+    db   $7d, $2d, $4c, $16, $10, $ff, $00, $00        ;; 2d:7d1e ????????
+    db   $00, $00, $87, $78, $17, $18, $49, $7d        ;; 2d:7d26 ????????
+    db   $2d, $4c, $16, $04, $ff, $00, $00, $00        ;; 2d:7d2e ????????
+    db   $00, $61, $42, $10, $18, $49, $7d, $2d        ;; 2d:7d36 ????????
+    db   $4c, $16, $02, $ff, $00, $00, $00, $00        ;; 2d:7d3e ????????
+    db   $71, $42, $10, $44, $06, $00, $20, $14        ;; 2d:7d46 ????????
+    db   $01, $7a, $74, $c2, $7d, $2d, $16, $01        ;; 2d:7d4e ????????
+    db   $3f, $94, $50, $15, $c7, $00, $4e, $82        ;; 2d:7d56 ????????
+    db   $d9, $6d, $02, $16, $01, $3e, $59, $68        ;; 2d:7d5e ????????
+    db   $01, $64, $c7, $fd, $d1, $01, $68, $02        ;; 2d:7d66 ????????
+    db   $d8, $c7, $16, $d2, $01, $68, $02, $da        ;; 2d:7d6e ????????
+    db   $c7, $0e, $d2, $01, $1e, $d4, $6f, $1d        ;; 2d:7d76 ????????
+    db   $1e, $3b, $72, $2d, $1e, $0b, $70, $1d        ;; 2d:7d7e ????????
+    db   $1e, $e8, $6a, $1d, $04, $b2, $44, $39        ;; 2d:7d86 ????????
+    db   $4c, $16, $ff, $04, $00, $00, $00, $00        ;; 2d:7d8e ????????
+    db   $56, $7b, $0f, $06, $c0, $44, $39, $4a        ;; 2d:7d96 ????????
+    db   $3e, $16, $56, $7b, $0f, $9d, $7d, $2d        ;; 2d:7d9e ????????
+    db   $4c, $16, $08, $02, $00, $00, $00, $00        ;; 2d:7da6 ????????
+    db   $21, $7c, $0f, $4a, $3e, $16, $21, $7c        ;; 2d:7dae ????????
+    db   $0f, $b1, $7d, $2d, $06, $cb, $44, $39        ;; 2d:7db6 ????????
+    db   $1e, $5d, $61, $04, $1e, $ed, $7c, $2d        ;; 2d:7dbe ????????
+    db   $20, $e7, $d8, $e4, $13, $6f, $77, $01        ;; 2d:7dc6 ????????
+    db   $64, $69, $64, $01, $79, $6f, $75, $01        ;; 2d:7dce ????????
+    db   $67, $65, $74, $e4, $68, $65, $72, $65        ;; 2d:7dd6 ????????
+    db   $d9, $01, $e5, $22, $61, $73, $6e, $d0        ;; 2d:7dde ????????
+    db   $74, $01, $74, $68, $65, $e4, $77, $61        ;; 2d:7de6 ????????
+    db   $74, $65, $72, $01, $74, $6f, $6f, $01        ;; 2d:7dee ????????
+    db   $68, $69, $67, $68, $01, $66, $6f, $72        ;; 2d:7df6 ????????
+    db   $e4, $79, $6f, $75, $01, $74, $6f, $01        ;; 2d:7dfe ????????
+    db   $63, $72, $6f, $73, $73, $d9, $e0, $ea        ;; 2d:7e06 ????????
+    db   $13, $61, $6d, $68, $61, $e8, $d8, $e0        ;; 2d:7e0e ????????
+    db   $14, $74, $d0, $73, $01, $6a, $75, $73        ;; 2d:7e16 ????????
+    db   $74, $01, $6d, $65, $01, $68, $65, $72        ;; 2d:7e1e ????????
+    db   $65, $ca, $e0, $18, $79, $01, $62, $72        ;; 2d:7e26 ????????
+    db   $6f, $74, $68, $65, $72, $d0, $73, $01        ;; 2d:7e2e ????????
+    db   $69, $6e, $01, $61, $e4, $00, $ea, $68        ;; 2d:7e36 ????????
+    db   $75, $6c, $61, $68, $75, $6c, $61, $e8        ;; 2d:7e3e ????????
+    db   $01, $61, $67, $61, $69, $6e, $d8, $01        ;; 2d:7e46 ????????
+    db   $e5, $00, $14, $e4, $68, $61, $76, $65        ;; 2d:7e4e ????????
+    db   $01, $6e, $6f, $01, $69, $64, $65, $61        ;; 2d:7e56 ????????
+    db   $01, $77, $68, $65, $72, $65, $e4, $68        ;; 2d:7e5e ????????
+    db   $65, $01, $77, $65, $6e, $74, $01, $74        ;; 2d:7e66 ????????
+    db   $68, $69, $73, $01, $74, $69, $6d, $65        ;; 2d:7e6e ????????
+    db   $ca, $e3, $c7, $1e, $69, $67, $68, $c7        ;; 2d:7e76 ????????
+    db   $d1, $e0, $0f, $69, $64, $01, $79, $6f        ;; 2d:7e7e ????????
+    db   $75, $01, $6e, $65, $65, $64, $01, $74        ;; 2d:7e86 ????????
+    db   $6f, $e4, $74, $65, $6c, $6c, $01, $6d        ;; 2d:7e8e ????????
+    db   $65, $01, $73, $6f, $6d, $65, $74, $68        ;; 2d:7e96 ????????
+    db   $69, $6e, $67, $d9, $e3, $1a, $68, $cf        ;; 2d:7e9e ????????
+    db   $01, $77, $65, $d0, $72, $65, $01, $6d        ;; 2d:7ea6 ????????
+    db   $65, $65, $74, $69, $6e, $67, $e4, $74        ;; 2d:7eae ????????
+    db   $68, $65, $01, $6f, $74, $68, $65, $72        ;; 2d:7eb6 ????????
+    db   $73, $01, $61, $74, $01, $74, $68, $65        ;; 2d:7ebe ????????
+    db   $e4, $0e, $6c, $75, $62, $68, $6f, $75        ;; 2d:7ec6 ????????
+    db   $73, $65, $d9, $e3, $1a, $16, $cf, $01        ;; 2d:7ece ????????
+    db   $6c, $65, $74, $d0, $73, $01, $67, $6f        ;; 2d:7ed6 ????????
+    db   $ca, $e0, $22, $65, $01, $6e, $65, $65        ;; 2d:7ede ????????
+    db   $64, $01, $74, $6f, $01, $66, $69, $6e        ;; 2d:7ee6 ????????
+    db   $64, $e4, $6d, $79, $01, $62, $72, $6f        ;; 2d:7eee ????????
+    db   $74, $68, $65, $72, $cf, $01, $74, $68        ;; 2d:7ef6 ????????
+    db   $65, $6e, $ca, $e3, $e7, $cf, $e3, $68        ;; 2d:7efe ????????
+    db   $65, $6c, $70, $01, $6d, $65, $01, $6c        ;; 2d:7f06 ????????
+    db   $6f, $6f, $6b, $01, $66, $6f, $72, $e4        ;; 2d:7f0e ????????
+    db   $68, $69, $6d, $01, $61, $72, $6f, $75        ;; 2d:7f16 ????????
+    db   $6e, $64, $e4, $68, $65, $72, $65, $ca        ;; 2d:7f1e ????????
+    db   $e0, $14, $01, $64, $69, $64, $6e, $d0        ;; 2d:7f26 ????????
+    db   $74, $01, $6b, $6e, $6f, $77, $01, $74        ;; 2d:7f2e ????????
+    db   $68, $65, $e4, $70, $6c, $75, $67, $cb        ;; 2d:7f36 ????????
+    db   $69, $6e, $01, $77, $61, $73, $01, $62        ;; 2d:7f3e ????????
+    db   $65, $68, $69, $6e, $64, $e4, $74, $68        ;; 2d:7f46 ????????
+    db   $65, $01, $63, $6f, $75, $6e, $74, $65        ;; 2d:7f4e ????????
+    db   $72, $ca, $e0, $14, $d0, $6d, $01, $67        ;; 2d:7f56 ????????
+    db   $6c, $61, $64, $01, $79, $6f, $75, $01        ;; 2d:7f5e ????????
+    db   $74, $72, $69, $65, $64, $e4, $61, $01        ;; 2d:7f66 ????????
+    db   $ea, $74, $75, $67, $67, $69, $65, $e8        ;; 2d:7f6e ????????
+    db   $01, $6f, $6e, $01, $74, $68, $65, $e4        ;; 2d:7f76 ????????
+    db   $70, $6c, $75, $67, $ca, $01, $e5, $0d        ;; 2d:7f7e ????????
+    db   $75, $74, $01, $14, $d0, $6d, $01, $67        ;; 2d:7f86 ????????
+    db   $6f, $cb, $e4, $69, $6e, $67, $01, $74        ;; 2d:7f8e ????????
+    db   $6f, $01, $73, $74, $61, $79, $01, $68        ;; 2d:7f96 ????????
+    db   $65, $72, $65, $e4, $66, $6f, $72, $01        ;; 2d:7f9e ????????
+    db   $61, $01, $62, $69, $74, $01, $6c, $6f        ;; 2d:7fa6 ????????
+    db   $6e, $67, $65, $72, $dc, $e0, $e4, $00        ;; 2d:7fae ????????
+    db   $19, $6f, $74, $68, $69, $6e, $67, $01        ;; 2d:7fb6 ????????
+    db   $79, $65, $74, $ca, $00, $1e, $74, $69        ;; 2d:7fbe ????????
+    db   $6c, $6c, $01, $6e, $6f, $74, $68, $69        ;; 2d:7fc6 ????????
+    db   $6e, $67, $ca, $00, $e0, $24, $6f, $75        ;; 2d:7fce ????????
+    db   $01, $6c, $65, $61, $72, $6e, $65, $64        ;; 2d:7fd6 ????????
+    db   $e4, $00, $e4, $eb, $ea, $68, $75, $6c        ;; 2d:7fde ????????
+    db   $61, $68, $75, $6c, $61, $e8, $ca, $00        ;; 2d:7fe6 ????????
+    db   $e0, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 2d:7fee ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 2d:7ff6 ????????
+    db   $ff, $ff                                      ;; 2d:7ffe ??

@@ -2,6 +2,9 @@
 
 *.gbc
 *.gb
+*.sav
+*.sn1
+
 _tmp
 
 *.map
