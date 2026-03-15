@@ -4,6 +4,7 @@
 *.gb
 *.sav
 *.sn1
+output
 
 _tmp
 
