@@ -170,7 +170,7 @@ call_06_40a8:
     ld   [wC4E2], A                                    ;; 06:423f $ea $e2 $c4
     ld   [wC4E3], A                                    ;; 06:4242 $ea $e3 $c4
     ld   [wC4E4], A                                    ;; 06:4245 $ea $e4 $c4
-    ld   A, [wC399]                                    ;; 06:4248 $fa $99 $c3
+    ld   A, [op10LoopsDoneC399]                        ;; 06:4248 $fa $99 $c3
     dec  A                                             ;; 06:424b $3d
     cp   A, $07                                        ;; 06:424c $fe $07
     jr   C, .jr_06_4252                                ;; 06:424e $38 $02

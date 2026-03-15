@@ -3248,9 +3248,9 @@ call_00_168f:
     jr   .jr_00_16ee                                   ;; 00:16f6 $18 $f6
 .jr_00_16f8:
     ld   A, L                                          ;; 00:16f8 $7d
-    ld   [wC394], A                                    ;; 00:16f9 $ea $94 $c3
+    ld   [op10address1_C394], A                        ;; 00:16f9 $ea $94 $c3
     ld   A, H                                          ;; 00:16fc $7c
-    ld   [wC395], A                                    ;; 00:16fd $ea $95 $c3
+    ld   [op10address1_C394.high], A                   ;; 00:16fd $ea $95 $c3
     ld   A, C                                          ;; 00:1700 $79
     ld   [wDupeBitArrayIndexC358], A                   ;; 00:1701 $ea $58 $c3
     ld   A, B                                          ;; 00:1704 $78
@@ -3262,19 +3262,19 @@ call_00_168f:
     cpl                                                ;; 00:170c $2f
     ld   B, A                                          ;; 00:170d $47
     inc  BC                                            ;; 00:170e $03
-    ld   A, [wC394]                                    ;; 00:170f $fa $94 $c3
+    ld   A, [op10address1_C394]                        ;; 00:170f $fa $94 $c3
     ld   L, A                                          ;; 00:1712 $6f
-    ld   A, [wC395]                                    ;; 00:1713 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 00:1713 $fa $95 $c3
     ld   H, A                                          ;; 00:1716 $67
     add  HL, BC                                        ;; 00:1717 $09
     ld   A, L                                          ;; 00:1718 $7d
     ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 00:1719 $ea $56 $c3
     ld   A, H                                          ;; 00:171c $7c
     ld   [wC357], A                                    ;; 00:171d $ea $57 $c3
-    ld   A, [wC394]                                    ;; 00:1720 $fa $94 $c3
+    ld   A, [op10address1_C394]                        ;; 00:1720 $fa $94 $c3
     ld   [wC3EC], A                                    ;; 00:1723 $ea $ec $c3
     ld   L, A                                          ;; 00:1726 $6f
-    ld   A, [wC395]                                    ;; 00:1727 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 00:1727 $fa $95 $c3
     ld   [wC3ED], A                                    ;; 00:172a $ea $ed $c3
     ld   H, A                                          ;; 00:172d $67
     ld   DE, w1_D000                                   ;; 00:172e $11 $00 $d0
@@ -4062,7 +4062,7 @@ Write3ArgsToC328toA_AndRunOp_PossibleTextPointer:
     jr   Z, .jr_00_1ccc                                ;; 00:1cb1 $28 $19
     ld   A, [wC3FC]                                    ;; 00:1cb3 $fa $fc $c3
     rlca                                               ;; 00:1cb6 $07
-    ld   [wC394], A                                    ;; 00:1cb7 $ea $94 $c3
+    ld   [op10address1_C394], A                        ;; 00:1cb7 $ea $94 $c3
     ld   A, $01                                        ;; 00:1cba $3e $01
     ld   [wC38F], A                                    ;; 00:1cbc $ea $8f $c3
     ld   A, $41                                        ;; 00:1cbf $3e $41
@@ -4116,7 +4116,7 @@ Write3ArgsToC328toA_AndRunOp_PossibleTextPointer:
     ld   [wReturnAddressC324.high], A                  ;; 00:1d3b $ea $25 $c3
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1d3e $c3 $39 $0a
 .jp_00_1d41:
-    ld   A, [wC394]                                    ;; 00:1d41 $fa $94 $c3
+    ld   A, [op10address1_C394]                        ;; 00:1d41 $fa $94 $c3
     and  A, A                                          ;; 00:1d44 $a7
     jr   NZ, .jr_00_1d54                               ;; 00:1d45 $20 $0d
     ld   A, $fe                                        ;; 00:1d47 $3e $fe
@@ -4126,9 +4126,9 @@ Write3ArgsToC328toA_AndRunOp_PossibleTextPointer:
     jp   .jp_00_1dfe                                   ;; 00:1d51 $c3 $fe $1d
 .jr_00_1d54:
     dec  A                                             ;; 00:1d54 $3d
-    ld   [wC394], A                                    ;; 00:1d55 $ea $94 $c3
+    ld   [op10address1_C394], A                        ;; 00:1d55 $ea $94 $c3
     xor  A, A                                          ;; 00:1d58 $af
-    ld   [wC395], A                                    ;; 00:1d59 $ea $95 $c3
+    ld   [op10address1_C394.high], A                   ;; 00:1d59 $ea $95 $c3
     ld   [wHamChatCursorIndexC38E], A                  ;; 00:1d5c $ea $8e $c3
     ld   A, $69                                        ;; 00:1d5f $3e $69
     ld   [wReturnAddressC324], A                       ;; 00:1d61 $ea $24 $c3
@@ -4138,9 +4138,9 @@ Write3ArgsToC328toA_AndRunOp_PossibleTextPointer:
     ld   [wCurrentRomBankC677], A                      ;; 00:1d6b $ea $77 $c6
     ld   [$2000], A                                    ;; 00:1d6e $ea $00 $20
     call call_01_43cd                                  ;; 00:1d71 $cd $cd $43
-    ld   A, [wC395]                                    ;; 00:1d74 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 00:1d74 $fa $95 $c3
     inc  A                                             ;; 00:1d77 $3c
-    ld   [wC395], A                                    ;; 00:1d78 $ea $95 $c3
+    ld   [op10address1_C394.high], A                   ;; 00:1d78 $ea $95 $c3
     ld   HL, wC3FC                                     ;; 00:1d7b $21 $fc $c3
     cp   A, [HL]                                       ;; 00:1d7e $be
     jr   Z, .jr_00_1d84                                ;; 00:1d7f $28 $03
@@ -4404,6 +4404,7 @@ Op14:
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:1f83 $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:1f86 $c3 $14 $0a
 
+; Both parts of this just write bytes to special memory addresses.
 Write3BytesFromHLPointerToC35E_AndUseJumpArray2:
     ld   HL, wBeginningOfSomeRegionC5B3                ;; 00:1f89 $21 $b3 $c5
     ld   C, $10                                        ;; 00:1f8c $0e $10
@@ -4416,6 +4417,10 @@ Write3BytesFromHLPointerToC35E_AndUseJumpArray2:
     ld   [wImportantBitArrayThingC35A], A              ;; 00:1f97 $ea $5a $c3
     ld   [wImportantBitArrayThingC35B], A              ;; 00:1f9a $ea $5b $c3
 
+; Put [C38C-D] (originally second addr arg of Op10) into HL.
+; Switch to bank in C6A8
+; Put 3 bytes from [HL] (the data pointed to by arg2 of Op10) into wBitArrayIndexC35E-60.
+; Then jump to another function.
 jp_00_1f9d:
     ld   A, [wTempHoldsBC_1_C38C]                      ;; 00:1f9d $fa $8c $c3
     ld   L, A                                          ;; 00:1fa0 $6f
@@ -4629,7 +4634,7 @@ WriteArgToC39A_andCallOp4E:
 
 SomeFiveArgOp:
     ld   A, $00                                        ;; 00:2126 $3e $00
-    ld   HL, wC4FA                                     ;; 00:2128 $21 $fa $c4
+    ld   HL, op10WritesIntoThisRegionC4FA              ;; 00:2128 $21 $fa $c4
     ld   E, $20                                        ;; 00:212b $1e $20
 .jr_00_212d:
     ld   [HL+], A                                      ;; 00:212d $22
@@ -4643,13 +4648,13 @@ SomeFiveArgOp:
     jr   NZ, .jr_00_2136                               ;; 00:2138 $20 $fc
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:213a $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:213d $2a
-    ld   [wC398], A                                    ;; 00:213e $ea $98 $c3
+    ld   [op10CountC398], A                            ;; 00:213e $ea $98 $c3
     ld   A, $00                                        ;; 00:2141 $3e $00
-    ld   [wC399], A                                    ;; 00:2143 $ea $99 $c3
+    ld   [op10LoopsDoneC399], A                        ;; 00:2143 $ea $99 $c3
     ld   A, [HL+]                                      ;; 00:2146 $2a
-    ld   [wC394], A                                    ;; 00:2147 $ea $94 $c3
+    ld   [op10address1_C394], A                        ;; 00:2147 $ea $94 $c3
     ld   A, [HL+]                                      ;; 00:214a $2a
-    ld   [wC395], A                                    ;; 00:214b $ea $95 $c3
+    ld   [op10address1_C394.high], A                   ;; 00:214b $ea $95 $c3
     ld   A, [HL+]                                      ;; 00:214e $2a
     ld   [wTempHoldsBC_1_C38C], A                      ;; 00:214f $ea $8c $c3
     ld   A, [HL+]                                      ;; 00:2152 $2a
@@ -4657,61 +4662,72 @@ SomeFiveArgOp:
     ld   A, $05                                        ;; 00:2156 $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:2158 $ea $26 $c3
     ld   A, $00                                        ;; 00:215b $3e $00
-    ld   [wC392], A                                    ;; 00:215d $ea $92 $c3
-    ld   [wC393], A                                    ;; 00:2160 $ea $93 $c3
+    ld   [offsetInHamchatWheel_toWriteOp10Byte_C392], A ;; 00:215d $ea $92 $c3
+    ld   [offsetFromOp10Address1_C393], A              ;; 00:2160 $ea $93 $c3
     ld   [wC38F], A                                    ;; 00:2163 $ea $8f $c3
-.jr_00_2166:
+.loopArg1Times:
+; Somehow this function puts 00 in C5C3 if I don't have the move.
+; This ends up with either the "have it" or "dont have it" tablejump index
+;  in the hamchatwheel at a given slot. 05 vs 06. TableJump tables are 
+;  designed like Teenie_handler Dont_have_handler Foo_handler Dont_have_handler.
     call Write3BytesFromHLPointerToC35E_AndUseJumpArray2 ;; 00:2166 $cd $89 $1f
+; The call immediately above this sets this value based on jumptable.
+; wTempHoldsBC_1_C38C-D determine what it does.
     ld   A, [wBeginningOfSomeRegionC5C3]               ;; 00:2169 $fa $c3 $c5
     and  A, A                                          ;; 00:216c $a7
-    jr   Z, .jr_00_21af                                ;; 00:216d $28 $40
+    jr   Z, .nextLoop                                  ;; 00:216d $28 $40
     ld   A, [wPossibleBankSourceC6A8]                  ;; 00:216f $fa $a8 $c6
     ld   [wCurrentRomBankC677], A                      ;; 00:2172 $ea $77 $c6
     ld   [$2000], A                                    ;; 00:2175 $ea $00 $20
-    ld   HL, wC399                                     ;; 00:2178 $21 $99 $c3
+    ld   HL, op10LoopsDoneC399                         ;; 00:2178 $21 $99 $c3
     inc  [HL]                                          ;; 00:217b $34
-    ld   A, [wC394]                                    ;; 00:217c $fa $94 $c3
+    ld   A, [op10address1_C394]                        ;; 00:217c $fa $94 $c3
     ld   L, A                                          ;; 00:217f $6f
-    ld   A, [wC395]                                    ;; 00:2180 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 00:2180 $fa $95 $c3
     ld   H, A                                          ;; 00:2183 $67
-    ld   A, [wC393]                                    ;; 00:2184 $fa $93 $c3
+    ld   A, [offsetFromOp10Address1_C393]              ;; 00:2184 $fa $93 $c3
     ld   E, A                                          ;; 00:2187 $5f
     ld   D, $00                                        ;; 00:2188 $16 $00
     add  HL, DE                                        ;; 00:218a $19
+; First addr arg of Op10 + [C393] == An address.
+; Write that address into C4FA rgion at offset [C392].
+; Values from the region Op10 points to get put in C4FA region.
     ld   C, [HL]                                       ;; 00:218b $4e
-    ld   A, [wC392]                                    ;; 00:218c $fa $92 $c3
+    ld   A, [offsetInHamchatWheel_toWriteOp10Byte_C392] ;; 00:218c $fa $92 $c3
     ld   E, A                                          ;; 00:218f $5f
     ld   D, $00                                        ;; 00:2190 $16 $00
-    ld   HL, wC4FA                                     ;; 00:2192 $21 $fa $c4
+    ld   HL, op10WritesIntoThisRegionC4FA              ;; 00:2192 $21 $fa $c4
     add  HL, DE                                        ;; 00:2195 $19
     ld   [HL], C                                       ;; 00:2196 $71
+; Also write C393 into the hamcheetwheel C51A.
+; 01 02 03 04 06 somehow?
     ld   HL, wHamChatWheelStartC51A                    ;; 00:2197 $21 $1a $c5
     add  HL, DE                                        ;; 00:219a $19
-    ld   A, [wC393]                                    ;; 00:219b $fa $93 $c3
+    ld   A, [offsetFromOp10Address1_C393]              ;; 00:219b $fa $93 $c3
     inc  A                                             ;; 00:219e $3c
     ld   C, A                                          ;; 00:219f $4f
     ld   [HL], A                                       ;; 00:21a0 $77
-    ld   HL, wC392                                     ;; 00:21a1 $21 $92 $c3
+    ld   HL, offsetInHamchatWheel_toWriteOp10Byte_C392 ;; 00:21a1 $21 $92 $c3
     inc  [HL]                                          ;; 00:21a4 $34
     ld   A, [wC3AE]                                    ;; 00:21a5 $fa $ae $c3
     cp   A, C                                          ;; 00:21a8 $b9
-    jr   NZ, .jr_00_21af                               ;; 00:21a9 $20 $04
+    jr   NZ, .nextLoop                                 ;; 00:21a9 $20 $04
     ld   A, E                                          ;; 00:21ab $7b
     ld   [wC38F], A                                    ;; 00:21ac $ea $8f $c3
-.jr_00_21af:
-    ld   HL, wC393                                     ;; 00:21af $21 $93 $c3
+.nextLoop:
+    ld   HL, offsetFromOp10Address1_C393               ;; 00:21af $21 $93 $c3
     inc  [HL]                                          ;; 00:21b2 $34
-    ld   HL, wC398                                     ;; 00:21b3 $21 $98 $c3
+    ld   HL, op10CountC398                             ;; 00:21b3 $21 $98 $c3
     dec  [HL]                                          ;; 00:21b6 $35
-    jr   NZ, .jr_00_2166                               ;; 00:21b7 $20 $ad
+    jr   NZ, .loopArg1Times                            ;; 00:21b7 $20 $ad
     ret                                                ;; 00:21b9 $c9
     xor  A, A                                          ;; 00:21ba $af
     ld   [wC332], A                                    ;; 00:21bb $ea $32 $c3
     ld   [wC333], A                                    ;; 00:21be $ea $33 $c3
-    ld   A, [wC392]                                    ;; 00:21c1 $fa $92 $c3
+    ld   A, [offsetInHamchatWheel_toWriteOp10Byte_C392] ;; 00:21c1 $fa $92 $c3
     ld   E, A                                          ;; 00:21c4 $5f
     ld   D, $00                                        ;; 00:21c5 $16 $00
-    ld   HL, wC4FA                                     ;; 00:21c7 $21 $fa $c4
+    ld   HL, op10WritesIntoThisRegionC4FA              ;; 00:21c7 $21 $fa $c4
     add  HL, DE                                        ;; 00:21ca $19
     ld   E, [HL]                                       ;; 00:21cb $5e
     sla  E                                             ;; 00:21cc $cb $23
@@ -4888,13 +4904,13 @@ call_00_22f9:
     add  A, C                                          ;; 00:2322 $81
     ld   [wC38F], A                                    ;; 00:2323 $ea $8f $c3
     ld   A, [HL+]                                      ;; 00:2326 $2a
-    ld   [wC392], A                                    ;; 00:2327 $ea $92 $c3
+    ld   [offsetInHamchatWheel_toWriteOp10Byte_C392], A ;; 00:2327 $ea $92 $c3
     ld   A, [HL+]                                      ;; 00:232a $2a
-    ld   [wC393], A                                    ;; 00:232b $ea $93 $c3
+    ld   [offsetFromOp10Address1_C393], A              ;; 00:232b $ea $93 $c3
     ld   A, [HL+]                                      ;; 00:232e $2a
-    ld   [wC394], A                                    ;; 00:232f $ea $94 $c3
+    ld   [op10address1_C394], A                        ;; 00:232f $ea $94 $c3
     ld   A, [HL]                                       ;; 00:2332 $7e
-    ld   [wC395], A                                    ;; 00:2333 $ea $95 $c3
+    ld   [op10address1_C394.high], A                   ;; 00:2333 $ea $95 $c3
     ld   A, [wC686]                                    ;; 00:2336 $fa $86 $c6
     ld   B, A                                          ;; 00:2339 $47
     ld   A, [wC680]                                    ;; 00:233a $fa $80 $c6

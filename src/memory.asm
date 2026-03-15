@@ -333,16 +333,15 @@ wC390:
 wC391:
     ds 1                                               ;; c391
 
-wC392:
+offsetInHamchatWheel_toWriteOp10Byte_C392:
     ds 1                                               ;; c392
 
-wC393:
+offsetFromOp10Address1_C393:
     ds 1                                               ;; c393
 
-wC394:
+op10address1_C394:
     ds 1                                               ;; c394
-
-wC395:
+.high:
     ds 1                                               ;; c395
 
 wC396:
@@ -351,10 +350,10 @@ wC396:
 wC397:
     ds 1                                               ;; c397
 
-wC398:
+op10CountC398:
     ds 1                                               ;; c398
 
-wC399:
+op10LoopsDoneC399:
     ds 1                                               ;; c399
 
 wC39A:
@@ -564,7 +563,7 @@ wC4F1:
 wC4F7:
     ds 3                                               ;; c4f7
 
-wC4FA:
+op10WritesIntoThisRegionC4FA:
     ds 32                                              ;; c4fa
 
 wHamChatWheelStartC51A:

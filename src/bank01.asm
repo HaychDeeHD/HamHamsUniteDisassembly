@@ -26,9 +26,9 @@ jp_01_4000:
     db   $00, $00, $00, $00, $00, $00                  ;; 01:4018 ??????
     dw   .data_01_4069                                 ;; 01:401e pP
 .data_01_4020:
-    ld   A, [wC394]                                    ;; 01:4020 $fa $94 $c3
+    ld   A, [op10address1_C394]                        ;; 01:4020 $fa $94 $c3
     ld   L, A                                          ;; 01:4023 $6f
-    ld   A, [wC395]                                    ;; 01:4024 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 01:4024 $fa $95 $c3
     ld   H, A                                          ;; 01:4027 $67
     ld   A, [wDupeBitArrayIndexC358]                   ;; 01:4028 $fa $58 $c3
     ld   E, A                                          ;; 01:402b $5f
@@ -42,9 +42,9 @@ jp_01_4000:
     ld   D, H                                          ;; 01:4035 $54
     jp   .jp_01_4075                                   ;; 01:4036 $c3 $75 $40
 .data_01_4039:
-    ld   A, [wC394]                                    ;; 01:4039 $fa $94 $c3
+    ld   A, [op10address1_C394]                        ;; 01:4039 $fa $94 $c3
     ld   L, A                                          ;; 01:403c $6f
-    ld   A, [wC395]                                    ;; 01:403d $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 01:403d $fa $95 $c3
     ld   H, A                                          ;; 01:4040 $67
     ld   A, [wDupeBitArrayIndexC358]                   ;; 01:4041 $fa $58 $c3
     ld   E, A                                          ;; 01:4044 $5f
@@ -56,9 +56,9 @@ jp_01_4000:
     ld   D, H                                          ;; 01:404c $54
     jp   .jp_01_4075                                   ;; 01:404d $c3 $75 $40
 .data_01_4050:
-    ld   A, [wC394]                                    ;; 01:4050 $fa $94 $c3
+    ld   A, [op10address1_C394]                        ;; 01:4050 $fa $94 $c3
     ld   L, A                                          ;; 01:4053 $6f
-    ld   A, [wC395]                                    ;; 01:4054 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 01:4054 $fa $95 $c3
     ld   H, A                                          ;; 01:4057 $67
     ld   A, [wDupeBitArrayIndexC358]                   ;; 01:4058 $fa $58 $c3
     ld   E, A                                          ;; 01:405b $5f
@@ -83,9 +83,9 @@ jp_01_4000:
     ld   [wC362], A                                    ;; 01:4076 $ea $62 $c3
     ld   A, D                                          ;; 01:4079 $7a
     ld   [wC363], A                                    ;; 01:407a $ea $63 $c3
-    ld   A, [wC394]                                    ;; 01:407d $fa $94 $c3
+    ld   A, [op10address1_C394]                        ;; 01:407d $fa $94 $c3
     ld   [wC364], A                                    ;; 01:4080 $ea $64 $c3
-    ld   A, [wC395]                                    ;; 01:4083 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 01:4083 $fa $95 $c3
     ld   [wC365], A                                    ;; 01:4086 $ea $65 $c3
     ret                                                ;; 01:4089 $c9
 
@@ -520,7 +520,7 @@ call_01_4390:
     ld   [wC396], A                                    ;; 01:43b0 $ea $96 $c3
     call call_01_47ba                                  ;; 01:43b3 $cd $ba $47
     ld   A, $02                                        ;; 01:43b6 $3e $02
-    ld   [wC394], A                                    ;; 01:43b8 $ea $94 $c3
+    ld   [op10address1_C394], A                        ;; 01:43b8 $ea $94 $c3
     ld   A, $41                                        ;; 01:43bb $3e $41
     ld   [wReturnAddressC324], A                       ;; 01:43bd $ea $24 $c3
     ld   A, $1d                                        ;; 01:43c0 $3e $1d
@@ -534,7 +534,7 @@ call_01_43cd:
     ld   A, [wC3FB]                                    ;; 01:43cd $fa $fb $c3
     ldh  [rSVBK], A                                    ;; 01:43d0 $e0 $70
     ld   HL, wC44C                                     ;; 01:43d2 $21 $4c $c4
-    ld   A, [wC395]                                    ;; 01:43d5 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 01:43d5 $fa $95 $c3
     rlca                                               ;; 01:43d8 $07
     ld   E, A                                          ;; 01:43d9 $5f
     ld   D, $00                                        ;; 01:43da $16 $00
@@ -552,14 +552,14 @@ call_01_43cd:
     ld   A, H                                          ;; 01:43ed $7c
     ld   [wC357], A                                    ;; 01:43ee $ea $57 $c3
     ld   HL, wC458                                     ;; 01:43f1 $21 $58 $c4
-    ld   A, [wC395]                                    ;; 01:43f4 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 01:43f4 $fa $95 $c3
     ld   E, A                                          ;; 01:43f7 $5f
     ld   D, $00                                        ;; 01:43f8 $16 $00
     add  HL, DE                                        ;; 01:43fa $19
     ld   A, [HL]                                       ;; 01:43fb $7e
     ld   [wImportantBitArrayThingC35A], A              ;; 01:43fc $ea $5a $c3
     ld   HL, wC45E                                     ;; 01:43ff $21 $5e $c4
-    ld   A, [wC395]                                    ;; 01:4402 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 01:4402 $fa $95 $c3
     rlca                                               ;; 01:4405 $07
     ld   E, A                                          ;; 01:4406 $5f
     ld   D, $00                                        ;; 01:4407 $16 $00
@@ -577,7 +577,7 @@ call_01_43cd:
     ld   A, H                                          ;; 01:441a $7c
     ld   [wC35D], A                                    ;; 01:441b $ea $5d $c3
     ld   HL, wC46A                                     ;; 01:441e $21 $6a $c4
-    ld   A, [wC395]                                    ;; 01:4421 $fa $95 $c3
+    ld   A, [op10address1_C394.high]                   ;; 01:4421 $fa $95 $c3
     ld   E, A                                          ;; 01:4424 $5f
     ld   D, $00                                        ;; 01:4425 $16 $00
     add  HL, DE                                        ;; 01:4427 $19
@@ -1584,6 +1584,9 @@ JumpUsing3BitsFromBitArrayIndexHighC35E_AndWriteThatIndexToC35C:
     dw   call_01_4af7                                  ;; 01:4a9d pP $06
     dw   call_01_4b0c                                  ;; 01:4a9f ?? $07
 
+; C38C and D is where the BitArrayIndex value will come from
+; the next time this is called. This basically increments a second time
+; reading an Op10 arg byte, indicating a 2 byte arg?
 WriteToC35AandB_WhetherBitArrayBitC35EtoFIsSet:
     call StoreBCPlus1InC38CtoD                         ;; 01:4aa1 $cd $72 $4a
     call CheckBitArrayBitFromC35EtoF_isSet             ;; 01:4aa4 $cd $27 $4d
@@ -1591,7 +1594,7 @@ WriteToC35AandB_WhetherBitArrayBitC35EtoFIsSet:
     ld   [wImportantBitArrayThingC35A], A              ;; 01:4aa7 $ea $5a $c3
     ld   [wImportantBitArrayThingC35B], A              ;; 01:4aaa $ea $5b $c3
     call call_01_4bab                                  ;; 01:4aad $cd $ab $4b
-    jp   jp_01_4b0f                                    ;; 01:4ab0 $c3 $0f $4b
+    jp   UseJumpTableTwo                               ;; 01:4ab0 $c3 $0f $4b
 
 WriteToC35AandB_WhetherBitArrayBitC35EtoFIsNotSet:
     call StoreBCPlus1InC38CtoD                         ;; 01:4ab3 $cd $72 $4a
@@ -1601,7 +1604,7 @@ WriteToC35AandB_WhetherBitArrayBitC35EtoFIsNotSet:
     ld   [wImportantBitArrayThingC35A], A              ;; 01:4aba $ea $5a $c3
     ld   [wImportantBitArrayThingC35B], A              ;; 01:4abd $ea $5b $c3
     call call_01_4bab                                  ;; 01:4ac0 $cd $ab $4b
-    jp   jp_01_4b0f                                    ;; 01:4ac3 $c3 $0f $4b
+    jp   UseJumpTableTwo                               ;; 01:4ac3 $c3 $0f $4b
 
 call_01_4ac6:
     call StoreBCPlus1InC38CtoD                         ;; 01:4ac6 $cd $72 $4a
@@ -1609,13 +1612,13 @@ call_01_4ac6:
     ld   A, $00                                        ;; 01:4acc $3e $00
     ld   [wImportantBitArrayThingC35B], A              ;; 01:4ace $ea $5b $c3
     call call_01_4bab                                  ;; 01:4ad1 $cd $ab $4b
-    jp   jp_01_4b0f                                    ;; 01:4ad4 $c3 $0f $4b
+    jp   UseJumpTableTwo                               ;; 01:4ad4 $c3 $0f $4b
 
 call_01_4ad7:
     call StoreBCPlus1InC38CtoD                         ;; 01:4ad7 $cd $72 $4a
     call Copy2BytesFromPlayerStateToC35AtoB_ReturnFlag ;; 01:4ada $cd $0b $4d
     call call_01_4bab                                  ;; 01:4add $cd $ab $4b
-    jp   jp_01_4b0f                                    ;; 01:4ae0 $c3 $0f $4b
+    jp   UseJumpTableTwo                               ;; 01:4ae0 $c3 $0f $4b
 
 call_01_4ae3:
     call StoreBCPlus1InC38CtoD                         ;; 01:4ae3 $cd $72 $4a
@@ -1624,7 +1627,7 @@ call_01_4ae3:
     ld   A, $00                                        ;; 01:4aec $3e $00
     ld   [wImportantBitArrayThingC35B], A              ;; 01:4aee $ea $5b $c3
     call call_01_4bab                                  ;; 01:4af1 $cd $ab $4b
-    jp   jp_01_4b0f                                    ;; 01:4af4 $c3 $0f $4b
+    jp   UseJumpTableTwo                               ;; 01:4af4 $c3 $0f $4b
 
 call_01_4af7:
     call StoreBCPlus2InC38CtoD                         ;; 01:4af7 $cd $71 $4a
@@ -1633,38 +1636,43 @@ call_01_4af7:
     ld   A, [wBitArrayIndexC35E.low]                   ;; 01:4b00 $fa $5f $c3
     ld   [wImportantBitArrayThingC35B], A              ;; 01:4b03 $ea $5b $c3
     call call_01_4bab                                  ;; 01:4b06 $cd $ab $4b
-    jp   jp_01_4b0f                                    ;; 01:4b09 $c3 $0f $4b
+    jp   UseJumpTableTwo                               ;; 01:4b09 $c3 $0f $4b
 
 call_01_4b0c:
     call StoreBCInC38CtoD                              ;; 01:4b0c $cd $73 $4a
 
-jp_01_4b0f:
+; After this jump I saw a return to 00:2166
+UseJumpTableTwo:
     ld   A, [wBitArrayIndexC35E]                       ;; 01:4b0f $fa $5e $c3
     and  A, $1e                                        ;; 01:4b12 $e6 $1e
     ld   E, A                                          ;; 01:4b14 $5f
     ld   D, $00                                        ;; 01:4b15 $16 $00
-    ld   HL, .data_01_4b1f                             ;; 01:4b17 $21 $1f $4b
+    ld   HL, .jumptable                                ;; 01:4b17 $21 $1f $4b
     add  HL, DE                                        ;; 01:4b1a $19
     ld   A, [HL+]                                      ;; 01:4b1b $2a
     ld   H, [HL]                                       ;; 01:4b1c $66
     ld   L, A                                          ;; 01:4b1d $6f
     jp   HL                                            ;; 01:4b1e $e9
-.data_01_4b1f:
-    dw   .data_01_4b3f                                 ;; 01:4b1f pP
-    dw   .data_01_4b58                                 ;; 01:4b21 pP
-    dw   .data_01_4b85                                 ;; 01:4b23 pP
-    dw   .data_01_4b85                                 ;; 01:4b25 pP
-    db   $85, $4b                                      ;; 01:4b27 ??
-    dw   .data_01_4b85                                 ;; 01:4b29 pP
-    dw   .data_01_4b85                                 ;; 01:4b2b pP
-    dw   .data_01_4b85                                 ;; 01:4b2d pP
-    dw   .data_01_4b85                                 ;; 01:4b2f pP
-    dw   .data_01_4b85                                 ;; 01:4b31 pP
-    db   $85, $4b, $85, $4b, $85, $4b                  ;; 01:4b33 ??????
-    dw   .data_01_4b99                                 ;; 01:4b39 pP
-    db   $a2, $4b                                      ;; 01:4b3b ??
-    dw   .data_01_4baa                                 ;; 01:4b3d pP
-.data_01_4b3f:
+;@jumptable amount=16
+.jumptable:
+    dw   call_01_4b3f                                  ;; 01:4b1f pP $00
+    dw   call_01_4b58                                  ;; 01:4b21 pP $01
+    dw   call_01_4b85                                  ;; 01:4b23 pP $02
+    dw   call_01_4b85                                  ;; 01:4b25 pP $03
+    dw   call_01_4b85                                  ;; 01:4b27 ?? $04
+    dw   call_01_4b85                                  ;; 01:4b29 pP $05
+    dw   call_01_4b85                                  ;; 01:4b2b pP $06
+    dw   call_01_4b85                                  ;; 01:4b2d pP $07
+    dw   call_01_4b85                                  ;; 01:4b2f pP $08
+    dw   call_01_4b85                                  ;; 01:4b31 pP $09
+    dw   call_01_4b85                                  ;; 01:4b33 ?? $0a
+    dw   call_01_4b85                                  ;; 01:4b35 ?? $0b
+    dw   call_01_4b85                                  ;; 01:4b37 ?? $0c
+    dw   call_01_4b99                                  ;; 01:4b39 pP $0d
+    dw   call_01_4ba2                                  ;; 01:4b3b ?? $0e
+    dw   ImmediateReturn                               ;; 01:4b3d pP $0f
+
+call_01_4b3f:
     ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 01:4b3f $21 $56 $c3
     inc  [HL]                                          ;; 01:4b42 $34
     ld   E, [HL]                                       ;; 01:4b43 $5e
@@ -1679,7 +1687,8 @@ jp_01_4b0f:
     add  HL, DE                                        ;; 01:4b53 $19
     ld   [HL], D                                       ;; 01:4b54 $72
     jp   jp_00_1f9d                                    ;; 01:4b55 $c3 $9d $1f
-.data_01_4b58:
+
+call_01_4b58:
     ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 01:4b58 $21 $56 $c3
     ld   E, [HL]                                       ;; 01:4b5b $5e
     ld   D, $00                                        ;; 01:4b5c $16 $00
@@ -1704,7 +1713,8 @@ jp_01_4b0f:
     ld   [HL], D                                       ;; 01:4b7e $72
     call call_01_4bab                                  ;; 01:4b7f $cd $ab $4b
     jp   jp_00_1f9d                                    ;; 01:4b82 $c3 $9d $1f
-.data_01_4b85:
+
+call_01_4b85:
     ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 01:4b85 $21 $56 $c3
     ld   E, [HL]                                       ;; 01:4b88 $5e
     ld   D, $00                                        ;; 01:4b89 $16 $00
@@ -1715,13 +1725,19 @@ jp_01_4b0f:
     inc  A                                             ;; 01:4b94 $3c
     ld   [HL], A                                       ;; 01:4b95 $77
     jp   jp_00_1f9d                                    ;; 01:4b96 $c3 $9d $1f
-.data_01_4b99:
+
+call_01_4b99:
     ld   A, $ff                                        ;; 01:4b99 $3e $ff
     ld   [wBeginningOfSomeRegionC5C3], A               ;; 01:4b9b $ea $c3 $c5
     ld   [wBeginningOfSomeRegionC5D3], A               ;; 01:4b9e $ea $d3 $c5
     ret                                                ;; 01:4ba1 $c9
-    db   $3e, $00, $ea, $c3, $c5, $ea, $d3, $c5        ;; 01:4ba2 ????????
-.data_01_4baa:
+
+call_01_4ba2:
+    ld   A, $00                                        ;; 01:4ba2 $3e $00
+    ld   [wBeginningOfSomeRegionC5C3], A               ;; 01:4ba4 $ea $c3 $c5
+    ld   [wBeginningOfSomeRegionC5D3], A               ;; 01:4ba7 $ea $d3 $c5
+
+ImmediateReturn:
     ret                                                ;; 01:4baa $c9
 
 call_01_4bab:
@@ -1754,7 +1770,7 @@ call_01_4bab:
     dec  A                                             ;; 01:4bdd $3d
     ld   E, A                                          ;; 01:4bde $5f
     ld   D, $00                                        ;; 01:4bdf $16 $00
-    ld   HL, .data_01_4bf7                             ;; 01:4be1 $21 $f7 $4b
+    ld   HL, .jumptable                                ;; 01:4be1 $21 $f7 $4b
     add  HL, DE                                        ;; 01:4be4 $19
     ld   A, [HL+]                                      ;; 01:4be5 $2a
     ld   H, [HL]                                       ;; 01:4be6 $66
@@ -1767,19 +1783,26 @@ call_01_4bab:
     ld   E, A                                          ;; 01:4bf3 $5f
     ld   D, $00                                        ;; 01:4bf4 $16 $00
     jp   HL                                            ;; 01:4bf6 $e9
-.data_01_4bf7:
-    db   $ca, $4c, $ca, $4c                            ;; 01:4bf7 ????
-    dw   .data_01_4c17                                 ;; 01:4bfb pP
-    dw   .data_01_4c40                                 ;; 01:4bfd pP
-    db   $56, $4c                                      ;; 01:4bff ??
-    dw   .data_01_4c2d                                 ;; 01:4c01 pP
-    dw   .data_01_4c67                                 ;; 01:4c03 pP
-    dw   .data_01_4cb6                                 ;; 01:4c05 pP
-    dw   .data_01_4c7a                                 ;; 01:4c07 pP
-    dw   .data_01_4ca2                                 ;; 01:4c09 pP
-    db   $ca, $4c, $ca, $4c, $ca, $4c, $ca, $4c        ;; 01:4c0b ????????
-    db   $ca, $4c, $ca, $4c                            ;; 01:4c13 ????
-.data_01_4c17:
+;@jumptable amount=16
+.jumptable:
+    dw   call_01_4cca                                  ;; 01:4bf7 ?? $00
+    dw   call_01_4cca                                  ;; 01:4bf9 ?? $01
+    dw   call_01_4c17                                  ;; 01:4bfb pP $02
+    dw   call_01_4c40                                  ;; 01:4bfd pP $03
+    dw   call_01_4c56                                  ;; 01:4bff ?? $04
+    dw   call_01_4c2d                                  ;; 01:4c01 pP $05
+    dw   call_01_4c67                                  ;; 01:4c03 pP $06
+    dw   call_01_4cb6                                  ;; 01:4c05 pP $07
+    dw   call_01_4c7a                                  ;; 01:4c07 pP $08
+    dw   call_01_4ca2                                  ;; 01:4c09 pP $09
+    dw   call_01_4cca                                  ;; 01:4c0b ?? $0a
+    dw   call_01_4cca                                  ;; 01:4c0d ?? $0b
+    dw   call_01_4cca                                  ;; 01:4c0f ?? $0c
+    dw   call_01_4cca                                  ;; 01:4c11 ?? $0d
+    dw   call_01_4cca                                  ;; 01:4c13 ?? $0e
+    dw   call_01_4cca                                  ;; 01:4c15 ?? $0f
+
+call_01_4c17:
     ld   A, $00                                        ;; 01:4c17 $3e $00
     ld   [wLessImportantBitArrayThingC35C], A          ;; 01:4c19 $ea $5c $c3
     ld   HL, wBeginningOfSomeRegionC5C3                ;; 01:4c1c $21 $c3 $c5
@@ -1792,8 +1815,9 @@ call_01_4bab:
     ld   A, [HL]                                       ;; 01:4c27 $7e
     and  A, B                                          ;; 01:4c28 $a0
     ld   [HL], A                                       ;; 01:4c29 $77
-    jp   .jp_01_4cca                                   ;; 01:4c2a $c3 $ca $4c
-.data_01_4c2d:
+    jp   call_01_4cca                                  ;; 01:4c2a $c3 $ca $4c
+
+call_01_4c2d:
     ld   HL, wBeginningOfSomeRegionC5D3                ;; 01:4c2d $21 $d3 $c5
     add  HL, DE                                        ;; 01:4c30 $19
     push HL                                            ;; 01:4c31 $e5
@@ -1806,8 +1830,9 @@ call_01_4bab:
     ld   A, [HL]                                       ;; 01:4c3a $7e
     adc  A, B                                          ;; 01:4c3b $88
     ld   [HL], A                                       ;; 01:4c3c $77
-    jp   .jp_01_4cca                                   ;; 01:4c3d $c3 $ca $4c
-.data_01_4c40:
+    jp   call_01_4cca                                  ;; 01:4c3d $c3 $ca $4c
+
+call_01_4c40:
     ld   A, $00                                        ;; 01:4c40 $3e $00
     ld   [wLessImportantBitArrayThingC35C], A          ;; 01:4c42 $ea $5c $c3
     ld   HL, wBeginningOfSomeRegionC5C3                ;; 01:4c45 $21 $c3 $c5
@@ -1820,11 +1845,22 @@ call_01_4bab:
     ld   A, [HL]                                       ;; 01:4c50 $7e
     or   A, B                                          ;; 01:4c51 $b0
     ld   [HL], A                                       ;; 01:4c52 $77
-    jp   .jp_01_4cca                                   ;; 01:4c53 $c3 $ca $4c
-    db   $21, $c3, $c5, $19, $7e, $a9, $77, $21        ;; 01:4c56 ????????
-    db   $d3, $c5, $19, $7e, $a8, $77, $c3, $ca        ;; 01:4c5e ????????
-    db   $4c                                           ;; 01:4c66 ?
-.data_01_4c67:
+    jp   call_01_4cca                                  ;; 01:4c53 $c3 $ca $4c
+
+call_01_4c56:
+    ld   HL, wBeginningOfSomeRegionC5C3                ;; 01:4c56 $21 $c3 $c5
+    add  HL, DE                                        ;; 01:4c59 $19
+    ld   A, [HL]                                       ;; 01:4c5a $7e
+    xor  A, C                                          ;; 01:4c5b $a9
+    ld   [HL], A                                       ;; 01:4c5c $77
+    ld   HL, wBeginningOfSomeRegionC5D3                ;; 01:4c5d $21 $d3 $c5
+    add  HL, DE                                        ;; 01:4c60 $19
+    ld   A, [HL]                                       ;; 01:4c61 $7e
+    xor  A, B                                          ;; 01:4c62 $a8
+    ld   [HL], A                                       ;; 01:4c63 $77
+    jp   call_01_4cca                                  ;; 01:4c64 $c3 $ca $4c
+
+call_01_4c67:
     ld   HL, wBeginningOfSomeRegionC5D3                ;; 01:4c67 $21 $d3 $c5
     add  HL, DE                                        ;; 01:4c6a $19
     push HL                                            ;; 01:4c6b $e5
@@ -1837,24 +1873,28 @@ call_01_4bab:
     ld   A, [HL]                                       ;; 01:4c74 $7e
     sbc  A, B                                          ;; 01:4c75 $98
     ld   [HL], A                                       ;; 01:4c76 $77
-    jp   .jp_01_4cca                                   ;; 01:4c77 $c3 $ca $4c
-.data_01_4c7a:
+    jp   call_01_4cca                                  ;; 01:4c77 $c3 $ca $4c
+
+call_01_4c7a:
     ld   HL, wBeginningOfSomeRegionC5D3                ;; 01:4c7a $21 $d3 $c5
     add  HL, DE                                        ;; 01:4c7d $19
     ld   A, [HL]                                       ;; 01:4c7e $7e
     cp   A, B                                          ;; 01:4c7f $b8
-    jr   NZ, .jr_01_4c8e                               ;; 01:4c80 $20 $0c
+    jr   NZ, jr_01_4c8e                                ;; 01:4c80 $20 $0c
     ld   HL, wBeginningOfSomeRegionC5C3                ;; 01:4c82 $21 $c3 $c5
     add  HL, DE                                        ;; 01:4c85 $19
     ld   A, [HL]                                       ;; 01:4c86 $7e
     cp   A, C                                          ;; 01:4c87 $b9
-    jr   NZ, .jr_01_4c8e                               ;; 01:4c88 $20 $04
-.jr_01_4c8a:
+    jr   NZ, jr_01_4c8e                                ;; 01:4c88 $20 $04
+
+jr_01_4c8a:
     ld   A, $ff                                        ;; 01:4c8a $3e $ff
-    jr   .jr_01_4c90                                   ;; 01:4c8c $18 $02
-.jr_01_4c8e:
+    jr   jr_01_4c90                                    ;; 01:4c8c $18 $02
+
+jr_01_4c8e:
     ld   A, $00                                        ;; 01:4c8e $3e $00
-.jr_01_4c90:
+
+jr_01_4c90:
     ld   HL, wBeginningOfSomeRegionC5C3                ;; 01:4c90 $21 $c3 $c5
     add  HL, DE                                        ;; 01:4c93 $19
     ld   [HL], A                                       ;; 01:4c94 $77
@@ -1863,34 +1903,37 @@ call_01_4bab:
     ld   [HL], A                                       ;; 01:4c99 $77
     ld   A, $00                                        ;; 01:4c9a $3e $00
     ld   [wLessImportantBitArrayThingC35C], A          ;; 01:4c9c $ea $5c $c3
-    jp   .jp_01_4cca                                   ;; 01:4c9f $c3 $ca $4c
-.data_01_4ca2:
+    jp   call_01_4cca                                  ;; 01:4c9f $c3 $ca $4c
+
+call_01_4ca2:
     ld   HL, wBeginningOfSomeRegionC5D3                ;; 01:4ca2 $21 $d3 $c5
     add  HL, DE                                        ;; 01:4ca5 $19
     ld   A, [HL]                                       ;; 01:4ca6 $7e
     cp   A, B                                          ;; 01:4ca7 $b8
-    jr   C, .jr_01_4c8a                                ;; 01:4ca8 $38 $e0
-    jr   NZ, .jr_01_4c8e                               ;; 01:4caa $20 $e2
+    jr   C, jr_01_4c8a                                 ;; 01:4ca8 $38 $e0
+    jr   NZ, jr_01_4c8e                                ;; 01:4caa $20 $e2
     ld   HL, wBeginningOfSomeRegionC5C3                ;; 01:4cac $21 $c3 $c5
     add  HL, DE                                        ;; 01:4caf $19
     ld   A, [HL]                                       ;; 01:4cb0 $7e
     cp   A, C                                          ;; 01:4cb1 $b9
-    jr   C, .jr_01_4c8a                                ;; 01:4cb2 $38 $d6
-    jr   .jr_01_4c8e                                   ;; 01:4cb4 $18 $d8
-.data_01_4cb6:
+    jr   C, jr_01_4c8a                                 ;; 01:4cb2 $38 $d6
+    jr   jr_01_4c8e                                    ;; 01:4cb4 $18 $d8
+
+call_01_4cb6:
     ld   HL, wBeginningOfSomeRegionC5D3                ;; 01:4cb6 $21 $d3 $c5
     add  HL, DE                                        ;; 01:4cb9 $19
     ld   A, [HL]                                       ;; 01:4cba $7e
     cp   A, B                                          ;; 01:4cbb $b8
-    jr   C, .jr_01_4c8e                                ;; 01:4cbc $38 $d0
-    jr   NZ, .jr_01_4c8a                               ;; 01:4cbe $20 $ca
+    jr   C, jr_01_4c8e                                 ;; 01:4cbc $38 $d0
+    jr   NZ, jr_01_4c8a                                ;; 01:4cbe $20 $ca
     ld   HL, wBeginningOfSomeRegionC5C3                ;; 01:4cc0 $21 $c3 $c5
     add  HL, DE                                        ;; 01:4cc3 $19
     ld   A, [HL]                                       ;; 01:4cc4 $7e
     cp   A, C                                          ;; 01:4cc5 $b9
-    jr   NC, .jr_01_4c8a                               ;; 01:4cc6 $30 $c2
-    jr   .jr_01_4c8e                                   ;; 01:4cc8 $18 $c4
-.jp_01_4cca:
+    jr   NC, jr_01_4c8a                                ;; 01:4cc6 $30 $c2
+    jr   jr_01_4c8e                                    ;; 01:4cc8 $18 $c4
+
+call_01_4cca:
     ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 01:4cca $fa $56 $c3
     ld   E, A                                          ;; 01:4ccd $5f
     ld   D, $00                                        ;; 01:4cce $16 $00
@@ -2626,7 +2669,7 @@ OpenHamchatWheel_Maybe:
     ld   A, $00                                        ;; 01:510d $3e $00
     ld   HL, SomeFiveArgOp                             ;; 01:510f $21 $26 $21
     call call_00_2390                                  ;; 01:5112 $cd $90 $23
-    ld   A, [wC399]                                    ;; 01:5115 $fa $99 $c3
+    ld   A, [op10LoopsDoneC399]                        ;; 01:5115 $fa $99 $c3
     and  A, A                                          ;; 01:5118 $a7
     jp   Z, CallNextScriptInstruction_PrepArgAddr      ;; 01:5119 $ca $14 $0a
     ld   A, $06                                        ;; 01:511c $3e $06
@@ -2714,18 +2757,18 @@ OpenHamchatWheel_Maybe:
     ld   A, $00                                        ;; 01:51d4 $3e $00
     ld   [wC397], A                                    ;; 01:51d6 $ea $97 $c3
     ld   [wC32F], A                                    ;; 01:51d9 $ea $2f $c3
-    ld   [wC393], A                                    ;; 01:51dc $ea $93 $c3
+    ld   [offsetFromOp10Address1_C393], A              ;; 01:51dc $ea $93 $c3
     ld   A, [wHamChatCursorIndexC38E]                  ;; 01:51df $fa $8e $c3
-    ld   [wC392], A                                    ;; 01:51e2 $ea $92 $c3
+    ld   [offsetInHamchatWheel_toWriteOp10Byte_C392], A ;; 01:51e2 $ea $92 $c3
 .jr_01_51e5:
     ld   A, [wC397]                                    ;; 01:51e5 $fa $97 $c3
     ld   [wC32E], A                                    ;; 01:51e8 $ea $2e $c3
     ld   A, $00                                        ;; 01:51eb $3e $00
     ld   HL, $21ba                                     ;; 01:51ed $21 $ba $21
     call call_00_2390                                  ;; 01:51f0 $cd $90 $23
-    ld   HL, wC392                                     ;; 01:51f3 $21 $92 $c3
+    ld   HL, offsetInHamchatWheel_toWriteOp10Byte_C392 ;; 01:51f3 $21 $92 $c3
     inc  [HL]                                          ;; 01:51f6 $34
-    ld   A, [wC399]                                    ;; 01:51f7 $fa $99 $c3
+    ld   A, [op10LoopsDoneC399]                        ;; 01:51f7 $fa $99 $c3
     cp   A, [HL]                                       ;; 01:51fa $be
     jr   Z, .jr_01_522a                                ;; 01:51fb $28 $2d
     ld   A, [wC484]                                    ;; 01:51fd $fa $84 $c4
@@ -2734,7 +2777,7 @@ OpenHamchatWheel_Maybe:
     add  A, B                                          ;; 01:5204 $80
     cp   A, [HL]                                       ;; 01:5205 $be
     jr   Z, .jr_01_522a                                ;; 01:5206 $28 $22
-    ld   HL, wC393                                     ;; 01:5208 $21 $93 $c3
+    ld   HL, offsetFromOp10Address1_C393               ;; 01:5208 $21 $93 $c3
     inc  [HL]                                          ;; 01:520b $34
     ld   A, [wC483]                                    ;; 01:520c $fa $83 $c4
     cp   A, [HL]                                       ;; 01:520f $be
@@ -2747,7 +2790,7 @@ OpenHamchatWheel_Maybe:
 .jr_01_521c:
     ld   A, $00                                        ;; 01:521c $3e $00
     ld   [wC397], A                                    ;; 01:521e $ea $97 $c3
-    ld   [wC393], A                                    ;; 01:5221 $ea $93 $c3
+    ld   [offsetFromOp10Address1_C393], A              ;; 01:5221 $ea $93 $c3
     ld   HL, wC32F                                     ;; 01:5224 $21 $2f $c3
     inc  [HL]                                          ;; 01:5227 $34
     jr   .jr_01_51e5                                   ;; 01:5228 $18 $bb
@@ -2900,7 +2943,7 @@ OpenHamchatWheel_Maybe:
     jp   Z, .jp_01_5450                                ;; 01:5373 $ca $50 $54
     ld   HL, wC38F                                     ;; 01:5376 $21 $8f $c3
     inc  [HL]                                          ;; 01:5379 $34
-    ld   A, [wC399]                                    ;; 01:537a $fa $99 $c3
+    ld   A, [op10LoopsDoneC399]                        ;; 01:537a $fa $99 $c3
     cp   A, [HL]                                       ;; 01:537d $be
     jr   Z, .jr_01_5395                                ;; 01:537e $28 $15
     ld   A, [wC483]                                    ;; 01:5380 $fa $83 $c4
@@ -2934,12 +2977,12 @@ OpenHamchatWheel_Maybe:
     dec  A                                             ;; 01:53b7 $3d
     add  A, [HL]                                       ;; 01:53b8 $86
     ld   B, A                                          ;; 01:53b9 $47
-    ld   A, [wC399]                                    ;; 01:53ba $fa $99 $c3
+    ld   A, [op10LoopsDoneC399]                        ;; 01:53ba $fa $99 $c3
     dec  A                                             ;; 01:53bd $3d
     cp   A, B                                          ;; 01:53be $b8
     jp   NC, .jp_01_5450                               ;; 01:53bf $d2 $50 $54
     ld   B, [HL]                                       ;; 01:53c2 $46
-    ld   A, [wC399]                                    ;; 01:53c3 $fa $99 $c3
+    ld   A, [op10LoopsDoneC399]                        ;; 01:53c3 $fa $99 $c3
     dec  A                                             ;; 01:53c6 $3d
     ld   [HL], A                                       ;; 01:53c7 $77
     sub  A, B                                          ;; 01:53c8 $90
@@ -2952,7 +2995,7 @@ OpenHamchatWheel_Maybe:
     ld   A, [wC38F]                                    ;; 01:53d5 $fa $8f $c3
     add  A, [HL]                                       ;; 01:53d8 $86
     ld   [wUsedAsAnOffsetIntoSomeRegionC356], A        ;; 01:53d9 $ea $56 $c3
-    ld   HL, wC399                                     ;; 01:53dc $21 $99 $c3
+    ld   HL, op10LoopsDoneC399                         ;; 01:53dc $21 $99 $c3
     cp   A, [HL]                                       ;; 01:53df $be
     jr   C, .jr_01_53f9                                ;; 01:53e0 $38 $17
     ld   A, [wC39C]                                    ;; 01:53e2 $fa $9c $c3
@@ -2962,7 +3005,7 @@ OpenHamchatWheel_Maybe:
     cp   A, [HL]                                       ;; 01:53ea $be
     jp   NC, .jp_01_5450                               ;; 01:53eb $d2 $50 $54
     ld   B, A                                          ;; 01:53ee $47
-    ld   A, [wC399]                                    ;; 01:53ef $fa $99 $c3
+    ld   A, [op10LoopsDoneC399]                        ;; 01:53ef $fa $99 $c3
     dec  A                                             ;; 01:53f2 $3d
     ld   C, A                                          ;; 01:53f3 $4f
     sub  A, B                                          ;; 01:53f4 $90
@@ -3232,7 +3275,7 @@ call_01_5661:
     ld   [w1_D61A], A                                  ;; 01:5688 $ea $1a $d6
     ld   [w1_D61B], A                                  ;; 01:568b $ea $1b $d6
 .jr_01_568e:
-    ld   A, [wC399]                                    ;; 01:568e $fa $99 $c3
+    ld   A, [op10LoopsDoneC399]                        ;; 01:568e $fa $99 $c3
     ld   B, A                                          ;; 01:5691 $47
     ld   HL, wC484                                     ;; 01:5692 $21 $84 $c4
     ld   A, [wHamChatCursorIndexC38E]                  ;; 01:5695 $fa $8e $c3
@@ -3306,10 +3349,10 @@ call_01_5732:
     ld   HL, wC390                                     ;; 01:5732 $21 $90 $c3
     ld   A, [wC38F]                                    ;; 01:5735 $fa $8f $c3
     sub  A, [HL]                                       ;; 01:5738 $96
-    ld   [wC392], A                                    ;; 01:5739 $ea $92 $c3
+    ld   [offsetInHamchatWheel_toWriteOp10Byte_C392], A ;; 01:5739 $ea $92 $c3
     ld   A, $00                                        ;; 01:573c $3e $00
     ld   [wC397], A                                    ;; 01:573e $ea $97 $c3
-    ld   [wC393], A                                    ;; 01:5741 $ea $93 $c3
+    ld   [offsetFromOp10Address1_C393], A              ;; 01:5741 $ea $93 $c3
     ld   A, [wC391]                                    ;; 01:5744 $fa $91 $c3
     ld   [wC32F], A                                    ;; 01:5747 $ea $2f $c3
 .jr_01_574a:
@@ -3318,15 +3361,15 @@ call_01_5732:
     ld   A, $00                                        ;; 01:5750 $3e $00
     ld   HL, $21ba                                     ;; 01:5752 $21 $ba $21
     call call_00_2390                                  ;; 01:5755 $cd $90 $23
-    ld   HL, wC392                                     ;; 01:5758 $21 $92 $c3
+    ld   HL, offsetInHamchatWheel_toWriteOp10Byte_C392 ;; 01:5758 $21 $92 $c3
     inc  [HL]                                          ;; 01:575b $34
-    ld   A, [wC399]                                    ;; 01:575c $fa $99 $c3
+    ld   A, [op10LoopsDoneC399]                        ;; 01:575c $fa $99 $c3
     cp   A, [HL]                                       ;; 01:575f $be
     jr   Z, .jr_01_577c                                ;; 01:5760 $28 $1a
     ld   A, [wC484]                                    ;; 01:5762 $fa $84 $c4
     cp   A, [HL]                                       ;; 01:5765 $be
     jr   Z, .jr_01_577c                                ;; 01:5766 $28 $14
-    ld   HL, wC393                                     ;; 01:5768 $21 $93 $c3
+    ld   HL, offsetFromOp10Address1_C393               ;; 01:5768 $21 $93 $c3
     inc  [HL]                                          ;; 01:576b $34
     ld   A, [wC483]                                    ;; 01:576c $fa $83 $c4
     cp   A, [HL]                                       ;; 01:576f $be
