@@ -1014,7 +1014,7 @@ data_05_4123:
 ; 17 0e = Nopibloo else ?
 ; The other option data has the rules for how many args
 ; to expect and what condition to apply (I think)
-; This data is consumed by Op10. 
+; This data is consumed by Op10.
 ; (This ints seem to only map to words actually used in AcornShrine.)
 ; (The words indicated by these values is not any standard chat ids I've seen.)
 ; (Maybe there's a table nearby of AcornShrine words?)

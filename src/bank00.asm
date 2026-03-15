@@ -4665,11 +4665,11 @@ SomeFiveArgOp:
     ld   [offsetInHamchatWheel_toWriteOp10Byte_C392], A ;; 00:215d $ea $92 $c3
     ld   [offsetFromOp10Address1_C393], A              ;; 00:2160 $ea $93 $c3
     ld   [wC38F], A                                    ;; 00:2163 $ea $8f $c3
-.loopArg1Times:
 ; Somehow this function puts 00 in C5C3 if I don't have the move.
 ; This ends up with either the "have it" or "dont have it" tablejump index
-;  in the hamchatwheel at a given slot. 05 vs 06. TableJump tables are 
+;  in the hamchatwheel at a given slot. 05 vs 06. TableJump tables are
 ;  designed like Teenie_handler Dont_have_handler Foo_handler Dont_have_handler.
+.loopArg1Times:
     call Write3BytesFromHLPointerToC35E_AndUseJumpArray2 ;; 00:2166 $cd $89 $1f
 ; The call immediately above this sets this value based on jumptable.
 ; wTempHoldsBC_1_C38C-D determine what it does.
