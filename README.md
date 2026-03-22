@@ -36,3 +36,7 @@ I used Python 3.12.3 to run the BadBoy disassembler. I have not tested other ver
 To get the same disassembly otuput that I have, run the [update.sh](https://github.com/HaychDeeHD/HamHamsUniteDisassembly/blob/main/update.sh) script. It assumes this repo is a sibling of BadBoy. (To exactly match my results you should use [my fork of BadBoy](https://github.com/HaychDeeHD/BadBoy/tree/master).) It will rerun the disassembler, build the resulting assembly files into a GBC ROM, then compare that ROM's hash against the input ROM to verify they match. 
 
 To progress the disassembly you can make changes by adding labels, special BadBoy annotation comments, or plugin edits before running [update.sh](https://github.com/HaychDeeHD/HamHamsUniteDisassembly/blob/main/update.sh). 
+
+## Docs
+
+To learn more about how this game works, please see the docs folder for writeups of what I've come to understand so far.

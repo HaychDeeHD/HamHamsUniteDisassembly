@@ -12,5 +12,6 @@ _tmp
 *.sym
 
 *.txt
+!HamtaroNotes.txt
 
 .vscode

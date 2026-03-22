@@ -1,0 +1,926 @@
+!!!!!!!!!!
+~ NOTE!
+These are my personal, stream-of-consciousness notes as I was learning things about this game.
+There is no guarantee that the information in here is understandable, useful, or even accurate.
+However, there are far more little details I noted at some point in here than in the docs I later wrote.
+!!!!!!!!!!
+
+CA50 - Inventory
+
+
+FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 0B
+00 00 00 0A 00 00 10 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+CA4F is that 0B, HamChats num
+CA52 referenced in code like the start of an array
+CA53 is 0A, seeds
+CA54 is 00, Acorns
+CA56 is 10, rocks
+
+
+Rom2 6DFF increments the hamchat counter
+c715 also updated on hamchat get
+d0f8 and d0fd mentioned
+
+D0F0
+
+03 01 02 00 FF FF FF FF FF 02 00 00 00 FF 00 00
+
+First 4 are different Hamchat ids
+Then FF's not sure why
+The number after the FFs is the current Hamchat book page
+
+0 Hamha
+1 Hif hif
+2 tac q
+3 digdid
+
+0A megaq
+48 yep
+47 no
+40 look
+
+3a gop
+39 paka
+38 scrit
+17 scooch
+
+758a writes to this row in book context
+
+lots of things write to ff70 (SVBK)
+
+d000 was holding the base 4 chats at one point.
+On learning a new chat it changed
+it eventually changed to hold a list of all my chats 4 at a time in the book page!
+
+There's 86 ham words. (0x56 in hex)
+
+c9a3 is loaded. Some bit nonsense is done. Under conditions, hamchat id is written to d000.
+I think the hamchats are stored at c9a3 in some compressed way.
+
+0000C9A0  00 00 00 00 FF 02 FF 01  FF 03 FF FF FF FF FF FF  ................
+0000C9B0  FF FF FF FF FF FF FF 0B  FF FF FF FF FF FF FF FF  ................  0B in this row changes from FF when I get megaq
+0000C9C0  FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ................
+0000C9D0  FF 04 FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ................
+0000C9E0  FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ................
+0000C9F0  FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ................
+0000CA00  FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ................
+0000CA10  FF FF FF 05 FF 06 FF 07  FF FF FF FF FF FF FF FF  ................
+0000CA20  FF FF FF 08 FF FF FF FF  FF FF FF FF FF FF FF FF  ................
+0000CA30  FF 09 FF 0A FF FF FF FF  FF FF FF FF FF FF FF FF  ................
+0000CA40  FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF 0C  ................
+
+This is the same block as before! The last byte is the num chats
+There's some kind of chat id followed by FF.It's the fact that there's data at an index that isnt ff
+Megaq has chat Id 0A (decimal 10) and it's in the 10th slot. What I've been calling id is an index in this table
+Not just any value in the table works. It needs to observe some kinda bit math.
+
+00 -> 00
+01 -> 02
+02 -> 01
+03 -> 03
+0A -> 0B
+
+C = wordId
+B = 0
+SLA C (shift left?)
+RL B (rotate B? Does nothing?)
+
+
+complete save looks like this
+
+
+ 
+00001280  00 00 00 00 00 00 00 00  00 00 00 00 FF 02 FF 01  ................
+00001290  FF 03 FF 41 FF 4A FF 0D  FF 51 FF 0C FF 11 FF 0B  ...A.J...Q......
+000012A0  FF 40 FF 54 FF 3C FF 2D  FF 45 FF 35 FF 1E FF 3E  .@.T.<.-.E.5...>
+000012B0  FF 44 FF 33 FF 20 FF 47  FF 04 FF 10 FF 34 FF 2E  .D.3. .G.....4..
+000012C0  FF 0F FF 49 FF 14 FF 0E  FF 36 FF 12 FF 15 FF 1D  ...I.....6......
+000012D0  FF 48 FF 1B FF 1A FF 13  FF 17 FF 19 FF 16 FF 28  .H.............(
+000012E0  FF 18 FF 22 FF 24 FF 25  FF 4D FF 2A FF 29 FF 2B  ...".$.%.M.*.).+
+000012F0  FF 3F FF 2C FF 26 FF 30  FF 52 FF 05 FF 06 FF 07  .?.,.&.0.R......
+00001300  FF 21 FF 37 FF 32 FF 39  FF 1C FF 08 FF 31 FF 38  .!.7.2.9.....1.8
+00001310  FF 55 FF 23 FF 1F FF 4E  FF 09 FF 0A FF 50 FF 2F  .U.#...N.....P./
+00001320  FF 27 FF 3B FF 42 FF 43  FF 46 FF 4B FF 4F FF 3A  .'.;.B.C.F.K.O.:
+00001330  FF 53 FF 4C FF 3D FF 56                           .S.L.=.V
+
+The number displayed is the order obtained
+
+
+ff70 svbk mentioned often
+
+HL is Register pair H and L
+(HL) dereferences
+
+
+
+The code at 6DD9
+
+Load value stored at SVBK (FF70) into A and PUSH AF (Temp storage of A? It's popped out into SVBK at the end)
+Replace the value at SVBK with 0x02
+Put value at C715 into C. Use bitshift left on C (mult by 2!) so BC is the result. (B is 0 or 1, just the carry)
+(So 2 * (C715) will be our table offset)
+Load the Collected Chats Table address (C9A3) into HL
+Loads the table value at the offset into A, compares to FF
+Does something with the D0F8 row
+Writes num_chats into the table at that address
+increments num_chats
+Something else with D0f8 and co
+Pops back into SVBK (why did this need to be 2 temporarily?
+
+So C715 contains the Chat to learn!
+
+Rom0 0AFB is what writes the HamchatId into C715, but it's not hardcoded to that address
+
+SVBK is a bank switcher! Loading 2 switches to bank 2 (?)
+VBK is a new color-exclusive switcher but on the GB and not in the cartiridge. Tile related?
+
+CP is a subtraction from A that doesn't modify A but sets flags like C (carry/negative) or Z (zero)
+
+0AFB
+
+(C6A0 seems to be changing with each text box. Character data?)
+C6A0-1 contains an address (byteswapped) (7248 26) which contains an address (byteswapped) (C715). We load the double deref into BC
+The address (7248) + 2 contains how far into a destination rom bank we should scan (used in calls to SVBK/VBK)
+The address (7248) + 3 contains the data to write into the destination (MegaQ Id)
+
+Compare against A0 (10). Number of starting chats? 
+IF ELSE To switch SVBK or VBK banks according to C <- actually comparing address bytes to 0xA0
+Perform the write
+Load 0x4 to C326 (new) .. and more stuff
+
+The C670 Row looks like something
+
+C6A0 contained 7248 (byteswapped) (Rom bank 0x26=38) which contained C715 (byteswapped)
+When do we write C6A0 and when do we write 7248?
+
+C6A0: 48 72 26 ...
+RO26:7248: 15 C7 00 0A
+The ROM26 data should be static. I changed it to 0B in the .gbc file and she gave me Twintoo instead of MegaQ!
+
+TODO: Learn which index in the table is what move (DONE)
+TODO: Learn where all the static move data is stored. (Probably more 15 C7?)
+TODO: Change MegaQ giver to give nothing (give ignorable offset?)
+^(This may not be the way. Might need to get giver to invoke getRock instead of getHamchat)
+
+"15 C7 00" is in the ROM a LOT
+Might just be any function that puts data there to read. May not be limited to HamChats.
+But if I'm looking for HamChat e.g. 3A, I know to look at the "15 C7 00 3A".
+There were only 5 for 0A, 2 for 50, but many 26 for 3A. 86 HamChats.
+Could risk changing multiple to different values and then see what Chat I get to determine the source used.
+
+0xFullRomLineNumber / 0x4000 = Decimal rom bank
+
+https://docs.google.com/spreadsheets/d/1qhEhI7Gi7CXCNa9g3g4ujVVaknqKTlR2kQXQfO9Q8VA/edit?gid=0#gid=0
+All Hamchats
+
+C715 is like a special args spot. Looks like lots of things write to there for other things to check
+
+Seed writer function
+Ro2:42d3 UpdateSeedCount 
+
+...
+Write H to C741
+Write L to SeedCount (CA53)
+Write 62 to C715 (via an address pointing to an array of numbers 0x61-0x70 (alphabet?))
+Write 1 to C717
+CALL 3D04
+
+Ro2:3D04 SetBitInArrayOrSomething
+(C715 is an arg and C717 is used to branch 3 different modes)
+C = value at C715 (0x62) (0b01100010)
+B = 0x00 (This may be a macro for adding BC to HL even though B would be skippable in this case)
+Divide BC by 8 (truncate) (0b00001100) (12)
+Load 0xC918 into HL
+Add BC into HL (it's now 0xC924) 
+Load the last 3 bits of C715 into B (The remainder after division by 8) (0b010) (2)
+A = value at C717 (1)
+Jump 1 if 0, Jump 2 if FF * (These also lead to some kind of bitshift dowhile decrementing B)
+ELSE A = 1 and Shift that bit left once per remainder in B  (A = 0b00000100) (A = 2^remainder)
+Set a bit in (HL) to 1 depending on the result. (By ORing (HL) with A)
+
+C918 may be one big flag array. Calling 3D04 with C715 = 1 (not 0 or FF) and C717 = # sets index # to 1.
+Byte 1				      Byte 2                    Byte 3                  ... Byte 12
+07 06 05 04 03 02 01 00   0F 0E 0D 0C 0B 0A 09 08	17 16 15 14 13 12 11 10 ... 67 66 65 64 63 62 61 60
+
+BUT maybe not. This bit was already set in my game. 
+I also think digdig seeds are random and replenishable
+Collecting a seed set bit at spot 62
+Colecting an acorn set at spot 63
+
+C736 contains a value for offset into the Inventory from CA52. Read by 4261
+1 -> Seeds at 
+2 -> Acorns at CA54
+4 -> Rock
+
+Ro2:4231 UpdateCollectibleInventory
+If C736 is 1, jump to Seed handling
+If C737's highest bit is 1, jump to 4261
+(I'm guessing C737 is the amount to collect.)
+(Highest bit jump may be PAYMENT code instead of collect code for negative signed int?)
+Add (C736) to 0xCA52 and put in HL. This is determining an offset into inventory (2=acorns, 4=rocks)
+If I have none of those, CALL FUN_rom2_433c
+Add amount I have with C737 (amount I'm collecting)
+If I go over or hit FF, Jump to 429a (sets amount to FE in proper inventory slot)
+Else Save amount in proper inventory slot
+
+C741 is something
+
+CONCLUSION: There are argument registers at least for this function
+C715 (62, x bitarray index).
+C717 (0, 1, FF branching opcode).
+C736 (1, 2, 4 item type).
+C737 (x, amount getting collected) 
+The effects of calling this series of methods is
+1) Update inventory count (offset from CA52)
+2) Set a bit in the bitarray (offset from C918). Dunno why. It's sometimes a noop.
+
+BitArray
+The bitarray has lotsa values and is a stone's throw from the inventory
+The byte containing the 'seeds/rocks' bit gets read every screen transition
+Seed -> 62, 3rd smallest bit of C924 (offest 12, remainder 3)
+Rock -> 65, 6th smallest bit
+Is it just a "have you ever collected one" bit? Why? Let's examine reads
+
+3 reads each new walkable screen
+3930, 3A4E, 3A7D
+
+The FF80 to FFFF (126 bytes) region is HRAM, fast access RAM
+FF80 itself is the y pos of the topmost actor in the current screen
+FF80 - FF87
+18 00 A4 C2 A4 C2 CF D1
+The repeated A4 C2 may be a tile id? Twice for transitions?
+The same ones were used in the clubhouse, but they may support the theory
+CF D1 map id? <- seemingly not, it didn't change in clubhouse
+CF D1 had a different value for item screen for each option, BACK being CF D1
+CF D! changes to 59 D2 when I'm on the same row (graphically) as a hamster
+
+
+Ro2 3912 PlayerStateChecksum
+(Includes 3930)
+Looks like this adds ALL bytes from C718-CAB2 into FF80-3
+It also puts CAB2-3 to 9A 03. This denotes the length of the preceding region (0x39A) 
+
+Ro2 3952
+(includes 3A4E and 3A7D)
+Copy [C6A9-C6AF] to [CA93-CA99]. 7 bytes copied. Source is not in checksum area, dest is.
+*(Remember C6A0 was an argument line of sorts when getting Hamchat)
+Call PlayerStateChecksum to put checksum in FF80-3
+Copy the 4 checksum bytes from FF80-3 to CAB4-7, right after the summed region
+--- Copy
+Write 0 to 4000 (Is this what this instruction means?) (LD (4000),A)
+Write 0xA to 0000 (is this what this instruction means?) (LD (0000),A)
+Disable Interrupts
+Copy all 39A bytes of player state to A020-AFBF
+Also copy the 6 bytes after, the size and checksum. To AFC0-5
+Enable Interrupts
+Write 0 to 0000
+--- End Copy
+Do the exact same copy but to B000 with last 6 bytes at BFC0 (This one has a 20 byte gap?)
+Do something by jumping to RST28 (0028) and coming back when done
+A = (CAB8), first byte after checksum
+Jump to 1 of 3 places if it is 1, 2, or 3 (though 2 and 3 seem identical). Else return.
+Each of the jumps call RST20 and then set register values before returning. CAB8 dictates return values?
+
+CONCLUSION: These 3 reads are just some kind of data copy/checksumming on screen transition
+Meaning I still have not hit a meaningful read to the bitarray in my playing
+
+TODO: Maybe give up on bit array
+TODO: Find what put MegaQ in C6A0 for it to be given to me
+
+0AFB put megaQ into C715 at the moment of getting it because 7248 was at C6A0, which has 0A (permanently?)
+0A65 put it there from HL (part of 0A52 CopyHLValueToArgAddrWith0x8000Check)
+I think it got into HL from FUN_0A14 (the first line is a call) From C327 and C326 (47 gets incremented to 48 right after)
+The called function is 0A41 [sic] which adds to whatever was already in HL based on C327 and C326
+So HL must have had a value before 0A14 was called? It has many callers
+
+So said again in order:
+
+0) ROM 0x26 7247 permanently has data  50 15 C7 00 0A
+	)This represents that 0A should wind up stored in C715 (with some kind of SVBK offset 0)
+	)The 50 is an opcode (JumpArray index) for Execute Write at C6A0. Set to C322
+1) Starting state still unexplained
+	)Unknown caller puts a value in HL, VAL1 (7241)
+	)C327-6 registers have some specific value, VAL2 (06). VAL1 + VAL2 = 7247 
+	  )This is the distance to next script instruction / length of previous script instruction!
+	)C6A2 has or gets a 26 along the way
+2) PrepArgAddr0A14 adds C327-6 to HL (by calling SumC327-C326ToHLViaDE_then_CopyHLValueToArgAddrWith0x8000Check)
+	)This includes a copy to ArgAddr (C6A0-1) that will be overwritten soon. It's 47 72
+	)Then 0's out the C326 area
+    )Then increments HL and then copies to ArgAddr (C6A0-1) again. RESULT IS 48 72 --> 7248
+		)There's a 26 already(?) there for 48 72 26
+...
+3) Enter function in region of ROM0 0AE8 via JumpArray
+    ) (Must be pretty soon after, otherwise C6A0 region might get rewritten?)
+	) This function is an "Execute the write instruction indicated at C6A0-2" function.
+		) C6A0-2:  48 72 26
+		) 26:7248: 15 C7 00 0A
+		) 0x0A gets written to C715
+...
+4) JumpArray calls 6DD9 (obtainHamChatFromC715)
+	) Puts a value in the (C715)=0x0A=MegaQ slot of your chat Array equal to obtained order (num_chats)
+
+
+TODO: What writes the 26 to C6A2?
+TODO: Who calls PrepArgAddr0A14 with preset HL and C327-6
+-- 9+ callers
+-- In normal gameplay I only notice C326 is single digit and C327 is 00
+TODO: Maybe knowing what calls 6DD9 (obtainHamChatFromC715) helps or matters? 
+
+"What writes the 26 to C6A2?"
+Happens on screen transition / standing on edge of screen
+"What writes 72 to C6A1?"
+0C2C, then 0A61 a bunch
+
+0BF1 function:
+C6A0-2 stores an address (26:6B40), which HL holds 
+Copy 3 bytes from there to C356-8 (61 04 1E)
+Copy C5E3-4 to BC (byteswapped) (C5E8), and B to C359 (C5)
+Write to the 3 bytes at BC (C5E8-A) HL+4 byteswapped (44 6B), C6A2 rombank (26) 
+Jump if BC+4 ends in 0x25 (no)
+Store BC+4 (byteswapped) in C5E3-4 (EB C5)
+Load C356-8 to C6A0-2
+Write 0 to AddressSourceLowC326
+Jump to PrepArgAddr0A14
+
+F7 to step in BGB btw
+
+Broke on Start of 0BF1 and checked the calls right before geting Megaq
+before/after for each of the 3 stops right before megaq
+1) HL=6B24 | C6A0=24 6B 26 | 26:6B24=5D 61 04 | C5E3=E5 C5 |
+   HL=C6A2 | C6A0=5D 61 04 | ................ | C5E3=E8 C5 |
+2) HL=6B28 | C6A0=28 6B 26 | 26:6b28=40 72 26 | C5E3=E5 C5 |
+   HL=C6A2 | C6A0=40 72 26 | ................ | C5E3=E8 C5 |
+3) HL=726A | C6A0=72 6A 26 | 26:726A=D4 6F 1D | C5E3=E8 C5 |
+   HL=C6A2 | C6A0=D4 6F 1D | ................ | C5E3=EB C5 |
+General) HL=(C6A0) | C6A0=ll hh bb | bb:hhll=xx yy zz | C5E3=pp C5 |
+         HL=C6A2 | C6A0=xx yy zz | .................. | C5E3=pp+3 C5 |
+		 
+I believe the primary purpose of this function is to dereference C6A0-2 into itself
+C6A0=(C6A0) (3 bytes) . C356-8 also gets them followed by a C5
+And then call PrepArgAddr0A14
+So the value put into C6A0 before calling PrepArgAddr0A14 will get C327-6 added to it
+
+C326-C327 appears to always be 0# 00
+During MegaQ acquisition it's 7240 + 00 and then 7241 + 06 = 7247!
+So possibly invocation 2 above write 7240 to C6A0 and then it gets incremented which is why I didn't see a 7241 write?
+
+The end results in the table will always get incremented by 1 because PrepArgAddr does that!
+So the second write write 7241, which gets 
+So there's a write to put 7240->7241 in the special address. 
+Then I'm guessing that ends up in HL and PrepArgAddr gets called again writing 7241+6=7247 -> 7248.
+
+There are many calls to obtainHamchat, and they are all in the higher ROMS
+Suggests that this is only called from data scripts, which makes sense.
+But there's WAY more than there are hamchats. Might be many false positives?
+
+096B happens at the end of PrepArgAddr
+Load (C322) to E and 00 to D --- So DE = 00##, the byte from C322
+HL=097A + DE. So C322 stores an offset into data that begins at 097A
+(097A is directly after this function)
+That points to an address that contains a byteswapped address
+We put that in HL and jump there
+
+The MegaQ collection moment uses the jump array to go to 1F25
+1F2F
+Write the value pointed to by HL (HL=7241, so value at 7241) to C38A AND C38B
+Write the subsequent value (at 7242) to C38C and the next (at 7243) to C38D 
+Call 1F89 a bunch
+...
+This function (one branch of it) ultimately writes to ArgAddr right before calling PrepArgAddr?
+
+
+1F89
+Zero out 10 bytes at C5B3, C356, C35A, C35B
+Load address stored at C38C (byteswapped) to HL
+Copy C6A8 to C677 and 2000 (temporarily, for no reason?)
+Copy 3 bytes from HL's held address to C35E-C360
+Write 1 to C677 and 2000
+Jump 4A7C (?) <- This has to be the only reason to loop this. 
+
+TODO: Still deciphering 1f2f and 1f89, etc
+TODO: I should reexamine PrepArgAddr cause it def does more stuff than I focused on the first time
+
+Callstack seems to have a lot of non callstack stuff in it
+0AFB (0AE8, ExecuteWriteInstructionIndicatedAtC6A0-2) called by 03A0 (ret addr is 03A3)?
+
+03A0 -> 096b (JumpToAddressUsingIndexFromC322) ... -> Jump using C322 -> 1F25 (for megaQ case) -->
+   PrepArgAddress --> JumpToAddressUsingIndexFromC322 .. -> Jump to 0AE8 (offset 40 in decimal, 0x28)
+   
+It generally looks like a lot of "stacktraces" were CALLed from 03A0 but then JumpArrayed around
+   
+What calls 6DD9 (obtain hamchat)? 
+Callstack says 03A3 --> 0EA1 (should be calls before each of these)
+0EA1 was pushed manually on line 0e9f
+0E87 is in the JumpArray, so that could be how we got here
+
+PLACES WE JUMP TO IN JUMP ARRAY
+14A6 (FrquentLoop) all the time (dec 21*2=42, hex 15*2=0x2A)
+0D13 once I pressed A (0x1C)
+0E87 (0x82)
+0D13 again
+1F25 (0x14) <-- part of megaq collection but we still haven't seen a textbox
+(skipping some repeats below)
+0E87
+0BF1 (DerefArgAddrIntoSelfAndC356) (0x1E)
+0AC9 (0x52)
+0C64 (0x20)
+0DFD (0x68)
+1f25 
+208E (0x10) inifinite loop deciding to say Hamha
+1B94 (0x06) infinite loop waiting for text dismiss
+1f0c (0x92)
+0C64
+0BF1
+1F25
+0AE8 (ExecuteWriteInstructionIndicatedAtC6A0-2) (0x50)
+>> 724c not in jump array but this was in HL when we wrote to C715 at this point
+0E87
+
+Codes list from that: 2A, 1C, 82, 14, 1E, 52, 20, 68, 10, 06, 92 
+
+Places that "Call" 0AE8 (ExecuteWriteInstructionIndicatedAtC6A0-2) by writing 0x50 to C322
+0A21 
+The HLs are
+Summoning menu: 6FC9, 6FCE, 
+Picked Hamha: 6A75, 6F3D, 6F43, 
+Finished Hamha, she bout to talk: 6F3D, 6F43, 
+She does all the talking
+She giving MegaQ: 7247
+
+The 0x50 comes from 7247!
+50 15 C7 00 0A
+Note the following bytes
+82 D9 6D 02 
+index 0x82 of JumpArray maps to 0E87 and 02:6DD9 is ObtainHamChat
+There are 6 places in memory that have this same sequence. Duplicate scripts for giving megaQ? 
+19 places for 0x11 hamchat
+
+TODO: How does the code go through these script opcode sections? standard instruction length?
+TODO: Could I already shuffle just hamchats?
+
+JumpArray Script Opcodes
+(lengths don't count the opcodes themselves)
+
+50 : Write byte to address. 4 bytes
+14 : 1F25 . 6 bytes.
+82 : Jump? 3 bytes
+16 : 1fC7
+Continued in
+https://docs.google.com/spreadsheets/d/1qhEhI7Gi7CXCNa9g3g4ujVVaknqKTlR2kQXQfO9Q8VA/edit?gid=1652235814#gid=1652235814
+
+Renaming PrepArgAddr to CallNextScriptInstruction
+
+TODO: Could learn more about 1FF3
+TODO: Parse a few more script instructions. Hoping flow becomes apparent.
+
+C918 (in player state WRAM) changes from 55 to 5d when in dialog (roughly)
+1010101 to 1011101 (one bit flip)
+
+The stuff at the very end of the checksum region is text.
+FILE1 2001/03/22
+(Dump player state with start byte: C710, length: 3A8)
+The bit that determines if you've talked to MegaQ girl before: C76B went from 00 to 01
+The one for KoochiQ girl: C91B went from 00 to 02 (if set she still says first box but doesn't give word)
+The one for Teenie lovesick guy is C91A went from 00 to 10 (partial like above)
+Whether the rope has been tackled: C76C 00 to 01
+
+C95B thru C960 was used during name input
+
+C7A5 is holds a value on the intro menu corresponding to the selected option
+new/continue/jam, yes/no (does not control name select yes/no)
+
+C79B became 1 after name select popped up
+C918 changes from 4 to 5 after name select
+
+C751 00 to 1 when getting the book
+C764 became FF at tutorial start
+C764 seems to become my vertical pos when opening chat menu
+C763 became 78 when shown Hamha
+
+C7E0 is used to count down how many seeds to give one at a time
+
+C784 is used in level select
+
+C38F is the index of the cursor hamchat (but is something else at other times!)
+C390 and C391 are the row and column of the cursor in the chats menu
+C392 of C39B might be the num chats in the hamchat window?
+
+hamchat window does not consult player state chats or tutorail flags
+picking go-p when I don't have it will give it to me
+Is the game hardcoded to show you starting chats regardless?
+Even the chats you unlock do not check your chat inventory!
+It reads the obtain flag!
+The code that reads the flag does so as an offset from C918
+Change all the flags right as we initiate a menu open? Then restore them?
+Would need not check location flags myself all the time. 
+These flags effectively ARE my inventory. The chat dict is just for the book view.
+So giver state and obtained-chats are inseparable without patches :(
+(Or manipulating the chat window that get's drawn? skeptical)
+*MAYBE* each location has a separate indicator I could look at?
+It looks like starting Hamchats may not even check the bitarray
+
+
+C35C-F are used to blink the cursor
+
+C68A controls the vertical position of the hamchat window
+
+C35E-f is involved in populating the menu somehow (but does other things?)
+Last bit of C35E, 
+Code is at 4D41 <<
+
+C761 is which chat am I looking at in the alpha sort
+Looks like the dictionary reads from the Ordered Chat table even when using alpha sort
+
+Looking into how Hamchat Wheel is populated
+4D27 start of function that hits watchpoint
+C35E-F is consulted
+)Last bit of C35E -> D
+)C35F -> E
+)SRL D + RR E just bitshifts DE right once
+)It's done 3 times.
+)So DE gets C35E-F >> 3 (same as div by 8)
+) Uses that as an offset from C918 (makes sense)
+) Read that byte into B
+) Load lowest 3 bits of C35f (remainder of div by 8)
+So to check Hamha (C919, 3)
+C35E-F would have to store 11 (decimal) / 00 0B (hex) / 00000000 00001011 (binary)
+
+Only 12 bit array bytes hold chats (11-96 dec indices)
+So the same bitarray must hold lots of other stuff to need 9 bits 
+This can index between 32 and 63 bytes
+There's seemingly room for 140 bytes between the bitarray start and the beginning of the dictionary
+I originally encountered this bitarray picking up seeds. So it must track lotsa stuff
+e.g. what state is maxwell in? Who is in clubhouse?
+Dreaming Hamster does not use MegaQ bit to check what to say to you, but C76B
+(Uses MegaQ bit to determine whether to open book and show learning MegaQ)
+
+What calls 4D27 (CheckBitArrayBitFromC35E-F_isSet) when opening chat wheel?
+What sets specific Nopibloo value to C35F?
+
+15B5 writes Nopibloo to C35F
+
+C51A-C521 might be related to hamchat wheel?
+It has strange population behavior
+But it represents what each slot of the wheel *does*
+Changing the third one to 01 make it do Hamha
+Making it 00 give you "You don't know this"
+Changing to an unexpected number gives "you don't know this"
+It doesn't matter if it is visually a ??, I can make it do Hamha
+(This means C4FA wheel printing is not strictly relevant)
+The numbers don't seem to permanently correspond to Hamchats?
+
+^What reads these addresses?
+^ 5319
+
+The code around 5319:
+)Reads the Hamchat Wheel value according to the cursor position
+)Puts that into C53A and C582
+)))If C662's 3rd bit is set, load 0x88 into CFF2 (this mutes the chat sound? C662 used for HamJam!)
+)Sets Return address to 5476, calls JumpToAddressUsingIndexFromC322-IfC323 (jumparray function)
+)5476 seems to just set up for the next script instruction call
+
+
+ C4FA-C501 is the Hamchat Wheel!
+ What do the values mean? 0E == Unknown word
+ Doesn't matter what i write to here. It's display only. Still does correct word.
+ But now I can check what writes to it
+ 0x05 = Hamha, 0x10 = Hamsolo , 0x11 = MegaQ (always?)
+ Offsets into another array?
+ 
+ What write The4? Can I affect it via RAM? (Not by writing to the wheel frame-perfectly)
+ How does the Tutorial hide The4? Does it check the bits nothing else does? Or hardcode?
+ 
+ When I patched MegaQ girl, did my BitArray update normally or did it match the dict?
+ ^ The code I patched changed the Dictionary only!!
+ 
+ 
+ FUN_23C6
+ )HL <- C6A0-1 address and bank switch
+ )Read 6 bytes from that HL position into C6A3 on.
+ )The first 3 are an address+bank of the beginning of some 3 byte address array.
+ )C6AA is an offset for that array 
+ )We copy the 3 bytes pointed to by that array+offset to C6A0-2
+E.g. C6A0 has 34 12 26 , C6AA has 04, 26:1234 has 78 56 29 xx xx xx, 29:5678 is an array of addresses
+We read 6 bytes from 26:1234
+Use first 3 plus C6AA to go to index 4 of address list at 29:5678
+The address we find there gets put in C6A0-2
+ -- C6A0-2 starts with address of where Table address (and more) is stored, C6AA has table index
+ -- 
+ 
+ 
+ C677 is something. Bank related?
+ 
+ What Reads from C53A and C582 (hamchat wheel values copied there)?
+ 0D13 (reached via JumpArray) may be ResolveHamchat
+
+0D13: ResolveHamchat
+ )Load C53A Hamchat Value -- It's not the id, still figuring it out
+ )))jump to other part if 0 (probably for "You don't know this")
+ )Subtract 1 from the HamchatValue (might be 1-indexed in mem because 00 means "don't know")
+ )HL <-- 1 + 3*HamchatValue
+	This implies the HamchatValue is an offset into a 3byte address Array
+	I wonder what that preceding byte is that we skip
+ )Call LoadValueFromAddressStoredAtC6A0ToAViaDE_AndBankSwitch
+	Used just to bankswitch and copy C6A0-1 to DE
+ )HL + DE
+ )Read 3 bytes from there into C6A0-2
+ )LengthOfPreviousScriptInstruction <-- 0   because this is kicking off a script, first instruction
+ )CallNextScriptInstruction-PrepArgAddr
+SUMMARY
+C6A0-2 have an address.
+That address has 1 initial byte, then an array of 3 byte addresses.
+	Those addresses point to the scripts for the various hamchats you could choose from this wheel.
+C53A holds the index (1-indexed) in that array that should have its script executed
+^^^This may be broader than "Resolve hamchat, since it also is hit when I first open the wheel.
+"Resolve script with index"??
+
+Maxwell example with breakpoint on 0D13:
+	Hit A to open wheel.
+	BREAK: C6A0 is 28:4029, C53A is 09
+	BREAK: C6A0 is 28:46C1, C53A is 03
+	Wheel is up, choose Hamha
+	BREAK: C6A0 is 28:46DE, C53A is 01 (Hamha)
+	BREAK: C6A0 is 28:4734, C53A is 02
+	Does the Hamha animation
+	BREAK: C6A0 is 1D:6B21, C53A is 00 (interesting. Maybe it's for textboxes?)
+	Maxwell responds, done.
+	...Repeat but with Tack-Q
+	BREAK: C6A0 is 28:46DE, C53A is 03 (Tack-Q)
+	BREAK: C6A0 is 28:479F, C53A is 02
+	Does the Tack-Q animation, Maxwell responds, done.
+	...Repeat with unknown
+	BREAK: C6A0 is 28:46DE, C53A is 06 (the one I clicked)
+	BREAK: C6A0 is 28:4714, C53A is 02
+	BREAK: C6A0 is 1D:6AED, C53A is 00
+	"You haven't leaned that word yet." done
+	
+
+In certain spots, 0D13 gets called in a loop?
+	
+Looks like every Hamchat script is starting with ObtainHamChat (82 d9 6d 02). Matches what I observed. 
+But it's ObtainHamChat 0? It also can't be because this is before checking if you hit a ? option.
+c6E5 gets copied to C53A (chat wheel) in each. Mostly stays 0?
+Rather than call it ChatWheelValue, it's an offset into a script table. <<
+
+The first byte of these script arrays is the length. 
+
+50 15 c7 00 XX  Write XX to C715 Where XX is the Hamchat I just used
+82 d9 6d 02     Run ObtainHamChat
+16 01			1FF3 once 
+3e 03 74 5e c6 1c 02 xx
+
+Op3E
+)Some kinda bank switch business
+)Copy 7 bytes from the script (args) into FF80-6 (HRAM)
+	Maybe needed to use HRAM cuz it's too many args to work with otherwise? Extra registers basically.
+)arg 1 is an ODBD offset
+)Load 2 bytes from ODBD[arg1-arg1+1] PLUS 6 into HL (low bits then high bits) (index is not doubled)
+)Add 6 to that second address in the array
+)Compare to arg 2    arg 2 is some kind of cutoff or comparison address?
+)Repeat for arg 3, 4
+)))Arg 5,6,7 get put back to C6A0-2 if none of the comparisons hit (prev len 0 because wrote C6A0)
+)))If a comparison hits, you end early (prev inst len 7)
+EXAMPLE=====
+For above instruction, arg 1 is 3. Slots 3 and 4 of the array give D031.
+Add 6 for D037
+Then we compare the next Arg (74) against the value AT D037.
+	If they're NOT equal, end op and move to next op.
+Inc to D038 and check again with next arg. And again.
+If we get this far, next script instruction is args 5-7.
+SUMMARY======
+3e (1 byte index) (3 bytes payload) (3 bytes jump address)
+Check that the given 3 bytes payload are at a location indicated by the index.
+	If YES, Jump to given address
+	If NO, go to next sequential instruction.
+IT's A BRANCH INSTRUCTION of some kind
+
+
+^^TODO: Double check script. This 7 arg inst seems to break up a pattern.
+Plus 1B:021C isn't a real address? 
+
+1FF3 (16 calls N times)
+** When called, Steve slots point to the location of arg 1  (e.g. Steves point to 3E)
+)Set HL from the Steve slots
+)Advances HL twice reading 2 more args as a 2 byte number (high bytes then low bytes) into BitArrayIndex slots
+)Stores new HL in BC   (e.g. points to 74)
+)Read 2 more arg bytes from HL into more Ram slots C360-1   (e.g. 74 5e) (HL now on arg 5)
+) ^ All this is a way to prepare to read between 2 and 4 byte args.
+)Switch on Arg 1
+))))Case 3E-F
+) Put BC into "Steve" ram slots (They go from arg 1 to arg 3) (to be used in next loop)
+) Set bitarray bit to 1
+) Return (what exactly does this do?) (Each case returns)
+))))Case 5E-F
+) Advance Steve slots like above
+) Set bitarray bit to 0
+))))Case 7E-F
+) Advance Steve slots, but with an additional 1
+) Set player state byte to Arg 3. (Args 1 and 2 are a 9 bit offset from C718)
+))))Case 9E-F
+) Advance Steve slots, but with an additional 2
+) Set 2 consecutive player state bytes to Args 3 and 4 (above but double, as convenience)
+))))DEFAULT
+) Clear 10 bytes at C5B3, clear C356, clear C35A-B
+) 3 bottom bits from Arg 1's available 7 bits (the lowest is bit 9 of Arg 2) branch to 8 different handlers  
+) TODO!!!!! explore these 8 handlers
+
+The arg 3E 5E etc communicates which branch to take. Only it's last bit is part of the BitArray index.
+
+RENAMING DerefArgAddrIntoSelfAndC356 to Op1E
+1E has 3 args (?)
+
+
+---- I think C3E5 is the beginning of a callstack and C5E3-4 points to the stack head!
+
+Op 1E
+)Copy 3 args to C356-8 for later use
+)Copy C5E3-4 (Stackhead pointer) to BC and C5E4 also to C359
+)We write the 3 byte address of the next Script instruction to the top of the stack. The return pointer.
+)If that would put the stack head at C625, jump
+))))
+
+
+TODO: A 02 Op gets followed by 2 3-byte script addresses. Does it somehow use them?
+Maybe everything in these tables uses 2 addresses?
+But how would it get them? C6A0 gets wiped out. How do we get back?
+The second address seems to always be the following script instruction.
+^^ These were never 02 instructions. 02 was the length of the address arrays in these examples!
+1C is follwed by a table_size and then a 3byte address table of that size.
+The MaxwellChats table is also part of a 1C instruction!
+
+By the time I hit the Maxwell script table, it's giving me the word.
+So "You don't have this" must come BEFORE going to Maxwell script table.
+Some script called 1C to get to Maxwell table?
+THAT script probably checks my words and does the animation before the 1C call. 
+What writes 28:46DD to C6A0-1?
+Some script instruction probably jumps to 46DD? After calling 74 Op?
+Looking for "18 DD 46 28" -- no results
+I think I can just look directly above the Maxwell table, I think we enter somewhere above it.
+
+TODO: Decipher the 10 Op. May be wait for chat select.
+TODO: Label and decompile all the opcodes. Then look for references to BitArray lookups to see where check is.
+(Could also be a 16 SubOp I guess.
+
+
+5A could be a Hamchat animation/sound related op.
+In maxwell script it puts 44 in a register near to the one I saw 88 put into
+ which had the effect of muting during HamJam or something
+ CFFX registers do stuff. Ops interact with them.
+ 
+D5EE briefly becomes 2 any time a textbox closes
+D5EE is used to decide whether to jump or return in some Ops related to Op 10
+
+1AA7 (Used by 10 Op):
+A --> 0x17 (rom bank probably)
+BC
+  76C8 or 771D --> 17:79E6
+  75BE or 7613 --> 17:79F6
+  77D2 or 7827 --> 17:7A06
+  78DC or 7931 --> 17:7A16
+SUMMARY: Changes D203-5 to a new address value based on previous value. Hardcoded.
+  Also write 0 to D202,6,7
+  
+TODO: Possibly check out these addresses. Or watchpoint to see what they're used for.
+
+I looked at 5B6B as place where we jump when opening (not closing) Hamchats in Op10 handling.
+C542 begins a region that stores a list (stack?) of 2byte addresses
+If the first list entry (a loop hardcoded to i=1) matches C6A0-1, Hamchat stuff happens
+
+Maybe this closing bit DFEE is just so I can't select the chat while the box is closing?
+If the code is changed to never write 2, the Chat close animation never plays. It stays on screen.
+So that 02 must mean 'Chat wheel is in closing animation'
+
+4857 (483D) closes the textbox after playing Hamha animation
+
+Maybe places where I see JumpUsingOpTableUsingIndexFromC322-IfC323 called at the end of an Op
+  (Instead of CallNextScriptInstruction-PrepArgAddr) are places where an Op loops?
+  Could examine the C322-3 registers in BGB to test, along with some breakpoints.
+
+TODO: It's time to know more about C322-C323 (op table index) and C324-5 "ReturnAddress"
+
+I can watch C322 during gameplay to see its behavior. It holds an opcode.
+2A at most times. Probably a holding pattern, wait for input type thing.
+10 when opening the Hamchat wheel. Supports that 10 would be "read hamchat choice"
+Looks like it's 44 right after hamchat most times
+92 at the end of an action sometimes
+
+TODO: Enact "You can't do that" and examine memory for a clue.
+
+Started searching for text data. It's in lotsa places
+Rom 28 (NOT 0x28, 0x1C) 4000 to about 6540. 
+Rom 47 (0x2F) 4AB2 "You haven't learned that word yet" and other basic looking messages.
+
+1E17 is reading text data.
+It's within 1DFE which is sometimes jumped to by C322-3
+Is there 06 B2 4A 2F in the script region?
+
+Notes on Op68:
+6 args!
+first arg written to C35A (not to be confused with C53A which is the index used by Op1C table jump)
+Next 2 are an address, stored in DE
+Next 2 are an address, stored in BC
+Next is a rombank
+Bank switch
+The first arg is read again from C35A, it's a loop count
+SUMMARY: Copy Arg1 bytes from BC (arg4/5) to DE (arg(2/3), bank arg6
+
+Notes on Op 14
+Arg1 -> C38A and B. Both are a copy of the loop count
+Arg2-3 -> C38C-D (an address) (somethinglowbits, etc)
+Loop Arg1 times:
+  Call to 1F89
+   Arg2-3 -> HL. 2 bytes from there are loaded into BitArrayHigh/Low slots.
+                     (Bank comes from C6A8) (05 in Teenie example)
+                 A third byte is copied into C360.
+   Jump to 4a7C
+   ^^ TODO come back to this  
+InstrLen = 3 + 3*Arg1, Call next Instr 
+  
+  
+Maxwell bitarray bits checked when opening chat wheel:
+(Using C35E-F at 4AA7/4ABA)
+0x187 -> 391
+Each of these do 3E (4AA7) then 5E (4ABA) (the only code difference is a CPL instruction - flips all bits)
+0x14 -> 20 == Teenie
+0x26 -> 38 == Sparklie
+0x2C -> 44 == Nopibloo
+0x29 -> 41 == Oopsie
+^^^ This is clearly involved in checking your moves
+I want whatever is calling this to also do it for Hamha etc.
+Looks like Op14 is responsible!
+
+
+Rom5:4173 is where the 14's are referencing.
+Each pointed-to spot starts with 70 and is 3 additional bytes long
+4173, 4177, 417b, 417f
+Later there's a 416f. It starts with a 72.
+Stepping through Teenie example: -----------------------------------------
+70 -> BitArrayIndexHigh
+4B -> BitArrayIndexLow (== 75)
+BE -> C360
+70 --> 07 --> 06 after the bit stuff in 4A73
+Write 06 to C35C, use as index to jump to 4AC6
+4B is a number of bytes into player state (after C718) (C763)
+That byte and the next are contains 03 FF, copy to C35A-B
+Return with a flag reflecting ig there was nonzero data there
+Now in function 4BAB
+C5C3 (offset from C5B3?) got 03
+C5D3 went from FF to 00
+C5A3 got 06
+back to 4AD4 to immediately jump to 4B0F
+after bit stuff, DE = 10 (an offset from 4B1F jump table)
+Reading that gives 4B85, where we jump
+Reads C356 to E (D=0)
+HL=C5B3
+C35E (BitArrayIndexHigh) -> A == 70, bit stuff to 10, inc to 11
+Write that to offset at C5B3
+Jump 1F9D
+Load 4175 out from somethinglowbits etc (C38C-D)
+C6A8 has rom bank 5
+Do it all again ----------------
+BE -> Bit Array Index High
+03 -> BitArrayIndexLow (== 3)
+BE --> 0A after the bit stuff in 4A73
+Use as jump index to jump to 4AE3 -- Doing barely different stuff
+Write 03 to C35A
+Loads the 11, decrements it to 10, offset from 4BF7, another jumparray
+    Use it to jump 4C7A
+Write FF to C5C3 (which was written to 03 before)
+FF to C5D3
+0 to C35C (there was an 0A there)
+----------------------------------------------------------------------------
+Idk that I learned anything, don't recognize Teenie
+
+
+TODO: Can I
+   A) point Maxwell's 1E to an empty part of the ROM
+   B) copy the 14's script there with my additions to check Hamha etc? 
+   
+   
+ TODO nail down purpose of C35E 
+ 
+ bitarray index 98 has to do with seeds. 
+ 
+Suspected script banks:
+There are some scripts in 1C
+1D-21
+23-28 (some unsure ones in there)
+29 has a mix
+2a-2e
+2f has some
+30 has some
+31-38
+3A-3B
+3C has scripts! Doesn't seem to start with scripts though
+Bank 04 has some script code!
+
+sweep-emu revealed that 
+c71a may be related to tutorial state.
+c918-9 may be available levels! (acorn shrine assumed?)
+c76f maxwell state
+c472 hole in wall state
+c6a6 had a weird effect on text box
+28:46d9-c affect maxwell words. This is th Op10 instr
