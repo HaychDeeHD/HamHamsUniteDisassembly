@@ -1,3 +1,338 @@
 # HamScripts
 
+This game uses a custom scripting languange that I have named HamScript. Rom Banks 1C through 3B are *full* of HamScript data!
+
+The [hamscripts.py plugin](./plugins/hamscripts.py) implements a good chunk of these so that scripts can be auto-deciphered by the BadBoy disassembler.
+
+The scripting language and the meaning of all its opcodes is not fully cracked.
+More information about these ops might be found in the handler functions as comments, in `hamscripts.py`, and sometimes in some script data as comments.
+
+## How scripts are handled
+
 To be written
+
+### Opcode Table
+
+| Op | Len   | Function Address | Notes            |
+| -- | ----- | ---------------- | ---------------- |
+| 00 | -     | 0a14             | [Op00](#op00)    |
+| 02 | 0     | 0cca             | [Op02](#op02)    |
+| 04 | 0?    | 1b5c             | [Op04](#op04)    |
+| 06 | 0?    | 1b94             | [Op06](#op06)    |
+| 08 | 0?    | 1b52             | [Op08](#op08)    |
+| 0A | 0?    | 1b8a             | [Op0A](#op0A)    |
+| 0C |       | 20a8             | [Op0C](#op0C)    |
+| 0E |       | 209c             | [Op0E](#op0E)    |
+| 10 | 3?    | 208e             | [Op10](#op10)    |
+| 12 |       | 2082             | [Op12](#op12)    |
+| 14 | 3+3\* | 1f25             | [Op14](#op14)    |
+| 16 | 1+    | 1fc7             | [Op16](#op16)    |
+| 18 | 3     | 0cfc             | [Op18](#op18)    |
+| 1A |       | 0ca4             | [Op1A](#op1A)    |
+| 1C | 1+3\* | 0d13             | [Op1C](#op1C)    |
+| 1E | 3     | 0bf1             | [Op1E](#op1E)    |
+| 20 | 0     | 0c64             | [Op20](#op20)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| 2A | 3     | 14a6             | [Op2A](#op2A)    |
+| 2C | 4     | 1475             | [Op2C](#op2C)    |
+| 2E | 3     | 1492             | [Op2E](#op2E)    |
+| 30 |       | 1461             | [Op30](#op30)    |
+| 32 | 6     | 1274             | [Op32](#op32)    |
+| 34 |       | 12da             | [Op34](#op34)    |
+| 36 |       | 1325             | [Op36](#op36)    |
+| 38 |       | 1350             | [Op38](#op38)    |
+| 3A |       | 13e0             | [Op3A](#op3A)    |
+| 3C |       | 15a0             | [Op3C](#op3C)    |
+| 3E | 7     | 0d54             | [Op3E](#op3E)    |
+| 40 |       | 109a             | [Op40](#op40)    |
+| 42 | 5     | 0ff8             | [Op42](#op42)    |
+| 44 | 2     | 0b17             | [Op44](#op44)    |
+| 46 |       | 0bc0             | [Op46](#op46)    |
+| 48 |       | 0b04             | [Op48](#op48)    |
+| 4A | 0     | 0b0c             | [Op4A](#op4A)    |
+| 4C | 10    | 110e             | [Op4C](#op4C)    |
+| 4E |       | 0f96             | [Op4E](#op4E)    |
+| 50 | 4     | 0ae8             | [Op50](#op50)    |
+| 52 | 5     | 0ac9             | [Op52](#op52)    |
+| 54 |       | 0c8b             | [Op54](#op54)    |
+| 56 |       | 11d1             | [Op56](#op56)    |
+| 58 |       | 11c4             | [Op58](#op58)    |
+| 5A | 1     | 0eac             | [Op5A](#op5A)    |
+| 5C | 1     | 0ec4             | [Op5C](#op5C)    |
+| 5E | 1     | 0edc             | [Op5E](#op5E)    |
+| 60 | 1     | 0eeb             | [Op60](#op60)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| 68 | 6     | 0dfd             | [Op68](#op68)    |
+| 6A |       | 107f             | [Op6A](#op6A)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| 74 | 2     | 0aa7             | [Op74](#op74)    |
+| 76 | 1     | 0aba             | [Op76](#op76)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| 7E |       | 137f             | [Op7E](#op7E)    |
+| 80 |       | 10e0             | [Op80](#op80)    |
+| 82 | 3     | 0e87             | [Op82](#op82)    |
+| 84 |       | 10b5             | [Op84](#op84)    |
+| 86 |       | 13b2             | [Op86](#op86)    |
+| 88 | 2?    | 0b54             | [Op88](#op88)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| -- | -     | ----             | [Op00](#op00)    |
+| 8E | 4     | 0e2a             | [Op8E](#op8E)    |
+| 90 | 4     | 0e42             | [Op90](#op90)    |
+| 92 | 1?    | 1f0c             | [Op92](#op92)    |
+| 94 |       | 2276             | [Op94](#op94)    |
+| 96 |       | 22c4             | [Op96](#op96)    |
+| 98 | 4     | 0e5a             | [Op98](#op98)    |
+
+<a id="op00"></a>
+### Op00 - CallNextScriptInstruction
+
+This is not actually a script instruction and should never appear in a script.
+This is a function that is used to move to the next line in the current script and execute it.
+
+This appears several times in the script-op-handler jumptable wherever there is an unused opcode.
+
+<a id="op02"></a>
+### Op02 
+
+Jump to address in table C6A3-5 points to with index C6AA.
+
+<a id="op04"></a>
+### Op04 
+
+textbox?
+
+<a id="op06"></a>
+### Op06 
+
+textbox?
+
+<a id="op08"></a>
+### Op08 
+
+textbox?
+
+<a id="op0A"></a>
+### Op0A 
+
+textbox?
+
+<a id="op0C"></a>
+### Op0C 
+
+<a id="op0E"></a>
+### Op0E 
+
+<a id="op10"></a>
+### Op10 - HamchatWheel
+
+TODO write about Op10. For now, see comments elsewhere, including in bank 0x28.
+
+<a id="op12"></a>
+### Op12 
+
+<a id="op14"></a>
+### Op14 
+
+Related to Hamchat checks? Args are count, 2 bytes, any number of 3 byte addresses (presumably the number matches arg1).
+
+<a id="op16"></a>
+### Op16 - Begin SubOps
+
+Call N SubOps. (First 2 SubOp args are 7 bits SubOpCode plus 9 bit Offset.)
+
+TODO explain SubOps. For now, see hamscripts.py and the Op16 handler comments.
+
+<a id="op18"></a>
+### Op18 - Jump
+
+Jump to 3 byte script address.
+
+<a id="op1A"></a>
+### Op1A 
+
+<a id="op1C"></a>
+### Op1C - TableJump
+
+Following byte is a table size, followed by that many 3-byte addresses. Index to jump to comes from C53A.
+
+<a id="op1E"></a>
+### Op1E 
+
+<a id="op20"></a>
+### Op20 
+
+<a id="op2A"></a>
+### Op2A 
+
+<a id="op2C"></a>
+### Op2C 
+
+Same as 2A but first write arg1 to C39A
+
+<a id="op2E"></a>
+### Op2E 
+
+Same as 2A but first copies C6A0-2 address (minus 1) to C53C-E.
+
+<a id="op30"></a>
+### Op30 
+
+<a id="op32"></a>
+### Op32 
+
+<a id="op34"></a>
+### Op34 
+
+<a id="op36"></a>
+### Op36 
+
+<a id="op38"></a>
+### Op38 
+
+<a id="op3A"></a>
+### Op3A 
+
+<a id="op3C"></a>
+### Op3C 
+
+<a id="op3E"></a>
+### Op3E - Branch
+
+Byte 1 is an offset to an address table. Check that the 3 bytes at that address match args 2-4. If Yes, jump to Args 5-7. Otherwise, go to next op.
+
+<a id="op40"></a>
+### Op40 
+
+<a id="op42"></a>
+### Op42 
+
+<a id="op44"></a>
+### Op44 
+
+seems to happen after chat select etc
+
+<a id="op46"></a>
+### Op46 
+
+<a id="op48"></a>
+### Op48 
+
+<a id="op4A"></a>
+### Op4A - Return
+
+A return variant. Actually calls return so uses the real GBC callstack I guess?
+
+<a id="op4C"></a>
+### Op4C 
+
+<a id="op4E"></a>
+### Op4E 
+
+<a id="op50"></a>
+### Op50 - WriteByte
+
+Write 4th byte to address of first 3 bytes.
+
+<a id="op52"></a>
+### Op52 - WriteWord
+
+Same as Op50 but it's 2 bytes.
+
+<a id="op54"></a>
+### Op54 
+
+<a id="op56"></a>
+### Op56 
+
+<a id="op58"></a>
+### Op58 
+
+<a id="op5A"></a>
+### Op5A 
+
+<a id="op5C"></a>
+### Op5C 
+
+<a id="op5E"></a>
+### Op5E 
+
+Writes arg to CFF9.
+
+<a id="op60"></a>
+### Op60 
+
+Writes 80 to CFF0. Throws away arg?
+
+<a id="op68"></a>
+### Op68 
+
+Copy wram bytes from one location to another (can't copy between 2 non-zero banks). Arg1 = num bytes. Arg2-3 = Target address. Arg4-5 = Source address. Arg6 = bank
+
+<a id="op6A"></a>
+### Op6A 
+
+<a id="op74"></a>
+### Op74 
+
+Copy byte at given 2 byte address to C53A. Used as an index into a script table (Op 1C).
+
+<a id="op76"></a>
+### Op76 
+
+Write the given arg byte to C53A. Used as an index into a script table (Op 1C).
+
+<a id="op7E"></a>
+### Op7E 
+
+<a id="op80"></a>
+### Op80 
+
+<a id="op82"></a>
+### Op82 - Run
+
+Run function at 3 byte address.
+
+<a id="op84"></a>
+### Op84 
+
+<a id="op86"></a>
+### Op86 
+
+<a id="op88"></a>
+### Op88 
+
+<a id="op8E"></a>
+### Op8E 
+
+8E/90/98 Arg1 offset 1-4 into table of wram addresses. Write Arg2-4 there. [C3C4, C3E8)
+
+<a id="op90"></a>
+### Op90 
+
+8E/90/98 Arg1 offset 1-4 into table of wram addresses. Write Arg2-4 there. [C3C4, C3E8)
+
+<a id="op92"></a>
+### Op92 
+
+Related to ending a Hamchat animation?
+
+<a id="op94"></a>
+### Op94 
+
+<a id="op96"></a>
+### Op96 
+
+<a id="op98"></a>
+### Op98 
+
+8E/90/98 Arg1 offset 1-4 into table of wram addresses. Write Arg2-4 there. [C3C4, C3E8)
