@@ -1,6 +1,6 @@
 # HamScripts
 
-This game uses a custom scripting languange that I have named HamScript. Rom Banks 1C through 3B are *full* of HamScript data!
+This game uses a custom scripting languange that I have named HamScript. Rom Banks 1C through 3B are *chock full* of HamScript data!
 
 The [hamscripts.py plugin](./plugins/hamscripts.py) implements a good chunk of these so that scripts can be auto-deciphered by the BadBoy disassembler.
 
@@ -9,9 +9,20 @@ More information about these ops might be found in the handler functions as comm
 
 ## How scripts are handled
 
-To be written
+Key addresses:
+* C6A0-2 (`wArgAddressC6A0`) holds a 3 byte Rom address. It essentially serves as a Program Counter while executing HamScripts.  
+* C326-7 (`wLengthOfPreviousInstructionC326`) is a variable indicating how many bytes long the previous script instruction was (including its opcode). This is important for advancing the Program Counter (`wArgAddressC6A0`) between script instructions. It is 2 bytes long despite the fact that no instruction comes anywhere close to being long enough to necesitate that. I expect the high byte is always be 0x00.
+* C322 (`wOpcodeC322`) holds the 1 byte HamScript Opcode of the current instruction.
+
+Key functions:
+* 0A14 (`CallNextScriptInstruction_PrepArgAddr`) calls the next script instruction as the name suggests. It is responsible for updating the HamScriptProgramCounter `wArgAddressC6A0` based on the value of `wLengthOfPreviousInstructionC326`. It calls the next 2 functions mentioned here.
+* 0A41 (`GetNextScriptInstructionLocationInHL`) puts the byte currently pointed to by `wArgAddressC6A0` -- which is expected to be the next opcode -- into `wOpcodeC322` and increments `wArgAddressC6A0` to the following byte -- typically the first argument byte for the coming instruction.
+* 096B (`JumpUsingOpTableUsingIndexFromC322`) uses a jumptable based on the opcode in `wOpcodeC322`. This jumptable leads to various script handlers that will operate on the argument bytes pointed to by `wArgAddressC6A0` in a way appropriate to whatever action they are performing. See the table below for more details.
+* 0A69 (`LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch`) is the first line of each Op Handler. It points `HL` to the first arg of the Op and ensures a switch to the proper Rom bank. It also reads the first arg byte into `A`, but Op handlers commonly repeat that work themselves.  
 
 ### Opcode Table
+
+The length column in this table excludes the opcode byte.
 
 | Op | Len   | Function Address | Notes            |
 | -- | ----- | ---------------- | ---------------- |
@@ -104,7 +115,9 @@ This appears several times in the script-op-handler jumptable wherever there is 
 <a id="op02"></a>
 ### Op02 
 
-Jump to address in table C6A3-5 points to with index C6AA.
+C6A3-5 is a 3 byte address pointing to a jumptable. C6AA is an index.
+
+Op02 jumps to the address stored in that jumptable at that index. 
 
 <a id="op04"></a>
 ### Op04 
@@ -153,23 +166,33 @@ Call N SubOps. (First 2 SubOp args are 7 bits SubOpCode plus 9 bit Offset.)
 TODO explain SubOps. For now, see hamscripts.py and the Op16 handler comments.
 
 <a id="op18"></a>
-### Op18 - Jump
+### Op18 - Script Jump
 
-Jump to 3 byte script address.
+The argument bytes form a 3 byte address pointing to a HamScript instruction. Op18 jumps the script to that instruction.
 
 <a id="op1A"></a>
 ### Op1A 
 
 <a id="op1C"></a>
-### Op1C - TableJump
+### Op1C - Script TableJump
 
-Following byte is a table size, followed by that many 3-byte addresses. Index to jump to comes from C53A.
+The following byte is a table size, followed by that many 3-byte addresses pointing to HamScript instructions. C53A holds an index.
+
+Op1C jumps the script to the instruction in the table at that index.
+
+Commonly, the Op1C script jumptable lists all the handlers for the dialog options in the HamChat Wheel (including `?` options). C53A is set by Op74 or Op76 after the player selects a HamChat.
 
 <a id="op1E"></a>
-### Op1E 
+### Op1E - Script Call
+
+The argument bytes form a 3 byte address pointing to a HamScript instruction. Op18 "calls" the script at that location but expects to return (Op20) to the line after the 1E Op.
+
+A callstack is maintained, starting at `wStackStartC5E5`. A pointer to the HEAD of the callstack is at `wStackHeadAddressC5E3`. See the handler code for more details.
 
 <a id="op20"></a>
-### Op20 
+### Op20 - Script Return
+
+A return to match Op1E's calls. Uses the data put into the stack by Op1E to resume script execution from the Op1E callsite, ending the script execution that had led up to the Op20.
 
 <a id="op2A"></a>
 ### Op2A 
@@ -206,9 +229,14 @@ Same as 2A but first copies C6A0-2 address (minus 1) to C53C-E.
 ### Op3C 
 
 <a id="op3E"></a>
-### Op3E - Branch
+### Op3E - Conditional Script Jump
 
-Byte 1 is an offset to an address table. Check that the 3 bytes at that address match args 2-4. If Yes, jump to Args 5-7. Otherwise, go to next op.
+Op3E has 7 arg bytes.
+* Arg Byte 1: index into 0DBD array (stores 3 byte addresses)
+* Next 3 bytes: Payload to compare against
+* Last 3 bytes: Jump destination if all match
+
+Op3E will use the first byte as an index to pull a 3 byte address out of the ODBD table (plus 6). If the 3 bytes found at that address match args 2-4, Op3E will jump the script to the 3 byte script address indicated by args 5-7. Otherwise, Op3E does nothing and script execution continues at the following instruction.
 
 <a id="op40"></a>
 ### Op40 
@@ -239,14 +267,14 @@ A return variant. Actually calls return so uses the real GBC callstack I guess?
 ### Op4E 
 
 <a id="op50"></a>
-### Op50 - WriteByte
+### Op50 - Write Byte
 
-Write 4th byte to address of first 3 bytes.
+Write the 4th arg byte to WRAM address indicated by the first 3 bytes.
 
 <a id="op52"></a>
-### Op52 - WriteWord
+### Op52 - Write Word
 
-Same as Op50 but it's 2 bytes.
+Same as Op50 but with 2 payload bytes.
 
 <a id="op54"></a>
 ### Op54 
@@ -266,12 +294,14 @@ Same as Op50 but it's 2 bytes.
 <a id="op5E"></a>
 ### Op5E 
 
-Writes arg to CFF9.
+Writes the singular arg byte to `wCFF9`. I don't yet know what is special about this WRAM address. 
 
 <a id="op60"></a>
 ### Op60 
 
-Writes 80 to CFF0. Throws away arg?
+Writes 0x80 to `wCFF0`. I don't yet know what is special about this WRAM address. 
+
+Op60 takes an arg byte, but it is completely disregarded.
 
 <a id="op68"></a>
 ### Op68 
@@ -298,9 +328,9 @@ Write the given arg byte to C53A. Used as an index into a script table (Op 1C).
 ### Op80 
 
 <a id="op82"></a>
-### Op82 - Run
+### Op82 - Run (Non-Script) Function
 
-Run function at 3 byte address.
+Runs the GB assembly function at the 3 byte address indicated by the arg bytes. This uses the actual GB callstack.  
 
 <a id="op84"></a>
 ### Op84 
