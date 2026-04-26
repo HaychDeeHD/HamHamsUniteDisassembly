@@ -522,15 +522,15 @@ call_28_46cf:
     SCRIPT_POINTER SadMaxwellTackQ                     ;; 28:46e5 $8e $47 $28
     SCRIPT_POINTER SadMaxwellDigdig                    ;; 28:46e8 $ef $47 $28
     SCRIPT_POINTER SadMaxwellTeenie                    ;; 28:46eb $0f $48 $28
-    SCRIPT_POINTER SadMaxwellDefaultMaybe              ;; 28:46ee $03 $47 $28
+    SCRIPT_POINTER SadMaxwellYouDontHaveThatWord       ;; 28:46ee $03 $47 $28
     SCRIPT_POINTER SadMaxwellSparklie                  ;; 28:46f1 $5a $48 $28
-    SCRIPT_POINTER SadMaxwellDefaultMaybe              ;; 28:46f4 $03 $47 $28
+    SCRIPT_POINTER SadMaxwellYouDontHaveThatWord       ;; 28:46f4 $03 $47 $28
     SCRIPT_POINTER SadMaxwellNopibloo                  ;; 28:46f7 $a5 $48 $28
-    SCRIPT_POINTER SadMaxwellDefaultMaybe              ;; 28:46fa $03 $47 $28
+    SCRIPT_POINTER SadMaxwellYouDontHaveThatWord       ;; 28:46fa $03 $47 $28
     SCRIPT_POINTER SadMaxwellOopsie                    ;; 28:46fd $9b $4a $28
-    SCRIPT_POINTER SadMaxwellDefaultMaybe              ;; 28:4700 $03 $47 $28
+    SCRIPT_POINTER SadMaxwellYouDontHaveThatWord       ;; 28:4700 $03 $47 $28
 
-SadMaxwellDefaultMaybe:
+SadMaxwellYouDontHaveThatWord:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 28:4703 $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 28:4708 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 28:470c $16 $01

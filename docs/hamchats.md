@@ -93,6 +93,4 @@
 
 ## How Hamchat Options Work
 
-To be written
-
-Op10 points to 2 addresses with graphics vs scripttable indexes. 
+See [the HamChatWheel docs](./hamchatwheel.md).

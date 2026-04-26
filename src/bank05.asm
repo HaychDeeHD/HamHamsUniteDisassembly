@@ -1011,12 +1011,12 @@ data_05_4123:
 
 ; Word to display. Paired with other options data.
 ; 05 = Hamha, 06 = hifhif, etc
-; 17 0e = Nopibloo else ?
+; 17 0e = Nopibloo else "?"
 ; The other option data has the rules for how many args
 ; to expect and what condition to apply (I think)
 ; This data is consumed by Op10.
-; (This ints seem to only map to words actually used in AcornShrine.)
-; (The words indicated by these values is not any standard chat ids I've seen.)
+; (These ints seem to only map to words actually used in AcornShrine.)
+; (The words indicated by these values don't follow any standard chat id system I've seen.)
 ; (Maybe there's a table nearby of AcornShrine words?)
 ; (Hamha still plays even if you changed the word.)
 ; (So it seems this is unrelated to behavior?)

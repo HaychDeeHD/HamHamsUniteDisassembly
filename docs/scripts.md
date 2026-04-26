@@ -122,22 +122,22 @@ Op02 jumps to the address stored in that jumptable at that index.
 <a id="op04"></a>
 ### Op04 
 
-textbox?
+Unknown, but possibly related to textboxes.
 
 <a id="op06"></a>
 ### Op06 
 
-textbox?
+Unknown, but possibly related to textboxes.
 
 <a id="op08"></a>
 ### Op08 
 
-textbox?
+Unknown, but possibly related to textboxes.
 
 <a id="op0A"></a>
 ### Op0A 
 
-textbox?
+Unknown, but possibly related to textboxes.
 
 <a id="op0C"></a>
 ### Op0C 
@@ -148,7 +148,13 @@ textbox?
 <a id="op10"></a>
 ### Op10 - HamchatWheel
 
-TODO write about Op10. For now, see comments elsewhere, including in bank 0x28.
+Op10 is involved in presenting the player with HamChat options and taking their selection. i.e. the HamChatWheel. It takes 5 argument bytes total.
+
+The first byte argument is a count of possible options -- whether they will be used or not. As an example, if a hamster in the game gives the options [Hamha, Hif-hif, Tack-Q, Digdig, Koochi-Q, Teenie] then the count will be *8* for [Hamha, Hif-hif, Tack-Q, Digdig, Koochi-Q, ? (don't have Koochi-Q), Teenie, ? (don't have Teenie)].
+
+The next 4 bytes are a pair of 2 byte ROM pointers. (It would seem the correct ROM bank is already active whem Op10 is reached.) The first pointer points to a region of data of the specified length that is some kind of hamchat data. The second pointer points to another region of data of variable length in the same bank that specifies how to use the data at the first pointer.
+
+Learn more about how the HamChatWheel works.
 
 <a id="op12"></a>
 ### Op12 
@@ -161,9 +167,29 @@ Related to Hamchat checks? Args are count, 2 bytes, any number of 3 byte address
 <a id="op16"></a>
 ### Op16 - Begin SubOps
 
-Call N SubOps. (First 2 SubOp args are 7 bits SubOpCode plus 9 bit Offset.)
+Declare that the following bytes will represent N special instructions that I termed "SubOps" early in the disassembly process. These SubOps are used to update the game state in the [Player State Region](./memory.md#player-state-region) of memory in various ways, e.g. flipping flag bits.
 
-TODO explain SubOps. For now, see hamscripts.py and the Op16 handler comments.
+The Op16 instruction takes one argument for the number of SubOps that will follow before normal script instructions resume.
+
+For whatever reason it is relatively common in the game scripts to see X Op16's of size 1 in a row rather than 1 of size X. 
+
+#### SubOps
+
+Not all SubOps are the same length, but they do all use the first 2 bytes the same way. The 7 highest bits of the first byte serve as a SubOp opcode. The last bit of that byte joins the 8 bits of the next byte to form a 9 bit offset number, with the borrowed bit being the highest. 
+
+"Extra args" in the following table describes argument bytes *after* the first 2 bytes which give the opcode and a 9-bit index. Note that 0x3E and 0x3F both represent the same opcode since the lowest bit is actually the highest bit of the 9-bit index.
+
+| SubOp opcode | Extra args   | Desc | Notes            |
+| -- | ----- | ---------------- | ---------------- |
+| 3e | 0 | Set Flag | Use the index to set a bit in the [bitarray](./memory.md#bitarray) to 1. |
+| 5e | 0 | Clear Flag | Use the index to set a bit in the [bitarray](./memory.md#bitarray) to 0. |
+| 7e | 1 | Set Byte | Use the index to write the argument byte to the [player state](./memory.md#player-state-region). |
+| 9e | 2 | Set Word | Use the index to write the 2 argument bytes to the [player state](./memory.md#player-state-region). |
+| Other | N/A | Various | See below*. |
+
+*If the SubOp opcode is not one of the ones named explicitly in the above table, there is a second level of branching behavior based on the value that I have not yet deciphered. All SubOps in this category are 4 bytes long total including the opcode. I don't know much about these kinds of SubOps, so the rules I laid out above about SubOps might not apply to them. You can find several examples that my scripts plugin spat out using the macro `SubOp_DefaultCase`.
+
+You may be able to learn more about Op16 and SubOps from [the hamscripts.py plugin](./plugins/hamscripts.py) or Op16's handler in ROM bank 0.
 
 <a id="op18"></a>
 ### Op18 - Script Jump
@@ -180,7 +206,7 @@ The following byte is a table size, followed by that many 3-byte addresses point
 
 Op1C jumps the script to the instruction in the table at that index.
 
-Commonly, the Op1C script jumptable lists all the handlers for the dialog options in the HamChat Wheel (including `?` options). C53A is set by Op74 or Op76 after the player selects a HamChat.
+Commonly, the Op1C script jumptable lists all the handlers for the dialog options in the HamChat Wheel (including `?` options). C53A is set by Op74 or Op76, and (I suspect) also by Op10 after the player selects a HamChat.
 
 <a id="op1E"></a>
 ### Op1E - Script Call

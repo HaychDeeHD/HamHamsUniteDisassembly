@@ -14,13 +14,13 @@ Other addresses in the vicinity of this seem to serve related roles, but I don't
 
 For more information about the game scripts that use this address and how they use it, see [the documentation on scripts](./scripts.md).
 
-## Hamchat Options
+## HamChatWheel Values
 
-When interacting with a Hamster or anything else, a box appears on screen with potential Hamchats to use, or "?" indicating unlearned options. There are 2 arrays in memory that support this.
+When interacting with a Hamster or anything else, a box appears on screen with potential Hamchats to use, or "?" indicating unlearned options. I've termed this the [HamChatWheel](./hamchatwheel.md). There are 2 arrays in memory that support it.
 
-C4FA begins an array of values corresponding (I think) to what should be  *visually* displayed as your options. 
+C4FA begins an array of values corresponding to HamChatWheelOptions values. I *suspect* that these are indices in some set of tables that can be used to obtain most of the data for the chat options themselve. E.g. the text graphics data, animations, and sounds. 
 
-C51A begins an array of values corresponding to what *behaviors* each option should induce. They are indices into a script jumptable that usually follows the script instruction that populated the Hamchat options. For more information, see [How Hamchat Options Work](./hamchats.md#how-hamchat-options-work) 
+C51A begins an array of values corresponding to what *behaviors* each option should induce. They are indices into a script jumptable that usually follows the script instruction that populated the Hamchat options. Read up on [how HamChatWhellWheel works](./hamchats.md#how-hamchat-options-work) for more details. 
 
 I'm not sure the limit of these 2 arrays, but I think I've only ever seen 8 or fewer options to select from. 
 
@@ -30,7 +30,7 @@ I'm not sure the limit of these 2 arrays, but I think I've only ever seen 8 or f
 
 ## Player State Region
 
-The region between C718 and CAB5 is tracks all of the persistent state for the game file. This is the region that is copied on game save as a save file. I suspect that much of this region is 1 bit flags.  
+The region between C718 and CAB5 tracks all of the persistent state for the game file. This is the region that is copied on game save as a save file. I suspect that much of this region is 1 bit flags.  
 
 <img src="./images/HamtaroPlayerState.png?raw=true" height="800px">
 
