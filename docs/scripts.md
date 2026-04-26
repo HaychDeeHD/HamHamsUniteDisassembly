@@ -154,7 +154,7 @@ The first byte argument is a count of possible options -- whether they will be u
 
 The next 4 bytes are a pair of 2 byte ROM pointers. (It would seem the correct ROM bank is already active whem Op10 is reached.) The first pointer points to a region of data of the specified length that is some kind of hamchat data. The second pointer points to another region of data of variable length in the same bank that specifies how to use the data at the first pointer.
 
-Learn more about how the HamChatWheel works.
+Learn more about how the HamChatWheel works from [its docs page](./hamchatwheel.md).
 
 <a id="op12"></a>
 ### Op12 
