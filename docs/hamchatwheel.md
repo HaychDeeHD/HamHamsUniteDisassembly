@@ -31,7 +31,7 @@ Here is what Bank 28, $4C2F looks like. This is hamscript that is reached when y
 call_28_46cf:
     Op82_Run data_01_7416                              ;; 28:46cf $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:46d3 $1e $1d $6f $1d
-    Op10_Unknown $0c, $39, $5a, $44, $5e               ;; 28:46d7 $10 $0c $39 $5a $44 $5e
+    Op10_HamChatWheel 12, $5a39, $5e44                ;; 28:46d7 $10 $0c $39 $5a $44 $5e
     Op1C_TableJump 12                                  ;; 28:46dd $1c $0c
     SCRIPT_POINTER SadMaxwellHamha                     ;; 28:46df $23 $47 $28
     SCRIPT_POINTER SadMaxwellHifHif                    ;; 28:46e2 $6e $47 $28
@@ -56,32 +56,45 @@ Op10 is responsible for presenting the player with their choices and accepting t
 
 The first argument to Op10 is the same number we've already seen: 12, the number of different possible choices that could appear counting each "?" separately and the length of the following jumptable.
 
-The next 4 bytes are a pair of 2 byte pointers that work together. $5A39, $5E44 in this example. The first points to HamChatOptions and the second to HamChatRules. It is assumed that the 'correct' ROM bank is already active before the Op10 instruction begins. For Sad Maxwell, that bank is 05.
+The next 4 bytes are a pair of 2 byte pointers that work together. $5A39, $5E44 in this example. The first points to HamChatOptions and the second to HamChatRules. *Somehow* the 'correct' ROM bank will get switched to as the Op10 instruction handling begins. For Sad Maxwell, that bank happens to be 05.
 
 Here is the relevant data from each of those pointer locations:
 
 ```
-; 05:5A39 - Pointer 1
-; 12 bytes of HamChatWheelOption ids for Sad Maxwell
-db   $05, $06, $07, $08, $0d, $0e, $16, $0e, $17, $0e, $15, $0e
+;@hamchatwheeloptions amount=12
+SadMaxwellOptions:
+    HamChatWheelOption 0, $05                          ;; 05:5a39 $05
+    HamChatWheelOption 1, $06                          ;; 05:5a3a $06
+    HamChatWheelOption 2, $07                          ;; 05:5a3b $07
+    HamChatWheelOption 3, $08                          ;; 05:5a3c $08
+    HamChatWheelOption 4, $0d                          ;; 05:5a3d $0d
+    HamChatWheelOption 5, $0e                          ;; 05:5a3e $0e
+    HamChatWheelOption 6, $16                          ;; 05:5a3f $16
+    HamChatWheelOption 7, $0e                          ;; 05:5a40 $0e
+    HamChatWheelOption 8, $17                          ;; 05:5a41 $17
+    HamChatWheelOption 9, $0e                          ;; 05:5a42 $0e
+    HamChatWheelOption 10, $15                         ;; 05:5a43 $15
+    HamChatWheelOption 11, $0e                         ;; 05:5a44 $0e
 ```
 
 ```
-; 05:5E44 - Pointer 2
-; 12 HamChatWheelRules, 20 bytes total in this case, for Sad Maxwell
-db   $1a
-db   $1a
-db   $1a
-db   $1a
-db   $3e, $14
-db   $5e, $14        
-db   $3e, $26
-db   $5e, $26
-db   $3e, $2c
-db   $5e, $2c       
-db   $3e, $29
-db   $5e, $29
+;@hamchatwheelrules amount=12
+SadMaxwellRules:
+    HamChatWheelRule_AlwaysUse 0                       ;; 05:5e44 $1a
+    HamChatWheelRule_AlwaysUse 1                       ;; 05:5e45 $1a
+    HamChatWheelRule_AlwaysUse 2                       ;; 05:5e46 $1a
+    HamChatWheelRule_AlwaysUse 3                       ;; 05:5e47 $1a
+    HamChatWheelRule_UseIfHave 4, HAMCHAT_TEENIE       ;; 05:5e48 $3e $14
+    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_TEENIE   ;; 05:5e4a $5e $14
+    HamChatWheelRule_UseIfHave 6, HAMCHAT_SPARKLIE     ;; 05:5e4c $3e $26
+    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_SPARKLIE ;; 05:5e4e $5e $26
+    HamChatWheelRule_UseIfHave 8, HAMCHAT_NOPIBLOO     ;; 05:5e50 $3e $2c
+    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_NOPIBLOO ;; 05:5e52 $5e $2c
+    HamChatWheelRule_UseIfHave 10, HAMCHAT_OOPSIE      ;; 05:5e54 $3e $29
+    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_OOPSIE  ;; 05:5e56 $5e $29
 ```
+
+Pay attention to the end-of-line comments to better understand the actual data. The macros I added are glorified comments and have ignored index arguments for reading convenience. 
 
 ### HamChatWheelOptions
 

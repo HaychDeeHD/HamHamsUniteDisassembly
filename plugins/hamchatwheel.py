@@ -46,9 +46,11 @@ class HamChatWheelRulesBlock(Block):
                 case 0x1A:
                     self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_AlwaysUse", str(i)))
                     size += 1
+                # TODO handle 3F case. The lowest bit is actually a 9th high bit for the following arg. 
                 case 0x3E:
                     self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfHave", str(i), BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(addr + size + 1)]))
                     size += 2
+                # TODO: handle 5F case. The lowest bit is actually a 9th high bit for the following arg.
                 case 0x5E:
                     self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfDontHave", str(i), BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(addr + size + 1)]))
                     size += 2
