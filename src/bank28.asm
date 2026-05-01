@@ -503,19 +503,11 @@ call_28_46bc:
     SCRIPT_POINTER call_28_46cf                        ;; 28:46c8 $cf $46 $28
     Op18_Jump call_28_400c                             ;; 28:46cb $18 $0c $40 $28
 
-; Maxwell stuff is here.
 call_28_46cf:
     Op82_Run data_01_7416                              ;; 28:46cf $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:46d3 $1e $1d $6f $1d
-; Op10 might be a count and 2 pointers. 12, 5a39, 5e44
-; (The pointers may be to rom bank 05 in this case? Based on debug memory.)
-; 05:5e44 has $1a $1a $1a. These get put into wBitArrayIndexC35E-60.
-; First 3 bits of those 1a's is a mode, how to set BC or something. Jumptable 01:4a91. (value is index 0-7)
-; The last 5 bits is another mode. Jumptable 01:4b1f. (value is 0-32, halve it for index)
-; Op10 is often followed by a TableJump with the same length.
+; The 2 addresses named here are both in Rom Bank 05.
     Op10_HamChatWheel 12, $5a39, $5e44                 ;; 28:46d7 $10 $0c $39 $5a $44 $5e
-; The later entries in this table are the 'have it" "don't have it" handlers
-; The index to execute comes from the loop counter that Op10 writes to HamchatWheels.
     Op1C_TableJump 12                                  ;; 28:46dd $1c $0c
     SCRIPT_POINTER SadMaxwellHamha                     ;; 28:46df $23 $47 $28
     SCRIPT_POINTER SadMaxwellHifHif                    ;; 28:46e2 $6e $47 $28
