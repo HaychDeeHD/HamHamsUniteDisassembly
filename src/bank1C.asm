@@ -1027,7 +1027,7 @@ call_1c_69d4:
 call_1c_6a2c:
     Op82_Run data_01_7416                              ;; 1c:6a2c $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1c:6a30 $1e $1d $6f $1d
-    Op10_Unknown $06, $5d, $73, $a2, $73               ;; 1c:6a34 $10 $06 $5d $73 $a2 $73
+    Op10_HamChatWheel 6, $735d, $73a2                  ;; 1c:6a34 $10 $06 $5d $73 $a2 $73
     Op1C_TableJump 6                                   ;; 1c:6a3a $1c $06
     SCRIPT_POINTER call_1c_6a4e                        ;; 1c:6a3c $4e $6a $1c
     SCRIPT_POINTER call_1c_6a6e                        ;; 1c:6a3f $6e $6a $1c

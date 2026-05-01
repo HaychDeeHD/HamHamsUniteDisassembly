@@ -1251,7 +1251,7 @@ call_36_5119:
 call_36_5129:
     Op82_Run data_01_7416                              ;; 36:5129 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 36:512d $1e $1d $6f $1d
-    Op10_Unknown $08, $4b, $48, $12, $52               ;; 36:5131 $10 $08 $4b $48 $12 $52
+    Op10_HamChatWheel 8, $484b, $5212                  ;; 36:5131 $10 $08 $4b $48 $12 $52
     Op1C_TableJump 8                                   ;; 36:5137 $1c $08
     SCRIPT_POINTER call_36_536e                        ;; 36:5139 $6e $53 $36
     SCRIPT_POINTER call_36_5155                        ;; 36:513c $55 $51 $36

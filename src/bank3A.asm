@@ -138,7 +138,7 @@ call_3a_416f:
 call_3a_41df:
     Op82_Run data_01_7416                              ;; 3a:41df $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 3a:41e3 $1e $1d $6f $1d
-    Op10_Unknown $06, $65, $66, $8d, $66               ;; 3a:41e7 $10 $06 $65 $66 $8d $66
+    Op10_HamChatWheel 6, $6665, $668d                  ;; 3a:41e7 $10 $06 $65 $66 $8d $66
     Op1C_TableJump 6                                   ;; 3a:41ed $1c $06
     SCRIPT_POINTER call_3a_4201                        ;; 3a:41ef $01 $42 $3a
     SCRIPT_POINTER call_3a_4221                        ;; 3a:41f2 $21 $42 $3a

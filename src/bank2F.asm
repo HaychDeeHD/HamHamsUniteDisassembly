@@ -2431,7 +2431,7 @@ call_2f_71ce:
     SCRIPT_POINTER call_2f_7398                        ;; 2f:71d2 $98 $73 $2f
     Op82_Run data_01_7416                              ;; 2f:71d5 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2f:71d9 $1e $1d $6f $1d
-    Op10_Unknown $08, $46, $66, $86, $69               ;; 2f:71dd $10 $08 $46 $66 $86 $69
+    Op10_HamChatWheel 8, $6646, $6986                  ;; 2f:71dd $10 $08 $46 $66 $86 $69
     Op1C_TableJump 8                                   ;; 2f:71e3 $1c $08
     SCRIPT_POINTER call_2f_7205                        ;; 2f:71e5 $05 $72 $2f
     SCRIPT_POINTER call_2f_7243                        ;; 2f:71e8 $43 $72 $2f

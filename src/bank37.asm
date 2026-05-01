@@ -222,7 +222,7 @@ call_37_42ff:
 call_37_4306:
     Op82_Run data_01_7416                              ;; 37:4306 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 37:430a $1e $1d $6f $1d
-    Op10_Unknown $08, $17, $48, $5c, $50               ;; 37:430e $10 $08 $17 $48 $5c $50
+    Op10_HamChatWheel 8, $4817, $505c                  ;; 37:430e $10 $08 $17 $48 $5c $50
     Op1C_TableJump 8                                   ;; 37:4314 $1c $08
     SCRIPT_POINTER call_37_4485                        ;; 37:4316 $85 $44 $37
     SCRIPT_POINTER call_37_4332                        ;; 37:4319 $32 $43 $37

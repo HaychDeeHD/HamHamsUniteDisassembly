@@ -513,7 +513,7 @@ call_28_46cf:
 ; First 3 bits of those 1a's is a mode, how to set BC or something. Jumptable 01:4a91. (value is index 0-7)
 ; The last 5 bits is another mode. Jumptable 01:4b1f. (value is 0-32, halve it for index)
 ; Op10 is often followed by a TableJump with the same length.
-    Op10_Unknown $0c, $39, $5a, $44, $5e               ;; 28:46d7 $10 $0c $39 $5a $44 $5e
+    Op10_HamChatWheel 12, $5a39, $5e44                 ;; 28:46d7 $10 $0c $39 $5a $44 $5e
 ; The later entries in this table are the 'have it" "don't have it" handlers
 ; The index to execute comes from the loop counter that Op10 writes to HamchatWheels.
     Op1C_TableJump 12                                  ;; 28:46dd $1c $0c
@@ -1291,7 +1291,7 @@ call_28_525e:
 call_28_5283:
     Op82_Run data_01_7416                              ;; 28:5283 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:5287 $1e $1d $6f $1d
-    Op10_Unknown $04, $77, $6c, $f7, $6c               ;; 28:528b $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, $6c77, $6cf7                  ;; 28:528b $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 28:5291 $1c $04
     SCRIPT_POINTER call_28_529f                        ;; 28:5293 $9f $52 $28
     SCRIPT_POINTER call_28_52bf                        ;; 28:5296 $bf $52 $28
@@ -1377,7 +1377,7 @@ call_28_533a:
 call_28_535c:
     Op82_Run data_01_7416                              ;; 28:535c $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:5360 $1e $1d $6f $1d
-    Op10_Unknown $04, $77, $6c, $f7, $6c               ;; 28:5364 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, $6c77, $6cf7                  ;; 28:5364 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 28:536a $1c $04
     SCRIPT_POINTER call_28_529f                        ;; 28:536c $9f $52 $28
     SCRIPT_POINTER call_28_52bf                        ;; 28:536f $bf $52 $28
@@ -1447,7 +1447,7 @@ call_28_5401:
 call_28_5422:
     Op82_Run data_01_7416                              ;; 28:5422 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:5426 $1e $1d $6f $1d
-    Op10_Unknown $04, $77, $6c, $f7, $6c               ;; 28:542a $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, $6c77, $6cf7                  ;; 28:542a $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 28:5430 $1c $04
     SCRIPT_POINTER call_28_543e                        ;; 28:5432 $3e $54 $28
     SCRIPT_POINTER call_28_548a                        ;; 28:5435 $8a $54 $28
@@ -1726,7 +1726,7 @@ call_28_577b:
 call_28_57a3:
     Op82_Run data_01_7416                              ;; 28:57a3 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:57a7 $1e $1d $6f $1d
-    Op10_Unknown $04, $77, $6c, $f7, $6c               ;; 28:57ab $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, $6c77, $6cf7                  ;; 28:57ab $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 28:57b1 $1c $04
     SCRIPT_POINTER call_28_57c3                        ;; 28:57b3 $c3 $57 $28
     SCRIPT_POINTER call_28_5832                        ;; 28:57b6 $32 $58 $28
@@ -1820,7 +1820,7 @@ call_28_58b5:
 call_28_58cd:
     Op82_Run data_01_7416                              ;; 28:58cd $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:58d1 $1e $1d $6f $1d
-    Op10_Unknown $0c, $ba, $6c, $ad, $70               ;; 28:58d5 $10 $0c $ba $6c $ad $70
+    Op10_HamChatWheel 12, $6cba, $70ad                 ;; 28:58d5 $10 $0c $ba $6c $ad $70
     Op1C_TableJump 12                                  ;; 28:58db $1c $0c
     SCRIPT_POINTER call_28_5905                        ;; 28:58dd $05 $59 $28
     SCRIPT_POINTER call_28_5941                        ;; 28:58e0 $41 $59 $28
@@ -2083,7 +2083,7 @@ call_28_5bfc:
 call_28_5c5a:
     Op82_Run data_01_7416                              ;; 28:5c5a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:5c5e $1e $1d $6f $1d
-    Op10_Unknown $08, $c6, $6c, $c1, $70               ;; 28:5c62 $10 $08 $c6 $6c $c1 $70
+    Op10_HamChatWheel 8, $6cc6, $70c1                  ;; 28:5c62 $10 $08 $c6 $6c $c1 $70
     Op1C_TableJump 8                                   ;; 28:5c68 $1c $08
     SCRIPT_POINTER call_28_5c8a                        ;; 28:5c6a $8a $5c $28
     SCRIPT_POINTER call_28_5c82                        ;; 28:5c6d $82 $5c $28

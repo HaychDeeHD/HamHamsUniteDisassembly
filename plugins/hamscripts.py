@@ -561,11 +561,21 @@ class Op06Block(Block):
     def export(self, file):
         file.asmLine(4, "Op06_Unknown_Text", str(self.label))
 
+class Op10Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=6)
+        RomInfo.macros["Op10_HamChatWheel"] = "db $10\ndb \\1\ndw \\2\ndw \\3"
+    
+    def export(self, file):
+        count = self.memory.byte(file.addr + 1)
+        optionspointer = self.memory.word(file.addr + 2)
+        rulespointer = self.memory.word(file.addr + 4)
+        file.asmLine(6, "Op10_HamChatWheel", str(count), "$%04x" % optionspointer,  "$%04x" % rulespointer)
+
 OPBLOCKS = {
     0x04: Op04Block,
     0x06: Op06Block,
-    # I think 00:2126 is the eventual Op10 handler. Something about textboxes.
-    0x10: makeGenericBlockClass(0x10, 6), 
+    0x10: Op10Block,
     0x14: Op14Block,
     0x16: Op16Block,
     0x18: Op18Block,

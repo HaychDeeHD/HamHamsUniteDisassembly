@@ -259,7 +259,7 @@ call_1e_4338:
 call_1e_434f:
     Op82_Run data_01_7416                              ;; 1e:434f $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1e:4353 $1e $1d $6f $1d
-    Op10_Unknown $0c, $51, $73, $f4, $74               ;; 1e:4357 $10 $0c $51 $73 $f4 $74
+    Op10_HamChatWheel 12, $7351, $74f4                 ;; 1e:4357 $10 $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1e:435d $1c $0c
     SCRIPT_POINTER call_1e_4383                        ;; 1e:435f $83 $43 $1e
     SCRIPT_POINTER call_1e_4498                        ;; 1e:4362 $98 $44 $1e
@@ -593,7 +593,7 @@ call_1e_48b9:
 call_1e_48d4:
     Op82_Run data_01_7416                              ;; 1e:48d4 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1e:48d8 $1e $1d $6f $1d
-    Op10_Unknown $0c, $51, $73, $f4, $74               ;; 1e:48dc $10 $0c $51 $73 $f4 $74
+    Op10_HamChatWheel 12, $7351, $74f4                 ;; 1e:48dc $10 $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1e:48e2 $1c $0c
     SCRIPT_POINTER call_1e_4908                        ;; 1e:48e4 $08 $49 $1e
     SCRIPT_POINTER call_1e_493b                        ;; 1e:48e7 $3b $49 $1e

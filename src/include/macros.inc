@@ -8,13 +8,11 @@ db $06
 dw \1
 db BANK(\1)
 ENDM
-MACRO Op10_Unknown
+MACRO Op10_HamChatWheel
 db $10
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
+db \1
+dw \2
+dw \3
 ENDM
 MACRO Op14_Unknown
 db $14

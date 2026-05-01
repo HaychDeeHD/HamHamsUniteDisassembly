@@ -117,7 +117,7 @@ call_3b_4163:
 call_3b_418c:
     Op82_Run data_01_7416                              ;; 3b:418c $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 3b:4190 $1e $1d $6f $1d
-    Op10_Unknown $04, $3f, $73, $a2, $73               ;; 3b:4194 $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, $733f, $73a2                  ;; 3b:4194 $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 3b:419a $1c $04
     SCRIPT_POINTER call_3b_41a8                        ;; 3b:419c $a8 $41 $3b
     SCRIPT_POINTER call_3b_41c8                        ;; 3b:419f $c8 $41 $3b
@@ -370,7 +370,7 @@ call_3b_4471:
 call_3b_449a:
     Op82_Run data_01_7416                              ;; 3b:449a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 3b:449e $1e $1d $6f $1d
-    Op10_Unknown $04, $3f, $73, $a2, $73               ;; 3b:44a2 $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, $733f, $73a2                  ;; 3b:44a2 $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 3b:44a8 $1c $04
     SCRIPT_POINTER call_3b_44b6                        ;; 3b:44aa $b6 $44 $3b
     SCRIPT_POINTER call_3b_44d6                        ;; 3b:44ad $d6 $44 $3b

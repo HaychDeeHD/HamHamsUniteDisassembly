@@ -1542,7 +1542,7 @@ call_34_605b:
 call_34_606a:
     Op82_Run data_01_7416                              ;; 34:606a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 34:606e $1e $1d $6f $1d
-    Op10_Unknown $08, $3e, $66, $20, $69               ;; 34:6072 $10 $08 $3e $66 $20 $69
+    Op10_HamChatWheel 8, $663e, $6920                  ;; 34:6072 $10 $08 $3e $66 $20 $69
     Op1C_TableJump 8                                   ;; 34:6078 $1c $08
     SCRIPT_POINTER call_34_609a                        ;; 34:607a $9a $60 $34
     SCRIPT_POINTER call_34_60b2                        ;; 34:607d $b2 $60 $34
@@ -2241,7 +2241,7 @@ call_34_6caa:
 call_34_6d11:
     Op82_Run data_01_7416                              ;; 34:6d11 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 34:6d15 $1e $1d $6f $1d
-    Op10_Unknown $04, $77, $6c, $f7, $6c               ;; 34:6d19 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, $6c77, $6cf7                  ;; 34:6d19 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 34:6d1f $1c $04
     SCRIPT_POINTER call_34_6d2d                        ;; 34:6d21 $2d $6d $34
     SCRIPT_POINTER call_34_6d4d                        ;; 34:6d24 $4d $6d $34
@@ -2415,7 +2415,7 @@ call_34_6efb:
 call_34_6f08:
     Op82_Run data_01_7416                              ;; 34:6f08 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 34:6f0c $1e $1d $6f $1d
-    Op10_Unknown $04, $77, $6c, $f7, $6c               ;; 34:6f10 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, $6c77, $6cf7                  ;; 34:6f10 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 34:6f16 $1c $04
     SCRIPT_POINTER call_34_6f28                        ;; 34:6f18 $28 $6f $34
     SCRIPT_POINTER call_34_6f9b                        ;; 34:6f1b $9b $6f $34
@@ -2525,7 +2525,7 @@ call_34_7038:
 call_34_7050:
     Op82_Run data_01_7416                              ;; 34:7050 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 34:7054 $1e $1d $6f $1d
-    Op10_Unknown $04, $77, $6c, $f7, $6c               ;; 34:7058 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, $6c77, $6cf7                  ;; 34:7058 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 34:705e $1c $04
     SCRIPT_POINTER call_34_6d2d                        ;; 34:7060 $2d $6d $34
     SCRIPT_POINTER call_34_6d4d                        ;; 34:7063 $4d $6d $34

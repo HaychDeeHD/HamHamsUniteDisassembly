@@ -309,7 +309,7 @@ call_33_43d0:
 call_33_442b:
     Op82_Run data_01_7416                              ;; 33:442b $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:442f $1e $1d $6f $1d
-    Op10_Unknown $06, $5d, $73, $a2, $73               ;; 33:4433 $10 $06 $5d $73 $a2 $73
+    Op10_HamChatWheel 6, $735d, $73a2                  ;; 33:4433 $10 $06 $5d $73 $a2 $73
     Op1C_TableJump 6                                   ;; 33:4439 $1c $06
     SCRIPT_POINTER call_33_444d                        ;; 33:443b $4d $44 $33
     SCRIPT_POINTER call_33_446d                        ;; 33:443e $6d $44 $33
@@ -646,7 +646,7 @@ call_33_490f:
     Op16_SubOps 1                                      ;; 33:4926 $16 $01
     SubOp_SetFlag wBitArrayC918, 1                     ;; 33:4928 $3e $01
     Op1E_Call call_1d_6f1d                             ;; 33:492a $1e $1d $6f $1d
-    Op10_Unknown $04, $4b, $41, $59, $41               ;; 33:492e $10 $04 $4b $41 $59 $41
+    Op10_HamChatWheel 4, $414b, $4159                  ;; 33:492e $10 $04 $4b $41 $59 $41
     Op1C_TableJump 4                                   ;; 33:4934 $1c $04
     SCRIPT_POINTER call_33_4981                        ;; 33:4936 $81 $49 $33
     SCRIPT_POINTER call_33_49ca                        ;; 33:4939 $ca $49 $33
@@ -664,7 +664,7 @@ call_33_4942:
     Op16_SubOps 1                                      ;; 33:4959 $16 $01
     SubOp_SetFlag wBitArrayC918, 1                     ;; 33:495b $3e $01
     Op1E_Call call_1d_6f1d                             ;; 33:495d $1e $1d $6f $1d
-    Op10_Unknown $08, $4f, $41, $59, $41               ;; 33:4961 $10 $08 $4f $41 $59 $41
+    Op10_HamChatWheel 8, $414f, $4159                  ;; 33:4961 $10 $08 $4f $41 $59 $41
     Op1C_TableJump 8                                   ;; 33:4967 $1c $08
     SCRIPT_POINTER call_33_4981                        ;; 33:4969 $81 $49 $33
     SCRIPT_POINTER call_33_49ca                        ;; 33:496c $ca $49 $33
@@ -1377,7 +1377,7 @@ call_33_539e:
 call_33_53f8:
     Op82_Run data_01_7416                              ;; 33:53f8 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:53fc $1e $1d $6f $1d
-    Op10_Unknown $04, $03, $60, $64, $60               ;; 33:5400 $10 $04 $03 $60 $64 $60
+    Op10_HamChatWheel 4, $6003, $6064                  ;; 33:5400 $10 $04 $03 $60 $64 $60
     Op1C_TableJump 4                                   ;; 33:5406 $1c $04
     SCRIPT_POINTER call_33_5414                        ;; 33:5408 $14 $54 $33
     SCRIPT_POINTER call_33_5434                        ;; 33:540b $34 $54 $33
@@ -1464,7 +1464,7 @@ call_33_54af:
 call_33_54d6:
     Op82_Run data_01_7416                              ;; 33:54d6 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:54da $1e $1d $6f $1d
-    Op10_Unknown $04, $03, $60, $64, $60               ;; 33:54de $10 $04 $03 $60 $64 $60
+    Op10_HamChatWheel 4, $6003, $6064                  ;; 33:54de $10 $04 $03 $60 $64 $60
     Op1C_TableJump 4                                   ;; 33:54e4 $1c $04
     SCRIPT_POINTER call_33_5414                        ;; 33:54e6 $14 $54 $33
     SCRIPT_POINTER call_33_54f2                        ;; 33:54e9 $f2 $54 $33
@@ -1658,7 +1658,7 @@ call_33_5947:
 call_33_5963:
     Op82_Run data_01_7416                              ;; 33:5963 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:5967 $1e $1d $6f $1d
-    Op10_Unknown $04, $03, $60, $64, $60               ;; 33:596b $10 $04 $03 $60 $64 $60
+    Op10_HamChatWheel 4, $6003, $6064                  ;; 33:596b $10 $04 $03 $60 $64 $60
     Op1C_TableJump 4                                   ;; 33:5971 $1c $04
     SCRIPT_POINTER call_33_5414                        ;; 33:5973 $14 $54 $33
     SCRIPT_POINTER call_33_597f                        ;; 33:5976 $7f $59 $33
@@ -2602,7 +2602,7 @@ call_33_67df:
 call_33_6837:
     Op82_Run data_01_7416                              ;; 33:6837 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:683b $1e $1d $6f $1d
-    Op10_Unknown $06, $5d, $73, $a2, $73               ;; 33:683f $10 $06 $5d $73 $a2 $73
+    Op10_HamChatWheel 6, $735d, $73a2                  ;; 33:683f $10 $06 $5d $73 $a2 $73
     Op1C_TableJump 6                                   ;; 33:6845 $1c $06
     SCRIPT_POINTER call_33_6859                        ;; 33:6847 $59 $68 $33
     SCRIPT_POINTER call_33_6879                        ;; 33:684a $79 $68 $33
