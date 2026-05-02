@@ -17,6 +17,8 @@ blockingAddresses = set()
 # Stack used for unrolled formerly recursive script decoding.
 # Avoiding recursion improves error messages and means we can decode with unlimited jump depth.
 scriptAddressesStack = []
+# List of addresses where we are manually telling the script parser to stop assuming hamscript follows hamscript.
+hamscriptEndings = []
 
 def addKnownScriptAddress(memory, addr):
     scriptAddressesStack.append((memory, addr))
@@ -25,12 +27,16 @@ def maybeCreateScriptBlocks():
     while len(scriptAddressesStack):
         memory, addr = scriptAddressesStack.pop()
         maybeCreateScriptBlock(memory, addr)
-    print("Done processing @hamscript for %02x:%04x." % (memory.bankNumber, addr))
+    print("Done processing @hamscript for " + serializeAddress(memory, addr))
     print(sorted(blockingOpcodes.items(), key=lambda item: item[1], reverse=True))
 
 def maybeCreateScriptBlock(memory, addr):
     while addr - memory.base_address < 0x4000:
         serializedAddr = serializeAddress(memory, addr)
+        if serializedAddr in hamscriptEndings:
+            # We've reached a line manually tagged as being non-hamscript.
+            break
+
         opcode = memory.byte(addr)
 
         # If this addr is already handled.
@@ -56,6 +62,10 @@ def maybeCreateScriptBlock(memory, addr):
             addr += len(subBlock)
 
 @annotation(priority=1)
+def endhamscript(memory, addr):
+    hamscriptEndings.append(serializeAddress(memory, addr))
+
+@annotation(priority=2)
 def hamscript(memory, addr):
     addKnownScriptAddress(memory, addr)
     maybeCreateScriptBlocks()
