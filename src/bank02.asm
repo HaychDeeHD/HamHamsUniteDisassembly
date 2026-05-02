@@ -3045,6 +3045,8 @@ call_02_659f:
     ld   A, $01                                        ;; 02:66cc $3e $01
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:66ce $ea $3a $c5
     ret                                                ;; 02:66d1 $c9
+
+data_02_66d2:
     ld   A, [wC77D]                                    ;; 02:66d2 $fa $7d $c7
     ld   BC, rIE                                       ;; 02:66d5 $01 $ff $ff
     cp   A, $64                                        ;; 02:66d8 $fe $64
@@ -3075,6 +3077,8 @@ call_02_659f:
     pop  AF                                            ;; 02:6705 $f1
     ld_long_store rSVBK, A                             ;; 02:6706 $ea $70 $ff
     ret                                                ;; 02:6709 $c9
+
+data_02_670a:
     ld_long_load A, rSVBK                              ;; 02:670a $fa $70 $ff
     push AF                                            ;; 02:670d $f5
     ld   A, $02                                        ;; 02:670e $3e $02
@@ -3084,6 +3088,8 @@ call_02_659f:
     pop  AF                                            ;; 02:6719 $f1
     ld_long_store rSVBK, A                             ;; 02:671a $ea $70 $ff
     ret                                                ;; 02:671d $c9
+
+data_02_671e:
     ld_long_load A, rSVBK                              ;; 02:671e $fa $70 $ff
     push AF                                            ;; 02:6721 $f5
     ld   A, $02                                        ;; 02:6722 $3e $02
@@ -3093,6 +3099,8 @@ call_02_659f:
     pop  AF                                            ;; 02:672d $f1
     ld_long_store rSVBK, A                             ;; 02:672e $ea $70 $ff
     ret                                                ;; 02:6731 $c9
+
+data_02_6732:
     ld_long_load A, rSVBK                              ;; 02:6732 $fa $70 $ff
     push AF                                            ;; 02:6735 $f5
     ld   A, $02                                        ;; 02:6736 $3e $02
@@ -4579,19 +4587,24 @@ data_02_7a15:
     pop  AF                                            ;; 02:7ac9 $f1
     ld_long_store rSVBK, A                             ;; 02:7aca $ea $70 $ff
     ret                                                ;; 02:7acd $c9
+
+data_02_7ace:
     db   $fa, $70, $ff, $f5, $3e, $02, $ea, $70        ;; 02:7ace ????????
     db   $ff, $fa, $61, $c7, $ea, $f8, $d0, $3e        ;; 02:7ad6 ????????
     db   $fd, $ea, $fd, $d0, $f1, $ea, $70, $ff        ;; 02:7ade ????????
-    db   $c9, $fa, $70, $ff, $f5, $3e, $02, $ea        ;; 02:7ae6 ????????
-    db   $70, $ff, $fa, $61, $c7, $21, $00, $d0        ;; 02:7aee ????????
-    db   $85, $6f, $3e, $00, $8c, $67, $7e, $f5        ;; 02:7af6 ????????
-    db   $fa, $5f, $c7, $fe, $01, $28, $1c, $3e        ;; 02:7afe ????????
-    db   $fd, $ea, $fd, $d0, $f1, $fe, $fe, $30        ;; 02:7b06 ????????
-    db   $1c, $87, $21, $a3, $c9, $85, $6f, $3e        ;; 02:7b0e ????????
-    db   $00, $8c, $67, $46, $fa, $4f, $ca, $3d        ;; 02:7b16 ????????
-    db   $90, $18, $0b, $3e, $fe, $ea, $fd, $d0        ;; 02:7b1e ????????
-    db   $f1, $fe, $fe, $38, $01, $af, $ea, $f8        ;; 02:7b26 ????????
-    db   $d0, $f1, $ea, $70, $ff, $c9                  ;; 02:7b2e ??????
+    db   $c9                                           ;; 02:7ae6 ?
+
+data_02_7ae7:
+    db   $fa, $70, $ff, $f5, $3e, $02, $ea, $70        ;; 02:7ae7 ????????
+    db   $ff, $fa, $61, $c7, $21, $00, $d0, $85        ;; 02:7aef ????????
+    db   $6f, $3e, $00, $8c, $67, $7e, $f5, $fa        ;; 02:7af7 ????????
+    db   $5f, $c7, $fe, $01, $28, $1c, $3e, $fd        ;; 02:7aff ????????
+    db   $ea, $fd, $d0, $f1, $fe, $fe, $30, $1c        ;; 02:7b07 ????????
+    db   $87, $21, $a3, $c9, $85, $6f, $3e, $00        ;; 02:7b0f ????????
+    db   $8c, $67, $46, $fa, $4f, $ca, $3d, $90        ;; 02:7b17 ????????
+    db   $18, $0b, $3e, $fe, $ea, $fd, $d0, $f1        ;; 02:7b1f ????????
+    db   $fe, $fe, $38, $01, $af, $ea, $f8, $d0        ;; 02:7b27 ????????
+    db   $f1, $ea, $70, $ff, $c9                       ;; 02:7b2f ?????
 
 call_02_7b34:
     ld   HL, w1_D000                                   ;; 02:7b34 $21 $00 $d0

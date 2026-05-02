@@ -174,6 +174,10 @@ db \3
 db \4
 db \5
 ENDM
+MACRO Op5A_Unknown
+db $5a
+db \<1>
+ENDM
 MACRO Op68_CopyBytes
 db $68
 db \1

@@ -1029,10 +1029,16 @@ wC75D:
     ds 1                                               ;; c75d
 
 wC75E:
-    ds 3                                               ;; c75e
+    ds 1                                               ;; c75e
+
+wC75F:
+    ds 2                                               ;; c75f
 
 wC761:
-    ds 2                                               ;; c761
+    ds 1                                               ;; c761
+
+wC762:
+    ds 1                                               ;; c762
 
 wC763:
     ds 1                                               ;; c763
@@ -1047,10 +1053,19 @@ wC766:
     ds 1                                               ;; c766
 
 wC767:
-    ds 3                                               ;; c767
+    ds 1                                               ;; c767
+
+wC768:
+    ds 1                                               ;; c768
+
+wC769:
+    ds 1                                               ;; c769
 
 wC76A:
-    ds 2                                               ;; c76a
+    ds 1                                               ;; c76a
+
+wC76B:
+    ds 1                                               ;; c76b
 
 wC76C:
     ds 1                                               ;; c76c
@@ -1074,13 +1089,19 @@ wC772:
     ds 8                                               ;; c772
 
 wC77A:
-    ds 3                                               ;; c77a
+    ds 2                                               ;; c77a
+
+wC77C:
+    ds 1                                               ;; c77c
 
 wC77D:
     ds 1                                               ;; c77d
 
 wC77E:
-    ds 2                                               ;; c77e
+    ds 1                                               ;; c77e
+
+wC77F:
+    ds 1                                               ;; c77f
 
 wC780:
     ds 1                                               ;; c780
@@ -1512,10 +1533,19 @@ wC964:
     ds 31                                              ;; c964
 
 wC983:
-    ds 16                                              ;; c983
+    ds 15                                              ;; c983
+
+wC992:
+    ds 1                                               ;; c992
 
 wC993:
-    ds 16                                              ;; c993
+    ds 1                                               ;; c993
+
+wC994:
+    ds 1                                               ;; c994
+
+wC995:
+    ds 14                                              ;; c995
 
 ; 86 * 2 = 172 bytes. Every other byte is FF. Value is obtain order.
 wHamChatDictArrayC9A3:

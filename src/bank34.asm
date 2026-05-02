@@ -1223,7 +1223,7 @@ call_34_5c2e:
     SCRIPT_POINTER call_34_5c3b                        ;; 34:5c32 $3b $5c $34
     Op16_SubOps 1                                      ;; 34:5c35 $16 $01
     SubOp_SetFlag wC92D, 5                             ;; 34:5c37 $3e $ad
-    db   $5a, $a3                                      ;; 34:5c39 ??
+    Op5A_Unknown $a3                                   ;; 34:5c39 $5a $a3
 
 call_34_5c3b:
     Op1E_Call call_33_4d29                             ;; 34:5c3b $1e $29 $4d $33

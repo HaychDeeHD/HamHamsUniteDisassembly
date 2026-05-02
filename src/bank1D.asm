@@ -2737,6 +2737,8 @@ call_1d_6c6e:
     Op1C_TableJump 1                                   ;; 1d:6c7f $1c $01
     SCRIPT_POINTER call_04_69dd                        ;; 1d:6c81 $dd $69 $04
     Op18_Jump call_04_69e5                             ;; 1d:6c84 $18 $e5 $69 $04
+
+call_1d_6c88:
     Op1E_Call call_1d_6f05                             ;; 1d:6c88 $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6c8c $1c $01
     SCRIPT_POINTER call_04_69fb                        ;; 1d:6c8e $fb $69 $04
@@ -2835,6 +2837,8 @@ call_1d_6d72:
     Op1C_TableJump 1                                   ;; 1d:6d76 $1c $01
     SCRIPT_POINTER call_04_6bbc                        ;; 1d:6d78 $bc $6b $04
     Op18_Jump call_04_6bc4                             ;; 1d:6d7b $18 $c4 $6b $04
+
+call_1d_6d7f:
     Op1E_Call call_1d_6f05                             ;; 1d:6d7f $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6d83 $1c $01
     SCRIPT_POINTER call_04_6bd3                        ;; 1d:6d85 $d3 $6b $04
@@ -2891,6 +2895,8 @@ call_1d_6df4:
     Op1C_TableJump 1                                   ;; 1d:6df8 $1c $01
     SCRIPT_POINTER call_04_6cc5                        ;; 1d:6dfa $c5 $6c $04
     Op18_Jump call_04_6ccd                             ;; 1d:6dfd $18 $cd $6c $04
+
+call_1d_6e01:
     Op1E_Call call_1d_6f05                             ;; 1d:6e01 $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6e05 $1c $01
     SCRIPT_POINTER call_04_6ce3                        ;; 1d:6e07 $e3 $6c $04
@@ -2929,6 +2935,8 @@ call_1d_6e4f:
     Op1C_TableJump 1                                   ;; 1d:6e53 $1c $01
     SCRIPT_POINTER call_04_6d89                        ;; 1d:6e55 $89 $6d $04
     Op18_Jump call_04_6d91                             ;; 1d:6e58 $18 $91 $6d $04
+
+call_1d_6e5c:
     Op1E_Call call_1d_6f05                             ;; 1d:6e5c $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6e60 $1c $01
     SCRIPT_POINTER call_04_6da7                        ;; 1d:6e62 $a7 $6d $04
@@ -3166,6 +3174,8 @@ call_1d_711e:
 call_1d_7130:
     Op50_WriteByte wC737, $00, $0a                     ;; 1d:7130 $50 $37 $c7 $00 $0a
     Op18_Jump call_1d_713e                             ;; 1d:7135 $18 $3e $71 $1d
+
+call_1d_7139:
     Op50_WriteByte wC737, $00, $14                     ;; 1d:7139 $50 $37 $c7 $00 $14
 
 call_1d_713e:
@@ -3528,6 +3538,8 @@ call_1d_7660:
     Op3E_Compare_Branch 22, $8f, $55, $10, call_1d_7660 ;; 1d:7661 $3e $16 $8f $55 $10 $60 $76 $1d
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, $00, $00, $00 ;; 1d:7669 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     SCRIPT_RETURN_20                                   ;; 1d:7674 $20
+
+call_1d_7675:
     Op36_Unknown $c9, $74, $7f, $f2, $dd, $01          ;; 1d:7675 $36 $c9 $74 $7f $f2 $dd $01
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $3f, $55, $10 ;; 1d:767c $4c $16 $08 $04 $00 $00 $00 $00 $3f $55 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $f6, $70, $15 ;; 1d:7687 $4c $08 $01 $04 $00 $00 $00 $00 $f6 $70 $15
@@ -3568,6 +3580,8 @@ call_1d_7716:
     Op3E_Compare_Branch 22, $8f, $55, $10, call_1d_7716 ;; 1d:7717 $3e $16 $8f $55 $10 $16 $77 $1d
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, $00, $00, $00 ;; 1d:771f $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     SCRIPT_RETURN_20                                   ;; 1d:772a $20
+
+call_1d_772b:
     Op36_Unknown $d3, $74, $7f, $f2, $dd, $01          ;; 1d:772b $36 $d3 $74 $7f $f2 $dd $01
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $3f, $55, $10 ;; 1d:7732 $4c $16 $08 $04 $00 $00 $00 $00 $3f $55 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $f6, $70, $15 ;; 1d:773d $4c $08 $01 $04 $00 $00 $00 $00 $f6 $70 $15

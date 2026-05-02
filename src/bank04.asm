@@ -1069,6 +1069,8 @@ call_04_5b76:
     Op4E_Unknown_StoreValue 4, $01, $01, $5d, $04      ;; 04:5b90 $4e $04 $01 $01 $5d $04
     Op4E_Unknown_StoreValue 5, $01, $69, $5d, $04      ;; 04:5b96 $4e $05 $01 $69 $5d $04
     SCRIPT_RETURN_20                                   ;; 04:5b9c $20
+
+call_04_5b9d:
     Op4E_Unknown_StoreValue 4, $01, $f4, $5c, $04      ;; 04:5b9d $4e $04 $01 $f4 $5c $04
     Op4E_Unknown_StoreValue 5, $01, $76, $5d, $04      ;; 04:5ba3 $4e $05 $01 $76 $5d $04
     SCRIPT_RETURN_20                                   ;; 04:5ba9 $20
