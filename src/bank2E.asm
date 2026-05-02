@@ -4510,13 +4510,9 @@ call_2e_7ac4:
     SubOp_SetByte wC78C, $04                           ;; 2e:7ada $7e $74 $04
     Op18_Jump call_2e_6f49                             ;; 2e:7add $18 $49 $6f $2e
 
+;@hamstring toAddress=7b08
 data_2e_7ae1:
-    Op1A_Unknown $68                                   ;; 2e:7ae1 $1a $68
-    db   $cf, $01, $73, $6f, $01, $79, $6f, $75        ;; 2e:7ae3 ????????
-    db   $d0, $72, $65, $e4, $6c, $65, $61, $72        ;; 2e:7aeb ????????
-    db   $6e, $69, $6e, $67, $01, $13, $61, $6d        ;; 2e:7af3 ????????
-    db   $cb, $0e, $68, $61, $74, $cf, $e4, $74        ;; 2e:7afb ????????
-    db   $6f, $6f, $d9, $e3, $00                       ;; 2e:7b03 ?????
+    TXT  "Oh, so you're<E4>learning Ham-Chat,<E4>too?<E3><end>" ;; 2e:7ae1 ???????????????????????????????????????
 
 data_2e_7b08:
     TXT  "I see<...><E3><end>"                         ;; 2e:7b08 ????????
