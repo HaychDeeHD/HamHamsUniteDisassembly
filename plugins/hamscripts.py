@@ -596,6 +596,7 @@ class Op0CBlock(Block):
         file.asmLine(6, "Op0C_HamChatWheel", str(count), "$%04x" % optionspointer,  "$%04x" % rulespointer)
 
 OPBLOCKS = {
+    0x02: makeGenericBlockClass(0x02, 1, "Op02_Unknown_Jump"),
     0x04: Op04Block,
     0x06: Op06Block,
     0x0C: Op0CBlock,

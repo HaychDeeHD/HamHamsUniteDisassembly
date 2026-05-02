@@ -117,7 +117,7 @@ This appears several times in the script-op-handler jumptable wherever there is 
 
 C6A3-5 is a 3 byte address pointing to a jumptable. C6AA is an index.
 
-Op02 jumps to the address stored in that jumptable at that index. 
+Op02 jumps to the address stored in that jumptable at that index. This is a `jp` as opposed to a script jump.
 
 <a id="op04"></a>
 ### Op04 

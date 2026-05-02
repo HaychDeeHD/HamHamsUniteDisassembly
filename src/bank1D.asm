@@ -2759,7 +2759,13 @@ call_1d_650f:
     Op54_Unknown $01                                   ;; 1d:651b $54 $01
     Op54_Unknown $02                                   ;; 1d:651d $54 $02
     Op54_Unknown $03                                   ;; 1d:651f $54 $03
-    db   $02, $02, $02, $02, $02, $02, $02             ;; 1d:6521 ???????
+    Op02_Unknown_Jump                                  ;; 1d:6521 $02
+    Op02_Unknown_Jump                                  ;; 1d:6522 $02
+    Op02_Unknown_Jump                                  ;; 1d:6523 $02
+    Op02_Unknown_Jump                                  ;; 1d:6524 $02
+    Op02_Unknown_Jump                                  ;; 1d:6525 $02
+    Op02_Unknown_Jump                                  ;; 1d:6526 $02
+    Op02_Unknown_Jump                                  ;; 1d:6527 $02
 
 call_1d_6528:
     Op1E_Call call_04_61e7                             ;; 1d:6528 $1e $e7 $61 $04
