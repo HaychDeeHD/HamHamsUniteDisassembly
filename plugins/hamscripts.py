@@ -316,22 +316,6 @@ class Op14Block(Block):
         arg2 = self.memory.byte(file.addr + 3)
         file.asmLine(4, "Op14_Unknown", str(self.count), "$%02x" % arg1, "$%02x" % arg2)
 
-class Op20Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 1)
-        RomInfo.macros["SCRIPT_RETURN_20"] = "db $20"
-
-    def export(self, file):
-        file.asmLine(1, "SCRIPT_RETURN_20")
-
-class Op4ABlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 1)
-        RomInfo.macros["SCRIPT_RETURN_4A"] = "db $4a"
-
-    def export(self, file):
-        file.asmLine(1, "SCRIPT_RETURN_4A")
-
 class Op3EBlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 8)
@@ -604,7 +588,7 @@ OPBLOCKS = {
     0x1A: makeGenericBlockClass(0x1A, 2),
     0x1C: Op1CBlock,
     0x1E: Op1EBlock,
-    0x20: Op20Block,
+    0x20: makeGenericBlockClass(0x20, 1, "SCRIPT_RETURN_20"),
     0x2A: makeGenericBlockClass(0x2A, 4, "Op2A_MaybeCodeJump"),
     0x2C: makeGenericBlockClass(0x2C, 5, "Op2C_MaybeCodeJump"),
     0x2E: makeGenericBlockClass(0x2E, 4, "Op2E_MaybeCodeJump"),
@@ -616,7 +600,8 @@ OPBLOCKS = {
     0x3E: Op3EBlock,
     0x42: Op42Block,
     0x44: makeGenericBlockClass(0x44, 3),
-    0x4A: Op4ABlock,
+    0x48: makeGenericBlockClass(0x48, 1),
+    0x4A: makeGenericBlockClass(0x4A, 1, "SCRIPT_RETURN_4A"),
     0x4C: makeGenericBlockClass(0x4C, 11),
     0x4E: Op4EBlock,
     0x50: Op50Block,

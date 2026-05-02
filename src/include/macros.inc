@@ -144,6 +144,9 @@ db $44
 db \<1>
 db \<2>
 ENDM
+MACRO Op48_Unknown
+db $48
+ENDM
 MACRO Op4C_Unknown
 db $4c
 db \<1>
