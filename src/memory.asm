@@ -2080,7 +2080,10 @@ hFFFE:
 
 SECTION "vram", VRAM[$8000]
 ; TODO: Is vram also supposed to be banked?
-    ds 6799                                            ;; 8000
+    ds 6793                                            ;; 8000
+
+v9A89:
+    ds 6                                               ;; 9a89
 
 v9A8F:
     ds 1393                                            ;; 9a8f

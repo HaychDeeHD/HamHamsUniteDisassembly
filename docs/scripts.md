@@ -50,7 +50,7 @@ The length column in this table excludes the opcode byte.
 | 2A | 3     | 14a6             | [Op2A](#op2A)    |
 | 2C | 4     | 1475             | [Op2C](#op2C)    |
 | 2E | 3     | 1492             | [Op2E](#op2E)    |
-| 30 |       | 1461             | [Op30](#op30)    |
+| 30 | 4     | 1461             | [Op30](#op30)    |
 | 32 | 6     | 1274             | [Op32](#op32)    |
 | 34 |       | 12da             | [Op34](#op34)    |
 | 36 |       | 1325             | [Op36](#op36)    |
@@ -234,7 +234,7 @@ Presumably, this op always takes 3 arg bytes?
 <a id="op2C"></a>
 ### Op2C 
 
-Same as 2A but first write arg1 to C39A
+Same as 2A but first write arg1 to C39A. Takes 4 arg bytes total.
 
 <a id="op2E"></a>
 ### Op2E 
@@ -322,6 +322,10 @@ Same as Op50 but with 2 payload bytes.
 <a id="op5A"></a>
 ### Op5A 
 
+Maybe write the arg byte to CFF0. Only do so if the last bit of C662 is set.
+
+I saw that C662 was involved with the HamJam. It makes me wonder whether Op5A is related to animation/sound.
+
 <a id="op5C"></a>
 ### Op5C 
 
@@ -367,7 +371,17 @@ Write the given arg byte to C53A. Used as an index into a script table (Op 1C).
 Runs the GB assembly function at the 3 byte address indicated by the arg bytes. This uses the actual GB callstack.  
 
 <a id="op84"></a>
-### Op84 
+### Op84 - WriteByteNTimes 
+
+Takes 7 arg bytes.
+
+The first 3 arg bytes are an address and a bank. The address has been observed as WRAM, VRAM, etc.
+
+The next 2 bytes are an amount.
+
+The last byte is a payload byte.
+
+Op84 writes the payload byte to the specified location for the next N contiguous bytes.
 
 <a id="op86"></a>
 ### Op86 

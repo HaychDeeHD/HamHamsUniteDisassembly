@@ -1736,7 +1736,7 @@ call_29_6eae:
     Op18_Jump call_29_6fd9                             ;; 29:6eb7 $18 $d9 $6f $29
 
 call_29_6ebb:
-    Op84_WriteByteNTimes w3_D6E6, 99, $00              ;; 29:6ebb $84 $e6 $d6 $03 $63 $00 $00
+    Op84_WriteByteNTimes w3_D6E6, 3, 99, $00           ;; 29:6ebb $84 $e6 $d6 $03 $63 $00 $00
     Op82_Run data_03_7250                              ;; 29:6ec2 $82 $50 $72 $03
     Op82_Run data_03_72e1                              ;; 29:6ec6 $82 $e1 $72 $03
     Op50_WriteByte wC31A, $00, $18                     ;; 29:6eca $50 $1a $c3 $00 $18

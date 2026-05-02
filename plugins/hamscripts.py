@@ -492,11 +492,11 @@ class Op56Block(Block):
 class Op84Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 7)
-        RomInfo.macros["Op84_WriteByteNTimes"] = "db $84\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb \\3"
+        RomInfo.macros["Op84_WriteByteNTimes"] = "db $84\ndw \\1\ndb \\2\ndw \\3\ndb \\4"
 
         pointer = memory.word(addr + 1)
-        bankNum = memory.byte(addr + 3)
-        possiblyRelevantWramBank = RomInfo.getWRam(bankNum)
+        self.bankNum = memory.byte(addr + 3)
+        possiblyRelevantWramBank = RomInfo.getWRam(self.bankNum)
         targetMemory = RomInfo.memoryAt(pointer, None, active_wram_bank=possiblyRelevantWramBank)
         targetMemory.addAutoLabel(pointer, None, None)
         self.label = targetMemory.getLabel(pointer)
@@ -504,7 +504,7 @@ class Op84Block(Block):
     def export(self, file):
         amount = self.memory.word(file.addr + 4)
         payload = self.memory.byte(file.addr + 6)
-        file.asmLine(7, "Op84_WriteByteNTimes", str(self.label), str(amount), "$%02x" % payload)
+        file.asmLine(7, "Op84_WriteByteNTimes", str(self.label), str(self.bankNum), str(amount), "$%02x" % payload)
 
 class Op80Block(Block):
     def __init__(self, memory, addr):
@@ -585,7 +585,7 @@ OPBLOCKS = {
     0x1E: Op1EBlock,
     0x20: Op20Block,
     0x2A: makeGenericBlockClass(0x2A, 4, "Op2A_MaybeCodeJump"),
-    0x2C: makeGenericBlockClass(0x2C, 4, "Op2C_MaybeCodeJump"),
+    0x2C: makeGenericBlockClass(0x2C, 5, "Op2C_MaybeCodeJump"),
     0x2E: makeGenericBlockClass(0x2E, 4, "Op2E_MaybeCodeJump"),
     0x32: makeGenericBlockClass(0x32, 7),
     0x34: makeGenericBlockClass(0x34, 8),

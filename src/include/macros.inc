@@ -205,9 +205,9 @@ ENDM
 MACRO Op84_WriteByteNTimes
 db $84
 dw \1
-db BANK(\1)
-dw \2
-db \3
+db \2
+dw \3
+db \4
 ENDM
 MACRO Op8E_StoreAddress
 db $8e

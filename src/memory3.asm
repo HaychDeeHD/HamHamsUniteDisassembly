@@ -411,7 +411,10 @@ w3_D17D:
     ds 1                                               ;; d17d
 
 w3_D17E:
-    ds 2                                               ;; d17e
+    ds 1                                               ;; d17e
+
+w3_D17F:
+    ds 1                                               ;; d17f
 
 w3_D180:
     ds 6                                               ;; d180
@@ -474,7 +477,13 @@ w3_D1B6:
     ds 3                                               ;; d1b6
 
 w3_D1B9:
-    ds 3                                               ;; d1b9
+    ds 1                                               ;; d1b9
+
+w3_D1BA:
+    ds 1                                               ;; d1ba
+
+w3_D1BB:
+    ds 1                                               ;; d1bb
 
 w3_D1BC:
     ds 6                                               ;; d1bc
@@ -501,13 +510,31 @@ w3_D1D1:
     ds 3                                               ;; d1d1
 
 w3_D1D4:
-    ds 3                                               ;; d1d4
+    ds 1                                               ;; d1d4
+
+w3_D1D5:
+    ds 1                                               ;; d1d5
+
+w3_D1D6:
+    ds 1                                               ;; d1d6
 
 w3_D1D7:
-    ds 3                                               ;; d1d7
+    ds 1                                               ;; d1d7
+
+w3_D1D8:
+    ds 1                                               ;; d1d8
+
+w3_D1D9:
+    ds 1                                               ;; d1d9
 
 w3_D1DA:
-    ds 6                                               ;; d1da
+    ds 1                                               ;; d1da
+
+w3_D1DB:
+    ds 1                                               ;; d1db
+
+w3_D1DC:
+    ds 4                                               ;; d1dc
 
 w3_D1E0:
     ds 3                                               ;; d1e0
@@ -534,13 +561,22 @@ w3_D1EF:
     ds 3                                               ;; d1ef
 
 w3_D1F2:
-    ds 3                                               ;; d1f2
+    ds 2                                               ;; d1f2
+
+w3_D1F4:
+    ds 1                                               ;; d1f4
 
 w3_D1F5:
-    ds 3                                               ;; d1f5
+    ds 2                                               ;; d1f5
+
+w3_D1F7:
+    ds 1                                               ;; d1f7
 
 w3_D1F8:
-    ds 6                                               ;; d1f8
+    ds 2                                               ;; d1f8
+
+w3_D1FA:
+    ds 4                                               ;; d1fa
 
 w3_D1FE:
     ds 3                                               ;; d1fe
@@ -564,13 +600,31 @@ w3_D20D:
     ds 3                                               ;; d20d
 
 w3_D210:
-    ds 3                                               ;; d210
+    ds 1                                               ;; d210
+
+w3_D211:
+    ds 1                                               ;; d211
+
+w3_D212:
+    ds 1                                               ;; d212
 
 w3_D213:
-    ds 3                                               ;; d213
+    ds 1                                               ;; d213
+
+w3_D214:
+    ds 1                                               ;; d214
+
+w3_D215:
+    ds 1                                               ;; d215
 
 w3_D216:
-    ds 9                                               ;; d216
+    ds 1                                               ;; d216
+
+w3_D217:
+    ds 1                                               ;; d217
+
+w3_D218:
+    ds 7                                               ;; d218
 
 w3_D21F:
     ds 3                                               ;; d21f
@@ -594,7 +648,13 @@ w3_D22E:
     ds 3                                               ;; d22e
 
 w3_D231:
-    ds 3                                               ;; d231
+    ds 1                                               ;; d231
+
+w3_D232:
+    ds 1                                               ;; d232
+
+w3_D233:
+    ds 1                                               ;; d233
 
 w3_D234:
     ds 3                                               ;; d234
@@ -627,7 +687,10 @@ w3_D24E:
     ds 1                                               ;; d24e
 
 w3_D24F:
-    ds 3                                               ;; d24f
+    ds 2                                               ;; d24f
+
+w3_D251:
+    ds 1                                               ;; d251
 
 w3_D252:
     ds 6                                               ;; d252
@@ -660,7 +723,10 @@ w3_D26D:
     ds 1                                               ;; d26d
 
 w3_D26E:
-    ds 2                                               ;; d26e
+    ds 1                                               ;; d26e
+
+w3_D26F:
+    ds 1                                               ;; d26f
 
 w3_D270:
     ds 9                                               ;; d270
@@ -825,7 +891,10 @@ w3_D32D:
     ds 3                                               ;; d32d
 
 w3_D330:
-    ds 12                                              ;; d330
+    ds 3                                               ;; d330
+
+w3_D333:
+    ds 9                                               ;; d333
 
 w3_D33C:
     ds 3                                               ;; d33c
@@ -840,7 +909,10 @@ w3_D34B:
     ds 3                                               ;; d34b
 
 w3_D34E:
-    ds 12                                              ;; d34e
+    ds 3                                               ;; d34e
+
+w3_D351:
+    ds 9                                               ;; d351
 
 w3_D35A:
     ds 3                                               ;; d35a
@@ -855,7 +927,10 @@ w3_D369:
     ds 3                                               ;; d369
 
 w3_D36C:
-    ds 12                                              ;; d36c
+    ds 3                                               ;; d36c
+
+w3_D36F:
+    ds 9                                               ;; d36f
 
 w3_D378:
     ds 3                                               ;; d378
@@ -906,7 +981,13 @@ w3_D637:
     ds 12                                              ;; d637
 
 w3_D643:
-    ds 3                                               ;; d643
+    ds 1                                               ;; d643
+
+w3_D644:
+    ds 1                                               ;; d644
+
+w3_D645:
+    ds 1                                               ;; d645
 
 w3_D646:
     ds 1                                               ;; d646
@@ -930,13 +1011,22 @@ w3_D6E5:
     ds 1                                               ;; d6e5
 
 w3_D6E6:
-    ds 33                                              ;; d6e6
+    ds 1                                               ;; d6e6
+
+w3_D6E7:
+    ds 32                                              ;; d6e7
 
 w3_D707:
-    ds 33                                              ;; d707
+    ds 1                                               ;; d707
+
+w3_D708:
+    ds 32                                              ;; d708
 
 w3_D728:
-    ds 33                                              ;; d728
+    ds 1                                               ;; d728
+
+w3_D729:
+    ds 32                                              ;; d729
 
 w3_D749:
     ds 1                                               ;; d749

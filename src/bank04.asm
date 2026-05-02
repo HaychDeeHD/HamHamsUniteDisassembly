@@ -1182,11 +1182,11 @@ data_04_5e37:
     db   $00                                           ;; 04:5e37 .
 
 call_04_5e38:
-    Op84_WriteByteNTimes w1_DD9A, 128, $00             ;; 04:5e38 $84 $9a $dd $01 $80 $00 $00
-    Op84_WriteByteNTimes w5_D800, 1024, $00            ;; 04:5e3f $84 $00 $d8 $05 $00 $04 $00
-    Op84_WriteByteNTimes w7_D800, 1024, $00            ;; 04:5e46 $84 $00 $d8 $07 $00 $04 $00
-    Op84_WriteByteNTimes w5_DC00, 1024, $00            ;; 04:5e4d $84 $00 $dc $05 $00 $04 $00
-    Op84_WriteByteNTimes w7_DC00, 1024, $00            ;; 04:5e54 $84 $00 $dc $07 $00 $04 $00
+    Op84_WriteByteNTimes w1_DD9A, 1, 128, $00          ;; 04:5e38 $84 $9a $dd $01 $80 $00 $00
+    Op84_WriteByteNTimes w5_D800, 5, 1024, $00         ;; 04:5e3f $84 $00 $d8 $05 $00 $04 $00
+    Op84_WriteByteNTimes w7_D800, 7, 1024, $00         ;; 04:5e46 $84 $00 $d8 $07 $00 $04 $00
+    Op84_WriteByteNTimes w5_DC00, 5, 1024, $00         ;; 04:5e4d $84 $00 $dc $05 $00 $04 $00
+    Op84_WriteByteNTimes w7_DC00, 7, 1024, $00         ;; 04:5e54 $84 $00 $dc $07 $00 $04 $00
     db   $7e, $00, $d8, $05, $00, $98, $00, $00        ;; 04:5e5b w.......
     db   $04, $7e, $00, $d8, $07, $00, $98, $01        ;; 04:5e63 .w......
     db   $00, $04, $7e, $00, $dc, $05, $00, $9c        ;; 04:5e6b ..w.....
@@ -1329,7 +1329,7 @@ call_04_6169:
     Op1E_Call call_04_5f51                             ;; 04:6169 $1e $51 $5f $04
     Op1E_Call call_04_5e38                             ;; 04:616d $1e $38 $5e $04
     SCRIPT_RETURN_20                                   ;; 04:6171 $20
-    Op84_WriteByteNTimes w1_DD9A, 128, $ff             ;; 04:6172 $84 $9a $dd $01 $80 $00 $ff
+    Op84_WriteByteNTimes w1_DD9A, 1, 128, $ff          ;; 04:6172 $84 $9a $dd $01 $80 $00 $ff
     Op1E_Call call_04_622f                             ;; 04:6179 $1e $2f $62 $04
     Op32_Unknown $47, $74, $7d, $a0, $dd, $06          ;; 04:617d $32 $47 $74 $7d $a0 $dd $06
     db   $6a, $00, $00, $00, $00, $40, $00, $00        ;; 04:6184 ????????

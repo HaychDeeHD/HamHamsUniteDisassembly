@@ -33,7 +33,7 @@ for n in range(len(symbols)):
 # EA begin red text
 # E7 player name?
 # E8 end red text
-for n in range(14): # E0 to ED for now
+for n in range(16): # E0 to EF for now
     charmap[0xE0 + n] = "<%02X>" % (0xE0 + n)
 
 def serializeAddress(memory, addr):

@@ -1749,17 +1749,17 @@ call_24_56e4:
     SCRIPT_POINTER call_24_5710                        ;; 24:56e8 $10 $57 $24
     Op16_SubOps 1                                      ;; 24:56eb $16 $01
     SubOp_SetFlag wC93F, 6                             ;; 24:56ed $3f $3e
-    Op84_WriteByteNTimes w3_D16E, 3, $50               ;; 24:56ef $84 $6e $d1 $03 $03 $00 $50
-    Op84_WriteByteNTimes w3_D18C, 3, $50               ;; 24:56f6 $84 $8c $d1 $03 $03 $00 $50
-    Op84_WriteByteNTimes w3_D1AA, 3, $50               ;; 24:56fd $84 $aa $d1 $03 $03 $00 $50
+    Op84_WriteByteNTimes w3_D16E, 3, 3, $50            ;; 24:56ef $84 $6e $d1 $03 $03 $00 $50
+    Op84_WriteByteNTimes w3_D18C, 3, 3, $50            ;; 24:56f6 $84 $8c $d1 $03 $03 $00 $50
+    Op84_WriteByteNTimes w3_D1AA, 3, 3, $50            ;; 24:56fd $84 $aa $d1 $03 $03 $00 $50
     Op4C_Unknown $1a, $01, $04, $30, $00, $30, $00, $7e, $40, $16 ;; 24:5704 $4c $1a $01 $04 $30 $00 $30 $00 $7e $40 $16
     SCRIPT_RETURN_20                                   ;; 24:570f $20
 
 call_24_5710:
-    Op84_WriteByteNTimes w3_D16E, 3, $43               ;; 24:5710 $84 $6e $d1 $03 $03 $00 $43
-    Op84_WriteByteNTimes w3_D18C, 3, $43               ;; 24:5717 $84 $8c $d1 $03 $03 $00 $43
+    Op84_WriteByteNTimes w3_D16E, 3, 3, $43            ;; 24:5710 $84 $6e $d1 $03 $03 $00 $43
+    Op84_WriteByteNTimes w3_D18C, 3, 3, $43            ;; 24:5717 $84 $8c $d1 $03 $03 $00 $43
     Op50_WriteByte w3_D18E, $03, $80                   ;; 24:571e $50 $8e $d1 $03 $80
-    Op84_WriteByteNTimes w3_D1AA, 3, $43               ;; 24:5723 $84 $aa $d1 $03 $03 $00 $43
+    Op84_WriteByteNTimes w3_D1AA, 3, 3, $43            ;; 24:5723 $84 $aa $d1 $03 $03 $00 $43
     Op1E_Call call_38_5d8d                             ;; 24:572a $1e $8d $5d $38
     Op14_Unknown 1, $82, $5a                           ;; 24:572e $14 $01 $82 $5a
     SCRIPT_POINTER call_24_576b                        ;; 24:5732 $6b $57 $24

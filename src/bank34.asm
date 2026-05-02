@@ -105,9 +105,9 @@ call_34_4137:
     SubOp_SetFlag wC94A, 2                             ;; 34:4139 $3f $92
 
 call_34_413b:
-    Op84_WriteByteNTimes w3_D1C8, 3, $03               ;; 34:413b $84 $c8 $d1 $03 $03 $00 $03
-    Op84_WriteByteNTimes w3_D1E6, 3, $03               ;; 34:4142 $84 $e6 $d1 $03 $03 $00 $03
-    Op84_WriteByteNTimes w3_D204, 3, $03               ;; 34:4149 $84 $04 $d2 $03 $03 $00 $03
+    Op84_WriteByteNTimes w3_D1C8, 3, 3, $03            ;; 34:413b $84 $c8 $d1 $03 $03 $00 $03
+    Op84_WriteByteNTimes w3_D1E6, 3, 3, $03            ;; 34:4142 $84 $e6 $d1 $03 $03 $00 $03
+    Op84_WriteByteNTimes w3_D204, 3, 3, $03            ;; 34:4149 $84 $04 $d2 $03 $03 $00 $03
     Op14_Unknown 1, $bf, $77                           ;; 34:4150 $14 $01 $bf $77
     SCRIPT_POINTER call_34_4163                        ;; 34:4154 $63 $41 $34
     Op4C_Unknown $22, $01, $04, $20, $00, $58, $00, $bd, $69, $14 ;; 34:4157 $4c $22 $01 $04 $20 $00 $58 $00 $bd $69 $14
@@ -132,9 +132,9 @@ call_34_4196:
     Op4C_Unknown $22, $01, $04, $30, $00, $58, $00, $07, $6e, $14 ;; 34:4196 $4c $22 $01 $04 $30 $00 $58 $00 $07 $6e $14
 
 call_34_41a1:
-    Op84_WriteByteNTimes w3_D1C8, 3, $04               ;; 34:41a1 $84 $c8 $d1 $03 $03 $00 $04
-    Op84_WriteByteNTimes w3_D1E6, 3, $04               ;; 34:41a8 $84 $e6 $d1 $03 $03 $00 $04
-    Op84_WriteByteNTimes w3_D204, 3, $04               ;; 34:41af $84 $04 $d2 $03 $03 $00 $04
+    Op84_WriteByteNTimes w3_D1C8, 3, 3, $04            ;; 34:41a1 $84 $c8 $d1 $03 $03 $00 $04
+    Op84_WriteByteNTimes w3_D1E6, 3, 3, $04            ;; 34:41a8 $84 $e6 $d1 $03 $03 $00 $04
+    Op84_WriteByteNTimes w3_D204, 3, 3, $04            ;; 34:41af $84 $04 $d2 $03 $03 $00 $04
     Op42_Unknown_StoreValue 7, $01, $5d, $7f, $17      ;; 34:41b6 $42 $07 $01 $5d $7f $17
     SCRIPT_RETURN_20                                   ;; 34:41bc $20
 
@@ -158,28 +158,28 @@ call_34_41e4:
 
 call_34_41ef:
     Op4C_Unknown $22, $01, $04, $30, $00, $58, $00, $07, $6e, $14 ;; 34:41ef $4c $22 $01 $04 $30 $00 $58 $00 $07 $6e $14
-    Op84_WriteByteNTimes w3_D1C8, 3, $80               ;; 34:41fa $84 $c8 $d1 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D1E6, 3, $80               ;; 34:4201 $84 $e6 $d1 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D204, 3, $80               ;; 34:4208 $84 $04 $d2 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D1CB, 3, $07               ;; 34:420f $84 $cb $d1 $03 $03 $00 $07
-    Op84_WriteByteNTimes w3_D1E9, 3, $07               ;; 34:4216 $84 $e9 $d1 $03 $03 $00 $07
-    Op84_WriteByteNTimes w3_D207, 3, $07               ;; 34:421d $84 $07 $d2 $03 $03 $00 $07
-    Op84_WriteByteNTimes w3_D222, 3, $07               ;; 34:4224 $84 $22 $d2 $03 $03 $00 $07
-    Op84_WriteByteNTimes w3_D240, 3, $07               ;; 34:422b $84 $40 $d2 $03 $03 $00 $07
-    Op84_WriteByteNTimes w3_D25E, 3, $07               ;; 34:4232 $84 $5e $d2 $03 $03 $00 $07
+    Op84_WriteByteNTimes w3_D1C8, 3, 3, $80            ;; 34:41fa $84 $c8 $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D1E6, 3, 3, $80            ;; 34:4201 $84 $e6 $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D204, 3, 3, $80            ;; 34:4208 $84 $04 $d2 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D1CB, 3, 3, $07            ;; 34:420f $84 $cb $d1 $03 $03 $00 $07
+    Op84_WriteByteNTimes w3_D1E9, 3, 3, $07            ;; 34:4216 $84 $e9 $d1 $03 $03 $00 $07
+    Op84_WriteByteNTimes w3_D207, 3, 3, $07            ;; 34:421d $84 $07 $d2 $03 $03 $00 $07
+    Op84_WriteByteNTimes w3_D222, 3, 3, $07            ;; 34:4224 $84 $22 $d2 $03 $03 $00 $07
+    Op84_WriteByteNTimes w3_D240, 3, 3, $07            ;; 34:422b $84 $40 $d2 $03 $03 $00 $07
+    Op84_WriteByteNTimes w3_D25E, 3, 3, $07            ;; 34:4232 $84 $5e $d2 $03 $03 $00 $07
     Op42_Unknown_StoreValue 7, $01, $5d, $7f, $17      ;; 34:4239 $42 $07 $01 $5d $7f $17
     SCRIPT_RETURN_20                                   ;; 34:423f $20
 
 call_34_4240:
-    Op84_WriteByteNTimes w3_D1C8, 3, $80               ;; 34:4240 $84 $c8 $d1 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D1E6, 3, $80               ;; 34:4247 $84 $e6 $d1 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D204, 3, $80               ;; 34:424e $84 $04 $d2 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D1CB, 3, $08               ;; 34:4255 $84 $cb $d1 $03 $03 $00 $08
-    Op84_WriteByteNTimes w3_D1E9, 3, $08               ;; 34:425c $84 $e9 $d1 $03 $03 $00 $08
-    Op84_WriteByteNTimes w3_D207, 3, $08               ;; 34:4263 $84 $07 $d2 $03 $03 $00 $08
-    Op84_WriteByteNTimes w3_D222, 3, $08               ;; 34:426a $84 $22 $d2 $03 $03 $00 $08
-    Op84_WriteByteNTimes w3_D240, 3, $08               ;; 34:4271 $84 $40 $d2 $03 $03 $00 $08
-    Op84_WriteByteNTimes w3_D25E, 3, $08               ;; 34:4278 $84 $5e $d2 $03 $03 $00 $08
+    Op84_WriteByteNTimes w3_D1C8, 3, 3, $80            ;; 34:4240 $84 $c8 $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D1E6, 3, 3, $80            ;; 34:4247 $84 $e6 $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D204, 3, 3, $80            ;; 34:424e $84 $04 $d2 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D1CB, 3, 3, $08            ;; 34:4255 $84 $cb $d1 $03 $03 $00 $08
+    Op84_WriteByteNTimes w3_D1E9, 3, 3, $08            ;; 34:425c $84 $e9 $d1 $03 $03 $00 $08
+    Op84_WriteByteNTimes w3_D207, 3, 3, $08            ;; 34:4263 $84 $07 $d2 $03 $03 $00 $08
+    Op84_WriteByteNTimes w3_D222, 3, 3, $08            ;; 34:426a $84 $22 $d2 $03 $03 $00 $08
+    Op84_WriteByteNTimes w3_D240, 3, 3, $08            ;; 34:4271 $84 $40 $d2 $03 $03 $00 $08
+    Op84_WriteByteNTimes w3_D25E, 3, 3, $08            ;; 34:4278 $84 $5e $d2 $03 $03 $00 $08
     Op42_Unknown_StoreValue 7, $01, $5d, $7f, $17      ;; 34:427f $42 $07 $01 $5d $7f $17
     Op4C_Unknown $1e, $01, $04, $30, $00, $78, $00, $76, $69, $09 ;; 34:4285 $4c $1e $01 $04 $30 $00 $78 $00 $76 $69 $09
     Op4C_Unknown $22, $01, $04, $30, $00, $58, $00, $07, $6e, $14 ;; 34:4290 $4c $22 $01 $04 $30 $00 $58 $00 $07 $6e $14
@@ -192,15 +192,15 @@ call_34_42a6:
     SCRIPT_RETURN_20                                   ;; 34:42a6 $20
 
 call_34_42a7:
-    Op84_WriteByteNTimes w3_D1C8, 3, $06               ;; 34:42a7 $84 $c8 $d1 $03 $03 $00 $06
-    Op84_WriteByteNTimes w3_D1E6, 3, $06               ;; 34:42ae $84 $e6 $d1 $03 $03 $00 $06
-    Op84_WriteByteNTimes w3_D204, 3, $06               ;; 34:42b5 $84 $04 $d2 $03 $03 $00 $06
-    Op84_WriteByteNTimes w3_D1CB, 3, $02               ;; 34:42bc $84 $cb $d1 $03 $03 $00 $02
-    Op84_WriteByteNTimes w3_D1E9, 3, $02               ;; 34:42c3 $84 $e9 $d1 $03 $03 $00 $02
-    Op84_WriteByteNTimes w3_D207, 3, $02               ;; 34:42ca $84 $07 $d2 $03 $03 $00 $02
-    Op84_WriteByteNTimes w3_D222, 3, $00               ;; 34:42d1 $84 $22 $d2 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D240, 3, $00               ;; 34:42d8 $84 $40 $d2 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D25E, 3, $00               ;; 34:42df $84 $5e $d2 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D1C8, 3, 3, $06            ;; 34:42a7 $84 $c8 $d1 $03 $03 $00 $06
+    Op84_WriteByteNTimes w3_D1E6, 3, 3, $06            ;; 34:42ae $84 $e6 $d1 $03 $03 $00 $06
+    Op84_WriteByteNTimes w3_D204, 3, 3, $06            ;; 34:42b5 $84 $04 $d2 $03 $03 $00 $06
+    Op84_WriteByteNTimes w3_D1CB, 3, 3, $02            ;; 34:42bc $84 $cb $d1 $03 $03 $00 $02
+    Op84_WriteByteNTimes w3_D1E9, 3, 3, $02            ;; 34:42c3 $84 $e9 $d1 $03 $03 $00 $02
+    Op84_WriteByteNTimes w3_D207, 3, 3, $02            ;; 34:42ca $84 $07 $d2 $03 $03 $00 $02
+    Op84_WriteByteNTimes w3_D222, 3, 3, $00            ;; 34:42d1 $84 $22 $d2 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D240, 3, 3, $00            ;; 34:42d8 $84 $40 $d2 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D25E, 3, 3, $00            ;; 34:42df $84 $5e $d2 $03 $03 $00 $00
     Op42_Unknown_StoreValue 7, $01, $5d, $7f, $17      ;; 34:42e6 $42 $07 $01 $5d $7f $17
     Op4C_Unknown $22, $01, $04, $30, $00, $58, $00, $07, $6e, $14 ;; 34:42ec $4c $22 $01 $04 $30 $00 $58 $00 $07 $6e $14
     SCRIPT_RETURN_20                                   ;; 34:42f7 $20
@@ -215,17 +215,17 @@ call_34_42f8:
     SCRIPT_RETURN_20                                   ;; 34:4317 $20
 
 call_34_4318:
-    Op84_WriteByteNTimes w3_D1C8, 3, $05               ;; 34:4318 $84 $c8 $d1 $03 $03 $00 $05
-    Op84_WriteByteNTimes w3_D1E6, 3, $05               ;; 34:431f $84 $e6 $d1 $03 $03 $00 $05
-    Op84_WriteByteNTimes w3_D204, 3, $05               ;; 34:4326 $84 $04 $d2 $03 $03 $00 $05
+    Op84_WriteByteNTimes w3_D1C8, 3, 3, $05            ;; 34:4318 $84 $c8 $d1 $03 $03 $00 $05
+    Op84_WriteByteNTimes w3_D1E6, 3, 3, $05            ;; 34:431f $84 $e6 $d1 $03 $03 $00 $05
+    Op84_WriteByteNTimes w3_D204, 3, 3, $05            ;; 34:4326 $84 $04 $d2 $03 $03 $00 $05
     Op4C_Unknown $22, $01, $04, $20, $00, $58, $00, $0b, $6c, $14 ;; 34:432d $4c $22 $01 $04 $20 $00 $58 $00 $0b $6c $14
     Op4C_Unknown $20, $01, $04, $00, $00, $00, $00, $28, $6c, $14 ;; 34:4338 $4c $20 $01 $04 $00 $00 $00 $00 $28 $6c $14
     SCRIPT_RETURN_20                                   ;; 34:4343 $20
 
 call_34_4344:
-    Op84_WriteByteNTimes w3_D1C8, 3, $09               ;; 34:4344 $84 $c8 $d1 $03 $03 $00 $09
-    Op84_WriteByteNTimes w3_D1E6, 3, $09               ;; 34:434b $84 $e6 $d1 $03 $03 $00 $09
-    Op84_WriteByteNTimes w3_D204, 3, $09               ;; 34:4352 $84 $04 $d2 $03 $03 $00 $09
+    Op84_WriteByteNTimes w3_D1C8, 3, 3, $09            ;; 34:4344 $84 $c8 $d1 $03 $03 $00 $09
+    Op84_WriteByteNTimes w3_D1E6, 3, 3, $09            ;; 34:434b $84 $e6 $d1 $03 $03 $00 $09
+    Op84_WriteByteNTimes w3_D204, 3, 3, $09            ;; 34:4352 $84 $04 $d2 $03 $03 $00 $09
     SCRIPT_RETURN_20                                   ;; 34:4359 $20
 
 call_34_435a:
@@ -2150,9 +2150,9 @@ call_34_676a:
     Op16_SubOps 1                                      ;; 34:676e $16 $01
     SubOp_SetFlag wC949, 2                             ;; 34:6770 $3f $8a
     Op4C_Unknown $36, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 34:6772 $4c $36 $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op84_WriteByteNTimes w3_D27C, 3, $00               ;; 34:677d $84 $7c $d2 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D29A, 3, $00               ;; 34:6784 $84 $9a $d2 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D2B8, 3, $00               ;; 34:678b $84 $b8 $d2 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D27C, 3, 3, $00            ;; 34:677d $84 $7c $d2 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D29A, 3, 3, $00            ;; 34:6784 $84 $9a $d2 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D2B8, 3, 3, $00            ;; 34:678b $84 $b8 $d2 $03 $03 $00 $00
     Op50_WriteByte w3_D27F, $03, $00                   ;; 34:6792 $50 $7f $d2 $03 $00
     Op18_Jump call_34_6a46                             ;; 34:6797 $18 $46 $6a $34
 
@@ -2191,9 +2191,9 @@ call_34_67ea:
     Op16_SubOps 1                                      ;; 34:67ee $16 $01
     SubOp_SetFlag wC949, 3                             ;; 34:67f0 $3f $8b
     Op4C_Unknown $38, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 34:67f2 $4c $38 $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op84_WriteByteNTimes w3_D17D, 3, $00               ;; 34:67fd $84 $7d $d1 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D19B, 3, $00               ;; 34:6804 $84 $9b $d1 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D1B9, 3, $00               ;; 34:680b $84 $b9 $d1 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D17D, 3, 3, $00            ;; 34:67fd $84 $7d $d1 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D19B, 3, 3, $00            ;; 34:6804 $84 $9b $d1 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D1B9, 3, 3, $00            ;; 34:680b $84 $b9 $d1 $03 $03 $00 $00
     Op50_WriteByte w3_D17A, $03, $4a                   ;; 34:6812 $50 $7a $d1 $03 $4a
     Op18_Jump call_34_6a46                             ;; 34:6817 $18 $46 $6a $34
 
@@ -2377,25 +2377,25 @@ call_34_6a46:
 
 call_34_6a4e:
     Op4C_Unknown $36, $01, $04, $30, $00, $ac, $00, $c3, $64, $15 ;; 34:6a4e $4c $36 $01 $04 $30 $00 $ac $00 $c3 $64 $15
-    Op84_WriteByteNTimes w3_D27C, 3, $80               ;; 34:6a59 $84 $7c $d2 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D29A, 3, $80               ;; 34:6a60 $84 $9a $d2 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D2B8, 3, $80               ;; 34:6a67 $84 $b8 $d2 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D27C, 3, 3, $80            ;; 34:6a59 $84 $7c $d2 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D29A, 3, 3, $80            ;; 34:6a60 $84 $9a $d2 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D2B8, 3, 3, $80            ;; 34:6a67 $84 $b8 $d2 $03 $03 $00 $80
     Op50_WriteByte w3_D27F, $03, $05                   ;; 34:6a6e $50 $7f $d2 $03 $05
     SCRIPT_RETURN_20                                   ;; 34:6a73 $20
 
 call_34_6a74:
     Op4C_Unknown $38, $01, $04, $a8, $00, $64, $00, $c3, $64, $15 ;; 34:6a74 $4c $38 $01 $04 $a8 $00 $64 $00 $c3 $64 $15
-    Op84_WriteByteNTimes w3_D17D, 3, $80               ;; 34:6a7f $84 $7d $d1 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D19B, 3, $80               ;; 34:6a86 $84 $9b $d1 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D1B9, 3, $80               ;; 34:6a8d $84 $b9 $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D17D, 3, 3, $80            ;; 34:6a7f $84 $7d $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D19B, 3, 3, $80            ;; 34:6a86 $84 $9b $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D1B9, 3, 3, $80            ;; 34:6a8d $84 $b9 $d1 $03 $03 $00 $80
     Op50_WriteByte w3_D17A, $03, $46                   ;; 34:6a94 $50 $7a $d1 $03 $46
     SCRIPT_RETURN_20                                   ;; 34:6a99 $20
 
 call_34_6a9a:
     Op4C_Unknown $3a, $01, $04, $30, $00, $1c, $00, $48, $66, $15 ;; 34:6a9a $4c $3a $01 $04 $30 $00 $1c $00 $48 $66 $15
-    Op84_WriteByteNTimes w3_D060, 3, $80               ;; 34:6aa5 $84 $60 $d0 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D07E, 3, $80               ;; 34:6aac $84 $7e $d0 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D09C, 3, $80               ;; 34:6ab3 $84 $9c $d0 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D060, 3, 3, $80            ;; 34:6aa5 $84 $60 $d0 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D07E, 3, 3, $80            ;; 34:6aac $84 $7e $d0 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D09C, 3, 3, $80            ;; 34:6ab3 $84 $9c $d0 $03 $03 $00 $80
     Op50_WriteByte w3_D063, $03, $07                   ;; 34:6aba $50 $63 $d0 $03 $07
     SCRIPT_RETURN_20                                   ;; 34:6abf $20
 
@@ -2928,9 +2928,9 @@ call_34_711c:
     Op16_SubOps 1                                      ;; 34:7120 $16 $01
     SubOp_SetByte wC82D, $02                           ;; 34:7122 $7f $15 $02
     Op4C_Unknown $34, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 34:7125 $4c $34 $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op84_WriteByteNTimes w3_D234, 3, $00               ;; 34:7130 $84 $34 $d2 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D252, 3, $00               ;; 34:7137 $84 $52 $d2 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D270, 3, $00               ;; 34:713e $84 $70 $d2 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D234, 3, 3, $00            ;; 34:7130 $84 $34 $d2 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D252, 3, 3, $00            ;; 34:7137 $84 $52 $d2 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D270, 3, 3, $00            ;; 34:713e $84 $70 $d2 $03 $03 $00 $00
     Op50_WriteByte w3_D1DA, $03, $07                   ;; 34:7145 $50 $da $d1 $03 $07
     Op50_WriteByte w3_D231, $03, $00                   ;; 34:714a $50 $31 $d2 $03 $00
     Op50_WriteByte w3_D237, $03, $42                   ;; 34:714f $50 $37 $d2 $03 $42
@@ -2949,9 +2949,9 @@ call_34_716b:
 
 call_34_7173:
     Op4C_Unknown $34, $01, $04, $c0, $00, $90, $00, $c3, $64, $15 ;; 34:7173 $4c $34 $01 $04 $c0 $00 $90 $00 $c3 $64 $15
-    Op84_WriteByteNTimes w3_D234, 3, $80               ;; 34:717e $84 $34 $d2 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D252, 3, $80               ;; 34:7185 $84 $52 $d2 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D270, 3, $80               ;; 34:718c $84 $70 $d2 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D234, 3, 3, $80            ;; 34:717e $84 $34 $d2 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D252, 3, 3, $80            ;; 34:7185 $84 $52 $d2 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D270, 3, 3, $80            ;; 34:718c $84 $70 $d2 $03 $03 $00 $80
     Op50_WriteByte w3_D1DA, $03, $0b                   ;; 34:7193 $50 $da $d1 $03 $0b
     Op50_WriteByte w3_D231, $03, $0c                   ;; 34:7198 $50 $31 $d2 $03 $0c
     Op50_WriteByte w3_D237, $03, $4d                   ;; 34:719d $50 $37 $d2 $03 $4d
@@ -3697,20 +3697,20 @@ call_34_7ae2:
     SCRIPT_RETURN_20                                   ;; 34:7af4 $20
 
 call_34_7af5:
-    Op84_WriteByteNTimes w3_D117, 3, $06               ;; 34:7af5 $84 $17 $d1 $03 $03 $00 $06
-    Op84_WriteByteNTimes w3_D135, 3, $06               ;; 34:7afc $84 $35 $d1 $03 $03 $00 $06
-    Op84_WriteByteNTimes w3_D153, 3, $06               ;; 34:7b03 $84 $53 $d1 $03 $03 $00 $06
-    Op84_WriteByteNTimes w3_D174, 3, $06               ;; 34:7b0a $84 $74 $d1 $03 $03 $00 $06
-    Op84_WriteByteNTimes w3_D192, 3, $06               ;; 34:7b11 $84 $92 $d1 $03 $03 $00 $06
-    Op84_WriteByteNTimes w3_D1B0, 3, $06               ;; 34:7b18 $84 $b0 $d1 $03 $03 $00 $06
+    Op84_WriteByteNTimes w3_D117, 3, 3, $06            ;; 34:7af5 $84 $17 $d1 $03 $03 $00 $06
+    Op84_WriteByteNTimes w3_D135, 3, 3, $06            ;; 34:7afc $84 $35 $d1 $03 $03 $00 $06
+    Op84_WriteByteNTimes w3_D153, 3, 3, $06            ;; 34:7b03 $84 $53 $d1 $03 $03 $00 $06
+    Op84_WriteByteNTimes w3_D174, 3, 3, $06            ;; 34:7b0a $84 $74 $d1 $03 $03 $00 $06
+    Op84_WriteByteNTimes w3_D192, 3, 3, $06            ;; 34:7b11 $84 $92 $d1 $03 $03 $00 $06
+    Op84_WriteByteNTimes w3_D1B0, 3, 3, $06            ;; 34:7b18 $84 $b0 $d1 $03 $03 $00 $06
     SCRIPT_RETURN_20                                   ;; 34:7b1f $20
 
 call_34_7b20:
     Op14_Unknown 1, $b0, $68                           ;; 34:7b20 $14 $01 $b0 $68
     SCRIPT_POINTER call_34_7b3c                        ;; 34:7b24 $3c $7b $34
-    Op84_WriteByteNTimes w3_D0C3, 3, $00               ;; 34:7b27 $84 $c3 $d0 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D0E1, 3, $00               ;; 34:7b2e $84 $e1 $d0 $03 $03 $00 $00
-    Op84_WriteByteNTimes w3_D0FF, 3, $00               ;; 34:7b35 $84 $ff $d0 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D0C3, 3, 3, $00            ;; 34:7b27 $84 $c3 $d0 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D0E1, 3, 3, $00            ;; 34:7b2e $84 $e1 $d0 $03 $03 $00 $00
+    Op84_WriteByteNTimes w3_D0FF, 3, 3, $00            ;; 34:7b35 $84 $ff $d0 $03 $03 $00 $00
 
 call_34_7b3c:
     SCRIPT_RETURN_20                                   ;; 34:7b3c $20

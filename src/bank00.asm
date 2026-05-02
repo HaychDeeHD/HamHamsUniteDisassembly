@@ -1785,7 +1785,7 @@ AddressArray_0dbd:
     dw   $d0e9                                         ;; 00:0dc7 wW $05
     dw   $d117                                         ;; 00:0dc9 wW $06
     dw   $d145                                         ;; 00:0dcb wW $07
-    dw   $d173                                         ;; 00:0dcd wW $08
+    dw   w1_D173                                       ;; 00:0dcd wW $08
     dw   w1_D1A1                                       ;; 00:0dcf ?? $09
     dw   w1_D1CF                                       ;; 00:0dd1 ?? $0a
     dw   w1_BeginRegionD1FD                            ;; 00:0dd3 wW $0b
@@ -2569,7 +2569,7 @@ WramAddressTable:
     dw   $d0e9                                         ;; 00:1212 pP
     dw   $d117                                         ;; 00:1214 pP
     dw   $d145                                         ;; 00:1216 pP
-    dw   $d173                                         ;; 00:1218 pP
+    dw   w1_D173                                       ;; 00:1218 pP
     dw   w1_D1A1                                       ;; 00:121a pP
     dw   w1_D1CF                                       ;; 00:121c pP
     dw   w1_BeginRegionD1FD                            ;; 00:121e pP
@@ -6158,7 +6158,7 @@ jp_00_2b95:
     dw   $d0e9                                         ;; 00:2bb4 pP
     dw   $d117                                         ;; 00:2bb6 pP
     dw   $d145                                         ;; 00:2bb8 pP
-    dw   $d173                                         ;; 00:2bba pP
+    dw   w1_D173                                       ;; 00:2bba pP
     dw   w1_D1A1                                       ;; 00:2bbc pP
     dw   w1_D1CF                                       ;; 00:2bbe pP
     dw   w1_BeginRegionD1FD                            ;; 00:2bc0 pP

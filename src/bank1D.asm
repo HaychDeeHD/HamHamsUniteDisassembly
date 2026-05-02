@@ -2056,15 +2056,15 @@ call_1d_5e55:
 call_1d_5e5d:
     Op14_Unknown 1, $2c, $75                           ;; 1d:5e5d $14 $01 $2c $75
     SCRIPT_POINTER call_1d_5eaf                        ;; 1d:5e61 $af $5e $1d
-    Op84_WriteByteNTimes w3_D11A, 3, $80               ;; 1d:5e64 $84 $1a $d1 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D138, 3, $80               ;; 1d:5e6b $84 $38 $d1 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D156, 3, $80               ;; 1d:5e72 $84 $56 $d1 $03 $03 $00 $80
-    Op84_WriteByteNTimes w3_D117, 3, $0e               ;; 1d:5e79 $84 $17 $d1 $03 $03 $00 $0e
-    Op84_WriteByteNTimes w3_D135, 3, $0e               ;; 1d:5e80 $84 $35 $d1 $03 $03 $00 $0e
-    Op84_WriteByteNTimes w3_D153, 3, $0e               ;; 1d:5e87 $84 $53 $d1 $03 $03 $00 $0e
-    Op84_WriteByteNTimes w3_D0C0, 3, $0e               ;; 1d:5e8e $84 $c0 $d0 $03 $03 $00 $0e
-    Op84_WriteByteNTimes w3_D0DE, 3, $0e               ;; 1d:5e95 $84 $de $d0 $03 $03 $00 $0e
-    Op84_WriteByteNTimes w3_D0FC, 3, $0e               ;; 1d:5e9c $84 $fc $d0 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D11A, 3, 3, $80            ;; 1d:5e64 $84 $1a $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D138, 3, 3, $80            ;; 1d:5e6b $84 $38 $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D156, 3, 3, $80            ;; 1d:5e72 $84 $56 $d1 $03 $03 $00 $80
+    Op84_WriteByteNTimes w3_D117, 3, 3, $0e            ;; 1d:5e79 $84 $17 $d1 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D135, 3, 3, $0e            ;; 1d:5e80 $84 $35 $d1 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D153, 3, 3, $0e            ;; 1d:5e87 $84 $53 $d1 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D0C0, 3, 3, $0e            ;; 1d:5e8e $84 $c0 $d0 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D0DE, 3, 3, $0e            ;; 1d:5e95 $84 $de $d0 $03 $03 $00 $0e
+    Op84_WriteByteNTimes w3_D0FC, 3, 3, $0e            ;; 1d:5e9c $84 $fc $d0 $03 $03 $00 $0e
     Op4C_Unknown $30, $01, $04, $60, $00, $48, $00, $3a, $66, $15 ;; 1d:5ea3 $4c $30 $01 $04 $60 $00 $48 $00 $3a $66 $15
     SCRIPT_RETURN_20                                   ;; 1d:5eae $20
 
