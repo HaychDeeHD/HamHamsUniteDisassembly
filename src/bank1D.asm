@@ -2254,78 +2254,185 @@ call_1d_5f43:
     SCRIPT_POINTER call_1d_6316                        ;; 1d:5f5c $16 $63 $1d
     SCRIPT_POINTER call_1d_6300                        ;; 1d:5f5f $00 $63 $1d
     SCRIPT_POINTER call_1d_61a4                        ;; 1d:5f62 $a4 $61 $1d
+; Is this unreachable? What's with the random $07?
     Op68_CopyBytes 95, $501d, wBitArrayIndexC715, $00  ;; 1d:5f65 $68 $5f $1d $50 $15 $c7 $00
-    db   $07, $82, $d9, $6d, $02, $16, $01, $3e        ;; 1d:5f6c ????????
-    db   $12, $50, $15, $c7, $00, $08, $82, $d9        ;; 1d:5f74 ????????
-    db   $6d, $02, $16, $01, $3e, $13, $50, $15        ;; 1d:5f7c ????????
-    db   $c7, $00, $09, $82, $d9, $6d, $02, $16        ;; 1d:5f84 ????????
-    db   $01, $3e, $14, $50, $15, $c7, $00, $0a        ;; 1d:5f8c ????????
-    db   $82, $d9, $6d, $02, $16, $01, $3e, $15        ;; 1d:5f94 ????????
-    db   $50, $15, $c7, $00, $0b, $82, $d9, $6d        ;; 1d:5f9c ????????
-    db   $02, $16, $01, $3e, $16, $50, $15, $c7        ;; 1d:5fa4 ????????
-    db   $00, $0c, $82, $d9, $6d, $02, $16, $01        ;; 1d:5fac ????????
-    db   $3e, $17, $50, $15, $c7, $00, $12, $82        ;; 1d:5fb4 ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $1d, $50        ;; 1d:5fbc ????????
-    db   $15, $c7, $00, $13, $82, $d9, $6d, $02        ;; 1d:5fc4 ????????
-    db   $16, $01, $3e, $1e, $50, $15, $c7, $00        ;; 1d:5fcc ????????
-    db   $14, $82, $d9, $6d, $02, $16, $01, $3e        ;; 1d:5fd4 ????????
-    db   $1f, $50, $15, $c7, $00, $15, $82, $d9        ;; 1d:5fdc ????????
-    db   $6d, $02, $16, $01, $3e, $20, $50, $15        ;; 1d:5fe4 ????????
-    db   $c7, $00, $16, $82, $d9, $6d, $02, $16        ;; 1d:5fec ????????
-    db   $01, $3e, $21, $50, $15, $c7, $00, $18        ;; 1d:5ff4 ????????
-    db   $82, $d9, $6d, $02, $16, $01, $3e, $23        ;; 1d:5ffc ????????
-    db   $50, $15, $c7, $00, $1a, $82, $d9, $6d        ;; 1d:6004 ????????
-    db   $02, $16, $01, $3e, $25, $50, $15, $c7        ;; 1d:600c ????????
-    db   $00, $1b, $82, $d9, $6d, $02, $16, $01        ;; 1d:6014 ????????
-    db   $3e, $26, $50, $15, $c7, $00, $20, $82        ;; 1d:601c ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $2b, $50        ;; 1d:6024 ????????
-    db   $15, $c7, $00, $23, $82, $d9, $6d, $02        ;; 1d:602c ????????
-    db   $16, $01, $3e, $2e, $50, $15, $c7, $00        ;; 1d:6034 ????????
-    db   $25, $82, $d9, $6d, $02, $16, $01, $3e        ;; 1d:603c ????????
-    db   $30, $50, $15, $c7, $00, $26, $82, $d9        ;; 1d:6044 ????????
-    db   $6d, $02, $16, $01, $3e, $31, $50, $15        ;; 1d:604c ????????
-    db   $c7, $00, $27, $82, $d9, $6d, $02, $16        ;; 1d:6054 ????????
-    db   $01, $3e, $32, $50, $15, $c7, $00, $28        ;; 1d:605c ????????
-    db   $82, $d9, $6d, $02, $16, $01, $3e, $33        ;; 1d:6064 ????????
-    db   $50, $15, $c7, $00, $2a, $82, $d9, $6d        ;; 1d:606c ????????
-    db   $02, $16, $01, $3e, $35, $50, $15, $c7        ;; 1d:6074 ????????
-    db   $00, $2b, $82, $d9, $6d, $02, $16, $01        ;; 1d:607c ????????
-    db   $3e, $36, $50, $15, $c7, $00, $2c, $82        ;; 1d:6084 ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $37, $50        ;; 1d:608c ????????
-    db   $15, $c7, $00, $2e, $82, $d9, $6d, $02        ;; 1d:6094 ????????
-    db   $16, $01, $3e, $39, $50, $15, $c7, $00        ;; 1d:609c ????????
-    db   $2f, $82, $d9, $6d, $02, $16, $01, $3e        ;; 1d:60a4 ????????
-    db   $3a, $50, $15, $c7, $00, $30, $82, $d9        ;; 1d:60ac ????????
-    db   $6d, $02, $16, $01, $3e, $3b, $50, $15        ;; 1d:60b4 ????????
-    db   $c7, $00, $31, $82, $d9, $6d, $02, $16        ;; 1d:60bc ????????
-    db   $01, $3e, $3c, $50, $15, $c7, $00, $32        ;; 1d:60c4 ????????
-    db   $82, $d9, $6d, $02, $16, $01, $3e, $3d        ;; 1d:60cc ????????
-    db   $50, $15, $c7, $00, $35, $82, $d9, $6d        ;; 1d:60d4 ????????
-    db   $02, $16, $01, $3e, $40, $50, $15, $c7        ;; 1d:60dc ????????
-    db   $00, $36, $82, $d9, $6d, $02, $16, $01        ;; 1d:60e4 ????????
-    db   $3e, $41, $50, $15, $c7, $00, $3d, $82        ;; 1d:60ec ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $48, $50        ;; 1d:60f4 ????????
-    db   $15, $c7, $00, $42, $82, $d9, $6d, $02        ;; 1d:60fc ????????
-    db   $16, $01, $3e, $4d, $50, $15, $c7, $00        ;; 1d:6104 ????????
-    db   $46, $82, $d9, $6d, $02, $16, $01, $3e        ;; 1d:610c ????????
-    db   $51, $50, $15, $c7, $00, $49, $82, $d9        ;; 1d:6114 ????????
-    db   $6d, $02, $16, $01, $3e, $54, $50, $15        ;; 1d:611c ????????
-    db   $c7, $00, $4a, $82, $d9, $6d, $02, $16        ;; 1d:6124 ????????
-    db   $01, $3e, $55, $50, $15, $c7, $00, $4d        ;; 1d:612c ????????
-    db   $82, $d9, $6d, $02, $16, $01, $3e, $58        ;; 1d:6134 ????????
-    db   $50, $15, $c7, $00, $4e, $82, $d9, $6d        ;; 1d:613c ????????
-    db   $02, $16, $01, $3e, $59, $50, $15, $c7        ;; 1d:6144 ????????
-    db   $00, $4f, $82, $d9, $6d, $02, $16, $01        ;; 1d:614c ????????
-    db   $3e, $5a, $50, $15, $c7, $00, $50, $82        ;; 1d:6154 ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $5b, $50        ;; 1d:615c ????????
-    db   $15, $c7, $00, $51, $82, $d9, $6d, $02        ;; 1d:6164 ????????
-    db   $16, $01, $3e, $5c, $50, $15, $c7, $00        ;; 1d:616c ????????
-    db   $52, $82, $d9, $6d, $02, $16, $01, $3e        ;; 1d:6174 ????????
-    db   $5d, $50, $15, $c7, $00, $53, $82, $d9        ;; 1d:617c ????????
-    db   $6d, $02, $16, $01, $3e, $5e, $50, $15        ;; 1d:6184 ????????
-    db   $c7, $00, $54, $82, $d9, $6d, $02, $16        ;; 1d:618c ????????
-    db   $01, $3e, $5f, $50, $15, $c7, $00, $55        ;; 1d:6194 ????????
-    db   $82, $d9, $6d, $02, $16, $01, $3e, $60        ;; 1d:619c ????????
+    db   $07                                           ;; 1d:5f6c ?
+;@hamscript
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5f6d $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5f71 $16 $01
+    SubOp_SetFlag wC91A, 2                             ;; 1d:5f73 $3e $12
+    Op50_WriteByte wBitArrayIndexC715, $00, $08        ;; 1d:5f75 $50 $15 $c7 $00 $08
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5f7a $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5f7e $16 $01
+    SubOp_SetFlag wC91A, 3                             ;; 1d:5f80 $3e $13
+    Op50_WriteByte wBitArrayIndexC715, $00, $09        ;; 1d:5f82 $50 $15 $c7 $00 $09
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5f87 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5f8b $16 $01
+    SubOp_SetFlag wC91A, 4                             ;; 1d:5f8d $3e $14
+    Op50_WriteByte wBitArrayIndexC715, $00, $0a        ;; 1d:5f8f $50 $15 $c7 $00 $0a
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5f94 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5f98 $16 $01
+    SubOp_SetFlag wC91A, 5                             ;; 1d:5f9a $3e $15
+    Op50_WriteByte wBitArrayIndexC715, $00, $0b        ;; 1d:5f9c $50 $15 $c7 $00 $0b
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5fa1 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5fa5 $16 $01
+    SubOp_SetFlag wC91A, 6                             ;; 1d:5fa7 $3e $16
+    Op50_WriteByte wBitArrayIndexC715, $00, $0c        ;; 1d:5fa9 $50 $15 $c7 $00 $0c
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5fae $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5fb2 $16 $01
+    SubOp_SetFlag wC91A, 7                             ;; 1d:5fb4 $3e $17
+    Op50_WriteByte wBitArrayIndexC715, $00, $12        ;; 1d:5fb6 $50 $15 $c7 $00 $12
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5fbb $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5fbf $16 $01
+    SubOp_SetFlag wC91B, 5                             ;; 1d:5fc1 $3e $1d
+    Op50_WriteByte wBitArrayIndexC715, $00, $13        ;; 1d:5fc3 $50 $15 $c7 $00 $13
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5fc8 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5fcc $16 $01
+    SubOp_SetFlag wC91B, 6                             ;; 1d:5fce $3e $1e
+    Op50_WriteByte wBitArrayIndexC715, $00, $14        ;; 1d:5fd0 $50 $15 $c7 $00 $14
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5fd5 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5fd9 $16 $01
+    SubOp_SetFlag wC91B, 7                             ;; 1d:5fdb $3e $1f
+    Op50_WriteByte wBitArrayIndexC715, $00, $15        ;; 1d:5fdd $50 $15 $c7 $00 $15
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5fe2 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5fe6 $16 $01
+    SubOp_SetFlag wC91C, 0                             ;; 1d:5fe8 $3e $20
+    Op50_WriteByte wBitArrayIndexC715, $00, $16        ;; 1d:5fea $50 $15 $c7 $00 $16
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5fef $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:5ff3 $16 $01
+    SubOp_SetFlag wC91C, 1                             ;; 1d:5ff5 $3e $21
+    Op50_WriteByte wBitArrayIndexC715, $00, $18        ;; 1d:5ff7 $50 $15 $c7 $00 $18
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:5ffc $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6000 $16 $01
+    SubOp_SetFlag wC91C, 3                             ;; 1d:6002 $3e $23
+    Op50_WriteByte wBitArrayIndexC715, $00, $1a        ;; 1d:6004 $50 $15 $c7 $00 $1a
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6009 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:600d $16 $01
+    SubOp_SetFlag wC91C, 5                             ;; 1d:600f $3e $25
+    Op50_WriteByte wBitArrayIndexC715, $00, $1b        ;; 1d:6011 $50 $15 $c7 $00 $1b
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6016 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:601a $16 $01
+    SubOp_SetFlag wC91C, 6                             ;; 1d:601c $3e $26
+    Op50_WriteByte wBitArrayIndexC715, $00, $20        ;; 1d:601e $50 $15 $c7 $00 $20
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6023 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6027 $16 $01
+    SubOp_SetFlag wC91D, 3                             ;; 1d:6029 $3e $2b
+    Op50_WriteByte wBitArrayIndexC715, $00, $23        ;; 1d:602b $50 $15 $c7 $00 $23
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6030 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6034 $16 $01
+    SubOp_SetFlag wC91D, 6                             ;; 1d:6036 $3e $2e
+    Op50_WriteByte wBitArrayIndexC715, $00, $25        ;; 1d:6038 $50 $15 $c7 $00 $25
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:603d $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6041 $16 $01
+    SubOp_SetFlag wC91E, 0                             ;; 1d:6043 $3e $30
+    Op50_WriteByte wBitArrayIndexC715, $00, $26        ;; 1d:6045 $50 $15 $c7 $00 $26
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:604a $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:604e $16 $01
+    SubOp_SetFlag wC91E, 1                             ;; 1d:6050 $3e $31
+    Op50_WriteByte wBitArrayIndexC715, $00, $27        ;; 1d:6052 $50 $15 $c7 $00 $27
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6057 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:605b $16 $01
+    SubOp_SetFlag wC91E, 2                             ;; 1d:605d $3e $32
+    Op50_WriteByte wBitArrayIndexC715, $00, $28        ;; 1d:605f $50 $15 $c7 $00 $28
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6064 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6068 $16 $01
+    SubOp_SetFlag wC91E, 3                             ;; 1d:606a $3e $33
+    Op50_WriteByte wBitArrayIndexC715, $00, $2a        ;; 1d:606c $50 $15 $c7 $00 $2a
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6071 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6075 $16 $01
+    SubOp_SetFlag wC91E, 5                             ;; 1d:6077 $3e $35
+    Op50_WriteByte wBitArrayIndexC715, $00, $2b        ;; 1d:6079 $50 $15 $c7 $00 $2b
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:607e $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6082 $16 $01
+    SubOp_SetFlag wC91E, 6                             ;; 1d:6084 $3e $36
+    Op50_WriteByte wBitArrayIndexC715, $00, $2c        ;; 1d:6086 $50 $15 $c7 $00 $2c
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:608b $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:608f $16 $01
+    SubOp_SetFlag wC91E, 7                             ;; 1d:6091 $3e $37
+    Op50_WriteByte wBitArrayIndexC715, $00, $2e        ;; 1d:6093 $50 $15 $c7 $00 $2e
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6098 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:609c $16 $01
+    SubOp_SetFlag wC91F, 1                             ;; 1d:609e $3e $39
+    Op50_WriteByte wBitArrayIndexC715, $00, $2f        ;; 1d:60a0 $50 $15 $c7 $00 $2f
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:60a5 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:60a9 $16 $01
+    SubOp_SetFlag wC91F, 2                             ;; 1d:60ab $3e $3a
+    Op50_WriteByte wBitArrayIndexC715, $00, $30        ;; 1d:60ad $50 $15 $c7 $00 $30
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:60b2 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:60b6 $16 $01
+    SubOp_SetFlag wC91F, 3                             ;; 1d:60b8 $3e $3b
+    Op50_WriteByte wBitArrayIndexC715, $00, $31        ;; 1d:60ba $50 $15 $c7 $00 $31
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:60bf $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:60c3 $16 $01
+    SubOp_SetFlag wC91F, 4                             ;; 1d:60c5 $3e $3c
+    Op50_WriteByte wBitArrayIndexC715, $00, $32        ;; 1d:60c7 $50 $15 $c7 $00 $32
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:60cc $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:60d0 $16 $01
+    SubOp_SetFlag wC91F, 5                             ;; 1d:60d2 $3e $3d
+    Op50_WriteByte wBitArrayIndexC715, $00, $35        ;; 1d:60d4 $50 $15 $c7 $00 $35
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:60d9 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:60dd $16 $01
+    SubOp_SetFlag wC920, 0                             ;; 1d:60df $3e $40
+    Op50_WriteByte wBitArrayIndexC715, $00, $36        ;; 1d:60e1 $50 $15 $c7 $00 $36
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:60e6 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:60ea $16 $01
+    SubOp_SetFlag wC920, 1                             ;; 1d:60ec $3e $41
+    Op50_WriteByte wBitArrayIndexC715, $00, $3d        ;; 1d:60ee $50 $15 $c7 $00 $3d
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:60f3 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:60f7 $16 $01
+    SubOp_SetFlag wC921, 0                             ;; 1d:60f9 $3e $48
+    Op50_WriteByte wBitArrayIndexC715, $00, $42        ;; 1d:60fb $50 $15 $c7 $00 $42
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6100 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6104 $16 $01
+    SubOp_SetFlag wC921, 5                             ;; 1d:6106 $3e $4d
+    Op50_WriteByte wBitArrayIndexC715, $00, $46        ;; 1d:6108 $50 $15 $c7 $00 $46
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:610d $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6111 $16 $01
+    SubOp_SetFlag wC922, 1                             ;; 1d:6113 $3e $51
+    Op50_WriteByte wBitArrayIndexC715, $00, $49        ;; 1d:6115 $50 $15 $c7 $00 $49
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:611a $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:611e $16 $01
+    SubOp_SetFlag wC922, 4                             ;; 1d:6120 $3e $54
+    Op50_WriteByte wBitArrayIndexC715, $00, $4a        ;; 1d:6122 $50 $15 $c7 $00 $4a
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6127 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:612b $16 $01
+    SubOp_SetFlag wC922, 5                             ;; 1d:612d $3e $55
+    Op50_WriteByte wBitArrayIndexC715, $00, $4d        ;; 1d:612f $50 $15 $c7 $00 $4d
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6134 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6138 $16 $01
+    SubOp_SetFlag wC923, 0                             ;; 1d:613a $3e $58
+    Op50_WriteByte wBitArrayIndexC715, $00, $4e        ;; 1d:613c $50 $15 $c7 $00 $4e
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6141 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6145 $16 $01
+    SubOp_SetFlag wC923, 1                             ;; 1d:6147 $3e $59
+    Op50_WriteByte wBitArrayIndexC715, $00, $4f        ;; 1d:6149 $50 $15 $c7 $00 $4f
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:614e $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6152 $16 $01
+    SubOp_SetFlag wC923, 2                             ;; 1d:6154 $3e $5a
+    Op50_WriteByte wBitArrayIndexC715, $00, $50        ;; 1d:6156 $50 $15 $c7 $00 $50
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:615b $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:615f $16 $01
+    SubOp_SetFlag wC923, 3                             ;; 1d:6161 $3e $5b
+    Op50_WriteByte wBitArrayIndexC715, $00, $51        ;; 1d:6163 $50 $15 $c7 $00 $51
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6168 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:616c $16 $01
+    SubOp_SetFlag wC923, 4                             ;; 1d:616e $3e $5c
+    Op50_WriteByte wBitArrayIndexC715, $00, $52        ;; 1d:6170 $50 $15 $c7 $00 $52
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6175 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6179 $16 $01
+    SubOp_SetFlag wC923, 5                             ;; 1d:617b $3e $5d
+    Op50_WriteByte wBitArrayIndexC715, $00, $53        ;; 1d:617d $50 $15 $c7 $00 $53
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:6182 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6186 $16 $01
+    SubOp_SetFlag wC923, 6                             ;; 1d:6188 $3e $5e
+    Op50_WriteByte wBitArrayIndexC715, $00, $54        ;; 1d:618a $50 $15 $c7 $00 $54
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:618f $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:6193 $16 $01
+    SubOp_SetFlag wC923, 7                             ;; 1d:6195 $3e $5f
+    Op50_WriteByte wBitArrayIndexC715, $00, $55        ;; 1d:6197 $50 $15 $c7 $00 $55
+    Op82_Run ObtainHamChatFromC715                     ;; 1d:619c $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1d:61a0 $16 $01
+    SubOp_SetFlag wC924, 0                             ;; 1d:61a2 $3e $60
 
 call_1d_61a4:
     Op16_SubOps 1                                      ;; 1d:61a4 $16 $01
@@ -4425,101 +4532,27 @@ call_1d_7cde:
     Op52_WriteBytes w1_D20B, $01, $00, $00             ;; 1d:7ce4 $52 $0b $d2 $01 $00 $00
     Op52_WriteBytes w1_D213, $01, $00, $00             ;; 1d:7cea $52 $13 $d2 $01 $00 $00
     SCRIPT_RETURN_20                                   ;; 1d:7cf0 $20
-    db   $13, $65, $79, $d1, $01, $ea, $13, $61        ;; 1d:7cf1 ????????
-    db   $6d, $68, $61, $e8, $ca, $e4, $14, $d0        ;; 1d:7cf9 ????????
-    db   $6d, $01, $6c, $6f, $6f, $6b, $69, $6e        ;; 1d:7d01 ????????
-    db   $67, $01, $66, $6f, $72, $e4, $1f, $72        ;; 1d:7d09 ????????
-    db   $69, $63, $6b, $65, $74, $ca, $e0, $e4        ;; 1d:7d11 ????????
-    db   $1e, $6d, $65, $6c, $6c, $73, $01, $6c        ;; 1d:7d19 ????????
-    db   $69, $6b, $65, $01, $0e, $75, $63, $75        ;; 1d:7d21 ????????
-    db   $6d, $62, $65, $72, $d1, $e0, $1f, $68        ;; 1d:7d29 ????????
-    db   $69, $73, $01, $0e, $75, $63, $75, $6d        ;; 1d:7d31 ????????
-    db   $62, $65, $72, $01, $69, $73, $e4, $1f        ;; 1d:7d39 ????????
-    db   $72, $69, $63, $6b, $65, $74, $d0, $73        ;; 1d:7d41 ????????
-    db   $01, $66, $61, $76, $6f, $72, $69, $74        ;; 1d:7d49 ????????
-    db   $65, $e4, $66, $6f, $6f, $64, $ca, $e0        ;; 1d:7d51 ????????
-    db   $19, $6f, $6f, $6f, $d8, $e3, $24, $6f        ;; 1d:7d59 ????????
-    db   $75, $01, $63, $61, $6e, $d0, $74, $01        ;; 1d:7d61 ????????
-    db   $65, $61, $74, $e4, $1f, $72, $69, $63        ;; 1d:7d69 ????????
-    db   $6b, $65, $74, $d8, $e0, $24, $65, $73        ;; 1d:7d71 ????????
-    db   $ca, $01, $13, $65, $d0, $73, $e4, $76        ;; 1d:7d79 ????????
-    db   $65, $72, $79, $01, $00, $ea, $6b, $6f        ;; 1d:7d81 ????????
-    db   $6f, $63, $68, $69, $cb, $1c, $e8, $ca        ;; 1d:7d89 ????????
-    db   $e3, $00, $13, $65, $d0, $73, $01, $61        ;; 1d:7d91 ????????
-    db   $01, $70, $65, $74, $cf, $01, $62, $75        ;; 1d:7d99 ????????
-    db   $74, $e4, $68, $65, $d0, $73, $01, $61        ;; 1d:7da1 ????????
-    db   $6c, $73, $6f, $01, $6d, $79, $e4, $00        ;; 1d:7da9 ????????
-    db   $ea, $68, $61, $6d, $6d, $6f, $e8, $ca        ;; 1d:7db1 ????????
-    db   $e3, $14, $73, $6e, $d0, $74, $01, $74        ;; 1d:7db9 ????????
-    db   $68, $61, $74, $01, $67, $72, $65, $61        ;; 1d:7dc1 ????????
-    db   $74, $d9, $e0, $1f, $68, $69, $73, $01        ;; 1d:7dc9 ????????
-    db   $0e, $75, $63, $75, $6d, $62, $65, $72        ;; 1d:7dd1 ????????
-    db   $01, $69, $73, $e4, $1f, $72, $69, $63        ;; 1d:7dd9 ????????
-    db   $6b, $65, $74, $d0, $73, $01, $66, $61        ;; 1d:7de1 ????????
-    db   $76, $6f, $72, $69, $74, $65, $e4, $66        ;; 1d:7de9 ????????
-    db   $6f, $6f, $64, $ca, $01, $e5, $00, $1a        ;; 1d:7df1 ????????
-    db   $68, $cf, $01, $14, $01, $6b, $6e, $6f        ;; 1d:7df9 ????????
-    db   $77, $d8, $e4, $14, $d0, $6c, $6c, $01        ;; 1d:7e01 ????????
-    db   $67, $69, $76, $65, $01, $79, $6f, $75        ;; 1d:7e09 ????????
-    db   $01, $74, $68, $69, $73, $e4, $0e, $75        ;; 1d:7e11 ????????
-    db   $63, $75, $6d, $62, $65, $72, $ca, $01        ;; 1d:7e19 ????????
-    db   $e5, $1f, $72, $69, $63, $6b, $65, $74        ;; 1d:7e21 ????????
-    db   $e4, $77, $69, $6c, $6c, $01, $66, $6f        ;; 1d:7e29 ????????
-    db   $6c, $6c, $6f, $77, $01, $79, $6f, $75        ;; 1d:7e31 ????????
-    db   $e4, $61, $6c, $6c, $01, $74, $68, $65        ;; 1d:7e39 ????????
-    db   $01, $77, $61, $79, $01, $68, $65, $72        ;; 1d:7e41 ????????
-    db   $65, $e3, $69, $66, $01, $79, $6f, $75        ;; 1d:7e49 ????????
-    db   $01, $61, $72, $65, $01, $68, $6f, $6c        ;; 1d:7e51 ????????
-    db   $64, $69, $6e, $67, $e4, $69, $74, $ca        ;; 1d:7e59 ????????
-    db   $01, $e5, $1b, $6c, $65, $61, $73, $65        ;; 1d:7e61 ????????
-    db   $01, $62, $72, $69, $6e, $67, $e4, $6d        ;; 1d:7e69 ????????
-    db   $79, $01, $1f, $72, $69, $63, $6b, $65        ;; 1d:7e71 ????????
-    db   $74, $01, $62, $61, $63, $6b, $ca, $e0        ;; 1d:7e79 ????????
-    db   $14, $66, $01, $79, $6f, $75, $01, $66        ;; 1d:7e81 ????????
-    db   $69, $6e, $64, $01, $68, $69, $6d, $cf        ;; 1d:7e89 ????????
-    db   $e4, $70, $6c, $65, $61, $73, $65, $01        ;; 1d:7e91 ????????
-    db   $62, $72, $69, $6e, $67, $01, $68, $69        ;; 1d:7e99 ????????
-    db   $6d, $e4, $74, $6f, $01, $6d, $65, $ca        ;; 1d:7ea1 ????????
-    db   $01, $1f, $68, $61, $6e, $6b, $73, $d8        ;; 1d:7ea9 ????????
-    db   $e0, $24, $65, $73, $ca, $e3, $13, $65        ;; 1d:7eb1 ????????
-    db   $d0, $73, $01, $76, $65, $72, $79, $e4        ;; 1d:7eb9 ????????
-    db   $ea, $74, $65, $65, $6e, $69, $65, $e8        ;; 1d:7ec1 ????????
-    db   $ca, $e0, $19, $6f, $cf, $01, $1f, $72        ;; 1d:7ec9 ????????
-    db   $69, $63, $6b, $65, $74, $01, $69, $73        ;; 1d:7ed1 ????????
-    db   $6e, $d0, $74, $e4, $ea, $6d, $65, $67        ;; 1d:7ed9 ????????
-    db   $61, $cb, $1c, $e8, $ca, $e0, $1a, $68        ;; 1d:7ee1 ????????
-    db   $cf, $01, $1f, $72, $69, $63, $6b, $65        ;; 1d:7ee9 ????????
-    db   $74, $d8, $e3, $22, $68, $65, $72, $65        ;; 1d:7ef1 ????????
-    db   $01, $64, $69, $64, $01, $79, $6f, $75        ;; 1d:7ef9 ????????
-    db   $01, $67, $6f, $d9, $e4, $14, $d0, $76        ;; 1d:7f01 ????????
-    db   $65, $01, $62, $65, $65, $6e, $01, $77        ;; 1d:7f09 ????????
-    db   $6f, $72, $72, $69, $65, $64, $e4, $73        ;; 1d:7f11 ????????
-    db   $69, $63, $6b, $01, $61, $62, $6f, $75        ;; 1d:7f19 ????????
-    db   $74, $01, $79, $6f, $75, $d8, $e0, $14        ;; 1d:7f21 ????????
-    db   $d0, $6c, $6c, $01, $67, $69, $76, $65        ;; 1d:7f29 ????????
-    db   $01, $79, $6f, $75, $e4, $c5, $74, $68        ;; 1d:7f31 ????????
-    db   $69, $73, $d0, $01, $e5, $61, $73, $01        ;; 1d:7f39 ????????
-    db   $61, $01, $72, $65, $77, $61, $72, $64        ;; 1d:7f41 ????????
-    db   $e4, $66, $6f, $72, $01, $66, $69, $6e        ;; 1d:7f49 ????????
-    db   $64, $69, $6e, $67, $01, $6d, $79, $e4        ;; 1d:7f51 ????????
-    db   $1f, $72, $69, $63, $6b, $65, $74, $ca        ;; 1d:7f59 ????????
-    db   $e0, $ea, $13, $61, $6d, $68, $61, $e8        ;; 1d:7f61 ????????
-    db   $d8, $e3, $14, $74, $d0, $73, $01, $67        ;; 1d:7f69 ????????
-    db   $72, $65, $61, $74, $01, $68, $61, $76        ;; 1d:7f71 ????????
-    db   $69, $6e, $67, $e4, $1f, $72, $69, $63        ;; 1d:7f79 ????????
-    db   $6b, $65, $74, $01, $62, $61, $63, $6b        ;; 1d:7f81 ????????
-    db   $d8, $e0, $13, $65, $79, $d8, $01, $14        ;; 1d:7f89 ????????
-    db   $01, $73, $61, $77, $01, $74, $68, $61        ;; 1d:7f91 ????????
-    db   $74, $ca, $e3, $24, $6f, $75, $01, $64        ;; 1d:7f99 ????????
-    db   $72, $6f, $6f, $6c, $65, $64, $01, $77        ;; 1d:7fa1 ????????
-    db   $68, $65, $6e, $e4, $79, $6f, $75, $01        ;; 1d:7fa9 ????????
-    db   $6c, $6f, $6f, $6b, $65, $64, $01, $61        ;; 1d:7fb1 ????????
-    db   $74, $e4, $1f, $72, $69, $63, $6b, $65        ;; 1d:7fb9 ????????
-    db   $74, $d8, $e0, $24, $6f, $75, $01, $6c        ;; 1d:7fc1 ????????
-    db   $65, $61, $72, $6e, $65, $64, $e4, $00        ;; 1d:7fc9 ????????
-    db   $e4, $eb, $ea, $68, $61, $6d, $6d, $6f        ;; 1d:7fd1 ????????
-    db   $e8, $ca, $00, $e0, $e2, $24, $6f, $75        ;; 1d:7fd9 ????????
-    db   $01, $67, $6f, $74, $01, $61, $01, $0e        ;; 1d:7fe1 ????????
-    db   $75, $63, $75, $6d, $62, $65, $72, $d8        ;; 1d:7fe9 ????????
-    db   $00, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1d:7ff1 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff             ;; 1d:7ff9 ???????
+;@hamstring toAddress=7ff0
+    TXT  "Hey<...> <EA>Hamha<E8>.<E4>I'm looking for<E4>Tricket.<E0>" ;; 1d:7cf1 ???????????????????????????????????????
+    TXT  "<E4>Smells like Cucumber<...><E0>"           ;; 1d:7d18 ???????????????????????
+    TXT  "This Cucumber is<E4>Tricket's favorite<E4>food.<E0>" ;; 1d:7d2f ??????????????????????????????????????????
+    TXT  "Nooo!<E3>You can't eat<E4>Tricket!<E0>"      ;; 1d:7d59 ?????????????????????????????
+    TXT  "Yes. He's<E4>very <end>"                     ;; 1d:7d76 ????????????????
+    TXT  "<EA>koochi-Q<E8>.<E3><end>"                  ;; 1d:7d86 ?????????????
+    TXT  "He's a pet, but<E4>he's also my<E4><end>"    ;; 1d:7d93 ??????????????????????????????
+    TXT  "<EA>hammo<E8>.<E3>Isn't that great?<E0>"     ;; 1d:7db1 ???????????????????????????
+    TXT  "This Cucumber is<E4>Tricket's favorite<E4>food. <E5><end>" ;; 1d:7dcc ????????????????????????????????????????????
+    TXT  "Oh, I know!<E4>I'll give you this<E4>Cucumber. <E5>Tricket<E4>will follow you<E4>all the way here<E3>if you are holding<E4>it. <E5>Please bring<E4>my Tricket back.<E0>" ;; 1d:7df8 ?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+    TXT  "If you find him,<E4>please bring him<E4>to me. Thanks!<E0>" ;; 1d:7e81 ?????????????????????????????????????????????????
+    TXT  "Yes.<E3>He's very<E4><EA>teenie<E8>.<E0>"    ;; 1d:7eb2 ?????????????????????????
+    TXT  "No, Tricket isn't<E4><EA>mega-Q<E8>.<E0>"    ;; 1d:7ecb ????????????????????????????
+    TXT  "Oh, Tricket!<E3>Where did you go?<E4>I've been worried<E4>sick about you!<E0>" ;; 1d:7ee7 ?????????????????????????????????????????????????????????????????
+    TXT  "I'll give you<E4><o'>this' <E5>as a reward<E4>for finding my<E4>Tricket.<E0>" ;; 1d:7f28 ??????????????????????????????????????????????????????????
+    TXT  "<EA>Hamha<E8>!<E3>It's great having<E4>Tricket back!<E0>" ;; 1d:7f62 ?????????????????????????????????????????
+    TXT  "Hey! I saw that.<E3>You drooled when<E4>you looked at<E4>Tricket!<E0>" ;; 1d:7f8b ?????????????????????????????????????????????????????????
+    TXT  "You learned<E4><end>"                        ;; 1d:7fc4 ?????????????
+    TXT  "<E4><EB><EA>hammo<E8>.<end>"                 ;; 1d:7fd1 ???????????
+    TXT  "<E0>"                                        ;; 1d:7fdc ?
+    TXT  "<E2>You got a Cucumber!<end>"                ;; 1d:7fdd ?????????????????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1d:7ff2 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff                  ;; 1d:7ffa ??????
