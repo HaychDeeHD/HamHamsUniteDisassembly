@@ -408,7 +408,10 @@ wOp90_3ByteRegionC3D0:
 ; It's an array of 4 3-byte slots.
 ; The values that go here look like 3byte rom addresses.
 wOp98_3ByteRegionC3DC:
-    ds 13                                              ;; c3dc
+    ds 12                                              ;; c3dc
+
+wC3E8:
+    ds 1                                               ;; c3e8
 
 wC3E9:
     ds 2                                               ;; c3e9
@@ -921,7 +924,10 @@ wC71D:
     ds 1                                               ;; c71d
 
 wC71E:
-    ds 2                                               ;; c71e
+    ds 1                                               ;; c71e
+
+wC71F:
+    ds 1                                               ;; c71f
 
 wC720:
     ds 1                                               ;; c720
@@ -1191,7 +1197,10 @@ wC799:
     ds 1                                               ;; c799
 
 wC79A:
-    ds 2                                               ;; c79a
+    ds 1                                               ;; c79a
+
+wC79B:
+    ds 1                                               ;; c79b
 
 wC79C:
     ds 2                                               ;; c79c

@@ -225,6 +225,13 @@ dw \2
 dw \3
 db \4
 ENDM
+MACRO Op6A_Unknown
+db $6a
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+ENDM
 MACRO Op74_PrepTableJumpIndex_Copy
 db $74
 dw \1

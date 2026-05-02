@@ -134,7 +134,13 @@ w1_D1CF:
     ds 17                                              ;; d1cf
 
 w1_D1E0:
-    ds 29                                              ;; d1e0
+    ds 5                                               ;; d1e0
+
+w1_D1E5:
+    ds 1                                               ;; d1e5
+
+w1_D1E6:
+    ds 23                                              ;; d1e6
 
 w1_BeginRegionD1FD:
     ds 1                                               ;; d1fd
@@ -215,7 +221,10 @@ w1_D218:
     ds 19                                              ;; d218
 
 w1_D22B:
-    ds 17                                              ;; d22b
+    ds 15                                              ;; d22b
+
+w1_D23A:
+    ds 2                                               ;; d23a
 
 w1_D23C:
     ds 8                                               ;; d23c

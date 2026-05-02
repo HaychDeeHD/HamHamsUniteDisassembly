@@ -854,6 +854,8 @@ call_03_455c:
     ld   [w1_D506], A                                  ;; 03:459a $ea $06 $d5
     xor  A, A                                          ;; 03:459d $af
     jp   call_03_596a                                  ;; 03:459e $c3 $6a $59
+
+data_03_45a1:
     ld_long_load A, rSVBK                              ;; 03:45a1 $fa $70 $ff
     push AF                                            ;; 03:45a4 $f5
     ld   A, $03                                        ;; 03:45a5 $3e $03
@@ -1040,6 +1042,8 @@ call_03_4730:
     ld   A, $02                                        ;; 03:4739 $3e $02
     ld   [w1_D507], A                                  ;; 03:473b $ea $07 $d5
     ret                                                ;; 03:473e $c9
+
+data_03_473f:
     ld_long_load A, rSVBK                              ;; 03:473f $fa $70 $ff
     push AF                                            ;; 03:4742 $f5
     ld   A, $03                                        ;; 03:4743 $3e $03

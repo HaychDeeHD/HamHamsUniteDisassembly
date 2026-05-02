@@ -79,7 +79,7 @@ The length column in this table excludes the opcode byte.
 | -- | -     | ----             | [Op00](#op00)    |
 | -- | -     | ----             | [Op00](#op00)    |
 | 68 | 6     | 0dfd             | [Op68](#op68)    |
-| 6A |       | 107f             | [Op6A](#op6A)    |
+| 6A | 4     | 107f             | [Op6A](#op6A)    |
 | -- | -     | ----             | [Op00](#op00)    |
 | -- | -     | ----             | [Op00](#op00)    |
 | -- | -     | ----             | [Op00](#op00)    |
