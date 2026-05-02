@@ -41,32 +41,37 @@ def serializeAddress(memory, addr):
 
 textAddressesStack = []
 
-def addKnownTextAddress(memory, addr):
-    textAddressesStack.append((memory, addr))
+def addKnownTextAddress(memory, addr, toAddress=None):
+    textAddressesStack.append((memory, addr, toAddress))
 
 def maybeCreateTextBlocks():
     while len(textAddressesStack):
-        memory, addr = textAddressesStack.pop()
-        maybeCreateTextBlock(memory, addr)
+        memory, addr, toAddress = textAddressesStack.pop()
+        maybeCreateTextBlock(memory, addr, toAddress)
 
 
-def maybeCreateTextBlock(memory, addr):
+def maybeCreateTextBlock(memory, addr, toAddress):
     # Unlike maybeCreateScript block, don't assume that TextBlocks follow TextBlocks.
+    # But if a toAddress is provided, try to decode text up to that point.
 
-    serializedAddr = serializeAddress(memory, addr)
+    toAddress = toAddress or addr + 1 # Effectively no looping if toAddress is None.
+    while addr < toAddress:
+        serializedAddr = serializeAddress(memory, addr)
 
-    # If this addr is already handled.
-    if memory[addr] is not None:
-        return
+        # If this addr is already handled.
+        if memory[addr] is not None:
+            return
 
-    try: 
-        TextBlock(memory, addr)
-    except Exception as e:
-        raise Exception('Could not make Text Block. At %s --> %s' % (serializedAddr, e)) from e
+        try: 
+            block = TextBlock(memory, addr)
+        except Exception as e:
+            raise Exception('Could not make Text Block. At %s --> %s' % (serializedAddr, e)) from e
+
+        addr += len(block)
 
 @annotation(priority=1)
-def hamstring(memory, addr):
-    addKnownTextAddress(memory, addr)
+def hamstring(memory, addr, toAddress=None):
+    addKnownTextAddress(memory, addr, int(toAddress, 16) if toAddress else None)
     maybeCreateTextBlocks()
 
 class TextBlock(Block):
