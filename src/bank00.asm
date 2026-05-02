@@ -4512,10 +4512,11 @@ RunSubOp:
     ld   [wImportantBitArrayThingC35B], A              ;; 00:204e $ea $5b $c3
     jp   Op16DefaultHandler                            ;; 00:2051 $c3 $9b $4d
 
-; Wait, but this finishes by starting over again??
-; wC38C-D are the high/low bits of an address
-; which contains 4 bytes to set to C35E-C361.
-FinishSubOp:
+; wC38C-D are the high/low bits of an address.
+; It was essentially a copy of HL.
+; It is the address of the next byte following the subOp bytes we just used.
+; So anoter 2 byte Op+BitArrayIndex with 7 and 9 bits respectively.
+DoAnotherDefaultSubOp:
     ld   A, [wTempHoldsBC_1_C38C]                      ;; 00:2054 $fa $8c $c3
     ld   L, A                                          ;; 00:2057 $6f
     ld   A, [wTempHoldsBC_2_C38D]                      ;; 00:2058 $fa $8d $c3

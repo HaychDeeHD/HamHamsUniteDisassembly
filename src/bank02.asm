@@ -3014,6 +3014,8 @@ data_02_65a4:
 .data_02_65e8:
     db   $91, $d8, $07, $d0, $d8, $07, $50, $d9        ;; 02:65e8 ..?..?..
     db   $07, $51, $d8, $07, $10, $d9, $07             ;; 02:65f0 ?..?..?
+
+data_02_65f7:
     xor  A, A                                          ;; 02:65f7 $af
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:65f8 $ea $3a $c5
     ld   A, [wC736]                                    ;; 02:65fb $fa $36 $c7
@@ -3096,6 +3098,8 @@ data_02_65a4:
     ld   A, $01                                        ;; 02:6696 $3e $01
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:6698 $ea $3a $c5
     ret                                                ;; 02:669b $c9
+
+data_02_669c:
     ld   A, $01                                        ;; 02:669c $3e $01
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:669e $ea $3a $c5
     ld   A, [wC7E0]                                    ;; 02:66a1 $fa $e0 $c7
@@ -3114,6 +3118,8 @@ data_02_65a4:
     xor  A, A                                          ;; 02:66b8 $af
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:66b9 $ea $3a $c5
     ret                                                ;; 02:66bc $c9
+
+data_02_66bd:
     xor  A, A                                          ;; 02:66bd $af
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:66be $ea $3a $c5
     ld   A, [wC317]                                    ;; 02:66c1 $fa $17 $c3

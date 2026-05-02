@@ -189,7 +189,7 @@ Not all SubOps are the same length, but they do all use the first 2 bytes the sa
 | 9e | 2 | Set Word | Use the index to write the 2 argument bytes to the [player state](./memory.md#player-state-region). |
 | Other | N/A | Various | See below*. |
 
-*If the SubOp opcode is not one of the ones named explicitly in the above table, there is a second level of branching behavior based on the value that I have not yet deciphered. All SubOps in this category are 4 bytes long total including the opcode. 75 is an exception and is 6 bytes long. I don't know much about these kinds of SubOps, so the rules I laid out above about SubOps might not apply to them. You can find several examples that my scripts plugin spat out using the macro `SubOp_DefaultCase`.
+If the SubOp opcode is not one of the ones named explicitly in the above table, we enter "default subop mode". default subop instructions continue until a terminating one is hit. Default subops use their own separate opcode branching where the opcode is of the format XXXYYYYZ (Z being reserved for a 9th high bit of the following byte). XXX determines some initial value setting but most importantly will indicate that the instruction is 3 bytes if it is 110, 2 bytes in all other cases. YYYY determines handling behavior, with all cases other than 1101/1110/1111 being followed by more default subops. What the default subops actually *do* I have not yet determined.
 
 You may be able to learn more about Op16 and SubOps from [the hamscripts.py plugin](./plugins/hamscripts.py) or Op16's handler in ROM bank 0.
 

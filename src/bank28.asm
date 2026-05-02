@@ -926,7 +926,8 @@ call_28_4ccc:
     Op16_SubOps 1                                      ;; 28:4ceb $16 $01
     SubOp_SetByte wC737, $01                           ;; 28:4ced $7e $1f $01
     Op16_SubOps 1                                      ;; 28:4cf0 $16 $01
-    SubOp_DefaultCase $76, $28, $be, $03               ;; 28:4cf2 $76 $28 $be $03
+    SubOp_DefaultCase_Pair $76, $28                    ;; 28:4cf2 $76 $28
+    SubOp_DefaultCase_Pair $be, $03                    ;; 28:4cf4 $be $03
     Op16_SubOps 1                                      ;; 28:4cf6 $16 $01
     SubOp_SetFlag wC92C, 7                             ;; 28:4cf8 $3e $a7
     Op1E_Call call_1d_6aa1                             ;; 28:4cfa $1e $a1 $6a $1d
@@ -974,7 +975,8 @@ call_28_4d56:
     Op16_SubOps 1                                      ;; 28:4d6e $16 $01
     SubOp_SetByte wC737, $01                           ;; 28:4d70 $7e $1f $01
     Op16_SubOps 1                                      ;; 28:4d73 $16 $01
-    SubOp_DefaultCase $76, $28, $be, $01               ;; 28:4d75 $76 $28 $be $01
+    SubOp_DefaultCase_Pair $76, $28                    ;; 28:4d75 $76 $28
+    SubOp_DefaultCase_Pair $be, $01                    ;; 28:4d77 $be $01
     Op16_SubOps 1                                      ;; 28:4d79 $16 $01
     SubOp_SetFlag wC92C, 7                             ;; 28:4d7b $3e $a7
     Op1E_Call call_1d_6aa1                             ;; 28:4d7d $1e $a1 $6a $1d

@@ -2836,7 +2836,8 @@ call_2d_6217:
     Op14_Unknown 1, $ea, $58                           ;; 2d:6222 $14 $01 $ea $58
     SCRIPT_POINTER call_2d_622f                        ;; 2d:6226 $2f $62 $2d
     Op16_SubOps 1                                      ;; 2d:6229 $16 $01
-    SubOp_DefaultCase $77, $0f, $be, $01               ;; 2d:622b $77 $0f $be $01
+    SubOp_DefaultCase_Pair $77, $0f                    ;; 2d:622b $77 $0f
+    SubOp_DefaultCase_Pair $be, $01                    ;; 2d:622d $be $01
 
 call_2d_622f:
     Op1E_Call call_1d_6e4f                             ;; 2d:622f $1e $4f $6e $1d

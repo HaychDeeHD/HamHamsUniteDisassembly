@@ -1545,6 +1545,8 @@ call_01_4897:
 .jr_01_4a6e:
     jp   .jp_01_49f1                                   ;; 01:4a6e $c3 $f1 $49
 
+; C38C-D is the instruction following the subops.
+; These ones are 1 or 2 bytes longer.
 StoreBCPlus2InC38CtoD:
     inc  BC                                            ;; 01:4a71 $03
 
@@ -1587,6 +1589,7 @@ JumpUsing3BitsFromBitArrayIndexHighC35E_AndWriteThatIndexToC35C:
 ; C38C and D is where the BitArrayIndex value will come from
 ; the next time this is called. This basically increments a second time
 ; reading an Op10 arg byte, indicating a 2 byte arg?
+; Note C38C and D is *also* used for a different purpose in Op16.
 WriteToC35AandB_WhetherBitArrayBitC35EtoFIsSet:
     call StoreBCPlus1InC38CtoD                         ;; 01:4aa1 $cd $72 $4a
     call CheckBitArrayBitFromC35EtoF_isSet             ;; 01:4aa4 $cd $27 $4d
@@ -2031,6 +2034,8 @@ CheckBitArrayBitFromC35EtoF_isSet:
 .bitmasks:
     db   $01, $02, $04, $08, $10, $20, $40, $80        ;; 01:4d55 ????????
 
+; Whatever gets put in C38C-D will point to the byte after this SubOp.
+; So since 7E adds 1 and 9E adds 2, those take 1 and 2 extra bytes respectively.
 SubOp_Case3E_SetBitArrayBit:
     call StoreBCInC38CtoD                              ;; 01:4d5d $cd $73 $4a
     call SetBitArrayBit                                ;; 01:4d60 $cd $96 $50
@@ -2069,7 +2074,7 @@ SubOp_Case9E_SetTwoPlayerStateBytesToArgs3and4:
     ld   [HL], A                                       ;; 01:4d99 $77
     ret                                                ;; 01:4d9a $c9
 
-; SubOpCode byte in default case looks like XXXYYYY?
+; SubOpCode byte in default case looks like XXXYYYYZ
 ; 3 X bits determine how to set C35A-B and update Two Slots
 ; 4 Y bits are used in the following jumptable
 ; (The final bit is a 9th high bit for the index in the next slot.)
@@ -2100,10 +2105,10 @@ Op16DefaultHandler:
     dw   Op16DefaultHandler_Part1_000_and_111          ;; 01:4dbe ?? $07
 
 ; Each of these:
-; 1) Stores BC in C38C-D
+; 1) Stores BC (or BC plus 1) in C38C-D. That's the address immediately after the SubOp.
 ; 2) Sets C35A-B in some way based the value in C35E-F.
 ; 3) Does a call and a jump
-; The difference is just how to set C35A-B.
+; The difference is just how to set C35A-B (or adding 1 to BC).
 ; C35A = Is flag at index set.
 ; C35B = Is flag at index set.
 Op16DefaultHandler_Part1_001:
@@ -2184,9 +2189,14 @@ Op16DefaultHandler_Part2:
     ld   A, [wUsedAsAnOffsetIntoSomeRegionC356]        ;; 01:4e3d $fa $56 $c3
     ld   E, A                                          ;; 01:4e40 $5f
     jp   HL                                            ;; 01:4e41 $e9
+; 0000_and_1001 loop
+; 0001 loops
+; 1100 and 1101 loop
+; Else loops
+; Only 1101_1110_1111 doesn't. (But it self loops)
 ;@jumptable amount=16
 .jumptable:
-    dw   Op16DefaultHandler_Part2_0000_and_1001        ;; 01:4e42 ?? $00
+    dw   Op16DefaultHandler_Part2_0000_1010            ;; 01:4e42 ?? $00
     dw   Op16DefaultHandler_Part2_0001                 ;; 01:4e44 ?? $01
     dw   Op16DefaultHandler_Part2_Else                 ;; 01:4e46 pP $02
     dw   Op16DefaultHandler_Part2_Else                 ;; 01:4e48 pP $03
@@ -2196,14 +2206,14 @@ Op16DefaultHandler_Part2:
     dw   Op16DefaultHandler_Part2_Else                 ;; 01:4e50 ?? $07
     dw   Op16DefaultHandler_Part2_Else                 ;; 01:4e52 ?? $08
     dw   Op16DefaultHandler_Part2_Else                 ;; 01:4e54 ?? $09
-    dw   Op16DefaultHandler_Part2_0000_and_1001        ;; 01:4e56 pP $0a
-    dw   Op16DefaultHandler_Part2_1100                 ;; 01:4e58 pP $0b
-    dw   Op16DefaultHandler_Part2_1101                 ;; 01:4e5a pP $0c
-    dw   Op16DefaultHandler_Part2_11XX                 ;; 01:4e5c ?? $0d
-    dw   Op16DefaultHandler_Part2_11XX                 ;; 01:4e5e ?? $0e
-    dw   Op16DefaultHandler_Part2_11XX                 ;; 01:4e60 pP $0f
+    dw   Op16DefaultHandler_Part2_0000_1010            ;; 01:4e56 pP $0a
+    dw   Op16DefaultHandler_Part2_1011                 ;; 01:4e58 pP $0b
+    dw   Op16DefaultHandler_Part2_1100                 ;; 01:4e5a pP $0c
+    dw   Op16DefaultHandler_Part2_1101_1110_1111       ;; 01:4e5c ?? $0d
+    dw   Op16DefaultHandler_Part2_1101_1110_1111       ;; 01:4e5e ?? $0e
+    dw   Op16DefaultHandler_Part2_1101_1110_1111       ;; 01:4e60 pP $0f
 
-Op16DefaultHandler_Part2_0000_and_1001:
+Op16DefaultHandler_Part2_0000_1010:
     ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 01:4e62 $21 $56 $c3
     inc  [HL]                                          ;; 01:4e65 $34
     ld   E, [HL]                                       ;; 01:4e66 $5e
@@ -2216,7 +2226,7 @@ Op16DefaultHandler_Part2_0000_and_1001:
     ld   HL, wBeginningOfSomeRegionC5B3                ;; 01:4e71 $21 $b3 $c5
     add  HL, DE                                        ;; 01:4e74 $19
     ld   [HL], D                                       ;; 01:4e75 $72
-    jp   FinishSubOp                                   ;; 01:4e76 $c3 $54 $20
+    jp   DoAnotherDefaultSubOp                         ;; 01:4e76 $c3 $54 $20
 
 Op16DefaultHandler_Part2_0001:
     ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 01:4e79 $21 $56 $c3
@@ -2240,21 +2250,21 @@ Op16DefaultHandler_Part2_0001:
     add  HL, DE                                        ;; 01:4e9b $19
     ld   [HL], D                                       ;; 01:4e9c $72
     call UpdateTheTwoSlots                             ;; 01:4e9d $cd $3c $4f
-    jp   FinishSubOp                                   ;; 01:4ea0 $c3 $54 $20
+    jp   DoAnotherDefaultSubOp                         ;; 01:4ea0 $c3 $54 $20
 
-Op16DefaultHandler_Part2_1100:
+Op16DefaultHandler_Part2_1011:
     ld   HL, wBeginningOfSomeRegionC5B3                ;; 01:4ea3 $21 $b3 $c5
     add  HL, DE                                        ;; 01:4ea6 $19
     ld   A, $0b                                        ;; 01:4ea7 $3e $0b
     ld   [HL], A                                       ;; 01:4ea9 $77
-    jp   Op16DefaultHandler_Part2_0000_and_1001        ;; 01:4eaa $c3 $62 $4e
+    jp   Op16DefaultHandler_Part2_0000_1010            ;; 01:4eaa $c3 $62 $4e
 
-Op16DefaultHandler_Part2_1101:
+Op16DefaultHandler_Part2_1100:
     ld   HL, wBeginningOfSomeRegionC5B3                ;; 01:4ead $21 $b3 $c5
     add  HL, DE                                        ;; 01:4eb0 $19
     ld   A, $0d                                        ;; 01:4eb1 $3e $0d
     ld   [HL], A                                       ;; 01:4eb3 $77
-    jp   Op16DefaultHandler_Part2_0000_and_1001        ;; 01:4eb4 $c3 $62 $4e
+    jp   Op16DefaultHandler_Part2_0000_1010            ;; 01:4eb4 $c3 $62 $4e
 
 Op16DefaultHandler_Part2_Else:
     ld   HL, wBeginningOfSomeRegionC5B3                ;; 01:4eb7 $21 $b3 $c5
@@ -2263,9 +2273,9 @@ Op16DefaultHandler_Part2_Else:
     and  A, $1e                                        ;; 01:4ebe $e6 $1e
     inc  A                                             ;; 01:4ec0 $3c
     ld   [HL], A                                       ;; 01:4ec1 $77
-    jp   FinishSubOp                                   ;; 01:4ec2 $c3 $54 $20
+    jp   DoAnotherDefaultSubOp                         ;; 01:4ec2 $c3 $54 $20
 
-Op16DefaultHandler_Part2_11XX:
+Op16DefaultHandler_Part2_1101_1110_1111:
     ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 01:4ec5 $21 $56 $c3
     ld   A, [HL]                                       ;; 01:4ec8 $7e
     and  A, A                                          ;; 01:4ec9 $a7
@@ -2292,7 +2302,7 @@ Op16DefaultHandler_Part2_11XX:
     ld   [wLessImportantBitArrayThingC35C], A          ;; 01:4eec $ea $5c $c3
     ld   [HL], D                                       ;; 01:4eef $72
     call UpdateTheTwoSlots                             ;; 01:4ef0 $cd $3c $4f
-    jr   Op16DefaultHandler_Part2_11XX                 ;; 01:4ef3 $18 $d0
+    jr   Op16DefaultHandler_Part2_1101_1110_1111       ;; 01:4ef3 $18 $d0
 .jr_01_4ef5:
     ld   HL, wPlayerStateRegionStartC718               ;; 01:4ef5 $21 $18 $c7
     ld   A, [wC359]                                    ;; 01:4ef8 $fa $59 $c3

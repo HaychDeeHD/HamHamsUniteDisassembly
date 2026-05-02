@@ -1326,6 +1326,8 @@ call_20_5316:
     SCRIPT_RETURN_4A                                   ;; 20:5316 $4a
     Op3E_Compare_Branch 22, $93, $7a, $0f, call_20_5316 ;; 20:5317 $3e $16 $93 $7a $0f $16 $53 $20
     SCRIPT_RETURN_20                                   ;; 20:531f $20
+
+call_20_5320:
     Op1E_Call call_1d_6acd                             ;; 20:5320 $1e $cd $6a $1d
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, $56, $7b, $0f ;; 20:5324 $4c $16 $ff $04 $00 $00 $00 $00 $56 $7b $0f
     Op04_Unknown_Text data_2f_49d4                     ;; 20:532f $04 $d4 $49 $2f
@@ -2980,7 +2982,8 @@ call_20_69a3:
     Op16_SubOps 1                                      ;; 20:69bf $16 $01
     SubOp_SetByte wC737, $01                           ;; 20:69c1 $7e $1f $01
     Op16_SubOps 1                                      ;; 20:69c4 $16 $01
-    SubOp_DefaultCase $76, $28, $be, $05               ;; 20:69c6 $76 $28 $be $05
+    SubOp_DefaultCase_Pair $76, $28                    ;; 20:69c6 $76 $28
+    SubOp_DefaultCase_Pair $be, $05                    ;; 20:69c8 $be $05
     Op16_SubOps 1                                      ;; 20:69ca $16 $01
     SubOp_SetFlag wC92C, 7                             ;; 20:69cc $3e $a7
     Op1E_Call call_1d_6aa1                             ;; 20:69ce $1e $a1 $6a $1d

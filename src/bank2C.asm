@@ -2801,7 +2801,8 @@ call_2c_7d50:
     Op1E_Call call_20_45ce                             ;; 2c:7d5b $1e $ce $45 $20
     Op1E_Call call_1d_7462                             ;; 2c:7d5f $1e $62 $74 $1d
     Op16_SubOps 1                                      ;; 2c:7d63 $16 $01
-    SubOp_DefaultCase $76, $28, $be, $03               ;; 2c:7d65 $76 $28 $be $03
+    SubOp_DefaultCase_Pair $76, $28                    ;; 2c:7d65 $76 $28
+    SubOp_DefaultCase_Pair $be, $03                    ;; 2c:7d67 $be $03
     Op16_SubOps 1                                      ;; 2c:7d69 $16 $01
     SubOp_SetByte wC736, $04                           ;; 2c:7d6b $7e $1e $04
     Op16_SubOps 1                                      ;; 2c:7d6e $16 $01

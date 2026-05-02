@@ -321,19 +321,14 @@ MACRO SubOp_ClearFlag
 db ($5e + (((\1 - $c918) * 8 + \2) >> 8))
 db (((\1 - $c918) * 8 + \2) & $FF)
 ENDM
-MACRO SubOp_DefaultCase
+MACRO SubOp_DefaultCase_Pair
 db \1
 db \2
-db \3
-db \4
 ENDM
-MACRO SubOp_DefaultCase_75
+MACRO SubOp_DefaultCase_Trio
 db \1
 db \2
 db \3
-db \4
-db \5
-db \6
 ENDM
 MACRO SubOp_SetByte
 

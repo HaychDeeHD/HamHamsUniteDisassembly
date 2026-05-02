@@ -683,10 +683,45 @@ data_3a_50e3:
 
 data_3a_50e4:
     TXT  "<end>"                                       ;; 3a:50e4 ?
-    db   $00, $02, $00, $03, $00, $04, $00, $05        ;; 3a:50e5 ????????
-    db   $00, $06, $00, $07, $00, $08, $00, $09        ;; 3a:50ed ????????
-    db   $00, $0a, $00, $0b, $00, $01, $00, $d1        ;; 3a:50f5 ????????
-    db   $d1, $e0                                      ;; 3a:50fd ??
+
+data_3a_50e5:
+    TXT  "<end>"                                       ;; 3a:50e5 ?
+
+data_3a_50e6:
+    TXT  "0<end>"                                      ;; 3a:50e6 ??
+
+data_3a_50e8:
+    TXT  "1<end>"                                      ;; 3a:50e8 ??
+
+data_3a_50ea:
+    TXT  "2<end>"                                      ;; 3a:50ea ??
+
+data_3a_50ec:
+    TXT  "3<end>"                                      ;; 3a:50ec ??
+
+data_3a_50ee:
+    TXT  "4<end>"                                      ;; 3a:50ee ??
+
+data_3a_50f0:
+    TXT  "5<end>"                                      ;; 3a:50f0 ??
+
+data_3a_50f2:
+    TXT  "6<end>"                                      ;; 3a:50f2 ??
+
+data_3a_50f4:
+    TXT  "7<end>"                                      ;; 3a:50f4 ??
+
+data_3a_50f6:
+    TXT  "8<end>"                                      ;; 3a:50f6 ??
+
+data_3a_50f8:
+    TXT  "9<end>"                                      ;; 3a:50f8 ??
+
+data_3a_50fa:
+    TXT  " <end>"                                      ;; 3a:50fa ??
+
+data_3a_50fc:
+    TXT  "<...><...><E0>"                              ;; 3a:50fc ???
 
 data_3a_50ff:
     TXT  "Hey, knock it off!<E3>I'm trying to<E4>count!<E0>" ;; 3a:50ff ????????????????????????????????????????

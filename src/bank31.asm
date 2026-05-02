@@ -150,7 +150,9 @@ call_31_41e9:
     Op16_SubOps 1                                      ;; 31:41f0 $16 $01
     SubOp_SetByte wC74F, $00                           ;; 31:41f2 $7e $37 $00
     Op16_SubOps 1                                      ;; 31:41f5 $16 $01
-    SubOp_DefaultCase_75 $75, $0a, $6b, $0a, $be, $01  ;; 31:41f7 $75 $0a $6b $0a $be $01
+    SubOp_DefaultCase_Pair $75, $0a                    ;; 31:41f7 $75 $0a
+    SubOp_DefaultCase_Pair $6b, $0a                    ;; 31:41f9 $6b $0a
+    SubOp_DefaultCase_Pair $be, $01                    ;; 31:41fb $be $01
     Op14_Unknown 1, $3e, $61                           ;; 31:41fd $14 $01 $3e $61
     SCRIPT_POINTER call_31_4208                        ;; 31:4201 $08 $42 $31
     Op18_Jump call_31_41dc                             ;; 31:4204 $18 $dc $41 $31
@@ -337,7 +339,8 @@ call_31_43fc:
     Op14_Unknown 1, $78, $61                           ;; 31:440a $14 $01 $78 $61
     SCRIPT_POINTER call_31_4432                        ;; 31:440e $32 $44 $31
     Op16_SubOps 1                                      ;; 31:4411 $16 $01
-    SubOp_DefaultCase $76, $8f, $be, $01               ;; 31:4413 $76 $8f $be $01
+    SubOp_DefaultCase_Pair $76, $8f                    ;; 31:4413 $76 $8f
+    SubOp_DefaultCase_Pair $be, $01                    ;; 31:4415 $be $01
     Op14_Unknown 1, $7a, $61                           ;; 31:4417 $14 $01 $7a $61
     SCRIPT_POINTER call_31_4432                        ;; 31:441b $32 $44 $31
     Op14_Unknown 1, $7e, $61                           ;; 31:441e $14 $01 $7e $61
@@ -891,7 +894,9 @@ call_31_4cca:
     Op16_SubOps 1                                      ;; 31:4cd1 $16 $01
     SubOp_SetByte wC74F, $00                           ;; 31:4cd3 $7e $37 $00
     Op16_SubOps 1                                      ;; 31:4cd6 $16 $01
-    SubOp_DefaultCase_75 $75, $11, $6b, $11, $be, $01  ;; 31:4cd8 $75 $11 $6b $11 $be $01
+    SubOp_DefaultCase_Pair $75, $11                    ;; 31:4cd8 $75 $11
+    SubOp_DefaultCase_Pair $6b, $11                    ;; 31:4cda $6b $11
+    SubOp_DefaultCase_Pair $be, $01                    ;; 31:4cdc $be $01
     Op14_Unknown 1, $a5, $67                           ;; 31:4cde $14 $01 $a5 $67
     SCRIPT_POINTER call_31_4ce9                        ;; 31:4ce2 $e9 $4c $31
     Op18_Jump call_31_4cba                             ;; 31:4ce5 $18 $ba $4c $31
@@ -1128,7 +1133,9 @@ call_31_4f71:
     SCRIPT_POINTER call_31_4f95                        ;; 31:4f7c $95 $4f $31
     Op68_CopyBytes 1, wC829, w1_BeginRegionD1FD, $01   ;; 31:4f7f $68 $01 $29 $c8 $fd $d1 $01
     Op16_SubOps 1                                      ;; 31:4f86 $16 $01
-    SubOp_DefaultCase_75 $75, $11, $65, $11, $be, $1f  ;; 31:4f88 $75 $11 $65 $11 $be $1f
+    SubOp_DefaultCase_Pair $75, $11                    ;; 31:4f88 $75 $11
+    SubOp_DefaultCase_Pair $65, $11                    ;; 31:4f8a $65 $11
+    SubOp_DefaultCase_Pair $be, $1f                    ;; 31:4f8c $be $1f
     Op14_Unknown 1, $2d, $67                           ;; 31:4f8e $14 $01 $2d $67
     SCRIPT_POINTER call_31_4fa4                        ;; 31:4f92 $a4 $4f $31
 
@@ -1510,7 +1517,8 @@ call_31_54e3:
     Op16_SubOps 1                                      ;; 31:54fa $16 $01
     SubOp_SetByte wC737, $01                           ;; 31:54fc $7e $1f $01
     Op16_SubOps 1                                      ;; 31:54ff $16 $01
-    SubOp_DefaultCase $76, $28, $be, $15               ;; 31:5501 $76 $28 $be $15
+    SubOp_DefaultCase_Pair $76, $28                    ;; 31:5501 $76 $28
+    SubOp_DefaultCase_Pair $be, $15                    ;; 31:5503 $be $15
     Op82_Run UpdateCollectibleInventory                ;; 31:5505 $82 $31 $42 $02
     Op1E_Call call_1d_6a78                             ;; 31:5509 $1e $78 $6a $1d
     Op1E_Call call_31_4b26                             ;; 31:550d $1e $26 $4b $31
@@ -3806,9 +3814,11 @@ call_31_72f8:
     Op18_Jump call_31_69bf                             ;; 31:7314 $18 $bf $69 $31
     Op68_CopyBytes 1, wC77D, wNumHamChatsCA45, $00     ;; 31:7318 $68 $01 $7d $c7 $4f $ca $00
     Op16_SubOps 1                                      ;; 31:731f $16 $01
-    SubOp_DefaultCase $74, $65, $ac, $55               ;; 31:7321 $74 $65 $ac $55
-    Op7E_Unknown $65, $82, $d2, $66, $02, $82, $0a, $67 ;; 31:7325 $7e $65 $82 $d2 $66 $02 $82 $0a $67
-    Op02_Unknown_Jump                                  ;; 31:732e $02
+    SubOp_DefaultCase_Pair $74, $65                    ;; 31:7321 $74 $65
+    SubOp_DefaultCase_Pair $ac, $55                    ;; 31:7323 $ac $55
+    SubOp_DefaultCase_Pair $7e, $65                    ;; 31:7325 $7e $65
+    Op82_Run data_02_66d2                              ;; 31:7327 $82 $d2 $66 $02
+    Op82_Run data_02_670a                              ;; 31:732b $82 $0a $67 $02
     Op06_Unknown_Text data_36_775b                     ;; 31:732f $06 $5b $77 $36
     Op82_Run data_02_671e                              ;; 31:7333 $82 $1e $67 $02
     Op74_PrepTableJumpIndex_Copy wC77E                 ;; 31:7337 $74 $7e $c7
@@ -4308,7 +4318,8 @@ call_31_7821:
 call_31_7855:
     Op44_Unknown $28, $00                              ;; 31:7855 $44 $28 $00
     Op16_SubOps 1                                      ;; 31:7858 $16 $01
-    SubOp_DefaultCase $77, $0a, $be, $01               ;; 31:785a $77 $0a $be $01
+    SubOp_DefaultCase_Pair $77, $0a                    ;; 31:785a $77 $0a
+    SubOp_DefaultCase_Pair $be, $01                    ;; 31:785c $be $01
     Op18_Jump call_31_73f7                             ;; 31:785e $18 $f7 $73 $31
 
 call_31_7862:
@@ -4446,7 +4457,8 @@ call_31_79cc:
 call_31_79f1:
     Op44_Unknown $28, $00                              ;; 31:79f1 $44 $28 $00
     Op16_SubOps 1                                      ;; 31:79f4 $16 $01
-    SubOp_DefaultCase $77, $08, $be, $01               ;; 31:79f6 $77 $08 $be $01
+    SubOp_DefaultCase_Pair $77, $08                    ;; 31:79f6 $77 $08
+    SubOp_DefaultCase_Pair $be, $01                    ;; 31:79f8 $be $01
     Op18_Jump call_31_73f7                             ;; 31:79fa $18 $f7 $73 $31
 
 call_31_79fe:

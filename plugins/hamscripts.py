@@ -192,8 +192,8 @@ db ($9e + ((\1 - $c718) >> 8))
 db ((\1 - $c718) & $FF)
 dw \2
 """
-        RomInfo.macros["SubOp_DefaultCase"] = "db \\1\ndb \\2\ndb \\3\ndb \\4"
-        RomInfo.macros["SubOp_DefaultCase_75"] = "db \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
+        RomInfo.macros["SubOp_DefaultCase_Pair"] = "db \\1\ndb \\2"
+        RomInfo.macros["SubOp_DefaultCase_Trio"] = "db \\1\ndb \\2\ndb \\3"
 
         self.subOpArgsList = []
         size = 0
@@ -233,20 +233,34 @@ dw \2
                     self.subOpArgsList.append((4, "SubOp_SetWord", str(label), "$%04x" % memory.word(addr + size + 2)))
                     size += 4
                 case _:
-                    # The "Default Case" is mysterious, but I *think* it will always take the opcode byte + 3 args.
-                    byte1 = memory.byte(addr + size)
-                    byte2 = memory.byte(addr + size + 1)
-                    byte3 = memory.byte(addr + size + 2)
-                    byte4 = memory.byte(addr + size + 3)
-                    # HOWEVER, 75 seems to take an extra 2 bytes.
-                    if byte1 == 0x75:
-                        byte5 = memory.byte(addr + size + 4)
-                        byte6 = memory.byte(addr + size + 5)
-                        self.subOpArgsList.append((6, "SubOp_DefaultCase_75", "$%02x" % byte1, "$%02x" % byte2, "$%02x" % byte3, "$%02x" % byte4, "$%02x" % byte5, "$%02x" % byte6))
-                        size += 6
-                    else:
-                        self.subOpArgsList.append((4, "SubOp_DefaultCase", "$%02x" % byte1, "$%02x" % byte2, "$%02x" % byte3, "$%02x" % byte4))
-                        size += 4
+                    # The default subop case is mostly a series of Op+BitarrayIndex 2 byte pairs -- 7 bit op and 9 bit index.
+                    # Ops beginning with bits 110 take an extra byte.
+                    # These pairs continue until an Op matching a certain pattern is processed.
+
+                    # Default Opcode is of format XXXYYYYZ. 
+                    # The first 3 bits determine some value setting. All that is relevant to this is that 110 adds an arg byte.
+                    # The YYYY bits determine handling. Only 1101, 1110, or 1111 will terminate the series.
+
+                    while True:
+                        firstByte = memory.byte(addr + size)
+
+                        xbits = (firstByte & 0xE0) >> 5
+                        ybits = (firstByte & 0x1E) >> 1
+
+                        print('logging', str(memory.bankNumber) + ":%04x" % (addr + size), "$%02x" % firstByte, bin(xbits), bin(ybits))
+
+                        byte1 = memory.byte(addr + size)
+                        byte2 = memory.byte(addr + size + 1)
+                        if xbits == 0b110:
+                            byte3 = memory.byte(addr + size + 2)
+                            self.subOpArgsList.append((3, "SubOp_DefaultCase_Trio", "$%02x" % byte1, "$%02x" % byte2, "$%02x" % byte3))
+                            size += 3
+                        else:
+                            self.subOpArgsList.append((2, "SubOp_DefaultCase_Pair", "$%02x" % byte1, "$%02x" % byte2))
+                            size += 2
+
+                        if ybits in [0b1101, 0b1110, 0b1111]:
+                            break
 
         self.resize(size)
 

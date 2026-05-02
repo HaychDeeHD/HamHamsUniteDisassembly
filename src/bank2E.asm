@@ -850,7 +850,9 @@ call_2e_4b3b:
     Op3E_Compare_Branch 22, $35, $42, $10, call_2e_4bdd ;; 2e:4b53 $3e $16 $35 $42 $10 $dd $4b $2e
     Op68_CopyBytes 1, wC822, w1_BeginRegionD1FD, $01   ;; 2e:4b5b $68 $01 $22 $c8 $fd $d1 $01
     Op16_SubOps 1                                      ;; 2e:4b62 $16 $01
-    SubOp_DefaultCase_75 $75, $0a, $65, $0a, $be, $1f  ;; 2e:4b64 $75 $0a $65 $0a $be $1f
+    SubOp_DefaultCase_Pair $75, $0a                    ;; 2e:4b64 $75 $0a
+    SubOp_DefaultCase_Pair $65, $0a                    ;; 2e:4b66 $65 $0a
+    SubOp_DefaultCase_Pair $be, $1f                    ;; 2e:4b68 $be $1f
     Op14_Unknown 1, $ec, $61                           ;; 2e:4b6a $14 $01 $ec $61
     SCRIPT_POINTER call_2e_4b8a                        ;; 2e:4b6e $8a $4b $2e
     Op14_Unknown 1, $f0, $61                           ;; 2e:4b71 $14 $01 $f0 $61
@@ -1795,7 +1797,8 @@ call_2e_55c8:
     Op4C_Unknown $36, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 2e:55d7 $4c $36 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_7462                             ;; 2e:55e2 $1e $62 $74 $1d
     Op16_SubOps 1                                      ;; 2e:55e6 $16 $01
-    SubOp_DefaultCase $76, $28, $be, $01               ;; 2e:55e8 $76 $28 $be $01
+    SubOp_DefaultCase_Pair $76, $28                    ;; 2e:55e8 $76 $28
+    SubOp_DefaultCase_Pair $be, $01                    ;; 2e:55ea $be $01
     Op16_SubOps 1                                      ;; 2e:55ec $16 $01
     SubOp_SetByte wC736, $04                           ;; 2e:55ee $7e $1e $04
     Op16_SubOps 1                                      ;; 2e:55f1 $16 $01

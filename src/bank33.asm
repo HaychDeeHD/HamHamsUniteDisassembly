@@ -174,7 +174,9 @@ call_33_4257:
     Op16_SubOps 1                                      ;; 33:425e $16 $01
     SubOp_SetByte wC74F, $00                           ;; 33:4260 $7e $37 $00
     Op16_SubOps 1                                      ;; 33:4263 $16 $01
-    SubOp_DefaultCase_75 $75, $1c, $6b, $1c, $be, $01  ;; 33:4265 $75 $1c $6b $1c $be $01
+    SubOp_DefaultCase_Pair $75, $1c                    ;; 33:4265 $75 $1c
+    SubOp_DefaultCase_Pair $6b, $1c                    ;; 33:4267 $6b $1c
+    SubOp_DefaultCase_Pair $be, $01                    ;; 33:4269 $be $01
     Op14_Unknown 1, $96, $78                           ;; 33:426b $14 $01 $96 $78
     SCRIPT_POINTER call_33_4276                        ;; 33:426f $76 $42 $33
     Op18_Jump call_33_422a                             ;; 33:4272 $18 $2a $42 $33
@@ -1945,7 +1947,8 @@ call_33_5997:
     Op4C_Unknown $34, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 33:59a6 $4c $34 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_7462                             ;; 33:59b1 $1e $62 $74 $1d
     Op16_SubOps 1                                      ;; 33:59b5 $16 $01
-    SubOp_DefaultCase $76, $28, $be, $01               ;; 33:59b7 $76 $28 $be $01
+    SubOp_DefaultCase_Pair $76, $28                    ;; 33:59b7 $76 $28
+    SubOp_DefaultCase_Pair $be, $01                    ;; 33:59b9 $be $01
     Op16_SubOps 1                                      ;; 33:59bb $16 $01
     SubOp_SetByte wC736, $04                           ;; 33:59bd $7e $1e $04
     Op16_SubOps 1                                      ;; 33:59c0 $16 $01
@@ -4470,12 +4473,18 @@ call_33_79d3:
 
 call_33_79d8:
     Op16_SubOps 1                                      ;; 33:79d8 $16 $01
-    SubOp_DefaultCase $74, $90, $6a, $90               ;; 33:79da $74 $90 $6a $90
-    Op7E_Unknown $1f, $14, $01, $c8, $78, $f1, $79, $33 ;; 33:79de $7e $1f $14 $01 $c8 $78 $f1 $79 $33
+    SubOp_DefaultCase_Pair $74, $90                    ;; 33:79da $74 $90
+    SubOp_DefaultCase_Pair $6a, $90                    ;; 33:79dc $6a $90
+    SubOp_DefaultCase_Pair $7e, $1f                    ;; 33:79de $7e $1f
+    Op14_Unknown 1, $c8, $78                           ;; 33:79e0 $14 $01 $c8 $78
+    SCRIPT_POINTER call_33_79f1                        ;; 33:79e4 $f1 $79 $33
     Op16_SubOps 1                                      ;; 33:79e7 $16 $01
     SubOp_SetFlag wC94C, 7                             ;; 33:79e9 $3f $a7
     Op16_SubOps 1                                      ;; 33:79eb $16 $01
-    SubOp_DefaultCase $78, $90, $be, $64               ;; 33:79ed $78 $90 $be $64
+    SubOp_DefaultCase_Pair $78, $90                    ;; 33:79ed $78 $90
+    SubOp_DefaultCase_Pair $be, $64                    ;; 33:79ef $be $64
+
+call_33_79f1:
     Op16_SubOps 1                                      ;; 33:79f1 $16 $01
     SubOp_SetByte wC736, $01                           ;; 33:79f3 $7e $1e $01
     Op16_SubOps 1                                      ;; 33:79f6 $16 $01

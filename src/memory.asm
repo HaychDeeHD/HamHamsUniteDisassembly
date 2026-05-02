@@ -1356,7 +1356,10 @@ wC839:
     ds 1                                               ;; c839
 
 wC83A:
-    ds 2                                               ;; c83a
+    ds 1                                               ;; c83a
+
+wC83B:
+    ds 1                                               ;; c83b
 
 wC83C:
     ds 1                                               ;; c83c

@@ -308,7 +308,8 @@ call_35_4583:
     SCRIPT_POINTER call_35_45a0                        ;; 35:458a $a0 $45 $35
     SCRIPT_POINTER call_35_45a0                        ;; 35:458d $a0 $45 $35
     Op16_SubOps 1                                      ;; 35:4590 $16 $01
-    SubOp_DefaultCase $97, $07, $be, $01               ;; 35:4592 $97 $07 $be $01
+    SubOp_DefaultCase_Pair $97, $07                    ;; 35:4592 $97 $07
+    SubOp_DefaultCase_Pair $be, $01                    ;; 35:4594 $be $01
     Op14_Unknown 1, $9d, $42                           ;; 35:4596 $14 $01 $9d $42
     SCRIPT_POINTER call_35_4583                        ;; 35:459a $83 $45 $35
     Op76_PrepTableJumpIndex_Write $00                  ;; 35:459d $76 $00
@@ -331,7 +332,8 @@ call_35_45b2:
     SCRIPT_POINTER call_35_45cf                        ;; 35:45b9 $cf $45 $35
     SCRIPT_POINTER call_35_45cf                        ;; 35:45bc $cf $45 $35
     Op16_SubOps 1                                      ;; 35:45bf $16 $01
-    SubOp_DefaultCase $97, $07, $be, $01               ;; 35:45c1 $97 $07 $be $01
+    SubOp_DefaultCase_Pair $97, $07                    ;; 35:45c1 $97 $07
+    SubOp_DefaultCase_Pair $be, $01                    ;; 35:45c3 $be $01
     Op14_Unknown 1, $a2, $42                           ;; 35:45c5 $14 $01 $a2 $42
     SCRIPT_POINTER call_35_45b2                        ;; 35:45c9 $b2 $45 $35
     Op76_PrepTableJumpIndex_Write $00                  ;; 35:45cc $76 $00

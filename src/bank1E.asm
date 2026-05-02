@@ -803,7 +803,9 @@ call_1e_4b26:
 
 call_1e_4b2e:
     Op16_SubOps 1                                      ;; 1e:4b2e $16 $01
-    SubOp_DefaultCase_75 $75, $16, $6b, $16, $be, $01  ;; 1e:4b30 $75 $16 $6b $16 $be $01
+    SubOp_DefaultCase_Pair $75, $16                    ;; 1e:4b30 $75 $16
+    SubOp_DefaultCase_Pair $6b, $16                    ;; 1e:4b32 $6b $16
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1e:4b34 $be $01
     Op14_Unknown 1, $d3, $77                           ;; 1e:4b36 $14 $01 $d3 $77
     SCRIPT_POINTER call_1e_4b43                        ;; 1e:4b3a $43 $4b $1e
     Op92_Unknown $00                                   ;; 1e:4b3d $92 $00
@@ -1574,7 +1576,9 @@ call_1e_5623:
     Op14_Unknown 1, $e5, $77                           ;; 1e:5623 $14 $01 $e5 $77
     SCRIPT_POINTER call_1e_5668                        ;; 1e:5627 $68 $56 $1e
     Op16_SubOps 1                                      ;; 1e:562a $16 $01
-    SubOp_DefaultCase_75 $75, $16, $6b, $16, $be, $01  ;; 1e:562c $75 $16 $6b $16 $be $01
+    SubOp_DefaultCase_Pair $75, $16                    ;; 1e:562c $75 $16
+    SubOp_DefaultCase_Pair $6b, $16                    ;; 1e:562e $6b $16
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1e:5630 $be $01
     Op14_Unknown 1, $d3, $77                           ;; 1e:5632 $14 $01 $d3 $77
     SCRIPT_POINTER call_1e_564a                        ;; 1e:5636 $4a $56 $1e
     Op92_Unknown $00                                   ;; 1e:5639 $92 $00
@@ -2936,7 +2940,8 @@ call_1e_670b:
     Op14_Unknown 1, $a4, $76                           ;; 1e:6727 $14 $01 $a4 $76
     SCRIPT_POINTER call_1e_674c                        ;; 1e:672b $4c $67 $1e
     Op16_SubOps 1                                      ;; 1e:672e $16 $01
-    SubOp_DefaultCase $77, $11, $be, $01               ;; 1e:6730 $77 $11 $be $01
+    SubOp_DefaultCase_Pair $77, $11                    ;; 1e:6730 $77 $11
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1e:6732 $be $01
     Op50_WriteByte wC31D, $00, $10                     ;; 1e:6734 $50 $1d $c3 $00 $10
     Op82_Run data_01_74c3                              ;; 1e:6739 $82 $c3 $74 $01
     Op1C_TableJump 1                                   ;; 1e:673d $1c $01
@@ -2945,11 +2950,13 @@ call_1e_670b:
 
 call_1e_6746:
     Op16_SubOps 1                                      ;; 1e:6746 $16 $01
-    SubOp_DefaultCase $77, $11, $be, $0c               ;; 1e:6748 $77 $11 $be $0c
+    SubOp_DefaultCase_Pair $77, $11                    ;; 1e:6748 $77 $11
+    SubOp_DefaultCase_Pair $be, $0c                    ;; 1e:674a $be $0c
 
 call_1e_674c:
     Op16_SubOps 1                                      ;; 1e:674c $16 $01
-    SubOp_DefaultCase $77, $11, $be, $0c               ;; 1e:674e $77 $11 $be $0c
+    SubOp_DefaultCase_Pair $77, $11                    ;; 1e:674e $77 $11
+    SubOp_DefaultCase_Pair $be, $0c                    ;; 1e:6750 $be $0c
     Op18_Jump call_1e_6756                             ;; 1e:6752 $18 $56 $67 $1e
 
 call_1e_6756:
@@ -2965,7 +2972,8 @@ call_1e_676c:
     Op14_Unknown 1, $a8, $76                           ;; 1e:676d $14 $01 $a8 $76
     SCRIPT_POINTER call_1e_677e                        ;; 1e:6771 $7e $67 $1e
     Op16_SubOps 1                                      ;; 1e:6774 $16 $01
-    SubOp_DefaultCase $77, $11, $be, $01               ;; 1e:6776 $77 $11 $be $01
+    SubOp_DefaultCase_Pair $77, $11                    ;; 1e:6776 $77 $11
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1e:6778 $be $01
     Op18_Jump call_1e_676c                             ;; 1e:677a $18 $6c $67 $1e
 
 call_1e_677e:
@@ -3000,7 +3008,8 @@ call_1e_67f0:
     SCRIPT_RETURN_4A                                   ;; 1e:67f0 $4a
     Op3E_Compare_Branch 22, $af, $56, $10, call_1e_67f0 ;; 1e:67f1 $3e $16 $af $56 $10 $f0 $67 $1e
     Op16_SubOps 1                                      ;; 1e:67f9 $16 $01
-    SubOp_DefaultCase $77, $08, $be, $01               ;; 1e:67fb $77 $08 $be $01
+    SubOp_DefaultCase_Pair $77, $08                    ;; 1e:67fb $77 $08
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1e:67fd $be $01
     Op1E_Call call_1e_6ff7                             ;; 1e:67ff $1e $f7 $6f $1e
     Op14_Unknown 1, $b4, $76                           ;; 1e:6803 $14 $01 $b4 $76
     SCRIPT_POINTER call_1e_68a1                        ;; 1e:6807 $a1 $68 $1e
@@ -3025,9 +3034,11 @@ call_1e_6847:
     Op4C_Unknown $10, $01, $04, $44, $00, $30, $00, $ab, $46, $15 ;; 1e:6850 $4c $10 $01 $04 $44 $00 $30 $00 $ab $46 $15
     Op44_Unknown $0e, $00                              ;; 1e:685b $44 $0e $00
     Op16_SubOps 1                                      ;; 1e:685e $16 $01
-    SubOp_DefaultCase $77, $08, $be, $01               ;; 1e:6860 $77 $08 $be $01
+    SubOp_DefaultCase_Pair $77, $08                    ;; 1e:6860 $77 $08
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1e:6862 $be $01
     Op16_SubOps 1                                      ;; 1e:6864 $16 $01
-    SubOp_DefaultCase $77, $07, $be, $01               ;; 1e:6866 $77 $07 $be $01
+    SubOp_DefaultCase_Pair $77, $07                    ;; 1e:6866 $77 $07
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1e:6868 $be $01
     Op1E_Call call_1e_704c                             ;; 1e:686a $1e $4c $70 $1e
     Op14_Unknown 1, $b4, $76                           ;; 1e:686e $14 $01 $b4 $76
     SCRIPT_POINTER call_1e_68a1                        ;; 1e:6872 $a1 $68 $1e
@@ -3389,7 +3400,8 @@ call_1e_6cce:
     SCRIPT_RETURN_4A                                   ;; 1e:6cce $4a
     Op3E_Compare_Branch 26, $38, $49, $15, call_1e_6cce ;; 1e:6ccf $3e $1a $38 $49 $15 $ce $6c $1e
     Op16_SubOps 1                                      ;; 1e:6cd7 $16 $01
-    SubOp_DefaultCase $77, $08, $be, $01               ;; 1e:6cd9 $77 $08 $be $01
+    SubOp_DefaultCase_Pair $77, $08                    ;; 1e:6cd9 $77 $08
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1e:6cdb $be $01
     Op1E_Call call_1e_6ff7                             ;; 1e:6cdd $1e $f7 $6f $1e
     Op14_Unknown 1, $c8, $76                           ;; 1e:6ce1 $14 $01 $c8 $76
     SCRIPT_POINTER call_1e_6dd1                        ;; 1e:6ce5 $d1 $6d $1e
@@ -3550,7 +3562,8 @@ call_1e_6eca:
     Op4C_Unknown $38, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 1e:6edd $4c $38 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_7462                             ;; 1e:6ee8 $1e $62 $74 $1d
     Op16_SubOps 1                                      ;; 1e:6eec $16 $01
-    SubOp_DefaultCase $76, $28, $be, $01               ;; 1e:6eee $76 $28 $be $01
+    SubOp_DefaultCase_Pair $76, $28                    ;; 1e:6eee $76 $28
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1e:6ef0 $be $01
     Op16_SubOps 1                                      ;; 1e:6ef2 $16 $01
     SubOp_SetByte wC736, $04                           ;; 1e:6ef4 $7e $1e $04
     Op16_SubOps 1                                      ;; 1e:6ef7 $16 $01
@@ -3754,7 +3767,8 @@ call_1e_721e:
 
 call_1e_7228:
     Op16_SubOps 1                                      ;; 1e:7228 $16 $01
-    SubOp_DefaultCase $79, $10, $be, $08               ;; 1e:722a $79 $10 $be $08
+    SubOp_DefaultCase_Pair $79, $10                    ;; 1e:722a $79 $10
+    SubOp_DefaultCase_Pair $be, $08                    ;; 1e:722c $be $08
     Op74_PrepTableJumpIndex_Copy wC828                 ;; 1e:722e $74 $28 $c8
     Op1C_TableJump 10                                  ;; 1e:7231 $1c $0a
     SCRIPT_POINTER call_1e_7251                        ;; 1e:7233 $51 $72 $1e
@@ -3811,7 +3825,8 @@ call_1e_72e3:
     Op44_Unknown $18, $00                              ;; 1e:72e3 $44 $18 $00
     SCRIPT_RETURN_20                                   ;; 1e:72e6 $20
     Op16_SubOps 1                                      ;; 1e:72e7 $16 $01
-    SubOp_DefaultCase $79, $10, $be, $08               ;; 1e:72e9 $79 $10 $be $08
+    SubOp_DefaultCase_Pair $79, $10                    ;; 1e:72e9 $79 $10
+    SubOp_DefaultCase_Pair $be, $08                    ;; 1e:72eb $be $08
     Op74_PrepTableJumpIndex_Copy wC828                 ;; 1e:72ed $74 $28 $c8
     Op1C_TableJump 10                                  ;; 1e:72f0 $1c $0a
     SCRIPT_POINTER call_1e_7310                        ;; 1e:72f2 $10 $73 $1e
@@ -3987,7 +4002,8 @@ call_1e_754f:
 
 call_1e_755e:
     Op16_SubOps 1                                      ;; 1e:755e $16 $01
-    SubOp_DefaultCase $77, $10, $be, $08               ;; 1e:7560 $77 $10 $be $08
+    SubOp_DefaultCase_Pair $77, $10                    ;; 1e:7560 $77 $10
+    SubOp_DefaultCase_Pair $be, $08                    ;; 1e:7562 $be $08
     SCRIPT_RETURN_20                                   ;; 1e:7564 $20
 
 call_1e_7565:

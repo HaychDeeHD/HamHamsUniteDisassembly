@@ -705,7 +705,9 @@ call_23_492d:
     Op92_Unknown $00                                   ;; 23:4943 $92 $00
     Op1E_Call call_23_53f1                             ;; 23:4945 $1e $f1 $53 $23
     Op16_SubOps 1                                      ;; 23:4949 $16 $01
-    SubOp_DefaultCase_75 $75, $0a, $6b, $0a, $be, $01  ;; 23:494b $75 $0a $6b $0a $be $01
+    SubOp_DefaultCase_Pair $75, $0a                    ;; 23:494b $75 $0a
+    SubOp_DefaultCase_Pair $6b, $0a                    ;; 23:494d $6b $0a
+    SubOp_DefaultCase_Pair $be, $01                    ;; 23:494f $be $01
     Op18_Jump call_23_4686                             ;; 23:4951 $18 $86 $46 $23
 
 call_23_4955:

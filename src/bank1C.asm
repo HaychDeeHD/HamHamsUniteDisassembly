@@ -1384,7 +1384,9 @@ call_1c_70fd:
     Op06_Unknown_Text data_29_46ab                     ;; 1c:7120 $06 $ab $46 $29
     Op92_Unknown $00                                   ;; 1c:7124 $92 $00
     Op16_SubOps 1                                      ;; 1c:7126 $16 $01
-    SubOp_DefaultCase_75 $75, $00, $6b, $00, $be, $01  ;; 1c:7128 $75 $00 $6b $00 $be $01
+    SubOp_DefaultCase_Pair $75, $00                    ;; 1c:7128 $75 $00
+    SubOp_DefaultCase_Pair $6b, $00                    ;; 1c:712a $6b $00
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1c:712c $be $01
     Op16_SubOps 1                                      ;; 1c:712e $16 $01
     SubOp_SetByte wC819, $02                           ;; 1c:7130 $7f $01 $02
     Op82_Run data_01_7416                              ;; 1c:7133 $82 $16 $74 $01
@@ -1443,7 +1445,9 @@ call_1c_71a4:
     Op06_Unknown_Text data_29_47b2                     ;; 1c:71c7 $06 $b2 $47 $29
     Op92_Unknown $00                                   ;; 1c:71cb $92 $00
     Op16_SubOps 1                                      ;; 1c:71cd $16 $01
-    SubOp_DefaultCase_75 $75, $00, $6b, $00, $be, $01  ;; 1c:71cf $75 $00 $6b $00 $be $01
+    SubOp_DefaultCase_Pair $75, $00                    ;; 1c:71cf $75 $00
+    SubOp_DefaultCase_Pair $6b, $00                    ;; 1c:71d1 $6b $00
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1c:71d3 $be $01
     Op16_SubOps 1                                      ;; 1c:71d5 $16 $01
     SubOp_SetByte wC819, $02                           ;; 1c:71d7 $7f $01 $02
     Op82_Run data_01_7416                              ;; 1c:71da $82 $16 $74 $01

@@ -990,7 +990,9 @@ call_32_4bf4:
     Op16_SubOps 1                                      ;; 32:4bfb $16 $01
     SubOp_SetByte wC74F, $00                           ;; 32:4bfd $7e $37 $00
     Op16_SubOps 1                                      ;; 32:4c00 $16 $01
-    SubOp_DefaultCase_75 $75, $0a, $6b, $0a, $be, $01  ;; 32:4c02 $75 $0a $6b $0a $be $01
+    SubOp_DefaultCase_Pair $75, $0a                    ;; 32:4c02 $75 $0a
+    SubOp_DefaultCase_Pair $6b, $0a                    ;; 32:4c04 $6b $0a
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:4c06 $be $01
     Op14_Unknown 1, $00, $61                           ;; 32:4c08 $14 $01 $00 $61
     SCRIPT_POINTER call_32_4c13                        ;; 32:4c0c $13 $4c $32
     Op18_Jump call_32_4be4                             ;; 32:4c0f $18 $e4 $4b $32
@@ -2718,7 +2720,8 @@ call_32_60db:
     Op14_Unknown 1, $f5, $69                           ;; 32:60db $14 $01 $f5 $69
     SCRIPT_POINTER call_32_60e8                        ;; 32:60df $e8 $60 $32
     Op16_SubOps 1                                      ;; 32:60e2 $16 $01
-    SubOp_DefaultCase $74, $8b, $7e, $28               ;; 32:60e4 $74 $8b $7e $28
+    SubOp_DefaultCase_Pair $74, $8b                    ;; 32:60e4 $74 $8b
+    SubOp_DefaultCase_Pair $7e, $28                    ;; 32:60e6 $7e $28
 
 call_32_60e8:
     Op16_SubOps 1                                      ;; 32:60e8 $16 $01
@@ -2728,7 +2731,9 @@ call_32_60e8:
     Op16_SubOps 1                                      ;; 32:60f2 $16 $01
     SubOp_SetByte wC824, $00                           ;; 32:60f4 $7f $0c $00
     Op16_SubOps 1                                      ;; 32:60f7 $16 $01
-    SubOp_DefaultCase_75 $75, $0d, $6c, $28, $7e, $8b  ;; 32:60f9 $75 $0d $6c $28 $7e $8b
+    SubOp_DefaultCase_Pair $75, $0d                    ;; 32:60f9 $75 $0d
+    SubOp_DefaultCase_Pair $6c, $28                    ;; 32:60fb $6c $28
+    SubOp_DefaultCase_Pair $7e, $8b                    ;; 32:60fd $7e $8b
     Op1E_Call call_32_64f9                             ;; 32:60ff $1e $f9 $64 $32
     Op16_SubOps 1                                      ;; 32:6103 $16 $01
     SubOp_SetByte wC736, $04                           ;; 32:6105 $7e $1e $04
@@ -2736,29 +2741,80 @@ call_32_60e8:
     Op14_Unknown 1, $f9, $69                           ;; 32:610c $14 $01 $f9 $69
     SCRIPT_POINTER call_32_61c5                        ;; 32:6110 $c5 $61 $32
     Op16_SubOps 1                                      ;; 32:6113 $16 $01
-    SubOp_DefaultCase_75 $75, $0e, $7e, $1f, $16, $01  ;; 32:6115 $75 $0e $7e $1f $16 $01
-    Op7E_Unknown $1e, $04, $16, $01, $74, $1f, $cc, $01 ;; 32:611b $7e $1e $04 $16 $01 $74 $1f $cc $01
-    db   $00, $7e, $1f, $16, $01, $3f, $a6, $16        ;; 32:6124 ????????
-    db   $01, $3e, $a7, $1e, $a1, $6a, $1d, $1e        ;; 32:612c ????????
-    db   $5f, $5d, $32, $4c, $16, $08, $02, $00        ;; 32:6134 ????????
-    db   $00, $00, $00, $b9, $59, $0f, $44, $10        ;; 32:613c ????????
-    db   $00, $16, $01, $75, $10, $67, $10, $be        ;; 32:6144 ????????
-    db   $01, $4a, $14, $01, $fd, $69, $59, $61        ;; 32:614c ????????
-    db   $32, $1e, $2e, $65, $32, $16, $01, $75        ;; 32:6154 ????????
-    db   $0b, $6b, $0b, $be, $01, $16, $01, $75        ;; 32:615c ????????
-    db   $0c, $6b, $0c, $be, $01, $14, $01, $01        ;; 32:6164 ????????
-    db   $6a, $88, $61, $32, $16, $01, $7f, $0c        ;; 32:616c ????????
-    db   $0a, $14, $01, $05, $6a, $c1, $61, $32        ;; 32:6174 ????????
-    db   $16, $01, $76, $8b, $be, $01, $1e, $be        ;; 32:617c ????????
-    db   $64, $32, $5a, $ae, $44, $03, $00, $14        ;; 32:6184 ????????
-    db   $01, $09, $6a, $9d, $61, $32, $14, $01        ;; 32:618c ????????
-    db   $05, $6a, $c1, $61, $32, $18, $4d, $61        ;; 32:6194 ????????
-    db   $32, $14, $01, $0b, $6a, $b6, $61, $32        ;; 32:619c ????????
-    db   $14, $01, $0d, $6a, $92, $61, $32, $14        ;; 32:61a4 ????????
-    db   $01, $11, $6a, $c1, $61, $32, $18, $4d        ;; 32:61ac ????????
-    db   $61, $32, $14, $01, $05, $6a, $2e, $62        ;; 32:61b4 ????????
-    db   $32, $18, $4d, $61, $32, $1e, $f1, $65        ;; 32:61bc ????????
-    db   $32                                           ;; 32:61c4 ?
+    SubOp_DefaultCase_Pair $75, $0e                    ;; 32:6115 $75 $0e
+    SubOp_DefaultCase_Pair $7e, $1f                    ;; 32:6117 $7e $1f
+    Op16_SubOps 1                                      ;; 32:6119 $16 $01
+    SubOp_SetByte wC736, $04                           ;; 32:611b $7e $1e $04
+    Op16_SubOps 1                                      ;; 32:611e $16 $01
+    SubOp_DefaultCase_Pair $74, $1f                    ;; 32:6120 $74 $1f
+    SubOp_DefaultCase_Trio $cc, $01, $00               ;; 32:6122 $cc $01 $00
+    SubOp_DefaultCase_Pair $7e, $1f                    ;; 32:6125 $7e $1f
+    Op16_SubOps 1                                      ;; 32:6127 $16 $01
+    SubOp_SetFlag wC94C, 6                             ;; 32:6129 $3f $a6
+    Op16_SubOps 1                                      ;; 32:612b $16 $01
+    SubOp_SetFlag wC92C, 7                             ;; 32:612d $3e $a7
+    Op1E_Call call_1d_6aa1                             ;; 32:612f $1e $a1 $6a $1d
+    Op1E_Call call_32_5d5f                             ;; 32:6133 $1e $5f $5d $32
+    Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $b9, $59, $0f ;; 32:6137 $4c $16 $08 $02 $00 $00 $00 $00 $b9 $59 $0f
+    Op44_Unknown $10, $00                              ;; 32:6142 $44 $10 $00
+    Op16_SubOps 1                                      ;; 32:6145 $16 $01
+    SubOp_DefaultCase_Pair $75, $10                    ;; 32:6147 $75 $10
+    SubOp_DefaultCase_Pair $67, $10                    ;; 32:6149 $67 $10
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:614b $be $01
+
+call_32_614d:
+    SCRIPT_RETURN_4A                                   ;; 32:614d $4a
+    Op14_Unknown 1, $fd, $69                           ;; 32:614e $14 $01 $fd $69
+    SCRIPT_POINTER call_32_6159                        ;; 32:6152 $59 $61 $32
+    Op1E_Call call_32_652e                             ;; 32:6155 $1e $2e $65 $32
+
+call_32_6159:
+    Op16_SubOps 1                                      ;; 32:6159 $16 $01
+    SubOp_DefaultCase_Pair $75, $0b                    ;; 32:615b $75 $0b
+    SubOp_DefaultCase_Pair $6b, $0b                    ;; 32:615d $6b $0b
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:615f $be $01
+    Op16_SubOps 1                                      ;; 32:6161 $16 $01
+    SubOp_DefaultCase_Pair $75, $0c                    ;; 32:6163 $75 $0c
+    SubOp_DefaultCase_Pair $6b, $0c                    ;; 32:6165 $6b $0c
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:6167 $be $01
+    Op14_Unknown 1, $01, $6a                           ;; 32:6169 $14 $01 $01 $6a
+    SCRIPT_POINTER call_32_6188                        ;; 32:616d $88 $61 $32
+    Op16_SubOps 1                                      ;; 32:6170 $16 $01
+    SubOp_SetByte wC824, $0a                           ;; 32:6172 $7f $0c $0a
+    Op14_Unknown 1, $05, $6a                           ;; 32:6175 $14 $01 $05 $6a
+    SCRIPT_POINTER call_32_61c1                        ;; 32:6179 $c1 $61 $32
+    Op16_SubOps 1                                      ;; 32:617c $16 $01
+    SubOp_DefaultCase_Pair $76, $8b                    ;; 32:617e $76 $8b
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:6180 $be $01
+    Op1E_Call call_32_64be                             ;; 32:6182 $1e $be $64 $32
+    Op5A_Unknown $ae                                   ;; 32:6186 $5a $ae
+
+call_32_6188:
+    Op44_Unknown $03, $00                              ;; 32:6188 $44 $03 $00
+    Op14_Unknown 1, $09, $6a                           ;; 32:618b $14 $01 $09 $6a
+    SCRIPT_POINTER call_32_619d                        ;; 32:618f $9d $61 $32
+
+call_32_6192:
+    Op14_Unknown 1, $05, $6a                           ;; 32:6192 $14 $01 $05 $6a
+    SCRIPT_POINTER call_32_61c1                        ;; 32:6196 $c1 $61 $32
+    Op18_Jump call_32_614d                             ;; 32:6199 $18 $4d $61 $32
+
+call_32_619d:
+    Op14_Unknown 1, $0b, $6a                           ;; 32:619d $14 $01 $0b $6a
+    SCRIPT_POINTER call_32_61b6                        ;; 32:61a1 $b6 $61 $32
+    Op14_Unknown 1, $0d, $6a                           ;; 32:61a4 $14 $01 $0d $6a
+    SCRIPT_POINTER call_32_6192                        ;; 32:61a8 $92 $61 $32
+    Op14_Unknown 1, $11, $6a                           ;; 32:61ab $14 $01 $11 $6a
+    SCRIPT_POINTER call_32_61c1                        ;; 32:61af $c1 $61 $32
+    Op18_Jump call_32_614d                             ;; 32:61b2 $18 $4d $61 $32
+
+call_32_61b6:
+    Op14_Unknown 1, $05, $6a                           ;; 32:61b6 $14 $01 $05 $6a
+    SCRIPT_POINTER call_32_622e                        ;; 32:61ba $2e $62 $32
+    Op18_Jump call_32_614d                             ;; 32:61bd $18 $4d $61 $32
+
+call_32_61c1:
+    Op1E_Call call_32_65f1                             ;; 32:61c1 $1e $f1 $65 $32
 
 call_32_61c5:
     Op16_SubOps 1                                      ;; 32:61c5 $16 $01
@@ -2774,7 +2830,9 @@ call_32_61c5:
     Op16_SubOps 1                                      ;; 32:61e3 $16 $01
     SubOp_SetFlag wC941, 0                             ;; 32:61e5 $3f $48
     Op16_SubOps 1                                      ;; 32:61e7 $16 $01
-    SubOp_DefaultCase_75 $75, $10, $67, $10, $be, $02  ;; 32:61e9 $75 $10 $67 $10 $be $02
+    SubOp_DefaultCase_Pair $75, $10                    ;; 32:61e9 $75 $10
+    SubOp_DefaultCase_Pair $67, $10                    ;; 32:61eb $67 $10
+    SubOp_DefaultCase_Pair $be, $02                    ;; 32:61ed $be $02
     Op44_Unknown $3c, $00                              ;; 32:61ef $44 $3c $00
     Op4C_Unknown $1c, $01, $04, $00, $00, $00, $00, $12, $62, $1b ;; 32:61f2 $4c $1c $01 $04 $00 $00 $00 $00 $12 $62 $1b
     Op44_Unknown $30, $00                              ;; 32:61fd $44 $30 $00
@@ -2792,13 +2850,16 @@ call_32_620c:
 
 call_32_6214:
     Op16_SubOps 1                                      ;; 32:6214 $16 $01
-    SubOp_DefaultCase $76, $8b, $be, $01               ;; 32:6216 $76 $8b $be $01
+    SubOp_DefaultCase_Pair $76, $8b                    ;; 32:6216 $76 $8b
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:6218 $be $01
     Op1E_Call call_32_64be                             ;; 32:621a $1e $be $64 $32
     Op5A_Unknown $ae                                   ;; 32:621e $5a $ae
     Op44_Unknown $03, $00                              ;; 32:6220 $44 $03 $00
     Op14_Unknown 1, $05, $6a                           ;; 32:6223 $14 $01 $05 $6a
     SCRIPT_POINTER call_32_6232                        ;; 32:6227 $32 $62 $32
     Op18_Jump call_32_6200                             ;; 32:622a $18 $00 $62 $32
+
+call_32_622e:
     Op1E_Call call_32_65f1                             ;; 32:622e $1e $f1 $65 $32
 
 call_32_6232:
@@ -2837,18 +2898,21 @@ call_32_6284:
     Op14_Unknown 1, $29, $6a                           ;; 32:6288 $14 $01 $29 $6a
     SCRIPT_POINTER call_32_62be                        ;; 32:628c $be $62 $32
     Op16_SubOps 1                                      ;; 32:628f $16 $01
-    SubOp_DefaultCase $74, $3c, $7f, $0d               ;; 32:6291 $74 $3c $7f $0d
+    SubOp_DefaultCase_Pair $74, $3c                    ;; 32:6291 $74 $3c
+    SubOp_DefaultCase_Pair $7f, $0d                    ;; 32:6293 $7f $0d
     Op82_Run data_03_59cb                              ;; 32:6295 $82 $cb $59 $03
     Op14_Unknown 1, $2d, $6a                           ;; 32:6299 $14 $01 $2d $6a
     SCRIPT_POINTER call_32_62ad                        ;; 32:629d $ad $62 $32
     Op16_SubOps 1                                      ;; 32:62a0 $16 $01
-    SubOp_DefaultCase $76, $3e, $be, $01               ;; 32:62a2 $76 $3e $be $01
+    SubOp_DefaultCase_Pair $76, $3e                    ;; 32:62a2 $76 $3e
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:62a4 $be $01
     Op74_PrepTableJumpIndex_Copy wC756                 ;; 32:62a6 $74 $56 $c7
     Op1E_Call call_33_4cbf                             ;; 32:62a9 $1e $bf $4c $33
 
 call_32_62ad:
     Op16_SubOps 1                                      ;; 32:62ad $16 $01
-    SubOp_DefaultCase $76, $3d, $be, $01               ;; 32:62af $76 $3d $be $01
+    SubOp_DefaultCase_Pair $76, $3d                    ;; 32:62af $76 $3d
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:62b1 $be $01
     Op74_PrepTableJumpIndex_Copy wC755                 ;; 32:62b3 $74 $55 $c7
     Op1E_Call call_33_4cbf                             ;; 32:62b6 $1e $bf $4c $33
     Op18_Jump call_32_62c2                             ;; 32:62ba $18 $c2 $62 $32
@@ -2907,7 +2971,8 @@ call_32_6336:
     Op4C_Unknown $34, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 32:633e $4c $34 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_7443                             ;; 32:6349 $1e $43 $74 $1d
     Op16_SubOps 1                                      ;; 32:634d $16 $01
-    SubOp_DefaultCase $76, $28, $be, $03               ;; 32:634f $76 $28 $be $03
+    SubOp_DefaultCase_Pair $76, $28                    ;; 32:634f $76 $28
+    SubOp_DefaultCase_Pair $be, $03                    ;; 32:6351 $be $03
     Op16_SubOps 1                                      ;; 32:6353 $16 $01
     SubOp_SetByte wC736, $04                           ;; 32:6355 $7e $1e $04
     Op16_SubOps 1                                      ;; 32:6358 $16 $01
@@ -3059,14 +3124,17 @@ call_32_64be:
     Op14_Unknown 1, $39, $6a                           ;; 32:64be $14 $01 $39 $6a
     SCRIPT_POINTER call_32_64ed                        ;; 32:64c2 $ed $64 $32
     Op16_SubOps 1                                      ;; 32:64c5 $16 $01
-    SubOp_DefaultCase $74, $3c, $7e, $8b               ;; 32:64c7 $74 $3c $7e $8b
+    SubOp_DefaultCase_Pair $74, $3c                    ;; 32:64c7 $74 $3c
+    SubOp_DefaultCase_Pair $7e, $8b                    ;; 32:64c9 $7e $8b
     Op82_Run data_03_59cb                              ;; 32:64cb $82 $cb $59 $03
     Op16_SubOps 1                                      ;; 32:64cf $16 $01
-    SubOp_DefaultCase $76, $3e, $be, $01               ;; 32:64d1 $76 $3e $be $01
+    SubOp_DefaultCase_Pair $76, $3e                    ;; 32:64d1 $76 $3e
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:64d3 $be $01
     Op74_PrepTableJumpIndex_Copy wC756                 ;; 32:64d5 $74 $56 $c7
     Op1E_Call call_32_6457                             ;; 32:64d8 $1e $57 $64 $32
     Op16_SubOps 1                                      ;; 32:64dc $16 $01
-    SubOp_DefaultCase $76, $3d, $be, $01               ;; 32:64de $76 $3d $be $01
+    SubOp_DefaultCase_Pair $76, $3d                    ;; 32:64de $76 $3d
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:64e0 $be $01
     Op74_PrepTableJumpIndex_Copy wC755                 ;; 32:64e2 $74 $55 $c7
     Op1E_Call call_32_63f0                             ;; 32:64e5 $1e $f0 $63 $32
     Op18_Jump call_32_64f8                             ;; 32:64e9 $18 $f8 $64 $32
@@ -3098,6 +3166,8 @@ call_32_6524:
     SCRIPT_RETURN_4A                                   ;; 32:6524 $4a
     Op3E_Compare_Branch 22, $ca, $59, $0f, call_32_6524 ;; 32:6525 $3e $16 $ca $59 $0f $24 $65 $32
     SCRIPT_RETURN_20                                   ;; 32:652d $20
+
+call_32_652e:
     Op14_Unknown 1, $3d, $6a                           ;; 32:652e $14 $01 $3d $6a
     SCRIPT_POINTER call_32_65f0                        ;; 32:6532 $f0 $65 $32
     Op68_CopyBytes 1, wC829, w1_D287, $01              ;; 32:6535 $68 $01 $29 $c8 $87 $d2 $01
@@ -3145,7 +3215,9 @@ call_32_65e3:
     Op16_SubOps 1                                      ;; 32:65e3 $16 $01
     SubOp_SetByte wC823, $00                           ;; 32:65e5 $7f $0b $00
     Op16_SubOps 1                                      ;; 32:65e8 $16 $01
-    SubOp_DefaultCase_75 $75, $0e, $6d, $0e, $be, $01  ;; 32:65ea $75 $0e $6d $0e $be $01
+    SubOp_DefaultCase_Pair $75, $0e                    ;; 32:65ea $75 $0e
+    SubOp_DefaultCase_Pair $6d, $0e                    ;; 32:65ec $6d $0e
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:65ee $be $01
 
 call_32_65f0:
     SCRIPT_RETURN_20                                   ;; 32:65f0 $20
@@ -3371,7 +3443,9 @@ call_32_6908:
     Op16_SubOps 1                                      ;; 32:690f $16 $01
     SubOp_SetByte wC74F, $00                           ;; 32:6911 $7e $37 $00
     Op16_SubOps 1                                      ;; 32:6914 $16 $01
-    SubOp_DefaultCase_75 $75, $11, $6b, $11, $be, $01  ;; 32:6916 $75 $11 $6b $11 $be $01
+    SubOp_DefaultCase_Pair $75, $11                    ;; 32:6916 $75 $11
+    SubOp_DefaultCase_Pair $6b, $11                    ;; 32:6918 $6b $11
+    SubOp_DefaultCase_Pair $be, $01                    ;; 32:691a $be $01
     Op14_Unknown 1, $e1, $67                           ;; 32:691c $14 $01 $e1 $67
     SCRIPT_POINTER call_32_6927                        ;; 32:6920 $27 $69 $32
     Op18_Jump call_32_6884                             ;; 32:6923 $18 $84 $68 $32

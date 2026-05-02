@@ -1496,7 +1496,8 @@ call_27_53ac:
     Op14_Unknown 1, $2e, $77                           ;; 27:53c8 $14 $01 $2e $77
     SCRIPT_POINTER call_27_53f1                        ;; 27:53cc $f1 $53 $27
     Op16_SubOps 1                                      ;; 27:53cf $16 $01
-    SubOp_DefaultCase $98, $c2, $be, $18               ;; 27:53d1 $98 $c2 $be $18
+    SubOp_DefaultCase_Pair $98, $c2                    ;; 27:53d1 $98 $c2
+    SubOp_DefaultCase_Pair $be, $18                    ;; 27:53d3 $be $18
     Op80_CopyNBytes wC7D8, $00, w1_D2A0, $01, 2        ;; 27:53d5 $80 $d8 $c7 $00 $a0 $d2 $01 $02 $00
     Op80_CopyNBytes wC7DA, $00, w1_D298, $01, 2        ;; 27:53de $80 $da $c7 $00 $98 $d2 $01 $02 $00
     Op50_WriteByte w1_D29F, $01, $80                   ;; 27:53e7 $50 $9f $d2 $01 $80
@@ -2058,7 +2059,9 @@ call_27_5a91:
 call_27_5aa6:
     Op68_CopyBytes 1, wC82B, w1_BeginRegionD1FD, $01   ;; 27:5aa6 $68 $01 $2b $c8 $fd $d1 $01
     Op16_SubOps 1                                      ;; 27:5aad $16 $01
-    SubOp_DefaultCase_75 $75, $13, $65, $13, $be, $0f  ;; 27:5aaf $75 $13 $65 $13 $be $0f
+    SubOp_DefaultCase_Pair $75, $13                    ;; 27:5aaf $75 $13
+    SubOp_DefaultCase_Pair $65, $13                    ;; 27:5ab1 $65 $13
+    SubOp_DefaultCase_Pair $be, $0f                    ;; 27:5ab3 $be $0f
     Op14_Unknown 1, $0e, $77                           ;; 27:5ab5 $14 $01 $0e $77
     SCRIPT_POINTER call_27_5ad1                        ;; 27:5ab9 $d1 $5a $27
     Op14_Unknown 1, $12, $77                           ;; 27:5abc $14 $01 $12 $77
@@ -2173,7 +2176,8 @@ call_27_5be9:
     Op4C_Unknown $18, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 27:5c1c $4c $18 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_7443                             ;; 27:5c27 $1e $43 $74 $1d
     Op16_SubOps 1                                      ;; 27:5c2b $16 $01
-    SubOp_DefaultCase $76, $28, $be, $01               ;; 27:5c2d $76 $28 $be $01
+    SubOp_DefaultCase_Pair $76, $28                    ;; 27:5c2d $76 $28
+    SubOp_DefaultCase_Pair $be, $01                    ;; 27:5c2f $be $01
     Op16_SubOps 1                                      ;; 27:5c31 $16 $01
     SubOp_SetByte wC736, $04                           ;; 27:5c33 $7e $1e $04
     Op16_SubOps 1                                      ;; 27:5c36 $16 $01
@@ -2912,7 +2916,8 @@ call_27_6556:
     Op14_Unknown 1, $b2, $6e                           ;; 27:655d $14 $01 $b2 $6e
     SCRIPT_POINTER call_27_6589                        ;; 27:6561 $89 $65 $27
     Op16_SubOps 1                                      ;; 27:6564 $16 $01
-    SubOp_DefaultCase $76, $6f, $be, $01               ;; 27:6566 $76 $6f $be $01
+    SubOp_DefaultCase_Pair $76, $6f                    ;; 27:6566 $76 $6f
+    SubOp_DefaultCase_Pair $be, $01                    ;; 27:6568 $be $01
     Op14_Unknown 1, $b4, $6e                           ;; 27:656a $14 $01 $b4 $6e
     SCRIPT_POINTER call_27_657e                        ;; 27:656e $7e $65 $27
     Op16_SubOps 1                                      ;; 27:6571 $16 $01
@@ -3507,7 +3512,8 @@ call_27_6c50:
     SubOp_ClearFlag wC934, 7                           ;; 27:6c68 $5e $e7
     Op1E_Call call_27_7160                             ;; 27:6c6a $1e $60 $71 $27
     Op16_SubOps 1                                      ;; 27:6c6e $16 $01
-    SubOp_DefaultCase $76, $6f, $be, $01               ;; 27:6c70 $76 $6f $be $01
+    SubOp_DefaultCase_Pair $76, $6f                    ;; 27:6c70 $76 $6f
+    SubOp_DefaultCase_Pair $be, $01                    ;; 27:6c72 $be $01
     Op56_WriteBitArrayIndex 26, $39, $4f, $18          ;; 27:6c74 $56 $1a $39 $4f $18
     Op18_Jump call_27_6243                             ;; 27:6c79 $18 $43 $62 $27
 
@@ -4703,50 +4709,148 @@ call_27_7bce:
     SubOp_SetByte wC818, $00                           ;; 27:7bd0 $7f $00 $00
     Op1E_Call call_1d_6c2d                             ;; 27:7bd3 $1e $2d $6c $1d
     Op04_Unknown_Text data_3a_50e4                     ;; 27:7bd7 $04 $e4 $50 $3a
+
+call_27_7bdb:
     Op16_SubOps 1                                      ;; 27:7bdb $16 $01
-    SubOp_DefaultCase $74, $6a, $6a, $6a               ;; 27:7bdd $74 $6a $6a $6a
-    db   $be, $01, $68, $01, $7d, $c7, $82, $c7        ;; 27:7be1 ????????
-    db   $00, $82, $d2, $66, $02, $82, $0a, $67        ;; 27:7be9 ????????
-    db   $02, $14, $01, $3a, $55, $8a, $7c, $27        ;; 27:7bf1 ????????
-    db   $74, $7e, $c7, $1c, $09, $9a, $7c, $27        ;; 27:7bf9 ????????
-    db   $a2, $7c, $27, $aa, $7c, $27, $b2, $7c        ;; 27:7c01 ????????
-    db   $27, $ba, $7c, $27, $c2, $7c, $27, $ca        ;; 27:7c09 ????????
-    db   $7c, $27, $d2, $7c, $27, $da, $7c, $27        ;; 27:7c11 ????????
-    db   $18, $8a, $7c, $27, $82, $1e, $67, $02        ;; 27:7c19 ????????
-    db   $14, $01, $3a, $55, $4c, $7c, $27, $74        ;; 27:7c21 ????????
-    db   $7e, $c7, $1c, $09, $9a, $7c, $27, $a2        ;; 27:7c29 ????????
-    db   $7c, $27, $aa, $7c, $27, $b2, $7c, $27        ;; 27:7c31 ????????
-    db   $ba, $7c, $27, $c2, $7c, $27, $ca, $7c        ;; 27:7c39 ????????
-    db   $27, $d2, $7c, $27, $da, $7c, $27, $18        ;; 27:7c41 ????????
-    db   $8a, $7c, $27, $82, $0a, $67, $02, $14        ;; 27:7c49 ????????
-    db   $01, $3a, $55, $8a, $7c, $27, $18, $92        ;; 27:7c51 ????????
-    db   $7c, $27, $82, $32, $67, $02, $14, $01        ;; 27:7c59 ????????
-    db   $3a, $55, $92, $7c, $27, $74, $7e, $c7        ;; 27:7c61 ????????
-    db   $1c, $09, $9a, $7c, $27, $a2, $7c, $27        ;; 27:7c69 ????????
-    db   $aa, $7c, $27, $b2, $7c, $27, $ba, $7c        ;; 27:7c71 ????????
-    db   $27, $c2, $7c, $27, $ca, $7c, $27, $d2        ;; 27:7c79 ????????
-    db   $7c, $27, $da, $7c, $27, $18, $8a, $7c        ;; 27:7c81 ????????
-    db   $27, $06, $e5, $50, $3a, $18, $e2, $7c        ;; 27:7c89 ????????
-    db   $27, $06, $e6, $50, $3a, $18, $e2, $7c        ;; 27:7c91 ????????
-    db   $27, $06, $e8, $50, $3a, $18, $e2, $7c        ;; 27:7c99 ????????
-    db   $27, $06, $ea, $50, $3a, $18, $e2, $7c        ;; 27:7ca1 ????????
-    db   $27, $06, $ec, $50, $3a, $18, $e2, $7c        ;; 27:7ca9 ????????
-    db   $27, $06, $ee, $50, $3a, $18, $e2, $7c        ;; 27:7cb1 ????????
-    db   $27, $06, $f0, $50, $3a, $18, $e2, $7c        ;; 27:7cb9 ????????
-    db   $27, $06, $f2, $50, $3a, $18, $e2, $7c        ;; 27:7cc1 ????????
-    db   $27, $06, $f4, $50, $3a, $18, $e2, $7c        ;; 27:7cc9 ????????
-    db   $27, $06, $f6, $50, $3a, $18, $e2, $7c        ;; 27:7cd1 ????????
-    db   $27, $06, $f8, $50, $3a, $18, $e2, $7c        ;; 27:7cd9 ????????
-    db   $27, $16, $01, $75, $00, $6b, $00, $be        ;; 27:7ce1 ????????
-    db   $01, $16, $01, $75, $1c, $65, $00, $be        ;; 27:7ce9 ????????
-    db   $0f, $74, $34, $c8, $1c, $03, $1d, $7c        ;; 27:7cf1 ????????
-    db   $27, $5b, $7c, $27, $04, $7d, $27, $18        ;; 27:7cf9 ????????
-    db   $04, $7d, $27, $16, $01, $75, $00, $6b        ;; 27:7d01 ????????
-    db   $00, $be, $10, $16, $01, $75, $00, $65        ;; 27:7d09 ????????
-    db   $00, $be, $f0, $14, $01, $3e, $55, $23        ;; 27:7d11 ????????
-    db   $7d, $27, $06, $fa, $50, $3a, $18, $db        ;; 27:7d19 ????????
-    db   $7b, $27, $06, $fc, $50, $3a, $92, $00        ;; 27:7d21 ????????
-    db   $20                                           ;; 27:7d29 ?
+    SubOp_DefaultCase_Pair $74, $6a                    ;; 27:7bdd $74 $6a
+    SubOp_DefaultCase_Pair $6a, $6a                    ;; 27:7bdf $6a $6a
+    SubOp_DefaultCase_Pair $be, $01                    ;; 27:7be1 $be $01
+    Op68_CopyBytes 1, wC77D, wC782, $00                ;; 27:7be3 $68 $01 $7d $c7 $82 $c7 $00
+    Op82_Run data_02_66d2                              ;; 27:7bea $82 $d2 $66 $02
+    Op82_Run data_02_670a                              ;; 27:7bee $82 $0a $67 $02
+    Op14_Unknown 1, $3a, $55                           ;; 27:7bf2 $14 $01 $3a $55
+    SCRIPT_POINTER call_27_7c8a                        ;; 27:7bf6 $8a $7c $27
+    Op74_PrepTableJumpIndex_Copy wC77E                 ;; 27:7bf9 $74 $7e $c7
+    Op1C_TableJump 9                                   ;; 27:7bfc $1c $09
+    SCRIPT_POINTER call_27_7c9a                        ;; 27:7bfe $9a $7c $27
+    SCRIPT_POINTER call_27_7ca2                        ;; 27:7c01 $a2 $7c $27
+    SCRIPT_POINTER call_27_7caa                        ;; 27:7c04 $aa $7c $27
+    SCRIPT_POINTER call_27_7cb2                        ;; 27:7c07 $b2 $7c $27
+    SCRIPT_POINTER call_27_7cba                        ;; 27:7c0a $ba $7c $27
+    SCRIPT_POINTER call_27_7cc2                        ;; 27:7c0d $c2 $7c $27
+    SCRIPT_POINTER call_27_7cca                        ;; 27:7c10 $ca $7c $27
+    SCRIPT_POINTER call_27_7cd2                        ;; 27:7c13 $d2 $7c $27
+    SCRIPT_POINTER call_27_7cda                        ;; 27:7c16 $da $7c $27
+    Op18_Jump call_27_7c8a                             ;; 27:7c19 $18 $8a $7c $27
+
+call_27_7c1d:
+    Op82_Run data_02_671e                              ;; 27:7c1d $82 $1e $67 $02
+    Op14_Unknown 1, $3a, $55                           ;; 27:7c21 $14 $01 $3a $55
+    SCRIPT_POINTER call_27_7c4c                        ;; 27:7c25 $4c $7c $27
+    Op74_PrepTableJumpIndex_Copy wC77E                 ;; 27:7c28 $74 $7e $c7
+    Op1C_TableJump 9                                   ;; 27:7c2b $1c $09
+    SCRIPT_POINTER call_27_7c9a                        ;; 27:7c2d $9a $7c $27
+    SCRIPT_POINTER call_27_7ca2                        ;; 27:7c30 $a2 $7c $27
+    SCRIPT_POINTER call_27_7caa                        ;; 27:7c33 $aa $7c $27
+    SCRIPT_POINTER call_27_7cb2                        ;; 27:7c36 $b2 $7c $27
+    SCRIPT_POINTER call_27_7cba                        ;; 27:7c39 $ba $7c $27
+    SCRIPT_POINTER call_27_7cc2                        ;; 27:7c3c $c2 $7c $27
+    SCRIPT_POINTER call_27_7cca                        ;; 27:7c3f $ca $7c $27
+    SCRIPT_POINTER call_27_7cd2                        ;; 27:7c42 $d2 $7c $27
+    SCRIPT_POINTER call_27_7cda                        ;; 27:7c45 $da $7c $27
+    Op18_Jump call_27_7c8a                             ;; 27:7c48 $18 $8a $7c $27
+
+call_27_7c4c:
+    Op82_Run data_02_670a                              ;; 27:7c4c $82 $0a $67 $02
+    Op14_Unknown 1, $3a, $55                           ;; 27:7c50 $14 $01 $3a $55
+    SCRIPT_POINTER call_27_7c8a                        ;; 27:7c54 $8a $7c $27
+    Op18_Jump call_27_7c92                             ;; 27:7c57 $18 $92 $7c $27
+
+call_27_7c5b:
+    Op82_Run data_02_6732                              ;; 27:7c5b $82 $32 $67 $02
+    Op14_Unknown 1, $3a, $55                           ;; 27:7c5f $14 $01 $3a $55
+    SCRIPT_POINTER call_27_7c92                        ;; 27:7c63 $92 $7c $27
+    Op74_PrepTableJumpIndex_Copy wC77E                 ;; 27:7c66 $74 $7e $c7
+    Op1C_TableJump 9                                   ;; 27:7c69 $1c $09
+    SCRIPT_POINTER call_27_7c9a                        ;; 27:7c6b $9a $7c $27
+    SCRIPT_POINTER call_27_7ca2                        ;; 27:7c6e $a2 $7c $27
+    SCRIPT_POINTER call_27_7caa                        ;; 27:7c71 $aa $7c $27
+    SCRIPT_POINTER call_27_7cb2                        ;; 27:7c74 $b2 $7c $27
+    SCRIPT_POINTER call_27_7cba                        ;; 27:7c77 $ba $7c $27
+    SCRIPT_POINTER call_27_7cc2                        ;; 27:7c7a $c2 $7c $27
+    SCRIPT_POINTER call_27_7cca                        ;; 27:7c7d $ca $7c $27
+    SCRIPT_POINTER call_27_7cd2                        ;; 27:7c80 $d2 $7c $27
+    SCRIPT_POINTER call_27_7cda                        ;; 27:7c83 $da $7c $27
+    Op18_Jump call_27_7c8a                             ;; 27:7c86 $18 $8a $7c $27
+
+call_27_7c8a:
+    Op06_Unknown_Text data_3a_50e5                     ;; 27:7c8a $06 $e5 $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7c8e $18 $e2 $7c $27
+
+call_27_7c92:
+    Op06_Unknown_Text data_3a_50e6                     ;; 27:7c92 $06 $e6 $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7c96 $18 $e2 $7c $27
+
+call_27_7c9a:
+    Op06_Unknown_Text data_3a_50e8                     ;; 27:7c9a $06 $e8 $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7c9e $18 $e2 $7c $27
+
+call_27_7ca2:
+    Op06_Unknown_Text data_3a_50ea                     ;; 27:7ca2 $06 $ea $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7ca6 $18 $e2 $7c $27
+
+call_27_7caa:
+    Op06_Unknown_Text data_3a_50ec                     ;; 27:7caa $06 $ec $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7cae $18 $e2 $7c $27
+
+call_27_7cb2:
+    Op06_Unknown_Text data_3a_50ee                     ;; 27:7cb2 $06 $ee $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7cb6 $18 $e2 $7c $27
+
+call_27_7cba:
+    Op06_Unknown_Text data_3a_50f0                     ;; 27:7cba $06 $f0 $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7cbe $18 $e2 $7c $27
+
+call_27_7cc2:
+    Op06_Unknown_Text data_3a_50f2                     ;; 27:7cc2 $06 $f2 $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7cc6 $18 $e2 $7c $27
+
+call_27_7cca:
+    Op06_Unknown_Text data_3a_50f4                     ;; 27:7cca $06 $f4 $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7cce $18 $e2 $7c $27
+
+call_27_7cd2:
+    Op06_Unknown_Text data_3a_50f6                     ;; 27:7cd2 $06 $f6 $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7cd6 $18 $e2 $7c $27
+
+call_27_7cda:
+    Op06_Unknown_Text data_3a_50f8                     ;; 27:7cda $06 $f8 $50 $3a
+    Op18_Jump call_27_7ce2                             ;; 27:7cde $18 $e2 $7c $27
+
+call_27_7ce2:
+    Op16_SubOps 1                                      ;; 27:7ce2 $16 $01
+    SubOp_DefaultCase_Pair $75, $00                    ;; 27:7ce4 $75 $00
+    SubOp_DefaultCase_Pair $6b, $00                    ;; 27:7ce6 $6b $00
+    SubOp_DefaultCase_Pair $be, $01                    ;; 27:7ce8 $be $01
+    Op16_SubOps 1                                      ;; 27:7cea $16 $01
+    SubOp_DefaultCase_Pair $75, $1c                    ;; 27:7cec $75 $1c
+    SubOp_DefaultCase_Pair $65, $00                    ;; 27:7cee $65 $00
+    SubOp_DefaultCase_Pair $be, $0f                    ;; 27:7cf0 $be $0f
+    Op74_PrepTableJumpIndex_Copy wC834                 ;; 27:7cf2 $74 $34 $c8
+    Op1C_TableJump 3                                   ;; 27:7cf5 $1c $03
+    SCRIPT_POINTER call_27_7c1d                        ;; 27:7cf7 $1d $7c $27
+    SCRIPT_POINTER call_27_7c5b                        ;; 27:7cfa $5b $7c $27
+    SCRIPT_POINTER call_27_7d04                        ;; 27:7cfd $04 $7d $27
+    Op18_Jump call_27_7d04                             ;; 27:7d00 $18 $04 $7d $27
+
+call_27_7d04:
+    Op16_SubOps 1                                      ;; 27:7d04 $16 $01
+    SubOp_DefaultCase_Pair $75, $00                    ;; 27:7d06 $75 $00
+    SubOp_DefaultCase_Pair $6b, $00                    ;; 27:7d08 $6b $00
+    SubOp_DefaultCase_Pair $be, $10                    ;; 27:7d0a $be $10
+    Op16_SubOps 1                                      ;; 27:7d0c $16 $01
+    SubOp_DefaultCase_Pair $75, $00                    ;; 27:7d0e $75 $00
+    SubOp_DefaultCase_Pair $65, $00                    ;; 27:7d10 $65 $00
+    SubOp_DefaultCase_Pair $be, $f0                    ;; 27:7d12 $be $f0
+    Op14_Unknown 1, $3e, $55                           ;; 27:7d14 $14 $01 $3e $55
+    SCRIPT_POINTER call_27_7d23                        ;; 27:7d18 $23 $7d $27
+    Op06_Unknown_Text data_3a_50fa                     ;; 27:7d1b $06 $fa $50 $3a
+    Op18_Jump call_27_7bdb                             ;; 27:7d1f $18 $db $7b $27
+
+call_27_7d23:
+    Op06_Unknown_Text data_3a_50fc                     ;; 27:7d23 $06 $fc $50 $3a
+    Op92_Unknown $00                                   ;; 27:7d27 $92 $00
+    SCRIPT_RETURN_20                                   ;; 27:7d29 $20
 
 call_27_7d2a:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $e9, $44, $16 ;; 27:7d2a $4c $1a $01 $04 $00 $00 $00 $00 $e9 $44 $16

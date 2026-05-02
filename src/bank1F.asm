@@ -1903,7 +1903,8 @@ call_1f_57de:
     Op16_SubOps 1                                      ;; 1f:580f $16 $01
     SubOp_SetByte wC737, $01                           ;; 1f:5811 $7e $1f $01
     Op16_SubOps 1                                      ;; 1f:5814 $16 $01
-    SubOp_DefaultCase $76, $28, $be, $03               ;; 1f:5816 $76 $28 $be $03
+    SubOp_DefaultCase_Pair $76, $28                    ;; 1f:5816 $76 $28
+    SubOp_DefaultCase_Pair $be, $03                    ;; 1f:5818 $be $03
     Op18_Jump call_1f_5918                             ;; 1f:581a $18 $18 $59 $1f
 
 call_1f_581e:
@@ -2206,7 +2207,8 @@ call_1f_5b98:
     Op50_WriteByte w3_D645, $03, $00                   ;; 1f:5ba0 $50 $45 $d6 $03 $00
     Op68_CopyBytes 1, wC81A, w3_D635, $03              ;; 1f:5ba5 $68 $01 $1a $c8 $35 $d6 $03
     Op16_SubOps 1                                      ;; 1f:5bac $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:5bae $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:5bae $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:5bb0 $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:5bb2 $74 $1a $c8
     Op1C_TableJump 4                                   ;; 1f:5bb5 $1c $04
     SCRIPT_POINTER call_1f_5bc7                        ;; 1f:5bb7 $c7 $5b $1f
@@ -2241,7 +2243,8 @@ call_1f_5bf4:
     Op14_Unknown 1, $83, $41                           ;; 1f:5c04 $14 $01 $83 $41
     SCRIPT_POINTER call_1f_5b75                        ;; 1f:5c08 $75 $5b $1f
     Op16_SubOps 1                                      ;; 1f:5c0b $16 $01
-    SubOp_DefaultCase $78, $3c, $be, $01               ;; 1f:5c0d $78 $3c $be $01
+    SubOp_DefaultCase_Pair $78, $3c                    ;; 1f:5c0d $78 $3c
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:5c0f $be $01
     Op18_Jump call_1f_5c80                             ;; 1f:5c11 $18 $80 $5c $1f
 
 call_1f_5c15:
@@ -2255,7 +2258,8 @@ call_1f_5c15:
 
 call_1f_5c30:
     Op16_SubOps 1                                      ;; 1f:5c30 $16 $01
-    SubOp_DefaultCase $76, $3c, $be, $01               ;; 1f:5c32 $76 $3c $be $01
+    SubOp_DefaultCase_Pair $76, $3c                    ;; 1f:5c32 $76 $3c
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:5c34 $be $01
     Op18_Jump call_1f_5c80                             ;; 1f:5c36 $18 $80 $5c $1f
 
 call_1f_5c3a:
@@ -2266,7 +2270,8 @@ call_1f_5c3a:
     Op14_Unknown 1, $83, $41                           ;; 1f:5c4a $14 $01 $83 $41
     SCRIPT_POINTER call_1f_5b75                        ;; 1f:5c4e $75 $5b $1f
     Op16_SubOps 1                                      ;; 1f:5c51 $16 $01
-    SubOp_DefaultCase $78, $3c, $be, $02               ;; 1f:5c53 $78 $3c $be $02
+    SubOp_DefaultCase_Pair $78, $3c                    ;; 1f:5c53 $78 $3c
+    SubOp_DefaultCase_Pair $be, $02                    ;; 1f:5c55 $be $02
     Op18_Jump call_1f_5c80                             ;; 1f:5c57 $18 $80 $5c $1f
 
 call_1f_5c5b:
@@ -2280,7 +2285,8 @@ call_1f_5c5b:
 
 call_1f_5c76:
     Op16_SubOps 1                                      ;; 1f:5c76 $16 $01
-    SubOp_DefaultCase $76, $3c, $be, $02               ;; 1f:5c78 $76 $3c $be $02
+    SubOp_DefaultCase_Pair $76, $3c                    ;; 1f:5c78 $76 $3c
+    SubOp_DefaultCase_Pair $be, $02                    ;; 1f:5c7a $be $02
     Op18_Jump call_1f_5c80                             ;; 1f:5c7c $18 $80 $5c $1f
 
 call_1f_5c80:
@@ -2319,7 +2325,8 @@ call_1f_5ca9:
     Op34_Unknown $28, $5d, $0e, $80, $d8, $07, $14     ;; 1f:5d19 $34 $28 $5d $0e $80 $d8 $07 $14
     Op68_CopyBytes 1, wC81A, w3_D637, $03              ;; 1f:5d21 $68 $01 $1a $c8 $37 $d6 $03
     Op16_SubOps 1                                      ;; 1f:5d28 $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:5d2a $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:5d2a $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:5d2c $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:5d2e $74 $1a $c8
     Op1C_TableJump 3                                   ;; 1f:5d31 $1c $03
     SCRIPT_POINTER call_1f_5d83                        ;; 1f:5d33 $83 $5d $1f
@@ -2376,7 +2383,8 @@ call_1f_5de7:
 call_1f_5e19:
     Op68_CopyBytes 1, wC81A, w3_D649, $03              ;; 1f:5e19 $68 $01 $1a $c8 $49 $d6 $03
     Op16_SubOps 1                                      ;; 1f:5e20 $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:5e22 $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:5e22 $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:5e24 $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:5e26 $74 $1a $c8
     Op1C_TableJump 4                                   ;; 1f:5e29 $1c $04
     SCRIPT_POINTER call_1f_5e37                        ;; 1f:5e2b $37 $5e $1f
@@ -2431,7 +2439,8 @@ call_1f_5e67:
     Op4C_Unknown $22, $00, $00, $6c, $00, $61, $00, $ed, $48, $19 ;; 1f:5f0a $4c $22 $00 $00 $6c $00 $61 $00 $ed $48 $19
     Op68_CopyBytes 1, wC81A, w3_D5CF, $03              ;; 1f:5f15 $68 $01 $1a $c8 $cf $d5 $03
     Op16_SubOps 1                                      ;; 1f:5f1c $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:5f1e $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:5f1e $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:5f20 $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:5f22 $74 $1a $c8
     Op1C_TableJump 10                                  ;; 1f:5f25 $1c $0a
     SCRIPT_POINTER call_1f_60bf                        ;; 1f:5f27 $bf $60 $1f
@@ -2448,7 +2457,8 @@ call_1f_5e67:
 call_1f_5f45:
     Op68_CopyBytes 1, wC81A, w3_D649, $03              ;; 1f:5f45 $68 $01 $1a $c8 $49 $d6 $03
     Op16_SubOps 1                                      ;; 1f:5f4c $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:5f4e $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:5f4e $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:5f50 $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:5f52 $74 $1a $c8
     Op1C_TableJump 4                                   ;; 1f:5f55 $1c $04
     SCRIPT_POINTER call_1f_5f80                        ;; 1f:5f57 $80 $5f $1f
@@ -2505,7 +2515,8 @@ call_1f_602a:
     Op4E_Unknown_StoreValue 12, $01, $8a, $49, $19     ;; 1f:604d $4e $0c $01 $8a $49 $19
     Op68_CopyBytes 1, wC81A, w3_D64A, $03              ;; 1f:6053 $68 $01 $1a $c8 $4a $d6 $03
     Op16_SubOps 1                                      ;; 1f:605a $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:605c $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:605c $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:605e $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:6060 $74 $1a $c8
     Op1C_TableJump 4                                   ;; 1f:6063 $1c $04
     SCRIPT_POINTER call_1f_6071                        ;; 1f:6065 $71 $60 $1f
@@ -2605,7 +2616,8 @@ call_1f_61de:
     SCRIPT_RETURN_4A                                   ;; 1f:61de $4a
     Op82_Run data_03_4000                              ;; 1f:61df $82 $00 $40 $03
     Op16_SubOps 1                                      ;; 1f:61e3 $16 $01
-    SubOp_DefaultCase $79, $02, $be, $01               ;; 1f:61e5 $79 $02 $be $01
+    SubOp_DefaultCase_Pair $79, $02                    ;; 1f:61e5 $79 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:61e7 $be $01
     Op14_Unknown 1, $8a, $43                           ;; 1f:61e9 $14 $01 $8a $43
     SCRIPT_POINTER call_1f_61de                        ;; 1f:61ed $de $61 $1f
     Op4E_Unknown_StoreValue 4, $01, $91, $4c, $19      ;; 1f:61f0 $4e $04 $01 $91 $4c $19
@@ -2651,7 +2663,8 @@ call_1f_6219:
     SubOp_SetByte wC819, $03                           ;; 1f:62b2 $7f $01 $03
     Op68_CopyBytes 1, wC81A, w3_D5CF, $03              ;; 1f:62b5 $68 $01 $1a $c8 $cf $d5 $03
     Op16_SubOps 1                                      ;; 1f:62bc $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:62be $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:62be $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:62c0 $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:62c2 $74 $1a $c8
     Op1C_TableJump 10                                  ;; 1f:62c5 $1c $0a
     SCRIPT_POINTER call_1f_63b5                        ;; 1f:62c7 $b5 $63 $1f
@@ -2678,7 +2691,8 @@ call_1f_62e9:
     SubOp_SetByte wC819, $02                           ;; 1f:631f $7f $01 $02
     Op68_CopyBytes 1, wC81A, w3_D5CF, $03              ;; 1f:6322 $68 $01 $1a $c8 $cf $d5 $03
     Op16_SubOps 1                                      ;; 1f:6329 $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:632b $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:632b $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:632d $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:632f $74 $1a $c8
     Op1C_TableJump 10                                  ;; 1f:6332 $1c $0a
     SCRIPT_POINTER call_1f_63aa                        ;; 1f:6334 $aa $63 $1f
@@ -2800,7 +2814,8 @@ call_1f_6444:
     Op34_Unknown $e0, $50, $0e, $00, $d8, $07, $15     ;; 1f:64ae $34 $e0 $50 $0e $00 $d8 $07 $15
     Op68_CopyBytes 1, wC81A, w3_D64A, $03              ;; 1f:64b6 $68 $01 $1a $c8 $4a $d6 $03
     Op16_SubOps 1                                      ;; 1f:64bd $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:64bf $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:64bf $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:64c1 $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:64c3 $74 $1a $c8
     Op1C_TableJump 4                                   ;; 1f:64c6 $1c $04
     SCRIPT_POINTER call_1f_6509                        ;; 1f:64c8 $09 $65 $1f
@@ -3007,7 +3022,8 @@ call_1f_6764:
 call_1f_676c:
     Op68_CopyBytes 1, wC81A, w3_D635, $03              ;; 1f:676c $68 $01 $1a $c8 $35 $d6 $03
     Op16_SubOps 1                                      ;; 1f:6773 $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:6775 $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:6775 $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:6777 $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:6779 $74 $1a $c8
     Op1C_TableJump 4                                   ;; 1f:677c $1c $04
     SCRIPT_POINTER call_1f_678a                        ;; 1f:677e $8a $67 $1f
@@ -3059,7 +3075,8 @@ call_1f_6817:
     SCRIPT_RETURN_4A                                   ;; 1f:6817 $4a
     Op82_Run data_03_57f7                              ;; 1f:6818 $82 $f7 $57 $03
     Op16_SubOps 1                                      ;; 1f:681c $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:681e $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:681e $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:6820 $be $01
     Op14_Unknown 1, $53, $44                           ;; 1f:6822 $14 $01 $53 $44
     SCRIPT_POINTER call_1f_6817                        ;; 1f:6826 $17 $68 $1f
     Op68_CopyBytes 1, wC81A, w3_D637, $03              ;; 1f:6829 $68 $01 $1a $c8 $37 $d6 $03
@@ -3099,7 +3116,8 @@ call_1f_68c3:
     SCRIPT_RETURN_4A                                   ;; 1f:68c3 $4a
     Op82_Run data_03_57f7                              ;; 1f:68c4 $82 $f7 $57 $03
     Op16_SubOps 1                                      ;; 1f:68c8 $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:68ca $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:68ca $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:68cc $be $01
     Op14_Unknown 1, $53, $44                           ;; 1f:68ce $14 $01 $53 $44
     SCRIPT_POINTER call_1f_68c3                        ;; 1f:68d2 $c3 $68 $1f
     Op68_CopyBytes 1, wC81A, w3_D637, $03              ;; 1f:68d5 $68 $01 $1a $c8 $37 $d6 $03
@@ -3235,7 +3253,8 @@ call_1f_6aca:
 call_1f_6ae1:
     Op68_CopyBytes 1, wC81A, w3_D64A, $03              ;; 1f:6ae1 $68 $01 $1a $c8 $4a $d6 $03
     Op16_SubOps 1                                      ;; 1f:6ae8 $16 $01
-    SubOp_DefaultCase $77, $02, $be, $01               ;; 1f:6aea $77 $02 $be $01
+    SubOp_DefaultCase_Pair $77, $02                    ;; 1f:6aea $77 $02
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:6aec $be $01
     Op74_PrepTableJumpIndex_Copy wC81A                 ;; 1f:6aee $74 $1a $c8
     Op1C_TableJump 4                                   ;; 1f:6af1 $1c $04
     SCRIPT_POINTER call_1f_6b0b                        ;; 1f:6af3 $0b $6b $1f
@@ -4683,7 +4702,8 @@ call_1f_7f86:
     SCRIPT_POINTER call_1f_7fa3                        ;; 1f:7f8d $a3 $7f $1f
     SCRIPT_POINTER call_1f_7fa3                        ;; 1f:7f90 $a3 $7f $1f
     Op16_SubOps 1                                      ;; 1f:7f93 $16 $01
-    SubOp_DefaultCase $99, $07, $be, $01               ;; 1f:7f95 $99 $07 $be $01
+    SubOp_DefaultCase_Pair $99, $07                    ;; 1f:7f95 $99 $07
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1f:7f97 $be $01
     Op14_Unknown 1, $e2, $42                           ;; 1f:7f99 $14 $01 $e2 $42
     SCRIPT_POINTER call_1f_7f86                        ;; 1f:7f9d $86 $7f $1f
     Op76_PrepTableJumpIndex_Write $00                  ;; 1f:7fa0 $76 $00

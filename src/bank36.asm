@@ -2843,7 +2843,8 @@ call_36_7a89:
     Op14_Unknown 1, $dc, $71                           ;; 36:7ab1 $14 $01 $dc $71
     SCRIPT_POINTER call_36_7ac9                        ;; 36:7ab5 $c9 $7a $36
     Op16_SubOps 1                                      ;; 36:7ab8 $16 $01
-    SubOp_DefaultCase $76, $3c, $be, $01               ;; 36:7aba $76 $3c $be $01
+    SubOp_DefaultCase_Pair $76, $3c                    ;; 36:7aba $76 $3c
+    SubOp_DefaultCase_Pair $be, $01                    ;; 36:7abc $be $01
     Op74_PrepTableJumpIndex_Copy wC754                 ;; 36:7abe $74 $54 $c7
     Op1E_Call call_33_4cbf                             ;; 36:7ac1 $1e $bf $4c $33
     Op18_Jump call_36_7acd                             ;; 36:7ac5 $18 $cd $7a $36
@@ -2856,7 +2857,8 @@ call_36_7acd:
     Op14_Unknown 1, $e0, $71                           ;; 36:7ad4 $14 $01 $e0 $71
     SCRIPT_POINTER call_36_7aec                        ;; 36:7ad8 $ec $7a $36
     Op16_SubOps 1                                      ;; 36:7adb $16 $01
-    SubOp_DefaultCase $76, $3f, $be, $01               ;; 36:7add $76 $3f $be $01
+    SubOp_DefaultCase_Pair $76, $3f                    ;; 36:7add $76 $3f
+    SubOp_DefaultCase_Pair $be, $01                    ;; 36:7adf $be $01
     Op74_PrepTableJumpIndex_Copy wC757                 ;; 36:7ae1 $74 $57 $c7
     Op1E_Call call_33_4cbf                             ;; 36:7ae4 $1e $bf $4c $33
     Op18_Jump call_36_7af0                             ;; 36:7ae8 $18 $f0 $7a $36
@@ -2866,7 +2868,8 @@ call_36_7aec:
 
 call_36_7af0:
     Op16_SubOps 1                                      ;; 36:7af0 $16 $01
-    SubOp_DefaultCase $76, $3e, $be, $01               ;; 36:7af2 $76 $3e $be $01
+    SubOp_DefaultCase_Pair $76, $3e                    ;; 36:7af2 $76 $3e
+    SubOp_DefaultCase_Pair $be, $01                    ;; 36:7af4 $be $01
     Op74_PrepTableJumpIndex_Copy wC756                 ;; 36:7af6 $74 $56 $c7
     Op1E_Call call_33_4cbf                             ;; 36:7af9 $1e $bf $4c $33
     Op16_SubOps 1                                      ;; 36:7afd $16 $01
@@ -2985,7 +2988,9 @@ call_36_7c0e:
 
 call_36_7c16:
     Op16_SubOps 1                                      ;; 36:7c16 $16 $01
-    SubOp_DefaultCase_75 $75, $08, $6b, $08, $be, $01  ;; 36:7c18 $75 $08 $6b $08 $be $01
+    SubOp_DefaultCase_Pair $75, $08                    ;; 36:7c18 $75 $08
+    SubOp_DefaultCase_Pair $6b, $08                    ;; 36:7c1a $6b $08
+    SubOp_DefaultCase_Pair $be, $01                    ;; 36:7c1c $be $01
     Op74_PrepTableJumpIndex_Copy wC820                 ;; 36:7c1e $74 $20 $c8
     Op1C_TableJump 2                                   ;; 36:7c21 $1c $02
     SCRIPT_POINTER call_36_7b80                        ;; 36:7c23 $80 $7b $36

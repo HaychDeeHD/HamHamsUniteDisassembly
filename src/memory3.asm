@@ -138,7 +138,10 @@ w3_D0D1:
     ds 1                                               ;; d0d1
 
 w3_D0D2:
-    ds 3                                               ;; d0d2
+    ds 2                                               ;; d0d2
+
+w3_D0D4:
+    ds 1                                               ;; d0d4
 
 w3_D0D5:
     ds 3                                               ;; d0d5
@@ -168,7 +171,10 @@ w3_D0E6:
     ds 1                                               ;; d0e6
 
 w3_D0E7:
-    ds 3                                               ;; d0e7
+    ds 1                                               ;; d0e7
+
+w3_D0E8:
+    ds 2                                               ;; d0e8
 
 w3_D0EA:
     ds 3                                               ;; d0ea
@@ -210,7 +216,10 @@ w3_D105:
     ds 3                                               ;; d105
 
 w3_D108:
-    ds 8                                               ;; d108
+    ds 5                                               ;; d108
+
+w3_D10D:
+    ds 3                                               ;; d10d
 
 w3_D110:
     ds 1                                               ;; d110
@@ -387,7 +396,10 @@ w3_D16B:
     ds 3                                               ;; d16b
 
 w3_D16E:
-    ds 3                                               ;; d16e
+    ds 1                                               ;; d16e
+
+w3_D16F:
+    ds 2                                               ;; d16f
 
 w3_D171:
     ds 3                                               ;; d171
@@ -408,7 +420,10 @@ w3_D179:
     ds 1                                               ;; d179
 
 w3_D17A:
-    ds 3                                               ;; d17a
+    ds 1                                               ;; d17a
+
+w3_D17B:
+    ds 2                                               ;; d17b
 
 w3_D17D:
     ds 1                                               ;; d17d
@@ -447,7 +462,10 @@ w3_D195:
     ds 3                                               ;; d195
 
 w3_D198:
-    ds 3                                               ;; d198
+    ds 2                                               ;; d198
+
+w3_D19A:
+    ds 1                                               ;; d19a
 
 w3_D19B:
     ds 2                                               ;; d19b
@@ -477,7 +495,10 @@ w3_D1B3:
     ds 3                                               ;; d1b3
 
 w3_D1B6:
-    ds 3                                               ;; d1b6
+    ds 1                                               ;; d1b6
+
+w3_D1B7:
+    ds 2                                               ;; d1b7
 
 w3_D1B9:
     ds 1                                               ;; d1b9

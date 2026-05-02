@@ -2163,7 +2163,8 @@ call_1d_5e0b:
     Op16_SubOps 1                                      ;; 1d:5e24 $16 $01
     SubOp_SetByte wC737, $01                           ;; 1d:5e26 $7e $1f $01
     Op16_SubOps 1                                      ;; 1d:5e29 $16 $01
-    SubOp_DefaultCase $76, $28, $be, $03               ;; 1d:5e2b $76 $28 $be $03
+    SubOp_DefaultCase_Pair $76, $28                    ;; 1d:5e2b $76 $28
+    SubOp_DefaultCase_Pair $be, $03                    ;; 1d:5e2d $be $03
     Op16_SubOps 1                                      ;; 1d:5e2f $16 $01
     SubOp_SetFlag wC92C, 7                             ;; 1d:5e31 $3e $a7
     Op1E_Call call_1d_6aa1                             ;; 1d:5e33 $1e $a1 $6a $1d
@@ -3843,13 +3844,15 @@ call_1d_713e:
     Op16_SubOps 1                                      ;; 1d:7179 $16 $01
     SubOp_SetFlag wC948, 0                             ;; 1d:717b $3f $80
     Op16_SubOps 1                                      ;; 1d:717d $16 $01
-    SubOp_DefaultCase $76, $3e, $be, $01               ;; 1d:717f $76 $3e $be $01
+    SubOp_DefaultCase_Pair $76, $3e                    ;; 1d:717f $76 $3e
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1d:7181 $be $01
     Op74_PrepTableJumpIndex_Copy wC756                 ;; 1d:7183 $74 $56 $c7
     Op1E_Call call_33_4cbf                             ;; 1d:7186 $1e $bf $4c $33
 
 call_1d_718a:
     Op16_SubOps 1                                      ;; 1d:718a $16 $01
-    SubOp_DefaultCase $76, $3d, $be, $01               ;; 1d:718c $76 $3d $be $01
+    SubOp_DefaultCase_Pair $76, $3d                    ;; 1d:718c $76 $3d
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1d:718e $be $01
     Op74_PrepTableJumpIndex_Copy wC755                 ;; 1d:7190 $74 $55 $c7
     Op1E_Call call_33_4cbf                             ;; 1d:7193 $1e $bf $4c $33
     Op14_Unknown 1, $87, $41                           ;; 1d:7197 $14 $01 $87 $41
@@ -3886,7 +3889,8 @@ call_1d_71cf:
     Op16_SubOps 1                                      ;; 1d:7206 $16 $01
     SubOp_SetFlag wC948, 0                             ;; 1d:7208 $3f $80
     Op16_SubOps 1                                      ;; 1d:720a $16 $01
-    SubOp_DefaultCase $76, $3c, $be, $01               ;; 1d:720c $76 $3c $be $01
+    SubOp_DefaultCase_Pair $76, $3c                    ;; 1d:720c $76 $3c
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1d:720e $be $01
     Op74_PrepTableJumpIndex_Copy wC754                 ;; 1d:7210 $74 $54 $c7
     Op1E_Call call_33_4cbf                             ;; 1d:7213 $1e $bf $4c $33
     Op18_Jump call_1d_721f                             ;; 1d:7217 $18 $1f $72 $1d
@@ -3901,7 +3905,8 @@ call_1d_721f:
     Op16_SubOps 1                                      ;; 1d:722d $16 $01
     SubOp_SetFlag wC948, 0                             ;; 1d:722f $3f $80
     Op16_SubOps 1                                      ;; 1d:7231 $16 $01
-    SubOp_DefaultCase $76, $3f, $be, $01               ;; 1d:7233 $76 $3f $be $01
+    SubOp_DefaultCase_Pair $76, $3f                    ;; 1d:7233 $76 $3f
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1d:7235 $be $01
     Op74_PrepTableJumpIndex_Copy wC757                 ;; 1d:7237 $74 $57 $c7
     Op1E_Call call_33_4cbf                             ;; 1d:723a $1e $bf $4c $33
     Op18_Jump call_1d_7246                             ;; 1d:723e $18 $46 $72 $1d
@@ -3911,7 +3916,8 @@ call_1d_7242:
 
 call_1d_7246:
     Op16_SubOps 1                                      ;; 1d:7246 $16 $01
-    SubOp_DefaultCase $76, $3e, $be, $01               ;; 1d:7248 $76 $3e $be $01
+    SubOp_DefaultCase_Pair $76, $3e                    ;; 1d:7248 $76 $3e
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1d:724a $be $01
     Op74_PrepTableJumpIndex_Copy wC756                 ;; 1d:724c $74 $56 $c7
     Op1E_Call call_33_4cbf                             ;; 1d:724f $1e $bf $4c $33
     Op14_Unknown 1, $a7, $41                           ;; 1d:7253 $14 $01 $a7 $41
@@ -3970,13 +3976,15 @@ call_1d_72cc:
     Op16_SubOps 1                                      ;; 1d:7307 $16 $01
     SubOp_SetFlag wC948, 0                             ;; 1d:7309 $3f $80
     Op16_SubOps 1                                      ;; 1d:730b $16 $01
-    SubOp_DefaultCase $76, $3e, $be, $01               ;; 1d:730d $76 $3e $be $01
+    SubOp_DefaultCase_Pair $76, $3e                    ;; 1d:730d $76 $3e
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1d:730f $be $01
     Op74_PrepTableJumpIndex_Copy wC756                 ;; 1d:7311 $74 $56 $c7
     Op1E_Call call_33_4cbf                             ;; 1d:7314 $1e $bf $4c $33
 
 call_1d_7318:
     Op16_SubOps 1                                      ;; 1d:7318 $16 $01
-    SubOp_DefaultCase $76, $3d, $be, $01               ;; 1d:731a $76 $3d $be $01
+    SubOp_DefaultCase_Pair $76, $3d                    ;; 1d:731a $76 $3d
+    SubOp_DefaultCase_Pair $be, $01                    ;; 1d:731c $be $01
     Op74_PrepTableJumpIndex_Copy wC755                 ;; 1d:731e $74 $55 $c7
     Op1E_Call call_33_4cbf                             ;; 1d:7321 $1e $bf $4c $33
     Op14_Unknown 1, $87, $41                           ;; 1d:7325 $14 $01 $87 $41

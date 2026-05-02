@@ -2271,14 +2271,18 @@ call_34_5f3f:
     Op1E_Call call_20_4042                             ;; 34:5f3f $1e $42 $40 $20
     Op1E_Call call_34_61ca                             ;; 34:5f43 $1e $ca $61 $34
     Op16_SubOps 1                                      ;; 34:5f47 $16 $01
-    SubOp_DefaultCase_75 $75, $07, $67, $07, $be, $08  ;; 34:5f49 $75 $07 $67 $07 $be $08
+    SubOp_DefaultCase_Pair $75, $07                    ;; 34:5f49 $75 $07
+    SubOp_DefaultCase_Pair $67, $07                    ;; 34:5f4b $67 $07
+    SubOp_DefaultCase_Pair $be, $08                    ;; 34:5f4d $be $08
     Op18_Jump call_34_5f9a                             ;; 34:5f4f $18 $9a $5f $34
 
 call_34_5f53:
     Op1E_Call call_20_463a                             ;; 34:5f53 $1e $3a $46 $20
     Op1E_Call call_34_61ca                             ;; 34:5f57 $1e $ca $61 $34
     Op16_SubOps 1                                      ;; 34:5f5b $16 $01
-    SubOp_DefaultCase_75 $75, $07, $67, $07, $be, $04  ;; 34:5f5d $75 $07 $67 $07 $be $04
+    SubOp_DefaultCase_Pair $75, $07                    ;; 34:5f5d $75 $07
+    SubOp_DefaultCase_Pair $67, $07                    ;; 34:5f5f $67 $07
+    SubOp_DefaultCase_Pair $be, $04                    ;; 34:5f61 $be $04
     Op18_Jump call_34_5f9a                             ;; 34:5f63 $18 $9a $5f $34
 
 call_34_5f67:
@@ -2288,7 +2292,9 @@ call_34_5f67:
 
 call_34_5f72:
     Op16_SubOps 1                                      ;; 34:5f72 $16 $01
-    SubOp_DefaultCase_75 $75, $07, $67, $07, $be, $02  ;; 34:5f74 $75 $07 $67 $07 $be $02
+    SubOp_DefaultCase_Pair $75, $07                    ;; 34:5f74 $75 $07
+    SubOp_DefaultCase_Pair $67, $07                    ;; 34:5f76 $67 $07
+    SubOp_DefaultCase_Pair $be, $02                    ;; 34:5f78 $be $02
     Op18_Jump call_34_5f9a                             ;; 34:5f7a $18 $9a $5f $34
 
 call_34_5f7e:
@@ -2299,7 +2305,9 @@ call_34_5f86:
     Op1E_Call call_20_44fe                             ;; 34:5f86 $1e $fe $44 $20
     Op1E_Call call_34_61ca                             ;; 34:5f8a $1e $ca $61 $34
     Op16_SubOps 1                                      ;; 34:5f8e $16 $01
-    SubOp_DefaultCase_75 $75, $07, $67, $07, $be, $01  ;; 34:5f90 $75 $07 $67 $07 $be $01
+    SubOp_DefaultCase_Pair $75, $07                    ;; 34:5f90 $75 $07
+    SubOp_DefaultCase_Pair $67, $07                    ;; 34:5f92 $67 $07
+    SubOp_DefaultCase_Pair $be, $01                    ;; 34:5f94 $be $01
     Op18_Jump call_34_5f9a                             ;; 34:5f96 $18 $9a $5f $34
 
 call_34_5f9a:
@@ -3033,7 +3041,8 @@ call_34_6867:
     Op4C_Unknown $3a, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 34:686f $4c $3a $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_74a0                             ;; 34:687a $1e $a0 $74 $1d
     Op16_SubOps 1                                      ;; 34:687e $16 $01
-    SubOp_DefaultCase $76, $28, $be, $01               ;; 34:6880 $76 $28 $be $01
+    SubOp_DefaultCase_Pair $76, $28                    ;; 34:6880 $76 $28
+    SubOp_DefaultCase_Pair $be, $01                    ;; 34:6882 $be $01
     Op16_SubOps 1                                      ;; 34:6884 $16 $01
     SubOp_SetByte wC736, $04                           ;; 34:6886 $7e $1e $04
     Op16_SubOps 1                                      ;; 34:6889 $16 $01
@@ -4275,7 +4284,9 @@ call_34_7809:
 call_34_7835:
     Op1E_Call call_34_7aa9                             ;; 34:7835 $1e $a9 $7a $34
     Op16_SubOps 1                                      ;; 34:7839 $16 $01
-    SubOp_DefaultCase_75 $75, $00, $6b, $00, $be, $01  ;; 34:783b $75 $00 $6b $00 $be $01
+    SubOp_DefaultCase_Pair $75, $00                    ;; 34:783b $75 $00
+    SubOp_DefaultCase_Pair $6b, $00                    ;; 34:783d $6b $00
+    SubOp_DefaultCase_Pair $be, $01                    ;; 34:783f $be $01
     Op14_Unknown 1, $94, $68                           ;; 34:7841 $14 $01 $94 $68
     SCRIPT_POINTER call_34_786c                        ;; 34:7845 $6c $78 $34
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $2e, $77, $12 ;; 34:7848 $4c $1e $01 $04 $00 $00 $00 $00 $2e $77 $12

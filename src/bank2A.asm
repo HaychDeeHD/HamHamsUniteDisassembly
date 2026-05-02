@@ -2578,7 +2578,8 @@ call_2a_620d:
     Op16_SubOps 1                                      ;; 2a:6234 $16 $01
     SubOp_SetByte wC751, $00                           ;; 2a:6236 $7e $39 $00
     Op16_SubOps 1                                      ;; 2a:6239 $16 $01
-    SubOp_DefaultCase $74, $21, $7e, $0d               ;; 2a:623b $74 $21 $7e $0d
+    SubOp_DefaultCase_Pair $74, $21                    ;; 2a:623b $74 $21
+    SubOp_DefaultCase_Pair $7e, $0d                    ;; 2a:623d $7e $0d
     Op16_SubOps 1                                      ;; 2a:623f $16 $01
     SubOp_SetByte wC725, $2a                           ;; 2a:6241 $7e $0d $2a
     Op16_SubOps 1                                      ;; 2a:6244 $16 $01

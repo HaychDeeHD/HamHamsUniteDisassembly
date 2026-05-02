@@ -1080,7 +1080,8 @@ call_39_59f8:
     Op4C_Unknown $34, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 39:5a00 $4c $34 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_7462                             ;; 39:5a0b $1e $62 $74 $1d
     Op16_SubOps 1                                      ;; 39:5a0f $16 $01
-    SubOp_DefaultCase $76, $28, $be, $01               ;; 39:5a11 $76 $28 $be $01
+    SubOp_DefaultCase_Pair $76, $28                    ;; 39:5a11 $76 $28
+    SubOp_DefaultCase_Pair $be, $01                    ;; 39:5a13 $be $01
     Op16_SubOps 1                                      ;; 39:5a15 $16 $01
     SubOp_SetByte wC736, $04                           ;; 39:5a17 $7e $1e $04
     Op16_SubOps 1                                      ;; 39:5a1a $16 $01
