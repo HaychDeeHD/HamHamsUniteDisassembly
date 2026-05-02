@@ -599,13 +599,21 @@ call_38_4762:
 call_38_47a7:
     SCRIPT_RETURN_4A                                   ;; 38:47a7 $4a
     Op3E_Compare_Branch 22, $61, $47, $10, call_38_47a7 ;; 38:47a8 $3e $16 $61 $47 $10 $a7 $47 $38
-    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 38:47b0 ????????
-    db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 38:47b8 ????????
-    db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 38:47c0 ????????
-    db   $d0, $02, $fe, $16, $01, $7e, $39, $00        ;; 38:47c8 ????????
-    db   $16, $01, $7e, $0d, $a0, $16, $01, $7e        ;; 38:47d0 ????????
-    db   $12, $00, $16, $01, $7f, $0a, $00, $16        ;; 38:47d8 ????????
-    db   $01, $5e, $03, $20                            ;; 38:47e0 ????
+    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 38:47b0 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 38:47bb $52 $01 $d0 $01 $fd $d1
+    Op50_WriteByte wC31D, $00, $d0                     ;; 38:47c1 $50 $1d $c3 $00 $d0
+    Op50_WriteByte w2_D0FD, $02, $fe                   ;; 38:47c6 $50 $fd $d0 $02 $fe
+    Op16_SubOps 1                                      ;; 38:47cb $16 $01
+    SubOp_SetByte wC751, $00                           ;; 38:47cd $7e $39 $00
+    Op16_SubOps 1                                      ;; 38:47d0 $16 $01
+    SubOp_SetByte wC725, $a0                           ;; 38:47d2 $7e $0d $a0
+    Op16_SubOps 1                                      ;; 38:47d5 $16 $01
+    SubOp_SetByte wC72A, $00                           ;; 38:47d7 $7e $12 $00
+    Op16_SubOps 1                                      ;; 38:47da $16 $01
+    SubOp_SetByte wC822, $00                           ;; 38:47dc $7f $0a $00
+    Op16_SubOps 1                                      ;; 38:47df $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 38:47e1 $5e $03
+    SCRIPT_RETURN_20                                   ;; 38:47e3 $20
 
 call_38_47e4:
     Op14_Unknown 1, $94, $60                           ;; 38:47e4 $14 $01 $94 $60
@@ -1016,13 +1024,21 @@ call_38_4cf3:
     Op4E_Unknown_StoreValue 8, $01, $ef, $6a, $1a      ;; 38:4d26 $4e $08 $01 $ef $6a $1a
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $c0, $00, $90, $00 ;; 38:4d2c $3a $00 $00 $a0 $90 $50 $48 $c0 $00 $90 $00
     Op1E_Call call_33_4d12                             ;; 38:4d37 $1e $12 $4d $33
-    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 38:4d3b ????????
-    db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 38:4d43 ????????
-    db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 38:4d4b ????????
-    db   $d0, $02, $fe, $16, $01, $7e, $39, $00        ;; 38:4d53 ????????
-    db   $16, $01, $7e, $0d, $e0, $16, $01, $7e        ;; 38:4d5b ????????
-    db   $12, $50, $16, $01, $7f, $1c, $00, $16        ;; 38:4d63 ????????
-    db   $01, $5e, $03, $20                            ;; 38:4d6b ????
+    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 38:4d3b $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 38:4d46 $52 $01 $d0 $01 $fd $d1
+    Op50_WriteByte wC31D, $00, $d0                     ;; 38:4d4c $50 $1d $c3 $00 $d0
+    Op50_WriteByte w2_D0FD, $02, $fe                   ;; 38:4d51 $50 $fd $d0 $02 $fe
+    Op16_SubOps 1                                      ;; 38:4d56 $16 $01
+    SubOp_SetByte wC751, $00                           ;; 38:4d58 $7e $39 $00
+    Op16_SubOps 1                                      ;; 38:4d5b $16 $01
+    SubOp_SetByte wC725, $e0                           ;; 38:4d5d $7e $0d $e0
+    Op16_SubOps 1                                      ;; 38:4d60 $16 $01
+    SubOp_SetByte wC72A, $50                           ;; 38:4d62 $7e $12 $50
+    Op16_SubOps 1                                      ;; 38:4d65 $16 $01
+    SubOp_SetByte wC834, $00                           ;; 38:4d67 $7f $1c $00
+    Op16_SubOps 1                                      ;; 38:4d6a $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 38:4d6c $5e $03
+    SCRIPT_RETURN_20                                   ;; 38:4d6e $20
 
 call_38_4d6f:
     Op14_Unknown 1, $d8, $75                           ;; 38:4d6f $14 $01 $d8 $75
@@ -2491,11 +2507,17 @@ call_38_67a9:
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 38:67a9 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
     Op44_Unknown $08, $00                              ;; 38:67b4 $44 $08 $00
     Op1E_Call call_33_4d12                             ;; 38:67b7 $1e $12 $4d $33
-    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 38:67bb ????????
-    db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 38:67c3 ????????
-    db   $d1, $16, $01, $5e, $03, $16, $01, $7e        ;; 38:67cb ????????
-    db   $39, $00, $16, $01, $7e, $0d, $0d, $16        ;; 38:67d3 ????????
-    db   $01, $7e, $12, $60, $20                       ;; 38:67db ?????
+    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 38:67bb $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 38:67c6 $52 $01 $d0 $01 $fd $d1
+    Op16_SubOps 1                                      ;; 38:67cc $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 38:67ce $5e $03
+    Op16_SubOps 1                                      ;; 38:67d0 $16 $01
+    SubOp_SetByte wC751, $00                           ;; 38:67d2 $7e $39 $00
+    Op16_SubOps 1                                      ;; 38:67d5 $16 $01
+    SubOp_SetByte wC725, $0d                           ;; 38:67d7 $7e $0d $0d
+    Op16_SubOps 1                                      ;; 38:67da $16 $01
+    SubOp_SetByte wC72A, $60                           ;; 38:67dc $7e $12 $60
+    SCRIPT_RETURN_20                                   ;; 38:67df $20
 
 call_38_67e0:
     Op50_WriteByte wC31D, $00, $04                     ;; 38:67e0 $50 $1d $c3 $00 $04

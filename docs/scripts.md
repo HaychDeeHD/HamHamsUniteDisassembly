@@ -55,8 +55,8 @@ The length column in this table excludes the opcode byte.
 | 34 |       | 12da             | [Op34](#op34)    |
 | 36 |       | 1325             | [Op36](#op36)    |
 | 38 |       | 1350             | [Op38](#op38)    |
-| 3A |       | 13e0             | [Op3A](#op3A)    |
-| 3C |       | 15a0             | [Op3C](#op3C)    |
+| 3A | 10    | 13e0             | [Op3A](#op3A)    |
+| 3C | 10    | 15a0             | [Op3C](#op3C)    |
 | 3E | 7     | 0d54             | [Op3E](#op3E)    |
 | 40 |       | 109a             | [Op40](#op40)    |
 | 42 | 5     | 0ff8             | [Op42](#op42)    |

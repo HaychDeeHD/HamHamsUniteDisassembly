@@ -188,13 +188,21 @@ call_2c_426a:
 call_2c_4270:
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 2c:4270 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
     Op1E_Call call_33_4d12                             ;; 2c:427b $1e $12 $4d $33
-    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 2c:427f ????????
-    db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 2c:4287 ????????
-    db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 2c:428f ????????
-    db   $d0, $02, $fe, $16, $01, $7e, $39, $00        ;; 2c:4297 ????????
-    db   $16, $01, $7e, $0d, $1e, $16, $01, $7e        ;; 2c:429f ????????
-    db   $12, $b0, $16, $01, $7f, $05, $00, $16        ;; 2c:42a7 ????????
-    db   $01, $5e, $03, $20                            ;; 2c:42af ????
+    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2c:427f $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2c:428a $52 $01 $d0 $01 $fd $d1
+    Op50_WriteByte wC31D, $00, $d0                     ;; 2c:4290 $50 $1d $c3 $00 $d0
+    Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2c:4295 $50 $fd $d0 $02 $fe
+    Op16_SubOps 1                                      ;; 2c:429a $16 $01
+    SubOp_SetByte wC751, $00                           ;; 2c:429c $7e $39 $00
+    Op16_SubOps 1                                      ;; 2c:429f $16 $01
+    SubOp_SetByte wC725, $1e                           ;; 2c:42a1 $7e $0d $1e
+    Op16_SubOps 1                                      ;; 2c:42a4 $16 $01
+    SubOp_SetByte wC72A, $b0                           ;; 2c:42a6 $7e $12 $b0
+    Op16_SubOps 1                                      ;; 2c:42a9 $16 $01
+    SubOp_SetByte wC81D, $00                           ;; 2c:42ab $7f $05 $00
+    Op16_SubOps 1                                      ;; 2c:42ae $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2c:42b0 $5e $03
+    SCRIPT_RETURN_20                                   ;; 2c:42b2 $20
 
 call_2c_42b3:
     Op82_Run data_01_7416                              ;; 2c:42b3 $82 $16 $74 $01

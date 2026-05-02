@@ -147,13 +147,21 @@ call_1d_41b7:
     Op4E_Unknown_StoreValue 10, $01, $63, $63, $15     ;; 1d:41f6 $4e $0a $01 $63 $63 $15
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 1d:41fc $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
     Op1E_Call call_33_4d12                             ;; 1d:4207 $1e $12 $4d $33
-    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 1d:420b ????????
-    db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 1d:4213 ????????
-    db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 1d:421b ????????
-    db   $d0, $02, $fe, $16, $01, $7e, $39, $00        ;; 1d:4223 ????????
-    db   $16, $01, $7e, $0d, $1f, $16, $01, $7e        ;; 1d:422b ????????
-    db   $12, $b0, $16, $01, $7f, $1c, $00, $16        ;; 1d:4233 ????????
-    db   $01, $5e, $03, $20                            ;; 1d:423b ????
+    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 1d:420b $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 1d:4216 $52 $01 $d0 $01 $fd $d1
+    Op50_WriteByte wC31D, $00, $d0                     ;; 1d:421c $50 $1d $c3 $00 $d0
+    Op50_WriteByte w2_D0FD, $02, $fe                   ;; 1d:4221 $50 $fd $d0 $02 $fe
+    Op16_SubOps 1                                      ;; 1d:4226 $16 $01
+    SubOp_SetByte wC751, $00                           ;; 1d:4228 $7e $39 $00
+    Op16_SubOps 1                                      ;; 1d:422b $16 $01
+    SubOp_SetByte wC725, $1f                           ;; 1d:422d $7e $0d $1f
+    Op16_SubOps 1                                      ;; 1d:4230 $16 $01
+    SubOp_SetByte wC72A, $b0                           ;; 1d:4232 $7e $12 $b0
+    Op16_SubOps 1                                      ;; 1d:4235 $16 $01
+    SubOp_SetByte wC834, $00                           ;; 1d:4237 $7f $1c $00
+    Op16_SubOps 1                                      ;; 1d:423a $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 1d:423c $5e $03
+    SCRIPT_RETURN_20                                   ;; 1d:423e $20
 
 call_1d_423f:
     Op14_Unknown 1, $d0, $74                           ;; 1d:423f $14 $01 $d0 $74
@@ -2763,6 +2771,8 @@ call_1d_6cbc:
     Op1C_TableJump 1                                   ;; 1d:6cc0 $1c $01
     SCRIPT_POINTER call_04_6a5e                        ;; 1d:6cc2 $5e $6a $04
     Op18_Jump call_04_6a66                             ;; 1d:6cc5 $18 $66 $6a $04
+
+call_1d_6cc9:
     Op1E_Call call_1d_6f05                             ;; 1d:6cc9 $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6ccd $1c $01
     SCRIPT_POINTER call_04_6a75                        ;; 1d:6ccf $75 $6a $04

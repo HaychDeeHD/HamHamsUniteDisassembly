@@ -2887,8 +2887,7 @@ call_2f_78b4:
     Op1E_Call call_33_4d12                             ;; 2f:78fe $1e $12 $4d $33
     Op14_Unknown 1, $64, $52                           ;; 2f:7902 $14 $01 $64 $52
     SCRIPT_POINTER call_2f_7914                        ;; 2f:7906 $14 $79 $2f
-    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 2f:7909 ????????
-    db   $00, $00, $ff                                 ;; 2f:7911 ???
+    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2f:7909 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
 
 call_2f_7914:
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2f:7914 $52 $01 $d0 $01 $fd $d1
@@ -3030,10 +3029,14 @@ call_2f_7b36:
     Op1E_Call call_04_67d9                             ;; 2f:7b4a $1e $d9 $67 $04
     Op04_Unknown_Text data_38_53a1                     ;; 2f:7b4e $04 $a1 $53 $38
     Op1E_Call call_04_615d                             ;; 2f:7b52 $1e $5d $61 $04
-    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 2f:7b56 ????????
-    db   $00, $00, $ff, $16, $01, $3f, $09, $14        ;; 2f:7b5e ????????
-    db   $01, $04, $4c, $a0, $77, $2f, $16, $01        ;; 2f:7b66 ????????
-    db   $7e, $7e, $02, $18, $a0, $77, $2f             ;; 2f:7b6e ???????
+    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2f:7b56 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op16_SubOps 1                                      ;; 2f:7b61 $16 $01
+    SubOp_SetFlag wC939, 1                             ;; 2f:7b63 $3f $09
+    Op14_Unknown 1, $04, $4c                           ;; 2f:7b65 $14 $01 $04 $4c
+    SCRIPT_POINTER call_2f_77a0                        ;; 2f:7b69 $a0 $77 $2f
+    Op16_SubOps 1                                      ;; 2f:7b6c $16 $01
+    SubOp_SetByte wC796, $02                           ;; 2f:7b6e $7e $7e $02
+    Op18_Jump call_2f_77a0                             ;; 2f:7b71 $18 $a0 $77 $2f
 
 call_2f_7b75:
     Op1E_Call call_33_4daf                             ;; 2f:7b75 $1e $af $4d $33

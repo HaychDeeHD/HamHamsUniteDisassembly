@@ -29,14 +29,13 @@ def maybeCreateScriptBlocks():
     print(sorted(blockingOpcodes.items(), key=lambda item: item[1], reverse=True))
 
 def maybeCreateScriptBlock(memory, addr):
-    while True:
+    while addr - memory.base_address < 0x4000:
         serializedAddr = serializeAddress(memory, addr)
         opcode = memory.byte(addr)
 
         # If this addr is already handled.
         if memory[addr] is not None:
             break
-        # TODO condition for hitting end of file?
         # If the opcode is not recognized.
         if opcode not in OPBLOCKS:
             if serializedAddr not in blockingAddresses:
@@ -492,6 +491,7 @@ class Op56Block(Block):
 class Op84Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 7)
+        # Can't use BANK(\1). Example: The label is in VRAM but the bank arg is 1.
         RomInfo.macros["Op84_WriteByteNTimes"] = "db $84\ndw \\1\ndb \\2\ndw \\3\ndb \\4"
 
         pointer = memory.word(addr + 1)
@@ -591,6 +591,7 @@ OPBLOCKS = {
     0x34: makeGenericBlockClass(0x34, 8),
     0x36: makeGenericBlockClass(0x36, 7),
     0x3A: makeGenericBlockClass(0x3A, 11),
+    0x3C: makeGenericBlockClass(0x3C, 11),
     0x3E: Op3EBlock,
     0x42: Op42Block,
     0x44: makeGenericBlockClass(0x44, 3),

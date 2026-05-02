@@ -1182,14 +1182,23 @@ call_2b_519c:
     Op4E_Unknown_StoreValue 9, $01, $32, $41, $17      ;; 2b:51a2 $4e $09 $01 $32 $41 $17
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 2b:51a8 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
     Op1E_Call call_33_4d12                             ;; 2b:51b3 $1e $12 $4d $33
-    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 2b:51b7 ????????
-    db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 2b:51bf ????????
-    db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 2b:51c7 ????????
-    db   $d0, $02, $fe, $16, $01, $7e, $39, $00        ;; 2b:51cf ????????
-    db   $16, $01, $74, $21, $7e, $0d, $16, $01        ;; 2b:51d7 ????????
-    db   $7e, $0d, $3c, $16, $01, $7e, $12, $b0        ;; 2b:51df ????????
-    db   $16, $01, $7f, $05, $00, $16, $01, $5e        ;; 2b:51e7 ????????
-    db   $03, $20                                      ;; 2b:51ef ??
+    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2b:51b7 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2b:51c2 $52 $01 $d0 $01 $fd $d1
+    Op50_WriteByte wC31D, $00, $d0                     ;; 2b:51c8 $50 $1d $c3 $00 $d0
+    Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2b:51cd $50 $fd $d0 $02 $fe
+    Op16_SubOps 1                                      ;; 2b:51d2 $16 $01
+    SubOp_SetByte wC751, $00                           ;; 2b:51d4 $7e $39 $00
+    Op16_SubOps 1                                      ;; 2b:51d7 $16 $01
+    SubOp_DefaultCase $74, $21, $7e, $0d               ;; 2b:51d9 $74 $21 $7e $0d
+    Op16_SubOps 1                                      ;; 2b:51dd $16 $01
+    SubOp_SetByte wC725, $3c                           ;; 2b:51df $7e $0d $3c
+    Op16_SubOps 1                                      ;; 2b:51e2 $16 $01
+    SubOp_SetByte wC72A, $b0                           ;; 2b:51e4 $7e $12 $b0
+    Op16_SubOps 1                                      ;; 2b:51e7 $16 $01
+    SubOp_SetByte wC81D, $00                           ;; 2b:51e9 $7f $05 $00
+    Op16_SubOps 1                                      ;; 2b:51ec $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2b:51ee $5e $03
+    SCRIPT_RETURN_20                                   ;; 2b:51f0 $20
 
 call_2b_51f1:
     Op82_Run data_01_7416                              ;; 2b:51f1 $82 $16 $74 $01

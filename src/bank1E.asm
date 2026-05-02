@@ -176,13 +176,21 @@ call_1e_41f4:
 call_1e_4241:
     SCRIPT_RETURN_4A                                   ;; 1e:4241 $4a
     Op3E_Compare_Branch 22, $11, $4d, $12, call_1e_4241 ;; 1e:4242 $3e $16 $11 $4d $12 $41 $42 $1e
-    db   $3c, $0e, $71, $17, $fd, $d1, $00, $00        ;; 1e:424a ????????
-    db   $00, $00, $ff, $52, $01, $d0, $01, $fd        ;; 1e:4252 ????????
-    db   $d1, $50, $1d, $c3, $00, $d0, $50, $fd        ;; 1e:425a ????????
-    db   $d0, $02, $fe, $16, $01, $7e, $39, $00        ;; 1e:4262 ????????
-    db   $16, $01, $7e, $0d, $50, $16, $01, $7e        ;; 1e:426a ????????
-    db   $12, $b0, $16, $01, $7f, $1c, $00, $16        ;; 1e:4272 ????????
-    db   $01, $5e, $03, $20                            ;; 1e:427a ????
+    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 1e:424a $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 1e:4255 $52 $01 $d0 $01 $fd $d1
+    Op50_WriteByte wC31D, $00, $d0                     ;; 1e:425b $50 $1d $c3 $00 $d0
+    Op50_WriteByte w2_D0FD, $02, $fe                   ;; 1e:4260 $50 $fd $d0 $02 $fe
+    Op16_SubOps 1                                      ;; 1e:4265 $16 $01
+    SubOp_SetByte wC751, $00                           ;; 1e:4267 $7e $39 $00
+    Op16_SubOps 1                                      ;; 1e:426a $16 $01
+    SubOp_SetByte wC725, $50                           ;; 1e:426c $7e $0d $50
+    Op16_SubOps 1                                      ;; 1e:426f $16 $01
+    SubOp_SetByte wC72A, $b0                           ;; 1e:4271 $7e $12 $b0
+    Op16_SubOps 1                                      ;; 1e:4274 $16 $01
+    SubOp_SetByte wC834, $00                           ;; 1e:4276 $7f $1c $00
+    Op16_SubOps 1                                      ;; 1e:4279 $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 1e:427b $5e $03
+    SCRIPT_RETURN_20                                   ;; 1e:427d $20
 
 call_1e_427e:
     Op14_Unknown 1, $7e, $75                           ;; 1e:427e $14 $01 $7e $75
