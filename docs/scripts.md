@@ -223,6 +223,14 @@ A return to match Op1E's calls. Uses the data put into the stack by Op1E to resu
 <a id="op2A"></a>
 ### Op2A 
 
+Some kind of 'return' or 'invoke callback'?
+
+If C324-5 contains (address) data, the handler will jump there. This is not a *script* jump, it's a `jp`.
+
+If there is no address to jump to, the 3 arg bytes are written to wram 01:D037-9 and then more unkown stuff happens.
+
+Presumably, this op always takes 3 arg bytes?
+
 <a id="op2C"></a>
 ### Op2C 
 

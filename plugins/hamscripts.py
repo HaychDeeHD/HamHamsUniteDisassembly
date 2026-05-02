@@ -63,6 +63,7 @@ def hamscript(memory, addr):
     # Some script blocks mark text blocks, so process those.
     maybeCreateTextBlocks()
 
+# Size includes the opcode here.
 def makeGenericBlockClass(opcode, size, macroName=None):
     className = "Op%02xBlock" % opcode
     if macroName is None:
@@ -583,6 +584,9 @@ OPBLOCKS = {
     0x1C: Op1CBlock,
     0x1E: Op1EBlock,
     0x20: Op20Block,
+    0x2A: makeGenericBlockClass(0x2A, 4, "Op2A_MaybeCodeJump"),
+    0x2C: makeGenericBlockClass(0x2C, 4, "Op2C_MaybeCodeJump"),
+    0x2E: makeGenericBlockClass(0x2E, 4, "Op2E_MaybeCodeJump"),
     0x32: makeGenericBlockClass(0x32, 7),
     0x34: makeGenericBlockClass(0x34, 8),
     0x36: makeGenericBlockClass(0x36, 7),

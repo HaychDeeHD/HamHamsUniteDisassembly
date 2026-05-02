@@ -56,6 +56,12 @@ db $1e
 dw \1
 db BANK(\1)
 ENDM
+MACRO Op2A_MaybeCodeJump
+db $2a
+db \<1>
+db \<2>
+db \<3>
+ENDM
 MACRO Op32_Unknown
 db $32
 db \<1>
