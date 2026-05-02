@@ -879,7 +879,10 @@ wC6AF:
     ds 1                                               ;; c6af
 
 wC6B0:
-    ds 2                                               ;; c6b0
+    ds 1                                               ;; c6b0
+
+wC6B1:
+    ds 1                                               ;; c6b1
 
 wC6B2:
     ds 1                                               ;; c6b2

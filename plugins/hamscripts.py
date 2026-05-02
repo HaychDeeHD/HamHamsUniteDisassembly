@@ -622,6 +622,7 @@ OPBLOCKS = {
     0x68: Op68Block,
     0x74: Op74Block,
     0x76: makeGenericBlockClass(0x76, 2, "Op76_PrepTableJumpIndex_Write"),
+    0x7E: makeGenericBlockClass(0x7E, 9),
     0x80: Op80Block,
     0x82: Op82Block,
     0x84: Op84Block,

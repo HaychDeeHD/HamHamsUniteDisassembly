@@ -202,9 +202,9 @@ call_2b_4231:
     Op82_Run data_01_75db                              ;; 2b:4231 $82 $db $75 $01
     SCRIPT_RETURN_4A                                   ;; 2b:4235 $4a
     Op82_Run data_01_760c                              ;; 2b:4236 $82 $0c $76 $01
-    db   $7e, $00, $d8, $05, $00, $98, $00, $80        ;; 2b:423a ????????
-    db   $00, $7e, $00, $d8, $07, $00, $98, $01        ;; 2b:4242 ????????
-    db   $80, $00, $20                                 ;; 2b:424a ???
+    Op7E_Unknown $00, $d8, $05, $00, $98, $00, $80, $00 ;; 2b:423a $7e $00 $d8 $05 $00 $98 $00 $80 $00
+    Op7E_Unknown $00, $d8, $07, $00, $98, $01, $80, $00 ;; 2b:4243 $7e $00 $d8 $07 $00 $98 $01 $80 $00
+    SCRIPT_RETURN_20                                   ;; 2b:424c $20
 
 call_2b_424d:
     Op16_SubOps 1                                      ;; 2b:424d $16 $01
@@ -2196,153 +2196,418 @@ call_2b_5d6a:
     Op4C_Unknown $1c, $01, $04, $18, $00, $58, $00, $eb, $6c, $1a ;; 2b:5e0e $4c $1c $01 $04 $18 $00 $58 $00 $eb $6c $1a
     Op4C_Unknown $1e, $01, $04, $98, $00, $10, $00, $f2, $6c, $1a ;; 2b:5e19 $4c $1e $01 $04 $98 $00 $10 $00 $f2 $6c $1a
     Op4C_Unknown $08, $00, $04, $18, $00, $68, $00, $07, $6d, $1a ;; 2b:5e24 $4c $08 $00 $04 $18 $00 $68 $00 $07 $6d $1a
-    db   $7e, $00, $d8, $05, $00, $98, $00, $40        ;; 2b:5e2f ????????
-    db   $02, $7e, $00, $d8, $07, $00, $98, $01        ;; 2b:5e37 ????????
-    db   $40, $02, $4a, $16, $01, $7e, $42, $00        ;; 2b:5e3f ????????
-    db   $16, $01, $7e, $40, $00, $16, $01, $7e        ;; 2b:5e47 ????????
-    db   $41, $00, $16, $01, $7e, $49, $00, $16        ;; 2b:5e4f ????????
-    db   $01, $7e, $46, $00, $16, $01, $7e, $43        ;; 2b:5e57 ????????
-    db   $00, $16, $01, $7e, $45, $00, $16, $01        ;; 2b:5e5f ????????
-    db   $7e, $44, $00, $16, $01, $7e, $47, $00        ;; 2b:5e67 ????????
-    db   $82, $c1, $44, $02, $82, $d4, $47, $02        ;; 2b:5e6f ????????
-    db   $82, $e4, $45, $02, $4a, $82, $73, $46        ;; 2b:5e77 ????????
-    db   $02, $82, $e4, $45, $02, $4a, $82, $73        ;; 2b:5e7f ????????
-    db   $46, $02, $82, $06, $47, $02, $4a, $82        ;; 2b:5e87 ????????
-    db   $1e, $47, $02, $7e, $40, $d8, $05, $40        ;; 2b:5e8f ????????
-    db   $98, $00, $00, $01, $7e, $80, $d9, $07        ;; 2b:5e97 ????????
-    db   $80, $99, $01, $80, $00, $4c, $22, $01        ;; 2b:5e9f ????????
-    db   $00, $00, $00, $00, $00, $00, $00, $00        ;; 2b:5ea7 ????????
-    db   $4c, $08, $01, $04, $00, $00, $00, $00        ;; 2b:5eaf ????????
-    db   $00, $00, $00, $1e, $70, $5f, $2b, $4e        ;; 2b:5eb7 ????????
-    db   $05, $01, $0e, $6d, $1a, $4e, $06, $01        ;; 2b:5ebf ????????
-    db   $20, $6d, $1a, $44, $0a, $00, $4a, $82        ;; 2b:5ec7 ????????
-    db   $cc, $43, $02, $1c, $02, $de, $5e, $2b        ;; 2b:5ecf ????????
-    db   $3d, $5f, $2b, $18, $cd, $5e, $2b, $1e        ;; 2b:5ed7 ????????
-    db   $22, $5b, $04, $44, $0a, $00, $1e, $cf        ;; 2b:5edf ????????
-    db   $61, $04, $4c, $02, $01, $00, $00, $00        ;; 2b:5ee7 ????????
-    db   $00, $00, $43, $61, $04, $4c, $1c, $01        ;; 2b:5eef ????????
-    db   $00, $00, $00, $00, $00, $43, $61, $04        ;; 2b:5ef7 ????????
-    db   $4c, $08, $01, $00, $00, $00, $00, $00        ;; 2b:5eff ????????
-    db   $43, $61, $04, $4c, $1e, $01, $00, $00        ;; 2b:5f07 ????????
-    db   $00, $00, $00, $43, $61, $04, $4c, $20        ;; 2b:5f0f ????????
-    db   $01, $00, $00, $00, $00, $00, $43, $61        ;; 2b:5f17 ????????
-    db   $04, $4c, $22, $01, $00, $00, $00, $00        ;; 2b:5f1f ????????
-    db   $00, $43, $61, $04, $4c, $24, $01, $00        ;; 2b:5f27 ????????
-    db   $00, $00, $00, $00, $43, $61, $04, $42        ;; 2b:5f2f ????????
-    db   $04, $01, $50, $61, $04, $20, $1e, $45        ;; 2b:5f37 ????????
-    db   $5f, $2b, $18, $cd, $5e, $2b, $4c, $24        ;; 2b:5f3f ????????
-    db   $00, $00, $00, $00, $00, $00, $00, $00        ;; 2b:5f47 ????????
-    db   $00, $82, $e4, $45, $02, $4a, $82, $73        ;; 2b:5f4f ????????
-    db   $46, $02, $1e, $1a, $61, $2b, $7e, $40        ;; 2b:5f57 ????????
-    db   $d8, $05, $40, $98, $00, $00, $01, $7e        ;; 2b:5f5f ????????
-    db   $80, $d9, $07, $80, $99, $01, $80, $00        ;; 2b:5f67 ????????
-    db   $20, $82, $b4, $47, $02, $1c, $21, $19        ;; 2b:5f6f ????????
-    db   $61, $2b, $d9, $5f, $2b, $e3, $5f, $2b        ;; 2b:5f77 ????????
-    db   $ed, $5f, $2b, $f7, $5f, $2b, $01, $60        ;; 2b:5f7f ????????
-    db   $2b, $0b, $60, $2b, $15, $60, $2b, $1f        ;; 2b:5f87 ????????
-    db   $60, $2b, $29, $60, $2b, $33, $60, $2b        ;; 2b:5f8f ????????
-    db   $3d, $60, $2b, $47, $60, $2b, $51, $60        ;; 2b:5f97 ????????
-    db   $2b, $5b, $60, $2b, $65, $60, $2b, $6f        ;; 2b:5f9f ????????
-    db   $60, $2b, $79, $60, $2b, $83, $60, $2b        ;; 2b:5fa7 ????????
-    db   $8d, $60, $2b, $97, $60, $2b, $a1, $60        ;; 2b:5faf ????????
-    db   $2b, $ab, $60, $2b, $b5, $60, $2b, $bf        ;; 2b:5fb7 ????????
-    db   $60, $2b, $c9, $60, $2b, $d3, $60, $2b        ;; 2b:5fbf ????????
-    db   $dd, $60, $2b, $e7, $60, $2b, $f1, $60        ;; 2b:5fc7 ????????
-    db   $2b, $fb, $60, $2b, $05, $61, $2b, $0f        ;; 2b:5fcf ????????
-    db   $61, $2b, $4e, $04, $01, $32, $6d, $1a        ;; 2b:5fd7 ????????
-    db   $18, $19, $61, $2b, $4e, $04, $01, $44        ;; 2b:5fdf ????????
-    db   $6d, $1a, $18, $19, $61, $2b, $4e, $04        ;; 2b:5fe7 ????????
-    db   $01, $56, $6d, $1a, $18, $19, $61, $2b        ;; 2b:5fef ????????
-    db   $4e, $04, $01, $68, $6d, $1a, $18, $19        ;; 2b:5ff7 ????????
-    db   $61, $2b, $4e, $04, $01, $7a, $6d, $1a        ;; 2b:5fff ????????
-    db   $18, $19, $61, $2b, $4e, $04, $01, $8c        ;; 2b:6007 ????????
-    db   $6d, $1a, $18, $19, $61, $2b, $4e, $04        ;; 2b:600f ????????
-    db   $01, $9e, $6d, $1a, $18, $19, $61, $2b        ;; 2b:6017 ????????
-    db   $4e, $04, $01, $b0, $6d, $1a, $18, $19        ;; 2b:601f ????????
-    db   $61, $2b, $4e, $04, $01, $c2, $6d, $1a        ;; 2b:6027 ????????
-    db   $18, $19, $61, $2b, $4e, $04, $01, $d4        ;; 2b:602f ????????
-    db   $6d, $1a, $18, $19, $61, $2b, $4e, $04        ;; 2b:6037 ????????
-    db   $01, $e6, $6d, $1a, $18, $19, $61, $2b        ;; 2b:603f ????????
-    db   $4e, $04, $01, $f8, $6d, $1a, $18, $19        ;; 2b:6047 ????????
-    db   $61, $2b, $4e, $04, $01, $0a, $6e, $1a        ;; 2b:604f ????????
-    db   $18, $19, $61, $2b, $4e, $04, $01, $1c        ;; 2b:6057 ????????
-    db   $6e, $1a, $18, $19, $61, $2b, $4e, $04        ;; 2b:605f ????????
-    db   $01, $2e, $6e, $1a, $18, $19, $61, $2b        ;; 2b:6067 ????????
-    db   $4e, $04, $01, $40, $6e, $1a, $18, $19        ;; 2b:606f ????????
-    db   $61, $2b, $4e, $04, $01, $52, $6e, $1a        ;; 2b:6077 ????????
-    db   $18, $19, $61, $2b, $4e, $04, $01, $64        ;; 2b:607f ????????
-    db   $6e, $1a, $18, $19, $61, $2b, $4e, $04        ;; 2b:6087 ????????
-    db   $01, $76, $6e, $1a, $18, $19, $61, $2b        ;; 2b:608f ????????
-    db   $4e, $04, $01, $88, $6e, $1a, $18, $19        ;; 2b:6097 ????????
-    db   $61, $2b, $4e, $04, $01, $9a, $6e, $1a        ;; 2b:609f ????????
-    db   $18, $19, $61, $2b, $4e, $04, $01, $ac        ;; 2b:60a7 ????????
-    db   $6e, $1a, $18, $19, $61, $2b, $4e, $04        ;; 2b:60af ????????
-    db   $01, $be, $6e, $1a, $18, $19, $61, $2b        ;; 2b:60b7 ????????
-    db   $4e, $04, $01, $d0, $6e, $1a, $18, $19        ;; 2b:60bf ????????
-    db   $61, $2b, $4e, $04, $01, $e2, $6e, $1a        ;; 2b:60c7 ????????
-    db   $18, $19, $61, $2b, $4e, $04, $01, $f4        ;; 2b:60cf ????????
-    db   $6e, $1a, $18, $19, $61, $2b, $4e, $04        ;; 2b:60d7 ????????
-    db   $01, $06, $6f, $1a, $18, $19, $61, $2b        ;; 2b:60df ????????
-    db   $4e, $04, $01, $18, $6f, $1a, $18, $19        ;; 2b:60e7 ????????
-    db   $61, $2b, $4e, $04, $01, $2a, $6f, $1a        ;; 2b:60ef ????????
-    db   $18, $19, $61, $2b, $4e, $04, $01, $3c        ;; 2b:60f7 ????????
-    db   $6f, $1a, $18, $19, $61, $2b, $4e, $04        ;; 2b:60ff ????????
-    db   $01, $4e, $6f, $1a, $18, $19, $61, $2b        ;; 2b:6107 ????????
-    db   $4e, $04, $01, $60, $6f, $1a, $18, $19        ;; 2b:610f ????????
-    db   $61, $2b, $20, $82, $b4, $47, $02, $1c        ;; 2b:6117 ????????
-    db   $21, $c3, $62, $2b, $83, $61, $2b, $8d        ;; 2b:611f ????????
-    db   $61, $2b, $97, $61, $2b, $a1, $61, $2b        ;; 2b:6127 ????????
-    db   $ab, $61, $2b, $b5, $61, $2b, $bf, $61        ;; 2b:612f ????????
-    db   $2b, $c9, $61, $2b, $d3, $61, $2b, $dd        ;; 2b:6137 ????????
-    db   $61, $2b, $e7, $61, $2b, $f1, $61, $2b        ;; 2b:613f ????????
-    db   $fb, $61, $2b, $05, $62, $2b, $0f, $62        ;; 2b:6147 ????????
-    db   $2b, $19, $62, $2b, $23, $62, $2b, $2d        ;; 2b:614f ????????
-    db   $62, $2b, $37, $62, $2b, $41, $62, $2b        ;; 2b:6157 ????????
-    db   $4b, $62, $2b, $55, $62, $2b, $5f, $62        ;; 2b:615f ????????
-    db   $2b, $69, $62, $2b, $73, $62, $2b, $7d        ;; 2b:6167 ????????
-    db   $62, $2b, $87, $62, $2b, $91, $62, $2b        ;; 2b:616f ????????
-    db   $9b, $62, $2b, $a5, $62, $2b, $af, $62        ;; 2b:6177 ????????
-    db   $2b, $b9, $62, $2b, $4e, $04, $01, $3e        ;; 2b:617f ????????
-    db   $6d, $1a, $18, $c3, $62, $2b, $4e, $04        ;; 2b:6187 ????????
-    db   $01, $50, $6d, $1a, $18, $c3, $62, $2b        ;; 2b:618f ????????
-    db   $4e, $04, $01, $62, $6d, $1a, $18, $c3        ;; 2b:6197 ????????
-    db   $62, $2b, $4e, $04, $01, $74, $6d, $1a        ;; 2b:619f ????????
-    db   $18, $c3, $62, $2b, $4e, $04, $01, $86        ;; 2b:61a7 ????????
-    db   $6d, $1a, $18, $c3, $62, $2b, $4e, $04        ;; 2b:61af ????????
-    db   $01, $98, $6d, $1a, $18, $c3, $62, $2b        ;; 2b:61b7 ????????
-    db   $4e, $04, $01, $aa, $6d, $1a, $18, $c3        ;; 2b:61bf ????????
-    db   $62, $2b, $4e, $04, $01, $bc, $6d, $1a        ;; 2b:61c7 ????????
-    db   $18, $c3, $62, $2b, $4e, $04, $01, $ce        ;; 2b:61cf ????????
-    db   $6d, $1a, $18, $c3, $62, $2b, $4e, $04        ;; 2b:61d7 ????????
-    db   $01, $e0, $6d, $1a, $18, $c3, $62, $2b        ;; 2b:61df ????????
-    db   $4e, $04, $01, $f2, $6d, $1a, $18, $c3        ;; 2b:61e7 ????????
-    db   $62, $2b, $4e, $04, $01, $04, $6e, $1a        ;; 2b:61ef ????????
-    db   $18, $c3, $62, $2b, $4e, $04, $01, $16        ;; 2b:61f7 ????????
-    db   $6e, $1a, $18, $c3, $62, $2b, $4e, $04        ;; 2b:61ff ????????
-    db   $01, $28, $6e, $1a, $18, $c3, $62, $2b        ;; 2b:6207 ????????
-    db   $4e, $04, $01, $3a, $6e, $1a, $18, $c3        ;; 2b:620f ????????
-    db   $62, $2b, $4e, $04, $01, $4c, $6e, $1a        ;; 2b:6217 ????????
-    db   $18, $c3, $62, $2b, $4e, $04, $01, $5e        ;; 2b:621f ????????
-    db   $6e, $1a, $18, $c3, $62, $2b, $4e, $04        ;; 2b:6227 ????????
-    db   $01, $70, $6e, $1a, $18, $c3, $62, $2b        ;; 2b:622f ????????
-    db   $4e, $04, $01, $82, $6e, $1a, $18, $c3        ;; 2b:6237 ????????
-    db   $62, $2b, $4e, $04, $01, $94, $6e, $1a        ;; 2b:623f ????????
-    db   $18, $c3, $62, $2b, $4e, $04, $01, $a6        ;; 2b:6247 ????????
-    db   $6e, $1a, $18, $c3, $62, $2b, $4e, $04        ;; 2b:624f ????????
-    db   $01, $b8, $6e, $1a, $18, $c3, $62, $2b        ;; 2b:6257 ????????
-    db   $4e, $04, $01, $ca, $6e, $1a, $18, $c3        ;; 2b:625f ????????
-    db   $62, $2b, $4e, $04, $01, $dc, $6e, $1a        ;; 2b:6267 ????????
-    db   $18, $c3, $62, $2b, $4e, $04, $01, $ee        ;; 2b:626f ????????
-    db   $6e, $1a, $18, $c3, $62, $2b, $4e, $04        ;; 2b:6277 ????????
-    db   $01, $00, $6f, $1a, $18, $c3, $62, $2b        ;; 2b:627f ????????
-    db   $4e, $04, $01, $12, $6f, $1a, $18, $c3        ;; 2b:6287 ????????
-    db   $62, $2b, $4e, $04, $01, $24, $6f, $1a        ;; 2b:628f ????????
-    db   $18, $c3, $62, $2b, $4e, $04, $01, $36        ;; 2b:6297 ????????
-    db   $6f, $1a, $18, $c3, $62, $2b, $4e, $04        ;; 2b:629f ????????
-    db   $01, $48, $6f, $1a, $18, $c3, $62, $2b        ;; 2b:62a7 ????????
-    db   $4e, $04, $01, $5a, $6f, $1a, $18, $c3        ;; 2b:62af ????????
-    db   $62, $2b, $4e, $04, $01, $6c, $6f, $1a        ;; 2b:62b7 ????????
-    db   $18, $c3, $62, $2b, $20                       ;; 2b:62bf ?????
+    Op7E_Unknown $00, $d8, $05, $00, $98, $00, $40, $02 ;; 2b:5e2f $7e $00 $d8 $05 $00 $98 $00 $40 $02
+    Op7E_Unknown $00, $d8, $07, $00, $98, $01, $40, $02 ;; 2b:5e38 $7e $00 $d8 $07 $00 $98 $01 $40 $02
+    SCRIPT_RETURN_4A                                   ;; 2b:5e41 $4a
+    Op16_SubOps 1                                      ;; 2b:5e42 $16 $01
+    SubOp_SetByte wC75A, $00                           ;; 2b:5e44 $7e $42 $00
+    Op16_SubOps 1                                      ;; 2b:5e47 $16 $01
+    SubOp_SetByte wC758, $00                           ;; 2b:5e49 $7e $40 $00
+    Op16_SubOps 1                                      ;; 2b:5e4c $16 $01
+    SubOp_SetByte wC759, $00                           ;; 2b:5e4e $7e $41 $00
+    Op16_SubOps 1                                      ;; 2b:5e51 $16 $01
+    SubOp_SetByte wC761, $00                           ;; 2b:5e53 $7e $49 $00
+    Op16_SubOps 1                                      ;; 2b:5e56 $16 $01
+    SubOp_SetByte wC75E, $00                           ;; 2b:5e58 $7e $46 $00
+    Op16_SubOps 1                                      ;; 2b:5e5b $16 $01
+    SubOp_SetByte wC75B, $00                           ;; 2b:5e5d $7e $43 $00
+    Op16_SubOps 1                                      ;; 2b:5e60 $16 $01
+    SubOp_SetByte wC75D, $00                           ;; 2b:5e62 $7e $45 $00
+    Op16_SubOps 1                                      ;; 2b:5e65 $16 $01
+    SubOp_SetByte wC75C, $00                           ;; 2b:5e67 $7e $44 $00
+    Op16_SubOps 1                                      ;; 2b:5e6a $16 $01
+    SubOp_SetByte wC75F, $00                           ;; 2b:5e6c $7e $47 $00
+    Op82_Run data_02_44c1                              ;; 2b:5e6f $82 $c1 $44 $02
+    Op82_Run data_02_47d4                              ;; 2b:5e73 $82 $d4 $47 $02
+    Op82_Run data_02_45e4                              ;; 2b:5e77 $82 $e4 $45 $02
+    SCRIPT_RETURN_4A                                   ;; 2b:5e7b $4a
+    Op82_Run data_02_4673                              ;; 2b:5e7c $82 $73 $46 $02
+    Op82_Run data_02_45e4                              ;; 2b:5e80 $82 $e4 $45 $02
+    SCRIPT_RETURN_4A                                   ;; 2b:5e84 $4a
+    Op82_Run data_02_4673                              ;; 2b:5e85 $82 $73 $46 $02
+    Op82_Run data_02_4706                              ;; 2b:5e89 $82 $06 $47 $02
+    SCRIPT_RETURN_4A                                   ;; 2b:5e8d $4a
+    Op82_Run data_02_471e                              ;; 2b:5e8e $82 $1e $47 $02
+    Op7E_Unknown $40, $d8, $05, $40, $98, $00, $00, $01 ;; 2b:5e92 $7e $40 $d8 $05 $40 $98 $00 $00 $01
+    Op7E_Unknown $80, $d9, $07, $80, $99, $01, $80, $00 ;; 2b:5e9b $7e $80 $d9 $07 $80 $99 $01 $80 $00
+    Op4C_Unknown $22, $01, $00, $00, $00, $00, $00, $00, $00, $00 ;; 2b:5ea4 $4c $22 $01 $00 $00 $00 $00 $00 $00 $00 $00
+    Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $00, $00, $00 ;; 2b:5eaf $4c $08 $01 $04 $00 $00 $00 $00 $00 $00 $00
+    Op1E_Call call_2b_5f70                             ;; 2b:5eba $1e $70 $5f $2b
+    Op4E_Unknown_StoreValue 5, $01, $0e, $6d, $1a      ;; 2b:5ebe $4e $05 $01 $0e $6d $1a
+    Op4E_Unknown_StoreValue 6, $01, $20, $6d, $1a      ;; 2b:5ec4 $4e $06 $01 $20 $6d $1a
+    Op44_Unknown $0a, $00                              ;; 2b:5eca $44 $0a $00
+
+call_2b_5ecd:
+    SCRIPT_RETURN_4A                                   ;; 2b:5ecd $4a
+    Op82_Run data_02_43cc                              ;; 2b:5ece $82 $cc $43 $02
+    Op1C_TableJump 2                                   ;; 2b:5ed2 $1c $02
+    SCRIPT_POINTER call_2b_5ede                        ;; 2b:5ed4 $de $5e $2b
+    SCRIPT_POINTER call_2b_5f3d                        ;; 2b:5ed7 $3d $5f $2b
+    Op18_Jump call_2b_5ecd                             ;; 2b:5eda $18 $cd $5e $2b
+
+call_2b_5ede:
+    Op1E_Call call_04_5b22                             ;; 2b:5ede $1e $22 $5b $04
+    Op44_Unknown $0a, $00                              ;; 2b:5ee2 $44 $0a $00
+    Op1E_Call call_04_61cf                             ;; 2b:5ee5 $1e $cf $61 $04
+    Op4C_Unknown $02, $01, $00, $00, $00, $00, $00, $43, $61, $04 ;; 2b:5ee9 $4c $02 $01 $00 $00 $00 $00 $00 $43 $61 $04
+    Op4C_Unknown $1c, $01, $00, $00, $00, $00, $00, $43, $61, $04 ;; 2b:5ef4 $4c $1c $01 $00 $00 $00 $00 $00 $43 $61 $04
+    Op4C_Unknown $08, $01, $00, $00, $00, $00, $00, $43, $61, $04 ;; 2b:5eff $4c $08 $01 $00 $00 $00 $00 $00 $43 $61 $04
+    Op4C_Unknown $1e, $01, $00, $00, $00, $00, $00, $43, $61, $04 ;; 2b:5f0a $4c $1e $01 $00 $00 $00 $00 $00 $43 $61 $04
+    Op4C_Unknown $20, $01, $00, $00, $00, $00, $00, $43, $61, $04 ;; 2b:5f15 $4c $20 $01 $00 $00 $00 $00 $00 $43 $61 $04
+    Op4C_Unknown $22, $01, $00, $00, $00, $00, $00, $43, $61, $04 ;; 2b:5f20 $4c $22 $01 $00 $00 $00 $00 $00 $43 $61 $04
+    Op4C_Unknown $24, $01, $00, $00, $00, $00, $00, $43, $61, $04 ;; 2b:5f2b $4c $24 $01 $00 $00 $00 $00 $00 $43 $61 $04
+    Op42_Unknown_StoreValue 4, $01, $50, $61, $04      ;; 2b:5f36 $42 $04 $01 $50 $61 $04
+    SCRIPT_RETURN_20                                   ;; 2b:5f3c $20
+
+call_2b_5f3d:
+    Op1E_Call call_2b_5f45                             ;; 2b:5f3d $1e $45 $5f $2b
+    Op18_Jump call_2b_5ecd                             ;; 2b:5f41 $18 $cd $5e $2b
+
+call_2b_5f45:
+    Op4C_Unknown $24, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 2b:5f45 $4c $24 $00 $00 $00 $00 $00 $00 $00 $00 $00
+    Op82_Run data_02_45e4                              ;; 2b:5f50 $82 $e4 $45 $02
+    SCRIPT_RETURN_4A                                   ;; 2b:5f54 $4a
+    Op82_Run data_02_4673                              ;; 2b:5f55 $82 $73 $46 $02
+    Op1E_Call call_2b_611a                             ;; 2b:5f59 $1e $1a $61 $2b
+    Op7E_Unknown $40, $d8, $05, $40, $98, $00, $00, $01 ;; 2b:5f5d $7e $40 $d8 $05 $40 $98 $00 $00 $01
+    Op7E_Unknown $80, $d9, $07, $80, $99, $01, $80, $00 ;; 2b:5f66 $7e $80 $d9 $07 $80 $99 $01 $80 $00
+    SCRIPT_RETURN_20                                   ;; 2b:5f6f $20
+
+call_2b_5f70:
+    Op82_Run data_02_47b4                              ;; 2b:5f70 $82 $b4 $47 $02
+    Op1C_TableJump 33                                  ;; 2b:5f74 $1c $21
+    SCRIPT_POINTER call_2b_6119                        ;; 2b:5f76 $19 $61 $2b
+    SCRIPT_POINTER call_2b_5fd9                        ;; 2b:5f79 $d9 $5f $2b
+    SCRIPT_POINTER call_2b_5fe3                        ;; 2b:5f7c $e3 $5f $2b
+    SCRIPT_POINTER call_2b_5fed                        ;; 2b:5f7f $ed $5f $2b
+    SCRIPT_POINTER call_2b_5ff7                        ;; 2b:5f82 $f7 $5f $2b
+    SCRIPT_POINTER call_2b_6001                        ;; 2b:5f85 $01 $60 $2b
+    SCRIPT_POINTER call_2b_600b                        ;; 2b:5f88 $0b $60 $2b
+    SCRIPT_POINTER call_2b_6015                        ;; 2b:5f8b $15 $60 $2b
+    SCRIPT_POINTER call_2b_601f                        ;; 2b:5f8e $1f $60 $2b
+    SCRIPT_POINTER call_2b_6029                        ;; 2b:5f91 $29 $60 $2b
+    SCRIPT_POINTER call_2b_6033                        ;; 2b:5f94 $33 $60 $2b
+    SCRIPT_POINTER call_2b_603d                        ;; 2b:5f97 $3d $60 $2b
+    SCRIPT_POINTER call_2b_6047                        ;; 2b:5f9a $47 $60 $2b
+    SCRIPT_POINTER call_2b_6051                        ;; 2b:5f9d $51 $60 $2b
+    SCRIPT_POINTER call_2b_605b                        ;; 2b:5fa0 $5b $60 $2b
+    SCRIPT_POINTER call_2b_6065                        ;; 2b:5fa3 $65 $60 $2b
+    SCRIPT_POINTER call_2b_606f                        ;; 2b:5fa6 $6f $60 $2b
+    SCRIPT_POINTER call_2b_6079                        ;; 2b:5fa9 $79 $60 $2b
+    SCRIPT_POINTER call_2b_6083                        ;; 2b:5fac $83 $60 $2b
+    SCRIPT_POINTER call_2b_608d                        ;; 2b:5faf $8d $60 $2b
+    SCRIPT_POINTER call_2b_6097                        ;; 2b:5fb2 $97 $60 $2b
+    SCRIPT_POINTER call_2b_60a1                        ;; 2b:5fb5 $a1 $60 $2b
+    SCRIPT_POINTER call_2b_60ab                        ;; 2b:5fb8 $ab $60 $2b
+    SCRIPT_POINTER call_2b_60b5                        ;; 2b:5fbb $b5 $60 $2b
+    SCRIPT_POINTER call_2b_60bf                        ;; 2b:5fbe $bf $60 $2b
+    SCRIPT_POINTER call_2b_60c9                        ;; 2b:5fc1 $c9 $60 $2b
+    SCRIPT_POINTER call_2b_60d3                        ;; 2b:5fc4 $d3 $60 $2b
+    SCRIPT_POINTER call_2b_60dd                        ;; 2b:5fc7 $dd $60 $2b
+    SCRIPT_POINTER call_2b_60e7                        ;; 2b:5fca $e7 $60 $2b
+    SCRIPT_POINTER call_2b_60f1                        ;; 2b:5fcd $f1 $60 $2b
+    SCRIPT_POINTER call_2b_60fb                        ;; 2b:5fd0 $fb $60 $2b
+    SCRIPT_POINTER call_2b_6105                        ;; 2b:5fd3 $05 $61 $2b
+    SCRIPT_POINTER call_2b_610f                        ;; 2b:5fd6 $0f $61 $2b
+
+call_2b_5fd9:
+    Op4E_Unknown_StoreValue 4, $01, $32, $6d, $1a      ;; 2b:5fd9 $4e $04 $01 $32 $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:5fdf $18 $19 $61 $2b
+
+call_2b_5fe3:
+    Op4E_Unknown_StoreValue 4, $01, $44, $6d, $1a      ;; 2b:5fe3 $4e $04 $01 $44 $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:5fe9 $18 $19 $61 $2b
+
+call_2b_5fed:
+    Op4E_Unknown_StoreValue 4, $01, $56, $6d, $1a      ;; 2b:5fed $4e $04 $01 $56 $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:5ff3 $18 $19 $61 $2b
+
+call_2b_5ff7:
+    Op4E_Unknown_StoreValue 4, $01, $68, $6d, $1a      ;; 2b:5ff7 $4e $04 $01 $68 $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:5ffd $18 $19 $61 $2b
+
+call_2b_6001:
+    Op4E_Unknown_StoreValue 4, $01, $7a, $6d, $1a      ;; 2b:6001 $4e $04 $01 $7a $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6007 $18 $19 $61 $2b
+
+call_2b_600b:
+    Op4E_Unknown_StoreValue 4, $01, $8c, $6d, $1a      ;; 2b:600b $4e $04 $01 $8c $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6011 $18 $19 $61 $2b
+
+call_2b_6015:
+    Op4E_Unknown_StoreValue 4, $01, $9e, $6d, $1a      ;; 2b:6015 $4e $04 $01 $9e $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:601b $18 $19 $61 $2b
+
+call_2b_601f:
+    Op4E_Unknown_StoreValue 4, $01, $b0, $6d, $1a      ;; 2b:601f $4e $04 $01 $b0 $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6025 $18 $19 $61 $2b
+
+call_2b_6029:
+    Op4E_Unknown_StoreValue 4, $01, $c2, $6d, $1a      ;; 2b:6029 $4e $04 $01 $c2 $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:602f $18 $19 $61 $2b
+
+call_2b_6033:
+    Op4E_Unknown_StoreValue 4, $01, $d4, $6d, $1a      ;; 2b:6033 $4e $04 $01 $d4 $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6039 $18 $19 $61 $2b
+
+call_2b_603d:
+    Op4E_Unknown_StoreValue 4, $01, $e6, $6d, $1a      ;; 2b:603d $4e $04 $01 $e6 $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6043 $18 $19 $61 $2b
+
+call_2b_6047:
+    Op4E_Unknown_StoreValue 4, $01, $f8, $6d, $1a      ;; 2b:6047 $4e $04 $01 $f8 $6d $1a
+    Op18_Jump call_2b_6119                             ;; 2b:604d $18 $19 $61 $2b
+
+call_2b_6051:
+    Op4E_Unknown_StoreValue 4, $01, $0a, $6e, $1a      ;; 2b:6051 $4e $04 $01 $0a $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6057 $18 $19 $61 $2b
+
+call_2b_605b:
+    Op4E_Unknown_StoreValue 4, $01, $1c, $6e, $1a      ;; 2b:605b $4e $04 $01 $1c $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6061 $18 $19 $61 $2b
+
+call_2b_6065:
+    Op4E_Unknown_StoreValue 4, $01, $2e, $6e, $1a      ;; 2b:6065 $4e $04 $01 $2e $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:606b $18 $19 $61 $2b
+
+call_2b_606f:
+    Op4E_Unknown_StoreValue 4, $01, $40, $6e, $1a      ;; 2b:606f $4e $04 $01 $40 $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6075 $18 $19 $61 $2b
+
+call_2b_6079:
+    Op4E_Unknown_StoreValue 4, $01, $52, $6e, $1a      ;; 2b:6079 $4e $04 $01 $52 $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:607f $18 $19 $61 $2b
+
+call_2b_6083:
+    Op4E_Unknown_StoreValue 4, $01, $64, $6e, $1a      ;; 2b:6083 $4e $04 $01 $64 $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6089 $18 $19 $61 $2b
+
+call_2b_608d:
+    Op4E_Unknown_StoreValue 4, $01, $76, $6e, $1a      ;; 2b:608d $4e $04 $01 $76 $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6093 $18 $19 $61 $2b
+
+call_2b_6097:
+    Op4E_Unknown_StoreValue 4, $01, $88, $6e, $1a      ;; 2b:6097 $4e $04 $01 $88 $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:609d $18 $19 $61 $2b
+
+call_2b_60a1:
+    Op4E_Unknown_StoreValue 4, $01, $9a, $6e, $1a      ;; 2b:60a1 $4e $04 $01 $9a $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:60a7 $18 $19 $61 $2b
+
+call_2b_60ab:
+    Op4E_Unknown_StoreValue 4, $01, $ac, $6e, $1a      ;; 2b:60ab $4e $04 $01 $ac $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:60b1 $18 $19 $61 $2b
+
+call_2b_60b5:
+    Op4E_Unknown_StoreValue 4, $01, $be, $6e, $1a      ;; 2b:60b5 $4e $04 $01 $be $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:60bb $18 $19 $61 $2b
+
+call_2b_60bf:
+    Op4E_Unknown_StoreValue 4, $01, $d0, $6e, $1a      ;; 2b:60bf $4e $04 $01 $d0 $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:60c5 $18 $19 $61 $2b
+
+call_2b_60c9:
+    Op4E_Unknown_StoreValue 4, $01, $e2, $6e, $1a      ;; 2b:60c9 $4e $04 $01 $e2 $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:60cf $18 $19 $61 $2b
+
+call_2b_60d3:
+    Op4E_Unknown_StoreValue 4, $01, $f4, $6e, $1a      ;; 2b:60d3 $4e $04 $01 $f4 $6e $1a
+    Op18_Jump call_2b_6119                             ;; 2b:60d9 $18 $19 $61 $2b
+
+call_2b_60dd:
+    Op4E_Unknown_StoreValue 4, $01, $06, $6f, $1a      ;; 2b:60dd $4e $04 $01 $06 $6f $1a
+    Op18_Jump call_2b_6119                             ;; 2b:60e3 $18 $19 $61 $2b
+
+call_2b_60e7:
+    Op4E_Unknown_StoreValue 4, $01, $18, $6f, $1a      ;; 2b:60e7 $4e $04 $01 $18 $6f $1a
+    Op18_Jump call_2b_6119                             ;; 2b:60ed $18 $19 $61 $2b
+
+call_2b_60f1:
+    Op4E_Unknown_StoreValue 4, $01, $2a, $6f, $1a      ;; 2b:60f1 $4e $04 $01 $2a $6f $1a
+    Op18_Jump call_2b_6119                             ;; 2b:60f7 $18 $19 $61 $2b
+
+call_2b_60fb:
+    Op4E_Unknown_StoreValue 4, $01, $3c, $6f, $1a      ;; 2b:60fb $4e $04 $01 $3c $6f $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6101 $18 $19 $61 $2b
+
+call_2b_6105:
+    Op4E_Unknown_StoreValue 4, $01, $4e, $6f, $1a      ;; 2b:6105 $4e $04 $01 $4e $6f $1a
+    Op18_Jump call_2b_6119                             ;; 2b:610b $18 $19 $61 $2b
+
+call_2b_610f:
+    Op4E_Unknown_StoreValue 4, $01, $60, $6f, $1a      ;; 2b:610f $4e $04 $01 $60 $6f $1a
+    Op18_Jump call_2b_6119                             ;; 2b:6115 $18 $19 $61 $2b
+
+call_2b_6119:
+    SCRIPT_RETURN_20                                   ;; 2b:6119 $20
+
+call_2b_611a:
+    Op82_Run data_02_47b4                              ;; 2b:611a $82 $b4 $47 $02
+    Op1C_TableJump 33                                  ;; 2b:611e $1c $21
+    SCRIPT_POINTER call_2b_62c3                        ;; 2b:6120 $c3 $62 $2b
+    SCRIPT_POINTER call_2b_6183                        ;; 2b:6123 $83 $61 $2b
+    SCRIPT_POINTER call_2b_618d                        ;; 2b:6126 $8d $61 $2b
+    SCRIPT_POINTER call_2b_6197                        ;; 2b:6129 $97 $61 $2b
+    SCRIPT_POINTER call_2b_61a1                        ;; 2b:612c $a1 $61 $2b
+    SCRIPT_POINTER call_2b_61ab                        ;; 2b:612f $ab $61 $2b
+    SCRIPT_POINTER call_2b_61b5                        ;; 2b:6132 $b5 $61 $2b
+    SCRIPT_POINTER call_2b_61bf                        ;; 2b:6135 $bf $61 $2b
+    SCRIPT_POINTER call_2b_61c9                        ;; 2b:6138 $c9 $61 $2b
+    SCRIPT_POINTER call_2b_61d3                        ;; 2b:613b $d3 $61 $2b
+    SCRIPT_POINTER call_2b_61dd                        ;; 2b:613e $dd $61 $2b
+    SCRIPT_POINTER call_2b_61e7                        ;; 2b:6141 $e7 $61 $2b
+    SCRIPT_POINTER call_2b_61f1                        ;; 2b:6144 $f1 $61 $2b
+    SCRIPT_POINTER call_2b_61fb                        ;; 2b:6147 $fb $61 $2b
+    SCRIPT_POINTER call_2b_6205                        ;; 2b:614a $05 $62 $2b
+    SCRIPT_POINTER call_2b_620f                        ;; 2b:614d $0f $62 $2b
+    SCRIPT_POINTER call_2b_6219                        ;; 2b:6150 $19 $62 $2b
+    SCRIPT_POINTER call_2b_6223                        ;; 2b:6153 $23 $62 $2b
+    SCRIPT_POINTER call_2b_622d                        ;; 2b:6156 $2d $62 $2b
+    SCRIPT_POINTER call_2b_6237                        ;; 2b:6159 $37 $62 $2b
+    SCRIPT_POINTER call_2b_6241                        ;; 2b:615c $41 $62 $2b
+    SCRIPT_POINTER call_2b_624b                        ;; 2b:615f $4b $62 $2b
+    SCRIPT_POINTER call_2b_6255                        ;; 2b:6162 $55 $62 $2b
+    SCRIPT_POINTER call_2b_625f                        ;; 2b:6165 $5f $62 $2b
+    SCRIPT_POINTER call_2b_6269                        ;; 2b:6168 $69 $62 $2b
+    SCRIPT_POINTER call_2b_6273                        ;; 2b:616b $73 $62 $2b
+    SCRIPT_POINTER call_2b_627d                        ;; 2b:616e $7d $62 $2b
+    SCRIPT_POINTER call_2b_6287                        ;; 2b:6171 $87 $62 $2b
+    SCRIPT_POINTER call_2b_6291                        ;; 2b:6174 $91 $62 $2b
+    SCRIPT_POINTER call_2b_629b                        ;; 2b:6177 $9b $62 $2b
+    SCRIPT_POINTER call_2b_62a5                        ;; 2b:617a $a5 $62 $2b
+    SCRIPT_POINTER call_2b_62af                        ;; 2b:617d $af $62 $2b
+    SCRIPT_POINTER call_2b_62b9                        ;; 2b:6180 $b9 $62 $2b
+
+call_2b_6183:
+    Op4E_Unknown_StoreValue 4, $01, $3e, $6d, $1a      ;; 2b:6183 $4e $04 $01 $3e $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6189 $18 $c3 $62 $2b
+
+call_2b_618d:
+    Op4E_Unknown_StoreValue 4, $01, $50, $6d, $1a      ;; 2b:618d $4e $04 $01 $50 $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6193 $18 $c3 $62 $2b
+
+call_2b_6197:
+    Op4E_Unknown_StoreValue 4, $01, $62, $6d, $1a      ;; 2b:6197 $4e $04 $01 $62 $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:619d $18 $c3 $62 $2b
+
+call_2b_61a1:
+    Op4E_Unknown_StoreValue 4, $01, $74, $6d, $1a      ;; 2b:61a1 $4e $04 $01 $74 $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:61a7 $18 $c3 $62 $2b
+
+call_2b_61ab:
+    Op4E_Unknown_StoreValue 4, $01, $86, $6d, $1a      ;; 2b:61ab $4e $04 $01 $86 $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:61b1 $18 $c3 $62 $2b
+
+call_2b_61b5:
+    Op4E_Unknown_StoreValue 4, $01, $98, $6d, $1a      ;; 2b:61b5 $4e $04 $01 $98 $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:61bb $18 $c3 $62 $2b
+
+call_2b_61bf:
+    Op4E_Unknown_StoreValue 4, $01, $aa, $6d, $1a      ;; 2b:61bf $4e $04 $01 $aa $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:61c5 $18 $c3 $62 $2b
+
+call_2b_61c9:
+    Op4E_Unknown_StoreValue 4, $01, $bc, $6d, $1a      ;; 2b:61c9 $4e $04 $01 $bc $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:61cf $18 $c3 $62 $2b
+
+call_2b_61d3:
+    Op4E_Unknown_StoreValue 4, $01, $ce, $6d, $1a      ;; 2b:61d3 $4e $04 $01 $ce $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:61d9 $18 $c3 $62 $2b
+
+call_2b_61dd:
+    Op4E_Unknown_StoreValue 4, $01, $e0, $6d, $1a      ;; 2b:61dd $4e $04 $01 $e0 $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:61e3 $18 $c3 $62 $2b
+
+call_2b_61e7:
+    Op4E_Unknown_StoreValue 4, $01, $f2, $6d, $1a      ;; 2b:61e7 $4e $04 $01 $f2 $6d $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:61ed $18 $c3 $62 $2b
+
+call_2b_61f1:
+    Op4E_Unknown_StoreValue 4, $01, $04, $6e, $1a      ;; 2b:61f1 $4e $04 $01 $04 $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:61f7 $18 $c3 $62 $2b
+
+call_2b_61fb:
+    Op4E_Unknown_StoreValue 4, $01, $16, $6e, $1a      ;; 2b:61fb $4e $04 $01 $16 $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6201 $18 $c3 $62 $2b
+
+call_2b_6205:
+    Op4E_Unknown_StoreValue 4, $01, $28, $6e, $1a      ;; 2b:6205 $4e $04 $01 $28 $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:620b $18 $c3 $62 $2b
+
+call_2b_620f:
+    Op4E_Unknown_StoreValue 4, $01, $3a, $6e, $1a      ;; 2b:620f $4e $04 $01 $3a $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6215 $18 $c3 $62 $2b
+
+call_2b_6219:
+    Op4E_Unknown_StoreValue 4, $01, $4c, $6e, $1a      ;; 2b:6219 $4e $04 $01 $4c $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:621f $18 $c3 $62 $2b
+
+call_2b_6223:
+    Op4E_Unknown_StoreValue 4, $01, $5e, $6e, $1a      ;; 2b:6223 $4e $04 $01 $5e $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6229 $18 $c3 $62 $2b
+
+call_2b_622d:
+    Op4E_Unknown_StoreValue 4, $01, $70, $6e, $1a      ;; 2b:622d $4e $04 $01 $70 $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6233 $18 $c3 $62 $2b
+
+call_2b_6237:
+    Op4E_Unknown_StoreValue 4, $01, $82, $6e, $1a      ;; 2b:6237 $4e $04 $01 $82 $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:623d $18 $c3 $62 $2b
+
+call_2b_6241:
+    Op4E_Unknown_StoreValue 4, $01, $94, $6e, $1a      ;; 2b:6241 $4e $04 $01 $94 $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6247 $18 $c3 $62 $2b
+
+call_2b_624b:
+    Op4E_Unknown_StoreValue 4, $01, $a6, $6e, $1a      ;; 2b:624b $4e $04 $01 $a6 $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6251 $18 $c3 $62 $2b
+
+call_2b_6255:
+    Op4E_Unknown_StoreValue 4, $01, $b8, $6e, $1a      ;; 2b:6255 $4e $04 $01 $b8 $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:625b $18 $c3 $62 $2b
+
+call_2b_625f:
+    Op4E_Unknown_StoreValue 4, $01, $ca, $6e, $1a      ;; 2b:625f $4e $04 $01 $ca $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6265 $18 $c3 $62 $2b
+
+call_2b_6269:
+    Op4E_Unknown_StoreValue 4, $01, $dc, $6e, $1a      ;; 2b:6269 $4e $04 $01 $dc $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:626f $18 $c3 $62 $2b
+
+call_2b_6273:
+    Op4E_Unknown_StoreValue 4, $01, $ee, $6e, $1a      ;; 2b:6273 $4e $04 $01 $ee $6e $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6279 $18 $c3 $62 $2b
+
+call_2b_627d:
+    Op4E_Unknown_StoreValue 4, $01, $00, $6f, $1a      ;; 2b:627d $4e $04 $01 $00 $6f $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6283 $18 $c3 $62 $2b
+
+call_2b_6287:
+    Op4E_Unknown_StoreValue 4, $01, $12, $6f, $1a      ;; 2b:6287 $4e $04 $01 $12 $6f $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:628d $18 $c3 $62 $2b
+
+call_2b_6291:
+    Op4E_Unknown_StoreValue 4, $01, $24, $6f, $1a      ;; 2b:6291 $4e $04 $01 $24 $6f $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:6297 $18 $c3 $62 $2b
+
+call_2b_629b:
+    Op4E_Unknown_StoreValue 4, $01, $36, $6f, $1a      ;; 2b:629b $4e $04 $01 $36 $6f $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:62a1 $18 $c3 $62 $2b
+
+call_2b_62a5:
+    Op4E_Unknown_StoreValue 4, $01, $48, $6f, $1a      ;; 2b:62a5 $4e $04 $01 $48 $6f $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:62ab $18 $c3 $62 $2b
+
+call_2b_62af:
+    Op4E_Unknown_StoreValue 4, $01, $5a, $6f, $1a      ;; 2b:62af $4e $04 $01 $5a $6f $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:62b5 $18 $c3 $62 $2b
+
+call_2b_62b9:
+    Op4E_Unknown_StoreValue 4, $01, $6c, $6f, $1a      ;; 2b:62b9 $4e $04 $01 $6c $6f $1a
+    Op18_Jump call_2b_62c3                             ;; 2b:62bf $18 $c3 $62 $2b
+
+call_2b_62c3:
+    SCRIPT_RETURN_20                                   ;; 2b:62c3 $20
 
 call_2b_62c4:
     Op1E_Call call_04_5f51                             ;; 2b:62c4 $1e $51 $5f $04
@@ -2359,30 +2624,70 @@ call_2b_62c4:
     Op4C_Unknown $26, $01, $04, $08, $00, $1c, $00, $c4, $6f, $1a ;; 2b:62ff $4c $26 $01 $04 $08 $00 $1c $00 $c4 $6f $1a
     Op82_Run data_02_4e3b                              ;; 2b:630a $82 $3b $4e $02
     Op82_Run data_02_54e1                              ;; 2b:630e $82 $e1 $54 $02
-    db   $7e, $00, $d8, $05, $00, $98, $00, $40        ;; 2b:6312 ????????
-    db   $02, $7e, $00, $d8, $07, $00, $98, $01        ;; 2b:631a ????????
-    db   $40, $02, $16, $01, $7e, $42, $00, $16        ;; 2b:6322 ????????
-    db   $01, $7e, $40, $00, $16, $01, $7e, $41        ;; 2b:632a ????????
-    db   $00, $16, $01, $7e, $49, $00, $16, $01        ;; 2b:6332 ????????
-    db   $7e, $46, $00, $16, $01, $7e, $43, $00        ;; 2b:633a ????????
-    db   $16, $01, $7e, $45, $00, $16, $01, $7e        ;; 2b:6342 ????????
-    db   $44, $00, $16, $01, $7e, $47, $00, $50        ;; 2b:634a ????????
-    db   $87, $d5, $02, $00, $52, $88, $d5, $02        ;; 2b:6352 ????????
-    db   $00, $00, $16, $01, $9e, $08, $00, $80        ;; 2b:635a ????????
-    db   $82, $44, $68, $01, $52, $94, $c6, $00        ;; 2b:6362 ????????
-    db   $00, $00, $4e, $04, $01, $72, $6f, $1a        ;; 2b:636a ????????
-    db   $4e, $05, $01, $84, $6f, $1a, $44, $08        ;; 2b:6372 ????????
-    db   $00, $4a, $82, $87, $55, $02, $1c, $03        ;; 2b:637a ????????
-    db   $8f, $63, $2b, $9a, $63, $2b, $ab, $63        ;; 2b:6382 ????????
-    db   $2b, $18, $7b, $63, $2b, $16, $01, $9e        ;; 2b:638a ????????
-    db   $08, $00, $80, $82, $44, $68, $01, $20        ;; 2b:6392 ????????
-    db   $82, $73, $56, $02, $7e, $00, $d8, $05        ;; 2b:639a ????????
-    db   $00, $98, $00, $40, $02, $18, $7b, $63        ;; 2b:63a2 ????????
-    db   $2b, $82, $d6, $56, $02, $1c, $02, $bb        ;; 2b:63aa ????????
-    db   $63, $2b, $c3, $63, $2b, $18, $7b, $63        ;; 2b:63b2 ????????
-    db   $2b, $82, $eb, $56, $02, $18, $7b, $63        ;; 2b:63ba ????????
-    db   $2b, $82, $56, $57, $02, $18, $7b, $63        ;; 2b:63c2 ????????
-    db   $2b                                           ;; 2b:63ca ?
+    Op7E_Unknown $00, $d8, $05, $00, $98, $00, $40, $02 ;; 2b:6312 $7e $00 $d8 $05 $00 $98 $00 $40 $02
+    Op7E_Unknown $00, $d8, $07, $00, $98, $01, $40, $02 ;; 2b:631b $7e $00 $d8 $07 $00 $98 $01 $40 $02
+    Op16_SubOps 1                                      ;; 2b:6324 $16 $01
+    SubOp_SetByte wC75A, $00                           ;; 2b:6326 $7e $42 $00
+    Op16_SubOps 1                                      ;; 2b:6329 $16 $01
+    SubOp_SetByte wC758, $00                           ;; 2b:632b $7e $40 $00
+    Op16_SubOps 1                                      ;; 2b:632e $16 $01
+    SubOp_SetByte wC759, $00                           ;; 2b:6330 $7e $41 $00
+    Op16_SubOps 1                                      ;; 2b:6333 $16 $01
+    SubOp_SetByte wC761, $00                           ;; 2b:6335 $7e $49 $00
+    Op16_SubOps 1                                      ;; 2b:6338 $16 $01
+    SubOp_SetByte wC75E, $00                           ;; 2b:633a $7e $46 $00
+    Op16_SubOps 1                                      ;; 2b:633d $16 $01
+    SubOp_SetByte wC75B, $00                           ;; 2b:633f $7e $43 $00
+    Op16_SubOps 1                                      ;; 2b:6342 $16 $01
+    SubOp_SetByte wC75D, $00                           ;; 2b:6344 $7e $45 $00
+    Op16_SubOps 1                                      ;; 2b:6347 $16 $01
+    SubOp_SetByte wC75C, $00                           ;; 2b:6349 $7e $44 $00
+    Op16_SubOps 1                                      ;; 2b:634c $16 $01
+    SubOp_SetByte wC75F, $00                           ;; 2b:634e $7e $47 $00
+    Op50_WriteByte w2_D587, $02, $00                   ;; 2b:6351 $50 $87 $d5 $02 $00
+    Op52_WriteBytes w2_D588, $02, $00, $00             ;; 2b:6356 $52 $88 $d5 $02 $00 $00
+    Op16_SubOps 1                                      ;; 2b:635c $16 $01
+    SubOp_SetWord wC720, $8000                         ;; 2b:635e $9e $08 $00 $80
+    Op82_Run data_01_6844                              ;; 2b:6362 $82 $44 $68 $01
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 2b:6366 $52 $94 $c6 $00 $00 $00
+    Op4E_Unknown_StoreValue 4, $01, $72, $6f, $1a      ;; 2b:636c $4e $04 $01 $72 $6f $1a
+    Op4E_Unknown_StoreValue 5, $01, $84, $6f, $1a      ;; 2b:6372 $4e $05 $01 $84 $6f $1a
+    Op44_Unknown $08, $00                              ;; 2b:6378 $44 $08 $00
+
+call_2b_637b:
+    SCRIPT_RETURN_4A                                   ;; 2b:637b $4a
+    Op82_Run data_02_5587                              ;; 2b:637c $82 $87 $55 $02
+    Op1C_TableJump 3                                   ;; 2b:6380 $1c $03
+    SCRIPT_POINTER call_2b_638f                        ;; 2b:6382 $8f $63 $2b
+    SCRIPT_POINTER call_2b_639a                        ;; 2b:6385 $9a $63 $2b
+    SCRIPT_POINTER call_2b_63ab                        ;; 2b:6388 $ab $63 $2b
+    Op18_Jump call_2b_637b                             ;; 2b:638b $18 $7b $63 $2b
+
+call_2b_638f:
+    Op16_SubOps 1                                      ;; 2b:638f $16 $01
+    SubOp_SetWord wC720, $8000                         ;; 2b:6391 $9e $08 $00 $80
+    Op82_Run data_01_6844                              ;; 2b:6395 $82 $44 $68 $01
+    SCRIPT_RETURN_20                                   ;; 2b:6399 $20
+
+call_2b_639a:
+    Op82_Run data_02_5673                              ;; 2b:639a $82 $73 $56 $02
+    Op7E_Unknown $00, $d8, $05, $00, $98, $00, $40, $02 ;; 2b:639e $7e $00 $d8 $05 $00 $98 $00 $40 $02
+    Op18_Jump call_2b_637b                             ;; 2b:63a7 $18 $7b $63 $2b
+
+call_2b_63ab:
+    Op82_Run data_02_56d6                              ;; 2b:63ab $82 $d6 $56 $02
+    Op1C_TableJump 2                                   ;; 2b:63af $1c $02
+    SCRIPT_POINTER call_2b_63bb                        ;; 2b:63b1 $bb $63 $2b
+    SCRIPT_POINTER call_2b_63c3                        ;; 2b:63b4 $c3 $63 $2b
+    Op18_Jump call_2b_637b                             ;; 2b:63b7 $18 $7b $63 $2b
+
+call_2b_63bb:
+    Op82_Run data_02_56eb                              ;; 2b:63bb $82 $eb $56 $02
+    Op18_Jump call_2b_637b                             ;; 2b:63bf $18 $7b $63 $2b
+
+call_2b_63c3:
+    Op82_Run data_02_5756                              ;; 2b:63c3 $82 $56 $57 $02
+    Op18_Jump call_2b_637b                             ;; 2b:63c7 $18 $7b $63 $2b
 
 call_2b_63cb:
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 2b:63cb $68 $01 $64 $c7 $fd $d1 $01
