@@ -6,6 +6,8 @@ INCLUDE "include/charmaps.inc"
 INCLUDE "include/constants.inc"
 
 SECTION "wram7", WRAMX[$d000], BANK[$7]
+
+w7_D000:
     ds 2048                                            ;; d000
 
 w7_D800:

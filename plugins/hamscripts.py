@@ -161,7 +161,8 @@ db ($9e + ((\1 - $c718) >> 8))
 db ((\1 - $c718) & $FF)
 dw \2
 """
-        RomInfo.macros["SubOp_DefaultCase"] = "db \\1\ndb \\2\ndb \\3\ndb \\4\n"
+        RomInfo.macros["SubOp_DefaultCase"] = "db \\1\ndb \\2\ndb \\3\ndb \\4"
+        RomInfo.macros["SubOp_DefaultCase_75"] = "db \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
 
         self.subOpArgsList = []
         size = 0
@@ -206,8 +207,15 @@ dw \2
                     byte2 = memory.byte(addr + size + 1)
                     byte3 = memory.byte(addr + size + 2)
                     byte4 = memory.byte(addr + size + 3)
-                    self.subOpArgsList.append((4, "SubOp_DefaultCase", "$%02x" % byte1, "$%02x" % byte2, "$%02x" % byte3, "$%02x" % byte4))
-                    size += 4
+                    # HOWEVER, 75 seems to take an extra 2 bytes.
+                    if byte1 == 0x75:
+                        byte5 = memory.byte(addr + size + 4)
+                        byte6 = memory.byte(addr + size + 5)
+                        self.subOpArgsList.append((6, "SubOp_DefaultCase_75", "$%02x" % byte1, "$%02x" % byte2, "$%02x" % byte3, "$%02x" % byte4, "$%02x" % byte5, "$%02x" % byte6))
+                        size += 6
+                    else:
+                        self.subOpArgsList.append((4, "SubOp_DefaultCase", "$%02x" % byte1, "$%02x" % byte2, "$%02x" % byte3, "$%02x" % byte4))
+                        size += 4
 
         self.resize(size)
 

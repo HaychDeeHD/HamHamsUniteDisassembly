@@ -282,6 +282,14 @@ db \2
 db \3
 db \4
 ENDM
+MACRO SubOp_DefaultCase_75
+db \1
+db \2
+db \3
+db \4
+db \5
+db \6
+ENDM
 MACRO SubOp_SetByte
 
 db ($7e + ((\1 - $c718) >> 8))

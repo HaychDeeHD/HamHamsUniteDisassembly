@@ -89,7 +89,7 @@ The length column in this table excludes the opcode byte.
 | -- | -     | ----             | [Op00](#op00)    |
 | -- | -     | ----             | [Op00](#op00)    |
 | -- | -     | ----             | [Op00](#op00)    |
-| 7E |       | 137f             | [Op7E](#op7E)    |
+| 7E | 8     | 137f             | [Op7E](#op7E)    |
 | 80 |       | 10e0             | [Op80](#op80)    |
 | 82 | 3     | 0e87             | [Op82](#op82)    |
 | 84 |       | 10b5             | [Op84](#op84)    |
@@ -189,7 +189,7 @@ Not all SubOps are the same length, but they do all use the first 2 bytes the sa
 | 9e | 2 | Set Word | Use the index to write the 2 argument bytes to the [player state](./memory.md#player-state-region). |
 | Other | N/A | Various | See below*. |
 
-*If the SubOp opcode is not one of the ones named explicitly in the above table, there is a second level of branching behavior based on the value that I have not yet deciphered. All SubOps in this category are 4 bytes long total including the opcode. I don't know much about these kinds of SubOps, so the rules I laid out above about SubOps might not apply to them. You can find several examples that my scripts plugin spat out using the macro `SubOp_DefaultCase`.
+*If the SubOp opcode is not one of the ones named explicitly in the above table, there is a second level of branching behavior based on the value that I have not yet deciphered. All SubOps in this category are 4 bytes long total including the opcode. 75 is an exception and is 6 bytes long. I don't know much about these kinds of SubOps, so the rules I laid out above about SubOps might not apply to them. You can find several examples that my scripts plugin spat out using the macro `SubOp_DefaultCase`.
 
 You may be able to learn more about Op16 and SubOps from [the hamscripts.py plugin](./plugins/hamscripts.py) or Op16's handler in ROM bank 0.
 

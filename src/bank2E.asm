@@ -850,22 +850,37 @@ call_2e_4b3b:
     Op3E_Compare_Branch 22, $35, $42, $10, call_2e_4bdd ;; 2e:4b53 $3e $16 $35 $42 $10 $dd $4b $2e
     Op68_CopyBytes 1, wC822, w1_BeginRegionD1FD, $01   ;; 2e:4b5b $68 $01 $22 $c8 $fd $d1 $01
     Op16_SubOps 1                                      ;; 2e:4b62 $16 $01
-    SubOp_DefaultCase $75, $0a, $65, $0a               ;; 2e:4b64 $75 $0a $65 $0a
-    db   $be, $1f, $14, $01, $ec, $61, $8a, $4b        ;; 2e:4b68 ????????
-    db   $2e, $14, $01, $f0, $61, $99, $4b, $2e        ;; 2e:4b70 ????????
-    db   $14, $01, $f4, $61, $a8, $4b, $2e, $14        ;; 2e:4b78 ????????
-    db   $01, $f8, $61, $b7, $4b, $2e, $18, $c6        ;; 2e:4b80 ????????
-    db   $4b, $2e, $4c, $16, $ff, $ff, $00, $00        ;; 2e:4b88 ????????
-    db   $00, $00, $71, $42, $10, $18, $dd, $4b        ;; 2e:4b90 ????????
-    db   $2e, $4c, $16, $ff, $ff, $00, $00, $00        ;; 2e:4b98 ????????
-    db   $00, $61, $42, $10, $18, $dd, $4b, $2e        ;; 2e:4ba0 ????????
-    db   $4c, $16, $ff, $ff, $00, $00, $00, $00        ;; 2e:4ba8 ????????
-    db   $09, $42, $10, $18, $dd, $4b, $2e, $4c        ;; 2e:4bb0 ????????
-    db   $16, $ff, $ff, $00, $00, $00, $00, $35        ;; 2e:4bb8 ????????
-    db   $42, $10, $18, $dd, $4b, $2e, $52, $0b        ;; 2e:4bc0 ????????
-    db   $d2, $01, $00, $00, $52, $13, $d2, $01        ;; 2e:4bc8 ????????
-    db   $00, $00, $4c, $16, $ff, $ff, $00, $00        ;; 2e:4bd0 ????????
-    db   $00, $00, $bb, $40, $10                       ;; 2e:4bd8 ?????
+    SubOp_DefaultCase_75 $75, $0a, $65, $0a, $be, $1f  ;; 2e:4b64 $75 $0a $65 $0a $be $1f
+    Op14_Unknown 1, $ec, $61                           ;; 2e:4b6a $14 $01 $ec $61
+    SCRIPT_POINTER call_2e_4b8a                        ;; 2e:4b6e $8a $4b $2e
+    Op14_Unknown 1, $f0, $61                           ;; 2e:4b71 $14 $01 $f0 $61
+    SCRIPT_POINTER call_2e_4b99                        ;; 2e:4b75 $99 $4b $2e
+    Op14_Unknown 1, $f4, $61                           ;; 2e:4b78 $14 $01 $f4 $61
+    SCRIPT_POINTER call_2e_4ba8                        ;; 2e:4b7c $a8 $4b $2e
+    Op14_Unknown 1, $f8, $61                           ;; 2e:4b7f $14 $01 $f8 $61
+    SCRIPT_POINTER call_2e_4bb7                        ;; 2e:4b83 $b7 $4b $2e
+    Op18_Jump call_2e_4bc6                             ;; 2e:4b86 $18 $c6 $4b $2e
+
+call_2e_4b8a:
+    Op4C_Unknown $16, $ff, $ff, $00, $00, $00, $00, $71, $42, $10 ;; 2e:4b8a $4c $16 $ff $ff $00 $00 $00 $00 $71 $42 $10
+    Op18_Jump call_2e_4bdd                             ;; 2e:4b95 $18 $dd $4b $2e
+
+call_2e_4b99:
+    Op4C_Unknown $16, $ff, $ff, $00, $00, $00, $00, $61, $42, $10 ;; 2e:4b99 $4c $16 $ff $ff $00 $00 $00 $00 $61 $42 $10
+    Op18_Jump call_2e_4bdd                             ;; 2e:4ba4 $18 $dd $4b $2e
+
+call_2e_4ba8:
+    Op4C_Unknown $16, $ff, $ff, $00, $00, $00, $00, $09, $42, $10 ;; 2e:4ba8 $4c $16 $ff $ff $00 $00 $00 $00 $09 $42 $10
+    Op18_Jump call_2e_4bdd                             ;; 2e:4bb3 $18 $dd $4b $2e
+
+call_2e_4bb7:
+    Op4C_Unknown $16, $ff, $ff, $00, $00, $00, $00, $35, $42, $10 ;; 2e:4bb7 $4c $16 $ff $ff $00 $00 $00 $00 $35 $42 $10
+    Op18_Jump call_2e_4bdd                             ;; 2e:4bc2 $18 $dd $4b $2e
+
+call_2e_4bc6:
+    Op52_WriteBytes w1_D20B, $01, $00, $00             ;; 2e:4bc6 $52 $0b $d2 $01 $00 $00
+    Op52_WriteBytes w1_D213, $01, $00, $00             ;; 2e:4bcc $52 $13 $d2 $01 $00 $00
+    Op4C_Unknown $16, $ff, $ff, $00, $00, $00, $00, $bb, $40, $10 ;; 2e:4bd2 $4c $16 $ff $ff $00 $00 $00 $00 $bb $40 $10
 
 call_2e_4bdd:
     Op3E_Compare_Branch 26, $72, $74, $16, call_2e_4be6 ;; 2e:4bdd $3e $1a $72 $74 $16 $e6 $4b $2e

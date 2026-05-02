@@ -2828,6 +2828,8 @@ call_36_7b71:
     Op14_Unknown 1, $f2, $71                           ;; 36:7b75 $14 $01 $f2 $71
     SCRIPT_POINTER call_36_7bbe                        ;; 36:7b79 $be $7b $36
     Op18_Jump call_36_7bc6                             ;; 36:7b7c $18 $c6 $7b $36
+
+call_36_7b80:
     Op82_Run data_02_6732                              ;; 36:7b80 $82 $32 $67 $02
     Op14_Unknown 1, $f2, $71                           ;; 36:7b84 $14 $01 $f2 $71
     SCRIPT_POINTER call_36_7baf                        ;; 36:7b88 $af $7b $36
@@ -2896,10 +2898,15 @@ call_36_7c0e:
 
 call_36_7c16:
     Op16_SubOps 1                                      ;; 36:7c16 $16 $01
-    SubOp_DefaultCase $75, $08, $6b, $08               ;; 36:7c18 $75 $08 $6b $08
-    db   $be, $01, $74, $20, $c8, $1c, $02, $80        ;; 36:7c1c ????????
-    db   $7b, $36, $2d, $7c, $36, $18, $2d, $7c        ;; 36:7c24 ????????
-    db   $36, $20                                      ;; 36:7c2c ??
+    SubOp_DefaultCase_75 $75, $08, $6b, $08, $be, $01  ;; 36:7c18 $75 $08 $6b $08 $be $01
+    Op74_PrepTableJumpIndex_Copy wC820                 ;; 36:7c1e $74 $20 $c8
+    Op1C_TableJump 2                                   ;; 36:7c21 $1c $02
+    SCRIPT_POINTER call_36_7b80                        ;; 36:7c23 $80 $7b $36
+    SCRIPT_POINTER call_36_7c2d                        ;; 36:7c26 $2d $7c $36
+    Op18_Jump call_36_7c2d                             ;; 36:7c29 $18 $2d $7c $36
+
+call_36_7c2d:
+    SCRIPT_RETURN_20                                   ;; 36:7c2d $20
 
 call_36_7c2e:
     Op06_Unknown_Text data_29_5cfb                     ;; 36:7c2e $06 $fb $5c $29

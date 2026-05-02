@@ -717,10 +717,16 @@ w1_D8C2:
     ds 1                                               ;; d8c2
 
 w1_D8C3:
-    ds 13                                              ;; d8c3
+    ds 12                                              ;; d8c3
+
+w1_D8CF:
+    ds 1                                               ;; d8cf
 
 w1_D8D0:
-    ds 20                                              ;; d8d0
+    ds 11                                              ;; d8d0
+
+w1_D8DB:
+    ds 9                                               ;; d8db
 
 w1_D8E4:
     ds 27                                              ;; d8e4
