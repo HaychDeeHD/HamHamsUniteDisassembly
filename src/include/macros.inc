@@ -22,6 +22,12 @@ db $06
 dw \1
 db BANK(\1)
 ENDM
+MACRO Op0C_HamChatWheel
+db $0c
+db \1
+dw \2
+dw \3
+ENDM
 MACRO Op10_HamChatWheel
 db $10
 db \1

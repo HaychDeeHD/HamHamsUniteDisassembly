@@ -582,9 +582,21 @@ class Op10Block(Block):
         rulespointer = self.memory.word(file.addr + 4)
         file.asmLine(6, "Op10_HamChatWheel", str(count), "$%04x" % optionspointer,  "$%04x" % rulespointer)
 
+class Op0CBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=6)
+        RomInfo.macros["Op0C_HamChatWheel"] = "db $0c\ndb \\1\ndw \\2\ndw \\3"
+    
+    def export(self, file):
+        count = self.memory.byte(file.addr + 1)
+        optionspointer = self.memory.word(file.addr + 2)
+        rulespointer = self.memory.word(file.addr + 4)
+        file.asmLine(6, "Op0C_HamChatWheel", str(count), "$%04x" % optionspointer,  "$%04x" % rulespointer)
+
 OPBLOCKS = {
     0x04: Op04Block,
     0x06: Op06Block,
+    0x0C: Op0CBlock,
     0x10: Op10Block,
     0x14: Op14Block,
     0x16: Op16Block,

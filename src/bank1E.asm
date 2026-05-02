@@ -2831,19 +2831,47 @@ call_1e_660f:
     Op82_Run data_01_7416                              ;; 1e:6614 $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 1e:6618 $82 $cc $73 $01
     Op1E_Call call_1d_6f1d                             ;; 1e:661c $1e $1d $6f $1d
-    db   $0c, $02, $63, $73, $a2, $73, $1c, $02        ;; 1e:6620 ????????
-    db   $2e, $66, $1e, $46, $66, $1e, $50, $15        ;; 1e:6628 ????????
-    db   $c7, $00, $48, $82, $d9, $6d, $02, $16        ;; 1e:6630 ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 1e:6638 ????????
-    db   $32, $5d, $1e, $5e, $66, $1e, $50, $15        ;; 1e:6640 ????????
-    db   $c7, $00, $47, $82, $d9, $6d, $02, $16        ;; 1e:6648 ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 1e:6650 ????????
-    db   $32, $5d, $1e, $66, $66, $1e, $1e, $c4        ;; 1e:6658 ????????
-    db   $76, $1e, $18, $6a, $66, $1e, $1e, $00        ;; 1e:6660 ????????
-    db   $77, $1e, $4c, $16, $10, $02, $00, $00        ;; 1e:6668 ????????
-    db   $00, $00, $dc, $54, $12, $4a, $3e, $1a        ;; 1e:6670 ????????
-    db   $7b, $4e, $15, $75, $66, $1e, $16, $01        ;; 1e:6678 ????????
-    db   $7f, $12, $00, $20                            ;; 1e:6680 ????
+    Op0C_HamChatWheel 2, $7363, $73a2                  ;; 1e:6620 $0c $02 $63 $73 $a2 $73
+    Op1C_TableJump 2                                   ;; 1e:6626 $1c $02
+    SCRIPT_POINTER call_1e_662e                        ;; 1e:6628 $2e $66 $1e
+    SCRIPT_POINTER call_1e_6646                        ;; 1e:662b $46 $66 $1e
+
+call_1e_662e:
+    Op50_WriteByte wBitArrayIndexC715, $00, $48        ;; 1e:662e $50 $15 $c7 $00 $48
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6633 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6637 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6639 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:663b $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:663e $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6640 $32 $5d $1e
+    SCRIPT_POINTER call_1e_665e                        ;; 1e:6643 $5e $66 $1e
+
+call_1e_6646:
+    Op50_WriteByte wBitArrayIndexC715, $00, $47        ;; 1e:6646 $50 $15 $c7 $00 $47
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:664b $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:664f $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6651 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6653 $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6656 $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6658 $32 $5d $1e
+    SCRIPT_POINTER call_1e_6666                        ;; 1e:665b $66 $66 $1e
+
+call_1e_665e:
+    Op1E_Call call_1e_76c4                             ;; 1e:665e $1e $c4 $76 $1e
+    Op18_Jump call_1e_666a                             ;; 1e:6662 $18 $6a $66 $1e
+
+call_1e_6666:
+    Op1E_Call call_1e_7700                             ;; 1e:6666 $1e $00 $77 $1e
+
+call_1e_666a:
+    Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $dc, $54, $12 ;; 1e:666a $4c $16 $10 $02 $00 $00 $00 $00 $dc $54 $12
+
+call_1e_6675:
+    SCRIPT_RETURN_4A                                   ;; 1e:6675 $4a
+    Op3E_Compare_Branch 26, $7b, $4e, $15, call_1e_6675 ;; 1e:6676 $3e $1a $7b $4e $15 $75 $66 $1e
+    Op16_SubOps 1                                      ;; 1e:667e $16 $01
+    SubOp_SetByte wC82A, $00                           ;; 1e:6680 $7f $12 $00
+    SCRIPT_RETURN_20                                   ;; 1e:6683 $20
 
 call_1e_6684:
     Op16_SubOps 1                                      ;; 1e:6684 $16 $01
@@ -3100,28 +3128,57 @@ call_1e_69d7:
     Op82_Run data_01_73cc                              ;; 1e:69f0 $82 $cc $73 $01
     Op36_Unknown $05, $74, $7c, $68, $d1, $03          ;; 1e:69f4 $36 $05 $74 $7c $68 $d1 $03
     Op1E_Call call_1d_6f1d                             ;; 1e:69fb $1e $1d $6f $1d
-    db   $0c, $02, $63, $73, $a2, $73, $1c, $02        ;; 1e:69ff ????????
-    db   $0d, $6a, $1e, $25, $6a, $1e, $50, $15        ;; 1e:6a07 ????????
-    db   $c7, $00, $48, $82, $d9, $6d, $02, $16        ;; 1e:6a0f ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 1e:6a17 ????????
-    db   $32, $5d, $1e, $3d, $6a, $1e, $50, $15        ;; 1e:6a1f ????????
-    db   $c7, $00, $47, $82, $d9, $6d, $02, $16        ;; 1e:6a27 ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 1e:6a2f ????????
-    db   $32, $5d, $1e, $72, $6a, $1e, $16, $01        ;; 1e:6a37 ????????
-    db   $7f, $12, $00, $1e, $f9, $4b, $20, $4c        ;; 1e:6a3f ????????
-    db   $16, $10, $04, $00, $00, $00, $00, $87        ;; 1e:6a47 ????????
-    db   $78, $17, $1e, $4b, $71, $1e, $1e, $da        ;; 1e:6a4f ????????
-    db   $6d, $1d, $04, $78, $5c, $30, $1e, $5d        ;; 1e:6a57 ????????
-    db   $61, $04, $50, $20, $c7, $00, $1d, $82        ;; 1e:6a5f ????????
-    db   $44, $68, $01, $1e, $84, $66, $1e, $18        ;; 1e:6a67 ????????
-    db   $ba, $66, $1e, $16, $01, $7f, $12, $00        ;; 1e:6a6f ????????
-    db   $1e, $28, $4c, $20, $4c, $16, $10, $02        ;; 1e:6a77 ????????
-    db   $00, $00, $00, $00, $87, $78, $17, $4c        ;; 1e:6a7f ????????
-    db   $3a, $00, $00, $00, $00, $00, $00, $00        ;; 1e:6a87 ????????
-    db   $00, $00, $1e, $9b, $71, $1e, $1e, $da        ;; 1e:6a8f ????????
-    db   $6d, $1d, $04, $99, $5c, $30, $1e, $4b        ;; 1e:6a97 ????????
-    db   $71, $1e, $06, $07, $5d, $30, $18, $41        ;; 1e:6a9f ????????
-    db   $6b, $1e                                      ;; 1e:6aa7 ??
+    Op0C_HamChatWheel 2, $7363, $73a2                  ;; 1e:69ff $0c $02 $63 $73 $a2 $73
+    Op1C_TableJump 2                                   ;; 1e:6a05 $1c $02
+    SCRIPT_POINTER call_1e_6a0d                        ;; 1e:6a07 $0d $6a $1e
+    SCRIPT_POINTER call_1e_6a25                        ;; 1e:6a0a $25 $6a $1e
+
+call_1e_6a0d:
+    Op50_WriteByte wBitArrayIndexC715, $00, $48        ;; 1e:6a0d $50 $15 $c7 $00 $48
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6a12 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6a16 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6a18 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6a1a $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6a1d $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6a1f $32 $5d $1e
+    SCRIPT_POINTER call_1e_6a3d                        ;; 1e:6a22 $3d $6a $1e
+
+call_1e_6a25:
+    Op50_WriteByte wBitArrayIndexC715, $00, $47        ;; 1e:6a25 $50 $15 $c7 $00 $47
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6a2a $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6a2e $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6a30 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6a32 $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6a35 $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6a37 $32 $5d $1e
+    SCRIPT_POINTER call_1e_6a72                        ;; 1e:6a3a $72 $6a $1e
+
+call_1e_6a3d:
+    Op16_SubOps 1                                      ;; 1e:6a3d $16 $01
+    SubOp_SetByte wC82A, $00                           ;; 1e:6a3f $7f $12 $00
+    Op1E_Call call_20_4bf9                             ;; 1e:6a42 $1e $f9 $4b $20
+    Op4C_Unknown $16, $10, $04, $00, $00, $00, $00, $87, $78, $17 ;; 1e:6a46 $4c $16 $10 $04 $00 $00 $00 $00 $87 $78 $17
+    Op1E_Call call_1e_714b                             ;; 1e:6a51 $1e $4b $71 $1e
+    Op1E_Call call_1d_6dda                             ;; 1e:6a55 $1e $da $6d $1d
+    Op04_Unknown_Text data_30_5c78                     ;; 1e:6a59 $04 $78 $5c $30
+    Op1E_Call call_04_615d                             ;; 1e:6a5d $1e $5d $61 $04
+    Op50_WriteByte wC720, $00, $1d                     ;; 1e:6a61 $50 $20 $c7 $00 $1d
+    Op82_Run data_01_6844                              ;; 1e:6a66 $82 $44 $68 $01
+    Op1E_Call call_1e_6684                             ;; 1e:6a6a $1e $84 $66 $1e
+    Op18_Jump call_1e_66ba                             ;; 1e:6a6e $18 $ba $66 $1e
+
+call_1e_6a72:
+    Op16_SubOps 1                                      ;; 1e:6a72 $16 $01
+    SubOp_SetByte wC82A, $00                           ;; 1e:6a74 $7f $12 $00
+    Op1E_Call call_20_4c28                             ;; 1e:6a77 $1e $28 $4c $20
+    Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $87, $78, $17 ;; 1e:6a7b $4c $16 $10 $02 $00 $00 $00 $00 $87 $78 $17
+    Op4C_Unknown $3a, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 1e:6a86 $4c $3a $00 $00 $00 $00 $00 $00 $00 $00 $00
+    Op1E_Call call_1e_719b                             ;; 1e:6a91 $1e $9b $71 $1e
+    Op1E_Call call_1d_6dda                             ;; 1e:6a95 $1e $da $6d $1d
+    Op04_Unknown_Text data_30_5c99                     ;; 1e:6a99 $04 $99 $5c $30
+    Op1E_Call call_1e_714b                             ;; 1e:6a9d $1e $4b $71 $1e
+    Op06_Unknown_Text data_30_5d07                     ;; 1e:6aa1 $06 $07 $5d $30
+    Op18_Jump call_1e_6b41                             ;; 1e:6aa5 $18 $41 $6b $1e
 
 call_1e_6aa9:
     Op4C_Unknown $10, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 1e:6aa9 $4c $10 $00 $00 $00 $00 $00 $00 $00 $00 $00
@@ -3161,6 +3218,8 @@ call_1e_6b1d:
     Op4C_Unknown $3a, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 1e:6b2d $4c $3a $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6b38 $56 $1a $3b $4e $15
     Op06_Unknown_Text data_30_5e02                     ;; 1e:6b3d $06 $02 $5e $30
+
+call_1e_6b41:
     Op1E_Call call_04_615d                             ;; 1e:6b41 $1e $5d $61 $04
     Op1E_Call call_1e_7184                             ;; 1e:6b45 $1e $84 $71 $1e
     Op1E_Call call_1e_7061                             ;; 1e:6b49 $1e $61 $70 $1e
@@ -3179,95 +3238,246 @@ call_1e_6b6b:
     SubOp_SetByte wC82A, $03                           ;; 1e:6b6d $7f $12 $03
     Op82_Run data_01_7416                              ;; 1e:6b70 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1e:6b74 $1e $1d $6f $1d
-    db   $0c, $08, $69, $73, $a2, $73, $1c, $08        ;; 1e:6b78 ????????
-    db   $98, $6b, $1e, $c7, $6b, $1e, $eb, $6b        ;; 1e:6b80 ????????
-    db   $1e, $0f, $6c, $1e, $3e, $6c, $1e, $62        ;; 1e:6b88 ????????
-    db   $6c, $1e, $86, $6c, $1e, $aa, $6c, $1e        ;; 1e:6b90 ????????
-    db   $50, $15, $c7, $00, $00, $82, $d9, $6d        ;; 1e:6b98 ????????
-    db   $02, $16, $01, $3e, $03, $74, $5e, $c6        ;; 1e:6ba0 ????????
-    db   $1c, $02, $32, $5d, $1e, $b0, $6b, $1e        ;; 1e:6ba8 ????????
-    db   $1e, $00, $71, $1e, $1e, $42, $40, $20        ;; 1e:6bb0 ????????
-    db   $4c, $16, $10, $ff, $00, $00, $00, $00        ;; 1e:6bb8 ????????
-    db   $87, $78, $17, $18, $ce, $6c, $1e, $50        ;; 1e:6bc0 ????????
-    db   $15, $c7, $00, $01, $82, $d9, $6d, $02        ;; 1e:6bc8 ????????
-    db   $16, $01, $3e, $03, $74, $5e, $c6, $1c        ;; 1e:6bd0 ????????
-    db   $02, $32, $5d, $1e, $df, $6b, $1e, $1e        ;; 1e:6bd8 ????????
-    db   $1a, $71, $1e, $1e, $3a, $46, $20, $18        ;; 1e:6be0 ????????
-    db   $d9, $6d, $1e, $50, $15, $c7, $00, $02        ;; 1e:6be8 ????????
-    db   $82, $d9, $6d, $02, $16, $01, $3e, $03        ;; 1e:6bf0 ????????
-    db   $74, $5e, $c6, $1c, $02, $32, $5d, $1e        ;; 1e:6bf8 ????????
-    db   $03, $6c, $1e, $1e, $00, $71, $1e, $1e        ;; 1e:6c00 ????????
-    db   $f7, $42, $20, $18, $ce, $6c, $1e, $50        ;; 1e:6c08 ????????
-    db   $15, $c7, $00, $03, $82, $d9, $6d, $02        ;; 1e:6c10 ????????
-    db   $16, $01, $3e, $03, $74, $5e, $c6, $1c        ;; 1e:6c18 ????????
-    db   $02, $32, $5d, $1e, $27, $6c, $1e, $1e        ;; 1e:6c20 ????????
-    db   $00, $71, $1e, $1e, $fe, $44, $20, $4c        ;; 1e:6c28 ????????
-    db   $16, $10, $ff, $00, $00, $00, $00, $87        ;; 1e:6c30 ????????
-    db   $78, $17, $18, $ce, $6c, $1e, $50, $15        ;; 1e:6c38 ????????
-    db   $c7, $00, $39, $82, $d9, $6d, $02, $16        ;; 1e:6c40 ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 1e:6c48 ????????
-    db   $32, $5d, $1e, $56, $6c, $1e, $1e, $00        ;; 1e:6c50 ????????
-    db   $71, $1e, $1e, $84, $41, $20, $18, $ce        ;; 1e:6c58 ????????
-    db   $6c, $1e, $50, $15, $c7, $00, $38, $82        ;; 1e:6c60 ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 1e:6c68 ????????
-    db   $5e, $c6, $1c, $02, $32, $5d, $1e, $7a        ;; 1e:6c70 ????????
-    db   $6c, $1e, $1e, $00, $71, $1e, $1e, $b0        ;; 1e:6c78 ????????
-    db   $41, $20, $18, $ce, $6c, $1e, $50, $15        ;; 1e:6c80 ????????
-    db   $c7, $00, $17, $82, $d9, $6d, $02, $16        ;; 1e:6c88 ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 1e:6c90 ????????
-    db   $32, $5d, $1e, $9e, $6c, $1e, $1e, $00        ;; 1e:6c98 ????????
-    db   $71, $1e, $1e, $3c, $77, $1e, $18, $ce        ;; 1e:6ca0 ????????
-    db   $6c, $1e, $50, $15, $c7, $00, $3a, $82        ;; 1e:6ca8 ????????
-    db   $d9, $6d, $02, $16, $01, $3e, $03, $74        ;; 1e:6cb0 ????????
-    db   $5e, $c6, $1c, $02, $32, $5d, $1e, $c2        ;; 1e:6cb8 ????????
-    db   $6c, $1e, $1e, $00, $71, $1e, $1e, $5a        ;; 1e:6cc0 ????????
-    db   $42, $20, $18, $ce, $6c, $1e, $4a, $3e        ;; 1e:6cc8 ????????
-    db   $1a, $38, $49, $15, $ce, $6c, $1e, $16        ;; 1e:6cd0 ????????
-    db   $01, $77, $08, $be, $01, $1e, $f7, $6f        ;; 1e:6cd8 ????????
-    db   $1e, $14, $01, $c8, $76, $d1, $6d, $1e        ;; 1e:6ce0 ????????
-    db   $4c, $10, $00, $00, $00, $00, $00, $00        ;; 1e:6ce8 ????????
-    db   $00, $00, $00, $4c, $1a, $01, $04, $4c        ;; 1e:6cf0 ????????
-    db   $00, $70, $00, $8e, $4e, $15, $1e, $da        ;; 1e:6cf8 ????????
-    db   $6d, $1d, $04, $0e, $5e, $30, $56, $1a        ;; 1e:6d00 ????????
-    db   $3b, $4e, $15, $06, $1f, $5e, $30, $1e        ;; 1e:6d08 ????????
-    db   $5d, $61, $04, $16, $01, $7f, $12, $02        ;; 1e:6d10 ????????
-    db   $82, $16, $74, $01, $82, $cc, $73, $01        ;; 1e:6d18 ????????
-    db   $1e, $8c, $76, $1e, $1e, $1d, $6f, $1d        ;; 1e:6d20 ????????
-    db   $0c, $02, $63, $73, $a2, $73, $1c, $02        ;; 1e:6d28 ????????
-    db   $36, $6d, $1e, $4e, $6d, $1e, $50, $15        ;; 1e:6d30 ????????
-    db   $c7, $00, $48, $82, $d9, $6d, $02, $16        ;; 1e:6d38 ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 1e:6d40 ????????
-    db   $32, $5d, $1e, $66, $6d, $1e, $50, $15        ;; 1e:6d48 ????????
-    db   $c7, $00, $47, $82, $d9, $6d, $02, $16        ;; 1e:6d50 ????????
-    db   $01, $3e, $03, $74, $5e, $c6, $1c, $02        ;; 1e:6d58 ????????
-    db   $32, $5d, $1e, $92, $6d, $1e, $16, $01        ;; 1e:6d60 ????????
-    db   $7f, $12, $00, $1e, $f9, $4b, $20, $4c        ;; 1e:6d68 ????????
-    db   $16, $10, $ff, $00, $00, $00, $00, $87        ;; 1e:6d70 ????????
-    db   $78, $17, $1e, $4b, $71, $1e, $1e, $da        ;; 1e:6d78 ????????
-    db   $6d, $1d, $04, $54, $5e, $30, $1e, $5d        ;; 1e:6d80 ????????
-    db   $61, $04, $1e, $84, $66, $1e, $18, $6b        ;; 1e:6d88 ????????
-    db   $6b, $1e, $16, $01, $7f, $12, $00, $1e        ;; 1e:6d90 ????????
-    db   $28, $4c, $20, $4c, $16, $10, $ff, $00        ;; 1e:6d98 ????????
-    db   $00, $00, $00, $87, $78, $17, $1e, $da        ;; 1e:6da0 ????????
-    db   $71, $1e, $1e, $da, $6d, $1d, $04, $75        ;; 1e:6da8 ????????
-    db   $5e, $30, $56, $1a, $3b, $4e, $15, $06        ;; 1e:6db0 ????????
-    db   $e0, $5e, $30, $1e, $5d, $61, $04, $1e        ;; 1e:6db8 ????????
-    db   $b1, $70, $1e, $16, $01, $7f, $08, $00        ;; 1e:6dc0 ????????
-    db   $16, $01, $7f, $0c, $00, $18, $35, $6e        ;; 1e:6dc8 ????????
-    db   $1e, $1e, $18, $70, $1e, $18, $6b, $6b        ;; 1e:6dd0 ????????
-    db   $1e, $4a, $3e, $1a, $58, $49, $15, $d9        ;; 1e:6dd8 ????????
-    db   $6d, $1e, $16, $01, $7f, $12, $00, $1e        ;; 1e:6de0 ????????
-    db   $08, $72, $1e, $4c, $16, $10, $ff, $00        ;; 1e:6de8 ????????
-    db   $00, $00, $00, $87, $78, $17, $4c, $10        ;; 1e:6df0 ????????
-    db   $00, $00, $00, $00, $00, $00, $00, $00        ;; 1e:6df8 ????????
-    db   $00, $56, $1a, $3b, $4e, $15, $1e, $da        ;; 1e:6e00 ????????
-    db   $6d, $1d, $04, $eb, $5e, $30, $1e, $4b        ;; 1e:6e08 ????????
-    db   $71, $1e, $06, $8f, $5f, $30, $1e, $5d        ;; 1e:6e10 ????????
-    db   $61, $04, $1e, $61, $70, $1e, $16, $01        ;; 1e:6e18 ????????
-    db   $7f, $08, $00, $16, $01, $7f, $0c, $00        ;; 1e:6e20 ????????
-    db   $16, $01, $7e, $7b, $01, $1e, $a2, $76        ;; 1e:6e28 ????????
-    db   $1e, $18, $c5, $5c, $1e, $1e, $a2, $76        ;; 1e:6e30 ????????
-    db   $1e, $18, $c5, $5c, $1e                       ;; 1e:6e38 ?????
+    Op0C_HamChatWheel 8, $7369, $73a2                  ;; 1e:6b78 $0c $08 $69 $73 $a2 $73
+    Op1C_TableJump 8                                   ;; 1e:6b7e $1c $08
+    SCRIPT_POINTER call_1e_6b98                        ;; 1e:6b80 $98 $6b $1e
+    SCRIPT_POINTER call_1e_6bc7                        ;; 1e:6b83 $c7 $6b $1e
+    SCRIPT_POINTER call_1e_6beb                        ;; 1e:6b86 $eb $6b $1e
+    SCRIPT_POINTER call_1e_6c0f                        ;; 1e:6b89 $0f $6c $1e
+    SCRIPT_POINTER call_1e_6c3e                        ;; 1e:6b8c $3e $6c $1e
+    SCRIPT_POINTER call_1e_6c62                        ;; 1e:6b8f $62 $6c $1e
+    SCRIPT_POINTER call_1e_6c86                        ;; 1e:6b92 $86 $6c $1e
+    SCRIPT_POINTER call_1e_6caa                        ;; 1e:6b95 $aa $6c $1e
+
+call_1e_6b98:
+    Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 1e:6b98 $50 $15 $c7 $00 $00
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6b9d $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6ba1 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6ba3 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6ba5 $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6ba8 $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6baa $32 $5d $1e
+    SCRIPT_POINTER call_1e_6bb0                        ;; 1e:6bad $b0 $6b $1e
+
+call_1e_6bb0:
+    Op1E_Call call_1e_7100                             ;; 1e:6bb0 $1e $00 $71 $1e
+    Op1E_Call call_20_4042                             ;; 1e:6bb4 $1e $42 $40 $20
+    Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 1e:6bb8 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
+    Op18_Jump call_1e_6cce                             ;; 1e:6bc3 $18 $ce $6c $1e
+
+call_1e_6bc7:
+    Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 1e:6bc7 $50 $15 $c7 $00 $01
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6bcc $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6bd0 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6bd2 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6bd4 $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6bd7 $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6bd9 $32 $5d $1e
+    SCRIPT_POINTER call_1e_6bdf                        ;; 1e:6bdc $df $6b $1e
+
+call_1e_6bdf:
+    Op1E_Call call_1e_711a                             ;; 1e:6bdf $1e $1a $71 $1e
+    Op1E_Call call_20_463a                             ;; 1e:6be3 $1e $3a $46 $20
+    Op18_Jump call_1e_6dd9                             ;; 1e:6be7 $18 $d9 $6d $1e
+
+call_1e_6beb:
+    Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 1e:6beb $50 $15 $c7 $00 $02
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6bf0 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6bf4 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6bf6 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6bf8 $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6bfb $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6bfd $32 $5d $1e
+    SCRIPT_POINTER call_1e_6c03                        ;; 1e:6c00 $03 $6c $1e
+
+call_1e_6c03:
+    Op1E_Call call_1e_7100                             ;; 1e:6c03 $1e $00 $71 $1e
+    Op1E_Call call_20_42f7                             ;; 1e:6c07 $1e $f7 $42 $20
+    Op18_Jump call_1e_6cce                             ;; 1e:6c0b $18 $ce $6c $1e
+
+call_1e_6c0f:
+    Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 1e:6c0f $50 $15 $c7 $00 $03
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6c14 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6c18 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6c1a $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6c1c $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6c1f $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6c21 $32 $5d $1e
+    SCRIPT_POINTER call_1e_6c27                        ;; 1e:6c24 $27 $6c $1e
+
+call_1e_6c27:
+    Op1E_Call call_1e_7100                             ;; 1e:6c27 $1e $00 $71 $1e
+    Op1E_Call call_20_44fe                             ;; 1e:6c2b $1e $fe $44 $20
+    Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 1e:6c2f $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
+    Op18_Jump call_1e_6cce                             ;; 1e:6c3a $18 $ce $6c $1e
+
+call_1e_6c3e:
+    Op50_WriteByte wBitArrayIndexC715, $00, $39        ;; 1e:6c3e $50 $15 $c7 $00 $39
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6c43 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6c47 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6c49 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6c4b $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6c4e $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6c50 $32 $5d $1e
+    SCRIPT_POINTER call_1e_6c56                        ;; 1e:6c53 $56 $6c $1e
+
+call_1e_6c56:
+    Op1E_Call call_1e_7100                             ;; 1e:6c56 $1e $00 $71 $1e
+    Op1E_Call call_20_4184                             ;; 1e:6c5a $1e $84 $41 $20
+    Op18_Jump call_1e_6cce                             ;; 1e:6c5e $18 $ce $6c $1e
+
+call_1e_6c62:
+    Op50_WriteByte wBitArrayIndexC715, $00, $38        ;; 1e:6c62 $50 $15 $c7 $00 $38
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6c67 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6c6b $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6c6d $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6c6f $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6c72 $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6c74 $32 $5d $1e
+    SCRIPT_POINTER call_1e_6c7a                        ;; 1e:6c77 $7a $6c $1e
+
+call_1e_6c7a:
+    Op1E_Call call_1e_7100                             ;; 1e:6c7a $1e $00 $71 $1e
+    Op1E_Call call_20_41b0                             ;; 1e:6c7e $1e $b0 $41 $20
+    Op18_Jump call_1e_6cce                             ;; 1e:6c82 $18 $ce $6c $1e
+
+call_1e_6c86:
+    Op50_WriteByte wBitArrayIndexC715, $00, $17        ;; 1e:6c86 $50 $15 $c7 $00 $17
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6c8b $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6c8f $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6c91 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6c93 $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6c96 $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6c98 $32 $5d $1e
+    SCRIPT_POINTER call_1e_6c9e                        ;; 1e:6c9b $9e $6c $1e
+
+call_1e_6c9e:
+    Op1E_Call call_1e_7100                             ;; 1e:6c9e $1e $00 $71 $1e
+    Op1E_Call call_1e_773c                             ;; 1e:6ca2 $1e $3c $77 $1e
+    Op18_Jump call_1e_6cce                             ;; 1e:6ca6 $18 $ce $6c $1e
+
+call_1e_6caa:
+    Op50_WriteByte wBitArrayIndexC715, $00, $3a        ;; 1e:6caa $50 $15 $c7 $00 $3a
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6caf $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6cb3 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6cb5 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6cb7 $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6cba $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6cbc $32 $5d $1e
+    SCRIPT_POINTER call_1e_6cc2                        ;; 1e:6cbf $c2 $6c $1e
+
+call_1e_6cc2:
+    Op1E_Call call_1e_7100                             ;; 1e:6cc2 $1e $00 $71 $1e
+    Op1E_Call call_20_425a                             ;; 1e:6cc6 $1e $5a $42 $20
+    Op18_Jump call_1e_6cce                             ;; 1e:6cca $18 $ce $6c $1e
+
+call_1e_6cce:
+    SCRIPT_RETURN_4A                                   ;; 1e:6cce $4a
+    Op3E_Compare_Branch 26, $38, $49, $15, call_1e_6cce ;; 1e:6ccf $3e $1a $38 $49 $15 $ce $6c $1e
+    Op16_SubOps 1                                      ;; 1e:6cd7 $16 $01
+    SubOp_DefaultCase $77, $08, $be, $01               ;; 1e:6cd9 $77 $08 $be $01
+    Op1E_Call call_1e_6ff7                             ;; 1e:6cdd $1e $f7 $6f $1e
+    Op14_Unknown 1, $c8, $76                           ;; 1e:6ce1 $14 $01 $c8 $76
+    SCRIPT_POINTER call_1e_6dd1                        ;; 1e:6ce5 $d1 $6d $1e
+    Op4C_Unknown $10, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 1e:6ce8 $4c $10 $00 $00 $00 $00 $00 $00 $00 $00 $00
+    Op4C_Unknown $1a, $01, $04, $4c, $00, $70, $00, $8e, $4e, $15 ;; 1e:6cf3 $4c $1a $01 $04 $4c $00 $70 $00 $8e $4e $15
+    Op1E_Call call_1d_6dda                             ;; 1e:6cfe $1e $da $6d $1d
+    Op04_Unknown_Text data_30_5e0e                     ;; 1e:6d02 $04 $0e $5e $30
+    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6d06 $56 $1a $3b $4e $15
+    Op06_Unknown_Text data_30_5e1f                     ;; 1e:6d0b $06 $1f $5e $30
+    Op1E_Call call_04_615d                             ;; 1e:6d0f $1e $5d $61 $04
+    Op16_SubOps 1                                      ;; 1e:6d13 $16 $01
+    SubOp_SetByte wC82A, $02                           ;; 1e:6d15 $7f $12 $02
+    Op82_Run data_01_7416                              ;; 1e:6d18 $82 $16 $74 $01
+    Op82_Run data_01_73cc                              ;; 1e:6d1c $82 $cc $73 $01
+    Op1E_Call call_1e_768c                             ;; 1e:6d20 $1e $8c $76 $1e
+    Op1E_Call call_1d_6f1d                             ;; 1e:6d24 $1e $1d $6f $1d
+    Op0C_HamChatWheel 2, $7363, $73a2                  ;; 1e:6d28 $0c $02 $63 $73 $a2 $73
+    Op1C_TableJump 2                                   ;; 1e:6d2e $1c $02
+    SCRIPT_POINTER call_1e_6d36                        ;; 1e:6d30 $36 $6d $1e
+    SCRIPT_POINTER call_1e_6d4e                        ;; 1e:6d33 $4e $6d $1e
+
+call_1e_6d36:
+    Op50_WriteByte wBitArrayIndexC715, $00, $48        ;; 1e:6d36 $50 $15 $c7 $00 $48
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6d3b $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6d3f $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6d41 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6d43 $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6d46 $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6d48 $32 $5d $1e
+    SCRIPT_POINTER call_1e_6d66                        ;; 1e:6d4b $66 $6d $1e
+
+call_1e_6d4e:
+    Op50_WriteByte wBitArrayIndexC715, $00, $47        ;; 1e:6d4e $50 $15 $c7 $00 $47
+    Op82_Run ObtainHamChatFromC715                     ;; 1e:6d53 $82 $d9 $6d $02
+    Op16_SubOps 1                                      ;; 1e:6d57 $16 $01
+    SubOp_SetFlag wBitArrayC918, 3                     ;; 1e:6d59 $3e $03
+    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 1e:6d5b $74 $5e $c6
+    Op1C_TableJump 2                                   ;; 1e:6d5e $1c $02
+    SCRIPT_POINTER call_1e_5d32                        ;; 1e:6d60 $32 $5d $1e
+    SCRIPT_POINTER call_1e_6d92                        ;; 1e:6d63 $92 $6d $1e
+
+call_1e_6d66:
+    Op16_SubOps 1                                      ;; 1e:6d66 $16 $01
+    SubOp_SetByte wC82A, $00                           ;; 1e:6d68 $7f $12 $00
+    Op1E_Call call_20_4bf9                             ;; 1e:6d6b $1e $f9 $4b $20
+    Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 1e:6d6f $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
+    Op1E_Call call_1e_714b                             ;; 1e:6d7a $1e $4b $71 $1e
+    Op1E_Call call_1d_6dda                             ;; 1e:6d7e $1e $da $6d $1d
+    Op04_Unknown_Text data_30_5e54                     ;; 1e:6d82 $04 $54 $5e $30
+    Op1E_Call call_04_615d                             ;; 1e:6d86 $1e $5d $61 $04
+    Op1E_Call call_1e_6684                             ;; 1e:6d8a $1e $84 $66 $1e
+    Op18_Jump call_1e_6b6b                             ;; 1e:6d8e $18 $6b $6b $1e
+
+call_1e_6d92:
+    Op16_SubOps 1                                      ;; 1e:6d92 $16 $01
+    SubOp_SetByte wC82A, $00                           ;; 1e:6d94 $7f $12 $00
+    Op1E_Call call_20_4c28                             ;; 1e:6d97 $1e $28 $4c $20
+    Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 1e:6d9b $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
+    Op1E_Call call_1e_71da                             ;; 1e:6da6 $1e $da $71 $1e
+    Op1E_Call call_1d_6dda                             ;; 1e:6daa $1e $da $6d $1d
+    Op04_Unknown_Text data_30_5e75                     ;; 1e:6dae $04 $75 $5e $30
+    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6db2 $56 $1a $3b $4e $15
+    Op06_Unknown_Text data_30_5ee0                     ;; 1e:6db7 $06 $e0 $5e $30
+    Op1E_Call call_04_615d                             ;; 1e:6dbb $1e $5d $61 $04
+    Op1E_Call call_1e_70b1                             ;; 1e:6dbf $1e $b1 $70 $1e
+    Op16_SubOps 1                                      ;; 1e:6dc3 $16 $01
+    SubOp_SetByte wC820, $00                           ;; 1e:6dc5 $7f $08 $00
+    Op16_SubOps 1                                      ;; 1e:6dc8 $16 $01
+    SubOp_SetByte wC824, $00                           ;; 1e:6dca $7f $0c $00
+    Op18_Jump call_1e_6e35                             ;; 1e:6dcd $18 $35 $6e $1e
+
+call_1e_6dd1:
+    Op1E_Call call_1e_7018                             ;; 1e:6dd1 $1e $18 $70 $1e
+    Op18_Jump call_1e_6b6b                             ;; 1e:6dd5 $18 $6b $6b $1e
+
+call_1e_6dd9:
+    SCRIPT_RETURN_4A                                   ;; 1e:6dd9 $4a
+    Op3E_Compare_Branch 26, $58, $49, $15, call_1e_6dd9 ;; 1e:6dda $3e $1a $58 $49 $15 $d9 $6d $1e
+    Op16_SubOps 1                                      ;; 1e:6de2 $16 $01
+    SubOp_SetByte wC82A, $00                           ;; 1e:6de4 $7f $12 $00
+    Op1E_Call call_1e_7208                             ;; 1e:6de7 $1e $08 $72 $1e
+    Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 1e:6deb $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
+    Op4C_Unknown $10, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 1e:6df6 $4c $10 $00 $00 $00 $00 $00 $00 $00 $00 $00
+    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6e01 $56 $1a $3b $4e $15
+    Op1E_Call call_1d_6dda                             ;; 1e:6e06 $1e $da $6d $1d
+    Op04_Unknown_Text data_30_5eeb                     ;; 1e:6e0a $04 $eb $5e $30
+    Op1E_Call call_1e_714b                             ;; 1e:6e0e $1e $4b $71 $1e
+    Op06_Unknown_Text data_30_5f8f                     ;; 1e:6e12 $06 $8f $5f $30
+    Op1E_Call call_04_615d                             ;; 1e:6e16 $1e $5d $61 $04
+    Op1E_Call call_1e_7061                             ;; 1e:6e1a $1e $61 $70 $1e
+    Op16_SubOps 1                                      ;; 1e:6e1e $16 $01
+    SubOp_SetByte wC820, $00                           ;; 1e:6e20 $7f $08 $00
+    Op16_SubOps 1                                      ;; 1e:6e23 $16 $01
+    SubOp_SetByte wC824, $00                           ;; 1e:6e25 $7f $0c $00
+    Op16_SubOps 1                                      ;; 1e:6e28 $16 $01
+    SubOp_SetByte wC793, $01                           ;; 1e:6e2a $7e $7b $01
+    Op1E_Call call_1e_76a2                             ;; 1e:6e2d $1e $a2 $76 $1e
+    Op18_Jump call_1e_5cc5                             ;; 1e:6e31 $18 $c5 $5c $1e
+
+call_1e_6e35:
+    Op1E_Call call_1e_76a2                             ;; 1e:6e35 $1e $a2 $76 $1e
+    Op18_Jump call_1e_5cc5                             ;; 1e:6e39 $18 $c5 $5c $1e
 
 call_1e_6e3d:
     Op50_WriteByte wC31D, $00, $d0                     ;; 1e:6e3d $50 $1d $c3 $00 $d0
@@ -3444,6 +3654,8 @@ call_1e_7082:
     Op44_Unknown $50, $00                              ;; 1e:70a7 $44 $50 $00
     Op42_Unknown_StoreValue 8, $01, $eb, $4f, $1b      ;; 1e:70aa $42 $08 $01 $eb $4f $1b
     SCRIPT_RETURN_20                                   ;; 1e:70b0 $20
+
+call_1e_70b1:
     Op4C_Unknown $1a, $01, $04, $4c, $00, $70, $00, $35, $48, $15 ;; 1e:70b1 $4c $1a $01 $04 $4c $00 $70 $00 $35 $48 $15
 
 call_1e_70bc:
@@ -3463,10 +3675,14 @@ call_1e_70f6:
     SCRIPT_RETURN_4A                                   ;; 1e:70f6 $4a
     Op3E_Compare_Branch 26, $25, $49, $15, call_1e_70f6 ;; 1e:70f7 $3e $1a $25 $49 $15 $f6 $70 $1e
     SCRIPT_RETURN_20                                   ;; 1e:70ff $20
+
+call_1e_7100:
     Op4C_Unknown $1a, $01, $04, $4c, $00, $70, $00, $38, $49, $15 ;; 1e:7100 $4c $1a $01 $04 $4c $00 $70 $00 $38 $49 $15
     Op4C_Unknown $10, $01, $04, $00, $00, $00, $00, $7a, $4a, $15 ;; 1e:710b $4c $10 $01 $04 $00 $00 $00 $00 $7a $4a $15
     Op44_Unknown $12, $00                              ;; 1e:7116 $44 $12 $00
     SCRIPT_RETURN_20                                   ;; 1e:7119 $20
+
+call_1e_711a:
     Op4C_Unknown $1a, $01, $04, $4c, $00, $70, $00, $58, $49, $15 ;; 1e:711a $4c $1a $01 $04 $4c $00 $70 $00 $58 $49 $15
     Op4C_Unknown $10, $01, $04, $00, $00, $00, $00, $9d, $4a, $15 ;; 1e:7125 $4c $10 $01 $04 $00 $00 $00 $00 $9d $4a $15
     Op44_Unknown $12, $00                              ;; 1e:7130 $44 $12 $00
@@ -3840,6 +4056,8 @@ call_1e_768c:
     Op84_WriteByteNTimes w3_D243, 3, 3, $46            ;; 1e:7693 $84 $43 $d2 $03 $03 $00 $46
     Op84_WriteByteNTimes w3_D261, 3, 3, $46            ;; 1e:769a $84 $61 $d2 $03 $03 $00 $46
     SCRIPT_RETURN_20                                   ;; 1e:76a1 $20
+
+call_1e_76a2:
     Op84_WriteByteNTimes w3_D225, 3, 3, $05            ;; 1e:76a2 $84 $25 $d2 $03 $03 $00 $05
     Op84_WriteByteNTimes w3_D243, 3, 3, $05            ;; 1e:76a9 $84 $43 $d2 $03 $03 $00 $05
     Op84_WriteByteNTimes w3_D261, 3, 3, $05            ;; 1e:76b0 $84 $61 $d2 $03 $03 $00 $05
@@ -3848,6 +4066,8 @@ call_1e_768c:
 call_1e_76b8:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 1e:76b8 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     SCRIPT_RETURN_20                                   ;; 1e:76c3 $20
+
+call_1e_76c4:
     Op1E_Call call_1d_6acd                             ;; 1e:76c4 $1e $cd $6a $1d
     Op04_Unknown_Text data_30_6048                     ;; 1e:76c8 $04 $48 $60 $30
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $3f, $5c, $0f ;; 1e:76cc $4c $16 $08 $02 $00 $00 $00 $00 $3f $5c $0f
@@ -3857,6 +4077,8 @@ call_1e_76b8:
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, $09, $42, $10 ;; 1e:76f0 $4c $16 $08 $ff $00 $00 $00 $00 $09 $42 $10
     Op1E_Call call_04_615d                             ;; 1e:76fb $1e $5d $61 $04
     SCRIPT_RETURN_20                                   ;; 1e:76ff $20
+
+call_1e_7700:
     Op1E_Call call_1d_6acd                             ;; 1e:7700 $1e $cd $6a $1d
     Op04_Unknown_Text data_30_6052                     ;; 1e:7704 $04 $52 $60 $30
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $eb, $5c, $0f ;; 1e:7708 $4c $16 $08 $02 $00 $00 $00 $00 $eb $5c $0f

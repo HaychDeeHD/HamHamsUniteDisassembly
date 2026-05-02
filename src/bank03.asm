@@ -3776,6 +3776,8 @@ data_03_59cb:
     ld   [HL+], A                                      ;; 03:59d5 $22
     ld   [HL], D                                       ;; 03:59d6 $72
     ret                                                ;; 03:59d7 $c9
+
+data_03_59d8:
     ld   HL, wC754                                     ;; 03:59d8 $21 $54 $c7
     ld   A, [HL+]                                      ;; 03:59db $2a
     sub  A, [HL]                                       ;; 03:59dc $96
