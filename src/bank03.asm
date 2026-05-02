@@ -4266,6 +4266,8 @@ call_03_5c5b:
     rrca                                               ;; 03:5c75 $0f
     ld   B, A                                          ;; 03:5c76 $47
     jp   call_03_5b04                                  ;; 03:5c77 $c3 $04 $5b
+
+data_03_5c7a:
     ld_long_load A, rSVBK                              ;; 03:5c7a $fa $70 $ff
     push AF                                            ;; 03:5c7d $f5
     ld   A, $03                                        ;; 03:5c7e $3e $03

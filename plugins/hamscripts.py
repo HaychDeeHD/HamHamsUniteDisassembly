@@ -603,6 +603,7 @@ OPBLOCKS = {
     0x32: makeGenericBlockClass(0x32, 7),
     0x34: makeGenericBlockClass(0x34, 8),
     0x36: makeGenericBlockClass(0x36, 7),
+    0x38: makeGenericBlockClass(0x38, 8),
     0x3A: makeGenericBlockClass(0x3A, 11),
     0x3C: makeGenericBlockClass(0x3C, 11),
     0x3E: Op3EBlock,

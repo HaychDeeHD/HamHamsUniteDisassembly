@@ -245,7 +245,10 @@ w1_D269:
     ds 1                                               ;; d269
 
 w1_D26A:
-    ds 5                                               ;; d26a
+    ds 1                                               ;; d26a
+
+w1_D26B:
+    ds 4                                               ;; d26b
 
 w1_D26F:
     ds 1                                               ;; d26f
@@ -257,7 +260,10 @@ w1_D271:
     ds 1                                               ;; d271
 
 w1_D272:
-    ds 21                                              ;; d272
+    ds 1                                               ;; d272
+
+w1_D273:
+    ds 20                                              ;; d273
 
 w1_D287:
     ds 16                                              ;; d287
@@ -266,7 +272,10 @@ w1_D297:
     ds 1                                               ;; d297
 
 w1_D298:
-    ds 5                                               ;; d298
+    ds 1                                               ;; d298
+
+w1_D299:
+    ds 4                                               ;; d299
 
 w1_D29D:
     ds 1                                               ;; d29d
@@ -278,7 +287,10 @@ w1_D29F:
     ds 1                                               ;; d29f
 
 w1_D2A0:
-    ds 21                                              ;; d2a0
+    ds 1                                               ;; d2a0
+
+w1_D2A1:
+    ds 20                                              ;; d2a1
 
 w1_D2B5:
     ds 14                                              ;; d2b5
@@ -290,13 +302,19 @@ w1_D2C4:
     ds 2                                               ;; d2c4
 
 w1_D2C6:
-    ds 5                                               ;; d2c6
+    ds 1                                               ;; d2c6
+
+w1_D2C7:
+    ds 4                                               ;; d2c7
 
 w1_D2CB:
     ds 3                                               ;; d2cb
 
 w1_D2CE:
-    ds 21                                              ;; d2ce
+    ds 1                                               ;; d2ce
+
+w1_D2CF:
+    ds 20                                              ;; d2cf
 
 w1_D2E3:
     ds 17                                              ;; d2e3
