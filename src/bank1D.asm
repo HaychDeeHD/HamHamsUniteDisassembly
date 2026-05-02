@@ -3218,6 +3218,8 @@ call_1d_6b02:
     Op1C_TableJump 1                                   ;; 1d:6b06 $1c $01
     SCRIPT_POINTER call_04_67f3                        ;; 1d:6b08 $f3 $67 $04
     Op18_Jump call_04_67fb                             ;; 1d:6b0b $18 $fb $67 $04
+
+call_1d_6b0f:
     Op1E_Call call_1d_6f05                             ;; 1d:6b0f $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6b13 $1c $01
     SCRIPT_POINTER call_04_665b                        ;; 1d:6b15 $5b $66 $04
