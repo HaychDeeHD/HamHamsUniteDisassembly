@@ -1215,7 +1215,10 @@ wC79B:
     ds 1                                               ;; c79b
 
 wC79C:
-    ds 2                                               ;; c79c
+    ds 1                                               ;; c79c
+
+wC79D:
+    ds 1                                               ;; c79d
 
 wC79E:
     ds 1                                               ;; c79e
@@ -1407,7 +1410,13 @@ wC849:
     ds 3                                               ;; c849
 
 wC84C:
-    ds 6                                               ;; c84c
+    ds 2                                               ;; c84c
+
+wC84E:
+    ds 2                                               ;; c84e
+
+wC850:
+    ds 2                                               ;; c850
 
 wC852:
     ds 2                                               ;; c852

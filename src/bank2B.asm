@@ -599,6 +599,8 @@ call_2b_4831:
     Op44_Unknown $0a, $00                              ;; 2b:484a $44 $0a $00
     Op1E_Call call_04_5f51                             ;; 2b:484d $1e $51 $5f $04
     SCRIPT_RETURN_20                                   ;; 2b:4851 $20
+
+call_2b_4852:
     Op5A_Unknown $a4                                   ;; 2b:4852 $5a $a4
     Op1E_Call call_04_5b76                             ;; 2b:4854 $1e $76 $5b $04
     Op44_Unknown $0a, $00                              ;; 2b:4858 $44 $0a $00

@@ -1781,10 +1781,10 @@ AddressArray_0dbd:
     dw   w1_D031                                       ;; 00:0dbf ?? $01
     dw   w1_D05F                                       ;; 00:0dc1 ?? $02
     dw   w1_D08D                                       ;; 00:0dc3 wW $03
-    dw   $d0bb                                         ;; 00:0dc5 wW $04
+    dw   w1_D0BB                                       ;; 00:0dc5 wW $04
     dw   $d0e9                                         ;; 00:0dc7 wW $05
     dw   $d117                                         ;; 00:0dc9 wW $06
-    dw   $d145                                         ;; 00:0dcb wW $07
+    dw   w1_D145                                       ;; 00:0dcb wW $07
     dw   w1_D173                                       ;; 00:0dcd wW $08
     dw   w1_D1A1                                       ;; 00:0dcf ?? $09
     dw   w1_D1CF                                       ;; 00:0dd1 ?? $0a
@@ -2565,10 +2565,10 @@ WramAddressTable:
     dw   w1_D031                                       ;; 00:120a pP
     dw   w1_D05F                                       ;; 00:120c pP
     dw   w1_D08D                                       ;; 00:120e pP
-    dw   $d0bb                                         ;; 00:1210 pP
+    dw   w1_D0BB                                       ;; 00:1210 pP
     dw   $d0e9                                         ;; 00:1212 pP
     dw   $d117                                         ;; 00:1214 pP
-    dw   $d145                                         ;; 00:1216 pP
+    dw   w1_D145                                       ;; 00:1216 pP
     dw   w1_D173                                       ;; 00:1218 pP
     dw   w1_D1A1                                       ;; 00:121a pP
     dw   w1_D1CF                                       ;; 00:121c pP
@@ -6165,10 +6165,10 @@ jp_00_2b95:
     dw   w1_D031                                       ;; 00:2bac pP
     dw   w1_D05F                                       ;; 00:2bae pP
     dw   w1_D08D                                       ;; 00:2bb0 pP
-    dw   $d0bb                                         ;; 00:2bb2 pP
+    dw   w1_D0BB                                       ;; 00:2bb2 pP
     dw   $d0e9                                         ;; 00:2bb4 pP
     dw   $d117                                         ;; 00:2bb6 pP
-    dw   $d145                                         ;; 00:2bb8 pP
+    dw   w1_D145                                       ;; 00:2bb8 pP
     dw   w1_D173                                       ;; 00:2bba pP
     dw   w1_D1A1                                       ;; 00:2bbc pP
     dw   w1_D1CF                                       ;; 00:2bbe pP
