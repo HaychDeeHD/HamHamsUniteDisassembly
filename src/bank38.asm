@@ -827,8 +827,11 @@ call_38_4a54:
 call_38_4a61:
     SCRIPT_RETURN_4A                                   ;; 38:4a61 $4a
     Op3E_Compare_Branch 22, $1b, $5e, $10, call_38_4a61 ;; 38:4a62 $3e $16 $1b $5e $10 $61 $4a $38
-    db   $5e, $80, $5a, $90, $1e, $32, $45, $3c        ;; 38:4a6a ????????
-    db   $50, $92, $ca, $00, $05, $54, $01             ;; 38:4a72 ???????
+    Op5E_Unknown $80                                   ;; 38:4a6a $5e $80
+    Op5A_Unknown $90                                   ;; 38:4a6c $5a $90
+    Op1E_Call call_3c_4532                             ;; 38:4a6e $1e $32 $45 $3c
+    Op50_WriteByte wCA92, $00, $05                     ;; 38:4a72 $50 $92 $ca $00 $05
+    db   $54, $01                                      ;; 38:4a77 ??
 
 call_38_4a79:
     Op50_WriteByte wC31D, $00, $d8                     ;; 38:4a79 $50 $1d $c3 $00 $d8

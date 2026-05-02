@@ -1885,7 +1885,9 @@ call_20_5af2:
 call_20_5aff:
     SCRIPT_RETURN_4A                                   ;; 20:5aff $4a
     Op3E_Compare_Branch 22, $1b, $5e, $10, call_20_5aff ;; 20:5b00 $3e $16 $1b $5e $10 $ff $5a $20
-    db   $5e, $80, $5a, $90, $1e, $94, $7e, $36        ;; 20:5b08 ????????
+    Op5E_Unknown $80                                   ;; 20:5b08 $5e $80
+    Op5A_Unknown $90                                   ;; 20:5b0a $5a $90
+    Op1E_Call call_36_7e94                             ;; 20:5b0c $1e $94 $7e $36
     db   $54, $00                                      ;; 20:5b10 ??
 
 call_20_5b12:

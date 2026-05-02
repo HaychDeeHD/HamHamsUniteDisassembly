@@ -1365,6 +1365,8 @@ call_02_4aee:
 call_02_4af3:
     ld   B, $00                                        ;; 02:4af3 $06 $00
     jp   call_02_4a03                                  ;; 02:4af5 $c3 $03 $4a
+
+data_02_4af8:
     ld_long_load A, rSVBK                              ;; 02:4af8 $fa $70 $ff
     push AF                                            ;; 02:4afb $f5
     ld   A, $02                                        ;; 02:4afc $3e $02
@@ -1381,6 +1383,8 @@ call_02_4af3:
     call call_02_484c                                  ;; 02:4b16 $cd $4c $48
     call call_02_4812                                  ;; 02:4b19 $cd $12 $48
     ret                                                ;; 02:4b1c $c9
+
+data_02_4b1d:
     xor  A, A                                          ;; 02:4b1d $af
     ld_long_store rIF, A                               ;; 02:4b1e $ea $0f $ff
     ld_long_load A, rIE                                ;; 02:4b21 $fa $ff $ff
@@ -1389,18 +1393,22 @@ call_02_4af3:
     ei                                                 ;; 02:4b29 $fb
     call call_02_4857                                  ;; 02:4b2a $cd $57 $48
     ret                                                ;; 02:4b2d $c9
+
+data_02_4b2e:
     ld_long_load A, rSVBK                              ;; 02:4b2e $fa $70 $ff
     push AF                                            ;; 02:4b31 $f5
     ld   A, $02                                        ;; 02:4b32 $3e $02
     ld_long_store rSVBK, A                             ;; 02:4b34 $ea $70 $ff
     ld   A, $01                                        ;; 02:4b37 $3e $01
     ld   [wCAC2], A                                    ;; 02:4b39 $ea $c2 $ca
-.jp_02_4b3c:
+
+jp_02_4b3c:
     call call_00_27f3                                  ;; 02:4b3c $cd $f3 $27
     ld   A, [wCA9A]                                    ;; 02:4b3f $fa $9a $ca
     and  A, $3f                                        ;; 02:4b42 $e6 $3f
     ld   [wCAC6], A                                    ;; 02:4b44 $ea $c6 $ca
-.jp_02_4b47:
+
+jp_02_4b47:
     ld   A, [wCAC6]                                    ;; 02:4b47 $fa $c6 $ca
     inc  A                                             ;; 02:4b4a $3c
     ld   [wCAC6], A                                    ;; 02:4b4b $ea $c6 $ca
@@ -1410,20 +1418,22 @@ call_02_4af3:
     call call_00_03e5                                  ;; 02:4b55 $cd $e5 $03
     ld   A, [wC314]                                    ;; 02:4b58 $fa $14 $c3
     cp   A, $20                                        ;; 02:4b5b $fe $20
-    jp   Z, .jp_02_4e17                                ;; 02:4b5d $ca $17 $4e
+    jp   Z, jp_02_4e17                                 ;; 02:4b5d $ca $17 $4e
     ld   B, $02                                        ;; 02:4b60 $06 $02
     ld   C, $56                                        ;; 02:4b62 $0e $56
     ldh  A, [C]                                        ;; 02:4b64 $f2
     and  A, B                                          ;; 02:4b65 $a0
-    jp   NZ, .jp_02_4b47                               ;; 02:4b66 $c2 $47 $4b
-    jp   .jp_02_4c04                                   ;; 02:4b69 $c3 $04 $4c
+    jp   NZ, jp_02_4b47                                ;; 02:4b66 $c2 $47 $4b
+    jp   jp_02_4c04                                    ;; 02:4b69 $c3 $04 $4c
 .jr_02_4b6c:
     call call_02_484c                                  ;; 02:4b6c $cd $4c $48
     call call_02_48d5                                  ;; 02:4b6f $cd $d5 $48
     ld   A, [wCAC3]                                    ;; 02:4b72 $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4b75 $fe $6c
-    jp   NZ, .jp_02_4b3c                               ;; 02:4b77 $c2 $3c $4b
-    jp   .jp_02_4d17                                   ;; 02:4b7a $c3 $17 $4d
+    jp   NZ, jp_02_4b3c                                ;; 02:4b77 $c2 $3c $4b
+    jp   jp_02_4d17                                    ;; 02:4b7a $c3 $17 $4d
+
+data_02_4b7d:
     ld_long_load A, rSVBK                              ;; 02:4b7d $fa $70 $ff
     push AF                                            ;; 02:4b80 $f5
     ld   A, $02                                        ;; 02:4b81 $3e $02
@@ -1436,7 +1446,7 @@ call_02_4af3:
     call call_00_03e5                                  ;; 02:4b91 $cd $e5 $03
     ld   A, [wC314]                                    ;; 02:4b94 $fa $14 $c3
     cp   A, $20                                        ;; 02:4b97 $fe $20
-    jp   Z, .jp_02_4e17                                ;; 02:4b99 $ca $17 $4e
+    jp   Z, jp_02_4e17                                 ;; 02:4b99 $ca $17 $4e
     ld   B, $02                                        ;; 02:4b9c $06 $02
     ld   C, $56                                        ;; 02:4b9e $0e $56
     ldh  A, [C]                                        ;; 02:4ba0 $f2
@@ -1460,64 +1470,66 @@ call_02_4af3:
     jp   NZ, .jp_02_4b8e                               ;; 02:4bc8 $c2 $8e $4b
     ld   A, [wCAC5]                                    ;; 02:4bcb $fa $c5 $ca
     cp   A, $b0                                        ;; 02:4bce $fe $b0
-    jp   NZ, .jp_02_4e21                               ;; 02:4bd0 $c2 $21 $4e
+    jp   NZ, jp_02_4e21                                ;; 02:4bd0 $c2 $21 $4e
     swap A                                             ;; 02:4bd3 $cb $37
     ld   [wCAC5], A                                    ;; 02:4bd5 $ea $c5 $ca
     call call_02_484c                                  ;; 02:4bd8 $cd $4c $48
     call call_02_48d5                                  ;; 02:4bdb $cd $d5 $48
     ld   A, [wCAC3]                                    ;; 02:4bde $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4be1 $fe $6c
-    jp   NZ, .jp_02_4e21                               ;; 02:4be3 $c2 $21 $4e
+    jp   NZ, jp_02_4e21                                ;; 02:4be3 $c2 $21 $4e
     ld   HL, wCAC5                                     ;; 02:4be6 $21 $c5 $ca
     ld   B, $01                                        ;; 02:4be9 $06 $01
     call call_02_4925                                  ;; 02:4beb $cd $25 $49
     ld   A, [wCAC3]                                    ;; 02:4bee $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4bf1 $fe $6c
-    jp   NZ, .jp_02_4e21                               ;; 02:4bf3 $c2 $21 $4e
+    jp   NZ, jp_02_4e21                                ;; 02:4bf3 $c2 $21 $4e
     call call_02_4aee                                  ;; 02:4bf6 $cd $ee $4a
     ld   A, [wCAC3]                                    ;; 02:4bf9 $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4bfc $fe $6c
-    jp   NZ, .jp_02_4e21                               ;; 02:4bfe $c2 $21 $4e
-    jp   .jp_02_4c62                                   ;; 02:4c01 $c3 $62 $4c
-.jp_02_4c04:
+    jp   NZ, jp_02_4e21                                ;; 02:4bfe $c2 $21 $4e
+    jp   jp_02_4c62                                    ;; 02:4c01 $c3 $62 $4c
+
+jp_02_4c04:
     call call_02_4898                                  ;; 02:4c04 $cd $98 $48
     ld   A, [wCAC3]                                    ;; 02:4c07 $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4c0a $fe $6c
-    jp   NZ, .jp_02_4b47                               ;; 02:4c0c $c2 $47 $4b
+    jp   NZ, jp_02_4b47                                ;; 02:4c0c $c2 $47 $4b
     ld   HL, wCAC5                                     ;; 02:4c0f $21 $c5 $ca
     ld   B, $01                                        ;; 02:4c12 $06 $01
     call call_02_4a03                                  ;; 02:4c14 $cd $03 $4a
     ld   A, [wCAC3]                                    ;; 02:4c17 $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4c1a $fe $6c
-    jp   NZ, .jp_02_4b47                               ;; 02:4c1c $c2 $47 $4b
+    jp   NZ, jp_02_4b47                                ;; 02:4c1c $c2 $47 $4b
     call call_02_4af3                                  ;; 02:4c1f $cd $f3 $4a
     ld   A, [wCAC3]                                    ;; 02:4c22 $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4c25 $fe $6c
-    jp   NZ, .jp_02_4b47                               ;; 02:4c27 $c2 $47 $4b
+    jp   NZ, jp_02_4b47                                ;; 02:4c27 $c2 $47 $4b
     ld   A, [wCAC5]                                    ;; 02:4c2a $fa $c5 $ca
     cp   A, $b0                                        ;; 02:4c2d $fe $b0
-    jp   NZ, .jp_02_4e21                               ;; 02:4c2f $c2 $21 $4e
+    jp   NZ, jp_02_4e21                                ;; 02:4c2f $c2 $21 $4e
     swap A                                             ;; 02:4c32 $cb $37
     ld   [wCAC5], A                                    ;; 02:4c34 $ea $c5 $ca
     call call_02_484c                                  ;; 02:4c37 $cd $4c $48
     call call_02_48d5                                  ;; 02:4c3a $cd $d5 $48
     ld   A, [wCAC3]                                    ;; 02:4c3d $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4c40 $fe $6c
-    jp   NZ, .jp_02_4e21                               ;; 02:4c42 $c2 $21 $4e
+    jp   NZ, jp_02_4e21                                ;; 02:4c42 $c2 $21 $4e
     ld   HL, wCAC5                                     ;; 02:4c45 $21 $c5 $ca
     ld   B, $01                                        ;; 02:4c48 $06 $01
     call call_02_4925                                  ;; 02:4c4a $cd $25 $49
     ld   A, [wCAC3]                                    ;; 02:4c4d $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4c50 $fe $6c
-    jp   NZ, .jp_02_4e21                               ;; 02:4c52 $c2 $21 $4e
+    jp   NZ, jp_02_4e21                                ;; 02:4c52 $c2 $21 $4e
     call call_02_4aee                                  ;; 02:4c55 $cd $ee $4a
     ld   A, [wCAC3]                                    ;; 02:4c58 $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4c5b $fe $6c
-    jp   NZ, .jp_02_4e21                               ;; 02:4c5d $c2 $21 $4e
-    jr   .jp_02_4c62                                   ;; 02:4c60 $18 $00
-.jp_02_4c62:
+    jp   NZ, jp_02_4e21                                ;; 02:4c5d $c2 $21 $4e
+    jr   jp_02_4c62                                    ;; 02:4c60 $18 $00
+
+jp_02_4c62:
     ld   A, [wCAC9]                                    ;; 02:4c62 $fa $c9 $ca
-    ld   HL, .data_02_4e2b                             ;; 02:4c65 $21 $2b $4e
+    ld   HL, data_02_4e2b                              ;; 02:4c65 $21 $2b $4e
     add  A, L                                          ;; 02:4c68 $85
     ld   L, A                                          ;; 02:4c69 $6f
     ld   A, $00                                        ;; 02:4c6a $3e $00
@@ -1551,7 +1563,7 @@ call_02_4af3:
     ld   A, [wCAC9]                                    ;; 02:4cb1 $fa $c9 $ca
     add  A, A                                          ;; 02:4cb4 $87
     add  A, A                                          ;; 02:4cb5 $87
-    ld   HL, .data_02_4e2d                             ;; 02:4cb6 $21 $2d $4e
+    ld   HL, data_02_4e2d                              ;; 02:4cb6 $21 $2d $4e
     add  A, L                                          ;; 02:4cb9 $85
     ld   L, A                                          ;; 02:4cba $6f
     ld   A, $00                                        ;; 02:4cbb $3e $00
@@ -1583,25 +1595,26 @@ call_02_4af3:
     inc  [HL]                                          ;; 02:4cec $34
     xor  A, A                                          ;; 02:4ced $af
     ld   [wCACB], A                                    ;; 02:4cee $ea $cb $ca
-    jp   .jp_02_4c62                                   ;; 02:4cf1 $c3 $62 $4c
+    jp   jp_02_4c62                                    ;; 02:4cf1 $c3 $62 $4c
 .jp_02_4cf4:
     ld   HL, wCACB                                     ;; 02:4cf4 $21 $cb $ca
     inc  [HL]                                          ;; 02:4cf7 $34
     ld   A, [HL]                                       ;; 02:4cf8 $7e
     cp   A, $ff                                        ;; 02:4cf9 $fe $ff
-    jp   Z, .jp_02_4e21                                ;; 02:4cfb $ca $21 $4e
-    jp   .jp_02_4c62                                   ;; 02:4cfe $c3 $62 $4c
+    jp   Z, jp_02_4e21                                 ;; 02:4cfb $ca $21 $4e
+    jp   jp_02_4c62                                    ;; 02:4cfe $c3 $62 $4c
 .jp_02_4d01:
     ld   A, [wCACA]                                    ;; 02:4d01 $fa $ca $ca
     cp   A, $00                                        ;; 02:4d04 $fe $00
-    jp   NZ, .jp_02_4e0d                               ;; 02:4d06 $c2 $0d $4e
+    jp   NZ, jp_02_4e0d                                ;; 02:4d06 $c2 $0d $4e
     ld   A, $01                                        ;; 02:4d09 $3e $01
     ld   [wCACA], A                                    ;; 02:4d0b $ea $ca $ca
     xor  A, A                                          ;; 02:4d0e $af
     ld   [wCAC9], A                                    ;; 02:4d0f $ea $c9 $ca
     ld   [wCACB], A                                    ;; 02:4d12 $ea $cb $ca
-    jr   .jp_02_4d6d                                   ;; 02:4d15 $18 $56
-.jp_02_4d17:
+    jr   jp_02_4d6d                                    ;; 02:4d15 $18 $56
+
+jp_02_4d17:
     ld   A, $b0                                        ;; 02:4d17 $3e $b0
     ld   [wCAC5], A                                    ;; 02:4d19 $ea $c5 $ca
     ld   HL, wCAC5                                     ;; 02:4d1c $21 $c5 $ca
@@ -1609,32 +1622,33 @@ call_02_4af3:
     call call_02_4925                                  ;; 02:4d21 $cd $25 $49
     ld   A, [wCAC3]                                    ;; 02:4d24 $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4d27 $fe $6c
-    jp   NZ, .jp_02_4b47                               ;; 02:4d29 $c2 $47 $4b
+    jp   NZ, jp_02_4b47                                ;; 02:4d29 $c2 $47 $4b
     call call_02_4aee                                  ;; 02:4d2c $cd $ee $4a
     ld   A, [wCAC3]                                    ;; 02:4d2f $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4d32 $fe $6c
-    jp   NZ, .jp_02_4b47                               ;; 02:4d34 $c2 $47 $4b
+    jp   NZ, jp_02_4b47                                ;; 02:4d34 $c2 $47 $4b
     call call_02_484c                                  ;; 02:4d37 $cd $4c $48
     call call_02_4898                                  ;; 02:4d3a $cd $98 $48
     ld   A, [wCAC3]                                    ;; 02:4d3d $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4d40 $fe $6c
-    jp   NZ, .jp_02_4e21                               ;; 02:4d42 $c2 $21 $4e
+    jp   NZ, jp_02_4e21                                ;; 02:4d42 $c2 $21 $4e
     ld   HL, wCAC5                                     ;; 02:4d45 $21 $c5 $ca
     ld   B, $01                                        ;; 02:4d48 $06 $01
     call call_02_4a03                                  ;; 02:4d4a $cd $03 $4a
     ld   A, [wCAC3]                                    ;; 02:4d4d $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4d50 $fe $6c
-    jp   NZ, .jp_02_4e21                               ;; 02:4d52 $c2 $21 $4e
+    jp   NZ, jp_02_4e21                                ;; 02:4d52 $c2 $21 $4e
     call call_02_4af3                                  ;; 02:4d55 $cd $f3 $4a
     ld   A, [wCAC3]                                    ;; 02:4d58 $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4d5b $fe $6c
-    jp   NZ, .jp_02_4e21                               ;; 02:4d5d $c2 $21 $4e
+    jp   NZ, jp_02_4e21                                ;; 02:4d5d $c2 $21 $4e
     ld   A, [wCAC5]                                    ;; 02:4d60 $fa $c5 $ca
     swap A                                             ;; 02:4d63 $cb $37
     ld   [wCAC5], A                                    ;; 02:4d65 $ea $c5 $ca
     cp   A, $b0                                        ;; 02:4d68 $fe $b0
-    jp   NZ, .jp_02_4e21                               ;; 02:4d6a $c2 $21 $4e
-.jp_02_4d6d:
+    jp   NZ, jp_02_4e21                                ;; 02:4d6a $c2 $21 $4e
+
+jp_02_4d6d:
     call call_02_484c                                  ;; 02:4d6d $cd $4c $48
     call call_02_4898                                  ;; 02:4d70 $cd $98 $48
     ld   A, [wCAC3]                                    ;; 02:4d73 $fa $c3 $ca
@@ -1663,7 +1677,7 @@ call_02_4af3:
     ld   A, [wCAC5]                                    ;; 02:4db1 $fa $c5 $ca
     add  A, A                                          ;; 02:4db4 $87
     add  A, A                                          ;; 02:4db5 $87
-    ld   HL, .data_02_4e34                             ;; 02:4db6 $21 $34 $4e
+    ld   HL, data_02_4e34                              ;; 02:4db6 $21 $34 $4e
     add  A, L                                          ;; 02:4db9 $85
     ld   L, A                                          ;; 02:4dba $6f
     ld   A, $00                                        ;; 02:4dbb $3e $00
@@ -1691,47 +1705,53 @@ call_02_4af3:
     ld   A, [wCAC3]                                    ;; 02:4de1 $fa $c3 $ca
     cp   A, $6c                                        ;; 02:4de4 $fe $6c
     jp   NZ, .jp_02_4deb                               ;; 02:4de6 $c2 $eb $4d
-    jr   .jp_02_4d6d                                   ;; 02:4de9 $18 $82
+    jr   jp_02_4d6d                                    ;; 02:4de9 $18 $82
 .jp_02_4deb:
     ld   HL, wCACB                                     ;; 02:4deb $21 $cb $ca
     inc  [HL]                                          ;; 02:4dee $34
     ld   A, [HL]                                       ;; 02:4def $7e
     cp   A, $ff                                        ;; 02:4df0 $fe $ff
-    jr   Z, .jp_02_4e21                                ;; 02:4df2 $28 $2d
-    jp   .jp_02_4d6d                                   ;; 02:4df4 $c3 $6d $4d
+    jr   Z, jp_02_4e21                                 ;; 02:4df2 $28 $2d
+    jp   jp_02_4d6d                                    ;; 02:4df4 $c3 $6d $4d
 .jp_02_4df7:
     ld   A, [wCACA]                                    ;; 02:4df7 $fa $ca $ca
     cp   A, $00                                        ;; 02:4dfa $fe $00
-    jr   NZ, .jp_02_4e0d                               ;; 02:4dfc $20 $0f
+    jr   NZ, jp_02_4e0d                                ;; 02:4dfc $20 $0f
     ld   A, $01                                        ;; 02:4dfe $3e $01
     ld   [wCACA], A                                    ;; 02:4e00 $ea $ca $ca
     xor  A, A                                          ;; 02:4e03 $af
     ld   [wCAC9], A                                    ;; 02:4e04 $ea $c9 $ca
     ld   [wCACB], A                                    ;; 02:4e07 $ea $cb $ca
-    jp   .jp_02_4c62                                   ;; 02:4e0a $c3 $62 $4c
-.jp_02_4e0d:
+    jp   jp_02_4c62                                    ;; 02:4e0a $c3 $62 $4c
+
+jp_02_4e0d:
     ld   A, $02                                        ;; 02:4e0d $3e $02
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:4e0f $ea $3a $c5
     pop  AF                                            ;; 02:4e12 $f1
     ld_long_store rSVBK, A                             ;; 02:4e13 $ea $70 $ff
     ret                                                ;; 02:4e16 $c9
-.jp_02_4e17:
+
+jp_02_4e17:
     ld   A, $01                                        ;; 02:4e17 $3e $01
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:4e19 $ea $3a $c5
     pop  AF                                            ;; 02:4e1c $f1
     ld_long_store rSVBK, A                             ;; 02:4e1d $ea $70 $ff
     ret                                                ;; 02:4e20 $c9
-.jp_02_4e21:
+
+jp_02_4e21:
     ld   A, $01                                        ;; 02:4e21 $3e $01
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:4e23 $ea $3a $c5
     pop  AF                                            ;; 02:4e26 $f1
     ld_long_store rSVBK, A                             ;; 02:4e27 $ea $70 $ff
     ret                                                ;; 02:4e2a $c9
-.data_02_4e2b:
+
+data_02_4e2b:
     db   $00, $ff                                      ;; 02:4e2b ??
-.data_02_4e2d:
+
+data_02_4e2d:
     db   $3b, $99, $d6, $03, $ff, $ff, $ff             ;; 02:4e2d ???????
-.data_02_4e34:
+
+data_02_4e34:
     db   $3b, $5e, $d6, $03, $ff, $ff, $ff, $fa        ;; 02:4e34 ????????
     db   $70, $ff, $f5, $3e, $02, $ea, $70, $ff        ;; 02:4e3c ????????
     db   $01, $00, $04, $21, $87, $d1, $3e, $00        ;; 02:4e44 ????????
@@ -3439,6 +3459,8 @@ data_02_6e39:
     pop  AF                                            ;; 02:6e7c $f1
     ld_long_store rSVBK, A                             ;; 02:6e7d $ea $70 $ff
     ret                                                ;; 02:6e80 $c9
+
+data_02_6e81:
     ld_long_load A, rSVBK                              ;; 02:6e81 $fa $70 $ff
     push AF                                            ;; 02:6e84 $f5
     ld   A, $02                                        ;; 02:6e85 $3e $02

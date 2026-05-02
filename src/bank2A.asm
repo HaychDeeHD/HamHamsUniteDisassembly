@@ -2745,8 +2745,11 @@ call_2a_65d9:
     Op16_SubOps 1                                      ;; 2a:65e6 $16 $01
     SubOp_ClearFlag wC92F, 5                           ;; 2a:65e8 $5e $bd
     Op50_WriteByte w1_D000, $01, $00                   ;; 2a:65ea $50 $00 $d0 $01 $00
-    db   $5e, $80, $5a, $90, $1e, $82, $78, $3b        ;; 2a:65ef ????????
-    db   $50, $92, $ca, $00, $02, $54, $01             ;; 2a:65f7 ???????
+    Op5E_Unknown $80                                   ;; 2a:65ef $5e $80
+    Op5A_Unknown $90                                   ;; 2a:65f1 $5a $90
+    Op1E_Call call_3b_7882                             ;; 2a:65f3 $1e $82 $78 $3b
+    Op50_WriteByte wCA92, $00, $02                     ;; 2a:65f7 $50 $92 $ca $00 $02
+    db   $54, $01                                      ;; 2a:65fc ??
 
 call_2a_65fe:
     Op82_Run data_01_74b7                              ;; 2a:65fe $82 $b7 $74 $01
@@ -3905,7 +3908,9 @@ call_2a_758b:
 call_2a_7598:
     SCRIPT_RETURN_4A                                   ;; 2a:7598 $4a
     Op3E_Compare_Branch 22, $1b, $5e, $10, call_2a_7598 ;; 2a:7599 $3e $16 $1b $5e $10 $98 $75 $2a
-    db   $5e, $80, $5a, $90, $1e, $94, $7e, $36        ;; 2a:75a1 ????????
+    Op5E_Unknown $80                                   ;; 2a:75a1 $5e $80
+    Op5A_Unknown $90                                   ;; 2a:75a3 $5a $90
+    Op1E_Call call_36_7e94                             ;; 2a:75a5 $1e $94 $7e $36
     db   $54, $00                                      ;; 2a:75a9 ??
 
 call_2a_75ab:

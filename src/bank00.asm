@@ -150,7 +150,7 @@ entry2:
     ldh  [rLCDC], A                                    ;; 00:0283 $e0 $40
     ldh  A, [rKEY1]                                    ;; 00:0285 $f0 $4d
     bit  7, A                                          ;; 00:0287 $cb $7f
-    jr   NZ, jp_00_02a7                                ;; 00:0289 $20 $1c
+    jr   NZ, call_00_02a7                              ;; 00:0289 $20 $1c
     set  0, A                                          ;; 00:028b $cb $c7
     ldh  [rKEY1], A                                    ;; 00:028d $e0 $4d
     xor  A, A                                          ;; 00:028f $af
@@ -168,7 +168,7 @@ entry2:
     ldh  [rIE], A                                      ;; 00:02a3 $e0 $ff
     ldh  [rIF], A                                      ;; 00:02a5 $e0 $0f
 
-jp_00_02a7:
+call_00_02a7:
     di                                                 ;; 00:02a7 $f3
     ld   SP, $fffd                                     ;; 00:02a8 $31 $fd $ff
     ld   B, $07                                        ;; 00:02ab $06 $07
@@ -704,7 +704,7 @@ jp_00_059a:
     xor  A, A                                          ;; 00:0669 $af
     ldh  [rLCDC], A                                    ;; 00:066a $e0 $40
     ld   [wC672], A                                    ;; 00:066c $ea $72 $c6
-    jp   jp_00_02a7                                    ;; 00:066f $c3 $a7 $02
+    jp   call_00_02a7                                  ;; 00:066f $c3 $a7 $02
 .jr_00_0672:
     ld   A, [wC312]                                    ;; 00:0672 $fa $12 $c3
     inc  A                                             ;; 00:0675 $3c
@@ -5906,6 +5906,8 @@ WriteBytesBasedOn_C35AtoE_and_C356to8:
     ld   [wCurrentRomBankC677], A                      ;; 00:2a24 $ea $77 $c6
     ld   [$2000], A                                    ;; 00:2a27 $ea $00 $20
     ret                                                ;; 00:2a2a $c9
+
+data_00_2a2b:
     db   $af, $ea, $00, $40, $3e, $0a, $ea, $00        ;; 00:2a2b ????????
     db   $00, $af, $21, $00, $a0, $01, $00, $20        ;; 00:2a33 ????????
     db   $22, $0d, $20, $fc, $05, $20, $f9, $af        ;; 00:2a3b ????????
@@ -8108,6 +8110,8 @@ PlayerStateChecksum:
     dec  B                                             ;; 00:3946 $05
     jr   NZ, .loop_addPlayerStateBytesToFF80           ;; 00:3947 $20 $e7
     ret                                                ;; 00:3949 $c9
+
+data_00_394a:
     db   $fa, $93, $ca, $ea, $a9, $c6, $fa, $94        ;; 00:394a ????????
     db   $ca, $ea, $aa, $c6, $11, $00, $00, $fa        ;; 00:3952 ????????
     db   $a9, $c6, $5f, $cb, $23, $cb, $12, $cb        ;; 00:395a ????????

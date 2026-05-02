@@ -2311,20 +2311,42 @@ call_2d_5d8e:
     Op4C_Unknown $16, $02, $02, $00, $00, $00, $00, $71, $42, $10 ;; 2d:5d9f $4c $16 $02 $02 $00 $00 $00 $00 $71 $42 $10
     Op1E_Call call_1d_6b36                             ;; 2d:5daa $1e $36 $6b $1d
     Op04_Unknown_Text data_39_4e5f                     ;; 2d:5dae $04 $5f $4e $39
-    db   $5e, $80, $1e, $5d, $61, $04, $56, $1a        ;; 2d:5db2 ????????
-    db   $00, $43, $1a, $4c, $16, $08, $04, $00        ;; 2d:5dba ????????
-    db   $00, $00, $00, $83, $4c, $10, $4a, $3e        ;; 2d:5dc2 ????????
-    db   $1a, $00, $43, $1a, $c8, $5d, $2d, $50        ;; 2d:5dca ????????
-    db   $20, $c7, $00, $11, $82, $44, $68, $01        ;; 2d:5dd2 ????????
-    db   $4c, $16, $04, $02, $00, $00, $00, $00        ;; 2d:5dda ????????
-    db   $f3, $46, $10, $56, $1a, $a2, $42, $1a        ;; 2d:5de2 ????????
-    db   $4a, $3e, $1a, $a2, $42, $1a, $ea, $5d        ;; 2d:5dea ????????
-    db   $2d, $16, $01, $3e, $d9, $16, $01, $7f        ;; 2d:5df2 ????????
-    db   $12, $04, $16, $01, $3e, $08, $16, $01        ;; 2d:5dfa ????????
-    db   $3e, $0a, $5e, $80, $5a, $90, $1e, $49        ;; 2d:5e02 ????????
-    db   $56, $3c, $14, $01, $bc, $58, $1d, $5e        ;; 2d:5e0a ????????
-    db   $2d, $44, $30, $00, $16, $01, $7e, $4d        ;; 2d:5e12 ????????
-    db   $04, $54, $01, $54, $00                       ;; 2d:5e1a ?????
+    Op5E_Unknown $80                                   ;; 2d:5db2 $5e $80
+    Op1E_Call call_04_615d                             ;; 2d:5db4 $1e $5d $61 $04
+    Op56_WriteBitArrayIndex 26, $00, $43, $1a          ;; 2d:5db8 $56 $1a $00 $43 $1a
+    Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $83, $4c, $10 ;; 2d:5dbd $4c $16 $08 $04 $00 $00 $00 $00 $83 $4c $10
+
+call_2d_5dc8:
+    SCRIPT_RETURN_4A                                   ;; 2d:5dc8 $4a
+    Op3E_Compare_Branch 26, $00, $43, $1a, call_2d_5dc8 ;; 2d:5dc9 $3e $1a $00 $43 $1a $c8 $5d $2d
+    Op50_WriteByte wC720, $00, $11                     ;; 2d:5dd1 $50 $20 $c7 $00 $11
+    Op82_Run data_01_6844                              ;; 2d:5dd6 $82 $44 $68 $01
+    Op4C_Unknown $16, $04, $02, $00, $00, $00, $00, $f3, $46, $10 ;; 2d:5dda $4c $16 $04 $02 $00 $00 $00 $00 $f3 $46 $10
+    Op56_WriteBitArrayIndex 26, $a2, $42, $1a          ;; 2d:5de5 $56 $1a $a2 $42 $1a
+
+call_2d_5dea:
+    SCRIPT_RETURN_4A                                   ;; 2d:5dea $4a
+    Op3E_Compare_Branch 26, $a2, $42, $1a, call_2d_5dea ;; 2d:5deb $3e $1a $a2 $42 $1a $ea $5d $2d
+    Op16_SubOps 1                                      ;; 2d:5df3 $16 $01
+    SubOp_SetFlag wC933, 1                             ;; 2d:5df5 $3e $d9
+    Op16_SubOps 1                                      ;; 2d:5df7 $16 $01
+    SubOp_SetByte wC82A, $04                           ;; 2d:5df9 $7f $12 $04
+    Op16_SubOps 1                                      ;; 2d:5dfc $16 $01
+    SubOp_SetFlag wC919, 0                             ;; 2d:5dfe $3e $08
+    Op16_SubOps 1                                      ;; 2d:5e00 $16 $01
+    SubOp_SetFlag wC919, 2                             ;; 2d:5e02 $3e $0a
+    Op5E_Unknown $80                                   ;; 2d:5e04 $5e $80
+    Op5A_Unknown $90                                   ;; 2d:5e06 $5a $90
+    Op1E_Call call_3c_5649                             ;; 2d:5e08 $1e $49 $56 $3c
+    Op14_Unknown 1, $bc, $58                           ;; 2d:5e0c $14 $01 $bc $58
+    SCRIPT_POINTER call_2d_5e1d                        ;; 2d:5e10 $1d $5e $2d
+    Op44_Unknown $30, $00                              ;; 2d:5e13 $44 $30 $00
+    Op16_SubOps 1                                      ;; 2d:5e16 $16 $01
+    SubOp_SetByte wC765, $04                           ;; 2d:5e18 $7e $4d $04
+    db   $54, $01                                      ;; 2d:5e1b ??
+
+call_2d_5e1d:
+    db   $54, $00                                      ;; 2d:5e1d ??
 
 call_2d_5e1f:
     Op14_Unknown 1, $be, $58                           ;; 2d:5e1f $14 $01 $be $58
@@ -4886,15 +4908,9 @@ data_2d_7e50:
 
 data_2d_7e80:
     TXT  "Did you need to<E4>tell me something?<E3>Oh, we're meeting<E4>the others at the<E4>Clubhouse?<E3>OK, let's go.<E0>" ;; 2d:7e80 ????????????????????????????????????????????????????????????????????????????????????????????????
-    db   $22, $65, $01, $6e, $65, $65, $64, $01        ;; 2d:7ee0 ????????
-    db   $74, $6f, $01, $66, $69, $6e, $64, $e4        ;; 2d:7ee8 ????????
-    db   $6d, $79, $01, $62, $72, $6f, $74, $68        ;; 2d:7ef0 ????????
-    db   $65, $72, $cf, $01, $74, $68, $65, $6e        ;; 2d:7ef8 ????????
-    db   $ca, $e3, $e7, $cf, $e3, $68, $65, $6c        ;; 2d:7f00 ????????
-    db   $70, $01, $6d, $65, $01, $6c, $6f, $6f        ;; 2d:7f08 ????????
-    db   $6b, $01, $66, $6f, $72, $e4, $68, $69        ;; 2d:7f10 ????????
-    db   $6d, $01, $61, $72, $6f, $75, $6e, $64        ;; 2d:7f18 ????????
-    db   $e4, $68, $65, $72, $65, $ca, $e0             ;; 2d:7f20 ???????
+
+data_2d_7ee0:
+    TXT  "We need to find<E4>my brother, then.<E3><E7>,<E3>help me look for<E4>him around<E4>here.<E0>" ;; 2d:7ee0 ???????????????????????????????????????????????????????????????????????
 
 data_2d_7f27:
     TXT  "I didn't know the<E4>plug-in was behind<E4>the counter.<E0>" ;; 2d:7f27 ??????????????????????????????????????????????????

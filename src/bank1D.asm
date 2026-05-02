@@ -2085,10 +2085,16 @@ call_1d_5ebb:
     SubOp_SetByte wC71D, $00                           ;; 1d:5ebd $7e $05 $00
     Op14_Unknown 1, $57, $41                           ;; 1d:5ec0 $14 $01 $57 $41
     SCRIPT_POINTER call_1d_5f08                        ;; 1d:5ec4 $08 $5f $1d
-    db   $5e, $80, $82, $81, $6e, $02, $16, $01        ;; 1d:5ec7 ????????
-    db   $7e, $46, $00, $16, $01, $7e, $48, $00        ;; 1d:5ecf ????????
-    db   $1e, $51, $5f, $04, $1e, $3f, $5e, $04        ;; 1d:5ed7 ????????
-    db   $4a, $32, $47, $74, $7d, $a0, $dd, $06        ;; 1d:5edf ????????
+    Op5E_Unknown $80                                   ;; 1d:5ec7 $5e $80
+    Op82_Run data_02_6e81                              ;; 1d:5ec9 $82 $81 $6e $02
+    Op16_SubOps 1                                      ;; 1d:5ecd $16 $01
+    SubOp_SetByte wC75E, $00                           ;; 1d:5ecf $7e $46 $00
+    Op16_SubOps 1                                      ;; 1d:5ed2 $16 $01
+    SubOp_SetByte wC760, $00                           ;; 1d:5ed4 $7e $48 $00
+    Op1E_Call call_04_5f51                             ;; 1d:5ed7 $1e $51 $5f $04
+    Op1E_Call call_04_5e3f                             ;; 1d:5edb $1e $3f $5e $04
+    SCRIPT_RETURN_4A                                   ;; 1d:5edf $4a
+    Op32_Unknown $47, $74, $7d, $a0, $dd, $06          ;; 1d:5ee0 $32 $47 $74 $7d $a0 $dd $06
     db   $6a, $00, $00, $00, $00, $40, $00, $00        ;; 1d:5ee7 ????????
     db   $00, $01, $52, $94, $c6, $00, $00, $00        ;; 1d:5eef ????????
     db   $1e, $fb, $65, $04, $1e, $0d, $66, $04        ;; 1d:5ef7 ????????

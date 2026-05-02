@@ -688,7 +688,10 @@ wC65F:
     ds 1                                               ;; c65f
 
 wC660:
-    ds 2                                               ;; c660
+    ds 1                                               ;; c660
+
+wC661:
+    ds 1                                               ;; c661
 
 wHamJamFlagsC662:
     ds 1                                               ;; c662
@@ -924,7 +927,10 @@ wC721:
     ds 1                                               ;; c721
 
 wC722:
-    ds 2                                               ;; c722
+    ds 1                                               ;; c722
+
+wC723:
+    ds 1                                               ;; c723
 
 wC724:
     ds 1                                               ;; c724
@@ -1032,7 +1038,10 @@ wC75E:
     ds 1                                               ;; c75e
 
 wC75F:
-    ds 2                                               ;; c75f
+    ds 1                                               ;; c75f
+
+wC760:
+    ds 1                                               ;; c760
 
 wC761:
     ds 1                                               ;; c761
@@ -1200,7 +1209,10 @@ wC7A3:
     ds 1                                               ;; c7a3
 
 wC7A4:
-    ds 2                                               ;; c7a4
+    ds 1                                               ;; c7a4
+
+wC7A5:
+    ds 1                                               ;; c7a5
 
 wC7A6:
     ds 50                                              ;; c7a6

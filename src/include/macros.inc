@@ -191,6 +191,10 @@ MACRO Op5A_Unknown
 db $5a
 db \<1>
 ENDM
+MACRO Op5E_Unknown
+db $5e
+db \<1>
+ENDM
 MACRO Op68_CopyBytes
 db $68
 db \1

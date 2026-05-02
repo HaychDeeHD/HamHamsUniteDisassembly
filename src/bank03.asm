@@ -865,6 +865,8 @@ call_03_455c:
     ld   A, [w1_D5CF]                                  ;; 03:45b3 $fa $cf $d5
     call call_03_5906                                  ;; 03:45b6 $cd $06 $59
     jp   jp_03_5a58                                    ;; 03:45b9 $c3 $58 $5a
+
+data_03_45bc:
     ld_long_load A, rSVBK                              ;; 03:45bc $fa $70 $ff
     push AF                                            ;; 03:45bf $f5
     ld   A, $03                                        ;; 03:45c0 $3e $03
