@@ -4934,7 +4934,15 @@ call_00_22f9:
     ld   [wReturnAddressC324], A                       ;; 00:2361 $ea $24 $c3
     ret                                                ;; 00:2364 $c9
 
-call_00_2365:
+; Certain script ops like 82 call non-script code.
+; Sometimes those functions take arguments that are inlined after the script call.
+; Example:
+;   Op82_Run data_01_73bf
+;   db   $64, $c7
+;   Op68_CopyBytes 2, wC7D8, w1_D216, $01
+; In the above example, the function called by Op82 calls this function to read 4 subsequent bytes into BC/DE.
+; That function will only use 2 of the bytes, then set prev-instruction-length to 5 (3 + 2) to account for them.
+readTwoWordsAfterCurrentScriptPointerToBCDE:
     ld   A, [wCurrentRomBankC677]                      ;; 00:2365 $fa $77 $c6
     push AF                                            ;; 00:2368 $f5
     ld   A, [wArgAddressC6A0.bank]                     ;; 00:2369 $fa $a2 $c6

@@ -3045,16 +3045,30 @@ call_1d_6941:
     Op16_SubOps 1                                      ;; 1d:6941 $16 $01
     SubOp_SetByte wC751, $02                           ;; 1d:6943 $7e $39 $02
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 1d:6946 $68 $01 $64 $c7 $fd $d1 $01
-    Op82_Run data_01_73bf                              ;; 1d:694d $82 $bf $73 $01
-    db   $64, $c7, $68, $02, $d8, $c7, $16, $d2        ;; 1d:6951 ????????
-    db   $01, $68, $02, $da, $c7, $0e, $d2, $01        ;; 1d:6959 ????????
-    db   $5a, $02, $4a, $5e, $80, $5a, $90, $14        ;; 1d:6961 ????????
-    db   $01, $6d, $41, $7d, $69, $1d, $50, $f8        ;; 1d:6969 ????????
-    db   $d0, $02, $ff, $50, $fd, $d0, $02, $ff        ;; 1d:6971 ????????
-    db   $18, $82, $69, $1d, $50, $5f, $c6, $00        ;; 1d:6979 ????????
-    db   $01, $1e, $4b, $52, $26, $82, $07, $74        ;; 1d:6981 ????????
-    db   $01, $82, $6c, $75, $01, $16, $01, $5e        ;; 1d:6989 ????????
-    db   $03, $20                                      ;; 1d:6991 ??
+    Op82_Run apply7fMaskToPointerThatFollows           ;; 1d:694d $82 $bf $73 $01
+    ARGUMENT_WORD $c764                                ;; 1d:6951 $64 $c7
+    Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 1d:6953 $68 $02 $d8 $c7 $16 $d2 $01
+    Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 1d:695a $68 $02 $da $c7 $0e $d2 $01
+    Op5A_Unknown $02                                   ;; 1d:6961 $5a $02
+    SCRIPT_RETURN_4A                                   ;; 1d:6963 $4a
+    Op5E_Unknown $80                                   ;; 1d:6964 $5e $80
+    Op5A_Unknown $90                                   ;; 1d:6966 $5a $90
+    Op14_Unknown 1, $6d, $41                           ;; 1d:6968 $14 $01 $6d $41
+    SCRIPT_POINTER call_1d_697d                        ;; 1d:696c $7d $69 $1d
+    Op50_WriteByte w2_D0F8, $02, $ff                   ;; 1d:696f $50 $f8 $d0 $02 $ff
+    Op50_WriteByte w2_D0FD, $02, $ff                   ;; 1d:6974 $50 $fd $d0 $02 $ff
+    Op18_Jump call_1d_6982                             ;; 1d:6979 $18 $82 $69 $1d
+
+call_1d_697d:
+    Op50_WriteByte wC65F, $00, $01                     ;; 1d:697d $50 $5f $c6 $00 $01
+
+call_1d_6982:
+    Op1E_Call call_26_524b                             ;; 1d:6982 $1e $4b $52 $26
+    Op82_Run data_01_7407                              ;; 1d:6986 $82 $07 $74 $01
+    Op82_Run data_01_756c                              ;; 1d:698a $82 $6c $75 $01
+    Op16_SubOps 1                                      ;; 1d:698e $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 1d:6990 $5e $03
+    SCRIPT_RETURN_20                                   ;; 1d:6992 $20
 
 call_1d_6993:
     Op16_SubOps 1                                      ;; 1d:6993 $16 $01
@@ -3079,11 +3093,14 @@ call_1d_69b8:
     Op16_SubOps 1                                      ;; 1d:69b8 $16 $01
     SubOp_SetByte wC751, $02                           ;; 1d:69ba $7e $39 $02
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 1d:69bd $68 $01 $64 $c7 $fd $d1 $01
-    Op82_Run data_01_73bf                              ;; 1d:69c4 $82 $bf $73 $01
-    db   $64, $c7, $68, $02, $d8, $c7, $16, $d2        ;; 1d:69c8 ????????
-    db   $01, $68, $02, $da, $c7, $0e, $d2, $01        ;; 1d:69d0 ????????
-    db   $82, $c8, $77, $01, $1e, $22, $5b, $04        ;; 1d:69d8 ????????
-    db   $44, $0a, $00, $20                            ;; 1d:69e0 ????
+    Op82_Run apply7fMaskToPointerThatFollows           ;; 1d:69c4 $82 $bf $73 $01
+    ARGUMENT_WORD $c764                                ;; 1d:69c8 $64 $c7
+    Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 1d:69ca $68 $02 $d8 $c7 $16 $d2 $01
+    Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 1d:69d1 $68 $02 $da $c7 $0e $d2 $01
+    Op82_Run data_01_77c8                              ;; 1d:69d8 $82 $c8 $77 $01
+    Op1E_Call call_04_5b22                             ;; 1d:69dc $1e $22 $5b $04
+    Op44_Unknown $0a, $00                              ;; 1d:69e0 $44 $0a $00
+    SCRIPT_RETURN_20                                   ;; 1d:69e3 $20
 
 call_1d_69e4:
     Op1E_Call call_04_5b22                             ;; 1d:69e4 $1e $22 $5b $04
@@ -3126,11 +3143,16 @@ call_1d_6a40:
     Op16_SubOps 1                                      ;; 1d:6a40 $16 $01
     SubOp_SetByte wC751, $02                           ;; 1d:6a42 $7e $39 $02
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 1d:6a45 $68 $01 $64 $c7 $fd $d1 $01
-    Op82_Run data_01_73bf                              ;; 1d:6a4c $82 $bf $73 $01
-    db   $64, $c7, $68, $02, $d8, $c7, $16, $d2        ;; 1d:6a50 ????????
-    db   $01, $68, $02, $da, $c7, $0e, $d2, $01        ;; 1d:6a58 ????????
-    db   $5a, $02, $4a, $5e, $80, $5a, $90, $1e        ;; 1d:6a60 ????????
-    db   $8f, $65, $2b, $18, $6f, $6a, $1d             ;; 1d:6a68 ???????
+    Op82_Run apply7fMaskToPointerThatFollows           ;; 1d:6a4c $82 $bf $73 $01
+    ARGUMENT_WORD $c764                                ;; 1d:6a50 $64 $c7
+    Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 1d:6a52 $68 $02 $d8 $c7 $16 $d2 $01
+    Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 1d:6a59 $68 $02 $da $c7 $0e $d2 $01
+    Op5A_Unknown $02                                   ;; 1d:6a60 $5a $02
+    SCRIPT_RETURN_4A                                   ;; 1d:6a62 $4a
+    Op5E_Unknown $80                                   ;; 1d:6a63 $5e $80
+    Op5A_Unknown $90                                   ;; 1d:6a65 $5a $90
+    Op1E_Call call_2b_658f                             ;; 1d:6a67 $1e $8f $65 $2b
+    Op18_Jump call_1d_6a6f                             ;; 1d:6a6b $18 $6f $6a $1d
 
 call_1d_6a6f:
     Op82_Run data_01_7407                              ;; 1d:6a6f $82 $07 $74 $01
@@ -3141,21 +3163,29 @@ call_1d_6a78:
     Op16_SubOps 1                                      ;; 1d:6a78 $16 $01
     SubOp_SetByte wC751, $02                           ;; 1d:6a7a $7e $39 $02
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 1d:6a7d $68 $01 $64 $c7 $fd $d1 $01
-    Op82_Run data_01_73bf                              ;; 1d:6a84 $82 $bf $73 $01
-    db   $64, $c7, $68, $02, $d8, $c7, $16, $d2        ;; 1d:6a88 ????????
-    db   $01, $68, $02, $da, $c7, $0e, $d2, $01        ;; 1d:6a90 ????????
-    db   $16, $01, $5e, $03, $1e, $51, $5d, $2b        ;; 1d:6a98 ????????
-    db   $20                                           ;; 1d:6aa0 ?
+    Op82_Run apply7fMaskToPointerThatFollows           ;; 1d:6a84 $82 $bf $73 $01
+    ARGUMENT_WORD $c764                                ;; 1d:6a88 $64 $c7
+    Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 1d:6a8a $68 $02 $d8 $c7 $16 $d2 $01
+    Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 1d:6a91 $68 $02 $da $c7 $0e $d2 $01
+    Op16_SubOps 1                                      ;; 1d:6a98 $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 1d:6a9a $5e $03
+    Op1E_Call call_2b_5d51                             ;; 1d:6a9c $1e $51 $5d $2b
+    SCRIPT_RETURN_20                                   ;; 1d:6aa0 $20
 
 call_1d_6aa1:
     Op16_SubOps 1                                      ;; 1d:6aa1 $16 $01
     SubOp_SetByte wC751, $02                           ;; 1d:6aa3 $7e $39 $02
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 1d:6aa6 $68 $01 $64 $c7 $fd $d1 $01
-    Op82_Run data_01_73bf                              ;; 1d:6aad $82 $bf $73 $01
-    db   $64, $c7, $68, $02, $d8, $c7, $16, $d2        ;; 1d:6ab1 ????????
-    db   $01, $68, $02, $da, $c7, $0e, $d2, $01        ;; 1d:6ab9 ????????
-    db   $16, $01, $5e, $03, $5a, $02, $4a, $1e        ;; 1d:6ac1 ????????
-    db   $8f, $65, $2b, $20                            ;; 1d:6ac9 ????
+    Op82_Run apply7fMaskToPointerThatFollows           ;; 1d:6aad $82 $bf $73 $01
+    ARGUMENT_WORD $c764                                ;; 1d:6ab1 $64 $c7
+    Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 1d:6ab3 $68 $02 $d8 $c7 $16 $d2 $01
+    Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 1d:6aba $68 $02 $da $c7 $0e $d2 $01
+    Op16_SubOps 1                                      ;; 1d:6ac1 $16 $01
+    SubOp_ClearFlag wBitArrayC918, 3                   ;; 1d:6ac3 $5e $03
+    Op5A_Unknown $02                                   ;; 1d:6ac5 $5a $02
+    SCRIPT_RETURN_4A                                   ;; 1d:6ac7 $4a
+    Op1E_Call call_2b_658f                             ;; 1d:6ac8 $1e $8f $65 $2b
+    SCRIPT_RETURN_20                                   ;; 1d:6acc $20
 
 call_1d_6acd:
     Op16_SubOps 1                                      ;; 1d:6acd $16 $01

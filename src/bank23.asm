@@ -1949,16 +1949,23 @@ call_23_5a9b:
     Op16_SubOps 1                                      ;; 23:5ae7 $16 $01
     SubOp_SetByte wC751, $02                           ;; 23:5ae9 $7e $39 $02
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 23:5aec $68 $01 $64 $c7 $fd $d1 $01
-    Op82_Run data_01_73bf                              ;; 23:5af3 $82 $bf $73 $01
-    db   $64, $c7, $68, $02, $d8, $c7, $16, $d2        ;; 23:5af7 ????????
-    db   $01, $68, $02, $da, $c7, $0e, $d2, $01        ;; 23:5aff ????????
-    db   $5e, $80, $5a, $90, $1e, $51, $5d, $2b        ;; 23:5b07 ????????
-    db   $1e, $4c, $56, $23, $14, $01, $61, $5c        ;; 23:5b0f ????????
-    db   $dd, $55, $23, $1e, $fc, $66, $23, $1e        ;; 23:5b17 ????????
-    db   $17, $6b, $23, $4c, $16, $04, $ff, $00        ;; 23:5b1f ????????
-    db   $00, $00, $00, $61, $42, $10, $1e, $92        ;; 23:5b27 ????????
-    db   $68, $23, $1e, $52, $68, $23, $1e, $72        ;; 23:5b2f ????????
-    db   $68, $23, $18, $a6, $68, $23                  ;; 23:5b37 ??????
+    Op82_Run apply7fMaskToPointerThatFollows           ;; 23:5af3 $82 $bf $73 $01
+    ARGUMENT_WORD $c764                                ;; 23:5af7 $64 $c7
+    Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 23:5af9 $68 $02 $d8 $c7 $16 $d2 $01
+    Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 23:5b00 $68 $02 $da $c7 $0e $d2 $01
+    Op5E_Unknown $80                                   ;; 23:5b07 $5e $80
+    Op5A_Unknown $90                                   ;; 23:5b09 $5a $90
+    Op1E_Call call_2b_5d51                             ;; 23:5b0b $1e $51 $5d $2b
+    Op1E_Call call_23_564c                             ;; 23:5b0f $1e $4c $56 $23
+    Op14_Unknown 1, $61, $5c                           ;; 23:5b13 $14 $01 $61 $5c
+    SCRIPT_POINTER call_23_55dd                        ;; 23:5b17 $dd $55 $23
+    Op1E_Call call_23_66fc                             ;; 23:5b1a $1e $fc $66 $23
+    Op1E_Call call_23_6b17                             ;; 23:5b1e $1e $17 $6b $23
+    Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, $61, $42, $10 ;; 23:5b22 $4c $16 $04 $ff $00 $00 $00 $00 $61 $42 $10
+    Op1E_Call call_23_6892                             ;; 23:5b2d $1e $92 $68 $23
+    Op1E_Call call_23_6852                             ;; 23:5b31 $1e $52 $68 $23
+    Op1E_Call call_23_6872                             ;; 23:5b35 $1e $72 $68 $23
+    Op18_Jump call_23_68a6                             ;; 23:5b39 $18 $a6 $68 $23
 
 call_23_5b3d:
     Op1E_Call call_20_458d                             ;; 23:5b3d $1e $8d $45 $20
@@ -2851,6 +2858,8 @@ call_23_66f0:
     Op06_Unknown_Text data_3a_5909                     ;; 23:66f0 $06 $09 $59 $3a
     Op1E_Call call_04_615d                             ;; 23:66f4 $1e $5d $61 $04
     Op18_Jump call_23_677c                             ;; 23:66f8 $18 $7c $67 $23
+
+call_23_66fc:
     Op1E_Call call_1d_6af5                             ;; 23:66fc $1e $f5 $6a $1d
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $ba, $62, $19 ;; 23:6700 $4c $1a $01 $04 $00 $00 $00 $00 $ba $62 $19
 

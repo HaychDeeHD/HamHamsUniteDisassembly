@@ -136,8 +136,29 @@ class Op82Block(Block):
 
         self.label = label3ByteRomAddressArg(memory, addr + 1)
 
+        # Some functions called by Op82 read subsequent bytes as args.
+        # Check to see if this is one of those.
+        pointer = memory.word(addr + 1)
+        bankNum = memory.byte(addr + 3)
+        serializedAddress = "%02x:%04x" % (bankNum, pointer)
+        # This list may grow.
+        if serializedAddress in ["01:73bf"]:
+            # This function takes 1 pointer arg (1 word).
+            self.subBlock = ArgsBlock(memory, addr + 4, amount=1)
+
     def export(self, file):
         file.asmLine(4, "Op82_Run", str(self.label))
+
+class ArgsBlock(Block):
+    def __init__(self, memory, addr, amount):
+        super().__init__(memory, addr, size=amount*2)
+        RomInfo.macros["ARGUMENT_WORD"] = "dw \\1"
+
+        self.amount = amount
+
+    def export(self, file):
+        for i in range(self.amount):
+            file.asmLine(2, "ARGUMENT_WORD", "$%04x" % self.memory.word(file.addr))
 
 class Op16Block(Block):
     def __init__(self, memory, addr):

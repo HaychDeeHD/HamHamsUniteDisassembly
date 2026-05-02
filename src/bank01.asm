@@ -6387,8 +6387,8 @@ call_01_7284:
     db   $c9, $cd, $65, $23, $3e, $05, $ea, $26        ;; 01:73b1 ????????
     db   $c3, $0a, $f6, $80, $02, $c9                  ;; 01:73b9 ??????
 
-data_01_73bf:
-    call call_00_2365                                  ;; 01:73bf $cd $65 $23
+apply7fMaskToPointerThatFollows:
+    call readTwoWordsAfterCurrentScriptPointerToBCDE   ;; 01:73bf $cd $65 $23
     ld   A, $05                                        ;; 01:73c2 $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 01:73c4 $ea $26 $c3
     ld   A, [BC]                                       ;; 01:73c7 $0a
@@ -6491,7 +6491,7 @@ data_01_7442:
 
 data_01_7464:
     call call_00_27ef                                  ;; 01:7464 $cd $ef $27
-    call call_00_2365                                  ;; 01:7467 $cd $65 $23
+    call readTwoWordsAfterCurrentScriptPointerToBCDE   ;; 01:7467 $cd $65 $23
     ld   A, $05                                        ;; 01:746a $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 01:746c $ea $26 $c3
     ld   A, $03                                        ;; 01:746f $3e $03

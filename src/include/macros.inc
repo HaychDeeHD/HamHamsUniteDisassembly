@@ -1,3 +1,6 @@
+MACRO ARGUMENT_WORD
+dw \1
+ENDM
 MACRO HamChatWheelOption
 db \2
 ENDM

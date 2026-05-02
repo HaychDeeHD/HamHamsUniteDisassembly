@@ -3061,11 +3061,13 @@ call_25_6a7f:
     Op1E_Call call_04_5b22                             ;; 25:6a8a $1e $22 $5b $04
     Op44_Unknown $0a, $00                              ;; 25:6a8e $44 $0a $00
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 25:6a91 $68 $01 $64 $c7 $fd $d1 $01
-    Op82_Run data_01_73bf                              ;; 25:6a98 $82 $bf $73 $01
-    db   $64, $c7, $68, $02, $d8, $c7, $16, $d2        ;; 25:6a9c ????????
-    db   $01, $68, $02, $da, $c7, $0e, $d2, $01        ;; 25:6aa4 ????????
-    db   $1e, $56, $52, $39, $1e, $44, $73, $25        ;; 25:6aac ????????
-    db   $18, $dc, $65, $25                            ;; 25:6ab4 ????
+    Op82_Run apply7fMaskToPointerThatFollows           ;; 25:6a98 $82 $bf $73 $01
+    ARGUMENT_WORD $c764                                ;; 25:6a9c $64 $c7
+    Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 25:6a9e $68 $02 $d8 $c7 $16 $d2 $01
+    Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 25:6aa5 $68 $02 $da $c7 $0e $d2 $01
+    Op1E_Call call_39_5256                             ;; 25:6aac $1e $56 $52 $39
+    Op1E_Call call_25_7344                             ;; 25:6ab0 $1e $44 $73 $25
+    Op18_Jump call_25_65dc                             ;; 25:6ab4 $18 $dc $65 $25
 
 call_25_6ab8:
     Op14_Unknown 1, $2e, $49                           ;; 25:6ab8 $14 $01 $2e $49

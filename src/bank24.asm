@@ -2052,15 +2052,22 @@ call_24_59f3:
 
 call_24_5a10:
     Op68_CopyBytes 1, wC81D, w1_BeginRegionD1FD, $01   ;; 24:5a10 $68 $01 $1d $c8 $fd $d1 $01
-    Op82_Run data_01_73bf                              ;; 24:5a17 $82 $bf $73 $01
-    db   $1d, $c8, $14, $01, $ae, $5a, $37, $5a        ;; 24:5a1b ????????
-    db   $24, $82, $c3, $74, $01, $1c, $03, $dc        ;; 24:5a23 ????????
-    db   $54, $24, $f3, $54, $24, $c7, $57, $24        ;; 24:5a2b ????????
-    db   $18, $82, $54, $24, $4c, $16, $ff, $02        ;; 24:5a33 ????????
-    db   $00, $00, $00, $00, $15, $49, $17, $44        ;; 24:5a3b ????????
-    db   $32, $00, $4c, $16, $02, $02, $00, $00        ;; 24:5a43 ????????
-    db   $00, $00, $00, $00, $00, $18, $82, $54        ;; 24:5a4b ????????
-    db   $24                                           ;; 24:5a53 ?
+    Op82_Run apply7fMaskToPointerThatFollows           ;; 24:5a17 $82 $bf $73 $01
+    ARGUMENT_WORD $c81d                                ;; 24:5a1b $1d $c8
+    Op14_Unknown 1, $ae, $5a                           ;; 24:5a1d $14 $01 $ae $5a
+    SCRIPT_POINTER call_24_5a37                        ;; 24:5a21 $37 $5a $24
+    Op82_Run data_01_74c3                              ;; 24:5a24 $82 $c3 $74 $01
+    Op1C_TableJump 3                                   ;; 24:5a28 $1c $03
+    SCRIPT_POINTER call_24_54dc                        ;; 24:5a2a $dc $54 $24
+    SCRIPT_POINTER call_24_54f3                        ;; 24:5a2d $f3 $54 $24
+    SCRIPT_POINTER call_24_57c7                        ;; 24:5a30 $c7 $57 $24
+    Op18_Jump call_24_5482                             ;; 24:5a33 $18 $82 $54 $24
+
+call_24_5a37:
+    Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, $15, $49, $17 ;; 24:5a37 $4c $16 $ff $02 $00 $00 $00 $00 $15 $49 $17
+    Op44_Unknown $32, $00                              ;; 24:5a42 $44 $32 $00
+    Op4C_Unknown $16, $02, $02, $00, $00, $00, $00, $00, $00, $00 ;; 24:5a45 $4c $16 $02 $02 $00 $00 $00 $00 $00 $00 $00
+    Op18_Jump call_24_5482                             ;; 24:5a50 $18 $82 $54 $24
 
 call_24_5a54:
     Op82_Run data_01_74b7                              ;; 24:5a54 $82 $b7 $74 $01
@@ -3115,9 +3122,12 @@ call_24_6864:
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 24:686e $5e $03
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 24:6870 $2a $00 $00 $00
     Op68_CopyBytes 1, wC822, w1_BeginRegionD1FD, $01   ;; 24:6874 $68 $01 $22 $c8 $fd $d1 $01
-    Op82_Run data_01_73bf                              ;; 24:687b $82 $bf $73 $01
-    db   $22, $c8, $1c, $03, $d9, $69, $24, $64        ;; 24:687f ????????
-    db   $6a, $24, $30, $6a, $24                       ;; 24:6887 ?????
+    Op82_Run apply7fMaskToPointerThatFollows           ;; 24:687b $82 $bf $73 $01
+    ARGUMENT_WORD $c822                                ;; 24:687f $22 $c8
+    Op1C_TableJump 3                                   ;; 24:6881 $1c $03
+    SCRIPT_POINTER call_24_69d9                        ;; 24:6883 $d9 $69 $24
+    SCRIPT_POINTER call_24_6a64                        ;; 24:6886 $64 $6a $24
+    SCRIPT_POINTER call_24_6a30                        ;; 24:6889 $30 $6a $24
 
 call_24_688c:
     Op50_WriteByte wC31D, $00, $d0                     ;; 24:688c $50 $1d $c3 $00 $d0
@@ -3216,6 +3226,8 @@ call_24_6972:
     Op16_SubOps 1                                      ;; 24:69d3 $16 $01
     SubOp_SetByte wC72A, $90                           ;; 24:69d5 $7e $12 $90
     SCRIPT_RETURN_20                                   ;; 24:69d8 $20
+
+call_24_69d9:
     Op1E_Call call_33_4daf                             ;; 24:69d9 $1e $af $4d $33
     Op1C_TableJump 1                                   ;; 24:69dd $1c $01
     SCRIPT_POINTER call_24_688c                        ;; 24:69df $8c $68 $24
@@ -3265,6 +3277,8 @@ call_24_6a2c:
 
 call_24_6a2e:
     Op54_Unknown $06                                   ;; 24:6a2e $54 $06
+
+call_24_6a30:
     Op1E_Call call_33_4d7b                             ;; 24:6a30 $1e $7b $4d $33
     Op1C_TableJump 1                                   ;; 24:6a34 $1c $01
     SCRIPT_POINTER call_24_688c                        ;; 24:6a36 $8c $68 $24
@@ -3283,6 +3297,8 @@ call_24_6a2e:
 call_24_6a5c:
     Op1E_Call call_20_42f7                             ;; 24:6a5c $1e $f7 $42 $20
     Op18_Jump call_24_6864                             ;; 24:6a60 $18 $64 $68 $24
+
+call_24_6a64:
     Op1E_Call call_33_4d7b                             ;; 24:6a64 $1e $7b $4d $33
     Op1C_TableJump 1                                   ;; 24:6a68 $1c $01
     SCRIPT_POINTER call_24_688c                        ;; 24:6a6a $8c $68 $24
