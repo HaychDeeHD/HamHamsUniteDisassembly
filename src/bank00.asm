@@ -1806,7 +1806,7 @@ AddressArray_0dbd:
     dw   $d4af                                         ;; 00:0df1 wW $1a
     dw   w1_D4DD                                       ;; 00:0df3 wW $1b
     dw   $d50b                                         ;; 00:0df5 wW $1c
-    dw   $d539                                         ;; 00:0df7 wW $1d
+    dw   w1_D539                                       ;; 00:0df7 wW $1d
     dw   $d567                                         ;; 00:0df9 ?? $1e
     dw   $d595                                         ;; 00:0dfb ?? $1f
 
@@ -2590,7 +2590,7 @@ WramAddressTable:
     dw   $d4af                                         ;; 00:123c pP
     dw   w1_D4DD                                       ;; 00:123e pP
     dw   $d50b                                         ;; 00:1240 pP
-    dw   $d539                                         ;; 00:1242 pP
+    dw   w1_D539                                       ;; 00:1242 pP
     dw   $d567                                         ;; 00:1244 pP
     dw   $d595                                         ;; 00:1246 pP
 
@@ -2876,20 +2876,20 @@ Op3A:
 Op30:
     ld   A, [wReturnAddressC324]                       ;; 00:1461 $fa $24 $c3
     and  A, A                                          ;; 00:1464 $a7
-    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:1465 $c2 $1e $15
+    jp   NZ, jumpToC324to5ReturnAddress                ;; 00:1465 $c2 $1e $15
     ld   A, [wReturnAddressC324.high]                  ;; 00:1468 $fa $25 $c3
     and  A, A                                          ;; 00:146b $a7
-    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:146c $c2 $1e $15
+    jp   NZ, jumpToC324to5ReturnAddress                ;; 00:146c $c2 $1e $15
     call CopyC6A0AddressToC53CtoE                      ;; 00:146f $cd $8f $0a
     jp   jp_00_1483                                    ;; 00:1472 $c3 $83 $14
 
 Op2C:
     ld   A, [wReturnAddressC324]                       ;; 00:1475 $fa $24 $c3
     and  A, A                                          ;; 00:1478 $a7
-    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:1479 $c2 $1e $15
+    jp   NZ, jumpToC324to5ReturnAddress                ;; 00:1479 $c2 $1e $15
     ld   A, [wReturnAddressC324.high]                  ;; 00:147c $fa $25 $c3
     and  A, A                                          ;; 00:147f $a7
-    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:1480 $c2 $1e $15
+    jp   NZ, jumpToC324to5ReturnAddress                ;; 00:1480 $c2 $1e $15
 
 jp_00_1483:
     ld   A, $04                                        ;; 00:1483 $3e $04
@@ -2902,24 +2902,24 @@ jp_00_1483:
 Op2E:
     ld   A, [wReturnAddressC324]                       ;; 00:1492 $fa $24 $c3
     and  A, A                                          ;; 00:1495 $a7
-    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:1496 $c2 $1e $15
+    jp   NZ, jumpToC324to5ReturnAddress                ;; 00:1496 $c2 $1e $15
     ld   A, [wReturnAddressC324.high]                  ;; 00:1499 $fa $25 $c3
     and  A, A                                          ;; 00:149c $a7
-    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:149d $c2 $1e $15
+    jp   NZ, jumpToC324to5ReturnAddress                ;; 00:149d $c2 $1e $15
 ; This call is the only difference between this and op2A
     call CopyC6A0AddressToC53CtoE                      ;; 00:14a0 $cd $8f $0a
-    jp   twotimesC324to5Empty                          ;; 00:14a3 $c3 $b4 $14
+    jp   useThreeArgBytesInsteadOfJumping              ;; 00:14a3 $c3 $b4 $14
 
-; Jumps to C324-5 (return address?) if they hold a value
+; Jumps to C324-5 (return address? done callback?) if they hold a value
 Op2A_FrequentLoop:
     ld   A, [wReturnAddressC324]                       ;; 00:14a6 $fa $24 $c3
     and  A, A                                          ;; 00:14a9 $a7
-    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:14aa $c2 $1e $15
+    jp   NZ, jumpToC324to5ReturnAddress                ;; 00:14aa $c2 $1e $15
     ld   A, [wReturnAddressC324.high]                  ;; 00:14ad $fa $25 $c3
     and  A, A                                          ;; 00:14b0 $a7
-    jp   NZ, twotimesC324to5NotEmpty                   ;; 00:14b1 $c2 $1e $15
+    jp   NZ, jumpToC324to5ReturnAddress                ;; 00:14b1 $c2 $1e $15
 
-twotimesC324to5Empty:
+useThreeArgBytesInsteadOfJumping:
     ld   A, $03                                        ;; 00:14b4 $3e $03
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:14b6 $ea $26 $c3
     ld   A, $00                                        ;; 00:14b9 $3e $00
@@ -2978,7 +2978,7 @@ Write3ArgBytesToD037to9_AndThenDo2XStuff:
     ld   [wReturnAddressC324.high], A                  ;; 00:1518 $ea $25 $c3
     jp   jp_00_152b                                    ;; 00:151b $c3 $2b $15
 
-twotimesC324to5NotEmpty:
+jumpToC324to5ReturnAddress:
     ld   A, $01                                        ;; 00:151e $3e $01
     ldh  [rSVBK], A                                    ;; 00:1520 $e0 $70
     ld   A, [wReturnAddressC324]                       ;; 00:1522 $fa $24 $c3
@@ -6179,7 +6179,7 @@ jp_00_2b95:
     dw   $d4af                                         ;; 00:2bde pP
     dw   w1_D4DD                                       ;; 00:2be0 pP
     dw   $d50b                                         ;; 00:2be2 pP
-    dw   $d539                                         ;; 00:2be4 pP
+    dw   w1_D539                                       ;; 00:2be4 pP
     dw   $d567                                         ;; 00:2be6 pP
     dw   $d595                                         ;; 00:2be8 pP
     dw   w1_D5C3                                       ;; 00:2bea pP

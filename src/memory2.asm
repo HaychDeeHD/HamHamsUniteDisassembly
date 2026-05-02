@@ -30,4 +30,7 @@ w2_D0FE:
     ds 1                                               ;; d0fe
 
 w2_D0FF:
-    ds 3841                                            ;; d0ff
+    ds 2                                               ;; d0ff
+
+w2_D101:
+    ds 3839                                            ;; d101
