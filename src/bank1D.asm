@@ -2219,10 +2219,12 @@ call_1d_5ebb:
     SCRIPT_RETURN_4A                                   ;; 1d:5edf $4a
     Op32_Unknown $47, $74, $7d, $a0, $dd, $06          ;; 1d:5ee0 $32 $47 $74 $7d $a0 $dd $06
     Op6A_Unknown $00, $00, $00, $00                    ;; 1d:5ee7 $6a $00 $00 $00 $00
-    db   $40, $00, $00, $00, $01, $52, $94, $c6        ;; 1d:5eec ????????
-    db   $00, $00, $00, $1e, $fb, $65, $04, $1e        ;; 1d:5ef4 ????????
-    db   $0d, $66, $04, $84, $9a, $dd, $01, $10        ;; 1d:5efc ????????
-    db   $00, $ff, $1a, $01                            ;; 1d:5f04 ????
+    Op40_Unknown $00, $00, $00, $01                    ;; 1d:5eec $40 $00 $00 $00 $01
+    Op52_WriteBytes wC694, $00, $00, $00               ;; 1d:5ef1 $52 $94 $c6 $00 $00 $00
+    Op1E_Call call_04_65fb                             ;; 1d:5ef7 $1e $fb $65 $04
+    Op1E_Call call_04_660d                             ;; 1d:5efb $1e $0d $66 $04
+    Op84_WriteByteNTimes w1_DD9A, 1, 16, $ff           ;; 1d:5eff $84 $9a $dd $01 $10 $00 $ff
+    Op1A_Unknown $01                                   ;; 1d:5f06 $1a $01
 
 call_1d_5f08:
     Op1A_Unknown $02                                   ;; 1d:5f08 $1a $02

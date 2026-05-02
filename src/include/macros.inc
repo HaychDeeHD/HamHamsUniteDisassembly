@@ -147,6 +147,13 @@ db \4
 dw \5
 db BANK(\5)
 ENDM
+MACRO Op40_Unknown
+db $40
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+ENDM
 MACRO Op42_Unknown_StoreValue
 db $42
 db \1
