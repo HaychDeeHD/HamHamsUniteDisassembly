@@ -1334,6 +1334,8 @@ call_33_50c2:
     Op42_Unknown_StoreValue 8, $00, $50, $61, $04      ;; 33:520e $42 $08 $00 $50 $61 $04
     Op42_Unknown_StoreValue 9, $00, $50, $61, $04      ;; 33:5214 $42 $09 $00 $50 $61 $04
     SCRIPT_RETURN_20                                   ;; 33:521a $20
+
+call_33_521b:
     Op1E_Call call_3c_4692                             ;; 33:521b $1e $92 $46 $3c
     Op1E_Call call_3a_63ee                             ;; 33:521f $1e $ee $63 $3a
     Op1E_Call call_33_52ae                             ;; 33:5223 $1e $ae $52 $33

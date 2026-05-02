@@ -501,7 +501,8 @@ data_22_5614:
 
 data_22_5631:
     TXT  "Agreed.<E0>"                                 ;; 22:5631 ????????
-;@hamscript
+
+call_22_5639:
     Op1E_Call call_3a_63ee                             ;; 22:5639 $1e $ee $63 $3a
     Op1E_Call call_22_587b                             ;; 22:563d $1e $7b $58 $22
     Op1E_Call call_22_56be                             ;; 22:5641 $1e $be $56 $22

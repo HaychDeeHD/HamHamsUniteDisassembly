@@ -6,7 +6,8 @@ INCLUDE "include/charmaps.inc"
 INCLUDE "include/constants.inc"
 
 SECTION "bank3a", ROMX[$4000], BANK[$3a]
-;@hamscript
+
+call_3a_4000:
     Op16_SubOps 1                                      ;; 3a:4000 $16 $01
     SubOp_SetFlag wC942, 6                             ;; 3a:4002 $3f $56
     Op1E_Call call_3a_63ee                             ;; 3a:4004 $1e $ee $63 $3a
