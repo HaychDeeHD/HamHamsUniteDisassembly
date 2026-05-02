@@ -312,6 +312,8 @@ call_2b_4330:
 
 call_2b_4332:
     Op1E_Call call_2b_48d6                             ;; 2b:4332 $1e $d6 $48 $2b
+
+call_2b_4336:
     Op6A_Unknown $00, $00, $00, $00                    ;; 2b:4336 $6a $00 $00 $00 $00
     SCRIPT_RETURN_4A                                   ;; 2b:433b $4a
     Op32_Unknown $fc, $69, $60, $00, $d0, $05          ;; 2b:433c $32 $fc $69 $60 $00 $d0 $05
