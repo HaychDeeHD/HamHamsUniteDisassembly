@@ -5556,6 +5556,8 @@ data_01_68ba:
     db   $cf, $c9, $fa, $fa, $cf, $47, $fa, $20        ;; 01:68e3 ????????
     db   $c7, $b8, $c8, $3e, $20, $ea, $fd, $cf        ;; 01:68eb ????????
     db   $3e, $40, $ea, $fc, $cf, $c9                  ;; 01:68f3 ??????
+
+data_01_68f9:
     xor  A, A                                          ;; 01:68f9 $af
     ld   [wOp1CScriptTableIndexC53A], A                ;; 01:68fa $ea $3a $c5
     ld   A, [wC316]                                    ;; 01:68fd $fa $16 $c3
