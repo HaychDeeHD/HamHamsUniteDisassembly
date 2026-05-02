@@ -299,7 +299,7 @@ call_3a_4378:
     Op5E_Unknown $80                                   ;; 3a:4378 $5e $80
     Op5A_Unknown $90                                   ;; 3a:437a $5a $90
     Op1E_Call call_3c_4e25                             ;; 3a:437c $1e $25 $4e $3c
-    db   $54, $00                                      ;; 3a:4380 ??
+    Op54_Unknown $00                                   ;; 3a:4380 $54 $00
 
 call_3a_4382:
     Op50_WriteByte wC31D, $00, $d0                     ;; 3a:4382 $50 $1d $c3 $00 $d0

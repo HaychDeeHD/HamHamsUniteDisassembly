@@ -2479,7 +2479,8 @@ call_1d_6993:
 call_1d_69b0:
     Op16_SubOps 1                                      ;; 1d:69b0 $16 $01
     SubOp_SetByte wC751, $00                           ;; 1d:69b2 $7e $39 $00
-    db   $54, $00, $20                                 ;; 1d:69b5 ???
+    Op54_Unknown $00                                   ;; 1d:69b5 $54 $00
+    SCRIPT_RETURN_20                                   ;; 1d:69b7 $20
 
 call_1d_69b8:
     Op16_SubOps 1                                      ;; 1d:69b8 $16 $01
@@ -2495,7 +2496,7 @@ call_1d_69e4:
     Op1E_Call call_04_5b22                             ;; 1d:69e4 $1e $22 $5b $04
     Op44_Unknown $0a, $00                              ;; 1d:69e8 $44 $0a $00
     Op82_Run data_00_385c                              ;; 1d:69eb $82 $5c $38 $00
-    db   $54, $00                                      ;; 1d:69ef ??
+    Op54_Unknown $00                                   ;; 1d:69ef $54 $00
 
 call_1d_69f1:
     Op82_Run data_01_754a                              ;; 1d:69f1 $82 $4a $75 $01
@@ -2747,6 +2748,8 @@ call_1d_6c6e:
     Op1C_TableJump 1                                   ;; 1d:6c72 $1c $01
     SCRIPT_POINTER call_04_69bf                        ;; 1d:6c74 $bf $69 $04
     Op18_Jump call_04_69c7                             ;; 1d:6c77 $18 $c7 $69 $04
+
+call_1d_6c7b:
     Op1E_Call call_1d_6f05                             ;; 1d:6c7b $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6c7f $1c $01
     SCRIPT_POINTER call_04_69dd                        ;; 1d:6c81 $dd $69 $04
@@ -2763,6 +2766,8 @@ call_1d_6c95:
     Op1C_TableJump 1                                   ;; 1d:6c99 $1c $01
     SCRIPT_POINTER call_04_6a12                        ;; 1d:6c9b $12 $6a $04
     Op18_Jump call_04_6a1a                             ;; 1d:6c9e $18 $1a $6a $04
+
+call_1d_6ca2:
     Op1E_Call call_1d_6f05                             ;; 1d:6ca2 $1e $05 $6f $1d
     Op1C_TableJump 1                                   ;; 1d:6ca6 $1c $01
     SCRIPT_POINTER call_04_6a30                        ;; 1d:6ca8 $30 $6a $04

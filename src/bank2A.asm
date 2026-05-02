@@ -2749,7 +2749,7 @@ call_2a_65d9:
     Op5A_Unknown $90                                   ;; 2a:65f1 $5a $90
     Op1E_Call call_3b_7882                             ;; 2a:65f3 $1e $82 $78 $3b
     Op50_WriteByte wCA92, $00, $02                     ;; 2a:65f7 $50 $92 $ca $00 $02
-    db   $54, $01                                      ;; 2a:65fc ??
+    Op54_Unknown $01                                   ;; 2a:65fc $54 $01
 
 call_2a_65fe:
     Op82_Run data_01_74b7                              ;; 2a:65fe $82 $b7 $74 $01
@@ -3911,7 +3911,7 @@ call_2a_7598:
     Op5E_Unknown $80                                   ;; 2a:75a1 $5e $80
     Op5A_Unknown $90                                   ;; 2a:75a3 $5a $90
     Op1E_Call call_36_7e94                             ;; 2a:75a5 $1e $94 $7e $36
-    db   $54, $00                                      ;; 2a:75a9 ??
+    Op54_Unknown $00                                   ;; 2a:75a9 $54 $00
 
 call_2a_75ab:
     Op1E_Call call_1d_6acd                             ;; 2a:75ab $1e $cd $6a $1d

@@ -831,7 +831,7 @@ call_38_4a61:
     Op5A_Unknown $90                                   ;; 38:4a6c $5a $90
     Op1E_Call call_3c_4532                             ;; 38:4a6e $1e $32 $45 $3c
     Op50_WriteByte wCA92, $00, $05                     ;; 38:4a72 $50 $92 $ca $00 $05
-    db   $54, $01                                      ;; 38:4a77 ??
+    Op54_Unknown $01                                   ;; 38:4a77 $54 $01
 
 call_38_4a79:
     Op50_WriteByte wC31D, $00, $d8                     ;; 38:4a79 $50 $1d $c3 $00 $d8

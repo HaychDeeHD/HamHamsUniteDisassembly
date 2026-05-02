@@ -507,7 +507,13 @@ w3_D1CF:
     ds 2                                               ;; d1cf
 
 w3_D1D1:
-    ds 3                                               ;; d1d1
+    ds 1                                               ;; d1d1
+
+w3_D1D2:
+    ds 1                                               ;; d1d2
+
+w3_D1D3:
+    ds 1                                               ;; d1d3
 
 w3_D1D4:
     ds 1                                               ;; d1d4
@@ -558,7 +564,10 @@ w3_D1EE:
     ds 1                                               ;; d1ee
 
 w3_D1EF:
-    ds 3                                               ;; d1ef
+    ds 2                                               ;; d1ef
+
+w3_D1F1:
+    ds 1                                               ;; d1f1
 
 w3_D1F2:
     ds 2                                               ;; d1f2
@@ -597,7 +606,13 @@ w3_D20B:
     ds 2                                               ;; d20b
 
 w3_D20D:
-    ds 3                                               ;; d20d
+    ds 1                                               ;; d20d
+
+w3_D20E:
+    ds 1                                               ;; d20e
+
+w3_D20F:
+    ds 1                                               ;; d20f
 
 w3_D210:
     ds 1                                               ;; d210

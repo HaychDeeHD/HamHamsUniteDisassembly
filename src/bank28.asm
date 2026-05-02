@@ -774,10 +774,10 @@ call_28_4a6e:
     Op44_Unknown $30, $00                              ;; 28:4a8f $44 $30 $00
     Op16_SubOps 1                                      ;; 28:4a92 $16 $01
     SubOp_SetByte wC765, $02                           ;; 28:4a94 $7e $4d $02
-    db   $54, $01                                      ;; 28:4a97 ??
+    Op54_Unknown $01                                   ;; 28:4a97 $54 $01
 
 call_28_4a99:
-    db   $54, $00                                      ;; 28:4a99 ??
+    Op54_Unknown $00                                   ;; 28:4a99 $54 $00
 
 SadMaxwellOopsie:
     Op50_WriteByte wBitArrayIndexC715, $00, $1e        ;; 28:4a9b $50 $15 $c7 $00 $1e

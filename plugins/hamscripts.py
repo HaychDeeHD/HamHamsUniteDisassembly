@@ -606,6 +606,7 @@ OPBLOCKS = {
     0x4E: Op4EBlock,
     0x50: Op50Block,
     0x52: Op52Block,
+    0x54: makeGenericBlockClass(0x54, 2),
     0x56: Op56Block,
     0x58: Op58Block,
     0x5A: makeGenericBlockClass(0x5A, 2),

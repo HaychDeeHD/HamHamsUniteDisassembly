@@ -287,25 +287,25 @@ call_2b_42d7:
     Op18_Jump call_2b_4157                             ;; 2b:431e $18 $57 $41 $2b
 
 call_2b_4322:
-    db   $54, $01                                      ;; 2b:4322 ??
+    Op54_Unknown $01                                   ;; 2b:4322 $54 $01
 
 call_2b_4324:
-    db   $54, $02                                      ;; 2b:4324 ??
+    Op54_Unknown $02                                   ;; 2b:4324 $54 $02
 
 call_2b_4326:
-    db   $54, $03                                      ;; 2b:4326 ??
+    Op54_Unknown $03                                   ;; 2b:4326 $54 $03
 
 call_2b_4328:
-    db   $54, $04                                      ;; 2b:4328 ??
+    Op54_Unknown $04                                   ;; 2b:4328 $54 $04
 
 call_2b_432a:
-    db   $54, $05                                      ;; 2b:432a ??
+    Op54_Unknown $05                                   ;; 2b:432a $54 $05
 
 call_2b_432c:
-    db   $54, $06                                      ;; 2b:432c ??
+    Op54_Unknown $06                                   ;; 2b:432c $54 $06
 
 call_2b_432e:
-    db   $54, $07                                      ;; 2b:432e ??
+    Op54_Unknown $07                                   ;; 2b:432e $54 $07
 
 call_2b_4330:
     Op1A_Unknown $03                                   ;; 2b:4330 $1a $03

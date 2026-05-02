@@ -2655,7 +2655,7 @@ call_25_66ff:
     Op44_Unknown $1e, $00                              ;; 25:6714 $44 $1e $00
     Op5E_Unknown $80                                   ;; 25:6717 $5e $80
     Op5A_Unknown $90                                   ;; 25:6719 $5a $90
-    db   $54, $00                                      ;; 25:671b ??
+    Op54_Unknown $00                                   ;; 25:671b $54 $00
 
 call_25_671d:
     Op50_WriteByte wC31D, $00, $d8                     ;; 25:671d $50 $1d $c3 $00 $d8

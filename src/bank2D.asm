@@ -2343,10 +2343,10 @@ call_2d_5dea:
     Op44_Unknown $30, $00                              ;; 2d:5e13 $44 $30 $00
     Op16_SubOps 1                                      ;; 2d:5e16 $16 $01
     SubOp_SetByte wC765, $04                           ;; 2d:5e18 $7e $4d $04
-    db   $54, $01                                      ;; 2d:5e1b ??
+    Op54_Unknown $01                                   ;; 2d:5e1b $54 $01
 
 call_2d_5e1d:
-    db   $54, $00                                      ;; 2d:5e1d ??
+    Op54_Unknown $00                                   ;; 2d:5e1d $54 $00
 
 call_2d_5e1f:
     Op14_Unknown 1, $be, $58                           ;; 2d:5e1f $14 $01 $be $58

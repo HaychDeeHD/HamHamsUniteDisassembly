@@ -6056,6 +6056,8 @@ data_03_776e:
     add  A, [HL]                                       ;; 03:7789 $86
     ld   [wC756], A                                    ;; 03:778a $ea $56 $c7
     ret                                                ;; 03:778d $c9
+
+data_03_778e:
     ld_long_load A, rSVBK                              ;; 03:778e $fa $70 $ff
     push AF                                            ;; 03:7791 $f5
     ld   A, $03                                        ;; 03:7792 $3e $03

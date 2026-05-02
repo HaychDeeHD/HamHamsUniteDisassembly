@@ -600,10 +600,10 @@ call_21_4753:
     Op44_Unknown $30, $00                              ;; 21:47a8 $44 $30 $00
     Op16_SubOps 1                                      ;; 21:47ab $16 $01
     SubOp_SetByte wC765, $03                           ;; 21:47ad $7e $4d $03
-    db   $54, $01                                      ;; 21:47b0 ??
+    Op54_Unknown $01                                   ;; 21:47b0 $54 $01
 
 call_21_47b2:
-    db   $54, $00                                      ;; 21:47b2 ??
+    Op54_Unknown $00                                   ;; 21:47b2 $54 $00
 
 call_21_47b4:
     Op50_WriteByte wBitArrayIndexC715, $00, $27        ;; 21:47b4 $50 $15 $c7 $00 $27

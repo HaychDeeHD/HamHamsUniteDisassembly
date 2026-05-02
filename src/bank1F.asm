@@ -1449,10 +1449,10 @@ call_1f_51ab:
     Op44_Unknown $30, $00                              ;; 1f:51ea $44 $30 $00
     Op16_SubOps 1                                      ;; 1f:51ed $16 $01
     SubOp_SetByte wC765, $0a                           ;; 1f:51ef $7e $4d $0a
-    db   $54, $01                                      ;; 1f:51f2 ??
+    Op54_Unknown $01                                   ;; 1f:51f2 $54 $01
 
 call_1f_51f4:
-    db   $54, $00                                      ;; 1f:51f4 ??
+    Op54_Unknown $00                                   ;; 1f:51f4 $54 $00
 
 call_1f_51f6:
     Op50_WriteByte wBitArrayIndexC715, $00, $44        ;; 1f:51f6 $50 $15 $c7 $00 $44
@@ -3818,10 +3818,14 @@ call_1f_7fa6:
     SCRIPT_POINTER call_1f_79fc                        ;; 1f:7fc0 $fc $79 $1f
     Op1E_Call call_35_4537                             ;; 1f:7fc3 $1e $37 $45 $35
     Op18_Jump call_1f_73cb                             ;; 1f:7fc7 $18 $cb $73 $1f
-    db   $54, $00, $54, $00, $54, $00, $54, $00        ;; 1f:7fcb ????????
-    db   $54, $00, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7fd3 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7fdb ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7fe3 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7feb ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7ff3 ????????
-    db   $ff, $ff, $ff, $ff, $ff                       ;; 1f:7ffb ?????
+    Op54_Unknown $00                                   ;; 1f:7fcb $54 $00
+    Op54_Unknown $00                                   ;; 1f:7fcd $54 $00
+    Op54_Unknown $00                                   ;; 1f:7fcf $54 $00
+    Op54_Unknown $00                                   ;; 1f:7fd1 $54 $00
+    Op54_Unknown $00                                   ;; 1f:7fd3 $54 $00
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7fd5 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7fdd ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7fe5 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7fed ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 1f:7ff5 ????????
+    db   $ff, $ff, $ff                                 ;; 1f:7ffd ???

@@ -402,7 +402,7 @@ call_2e_44ad:
     SubOp_SetByte wC765, $05                           ;; 2e:44fa $7e $4d $05
 
 call_2e_44fd:
-    db   $54, $01                                      ;; 2e:44fd ??
+    Op54_Unknown $01                                   ;; 2e:44fd $54 $01
 
 call_2e_44ff:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2e:44ff $50 $15 $c7 $00 $01
@@ -1139,7 +1139,7 @@ call_2e_4ece:
     Op5E_Unknown $80                                   ;; 2e:4ed2 $5e $80
     Op5A_Unknown $90                                   ;; 2e:4ed4 $5a $90
     Op1E_Call call_3c_4532                             ;; 2e:4ed6 $1e $32 $45 $3c
-    db   $54, $00                                      ;; 2e:4eda ??
+    Op54_Unknown $00                                   ;; 2e:4eda $54 $00
 
 call_2e_4edc:
     Op14_Unknown 1, $c2, $63                           ;; 2e:4edc $14 $01 $c2 $63
@@ -1490,10 +1490,10 @@ call_2e_5281:
     Op44_Unknown $30, $00                              ;; 2e:52c3 $44 $30 $00
     Op16_SubOps 1                                      ;; 2e:52c6 $16 $01
     SubOp_SetByte wC765, $06                           ;; 2e:52c8 $7e $4d $06
-    db   $54, $01                                      ;; 2e:52cb ??
+    Op54_Unknown $01                                   ;; 2e:52cb $54 $01
 
 call_2e_52cd:
-    db   $54, $00                                      ;; 2e:52cd ??
+    Op54_Unknown $00                                   ;; 2e:52cd $54 $00
 
 call_2e_52cf:
     Op1E_Call call_33_4e1d                             ;; 2e:52cf $1e $1d $4e $33
@@ -3948,7 +3948,7 @@ call_2e_72cd:
     Op5E_Unknown $80                                   ;; 2e:72da $5e $80
     Op5A_Unknown $90                                   ;; 2e:72dc $5a $90
     Op1E_Call call_36_7e94                             ;; 2e:72de $1e $94 $7e $36
-    db   $54, $00                                      ;; 2e:72e2 ??
+    Op54_Unknown $00                                   ;; 2e:72e2 $54 $00
 
 call_2e_72e4:
     Op50_WriteByte wC31D, $00, $d8                     ;; 2e:72e4 $50 $1d $c3 $00 $d8

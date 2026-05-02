@@ -172,6 +172,10 @@ db \2
 db \3
 db \4
 ENDM
+MACRO Op54_Unknown
+db $54
+db \<1>
+ENDM
 MACRO Op56_WriteBitArrayIndex
 db $56
 db \1

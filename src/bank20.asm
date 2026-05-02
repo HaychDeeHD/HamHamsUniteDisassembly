@@ -1888,7 +1888,7 @@ call_20_5aff:
     Op5E_Unknown $80                                   ;; 20:5b08 $5e $80
     Op5A_Unknown $90                                   ;; 20:5b0a $5a $90
     Op1E_Call call_36_7e94                             ;; 20:5b0c $1e $94 $7e $36
-    db   $54, $00                                      ;; 20:5b10 ??
+    Op54_Unknown $00                                   ;; 20:5b10 $54 $00
 
 call_20_5b12:
     Op50_WriteByte wC31D, $00, $d8                     ;; 20:5b12 $50 $1d $c3 $00 $d8

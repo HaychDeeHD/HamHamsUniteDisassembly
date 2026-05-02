@@ -1585,7 +1585,7 @@ call_33_552a:
     Op5E_Unknown $80                                   ;; 33:552e $5e $80
     Op5A_Unknown $90                                   ;; 33:5530 $5a $90
     Op1E_Call call_3c_4532                             ;; 33:5532 $1e $32 $45 $3c
-    db   $54, $00                                      ;; 33:5536 ??
+    Op54_Unknown $00                                   ;; 33:5536 $54 $00
 
 call_33_5538:
     Op50_WriteByte wC31D, $00, $d0                     ;; 33:5538 $50 $1d $c3 $00 $d0
@@ -2517,7 +2517,7 @@ call_33_6098:
     Op16_SubOps 1                                      ;; 33:60e2 $16 $01
     SubOp_SetByte wC78B, $02                           ;; 33:60e4 $7e $73 $02
     Op1E_Call call_3a_6283                             ;; 33:60e7 $1e $83 $62 $3a
-    db   $54, $04                                      ;; 33:60eb ??
+    Op54_Unknown $04                                   ;; 33:60eb $54 $04
 
 call_33_60ed:
     Op50_WriteByte wBitArrayIndexC715, $00, $25        ;; 33:60ed $50 $15 $c7 $00 $25
@@ -4383,7 +4383,7 @@ call_33_78e3:
     Op5A_Unknown $90                                   ;; 33:78ee $5a $90
     Op1E_Call call_36_7e94                             ;; 33:78f0 $1e $94 $7e $36
     Op50_WriteByte wCA92, $00, $09                     ;; 33:78f4 $50 $92 $ca $00 $09
-    db   $54, $01                                      ;; 33:78f9 ??
+    Op54_Unknown $01                                   ;; 33:78f9 $54 $01
 
 call_33_78fb:
     Op82_Run data_01_74c3                              ;; 33:78fb $82 $c3 $74 $01

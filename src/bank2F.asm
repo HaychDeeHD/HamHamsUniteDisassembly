@@ -1514,10 +1514,10 @@ call_2f_616d:
     Op44_Unknown $30, $00                              ;; 2f:61a7 $44 $30 $00
     Op16_SubOps 1                                      ;; 2f:61aa $16 $01
     SubOp_SetByte wC765, $0c                           ;; 2f:61ac $7e $4d $0c
-    db   $54, $01                                      ;; 2f:61af ??
+    Op54_Unknown $01                                   ;; 2f:61af $54 $01
 
 call_2f_61b1:
-    db   $54, $00                                      ;; 2f:61b1 ??
+    Op54_Unknown $00                                   ;; 2f:61b1 $54 $00
 
 call_2f_61b3:
     Op16_SubOps 1                                      ;; 2f:61b3 $16 $01
@@ -2711,10 +2711,10 @@ call_2f_750a:
     Op44_Unknown $30, $00                              ;; 2f:7566 $44 $30 $00
     Op16_SubOps 1                                      ;; 2f:7569 $16 $01
     SubOp_SetByte wC765, $08                           ;; 2f:756b $7e $4d $08
-    db   $54, $01                                      ;; 2f:756e ??
+    Op54_Unknown $01                                   ;; 2f:756e $54 $01
 
 call_2f_7570:
-    db   $54, $00                                      ;; 2f:7570 ??
+    Op54_Unknown $00                                   ;; 2f:7570 $54 $00
 
 call_2f_7572:
     Op14_Unknown 1, $a4, $69                           ;; 2f:7572 $14 $01 $a4 $69
