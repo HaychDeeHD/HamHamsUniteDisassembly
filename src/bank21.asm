@@ -4759,4 +4759,6 @@ data_21_7fdf:
 
 data_21_7fec:
     TXT  "<E4>Your claws hurt.<E0>"                    ;; 21:7fec ??????????????????
+; This probably doesn't mean anything and may as well be $ff.
+; But I do see other banks ending with Op54_Unknown $00 calls.
     db   $54                                           ;; 21:7ffe ?
