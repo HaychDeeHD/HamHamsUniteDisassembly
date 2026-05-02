@@ -6,7 +6,9 @@ INCLUDE "include/charmaps.inc"
 INCLUDE "include/constants.inc"
 
 SECTION "bank20", ROMX[$4000], BANK[$20]
+
 ;@hamscript
+call_20_4000:
     Op1E_Call call_1d_6acd                             ;; 20:4000 $1e $cd $6a $1d
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $00, $40, $0f ;; 20:4004 $4c $16 $08 $02 $00 $00 $00 $00 $00 $40 $0f
     Op04_Unknown_Text data_2f_463d                     ;; 20:400f $04 $3d $46 $2f
@@ -1278,6 +1280,8 @@ call_20_5277:
     SCRIPT_RETURN_4A                                   ;; 20:5277 $4a
     Op3E_Compare_Branch 22, $77, $77, $0f, call_20_5277 ;; 20:5278 $3e $16 $77 $77 $0f $77 $52 $20
     SCRIPT_RETURN_20                                   ;; 20:5280 $20
+
+call_20_5281:
     Op1E_Call call_1d_6acd                             ;; 20:5281 $1e $cd $6a $1d
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, $53, $78, $0f ;; 20:5285 $4c $16 $ff $04 $00 $00 $00 $00 $53 $78 $0f
     Op04_Unknown_Text data_2f_49b2                     ;; 20:5290 $04 $b2 $49 $2f

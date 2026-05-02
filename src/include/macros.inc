@@ -271,6 +271,17 @@ db \2
 dw \3
 db \4
 ENDM
+MACRO Op86_Unknown
+db $86
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+db \<5>
+db \<6>
+db \<7>
+db \<8>
+ENDM
 MACRO Op8E_StoreAddress
 db $8e
 db \1

@@ -93,7 +93,7 @@ The length column in this table excludes the opcode byte.
 | 80 |       | 10e0             | [Op80](#op80)    |
 | 82 | 3     | 0e87             | [Op82](#op82)    |
 | 84 |       | 10b5             | [Op84](#op84)    |
-| 86 |       | 13b2             | [Op86](#op86)    |
+| 86 | 8     | 13b2             | [Op86](#op86)    |
 | 88 | 2?    | 0b54             | [Op88](#op88)    |
 | -- | -     | ----             | [Op00](#op00)    |
 | -- | -     | ----             | [Op00](#op00)    |
@@ -406,7 +406,7 @@ Op84 writes the payload byte to the specified location for the next N contiguous
 <a id="op92"></a>
 ### Op92 
 
-Related to ending a Hamchat animation?
+Related to ending a Hamchat animation? Or causing textbox to close?
 
 <a id="op94"></a>
 ### Op94 

@@ -628,9 +628,9 @@ OPBLOCKS = {
     0x80: Op80Block,
     0x82: Op82Block,
     0x84: Op84Block,
+    0x86: makeGenericBlockClass(0x86, 9),
     0x8E: Op8EBlock,
     0x90: Op90Block,
-    # Causes textbox to close? Something like that.
     0x92: makeGenericBlockClass(0x92, 2),
     0x98: Op98Block,
 }

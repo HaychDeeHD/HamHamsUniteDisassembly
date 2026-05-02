@@ -373,6 +373,8 @@ call_02_435f:
     pop  AF                                            ;; 02:438e $f1
     pop  HL                                            ;; 02:438f $e1
     ret                                                ;; 02:4390 $c9
+
+data_02_4391:
     ld   A, [wC741]                                    ;; 02:4391 $fa $41 $c7
     ld   B, A                                          ;; 02:4394 $47
     ld   A, [wSeedCountCA53]                           ;; 02:4395 $fa $53 $ca
