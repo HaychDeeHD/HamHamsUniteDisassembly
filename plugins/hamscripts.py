@@ -654,6 +654,7 @@ OPBLOCKS = {
     0x40: makeGenericBlockClass(0x40, 5),
     0x42: Op42Block,
     0x44: makeGenericBlockClass(0x44, 3),
+    0x46: makeGenericBlockClass(0x46, 1),
     0x48: makeGenericBlockClass(0x48, 1),
     0x4A: makeGenericBlockClass(0x4A, 1, "SCRIPT_RETURN_4A"),
     0x4C: makeGenericBlockClass(0x4C, 11),

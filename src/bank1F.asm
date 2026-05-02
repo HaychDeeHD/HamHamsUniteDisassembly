@@ -3786,9 +3786,11 @@ call_1f_71fa:
     Op50_WriteByte wCFF0, $00, $8e                     ;; 1f:72d3 $50 $f0 $cf $00 $8e
     Op4E_Unknown_StoreValue 1, $01, $0e, $73, $19      ;; 1f:72d8 $4e $01 $01 $0e $73 $19
     Op44_Unknown $08, $00                              ;; 1f:72de $44 $08 $00
-    db   $46, $82, $6d, $38, $00, $50, $f0, $cf        ;; 1f:72e1 ????????
-    db   $00, $93, $1e, $22, $5b, $04, $44, $30        ;; 1f:72e9 ????????
-    db   $00                                           ;; 1f:72f1 ?
+    Op46_Unknown                                       ;; 1f:72e1 $46
+    Op82_Run call_00_386d                              ;; 1f:72e2 $82 $6d $38 $00
+    Op50_WriteByte wCFF0, $00, $93                     ;; 1f:72e6 $50 $f0 $cf $00 $93
+    Op1E_Call call_04_5b22                             ;; 1f:72eb $1e $22 $5b $04
+    Op44_Unknown $30, $00                              ;; 1f:72ef $44 $30 $00
 
 call_1f_72f2:
     Op50_WriteByte wC661, $00, $00                     ;; 1f:72f2 $50 $61 $c6 $00 $00
@@ -3844,9 +3846,12 @@ call_1f_736c:
     Op50_WriteByte wCFF0, $00, $8e                     ;; 1f:73a4 $50 $f0 $cf $00 $8e
     Op4E_Unknown_StoreValue 1, $01, $0e, $73, $19      ;; 1f:73a9 $4e $01 $01 $0e $73 $19
     Op44_Unknown $08, $00                              ;; 1f:73af $44 $08 $00
-    db   $46, $82, $6d, $38, $00, $50, $f0, $cf        ;; 1f:73b2 ????????
-    db   $00, $93, $1e, $22, $5b, $04, $44, $30        ;; 1f:73ba ????????
-    db   $00, $82, $a7, $02, $00                       ;; 1f:73c2 ?????
+    Op46_Unknown                                       ;; 1f:73b2 $46
+    Op82_Run call_00_386d                              ;; 1f:73b3 $82 $6d $38 $00
+    Op50_WriteByte wCFF0, $00, $93                     ;; 1f:73b7 $50 $f0 $cf $00 $93
+    Op1E_Call call_04_5b22                             ;; 1f:73bc $1e $22 $5b $04
+    Op44_Unknown $30, $00                              ;; 1f:73c0 $44 $30 $00
+    Op82_Run call_00_02a7                              ;; 1f:73c3 $82 $a7 $02 $00
 
 call_1f_73c7:
     Op82_Run data_01_68ab                              ;; 1f:73c7 $82 $ab $68 $01

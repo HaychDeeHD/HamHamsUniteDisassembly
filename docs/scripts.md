@@ -61,7 +61,7 @@ The length column in this table excludes the opcode byte.
 | 40 | 4     | 109a             | [Op40](#op40)    |
 | 42 | 5     | 0ff8             | [Op42](#op42)    |
 | 44 | 2     | 0b17             | [Op44](#op44)    |
-| 46 |       | 0bc0             | [Op46](#op46)    |
+| 46 | 0     | 0bc0             | [Op46](#op46)    |
 | 48 | 0     | 0b04             | [Op48](#op48)    |
 | 4A | 0     | 0b0c             | [Op4A](#op4A)    |
 | 4C | 10    | 110e             | [Op4C](#op4C)    |
