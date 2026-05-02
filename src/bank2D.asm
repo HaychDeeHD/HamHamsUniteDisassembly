@@ -1975,9 +1975,17 @@ call_2d_5887:
     Op14_Unknown 1, $de, $68                           ;; 2d:588e $14 $01 $de $68
     SCRIPT_POINTER call_2d_58ae                        ;; 2d:5892 $ae $58 $2d
     Op82_Run data_01_7464                              ;; 2d:5895 $82 $64 $74 $01
-    db   $01, $03, $1c, $03, $a6, $58, $2d, $ae        ;; 2d:5899 ????????
-    db   $58, $2d, $ae, $58, $2d, $16, $01, $5f        ;; 2d:58a1 ????????
-    db   $3c, $16, $01, $5f, $34                       ;; 2d:58a9 ?????
+    ARGUMENT_WORD $0301                                ;; 2d:5899 $01 $03
+    Op1C_TableJump 3                                   ;; 2d:589b $1c $03
+    SCRIPT_POINTER call_2d_58a6                        ;; 2d:589d $a6 $58 $2d
+    SCRIPT_POINTER call_2d_58ae                        ;; 2d:58a0 $ae $58 $2d
+    SCRIPT_POINTER call_2d_58ae                        ;; 2d:58a3 $ae $58 $2d
+
+call_2d_58a6:
+    Op16_SubOps 1                                      ;; 2d:58a6 $16 $01
+    SubOp_ClearFlag wC93F, 4                           ;; 2d:58a8 $5f $3c
+    Op16_SubOps 1                                      ;; 2d:58aa $16 $01
+    SubOp_ClearFlag wC93E, 4                           ;; 2d:58ac $5f $34
 
 call_2d_58ae:
     SCRIPT_RETURN_20                                   ;; 2d:58ae $20

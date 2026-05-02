@@ -3653,9 +3653,15 @@ call_38_751e:
     Op14_Unknown 1, $9c, $58                           ;; 38:7523 $14 $01 $9c $58
     SCRIPT_POINTER call_38_7540                        ;; 38:7527 $40 $75 $38
     Op82_Run data_01_7464                              ;; 38:752a $82 $64 $74 $01
-    db   $00, $03, $1c, $03, $40, $75, $38, $3b        ;; 38:752e ????????
-    db   $75, $38, $3b, $75, $38, $16, $01, $7f        ;; 38:7536 ????????
-    db   $0c, $01                                      ;; 38:753e ??
+    ARGUMENT_WORD $0300                                ;; 38:752e $00 $03
+    Op1C_TableJump 3                                   ;; 38:7530 $1c $03
+    SCRIPT_POINTER call_38_7540                        ;; 38:7532 $40 $75 $38
+    SCRIPT_POINTER call_38_753b                        ;; 38:7535 $3b $75 $38
+    SCRIPT_POINTER call_38_753b                        ;; 38:7538 $3b $75 $38
+
+call_38_753b:
+    Op16_SubOps 1                                      ;; 38:753b $16 $01
+    SubOp_SetByte wC824, $01                           ;; 38:753d $7f $0c $01
 
 call_38_7540:
     SCRIPT_RETURN_20                                   ;; 38:7540 $20

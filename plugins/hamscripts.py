@@ -142,7 +142,7 @@ class Op82Block(Block):
         bankNum = memory.byte(addr + 3)
         serializedAddress = "%02x:%04x" % (bankNum, pointer)
         # This list may grow.
-        if serializedAddress in ["01:73bf"]:
+        if serializedAddress in ["01:73bf", "01:7464"]:
             # This function takes 1 pointer arg (1 word).
             self.subBlock = ArgsBlock(memory, addr + 4, amount=1)
 

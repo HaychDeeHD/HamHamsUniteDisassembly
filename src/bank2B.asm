@@ -3428,7 +3428,9 @@ call_2b_6c3c:
 
 call_2b_6c89:
     Op82_Run data_01_7464                              ;; 2b:6c89 $82 $64 $74 $01
-    db   $00, $01, $1c, $01, $d8, $6c, $2b             ;; 2b:6c8d ???????
+    ARGUMENT_WORD $0100                                ;; 2b:6c8d $00 $01
+    Op1C_TableJump 1                                   ;; 2b:6c8f $1c $01
+    SCRIPT_POINTER call_2b_6cd8                        ;; 2b:6c91 $d8 $6c $2b
 
 call_2b_6c94:
     Op16_SubOps 1                                      ;; 2b:6c94 $16 $01

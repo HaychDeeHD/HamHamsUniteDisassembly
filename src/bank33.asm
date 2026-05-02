@@ -1121,10 +1121,23 @@ call_33_4df7:
 
 call_33_4dfd:
     Op82_Run data_01_7464                              ;; 33:4dfd $82 $64 $74 $01
-    db   $01, $02, $1c, $02, $11, $4e, $33, $17        ;; 33:4e01 ????????
-    db   $4e, $33, $16, $01, $7e, $1f, $01, $20        ;; 33:4e09 ????????
-    db   $16, $01, $7e, $1f, $03, $20, $16, $01        ;; 33:4e11 ????????
-    db   $7e, $1f, $05, $20                            ;; 33:4e19 ????
+    ARGUMENT_WORD $0201                                ;; 33:4e01 $01 $02
+    Op1C_TableJump 2                                   ;; 33:4e03 $1c $02
+    SCRIPT_POINTER call_33_4e11                        ;; 33:4e05 $11 $4e $33
+    SCRIPT_POINTER call_33_4e17                        ;; 33:4e08 $17 $4e $33
+    Op16_SubOps 1                                      ;; 33:4e0b $16 $01
+    SubOp_SetByte wC737, $01                           ;; 33:4e0d $7e $1f $01
+    SCRIPT_RETURN_20                                   ;; 33:4e10 $20
+
+call_33_4e11:
+    Op16_SubOps 1                                      ;; 33:4e11 $16 $01
+    SubOp_SetByte wC737, $03                           ;; 33:4e13 $7e $1f $03
+    SCRIPT_RETURN_20                                   ;; 33:4e16 $20
+
+call_33_4e17:
+    Op16_SubOps 1                                      ;; 33:4e17 $16 $01
+    SubOp_SetByte wC737, $05                           ;; 33:4e19 $7e $1f $05
+    SCRIPT_RETURN_20                                   ;; 33:4e1c $20
 
 call_33_4e1d:
     Op1E_Call call_1d_6ae8                             ;; 33:4e1d $1e $e8 $6a $1d
