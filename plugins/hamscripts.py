@@ -286,12 +286,18 @@ class Op68Block(Block):
         targetPtr = memory.word(addr + 2)
         sourcePtr = memory.word(addr + 4)
         self.activeWramBankNum = memory.byte(addr + 6)
-        targetWram = RomInfo.getWRam(self.activeWramBankNum if targetPtr >= 0xD000 else 0)
-        targetWram.addAutoLabel(targetPtr, None, None)
-        self.targetLabel = targetWram.getLabel(targetPtr)
-        targetWram = RomInfo.getWRam(self.activeWramBankNum if sourcePtr >= 0xD000 else 0)
-        targetWram.addAutoLabel(sourcePtr, None, None)
-        self.sourceLabel = targetWram.getLabel(sourcePtr)
+        if targetPtr < 0xE000:
+            targetWram = RomInfo.getWRam(self.activeWramBankNum if targetPtr >= 0xD000 else 0)
+            targetWram.addAutoLabel(targetPtr, None, None)
+            self.targetLabel = targetWram.getLabel(targetPtr)
+        else: # FFF0 or something. Just print raw.
+            self.targetLabel = "$%04x" % targetPtr
+        if sourcePtr < 0xE000:
+            targetWram = RomInfo.getWRam(self.activeWramBankNum if sourcePtr >= 0xD000 else 0)
+            targetWram.addAutoLabel(sourcePtr, None, None)
+            self.sourceLabel = targetWram.getLabel(sourcePtr)
+        else: # FFF0 or something. Just print raw.
+            self.sourceLabel = "$%04x" % sourcePtr
 
     def export(self, file):
         count = self.memory.byte(file.addr + 1)
