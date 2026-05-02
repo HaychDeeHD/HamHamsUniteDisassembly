@@ -286,17 +286,17 @@ class Op68Block(Block):
         targetPtr = memory.word(addr + 2)
         sourcePtr = memory.word(addr + 4)
         self.activeWramBankNum = memory.byte(addr + 6)
-        if targetPtr < 0xE000:
+        if targetPtr >= 0xC000 and targetPtr < 0xE000:
             targetWram = RomInfo.getWRam(self.activeWramBankNum if targetPtr >= 0xD000 else 0)
             targetWram.addAutoLabel(targetPtr, None, None)
             self.targetLabel = targetWram.getLabel(targetPtr)
-        else: # FFF0 or something. Just print raw.
+        else: # ROM address or FFF0 or something. Just print raw.
             self.targetLabel = "$%04x" % targetPtr
-        if sourcePtr < 0xE000:
+        if sourcePtr >= 0xC000 and sourcePtr < 0xE000:
             targetWram = RomInfo.getWRam(self.activeWramBankNum if sourcePtr >= 0xD000 else 0)
             targetWram.addAutoLabel(sourcePtr, None, None)
             self.sourceLabel = targetWram.getLabel(sourcePtr)
-        else: # FFF0 or something. Just print raw.
+        else: # ROM address or FFF0 or something. Just print raw.
             self.sourceLabel = "$%04x" % sourcePtr
 
     def export(self, file):
@@ -352,11 +352,14 @@ class Op74Block(Block):
         RomInfo.macros["Op74_PrepTableJumpIndex_Copy"] = "db $74\ndw \\1"
 
         pointer = memory.word(addr + 1)
-        # There's no bank arg so I *think* this will always be wram bank 0.
-        # But there could also be a separate bank switch instruction I don't know about.
-        wramBank = RomInfo.getWRam()
-        wramBank.addAutoLabel(pointer, None, None)
-        self.label = wramBank.getLabel(pointer)
+        if pointer >= 0xC000 and pointer < 0xE000:
+            # There's no bank arg so I *think* this will always be wram bank 0.
+            # But there could also be a separate bank switch instruction I don't know about.
+            wramBank = RomInfo.getWRam()
+            wramBank.addAutoLabel(pointer, None, None)
+            self.label = wramBank.getLabel(pointer)
+        else: # ROM address or FFF0 or something. Just print raw.
+            self.label = "$%04x" % pointer
 
     def export(self, file):
         file.asmLine(3, "Op74_PrepTableJumpIndex_Copy", str(self.label))

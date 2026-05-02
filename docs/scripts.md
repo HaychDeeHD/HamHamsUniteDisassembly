@@ -32,9 +32,9 @@ The length column in this table excludes the opcode byte.
 | 06 | 0?    | 1b94             | [Op06](#op06)    |
 | 08 | 0?    | 1b52             | [Op08](#op08)    |
 | 0A | 0?    | 1b8a             | [Op0A](#op0A)    |
-| 0C |       | 20a8             | [Op0C](#op0C)    |
+| 0C | 5     | 20a8             | [Op0C](#op0C)    |
 | 0E |       | 209c             | [Op0E](#op0E)    |
-| 10 | 3?    | 208e             | [Op10](#op10)    |
+| 10 | 5     | 208e             | [Op10](#op10)    |
 | 12 |       | 2082             | [Op12](#op12)    |
 | 14 | 3+3\* | 1f25             | [Op14](#op14)    |
 | 16 | 1+    | 1fc7             | [Op16](#op16)    |
@@ -141,6 +141,8 @@ Unknown, but possibly related to textboxes.
 
 <a id="op0C"></a>
 ### Op0C 
+
+Seems like a variant of Op10.
 
 <a id="op0E"></a>
 ### Op0E 
