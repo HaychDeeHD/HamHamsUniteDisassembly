@@ -247,8 +247,6 @@ dw \2
                         xbits = (firstByte & 0xE0) >> 5
                         ybits = (firstByte & 0x1E) >> 1
 
-                        print('logging', str(memory.bankNumber) + ":%04x" % (addr + size), "$%02x" % firstByte, bin(xbits), bin(ybits))
-
                         byte1 = memory.byte(addr + size)
                         byte2 = memory.byte(addr + size + 1)
                         if xbits == 0b110:
