@@ -258,9 +258,10 @@ data_2f_4378:
 
 data_2f_4389:
     TXT  "<E4>Valley Girl Ham<E0>"                     ;; 2f:4389 ?????????????????
-    db   $e2, $24, $6f, $75, $01, $67, $6f, $74        ;; 2f:439a ????????
-    db   $01, $00, $61, $01, $1e, $74, $61, $72        ;; 2f:43a2 ????????
-    db   $d8, $00, $e0                                 ;; 2f:43aa ???
+;@hamstring toAddress=43ad
+    TXT  "<E2>You got <end>"                           ;; 2f:439a ??????????
+    TXT  "a Star!<end>"                                ;; 2f:43a4 ????????
+    TXT  "<E0>"                                        ;; 2f:43ac ?
 
 data_2f_43ad:
     TXT  "<E2>You got <end>"                           ;; 2f:43ad ??????????
@@ -1963,6 +1964,7 @@ call_2f_68c8:
     SCRIPT_POINTER call_2f_6957                        ;; 2f:68df $57 $69 $2f
     SCRIPT_POINTER call_2f_697b                        ;; 2f:68e2 $7b $69 $2f
     SCRIPT_POINTER call_2f_699f                        ;; 2f:68e5 $9f $69 $2f
+; An extra unreachable script pointer?
     db   $c3, $69, $2f                                 ;; 2f:68e8 ???
 
 call_2f_68eb:
@@ -1983,6 +1985,7 @@ call_2f_68eb:
     SCRIPT_POINTER call_2f_6be7                        ;; 2f:6914 $e7 $6b $2f
     SCRIPT_POINTER call_2f_6c13                        ;; 2f:6917 $13 $6c $2f
     SCRIPT_POINTER call_2f_6c3f                        ;; 2f:691a $3f $6c $2f
+; An extra unreachable script pointer?
     db   $6b, $6c, $2f                                 ;; 2f:691d ???
 
 call_2f_6920:
