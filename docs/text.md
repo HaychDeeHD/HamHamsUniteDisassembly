@@ -130,7 +130,7 @@ From 0xC5 to 0xDF. Punctiation, symbols, etc.
 From 0xE0 to at least 0xED. These values have some kind of meta meaning. 
 They format text, end lines, scroll the textbox, etc.
 
-The meaning of these characters are unconfirmed. This subject desrves more study.
+The meaning of these characters are unconfirmed. This subject desrves more study. I have observed characters as high in value as EF.
 
 | Value | Character                       |
 | ----- | ------------------------------- |
@@ -148,3 +148,5 @@ The meaning of these characters are unconfirmed. This subject desrves more study
 | 0xEB  | ?                               |
 | 0xEC  | ?                               |
 | 0xED  | ?                               |
+| 0xEE  | ?                               |
+| 0xEF  | ?                               |
