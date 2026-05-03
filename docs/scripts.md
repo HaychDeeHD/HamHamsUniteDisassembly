@@ -28,10 +28,10 @@ The length column in this table excludes the opcode byte.
 | -- | ----- | ---------------- | ---------------- |
 | 00 | -     | 0a14             | [Op00](#op00)    |
 | 02 | 0     | 0cca             | [Op02](#op02)    |
-| 04 | 0?    | 1b5c             | [Op04](#op04)    |
-| 06 | 0?    | 1b94             | [Op06](#op06)    |
-| 08 | 0?    | 1b52             | [Op08](#op08)    |
-| 0A | 0?    | 1b8a             | [Op0A](#op0A)    |
+| 04 | 3     | 1b5c             | [Op04](#op04)    |
+| 06 | 3     | 1b94             | [Op06](#op06)    |
+| 08 |       | 1b52             | [Op08](#op08)    |
+| 0A |       | 1b8a             | [Op0A](#op0A)    |
 | 0C | 5     | 20a8             | [Op0C](#op0C)    |
 | 0E |       | 209c             | [Op0E](#op0E)    |
 | 10 | 5     | 208e             | [Op10](#op10)    |
@@ -39,7 +39,7 @@ The length column in this table excludes the opcode byte.
 | 14 | 3+3\* | 1f25             | [Op14](#op14)    |
 | 16 | 1+    | 1fc7             | [Op16](#op16)    |
 | 18 | 3     | 0cfc             | [Op18](#op18)    |
-| 1A |       | 0ca4             | [Op1A](#op1A)    |
+| 1A | 1     | 0ca4             | [Op1A](#op1A)    |
 | 1C | 1+3\* | 0d13             | [Op1C](#op1C)    |
 | 1E | 3     | 0bf1             | [Op1E](#op1E)    |
 | 20 | 0     | 0c64             | [Op20](#op20)    |
@@ -50,10 +50,10 @@ The length column in this table excludes the opcode byte.
 | 2A | 3     | 14a6             | [Op2A](#op2A)    |
 | 2C | 4     | 1475             | [Op2C](#op2C)    |
 | 2E | 3     | 1492             | [Op2E](#op2E)    |
-| 30 | 4     | 1461             | [Op30](#op30)    |
+| 30 |       | 1461             | [Op30](#op30)    |
 | 32 | 6     | 1274             | [Op32](#op32)    |
-| 34 |       | 12da             | [Op34](#op34)    |
-| 36 |       | 1325             | [Op36](#op36)    |
+| 34 | 7     | 12da             | [Op34](#op34)    |
+| 36 | 6     | 1325             | [Op36](#op36)    |
 | 38 | 7     | 1350             | [Op38](#op38)    |
 | 3A | 10    | 13e0             | [Op3A](#op3A)    |
 | 3C | 10    | 15a0             | [Op3C](#op3C)    |
@@ -65,14 +65,14 @@ The length column in this table excludes the opcode byte.
 | 48 | 0     | 0b04             | [Op48](#op48)    |
 | 4A | 0     | 0b0c             | [Op4A](#op4A)    |
 | 4C | 10    | 110e             | [Op4C](#op4C)    |
-| 4E |       | 0f96             | [Op4E](#op4E)    |
+| 4E | 5     | 0f96             | [Op4E](#op4E)    |
 | 50 | 4     | 0ae8             | [Op50](#op50)    |
 | 52 | 5     | 0ac9             | [Op52](#op52)    |
-| 54 |       | 0c8b             | [Op54](#op54)    |
-| 56 |       | 11d1             | [Op56](#op56)    |
-| 58 |       | 11c4             | [Op58](#op58)    |
+| 54 | 1     | 0c8b             | [Op54](#op54)    |
+| 56 | 4     | 11d1             | [Op56](#op56)    |
+| 58 | 5     | 11c4             | [Op58](#op58)    |
 | 5A | 1     | 0eac             | [Op5A](#op5A)    |
-| 5C | 1     | 0ec4             | [Op5C](#op5C)    |
+| 5C |       | 0ec4             | [Op5C](#op5C)    |
 | 5E | 1     | 0edc             | [Op5E](#op5E)    |
 | 60 | 1     | 0eeb             | [Op60](#op60)    |
 | -- | -     | ----             | [Op00](#op00)    |
@@ -90,16 +90,16 @@ The length column in this table excludes the opcode byte.
 | -- | -     | ----             | [Op00](#op00)    |
 | -- | -     | ----             | [Op00](#op00)    |
 | 7E | 8     | 137f             | [Op7E](#op7E)    |
-| 80 |       | 10e0             | [Op80](#op80)    |
+| 80 | 8     | 10e0             | [Op80](#op80)    |
 | 82 | 3     | 0e87             | [Op82](#op82)    |
-| 84 |       | 10b5             | [Op84](#op84)    |
+| 84 | 6     | 10b5             | [Op84](#op84)    |
 | 86 | 8     | 13b2             | [Op86](#op86)    |
-| 88 | 2?    | 0b54             | [Op88](#op88)    |
+| 88 |     | 0b54             | [Op88](#op88)    |
 | -- | -     | ----             | [Op00](#op00)    |
 | -- | -     | ----             | [Op00](#op00)    |
 | 8E | 4     | 0e2a             | [Op8E](#op8E)    |
 | 90 | 4     | 0e42             | [Op90](#op90)    |
-| 92 | 1?    | 1f0c             | [Op92](#op92)    |
+| 92 | 1    | 1f0c             | [Op92](#op92)    |
 | 94 |       | 2276             | [Op94](#op94)    |
 | 96 |       | 22c4             | [Op96](#op96)    |
 | 98 | 4     | 0e5a             | [Op98](#op98)    |
@@ -122,22 +122,26 @@ Op02 jumps to the address stored in that jumptable at that index. This is a `jp`
 <a id="op04"></a>
 ### Op04 
 
-Unknown, but possibly related to textboxes.
+Takes a 3-byte Rom address that points to text data.
+
+The function of this Op is unknown, but it's a safe bet it has to do with text.
 
 <a id="op06"></a>
 ### Op06 
 
-Unknown, but possibly related to textboxes.
+Takes a 3-byte Rom address that points to text data.
+
+The function of this Op is unknown, but it's a safe bet it has to do with text.
 
 <a id="op08"></a>
 ### Op08 
 
-Unknown, but possibly related to textboxes.
+I have not observed this being used in any scripts.
 
 <a id="op0A"></a>
 ### Op0A 
 
-Unknown, but possibly related to textboxes.
+I have not observed this being used in any scripts.
 
 <a id="op0C"></a>
 ### Op0C 
@@ -146,6 +150,8 @@ Seems like a variant of Op10.
 
 <a id="op0E"></a>
 ### Op0E 
+
+I have not observed this being used in any scripts.
 
 <a id="op10"></a>
 ### Op10 - HamchatWheel
@@ -161,10 +167,12 @@ Learn more about how the HamChatWheel works from [its docs page](./hamchatwheel.
 <a id="op12"></a>
 ### Op12 
 
+I have not observed this being used in any scripts.
+
 <a id="op14"></a>
 ### Op14 
 
-Related to Hamchat checks? Args are count, 2 bytes, any number of 3 byte addresses (presumably the number matches arg1).
+Args are count, 2 bytes, then any number of 3 byte addresses (presumably the number matches arg1).
 
 <a id="op16"></a>
 ### Op16 - Begin SubOps
@@ -200,6 +208,8 @@ The argument bytes form a 3 byte address pointing to a HamScript instruction. Op
 
 <a id="op1A"></a>
 ### Op1A 
+
+I would guess this is some kind of return or jump based solely on how I see it used.
 
 <a id="op1C"></a>
 ### Op1C - Script TableJump
@@ -245,6 +255,8 @@ Same as 2A but first copies C6A0-2 address (minus 1) to C53C-E.
 
 <a id="op30"></a>
 ### Op30 
+
+I have not observed this being used in any scripts.
 
 <a id="op32"></a>
 ### Op32 
@@ -333,6 +345,8 @@ I saw that C662 was involved with the HamJam. It makes me wonder whether Op5A is
 <a id="op5C"></a>
 ### Op5C 
 
+I have not observed this being used in any scripts.
+
 <a id="op5E"></a>
 ### Op5E 
 
@@ -393,6 +407,8 @@ Op84 writes the payload byte to the specified location for the next N contiguous
 <a id="op88"></a>
 ### Op88 
 
+I have not observed this being used in any scripts.
+
 <a id="op8E"></a>
 ### Op8E 
 
@@ -411,8 +427,12 @@ Related to ending a Hamchat animation? Or causing textbox to close?
 <a id="op94"></a>
 ### Op94 
 
+I have not observed this being used in any scripts.
+
 <a id="op96"></a>
 ### Op96 
+
+I have not observed this being used in any scripts.
 
 <a id="op98"></a>
 ### Op98 

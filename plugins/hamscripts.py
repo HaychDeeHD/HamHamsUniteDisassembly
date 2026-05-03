@@ -628,6 +628,8 @@ class Op0CBlock(Block):
         rulespointer = self.memory.word(file.addr + 4)
         file.asmLine(6, "Op0C_HamChatWheel", str(count), "$%04x" % optionspointer,  "$%04x" % rulespointer)
 
+# Even though there are ophandlers not accounted for here, this list is apparently complete.
+# In the banks I have decoded I do not hit script instructions not present in this object.
 OPBLOCKS = {
     0x02: makeGenericBlockClass(0x02, 1, "Op02_Unknown_Jump"),
     0x04: Op04Block,
