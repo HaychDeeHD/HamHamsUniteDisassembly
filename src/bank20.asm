@@ -2100,7 +2100,7 @@ call_20_5d6c:
 call_20_5d7f:
     Op82_Run data_01_7416                              ;; 20:5d7f $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 20:5d83 $1e $1d $6f $1d
-    Op10_HamChatWheel 6, $7339, $73a2                  ;; 20:5d87 $10 $06 $39 $73 $a2 $73
+    Op10_HamChatWheel 6, data_05_7339, data_05_73a2    ;; 20:5d87 $10 $06 $39 $73 $a2 $73
     Op1C_TableJump 6                                   ;; 20:5d8d $1c $06
     SCRIPT_POINTER call_20_5da1                        ;; 20:5d8f $a1 $5d $20
     SCRIPT_POINTER call_20_5dc1                        ;; 20:5d92 $c1 $5d $20
@@ -4052,7 +4052,7 @@ call_20_774b:
 call_20_7753:
     Op82_Run data_01_7416                              ;; 20:7753 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 20:7757 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, $6014, $623c                 ;; 20:775b $10 $0c $14 $60 $3c $62
+    Op10_HamChatWheel 12, data_05_6014, data_05_623c   ;; 20:775b $10 $0c $14 $60 $3c $62
     Op1C_TableJump 12                                  ;; 20:7761 $1c $0c
     SCRIPT_POINTER call_20_7787                        ;; 20:7763 $87 $77 $20
     SCRIPT_POINTER call_20_77cb                        ;; 20:7766 $cb $77 $20

@@ -6,7 +6,7 @@ I think of dialog response prompts in games as "chat wheels" thanks to the ones 
 
 But how do they work?
 
-In short, a HamScript will reach an Op10 instruction that will point to 2 sets of HamChatWheel data (HamChatWheelOptions and HamChatWheelRules) elsewhere to display the wheel and accept the player's selection. Then an Op1C tablejump is used to jump to the script handler for that selection.  
+In short, a HamScript will reach an Op10 instruction that will point to 2 sets of HamChatWheel data (HamChatWheelOptions and HamChatWheelRules) in bank 05 to display the wheel and accept the player's selection. Then an Op1C tablejump is used to jump to the script handler for that selection.  
 
 ## The example scenario - "Sad" Maxwell
 
@@ -56,7 +56,7 @@ Op10 is responsible for presenting the player with their choices and accepting t
 
 The first argument to Op10 is the same number we've already seen: 12, the number of different possible choices that could appear counting each "?" separately and the length of the following jumptable.
 
-The next 4 bytes are a pair of 2 byte pointers that work together. $5A39, $5E44 in this example. The first points to HamChatOptions and the second to HamChatRules. *Somehow* the 'correct' ROM bank will get switched to as the Op10 instruction handling begins. For Sad Maxwell, that bank happens to be 05.
+The next 4 bytes are a pair of 2 byte pointers that work together. $5A39, $5E44 in this example. The first points to HamChatOptions and the second to HamChatRules. *ALL* Op10 pointers point into bank 05. 
 
 Here is the relevant data from each of those pointer locations:
 
@@ -98,9 +98,7 @@ Pay attention to the end-of-line comments to better understand the actual data. 
 
 ### HamChatWheelOptions
 
-The bytes in this set of data correspond to HamChat's or "?". 
-
-It is not clear to me exactly how, since the values used don't match the ids I've come to understand.
+The bytes in this set of data correspond to HamChat's or "?". The values are indices in a table in bank 05 that should be near to the HamChatWheelOptions data. For SadMaxwell's Options, that table starts at 05:593e.
 
 
 * $05 = Hamha
@@ -112,8 +110,6 @@ It is not clear to me exactly how, since the values used don't match the ids I'v
 * $16 = Sparklie
 * $17 = Nopibloo
 * $15 = Oopsie
-
-My guess is that these are the ids for these HamChats in some other table, one that more closely aligns with the order you would encounter these words in game. The table in question might even be region-specific. I expect that it should be from this id that the option's text graphics, animation, sound, etc can be found. But I can't be sure of any of that.
 
 The pointed-to HamChatWheelOptions values that get used end up in a region of memory starting at C4FA whenever Op10 is called. So if the player is missing Teenie and Nopibloo, C4FA will look like:
 
@@ -131,9 +127,11 @@ The rules have their own "opcodes".
 * $3E = Include this option IF a flag in the [BitArray](./memory.md#bitarray) is set. 
 * $5E = Include this option IF a flag in the [BitArray](./memory.md#bitarray) is NOT set. 
 
-Maybe there are other opcodes for these rules? These are the only ones used by Sad Maxwell, and they seem like they'd be sufficient pretty generally.
+Other opcodes exist, but I don't yet know how they work. These 3 are the only ones used by SadMaxwell.
 
 NOTE: The $3E and $5E opcodes only use the highest 7 bits of their byte, so $3F and $5F would work the same. The lowest bit of that byte is taken as a 9th high bit for the following argument byte, since the BitArray nees 9 bits to index. In this way, these rules are very similar to [Op16 SubOps opcodes](./scripts.md#op16---begin-subops).
+
+NOTE: Also similarly to SubOps, these opcodes are handled based on a jumptable for their 3 highest bits and a second jumptable for their 3 lowest bits. I don't know much beyond this yet.
 
 So if the player is missing Teenie and Nopibloo, C51A will look like:
 

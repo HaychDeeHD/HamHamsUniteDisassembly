@@ -1644,7 +1644,6 @@ call_01_4af7:
 call_01_4b0c:
     call StoreBCInC38CtoD                              ;; 01:4b0c $cd $73 $4a
 
-; After this jump I saw a return to 00:2166
 UseJumpTableTwo:
     ld   A, [wBitArrayIndexC35E]                       ;; 01:4b0f $fa $5e $c3
     and  A, $1e                                        ;; 01:4b12 $e6 $1e

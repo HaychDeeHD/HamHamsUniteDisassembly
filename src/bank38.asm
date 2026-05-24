@@ -3309,7 +3309,7 @@ call_38_6dbe:
 call_38_6dd1:
     Op82_Run data_01_7416                              ;; 38:6dd1 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 38:6dd5 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, $6627, $680b                  ;; 38:6dd9 $10 $08 $27 $66 $0b $68
+    Op10_HamChatWheel 8, data_05_6627, data_05_680b    ;; 38:6dd9 $10 $08 $27 $66 $0b $68
     Op1C_TableJump 8                                   ;; 38:6ddf $1c $08
     SCRIPT_POINTER call_38_6e19                        ;; 38:6de1 $19 $6e $38
     SCRIPT_POINTER call_38_6df9                        ;; 38:6de4 $f9 $6d $38

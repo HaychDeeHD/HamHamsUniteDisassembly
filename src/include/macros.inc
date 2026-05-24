@@ -9,7 +9,7 @@ db $1a
 ENDM
 MACRO HamChatWheelRule_UseIfDontHave
 db $5e
- db \2
+db \2
 ENDM
 MACRO HamChatWheelRule_UseIfHave
 db $3e

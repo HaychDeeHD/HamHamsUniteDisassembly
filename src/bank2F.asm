@@ -2585,7 +2585,7 @@ call_2f_71ce:
     SCRIPT_POINTER call_2f_7398                        ;; 2f:71d2 $98 $73 $2f
     Op82_Run data_01_7416                              ;; 2f:71d5 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2f:71d9 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, $6646, $6986                  ;; 2f:71dd $10 $08 $46 $66 $86 $69
+    Op10_HamChatWheel 8, data_05_6646, data_05_6986    ;; 2f:71dd $10 $08 $46 $66 $86 $69
     Op1C_TableJump 8                                   ;; 2f:71e3 $1c $08
     SCRIPT_POINTER call_2f_7205                        ;; 2f:71e5 $05 $72 $2f
     SCRIPT_POINTER call_2f_7243                        ;; 2f:71e8 $43 $72 $2f
@@ -3327,7 +3327,7 @@ call_2f_7b8f:
 call_2f_7b98:
     Op82_Run data_01_7416                              ;; 2f:7b98 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2f:7b9c $1e $1d $6f $1d
-    Op10_HamChatWheel 8, $4853, $5234                  ;; 2f:7ba0 $10 $08 $53 $48 $34 $52
+    Op10_HamChatWheel 8, data_05_4853, data_05_5234    ;; 2f:7ba0 $10 $08 $53 $48 $34 $52
     Op1C_TableJump 8                                   ;; 2f:7ba6 $1c $08
     SCRIPT_POINTER call_2f_7c85                        ;; 2f:7ba8 $85 $7c $2f
     SCRIPT_POINTER call_2f_7bc4                        ;; 2f:7bab $c4 $7b $2f
@@ -3367,7 +3367,7 @@ call_2f_7bf8:
 call_2f_7c01:
     Op82_Run data_01_7416                              ;; 2f:7c01 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2f:7c05 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, $485b, $5244                  ;; 2f:7c09 $10 $08 $5b $48 $44 $52
+    Op10_HamChatWheel 8, data_05_485b, data_05_5244    ;; 2f:7c09 $10 $08 $5b $48 $44 $52
     Op1C_TableJump 8                                   ;; 2f:7c0f $1c $08
     SCRIPT_POINTER call_2f_7ee9                        ;; 2f:7c11 $e9 $7e $2f
     SCRIPT_POINTER call_2f_7f09                        ;; 2f:7c14 $09 $7f $2f
@@ -3506,7 +3506,7 @@ call_2f_7d90:
 call_2f_7d9c:
     Op82_Run data_01_7416                              ;; 2f:7d9c $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2f:7da0 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, $486b, $5268                  ;; 2f:7da4 $10 $08 $6b $48 $68 $52
+    Op10_HamChatWheel 8, data_05_486b, data_05_5268    ;; 2f:7da4 $10 $08 $6b $48 $68 $52
     Op1C_TableJump 8                                   ;; 2f:7daa $1c $08
     SCRIPT_POINTER call_2f_7dd0                        ;; 2f:7dac $d0 $7d $2f
     SCRIPT_POINTER call_2f_7dc8                        ;; 2f:7daf $c8 $7d $2f

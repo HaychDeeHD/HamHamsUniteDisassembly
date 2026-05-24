@@ -2609,7 +2609,7 @@ call_39_7c74:
 call_39_7c86:
     Op82_Run data_01_7416                              ;; 39:7c86 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 39:7c8a $1e $1d $6f $1d
-    Op10_HamChatWheel 7, $660e, $66a8                  ;; 39:7c8e $10 $07 $0e $66 $a8 $66
+    Op10_HamChatWheel 7, data_05_660e, data_05_66a8    ;; 39:7c8e $10 $07 $0e $66 $a8 $66
     Op1C_TableJump 7                                   ;; 39:7c94 $1c $07
     SCRIPT_POINTER call_39_7cb3                        ;; 39:7c96 $b3 $7c $39
     SCRIPT_POINTER call_39_7cda                        ;; 39:7c99 $da $7c $39

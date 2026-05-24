@@ -4,6 +4,7 @@ from romInfo import RomInfo
 from memory.rom import RomMemory
 
 from hamtext import maybeCreateTextBlocks, addKnownTextAddress
+from hamchatwheel import HamChatWheelOptionsBlock, HamChatWheelRulesBlock
 
 
 def serializeAddress(memory, addr):
@@ -610,12 +611,25 @@ class Op10Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=6)
         RomInfo.macros["Op10_HamChatWheel"] = "db $10\ndb \\1\ndw \\2\ndw \\3"
+
+        self.count = memory.byte(addr + 1)
+        optionspointer = memory.word(addr + 2)
+        rulespointer = memory.word(addr + 4)
+
+        bank5 = RomInfo.romBank(0x05)
+        if bank5[optionspointer] is None:
+            bank5.addAutoLabel(optionspointer, None, None)
+            HamChatWheelOptionsBlock(bank5, optionspointer, self.count)
+
+        if bank5[rulespointer] is None:
+            bank5.addAutoLabel(rulespointer, None, None)
+            HamChatWheelRulesBlock(bank5, rulespointer, self.count)
+        
+        self.optionsLabel = bank5.getLabel(optionspointer)
+        self.rulesLabel = bank5.getLabel(rulespointer)
     
     def export(self, file):
-        count = self.memory.byte(file.addr + 1)
-        optionspointer = self.memory.word(file.addr + 2)
-        rulespointer = self.memory.word(file.addr + 4)
-        file.asmLine(6, "Op10_HamChatWheel", str(count), "$%04x" % optionspointer,  "$%04x" % rulespointer)
+        file.asmLine(6, "Op10_HamChatWheel", str(self.count), str(self.optionsLabel), str(self.rulesLabel))
 
 class Op0CBlock(Block):
     def __init__(self, memory, addr):
