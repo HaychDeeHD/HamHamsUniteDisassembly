@@ -2974,7 +2974,7 @@ call_25_6854:
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 25:6861 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 25:6864 $1c $02
     SCRIPT_POINTER call_25_6645                        ;; 25:6866 $45 $66 $25
-    SCRIPT_POINTER call_25_6884                        ;; 25:6869 $84 $68 $25
+    SCRIPT_POINTER HintGiverBoss                       ;; 25:6869 $84 $68 $25
 
 call_25_686c:
     Op50_WriteByte wBitArrayIndexC715, $00, $47        ;; 25:686c $50 $15 $c7 $00 $47
@@ -2986,7 +2986,7 @@ call_25_686c:
     SCRIPT_POINTER call_25_6645                        ;; 25:687e $45 $66 $25
     SCRIPT_POINTER call_25_6990                        ;; 25:6881 $90 $69 $25
 
-call_25_6884:
+HintGiverBoss:
     Op1E_Call call_20_4bf9                             ;; 25:6884 $1e $f9 $4b $20
     Op1E_Call call_25_7654                             ;; 25:6888 $1e $54 $76 $25
     Op1E_Call call_04_67fb                             ;; 25:688c $1e $fb $67 $04
@@ -3002,7 +3002,7 @@ call_25_6884:
     SubOp_SetFlag wC948, 0                             ;; 25:68ae $3f $80
     Op50_WriteByte wC65D, $00, $01                     ;; 25:68b0 $50 $5d $c6 $00 $01
     Op1E_Call call_04_6613                             ;; 25:68b5 $1e $13 $66 $04
-    Op10_HamChatWheel 12, data_05_47af, data_05_48ba   ;; 25:68b9 $10 $0c $af $47 $ba $48
+    Op10_HamChatWheel 12, HintGiverBossOptions, HintGiverBossRules ;; 25:68b9 $10 $0c $af $47 $ba $48
     Op50_WriteByte wC65D, $00, $00                     ;; 25:68bf $50 $5d $c6 $00 $00
     Op1C_TableJump 12                                  ;; 25:68c4 $1c $0c
     SCRIPT_POINTER call_25_68ea                        ;; 25:68c6 $ea $68 $25

@@ -1644,6 +1644,9 @@ call_01_4af7:
 call_01_4b0c:
     call StoreBCInC38CtoD                              ;; 01:4b0c $cd $73 $4a
 
+; HamChatRules loop until an opcode is found whose last 5 bits are:
+;  1111X, 1110X, or 1101X (last bit ignored).
+; Is this the same code used for default subops?
 UseJumpTableTwo:
     ld   A, [wBitArrayIndexC35E]                       ;; 01:4b0f $fa $5e $c3
     and  A, $1e                                        ;; 01:4b12 $e6 $1e
@@ -1688,7 +1691,7 @@ call_01_4b3f:
     ld   HL, wBeginningOfSomeRegionC5B3                ;; 01:4b50 $21 $b3 $c5
     add  HL, DE                                        ;; 01:4b53 $19
     ld   [HL], D                                       ;; 01:4b54 $72
-    jp   jp_00_1f9d                                    ;; 01:4b55 $c3 $9d $1f
+    jp   HandleHamChatRuleOpcode                       ;; 01:4b55 $c3 $9d $1f
 
 call_01_4b58:
     ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 01:4b58 $21 $56 $c3
@@ -1714,7 +1717,7 @@ call_01_4b58:
     add  HL, DE                                        ;; 01:4b7d $19
     ld   [HL], D                                       ;; 01:4b7e $72
     call call_01_4bab                                  ;; 01:4b7f $cd $ab $4b
-    jp   jp_00_1f9d                                    ;; 01:4b82 $c3 $9d $1f
+    jp   HandleHamChatRuleOpcode                       ;; 01:4b82 $c3 $9d $1f
 
 call_01_4b85:
     ld   HL, wUsedAsAnOffsetIntoSomeRegionC356         ;; 01:4b85 $21 $56 $c3
@@ -1726,7 +1729,7 @@ call_01_4b85:
     and  A, $1e                                        ;; 01:4b92 $e6 $1e
     inc  A                                             ;; 01:4b94 $3c
     ld   [HL], A                                       ;; 01:4b95 $77
-    jp   jp_00_1f9d                                    ;; 01:4b96 $c3 $9d $1f
+    jp   HandleHamChatRuleOpcode                       ;; 01:4b96 $c3 $9d $1f
 
 call_01_4b99:
     ld   A, $ff                                        ;; 01:4b99 $3e $ff

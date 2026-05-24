@@ -7,6 +7,18 @@ ENDM
 MACRO HamChatWheelRule_AlwaysUse
 db $1a
 ENDM
+MACRO HamChatWheelRule_DefaultCase_Pair
+db \2
+db \3
+ENDM
+MACRO HamChatWheelRule_DefaultCase_Single
+db \2
+ENDM
+MACRO HamChatWheelRule_DefaultCase_Trio
+db \2
+db \3
+db \4
+ENDM
 MACRO HamChatWheelRule_UseIfDontHave
 db $5e
 db \2

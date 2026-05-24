@@ -2008,13 +2008,13 @@ call_23_5ba4:
     Op1C_TableJump 3                                   ;; 23:5ba8 $1c $03
     SCRIPT_POINTER call_23_561a                        ;; 23:5baa $1a $56 $23
     SCRIPT_POINTER call_23_5631                        ;; 23:5bad $31 $56 $23
-    SCRIPT_POINTER call_23_5bb7                        ;; 23:5bb0 $b7 $5b $23
+    SCRIPT_POINTER BijouTree                           ;; 23:5bb0 $b7 $5b $23
     Op18_Jump call_23_55dd                             ;; 23:5bb3 $18 $dd $55 $23
 
-call_23_5bb7:
+BijouTree:
     Op82_Run data_01_7416                              ;; 23:5bb7 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 23:5bbb $1e $1d $6f $1d
-    Op10_HamChatWheel 6, data_05_5a1f, data_05_5c67    ;; 23:5bbf $10 $06 $1f $5a $67 $5c
+    Op10_HamChatWheel 6, BijouTreeOptions, BijouTreeRules ;; 23:5bbf $10 $06 $1f $5a $67 $5c
     Op1C_TableJump 6                                   ;; 23:5bc5 $1c $06
     SCRIPT_POINTER call_23_5914                        ;; 23:5bc7 $14 $59 $23
     SCRIPT_POINTER call_23_5934                        ;; 23:5bca $34 $59 $23

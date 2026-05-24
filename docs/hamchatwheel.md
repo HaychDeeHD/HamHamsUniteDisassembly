@@ -127,11 +127,11 @@ The rules have their own "opcodes".
 * $3E = Include this option IF a flag in the [BitArray](./memory.md#bitarray) is set. 
 * $5E = Include this option IF a flag in the [BitArray](./memory.md#bitarray) is NOT set. 
 
-Other opcodes exist, but I don't yet know how they work. These 3 are the only ones used by SadMaxwell.
+> **_NOTE:_** The $3E and $5E opcodes only use the highest 7 bits of their byte, so $3F and $5F would work the same. The lowest bit of that byte is taken as a 9th high bit for the following argument byte, since the BitArray needs 9 bits to index. In this way, these rules are very similar to [Op16 SubOps opcodes](./scripts.md#op16---begin-subops).
 
-NOTE: The $3E and $5E opcodes only use the highest 7 bits of their byte, so $3F and $5F would work the same. The lowest bit of that byte is taken as a 9th high bit for the following argument byte, since the BitArray nees 9 bits to index. In this way, these rules are very similar to [Op16 SubOps opcodes](./scripts.md#op16---begin-subops).
+Other opcodes exist but are only used in a handful of places where HamChatWheel contents change. I have only seen 3. Examples include (1) The tree Bijou hides behind which loses some options while she is hiding and (2) Boss when he is presenting you with a list of hamsters you may want a hint about.
 
-NOTE: Also similarly to SubOps, these opcodes are handled based on a jumptable for their 3 highest bits and a second jumptable for their 3 lowest bits. I don't know much beyond this yet.
+> **_NOTE:_** Also similarly to SubOps, these opcodes are handled based on a jumptable for their 3 highest bits and a second jumptable for their 3 lowest bits. The behavior mirrors that of "default" SubOps. See [the Op16 documentation](./scripts.md#op16---begin-subops) or [hamscript.py](./hamscripts.py)/[hamchatwheel.py](./hamchatwheel.py) for more info.
 
 So if the player is missing Teenie and Nopibloo, C51A will look like:
 

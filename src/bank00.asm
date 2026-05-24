@@ -4421,7 +4421,7 @@ Write3BytesFromHLPointerToC35E_AndUseJumpArray2:
 ; Switch to bank in C6A8
 ; Put 3 bytes from [HL] (the data pointed to by arg2 of Op10) into wBitArrayIndexC35E-60.
 ; Then jump to another function.
-jp_00_1f9d:
+HandleHamChatRuleOpcode:
     ld   A, [wTempHoldsBC_1_C38C]                      ;; 00:1f9d $fa $8c $c3
     ld   L, A                                          ;; 00:1fa0 $6f
     ld   A, [wTempHoldsBC_2_C38D]                      ;; 00:1fa1 $fa $8d $c3

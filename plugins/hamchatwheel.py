@@ -117,6 +117,10 @@ class HamChatWheelRulesBlock(Block):
         RomInfo.macros["HamChatWheelRule_AlwaysUse"] = "db $1a"
         RomInfo.macros["HamChatWheelRule_UseIfHave"] = "db $3e\ndb \\2"
         RomInfo.macros["HamChatWheelRule_UseIfDontHave"] = "db $5e\ndb \\2"
+        RomInfo.macros["HamChatWheelRule_DefaultCase_Single"] = "db \\2"
+        RomInfo.macros["HamChatWheelRule_DefaultCase_Pair"] = "db \\2\ndb \\3"
+        # TODO: I do not see any trios in bank 5. Remove?
+        RomInfo.macros["HamChatWheelRule_DefaultCase_Trio"] = "db \\2\ndb \\3\ndb \\4"
         RomInfo.constants["INVENTORY"] = {v: k for k, v in BITARRAY_INDEX_TO_HAMCHAT.items()}
 
         self.hamChatWheelRulesArgsList = []
@@ -139,10 +143,28 @@ class HamChatWheelRulesBlock(Block):
                     self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfDontHave", str(i), BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(addr + size + 1)]))
                     size += 2
                 case _:
-                    # There are known instances of other opcodes (6E, 00, B2). I don't know their lengths or behaviors. Giving up for now.
-                    # TODO: Investigate HamChatRule opcodes.
-                    print("Unknown HamChatRule case %02x at 05:%04x." % (ruleOpcode, addr + size))
-                    break
+                    # This works the same as the Op16 SubOps default case. See hamscript.py.
+                    # TODO The gaps in bank 5 lead me to believe there could be more to the story.
+                    while True:
+                        firstByte = memory.byte(addr + size)
+
+                        xbits = (firstByte & 0xE0) >> 5
+                        ybits = (firstByte & 0x1E) >> 1
+
+                        byte2 = memory.byte(addr + size + 1)
+                        byte3 = memory.byte(addr + size + 2)
+                        if xbits == 0b000:
+                            self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_DefaultCase_Single", str(i), "$%02x" % firstByte))
+                            size += 1
+                        elif xbits == 0b110:
+                            self.hamChatWheelRulesArgsList.append((3, "HamChatWheelRule_DefaultCase_Trio", str(i), "$%02x" % firstByte, "$%02x" % byte2, "$%02x" % byte3))
+                            size += 3
+                        else:
+                            self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_DefaultCase_Pair", str(i), "$%02x" % firstByte, "$%02x" % byte2))
+                            size += 2
+
+                        if ybits in [0b1101, 0b1110, 0b1111]:
+                            break
 
         if size > 0:
             self.resize(size)
