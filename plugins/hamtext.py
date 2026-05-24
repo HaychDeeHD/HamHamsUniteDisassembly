@@ -14,6 +14,8 @@ for n in range(10):
 for n in range(26):
     charmap[0x0C + n] = chr(0x41 + n) 
 # [0x26-0x60] empty?
+# There's a 32 at 05:45e7. But it might be in error.
+charmap[0x32] = "<32>"
 # [0x61,0x7A] lowercase
 for n in range(26):
     charmap[0x61 + n] = chr(0x61 + n) 
@@ -80,20 +82,12 @@ class TextBlock(Block):
         RomInfo.charmap["HAMTEXT"] = charmap
         RomInfo.macros["TXT"] = "SETCHARMAP HAMTEXT\ndb \\#"
 
-        # Go until you hit a 0xE0 eol byte or a 0x00 terminating byte
+        # Go until you hit a 0xE0 / 0xE1 eol byte or a 0x00 terminating byte
         size = 0
         while addr + size < memory.base_address + 0x4000: 
             byte = memory.byte(addr + size)
             size += 1
-            if byte == 0xE0: # E0 bytes are followed by more text
-                # TODO Looks like E0 isn't always followed by text?
-                # Saw text ending in e0 followed by a possible script instruction.
-
-                # Saw a location that is -- label: e0 ff ff ff ff <eof>
-                # if memory.byte(addr + size) != 0xFF:
-                #     addKnownTextAddress(memory, addr + size)
-                break
-            if byte == 0x00:
+            if byte in [0xE0, 0xE1, 0x00]:
                 break
 
         self.resize(size)

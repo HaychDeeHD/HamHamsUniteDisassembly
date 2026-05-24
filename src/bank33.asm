@@ -675,7 +675,7 @@ call_33_4903:
 call_33_490f:
     Op16_SubOps 1                                      ;; 33:490f $16 $01
     SubOp_ClearFlag wBitArrayC918, 1                   ;; 33:4911 $5e $01
-    Op82_Run data_01_754a                              ;; 33:4913 $82 $4a $75 $01
+    Op82_Run write_toC6A6to8_C641to3_andResetToStartOfBank5 ;; 33:4913 $82 $4a $75 $01
     Op82_Run data_01_73f8                              ;; 33:4917 $82 $f8 $73 $01
     Op82_Run data_01_73cc                              ;; 33:491b $82 $cc $73 $01
     Op14_Unknown 1, $6b, $41                           ;; 33:491f $14 $01 $6b $41
@@ -693,7 +693,7 @@ call_33_490f:
 call_33_4942:
     Op16_SubOps 1                                      ;; 33:4942 $16 $01
     SubOp_ClearFlag wBitArrayC918, 1                   ;; 33:4944 $5e $01
-    Op82_Run data_01_754a                              ;; 33:4946 $82 $4a $75 $01
+    Op82_Run write_toC6A6to8_C641to3_andResetToStartOfBank5 ;; 33:4946 $82 $4a $75 $01
     Op82_Run data_01_73f8                              ;; 33:494a $82 $f8 $73 $01
     Op82_Run data_01_73cc                              ;; 33:494e $82 $cc $73 $01
     Op14_Unknown 1, $6b, $41                           ;; 33:4952 $14 $01 $6b $41
@@ -725,7 +725,7 @@ call_33_4981:
 
 call_33_49a3:
     Op82_Run data_01_7407                              ;; 33:49a3 $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 33:49a7 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:49a7 $82 $6c $75 $01
     Op14_Unknown 1, $09, $44                           ;; 33:49ab $14 $01 $09 $44
     SCRIPT_POINTER call_20_4042                        ;; 33:49af $42 $40 $20
     Op16_SubOps 1                                      ;; 33:49b2 $16 $01
@@ -749,7 +749,7 @@ call_33_49ca:
 
 call_33_49ec:
     Op82_Run data_01_7407                              ;; 33:49ec $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 33:49f0 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:49f0 $82 $6c $75 $01
     Op14_Unknown 1, $09, $44                           ;; 33:49f4 $14 $01 $09 $44
     SCRIPT_POINTER call_20_463a                        ;; 33:49f8 $3a $46 $20
     Op50_WriteByte wOp1CScriptTableIndexC53A, $00, $03 ;; 33:49fb $50 $3a $c5 $00 $03
@@ -774,7 +774,7 @@ call_33_4a18:
 
 call_33_4a3a:
     Op82_Run data_01_7407                              ;; 33:4a3a $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 33:4a3e $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:4a3e $82 $6c $75 $01
     Op14_Unknown 1, $09, $44                           ;; 33:4a42 $14 $01 $09 $44
     SCRIPT_POINTER call_20_4294                        ;; 33:4a46 $94 $42 $20
     Op50_WriteByte wOp1CScriptTableIndexC53A, $00, $04 ;; 33:4a49 $50 $3a $c5 $00 $04
@@ -799,7 +799,7 @@ call_33_4a66:
 
 call_33_4a88:
     Op82_Run data_01_7407                              ;; 33:4a88 $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 33:4a8c $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:4a8c $82 $6c $75 $01
     Op14_Unknown 1, $09, $44                           ;; 33:4a90 $14 $01 $09 $44
     SCRIPT_POINTER call_20_4310                        ;; 33:4a94 $10 $43 $20
     Op50_WriteByte wOp1CScriptTableIndexC53A, $00, $05 ;; 33:4a97 $50 $3a $c5 $00 $05
@@ -824,7 +824,7 @@ call_33_4ab4:
 
 call_33_4ad6:
     Op82_Run data_01_7407                              ;; 33:4ad6 $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 33:4ada $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:4ada $82 $6c $75 $01
     Op14_Unknown 1, $09, $44                           ;; 33:4ade $14 $01 $09 $44
     SCRIPT_POINTER call_20_4184                        ;; 33:4ae2 $84 $41 $20
     Op50_WriteByte wOp1CScriptTableIndexC53A, $00, $06 ;; 33:4ae5 $50 $3a $c5 $00 $06
@@ -849,7 +849,7 @@ call_33_4b02:
 
 call_33_4b24:
     Op82_Run data_01_7407                              ;; 33:4b24 $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 33:4b28 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:4b28 $82 $6c $75 $01
     Op14_Unknown 1, $09, $44                           ;; 33:4b2c $14 $01 $09 $44
     SCRIPT_POINTER call_20_41b0                        ;; 33:4b30 $b0 $41 $20
     Op50_WriteByte wOp1CScriptTableIndexC53A, $00, $07 ;; 33:4b33 $50 $3a $c5 $00 $07
@@ -874,7 +874,7 @@ call_33_4b50:
 
 call_33_4b72:
     Op82_Run data_01_7407                              ;; 33:4b72 $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 33:4b76 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:4b76 $82 $6c $75 $01
     Op14_Unknown 1, $09, $44                           ;; 33:4b7a $14 $01 $09 $44
     SCRIPT_POINTER call_20_41dc                        ;; 33:4b7e $dc $41 $20
     Op50_WriteByte wOp1CScriptTableIndexC53A, $00, $08 ;; 33:4b81 $50 $3a $c5 $00 $08
@@ -899,7 +899,7 @@ call_33_4b9e:
 
 call_33_4bc0:
     Op82_Run data_01_7407                              ;; 33:4bc0 $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 33:4bc4 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:4bc4 $82 $6c $75 $01
     Op14_Unknown 1, $09, $44                           ;; 33:4bc8 $14 $01 $09 $44
     SCRIPT_POINTER call_20_425a                        ;; 33:4bcc $5a $42 $20
     Op50_WriteByte wOp1CScriptTableIndexC53A, $00, $09 ;; 33:4bcf $50 $3a $c5 $00 $09
@@ -913,7 +913,7 @@ call_33_4bc0:
 
 call_33_4bec:
     Op82_Run data_01_7407                              ;; 33:4bec $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 33:4bf0 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:4bf0 $82 $6c $75 $01
     SCRIPT_RETURN_20                                   ;; 33:4bf4 $20
 
 call_33_4bf5:
@@ -1039,14 +1039,14 @@ call_33_4d0d:
     SCRIPT_RETURN_20                                   ;; 33:4d11 $20
 
 call_33_4d12:
-    Op82_Run data_01_754a                              ;; 33:4d12 $82 $4a $75 $01
+    Op82_Run write_toC6A6to8_C641to3_andResetToStartOfBank5 ;; 33:4d12 $82 $4a $75 $01
     Op14_Unknown 1, $2d, $44                           ;; 33:4d16 $14 $01 $2d $44
     SCRIPT_POINTER call_33_4d20                        ;; 33:4d1a $20 $4d $33
     Op44_Unknown $08, $00                              ;; 33:4d1d $44 $08 $00
 
 call_33_4d20:
     Op1E_Call call_33_4d29                             ;; 33:4d20 $1e $29 $4d $33
-    Op82_Run data_01_756c                              ;; 33:4d24 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 33:4d24 $82 $6c $75 $01
     SCRIPT_RETURN_20                                   ;; 33:4d28 $20
 
 call_33_4d29:

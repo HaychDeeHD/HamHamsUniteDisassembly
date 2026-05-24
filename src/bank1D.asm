@@ -3018,7 +3018,7 @@ call_1d_6528:
     SCRIPT_RETURN_20                                   ;; 1d:68f8 $20
 
 call_1d_68f9:
-    Op82_Run data_01_754a                              ;; 1d:68f9 $82 $4a $75 $01
+    Op82_Run write_toC6A6to8_C641to3_andResetToStartOfBank5 ;; 1d:68f9 $82 $4a $75 $01
     Op82_Run data_01_73f8                              ;; 1d:68fd $82 $f8 $73 $01
     Op16_SubOps 1                                      ;; 1d:6901 $16 $01
     SubOp_ClearFlag wBitArrayC918, 1                   ;; 1d:6903 $5e $01
@@ -3041,7 +3041,7 @@ call_1d_68f9:
 
 call_1d_6938:
     Op82_Run data_01_7407                              ;; 1d:6938 $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 1d:693c $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 1d:693c $82 $6c $75 $01
     SCRIPT_RETURN_20                                   ;; 1d:6940 $20
 
 call_1d_6941:
@@ -3068,7 +3068,7 @@ call_1d_697d:
 call_1d_6982:
     Op1E_Call call_26_524b                             ;; 1d:6982 $1e $4b $52 $26
     Op82_Run data_01_7407                              ;; 1d:6986 $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 1d:698a $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 1d:698a $82 $6c $75 $01
     Op16_SubOps 1                                      ;; 1d:698e $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 1d:6990 $5e $03
     SCRIPT_RETURN_20                                   ;; 1d:6992 $20
@@ -3078,7 +3078,7 @@ call_1d_6993:
     SubOp_SetByte wC751, $02                           ;; 1d:6995 $7e $39 $02
     Op1E_Call call_2b_63cb                             ;; 1d:6998 $1e $cb $63 $2b
     Op82_Run data_01_7407                              ;; 1d:699c $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 1d:69a0 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 1d:69a0 $82 $6c $75 $01
     Op1E_Call call_04_5b22                             ;; 1d:69a4 $1e $22 $5b $04
     Op44_Unknown $1e, $00                              ;; 1d:69a8 $44 $1e $00
     Op1E_Call call_04_61cf                             ;; 1d:69ab $1e $cf $61 $04
@@ -3112,7 +3112,7 @@ call_1d_69e4:
     Op54_Unknown $00                                   ;; 1d:69ef $54 $00
 
 call_1d_69f1:
-    Op82_Run data_01_754a                              ;; 1d:69f1 $82 $4a $75 $01
+    Op82_Run write_toC6A6to8_C641to3_andResetToStartOfBank5 ;; 1d:69f1 $82 $4a $75 $01
     Op82_Run data_01_73f8                              ;; 1d:69f5 $82 $f8 $73 $01
     Op16_SubOps 1                                      ;; 1d:69f9 $16 $01
     SubOp_ClearFlag wBitArrayC918, 1                   ;; 1d:69fb $5e $01
@@ -3159,7 +3159,7 @@ call_1d_6a40:
 
 call_1d_6a6f:
     Op82_Run data_01_7407                              ;; 1d:6a6f $82 $07 $74 $01
-    Op82_Run data_01_756c                              ;; 1d:6a73 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 1d:6a73 $82 $6c $75 $01
     SCRIPT_RETURN_20                                   ;; 1d:6a77 $20
 
 call_1d_6a78:

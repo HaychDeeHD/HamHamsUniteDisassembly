@@ -512,7 +512,7 @@ data_39_5221:
     TXT  "and I'll be there<E4>as fast as I can.<E3>See you around,<E4><end>" ;; 39:5221 ?????????????????????????????????????????????????????
 
 call_39_5256:
-    Op82_Run data_01_754a                              ;; 39:5256 $82 $4a $75 $01
+    Op82_Run write_toC6A6to8_C641to3_andResetToStartOfBank5 ;; 39:5256 $82 $4a $75 $01
     Op50_WriteByte w1_BeginRegionD1FD, $01, $00        ;; 39:525a $50 $fd $d1 $01 $00
     Op50_WriteByte w1_D259, $01, $00                   ;; 39:525f $50 $59 $d2 $01 $00
     Op32_Unknown $8f, $65, $7d, $00, $d0, $04          ;; 39:5264 $32 $8f $65 $7d $00 $d0 $04
@@ -564,7 +564,7 @@ call_39_5338:
     Op1E_Call call_04_5b22                             ;; 39:533a $1e $22 $5b $04
     Op44_Unknown $0a, $00                              ;; 39:533e $44 $0a $00
     Op4E_Unknown_StoreValue 4, $00, $00, $00, $00      ;; 39:5341 $4e $04 $00 $00 $00 $00
-    Op82_Run data_01_756c                              ;; 39:5347 $82 $6c $75 $01
+    Op82_Run write_C641to3_toC6A6to8                   ;; 39:5347 $82 $6c $75 $01
     SCRIPT_RETURN_20                                   ;; 39:534b $20
 
 call_39_534c:

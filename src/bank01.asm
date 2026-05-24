@@ -6609,7 +6609,7 @@ jr_01_74d2:
     db   $31, $20, $32, $30, $30, $31, $2f, $30        ;; 01:753e ........
     db   $33, $2f, $32, $32                            ;; 01:7546 ....
 
-data_01_754a:
+write_toC6A6to8_C641to3_andResetToStartOfBank5:
     ld   A, [wC6A6]                                    ;; 01:754a $fa $a6 $c6
     ld   [wC641], A                                    ;; 01:754d $ea $41 $c6
     ld   A, [wC6A7]                                    ;; 01:7550 $fa $a7 $c6
@@ -6624,7 +6624,9 @@ data_01_754a:
     ld   [wPossibleBankSourceC6A8], A                  ;; 01:7568 $ea $a8 $c6
     ret                                                ;; 01:756b $c9
 
-data_01_756c:
+; C6A8 is a bank source for Hamchat data.
+; C6A6-8 is likely an address used for other things as well.
+write_C641to3_toC6A6to8:
     ld   A, [wC641]                                    ;; 01:756c $fa $41 $c6
     ld   [wC6A6], A                                    ;; 01:756f $ea $a6 $c6
     ld   A, [wC642]                                    ;; 01:7572 $fa $42 $c6
