@@ -605,7 +605,7 @@ call_1e_48a1:
     SCRIPT_POINTER call_1e_48b9                        ;; 1e:48b6 $b9 $48 $1e
 
 call_1e_48b9:
-    Op1E_Call call_33_4e1d                             ;; 1e:48b9 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 1e:48b9 $1e $1d $4e $33
     Op18_Jump call_1e_4054                             ;; 1e:48bd $18 $54 $40 $1e
 
 call_1e_48c1:
@@ -798,7 +798,7 @@ call_1e_4b0e:
     SCRIPT_POINTER call_1e_4b26                        ;; 1e:4b23 $26 $4b $1e
 
 call_1e_4b26:
-    Op1E_Call call_33_4e1d                             ;; 1e:4b26 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 1e:4b26 $1e $1d $4e $33
     Op18_Jump call_1e_4054                             ;; 1e:4b2a $18 $54 $40 $1e
 
 call_1e_4b2e:
@@ -1102,7 +1102,7 @@ call_1e_500a:
     SCRIPT_POINTER call_1e_5022                        ;; 1e:501f $22 $50 $1e
 
 call_1e_5022:
-    Op1E_Call call_33_4e1d                             ;; 1e:5022 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 1e:5022 $1e $1d $4e $33
     Op18_Jump call_1e_4054                             ;; 1e:5026 $18 $54 $40 $1e
 
 call_1e_502a:
@@ -1647,7 +1647,7 @@ call_1e_5725:
     SCRIPT_POINTER call_1e_573d                        ;; 1e:573a $3d $57 $1e
 
 call_1e_573d:
-    Op1E_Call call_33_4e1d                             ;; 1e:573d $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 1e:573d $1e $1d $4e $33
     Op18_Jump call_1e_4054                             ;; 1e:5741 $18 $54 $40 $1e
 
 call_1e_5745:
@@ -1906,7 +1906,7 @@ call_1e_5ae7:
     SCRIPT_POINTER call_1e_5aff                        ;; 1e:5afc $ff $5a $1e
 
 call_1e_5aff:
-    Op1E_Call call_33_4e1d                             ;; 1e:5aff $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 1e:5aff $1e $1d $4e $33
     Op18_Jump call_1e_4054                             ;; 1e:5b03 $18 $54 $40 $1e
 
 call_1e_5b07:

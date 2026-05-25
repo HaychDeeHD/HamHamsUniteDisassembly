@@ -1139,10 +1139,10 @@ call_33_4e17:
     SubOp_SetByte wC737, $05                           ;; 33:4e19 $7e $1f $05
     SCRIPT_RETURN_20                                   ;; 33:4e1c $20
 
-call_33_4e1d:
+ShowHaventLearnedWord:
     Op1E_Call call_1d_6ae8                             ;; 33:4e1d $1e $e8 $6a $1d
     Op5A_Unknown $8e                                   ;; 33:4e21 $5a $8e
-    Op04_Unknown_Text data_2f_4ab2                     ;; 33:4e23 $04 $b2 $4a $2f
+    Op04_Unknown_Text haveNotLearnedWordText           ;; 33:4e23 $04 $b2 $4a $2f
     Op1E_Call call_04_615d                             ;; 33:4e27 $1e $5d $61 $04
     SCRIPT_RETURN_20                                   ;; 33:4e2b $20
 
@@ -2248,7 +2248,7 @@ call_33_5d2a:
     Op18_Jump call_33_5b30                             ;; 33:5d5e $18 $30 $5b $33
 
 call_33_5d62:
-    Op1E_Call call_33_4e1d                             ;; 33:5d62 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 33:5d62 $1e $1d $4e $33
     Op18_Jump call_33_5b30                             ;; 33:5d66 $18 $30 $5b $33
 
 call_33_5d6a:
@@ -2269,7 +2269,7 @@ call_33_5d6a:
     Op18_Jump call_33_5b30                             ;; 33:5d99 $18 $30 $5b $33
 
 call_33_5d9d:
-    Op1E_Call call_33_4e1d                             ;; 33:5d9d $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 33:5d9d $1e $1d $4e $33
     Op18_Jump call_33_5b30                             ;; 33:5da1 $18 $30 $5b $33
 
 call_33_5da5:
@@ -3753,7 +3753,7 @@ call_33_70d1:
     Op18_Jump call_33_70d1                             ;; 33:70f9 $18 $d1 $70 $33
 
 call_33_70fd:
-    Op1E_Call call_33_4e1d                             ;; 33:70fd $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 33:70fd $1e $1d $4e $33
     Op18_Jump call_33_6ccd                             ;; 33:7101 $18 $cd $6c $33
 
 call_33_7105:
@@ -3793,7 +3793,7 @@ call_33_713a:
     Op18_Jump call_33_713a                             ;; 33:7162 $18 $3a $71 $33
 
 call_33_7166:
-    Op1E_Call call_33_4e1d                             ;; 33:7166 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 33:7166 $1e $1d $4e $33
     Op18_Jump call_33_6ccd                             ;; 33:716a $18 $cd $6c $33
 
 call_33_716e:
@@ -3934,7 +3934,7 @@ call_33_72dd:
     Op18_Jump call_33_72dd                             ;; 33:7305 $18 $dd $72 $33
 
 call_33_7309:
-    Op1E_Call call_33_4e1d                             ;; 33:7309 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 33:7309 $1e $1d $4e $33
     Op18_Jump call_33_6ccd                             ;; 33:730d $18 $cd $6c $33
 
 call_33_7311:

@@ -806,7 +806,7 @@ data_2f_4aae:
 data_2f_4ab0:
     TXT  "9<end>"                                      ;; 2f:4ab0 ??
 
-data_2f_4ab2:
+haveNotLearnedWordText:
     TXT  "You haven't learned<E4>that word yet.<E0>"   ;; 2f:4ab2 ???????????????????????????????????
 
 data_2f_4ad5:
@@ -2597,7 +2597,7 @@ call_2f_71ce:
     SCRIPT_POINTER call_2f_71fd                        ;; 2f:71fa $fd $71 $2f
 
 call_2f_71fd:
-    Op1E_Call call_33_4e1d                             ;; 2f:71fd $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 2f:71fd $1e $1d $4e $33
     Op18_Jump call_2f_6cbe                             ;; 2f:7201 $18 $be $6c $2f
 
 call_2f_7205:
@@ -3340,7 +3340,7 @@ call_2f_7b98:
     Op18_Jump call_2f_7b98                             ;; 2f:7bc0 $18 $98 $7b $2f
 
 call_2f_7bc4:
-    Op1E_Call call_33_4e1d                             ;; 2f:7bc4 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 2f:7bc4 $1e $1d $4e $33
     Op18_Jump call_2f_77a0                             ;; 2f:7bc8 $18 $a0 $77 $2f
 
 call_2f_7bcc:
@@ -3380,7 +3380,7 @@ call_2f_7c01:
     Op18_Jump call_2f_7c01                             ;; 2f:7c29 $18 $01 $7c $2f
 
 call_2f_7c2d:
-    Op1E_Call call_33_4e1d                             ;; 2f:7c2d $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 2f:7c2d $1e $1d $4e $33
     Op18_Jump call_2f_77a0                             ;; 2f:7c31 $18 $a0 $77 $2f
 
 call_2f_7c35:
@@ -3519,7 +3519,7 @@ call_2f_7d9c:
     Op18_Jump call_2f_7d9c                             ;; 2f:7dc4 $18 $9c $7d $2f
 
 call_2f_7dc8:
-    Op1E_Call call_33_4e1d                             ;; 2f:7dc8 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 2f:7dc8 $1e $1d $4e $33
     Op18_Jump call_2f_77a0                             ;; 2f:7dcc $18 $a0 $77 $2f
 
 call_2f_7dd0:

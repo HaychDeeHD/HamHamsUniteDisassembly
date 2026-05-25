@@ -3331,7 +3331,7 @@ call_38_6df9:
     SCRIPT_POINTER call_38_6e11                        ;; 38:6e0e $11 $6e $38
 
 call_38_6e11:
-    Op1E_Call call_33_4e1d                             ;; 38:6e11 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 38:6e11 $1e $1d $4e $33
     Op18_Jump call_38_6b61                             ;; 38:6e15 $18 $61 $6b $38
 
 call_38_6e19:

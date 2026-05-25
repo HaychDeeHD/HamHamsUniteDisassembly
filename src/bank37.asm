@@ -255,7 +255,7 @@ call_37_4306:
     Op18_Jump call_37_4306                             ;; 37:432e $18 $06 $43 $37
 
 call_37_4332:
-    Op1E_Call call_33_4e1d                             ;; 37:4332 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 37:4332 $1e $1d $4e $33
     Op18_Jump call_37_4033                             ;; 37:4336 $18 $33 $40 $37
 
 call_37_433a:
@@ -1894,7 +1894,7 @@ call_37_65be:
     SCRIPT_POINTER call_37_65d6                        ;; 37:65d3 $d6 $65 $37
 
 call_37_65d6:
-    Op1E_Call call_33_4e1d                             ;; 37:65d6 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 37:65d6 $1e $1d $4e $33
     Op18_Jump call_37_5fe8                             ;; 37:65da $18 $e8 $5f $37
 
 data_37_65de:
@@ -2448,7 +2448,7 @@ call_37_704d:
     SCRIPT_POINTER call_37_7065                        ;; 37:7062 $65 $70 $37
 
 call_37_7065:
-    Op1E_Call call_33_4e1d                             ;; 37:7065 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 37:7065 $1e $1d $4e $33
     Op18_Jump call_31_69bf                             ;; 37:7069 $18 $bf $69 $31
 
 call_37_706d:

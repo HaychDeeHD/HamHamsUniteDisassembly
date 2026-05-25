@@ -507,7 +507,7 @@ call_30_4e81:
     SCRIPT_POINTER call_30_4e99                        ;; 30:4e96 $99 $4e $30
 
 call_30_4e99:
-    Op1E_Call call_33_4e1d                             ;; 30:4e99 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 30:4e99 $1e $1d $4e $33
     Op18_Jump call_30_4aec                             ;; 30:4e9d $18 $ec $4a $30
 
 call_30_4ea1:
@@ -1542,7 +1542,7 @@ call_30_646a:
     Op18_Jump call_30_6095                             ;; 30:646a $18 $95 $60 $30
 
 call_30_646e:
-    Op1E_Call call_33_4e1d                             ;; 30:646e $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 30:646e $1e $1d $4e $33
     Op18_Jump call_30_6095                             ;; 30:6472 $18 $95 $60 $30
 
 call_30_6476:
@@ -3244,7 +3244,7 @@ call_30_7a22:
     SCRIPT_POINTER call_30_7a56                        ;; 30:7a53 $56 $7a $30
 
 call_30_7a56:
-    Op1E_Call call_33_4e1d                             ;; 30:7a56 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 30:7a56 $1e $1d $4e $33
     Op18_Jump call_30_760c                             ;; 30:7a5a $18 $0c $76 $30
 
 call_30_7a5e:

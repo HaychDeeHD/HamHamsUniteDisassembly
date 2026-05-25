@@ -496,7 +496,7 @@ call_26_463a:
     SCRIPT_POINTER call_26_4652                        ;; 26:464f $52 $46 $26
 
 call_26_4652:
-    Op1E_Call call_33_4e1d                             ;; 26:4652 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 26:4652 $1e $1d $4e $33
     Op18_Jump call_26_4084                             ;; 26:4656 $18 $84 $40 $26
 
 call_26_465a:
@@ -764,7 +764,7 @@ call_26_49f1:
     SCRIPT_POINTER call_26_4a09                        ;; 26:4a06 $09 $4a $26
 
 call_26_4a09:
-    Op1E_Call call_33_4e1d                             ;; 26:4a09 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 26:4a09 $1e $1d $4e $33
     Op18_Jump call_26_4084                             ;; 26:4a0d $18 $84 $40 $26
 
 call_26_4a11:
@@ -1023,7 +1023,7 @@ call_26_4d97:
     SCRIPT_POINTER call_26_4daf                        ;; 26:4dac $af $4d $26
 
 call_26_4daf:
-    Op1E_Call call_33_4e1d                             ;; 26:4daf $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 26:4daf $1e $1d $4e $33
     Op18_Jump call_26_4084                             ;; 26:4db3 $18 $84 $40 $26
 
 call_26_4db7:

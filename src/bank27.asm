@@ -523,7 +523,7 @@ call_27_46b9:
     SCRIPT_POINTER call_27_46d1                        ;; 27:46ce $d1 $46 $27
 
 call_27_46d1:
-    Op1E_Call call_33_4e1d                             ;; 27:46d1 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 27:46d1 $1e $1d $4e $33
     Op18_Jump call_27_408a                             ;; 27:46d5 $18 $8a $40 $27
 
 call_27_46d9:
@@ -698,7 +698,7 @@ call_27_4923:
     SCRIPT_POINTER call_27_493b                        ;; 27:4938 $3b $49 $27
 
 call_27_493b:
-    Op1E_Call call_33_4e1d                             ;; 27:493b $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 27:493b $1e $1d $4e $33
     Op18_Jump call_27_408a                             ;; 27:493f $18 $8a $40 $27
 
 call_27_4943:
@@ -957,7 +957,7 @@ call_27_4cca:
     SCRIPT_POINTER call_27_4ce2                        ;; 27:4cdf $e2 $4c $27
 
 call_27_4ce2:
-    Op1E_Call call_33_4e1d                             ;; 27:4ce2 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 27:4ce2 $1e $1d $4e $33
     Op18_Jump call_27_408a                             ;; 27:4ce6 $18 $8a $40 $27
 
 call_27_4cea:
@@ -1790,7 +1790,7 @@ call_27_56db:
     SCRIPT_POINTER call_27_5f97                        ;; 27:5711 $97 $5f $27
 
 call_27_5714:
-    Op1E_Call call_33_4e1d                             ;; 27:5714 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 27:5714 $1e $1d $4e $33
     Op18_Jump call_27_518f                             ;; 27:5718 $18 $8f $51 $27
 
 call_27_571c:
@@ -2247,7 +2247,7 @@ call_27_5cd7:
     SCRIPT_POINTER call_27_5f97                        ;; 27:5d03 $97 $5f $27
 
 call_27_5d06:
-    Op1E_Call call_33_4e1d                             ;; 27:5d06 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 27:5d06 $1e $1d $4e $33
     Op18_Jump call_27_518f                             ;; 27:5d0a $18 $8f $51 $27
 
 call_27_5d0e:
@@ -2266,7 +2266,7 @@ call_27_5d0e:
     SCRIPT_POINTER call_27_55cd                        ;; 27:5d36 $cd $55 $27
 
 call_27_5d39:
-    Op1E_Call call_33_4e1d                             ;; 27:5d39 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 27:5d39 $1e $1d $4e $33
     Op18_Jump call_27_518f                             ;; 27:5d3d $18 $8f $51 $27
 
 call_27_5d41:
@@ -3098,7 +3098,7 @@ call_27_671f:
     Op18_Jump call_27_6243                             ;; 27:6726 $18 $43 $62 $27
 
 call_27_672a:
-    Op1E_Call call_33_4e1d                             ;; 27:672a $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 27:672a $1e $1d $4e $33
     Op18_Jump call_27_6243                             ;; 27:672e $18 $43 $62 $27
 
 call_27_6732:

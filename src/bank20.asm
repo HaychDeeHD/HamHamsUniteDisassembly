@@ -3937,7 +3937,7 @@ call_20_75c9:
     SCRIPT_POINTER call_20_75e1                        ;; 20:75de $e1 $75 $20
 
 call_20_75e1:
-    Op1E_Call call_33_4e1d                             ;; 20:75e1 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 20:75e1 $1e $1d $4e $33
     Op1E_Call call_20_7d9c                             ;; 20:75e5 $1e $9c $7d $20
     Op18_Jump call_20_6e0f                             ;; 20:75e9 $18 $0f $6e $20
 
@@ -4246,7 +4246,7 @@ call_20_79bc:
     SCRIPT_POINTER call_20_79d4                        ;; 20:79d1 $d4 $79 $20
 
 call_20_79d4:
-    Op1E_Call call_33_4e1d                             ;; 20:79d4 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 20:79d4 $1e $1d $4e $33
     Op18_Jump call_20_6e0f                             ;; 20:79d8 $18 $0f $6e $20
 
 call_20_79dc:

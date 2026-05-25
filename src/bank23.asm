@@ -1125,7 +1125,7 @@ call_23_4f99:
     SCRIPT_POINTER call_23_4fb1                        ;; 23:4fae $b1 $4f $23
 
 call_23_4fb1:
-    Op1E_Call call_33_4e1d                             ;; 23:4fb1 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 23:4fb1 $1e $1d $4e $33
     Op18_Jump call_23_401b                             ;; 23:4fb5 $18 $1b $40 $23
 
 call_23_4fb9:
@@ -2406,7 +2406,7 @@ call_23_612d:
     SCRIPT_POINTER call_23_6145                        ;; 23:6142 $45 $61 $23
 
 call_23_6145:
-    Op1E_Call call_33_4e1d                             ;; 23:6145 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 23:6145 $1e $1d $4e $33
     Op18_Jump call_23_55dd                             ;; 23:6149 $18 $dd $55 $23
 
 call_23_614d:
@@ -2674,7 +2674,7 @@ call_23_646f:
     SCRIPT_POINTER call_23_6487                        ;; 23:6484 $87 $64 $23
 
 call_23_6487:
-    Op1E_Call call_33_4e1d                             ;; 23:6487 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 23:6487 $1e $1d $4e $33
     Op18_Jump call_23_55dd                             ;; 23:648b $18 $dd $55 $23
 
 call_23_648f:

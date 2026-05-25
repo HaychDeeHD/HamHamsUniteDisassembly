@@ -1360,7 +1360,7 @@ call_36_5129:
     Op18_Jump call_36_5129                             ;; 36:5151 $18 $29 $51 $36
 
 call_36_5155:
-    Op1E_Call call_33_4e1d                             ;; 36:5155 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 36:5155 $1e $1d $4e $33
     Op18_Jump call_36_4eb0                             ;; 36:5159 $18 $b0 $4e $36
 
 call_36_515d:

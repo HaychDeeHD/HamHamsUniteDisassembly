@@ -1276,7 +1276,7 @@ call_2e_500e:
     Op18_Jump call_2e_502c                             ;; 2e:5024 $18 $2c $50 $2e
 
 call_2e_5028:
-    Op1E_Call call_33_4e1d                             ;; 2e:5028 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 2e:5028 $1e $1d $4e $33
 
 call_2e_502c:
     Op56_WriteBitArrayIndex 26, $9b, $5e, $1a          ;; 2e:502c $56 $1a $9b $5e $1a
@@ -1513,7 +1513,7 @@ call_2e_52cd:
     Op54_Unknown $00                                   ;; 2e:52cd $54 $00
 
 call_2e_52cf:
-    Op1E_Call call_33_4e1d                             ;; 2e:52cf $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 2e:52cf $1e $1d $4e $33
 
 call_2e_52d3:
     Op56_WriteBitArrayIndex 26, $9b, $5e, $1a          ;; 2e:52d3 $56 $1a $9b $5e $1a

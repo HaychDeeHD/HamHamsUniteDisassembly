@@ -549,7 +549,7 @@ SadMaxwellYouDontHaveThatWord:
     SCRIPT_POINTER SadMaxwellYouDontKnowThis           ;; 28:4718 $1b $47 $28
 
 SadMaxwellYouDontKnowThis:
-    Op1E_Call call_33_4e1d                             ;; 28:471b $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 28:471b $1e $1d $4e $33
     Op18_Jump call_28_400c                             ;; 28:471f $18 $0c $40 $28
 
 SadMaxwellHamha:
@@ -2100,7 +2100,7 @@ call_28_5bc0:
     Op18_Jump call_28_50b4                             ;; 28:5bf0 $18 $b4 $50 $28
 
 call_28_5bf4:
-    Op1E_Call call_33_4e1d                             ;; 28:5bf4 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 28:5bf4 $1e $1d $4e $33
     Op18_Jump call_28_50b4                             ;; 28:5bf8 $18 $b4 $50 $28
 
 call_28_5bfc:
@@ -2146,7 +2146,7 @@ call_28_5c5a:
     SCRIPT_POINTER call_28_5c82                        ;; 28:5c7f $82 $5c $28
 
 call_28_5c82:
-    Op1E_Call call_33_4e1d                             ;; 28:5c82 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 28:5c82 $1e $1d $4e $33
     Op18_Jump call_28_50b4                             ;; 28:5c86 $18 $b4 $50 $28
 
 call_28_5c8a:
@@ -3098,7 +3098,7 @@ call_28_761c:
     SCRIPT_POINTER call_28_7634                        ;; 28:7631 $34 $76 $28
 
 call_28_7634:
-    Op1E_Call call_33_4e1d                             ;; 28:7634 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 28:7634 $1e $1d $4e $33
     Op18_Jump call_28_70ff                             ;; 28:7638 $18 $ff $70 $28
 
 call_28_763c:
@@ -3486,7 +3486,7 @@ call_28_7c49:
     SCRIPT_POINTER call_28_7c61                        ;; 28:7c5e $61 $7c $28
 
 call_28_7c61:
-    Op1E_Call call_33_4e1d                             ;; 28:7c61 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 28:7c61 $1e $1d $4e $33
     Op18_Jump call_28_70ff                             ;; 28:7c65 $18 $ff $70 $28
 
 call_28_7c69:

@@ -408,7 +408,7 @@ call_25_4460:
     SCRIPT_POINTER call_25_4714                        ;; 25:4488 $14 $47 $25
 
 call_25_448b:
-    Op1E_Call call_33_4e1d                             ;; 25:448b $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 25:448b $1e $1d $4e $33
     Op18_Jump call_25_400c                             ;; 25:448f $18 $0c $40 $25
 
 call_25_4493:
@@ -863,7 +863,7 @@ call_25_4a28:
     SCRIPT_POINTER call_25_4336                        ;; 25:4a3d $36 $43 $25
 
 call_25_4a40:
-    Op1E_Call call_33_4e1d                             ;; 25:4a40 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 25:4a40 $1e $1d $4e $33
     Op18_Jump call_25_400c                             ;; 25:4a44 $18 $0c $40 $25
 
 call_25_4a48:
@@ -1147,7 +1147,7 @@ call_25_4e30:
     SCRIPT_POINTER call_25_4e55                        ;; 25:4e52 $55 $4e $25
 
 call_25_4e55:
-    Op1E_Call call_33_4e1d                             ;; 25:4e55 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 25:4e55 $1e $1d $4e $33
     Op18_Jump call_25_400c                             ;; 25:4e59 $18 $0c $40 $25
 
 call_25_4e5d:
@@ -1980,7 +1980,7 @@ call_25_596e:
     SCRIPT_POINTER call_25_5986                        ;; 25:5983 $86 $59 $25
 
 call_25_5986:
-    Op1E_Call call_33_4e1d                             ;; 25:5986 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 25:5986 $1e $1d $4e $33
     Op18_Jump call_25_5931                             ;; 25:598a $18 $31 $59 $25
     Op18_Jump call_25_5931                             ;; 25:598e $18 $31 $59 $25
 
@@ -3235,7 +3235,7 @@ call_25_6b09:
     Op18_Jump call_25_65dc                             ;; 25:6b45 $18 $dc $65 $25
 
 call_25_6b49:
-    Op1E_Call call_33_4e1d                             ;; 25:6b49 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 25:6b49 $1e $1d $4e $33
     Op18_Jump call_25_65dc                             ;; 25:6b4d $18 $dc $65 $25
 
 call_25_6b51:

@@ -2379,7 +2379,7 @@ call_34_606a:
     SCRIPT_POINTER call_34_6092                        ;; 34:608f $92 $60 $34
 
 call_34_6092:
-    Op1E_Call call_33_4e1d                             ;; 34:6092 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 34:6092 $1e $1d $4e $33
     Op18_Jump call_34_59f4                             ;; 34:6096 $18 $f4 $59 $34
 
 call_34_609a:
@@ -4452,7 +4452,7 @@ call_34_7a0f:
     SCRIPT_POINTER call_34_7a27                        ;; 34:7a24 $27 $7a $34
 
 call_34_7a27:
-    Op1E_Call call_33_4e1d                             ;; 34:7a27 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 34:7a27 $1e $1d $4e $33
     Op18_Jump call_34_731c                             ;; 34:7a2b $18 $1c $73 $34
 
 call_34_7a2f:

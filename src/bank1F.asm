@@ -738,7 +738,7 @@ call_1f_495b:
     SCRIPT_POINTER call_1f_4973                        ;; 1f:4970 $73 $49 $1f
 
 call_1f_4973:
-    Op1E_Call call_33_4e1d                             ;; 1f:4973 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 1f:4973 $1e $1d $4e $33
     Op18_Jump call_1f_400c                             ;; 1f:4977 $18 $0c $40 $1f
 
 call_1f_497b:
@@ -1501,7 +1501,7 @@ call_1f_5252:
     SCRIPT_POINTER call_1f_526a                        ;; 1f:5267 $6a $52 $1f
 
 call_1f_526a:
-    Op1E_Call call_33_4e1d                             ;; 1f:526a $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 1f:526a $1e $1d $4e $33
     Op18_Jump call_1f_400c                             ;; 1f:526e $18 $0c $40 $1f
 
 call_1f_5272:

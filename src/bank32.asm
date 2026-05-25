@@ -2692,7 +2692,7 @@ call_32_6082:
     SCRIPT_POINTER call_32_60a7                        ;; 32:60a4 $a7 $60 $32
 
 call_32_60a7:
-    Op1E_Call call_33_4e1d                             ;; 32:60a7 $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 32:60a7 $1e $1d $4e $33
     Op18_Jump call_32_5ce7                             ;; 32:60ab $18 $e7 $5c $32
 
 call_32_60af:
@@ -3868,7 +3868,7 @@ call_32_6e15:
     SCRIPT_POINTER call_32_6e2d                        ;; 32:6e2a $2d $6e $32
 
 call_32_6e2d:
-    Op1E_Call call_33_4e1d                             ;; 32:6e2d $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 32:6e2d $1e $1d $4e $33
     Op18_Jump call_32_662b                             ;; 32:6e31 $18 $2b $66 $32
 
 call_32_6e35:
@@ -5081,7 +5081,7 @@ call_32_7d0a:
     SCRIPT_POINTER call_32_7d2b                        ;; 32:7d28 $2b $7d $32
 
 call_32_7d2b:
-    Op1E_Call call_33_4e1d                             ;; 32:7d2b $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 32:7d2b $1e $1d $4e $33
     Op18_Jump call_32_78a4                             ;; 32:7d2f $18 $a4 $78 $32
 
 call_32_7d33:

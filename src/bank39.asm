@@ -2620,7 +2620,7 @@ call_39_7c86:
     SCRIPT_POINTER call_39_7cab                        ;; 39:7ca8 $ab $7c $39
 
 call_39_7cab:
-    Op1E_Call call_33_4e1d                             ;; 39:7cab $1e $1d $4e $33
+    Op1E_Call ShowHaventLearnedWord                    ;; 39:7cab $1e $1d $4e $33
     Op18_Jump call_39_7a81                             ;; 39:7caf $18 $81 $7a $39
 
 call_39_7cb3:
