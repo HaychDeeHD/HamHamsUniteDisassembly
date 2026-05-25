@@ -1434,9 +1434,9 @@ jp_02_4b47:
     ld   [wCAC6], A                                    ;; 02:4b4b $ea $c6 $ca
     cp   A, $80                                        ;; 02:4b4e $fe $80
     jr   NC, .jr_02_4b6c                               ;; 02:4b50 $30 $1a
-    call call_00_0821                                  ;; 02:4b52 $cd $21 $08
-    call call_00_03e5                                  ;; 02:4b55 $cd $e5 $03
-    ld   A, [wC314]                                    ;; 02:4b58 $fa $14 $c3
+    call ReadInputs                                    ;; 02:4b52 $cd $21 $08
+    call UpdateButtonRegisters                         ;; 02:4b55 $cd $e5 $03
+    ld   A, [wPressedButtons]                          ;; 02:4b58 $fa $14 $c3
     cp   A, $20                                        ;; 02:4b5b $fe $20
     jp   Z, jp_02_4e17                                 ;; 02:4b5d $ca $17 $4e
     ld   B, $02                                        ;; 02:4b60 $06 $02
@@ -1462,9 +1462,9 @@ data_02_4b7d:
     ld   A, $01                                        ;; 02:4b89 $3e $01
     ld   [wCAC2], A                                    ;; 02:4b8b $ea $c2 $ca
 .jp_02_4b8e:
-    call call_00_0821                                  ;; 02:4b8e $cd $21 $08
-    call call_00_03e5                                  ;; 02:4b91 $cd $e5 $03
-    ld   A, [wC314]                                    ;; 02:4b94 $fa $14 $c3
+    call ReadInputs                                    ;; 02:4b8e $cd $21 $08
+    call UpdateButtonRegisters                         ;; 02:4b91 $cd $e5 $03
+    ld   A, [wPressedButtons]                          ;; 02:4b94 $fa $14 $c3
     cp   A, $20                                        ;; 02:4b97 $fe $20
     jp   Z, jp_02_4e17                                 ;; 02:4b99 $ca $17 $4e
     ld   B, $02                                        ;; 02:4b9c $06 $02
@@ -2448,7 +2448,7 @@ data_02_5ff5:
 data_02_621f:
     xor  A, A                                          ;; 02:621f $af
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:6220 $ea $3a $c5
-    ld   A, [wC316]                                    ;; 02:6223 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 02:6223 $fa $16 $c3
     and  A, A                                          ;; 02:6226 $a7
     jr   Z, .jp_02_6243                                ;; 02:6227 $28 $1a
     bit  6, A                                          ;; 02:6229 $cb $77
@@ -2534,7 +2534,7 @@ data_02_621f:
 data_02_62bb:
     xor  A, A                                          ;; 02:62bb $af
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:62bc $ea $3a $c5
-    ld   A, [wC316]                                    ;; 02:62bf $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 02:62bf $fa $16 $c3
     and  A, A                                          ;; 02:62c2 $a7
     jr   Z, .jp_02_62d7                                ;; 02:62c3 $28 $12
     bit  4, A                                          ;; 02:62c5 $cb $67
@@ -3827,7 +3827,7 @@ data_02_7398:
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:73ca $ea $3a $c5
     jr   .jr_02_73c3                                   ;; 02:73cd $18 $f4
 .jr_02_73cf:
-    ld   A, [wC314]                                    ;; 02:73cf $fa $14 $c3
+    ld   A, [wPressedButtons]                          ;; 02:73cf $fa $14 $c3
     bit  1, A                                          ;; 02:73d2 $cb $4f
     jr   Z, .jr_02_73dd                                ;; 02:73d4 $28 $07
     ld   A, $05                                        ;; 02:73d6 $3e $05
@@ -3877,12 +3877,12 @@ data_02_7398:
 data_02_742d:
     ld   A, [wC317]                                    ;; 02:742d $fa $17 $c3
     ld   B, A                                          ;; 02:7430 $47
-    ld   A, [wC31D]                                    ;; 02:7431 $fa $1d $c3
+    ld   A, [wButtonsOfInterest]                       ;; 02:7431 $fa $1d $c3
     ld   C, $00                                        ;; 02:7434 $0e $00
     and  A, B                                          ;; 02:7436 $a0
     jr   Z, .jr_02_7450                                ;; 02:7437 $28 $17
     ld   B, A                                          ;; 02:7439 $47
-    ld   A, [wC31D]                                    ;; 02:743a $fa $1d $c3
+    ld   A, [wButtonsOfInterest]                       ;; 02:743a $fa $1d $c3
 .jr_02_743d:
     and  A, $ff                                        ;; 02:743d $e6 $ff
     cp   A, $00                                        ;; 02:743f $fe $00

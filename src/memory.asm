@@ -49,19 +49,22 @@ wC312:
 wC313:
     ds 1                                               ;; c313
 
-wC314:
+; Order is 'Start Select B A Up Down Left Right'.
+; 1 means pressed, 0 means not pressed.
+wPressedButtons:
     ds 1                                               ;; c314
 
-wC315:
+; The PressedButtons from the last time they were checked.
+wPreviousPressedButtons:
     ds 1                                               ;; c315
 
-wC316:
+wNewlyPressedButtons:
     ds 1                                               ;; c316
 
 wC317:
     ds 1                                               ;; c317
 
-wC318:
+wNewlyReleasedButtons:
     ds 1                                               ;; c318
 
 wC319:
@@ -76,7 +79,10 @@ wC31B:
 wC31C:
     ds 1                                               ;; c31c
 
-wC31D:
+; This is used to indicate a set of buttons to check.
+; Used to set the ScriptTableIndex.
+; Example: 11010000 means Start is index 0, Select index 1, A index 2.
+wButtonsOfInterest:
     ds 1                                               ;; c31d
 
 wC31E:

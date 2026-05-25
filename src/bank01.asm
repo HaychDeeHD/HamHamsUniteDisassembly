@@ -442,7 +442,7 @@ call_01_4317:
     ld   A, $80                                        ;; 01:4323 $3e $80
     ld   [wHamChatCursorIndexC38E], A                  ;; 01:4325 $ea $8e $c3
     ld   A, $00                                        ;; 01:4328 $3e $00
-    ld   [wC316], A                                    ;; 01:432a $ea $16 $c3
+    ld   [wNewlyPressedButtons], A                     ;; 01:432a $ea $16 $c3
     ld   A, $20                                        ;; 01:432d $3e $20
     ld   [wC396], A                                    ;; 01:432f $ea $96 $c3
     call call_01_47ba                                  ;; 01:4332 $cd $ba $47
@@ -2862,7 +2862,7 @@ OpenHamchatWheel_Maybe:
     ld   [wC39C], A                                    ;; 01:52a8 $ea $9c $c3
     ld   A, [wC391]                                    ;; 01:52ab $fa $91 $c3
     ld   [wC39D], A                                    ;; 01:52ae $ea $9d $c3
-    ld   HL, wC316                                     ;; 01:52b1 $21 $16 $c3
+    ld   HL, wNewlyPressedButtons                      ;; 01:52b1 $21 $16 $c3
     ld   A, $10                                        ;; 01:52b4 $3e $10
     and  A, [HL]                                       ;; 01:52b6 $a6
     jp   NZ, .jp_01_530a                               ;; 01:52b7 $c2 $0a $53
@@ -5562,7 +5562,7 @@ data_01_68ba:
 data_01_68f9:
     xor  A, A                                          ;; 01:68f9 $af
     ld   [wOp1CScriptTableIndexC53A], A                ;; 01:68fa $ea $3a $c5
-    ld   A, [wC316]                                    ;; 01:68fd $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 01:68fd $fa $16 $c3
     and  A, A                                          ;; 01:6900 $a7
     jr   Z, .jr_01_6913                                ;; 01:6901 $28 $10
     bit  6, A                                          ;; 01:6903 $cb $77
@@ -6550,52 +6550,61 @@ data_01_7464:
     ld   [wOp1CScriptTableIndexC53A], A                ;; 01:74ad $ea $3a $c5
     ret                                                ;; 01:74b0 $c9
 
-data_01_74b1:
-    ld   A, [wC314]                                    ;; 01:74b1 $fa $14 $c3
+SetScriptTableIndexFromInputs_Pressed:
+    ld   A, [wPressedButtons]                          ;; 01:74b1 $fa $14 $c3
     ld   B, A                                          ;; 01:74b4 $47
-    jr   jr_01_74d2                                    ;; 01:74b5 $18 $1b
+    jr   SetScriptTableIndexFromInputs_Internal        ;; 01:74b5 $18 $1b
 
-data_01_74b7:
-    ld   A, [wC316]                                    ;; 01:74b7 $fa $16 $c3
+SetScriptTableIndexFromInputs_NewlyPressed:
+    ld   A, [wNewlyPressedButtons]                     ;; 01:74b7 $fa $16 $c3
     ld   B, A                                          ;; 01:74ba $47
-    jr   jr_01_74d2                                    ;; 01:74bb $18 $15
+    jr   SetScriptTableIndexFromInputs_Internal        ;; 01:74bb $18 $15
 
-data_01_74bd:
+; I still don't know what C317 represents.
+SetScriptTableIndexFromInputs_C317:
     ld   A, [wC317]                                    ;; 01:74bd $fa $17 $c3
     ld   B, A                                          ;; 01:74c0 $47
-    jr   jr_01_74d2                                    ;; 01:74c1 $18 $0f
+    jr   SetScriptTableIndexFromInputs_Internal        ;; 01:74c1 $18 $0f
 
-data_01_74c3:
-    ld   A, [wC314]                                    ;; 01:74c3 $fa $14 $c3
+; Selects pressed directions and *newly* pressed buttons before jumping.
+SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons:
+    ld   A, [wPressedButtons]                          ;; 01:74c3 $fa $14 $c3
     and  A, $0f                                        ;; 01:74c6 $e6 $0f
     ld   B, A                                          ;; 01:74c8 $47
-    ld   A, [wC316]                                    ;; 01:74c9 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 01:74c9 $fa $16 $c3
     and  A, $f0                                        ;; 01:74cc $e6 $f0
     or   A, B                                          ;; 01:74ce $b0
     ld   B, A                                          ;; 01:74cf $47
-    jr   jr_01_74d2                                    ;; 01:74d0 $18 $00
+    jr   SetScriptTableIndexFromInputs_Internal        ;; 01:74d0 $18 $00
 
-jr_01_74d2:
+; B is an argument, expected to be set by the above functions.
+; C31D is the inputs I'm looking for. E.g. 11010000 for Start Select A.
+; In that example, Start would be index 0, Select index 1, A index 2.
+; (This is all based on the order of [PressedButtons].)
+SetScriptTableIndexFromInputs_Internal:
     ld   C, $00                                        ;; 01:74d2 $0e $00
-    ld   A, [wC31D]                                    ;; 01:74d4 $fa $1d $c3
+    ld   A, [wButtonsOfInterest]                       ;; 01:74d4 $fa $1d $c3
     and  A, B                                          ;; 01:74d7 $a0
-    jr   Z, .jr_01_74f1                                ;; 01:74d8 $28 $17
+    jr   Z, .writeCtoScriptTableIndex                  ;; 01:74d8 $28 $17
     ld   B, A                                          ;; 01:74da $47
-    ld   A, [wC31D]                                    ;; 01:74db $fa $1d $c3
-.jr_01_74de:
+    ld   A, [wButtonsOfInterest]                       ;; 01:74db $fa $1d $c3
+; Iterate over C31D's bits high to low.
+; For each set bit, check if that bit is set in B.
+; If yes, save the index as the script table index and return.
+.iterateInputsOfInterest:
     sla  A                                             ;; 01:74de $cb $27
     jr   NC, .jr_01_74e9                               ;; 01:74e0 $30 $07
     inc  C                                             ;; 01:74e2 $0c
     sla  B                                             ;; 01:74e3 $cb $20
-    jr   C, .jr_01_74f1                                ;; 01:74e5 $38 $0a
+    jr   C, .writeCtoScriptTableIndex                  ;; 01:74e5 $38 $0a
     jr   .jr_01_74eb                                   ;; 01:74e7 $18 $02
 .jr_01_74e9:
     sla  B                                             ;; 01:74e9 $cb $20
 .jr_01_74eb:
     and  A, $ff                                        ;; 01:74eb $e6 $ff
-    jr   NZ, .jr_01_74de                               ;; 01:74ed $20 $ef
+    jr   NZ, .iterateInputsOfInterest                  ;; 01:74ed $20 $ef
     ld   C, $00                                        ;; 01:74ef $0e $00
-.jr_01_74f1:
+.writeCtoScriptTableIndex:
     ld   A, C                                          ;; 01:74f1 $79
     ld   [wOp1CScriptTableIndexC53A], A                ;; 01:74f2 $ea $3a $c5
     ret                                                ;; 01:74f5 $c9
@@ -7122,7 +7131,7 @@ call_01_7be6:
     ld   D, $00                                        ;; 01:7bf6 $16 $00
     ld   HL, data_01_7c73                              ;; 01:7bf8 $21 $73 $7c
     add  HL, DE                                        ;; 01:7bfb $19
-    ld   A, [wC314]                                    ;; 01:7bfc $fa $14 $c3
+    ld   A, [wPressedButtons]                          ;; 01:7bfc $fa $14 $c3
     and  A, $20                                        ;; 01:7bff $e6 $20
     jr   Z, jr_01_7c38                                 ;; 01:7c01 $28 $35
     ld   DE, $04                                       ;; 01:7c03 $11 $04 $00
@@ -7154,7 +7163,7 @@ call_01_7c09:
     ld   D, $00                                        ;; 01:7c27 $16 $00
     ld   HL, data_01_7c93                              ;; 01:7c29 $21 $93 $7c
     add  HL, DE                                        ;; 01:7c2c $19
-    ld   A, [wC314]                                    ;; 01:7c2d $fa $14 $c3
+    ld   A, [wPressedButtons]                          ;; 01:7c2d $fa $14 $c3
     and  A, $20                                        ;; 01:7c30 $e6 $20
     jr   Z, jr_01_7c38                                 ;; 01:7c32 $28 $04
     ld   DE, $04                                       ;; 01:7c34 $11 $04 $00

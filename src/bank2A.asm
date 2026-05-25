@@ -24,7 +24,7 @@ call_2a_401c:
     Op82_Run data_01_7416                              ;; 2a:4024 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 2a:4028 $16 $01
     SubOp_SetByte wC72A, $b0                           ;; 2a:402a $7e $12 $b0
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:402d $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:402d $50 $1d $c3 $00 $d0
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 2a:4032 $2a $00 $00 $00
     Op1C_TableJump 8                                   ;; 2a:4036 $1c $08
     SCRIPT_POINTER call_2a_42c6                        ;; 2a:4038 $c6 $42 $2a
@@ -35,7 +35,7 @@ call_2a_401c:
     SCRIPT_POINTER call_2a_43c0                        ;; 2a:4047 $c0 $43 $2a
     SCRIPT_POINTER call_2a_44d8                        ;; 2a:404a $d8 $44 $2a
     SCRIPT_POINTER call_2a_4800                        ;; 2a:404d $00 $48 $2a
-    Op82_Run data_01_74c3                              ;; 2a:4050 $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:4050 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:4054 $1c $03
     SCRIPT_POINTER call_2a_4063                        ;; 2a:4056 $63 $40 $2a
     SCRIPT_POINTER call_2a_407a                        ;; 2a:4059 $7a $40 $2a
@@ -155,7 +155,7 @@ call_2a_41cb:
     Op1E_Call call_33_4d12                             ;; 2a:421d $1e $12 $4d $33
     Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2a:4221 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2a:422c $52 $01 $d0 $01 $fd $d1
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:4232 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:4232 $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2a:4237 $50 $fd $d0 $02 $fe
     Op16_SubOps 1                                      ;; 2a:423c $16 $01
     SubOp_SetByte wC751, $00                           ;; 2a:423e $7e $39 $00
@@ -193,7 +193,7 @@ call_2a_4266:
     Op18_Jump call_2a_401c                             ;; 2a:4284 $18 $1c $40 $2a
 
 call_2a_4288:
-    Op82_Run data_01_74c3                              ;; 2a:4288 $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:4288 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:428c $1c $03
     SCRIPT_POINTER call_2a_4063                        ;; 2a:428e $63 $40 $2a
     SCRIPT_POINTER call_2a_407a                        ;; 2a:4291 $7a $40 $2a
@@ -218,9 +218,9 @@ call_2a_42be:
     Op18_Jump call_2a_401c                             ;; 2a:42c2 $18 $1c $40 $2a
 
 call_2a_42c6:
-    Op50_WriteByte wC31D, $00, $d2                     ;; 2a:42c6 $50 $1d $c3 $00 $d2
-    Op82_Run data_01_74c3                              ;; 2a:42cb $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:42cf $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d2        ;; 2a:42c6 $50 $1d $c3 $00 $d2
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:42cb $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:42cf $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 2a:42d4 $1c $04
     SCRIPT_POINTER call_2a_4063                        ;; 2a:42d6 $63 $40 $2a
     SCRIPT_POINTER call_2a_407a                        ;; 2a:42d9 $7a $40 $2a
@@ -241,9 +241,9 @@ call_2a_42f5:
     Op18_Jump call_2a_4266                             ;; 2a:4303 $18 $66 $42 $2a
 
 call_2a_4307:
-    Op50_WriteByte wC31D, $00, $d1                     ;; 2a:4307 $50 $1d $c3 $00 $d1
-    Op82_Run data_01_74c3                              ;; 2a:430c $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:4310 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d1        ;; 2a:4307 $50 $1d $c3 $00 $d1
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:430c $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:4310 $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 2a:4315 $1c $04
     SCRIPT_POINTER call_2a_4063                        ;; 2a:4317 $63 $40 $2a
     SCRIPT_POINTER call_2a_407a                        ;; 2a:431a $7a $40 $2a
@@ -264,9 +264,9 @@ call_2a_4336:
     Op18_Jump call_2a_4266                             ;; 2a:4344 $18 $66 $42 $2a
 
 call_2a_4348:
-    Op50_WriteByte wC31D, $00, $d4                     ;; 2a:4348 $50 $1d $c3 $00 $d4
-    Op82_Run data_01_74c3                              ;; 2a:434d $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:4351 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d4        ;; 2a:4348 $50 $1d $c3 $00 $d4
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:434d $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:4351 $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 2a:4356 $1c $04
     SCRIPT_POINTER call_2a_4063                        ;; 2a:4358 $63 $40 $2a
     SCRIPT_POINTER call_2a_407a                        ;; 2a:435b $7a $40 $2a
@@ -284,9 +284,9 @@ call_2a_4377:
     Op18_Jump call_2a_4266                             ;; 2a:4377 $18 $66 $42 $2a
 
 call_2a_437b:
-    Op50_WriteByte wC31D, $00, $d5                     ;; 2a:437b $50 $1d $c3 $00 $d5
-    Op82_Run data_01_74c3                              ;; 2a:4380 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:4384 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d5        ;; 2a:437b $50 $1d $c3 $00 $d5
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:4380 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:4384 $50 $1d $c3 $00 $d0
     Op1C_TableJump 5                                   ;; 2a:4389 $1c $05
     SCRIPT_POINTER call_2a_4063                        ;; 2a:438b $63 $40 $2a
     SCRIPT_POINTER call_2a_407a                        ;; 2a:438e $7a $40 $2a
@@ -311,7 +311,7 @@ call_2a_43bc:
     Op18_Jump call_2a_4266                             ;; 2a:43bc $18 $66 $42 $2a
 
 call_2a_43c0:
-    Op82_Run data_01_74c3                              ;; 2a:43c0 $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:43c0 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:43c4 $1c $03
     SCRIPT_POINTER call_2a_4063                        ;; 2a:43c6 $63 $40 $2a
     SCRIPT_POINTER call_2a_407a                        ;; 2a:43c9 $7a $40 $2a
@@ -574,7 +574,7 @@ call_2a_47e0:
 
 call_2a_4800:
     Op1E_Call call_2a_4be3                             ;; 2a:4800 $1e $e3 $4b $2a
-    Op82_Run data_01_74c3                              ;; 2a:4804 $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:4804 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:4808 $1c $03
     SCRIPT_POINTER call_2a_4063                        ;; 2a:480a $63 $40 $2a
     SCRIPT_POINTER call_2a_407a                        ;; 2a:480d $7a $40 $2a
@@ -1129,7 +1129,7 @@ call_2a_4f6a:
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 2a:4f6c $5e $03
     Op82_Run data_01_73cc                              ;; 2a:4f6e $82 $cc $73 $01
     Op82_Run data_01_7416                              ;; 2a:4f72 $82 $16 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:4f76 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:4f76 $50 $1d $c3 $00 $d0
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 2a:4f7b $2a $00 $00 $00
     Op1C_TableJump 8                                   ;; 2a:4f7f $1c $08
     SCRIPT_POINTER call_2a_53cd                        ;; 2a:4f81 $cd $53 $2a
@@ -1140,7 +1140,7 @@ call_2a_4f6a:
     SCRIPT_POINTER call_2a_5a31                        ;; 2a:4f90 $31 $5a $2a
     SCRIPT_POINTER call_2a_5321                        ;; 2a:4f93 $21 $53 $2a
     SCRIPT_POINTER call_2a_534f                        ;; 2a:4f96 $4f $53 $2a
-    Op82_Run data_01_74c3                              ;; 2a:4f99 $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:4f99 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:4f9d $1c $03
     SCRIPT_POINTER call_2a_4fac                        ;; 2a:4f9f $ac $4f $2a
     SCRIPT_POINTER call_2a_4fc9                        ;; 2a:4fa2 $c9 $4f $2a
@@ -1310,7 +1310,7 @@ call_2a_51ea:
 call_2a_51ee:
     Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2a:51ee $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2a:51f9 $52 $01 $d0 $01 $fd $d1
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:51ff $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:51ff $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2a:5204 $50 $fd $d0 $02 $fe
     Op16_SubOps 1                                      ;; 2a:5209 $16 $01
     SubOp_SetByte wC751, $00                           ;; 2a:520b $7e $39 $00
@@ -1439,9 +1439,9 @@ call_2a_5321:
     Op42_Unknown_StoreValue 7, $01, $a0, $74, $12      ;; 2a:532c $42 $07 $01 $a0 $74 $12
 
 call_2a_5332:
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:5332 $50 $1d $c3 $00 $d0
-    Op82_Run data_01_74c3                              ;; 2a:5337 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $90                     ;; 2a:533b $50 $1d $c3 $00 $90
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:5332 $50 $1d $c3 $00 $d0
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:5337 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:533b $50 $1d $c3 $00 $90
     Op1C_TableJump 3                                   ;; 2a:5340 $1c $03
     SCRIPT_POINTER call_2a_4fac                        ;; 2a:5342 $ac $4f $2a
     SCRIPT_POINTER call_2a_4fc9                        ;; 2a:5345 $c9 $4f $2a
@@ -1456,9 +1456,9 @@ call_2a_534f:
     Op42_Unknown_StoreValue 7, $01, $d1, $74, $12      ;; 2a:535a $42 $07 $01 $d1 $74 $12
 
 call_2a_5360:
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:5360 $50 $1d $c3 $00 $d0
-    Op82_Run data_01_74c3                              ;; 2a:5365 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $90                     ;; 2a:5369 $50 $1d $c3 $00 $90
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:5360 $50 $1d $c3 $00 $d0
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:5365 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:5369 $50 $1d $c3 $00 $90
     Op1C_TableJump 3                                   ;; 2a:536e $1c $03
     SCRIPT_POINTER call_2a_4fac                        ;; 2a:5370 $ac $4f $2a
     SCRIPT_POINTER call_2a_4fc9                        ;; 2a:5373 $c9 $4f $2a
@@ -1466,9 +1466,9 @@ call_2a_5360:
     Op18_Jump call_2a_4f6a                             ;; 2a:5379 $18 $6a $4f $2a
 
 call_2a_537d:
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:537d $50 $1d $c3 $00 $d0
-    Op82_Run data_01_74c3                              ;; 2a:5382 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $90                     ;; 2a:5386 $50 $1d $c3 $00 $90
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:537d $50 $1d $c3 $00 $d0
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:5382 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:5386 $50 $1d $c3 $00 $90
     Op1C_TableJump 3                                   ;; 2a:538b $1c $03
     SCRIPT_POINTER call_2a_4fac                        ;; 2a:538d $ac $4f $2a
     SCRIPT_POINTER call_2a_4fc9                        ;; 2a:5390 $c9 $4f $2a
@@ -1497,9 +1497,9 @@ call_2a_53c9:
     Op18_Jump call_2a_4f6a                             ;; 2a:53c9 $18 $6a $4f $2a
 
 call_2a_53cd:
-    Op50_WriteByte wC31D, $00, $d2                     ;; 2a:53cd $50 $1d $c3 $00 $d2
-    Op82_Run data_01_74c3                              ;; 2a:53d2 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:53d6 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d2        ;; 2a:53cd $50 $1d $c3 $00 $d2
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:53d2 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:53d6 $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 2a:53db $1c $04
     SCRIPT_POINTER call_2a_4fac                        ;; 2a:53dd $ac $4f $2a
     SCRIPT_POINTER call_2a_4fc9                        ;; 2a:53e0 $c9 $4f $2a
@@ -1521,9 +1521,9 @@ call_2a_53ff:
     Op1A_Unknown $11                                   ;; 2a:5411 $1a $11
 
 call_2a_5413:
-    Op50_WriteByte wC31D, $00, $d4                     ;; 2a:5413 $50 $1d $c3 $00 $d4
-    Op82_Run data_01_74c3                              ;; 2a:5418 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:541c $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d4        ;; 2a:5413 $50 $1d $c3 $00 $d4
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:5418 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:541c $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 2a:5421 $1c $04
     SCRIPT_POINTER call_2a_4fac                        ;; 2a:5423 $ac $4f $2a
     SCRIPT_POINTER call_2a_4fc9                        ;; 2a:5426 $c9 $4f $2a
@@ -1603,9 +1603,9 @@ call_2a_553b:
 call_2a_5559:
     Op14_Unknown 1, $83, $6a                           ;; 2a:5559 $14 $01 $83 $6a
     SCRIPT_POINTER call_2a_5d82                        ;; 2a:555d $82 $5d $2a
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:5560 $50 $1d $c3 $00 $d0
-    Op82_Run data_01_74c3                              ;; 2a:5565 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $90                     ;; 2a:5569 $50 $1d $c3 $00 $90
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:5560 $50 $1d $c3 $00 $d0
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:5565 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:5569 $50 $1d $c3 $00 $90
     Op1C_TableJump 3                                   ;; 2a:556e $1c $03
     SCRIPT_POINTER call_2a_4fac                        ;; 2a:5570 $ac $4f $2a
     SCRIPT_POINTER call_2a_4fc9                        ;; 2a:5573 $c9 $4f $2a
@@ -1853,9 +1853,9 @@ call_2a_5832:
 call_2a_583a:
     Op14_Unknown 1, $83, $6a                           ;; 2a:583a $14 $01 $83 $6a
     SCRIPT_POINTER call_2a_5d82                        ;; 2a:583e $82 $5d $2a
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:5841 $50 $1d $c3 $00 $d0
-    Op82_Run data_01_74c3                              ;; 2a:5846 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $90                     ;; 2a:584a $50 $1d $c3 $00 $90
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:5841 $50 $1d $c3 $00 $d0
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:5846 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:584a $50 $1d $c3 $00 $90
     Op1C_TableJump 3                                   ;; 2a:584f $1c $03
     SCRIPT_POINTER call_2a_4fac                        ;; 2a:5851 $ac $4f $2a
     SCRIPT_POINTER call_2a_4fc9                        ;; 2a:5854 $c9 $4f $2a
@@ -2019,9 +2019,9 @@ call_2a_5a29:
     Op18_Jump call_2a_4f6a                             ;; 2a:5a2d $18 $6a $4f $2a
 
 call_2a_5a31:
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:5a31 $50 $1d $c3 $00 $d0
-    Op82_Run data_01_74c3                              ;; 2a:5a36 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $90                     ;; 2a:5a3a $50 $1d $c3 $00 $90
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:5a31 $50 $1d $c3 $00 $d0
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:5a36 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:5a3a $50 $1d $c3 $00 $90
     Op1C_TableJump 3                                   ;; 2a:5a3f $1c $03
     SCRIPT_POINTER call_2a_4fac                        ;; 2a:5a41 $ac $4f $2a
     SCRIPT_POINTER call_2a_4fc9                        ;; 2a:5a44 $c9 $4f $2a
@@ -2394,7 +2394,7 @@ call_2a_5f62:
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 2a:5f64 $5e $03
     Op82_Run data_01_73cc                              ;; 2a:5f66 $82 $cc $73 $01
     Op82_Run data_01_7416                              ;; 2a:5f6a $82 $16 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:5f6e $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:5f6e $50 $1d $c3 $00 $d0
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 2a:5f73 $2a $00 $00 $00
     Op1C_TableJump 8                                   ;; 2a:5f77 $1c $08
     SCRIPT_POINTER call_2a_62ae                        ;; 2a:5f79 $ae $62 $2a
@@ -2405,7 +2405,7 @@ call_2a_5f62:
     SCRIPT_POINTER call_2a_66e8                        ;; 2a:5f88 $e8 $66 $2a
     SCRIPT_POINTER call_2a_6757                        ;; 2a:5f8b $57 $67 $2a
     SCRIPT_POINTER call_2a_6a5b                        ;; 2a:5f8e $5b $6a $2a
-    Op82_Run data_01_74b7                              ;; 2a:5f91 $82 $b7 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2a:5f91 $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2a:5f95 $1c $03
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:5f97 $a4 $5f $2a
     SCRIPT_POINTER call_2a_5fbb                        ;; 2a:5f9a $bb $5f $2a
@@ -2573,7 +2573,7 @@ call_2a_620d:
     Op3E_Compare_Branch 22, $b8, $54, $10, call_2a_620d ;; 2a:6211 $3e $16 $b8 $54 $10 $0d $62 $2a
     Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2a:6219 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2a:6224 $52 $01 $d0 $01 $fd $d1
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:622a $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:622a $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2a:622f $50 $fd $d0 $02 $fe
     Op16_SubOps 1                                      ;; 2a:6234 $16 $01
     SubOp_SetByte wC751, $00                           ;; 2a:6236 $7e $39 $00
@@ -2633,9 +2633,9 @@ call_2a_62a6:
     Op18_Jump call_2a_5f62                             ;; 2a:62aa $18 $62 $5f $2a
 
 call_2a_62ae:
-    Op50_WriteByte wC31D, $00, $d2                     ;; 2a:62ae $50 $1d $c3 $00 $d2
-    Op82_Run data_01_74c3                              ;; 2a:62b3 $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:62b7 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d2        ;; 2a:62ae $50 $1d $c3 $00 $d2
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:62b3 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:62b7 $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 2a:62bc $1c $04
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:62be $a4 $5f $2a
     SCRIPT_POINTER call_2a_5fbb                        ;; 2a:62c1 $bb $5f $2a
@@ -2653,9 +2653,9 @@ call_2a_62ce:
     Op1A_Unknown $02                                   ;; 2a:62e4 $1a $02
 
 call_2a_62e6:
-    Op50_WriteByte wC31D, $00, $d4                     ;; 2a:62e6 $50 $1d $c3 $00 $d4
-    Op82_Run data_01_74c3                              ;; 2a:62eb $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:62ef $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d4        ;; 2a:62e6 $50 $1d $c3 $00 $d4
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:62eb $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:62ef $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 2a:62f4 $1c $04
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:62f6 $a4 $5f $2a
     SCRIPT_POINTER call_2a_5fbb                        ;; 2a:62f9 $bb $5f $2a
@@ -2673,7 +2673,7 @@ call_2a_6306:
     Op1A_Unknown $05                                   ;; 2a:631c $1a $05
 
 call_2a_631e:
-    Op82_Run data_01_74b7                              ;; 2a:631e $82 $b7 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2a:631e $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2a:6322 $1c $03
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:6324 $a4 $5f $2a
     SCRIPT_POINTER call_2a_5fbb                        ;; 2a:6327 $bb $5f $2a
@@ -2889,7 +2889,7 @@ call_2a_65d9:
     Op54_Unknown $01                                   ;; 2a:65fc $54 $01
 
 call_2a_65fe:
-    Op82_Run data_01_74b7                              ;; 2a:65fe $82 $b7 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2a:65fe $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2a:6602 $1c $03
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:6604 $a4 $5f $2a
     SCRIPT_POINTER call_2a_5fbb                        ;; 2a:6607 $bb $5f $2a
@@ -2954,7 +2954,7 @@ call_2a_66be:
     Op18_Jump call_2a_5f62                             ;; 2a:66d1 $18 $62 $5f $2a
 
 call_2a_66d5:
-    Op82_Run data_01_74c3                              ;; 2a:66d5 $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:66d5 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:66d9 $1c $03
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:66db $a4 $5f $2a
     SCRIPT_POINTER call_2a_5fbb                        ;; 2a:66de $bb $5f $2a
@@ -2962,7 +2962,7 @@ call_2a_66d5:
     Op18_Jump call_2a_5f62                             ;; 2a:66e4 $18 $62 $5f $2a
 
 call_2a_66e8:
-    Op82_Run data_01_74b7                              ;; 2a:66e8 $82 $b7 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2a:66e8 $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2a:66ec $1c $03
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:66ee $a4 $5f $2a
     SCRIPT_POINTER call_2a_5fbb                        ;; 2a:66f1 $bb $5f $2a
@@ -2987,9 +2987,9 @@ call_2a_671e:
     Op82_Run ObtainHamChatFromC715                     ;; 2a:6723 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2a:6727 $16 $01
     SubOp_SetFlag wBitArrayC918, 3                     ;; 2a:6729 $3e $03
-    Op50_WriteByte wC31D, $00, $90                     ;; 2a:672b $50 $1d $c3 $00 $90
+    Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:672b $50 $1d $c3 $00 $90
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2a:6730 $74 $5e $c6
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:6733 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:6733 $50 $1d $c3 $00 $d0
     Op1C_TableJump 2                                   ;; 2a:6738 $1c $02
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:673a $a4 $5f $2a
     SCRIPT_POINTER call_2a_6740                        ;; 2a:673d $40 $67 $2a
@@ -3007,7 +3007,7 @@ call_2a_6753:
     Op18_Jump call_2a_5f62                             ;; 2a:6753 $18 $62 $5f $2a
 
 call_2a_6757:
-    Op82_Run data_01_74b7                              ;; 2a:6757 $82 $b7 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2a:6757 $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2a:675b $1c $03
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:675d $a4 $5f $2a
     SCRIPT_POINTER call_2a_5fbb                        ;; 2a:6760 $bb $5f $2a
@@ -3213,7 +3213,7 @@ call_2a_6a53:
     Op18_Jump call_2a_5f62                             ;; 2a:6a57 $18 $62 $5f $2a
 
 call_2a_6a5b:
-    Op82_Run data_01_74b7                              ;; 2a:6a5b $82 $b7 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2a:6a5b $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2a:6a5f $1c $03
     SCRIPT_POINTER call_2a_5fa4                        ;; 2a:6a61 $a4 $5f $2a
     SCRIPT_POINTER call_2a_5fbb                        ;; 2a:6a64 $bb $5f $2a
@@ -3229,7 +3229,7 @@ call_2a_6a6e:
 
 call_2a_6a80:
     Op82_Run data_01_7416                              ;; 2a:6a80 $82 $16 $74 $01
-    Op50_WriteByte wC31D, $00, $90                     ;; 2a:6a84 $50 $1d $c3 $00 $90
+    Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:6a84 $50 $1d $c3 $00 $90
     Op1E_Call call_1d_6f1d                             ;; 2a:6a89 $1e $1d $6f $1d
     Op10_HamChatWheel 4, data_05_59f2, data_05_5a55    ;; 2a:6a8d $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2a:6a93 $1c $04
@@ -3465,14 +3465,14 @@ call_2a_6dc6:
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 2a:6dc8 $5e $03
     Op82_Run data_01_73cc                              ;; 2a:6dca $82 $cc $73 $01
     Op82_Run data_01_7416                              ;; 2a:6dce $82 $16 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:6dd2 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:6dd2 $50 $1d $c3 $00 $d0
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 2a:6dd7 $2a $00 $00 $00
     Op1C_TableJump 4                                   ;; 2a:6ddb $1c $04
     SCRIPT_POINTER call_2a_7329                        ;; 2a:6ddd $29 $73 $2a
     SCRIPT_POINTER call_2a_73ad                        ;; 2a:6de0 $ad $73 $2a
     SCRIPT_POINTER call_2a_751b                        ;; 2a:6de3 $1b $75 $2a
     SCRIPT_POINTER call_2a_72d3                        ;; 2a:6de6 $d3 $72 $2a
-    Op82_Run data_01_74c3                              ;; 2a:6de9 $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:6de9 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:6ded $1c $03
     SCRIPT_POINTER call_2a_6dfc                        ;; 2a:6def $fc $6d $2a
     SCRIPT_POINTER call_2a_6e2f                        ;; 2a:6df2 $2f $6e $2a
@@ -3622,7 +3622,7 @@ call_2a_700f:
     Op3E_Compare_Branch 22, $5e, $5b, $12, call_2a_700f ;; 2a:7013 $3e $16 $5e $5b $12 $0f $70 $2a
     Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2a:701b $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2a:7026 $52 $01 $d0 $01 $fd $d1
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:702c $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:702c $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2a:7031 $50 $fd $d0 $02 $fe
     Op16_SubOps 1                                      ;; 2a:7036 $16 $01
     SubOp_SetByte wC751, $00                           ;; 2a:7038 $7e $39 $00
@@ -3814,7 +3814,7 @@ call_2a_72a7:
     Op18_Jump call_2a_6dc6                             ;; 2a:72cf $18 $c6 $6d $2a
 
 call_2a_72d3:
-    Op82_Run data_01_74c3                              ;; 2a:72d3 $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:72d3 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:72d7 $1c $03
     SCRIPT_POINTER call_2a_6dfc                        ;; 2a:72d9 $fc $6d $2a
     SCRIPT_POINTER call_2a_6e2f                        ;; 2a:72dc $2f $6e $2a
@@ -3848,9 +3848,9 @@ call_2a_731a:
     Op18_Jump call_2a_6dc6                             ;; 2a:7325 $18 $c6 $6d $2a
 
 call_2a_7329:
-    Op50_WriteByte wC31D, $00, $d3                     ;; 2a:7329 $50 $1d $c3 $00 $d3
-    Op82_Run data_01_74c3                              ;; 2a:732e $82 $c3 $74 $01
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:7332 $50 $1d $c3 $00 $d0
+    Op50_WriteByte wButtonsOfInterest, $00, $d3        ;; 2a:7329 $50 $1d $c3 $00 $d3
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:732e $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:7332 $50 $1d $c3 $00 $d0
     Op1C_TableJump 5                                   ;; 2a:7337 $1c $05
     SCRIPT_POINTER call_2a_6dfc                        ;; 2a:7339 $fc $6d $2a
     SCRIPT_POINTER call_2a_6e2f                        ;; 2a:733c $2f $6e $2a
@@ -3888,7 +3888,7 @@ call_2a_73a9:
 call_2a_73ad:
     Op14_Unknown 1, $ee, $78                           ;; 2a:73ad $14 $01 $ee $78
     SCRIPT_POINTER call_2a_73c7                        ;; 2a:73b1 $c7 $73 $2a
-    Op82_Run data_01_74c3                              ;; 2a:73b4 $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:73b4 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:73b8 $1c $03
     SCRIPT_POINTER call_2a_6dfc                        ;; 2a:73ba $fc $6d $2a
     SCRIPT_POINTER call_2a_6e2f                        ;; 2a:73bd $2f $6e $2a
@@ -4002,7 +4002,7 @@ call_2a_74f9:
     Op18_Jump call_2a_6dc6                             ;; 2a:7517 $18 $c6 $6d $2a
 
 call_2a_751b:
-    Op82_Run data_01_74c3                              ;; 2a:751b $82 $c3 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:751b $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2a:751f $1c $03
     SCRIPT_POINTER call_2a_6dfc                        ;; 2a:7521 $fc $6d $2a
     SCRIPT_POINTER call_2a_6e2f                        ;; 2a:7524 $2f $6e $2a
@@ -4423,8 +4423,8 @@ call_2a_7c5a:
     SCRIPT_POINTER call_2a_7e7a                        ;; 2a:7c79 $7a $7e $2a
     SCRIPT_POINTER call_2a_7e7a                        ;; 2a:7c7c $7a $7e $2a
     SCRIPT_POINTER call_2a_7e7a                        ;; 2a:7c7f $7a $7e $2a
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:7c82 $50 $1d $c3 $00 $d0
-    Op82_Run data_01_74b7                              ;; 2a:7c87 $82 $b7 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:7c82 $50 $1d $c3 $00 $d0
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2a:7c87 $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2a:7c8b $1c $03
     SCRIPT_POINTER call_2a_7c9a                        ;; 2a:7c8d $9a $7c $2a
     SCRIPT_POINTER call_2a_7cb1                        ;; 2a:7c90 $b1 $7c $2a
@@ -4540,8 +4540,8 @@ call_2a_7df1:
     Op18_Jump call_2a_7c5a                             ;; 2a:7e07 $18 $5a $7c $2a
 
 call_2a_7e0b:
-    Op50_WriteByte wC31D, $00, $d4                     ;; 2a:7e0b $50 $1d $c3 $00 $d4
-    Op82_Run data_01_74c3                              ;; 2a:7e10 $82 $c3 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d4        ;; 2a:7e0b $50 $1d $c3 $00 $d4
+    Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2a:7e10 $82 $c3 $74 $01
     Op1C_TableJump 4                                   ;; 2a:7e14 $1c $04
     SCRIPT_POINTER call_2a_7c9a                        ;; 2a:7e16 $9a $7c $2a
     SCRIPT_POINTER call_2a_7cb1                        ;; 2a:7e19 $b1 $7c $2a
@@ -4555,8 +4555,8 @@ call_2a_7e26:
     Op1A_Unknown $01                                   ;; 2a:7e35 $1a $01
 
 call_2a_7e37:
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:7e37 $50 $1d $c3 $00 $d0
-    Op82_Run data_01_74b7                              ;; 2a:7e3c $82 $b7 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:7e37 $50 $1d $c3 $00 $d0
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2a:7e3c $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2a:7e40 $1c $03
     SCRIPT_POINTER call_2a_7c9a                        ;; 2a:7e42 $9a $7c $2a
     SCRIPT_POINTER call_2a_7cb1                        ;; 2a:7e45 $b1 $7c $2a
@@ -4581,8 +4581,8 @@ call_2a_7e72:
     Op18_Jump call_2a_7c5a                             ;; 2a:7e76 $18 $5a $7c $2a
 
 call_2a_7e7a:
-    Op50_WriteByte wC31D, $00, $d0                     ;; 2a:7e7a $50 $1d $c3 $00 $d0
-    Op82_Run data_01_74b7                              ;; 2a:7e7f $82 $b7 $74 $01
+    Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2a:7e7a $50 $1d $c3 $00 $d0
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2a:7e7f $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2a:7e83 $1c $03
     SCRIPT_POINTER call_2a_7c9a                        ;; 2a:7e85 $9a $7c $2a
     SCRIPT_POINTER call_2a_7cb1                        ;; 2a:7e88 $b1 $7c $2a

@@ -67,7 +67,7 @@ call_03_4055:
     jp   jp_03_5a58                                    ;; 03:4069 $c3 $58 $5a
 
 call_03_406c:
-    ld   HL, wC316                                     ;; 03:406c $21 $16 $c3
+    ld   HL, wNewlyPressedButtons                      ;; 03:406c $21 $16 $c3
     ld   A, $3f                                        ;; 03:406f $3e $3f
     call call_03_5aa1                                  ;; 03:4071 $cd $a1 $5a
     ld   HL, data_03_411a                              ;; 03:4074 $21 $1a $41
@@ -279,7 +279,7 @@ call_03_41c8:
     ret                                                ;; 03:41da $c9
 
 call_03_41db:
-    ld   HL, wC316                                     ;; 03:41db $21 $16 $c3
+    ld   HL, wNewlyPressedButtons                      ;; 03:41db $21 $16 $c3
     ld   A, $3c                                        ;; 03:41de $3e $3c
     call call_03_5aa1                                  ;; 03:41e0 $cd $a1 $5a
     call call_03_5a31                                  ;; 03:41e3 $cd $31 $5a
@@ -406,7 +406,7 @@ call_03_4260:
     ret                                                ;; 03:42b5 $c9
 
 call_03_42b6:
-    ld   HL, wC316                                     ;; 03:42b6 $21 $16 $c3
+    ld   HL, wNewlyPressedButtons                      ;; 03:42b6 $21 $16 $c3
     ld   A, [w1_D649]                                  ;; 03:42b9 $fa $49 $d6
     cp   A, $03                                        ;; 03:42bc $fe $03
     jr   NZ, .jr_03_42ce                               ;; 03:42be $20 $0e
@@ -734,7 +734,7 @@ call_03_44cb:
     ret                                                ;; 03:44d5 $c9
 
 call_03_44d6:
-    ld   HL, wC316                                     ;; 03:44d6 $21 $16 $c3
+    ld   HL, wNewlyPressedButtons                      ;; 03:44d6 $21 $16 $c3
     ld   A, $3c                                        ;; 03:44d9 $3e $3c
     call call_03_5aa1                                  ;; 03:44db $cd $a1 $5a
     call call_03_5a31                                  ;; 03:44de $cd $31 $5a
@@ -955,7 +955,7 @@ call_03_467b:
     jr   call_03_46aa                                  ;; 03:46a8 $18 $00
 
 call_03_46aa:
-    ld   A, [wC316]                                    ;; 03:46aa $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 03:46aa $fa $16 $c3
     bit  5, A                                          ;; 03:46ad $cb $6f
     jr   Z, .jr_03_46b8                                ;; 03:46af $28 $07
     ld   A, $8b                                        ;; 03:46b1 $3e $8b
@@ -1123,7 +1123,7 @@ call_03_47e7:
     ld   A, [w1_D657]                                  ;; 03:47e7 $fa $57 $d6
     and  A, A                                          ;; 03:47ea $a7
     ret  NZ                                            ;; 03:47eb $c0
-    ld   HL, wC316                                     ;; 03:47ec $21 $16 $c3
+    ld   HL, wNewlyPressedButtons                      ;; 03:47ec $21 $16 $c3
     ld   A, $1c                                        ;; 03:47ef $3e $1c
     call call_03_5aa1                                  ;; 03:47f1 $cd $a1 $5a
     ld   HL, data_03_48ce                              ;; 03:47f4 $21 $ce $48
@@ -1246,7 +1246,7 @@ call_03_48cf:
     jr   Z, jr_03_491d                                 ;; 03:48d4 $28 $47
     cp   A, $09                                        ;; 03:48d6 $fe $09
     jr   NC, jr_03_491d                                ;; 03:48d8 $30 $43
-    ld   HL, wC316                                     ;; 03:48da $21 $16 $c3
+    ld   HL, wNewlyPressedButtons                      ;; 03:48da $21 $16 $c3
     ld   A, $30                                        ;; 03:48dd $3e $30
     call call_03_5aa1                                  ;; 03:48df $cd $a1 $5a
     ld   HL, jr_03_491d                                ;; 03:48e2 $21 $1d $49
@@ -1576,7 +1576,7 @@ call_03_4ae5:
     jp   NZ, jp_03_4bbf                                ;; 03:4aea $c2 $bf $4b
     ld   HL, jp_03_4bbf                                ;; 03:4aed $21 $bf $4b
     push HL                                            ;; 03:4af0 $e5
-    ld   HL, wC316                                     ;; 03:4af1 $21 $16 $c3
+    ld   HL, wNewlyPressedButtons                      ;; 03:4af1 $21 $16 $c3
     ld   A, [HL]                                       ;; 03:4af4 $7e
     and  A, $30                                        ;; 03:4af5 $e6 $30
     jr   Z, .jr_03_4b07                                ;; 03:4af7 $28 $0e
@@ -1703,7 +1703,7 @@ jp_03_4bbf:
 call_03_4bf1:
     xor  A, A                                          ;; 03:4bf1 $af
     ld   [w1_D7A8], A                                  ;; 03:4bf2 $ea $a8 $d7
-    ld   HL, wC316                                     ;; 03:4bf5 $21 $16 $c3
+    ld   HL, wNewlyPressedButtons                      ;; 03:4bf5 $21 $16 $c3
     ld   A, $30                                        ;; 03:4bf8 $3e $30
     call call_03_5aa1                                  ;; 03:4bfa $cd $a1 $5a
     ld   HL, .data_03_4c0a                             ;; 03:4bfd $21 $0a $4c

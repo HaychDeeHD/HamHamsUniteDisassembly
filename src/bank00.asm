@@ -6,6 +6,8 @@ INCLUDE "include/charmaps.inc"
 INCLUDE "include/constants.inc"
 
 SECTION "bank00", ROM0[$0000]
+
+zero_pointer:
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0000 ........
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0008 ........
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0010 ????????
@@ -304,7 +306,7 @@ call_00_02a7:
     call DoubleDerefC6A0to2_AddressIntoSelf            ;; 00:0394 $cd $c6 $23
 .jr_00_0397:
     call call_00_03c9                                  ;; 00:0397 $cd $c9 $03
-    call call_00_03e5                                  ;; 00:039a $cd $e5 $03
+    call UpdateButtonRegisters                         ;; 00:039a $cd $e5 $03
     call call_00_242f                                  ;; 00:039d $cd $2f $24
     call JumpUsingOpTableUsingIndexFromC322            ;; 00:03a0 $cd $6b $09
     call call_00_0589                                  ;; 00:03a3 $cd $89 $05
@@ -337,37 +339,45 @@ call_00_03c9:
     jr   NZ, .jr_00_03de                               ;; 00:03e2 $20 $fa
     ret                                                ;; 00:03e4 $c9
 
-call_00_03e5:
-    ld   A, [wC315]                                    ;; 00:03e5 $fa $15 $c3
+; C315 starts as the buttons I was pressing last time this was called.
+; At the end, C315 will be the buttons I am pressing this time.
+; C318 is the buttons I have *released* since last time.
+; C316 is the buttons I am *newly* pressing.
+; C317 copy of C316, but might become a copy of pressed buttons.
+; Maybe C319 is a 'how long held' counter?
+UpdateButtonRegisters:
+    ld   A, [wPreviousPressedButtons]                  ;; 00:03e5 $fa $15 $c3
     ld   C, A                                          ;; 00:03e8 $4f
-    ld   A, [wC314]                                    ;; 00:03e9 $fa $14 $c3
+    ld   A, [wPressedButtons]                          ;; 00:03e9 $fa $14 $c3
     ld   B, A                                          ;; 00:03ec $47
     ld   A, C                                          ;; 00:03ed $79
     xor  A, B                                          ;; 00:03ee $a8
     and  A, C                                          ;; 00:03ef $a1
-    ld   [wC318], A                                    ;; 00:03f0 $ea $18 $c3
+    ld   [wNewlyReleasedButtons], A                    ;; 00:03f0 $ea $18 $c3
     ld   A, B                                          ;; 00:03f3 $78
     xor  A, C                                          ;; 00:03f4 $a9
     and  A, B                                          ;; 00:03f5 $a0
-    ld   [wC316], A                                    ;; 00:03f6 $ea $16 $c3
+    ld   [wNewlyPressedButtons], A                     ;; 00:03f6 $ea $16 $c3
     ld   [wC317], A                                    ;; 00:03f9 $ea $17 $c3
     ld   A, B                                          ;; 00:03fc $78
     cp   A, C                                          ;; 00:03fd $b9
-    jr   Z, .jr_00_0406                                ;; 00:03fe $28 $06
+    jr   Z, .afterHandleButtonChange                   ;; 00:03fe $28 $06
+; Only if buttons have changed
     ld   A, [wC31A]                                    ;; 00:0400 $fa $1a $c3
     ld   [wC319], A                                    ;; 00:0403 $ea $19 $c3
-.jr_00_0406:
+.afterHandleButtonChange:
     ld   A, [wC319]                                    ;; 00:0406 $fa $19 $c3
     dec  A                                             ;; 00:0409 $3d
     ld   [wC319], A                                    ;; 00:040a $ea $19 $c3
-    jr   NZ, .jr_00_041b                               ;; 00:040d $20 $0c
-    ld   A, [wC314]                                    ;; 00:040f $fa $14 $c3
+    jr   NZ, .finish                                   ;; 00:040d $20 $0c
+; Only if C319 decremented to 0
+    ld   A, [wPressedButtons]                          ;; 00:040f $fa $14 $c3
     ld   [wC317], A                                    ;; 00:0412 $ea $17 $c3
     ld   A, [wC31B]                                    ;; 00:0415 $fa $1b $c3
     ld   [wC319], A                                    ;; 00:0418 $ea $19 $c3
-.jr_00_041b:
-    ld   A, [wC314]                                    ;; 00:041b $fa $14 $c3
-    ld   [wC315], A                                    ;; 00:041e $ea $15 $c3
+.finish:
+    ld   A, [wPressedButtons]                          ;; 00:041b $fa $14 $c3
+    ld   [wPreviousPressedButtons], A                  ;; 00:041e $ea $15 $c3
     ret                                                ;; 00:0421 $c9
 
 call_00_0422:
@@ -697,8 +707,8 @@ jp_00_059a:
     ld   A, [wC310]                                    ;; 00:0658 $fa $10 $c3
     cp   A, $01                                        ;; 00:065b $fe $01
     jr   NZ, .jr_00_0672                               ;; 00:065d $20 $13
-    call call_00_0821                                  ;; 00:065f $cd $21 $08
-    ld   A, [wC314]                                    ;; 00:0662 $fa $14 $c3
+    call ReadInputs                                    ;; 00:065f $cd $21 $08
+    ld   A, [wPressedButtons]                          ;; 00:0662 $fa $14 $c3
     cp   A, $f0                                        ;; 00:0665 $fe $f0
     jr   NZ, .jr_00_0672                               ;; 00:0667 $20 $09
     xor  A, A                                          ;; 00:0669 $af
@@ -979,14 +989,24 @@ call_00_07d6:
     ld   [HL], E                                       ;; 00:081f $73
     ret                                                ;; 00:0820 $c9
 
-call_00_0821:
+; Puts the currently pressed buttons into C314.
+; Order is 'Down Up Left Right Select Start B A'.
+; 1 means pressed, 0 means not pressed.
+; To understand how this is written, see https://gbdev.io/pandocs/Joypad_Input.html.
+ReadInputs:
     ld   B, $00                                        ;; 00:0821 $06 $00
+; Value to write to read directions.
     ld   A, $20                                        ;; 00:0823 $3e $20
     ldh  [rP1], A                                      ;; 00:0825 $e0 $00
+; Multiple reads is common practice to ensure stability.
     ldh  A, [rP1]                                      ;; 00:0827 $f0 $00
     ldh  A, [rP1]                                      ;; 00:0829 $f0 $00
+; Flip every bit. By default in GB, 0 is pressed, 1 is open.
     cpl                                                ;; 00:082b $2f
+; The lower 4 bits contain the button data.
     and  A, $0f                                        ;; 00:082c $e6 $0f
+; Last 4 bits of A are 'Down Up Left Right'
+; The next several lines just convert to 'Up Down Left Right'
     swap A                                             ;; 00:082e $cb $37
     sla  A                                             ;; 00:0830 $cb $27
     rr   B                                             ;; 00:0832 $cb $18
@@ -996,20 +1016,29 @@ call_00_0821:
     srl  A                                             ;; 00:083a $cb $3f
     or   A, B                                          ;; 00:083c $b0
     swap A                                             ;; 00:083d $cb $37
+; Done swapping Up and Down.
+; Save it to B.
     ld   B, A                                          ;; 00:083f $47
+; Value to write to read buttons.
     ld   A, $10                                        ;; 00:0840 $3e $10
     ldh  [rP1], A                                      ;; 00:0842 $e0 $00
+; Multiple reads is common practice to ensure stability.
     ldh  A, [rP1]                                      ;; 00:0844 $f0 $00
     ldh  A, [rP1]                                      ;; 00:0846 $f0 $00
     ldh  A, [rP1]                                      ;; 00:0848 $f0 $00
     ldh  A, [rP1]                                      ;; 00:084a $f0 $00
     ldh  A, [rP1]                                      ;; 00:084c $f0 $00
     ldh  A, [rP1]                                      ;; 00:084e $f0 $00
+; Flip every bit. By default in GB, 0 is pressed, 1 is open.
     cpl                                                ;; 00:0850 $2f
+; The lower 4 bits contain the button data.
     and  A, $0f                                        ;; 00:0851 $e6 $0f
     swap A                                             ;; 00:0853 $cb $37
     or   A, B                                          ;; 00:0855 $b0
-    ld   [wC314], A                                    ;; 00:0856 $ea $14 $c3
+; A is now 'Start Select B A Up Down Left Right'
+; Store this in wC314.
+    ld   [wPressedButtons], A                          ;; 00:0856 $ea $14 $c3
+; Write to clear input readings.
     ld   A, $30                                        ;; 00:0859 $3e $30
     ldh  [rP1], A                                      ;; 00:085b $e0 $00
     ret                                                ;; 00:085d $c9
@@ -1420,7 +1449,7 @@ Op88:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0b54 $cd $69 $0a
     ld   A, [wReturnAddressC324]                       ;; 00:0b57 $fa $24 $c3
     and  A, A                                          ;; 00:0b5a $a7
-    jr   NZ, .jr_00_0b75                               ;; 00:0b5b $20 $18
+    jr   NZ, .c324WasNotEmpty                          ;; 00:0b5b $20 $18
     ld   A, $01                                        ;; 00:0b5d $3e $01
     ld   [wReturnAddressC324], A                       ;; 00:0b5f $ea $24 $c3
     ld   A, [HL+]                                      ;; 00:0b62 $2a
@@ -1429,19 +1458,22 @@ Op88:
     ld   B, A                                          ;; 00:0b65 $47
     ld   A, $02                                        ;; 00:0b66 $3e $02
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0b68 $ea $26 $c3
-    ld   A, [wC316]                                    ;; 00:0b6b $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:0b6b $fa $16 $c3
+; Start
     and  A, $80                                        ;; 00:0b6e $e6 $80
-    ld   [wC316], A                                    ;; 00:0b70 $ea $16 $c3
+    ld   [wNewlyPressedButtons], A                     ;; 00:0b70 $ea $16 $c3
     jr   .jr_00_0b9f                                   ;; 00:0b73 $18 $2a
-.jr_00_0b75:
+.c324WasNotEmpty:
     ld   A, [wC39A]                                    ;; 00:0b75 $fa $9a $c3
     ld   C, A                                          ;; 00:0b78 $4f
     ld   A, [wC39B]                                    ;; 00:0b79 $fa $9b $c3
     ld   B, A                                          ;; 00:0b7c $47
-    ld   A, [wC316]                                    ;; 00:0b7d $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:0b7d $fa $16 $c3
+; A
     and  A, $10                                        ;; 00:0b80 $e6 $10
     jr   NZ, .jr_00_0b92                               ;; 00:0b82 $20 $0e
-    ld   A, [wC316]                                    ;; 00:0b84 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:0b84 $fa $16 $c3
+; Start
     and  A, $80                                        ;; 00:0b87 $e6 $80
     jr   Z, .jr_00_0b9f                                ;; 00:0b89 $28 $14
     ld   A, $02                                        ;; 00:0b8b $3e $02
@@ -1478,15 +1510,17 @@ Op46:
     jp   C, CallNextScriptInstruction_PrepArgAddr      ;; 00:0bc3 $da $14 $0a
     ld   A, [wReturnAddressC324]                       ;; 00:0bc6 $fa $24 $c3
     and  A, A                                          ;; 00:0bc9 $a7
-    jr   NZ, .jr_00_0bdc                               ;; 00:0bca $20 $10
+    jr   NZ, .c324NotEmpty                             ;; 00:0bca $20 $10
     ld   A, $01                                        ;; 00:0bcc $3e $01
     ld   [wReturnAddressC324], A                       ;; 00:0bce $ea $24 $c3
-    ld   A, [wC316]                                    ;; 00:0bd1 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:0bd1 $fa $16 $c3
+; Start
     and  A, $80                                        ;; 00:0bd4 $e6 $80
-    ld   [wC316], A                                    ;; 00:0bd6 $ea $16 $c3
+    ld   [wNewlyPressedButtons], A                     ;; 00:0bd6 $ea $16 $c3
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:0bd9 $c3 $39 $0a
-.jr_00_0bdc:
-    ld   A, [wC316]                                    ;; 00:0bdc $fa $16 $c3
+.c324NotEmpty:
+    ld   A, [wNewlyPressedButtons]                     ;; 00:0bdc $fa $16 $c3
+; A
     and  A, $10                                        ;; 00:0bdf $e6 $10
     jp   Z, JumpUsingOpTableUsingIndexFromC322_IfC323  ;; 00:0be1 $ca $39 $0a
     ld   A, $01                                        ;; 00:0be4 $3e $01
@@ -2957,8 +2991,9 @@ Write3ArgBytesToD037to9_AndThenDo2XStuff:
     ld   [w1_D03B], A                                  ;; 00:14ec $ea $3b $d0
     cp   A, B                                          ;; 00:14ef $b8
     jr   Z, .twotimesAfterCodeForIfWeWroteNonzeroStuff ;; 00:14f0 $28 $0c
-    call maybeInputRelatedIdk                          ;; 00:14f2 $cd $5b $1a
+    call GetPrioritizedInput                           ;; 00:14f2 $cd $5b $1a
     and  A, $0f                                        ;; 00:14f5 $e6 $0f
+; Jumps if direction pressed.
     jr   NZ, .twotimesAfterCodeForIfWeWroteNonzeroStuff ;; 00:14f7 $20 $05
     ld   A, $01                                        ;; 00:14f9 $3e $01
     ld   [w1_D031], A                                  ;; 00:14fb $ea $31 $d0
@@ -3003,13 +3038,16 @@ jp_00_152b:
     ld   A, [wOp1CScriptTableIndexC53A]                ;; 00:1542 $fa $3a $c5
     and  A, $40                                        ;; 00:1545 $e6 $40
     jr   NZ, .jr_00_1561                               ;; 00:1547 $20 $18
-    ld   A, [wC316]                                    ;; 00:1549 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:1549 $fa $16 $c3
+; A
     and  A, $10                                        ;; 00:154c $e6 $10
     jr   NZ, .jr_00_1561                               ;; 00:154e $20 $11
-    ld   A, [wC316]                                    ;; 00:1550 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:1550 $fa $16 $c3
+; Start
     and  A, $80                                        ;; 00:1553 $e6 $80
     jr   NZ, .jr_00_1561                               ;; 00:1555 $20 $0a
-    ld   A, [wC316]                                    ;; 00:1557 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:1557 $fa $16 $c3
+; Select
     and  A, $40                                        ;; 00:155a $e6 $40
     jr   NZ, .jr_00_1561                               ;; 00:155c $20 $03
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:155e $c3 $39 $0a
@@ -3021,7 +3059,8 @@ jp_00_152b:
     ld   A, [wOp1CScriptTableIndexC53A]                ;; 00:156b $fa $3a $c5
     and  A, $40                                        ;; 00:156e $e6 $40
     jr   NZ, .jr_00_1587                               ;; 00:1570 $20 $15
-    ld   A, [wC316]                                    ;; 00:1572 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:1572 $fa $16 $c3
+; Start or Select or A
     and  A, $d0                                        ;; 00:1575 $e6 $d0
     jr   NZ, .jr_00_1587                               ;; 00:1577 $20 $0e
     ld   A, [w1_D001]                                  ;; 00:1579 $fa $01 $d0
@@ -3352,8 +3391,9 @@ call_00_168f:
     db   $cd, $c5, $19, $c9                            ;; 00:17b7 ????
 
 call_00_17bb:
-    call maybeInputRelatedIdk                          ;; 00:17bb $cd $5b $1a
+    call GetPrioritizedInput                           ;; 00:17bb $cd $5b $1a
     and  A, $0f                                        ;; 00:17be $e6 $0f
+; Jumps if direction pressed.
     jr   NZ, .jr_00_17c5                               ;; 00:17c0 $20 $03
     scf                                                ;; 00:17c2 $37
     ccf                                                ;; 00:17c3 $3f
@@ -3371,14 +3411,14 @@ call_00_17bb:
     ld   A, [wImportantBitArrayThingC35B]              ;; 00:17d1 $fa $5b $c3
     ld   E, A                                          ;; 00:17d4 $5f
     ld   D, $00                                        ;; 00:17d5 $16 $00
-    ld   HL, $186f                                     ;; 00:17d7 $21 $6f $18
+    ld   HL, unknownTable ;@=ptr                       ;; 00:17d7 $21 $6f $18
     add  HL, DE                                        ;; 00:17da $19
     ld   A, [HL+]                                      ;; 00:17db $2a
     ld   H, [HL]                                       ;; 00:17dc $66
     ld   L, A                                          ;; 00:17dd $6f
     ld   A, [HL]                                       ;; 00:17de $7e
     ld   B, A                                          ;; 00:17df $47
-    call maybeInputRelatedIdk                          ;; 00:17e0 $cd $5b $1a
+    call GetPrioritizedInput                           ;; 00:17e0 $cd $5b $1a
     ld   E, A                                          ;; 00:17e3 $5f
     ld   D, $00                                        ;; 00:17e4 $16 $00
     add  HL, DE                                        ;; 00:17e6 $19
@@ -3443,7 +3483,7 @@ call_00_17bb:
     add  HL, DE                                        ;; 00:184b $19
     ld   A, [BC]                                       ;; 00:184c $0a
     ld   [HL], A                                       ;; 00:184d $77
-    call maybeInputRelatedIdk                          ;; 00:184e $cd $5b $1a
+    call GetPrioritizedInput                           ;; 00:184e $cd $5b $1a
     sla  A                                             ;; 00:1851 $cb $27
     ld   [wImportantBitArrayThingC35B], A              ;; 00:1853 $ea $5b $c3
     call call_00_185b                                  ;; 00:1856 $cd $5b $18
@@ -3460,23 +3500,37 @@ call_00_185b:
     ld   [wC31C], A                                    ;; 00:1867 $ea $1c $c3
 .jr_00_186a:
     ret                                                ;; 00:186a $c9
-    db   $09, $06, $03, $01, $00, $00                  ;; 00:186b ??????
-    dw   .data_00_1881                                 ;; 00:1871 pP
-    dw   .data_00_188c                                 ;; 00:1873 pP
-    db   $00, $00                                      ;; 00:1875 ??
-    dw   .data_00_1897                                 ;; 00:1877 pP
-    db   $00, $00, $00, $00, $00, $00                  ;; 00:1879 ??????
-    dw   .data_00_18a2                                 ;; 00:187f pP
-.data_00_1881:
+    db   $09, $06, $03, $01                            ;; 00:186b ????
+
+;@data format=p amount=9
+unknownTable:
+    dw   zero_pointer                                  ;; 00:186f ?? $00
+    dw   data_00_1881                                  ;; 00:1871 pP $01
+    dw   data_00_188c                                  ;; 00:1873 pP $02
+    dw   zero_pointer                                  ;; 00:1875 ?? $03
+    dw   data_00_1897                                  ;; 00:1877 pP $04
+    dw   zero_pointer                                  ;; 00:1879 ?? $05
+    dw   zero_pointer                                  ;; 00:187b ?? $06
+    dw   zero_pointer                                  ;; 00:187d ?? $07
+    dw   data_00_18a2                                  ;; 00:187f pP $08
+
+; 0001
+data_00_1881:
     db   $00, $00, $1c, $00, $14, $10, $18, $00        ;; 00:1881 .?w?w???
     db   $16, $12, $1a                                 ;; 00:1889 w??
-.data_00_188c:
+
+; 0010
+data_00_188c:
     db   $1e, $3a, $00, $00, $34, $38, $30, $00        ;; 00:188c .w??w???
     db   $32, $36, $2e                                 ;; 00:1894 w??
-.data_00_1897:
+
+; 0100
+data_00_1897:
     db   $3c, $52, $50, $00, $00, $4e, $4c, $00        ;; 00:1897 .ww?????
     db   $58, $56, $54                                 ;; 00:189f w??
-.data_00_18a2:
+
+; 1000
+data_00_18a2:
     db   $5a, $6e, $70, $00, $76, $72, $74, $00        ;; 00:18a2 .ww?w???
     db   $00, $6a, $6c                                 ;; 00:18aa ???
 
@@ -3486,11 +3540,12 @@ call_00_18ad:
     jr   NZ, .jr_00_18c9                               ;; 00:18b2 $20 $15
     ld   A, [wImportantBitArrayThingC35B]              ;; 00:18b4 $fa $5b $c3
     ld   B, A                                          ;; 00:18b7 $47
-    call maybeInputRelatedIdk                          ;; 00:18b8 $cd $5b $1a
+    call GetPrioritizedInput                           ;; 00:18b8 $cd $5b $1a
     sla  A                                             ;; 00:18bb $cb $27
     cp   A, B                                          ;; 00:18bd $b8
     jr   NZ, .jr_00_18ce                               ;; 00:18be $20 $0e
-    ld   A, [wC314]                                    ;; 00:18c0 $fa $14 $c3
+    ld   A, [wPressedButtons]                          ;; 00:18c0 $fa $14 $c3
+; B
     and  A, $20                                        ;; 00:18c3 $e6 $20
     jr   NZ, .jr_00_18d8                               ;; 00:18c5 $20 $11
     jr   .jr_00_18d3                                   ;; 00:18c7 $18 $0a
@@ -3672,85 +3727,66 @@ call_00_1a50:
     ld   [$2000], A                                    ;; 00:1a55 $ea $00 $20
     jp   jp_01_40f1                                    ;; 00:1a58 $c3 $f1 $40
 
-; Whacky bit checks and returns on C314 (2 modes depending on C71E)
-; Is this input related?
-;
-; IF C71E
-;   If C314 last bit is set
-;     Return 2
-;   ELSE IF the second to last bit is set
-;     Return 1
-;   ELSE if fourth to last bit is set
-;     Return 4
-;   Else if third to last bit is set
-;     Return 8
-;   ELSE
-;     Return 0
-; ELSE
-;   IF C314 last 2 bits are 11
-;     Return 0
-;   Else IF C314 last 2 bits are 00
-;     If 2 bits before that are 11
-;       Return 0
-;     Else
-;       Return them
-;   Else
-;     Return last 2 bits of C314
-;
-; C314 (With C71e)
-; XXXXXXX1 -> 2
-; XXXXXX10 -> 1
-; XXXX1X00 -> 4
-; XXXX0100 -> 8
-; XXXX0000 -> 8
-;
-; C314 (Without C71E)
-; XXXXXX11 -> 0b0 -> 0
-; XXXXXX01 -> 0b01 -> 1
-; XXXXXX10 -> 0b10 -> 2
-; XXXX1100 -> 0b0 -> 0
-; XXXX0100 -> 0b0100 -> 4
-; XXXX1000 -> 0b1000 -> 8
-; XXXX1100 -> 0b1100 -> 9
-maybeInputRelatedIdk:
+; Returns a value in A with 1 bit set for the priority pressed button.
+; C71E being zero mean this will select the active pressed direction.
+; If L&R or U&D are detected at the same time, return 0. Shouldn't be possible on a real GBC.
+; L/R takes precedence over U/D.
+; If C71E is set, we select the active pressed button.
+; Priority order is A B Start Select.
+; The return pattern is 'Select Start A B Up Down Left Right'. Only 1 will be set.
+; For some reason the buttons are swapped from the stored order of 'Start Select B A ...'.
+; C71E indicates whether we should select directions or buttons.
+GetPrioritizedInput:
     ld   A, [wC71E]                                    ;; 00:1a5b $fa $1e $c7
     and  A, A                                          ;; 00:1a5e $a7
-    jr   NZ, .ifValueInC71E                            ;; 00:1a5f $20 $19
-    ld   A, [wC314]                                    ;; 00:1a61 $fa $14 $c3
+    jr   NZ, .ifValueInC71E_detectButton               ;; 00:1a5f $20 $19
+    ld   A, [wPressedButtons]                          ;; 00:1a61 $fa $14 $c3
+; Left and right. Return zero if both are pressed (shouldn't be possible).
     and  A, $03                                        ;; 00:1a64 $e6 $03
     cp   A, $03                                        ;; 00:1a66 $fe $03
     jr   Z, .returnZero                                ;; 00:1a68 $28 $0e
     and  A, A                                          ;; 00:1a6a $a7
+; If exactly 1 if Left and Right are pressed, return that.
     jr   NZ, .return                                   ;; 00:1a6b $20 $39
-    ld   A, [wC314]                                    ;; 00:1a6d $fa $14 $c3
+    ld   A, [wPressedButtons]                          ;; 00:1a6d $fa $14 $c3
+; Up and Down. Return zero if both are pressed (shouldn't be possible).
     and  A, $0c                                        ;; 00:1a70 $e6 $0c
     cp   A, $0c                                        ;; 00:1a72 $fe $0c
     jr   Z, .returnZero                                ;; 00:1a74 $28 $02
+; At this point we can return. It's either 1 of Up/Down or nothing.
     jr   .return                                       ;; 00:1a76 $18 $2e
 .returnZero:
     xor  A, A                                          ;; 00:1a78 $af
     ret                                                ;; 00:1a79 $c9
-.ifValueInC71E:
-    ld   A, [wC314]                                    ;; 00:1a7a $fa $14 $c3
+; Check A
+.ifValueInC71E_detectButton:
+    ld   A, [wPressedButtons]                          ;; 00:1a7a $fa $14 $c3
+; A
     and  A, $01                                        ;; 00:1a7d $e6 $01
-    jr   Z, .ifValueInC71EBit1NotSet                   ;; 00:1a7f $28 $04
+    jr   Z, .notA                                      ;; 00:1a7f $28 $04
     ld   A, $02                                        ;; 00:1a81 $3e $02
     jr   .return                                       ;; 00:1a83 $18 $21
-.ifValueInC71EBit1NotSet:
-    ld   A, [wC314]                                    ;; 00:1a85 $fa $14 $c3
+; Check B
+.notA:
+    ld   A, [wPressedButtons]                          ;; 00:1a85 $fa $14 $c3
+; B
     and  A, $02                                        ;; 00:1a88 $e6 $02
-    jr   Z, .ifValueInC71EBit2NotSet                   ;; 00:1a8a $28 $04
+    jr   Z, .notB                                      ;; 00:1a8a $28 $04
     ld   A, $01                                        ;; 00:1a8c $3e $01
     jr   .return                                       ;; 00:1a8e $18 $16
-.ifValueInC71EBit2NotSet:
-    ld   A, [wC314]                                    ;; 00:1a90 $fa $14 $c3
+; Check Start
+.notB:
+    ld   A, [wPressedButtons]                          ;; 00:1a90 $fa $14 $c3
+; Start
     and  A, $08                                        ;; 00:1a93 $e6 $08
-    jr   Z, .ifValueInC71EBit4NotSet                   ;; 00:1a95 $28 $04
+    jr   Z, .notStart                                  ;; 00:1a95 $28 $04
     ld   A, $04                                        ;; 00:1a97 $3e $04
     jr   .return                                       ;; 00:1a99 $18 $0b
-.ifValueInC71EBit4NotSet:
-    ld   A, [wC314]                                    ;; 00:1a9b $fa $14 $c3
+; Check Select
+.notStart:
+    ld   A, [wPressedButtons]                          ;; 00:1a9b $fa $14 $c3
     and  A, $04                                        ;; 00:1a9e $e6 $04
+; Return 0 if no buttons pressed.
     jr   Z, .return                                    ;; 00:1aa0 $28 $04
     ld   A, $08                                        ;; 00:1aa2 $3e $08
     jr   .return                                       ;; 00:1aa4 $18 $00
@@ -3936,10 +3972,10 @@ Op06and0AelseCase:
 ; 04 06 08 and 0A can each end up here. 04 and 08 always do.
 ; Something to do with Hamchat selection and textboxes.
 CallIfC324to5HadData:
-    ld   A, [wC314]                                    ;; 00:1bb2 $fa $14 $c3
+    ld   A, [wPressedButtons]                          ;; 00:1bb2 $fa $14 $c3
     and  A, $20                                        ;; 00:1bb5 $e6 $20
     jr   NZ, .bit5or6ofC314WasSet                      ;; 00:1bb7 $20 $0e
-    ld   A, [wC314]                                    ;; 00:1bb9 $fa $14 $c3
+    ld   A, [wPressedButtons]                          ;; 00:1bb9 $fa $14 $c3
     and  A, $10                                        ;; 00:1bbc $e6 $10
     jr   NZ, .bit5or6ofC314WasSet                      ;; 00:1bbe $20 $07
     ld   A, $10                                        ;; 00:1bc0 $3e $10
@@ -3958,7 +3994,7 @@ CallIfC324to5HadData:
     jr   Z, .jr_00_1c31                                ;; 00:1bd9 $28 $56
     dec  A                                             ;; 00:1bdb $3d
     ld   [wHamChatCursorIndexC38E], A                  ;; 00:1bdc $ea $8e $c3
-    ld   A, [wC316]                                    ;; 00:1bdf $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:1bdf $fa $16 $c3
     and  A, $10                                        ;; 00:1be2 $e6 $10
     jp   Z, JumpUsingOpTableUsingIndexFromC322_IfC323  ;; 00:1be4 $ca $39 $0a
     xor  A, A                                          ;; 00:1be7 $af
@@ -3978,10 +4014,10 @@ CallIfC324to5HadData:
     ld   [wReturnAddressC324.high], A                  ;; 00:1c03 $ea $25 $c3
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 00:1c06 $c3 $39 $0a
 .copyActionReturned0_didNotSetC6A0:
-    ld   A, [wC316]                                    ;; 00:1c09 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:1c09 $fa $16 $c3
     and  A, $20                                        ;; 00:1c0c $e6 $20
     jr   NZ, .jr_00_1c17                               ;; 00:1c0e $20 $07
-    ld   A, [wC316]                                    ;; 00:1c10 $fa $16 $c3
+    ld   A, [wNewlyPressedButtons]                     ;; 00:1c10 $fa $16 $c3
     and  A, $10                                        ;; 00:1c13 $e6 $10
     jr   Z, .jr_00_1c23                                ;; 00:1c15 $28 $0c
 .jr_00_1c17:

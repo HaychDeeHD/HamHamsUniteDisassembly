@@ -1806,11 +1806,11 @@ data_3c_6f1d:
 call_3c_6f38:
     Op50_WriteByte w1_D000, $01, $01                   ;; 3c:6f38 $50 $00 $d0 $01 $01
     Op1E_Call call_3c_6f68                             ;; 3c:6f3d $1e $68 $6f $3c
-    Op50_WriteByte wC31D, $00, $30                     ;; 3c:6f41 $50 $1d $c3 $00 $30
+    Op50_WriteByte wButtonsOfInterest, $00, $30        ;; 3c:6f41 $50 $1d $c3 $00 $30
 
 call_3c_6f46:
     SCRIPT_RETURN_4A                                   ;; 3c:6f46 $4a
-    Op82_Run data_01_74b7                              ;; 3c:6f47 $82 $b7 $74 $01
+    Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 3c:6f47 $82 $b7 $74 $01
     Op1C_TableJump 2                                   ;; 3c:6f4b $1c $02
     SCRIPT_POINTER call_3c_6f57                        ;; 3c:6f4d $57 $6f $3c
     SCRIPT_POINTER call_3c_6f57                        ;; 3c:6f50 $57 $6f $3c
