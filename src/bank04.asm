@@ -2560,32 +2560,48 @@ call_04_6f43:
     db   $04, $00, $81, $59, $04, $42, $05, $00        ;; 04:6fb2 ????????
     db   $ef, $59, $04, $42, $06, $00, $3b, $5a        ;; 04:6fba ????????
     db   $04, $42, $07, $00, $87, $5a, $04, $20        ;; 04:6fc2 ????????
+
+call_04_6fca:
     dw   $7fd2                                         ;; 04:6fca wW
     db   $1e, $00, $40, $05                            ;; 04:6fcc ....
+
+call_04_6fd0:
     dw   $7fb0                                         ;; 04:6fd0 wW
     db   $39                                           ;; 04:6fd2 .
     dw   $448d                                         ;; 04:6fd3 wW
     db   $05                                           ;; 04:6fd5 .
+
+call_04_6fd6:
     dw   $733f                                         ;; 04:6fd6 wW
     db   $3c                                           ;; 04:6fd8 .
     dw   $531e                                         ;; 04:6fd9 wW
     db   $05                                           ;; 04:6fdb .
+
+call_04_6fdc:
     dw   $72c4                                         ;; 04:6fdc wW
     db   $3c                                           ;; 04:6fde .
     dw   $590e                                         ;; 04:6fdf wW
     db   $05                                           ;; 04:6fe1 .
+
+call_04_6fe2:
     dw   $71b1                                         ;; 04:6fe2 wW
     db   $3c                                           ;; 04:6fe4 .
     dw   $5ea0                                         ;; 04:6fe5 wW
     db   $05                                           ;; 04:6fe7 .
+
+call_04_6fe8:
     dw   $737b                                         ;; 04:6fe8 wW
     db   $3c                                           ;; 04:6fea .
     dw   $6458                                         ;; 04:6feb wW
     db   $05                                           ;; 04:6fed .
+
+call_04_6fee:
     dw   $73eb                                         ;; 04:6fee wW
     db   $3c                                           ;; 04:6ff0 .
     dw   $6aa9                                         ;; 04:6ff1 wW
     db   $05                                           ;; 04:6ff3 .
+
+call_04_6ff4:
     dw   $7303                                         ;; 04:6ff4 wW
     db   $3c                                           ;; 04:6ff6 .
     dw   $7202                                         ;; 04:6ff7 wW

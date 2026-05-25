@@ -924,10 +924,16 @@ wBitArrayModeC717:
 ; -------------------------
 ; Start player state region
 ; -------------------------
+; Usually this address comes up as the beginning of the player state region.
+; But this very first byte can be used as an index to the 00:0154 table.
 wPlayerStateRegionStartC718:
     ds 2                                               ;; c718
 
-wC71A:
+; Index 3 in the playerStateRegion. Lots of scripts set this.
+; This value is used to branch in the main game loop.
+; Zero breaks out of the inner loop and returns to the outer loop.
+; Any other value lets the inner loop continue.
+wInnerMainGameLoopKeepGoingFlag:
     ds 2                                               ;; c71a
 
 wC71C:

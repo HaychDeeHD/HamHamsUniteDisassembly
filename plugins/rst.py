@@ -15,6 +15,9 @@ class Rst20Block(CodeBlock):
         ThreeByteAddressBlock(from_memory, next_addr)
         CodeBlock(from_memory, next_addr + 3)
 
+# TODO more rsts worth implementing?
+
+# TODO The 3byte address stuff could be in its own file.
 class ThreeByteAddressBlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=3)
@@ -23,8 +26,25 @@ class ThreeByteAddressBlock(Block):
         pointer = memory.word(addr)
         bankNum = memory.byte(addr + 2)
         bank = RomInfo.romBank(bankNum)
+        # TODO not every 3 byte address is going to be a "call"
         bank.addAutoLabel(pointer, None, "call")
         self.label = bank.getLabel(pointer)
     
     def export(self, file):
         file.asmLine(3, "ThreeByteAddress", str(self.label))
+
+# This will probably only be used for the size 8 table at 00:0154.
+@annotation(priority=0)
+def threeByteAddressPlusByte(memory, addr, amount):
+    for i in range(int(amount)):
+        ThreeByteAddressPlusByteBlock(memory, addr + i * 4)
+
+class ThreeByteAddressPlusByteBlock(ThreeByteAddressBlock):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr)
+        RomInfo.macros["ThreeByteAddressPlusByte"] = "dw \\1\ndb BANK(\\1)\ndb \\2"
+        self.resize(4)
+    
+    def export(self, file):
+        byte = self.memory.byte(file.addr + 3)
+        file.asmLine(4, "ThreeByteAddressPlusByte", str(self.label), "%02x" % byte)

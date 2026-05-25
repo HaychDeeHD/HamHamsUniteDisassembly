@@ -85,39 +85,46 @@ entry:
     ds   3                                             ;; 00:014d
 
 SECTION "bank00_0150", ROM0[$0150]
-    db   $01, $00, $00, $ff, $ca, $6f, $04, $01        ;; 00:0150 ????....
-    db   $d0, $6f, $04, $01, $d6, $6f, $04, $01        ;; 00:0158 ........
-    db   $dc, $6f, $04, $01, $e2, $6f, $04, $01        ;; 00:0160 ........
-    db   $e8, $6f, $04, $01, $ee, $6f, $04, $01        ;; 00:0168 ........
-    db   $f4, $6f, $04, $01, $ff, $ff, $ff, $ff        ;; 00:0170 ....????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0178 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0180 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0188 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0190 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0198 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01a0 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01a8 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01b0 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01b8 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01c0 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01c8 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01d0 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01d8 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01e0 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01e8 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01f0 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01f8 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0200 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0208 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0210 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0218 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0220 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0228 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0230 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0238 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0240 ????????
-    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0248 ????????
-    db   $ff, $ff, $ff, $ff                            ;; 00:0250 ????
+    db   $01, $00, $00, $ff                            ;; 00:0150 ????
+
+;@threeByteAddressPlusByte amount=8
+PointerTable0154:
+    ThreeByteAddressPlusByte call_04_6fca, 01          ;; 00:0154 $ca $6f $04 $01
+    ThreeByteAddressPlusByte call_04_6fd0, 01          ;; 00:0158 $d0 $6f $04 $01
+    ThreeByteAddressPlusByte call_04_6fd6, 01          ;; 00:015c $d6 $6f $04 $01
+    ThreeByteAddressPlusByte call_04_6fdc, 01          ;; 00:0160 $dc $6f $04 $01
+    ThreeByteAddressPlusByte call_04_6fe2, 01          ;; 00:0164 $e2 $6f $04 $01
+    ThreeByteAddressPlusByte call_04_6fe8, 01          ;; 00:0168 $e8 $6f $04 $01
+    ThreeByteAddressPlusByte call_04_6fee, 01          ;; 00:016c $ee $6f $04 $01
+    ThreeByteAddressPlusByte call_04_6ff4, 01          ;; 00:0170 $f4 $6f $04 $01
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0174 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:017c ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0184 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:018c ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0194 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:019c ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01a4 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01ac ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01b4 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01bc ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01c4 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01cc ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01d4 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01dc ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01e4 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01ec ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01f4 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:01fc ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0204 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:020c ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0214 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:021c ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0224 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:022c ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0234 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:023c ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0244 ????????
+    db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:024c ????????
 
 entry2:
     cp   A, $11                                        ;; 00:0254 $fe $11
@@ -301,38 +308,39 @@ call_00_02a7:
     ld   A, [wC66E]                                    ;; 00:038b $fa $6e $c6
     ldh  [rIE], A                                      ;; 00:038e $e0 $ff
     ei                                                 ;; 00:0390 $fb
-.jr_00_0391:
+.outerMainGameLoop:
     call call_00_275c                                  ;; 00:0391 $cd $5c $27
     call DoubleDerefC6A0to2_AddressIntoSelf            ;; 00:0394 $cd $c6 $23
-.jr_00_0397:
+.innerMainGameLoop:
     call call_00_03c9                                  ;; 00:0397 $cd $c9 $03
     call UpdateButtonRegisters                         ;; 00:039a $cd $e5 $03
-    call call_00_242f                                  ;; 00:039d $cd $2f $24
+    call UnknownFunction243C_useC3C4                   ;; 00:039d $cd $2f $24
     call JumpUsingOpTableUsingIndexFromC322            ;; 00:03a0 $cd $6b $09
-    call call_00_0589                                  ;; 00:03a3 $cd $89 $05
-    call call_00_2434                                  ;; 00:03a6 $cd $34 $24
-    ld   A, [wC71A]                                    ;; 00:03a9 $fa $1a $c7
+    call Ensure7bytesAtC625areZero                     ;; 00:03a3 $cd $89 $05
+    call UnknownFunction243C_useC3D0                   ;; 00:03a6 $cd $34 $24
+    ld   A, [wInnerMainGameLoopKeepGoingFlag]          ;; 00:03a9 $fa $1a $c7
     and  A, A                                          ;; 00:03ac $a7
-    jr   Z, .jr_00_03c0                                ;; 00:03ad $28 $11
-    call call_00_2fcf                                  ;; 00:03af $cd $cf $2f
+    jr   Z, .jumpToOuterMainGameLoop                   ;; 00:03ad $28 $11
+    call SearchRegionD5C5_thenDoSomething              ;; 00:03af $cd $cf $2f
     call call_00_2b52                                  ;; 00:03b2 $cd $52 $2b
     call call_00_2a7f                                  ;; 00:03b5 $cd $7f $2a
     call call_00_365c                                  ;; 00:03b8 $cd $5c $36
-    call call_00_2439                                  ;; 00:03bb $cd $39 $24
-    jr   .jr_00_0397                                   ;; 00:03be $18 $d7
-.jr_00_03c0:
-    jr   .jr_00_0391                                   ;; 00:03c0 $18 $cf
+    call UnknownFunction243C_useC3DC                   ;; 00:03bb $cd $39 $24
+    jr   .innerMainGameLoop                            ;; 00:03be $18 $d7
+.jumpToOuterMainGameLoop:
+    jr   .outerMainGameLoop                            ;; 00:03c0 $18 $cf
     db   $3e, $02, $ea, $10, $c3, $18, $12             ;; 00:03c2 ???????
 
 call_00_03c9:
-    call call_00_0784                                  ;; 00:03c9 $cd $84 $07
+    call NoOp_ImmediateReturn                          ;; 00:03c9 $cd $84 $07
     ld   A, [wC306]                                    ;; 00:03cc $fa $06 $c3
     and  A, A                                          ;; 00:03cf $a7
     call NZ, call_00_0422                              ;; 00:03d0 $c4 $22 $04
     ld   A, $01                                        ;; 00:03d3 $3e $01
     ld   [wCFF8], A                                    ;; 00:03d5 $ea $f8 $cf
     ld   [wC310], A                                    ;; 00:03d8 $ea $10 $c3
-    call call_00_27f3                                  ;; 00:03db $cd $f3 $27
+    call AdjustValuesCA9AtoCAA1                        ;; 00:03db $cd $f3 $27
+; Loops forever if C310 is not zero?
 .jr_00_03de:
     ld   A, [wC310]                                    ;; 00:03de $fa $10 $c3
     and  A, A                                          ;; 00:03e1 $a7
@@ -592,20 +600,24 @@ jp_00_04dd:
     nop                                                ;; 00:0586 $00
     jr   .jr_00_0584                                   ;; 00:0587 $18 $fb
 
-call_00_0589:
+; Loop 7 bytes from C625 looking for a nonzero.
+; Return if all zero.
+; When a nonzero is found, hang forever?
+Ensure7bytesAtC625areZero:
     ld   HL, wC625                                     ;; 00:0589 $21 $25 $c6
     ld   C, $07                                        ;; 00:058c $0e $07
     xor  A, A                                          ;; 00:058e $af
-.jr_00_058f:
+.loopOver7Bytes:
     or   A, [HL]                                       ;; 00:058f $b6
-    jr   NZ, .jr_00_0597                               ;; 00:0590 $20 $05
+    jr   NZ, .foundANonZero                            ;; 00:0590 $20 $05
     inc  HL                                            ;; 00:0592 $23
     dec  C                                             ;; 00:0593 $0d
-    jr   NZ, .jr_00_058f                               ;; 00:0594 $20 $f9
+    jr   NZ, .loopOver7Bytes                           ;; 00:0594 $20 $f9
     ret                                                ;; 00:0596 $c9
-.jr_00_0597:
+; Hang forever?
+.foundANonZero:
     nop                                                ;; 00:0597 $00
-    jr   .jr_00_0597                                   ;; 00:0598 $18 $fd
+    jr   .foundANonZero                                ;; 00:0598 $18 $fd
 
 jp_00_059a:
     di                                                 ;; 00:059a $f3
@@ -887,7 +899,7 @@ call_00_0731:
     ld   [wCurrentRomBankC677], A                      ;; 00:0780 $ea $77 $c6
     ret                                                ;; 00:0783 $c9
 
-call_00_0784:
+NoOp_ImmediateReturn:
     ret                                                ;; 00:0784 $c9
 
 call_00_0785:
@@ -1626,7 +1638,7 @@ Op54:
     ld   [wC6A9], A                                    ;; 00:0c8f $ea $a9 $c6
     ld   [wPlayerStateRegionStartC718], A              ;; 00:0c92 $ea $18 $c7
     ld   A, $00                                        ;; 00:0c95 $3e $00
-    ld   [wC71A], A                                    ;; 00:0c97 $ea $1a $c7
+    ld   [wInnerMainGameLoopKeepGoingFlag], A          ;; 00:0c97 $ea $1a $c7
     call call_00_0f79                                  ;; 00:0c9a $cd $79 $0f
     xor  A, A                                          ;; 00:0c9d $af
     ld   [wSomeOffsetOfAddressArrayC6AA], A            ;; 00:0c9e $ea $aa $c6
@@ -5079,18 +5091,18 @@ DoubleDerefC6A0to2_AddressIntoSelf:
     ld   [wStackStartC5E5], A                          ;; 00:242b $ea $e4 $c5
     ret                                                ;; 00:242e $c9
 
-call_00_242f:
+UnknownFunction243C_useC3C4:
     ld   HL, wOp80_3ByteRegionC3C4                     ;; 00:242f $21 $c4 $c3
-    jr   jr_00_243c                                    ;; 00:2432 $18 $08
+    jr   UnknownFunction243C_internal                  ;; 00:2432 $18 $08
 
-call_00_2434:
+UnknownFunction243C_useC3D0:
     ld   HL, wOp90_3ByteRegionC3D0                     ;; 00:2434 $21 $d0 $c3
-    jr   jr_00_243c                                    ;; 00:2437 $18 $03
+    jr   UnknownFunction243C_internal                  ;; 00:2437 $18 $03
 
-call_00_2439:
+UnknownFunction243C_useC3DC:
     ld   HL, wOp98_3ByteRegionC3DC                     ;; 00:2439 $21 $dc $c3
 
-jr_00_243c:
+UnknownFunction243C_internal:
     ld   D, $04                                        ;; 00:243c $16 $04
 .jr_00_243e:
     ld   E, $00                                        ;; 00:243e $1e $00
@@ -5520,13 +5532,17 @@ call_00_26e2:
 
 call_00_275c:
     ld   DE, $00                                       ;; 00:275c $11 $00 $00
+; This data just happens to be the first byte in the playerStateRegion.
     ld   A, [wPlayerStateRegionStartC718]              ;; 00:275f $fa $18 $c7
     ld   E, A                                          ;; 00:2762 $5f
     sla  E                                             ;; 00:2763 $cb $23
     rl   D                                             ;; 00:2765 $cb $12
     sla  E                                             ;; 00:2767 $cb $23
     rl   D                                             ;; 00:2769 $cb $12
-    ld   HL, $154                                      ;; 00:276b $21 $54 $01
+; DE is now the value in C718 times 4.
+; Table 0154 has entries 4 bytes long.
+; So C718 was effectively an index into this table.
+    ld   HL, PointerTable0154 ;@=ptr                   ;; 00:276b $21 $54 $01
     add  HL, DE                                        ;; 00:276e $19
     ld   A, [HL+]                                      ;; 00:276f $2a
     ld   [wArgAddressC6A0], A                          ;; 00:2770 $ea $a0 $c6
@@ -5536,16 +5552,18 @@ call_00_275c:
     ld   [wArgAddressC6A0.bank], A                     ;; 00:2778 $ea $a2 $c6
     ld   A, [HL]                                       ;; 00:277b $7e
     and  A, A                                          ;; 00:277c $a7
-    jr   Z, .jr_00_2788                                ;; 00:277d $28 $09
-    call call_00_27be                                  ;; 00:277f $cd $be $27
-    call call_00_27dd                                  ;; 00:2782 $cd $dd $27
-    call call_00_27a4                                  ;; 00:2785 $cd $a4 $27
-.jr_00_2788:
+    jr   Z, .afterWramRegionReset                      ;; 00:277d $28 $09
+;  If the 4th byte is nonzero, reset some wram regions.
+; (It looks like *all* of them have 01 as the 4th byte?)
+    call ZeroOut_C000toC66E_thenWriteThreeSpecificBytes ;; 00:277f $cd $be $27
+    call ZeroOutWramBank1_D000toDD9A                   ;; 00:2782 $cd $dd $27
+    call WriteFiveSpecificWramBank1Bytes               ;; 00:2785 $cd $a4 $27
+.afterWramRegionReset:
     xor  A, A                                          ;; 00:2788 $af
     ld   [wC306], A                                    ;; 00:2789 $ea $06 $c3
     ld   [wC311], A                                    ;; 00:278c $ea $11 $c3
     ld   A, $ff                                        ;; 00:278f $3e $ff
-    ld   [wC71A], A                                    ;; 00:2791 $ea $1a $c7
+    ld   [wInnerMainGameLoopKeepGoingFlag], A          ;; 00:2791 $ea $1a $c7
     ld   A, $de                                        ;; 00:2794 $3e $de
     ld   [wC679], A                                    ;; 00:2796 $ea $79 $c6
     ld   A, $08                                        ;; 00:2799 $3e $08
@@ -5554,7 +5572,7 @@ call_00_275c:
     ld   [wC67B], A                                    ;; 00:27a0 $ea $7b $c6
     ret                                                ;; 00:27a3 $c9
 
-call_00_27a4:
+WriteFiveSpecificWramBank1Bytes:
     ld   A, $ff                                        ;; 00:27a4 $3e $ff
     ld   [w1_D5C3], A                                  ;; 00:27a6 $ea $c3 $d5
     ld   A, $03                                        ;; 00:27a9 $3e $03
@@ -5567,18 +5585,18 @@ call_00_27a4:
     ld   [w1_D917], A                                  ;; 00:27ba $ea $17 $d9
     ret                                                ;; 00:27bd $c9
 
-call_00_27be:
+ZeroOut_C000toC66E_thenWriteThreeSpecificBytes:
     ld   A, $00                                        ;; 00:27be $3e $00
     ldh  [rSVBK], A                                    ;; 00:27c0 $e0 $70
     ld   HL, wC000                                     ;; 00:27c2 $21 $00 $c0
     ld   DE, $66e                                      ;; 00:27c5 $11 $6e $06
-.jr_00_27c8:
+.zeroingLoop:
     xor  A, A                                          ;; 00:27c8 $af
     ld   [HL+], A                                      ;; 00:27c9 $22
     dec  DE                                            ;; 00:27ca $1b
     ld   A, E                                          ;; 00:27cb $7b
     or   A, D                                          ;; 00:27cc $b2
-    jr   NZ, .jr_00_27c8                               ;; 00:27cd $20 $f9
+    jr   NZ, .zeroingLoop                              ;; 00:27cd $20 $f9
     ld   A, $18                                        ;; 00:27cf $3e $18
     ld   [wC31A], A                                    ;; 00:27d1 $ea $1a $c3
     ld   [wC319], A                                    ;; 00:27d4 $ea $19 $c3
@@ -5586,26 +5604,27 @@ call_00_27be:
     ld   [wC31B], A                                    ;; 00:27d9 $ea $1b $c3
     ret                                                ;; 00:27dc $c9
 
-call_00_27dd:
+ZeroOutWramBank1_D000toDD9A:
     ld   A, $01                                        ;; 00:27dd $3e $01
     ldh  [rSVBK], A                                    ;; 00:27df $e0 $70
     ld   HL, w1_D000                                   ;; 00:27e1 $21 $00 $d0
     ld   DE, $d9a                                      ;; 00:27e4 $11 $9a $0d
-.jr_00_27e7:
+.zeroingLoop:
     xor  A, A                                          ;; 00:27e7 $af
     ld   [HL+], A                                      ;; 00:27e8 $22
     dec  DE                                            ;; 00:27e9 $1b
     ld   A, E                                          ;; 00:27ea $7b
     or   A, D                                          ;; 00:27eb $b2
-    jr   NZ, .jr_00_27e7                               ;; 00:27ec $20 $f9
+    jr   NZ, .zeroingLoop                              ;; 00:27ec $20 $f9
     ret                                                ;; 00:27ee $c9
 
-call_00_27ef:
-    call call_00_27f3                                  ;; 00:27ef $cd $f3 $27
+AdjustValuesCA9AtoCAA1_noopWrapper:
+    call AdjustValuesCA9AtoCAA1                        ;; 00:27ef $cd $f3 $27
     ret                                                ;; 00:27f2 $c9
 
-call_00_27f3:
+AdjustValuesCA9AtoCAA1:
     ld   B, $77                                        ;; 00:27f3 $06 $77
+; Add 0x77 (plus carry) to each of CA9A-D
     ld   A, [wCA9A]                                    ;; 00:27f5 $fa $9a $ca
     adc  A, B                                          ;; 00:27f8 $88
     ld   [wCA9A], A                                    ;; 00:27f9 $ea $9a $ca
@@ -5618,6 +5637,7 @@ call_00_27f3:
     ld   A, [wCA9D]                                    ;; 00:280a $fa $9d $ca
     adc  A, B                                          ;; 00:280d $88
     ld   [wCA9D], A                                    ;; 00:280e $ea $9d $ca
+; Sub 0xAE (plus carry) to each of CA9A-D
     ld   B, $ae                                        ;; 00:2811 $06 $ae
     ld   A, [wCA9A]                                    ;; 00:2813 $fa $9a $ca
     sbc  A, B                                          ;; 00:2816 $98
@@ -5631,6 +5651,7 @@ call_00_27f3:
     ld   A, [wCA9D]                                    ;; 00:2828 $fa $9d $ca
     sbc  A, B                                          ;; 00:282b $98
     ld   [wCA9D], A                                    ;; 00:282c $ea $9d $ca
+; CA9A-B in BC, CA9C-D in DE
     ld   A, [wCA9A]                                    ;; 00:282f $fa $9a $ca
     ld   C, A                                          ;; 00:2832 $4f
     ld   A, [wCA9B]                                    ;; 00:2833 $fa $9b $ca
@@ -5639,18 +5660,23 @@ call_00_27f3:
     ld   E, A                                          ;; 00:283a $5f
     ld   A, [wCA9D]                                    ;; 00:283b $fa $9d $ca
     ld   D, A                                          ;; 00:283e $57
+; Put CA9A + CA9D (plus carry) in CA9E
     ld   A, [wCA9A]                                    ;; 00:283f $fa $9a $ca
     adc  A, D                                          ;; 00:2842 $8a
     ld   [wCA9E], A                                    ;; 00:2843 $ea $9e $ca
+; Put CA9B + CA9C (plus carry) in CA9F
     ld   A, [wCA9B]                                    ;; 00:2846 $fa $9b $ca
     adc  A, E                                          ;; 00:2849 $8b
     ld   [wCA9F], A                                    ;; 00:284a $ea $9f $ca
+; Put CA9C + CA9B (plus carry) in CAA0
     ld   A, [wCA9C]                                    ;; 00:284d $fa $9c $ca
     adc  A, B                                          ;; 00:2850 $88
     ld   [wCAA0], A                                    ;; 00:2851 $ea $a0 $ca
+; Put CA9D + CA9A (plus carry) in CAA1
     ld   A, [wCA9D]                                    ;; 00:2854 $fa $9d $ca
     adc  A, C                                          ;; 00:2857 $89
     ld   [wCAA1], A                                    ;; 00:2858 $ea $a1 $ca
+; At the end, CA9E == CAA1 and CA9F == CAA0 (?)
     ret                                                ;; 00:285b $c9
 
 call_00_285c:
@@ -6148,7 +6174,7 @@ call_00_2b52:
     ld   [wC378], A                                    ;; 00:2b58 $ea $78 $c3
     ld   A, $c2                                        ;; 00:2b5b $3e $c2
     ld   [wC379], A                                    ;; 00:2b5d $ea $79 $c3
-    ld   HL, $2ba8                                     ;; 00:2b60 $21 $a8 $2b
+    ld   HL, WramOneTable2BA8 ;@=ptr                   ;; 00:2b60 $21 $a8 $2b
     ld   A, [w1_D001]                                  ;; 00:2b63 $fa $01 $d0
     ld   C, A                                          ;; 00:2b66 $4f
     ld   A, [w1_D002]                                  ;; 00:2b67 $fa $02 $d0
@@ -6160,6 +6186,7 @@ call_00_2b52:
 
 jr_00_2b72:
     push HL                                            ;; 00:2b72 $e5
+; BC is either what was in D001-2 or it's $D003 if they were empty.
     ld   A, [BC]                                       ;; 00:2b73 $0a
     and  A, A                                          ;; 00:2b74 $a7
     jr   Z, jp_00_2b95                                 ;; 00:2b75 $28 $1e
@@ -6196,40 +6223,44 @@ jp_00_2b95:
     cp   A, B                                          ;; 00:2ba3 $b8
     jr   NZ, jr_00_2b72                                ;; 00:2ba4 $20 $cc
     jr   .jr_00_2b96                                   ;; 00:2ba6 $18 $ee
-    dw   w1_D003                                       ;; 00:2ba8 pP
-    dw   w1_D003                                       ;; 00:2baa pP
-    dw   w1_D031                                       ;; 00:2bac pP
-    dw   w1_D05F                                       ;; 00:2bae pP
-    dw   w1_D08D                                       ;; 00:2bb0 pP
-    dw   w1_D0BB                                       ;; 00:2bb2 pP
-    dw   $d0e9                                         ;; 00:2bb4 pP
-    dw   $d117                                         ;; 00:2bb6 pP
-    dw   w1_D145                                       ;; 00:2bb8 pP
-    dw   w1_D173                                       ;; 00:2bba pP
-    dw   w1_D1A1                                       ;; 00:2bbc pP
-    dw   w1_D1CF                                       ;; 00:2bbe pP
-    dw   w1_BeginRegionD1FD                            ;; 00:2bc0 pP
-    dw   w1_D22B                                       ;; 00:2bc2 pP
-    dw   w1_D259                                       ;; 00:2bc4 pP
-    dw   w1_D287                                       ;; 00:2bc6 pP
-    dw   w1_D2B5                                       ;; 00:2bc8 pP
-    dw   w1_D2E3                                       ;; 00:2bca pP
-    dw   w1_D311                                       ;; 00:2bcc pP
-    dw   w1_D33F                                       ;; 00:2bce pP
-    dw   w1_D36D                                       ;; 00:2bd0 pP
-    dw   $d39b                                         ;; 00:2bd2 pP
-    dw   $d3c9                                         ;; 00:2bd4 pP
-    dw   $d3f7                                         ;; 00:2bd6 pP
-    dw   $d425                                         ;; 00:2bd8 pP
-    dw   w1_D453                                       ;; 00:2bda pP
-    dw   w1_D481                                       ;; 00:2bdc pP
-    dw   $d4af                                         ;; 00:2bde pP
-    dw   w1_D4DD                                       ;; 00:2be0 pP
-    dw   $d50b                                         ;; 00:2be2 pP
-    dw   w1_D539                                       ;; 00:2be4 pP
-    dw   $d567                                         ;; 00:2be6 pP
-    dw   $d595                                         ;; 00:2be8 pP
-    dw   w1_D5C3                                       ;; 00:2bea pP
+
+; I don't know why some of these didn't get labels.
+;@data format=p amount=34
+WramOneTable2BA8:
+    dw   w1_D003                                       ;; 00:2ba8 pP $00
+    dw   w1_D003                                       ;; 00:2baa pP $01
+    dw   w1_D031                                       ;; 00:2bac pP $02
+    dw   w1_D05F                                       ;; 00:2bae pP $03
+    dw   w1_D08D                                       ;; 00:2bb0 pP $04
+    dw   w1_D0BB                                       ;; 00:2bb2 pP $05
+    dw   $d0e9                                         ;; 00:2bb4 pP $06
+    dw   $d117                                         ;; 00:2bb6 pP $07
+    dw   w1_D145                                       ;; 00:2bb8 pP $08
+    dw   w1_D173                                       ;; 00:2bba pP $09
+    dw   w1_D1A1                                       ;; 00:2bbc pP $0a
+    dw   w1_D1CF                                       ;; 00:2bbe pP $0b
+    dw   w1_BeginRegionD1FD                            ;; 00:2bc0 pP $0c
+    dw   w1_D22B                                       ;; 00:2bc2 pP $0d
+    dw   w1_D259                                       ;; 00:2bc4 pP $0e
+    dw   w1_D287                                       ;; 00:2bc6 pP $0f
+    dw   w1_D2B5                                       ;; 00:2bc8 pP $10
+    dw   w1_D2E3                                       ;; 00:2bca pP $11
+    dw   w1_D311                                       ;; 00:2bcc pP $12
+    dw   w1_D33F                                       ;; 00:2bce pP $13
+    dw   w1_D36D                                       ;; 00:2bd0 pP $14
+    dw   $d39b                                         ;; 00:2bd2 pP $15
+    dw   $d3c9                                         ;; 00:2bd4 pP $16
+    dw   $d3f7                                         ;; 00:2bd6 pP $17
+    dw   $d425                                         ;; 00:2bd8 pP $18
+    dw   w1_D453                                       ;; 00:2bda pP $19
+    dw   w1_D481                                       ;; 00:2bdc pP $1a
+    dw   $d4af                                         ;; 00:2bde pP $1b
+    dw   w1_D4DD                                       ;; 00:2be0 pP $1c
+    dw   $d50b                                         ;; 00:2be2 pP $1d
+    dw   w1_D539                                       ;; 00:2be4 pP $1e
+    dw   $d567                                         ;; 00:2be6 pP $1f
+    dw   $d595                                         ;; 00:2be8 pP $20
+    dw   w1_D5C3                                       ;; 00:2bea pP $21
 
 jr_00_2bec:
     ld   HL, $01                                       ;; 00:2bec $21 $01 $00
@@ -6831,33 +6862,37 @@ jr_00_2bec:
     ldh  [rSVBK], A                                    ;; 00:2fca $e0 $70
     jp   .jp_00_2dee                                   ;; 00:2fcc $c3 $ee $2d
 
-call_00_2fcf:
+; Iterates over a region starting at w1_D5C5 where entries have size 0x29.
+; FF signals the end of that region.
+; This function looks for a nonzero entry and does stuff if it finds one.
+SearchRegionD5C5_thenDoSomething:
     ld   A, $01                                        ;; 00:2fcf $3e $01
     ldh  [rSVBK], A                                    ;; 00:2fd1 $e0 $70
     ld   HL, w1_D5C5                                   ;; 00:2fd3 $21 $c5 $d5
 
-jr_00_2fd6:
+; I don't know why these are all nonlocal labels.
+SearchRegionD5C5_thenDoSomething_internal:
     push HL                                            ;; 00:2fd6 $e5
     ld   A, [HL]                                       ;; 00:2fd7 $7e
     and  A, A                                          ;; 00:2fd8 $a7
-    jr   Z, jp_00_2fe4                                 ;; 00:2fd9 $28 $09
+    jr   Z, SearchRegionD5C5_foundZero                 ;; 00:2fd9 $28 $09
     cp   A, $ff                                        ;; 00:2fdb $fe $ff
-    jr   Z, jr_00_2feb                                 ;; 00:2fdd $28 $0c
+    jr   Z, SearchRegionD5C5_hitRegionEnd              ;; 00:2fdd $28 $0c
     ld   C, L                                          ;; 00:2fdf $4d
     ld   B, H                                          ;; 00:2fe0 $44
-    jp   jp_00_2fed                                    ;; 00:2fe1 $c3 $ed $2f
+    jp   SearchRegionD5C5_foundSomething               ;; 00:2fe1 $c3 $ed $2f
 
-jp_00_2fe4:
+SearchRegionD5C5_foundZero:
     pop  HL                                            ;; 00:2fe4 $e1
     ld   DE, $29                                       ;; 00:2fe5 $11 $29 $00
     add  HL, DE                                        ;; 00:2fe8 $19
-    jr   jr_00_2fd6                                    ;; 00:2fe9 $18 $eb
+    jr   SearchRegionD5C5_thenDoSomething_internal     ;; 00:2fe9 $18 $eb
 
-jr_00_2feb:
+SearchRegionD5C5_hitRegionEnd:
     pop  HL                                            ;; 00:2feb $e1
     ret                                                ;; 00:2fec $c9
 
-jp_00_2fed:
+SearchRegionD5C5_foundSomething:
     ld   [wC378], A                                    ;; 00:2fed $ea $78 $c3
     ld   HL, $01                                       ;; 00:2ff0 $21 $01 $00
     add  HL, BC                                        ;; 00:2ff3 $09
@@ -6945,7 +6980,7 @@ jp_00_301f:
     ld   A, [wC379]                                    ;; 00:3075 $fa $79 $c3
     and  A, A                                          ;; 00:3078 $a7
     jp   Z, jp_00_301f                                 ;; 00:3079 $ca $1f $30
-    jp   jp_00_2fe4                                    ;; 00:307c $c3 $e4 $2f
+    jp   SearchRegionD5C5_foundZero                    ;; 00:307c $c3 $e4 $2f
 .jp_00_307f:
     push DE                                            ;; 00:307f $d5
     and  A, $7f                                        ;; 00:3080 $e6 $7f
@@ -7006,7 +7041,7 @@ data_00_30d9:
     cp   A, E                                          ;; 00:30e0 $bb
     jr   NZ, .jr_00_30e7                               ;; 00:30e1 $20 $04
     ld   [BC], A                                       ;; 00:30e3 $02
-    jp   jp_00_2fe4                                    ;; 00:30e4 $c3 $e4 $2f
+    jp   SearchRegionD5C5_foundZero                    ;; 00:30e4 $c3 $e4 $2f
 .jr_00_30e7:
     dec  [HL]                                          ;; 00:30e7 $35
     dec  [HL]                                          ;; 00:30e8 $35
@@ -7329,7 +7364,7 @@ data_00_3361:
     ld   [HL], A                                       ;; 00:3369 $77
     inc  DE                                            ;; 00:336a $13
     call call_00_30d1                                  ;; 00:336b $cd $d1 $30
-    jp   jp_00_2fe4                                    ;; 00:336e $c3 $e4 $2f
+    jp   SearchRegionD5C5_foundZero                    ;; 00:336e $c3 $e4 $2f
 
 data_00_3371:
     ld   HL, $05                                       ;; 00:3371 $21 $05 $00
@@ -7343,7 +7378,7 @@ data_00_3371:
     ld   A, [DE]                                       ;; 00:337b $1a
     ld   [HL], A                                       ;; 00:337c $77
     inc  DE                                            ;; 00:337d $13
-    jp   jp_00_2fe4                                    ;; 00:337e $c3 $e4 $2f
+    jp   SearchRegionD5C5_foundZero                    ;; 00:337e $c3 $e4 $2f
     db   $1a, $02, $13, $cd, $d1, $30, $c3, $1f        ;; 00:3381 ????????
     db   $30                                           ;; 00:3389 ?
 
@@ -8083,7 +8118,7 @@ call_00_3889:
     jr   NZ, .jr_00_38ad                               ;; 00:38b2 $20 $f9
     call call_00_38d2                                  ;; 00:38b4 $cd $d2 $38
     ld   A, $ff                                        ;; 00:38b7 $3e $ff
-    ld   [wC71A], A                                    ;; 00:38b9 $ea $1a $c7
+    ld   [wInnerMainGameLoopKeepGoingFlag], A          ;; 00:38b9 $ea $1a $c7
     ld   [wC73D], A                                    ;; 00:38bc $ea $3d $c7
     ld   [wC736], A                                    ;; 00:38bf $ea $36 $c7
     ld   [wC721], A                                    ;; 00:38c2 $ea $21 $c7

@@ -1423,7 +1423,7 @@ data_02_4b2e:
     ld   [wCAC2], A                                    ;; 02:4b39 $ea $c2 $ca
 
 jp_02_4b3c:
-    call call_00_27f3                                  ;; 02:4b3c $cd $f3 $27
+    call AdjustValuesCA9AtoCAA1                        ;; 02:4b3c $cd $f3 $27
     ld   A, [wCA9A]                                    ;; 02:4b3f $fa $9a $ca
     and  A, $3f                                        ;; 02:4b42 $e6 $3f
     ld   [wCAC6], A                                    ;; 02:4b44 $ea $c6 $ca

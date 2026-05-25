@@ -377,6 +377,11 @@ MACRO ThreeByteAddress
 dw \1
 db BANK(\1)
 ENDM
+MACRO ThreeByteAddressPlusByte
+dw \1
+db BANK(\1)
+db \2
+ENDM
 MACRO ld_long_load
 db $FA
 dw \2

@@ -4799,7 +4799,7 @@ call_01_62cb:
     ld   A, [DE]                                       ;; 01:62ed $1a
     cp   A, $ff                                        ;; 01:62ee $fe $ff
     jr   Z, .jr_01_6314                                ;; 01:62f0 $28 $22
-    ld   HL, $2bda + $01                               ;; 01:62f2 $21 $db $2b
+    ld   HL, $2bdb                                     ;; 01:62f2 $21 $db $2b
     add  HL, DE                                        ;; 01:62f5 $19
     ld   A, H                                          ;; 01:62f6 $7c
     and  A, $80                                        ;; 01:62f7 $e6 $80
@@ -4900,7 +4900,7 @@ call_01_6368:
     inc  DE                                            ;; 01:637a $13
     ld   A, [DE]                                       ;; 01:637b $1a
     ld   H, A                                          ;; 01:637c $67
-    ld   DE, $2bda + $01                               ;; 01:637d $11 $db $2b
+    ld   DE, $2bdb                                     ;; 01:637d $11 $db $2b
     add  HL, DE                                        ;; 01:6380 $19
     ld   A, H                                          ;; 01:6381 $7c
     and  A, $80                                        ;; 01:6382 $e6 $80
@@ -5173,7 +5173,7 @@ jp_01_6410:
     adc  A, H                                          ;; 01:654f $8c
     ld   [wC697], A                                    ;; 01:6550 $ea $97 $c6
 .jr_01_6553:
-    jp   jp_00_2fe4                                    ;; 01:6553 $c3 $e4 $2f
+    jp   SearchRegionD5C5_foundZero                    ;; 01:6553 $c3 $e4 $2f
 
 call_01_6556:
     ld   A, [wDupeBitArrayIndexC358]                   ;; 01:6556 $fa $58 $c3
@@ -6506,7 +6506,7 @@ JumpToScriptAddressStoredInC65AtoC_ifNonzero:
     ret                                                ;; 01:7463 $c9
 
 data_01_7464:
-    call call_00_27ef                                  ;; 01:7464 $cd $ef $27
+    call AdjustValuesCA9AtoCAA1_noopWrapper            ;; 01:7464 $cd $ef $27
     call readTwoWordsAfterCurrentScriptPointerToBCDE   ;; 01:7467 $cd $65 $23
     ld   A, $05                                        ;; 01:746a $3e $05
     ld   [wLengthOfPreviousInstructionC326], A         ;; 01:746c $ea $26 $c3
