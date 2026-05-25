@@ -678,13 +678,14 @@ wC650:
 wC651:
     ds 9                                               ;; c651
 
-wC65A:
+; A script addresses can be stored in this.
+; The stored address can be put back in C6A0-2.
+; Kind of like a build-your-own return or jump or loop.
+wStoredScriptAddress:
     ds 1                                               ;; c65a
-
-wC65B:
+.high:
     ds 1                                               ;; c65b
-
-wC65C:
+.bank:
     ds 1                                               ;; c65c
 
 wC65D:

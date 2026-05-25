@@ -6461,9 +6461,11 @@ data_01_7407:
     ld   [HL], A                                       ;; 01:7414 $77
     ret                                                ;; 01:7415 $c9
 
-data_01_7416:
+; Puts the 3 byte address of the upcoming script instruction in C65A-C.
+; Has logic for wrapping from the end of one bank to the start of the next.
+StoreNextScriptAddressInC65AtoC:
     ld   A, [wArgAddressC6A0.bank]                     ;; 01:7416 $fa $a2 $c6
-    ld   [wC65C], A                                    ;; 01:7419 $ea $5c $c6
+    ld   [wStoredScriptAddress.bank], A                ;; 01:7419 $ea $5c $c6
     ld   A, [wLengthOfPreviousInstructionC326]         ;; 01:741c $fa $26 $c3
     ld   E, A                                          ;; 01:741f $5f
     ld   D, $00                                        ;; 01:7420 $16 $00
@@ -6476,27 +6478,27 @@ data_01_7416:
     cp   A, $80                                        ;; 01:742c $fe $80
     jr   C, .jr_01_7439                                ;; 01:742e $38 $09
     ld   H, $40                                        ;; 01:7430 $26 $40
-    ld   A, [wC65C]                                    ;; 01:7432 $fa $5c $c6
+    ld   A, [wStoredScriptAddress.bank]                ;; 01:7432 $fa $5c $c6
     inc  A                                             ;; 01:7435 $3c
-    ld   [wC65C], A                                    ;; 01:7436 $ea $5c $c6
+    ld   [wStoredScriptAddress.bank], A                ;; 01:7436 $ea $5c $c6
 .jr_01_7439:
     ld   A, L                                          ;; 01:7439 $7d
-    ld   [wC65A], A                                    ;; 01:743a $ea $5a $c6
+    ld   [wStoredScriptAddress], A                     ;; 01:743a $ea $5a $c6
     ld   A, H                                          ;; 01:743d $7c
-    ld   [wC65B], A                                    ;; 01:743e $ea $5b $c6
+    ld   [wStoredScriptAddress.high], A                ;; 01:743e $ea $5b $c6
     ret                                                ;; 01:7441 $c9
 
-data_01_7442:
-    ld   A, [wC65B]                                    ;; 01:7442 $fa $5b $c6
+JumpToScriptAddressStoredInC65AtoC_ifNonzero:
+    ld   A, [wStoredScriptAddress.high]                ;; 01:7442 $fa $5b $c6
     ld   B, A                                          ;; 01:7445 $47
-    ld   A, [wC65A]                                    ;; 01:7446 $fa $5a $c6
+    ld   A, [wStoredScriptAddress]                     ;; 01:7446 $fa $5a $c6
     or   A, B                                          ;; 01:7449 $b0
     jr   Z, .jr_01_7463                                ;; 01:744a $28 $17
-    ld   A, [wC65A]                                    ;; 01:744c $fa $5a $c6
+    ld   A, [wStoredScriptAddress]                     ;; 01:744c $fa $5a $c6
     ld   [wArgAddressC6A0], A                          ;; 01:744f $ea $a0 $c6
-    ld   A, [wC65B]                                    ;; 01:7452 $fa $5b $c6
+    ld   A, [wStoredScriptAddress.high]                ;; 01:7452 $fa $5b $c6
     ld   [wArgAddressC6A0.high], A                     ;; 01:7455 $ea $a1 $c6
-    ld   A, [wC65C]                                    ;; 01:7458 $fa $5c $c6
+    ld   A, [wStoredScriptAddress.bank]                ;; 01:7458 $fa $5c $c6
     ld   [wArgAddressC6A0.bank], A                     ;; 01:745b $ea $a2 $c6
     ld   A, $00                                        ;; 01:745e $3e $00
     ld   [wLengthOfPreviousInstructionC326], A         ;; 01:7460 $ea $26 $c3

@@ -15,7 +15,7 @@ call_33_400c:
     Op16_SubOps 1                                      ;; 33:400c $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 33:400e $5e $03
     Op82_Run data_01_73cc                              ;; 33:4010 $82 $cc $73 $01
-    Op82_Run data_01_7416                              ;; 33:4014 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:4014 $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 33:4018 $50 $1d $c3 $00 $d0
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 33:401d $2a $00 $00 $00
     Op1C_TableJump 9                                   ;; 33:4021 $1c $09
@@ -40,7 +40,7 @@ call_33_4051:
     Op14_Unknown 1, $aa, $73                           ;; 33:4055 $14 $01 $aa $73
     SCRIPT_POINTER call_33_400c                        ;; 33:4059 $0c $40 $33
     Op1E_Call call_33_407f                             ;; 33:405c $1e $7f $40 $33
-    Op82_Run data_01_7442                              ;; 33:4060 $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:4060 $82 $42 $74 $01
     Op18_Jump call_33_400c                             ;; 33:4064 $18 $0c $40 $33
 
 call_33_4068:
@@ -48,7 +48,7 @@ call_33_4068:
     Op14_Unknown 1, $aa, $73                           ;; 33:406c $14 $01 $aa $73
     SCRIPT_POINTER call_33_400c                        ;; 33:4070 $0c $40 $33
     Op1E_Call call_33_407f                             ;; 33:4073 $1e $7f $40 $33
-    Op82_Run data_01_7442                              ;; 33:4077 $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:4077 $82 $42 $74 $01
     Op18_Jump call_33_400c                             ;; 33:407b $18 $0c $40 $33
 
 call_33_407f:
@@ -219,7 +219,7 @@ call_33_42d3:
     SCRIPT_RETURN_20                                   ;; 33:42d3 $20
 
 call_33_42d4:
-    Op82_Run data_01_7416                              ;; 33:42d4 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:42d4 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:42d8 $16 $01
     SubOp_SetWord wC752, $0080                         ;; 33:42da $9e $3a $80 $00
     Op1E_Call call_33_490f                             ;; 33:42de $1e $0f $49 $33
@@ -237,7 +237,7 @@ call_33_42ee:
     Op18_Jump call_33_400c                             ;; 33:42fd $18 $0c $40 $33
 
 call_33_4301:
-    Op82_Run data_01_7416                              ;; 33:4301 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:4301 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:4305 $16 $01
     SubOp_SetWord wC752, $0d00                         ;; 33:4307 $9e $3a $00 $0d
     Op1E_Call call_33_490f                             ;; 33:430b $1e $0f $49 $33
@@ -342,7 +342,7 @@ call_33_4418:
     Op18_Jump call_33_400c                             ;; 33:4427 $18 $0c $40 $33
 
 call_33_442b:
-    Op82_Run data_01_7416                              ;; 33:442b $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:442b $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:442f $1e $1d $6f $1d
     Op10_HamChatWheel 6, data_05_735d, data_05_73a2    ;; 33:4433 $10 $06 $5d $73 $a2 $73
     Op1C_TableJump 6                                   ;; 33:4439 $1c $06
@@ -1345,7 +1345,7 @@ call_33_522b:
     Op16_SubOps 1                                      ;; 33:522b $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 33:522d $5e $03
     Op82_Run data_01_73cc                              ;; 33:522f $82 $cc $73 $01
-    Op82_Run data_01_7416                              ;; 33:5233 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5233 $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 33:5237 $50 $1d $c3 $00 $d0
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 33:523c $2a $00 $00 $00
     Op68_CopyBytes 1, wC819, wOp1CScriptTableIndexC53A, $00 ;; 33:5240 $68 $01 $19 $c8 $3a $c5 $00
@@ -1372,7 +1372,7 @@ call_33_527c:
     Op14_Unknown 1, $7c, $60                           ;; 33:5280 $14 $01 $7c $60
     SCRIPT_POINTER call_33_522b                        ;; 33:5284 $2b $52 $33
     Op1E_Call call_33_52bb                             ;; 33:5287 $1e $bb $52 $33
-    Op82_Run data_01_7442                              ;; 33:528b $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:528b $82 $42 $74 $01
     Op18_Jump call_33_522b                             ;; 33:528f $18 $2b $52 $33
 
 call_33_5293:
@@ -1382,7 +1382,7 @@ call_33_5293:
     Op16_SubOps 1                                      ;; 33:529e $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 33:52a0 $5e $03
     Op1E_Call call_33_52bb                             ;; 33:52a2 $1e $bb $52 $33
-    Op82_Run data_01_7442                              ;; 33:52a6 $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:52a6 $82 $42 $74 $01
     Op18_Jump call_33_522b                             ;; 33:52aa $18 $2b $52 $33
 
 call_33_52ae:
@@ -1478,7 +1478,7 @@ call_33_539e:
     SCRIPT_RETURN_20                                   ;; 33:53f7 $20
 
 call_33_53f8:
-    Op82_Run data_01_7416                              ;; 33:53f8 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:53f8 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:53fc $1e $1d $6f $1d
     Op10_HamChatWheel 4, data_05_6003, data_05_6064    ;; 33:5400 $10 $04 $03 $60 $64 $60
     Op1C_TableJump 4                                   ;; 33:5406 $1c $04
@@ -1569,7 +1569,7 @@ call_33_54be:
     Op18_Jump call_33_522b                             ;; 33:54d2 $18 $2b $52 $33
 
 call_33_54d6:
-    Op82_Run data_01_7416                              ;; 33:54d6 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:54d6 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:54da $1e $1d $6f $1d
     Op10_HamChatWheel 4, data_05_6003, data_05_6064    ;; 33:54de $10 $04 $03 $60 $64 $60
     Op1C_TableJump 4                                   ;; 33:54e4 $1c $04
@@ -1619,7 +1619,7 @@ call_33_5538:
     Op18_Jump call_33_522b                             ;; 33:554c $18 $2b $52 $33
 
 call_33_5550:
-    Op82_Run data_01_7416                              ;; 33:5550 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5550 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:5554 $1e $1d $6f $1d
     Op10_HamChatWheel 4, data_05_6003, data_05_6064    ;; 33:5558 $10 $04 $03 $60 $64 $60
     Op1C_TableJump 4                                   ;; 33:555e $1c $04
@@ -1886,7 +1886,7 @@ call_33_58c1:
     Op18_Jump call_33_522b                             ;; 33:58d5 $18 $2b $52 $33
 
 call_33_58d9:
-    Op82_Run data_01_7416                              ;; 33:58d9 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:58d9 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:58dd $1e $1d $6f $1d
     Op10_HamChatWheel 4, data_05_6003, data_05_6064    ;; 33:58e1 $10 $04 $03 $60 $64 $60
     Op1C_TableJump 4                                   ;; 33:58e7 $1c $04
@@ -1934,7 +1934,7 @@ call_33_594b:
     Op18_Jump call_33_522b                             ;; 33:595f $18 $2b $52 $33
 
 call_33_5963:
-    Op82_Run data_01_7416                              ;; 33:5963 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5963 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:5967 $1e $1d $6f $1d
     Op10_HamChatWheel 4, data_05_6003, data_05_6064    ;; 33:596b $10 $04 $03 $60 $64 $60
     Op1C_TableJump 4                                   ;; 33:5971 $1c $04
@@ -2075,7 +2075,7 @@ call_33_5b30:
     Op16_SubOps 1                                      ;; 33:5b30 $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 33:5b32 $5e $03
     Op82_Run data_01_73cc                              ;; 33:5b34 $82 $cc $73 $01
-    Op82_Run data_01_7416                              ;; 33:5b38 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5b38 $82 $16 $74 $01
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 33:5b3c $2a $00 $00 $00
     Op1C_TableJump 4                                   ;; 33:5b40 $1c $04
     SCRIPT_POINTER call_33_5cbb                        ;; 33:5b42 $bb $5c $33
@@ -2216,7 +2216,7 @@ call_33_5cf9:
     SCRIPT_POINTER call_33_5d2a                        ;; 33:5d04 $2a $5d $33
 
 call_33_5d07:
-    Op82_Run data_01_7416                              ;; 33:5d07 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5d07 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:5d0b $16 $01
     SubOp_SetWord wC752, $0900                         ;; 33:5d0d $9e $3a $00 $09
     Op1E_Call call_33_490f                             ;; 33:5d11 $1e $0f $49 $33
@@ -2229,7 +2229,7 @@ call_33_5d07:
     Op18_Jump call_33_5b30                             ;; 33:5d26 $18 $30 $5b $33
 
 call_33_5d2a:
-    Op82_Run data_01_7416                              ;; 33:5d2a $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5d2a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:5d2e $1e $1d $6f $1d
     Op10_HamChatWheel 12, data_05_481f, data_05_50b0   ;; 33:5d32 $10 $0c $1f $48 $b0 $50
     Op1C_TableJump 12                                  ;; 33:5d38 $1c $0c
@@ -2254,7 +2254,7 @@ call_33_5d62:
 call_33_5d6a:
     Op14_Unknown 1, $9c, $50                           ;; 33:5d6a $14 $01 $9c $50
     SCRIPT_POINTER call_33_5da5                        ;; 33:5d6e $a5 $5d $33
-    Op82_Run data_01_7416                              ;; 33:5d71 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5d71 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:5d75 $1e $1d $6f $1d
     Op10_HamChatWheel 8, data_05_482b, data_05_50c4    ;; 33:5d79 $10 $08 $2b $48 $c4 $50
     Op1C_TableJump 8                                   ;; 33:5d7f $1c $08
@@ -2273,7 +2273,7 @@ call_33_5d9d:
     Op18_Jump call_33_5b30                             ;; 33:5da1 $18 $30 $5b $33
 
 call_33_5da5:
-    Op82_Run data_01_7416                              ;; 33:5da5 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5da5 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:5da9 $16 $01
     SubOp_SetWord wC752, $0900                         ;; 33:5dab $9e $3a $00 $09
     Op1E_Call call_33_490f                             ;; 33:5daf $1e $0f $49 $33
@@ -2306,7 +2306,7 @@ call_33_5dfa:
     SCRIPT_POINTER call_33_5b4e                        ;; 33:5e00 $4e $5b $33
 
 call_33_5e03:
-    Op82_Run data_01_7416                              ;; 33:5e03 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5e03 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:5e07 $16 $01
     SubOp_SetWord wC752, $0d00                         ;; 33:5e09 $9e $3a $00 $0d
     Op1E_Call call_33_490f                             ;; 33:5e0d $1e $0f $49 $33
@@ -2337,7 +2337,7 @@ call_33_5e53:
     Op1E_Call call_33_5b66                             ;; 33:5e5e $1e $66 $5b $33
 
 call_33_5e62:
-    Op82_Run data_01_7442                              ;; 33:5e62 $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:5e62 $82 $42 $74 $01
     Op18_Jump call_33_5b30                             ;; 33:5e66 $18 $30 $5b $33
 
 call_33_5e6a:
@@ -2350,7 +2350,7 @@ call_33_5e6a:
     Op18_Jump call_33_5b30                             ;; 33:5e7d $18 $30 $5b $33
 
 call_33_5e81:
-    Op82_Run data_01_7416                              ;; 33:5e81 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:5e81 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:5e85 $16 $01
     SubOp_SetWord wC752, $0080                         ;; 33:5e87 $9e $3a $80 $00
     Op1E_Call call_33_490f                             ;; 33:5e8b $1e $0f $49 $33
@@ -2770,7 +2770,7 @@ call_33_63f5:
     Op16_SubOps 1                                      ;; 33:63f5 $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 33:63f7 $5e $03
     Op82_Run data_01_73cc                              ;; 33:63f9 $82 $cc $73 $01
-    Op82_Run data_01_7416                              ;; 33:63fd $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:63fd $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 33:6401 $50 $1d $c3 $00 $d0
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 33:6406 $2a $00 $00 $00
     Op1C_TableJump 10                                  ;; 33:640a $1c $0a
@@ -2796,7 +2796,7 @@ call_33_643d:
     Op14_Unknown 1, $aa, $73                           ;; 33:6441 $14 $01 $aa $73
     SCRIPT_POINTER call_33_63f5                        ;; 33:6445 $f5 $63 $33
     Op1E_Call call_33_646b                             ;; 33:6448 $1e $6b $64 $33
-    Op82_Run data_01_7442                              ;; 33:644c $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:644c $82 $42 $74 $01
     Op18_Jump call_33_63f5                             ;; 33:6450 $18 $f5 $63 $33
 
 call_33_6454:
@@ -2804,7 +2804,7 @@ call_33_6454:
     Op14_Unknown 1, $aa, $73                           ;; 33:6458 $14 $01 $aa $73
     SCRIPT_POINTER call_33_63f5                        ;; 33:645c $f5 $63 $33
     Op1E_Call call_33_646b                             ;; 33:645f $1e $6b $64 $33
-    Op82_Run data_01_7442                              ;; 33:6463 $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:6463 $82 $42 $74 $01
     Op18_Jump call_33_63f5                             ;; 33:6467 $18 $f5 $63 $33
 
 call_33_646b:
@@ -2947,7 +2947,7 @@ call_33_6662:
     SCRIPT_RETURN_20                                   ;; 33:6662 $20
 
 call_33_6663:
-    Op82_Run data_01_7416                              ;; 33:6663 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:6663 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:6667 $16 $01
     SubOp_SetWord wC752, $0080                         ;; 33:6669 $9e $3a $80 $00
     Op1E_Call call_33_490f                             ;; 33:666d $1e $0f $49 $33
@@ -2965,7 +2965,7 @@ call_33_667d:
     Op18_Jump call_33_63f5                             ;; 33:668c $18 $f5 $63 $33
 
 call_33_6690:
-    Op82_Run data_01_7416                              ;; 33:6690 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:6690 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:6694 $16 $01
     SubOp_SetWord wC752, $0d00                         ;; 33:6696 $9e $3a $00 $0d
     Op1E_Call call_33_490f                             ;; 33:669a $1e $0f $49 $33
@@ -3118,7 +3118,7 @@ call_33_6824:
     Op18_Jump call_33_63f5                             ;; 33:6833 $18 $f5 $63 $33
 
 call_33_6837:
-    Op82_Run data_01_7416                              ;; 33:6837 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:6837 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:683b $1e $1d $6f $1d
     Op10_HamChatWheel 6, data_05_735d, data_05_73a2    ;; 33:683f $10 $06 $5d $73 $a2 $73
     Op1C_TableJump 6                                   ;; 33:6845 $1c $06
@@ -3240,7 +3240,7 @@ call_33_695e:
     Op18_Jump call_33_63f5                             ;; 33:696d $18 $f5 $63 $33
 
 call_33_6971:
-    Op82_Run data_01_7416                              ;; 33:6971 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:6971 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:6975 $16 $01
     SubOp_SetWord wC752, $0900                         ;; 33:6977 $9e $3a $00 $09
     Op1E_Call call_33_490f                             ;; 33:697b $1e $0f $49 $33
@@ -3478,7 +3478,7 @@ call_33_6c99:
 
 call_33_6ccd:
     Op82_Run data_01_73cc                              ;; 33:6ccd $82 $cc $73 $01
-    Op82_Run data_01_7416                              ;; 33:6cd1 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:6cd1 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:6cd5 $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 33:6cd7 $5e $03
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 33:6cd9 $50 $1d $c3 $00 $d0
@@ -3738,7 +3738,7 @@ call_33_70c8:
     SCRIPT_POINTER call_33_6cf0                        ;; 33:70ce $f0 $6c $33
 
 call_33_70d1:
-    Op82_Run data_01_7416                              ;; 33:70d1 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:70d1 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:70d5 $1e $1d $6f $1d
     Op10_HamChatWheel 8, data_05_4853, data_05_5234    ;; 33:70d9 $10 $08 $53 $48 $34 $52
     Op1C_TableJump 8                                   ;; 33:70df $1c $08
@@ -3760,7 +3760,7 @@ call_33_7105:
     Op1E_Call call_33_4d7b                             ;; 33:7105 $1e $7b $4d $33
     Op1C_TableJump 1                                   ;; 33:7109 $1c $01
     SCRIPT_POINTER call_33_6cf0                        ;; 33:710b $f0 $6c $33
-    Op82_Run data_01_7416                              ;; 33:710e $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:710e $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:7112 $16 $01
     SubOp_SetWord wC752, $0d00                         ;; 33:7114 $9e $3a $00 $0d
     Op1E_Call call_33_490f                             ;; 33:7118 $1e $0f $49 $33
@@ -3778,7 +3778,7 @@ call_33_7131:
     SCRIPT_POINTER call_33_6cf0                        ;; 33:7137 $f0 $6c $33
 
 call_33_713a:
-    Op82_Run data_01_7416                              ;; 33:713a $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:713a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:713e $1e $1d $6f $1d
     Op10_HamChatWheel 8, data_05_485b, data_05_5244    ;; 33:7142 $10 $08 $5b $48 $44 $52
     Op1C_TableJump 8                                   ;; 33:7148 $1c $08
@@ -3803,7 +3803,7 @@ call_33_716e:
     Op1E_Call call_33_6d08                             ;; 33:7179 $1e $08 $6d $33
 
 call_33_717d:
-    Op82_Run data_01_7442                              ;; 33:717d $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:717d $82 $42 $74 $01
     Op18_Jump call_33_6ccd                             ;; 33:7181 $18 $cd $6c $33
 
 call_33_7185:
@@ -3816,7 +3816,7 @@ call_33_7185:
     Op18_Jump call_33_6ccd                             ;; 33:7198 $18 $cd $6c $33
 
 call_33_719c:
-    Op82_Run data_01_7416                              ;; 33:719c $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:719c $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:71a0 $16 $01
     SubOp_SetWord wC752, $0080                         ;; 33:71a2 $9e $3a $80 $00
     Op1E_Call call_33_490f                             ;; 33:71a6 $1e $0f $49 $33
@@ -3919,7 +3919,7 @@ call_33_72d1:
     Op1E_Call call_04_615d                             ;; 33:72d9 $1e $5d $61 $04
 
 call_33_72dd:
-    Op82_Run data_01_7416                              ;; 33:72dd $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:72dd $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 33:72e1 $1e $1d $6f $1d
     Op10_HamChatWheel 8, data_05_4863, data_05_5250    ;; 33:72e5 $10 $08 $63 $48 $50 $52
     Op1C_TableJump 8                                   ;; 33:72eb $1c $08
@@ -4143,7 +4143,7 @@ call_33_7597:
     Op16_SubOps 1                                      ;; 33:7597 $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 33:7599 $5e $03
     Op82_Run data_01_73cc                              ;; 33:759b $82 $cc $73 $01
-    Op82_Run data_01_7416                              ;; 33:759f $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:759f $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 33:75a3 $50 $1d $c3 $00 $d0
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 33:75a8 $2a $00 $00 $00
     Op1C_TableJump 4                                   ;; 33:75ac $1c $04
@@ -4163,7 +4163,7 @@ call_33_75cd:
     Op14_Unknown 1, $aa, $73                           ;; 33:75d1 $14 $01 $aa $73
     SCRIPT_POINTER call_33_7597                        ;; 33:75d5 $97 $75 $33
     Op1E_Call call_33_75fb                             ;; 33:75d8 $1e $fb $75 $33
-    Op82_Run data_01_7442                              ;; 33:75dc $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:75dc $82 $42 $74 $01
     Op18_Jump call_33_7597                             ;; 33:75e0 $18 $97 $75 $33
 
 call_33_75e4:
@@ -4171,7 +4171,7 @@ call_33_75e4:
     Op14_Unknown 1, $aa, $73                           ;; 33:75e8 $14 $01 $aa $73
     SCRIPT_POINTER call_33_7597                        ;; 33:75ec $97 $75 $33
     Op1E_Call call_33_75fb                             ;; 33:75ef $1e $fb $75 $33
-    Op82_Run data_01_7442                              ;; 33:75f3 $82 $42 $74 $01
+    Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 33:75f3 $82 $42 $74 $01
     Op18_Jump call_33_7597                             ;; 33:75f7 $18 $97 $75 $33
 
 call_33_75fb:
@@ -4309,7 +4309,7 @@ call_33_77e2:
     SCRIPT_RETURN_20                                   ;; 33:77e2 $20
 
 call_33_77e3:
-    Op82_Run data_01_7416                              ;; 33:77e3 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:77e3 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:77e7 $16 $01
     SubOp_SetWord wC752, $0080                         ;; 33:77e9 $9e $3a $80 $00
     Op1E_Call call_33_490f                             ;; 33:77ed $1e $0f $49 $33
@@ -4327,7 +4327,7 @@ call_33_77fd:
     Op18_Jump call_33_7597                             ;; 33:780c $18 $97 $75 $33
 
 call_33_7810:
-    Op82_Run data_01_7416                              ;; 33:7810 $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:7810 $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:7814 $16 $01
     SubOp_SetWord wC752, $0d00                         ;; 33:7816 $9e $3a $00 $0d
     Op1E_Call call_33_490f                             ;; 33:781a $1e $0f $49 $33
@@ -4375,7 +4375,7 @@ call_33_787c:
     Op18_Jump call_33_7597                             ;; 33:788b $18 $97 $75 $33
 
 call_33_788f:
-    Op82_Run data_01_7416                              ;; 33:788f $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:788f $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:7893 $16 $01
     SubOp_SetWord wC752, $0c00                         ;; 33:7895 $9e $3a $00 $0c
     Op1E_Call call_33_490f                             ;; 33:7899 $1e $0f $49 $33
@@ -4417,7 +4417,7 @@ call_33_78fb:
     Op18_Jump call_33_7597                             ;; 33:790a $18 $97 $75 $33
 
 call_33_790e:
-    Op82_Run data_01_7416                              ;; 33:790e $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:790e $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 33:7912 $16 $01
     SubOp_SetWord wC752, $0900                         ;; 33:7914 $9e $3a $00 $09
     Op1E_Call call_33_490f                             ;; 33:7918 $1e $0f $49 $33
@@ -4452,7 +4452,7 @@ call_33_7953:
     Op1E_Call call_1d_6ae8                             ;; 33:7973 $1e $e8 $6a $1d
     Op04_Unknown_Text data_39_770b                     ;; 33:7977 $04 $0b $77 $39
     Op92_Unknown $00                                   ;; 33:797b $92 $00
-    Op82_Run data_01_7416                              ;; 33:797d $82 $16 $74 $01
+    Op82_Run StoreNextScriptAddressInC65AtoC           ;; 33:797d $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 33:7981 $82 $cc $73 $01
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 33:7985 $50 $1d $c3 $00 $90
     Op1E_Call call_1d_6f1d                             ;; 33:798a $1e $1d $6f $1d
