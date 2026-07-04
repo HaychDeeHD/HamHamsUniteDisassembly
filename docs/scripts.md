@@ -160,7 +160,7 @@ Op10 is involved in presenting the player with HamChat options and taking their 
 
 The first byte argument is a count of possible options -- whether they will be used or not. As an example, if a hamster in the game gives the options [Hamha, Hif-hif, Tack-Q, Digdig, Koochi-Q, Teenie] then the count will be *8* for [Hamha, Hif-hif, Tack-Q, Digdig, Koochi-Q, ? (don't have Koochi-Q), Teenie, ? (don't have Teenie)].
 
-The next 4 bytes are a pair of 2 byte ROM pointers. (It would seem the correct ROM bank is already active whem Op10 is reached.) The first pointer points to a region of data of the specified length that is some kind of hamchat data. The second pointer points to another region of data of variable length in the same bank that specifies how to use the data at the first pointer.
+The next 4 bytes are a pair of 2 byte ROM pointers for bank 05. The first pointer points to a region of data of the specified length that is some kind of hamchat data. The second pointer points to another region of data of variable length in the same bank that specifies how to use the data at the first pointer.
 
 Learn more about how the HamChatWheel works from [its docs page](./hamchatwheel.md).
 
