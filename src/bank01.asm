@@ -428,7 +428,7 @@ jr_01_430c:
     jp   jp_01_4273                                    ;; 01:430f $c3 $73 $42
 
 data_01_4312:
-    ld   HL, wC95B                                     ;; 01:4312 $21 $5b $c9
+    ld   HL, wPlayerNameChar0                          ;; 01:4312 $21 $5b $c9
     jr   jr_01_430c                                    ;; 01:4315 $18 $f5
 
 call_01_4317:
@@ -5691,7 +5691,7 @@ call_01_6994:
     cp   A, $07                                        ;; 01:6a12 $fe $07
     jr   NC, .jr_01_6a46                               ;; 01:6a14 $30 $30
     ld   B, A                                          ;; 01:6a16 $47
-    ld   HL, wC95B                                     ;; 01:6a17 $21 $5b $c9
+    ld   HL, wPlayerNameChar0                          ;; 01:6a17 $21 $5b $c9
     add  A, L                                          ;; 01:6a1a $85
     ld   L, A                                          ;; 01:6a1b $6f
     ld   A, $00                                        ;; 01:6a1c $3e $00
@@ -5724,7 +5724,7 @@ call_01_6994:
     jp   jp_01_6b38                                    ;; 01:6a47 $c3 $38 $6b
 .jr_01_6a4a:
     call call_01_715e                                  ;; 01:6a4a $cd $5e $71
-    ld   A, [wC95B]                                    ;; 01:6a4d $fa $5b $c9
+    ld   A, [wPlayerNameChar0]                         ;; 01:6a4d $fa $5b $c9
     ld   [wC958], A                                    ;; 01:6a50 $ea $58 $c9
     call call_01_7284                                  ;; 01:6a53 $cd $84 $72
     ld   A, $03                                        ;; 01:6a56 $3e $03
@@ -5769,7 +5769,7 @@ call_01_6a90:
     ld   D, $00                                        ;; 01:6a9f $16 $00
     inc  A                                             ;; 01:6aa1 $3c
     ld   [wC3EB], A                                    ;; 01:6aa2 $ea $eb $c3
-    ld   HL, wC95B                                     ;; 01:6aa5 $21 $5b $c9
+    ld   HL, wPlayerNameChar0                          ;; 01:6aa5 $21 $5b $c9
     add  HL, DE                                        ;; 01:6aa8 $19
     ldh  A, [hFF80]                                    ;; 01:6aa9 $f0 $80
     ld   [HL], A                                       ;; 01:6aab $77
@@ -5822,7 +5822,7 @@ call_01_6acf:
 .jr_01_6b00:
     ld   E, A                                          ;; 01:6b00 $5f
     ld   D, $00                                        ;; 01:6b01 $16 $00
-    ld   HL, wC95B                                     ;; 01:6b03 $21 $5b $c9
+    ld   HL, wPlayerNameChar0                          ;; 01:6b03 $21 $5b $c9
     add  HL, DE                                        ;; 01:6b06 $19
     ld   A, $01                                        ;; 01:6b07 $3e $01
     ld   [HL], A                                       ;; 01:6b09 $77
@@ -6215,7 +6215,7 @@ data_01_7156:
     db   $39, $39, $39, $3a, $39, $3a, $3b, $2e        ;; 01:7156 .......?
 
 call_01_715e:
-    ld   HL, wC95B                                     ;; 01:715e $21 $5b $c9
+    ld   HL, wPlayerNameChar0                          ;; 01:715e $21 $5b $c9
     ld   B, $08                                        ;; 01:7161 $06 $08
 .jr_01_7163:
     dec  B                                             ;; 01:7163 $05
@@ -6225,12 +6225,12 @@ call_01_715e:
     jr   Z, .jr_01_7163                                ;; 01:716a $28 $f7
     cp   A, $01                                        ;; 01:716c $fe $01
     jr   Z, .jr_01_7163                                ;; 01:716e $28 $f3
-    ld   HL, wC95B                                     ;; 01:7170 $21 $5b $c9
+    ld   HL, wPlayerNameChar0                          ;; 01:7170 $21 $5b $c9
     ld   B, $01                                        ;; 01:7173 $06 $01
     call call_01_71c4                                  ;; 01:7175 $cd $c4 $71
     cp   A, $07                                        ;; 01:7178 $fe $07
     jr   Z, .jp_01_71a7                                ;; 01:717a $28 $2b
-    ld   HL, wC95B                                     ;; 01:717c $21 $5b $c9
+    ld   HL, wPlayerNameChar0                          ;; 01:717c $21 $5b $c9
     ld   B, $00                                        ;; 01:717f $06 $00
     call call_01_71d3                                  ;; 01:7181 $cd $d3 $71
     ld   HL, w1_D86B                                   ;; 01:7184 $21 $6b $d8

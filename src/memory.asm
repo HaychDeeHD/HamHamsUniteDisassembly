@@ -1608,28 +1608,30 @@ wC94F:
 wC950:
     ds 8                                               ;; c950
 
+; First letter of chosen name gets written to C958. Bug?
 wC958:
     ds 3                                               ;; c958
 
-wC95B:
+; Up to 7 Bytes of characters using the HamText encoding.
+wPlayerNameChar0:
     ds 1                                               ;; c95b
 
-wC95C:
+wPlayerNameChar1:
     ds 1                                               ;; c95c
 
-wC95D:
+wPlayerNameChar2:
     ds 1                                               ;; c95d
 
-wC95E:
+wPlayerNameChar3:
     ds 1                                               ;; c95e
 
-wC95F:
+wPlayerNameChar4:
     ds 1                                               ;; c95f
 
-wC960:
+wPlayerNameChar5:
     ds 1                                               ;; c960
 
-wC961:
+wPlayerNameChar6:
     ds 1                                               ;; c961
 
 wC962:

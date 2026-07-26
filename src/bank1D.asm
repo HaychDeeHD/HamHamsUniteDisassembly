@@ -2649,10 +2649,10 @@ call_1d_636c:
     SubOp_SetByte wC764, $ff                           ;; 1d:640b $7e $4c $ff
     Op16_SubOps 1                                      ;; 1d:640e $16 $01
     SubOp_SetByte wC751, $00                           ;; 1d:6410 $7e $39 $00
-    Op52_WriteBytes wC95B, $00, $0f, $65               ;; 1d:6413 $52 $5b $c9 $00 $0f $65
-    Op52_WriteBytes wC95D, $00, $62, $75               ;; 1d:6419 $52 $5d $c9 $00 $62 $75
-    Op52_WriteBytes wC95F, $00, $67, $65               ;; 1d:641f $52 $5f $c9 $00 $67 $65
-    Op52_WriteBytes wC961, $00, $72, $00               ;; 1d:6425 $52 $61 $c9 $00 $72 $00
+    Op52_WriteBytes wPlayerNameChar0, $00, $0f, $65    ;; 1d:6413 $52 $5b $c9 $00 $0f $65
+    Op52_WriteBytes wPlayerNameChar2, $00, $62, $75    ;; 1d:6419 $52 $5d $c9 $00 $62 $75
+    Op52_WriteBytes wPlayerNameChar4, $00, $67, $65    ;; 1d:641f $52 $5f $c9 $00 $67 $65
+    Op52_WriteBytes wPlayerNameChar6, $00, $72, $00    ;; 1d:6425 $52 $61 $c9 $00 $72 $00
     Op16_SubOps 1                                      ;; 1d:642b $16 $01
     SubOp_SetFlag wC919, 2                             ;; 1d:642d $3e $0a
     Op16_SubOps 1                                      ;; 1d:642f $16 $01
