@@ -1113,7 +1113,12 @@ wC76B:
 wC76C:
     ds 1                                               ;; c76c
 
-wC76D:
+; $00 to start.
+; $01 if you've only used hifhif or digdig.
+; $02 once you've used Hamha. This is the state where he will be on the other screen.
+; $03 if done his whole script (obtained Nopibloo).
+; The state value seemingly never decreases, even if you leave the area.
+wRoofTopHamsterStateC76D:
     ds 1                                               ;; c76d
 
 wC76E:

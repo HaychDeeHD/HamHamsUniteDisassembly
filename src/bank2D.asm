@@ -3797,6 +3797,7 @@ call_2d_6d7a:
     SCRIPT_POINTER call_2d_6d92                        ;; 2d:6d8b $92 $6d $2d
     Op18_Jump call_2d_6574                             ;; 2d:6d8e $18 $74 $65 $2d
 
+; Rooftop Hamster (Nopibloo giver)
 call_2d_6d92:
     Op14_Unknown 1, $9b, $5c                           ;; 2d:6d92 $14 $01 $9b $5c
     SCRIPT_POINTER call_2d_701f                        ;; 2d:6d96 $1f $70 $2d
@@ -3806,17 +3807,18 @@ call_2d_6d92:
     Op1E_Call call_1d_6f1d                             ;; 2d:6da4 $1e $1d $6f $1d
     Op10_HamChatWheel 4, data_05_59f2, data_05_5a55    ;; 2d:6da8 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2d:6dae $1c $04
-    SCRIPT_POINTER call_2d_6dbc                        ;; 2d:6db0 $bc $6d $2d
-    SCRIPT_POINTER call_2d_6ea6                        ;; 2d:6db3 $a6 $6e $2d
-    SCRIPT_POINTER call_2d_6f08                        ;; 2d:6db6 $08 $6f $2d
-    SCRIPT_POINTER call_2d_6fc8                        ;; 2d:6db9 $c8 $6f $2d
+    SCRIPT_POINTER RooftopHamsterHamha                 ;; 2d:6db0 $bc $6d $2d
+    SCRIPT_POINTER RooftopHamsterHifHif                ;; 2d:6db3 $a6 $6e $2d
+    SCRIPT_POINTER RooftopHamsterTackQ                 ;; 2d:6db6 $08 $6f $2d
+    SCRIPT_POINTER RooftopHamsterDigDig                ;; 2d:6db9 $c8 $6f $2d
 
-call_2d_6dbc:
+RooftopHamsterHamha:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:6dbc $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6dc1 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6dc5 $16 $01
     SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6dc7 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6dc9 $74 $5e $c6
+; My guess is that these table jumps of size 2 fork on whether the hamster is there or not.
     Op1C_TableJump 2                                   ;; 2d:6dcc $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6dce $b4 $65 $2d
     SCRIPT_POINTER call_2d_6dd4                        ;; 2d:6dd1 $d4 $6d $2d
@@ -3825,18 +3827,22 @@ call_2d_6dd4:
     Op14_Unknown 1, $ec, $5c                           ;; 2d:6dd4 $14 $01 $ec $5c
     SCRIPT_POINTER call_2d_6e66                        ;; 2d:6dd8 $66 $6e $2d
     Op16_SubOps 1                                      ;; 2d:6ddb $16 $01
-    SubOp_SetByte wC76D, $02                           ;; 2d:6ddd $7e $55 $02
+    SubOp_SetByte wRoofTopHamsterStateC76D, $02        ;; 2d:6ddd $7e $55 $02
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $c2, $40, $16 ;; 2d:6de0 $4c $1a $01 $04 $00 $00 $00 $00 $c2 $40 $16
     Op1E_Call call_20_4042                             ;; 2d:6deb $1e $42 $40 $20
     Op1E_Call call_1d_6c13                             ;; 2d:6def $1e $13 $6c $1d
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $35, $42, $10 ;; 2d:6df3 $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
+; Note that the last 3 args are $40 $45 $16.
     Op4C_Unknown $1a, $ff, $ff, $00, $00, $00, $00, $40, $45, $16 ;; 2d:6dfe $4c $1a $ff $ff $00 $00 $00 $00 $40 $45 $16
+; "Hamha!"
     Op04_Unknown_Text data_39_7e51                     ;; 2d:6e09 $04 $51 $7e $39
 
 call_2d_6e0d:
     SCRIPT_RETURN_4A                                   ;; 2d:6e0d $4a
+; Note that this is checking for $40 $45 $16. Returns if match.
     Op3E_Compare_Branch 26, $40, $45, $16, call_2d_6e0d ;; 2d:6e0e $3e $1a $40 $45 $16 $0d $6e $2d
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $e7, $40, $16 ;; 2d:6e16 $4c $1a $01 $04 $00 $00 $00 $00 $e7 $40 $16
+; Rooftop Nopibloo Hamster "Great view, huh"
     Op06_Unknown_Text data_39_7e5b                     ;; 2d:6e21 $06 $5b $7e $39
     Op92_Unknown $00                                   ;; 2d:6e25 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $46, $4a, $16 ;; 2d:6e27 $4c $1a $01 $04 $00 $00 $00 $00 $46 $4a $16
@@ -3861,16 +3867,18 @@ call_2d_6e66:
     Op1E_Call call_1d_6c13                             ;; 2d:6e75 $1e $13 $6c $1d
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $35, $42, $10 ;; 2d:6e79 $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
     Op4C_Unknown $1a, $ff, $ff, $00, $00, $00, $00, $40, $45, $16 ;; 2d:6e84 $4c $1a $ff $ff $00 $00 $00 $00 $40 $45 $16
+; "Hamha!"
     Op04_Unknown_Text data_39_7e9d                     ;; 2d:6e8f $04 $9d $7e $39
 
 call_2d_6e93:
     SCRIPT_RETURN_4A                                   ;; 2d:6e93 $4a
     Op3E_Compare_Branch 26, $40, $45, $16, call_2d_6e93 ;; 2d:6e94 $3e $1a $40 $45 $16 $93 $6e $2d
+; Rooftop Hamster (Nopibloo) "Hey you, wanna play?"
     Op06_Unknown_Text data_39_7ea7                     ;; 2d:6e9c $06 $a7 $7e $39
     Op92_Unknown $00                                   ;; 2d:6ea0 $92 $00
     Op18_Jump call_2d_6574                             ;; 2d:6ea2 $18 $74 $65 $2d
 
-call_2d_6ea6:
+RooftopHamsterHifHif:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:6ea6 $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6eab $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6eaf $16 $01
@@ -3884,7 +3892,7 @@ call_2d_6ebe:
     Op14_Unknown 1, $f0, $5c                           ;; 2d:6ebe $14 $01 $f0 $5c
     SCRIPT_POINTER call_2d_6eca                        ;; 2d:6ec2 $ca $6e $2d
     Op16_SubOps 1                                      ;; 2d:6ec5 $16 $01
-    SubOp_SetByte wC76D, $01                           ;; 2d:6ec7 $7e $55 $01
+    SubOp_SetByte wRoofTopHamsterStateC76D, $01        ;; 2d:6ec7 $7e $55 $01
 
 call_2d_6eca:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $c2, $40, $16 ;; 2d:6eca $4c $1a $01 $04 $00 $00 $00 $00 $c2 $40 $16
@@ -3897,7 +3905,7 @@ call_2d_6eca:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $7e, $40, $16 ;; 2d:6ef9 $4c $1a $01 $04 $00 $00 $00 $00 $7e $40 $16
     Op18_Jump call_2d_6574                             ;; 2d:6f04 $18 $74 $65 $2d
 
-call_2d_6f08:
+RooftopHamsterTackQ:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:6f08 $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6f0d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6f11 $16 $01
@@ -3911,10 +3919,11 @@ call_2d_6f20:
     Op14_Unknown 1, $f0, $5c                           ;; 2d:6f20 $14 $01 $f0 $5c
     SCRIPT_POINTER call_2d_6f2c                        ;; 2d:6f24 $2c $6f $2d
     Op16_SubOps 1                                      ;; 2d:6f27 $16 $01
-    SubOp_SetByte wC76D, $01                           ;; 2d:6f29 $7e $55 $01
+    SubOp_SetByte wRoofTopHamsterStateC76D, $01        ;; 2d:6f29 $7e $55 $01
 
 call_2d_6f2c:
     Op1E_Call call_1d_6ae8                             ;; 2d:6f2c $1e $e8 $6a $1d
+; "It's not safe to do that here"
     Op04_Unknown_Text data_39_7ee0                     ;; 2d:6f30 $04 $e0 $7e $39
     Op92_Unknown $00                                   ;; 2d:6f34 $92 $00
     Op18_Jump call_2d_6574                             ;; 2d:6f36 $18 $74 $65 $2d
@@ -3949,7 +3958,7 @@ call_2d_6f9f:
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, $00, $00, $00 ;; 2d:6fb9 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     Op18_Jump call_2d_6574                             ;; 2d:6fc4 $18 $74 $65 $2d
 
-call_2d_6fc8:
+RooftopHamsterDigDig:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:6fc8 $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6fcd $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6fd1 $16 $01
@@ -3963,7 +3972,7 @@ call_2d_6fe0:
     Op14_Unknown 1, $f0, $5c                           ;; 2d:6fe0 $14 $01 $f0 $5c
     SCRIPT_POINTER call_2d_6fec                        ;; 2d:6fe4 $ec $6f $2d
     Op16_SubOps 1                                      ;; 2d:6fe7 $16 $01
-    SubOp_SetByte wC76D, $01                           ;; 2d:6fe9 $7e $55 $01
+    SubOp_SetByte wRoofTopHamsterStateC76D, $01        ;; 2d:6fe9 $7e $55 $01
 
 call_2d_6fec:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $d2, $40, $16 ;; 2d:6fec $4c $1a $01 $04 $00 $00 $00 $00 $d2 $40 $16

@@ -3185,6 +3185,7 @@ call_2e_687d:
 call_2e_6895:
     SCRIPT_RETURN_4A                                   ;; 2e:6895 $4a
     Op3E_Compare_Branch 26, $7c, $48, $16, call_2e_6895 ;; 2e:6896 $3e $1a $7c $48 $16 $95 $68 $2e
+; Rooftop Hamster teaches Nopibloo
     Op50_WriteByte wBitArrayIndexC715, $00, $21        ;; 2e:689e $50 $15 $c7 $00 $21
     Op82_Run ObtainHamChatFromC715                     ;; 2e:68a3 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2e:68a7 $16 $01
@@ -3214,10 +3215,12 @@ call_2e_6907:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $35, $42, $10 ;; 2e:6910 $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $e7, $40, $16 ;; 2e:691b $4c $1a $01 $04 $00 $00 $00 $00 $e7 $40 $16
     Op1E_Call call_1d_6c13                             ;; 2e:6926 $1e $13 $6c $1d
+; Rooftop Hamster (Nopibloo) "Come play again!"
     Op04_Unknown_Text data_3c_656e                     ;; 2e:692a $04 $6e $65 $3c
     Op1E_Call call_04_615d                             ;; 2e:692e $1e $5d $61 $04
     Op16_SubOps 1                                      ;; 2e:6932 $16 $01
-    SubOp_SetByte wC76D, $03                           ;; 2e:6934 $7e $55 $03
+; Flag that indicates Rooftop Hamster's 'done' state (?)
+    SubOp_SetByte wRoofTopHamsterStateC76D, $03        ;; 2e:6934 $7e $55 $03
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $60, $4b, $16 ;; 2e:6937 $4c $1a $01 $04 $00 $00 $00 $00 $60 $4b $16
     Op44_Unknown $3c, $00                              ;; 2e:6942 $44 $3c $00
     Op18_Jump call_2e_638d                             ;; 2e:6945 $18 $8d $63 $2e
