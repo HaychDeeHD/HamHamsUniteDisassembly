@@ -93,17 +93,24 @@ BITARRAY_INDEX_TO_HAMCHAT = {
 
 @annotation(priority=1)
 def hamchatwheeloptions(memory, addr, amount="4"):
-    HamChatWheelOptionsBlock(memory, addr, int(amount))
+    HamChatWheelOptionsBlock(addr, int(amount))
 
 
 class HamChatWheelOptionsBlock(Block):
-    def __init__(self, memory, addr, amount):
-        super().__init__(memory, addr, size=amount)
+    def __init__(self, addr, amount):
+        bank5 = RomInfo.romBank(0x05)
+        super().__init__(bank5, addr, size=amount)
         RomInfo.macros["HamChatWheelOption"] = "db \\1"
 
         self.amount = amount
+        self.label = bank5.getLabel(addr)
+        self.pairedRuleBlocks = []
 
     def export(self, file):
+        prelineComments = self.memory.getComments(file.addr)
+        if prelineComments is not None and prelineComments[-1].startswith(" Paired with "):
+            prelineComments.pop() # Otherwise each run appends an additional comment
+        self.memory.addComment(file.addr, " Paired with %s" % ', '.join([str(block.label) for block in self.pairedRuleBlocks]))
         for i in range(self.amount):
             optionValue = self.memory.byte(file.addr)
             optionText = getHamChatWheelOptionText(file.addr, int(optionValue))
@@ -112,11 +119,12 @@ class HamChatWheelOptionsBlock(Block):
 
 @annotation(priority=1)
 def hamchatwheelrules(memory, addr, amount="4"):
-    HamChatWheelRulesBlock(memory, addr, int(amount))
+    HamChatWheelRulesBlock(addr, int(amount))
 
 class HamChatWheelRulesBlock(Block):
-    def __init__(self, memory, addr, amount):
-        super().__init__(memory, addr)
+    def __init__(self, addr, amount):
+        bank5 = RomInfo.romBank(0x05)
+        super().__init__(bank5, addr)
         RomInfo.macros["HamChatWheelRule_AlwaysUse"] = "db $1a"
         RomInfo.macros["HamChatWheelRule_UseIfHave"] = "db $3e\ndb \\1"
         RomInfo.macros["HamChatWheelRule_UseIfDontHave"] = "db $5e\ndb \\1"
@@ -126,10 +134,23 @@ class HamChatWheelRulesBlock(Block):
         RomInfo.macros["HamChatWheelRule_DefaultCase_Trio"] = "db \\1\ndb \\2\ndb \\3"
         RomInfo.constants["INVENTORY"] = {v: k for k, v in BITARRAY_INDEX_TO_HAMCHAT.items()}
 
+        self.label = bank5.getLabel(addr)
+        self.pairedOptionsBlocks = []
+        self.amount = amount
+        self.computeRules()
+
+    # Sometimes an Op10 points to a RulesBlock of  e.g. size 8 but only uses the first 4.
+    # This function can be called to retroactively grow a RulesBlock to its max size.
+    def maybeGrow(self, newAmount):
+        if newAmount > self.amount:
+            self.amount = newAmount
+            self.computeRules() 
+ 
+    def computeRules(self): 
         self.hamChatWheelRulesArgsList = []
         size = 0
-        for i in range(amount):
-            ruleOpcode = self.memory.byte(addr + size)
+        for i in range(self.amount):
+            ruleOpcode = self.memory.byte(self.base_address + size)
 
             # These are handled based on their first 3 bits then their next 5, similar to default subops. First jumptable is at 01:4a91.
             # 1a -> 000
@@ -140,22 +161,22 @@ class HamChatWheelRulesBlock(Block):
                     self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_AlwaysUse"))
                     size += 1
                 case 0x3E | 0x3F:
-                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfHave", BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(addr + size + 1)]))
+                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfHave", BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(self.base_address + size + 1)]))
                     size += 2
                 case 0x5E | 0x5F:
-                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfDontHave", BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(addr + size + 1)]))
+                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfDontHave", BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(self.base_address + size + 1)]))
                     size += 2
                 case _:
                     # This works the same as the Op16 SubOps default case. See hamscript.py.
                     # TODO The gaps in bank 5 lead me to believe there could be more to the story.
                     while True:
-                        firstByte = memory.byte(addr + size)
+                        firstByte = self.memory.byte(self.base_address + size)
 
                         xbits = (firstByte & 0xE0) >> 5
                         ybits = (firstByte & 0x1E) >> 1
 
-                        byte2 = memory.byte(addr + size + 1)
-                        byte3 = memory.byte(addr + size + 2)
+                        byte2 = self.memory.byte(self.base_address + size + 1)
+                        byte3 = self.memory.byte(self.base_address + size + 2)
                         if xbits == 0b000:
                             self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_DefaultCase_Single", "$%02x" % firstByte))
                             size += 1
@@ -173,6 +194,10 @@ class HamChatWheelRulesBlock(Block):
             self.resize(size)
 
     def export(self, file):
+        prelineComments = self.memory.getComments(file.addr)
+        if prelineComments is not None and prelineComments[-1].startswith(" Paired with "):
+            prelineComments.pop() # Otherwise each run appends an additional comment
+        self.memory.addComment(file.addr, " Paired with %s" % ', '.join([str(block.label) for block in self.pairedOptionsBlocks]))
         for i, hamChatWheelRuleArgs in enumerate(self.hamChatWheelRulesArgsList):
             self.memory.addInlineComment(file.addr, " %02d" % i)
             file.asmLine(*hamChatWheelRuleArgs)

@@ -61,7 +61,7 @@ The next 4 bytes are a pair of 2 byte pointers that work together. $5A39, $5E44 
 Here is the relevant data from each of those pointer locations:
 
 ```
-;@hamchatwheeloptions amount=12
+; Paired with SadMaxwellRules
 SadMaxwellOptions:
     HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a39 $05
     HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a3a $06
@@ -78,7 +78,7 @@ SadMaxwellOptions:
 ```
 
 ```
-;@hamchatwheelrules amount=12
+; Paired with SadMaxwellOptions
 SadMaxwellRules:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5e44 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5e45 $1a
@@ -140,6 +140,8 @@ So if the player is missing Teenie and Nopibloo, C51A will look like:
 ```
 
 Which are of course, the indices for the appropriate script handlers in the following Op1C Jumptable.
+
+> **_NOTE:_** Occasionally an Op10 call will point to an address that contains e.g. 6 HamChatWheelRules but use a count of 4 instead to only use that many. This is just a clever way to reuse overlapping sets of rules and cut down on data repetition. This is only done in a handful of places and usually the data is just repeated. 
 
 ### Putting it all together
 

@@ -628,16 +628,25 @@ class Op10Block(Block):
         rulespointer = memory.word(addr + 4)
 
         bank5 = RomInfo.romBank(0x05)
-        if bank5[optionspointer] is None:
-            bank5.addAutoLabel(optionspointer, None, None)
-            HamChatWheelOptionsBlock(bank5, optionspointer, self.count)
 
-        if bank5[rulespointer] is None:
+        self.optionsBlock = bank5[optionspointer]
+        if self.optionsBlock is None:
+            bank5.addAutoLabel(optionspointer, None, None)
+            self.optionsBlock = HamChatWheelOptionsBlock(optionspointer, self.count)
+
+        self.rulesBlock = bank5[rulespointer]
+        if self.rulesBlock is None:
             bank5.addAutoLabel(rulespointer, None, None)
-            HamChatWheelRulesBlock(bank5, rulespointer, self.count)
-        
+            self.rulesBlock = HamChatWheelRulesBlock(rulespointer, self.count)
+        else:
+            self.rulesBlock.maybeGrow(self.count)
+
         self.optionsLabel = bank5.getLabel(optionspointer)
         self.rulesLabel = bank5.getLabel(rulespointer)
+        if self.rulesBlock not in self.optionsBlock.pairedRuleBlocks:
+            self.optionsBlock.pairedRuleBlocks.append(self.rulesBlock)
+        if self.optionsBlock not in self.rulesBlock.pairedOptionsBlocks:
+            self.rulesBlock.pairedOptionsBlocks.append(self.optionsBlock) 
     
     def export(self, file):
         file.asmLine(6, "Op10_HamChatWheel", str(self.count), str(self.optionsLabel), str(self.rulesLabel))
