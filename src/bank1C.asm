@@ -1039,7 +1039,7 @@ call_1c_6cc6:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1c:6cc6 $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 1c:6cca $82 $cc $73 $01
     Op1E_Call call_1d_6f1d                             ;; 1c:6cce $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, $7363, $73a2                  ;; 1c:6cd2 $0c $02 $63 $73 $a2 $73
+    Op0C_HamChatWheel 2, SunflowerMarketYesNo, data_05_73a2 ;; 1c:6cd2 $0c $02 $63 $73 $a2 $73
     Op1C_TableJump 2                                   ;; 1c:6cd8 $1c $02
     SCRIPT_POINTER call_1c_6ce0                        ;; 1c:6cda $e0 $6c $1c
     SCRIPT_POINTER call_1c_6d00                        ;; 1c:6cdd $00 $6d $1c
@@ -1077,7 +1077,7 @@ call_1c_6d20:
     Op82_Run data_01_73cc                              ;; 1c:6d24 $82 $cc $73 $01
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 1c:6d28 $50 $1d $c3 $00 $90
     Op1E_Call call_1d_6f1d                             ;; 1c:6d2d $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, $7363, $73a2                  ;; 1c:6d31 $0c $02 $63 $73 $a2 $73
+    Op0C_HamChatWheel 2, SunflowerMarketYesNo, data_05_73a2 ;; 1c:6d31 $0c $02 $63 $73 $a2 $73
     Op1C_TableJump 2                                   ;; 1c:6d37 $1c $02
     SCRIPT_POINTER call_1c_6d3f                        ;; 1c:6d39 $3f $6d $1c
     SCRIPT_POINTER call_1c_6d5f                        ;; 1c:6d3c $5f $6d $1c
@@ -1151,7 +1151,7 @@ call_1c_6de8:
     Op1E_Call call_04_6601                             ;; 1c:6de8 $1e $01 $66 $04
 
 call_1c_6dec:
-    Op0C_HamChatWheel 4, $7365, $73a2                  ;; 1c:6dec $0c $04 $65 $73 $a2 $73
+    Op0C_HamChatWheel 4, FlugoSellerWares, data_05_73a2 ;; 1c:6dec $0c $04 $65 $73 $a2 $73
     Op1E_Call call_04_65fb                             ;; 1c:6df2 $1e $fb $65 $04
     Op50_WriteByte wC65D, $00, $00                     ;; 1c:6df6 $50 $5d $c6 $00 $00
     Op1C_TableJump 4                                   ;; 1c:6dfb $1c $04
@@ -1464,7 +1464,7 @@ call_1c_70fd:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1c:7133 $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 1c:7137 $82 $cc $73 $01
     Op1E_Call call_1d_6f1d                             ;; 1c:713b $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, $7363, $73a2                  ;; 1c:713f $0c $02 $63 $73 $a2 $73
+    Op0C_HamChatWheel 2, SunflowerMarketYesNo, data_05_73a2 ;; 1c:713f $0c $02 $63 $73 $a2 $73
     Op1C_TableJump 2                                   ;; 1c:7145 $1c $02
     SCRIPT_POINTER call_1c_714d                        ;; 1c:7147 $4d $71 $1c
     SCRIPT_POINTER call_1c_716d                        ;; 1c:714a $6d $71 $1c
@@ -1530,7 +1530,7 @@ call_1c_71a4:
     Op82_Run data_01_73cc                              ;; 1c:71de $82 $cc $73 $01
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 1c:71e2 $50 $1d $c3 $00 $90
     Op1E_Call call_1d_6f1d                             ;; 1c:71e7 $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, $7363, $73a2                  ;; 1c:71eb $0c $02 $63 $73 $a2 $73
+    Op0C_HamChatWheel 2, SunflowerMarketYesNo, data_05_73a2 ;; 1c:71eb $0c $02 $63 $73 $a2 $73
     Op1C_TableJump 2                                   ;; 1c:71f1 $1c $02
     SCRIPT_POINTER call_1c_71f9                        ;; 1c:71f3 $f9 $71 $1c
     SCRIPT_POINTER call_1c_7219                        ;; 1c:71f6 $19 $72 $1c

@@ -136,7 +136,7 @@ data_3c_4495:
     SCRIPT_POINTER call_3c_4528                        ;; 3c:44e1 $28 $45 $3c
     Op18_Jump call_33_521b                             ;; 3c:44e4 $18 $1b $52 $33
     Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 3c:44e8 $36 $fd $77 $7f $9a $dd $01
-    Op0C_HamChatWheel 10, $5ff9, $6064                 ;; 3c:44ef $0c $0a $f9 $5f $64 $60
+    Op0C_HamChatWheel 10, data_05_5ff9, SunflowerElementaryAlwaysUsePile ;; 3c:44ef $0c $0a $f9 $5f $64 $60
     Op1E_Call call_04_5b22                             ;; 3c:44f5 $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 3c:44f9 $44 $09 $00
     Op1C_TableJump 10                                  ;; 3c:44fc $1c $0a
@@ -462,7 +462,7 @@ data_3c_4d76:
     SCRIPT_POINTER call_3c_4e0c                        ;; 3c:4dc4 $0c $4e $3c
     Op18_Jump call_3a_4000                             ;; 3c:4dc7 $18 $00 $40 $3a
     Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 3c:4dcb $36 $fd $77 $7f $9a $dd $01
-    Op0C_HamChatWheel 9, $6605, $668d                  ;; 3c:4dd2 $0c $09 $05 $66 $8d $66
+    Op0C_HamChatWheel 9, data_05_6605, SkyGardenAlwaysUsePile ;; 3c:4dd2 $0c $09 $05 $66 $8d $66
     Op1E_Call call_04_5b22                             ;; 3c:4dd8 $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 3c:4ddc $44 $09 $00
     Op1C_TableJump 9                                   ;; 3c:4ddf $1c $09
@@ -756,7 +756,7 @@ data_3c_53b5:
     SubOp_SetByte wC779, $00                           ;; 3c:53f9 $7e $61 $00
     Op18_Jump call_22_5639                             ;; 3c:53fc $18 $39 $56 $22
     Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 3c:5400 $36 $fd $77 $7f $9a $dd $01
-    Op0C_HamChatWheel 11, $6c5a, $6cf7                 ;; 3c:5407 $0c $0b $5a $6c $f7 $6c
+    Op0C_HamChatWheel 11, data_05_6c5a, RuinsAlwaysUsePile ;; 3c:5407 $0c $0b $5a $6c $f7 $6c
     Op1E_Call call_04_5b22                             ;; 3c:540d $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 3c:5411 $44 $09 $00
     Op1C_TableJump 11                                  ;; 3c:5414 $1c $0b
@@ -865,7 +865,7 @@ call_3c_544f:
     SCRIPT_POINTER call_3c_563c                        ;; 3c:55f3 $3c $56 $3c
     Op18_Jump call_32_535a                             ;; 3c:55f6 $18 $5a $53 $32
     Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 3c:55fa $36 $fd $77 $7f $9a $dd $01
-    Op0C_HamChatWheel 10, $543c, $548e                 ;; 3c:5601 $0c $0a $3c $54 $8e $54
+    Op0C_HamChatWheel 10, data_05_543c, SunflowerParkAlwaysUsePile ;; 3c:5601 $0c $0a $3c $54 $8e $54
     Op1E_Call call_04_5b22                             ;; 3c:5607 $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 3c:560b $44 $09 $00
     Op1C_TableJump 10                                  ;; 3c:560e $1c $0a

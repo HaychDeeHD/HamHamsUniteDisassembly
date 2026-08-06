@@ -2898,7 +2898,7 @@ call_22_7561:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 22:7585 $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 22:7589 $82 $cc $73 $01
     Op1E_Call call_1d_6f1d                             ;; 22:758d $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, $6cb0, $6cf7                  ;; 22:7591 $0c $02 $b0 $6c $f7 $6c
+    Op0C_HamChatWheel 2, RuinsYesNo, RuinsAlwaysUsePile ;; 22:7591 $0c $02 $b0 $6c $f7 $6c
     Op1C_TableJump 2                                   ;; 22:7597 $1c $02
     SCRIPT_POINTER call_22_759f                        ;; 22:7599 $9f $75 $22
     SCRIPT_POINTER call_22_75bc                        ;; 22:759c $bc $75 $22

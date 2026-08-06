@@ -146,10 +146,30 @@ data_05_411b:
 
 data_05_4123:
     TXT  "Scoochie<E1>"                                ;; 05:4123 ?????????
-    db   $00, $01, $02, $03, $04, $05, $06, $07        ;; 05:412c ????????
-    db   $08, $09, $0a, $0b, $0c, $0d, $0e, $0f        ;; 05:4134 ????????
 
-; Paired with data_05_4159
+; Paired with MiscAlwaysUsePile
+data_05_412c:
+    HamChatWheelOption $00 ; 00 Game                   ;; 05:412c $00
+    HamChatWheelOption $01 ; 01 Flag                   ;; 05:412d $01
+    HamChatWheelOption $02 ; 02 H.H.Dic                ;; 05:412e $02
+    HamChatWheelOption $03 ; 03 Sound                  ;; 05:412f $03
+    HamChatWheelOption $04 ; 04 Dance                  ;; 05:4130 $04
+    HamChatWheelOption $05 ; 05 Face                   ;; 05:4131 $05
+    HamChatWheelOption $06 ; 06 Machine                ;; 05:4132 $06
+    HamChatWheelOption $07 ; 07 Ver                    ;; 05:4133 $07
+    HamChatWheelOption $08 ; 08 Ending                 ;; 05:4134 $08
+    HamChatWheelOption $09 ; 09 Epilog                 ;; 05:4135 $09
+
+; Paired with MiscAlwaysUsePile
+data_05_4136:
+    HamChatWheelOption $0a ; 00 Nobody                 ;; 05:4136 $0a
+    HamChatWheelOption $0b ; 01 Bij Get                ;; 05:4137 $0b
+    HamChatWheelOption $0c ; 02 Oxn Get                ;; 05:4138 $0c
+    HamChatWheelOption $0d ; 03 Pas Get                ;; 05:4139 $0d
+    HamChatWheelOption $0e ; 04 All Get                ;; 05:413a $0e
+    HamChatWheelOption $0f ; 05 Ham-Chat               ;; 05:413b $0f
+
+; Paired with MiscAlwaysUsePile
 data_05_413c:
     HamChatWheelOption $02 ; 00 H.H.Dic                ;; 05:413c $02
     HamChatWheelOption $10 ; 01 Move                   ;; 05:413d $10
@@ -157,7 +177,7 @@ data_05_413c:
     HamChatWheelOption $11 ; 03 Save                   ;; 05:413f $11
     HamChatWheelOption $12 ; 04 SaveClr                ;; 05:4140 $12
 
-; Paired with data_05_4159
+; Paired with MiscAlwaysUsePile
 data_05_4141:
     HamChatWheelOption $13 ; 00 Item                   ;; 05:4141 $13
     HamChatWheelOption $14 ; 01 AllGet                 ;; 05:4142 $14
@@ -173,14 +193,14 @@ data_05_4144:
     HamChatWheelOption $1a ; 05 Hammo                  ;; 05:4149 $1a
     HamChatWheelOption $18 ; 06   ?                    ;; 05:414a $18
 
-; Paired with data_05_4159
-data_05_414b:
+; Paired with MiscAlwaysUsePile
+MiscCoreFourHamChats:
     HamChatWheelOption $1b ; 00 Hamha                  ;; 05:414b $1b
     HamChatWheelOption $1c ; 01 Hif-hif                ;; 05:414c $1c
     HamChatWheelOption $1d ; 02 Tack-Q                 ;; 05:414d $1d
     HamChatWheelOption $1e ; 03 Digdig                 ;; 05:414e $1e
 
-; Paired with data_05_4159
+; Paired with MiscAlwaysUsePile
 data_05_414f:
     HamChatWheelOption $1b ; 00 Hamha                  ;; 05:414f $1b
     HamChatWheelOption $1c ; 01 Hif-hif                ;; 05:4150 $1c
@@ -192,8 +212,8 @@ data_05_414f:
     HamChatWheelOption $16 ; 07 Go-P                   ;; 05:4156 $16
     db   $3e, $00                                      ;; 05:4157 ??
 
-; Paired with data_05_414b, data_05_414f, data_05_4141, data_05_413c
-data_05_4159:
+; Paired with MiscCoreFourHamChats, data_05_414f, data_05_4141, data_05_413c, data_05_412c, data_05_4136
+MiscAlwaysUsePile:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:4159 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:415a $1a
     HamChatWheelRule_AlwaysUse ; 02                    ;; 05:415b $1a
@@ -202,86 +222,88 @@ data_05_4159:
     HamChatWheelRule_AlwaysUse ; 05                    ;; 05:415e $1a
     HamChatWheelRule_AlwaysUse ; 06                    ;; 05:415f $1a
     HamChatWheelRule_AlwaysUse ; 07                    ;; 05:4160 $1a
-    db   $1a, $1a, $00, $6c, $07, $a2, $80, $0e        ;; 05:4161 ????????
-    db   $be, $01, $3e, $01, $3e, $03, $72, $4b        ;; 05:4169 ????????
-    db   $7e, $12, $70, $4b, $be, $03, $70, $4b        ;; 05:4171 ????????
-    db   $be, $08, $70, $4b, $be, $04, $70, $4b        ;; 05:4179 ????????
-    db   $be, $09, $70, $3e, $be, $00, $00, $43        ;; 05:4181 ????????
-    db   $80, $04, $00, $70, $3d, $a2, $02, $1e        ;; 05:4189 ????????
-    db   $6e, $1f, $be, $0a, $70, $3c, $be, $00        ;; 05:4191 ????????
-    db   $00, $00, $70, $3f, $a2, $00, $04, $00        ;; 05:4199 ????????
-    db   $70, $3c, $a2, $00, $02, $1e, $00, $43        ;; 05:41a1 ????????
-    db   $80, $04, $00, $70, $3e, $a2, $02, $1e        ;; 05:41a9 ????????
-    db   $70, $37, $be, $00, $3e, $a8, $5e, $05        ;; 05:41b1 ????????
-    db   $5e, $06, $5e, $07, $5e, $08, $5e, $09        ;; 05:41b9 ????????
-    db   $5e, $0a, $5e, $a8, $3e, $02, $70, $6c        ;; 05:41c1 ????????
-    db   $be, $01, $70, $6c, $be, $02, $70, $6c        ;; 05:41c9 ????????
-    db   $be, $03, $70, $6c, $be, $04, $70, $6c        ;; 05:41d1 ????????
-    db   $be, $05, $70, $6c, $be, $06, $70, $6c        ;; 05:41d9 ????????
-    db   $be, $07, $70, $6c, $be, $08, $70, $3f        ;; 05:41e1 ????????
-    db   $be, $00, $3e, $4e, $5e, $30, $5e, $2f        ;; 05:41e9 ????????
-    db   $5e, $33, $5e, $36, $5e, $2d, $5e, $32        ;; 05:41f1 ????????
-    db   $5e, $20, $5e, $46, $5e, $4a, $ae, $05        ;; 05:41f9 ????????
-    db   $7e, $04, $5f, $12, $5f, $13, $70, $4b        ;; 05:4201 ????????
-    db   $be, $00, $5e, $14, $5e, $28, $5e, $2c        ;; 05:4209 ????????
-    db   $5e, $13, $5e, $11, $5e, $29, $5e, $26        ;; 05:4211 ????????
-    db   $5e, $23, $5e, $15, $5e, $34, $5e, $31        ;; 05:4219 ????????
-    db   $5e, $2b, $5f, $10, $5f, $11, $5e, $1b        ;; 05:4221 ????????
-    db   $5e, $24, $5e, $49, $5e, $4d, $5e, $4c        ;; 05:4229 ????????
-    db   $5e, $2a, $5e, $41, $5e, $47, $5e, $48        ;; 05:4231 ????????
-    db   $5e, $1f, $5f, $14, $5f, $15, $5e, $57        ;; 05:4239 ????????
-    db   $5e, $18, $5e, $60, $5e, $1d, $5e, $0f        ;; 05:4241 ????????
-    db   $5e, $3e, $5e, $16, $5f, $17, $5e, $39        ;; 05:4249 ????????
-    db   $5e, $55, $5e, $40, $5e, $37, $5e, $25        ;; 05:4251 ????????
-    db   $5e, $4f, $5e, $38, $5e, $56, $5e, $19        ;; 05:4259 ????????
-    db   $5e, $3c, $5e, $3b, $5e, $3d, $5e, $3f        ;; 05:4261 ????????
-    db   $5f, $18, $5f, $19, $5e, $2e, $5e, $5a        ;; 05:4269 ????????
-    db   $5e, $21, $5e, $59, $5e, $10, $5e, $58        ;; 05:4271 ????????
-    db   $5e, $1e, $5e, $1a, $5e, $27, $5f, $1a        ;; 05:4279 ????????
-    db   $5f, $1b, $5f, $16, $5e, $81, $5e, $82        ;; 05:4281 ????????
-    db   $5e, $83, $5e, $84, $5e, $85, $5e, $86        ;; 05:4289 ????????
-    db   $5e, $87, $5e, $88, $5e, $89, $5e, $8a        ;; 05:4291 ????????
-    db   $5e, $8b, $5e, $8c, $93, $07, $de, $01        ;; 05:4299 ????????
-    db   $2c, $93, $07, $be, $40, $70, $09, $be        ;; 05:42a1 ????????
-    db   $ff, $6e, $4b, $be, $01, $6e, $4b, $be        ;; 05:42a9 ????????
-    db   $01, $70, $4b, $be, $88, $70, $8d, $be        ;; 05:42b1 ????????
-    db   $00, $70, $8d, $be, $01, $6e, $04, $be        ;; 05:42b9 ????????
-    db   $05, $6e, $0b, $be, $01, $70, $0b, $be        ;; 05:42c1 ????????
-    db   $00, $70, $0b, $be, $02, $72, $0b, $be        ;; 05:42c9 ????????
-    db   $02, $70, $04, $be, $00, $70, $8d, $be        ;; 05:42d1 ????????
-    db   $02, $70, $8d, $be, $00, $70, $8d, $be        ;; 05:42d9 ????????
-    db   $01, $8f, $07, $be, $01, $00, $00, $b2        ;; 05:42e1 ????????
-    db   $01, $62, $3c, $06, $00, $72, $3c, $a2        ;; 05:42e9 ????????
-    db   $01, $02, $1e, $70, $3c, $be, $02, $70        ;; 05:42f1 ????????
-    db   $43, $be, $01, $70, $04, $be, $00, $00        ;; 05:42f9 ????????
-    db   $6c, $4b, $a2, $fe, $10, $be, $00, $00        ;; 05:4301 ????????
-    db   $6c, $4b, $a2, $fd, $10, $be, $00, $00        ;; 05:4309 ????????
-    db   $6c, $4b, $a2, $ff, $0e, $be, $01, $70        ;; 05:4311 ????????
-    db   $4b, $be, $56, $3f, $63, $6e, $4b, $be        ;; 05:4319 ????????
-    db   $0a, $5e, $03, $70, $17, $7e, $4b, $70        ;; 05:4321 ????????
-    db   $4b, $be, $ff, $70, $47, $be, $00, $70        ;; 05:4329 ????????
-    db   $47, $be, $01, $70, $42, $be, $00, $70        ;; 05:4331 ????????
-    db   $42, $be, $03, $70, $43, $be, $01, $70        ;; 05:4339 ????????
-    db   $42, $be, $01, $70, $42, $be, $02, $70        ;; 05:4341 ????????
-    db   $43, $be, $02, $70, $43, $be, $03, $70        ;; 05:4349 ????????
-    db   $47, $be, $02, $3e, $a7, $6e, $04, $be        ;; 05:4351 ????????
-    db   $05, $70, $6c, $be, $00, $70, $4b, $be        ;; 05:4359 ????????
-    db   $01, $70, $4b, $be, $02, $70, $4b, $be        ;; 05:4361 ????????
-    db   $03, $70, $4b, $be, $04, $6e, $4b, $be        ;; 05:4369 ????????
-    db   $01, $6e, $4b, $be, $01, $70, $1e, $be        ;; 05:4371 ????????
-    db   $01, $70, $1e, $be, $02, $70, $1e, $be        ;; 05:4379 ????????
-    db   $03, $70, $1e, $be, $04, $6e, $1f, $be        ;; 05:4381 ????????
-    db   $80, $b2, $00, $7f, $02, $71, $02, $be        ;; 05:4389 ????????
-    db   $00, $73, $02, $be, $03, $00, $00, $b2        ;; 05:4391 ????????
-    db   $03, $63, $01, $06, $00, $73, $01, $a2        ;; 05:4399 ????????
-    db   $03, $02, $1e, $71, $03, $be, $07, $71        ;; 05:43a1 ????????
-    db   $00, $be, $01, $3e, $a9, $b2, $02, $7e        ;; 05:43a9 ????????
-    db   $39, $70, $2a, $be, $01, $00, $6c, $0d        ;; 05:43b1 ????????
-    db   $a2, $5a, $0e, $be, $01, $70, $0d, $be        ;; 05:43b9 ????????
-    db   $5a, $70, $4c, $be, $10, $70, $4c, $be        ;; 05:43c1 ????????
-    db   $08, $70, $4c, $be, $04, $70, $4c, $be        ;; 05:43c9 ????????
-    db   $02, $00, $72, $39, $a2, $01, $06, $00        ;; 05:43d1 ????????
-    db   $b2, $01, $62, $39, $1e                       ;; 05:43d9 ?????
+    HamChatWheelRule_AlwaysUse ; 08                    ;; 05:4161 $1a
+    HamChatWheelRule_AlwaysUse ; 09                    ;; 05:4162 $1a
+    db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:4163 ????????
+    db   $3e, $01, $3e, $03, $72, $4b, $7e, $12        ;; 05:416b ????????
+    db   $70, $4b, $be, $03, $70, $4b, $be, $08        ;; 05:4173 ????????
+    db   $70, $4b, $be, $04, $70, $4b, $be, $09        ;; 05:417b ????????
+    db   $70, $3e, $be, $00, $00, $43, $80, $04        ;; 05:4183 ????????
+    db   $00, $70, $3d, $a2, $02, $1e, $6e, $1f        ;; 05:418b ????????
+    db   $be, $0a, $70, $3c, $be, $00, $00, $00        ;; 05:4193 ????????
+    db   $70, $3f, $a2, $00, $04, $00, $70, $3c        ;; 05:419b ????????
+    db   $a2, $00, $02, $1e, $00, $43, $80, $04        ;; 05:41a3 ????????
+    db   $00, $70, $3e, $a2, $02, $1e, $70, $37        ;; 05:41ab ????????
+    db   $be, $00, $3e, $a8, $5e, $05, $5e, $06        ;; 05:41b3 ????????
+    db   $5e, $07, $5e, $08, $5e, $09, $5e, $0a        ;; 05:41bb ????????
+    db   $5e, $a8, $3e, $02, $70, $6c, $be, $01        ;; 05:41c3 ????????
+    db   $70, $6c, $be, $02, $70, $6c, $be, $03        ;; 05:41cb ????????
+    db   $70, $6c, $be, $04, $70, $6c, $be, $05        ;; 05:41d3 ????????
+    db   $70, $6c, $be, $06, $70, $6c, $be, $07        ;; 05:41db ????????
+    db   $70, $6c, $be, $08, $70, $3f, $be, $00        ;; 05:41e3 ????????
+    db   $3e, $4e, $5e, $30, $5e, $2f, $5e, $33        ;; 05:41eb ????????
+    db   $5e, $36, $5e, $2d, $5e, $32, $5e, $20        ;; 05:41f3 ????????
+    db   $5e, $46, $5e, $4a, $ae, $05, $7e, $04        ;; 05:41fb ????????
+    db   $5f, $12, $5f, $13, $70, $4b, $be, $00        ;; 05:4203 ????????
+    db   $5e, $14, $5e, $28, $5e, $2c, $5e, $13        ;; 05:420b ????????
+    db   $5e, $11, $5e, $29, $5e, $26, $5e, $23        ;; 05:4213 ????????
+    db   $5e, $15, $5e, $34, $5e, $31, $5e, $2b        ;; 05:421b ????????
+    db   $5f, $10, $5f, $11, $5e, $1b, $5e, $24        ;; 05:4223 ????????
+    db   $5e, $49, $5e, $4d, $5e, $4c, $5e, $2a        ;; 05:422b ????????
+    db   $5e, $41, $5e, $47, $5e, $48, $5e, $1f        ;; 05:4233 ????????
+    db   $5f, $14, $5f, $15, $5e, $57, $5e, $18        ;; 05:423b ????????
+    db   $5e, $60, $5e, $1d, $5e, $0f, $5e, $3e        ;; 05:4243 ????????
+    db   $5e, $16, $5f, $17, $5e, $39, $5e, $55        ;; 05:424b ????????
+    db   $5e, $40, $5e, $37, $5e, $25, $5e, $4f        ;; 05:4253 ????????
+    db   $5e, $38, $5e, $56, $5e, $19, $5e, $3c        ;; 05:425b ????????
+    db   $5e, $3b, $5e, $3d, $5e, $3f, $5f, $18        ;; 05:4263 ????????
+    db   $5f, $19, $5e, $2e, $5e, $5a, $5e, $21        ;; 05:426b ????????
+    db   $5e, $59, $5e, $10, $5e, $58, $5e, $1e        ;; 05:4273 ????????
+    db   $5e, $1a, $5e, $27, $5f, $1a, $5f, $1b        ;; 05:427b ????????
+    db   $5f, $16, $5e, $81, $5e, $82, $5e, $83        ;; 05:4283 ????????
+    db   $5e, $84, $5e, $85, $5e, $86, $5e, $87        ;; 05:428b ????????
+    db   $5e, $88, $5e, $89, $5e, $8a, $5e, $8b        ;; 05:4293 ????????
+    db   $5e, $8c, $93, $07, $de, $01, $2c, $93        ;; 05:429b ????????
+    db   $07, $be, $40, $70, $09, $be, $ff, $6e        ;; 05:42a3 ????????
+    db   $4b, $be, $01, $6e, $4b, $be, $01, $70        ;; 05:42ab ????????
+    db   $4b, $be, $88, $70, $8d, $be, $00, $70        ;; 05:42b3 ????????
+    db   $8d, $be, $01, $6e, $04, $be, $05, $6e        ;; 05:42bb ????????
+    db   $0b, $be, $01, $70, $0b, $be, $00, $70        ;; 05:42c3 ????????
+    db   $0b, $be, $02, $72, $0b, $be, $02, $70        ;; 05:42cb ????????
+    db   $04, $be, $00, $70, $8d, $be, $02, $70        ;; 05:42d3 ????????
+    db   $8d, $be, $00, $70, $8d, $be, $01, $8f        ;; 05:42db ????????
+    db   $07, $be, $01, $00, $00, $b2, $01, $62        ;; 05:42e3 ????????
+    db   $3c, $06, $00, $72, $3c, $a2, $01, $02        ;; 05:42eb ????????
+    db   $1e, $70, $3c, $be, $02, $70, $43, $be        ;; 05:42f3 ????????
+    db   $01, $70, $04, $be, $00, $00, $6c, $4b        ;; 05:42fb ????????
+    db   $a2, $fe, $10, $be, $00, $00, $6c, $4b        ;; 05:4303 ????????
+    db   $a2, $fd, $10, $be, $00, $00, $6c, $4b        ;; 05:430b ????????
+    db   $a2, $ff, $0e, $be, $01, $70, $4b, $be        ;; 05:4313 ????????
+    db   $56, $3f, $63, $6e, $4b, $be, $0a, $5e        ;; 05:431b ????????
+    db   $03, $70, $17, $7e, $4b, $70, $4b, $be        ;; 05:4323 ????????
+    db   $ff, $70, $47, $be, $00, $70, $47, $be        ;; 05:432b ????????
+    db   $01, $70, $42, $be, $00, $70, $42, $be        ;; 05:4333 ????????
+    db   $03, $70, $43, $be, $01, $70, $42, $be        ;; 05:433b ????????
+    db   $01, $70, $42, $be, $02, $70, $43, $be        ;; 05:4343 ????????
+    db   $02, $70, $43, $be, $03, $70, $47, $be        ;; 05:434b ????????
+    db   $02, $3e, $a7, $6e, $04, $be, $05, $70        ;; 05:4353 ????????
+    db   $6c, $be, $00, $70, $4b, $be, $01, $70        ;; 05:435b ????????
+    db   $4b, $be, $02, $70, $4b, $be, $03, $70        ;; 05:4363 ????????
+    db   $4b, $be, $04, $6e, $4b, $be, $01, $6e        ;; 05:436b ????????
+    db   $4b, $be, $01, $70, $1e, $be, $01, $70        ;; 05:4373 ????????
+    db   $1e, $be, $02, $70, $1e, $be, $03, $70        ;; 05:437b ????????
+    db   $1e, $be, $04, $6e, $1f, $be, $80, $b2        ;; 05:4383 ????????
+    db   $00, $7f, $02, $71, $02, $be, $00, $73        ;; 05:438b ????????
+    db   $02, $be, $03, $00, $00, $b2, $03, $63        ;; 05:4393 ????????
+    db   $01, $06, $00, $73, $01, $a2, $03, $02        ;; 05:439b ????????
+    db   $1e, $71, $03, $be, $07, $71, $00, $be        ;; 05:43a3 ????????
+    db   $01, $3e, $a9, $b2, $02, $7e, $39, $70        ;; 05:43ab ????????
+    db   $2a, $be, $01, $00, $6c, $0d, $a2, $5a        ;; 05:43b3 ????????
+    db   $0e, $be, $01, $70, $0d, $be, $5a, $70        ;; 05:43bb ????????
+    db   $4c, $be, $10, $70, $4c, $be, $08, $70        ;; 05:43c3 ????????
+    db   $4c, $be, $04, $70, $4c, $be, $02, $00        ;; 05:43cb ????????
+    db   $72, $39, $a2, $01, $06, $00, $b2, $01        ;; 05:43d3 ????????
+    db   $62, $39, $1e                                 ;; 05:43db ???
 
 ; Paired with data_05_4144
 data_05_43de:
@@ -574,12 +596,29 @@ data_05_43de:
     TXT  "Wabldobl<E1>"                                ;; 05:4781 ?????????
 .data_05_478a:
     TXT  "See-Tru<E1>"                                 ;; 05:478a ????????
-    db   $00, $01, $02, $03, $04, $05, $06, $07        ;; 05:4792 ????????
-    db   $08, $09, $0a, $0b, $0c, $0d, $0e, $0f        ;; 05:479a ????????
-    db   $10                                           ;; 05:47a2 ?
 
-; Paired with data_05_4893
-data_05_47a3:
+; Paired with ClubhouseAlwaysUsePile
+ClubhouseSigns:
+    HamChatWheelOption $00 ; 00 LivingRoom             ;; 05:4792 $00
+    HamChatWheelOption $01 ; 01 Boutique               ;; 05:4793 $01
+    HamChatWheelOption $02 ; 02 Bijou                  ;; 05:4794 $02
+    HamChatWheelOption $03 ; 03 Maxwell                ;; 05:4795 $03
+    HamChatWheelOption $04 ; 04 Oxnard                 ;; 05:4796 $04
+    HamChatWheelOption $05 ; 05 Pashmina               ;; 05:4797 $05
+    HamChatWheelOption $06 ; 06 Panda                  ;; 05:4798 $06
+    HamChatWheelOption $07 ; 07 Jingle                 ;; 05:4799 $07
+    HamChatWheelOption $08 ; 08 Sandy                  ;; 05:479a $08
+    HamChatWheelOption $09 ; 09 Stan                   ;; 05:479b $09
+    HamChatWheelOption $0a ; 10 Penelope               ;; 05:479c $0a
+    HamChatWheelOption $0b ; 11 Cappy                  ;; 05:479d $0b
+    HamChatWheelOption $0c ; 12 Howdy                  ;; 05:479e $0c
+    HamChatWheelOption $0d ; 13 Dexter                 ;; 05:479f $0d
+    HamChatWheelOption $0e ; 14 Boss                   ;; 05:47a0 $0e
+    HamChatWheelOption $0f ; 15 Snoozer                ;; 05:47a1 $0f
+    HamChatWheelOption $10 ; 16 Dance Hall             ;; 05:47a2 $10
+
+; Paired with ClubhouseAlwaysUsePile
+ClubhouseNumbers:
     HamChatWheelOption $11 ; 00 01                     ;; 05:47a3 $11
     HamChatWheelOption $12 ; 01 02                     ;; 05:47a4 $12
     HamChatWheelOption $13 ; 02 03                     ;; 05:47a5 $13
@@ -590,7 +629,11 @@ data_05_47a3:
     HamChatWheelOption $18 ; 07 08                     ;; 05:47aa $18
     HamChatWheelOption $19 ; 08 09                     ;; 05:47ab $19
     HamChatWheelOption $1a ; 09 10                     ;; 05:47ac $1a
-    db   $1b, $1c                                      ;; 05:47ad ??
+
+; Paired with ClubhouseAlwaysUsePile
+ClubhouseYesNo:
+    HamChatWheelOption $1b ; 00 Yep-P                  ;; 05:47ad $1b
+    HamChatWheelOption $1c ; 01 No-P                   ;; 05:47ae $1c
 
 ; Paired with HintGiverBossRules
 HintGiverBossOptions:
@@ -618,15 +661,15 @@ data_05_47bb:
     HamChatWheelOption $21 ; 06 Noworrie               ;; 05:47c1 $21
     HamChatWheelOption $1e ; 07   ?                    ;; 05:47c2 $1e
 
-; Paired with data_05_4893
-data_05_47c3:
+; Paired with ClubhouseAlwaysUsePile
+ClubhouseCoreFourHamChats:
     HamChatWheelOption $22 ; 00 Hamha                  ;; 05:47c3 $22
     HamChatWheelOption $23 ; 01 Hif-hif                ;; 05:47c4 $23
     HamChatWheelOption $24 ; 02 Tack-Q                 ;; 05:47c5 $24
     HamChatWheelOption $25 ; 03 Digdig                 ;; 05:47c6 $25
 
-; Paired with data_05_4d38
-data_05_47c7:
+; Paired with TutorialHamChatRules
+TutorialCoreFourHamChats:
     HamChatWheelOption $22 ; 00 Hamha                  ;; 05:47c7 $22
     HamChatWheelOption $1e ; 01   ?                    ;; 05:47c8 $1e
     HamChatWheelOption $23 ; 02 Hif-hif                ;; 05:47c9 $23
@@ -886,8 +929,8 @@ data_05_487b:
     db   $72, $0c, $be, $02, $70, $4d, $be, $00        ;; 05:4883 ????????
     db   $6f, $2f, $be, $01, $70, $07, $be, $80        ;; 05:488b ????????
 
-; Paired with data_05_47c3, data_05_47a3
-data_05_4893:
+; Paired with ClubhouseCoreFourHamChats, ClubhouseYesNo, ClubhouseSigns, ClubhouseNumbers
+ClubhouseAlwaysUsePile:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:4893 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:4894 $1a
     HamChatWheelRule_AlwaysUse ; 02                    ;; 05:4895 $1a
@@ -898,10 +941,16 @@ data_05_4893:
     HamChatWheelRule_AlwaysUse ; 07                    ;; 05:489a $1a
     HamChatWheelRule_AlwaysUse ; 08                    ;; 05:489b $1a
     HamChatWheelRule_AlwaysUse ; 09                    ;; 05:489c $1a
-    db   $1a, $1a, $1a, $1a, $1a, $1a, $1a, $70        ;; 05:489d ????????
-    db   $04, $be, $00, $71, $2f, $7f, $2e, $73        ;; 05:48a5 ????????
-    db   $2f, $7f, $2e, $72, $0a, $be, $02, $b2        ;; 05:48ad ????????
-    db   $02, $7e, $39, $3f, $80                       ;; 05:48b5 ?????
+    HamChatWheelRule_AlwaysUse ; 10                    ;; 05:489d $1a
+    HamChatWheelRule_AlwaysUse ; 11                    ;; 05:489e $1a
+    HamChatWheelRule_AlwaysUse ; 12                    ;; 05:489f $1a
+    HamChatWheelRule_AlwaysUse ; 13                    ;; 05:48a0 $1a
+    HamChatWheelRule_AlwaysUse ; 14                    ;; 05:48a1 $1a
+    HamChatWheelRule_AlwaysUse ; 15                    ;; 05:48a2 $1a
+    HamChatWheelRule_AlwaysUse ; 16                    ;; 05:48a3 $1a
+    db   $70, $04, $be, $00, $71, $2f, $7f, $2e        ;; 05:48a4 ????????
+    db   $73, $2f, $7f, $2e, $72, $0a, $be, $02        ;; 05:48ac ????????
+    db   $b2, $02, $7e, $39, $3f, $80                  ;; 05:48b4 ??????
 
 ; Paired with HintGiverBossOptions
 HintGiverBossRules:
@@ -1119,8 +1168,8 @@ data_05_4940:
     db   $71, $12, $be, $04, $71, $10, $be, $01        ;; 05:4d28 ????????
     db   $71, $10, $be, $02, $3f, $83, $5f, $83        ;; 05:4d30 ????????
 
-; Paired with data_05_47c7
-data_05_4d38:
+; Paired with TutorialCoreFourHamChats
+TutorialHamChatRules:
     HamChatWheelRule_DefaultCase_Pair $b2, $00 ; 00    ;; 05:4d38 $b2 $00
     HamChatWheelRule_DefaultCase_Pair $7f, $12 ; 01    ;; 05:4d3a $7f $12
     HamChatWheelRule_DefaultCase_Pair $71, $12 ; 02    ;; 05:4d3c $71 $12
@@ -1637,8 +1686,19 @@ data_05_52f2:
     TXT  "Zuzuzu<E1>"                                  ;; 05:542f ???????
 .data_05_5436:
     TXT  "Hammo<E1>"                                   ;; 05:5436 ??????
-    db   $00, $01, $02, $03, $04, $05, $06, $07        ;; 05:543c ????????
-    db   $08, $09                                      ;; 05:5444 ??
+
+; Paired with SunflowerParkAlwaysUsePile
+data_05_543c:
+    HamChatWheelOption $00 ; 00 sabaku1                ;; 05:543c $00
+    HamChatWheelOption $01 ; 01 sabaku2                ;; 05:543d $01
+    HamChatWheelOption $02 ; 02 sabaku3                ;; 05:543e $02
+    HamChatWheelOption $03 ; 03 sabaku4                ;; 05:543f $03
+    HamChatWheelOption $04 ; 04 kadan1                 ;; 05:5440 $04
+    HamChatWheelOption $05 ; 05 kadan2                 ;; 05:5441 $05
+    HamChatWheelOption $06 ; 06 kadan3                 ;; 05:5442 $06
+    HamChatWheelOption $07 ; 07 hanazono               ;; 05:5443 $07
+    HamChatWheelOption $08 ; 08 suberidai1             ;; 05:5444 $08
+    HamChatWheelOption $09 ; 09 J Gym                  ;; 05:5445 $09
 
 ; Paired with data_05_5556
 data_05_5446:
@@ -1654,9 +1714,13 @@ data_05_5446:
     HamChatWheelOption $0f ; 09   ?                    ;; 05:544f $0f
     HamChatWheelOption $12 ; 10 Hushie                 ;; 05:5450 $12
     HamChatWheelOption $0f ; 11   ?                    ;; 05:5451 $0f
-    db   $13, $14                                      ;; 05:5452 ??
 
-; Paired with data_05_548e
+; Paired with SunflowerParkAlwaysUsePile
+SunflowerParkYesNo:
+    HamChatWheelOption $13 ; 00 Yep-P                  ;; 05:5452 $13
+    HamChatWheelOption $14 ; 01 No-P                   ;; 05:5453 $14
+
+; Paired with SunflowerParkAlwaysUsePile
 data_05_5454:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:5454 $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:5455 $0b
@@ -1665,8 +1729,8 @@ data_05_5454:
     HamChatWheelOption $15 ; 04 Lookie                 ;; 05:5458 $15
     HamChatWheelOption $16 ; 05 Go-P                   ;; 05:5459 $16
 
-; Paired with data_05_548e
-data_05_545a:
+; Paired with SunflowerParkAlwaysUsePile
+SunflowerParkCoreFourHamChats:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:545a $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:545b $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:545c $0c
@@ -1715,39 +1779,42 @@ data_05_5476:
     db   $71, $1c, $be, $03, $71, $1c, $be, $04        ;; 05:547e ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:5486 ????????
 
-; Paired with data_05_545a, data_05_5454
-data_05_548e:
+; Paired with data_05_543c, SunflowerParkCoreFourHamChats, data_05_5454, SunflowerParkYesNo
+SunflowerParkAlwaysUsePile:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:548e $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:548f $1a
     HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5490 $1a
     HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5491 $1a
     HamChatWheelRule_AlwaysUse ; 04                    ;; 05:5492 $1a
     HamChatWheelRule_AlwaysUse ; 05                    ;; 05:5493 $1a
-    db   $1a, $1a, $1a, $1a, $b2, $02, $7e, $39        ;; 05:5494 ????????
-    db   $5e, $c4, $5f, $9f, $70, $0d, $be, $0d        ;; 05:549c ????????
-    db   $70, $0d, $be, $0a, $3e, $a8, $70, $4c        ;; 05:54a4 ????????
-    db   $be, $10, $70, $4c, $be, $08, $70, $4c        ;; 05:54ac ????????
-    db   $be, $04, $70, $4c, $be, $02, $00, $72        ;; 05:54b4 ????????
-    db   $39, $a2, $01, $06, $00, $b2, $01, $62        ;; 05:54bc ????????
-    db   $39, $1e, $70, $37, $be, $00, $3e, $e0        ;; 05:54c4 ????????
-    db   $3e, $da, $71, $1b, $be, $05, $00, $6d        ;; 05:54cc ????????
-    db   $1c, $a2, $60, $0e, $be, $01, $00, $6d        ;; 05:54d4 ????????
-    db   $1c, $a2, $90, $0e, $be, $01, $3f, $b4        ;; 05:54dc ????????
-    db   $3f, $b5, $3f, $b6, $71, $1c, $be, $02        ;; 05:54e4 ????????
-    db   $71, $1c, $be, $03, $3e, $33, $71, $1b        ;; 05:54ec ????????
-    db   $be, $04, $00, $6d, $1c, $a2, $30, $0e        ;; 05:54f4 ????????
-    db   $be, $01, $5e, $de, $5e, $d1, $71, $1a        ;; 05:54fc ????????
-    db   $be, $01, $71, $1a, $be, $02, $70, $0d        ;; 05:5504 ????????
-    db   $be, $0c, $70, $0d, $be, $14, $70, $0d        ;; 05:550c ????????
-    db   $be, $28, $70, $0d, $be, $0b, $00, $6d        ;; 05:5514 ????????
-    db   $1c, $a2, $78, $0e, $be, $01, $70, $6a        ;; 05:551c ????????
-    db   $be, $60, $3e, $76, $00, $6d, $1c, $a2        ;; 05:5524 ????????
-    db   $48, $0e, $be, $01, $3e, $df, $3f, $b7        ;; 05:552c ????????
-    db   $3f, $b8, $3f, $b9, $3e, $36, $70, $66        ;; 05:5534 ????????
-    db   $be, $00, $71, $00, $be, $30, $3e, $aa        ;; 05:553c ????????
-    db   $70, $2a, $be, $01, $70, $56, $be, $02        ;; 05:5544 ????????
-    db   $70, $56, $be, $01, $71, $19, $be, $03        ;; 05:554c ????????
-    db   $5e, $a6                                      ;; 05:5554 ??
+    HamChatWheelRule_AlwaysUse ; 06                    ;; 05:5494 $1a
+    HamChatWheelRule_AlwaysUse ; 07                    ;; 05:5495 $1a
+    HamChatWheelRule_AlwaysUse ; 08                    ;; 05:5496 $1a
+    HamChatWheelRule_AlwaysUse ; 09                    ;; 05:5497 $1a
+    db   $b2, $02, $7e, $39, $5e, $c4, $5f, $9f        ;; 05:5498 ????????
+    db   $70, $0d, $be, $0d, $70, $0d, $be, $0a        ;; 05:54a0 ????????
+    db   $3e, $a8, $70, $4c, $be, $10, $70, $4c        ;; 05:54a8 ????????
+    db   $be, $08, $70, $4c, $be, $04, $70, $4c        ;; 05:54b0 ????????
+    db   $be, $02, $00, $72, $39, $a2, $01, $06        ;; 05:54b8 ????????
+    db   $00, $b2, $01, $62, $39, $1e, $70, $37        ;; 05:54c0 ????????
+    db   $be, $00, $3e, $e0, $3e, $da, $71, $1b        ;; 05:54c8 ????????
+    db   $be, $05, $00, $6d, $1c, $a2, $60, $0e        ;; 05:54d0 ????????
+    db   $be, $01, $00, $6d, $1c, $a2, $90, $0e        ;; 05:54d8 ????????
+    db   $be, $01, $3f, $b4, $3f, $b5, $3f, $b6        ;; 05:54e0 ????????
+    db   $71, $1c, $be, $02, $71, $1c, $be, $03        ;; 05:54e8 ????????
+    db   $3e, $33, $71, $1b, $be, $04, $00, $6d        ;; 05:54f0 ????????
+    db   $1c, $a2, $30, $0e, $be, $01, $5e, $de        ;; 05:54f8 ????????
+    db   $5e, $d1, $71, $1a, $be, $01, $71, $1a        ;; 05:5500 ????????
+    db   $be, $02, $70, $0d, $be, $0c, $70, $0d        ;; 05:5508 ????????
+    db   $be, $14, $70, $0d, $be, $28, $70, $0d        ;; 05:5510 ????????
+    db   $be, $0b, $00, $6d, $1c, $a2, $78, $0e        ;; 05:5518 ????????
+    db   $be, $01, $70, $6a, $be, $60, $3e, $76        ;; 05:5520 ????????
+    db   $00, $6d, $1c, $a2, $48, $0e, $be, $01        ;; 05:5528 ????????
+    db   $3e, $df, $3f, $b7, $3f, $b8, $3f, $b9        ;; 05:5530 ????????
+    db   $3e, $36, $70, $66, $be, $00, $71, $00        ;; 05:5538 ????????
+    db   $be, $30, $3e, $aa, $70, $2a, $be, $01        ;; 05:5540 ????????
+    db   $70, $56, $be, $02, $70, $56, $be, $01        ;; 05:5548 ????????
+    db   $71, $19, $be, $03, $5e, $a6                  ;; 05:5550 ??????
 
 ; Paired with data_05_5446
 data_05_5556:
@@ -1989,10 +2056,17 @@ data_05_58d6:
     TXT  "Sparklie<E1>"                                ;; 05:59db ?????????
 .data_05_59e4:
     TXT  "Nopibloo<E1>"                                ;; 05:59e4 ?????????
-    db   $00, $01, $02, $03, $04                       ;; 05:59ed ?????
 
 ; Paired with data_05_5a55
-data_05_59f2:
+data_05_59ed:
+    HamChatWheelOption $00 ; 00 deiriguti              ;; 05:59ed $00
+    HamChatWheelOption $01 ; 01 keidai                 ;; 05:59ee $01
+    HamChatWheelOption $02 ; 02 mori3                  ;; 05:59ef $02
+    HamChatWheelOption $03 ; 03 mori5                  ;; 05:59f0 $03
+    HamChatWheelOption $04 ; 04 ribbon                 ;; 05:59f1 $04
+
+; Paired with data_05_5a55
+AcornShrineCoreFourHamChats:
     HamChatWheelOption $05 ; 00 Hamha                  ;; 05:59f2 $05
     HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:59f3 $06
     HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:59f4 $07
@@ -2051,7 +2125,11 @@ data_05_5a16:
     HamChatWheelOption $0c ; 04 Scrit-T                ;; 05:5a1a $0c
     HamChatWheelOption $12 ; 05 Ta-dah                 ;; 05:5a1b $12
     HamChatWheelOption $0e ; 06   ?                    ;; 05:5a1c $0e
-    db   $13, $14                                      ;; 05:5a1d ??
+
+; Paired with data_05_5a55
+AcornShrineYesNo:
+    HamChatWheelOption $13 ; 00 Yep-P                  ;; 05:5a1d $13
+    HamChatWheelOption $14 ; 01 No-P                   ;; 05:5a1e $14
 
 ; These are just the base 4 if Bijou is behind the tree.
 ; Otherwise it also has Scrit-T and Scoochie.
@@ -2107,40 +2185,41 @@ SadMaxwellOptions:
     db   $71, $05, $be, $01, $71, $05, $be, $02        ;; 05:5a45 ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:5a4d ????????
 
-; Paired with data_05_59f2
+; Paired with AcornShrineCoreFourHamChats, AcornShrineYesNo, data_05_59ed
 data_05_5a55:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5a55 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5a56 $1a
     HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5a57 $1a
     HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5a58 $1a
-    db   $1a, $b2, $02, $7e, $39, $3e, $ba, $70        ;; 05:5a59 ????????
-    db   $4f, $be, $01, $70, $0d, $be, $0a, $70        ;; 05:5a61 ????????
-    db   $0d, $be, $0b, $3e, $a8, $70, $4c, $be        ;; 05:5a69 ????????
-    db   $10, $70, $4c, $be, $08, $70, $4c, $be        ;; 05:5a71 ????????
-    db   $04, $70, $4c, $be, $02, $3e, $03, $3f        ;; 05:5a79 ????????
-    db   $3e, $71, $06, $be, $00, $71, $06, $be        ;; 05:5a81 ????????
-    db   $01, $71, $06, $be, $02, $71, $06, $be        ;; 05:5a89 ????????
-    db   $03, $71, $06, $be, $04, $71, $06, $be        ;; 05:5a91 ????????
-    db   $05, $6e, $76, $be, $02, $00, $72, $77        ;; 05:5a99 ????????
-    db   $a2, $02, $06, $00, $72, $52, $a2, $03        ;; 05:5aa1 ????????
-    db   $1e, $70, $23, $be, $c0, $71, $05, $be        ;; 05:5aa9 ????????
-    db   $02, $3e, $bf, $3f, $88, $71, $05, $be        ;; 05:5ab1 ????????
-    db   $90, $72, $4f, $be, $01, $b2, $02, $7e        ;; 05:5ab9 ????????
-    db   $51, $70, $51, $be, $02, $70, $51, $be        ;; 05:5ac1 ????????
-    db   $01, $6e, $4f, $be, $02, $71, $05, $be        ;; 05:5ac9 ????????
-    db   $60, $00, $6d, $05, $a2, $78, $0e, $be        ;; 05:5ad1 ????????
-    db   $01, $70, $36, $be, $00, $3e, $73, $3e        ;; 05:5ad9 ????????
-    db   $eb, $6e, $1f, $be, $01, $6e, $04, $be        ;; 05:5ae1 ????????
-    db   $06, $5e, $81, $5e, $82, $3f, $38, $00        ;; 05:5ae9 ????????
-    db   $6c, $23, $a2, $60, $0e, $be, $01, $3f        ;; 05:5af1 ????????
-    db   $9c, $00, $6c, $23, $a2, $48, $0e, $be        ;; 05:5af9 ????????
-    db   $01, $71, $05, $be, $08, $00, $6d, $05        ;; 05:5b01 ????????
-    db   $a2, $60, $0e, $be, $01, $3e, $e2, $00        ;; 05:5b09 ????????
-    db   $00, $6f, $06, $a2, $02, $04, $00, $73        ;; 05:5b11 ????????
-    db   $06, $a2, $05, $02, $1e, $3e, $90, $3e        ;; 05:5b19 ????????
-    db   $92, $5f, $36, $5f, $35, $3f, $35, $3f        ;; 05:5b21 ????????
-    db   $36, $6e, $76, $be, $01, $3f, $4d, $71        ;; 05:5b29 ????????
-    db   $05, $be, $01, $70, $0d, $be, $14             ;; 05:5b31 ???????
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:5a59 $1a
+    db   $b2, $02, $7e, $39, $3e, $ba, $70, $4f        ;; 05:5a5a ????????
+    db   $be, $01, $70, $0d, $be, $0a, $70, $0d        ;; 05:5a62 ????????
+    db   $be, $0b, $3e, $a8, $70, $4c, $be, $10        ;; 05:5a6a ????????
+    db   $70, $4c, $be, $08, $70, $4c, $be, $04        ;; 05:5a72 ????????
+    db   $70, $4c, $be, $02, $3e, $03, $3f, $3e        ;; 05:5a7a ????????
+    db   $71, $06, $be, $00, $71, $06, $be, $01        ;; 05:5a82 ????????
+    db   $71, $06, $be, $02, $71, $06, $be, $03        ;; 05:5a8a ????????
+    db   $71, $06, $be, $04, $71, $06, $be, $05        ;; 05:5a92 ????????
+    db   $6e, $76, $be, $02, $00, $72, $77, $a2        ;; 05:5a9a ????????
+    db   $02, $06, $00, $72, $52, $a2, $03, $1e        ;; 05:5aa2 ????????
+    db   $70, $23, $be, $c0, $71, $05, $be, $02        ;; 05:5aaa ????????
+    db   $3e, $bf, $3f, $88, $71, $05, $be, $90        ;; 05:5ab2 ????????
+    db   $72, $4f, $be, $01, $b2, $02, $7e, $51        ;; 05:5aba ????????
+    db   $70, $51, $be, $02, $70, $51, $be, $01        ;; 05:5ac2 ????????
+    db   $6e, $4f, $be, $02, $71, $05, $be, $60        ;; 05:5aca ????????
+    db   $00, $6d, $05, $a2, $78, $0e, $be, $01        ;; 05:5ad2 ????????
+    db   $70, $36, $be, $00, $3e, $73, $3e, $eb        ;; 05:5ada ????????
+    db   $6e, $1f, $be, $01, $6e, $04, $be, $06        ;; 05:5ae2 ????????
+    db   $5e, $81, $5e, $82, $3f, $38, $00, $6c        ;; 05:5aea ????????
+    db   $23, $a2, $60, $0e, $be, $01, $3f, $9c        ;; 05:5af2 ????????
+    db   $00, $6c, $23, $a2, $48, $0e, $be, $01        ;; 05:5afa ????????
+    db   $71, $05, $be, $08, $00, $6d, $05, $a2        ;; 05:5b02 ????????
+    db   $60, $0e, $be, $01, $3e, $e2, $00, $00        ;; 05:5b0a ????????
+    db   $6f, $06, $a2, $02, $04, $00, $73, $06        ;; 05:5b12 ????????
+    db   $a2, $05, $02, $1e, $3e, $90, $3e, $92        ;; 05:5b1a ????????
+    db   $5f, $36, $5f, $35, $3f, $35, $3f, $36        ;; 05:5b22 ????????
+    db   $6e, $76, $be, $01, $3f, $4d, $71, $05        ;; 05:5b2a ????????
+    db   $be, $01, $70, $0d, $be, $14                  ;; 05:5b32 ??????
 
 ; Paired with data_05_5a10, data_05_59f6
 data_05_5b38:
@@ -2449,17 +2528,48 @@ SadMaxwellRules:
     TXT  "Koochi-Q<E1>"                                ;; 05:5fe7 ?????????
 .data_05_5ff0:
     TXT  "Smoochie<E1>"                                ;; 05:5ff0 ?????????
-    db   $00, $01, $02, $03, $04, $05, $06, $07        ;; 05:5ff9 ????????
-    db   $08, $09                                      ;; 05:6001 ??
 
-; Paired with data_05_6064
-data_05_6003:
+; Paired with SunflowerElementaryAlwaysUsePile
+data_05_5ff9:
+    HamChatWheelOption $00 ; 00 koumon                 ;; 05:5ff9 $00
+    HamChatWheelOption $01 ; 01 rika                   ;; 05:5ffa $01
+    HamChatWheelOption $02 ; 02 1F-rouka               ;; 05:5ffb $02
+    HamChatWheelOption $03 ; 03 2F-rouka               ;; 05:5ffc $03
+    HamChatWheelOption $04 ; 04 1F-kaidan              ;; 05:5ffd $04
+    HamChatWheelOption $05 ; 05 uraniwa                ;; 05:5ffe $05
+    HamChatWheelOption $06 ; 06 namikimiti             ;; 05:5fff $06
+    HamChatWheelOption $07 ; 07 kyuusyoku              ;; 05:6000 $07
+    HamChatWheelOption $08 ; 08 kousaku                ;; 05:6001 $08
+    HamChatWheelOption $09 ; 09 PC                     ;; 05:6002 $09
+
+; Paired with SunflowerElementaryAlwaysUsePile
+SunflowerElementaryCoreFourHamChats:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6003 $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6004 $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:6005 $0c
     HamChatWheelOption $0d ; 03 Digdig                 ;; 05:6006 $0d
-    db   $0e, $0f, $10, $0e, $0f, $0a, $0b, $0c        ;; 05:6007 ????????
-    db   $0d, $11, $12, $13, $12                       ;; 05:600f ?????
+
+; Paired with data_05_6146
+SunflowerElementaryYesNoMad:
+    HamChatWheelOption $0e ; 00 Yep-P                  ;; 05:6007 $0e
+    HamChatWheelOption $0f ; 01 No-P                   ;; 05:6008 $0f
+    HamChatWheelOption $10 ; 02 Blash-T                ;; 05:6009 $10
+
+; Paired with SunflowerElementaryAlwaysUsePile
+SunflowerElementaryYesNo:
+    HamChatWheelOption $0e ; 00 Yep-P                  ;; 05:600a $0e
+    HamChatWheelOption $0f ; 01 No-P                   ;; 05:600b $0f
+
+; Paired with data_05_6228
+data_05_600c:
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:600c $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:600d $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:600e $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:600f $0d
+    HamChatWheelOption $11 ; 04 Bestest                ;; 05:6010 $11
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6011 $12
+    HamChatWheelOption $13 ; 06 Hamchu                 ;; 05:6012 $13
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6013 $12
 
 ; Paired with data_05_623c
 data_05_6014:
@@ -2545,71 +2655,92 @@ data_05_6048:
     db   $70, $73, $be, $02, $71, $0a, $be, $05        ;; 05:6054 ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:605c ????????
 
-; Paired with data_05_6003
-data_05_6064:
+; Paired with SunflowerElementaryCoreFourHamChats, SunflowerElementaryYesNo, data_05_5ff9
+SunflowerElementaryAlwaysUsePile:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6064 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6065 $1a
     HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6066 $1a
     HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6067 $1a
-    db   $1a, $1a, $1a, $1a, $1a, $1a, $72, $0a        ;; 05:6068 ????????
-    db   $be, $02, $3f, $93, $70, $4c, $be, $ff        ;; 05:6070 ????????
-    db   $70, $72, $be, $03, $b2, $02, $7e, $39        ;; 05:6078 ????????
-    db   $70, $0d, $be, $0a, $00, $73, $00, $a2        ;; 05:6080 ????????
-    db   $01, $06, $00, $b2, $01, $63, $00, $1e        ;; 05:6088 ????????
-    db   $72, $62, $be, $02, $70, $0d, $be, $a0        ;; 05:6090 ????????
-    db   $70, $0d, $be, $0a, $3e, $a8, $00, $72        ;; 05:6098 ????????
-    db   $39, $a2, $01, $06, $00, $b2, $01, $62        ;; 05:60a0 ????????
-    db   $39, $1e, $5f, $94, $70, $62, $be, $01        ;; 05:60a8 ????????
-    db   $70, $62, $be, $02, $70, $62, $be, $00        ;; 05:60b0 ????????
-    db   $71, $01, $be, $04, $71, $01, $be, $05        ;; 05:60b8 ????????
-    db   $71, $01, $be, $02, $b2, $00, $7f, $00        ;; 05:60c0 ????????
-    db   $71, $01, $be, $09, $3f, $1c, $3e, $41        ;; 05:60c8 ????????
-    db   $70, $0d, $be, $52, $70, $0d, $be, $15        ;; 05:60d0 ????????
-    db   $70, $0d, $be, $16, $5e, $75, $70, $4c        ;; 05:60d8 ????????
-    db   $be, $10, $70, $4c, $be, $08, $70, $4c        ;; 05:60e0 ????????
-    db   $be, $04, $70, $4c, $be, $02, $00, $72        ;; 05:60e8 ????????
-    db   $39, $a2, $01, $06, $00, $b2, $01, $62        ;; 05:60f0 ????????
-    db   $39, $1e, $3e, $03, $70, $37, $be, $00        ;; 05:60f8 ????????
-    db   $6f, $0a, $be, $09, $70, $0d, $be, $14        ;; 05:6100 ????????
-    db   $71, $03, $be, $02, $5f, $80, $00, $6d        ;; 05:6108 ????????
-    db   $0a, $a2, $18, $0e, $be, $01, $71, $02        ;; 05:6110 ????????
-    db   $be, $01, $71, $02, $be, $00, $71, $0a        ;; 05:6118 ????????
-    db   $be, $30, $5f, $81, $00, $6d, $0a, $a2        ;; 05:6120 ????????
-    db   $c0, $0e, $be, $01, $71, $03, $be, $01        ;; 05:6128 ????????
-    db   $71, $03, $be, $00, $71, $0a, $be, $a8        ;; 05:6130 ????????
-    db   $3e, $75, $3e, $91, $5f, $95, $6f, $0a        ;; 05:6138 ????????
-    db   $be, $01, $5e, $a1, $3e, $71, $1a, $1a        ;; 05:6140 ????????
-    db   $24, $20, $3e, $fe, $6e, $1f, $be, $32        ;; 05:6148 ????????
-    db   $6e, $1f, $be, $19, $6e, $1f, $be, $05        ;; 05:6150 ????????
-    db   $3f, $97, $6e, $1f, $be, $14, $6e, $1f        ;; 05:6158 ????????
-    db   $be, $0a, $3e, $ef, $6e, $1f, $be, $01        ;; 05:6160 ????????
-    db   $3f, $96, $5e, $a5, $5e, $9a, $70, $2a        ;; 05:6168 ????????
-    db   $be, $01, $3e, $9b, $6e, $1f, $be, $03        ;; 05:6170 ????????
-    db   $3f, $15, $ae, $05, $7e, $8f, $6e, $04        ;; 05:6178 ????????
-    db   $be, $06, $5e, $9c, $5e, $46, $5e, $9d        ;; 05:6180 ????????
-    db   $5e, $9e, $5e, $9f, $00, $6d, $0a, $a2        ;; 05:6188 ????????
-    db   $78, $0e, $be, $01, $3e, $9e, $3e, $9f        ;; 05:6190 ????????
-    db   $00, $6d, $0a, $a2, $48, $10, $be, $00        ;; 05:6198 ????????
-    db   $3f, $99, $3f, $98, $70, $2a, $be, $00        ;; 05:61a0 ????????
-    db   $70, $0d, $be, $1e, $72, $04, $be, $06        ;; 05:61a8 ????????
-    db   $3f, $82, $00, $70, $73, $a2, $01, $06        ;; 05:61b0 ????????
-    db   $00, $70, $73, $a2, $03, $1e, $70, $0d        ;; 05:61b8 ????????
-    db   $be, $51, $5f, $9a, $3e, $ab, $71, $04        ;; 05:61c0 ????????
-    db   $be, $05, $3e, $85, $71, $04, $be, $06        ;; 05:61c8 ????????
-    db   $71, $04, $be, $08, $71, $04, $be, $0a        ;; 05:61d0 ????????
-    db   $70, $73, $be, $00, $70, $8e, $be, $02        ;; 05:61d8 ????????
-    db   $70, $8e, $be, $01, $71, $04, $be, $04        ;; 05:61e0 ????????
-    db   $70, $36, $be, $00, $71, $0a, $be, $02        ;; 05:61e8 ????????
-    db   $71, $0a, $be, $04, $71, $0a, $be, $08        ;; 05:61f0 ????????
-    db   $71, $0a, $be, $10, $00, $00, $72, $3c        ;; 05:61f8 ????????
-    db   $a2, $01, $06, $00, $b2, $03, $62, $3c        ;; 05:6200 ????????
-    db   $02, $1e, $3f, $9c, $3e, $86, $70, $0d        ;; 05:6208 ????????
-    db   $be, $54, $70, $0d, $be, $28, $00, $6d        ;; 05:6210 ????????
-    db   $0a, $a2, $30, $0e, $be, $01, $3e, $8d        ;; 05:6218 ????????
-    db   $00, $6d, $0a, $a2, $18, $0e, $be, $01        ;; 05:6220 ????????
-    db   $1a, $1a, $1a, $1a, $3e, $46, $5e, $46        ;; 05:6228 ????????
-    db   $3e, $41, $5e, $41, $3e, $6e, $71, $09        ;; 05:6230 ????????
-    db   $be, $01, $3f, $9d                            ;; 05:6238 ????
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:6068 $1a
+    HamChatWheelRule_AlwaysUse ; 05                    ;; 05:6069 $1a
+    HamChatWheelRule_AlwaysUse ; 06                    ;; 05:606a $1a
+    HamChatWheelRule_AlwaysUse ; 07                    ;; 05:606b $1a
+    HamChatWheelRule_AlwaysUse ; 08                    ;; 05:606c $1a
+    HamChatWheelRule_AlwaysUse ; 09                    ;; 05:606d $1a
+    db   $72, $0a, $be, $02, $3f, $93, $70, $4c        ;; 05:606e ????????
+    db   $be, $ff, $70, $72, $be, $03, $b2, $02        ;; 05:6076 ????????
+    db   $7e, $39, $70, $0d, $be, $0a, $00, $73        ;; 05:607e ????????
+    db   $00, $a2, $01, $06, $00, $b2, $01, $63        ;; 05:6086 ????????
+    db   $00, $1e, $72, $62, $be, $02, $70, $0d        ;; 05:608e ????????
+    db   $be, $a0, $70, $0d, $be, $0a, $3e, $a8        ;; 05:6096 ????????
+    db   $00, $72, $39, $a2, $01, $06, $00, $b2        ;; 05:609e ????????
+    db   $01, $62, $39, $1e, $5f, $94, $70, $62        ;; 05:60a6 ????????
+    db   $be, $01, $70, $62, $be, $02, $70, $62        ;; 05:60ae ????????
+    db   $be, $00, $71, $01, $be, $04, $71, $01        ;; 05:60b6 ????????
+    db   $be, $05, $71, $01, $be, $02, $b2, $00        ;; 05:60be ????????
+    db   $7f, $00, $71, $01, $be, $09, $3f, $1c        ;; 05:60c6 ????????
+    db   $3e, $41, $70, $0d, $be, $52, $70, $0d        ;; 05:60ce ????????
+    db   $be, $15, $70, $0d, $be, $16, $5e, $75        ;; 05:60d6 ????????
+    db   $70, $4c, $be, $10, $70, $4c, $be, $08        ;; 05:60de ????????
+    db   $70, $4c, $be, $04, $70, $4c, $be, $02        ;; 05:60e6 ????????
+    db   $00, $72, $39, $a2, $01, $06, $00, $b2        ;; 05:60ee ????????
+    db   $01, $62, $39, $1e, $3e, $03, $70, $37        ;; 05:60f6 ????????
+    db   $be, $00, $6f, $0a, $be, $09, $70, $0d        ;; 05:60fe ????????
+    db   $be, $14, $71, $03, $be, $02, $5f, $80        ;; 05:6106 ????????
+    db   $00, $6d, $0a, $a2, $18, $0e, $be, $01        ;; 05:610e ????????
+    db   $71, $02, $be, $01, $71, $02, $be, $00        ;; 05:6116 ????????
+    db   $71, $0a, $be, $30, $5f, $81, $00, $6d        ;; 05:611e ????????
+    db   $0a, $a2, $c0, $0e, $be, $01, $71, $03        ;; 05:6126 ????????
+    db   $be, $01, $71, $03, $be, $00, $71, $0a        ;; 05:612e ????????
+    db   $be, $a8, $3e, $75, $3e, $91, $5f, $95        ;; 05:6136 ????????
+    db   $6f, $0a, $be, $01, $5e, $a1, $3e, $71        ;; 05:613e ????????
+
+; Paired with SunflowerElementaryYesNoMad
+data_05_6146:
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6146 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6147 $1a
+    HamChatWheelRule_DefaultCase_Pair $24, $20 ; 02    ;; 05:6148 $24 $20
+    HamChatWheelRule_DefaultCase_Pair $3e, $fe ; 03    ;; 05:614a $3e $fe
+    db   $6e, $1f, $be, $32, $6e, $1f, $be, $19        ;; 05:614c ????????
+    db   $6e, $1f, $be, $05, $3f, $97, $6e, $1f        ;; 05:6154 ????????
+    db   $be, $14, $6e, $1f, $be, $0a, $3e, $ef        ;; 05:615c ????????
+    db   $6e, $1f, $be, $01, $3f, $96, $5e, $a5        ;; 05:6164 ????????
+    db   $5e, $9a, $70, $2a, $be, $01, $3e, $9b        ;; 05:616c ????????
+    db   $6e, $1f, $be, $03, $3f, $15, $ae, $05        ;; 05:6174 ????????
+    db   $7e, $8f, $6e, $04, $be, $06, $5e, $9c        ;; 05:617c ????????
+    db   $5e, $46, $5e, $9d, $5e, $9e, $5e, $9f        ;; 05:6184 ????????
+    db   $00, $6d, $0a, $a2, $78, $0e, $be, $01        ;; 05:618c ????????
+    db   $3e, $9e, $3e, $9f, $00, $6d, $0a, $a2        ;; 05:6194 ????????
+    db   $48, $10, $be, $00, $3f, $99, $3f, $98        ;; 05:619c ????????
+    db   $70, $2a, $be, $00, $70, $0d, $be, $1e        ;; 05:61a4 ????????
+    db   $72, $04, $be, $06, $3f, $82, $00, $70        ;; 05:61ac ????????
+    db   $73, $a2, $01, $06, $00, $70, $73, $a2        ;; 05:61b4 ????????
+    db   $03, $1e, $70, $0d, $be, $51, $5f, $9a        ;; 05:61bc ????????
+    db   $3e, $ab, $71, $04, $be, $05, $3e, $85        ;; 05:61c4 ????????
+    db   $71, $04, $be, $06, $71, $04, $be, $08        ;; 05:61cc ????????
+    db   $71, $04, $be, $0a, $70, $73, $be, $00        ;; 05:61d4 ????????
+    db   $70, $8e, $be, $02, $70, $8e, $be, $01        ;; 05:61dc ????????
+    db   $71, $04, $be, $04, $70, $36, $be, $00        ;; 05:61e4 ????????
+    db   $71, $0a, $be, $02, $71, $0a, $be, $04        ;; 05:61ec ????????
+    db   $71, $0a, $be, $08, $71, $0a, $be, $10        ;; 05:61f4 ????????
+    db   $00, $00, $72, $3c, $a2, $01, $06, $00        ;; 05:61fc ????????
+    db   $b2, $03, $62, $3c, $02, $1e, $3f, $9c        ;; 05:6204 ????????
+    db   $3e, $86, $70, $0d, $be, $54, $70, $0d        ;; 05:620c ????????
+    db   $be, $28, $00, $6d, $0a, $a2, $30, $0e        ;; 05:6214 ????????
+    db   $be, $01, $3e, $8d, $00, $6d, $0a, $a2        ;; 05:621c ????????
+    db   $18, $0e, $be, $01                            ;; 05:6224 ????
+
+; Paired with data_05_600c
+data_05_6228:
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6228 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6229 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:622a $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:622b $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_BESTEST ; 04    ;; 05:622c $3e $46
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BESTEST ; 05 ;; 05:622e $5e $46
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMCHU ; 06     ;; 05:6230 $3e $41
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMCHU ; 07 ;; 05:6232 $5e $41
+    db   $3e, $6e, $71, $09, $be, $01, $3f, $9d        ;; 05:6234 ????????
 
 ; Paired with data_05_6014
 data_05_623c:
@@ -2871,8 +3002,18 @@ data_05_63dc:
     TXT  "Strawberry: 5 Seeds<E1>"                     ;; 05:65ea ????????????????????
 .data_05_65fe:
     TXT  "Cancel<E1>"                                  ;; 05:65fe ???????
-    db   $00, $01, $02, $03, $04, $05, $06, $07        ;; 05:6605 ????????
-    db   $08                                           ;; 05:660d ?
+
+; Paired with SkyGardenAlwaysUsePile
+data_05_6605:
+    HamChatWheelOption $00 ; 00 niwa1-naka             ;; 05:6605 $00
+    HamChatWheelOption $01 ; 01 niwa1-R                ;; 05:6606 $01
+    HamChatWheelOption $02 ; 02 niwa1-L                ;; 05:6607 $02
+    HamChatWheelOption $03 ; 03 veranda1-D             ;; 05:6608 $03
+    HamChatWheelOption $04 ; 04 veranda2               ;; 05:6609 $04
+    HamChatWheelOption $05 ; 05 veranda4               ;; 05:660a $05
+    HamChatWheelOption $06 ; 06 funnsui                ;; 05:660b $06
+    HamChatWheelOption $07 ; 07 koisi-heya             ;; 05:660c $07
+    HamChatWheelOption $08 ; 08 veranda5               ;; 05:660d $08
 
 ; Paired with data_05_66a8
 data_05_660e:
@@ -2883,7 +3024,11 @@ data_05_660e:
     HamChatWheelOption $0b ; 04   ?                    ;; 05:6612 $0b
     HamChatWheelOption $0d ; 05 Hammo                  ;; 05:6613 $0d
     HamChatWheelOption $0b ; 06   ?                    ;; 05:6614 $0b
-    db   $0e, $0f                                      ;; 05:6615 ??
+
+; Paired with SkyGardenAlwaysUsePile
+SkyGardenYesNo:
+    HamChatWheelOption $0e ; 00 Yep-P                  ;; 05:6615 $0e
+    HamChatWheelOption $0f ; 01 No-P                   ;; 05:6616 $0f
 
 ; Paired with data_05_67b1
 data_05_6617:
@@ -2961,14 +3106,14 @@ data_05_6646:
     HamChatWheelOption $1e ; 06 Hamteam                ;; 05:664c $1e
     HamChatWheelOption $0b ; 07   ?                    ;; 05:664d $0b
 
-; Paired with data_05_668d
-data_05_664e:
+; Paired with SkyGardenAlwaysUsePile
+SkyGardenCoreFourHamChats:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:664e $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:664f $11
     HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6650 $12
     HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6651 $13
 
-; Paired with data_05_668d
+; Paired with SkyGardenAlwaysUsePile
 data_05_6652:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6652 $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6653 $11
@@ -2977,7 +3122,7 @@ data_05_6652:
     HamChatWheelOption $18 ; 04 Lookie                 ;; 05:6656 $18
     HamChatWheelOption $1f ; 05 Tuggie                 ;; 05:6657 $1f
 
-; Paired with data_05_668d
+; Paired with SkyGardenAlwaysUsePile
 data_05_6658:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6658 $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6659 $11
@@ -2996,7 +3141,7 @@ data_05_665e:
     HamChatWheelOption $21 ; 05 Chukchuk               ;; 05:6663 $21
     HamChatWheelOption $0b ; 06   ?                    ;; 05:6664 $0b
 
-; Paired with data_05_668d
+; Paired with SkyGardenAlwaysUsePile
 data_05_6665:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6665 $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6666 $11
@@ -3015,9 +3160,15 @@ data_05_666b:
     HamChatWheelOption $0b ; 05   ?                    ;; 05:6670 $0b
     HamChatWheelOption $23 ; 06 Wishie                 ;; 05:6671 $23
     HamChatWheelOption $0b ; 07   ?                    ;; 05:6672 $0b
-    db   $24, $25, $26, $27                            ;; 05:6673 ????
 
-; Paired with data_05_668d
+; Paired with SkyGardenAlwaysUsePile
+BartenderOfferings:
+    HamChatWheelOption $24 ; 00 Walnut    : 1 Seed     ;; 05:6673 $24
+    HamChatWheelOption $25 ; 01 Carrot    : 3 Seeds    ;; 05:6674 $25
+    HamChatWheelOption $26 ; 02 Strawberry: 5 Seeds    ;; 05:6675 $26
+    HamChatWheelOption $27 ; 03 Cancel                 ;; 05:6676 $27
+
+; Paired with SkyGardenAlwaysUsePile
 data_05_6677:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6677 $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6678 $11
@@ -3028,17 +3179,20 @@ data_05_6677:
     db   $71, $11, $be, $06, $71, $11, $be, $07        ;; 05:667d ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:6685 ????????
 
-; Paired with data_05_6658, data_05_664e, data_05_6652, data_05_6677, data_05_6665
-data_05_668d:
+; Paired with data_05_6658, SkyGardenYesNo, SkyGardenCoreFourHamChats, data_05_6652, BartenderOfferings, data_05_6677, data_05_6605, data_05_6665
+SkyGardenAlwaysUsePile:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:668d $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:668e $1a
     HamChatWheelRule_AlwaysUse ; 02                    ;; 05:668f $1a
     HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6690 $1a
     HamChatWheelRule_AlwaysUse ; 04                    ;; 05:6691 $1a
     HamChatWheelRule_AlwaysUse ; 05                    ;; 05:6692 $1a
-    db   $1a, $1a, $1a, $3f, $39, $b2, $02, $7e        ;; 05:6693 ????????
-    db   $39, $3f, $33, $70, $0d, $be, $0a, $3e        ;; 05:669b ????????
-    db   $03, $70, $37, $be, $00                       ;; 05:66a3 ?????
+    HamChatWheelRule_AlwaysUse ; 06                    ;; 05:6693 $1a
+    HamChatWheelRule_AlwaysUse ; 07                    ;; 05:6694 $1a
+    HamChatWheelRule_AlwaysUse ; 08                    ;; 05:6695 $1a
+    db   $3f, $39, $b2, $02, $7e, $39, $3f, $33        ;; 05:6696 ????????
+    db   $70, $0d, $be, $0a, $3e, $03, $70, $37        ;; 05:669e ????????
+    db   $be, $00                                      ;; 05:66a6 ??
 
 ; Paired with data_05_660e
 data_05_66a8:
@@ -3392,9 +3546,29 @@ data_05_6a85:
     TXT  "Chukchuk<E1>"                                ;; 05:6c4a ?????????
 .data_05_6c53:
     TXT  "Ta-dah<E1>"                                  ;; 05:6c53 ???????
-    db   $00, $01, $02, $03, $04, $05, $06, $07        ;; 05:6c5a ????????
-    db   $08, $09, $0a, $0b, $0c, $0d, $0e, $0f        ;; 05:6c62 ????????
-    db   $10                                           ;; 05:6c6a ?
+
+; Paired with RuinsAlwaysUsePile
+data_05_6c5a:
+    HamChatWheelOption $00 ; 00 syuuhen                ;; 05:6c5a $00
+    HamChatWheelOption $01 ; 01 iriguti                ;; 05:6c5b $01
+    HamChatWheelOption $02 ; 02 tokei-mae              ;; 05:6c5c $02
+    HamChatWheelOption $03 ; 03 TV-ura                 ;; 05:6c5d $03
+    HamChatWheelOption $04 ; 04 staff room             ;; 05:6c5e $04
+    HamChatWheelOption $05 ; 05 Tack-QBowl             ;; 05:6c5f $05
+    HamChatWheelOption $06 ; 06 reozouko-2             ;; 05:6c60 $06
+    HamChatWheelOption $07 ; 07 reizouko-R             ;; 05:6c61 $07
+    HamChatWheelOption $08 ; 08 kanaami-L              ;; 05:6c62 $08
+    HamChatWheelOption $09 ; 09 furu-tire              ;; 05:6c63 $09
+    HamChatWheelOption $0a ; 10 kanaami-LD             ;; 05:6c64 $0a
+
+; Paired with RuinsAlwaysUsePile
+data_05_6c65:
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c65 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c66 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c67 $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6c68 $0e
+    HamChatWheelOption $0f ; 04 Yep-P                  ;; 05:6c69 $0f
+    HamChatWheelOption $10 ; 05 Gasp-P                 ;; 05:6c6a $10
 
 ; Paired with data_05_6e04
 data_05_6c6b:
@@ -3411,14 +3585,27 @@ data_05_6c6b:
     HamChatWheelOption $15 ; 10 ShaShaa<32>            ;; 05:6c75 $15
     HamChatWheelOption $12 ; 11   ?                    ;; 05:6c76 $12
 
-; Paired with data_05_6cf7
-data_05_6c77:
+; Paired with RuinsAlwaysUsePile
+RuinsCoreFourHamChats:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c77 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c78 $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c79 $0d
     HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6c7a $0e
-    db   $0b, $0c, $0d, $0e, $16, $12, $17, $12        ;; 05:6c7b ????????
-    db   $18, $12, $19, $12                            ;; 05:6c83 ????
+
+; Paired with data_05_6e76
+data_05_6c7b:
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c7b $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c7c $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c7d $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6c7e $0e
+    HamChatWheelOption $16 ; 04 Pooie                  ;; 05:6c7f $16
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6c80 $12
+    HamChatWheelOption $17 ; 06 Hamsolo                ;; 05:6c81 $17
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6c82 $12
+    HamChatWheelOption $18 ; 08 Koochi-Q               ;; 05:6c83 $18
+    HamChatWheelOption $12 ; 09   ?                    ;; 05:6c84 $12
+    HamChatWheelOption $19 ; 10 Clapclap               ;; 05:6c85 $19
+    HamChatWheelOption $12 ; 11   ?                    ;; 05:6c86 $12
 
 ; Paired with data_05_6ec8
 data_05_6c87:
@@ -3432,7 +3619,7 @@ data_05_6c87:
     HamChatWheelOption $1d ; 07 Stickie                ;; 05:6c8e $1d
     HamChatWheelOption $12 ; 08   ?                    ;; 05:6c8f $12
 
-; Paired with data_05_6cf7
+; Paired with RuinsAlwaysUsePile
 data_05_6c90:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c90 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c91 $0c
@@ -3475,7 +3662,11 @@ data_05_6ca8:
     HamChatWheelOption $12 ; 05   ?                    ;; 05:6cad $12
     HamChatWheelOption $1d ; 06 Stickie                ;; 05:6cae $1d
     HamChatWheelOption $12 ; 07   ?                    ;; 05:6caf $12
-    db   $0f, $14                                      ;; 05:6cb0 ??
+
+; Paired with RuinsAlwaysUsePile
+RuinsYesNo:
+    HamChatWheelOption $0f ; 00 Yep-P                  ;; 05:6cb0 $0f
+    HamChatWheelOption $14 ; 01 No-P                   ;; 05:6cb1 $14
 
 ; Paired with data_05_706b
 data_05_6cb2:
@@ -3504,7 +3695,7 @@ data_05_6cba:
     HamChatWheelOption $12 ; 11   ?                    ;; 05:6cc5 $12
 
 ; Paired with data_05_70c1
-data_05_6cc6:
+CrowFriendWords:
     HamChatWheelOption $1c ; 00 Go-P                   ;; 05:6cc6 $1c
     HamChatWheelOption $12 ; 01   ?                    ;; 05:6cc7 $12
     HamChatWheelOption $25 ; 02 Zuzuzu                 ;; 05:6cc8 $25
@@ -3514,7 +3705,7 @@ data_05_6cc6:
     HamChatWheelOption $21 ; 06 Hammo                  ;; 05:6ccc $21
     HamChatWheelOption $12 ; 07   ?                    ;; 05:6ccd $12
 
-; Paired with data_05_6cf7
+; Paired with RuinsAlwaysUsePile
 data_05_6cce:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6cce $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6ccf $0c
@@ -3523,8 +3714,8 @@ data_05_6cce:
     HamChatWheelOption $1a ; 04 Lookie                 ;; 05:6cd2 $1a
     HamChatWheelOption $1c ; 05 Go-P                   ;; 05:6cd3 $1c
 
-; Paired with data_05_6cf7
-data_05_6cd4:
+; Paired with RuinsAlwaysUsePile
+GameOrPrizeExplanation:
     HamChatWheelOption $26 ; 00 Game explanation       ;; 05:6cd4 $26
     HamChatWheelOption $27 ; 01 Prize explanation      ;; 05:6cd5 $27
 
@@ -3542,7 +3733,7 @@ data_05_6cd6:
     HamChatWheelOption $12 ; 09   ?                    ;; 05:6cdf $12
     HamChatWheelOption $1a ; 10 Lookie                 ;; 05:6ce0 $1a
 
-; Paired with data_05_6cf7
+; Paired with RuinsAlwaysUsePile
 data_05_6ce1:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6ce1 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6ce2 $0c
@@ -3553,8 +3744,8 @@ data_05_6ce1:
     db   $71, $1e, $be, $08, $71, $1e, $be, $0a        ;; 05:6ce7 ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:6cef ????????
 
-; Paired with data_05_6c77, data_05_6cce, data_05_6cd4, data_05_6ce1, data_05_6c90
-data_05_6cf7:
+; Paired with RuinsCoreFourHamChats, data_05_6cce, GameOrPrizeExplanation, data_05_6ce1, RuinsYesNo, data_05_6c65, data_05_6c90, data_05_6c5a
+RuinsAlwaysUsePile:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6cf7 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6cf8 $1a
     HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6cf9 $1a
@@ -3563,39 +3754,42 @@ data_05_6cf7:
     HamChatWheelRule_AlwaysUse ; 05                    ;; 05:6cfc $1a
     HamChatWheelRule_AlwaysUse ; 06                    ;; 05:6cfd $1a
     HamChatWheelRule_AlwaysUse ; 07                    ;; 05:6cfe $1a
-    db   $1a, $1a, $1a, $b2, $02, $7e, $39, $70        ;; 05:6cff ????????
-    db   $0d, $be, $15, $70, $0d, $be, $0a, $3e        ;; 05:6d07 ????????
-    db   $a8, $70, $4c, $be, $10, $70, $4c, $be        ;; 05:6d0f ????????
-    db   $08, $70, $4c, $be, $04, $70, $4c, $be        ;; 05:6d17 ????????
-    db   $02, $00, $72, $39, $a2, $01, $06, $00        ;; 05:6d1f ????????
-    db   $b2, $01, $62, $39, $1e, $71, $1e, $be        ;; 05:6d27 ????????
-    db   $00, $71, $1e, $be, $01, $71, $1e, $be        ;; 05:6d2f ????????
-    db   $02, $71, $1e, $be, $03, $00, $6d, $1e        ;; 05:6d37 ????????
-    db   $a2, $78, $0e, $be, $01, $00, $6d, $1e        ;; 05:6d3f ????????
-    db   $a2, $90, $0e, $be, $01, $6f, $1e, $be        ;; 05:6d47 ????????
-    db   $01, $3f, $a5, $00, $6d, $1e, $a2, $30        ;; 05:6d4f ????????
-    db   $0e, $be, $01, $70, $36, $be, $00, $3e        ;; 05:6d57 ????????
-    db   $73, $3e, $eb, $6e, $1f, $be, $01, $3f        ;; 05:6d5f ????????
-    db   $38, $71, $1e, $be, $78, $3f, $a2, $00        ;; 05:6d67 ????????
-    db   $6d, $1e, $a2, $30, $0e, $be, $01, $00        ;; 05:6d6f ????????
-    db   $6d, $1e, $a2, $58, $0e, $be, $01, $71        ;; 05:6d77 ????????
-    db   $1e, $be, $08, $00, $6d, $1e, $a2, $18        ;; 05:6d7f ????????
-    db   $0e, $be, $01, $3e, $e2, $6f, $21, $be        ;; 05:6d87 ????????
-    db   $02, $5e, $92, $3e, $37, $71, $21, $be        ;; 05:6d8f ????????
-    db   $00, $71, $21, $be, $01, $71, $21, $be        ;; 05:6d97 ????????
-    db   $02, $71, $21, $be, $03, $71, $21, $be        ;; 05:6d9f ????????
-    db   $04, $00, $6d, $1e, $a2, $10, $0e, $be        ;; 05:6da7 ????????
-    db   $01, $70, $69, $be, $00, $70, $0d, $be        ;; 05:6daf ????????
-    db   $1e, $6e, $69, $be, $0a, $6f, $0a, $be        ;; 05:6db7 ????????
-    db   $01, $70, $69, $be, $02, $72, $71, $be        ;; 05:6dbf ????????
-    db   $03, $3e, $6f, $71, $09, $be, $00, $71        ;; 05:6dc7 ????????
-    db   $09, $be, $01, $71, $09, $be, $02, $71        ;; 05:6dcf ????????
-    db   $09, $be, $03, $70, $0d, $be, $14, $71        ;; 05:6dd7 ????????
-    db   $0b, $be, $01, $71, $0b, $be, $02, $71        ;; 05:6ddf ????????
-    db   $0b, $be, $03, $3f, $84, $3e, $e3, $5f        ;; 05:6de7 ????????
-    db   $84, $71, $1e, $be, $18, $70, $69, $be        ;; 05:6def ????????
-    db   $01, $00, $6d, $1e, $a2, $18, $0e, $be        ;; 05:6df7 ????????
-    db   $01, $71, $0a, $be, $04                       ;; 05:6dff ?????
+    HamChatWheelRule_AlwaysUse ; 08                    ;; 05:6cff $1a
+    HamChatWheelRule_AlwaysUse ; 09                    ;; 05:6d00 $1a
+    HamChatWheelRule_AlwaysUse ; 10                    ;; 05:6d01 $1a
+    db   $b2, $02, $7e, $39, $70, $0d, $be, $15        ;; 05:6d02 ????????
+    db   $70, $0d, $be, $0a, $3e, $a8, $70, $4c        ;; 05:6d0a ????????
+    db   $be, $10, $70, $4c, $be, $08, $70, $4c        ;; 05:6d12 ????????
+    db   $be, $04, $70, $4c, $be, $02, $00, $72        ;; 05:6d1a ????????
+    db   $39, $a2, $01, $06, $00, $b2, $01, $62        ;; 05:6d22 ????????
+    db   $39, $1e, $71, $1e, $be, $00, $71, $1e        ;; 05:6d2a ????????
+    db   $be, $01, $71, $1e, $be, $02, $71, $1e        ;; 05:6d32 ????????
+    db   $be, $03, $00, $6d, $1e, $a2, $78, $0e        ;; 05:6d3a ????????
+    db   $be, $01, $00, $6d, $1e, $a2, $90, $0e        ;; 05:6d42 ????????
+    db   $be, $01, $6f, $1e, $be, $01, $3f, $a5        ;; 05:6d4a ????????
+    db   $00, $6d, $1e, $a2, $30, $0e, $be, $01        ;; 05:6d52 ????????
+    db   $70, $36, $be, $00, $3e, $73, $3e, $eb        ;; 05:6d5a ????????
+    db   $6e, $1f, $be, $01, $3f, $38, $71, $1e        ;; 05:6d62 ????????
+    db   $be, $78, $3f, $a2, $00, $6d, $1e, $a2        ;; 05:6d6a ????????
+    db   $30, $0e, $be, $01, $00, $6d, $1e, $a2        ;; 05:6d72 ????????
+    db   $58, $0e, $be, $01, $71, $1e, $be, $08        ;; 05:6d7a ????????
+    db   $00, $6d, $1e, $a2, $18, $0e, $be, $01        ;; 05:6d82 ????????
+    db   $3e, $e2, $6f, $21, $be, $02, $5e, $92        ;; 05:6d8a ????????
+    db   $3e, $37, $71, $21, $be, $00, $71, $21        ;; 05:6d92 ????????
+    db   $be, $01, $71, $21, $be, $02, $71, $21        ;; 05:6d9a ????????
+    db   $be, $03, $71, $21, $be, $04, $00, $6d        ;; 05:6da2 ????????
+    db   $1e, $a2, $10, $0e, $be, $01, $70, $69        ;; 05:6daa ????????
+    db   $be, $00, $70, $0d, $be, $1e, $6e, $69        ;; 05:6db2 ????????
+    db   $be, $0a, $6f, $0a, $be, $01, $70, $69        ;; 05:6dba ????????
+    db   $be, $02, $72, $71, $be, $03, $3e, $6f        ;; 05:6dc2 ????????
+    db   $71, $09, $be, $00, $71, $09, $be, $01        ;; 05:6dca ????????
+    db   $71, $09, $be, $02, $71, $09, $be, $03        ;; 05:6dd2 ????????
+    db   $70, $0d, $be, $14, $71, $0b, $be, $01        ;; 05:6dda ????????
+    db   $71, $0b, $be, $02, $71, $0b, $be, $03        ;; 05:6de2 ????????
+    db   $3f, $84, $3e, $e3, $5f, $84, $71, $1e        ;; 05:6dea ????????
+    db   $be, $18, $70, $69, $be, $01, $00, $6d        ;; 05:6df2 ????????
+    db   $1e, $a2, $18, $0e, $be, $01, $71, $0a        ;; 05:6dfa ????????
+    db   $be, $04                                      ;; 05:6e02 ??
 
 ; Paired with data_05_6c6b
 data_05_6e04:
@@ -3622,17 +3816,30 @@ data_05_6e04:
     db   $be, $03, $70, $0d, $be, $3c, $70, $0d        ;; 05:6e58 ????????
     db   $be, $28, $00, $6d, $1e, $a2, $48, $10        ;; 05:6e60 ????????
     db   $be, $00, $00, $6d, $1e, $a2, $48, $0e        ;; 05:6e68 ????????
-    db   $be, $01, $70, $63, $be, $03, $1a, $1a        ;; 05:6e70 ????????
-    db   $1a, $1a, $3e, $4f, $5e, $4f, $3e, $13        ;; 05:6e78 ????????
-    db   $5e, $13, $3e, $11, $5e, $11, $3e, $49        ;; 05:6e80 ????????
-    db   $5e, $49, $3e, $89, $71, $01, $be, $00        ;; 05:6e88 ????????
-    db   $71, $01, $be, $01, $3e, $f0, $3f, $27        ;; 05:6e90 ????????
-    db   $3e, $38, $70, $0d, $be, $28, $3f, $86        ;; 05:6e98 ????????
-    db   $5f, $85, $3e, $e7, $71, $00, $be, $00        ;; 05:6ea0 ????????
-    db   $70, $0d, $be, $29, $5f, $96, $71, $0d        ;; 05:6ea8 ????????
-    db   $be, $11, $5e, $e7, $72, $6f, $be, $08        ;; 05:6eb0 ????????
-    db   $00, $70, $6f, $a2, $01, $06, $00, $70        ;; 05:6eb8 ????????
-    db   $6f, $a2, $04, $1e, $71, $0d, $be, $05        ;; 05:6ec0 ????????
+    db   $be, $01, $70, $63, $be, $03                  ;; 05:6e70 ??????
+
+; Paired with data_05_6c7b
+data_05_6e76:
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6e76 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6e77 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6e78 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6e79 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_POOIE ; 04      ;; 05:6e7a $3e $4f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_POOIE ; 05  ;; 05:6e7c $5e $4f
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMSOLO ; 06    ;; 05:6e7e $3e $13
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMSOLO ; 07 ;; 05:6e80 $5e $13
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 08    ;; 05:6e82 $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 09 ;; 05:6e84 $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_CLAPCLAP ; 10   ;; 05:6e86 $3e $49
+    HamChatWheelRule_UseIfDontHave HAMCHAT_CLAPCLAP ; 11 ;; 05:6e88 $5e $49
+    db   $3e, $89, $71, $01, $be, $00, $71, $01        ;; 05:6e8a ????????
+    db   $be, $01, $3e, $f0, $3f, $27, $3e, $38        ;; 05:6e92 ????????
+    db   $70, $0d, $be, $28, $3f, $86, $5f, $85        ;; 05:6e9a ????????
+    db   $3e, $e7, $71, $00, $be, $00, $70, $0d        ;; 05:6ea2 ????????
+    db   $be, $29, $5f, $96, $71, $0d, $be, $11        ;; 05:6eaa ????????
+    db   $5e, $e7, $72, $6f, $be, $08, $00, $70        ;; 05:6eb2 ????????
+    db   $6f, $a2, $01, $06, $00, $70, $6f, $a2        ;; 05:6eba ????????
+    db   $04, $1e, $71, $0d, $be, $05                  ;; 05:6ec2 ??????
 
 ; Paired with data_05_6c87
 data_05_6ec8:
@@ -3760,7 +3967,7 @@ data_05_70ad:
     HamChatWheelRule_UseIfHave HAMCHAT_BESTEST ; 10    ;; 05:70bd $3e $46
     HamChatWheelRule_UseIfDontHave HAMCHAT_BESTEST ; 11 ;; 05:70bf $5e $46
 
-; Paired with data_05_6cc6
+; Paired with CrowFriendWords
 data_05_70c1:
     HamChatWheelRule_UseIfHave HAMCHAT_GOP ; 00        ;; 05:70c1 $3e $45
     HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 01    ;; 05:70c3 $5e $45
@@ -3913,7 +4120,17 @@ data_05_7169:
     TXT  "Go-P<E1>"                                    ;; 05:7323 ?????
 .data_05_7328:
     TXT  "Bizzaroo<E1>"                                ;; 05:7328 ?????????
-    db   $00, $01, $02, $03, $04, $05, $06, $07        ;; 05:7331 ????????
+
+; Paired with data_05_73a2
+data_05_7331:
+    HamChatWheelOption $00 ; 00 tuuro-C                ;; 05:7331 $00
+    HamChatWheelOption $01 ; 01 seika-sita             ;; 05:7332 $01
+    HamChatWheelOption $02 ; 02 bicycle                ;; 05:7333 $02
+    HamChatWheelOption $03 ; 03 kasi-uriba             ;; 05:7334 $03
+    HamChatWheelOption $04 ; 04 souko-L                ;; 05:7335 $04
+    HamChatWheelOption $05 ; 05 innryou-D              ;; 05:7336 $05
+    HamChatWheelOption $06 ; 06 register               ;; 05:7337 $06
+    HamChatWheelOption $07 ; 07 uribasitaB             ;; 05:7338 $07
 
 ; Paired with data_05_73a2
 data_05_7339:
@@ -3925,7 +4142,7 @@ data_05_7339:
     HamChatWheelOption $0d ; 05 Tuggie                 ;; 05:733e $0d
 
 ; Paired with data_05_73a2
-data_05_733f:
+SunflowerMarketCoreFourHamChats:
     HamChatWheelOption $08 ; 00 Hamha                  ;; 05:733f $08
     HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7340 $09
     HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7341 $0a
@@ -3974,7 +4191,18 @@ data_05_735d:
     HamChatWheelOption $0b ; 03 Digdig                 ;; 05:7360 $0b
     HamChatWheelOption $15 ; 04 Yep-P                  ;; 05:7361 $15
     HamChatWheelOption $16 ; 05 No-P                   ;; 05:7362 $16
-    db   $15, $16, $17, $18, $19, $1a                  ;; 05:7363 ??????
+
+; Paired with data_05_73a2
+SunflowerMarketYesNo:
+    HamChatWheelOption $15 ; 00 Yep-P                  ;; 05:7363 $15
+    HamChatWheelOption $16 ; 01 No-P                   ;; 05:7364 $16
+
+; Paired with data_05_73a2
+FlugoSellerWares:
+    HamChatWheelOption $17 ; 00 Flugo                  ;; 05:7365 $17
+    HamChatWheelOption $18 ; 01 Heat Patch             ;; 05:7366 $18
+    HamChatWheelOption $19 ; 02 Striped Sticker        ;; 05:7367 $19
+    HamChatWheelOption $1a ; 03 Cancel                 ;; 05:7368 $1a
 
 ; Paired with data_05_73a2
 data_05_7369:
@@ -4041,7 +4269,7 @@ data_05_7390:
     db   $71, $1c, $be, $09, $00, $6c, $07, $a2        ;; 05:7396 ????????
     db   $80, $0e, $be, $01                            ;; 05:739e ????
 
-; Paired with data_05_735d, data_05_7339, data_05_733f, data_05_7369, data_05_734b, data_05_7390
+; Paired with data_05_735d, SunflowerMarketYesNo, FlugoSellerWares, data_05_7339, SunflowerMarketCoreFourHamChats, data_05_7369, data_05_7331, data_05_734b, data_05_7390
 data_05_73a2:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:73a2 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:73a3 $1a

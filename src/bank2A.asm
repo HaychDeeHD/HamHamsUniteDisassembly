@@ -1397,7 +1397,7 @@ call_2a_523f:
 call_2a_5240:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:5240 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2a:5244 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_664e, data_05_668d    ;; 2a:5248 $10 $04 $4e $66 $8d $66
+    Op10_HamChatWheel 4, SkyGardenCoreFourHamChats, SkyGardenAlwaysUsePile ;; 2a:5248 $10 $04 $4e $66 $8d $66
     Op1C_TableJump 4                                   ;; 2a:524e $1c $04
     SCRIPT_POINTER call_2a_525c                        ;; 2a:5250 $5c $52 $2a
     SCRIPT_POINTER call_2a_527c                        ;; 2a:5253 $7c $52 $2a
@@ -1781,7 +1781,7 @@ call_2a_567d:
     Op82_Run data_01_73cc                              ;; 2a:5681 $82 $cc $73 $01
     Op1E_Call call_04_6601                             ;; 2a:5685 $1e $01 $66 $04
     Op50_WriteByte wC65D, $00, $01                     ;; 2a:5689 $50 $5d $c6 $00 $01
-    Op0C_HamChatWheel 4, $6673, $668d                  ;; 2a:568e $0c $04 $73 $66 $8d $66
+    Op0C_HamChatWheel 4, BartenderOfferings, SkyGardenAlwaysUsePile ;; 2a:568e $0c $04 $73 $66 $8d $66
     Op1E_Call call_04_65fb                             ;; 2a:5694 $1e $fb $65 $04
     Op50_WriteByte wC65D, $00, $00                     ;; 2a:5698 $50 $5d $c6 $00 $00
     Op1C_TableJump 4                                   ;; 2a:569d $1c $04
@@ -1969,7 +1969,7 @@ call_2a_58ca:
     Op82_Run data_01_73cc                              ;; 2a:58ce $82 $cc $73 $01
     Op1E_Call call_04_6601                             ;; 2a:58d2 $1e $01 $66 $04
     Op50_WriteByte wC65D, $00, $01                     ;; 2a:58d6 $50 $5d $c6 $00 $01
-    Op0C_HamChatWheel 4, $6673, $668d                  ;; 2a:58db $0c $04 $73 $66 $8d $66
+    Op0C_HamChatWheel 4, BartenderOfferings, SkyGardenAlwaysUsePile ;; 2a:58db $0c $04 $73 $66 $8d $66
     Op1E_Call call_04_65fb                             ;; 2a:58e1 $1e $fb $65 $04
     Op50_WriteByte wC65D, $00, $00                     ;; 2a:58e5 $50 $5d $c6 $00 $00
     Op1C_TableJump 4                                   ;; 2a:58ea $1c $04
@@ -2100,7 +2100,7 @@ call_2a_5a31:
 call_2a_5a4e:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:5a4e $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2a:5a52 $1e $1d $6f $1d
-    Op10_HamChatWheel 6, data_05_6677, data_05_668d    ;; 2a:5a56 $10 $06 $77 $66 $8d $66
+    Op10_HamChatWheel 6, data_05_6677, SkyGardenAlwaysUsePile ;; 2a:5a56 $10 $06 $77 $66 $8d $66
     Op1C_TableJump 6                                   ;; 2a:5a5c $1c $06
     SCRIPT_POINTER call_2a_5a70                        ;; 2a:5a5e $70 $5a $2a
     SCRIPT_POINTER call_2a_5a90                        ;; 2a:5a61 $90 $5a $2a
@@ -3108,7 +3108,7 @@ call_2a_676a:
 call_2a_677c:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:677c $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2a:6780 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_59f2, data_05_5a55    ;; 2a:6784 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2a:6784 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2a:678a $1c $04
     SCRIPT_POINTER call_2a_67bd                        ;; 2a:678c $bd $67 $2a
     SCRIPT_POINTER call_2a_67ec                        ;; 2a:678f $ec $67 $2a
@@ -3321,7 +3321,7 @@ call_2a_6a80:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:6a80 $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:6a84 $50 $1d $c3 $00 $90
     Op1E_Call call_1d_6f1d                             ;; 2a:6a89 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_59f2, data_05_5a55    ;; 2a:6a8d $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2a:6a8d $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2a:6a93 $1c $04
     SCRIPT_POINTER call_2a_6ac6                        ;; 2a:6a95 $c6 $6a $2a
     SCRIPT_POINTER call_2a_6af5                        ;; 2a:6a98 $f5 $6a $2a
@@ -3746,7 +3746,7 @@ call_2a_7060:
 call_2a_7061:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:7061 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2a:7065 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_733f, data_05_73a2    ;; 2a:7069 $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, SunflowerMarketCoreFourHamChats, data_05_73a2 ;; 2a:7069 $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 2a:706f $1c $04
     SCRIPT_POINTER call_2a_707d                        ;; 2a:7071 $7d $70 $2a
     SCRIPT_POINTER call_2a_70a4                        ;; 2a:7074 $a4 $70 $2a
@@ -3926,7 +3926,7 @@ call_2a_72d3:
 call_2a_72e6:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:72e6 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2a:72ea $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_733f, data_05_73a2    ;; 2a:72ee $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, SunflowerMarketCoreFourHamChats, data_05_73a2 ;; 2a:72ee $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 2a:72f4 $1c $04
     SCRIPT_POINTER call_2a_707d                        ;; 2a:72f6 $7d $70 $2a
     SCRIPT_POINTER call_2a_70a4                        ;; 2a:72f9 $a4 $70 $2a
@@ -4745,7 +4745,7 @@ call_2a_7eb5:
     Op1E_Call call_04_615d                             ;; 2a:7ed2 $1e $5d $61 $04
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:7ed6 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2a:7eda $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, $47ad, $4893                  ;; 2a:7ede $0c $02 $ad $47 $93 $48
+    Op0C_HamChatWheel 2, ClubhouseYesNo, ClubhouseAlwaysUsePile ;; 2a:7ede $0c $02 $ad $47 $93 $48
     Op1C_TableJump 2                                   ;; 2a:7ee4 $1c $02
     SCRIPT_POINTER call_2a_7eec                        ;; 2a:7ee6 $ec $7e $2a
     SCRIPT_POINTER call_2a_7f04                        ;; 2a:7ee9 $04 $7f $2a

@@ -618,10 +618,9 @@ class Op06Block(Block):
         file.comment(pullTextFrom3ByteRomAddressArg(self.memory, file.addr + 1))
         file.asmLine(4, "Op06_Unknown_Text", str(self.label))
 
-class Op10Block(Block):
+class Op10OrOp0CBlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=6)
-        RomInfo.macros["Op10_HamChatWheel"] = "db $10\ndb \\1\ndw \\2\ndw \\3"
 
         self.count = memory.byte(addr + 1)
         optionspointer = memory.word(addr + 2)
@@ -647,20 +646,22 @@ class Op10Block(Block):
             self.optionsBlock.pairedRuleBlocks.append(self.rulesBlock)
         if self.optionsBlock not in self.rulesBlock.pairedOptionsBlocks:
             self.rulesBlock.pairedOptionsBlocks.append(self.optionsBlock) 
+
+class Op10Block(Op10OrOp0CBlock):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr)
+        RomInfo.macros["Op10_HamChatWheel"] = "db $10\ndb \\1\ndw \\2\ndw \\3"
     
     def export(self, file):
         file.asmLine(6, "Op10_HamChatWheel", str(self.count), str(self.optionsLabel), str(self.rulesLabel))
 
-class Op0CBlock(Block):
+class Op0CBlock(Op10OrOp0CBlock):
     def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=6)
+        super().__init__(memory, addr)
         RomInfo.macros["Op0C_HamChatWheel"] = "db $0c\ndb \\1\ndw \\2\ndw \\3"
-    
+
     def export(self, file):
-        count = self.memory.byte(file.addr + 1)
-        optionspointer = self.memory.word(file.addr + 2)
-        rulespointer = self.memory.word(file.addr + 4)
-        file.asmLine(6, "Op0C_HamChatWheel", str(count), "$%04x" % optionspointer,  "$%04x" % rulespointer)
+        file.asmLine(6, "Op0C_HamChatWheel", str(self.count), str(self.optionsLabel), str(self.rulesLabel))
 
 # Even though there are ophandlers not accounted for here, this list is apparently complete.
 # In the banks I have decoded I do not hit script instructions not present in this object.

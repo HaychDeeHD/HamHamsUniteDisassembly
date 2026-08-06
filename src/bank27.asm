@@ -302,7 +302,7 @@ call_27_43ee:
 call_27_4445:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:4445 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:4449 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_47c3, data_05_4893    ;; 27:444d $10 $04 $c3 $47 $93 $48
+    Op10_HamChatWheel 4, ClubhouseCoreFourHamChats, ClubhouseAlwaysUsePile ;; 27:444d $10 $04 $c3 $47 $93 $48
     Op1C_TableJump 4                                   ;; 27:4453 $1c $04
     SCRIPT_POINTER call_27_4461                        ;; 27:4455 $61 $44 $27
     SCRIPT_POINTER call_27_4481                        ;; 27:4458 $81 $44 $27
@@ -427,7 +427,7 @@ call_27_4563:
 call_27_4576:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:4576 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:457a $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_47c3, data_05_4893    ;; 27:457e $10 $04 $c3 $47 $93 $48
+    Op10_HamChatWheel 4, ClubhouseCoreFourHamChats, ClubhouseAlwaysUsePile ;; 27:457e $10 $04 $c3 $47 $93 $48
     Op1C_TableJump 4                                   ;; 27:4584 $1c $04
     SCRIPT_POINTER call_27_4461                        ;; 27:4586 $61 $44 $27
     SCRIPT_POINTER call_27_4481                        ;; 27:4589 $81 $44 $27
@@ -875,7 +875,7 @@ call_27_4b21:
     Op16_SubOps 1                                      ;; 27:4b5e $16 $01
     SubOp_SetFlag wC948, 6                             ;; 27:4b60 $3f $86
     Op1E_Call call_1d_6f1d                             ;; 27:4b62 $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, $47ad, $4893                  ;; 27:4b66 $0c $02 $ad $47 $93 $48
+    Op0C_HamChatWheel 2, ClubhouseYesNo, ClubhouseAlwaysUsePile ;; 27:4b66 $0c $02 $ad $47 $93 $48
     Op1C_TableJump 2                                   ;; 27:4b6c $1c $02
     SCRIPT_POINTER call_27_4b74                        ;; 27:4b6e $74 $4b $27
     SCRIPT_POINTER call_27_4bf1                        ;; 27:4b71 $f1 $4b $27
@@ -1608,7 +1608,7 @@ call_27_5487:
 call_27_54b5:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:54b5 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:54b9 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_733f, data_05_73a2    ;; 27:54bd $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, SunflowerMarketCoreFourHamChats, data_05_73a2 ;; 27:54bd $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 27:54c3 $1c $04
     SCRIPT_POINTER call_27_54d1                        ;; 27:54c5 $d1 $54 $27
     SCRIPT_POINTER call_27_54f5                        ;; 27:54c8 $f5 $54 $27
@@ -1780,7 +1780,7 @@ call_27_565f:
     Op18_Jump call_27_5637                             ;; 27:566c $18 $37 $56 $27
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:5670 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:5674 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_733f, data_05_73a2    ;; 27:5678 $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, SunflowerMarketCoreFourHamChats, data_05_73a2 ;; 27:5678 $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 27:567e $1c $04
     SCRIPT_POINTER call_27_54d1                        ;; 27:5680 $d1 $54 $27
     SCRIPT_POINTER call_27_54f5                        ;; 27:5683 $f5 $54 $27
@@ -2192,7 +2192,7 @@ call_27_5b70:
     SCRIPT_POINTER call_27_5cd7                        ;; 27:5b74 $d7 $5c $27
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:5b77 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:5b7b $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_733f, data_05_73a2    ;; 27:5b7f $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, SunflowerMarketCoreFourHamChats, data_05_73a2 ;; 27:5b7f $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 27:5b85 $1c $04
     SCRIPT_POINTER call_27_54d1                        ;; 27:5b87 $d1 $54 $27
     SCRIPT_POINTER call_27_54f5                        ;; 27:5b8a $f5 $54 $27
@@ -2289,7 +2289,7 @@ call_27_5c9b:
 call_27_5cbb:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:5cbb $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:5cbf $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_733f, data_05_73a2    ;; 27:5cc3 $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, SunflowerMarketCoreFourHamChats, data_05_73a2 ;; 27:5cc3 $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 27:5cc9 $1c $04
     SCRIPT_POINTER call_27_5d41                        ;; 27:5ccb $41 $5d $27
     SCRIPT_POINTER call_27_5d7f                        ;; 27:5cce $7f $5d $27
@@ -2888,7 +2888,7 @@ call_27_63f2:
 call_27_644e:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:644e $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:6452 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_6c77, data_05_6cf7    ;; 27:6456 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, RuinsCoreFourHamChats, RuinsAlwaysUsePile ;; 27:6456 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 27:645c $1c $04
     SCRIPT_POINTER call_27_646a                        ;; 27:645e $6a $64 $27
     SCRIPT_POINTER call_27_648a                        ;; 27:6461 $8a $64 $27
@@ -3186,7 +3186,7 @@ call_27_672a:
 call_27_6732:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:6732 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:6736 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_6c77, data_05_6cf7    ;; 27:673a $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, RuinsCoreFourHamChats, RuinsAlwaysUsePile ;; 27:673a $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 27:6740 $1c $04
     SCRIPT_POINTER call_27_65e4                        ;; 27:6742 $e4 $65 $27
     SCRIPT_POINTER call_27_660c                        ;; 27:6745 $0c $66 $27
@@ -3206,7 +3206,7 @@ call_27_6752:
 call_27_676a:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:676a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:676e $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_6c77, data_05_6cf7    ;; 27:6772 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, RuinsCoreFourHamChats, RuinsAlwaysUsePile ;; 27:6772 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 27:6778 $1c $04
     SCRIPT_POINTER call_27_6786                        ;; 27:677a $86 $67 $27
     SCRIPT_POINTER call_27_6800                        ;; 27:677d $00 $68 $27
@@ -3472,7 +3472,7 @@ call_27_6a46:
 call_27_6a5e:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:6a5e $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:6a62 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_6c77, data_05_6cf7    ;; 27:6a66 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, RuinsCoreFourHamChats, RuinsAlwaysUsePile ;; 27:6a66 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 27:6a6c $1c $04
     SCRIPT_POINTER call_27_646a                        ;; 27:6a6e $6a $64 $27
     SCRIPT_POINTER call_27_6a7a                        ;; 27:6a71 $7a $6a $27
@@ -3699,7 +3699,7 @@ call_27_6d06:
 call_27_6d1e:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:6d1e $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:6d22 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_6c77, data_05_6cf7    ;; 27:6d26 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, RuinsCoreFourHamChats, RuinsAlwaysUsePile ;; 27:6d26 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 27:6d2c $1c $04
     SCRIPT_POINTER call_27_646a                        ;; 27:6d2e $6a $64 $27
     SCRIPT_POINTER call_27_648a                        ;; 27:6d31 $8a $64 $27
@@ -3734,7 +3734,7 @@ call_27_6d5a:
 call_27_6d78:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:6d78 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:6d7c $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_6c77, data_05_6cf7    ;; 27:6d80 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, RuinsCoreFourHamChats, RuinsAlwaysUsePile ;; 27:6d80 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 27:6d86 $1c $04
     SCRIPT_POINTER call_27_646a                        ;; 27:6d88 $6a $64 $27
     SCRIPT_POINTER call_27_6dd2                        ;; 27:6d8b $d2 $6d $27
@@ -3793,7 +3793,7 @@ call_27_6e18:
 call_27_6e23:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:6e23 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:6e27 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_6c90, data_05_6cf7    ;; 27:6e2b $10 $08 $90 $6c $f7 $6c
+    Op10_HamChatWheel 8, data_05_6c90, RuinsAlwaysUsePile ;; 27:6e2b $10 $08 $90 $6c $f7 $6c
     Op1C_TableJump 8                                   ;; 27:6e31 $1c $08
     SCRIPT_POINTER call_27_646a                        ;; 27:6e33 $6a $64 $27
     SCRIPT_POINTER call_27_648a                        ;; 27:6e36 $8a $64 $27
@@ -3912,7 +3912,7 @@ call_27_6f44:
 call_27_6f5c:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 27:6f5c $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 27:6f60 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_6c77, data_05_6cf7    ;; 27:6f64 $10 $04 $77 $6c $f7 $6c
+    Op10_HamChatWheel 4, RuinsCoreFourHamChats, RuinsAlwaysUsePile ;; 27:6f64 $10 $04 $77 $6c $f7 $6c
     Op1C_TableJump 4                                   ;; 27:6f6a $1c $04
     SCRIPT_POINTER call_27_646a                        ;; 27:6f6c $6a $64 $27
     SCRIPT_POINTER call_27_648a                        ;; 27:6f6f $8a $64 $27

@@ -1574,7 +1574,7 @@ call_38_5888:
     Op1E_Call call_04_615d                             ;; 38:5890 $1e $5d $61 $04
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 38:5894 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 38:5898 $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, $47ad, $4893                  ;; 38:589c $0c $02 $ad $47 $93 $48
+    Op0C_HamChatWheel 2, ClubhouseYesNo, ClubhouseAlwaysUsePile ;; 38:589c $0c $02 $ad $47 $93 $48
     Op1C_TableJump 2                                   ;; 38:58a2 $1c $02
     SCRIPT_POINTER call_38_58aa                        ;; 38:58a4 $aa $58 $38
     SCRIPT_POINTER call_38_58e5                        ;; 38:58a7 $e5 $58 $38
@@ -3587,7 +3587,7 @@ call_38_6ed6:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 38:6f1a $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 38:6f1e $82 $cc $73 $01
     Op1E_Call call_1d_6f1d                             ;; 38:6f22 $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, $6615, $668d                  ;; 38:6f26 $0c $02 $15 $66 $8d $66
+    Op0C_HamChatWheel 2, SkyGardenYesNo, SkyGardenAlwaysUsePile ;; 38:6f26 $0c $02 $15 $66 $8d $66
     Op1C_TableJump 2                                   ;; 38:6f2c $1c $02
     SCRIPT_POINTER call_38_6f34                        ;; 38:6f2e $34 $6f $38
     SCRIPT_POINTER call_38_6f83                        ;; 38:6f31 $83 $6f $38

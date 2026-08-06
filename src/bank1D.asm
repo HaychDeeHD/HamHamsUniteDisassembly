@@ -187,7 +187,7 @@ call_1d_4263:
 call_1d_4264:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:4264 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1d:4268 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_733f, data_05_73a2    ;; 1d:426c $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, SunflowerMarketCoreFourHamChats, data_05_73a2 ;; 1d:426c $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 1d:4272 $1c $04
     SCRIPT_POINTER call_1d_4280                        ;; 1d:4274 $80 $42 $1d
     SCRIPT_POINTER call_1d_42a0                        ;; 1d:4277 $a0 $42 $1d
@@ -261,7 +261,7 @@ call_1d_4300:
 call_1d_4313:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:4313 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1d:4317 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, data_05_733f, data_05_73a2    ;; 1d:431b $10 $04 $3f $73 $a2 $73
+    Op10_HamChatWheel 4, SunflowerMarketCoreFourHamChats, data_05_73a2 ;; 1d:431b $10 $04 $3f $73 $a2 $73
     Op1C_TableJump 4                                   ;; 1d:4321 $1c $04
     SCRIPT_POINTER call_1d_4280                        ;; 1d:4323 $80 $42 $1d
     SCRIPT_POINTER call_1d_42a0                        ;; 1d:4326 $a0 $42 $1d
@@ -1994,7 +1994,7 @@ call_1d_5b08:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:5b08 $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 1d:5b0c $82 $cc $73 $01
     Op1E_Call call_1d_6f1d                             ;; 1d:5b10 $1e $1d $6f $1d
-    Op0C_HamChatWheel 12, $7351, $74f4                 ;; 1d:5b14 $0c $0c $51 $73 $f4 $74
+    Op0C_HamChatWheel 12, data_05_7351, data_05_74f4   ;; 1d:5b14 $0c $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1d:5b1a $1c $0c
     SCRIPT_POINTER call_1d_5b40                        ;; 1d:5b1c $40 $5b $1d
     SCRIPT_POINTER call_1d_5b79                        ;; 1d:5b1f $79 $5b $1d
@@ -2329,7 +2329,7 @@ call_1d_5f0a:
     Op82_Run data_01_73cc                              ;; 1d:5f0a $82 $cc $73 $01
     Op52_WriteBytes wC689, $00, $60, $00               ;; 1d:5f0e $52 $89 $c6 $00 $60 $00
     Op50_WriteByte wC478, $00, $03                     ;; 1d:5f14 $50 $78 $c4 $00 $03
-    Op0C_HamChatWheel 10, $412c, $4159                 ;; 1d:5f19 $0c $0a $2c $41 $59 $41
+    Op0C_HamChatWheel 10, data_05_412c, MiscAlwaysUsePile ;; 1d:5f19 $0c $0a $2c $41 $59 $41
     Op1C_TableJump 10                                  ;; 1d:5f1f $1c $0a
     SCRIPT_POINTER call_1d_5f43                        ;; 1d:5f21 $43 $5f $1d
     SCRIPT_POINTER call_1d_6461                        ;; 1d:5f24 $61 $64 $1d
@@ -2346,7 +2346,7 @@ call_1d_5f0a:
 call_1d_5f43:
     Op52_WriteBytes wC689, $00, $60, $00               ;; 1d:5f43 $52 $89 $c6 $00 $60 $00
     Op50_WriteByte wC478, $00, $03                     ;; 1d:5f49 $50 $78 $c4 $00 $03
-    Op0C_HamChatWheel 6, $4136, $4159                  ;; 1d:5f4e $0c $06 $36 $41 $59 $41
+    Op0C_HamChatWheel 6, data_05_4136, MiscAlwaysUsePile ;; 1d:5f4e $0c $06 $36 $41 $59 $41
     Op1C_TableJump 5                                   ;; 1d:5f54 $1c $05
     SCRIPT_POINTER call_1d_636c                        ;; 1d:5f56 $6c $63 $1d
     SCRIPT_POINTER call_1d_634e                        ;; 1d:5f59 $4e $63 $1d
@@ -3212,7 +3212,7 @@ call_1d_68f9:
     Op16_SubOps 1                                      ;; 1d:6919 $16 $01
     SubOp_SetFlag wBitArrayC918, 1                     ;; 1d:691b $3e $01
     Op1E_Call call_1d_6f1d                             ;; 1d:691d $1e $1d $6f $1d
-    Op10_HamChatWheel 5, data_05_413c, data_05_4159    ;; 1d:6921 $10 $05 $3c $41 $59 $41
+    Op10_HamChatWheel 5, data_05_413c, MiscAlwaysUsePile ;; 1d:6921 $10 $05 $3c $41 $59 $41
     Op1C_TableJump 5                                   ;; 1d:6927 $1c $05
     SCRIPT_POINTER call_1d_6941                        ;; 1d:6929 $41 $69 $1d
     SCRIPT_POINTER call_1d_69b0                        ;; 1d:692c $b0 $69 $1d
@@ -3306,7 +3306,7 @@ call_1d_69f1:
     Op16_SubOps 1                                      ;; 1d:6a11 $16 $01
     SubOp_SetFlag wBitArrayC918, 1                     ;; 1d:6a13 $3e $01
     Op1E_Call call_1d_6f1d                             ;; 1d:6a15 $1e $1d $6f $1d
-    Op10_HamChatWheel 3, data_05_4141, data_05_4159    ;; 1d:6a19 $10 $03 $41 $41 $59 $41
+    Op10_HamChatWheel 3, data_05_4141, MiscAlwaysUsePile ;; 1d:6a19 $10 $03 $41 $41 $59 $41
     Op1C_TableJump 3                                   ;; 1d:6a1f $1c $03
     SCRIPT_POINTER call_1d_6a40                        ;; 1d:6a21 $40 $6a $1d
     SCRIPT_POINTER call_1d_6a3c                        ;; 1d:6a24 $3c $6a $1d

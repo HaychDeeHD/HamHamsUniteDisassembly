@@ -50,7 +50,9 @@ call_28_46cf:
 It is probably clear from the above script that the Op1C call will jump to a hamscript appropriate for handling the behavior that should result from your choice. But note that the table length is *12* instead of 8. This is because each of the 4 possible "?"s are listed separately -- and in an order that we will see matters -- despite having the same handling the vast majority of the time. You might also note that there is no "missing word" handling whatsoever for words the script expects you will always have. It turns out that even if you edit memory to forget a starter hamchat like Tack-Q you will still be able to use it on Maxwell because his script does not check. All the HamChatWheels I've examined follow this pattern.
 
 
-## Op10 and HamChatWheel data
+## Op10 / Op0C and HamChatWheel data
+
+(This document describes the behavior of Op10. Op0C appears to be used in the exact same way, but I haven't examined its code to know whether it deviates in any important ways.)
 
 Op10 is responsible for presenting the player with their choices and accepting their selection for use with the following Op1C tablejump.
 
