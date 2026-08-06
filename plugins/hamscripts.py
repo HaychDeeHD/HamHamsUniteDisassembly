@@ -111,10 +111,9 @@ def pullTextFrom3ByteRomAddressArg(memory, addr):
     bankNum = memory.byte(addr + 2)
     bank = RomInfo.romBank(bankNum)
     try:
-        referencedText = getTextFromTextBlockAtAddress(bank, pointer)
+        return getTextFromTextBlockAtAddress(bank, pointer)
     except Exception as e:
         raise Exception('Text instruction at %s references non-text --> %s' % (serializeAddress(memory, addr), e)) from e
-    return referencedText
 
 class Op1CBlock(Block):
     def __init__(self, memory, addr):

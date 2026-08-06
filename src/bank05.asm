@@ -150,48 +150,48 @@ data_05_4123:
     db   $08, $09, $0a, $0b, $0c, $0d, $0e, $0f        ;; 05:4134 ????????
 
 data_05_413c:
-    HamChatWheelOption 0, $02                          ;; 05:413c $02
-    HamChatWheelOption 1, $10                          ;; 05:413d $10
-    HamChatWheelOption 2, $01                          ;; 05:413e $01
-    HamChatWheelOption 3, $11                          ;; 05:413f $11
-    HamChatWheelOption 4, $12                          ;; 05:4140 $12
+    HamChatWheelOption $02 ; 00 H.H.Dic                ;; 05:413c $02
+    HamChatWheelOption $10 ; 01 Move                   ;; 05:413d $10
+    HamChatWheelOption $01 ; 02 Flag                   ;; 05:413e $01
+    HamChatWheelOption $11 ; 03 Save                   ;; 05:413f $11
+    HamChatWheelOption $12 ; 04 SaveClr                ;; 05:4140 $12
 
 data_05_4141:
-    HamChatWheelOption 0, $13                          ;; 05:4141 $13
-    HamChatWheelOption 1, $14                          ;; 05:4142 $14
-    HamChatWheelOption 2, $15                          ;; 05:4143 $15
+    HamChatWheelOption $13 ; 00 Item                   ;; 05:4141 $13
+    HamChatWheelOption $14 ; 01 AllGet                 ;; 05:4142 $14
+    HamChatWheelOption $15 ; 02 SeedGet                ;; 05:4143 $15
 
 data_05_4144:
-    HamChatWheelOption 0, $16                          ;; 05:4144 $16
-    HamChatWheelOption 1, $17                          ;; 05:4145 $17
-    HamChatWheelOption 2, $18                          ;; 05:4146 $18
-    HamChatWheelOption 3, $19                          ;; 05:4147 $19
-    HamChatWheelOption 4, $18                          ;; 05:4148 $18
-    HamChatWheelOption 5, $1a                          ;; 05:4149 $1a
-    HamChatWheelOption 6, $18                          ;; 05:414a $18
+    HamChatWheelOption $16 ; 00 Go-P                   ;; 05:4144 $16
+    HamChatWheelOption $17 ; 01 Zuzuzu                 ;; 05:4145 $17
+    HamChatWheelOption $18 ; 02   ?                    ;; 05:4146 $18
+    HamChatWheelOption $19 ; 03 Blanko                 ;; 05:4147 $19
+    HamChatWheelOption $18 ; 04   ?                    ;; 05:4148 $18
+    HamChatWheelOption $1a ; 05 Hammo                  ;; 05:4149 $1a
+    HamChatWheelOption $18 ; 06   ?                    ;; 05:414a $18
 
 data_05_414b:
-    HamChatWheelOption 0, $1b                          ;; 05:414b $1b
-    HamChatWheelOption 1, $1c                          ;; 05:414c $1c
-    HamChatWheelOption 2, $1d                          ;; 05:414d $1d
-    HamChatWheelOption 3, $1e                          ;; 05:414e $1e
+    HamChatWheelOption $1b ; 00 Hamha                  ;; 05:414b $1b
+    HamChatWheelOption $1c ; 01 Hif-hif                ;; 05:414c $1c
+    HamChatWheelOption $1d ; 02 Tack-Q                 ;; 05:414d $1d
+    HamChatWheelOption $1e ; 03 Digdig                 ;; 05:414e $1e
 
 data_05_414f:
-    HamChatWheelOption 0, $1b                          ;; 05:414f $1b
-    HamChatWheelOption 1, $1c                          ;; 05:4150 $1c
-    HamChatWheelOption 2, $1d                          ;; 05:4151 $1d
-    HamChatWheelOption 3, $1e                          ;; 05:4152 $1e
-    HamChatWheelOption 4, $1f                          ;; 05:4153 $1f
-    HamChatWheelOption 5, $20                          ;; 05:4154 $20
-    HamChatWheelOption 6, $21                          ;; 05:4155 $21
-    HamChatWheelOption 7, $16                          ;; 05:4156 $16
+    HamChatWheelOption $1b ; 00 Hamha                  ;; 05:414f $1b
+    HamChatWheelOption $1c ; 01 Hif-hif                ;; 05:4150 $1c
+    HamChatWheelOption $1d ; 02 Tack-Q                 ;; 05:4151 $1d
+    HamChatWheelOption $1e ; 03 Digdig                 ;; 05:4152 $1e
+    HamChatWheelOption $1f ; 04 Pakapaka               ;; 05:4153 $1f
+    HamChatWheelOption $20 ; 05 Scrit-T                ;; 05:4154 $20
+    HamChatWheelOption $21 ; 06 Scoochie               ;; 05:4155 $21
+    HamChatWheelOption $16 ; 07 Go-P                   ;; 05:4156 $16
     db   $3e, $00                                      ;; 05:4157 ??
 
 data_05_4159:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:4159 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:415a $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:415b $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:415c $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:4159 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:415a $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:415b $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:415c $1a
     db   $1a, $1a, $1a, $1a, $1a, $1a, $00, $6c        ;; 05:415d ????????
     db   $07, $a2, $80, $0e, $be, $01, $3e, $01        ;; 05:4165 ????????
     db   $3e, $03, $72, $4b, $7e, $12, $70, $4b        ;; 05:416d ????????
@@ -275,13 +275,13 @@ data_05_4159:
     db   $1e                                           ;; 05:43dd ?
 
 data_05_43de:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:43de $1a
-    HamChatWheelRule_UseIfHave 1, HAMCHAT_ZUZUZU       ;; 05:43df $3e $31
-    HamChatWheelRule_UseIfDontHave 2, HAMCHAT_ZUZUZU   ;; 05:43e1 $5e $31
-    HamChatWheelRule_UseIfHave 3, HAMCHAT_BLANKO       ;; 05:43e3 $3e $36
-    HamChatWheelRule_UseIfDontHave 4, HAMCHAT_BLANKO   ;; 05:43e5 $5e $36
-    HamChatWheelRule_UseIfHave 5, HAMCHAT_HAMMO        ;; 05:43e7 $3e $2f
-    HamChatWheelRule_UseIfDontHave 6, HAMCHAT_HAMMO    ;; 05:43e9 $5e $2f
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:43de $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_ZUZUZU ; 01     ;; 05:43df $3e $31
+    HamChatWheelRule_UseIfDontHave HAMCHAT_ZUZUZU ; 02 ;; 05:43e1 $5e $31
+    HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 03     ;; 05:43e3 $3e $36
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLANKO ; 04 ;; 05:43e5 $5e $36
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 05      ;; 05:43e7 $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 06  ;; 05:43e9 $5e $2f
     db   $70, $67, $be, $01, $70, $67, $be, $02        ;; 05:43eb ????????
     db   $70, $67, $be, $03, $70, $67, $be, $04        ;; 05:43f3 ????????
     db   $3f, $81, $3f, $16, $70, $2a, $be, $00        ;; 05:43fb ????????
@@ -569,289 +569,289 @@ data_05_43de:
     db   $10                                           ;; 05:47a2 ?
 
 data_05_47a3:
-    HamChatWheelOption 0, $11                          ;; 05:47a3 $11
-    HamChatWheelOption 1, $12                          ;; 05:47a4 $12
-    HamChatWheelOption 2, $13                          ;; 05:47a5 $13
-    HamChatWheelOption 3, $14                          ;; 05:47a6 $14
-    HamChatWheelOption 4, $15                          ;; 05:47a7 $15
-    HamChatWheelOption 5, $16                          ;; 05:47a8 $16
-    HamChatWheelOption 6, $17                          ;; 05:47a9 $17
-    HamChatWheelOption 7, $18                          ;; 05:47aa $18
-    HamChatWheelOption 8, $19                          ;; 05:47ab $19
-    HamChatWheelOption 9, $1a                          ;; 05:47ac $1a
+    HamChatWheelOption $11 ; 00 01                     ;; 05:47a3 $11
+    HamChatWheelOption $12 ; 01 02                     ;; 05:47a4 $12
+    HamChatWheelOption $13 ; 02 03                     ;; 05:47a5 $13
+    HamChatWheelOption $14 ; 03 04                     ;; 05:47a6 $14
+    HamChatWheelOption $15 ; 04 05                     ;; 05:47a7 $15
+    HamChatWheelOption $16 ; 05 06                     ;; 05:47a8 $16
+    HamChatWheelOption $17 ; 06 07                     ;; 05:47a9 $17
+    HamChatWheelOption $18 ; 07 08                     ;; 05:47aa $18
+    HamChatWheelOption $19 ; 08 09                     ;; 05:47ab $19
+    HamChatWheelOption $1a ; 09 10                     ;; 05:47ac $1a
     db   $1b, $1c                                      ;; 05:47ad ??
 
 HintGiverBossOptions:
-    HamChatWheelOption 0, $02                          ;; 05:47af $02
-    HamChatWheelOption 1, $03                          ;; 05:47b0 $03
-    HamChatWheelOption 2, $04                          ;; 05:47b1 $04
-    HamChatWheelOption 3, $05                          ;; 05:47b2 $05
-    HamChatWheelOption 4, $0a                          ;; 05:47b3 $0a
-    HamChatWheelOption 5, $0b                          ;; 05:47b4 $0b
-    HamChatWheelOption 6, $06                          ;; 05:47b5 $06
-    HamChatWheelOption 7, $07                          ;; 05:47b6 $07
-    HamChatWheelOption 8, $08                          ;; 05:47b7 $08
-    HamChatWheelOption 9, $09                          ;; 05:47b8 $09
-    HamChatWheelOption 10, $0c                         ;; 05:47b9 $0c
-    HamChatWheelOption 11, $0d                         ;; 05:47ba $0d
+    HamChatWheelOption $02 ; 00 Bijou                  ;; 05:47af $02
+    HamChatWheelOption $03 ; 01 Maxwell                ;; 05:47b0 $03
+    HamChatWheelOption $04 ; 02 Oxnard                 ;; 05:47b1 $04
+    HamChatWheelOption $05 ; 03 Pashmina               ;; 05:47b2 $05
+    HamChatWheelOption $0a ; 04 Penelope               ;; 05:47b3 $0a
+    HamChatWheelOption $0b ; 05 Cappy                  ;; 05:47b4 $0b
+    HamChatWheelOption $06 ; 06 Panda                  ;; 05:47b5 $06
+    HamChatWheelOption $07 ; 07 Jingle                 ;; 05:47b6 $07
+    HamChatWheelOption $08 ; 08 Sandy                  ;; 05:47b7 $08
+    HamChatWheelOption $09 ; 09 Stan                   ;; 05:47b8 $09
+    HamChatWheelOption $0c ; 10 Howdy                  ;; 05:47b9 $0c
+    HamChatWheelOption $0d ; 11 Dexter                 ;; 05:47ba $0d
 
 data_05_47bb:
-    HamChatWheelOption 0, $1d                          ;; 05:47bb $1d
-    HamChatWheelOption 1, $1e                          ;; 05:47bc $1e
-    HamChatWheelOption 2, $1f                          ;; 05:47bd $1f
-    HamChatWheelOption 3, $1e                          ;; 05:47be $1e
-    HamChatWheelOption 4, $20                          ;; 05:47bf $20
-    HamChatWheelOption 5, $1e                          ;; 05:47c0 $1e
-    HamChatWheelOption 6, $21                          ;; 05:47c1 $21
-    HamChatWheelOption 7, $1e                          ;; 05:47c2 $1e
+    HamChatWheelOption $1d ; 00 ShaShaa<32>            ;; 05:47bb $1d
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:47bc $1e
+    HamChatWheelOption $1f ; 02 Zuzuzu                 ;; 05:47bd $1f
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:47be $1e
+    HamChatWheelOption $20 ; 04 Minglie                ;; 05:47bf $20
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:47c0 $1e
+    HamChatWheelOption $21 ; 06 Noworrie               ;; 05:47c1 $21
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:47c2 $1e
 
 data_05_47c3:
-    HamChatWheelOption 0, $22                          ;; 05:47c3 $22
-    HamChatWheelOption 1, $23                          ;; 05:47c4 $23
-    HamChatWheelOption 2, $24                          ;; 05:47c5 $24
-    HamChatWheelOption 3, $25                          ;; 05:47c6 $25
+    HamChatWheelOption $22 ; 00 Hamha                  ;; 05:47c3 $22
+    HamChatWheelOption $23 ; 01 Hif-hif                ;; 05:47c4 $23
+    HamChatWheelOption $24 ; 02 Tack-Q                 ;; 05:47c5 $24
+    HamChatWheelOption $25 ; 03 Digdig                 ;; 05:47c6 $25
 
 data_05_47c7:
-    HamChatWheelOption 0, $22                          ;; 05:47c7 $22
-    HamChatWheelOption 1, $1e                          ;; 05:47c8 $1e
-    HamChatWheelOption 2, $23                          ;; 05:47c9 $23
-    HamChatWheelOption 3, $1e                          ;; 05:47ca $1e
-    HamChatWheelOption 4, $24                          ;; 05:47cb $24
-    HamChatWheelOption 5, $1e                          ;; 05:47cc $1e
-    HamChatWheelOption 6, $25                          ;; 05:47cd $25
-    HamChatWheelOption 7, $1e                          ;; 05:47ce $1e
+    HamChatWheelOption $22 ; 00 Hamha                  ;; 05:47c7 $22
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:47c8 $1e
+    HamChatWheelOption $23 ; 02 Hif-hif                ;; 05:47c9 $23
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:47ca $1e
+    HamChatWheelOption $24 ; 04 Tack-Q                 ;; 05:47cb $24
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:47cc $1e
+    HamChatWheelOption $25 ; 06 Digdig                 ;; 05:47cd $25
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:47ce $1e
 
 data_05_47cf:
-    HamChatWheelOption 0, $26                          ;; 05:47cf $26
-    HamChatWheelOption 1, $1e                          ;; 05:47d0 $1e
-    HamChatWheelOption 2, $27                          ;; 05:47d1 $27
-    HamChatWheelOption 3, $1e                          ;; 05:47d2 $1e
-    HamChatWheelOption 4, $28                          ;; 05:47d3 $28
-    HamChatWheelOption 5, $1e                          ;; 05:47d4 $1e
-    HamChatWheelOption 6, $29                          ;; 05:47d5 $29
-    HamChatWheelOption 7, $1e                          ;; 05:47d6 $1e
+    HamChatWheelOption $26 ; 00 Mega-Q                 ;; 05:47cf $26
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:47d0 $1e
+    HamChatWheelOption $27 ; 02 Teenie                 ;; 05:47d1 $27
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:47d2 $1e
+    HamChatWheelOption $28 ; 04 Sparklie               ;; 05:47d3 $28
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:47d4 $1e
+    HamChatWheelOption $29 ; 06 Hamsolo                ;; 05:47d5 $29
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:47d6 $1e
 
 data_05_47d7:
-    HamChatWheelOption 0, $28                          ;; 05:47d7 $28
-    HamChatWheelOption 1, $1e                          ;; 05:47d8 $1e
-    HamChatWheelOption 2, $2a                          ;; 05:47d9 $2a
-    HamChatWheelOption 3, $1e                          ;; 05:47da $1e
-    HamChatWheelOption 4, $2b                          ;; 05:47db $2b
-    HamChatWheelOption 5, $1e                          ;; 05:47dc $1e
-    HamChatWheelOption 6, $2c                          ;; 05:47dd $2c
-    HamChatWheelOption 7, $1e                          ;; 05:47de $1e
+    HamChatWheelOption $28 ; 00 Sparklie               ;; 05:47d7 $28
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:47d8 $1e
+    HamChatWheelOption $2a ; 02 Delichu                ;; 05:47d9 $2a
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:47da $1e
+    HamChatWheelOption $2b ; 04 Thank-Q                ;; 05:47db $2b
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:47dc $1e
+    HamChatWheelOption $2c ; 06 Koochi-Q               ;; 05:47dd $2c
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:47de $1e
 
 data_05_47df:
-    HamChatWheelOption 0, $2d                          ;; 05:47df $2d
-    HamChatWheelOption 1, $1e                          ;; 05:47e0 $1e
-    HamChatWheelOption 2, $2e                          ;; 05:47e1 $2e
-    HamChatWheelOption 3, $1e                          ;; 05:47e2 $1e
-    HamChatWheelOption 4, $2f                          ;; 05:47e3 $2f
-    HamChatWheelOption 5, $1e                          ;; 05:47e4 $1e
-    HamChatWheelOption 6, $30                          ;; 05:47e5 $30
-    HamChatWheelOption 7, $1e                          ;; 05:47e6 $1e
+    HamChatWheelOption $2d ; 00 Whawha                 ;; 05:47df $2d
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:47e0 $1e
+    HamChatWheelOption $2e ; 02 Blash-T                ;; 05:47e1 $2e
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:47e2 $1e
+    HamChatWheelOption $2f ; 04 Shockie                ;; 05:47e3 $2f
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:47e4 $1e
+    HamChatWheelOption $30 ; 06 Hamspar                ;; 05:47e5 $30
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:47e6 $1e
 
 data_05_47e7:
-    HamChatWheelOption 0, $29                          ;; 05:47e7 $29
-    HamChatWheelOption 1, $1e                          ;; 05:47e8 $1e
-    HamChatWheelOption 2, $31                          ;; 05:47e9 $31
-    HamChatWheelOption 3, $1e                          ;; 05:47ea $1e
-    HamChatWheelOption 4, $32                          ;; 05:47eb $32
-    HamChatWheelOption 5, $1e                          ;; 05:47ec $1e
-    HamChatWheelOption 6, $33                          ;; 05:47ed $33
-    HamChatWheelOption 7, $1e                          ;; 05:47ee $1e
+    HamChatWheelOption $29 ; 00 Hamsolo                ;; 05:47e7 $29
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:47e8 $1e
+    HamChatWheelOption $31 ; 02 Blahh                  ;; 05:47e9 $31
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:47ea $1e
+    HamChatWheelOption $32 ; 04 Hushie                 ;; 05:47eb $32
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:47ec $1e
+    HamChatWheelOption $33 ; 06 Go-P                   ;; 05:47ed $33
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:47ee $1e
 
 data_05_47ef:
-    HamChatWheelOption 0, $34                          ;; 05:47ef $34
-    HamChatWheelOption 1, $1e                          ;; 05:47f0 $1e
-    HamChatWheelOption 2, $35                          ;; 05:47f1 $35
-    HamChatWheelOption 3, $1e                          ;; 05:47f2 $1e
-    HamChatWheelOption 4, $36                          ;; 05:47f3 $36
-    HamChatWheelOption 5, $1e                          ;; 05:47f4 $1e
-    HamChatWheelOption 6, $37                          ;; 05:47f5 $37
-    HamChatWheelOption 7, $1e                          ;; 05:47f6 $1e
+    HamChatWheelOption $34 ; 00 Blissie                ;; 05:47ef $34
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:47f0 $1e
+    HamChatWheelOption $35 ; 02 Goodgo                 ;; 05:47f1 $35
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:47f2 $1e
+    HamChatWheelOption $36 ; 04 Hamchu                 ;; 05:47f3 $36
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:47f4 $1e
+    HamChatWheelOption $37 ; 06 Bizzaroo               ;; 05:47f5 $37
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:47f6 $1e
 
 data_05_47f7:
-    HamChatWheelOption 0, $38                          ;; 05:47f7 $38
-    HamChatWheelOption 1, $1e                          ;; 05:47f8 $1e
-    HamChatWheelOption 2, $39                          ;; 05:47f9 $39
-    HamChatWheelOption 3, $1e                          ;; 05:47fa $1e
-    HamChatWheelOption 4, $3a                          ;; 05:47fb $3a
-    HamChatWheelOption 5, $1e                          ;; 05:47fc $1e
-    HamChatWheelOption 6, $3b                          ;; 05:47fd $3b
-    HamChatWheelOption 7, $1e                          ;; 05:47fe $1e
+    HamChatWheelOption $38 ; 00 Stickie                ;; 05:47f7 $38
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:47f8 $1e
+    HamChatWheelOption $39 ; 02 Meep-P                 ;; 05:47f9 $39
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:47fa $1e
+    HamChatWheelOption $3a ; 04 Nopookie               ;; 05:47fb $3a
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:47fc $1e
+    HamChatWheelOption $3b ; 06 Nopibloo               ;; 05:47fd $3b
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:47fe $1e
 
 data_05_47ff:
-    HamChatWheelOption 0, $21                          ;; 05:47ff $21
-    HamChatWheelOption 1, $1e                          ;; 05:4800 $1e
-    HamChatWheelOption 2, $38                          ;; 05:4801 $38
-    HamChatWheelOption 3, $1e                          ;; 05:4802 $1e
-    HamChatWheelOption 4, $3b                          ;; 05:4803 $3b
-    HamChatWheelOption 5, $1e                          ;; 05:4804 $1e
-    HamChatWheelOption 6, $3c                          ;; 05:4805 $3c
-    HamChatWheelOption 7, $1e                          ;; 05:4806 $1e
+    HamChatWheelOption $21 ; 00 Noworrie               ;; 05:47ff $21
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:4800 $1e
+    HamChatWheelOption $38 ; 02 Stickie                ;; 05:4801 $38
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:4802 $1e
+    HamChatWheelOption $3b ; 04 Nopibloo               ;; 05:4803 $3b
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4804 $1e
+    HamChatWheelOption $3c ; 06 Gasp-P                 ;; 05:4805 $3c
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:4806 $1e
 
 data_05_4807:
-    HamChatWheelOption 0, $32                          ;; 05:4807 $32
-    HamChatWheelOption 1, $1e                          ;; 05:4808 $1e
-    HamChatWheelOption 2, $3d                          ;; 05:4809 $3d
-    HamChatWheelOption 3, $1e                          ;; 05:480a $1e
-    HamChatWheelOption 4, $3e                          ;; 05:480b $3e
-    HamChatWheelOption 5, $1e                          ;; 05:480c $1e
-    HamChatWheelOption 6, $21                          ;; 05:480d $21
-    HamChatWheelOption 7, $1e                          ;; 05:480e $1e
+    HamChatWheelOption $32 ; 00 Hushie                 ;; 05:4807 $32
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:4808 $1e
+    HamChatWheelOption $3d ; 02 Hammo                  ;; 05:4809 $3d
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:480a $1e
+    HamChatWheelOption $3e ; 04 Lookie                 ;; 05:480b $3e
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:480c $1e
+    HamChatWheelOption $21 ; 06 Noworrie               ;; 05:480d $21
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:480e $1e
 
 data_05_480f:
-    HamChatWheelOption 0, $3f                          ;; 05:480f $3f
-    HamChatWheelOption 1, $1e                          ;; 05:4810 $1e
-    HamChatWheelOption 2, $20                          ;; 05:4811 $20
-    HamChatWheelOption 3, $1e                          ;; 05:4812 $1e
-    HamChatWheelOption 4, $3d                          ;; 05:4813 $3d
-    HamChatWheelOption 5, $1e                          ;; 05:4814 $1e
-    HamChatWheelOption 6, $40                          ;; 05:4815 $40
-    HamChatWheelOption 7, $1e                          ;; 05:4816 $1e
+    HamChatWheelOption $3f ; 00 Hamteam                ;; 05:480f $3f
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:4810 $1e
+    HamChatWheelOption $20 ; 02 Minglie                ;; 05:4811 $20
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:4812 $1e
+    HamChatWheelOption $3d ; 04 Hammo                  ;; 05:4813 $3d
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4814 $1e
+    HamChatWheelOption $40 ; 06 Chukchuk               ;; 05:4815 $40
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:4816 $1e
 
 data_05_4817:
-    HamChatWheelOption 0, $41                          ;; 05:4817 $41
-    HamChatWheelOption 1, $1e                          ;; 05:4818 $1e
-    HamChatWheelOption 2, $42                          ;; 05:4819 $42
-    HamChatWheelOption 3, $1e                          ;; 05:481a $1e
-    HamChatWheelOption 4, $35                          ;; 05:481b $35
-    HamChatWheelOption 5, $1e                          ;; 05:481c $1e
-    HamChatWheelOption 6, $38                          ;; 05:481d $38
-    HamChatWheelOption 7, $1e                          ;; 05:481e $1e
+    HamChatWheelOption $41 ; 00 Wit-T                  ;; 05:4817 $41
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:4818 $1e
+    HamChatWheelOption $42 ; 02 Clapclap               ;; 05:4819 $42
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:481a $1e
+    HamChatWheelOption $35 ; 04 Goodgo                 ;; 05:481b $35
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:481c $1e
+    HamChatWheelOption $38 ; 06 Stickie                ;; 05:481d $38
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:481e $1e
 
 data_05_481f:
-    HamChatWheelOption 0, $22                          ;; 05:481f $22
-    HamChatWheelOption 1, $23                          ;; 05:4820 $23
-    HamChatWheelOption 2, $24                          ;; 05:4821 $24
-    HamChatWheelOption 3, $25                          ;; 05:4822 $25
-    HamChatWheelOption 4, $36                          ;; 05:4823 $36
-    HamChatWheelOption 5, $1e                          ;; 05:4824 $1e
-    HamChatWheelOption 6, $43                          ;; 05:4825 $43
-    HamChatWheelOption 7, $1e                          ;; 05:4826 $1e
-    HamChatWheelOption 8, $32                          ;; 05:4827 $32
-    HamChatWheelOption 9, $1e                          ;; 05:4828 $1e
-    HamChatWheelOption 10, $37                         ;; 05:4829 $37
-    HamChatWheelOption 11, $1e                         ;; 05:482a $1e
+    HamChatWheelOption $22 ; 00 Hamha                  ;; 05:481f $22
+    HamChatWheelOption $23 ; 01 Hif-hif                ;; 05:4820 $23
+    HamChatWheelOption $24 ; 02 Tack-Q                 ;; 05:4821 $24
+    HamChatWheelOption $25 ; 03 Digdig                 ;; 05:4822 $25
+    HamChatWheelOption $36 ; 04 Hamchu                 ;; 05:4823 $36
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4824 $1e
+    HamChatWheelOption $43 ; 06 Wishie                 ;; 05:4825 $43
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:4826 $1e
+    HamChatWheelOption $32 ; 08 Hushie                 ;; 05:4827 $32
+    HamChatWheelOption $1e ; 09   ?                    ;; 05:4828 $1e
+    HamChatWheelOption $37 ; 10 Bizzaroo               ;; 05:4829 $37
+    HamChatWheelOption $1e ; 11   ?                    ;; 05:482a $1e
 
 data_05_482b:
-    HamChatWheelOption 0, $44                          ;; 05:482b $44
-    HamChatWheelOption 1, $1e                          ;; 05:482c $1e
-    HamChatWheelOption 2, $32                          ;; 05:482d $32
-    HamChatWheelOption 3, $1e                          ;; 05:482e $1e
-    HamChatWheelOption 4, $45                          ;; 05:482f $45
-    HamChatWheelOption 5, $1e                          ;; 05:4830 $1e
-    HamChatWheelOption 6, $46                          ;; 05:4831 $46
-    HamChatWheelOption 7, $1e                          ;; 05:4832 $1e
+    HamChatWheelOption $44 ; 00 Bestest                ;; 05:482b $44
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:482c $1e
+    HamChatWheelOption $32 ; 02 Hushie                 ;; 05:482d $32
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:482e $1e
+    HamChatWheelOption $45 ; 04 Pooie                  ;; 05:482f $45
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4830 $1e
+    HamChatWheelOption $46 ; 06 Dingbang               ;; 05:4831 $46
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:4832 $1e
 
 data_05_4833:
-    HamChatWheelOption 0, $47                          ;; 05:4833 $47
-    HamChatWheelOption 1, $1e                          ;; 05:4834 $1e
-    HamChatWheelOption 2, $48                          ;; 05:4835 $48
-    HamChatWheelOption 3, $1e                          ;; 05:4836 $1e
-    HamChatWheelOption 4, $49                          ;; 05:4837 $49
-    HamChatWheelOption 5, $1e                          ;; 05:4838 $1e
-    HamChatWheelOption 6, $4a                          ;; 05:4839 $4a
-    HamChatWheelOption 7, $1e                          ;; 05:483a $1e
+    HamChatWheelOption $47 ; 00 Bye-Q                  ;; 05:4833 $47
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:4834 $1e
+    HamChatWheelOption $48 ; 02 Wondachu               ;; 05:4835 $48
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:4836 $1e
+    HamChatWheelOption $49 ; 04 Spiffie                ;; 05:4837 $49
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4838 $1e
+    HamChatWheelOption $4a ; 06 Giftee                 ;; 05:4839 $4a
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:483a $1e
 
 data_05_483b:
-    HamChatWheelOption 0, $48                          ;; 05:483b $48
-    HamChatWheelOption 1, $1e                          ;; 05:483c $1e
-    HamChatWheelOption 2, $4b                          ;; 05:483d $4b
-    HamChatWheelOption 3, $1e                          ;; 05:483e $1e
-    HamChatWheelOption 4, $2c                          ;; 05:483f $2c
-    HamChatWheelOption 5, $1e                          ;; 05:4840 $1e
-    HamChatWheelOption 6, $3e                          ;; 05:4841 $3e
-    HamChatWheelOption 7, $1e                          ;; 05:4842 $1e
+    HamChatWheelOption $48 ; 00 Wondachu               ;; 05:483b $48
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:483c $1e
+    HamChatWheelOption $4b ; 02 Smoochie               ;; 05:483d $4b
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:483e $1e
+    HamChatWheelOption $2c ; 04 Koochi-Q               ;; 05:483f $2c
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4840 $1e
+    HamChatWheelOption $3e ; 06 Lookie                 ;; 05:4841 $3e
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:4842 $1e
 
 data_05_4843:
-    HamChatWheelOption 0, $4c                          ;; 05:4843 $4c
-    HamChatWheelOption 1, $1e                          ;; 05:4844 $1e
-    HamChatWheelOption 2, $35                          ;; 05:4845 $35
-    HamChatWheelOption 3, $1e                          ;; 05:4846 $1e
-    HamChatWheelOption 4, $3a                          ;; 05:4847 $3a
-    HamChatWheelOption 5, $1e                          ;; 05:4848 $1e
-    HamChatWheelOption 6, $47                          ;; 05:4849 $47
-    HamChatWheelOption 7, $1e                          ;; 05:484a $1e
+    HamChatWheelOption $4c ; 00 Oopsie                 ;; 05:4843 $4c
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:4844 $1e
+    HamChatWheelOption $35 ; 02 Goodgo                 ;; 05:4845 $35
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:4846 $1e
+    HamChatWheelOption $3a ; 04 Nopookie               ;; 05:4847 $3a
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4848 $1e
+    HamChatWheelOption $47 ; 06 Bye-Q                  ;; 05:4849 $47
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:484a $1e
 
 data_05_484b:
-    HamChatWheelOption 0, $4d                          ;; 05:484b $4d
-    HamChatWheelOption 1, $1e                          ;; 05:484c $1e
-    HamChatWheelOption 2, $1b                          ;; 05:484d $1b
-    HamChatWheelOption 3, $1e                          ;; 05:484e $1e
-    HamChatWheelOption 4, $3e                          ;; 05:484f $3e
-    HamChatWheelOption 5, $1e                          ;; 05:4850 $1e
-    HamChatWheelOption 6, $2e                          ;; 05:4851 $2e
-    HamChatWheelOption 7, $1e                          ;; 05:4852 $1e
+    HamChatWheelOption $4d ; 00 Ta-dah                 ;; 05:484b $4d
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:484c $1e
+    HamChatWheelOption $1b ; 02 Yep-P                  ;; 05:484d $1b
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:484e $1e
+    HamChatWheelOption $3e ; 04 Lookie                 ;; 05:484f $3e
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4850 $1e
+    HamChatWheelOption $2e ; 06 Blash-T                ;; 05:4851 $2e
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:4852 $1e
 
 data_05_4853:
-    HamChatWheelOption 0, $44                          ;; 05:4853 $44
-    HamChatWheelOption 1, $1e                          ;; 05:4854 $1e
-    HamChatWheelOption 2, $4e                          ;; 05:4855 $4e
-    HamChatWheelOption 3, $1e                          ;; 05:4856 $1e
-    HamChatWheelOption 4, $45                          ;; 05:4857 $45
-    HamChatWheelOption 5, $1e                          ;; 05:4858 $1e
-    HamChatWheelOption 6, $4f                          ;; 05:4859 $4f
-    HamChatWheelOption 7, $1e                          ;; 05:485a $1e
+    HamChatWheelOption $44 ; 00 Bestest                ;; 05:4853 $44
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:4854 $1e
+    HamChatWheelOption $4e ; 02 Hotchu                 ;; 05:4855 $4e
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:4856 $1e
+    HamChatWheelOption $45 ; 04 Pooie                  ;; 05:4857 $45
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4858 $1e
+    HamChatWheelOption $4f ; 06 Frost-T                ;; 05:4859 $4f
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:485a $1e
 
 data_05_485b:
-    HamChatWheelOption 0, $22                          ;; 05:485b $22
-    HamChatWheelOption 1, $23                          ;; 05:485c $23
-    HamChatWheelOption 2, $24                          ;; 05:485d $24
-    HamChatWheelOption 3, $25                          ;; 05:485e $25
-    HamChatWheelOption 4, $3e                          ;; 05:485f $3e
-    HamChatWheelOption 5, $1e                          ;; 05:4860 $1e
-    HamChatWheelOption 6, $2c                          ;; 05:4861 $2c
-    HamChatWheelOption 7, $1e                          ;; 05:4862 $1e
+    HamChatWheelOption $22 ; 00 Hamha                  ;; 05:485b $22
+    HamChatWheelOption $23 ; 01 Hif-hif                ;; 05:485c $23
+    HamChatWheelOption $24 ; 02 Tack-Q                 ;; 05:485d $24
+    HamChatWheelOption $25 ; 03 Digdig                 ;; 05:485e $25
+    HamChatWheelOption $3e ; 04 Lookie                 ;; 05:485f $3e
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4860 $1e
+    HamChatWheelOption $2c ; 06 Koochi-Q               ;; 05:4861 $2c
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:4862 $1e
 
 data_05_4863:
-    HamChatWheelOption 0, $50                          ;; 05:4863 $50
-    HamChatWheelOption 1, $1e                          ;; 05:4864 $1e
-    HamChatWheelOption 2, $51                          ;; 05:4865 $51
-    HamChatWheelOption 3, $1e                          ;; 05:4866 $1e
-    HamChatWheelOption 4, $30                          ;; 05:4867 $30
-    HamChatWheelOption 5, $1e                          ;; 05:4868 $1e
-    HamChatWheelOption 6, $40                          ;; 05:4869 $40
-    HamChatWheelOption 7, $1e                          ;; 05:486a $1e
+    HamChatWheelOption $50 ; 00 Hamtast                ;; 05:4863 $50
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:4864 $1e
+    HamChatWheelOption $51 ; 02 Blushie                ;; 05:4865 $51
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:4866 $1e
+    HamChatWheelOption $30 ; 04 Hamspar                ;; 05:4867 $30
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4868 $1e
+    HamChatWheelOption $40 ; 06 Chukchuk               ;; 05:4869 $40
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:486a $1e
 
 data_05_486b:
-    HamChatWheelOption 0, $52                          ;; 05:486b $52
-    HamChatWheelOption 1, $1e                          ;; 05:486c $1e
-    HamChatWheelOption 2, $3d                          ;; 05:486d $3d
-    HamChatWheelOption 3, $1e                          ;; 05:486e $1e
-    HamChatWheelOption 4, $3c                          ;; 05:486f $3c
-    HamChatWheelOption 5, $1e                          ;; 05:4870 $1e
-    HamChatWheelOption 6, $2c                          ;; 05:4871 $2c
-    HamChatWheelOption 7, $1e                          ;; 05:4872 $1e
+    HamChatWheelOption $52 ; 00 Blanko                 ;; 05:486b $52
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:486c $1e
+    HamChatWheelOption $3d ; 02 Hammo                  ;; 05:486d $3d
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:486e $1e
+    HamChatWheelOption $3c ; 04 Gasp-P                 ;; 05:486f $3c
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4870 $1e
+    HamChatWheelOption $2c ; 06 Koochi-Q               ;; 05:4871 $2c
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:4872 $1e
 
 data_05_4873:
-    HamChatWheelOption 0, $50                          ;; 05:4873 $50
-    HamChatWheelOption 1, $1e                          ;; 05:4874 $1e
-    HamChatWheelOption 2, $53                          ;; 05:4875 $53
-    HamChatWheelOption 3, $1e                          ;; 05:4876 $1e
-    HamChatWheelOption 4, $52                          ;; 05:4877 $52
-    HamChatWheelOption 5, $1e                          ;; 05:4878 $1e
-    HamChatWheelOption 6, $44                          ;; 05:4879 $44
-    HamChatWheelOption 7, $1e                          ;; 05:487a $1e
+    HamChatWheelOption $50 ; 00 Hamtast                ;; 05:4873 $50
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:4874 $1e
+    HamChatWheelOption $53 ; 02 Smidgie                ;; 05:4875 $53
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:4876 $1e
+    HamChatWheelOption $52 ; 04 Blanko                 ;; 05:4877 $52
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4878 $1e
+    HamChatWheelOption $44 ; 06 Bestest                ;; 05:4879 $44
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:487a $1e
 
 data_05_487b:
-    HamChatWheelOption 0, $31                          ;; 05:487b $31
-    HamChatWheelOption 1, $1e                          ;; 05:487c $1e
-    HamChatWheelOption 2, $34                          ;; 05:487d $34
-    HamChatWheelOption 3, $1e                          ;; 05:487e $1e
-    HamChatWheelOption 4, $54                          ;; 05:487f $54
-    HamChatWheelOption 5, $1e                          ;; 05:4880 $1e
-    HamChatWheelOption 6, $55                          ;; 05:4881 $55
-    HamChatWheelOption 7, $1e                          ;; 05:4882 $1e
+    HamChatWheelOption $31 ; 00 Blahh                  ;; 05:487b $31
+    HamChatWheelOption $1e ; 01   ?                    ;; 05:487c $1e
+    HamChatWheelOption $34 ; 02 Blissie                ;; 05:487d $34
+    HamChatWheelOption $1e ; 03   ?                    ;; 05:487e $1e
+    HamChatWheelOption $54 ; 04 Wabldobl               ;; 05:487f $54
+    HamChatWheelOption $1e ; 05   ?                    ;; 05:4880 $1e
+    HamChatWheelOption $55 ; 06 See-Tru                ;; 05:4881 $55
+    HamChatWheelOption $1e ; 07   ?                    ;; 05:4882 $1e
     db   $72, $0c, $be, $02, $70, $4d, $be, $00        ;; 05:4883 ????????
     db   $6f, $2f, $be, $01, $70, $07, $be, $80        ;; 05:488b ????????
 
 data_05_4893:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:4893 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:4894 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:4895 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:4896 $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:4893 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:4894 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:4895 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:4896 $1a
     db   $1a, $1a, $1a, $1a, $1a, $1a, $1a, $1a        ;; 05:4897 ????????
     db   $1a, $1a, $1a, $1a, $1a, $70, $04, $be        ;; 05:489f ????????
     db   $00, $71, $2f, $7f, $2e, $73, $2f, $7f        ;; 05:48a7 ????????
@@ -859,78 +859,78 @@ data_05_4893:
     db   $39, $3f, $80                                 ;; 05:48b7 ???
 
 HintGiverBossRules:
-    HamChatWheelRule_DefaultCase_Single 0, $00         ;; 05:48ba $00
-    HamChatWheelRule_DefaultCase_Pair 0, $42, $81      ;; 05:48bb $42 $81
-    HamChatWheelRule_DefaultCase_Single 0, $04         ;; 05:48bd $04
-    HamChatWheelRule_DefaultCase_Single 0, $00         ;; 05:48be $00
-    HamChatWheelRule_DefaultCase_Pair 0, $22, $06      ;; 05:48bf $22 $06
-    HamChatWheelRule_DefaultCase_Single 0, $1e         ;; 05:48c1 $1e
-    HamChatWheelRule_DefaultCase_Single 1, $00         ;; 05:48c2 $00
-    HamChatWheelRule_DefaultCase_Pair 1, $42, $82      ;; 05:48c3 $42 $82
-    HamChatWheelRule_DefaultCase_Single 1, $04         ;; 05:48c5 $04
-    HamChatWheelRule_DefaultCase_Single 1, $00         ;; 05:48c6 $00
-    HamChatWheelRule_DefaultCase_Pair 1, $22, $06      ;; 05:48c7 $22 $06
-    HamChatWheelRule_DefaultCase_Single 1, $1e         ;; 05:48c9 $1e
-    HamChatWheelRule_DefaultCase_Single 2, $00         ;; 05:48ca $00
-    HamChatWheelRule_DefaultCase_Pair 2, $42, $83      ;; 05:48cb $42 $83
-    HamChatWheelRule_DefaultCase_Single 2, $04         ;; 05:48cd $04
-    HamChatWheelRule_DefaultCase_Single 2, $00         ;; 05:48ce $00
-    HamChatWheelRule_DefaultCase_Pair 2, $22, $05      ;; 05:48cf $22 $05
-    HamChatWheelRule_DefaultCase_Single 2, $1e         ;; 05:48d1 $1e
-    HamChatWheelRule_DefaultCase_Single 3, $00         ;; 05:48d2 $00
-    HamChatWheelRule_DefaultCase_Pair 3, $42, $84      ;; 05:48d3 $42 $84
-    HamChatWheelRule_DefaultCase_Single 3, $04         ;; 05:48d5 $04
-    HamChatWheelRule_DefaultCase_Single 3, $00         ;; 05:48d6 $00
-    HamChatWheelRule_DefaultCase_Pair 3, $22, $05      ;; 05:48d7 $22 $05
-    HamChatWheelRule_DefaultCase_Single 3, $1e         ;; 05:48d9 $1e
-    HamChatWheelRule_DefaultCase_Single 4, $00         ;; 05:48da $00
-    HamChatWheelRule_DefaultCase_Pair 4, $42, $89      ;; 05:48db $42 $89
-    HamChatWheelRule_DefaultCase_Single 4, $04         ;; 05:48dd $04
-    HamChatWheelRule_DefaultCase_Single 4, $00         ;; 05:48de $00
-    HamChatWheelRule_DefaultCase_Pair 4, $22, $09      ;; 05:48df $22 $09
-    HamChatWheelRule_DefaultCase_Single 4, $1e         ;; 05:48e1 $1e
-    HamChatWheelRule_DefaultCase_Single 5, $00         ;; 05:48e2 $00
-    HamChatWheelRule_DefaultCase_Pair 5, $42, $8a      ;; 05:48e3 $42 $8a
-    HamChatWheelRule_DefaultCase_Single 5, $04         ;; 05:48e5 $04
-    HamChatWheelRule_DefaultCase_Single 5, $00         ;; 05:48e6 $00
-    HamChatWheelRule_DefaultCase_Pair 5, $22, $09      ;; 05:48e7 $22 $09
-    HamChatWheelRule_DefaultCase_Single 5, $1e         ;; 05:48e9 $1e
-    HamChatWheelRule_DefaultCase_Single 6, $00         ;; 05:48ea $00
-    HamChatWheelRule_DefaultCase_Pair 6, $42, $85      ;; 05:48eb $42 $85
-    HamChatWheelRule_DefaultCase_Single 6, $04         ;; 05:48ed $04
-    HamChatWheelRule_DefaultCase_Single 6, $00         ;; 05:48ee $00
-    HamChatWheelRule_DefaultCase_Pair 6, $22, $07      ;; 05:48ef $22 $07
-    HamChatWheelRule_DefaultCase_Single 6, $1e         ;; 05:48f1 $1e
-    HamChatWheelRule_DefaultCase_Single 7, $00         ;; 05:48f2 $00
-    HamChatWheelRule_DefaultCase_Pair 7, $42, $86      ;; 05:48f3 $42 $86
-    HamChatWheelRule_DefaultCase_Single 7, $04         ;; 05:48f5 $04
-    HamChatWheelRule_DefaultCase_Single 7, $00         ;; 05:48f6 $00
-    HamChatWheelRule_DefaultCase_Pair 7, $22, $07      ;; 05:48f7 $22 $07
-    HamChatWheelRule_DefaultCase_Single 7, $1e         ;; 05:48f9 $1e
-    HamChatWheelRule_DefaultCase_Single 8, $00         ;; 05:48fa $00
-    HamChatWheelRule_DefaultCase_Pair 8, $42, $87      ;; 05:48fb $42 $87
-    HamChatWheelRule_DefaultCase_Single 8, $04         ;; 05:48fd $04
-    HamChatWheelRule_DefaultCase_Single 8, $00         ;; 05:48fe $00
-    HamChatWheelRule_DefaultCase_Pair 8, $22, $08      ;; 05:48ff $22 $08
-    HamChatWheelRule_DefaultCase_Single 8, $1e         ;; 05:4901 $1e
-    HamChatWheelRule_DefaultCase_Single 9, $00         ;; 05:4902 $00
-    HamChatWheelRule_DefaultCase_Pair 9, $42, $88      ;; 05:4903 $42 $88
-    HamChatWheelRule_DefaultCase_Single 9, $04         ;; 05:4905 $04
-    HamChatWheelRule_DefaultCase_Single 9, $00         ;; 05:4906 $00
-    HamChatWheelRule_DefaultCase_Pair 9, $22, $08      ;; 05:4907 $22 $08
-    HamChatWheelRule_DefaultCase_Single 9, $1e         ;; 05:4909 $1e
-    HamChatWheelRule_DefaultCase_Single 10, $00        ;; 05:490a $00
-    HamChatWheelRule_DefaultCase_Pair 10, $42, $8b     ;; 05:490b $42 $8b
-    HamChatWheelRule_DefaultCase_Single 10, $04        ;; 05:490d $04
-    HamChatWheelRule_DefaultCase_Single 10, $00        ;; 05:490e $00
-    HamChatWheelRule_DefaultCase_Pair 10, $22, $0a     ;; 05:490f $22 $0a
-    HamChatWheelRule_DefaultCase_Single 10, $1e        ;; 05:4911 $1e
-    HamChatWheelRule_DefaultCase_Single 11, $00        ;; 05:4912 $00
-    HamChatWheelRule_DefaultCase_Pair 11, $42, $8c     ;; 05:4913 $42 $8c
-    HamChatWheelRule_DefaultCase_Single 11, $04        ;; 05:4915 $04
-    HamChatWheelRule_DefaultCase_Single 11, $00        ;; 05:4916 $00
-    HamChatWheelRule_DefaultCase_Pair 11, $22, $0a     ;; 05:4917 $22 $0a
-    HamChatWheelRule_DefaultCase_Single 11, $1e        ;; 05:4919 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:48ba $00
+    HamChatWheelRule_DefaultCase_Pair $42, $81 ; 01    ;; 05:48bb $42 $81
+    HamChatWheelRule_DefaultCase_Single $04 ; 02       ;; 05:48bd $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 03       ;; 05:48be $00
+    HamChatWheelRule_DefaultCase_Pair $22, $06 ; 04    ;; 05:48bf $22 $06
+    HamChatWheelRule_DefaultCase_Single $1e ; 05       ;; 05:48c1 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 06       ;; 05:48c2 $00
+    HamChatWheelRule_DefaultCase_Pair $42, $82 ; 07    ;; 05:48c3 $42 $82
+    HamChatWheelRule_DefaultCase_Single $04 ; 08       ;; 05:48c5 $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 09       ;; 05:48c6 $00
+    HamChatWheelRule_DefaultCase_Pair $22, $06 ; 10    ;; 05:48c7 $22 $06
+    HamChatWheelRule_DefaultCase_Single $1e ; 11       ;; 05:48c9 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 12       ;; 05:48ca $00
+    HamChatWheelRule_DefaultCase_Pair $42, $83 ; 13    ;; 05:48cb $42 $83
+    HamChatWheelRule_DefaultCase_Single $04 ; 14       ;; 05:48cd $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 15       ;; 05:48ce $00
+    HamChatWheelRule_DefaultCase_Pair $22, $05 ; 16    ;; 05:48cf $22 $05
+    HamChatWheelRule_DefaultCase_Single $1e ; 17       ;; 05:48d1 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 18       ;; 05:48d2 $00
+    HamChatWheelRule_DefaultCase_Pair $42, $84 ; 19    ;; 05:48d3 $42 $84
+    HamChatWheelRule_DefaultCase_Single $04 ; 20       ;; 05:48d5 $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 21       ;; 05:48d6 $00
+    HamChatWheelRule_DefaultCase_Pair $22, $05 ; 22    ;; 05:48d7 $22 $05
+    HamChatWheelRule_DefaultCase_Single $1e ; 23       ;; 05:48d9 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 24       ;; 05:48da $00
+    HamChatWheelRule_DefaultCase_Pair $42, $89 ; 25    ;; 05:48db $42 $89
+    HamChatWheelRule_DefaultCase_Single $04 ; 26       ;; 05:48dd $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 27       ;; 05:48de $00
+    HamChatWheelRule_DefaultCase_Pair $22, $09 ; 28    ;; 05:48df $22 $09
+    HamChatWheelRule_DefaultCase_Single $1e ; 29       ;; 05:48e1 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 30       ;; 05:48e2 $00
+    HamChatWheelRule_DefaultCase_Pair $42, $8a ; 31    ;; 05:48e3 $42 $8a
+    HamChatWheelRule_DefaultCase_Single $04 ; 32       ;; 05:48e5 $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 33       ;; 05:48e6 $00
+    HamChatWheelRule_DefaultCase_Pair $22, $09 ; 34    ;; 05:48e7 $22 $09
+    HamChatWheelRule_DefaultCase_Single $1e ; 35       ;; 05:48e9 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 36       ;; 05:48ea $00
+    HamChatWheelRule_DefaultCase_Pair $42, $85 ; 37    ;; 05:48eb $42 $85
+    HamChatWheelRule_DefaultCase_Single $04 ; 38       ;; 05:48ed $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 39       ;; 05:48ee $00
+    HamChatWheelRule_DefaultCase_Pair $22, $07 ; 40    ;; 05:48ef $22 $07
+    HamChatWheelRule_DefaultCase_Single $1e ; 41       ;; 05:48f1 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 42       ;; 05:48f2 $00
+    HamChatWheelRule_DefaultCase_Pair $42, $86 ; 43    ;; 05:48f3 $42 $86
+    HamChatWheelRule_DefaultCase_Single $04 ; 44       ;; 05:48f5 $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 45       ;; 05:48f6 $00
+    HamChatWheelRule_DefaultCase_Pair $22, $07 ; 46    ;; 05:48f7 $22 $07
+    HamChatWheelRule_DefaultCase_Single $1e ; 47       ;; 05:48f9 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 48       ;; 05:48fa $00
+    HamChatWheelRule_DefaultCase_Pair $42, $87 ; 49    ;; 05:48fb $42 $87
+    HamChatWheelRule_DefaultCase_Single $04 ; 50       ;; 05:48fd $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 51       ;; 05:48fe $00
+    HamChatWheelRule_DefaultCase_Pair $22, $08 ; 52    ;; 05:48ff $22 $08
+    HamChatWheelRule_DefaultCase_Single $1e ; 53       ;; 05:4901 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 54       ;; 05:4902 $00
+    HamChatWheelRule_DefaultCase_Pair $42, $88 ; 55    ;; 05:4903 $42 $88
+    HamChatWheelRule_DefaultCase_Single $04 ; 56       ;; 05:4905 $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 57       ;; 05:4906 $00
+    HamChatWheelRule_DefaultCase_Pair $22, $08 ; 58    ;; 05:4907 $22 $08
+    HamChatWheelRule_DefaultCase_Single $1e ; 59       ;; 05:4909 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 60       ;; 05:490a $00
+    HamChatWheelRule_DefaultCase_Pair $42, $8b ; 61    ;; 05:490b $42 $8b
+    HamChatWheelRule_DefaultCase_Single $04 ; 62       ;; 05:490d $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 63       ;; 05:490e $00
+    HamChatWheelRule_DefaultCase_Pair $22, $0a ; 64    ;; 05:490f $22 $0a
+    HamChatWheelRule_DefaultCase_Single $1e ; 65       ;; 05:4911 $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 66       ;; 05:4912 $00
+    HamChatWheelRule_DefaultCase_Pair $42, $8c ; 67    ;; 05:4913 $42 $8c
+    HamChatWheelRule_DefaultCase_Single $04 ; 68       ;; 05:4915 $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 69       ;; 05:4916 $00
+    HamChatWheelRule_DefaultCase_Pair $22, $0a ; 70    ;; 05:4917 $22 $0a
+    HamChatWheelRule_DefaultCase_Single $1e ; 71       ;; 05:4919 $1e
     db   $00, $22, $8b, $06, $00, $22, $8c, $1e        ;; 05:491a ????????
     db   $00, $22, $1a, $06, $00, $22, $27, $1e        ;; 05:4922 ????????
     db   $71, $01, $be, $03, $70, $4e, $be, $03        ;; 05:492a ????????
@@ -938,14 +938,14 @@ HintGiverBossRules:
     db   $00, $6e, $04, $a2, $05, $1e                  ;; 05:493a ??????
 
 data_05_4940:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_SHASHAA      ;; 05:4940 $3e $39
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_SHASHAA  ;; 05:4942 $5e $39
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_ZUZUZU       ;; 05:4944 $3e $31
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_ZUZUZU   ;; 05:4946 $5e $31
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_MINGLIE      ;; 05:4948 $3e $27
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_MINGLIE  ;; 05:494a $5e $27
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_NOWORRIE     ;; 05:494c $3e $1f
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_NOWORRIE ;; 05:494e $5e $1f
+    HamChatWheelRule_UseIfHave HAMCHAT_SHASHAA ; 00    ;; 05:4940 $3e $39
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SHASHAA ; 01 ;; 05:4942 $5e $39
+    HamChatWheelRule_UseIfHave HAMCHAT_ZUZUZU ; 02     ;; 05:4944 $3e $31
+    HamChatWheelRule_UseIfDontHave HAMCHAT_ZUZUZU ; 03 ;; 05:4946 $5e $31
+    HamChatWheelRule_UseIfHave HAMCHAT_MINGLIE ; 04    ;; 05:4948 $3e $27
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MINGLIE ; 05 ;; 05:494a $5e $27
+    HamChatWheelRule_UseIfHave HAMCHAT_NOWORRIE ; 06   ;; 05:494c $3e $1f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOWORRIE ; 07 ;; 05:494e $5e $1f
     db   $3e, $cc, $71, $01, $be, $09, $71, $01        ;; 05:4950 ????????
     db   $be, $0b, $3e, $5b, $71, $01, $be, $06        ;; 05:4958 ????????
     db   $71, $01, $be, $07, $71, $01, $be, $09        ;; 05:4960 ????????
@@ -1073,22 +1073,22 @@ data_05_4940:
     db   $71, $10, $be, $02, $3f, $83, $5f, $83        ;; 05:4d30 ????????
 
 data_05_4d38:
-    HamChatWheelRule_DefaultCase_Pair 0, $b2, $00      ;; 05:4d38 $b2 $00
-    HamChatWheelRule_DefaultCase_Pair 0, $7f, $12      ;; 05:4d3a $7f $12
-    HamChatWheelRule_DefaultCase_Pair 1, $71, $12      ;; 05:4d3c $71 $12
-    HamChatWheelRule_DefaultCase_Pair 1, $be, $00      ;; 05:4d3e $be $00
-    HamChatWheelRule_DefaultCase_Pair 2, $b2, $02      ;; 05:4d40 $b2 $02
-    HamChatWheelRule_DefaultCase_Pair 2, $7f, $12      ;; 05:4d42 $7f $12
-    HamChatWheelRule_DefaultCase_Pair 3, $73, $12      ;; 05:4d44 $73 $12
-    HamChatWheelRule_DefaultCase_Pair 3, $be, $03      ;; 05:4d46 $be $03
-    HamChatWheelRule_DefaultCase_Pair 4, $b2, $01      ;; 05:4d48 $b2 $01
-    HamChatWheelRule_DefaultCase_Pair 4, $7f, $12      ;; 05:4d4a $7f $12
-    HamChatWheelRule_DefaultCase_Pair 5, $73, $12      ;; 05:4d4c $73 $12
-    HamChatWheelRule_DefaultCase_Pair 5, $be, $02      ;; 05:4d4e $be $02
-    HamChatWheelRule_DefaultCase_Pair 6, $b2, $03      ;; 05:4d50 $b2 $03
-    HamChatWheelRule_DefaultCase_Pair 6, $7f, $12      ;; 05:4d52 $7f $12
-    HamChatWheelRule_DefaultCase_Pair 7, $73, $12      ;; 05:4d54 $73 $12
-    HamChatWheelRule_DefaultCase_Pair 7, $be, $04      ;; 05:4d56 $be $04
+    HamChatWheelRule_DefaultCase_Pair $b2, $00 ; 00    ;; 05:4d38 $b2 $00
+    HamChatWheelRule_DefaultCase_Pair $7f, $12 ; 01    ;; 05:4d3a $7f $12
+    HamChatWheelRule_DefaultCase_Pair $71, $12 ; 02    ;; 05:4d3c $71 $12
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 03    ;; 05:4d3e $be $00
+    HamChatWheelRule_DefaultCase_Pair $b2, $02 ; 04    ;; 05:4d40 $b2 $02
+    HamChatWheelRule_DefaultCase_Pair $7f, $12 ; 05    ;; 05:4d42 $7f $12
+    HamChatWheelRule_DefaultCase_Pair $73, $12 ; 06    ;; 05:4d44 $73 $12
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 07    ;; 05:4d46 $be $03
+    HamChatWheelRule_DefaultCase_Pair $b2, $01 ; 08    ;; 05:4d48 $b2 $01
+    HamChatWheelRule_DefaultCase_Pair $7f, $12 ; 09    ;; 05:4d4a $7f $12
+    HamChatWheelRule_DefaultCase_Pair $73, $12 ; 10    ;; 05:4d4c $73 $12
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 11    ;; 05:4d4e $be $02
+    HamChatWheelRule_DefaultCase_Pair $b2, $03 ; 12    ;; 05:4d50 $b2 $03
+    HamChatWheelRule_DefaultCase_Pair $7f, $12 ; 13    ;; 05:4d52 $7f $12
+    HamChatWheelRule_DefaultCase_Pair $73, $12 ; 14    ;; 05:4d54 $73 $12
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 15    ;; 05:4d56 $be $04
     db   $5e, $fa, $3f, $92, $00, $72, $39, $a2        ;; 05:4d58 ????????
     db   $01, $06, $00, $b2, $01, $62, $39, $1e        ;; 05:4d60 ????????
     db   $71, $14, $be, $04, $71, $14, $be, $05        ;; 05:4d68 ????????
@@ -1115,35 +1115,35 @@ data_05_4d38:
     db   $04, $00, $6e, $81, $a2, $02, $02, $1e        ;; 05:4e10 ????????
 
 data_05_4e18:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_MEGAQ        ;; 05:4e18 $3e $15
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_MEGAQ    ;; 05:4e1a $5e $15
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_TEENIE       ;; 05:4e1c $3e $14
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_TEENIE   ;; 05:4e1e $5e $14
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_SPARKLIE     ;; 05:4e20 $3e $26
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_SPARKLIE ;; 05:4e22 $5e $26
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HAMSOLO      ;; 05:4e24 $3e $13
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HAMSOLO  ;; 05:4e26 $5e $13
+    HamChatWheelRule_UseIfHave HAMCHAT_MEGAQ ; 00      ;; 05:4e18 $3e $15
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MEGAQ ; 01  ;; 05:4e1a $5e $15
+    HamChatWheelRule_UseIfHave HAMCHAT_TEENIE ; 02     ;; 05:4e1c $3e $14
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TEENIE ; 03 ;; 05:4e1e $5e $14
+    HamChatWheelRule_UseIfHave HAMCHAT_SPARKLIE ; 04   ;; 05:4e20 $3e $26
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SPARKLIE ; 05 ;; 05:4e22 $5e $26
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMSOLO ; 06    ;; 05:4e24 $3e $13
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMSOLO ; 07 ;; 05:4e26 $5e $13
 
 data_05_4e28:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_SPARKLIE     ;; 05:4e28 $3e $26
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_SPARKLIE ;; 05:4e2a $5e $26
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_DELICHU      ;; 05:4e2c $3e $23
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_DELICHU  ;; 05:4e2e $5e $23
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_THANKQ       ;; 05:4e30 $3e $28
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_THANKQ   ;; 05:4e32 $5e $28
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_KOOCHIQ      ;; 05:4e34 $3e $11
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_KOOCHIQ  ;; 05:4e36 $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_SPARKLIE ; 00   ;; 05:4e28 $3e $26
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SPARKLIE ; 01 ;; 05:4e2a $5e $26
+    HamChatWheelRule_UseIfHave HAMCHAT_DELICHU ; 02    ;; 05:4e2c $3e $23
+    HamChatWheelRule_UseIfDontHave HAMCHAT_DELICHU ; 03 ;; 05:4e2e $5e $23
+    HamChatWheelRule_UseIfHave HAMCHAT_THANKQ ; 04     ;; 05:4e30 $3e $28
+    HamChatWheelRule_UseIfDontHave HAMCHAT_THANKQ ; 05 ;; 05:4e32 $5e $28
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 06    ;; 05:4e34 $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 07 ;; 05:4e36 $5e $11
     db   $3f, $84, $71, $1c, $be, $02, $5e, $51        ;; 05:4e38 ????????
 
 data_05_4e40:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_WHAWHA       ;; 05:4e40 $3e $2a
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_WHAWHA   ;; 05:4e42 $5e $2a
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_BLASHT       ;; 05:4e44 $3e $20
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_BLASHT   ;; 05:4e46 $5e $20
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_SHOCKIE      ;; 05:4e48 $3e $1d
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_SHOCKIE  ;; 05:4e4a $5e $1d
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HAMSPAR      ;; 05:4e4c $3e $1a
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HAMSPAR  ;; 05:4e4e $5e $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_WHAWHA ; 00     ;; 05:4e40 $3e $2a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_WHAWHA ; 01 ;; 05:4e42 $5e $2a
+    HamChatWheelRule_UseIfHave HAMCHAT_BLASHT ; 02     ;; 05:4e44 $3e $20
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLASHT ; 03 ;; 05:4e46 $5e $20
+    HamChatWheelRule_UseIfHave HAMCHAT_SHOCKIE ; 04    ;; 05:4e48 $3e $1d
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SHOCKIE ; 05 ;; 05:4e4a $5e $1d
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMSPAR ; 06    ;; 05:4e4c $3e $1a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMSPAR ; 07 ;; 05:4e4e $5e $1a
     db   $3f, $9a, $3f, $98, $00, $00, $b2, $01        ;; 05:4e50 ????????
     db   $62, $7e, $04, $00, $72, $7e, $a2, $04        ;; 05:4e58 ????????
     db   $02, $1e, $70, $4d, $be, $02, $00, $00        ;; 05:4e60 ????????
@@ -1157,44 +1157,44 @@ data_05_4e40:
     db   $70, $7e, $be, $04, $3f, $9b                  ;; 05:4ea0 ??????
 
 data_05_4ea6:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_HAMSOLO      ;; 05:4ea6 $3e $13
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_HAMSOLO  ;; 05:4ea8 $5e $13
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_BLAHH        ;; 05:4eaa $3e $25
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_BLAHH    ;; 05:4eac $5e $25
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HUSHIE       ;; 05:4eae $3e $30
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HUSHIE   ;; 05:4eb0 $5e $30
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_GOP          ;; 05:4eb2 $3e $45
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_GOP      ;; 05:4eb4 $5e $45
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMSOLO ; 00    ;; 05:4ea6 $3e $13
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMSOLO ; 01 ;; 05:4ea8 $5e $13
+    HamChatWheelRule_UseIfHave HAMCHAT_BLAHH ; 02      ;; 05:4eaa $3e $25
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLAHH ; 03  ;; 05:4eac $5e $25
+    HamChatWheelRule_UseIfHave HAMCHAT_HUSHIE ; 04     ;; 05:4eae $3e $30
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HUSHIE ; 05 ;; 05:4eb0 $5e $30
+    HamChatWheelRule_UseIfHave HAMCHAT_GOP ; 06        ;; 05:4eb2 $3e $45
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 07    ;; 05:4eb4 $5e $45
 
 data_05_4eb6:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_BLISSIE      ;; 05:4eb6 $3e $19
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_BLISSIE  ;; 05:4eb8 $5e $19
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_GOODGO       ;; 05:4eba $3e $42
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_GOODGO   ;; 05:4ebc $5e $42
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HAMCHU       ;; 05:4ebe $3e $41
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HAMCHU   ;; 05:4ec0 $5e $41
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_BIZZAROO     ;; 05:4ec2 $3e $34
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_BIZZAROO ;; 05:4ec4 $5e $34
+    HamChatWheelRule_UseIfHave HAMCHAT_BLISSIE ; 00    ;; 05:4eb6 $3e $19
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLISSIE ; 01 ;; 05:4eb8 $5e $19
+    HamChatWheelRule_UseIfHave HAMCHAT_GOODGO ; 02     ;; 05:4eba $3e $42
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOODGO ; 03 ;; 05:4ebc $5e $42
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMCHU ; 04     ;; 05:4ebe $3e $41
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMCHU ; 05 ;; 05:4ec0 $5e $41
+    HamChatWheelRule_UseIfHave HAMCHAT_BIZZAROO ; 06   ;; 05:4ec2 $3e $34
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BIZZAROO ; 07 ;; 05:4ec4 $5e $34
 
 data_05_4ec6:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_STICKIE      ;; 05:4ec6 $3e $1c
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_STICKIE  ;; 05:4ec8 $5e $1c
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_MEEPP        ;; 05:4eca $3e $33
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_MEEPP    ;; 05:4ecc $5e $33
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_NOPOOKIE     ;; 05:4ece $3e $3d
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_NOPOOKIE ;; 05:4ed0 $5e $3d
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_NOPIBLOO     ;; 05:4ed2 $3e $2c
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_NOPIBLOO ;; 05:4ed4 $5e $2c
+    HamChatWheelRule_UseIfHave HAMCHAT_STICKIE ; 00    ;; 05:4ec6 $3e $1c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 01 ;; 05:4ec8 $5e $1c
+    HamChatWheelRule_UseIfHave HAMCHAT_MEEPP ; 02      ;; 05:4eca $3e $33
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MEEPP ; 03  ;; 05:4ecc $5e $33
+    HamChatWheelRule_UseIfHave HAMCHAT_NOPOOKIE ; 04   ;; 05:4ece $3e $3d
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOPOOKIE ; 05 ;; 05:4ed0 $5e $3d
+    HamChatWheelRule_UseIfHave HAMCHAT_NOPIBLOO ; 06   ;; 05:4ed2 $3e $2c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOPIBLOO ; 07 ;; 05:4ed4 $5e $2c
 
 data_05_4ed6:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_NOWORRIE     ;; 05:4ed6 $3e $1f
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_NOWORRIE ;; 05:4ed8 $5e $1f
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_STICKIE      ;; 05:4eda $3e $1c
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_STICKIE  ;; 05:4edc $5e $1c
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_NOPIBLOO     ;; 05:4ede $3e $2c
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_NOPIBLOO ;; 05:4ee0 $5e $2c
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_GASPP        ;; 05:4ee2 $3e $2d
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_GASPP    ;; 05:4ee4 $5e $2d
+    HamChatWheelRule_UseIfHave HAMCHAT_NOWORRIE ; 00   ;; 05:4ed6 $3e $1f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOWORRIE ; 01 ;; 05:4ed8 $5e $1f
+    HamChatWheelRule_UseIfHave HAMCHAT_STICKIE ; 02    ;; 05:4eda $3e $1c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 03 ;; 05:4edc $5e $1c
+    HamChatWheelRule_UseIfHave HAMCHAT_NOPIBLOO ; 04   ;; 05:4ede $3e $2c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOPIBLOO ; 05 ;; 05:4ee0 $5e $2c
+    HamChatWheelRule_UseIfHave HAMCHAT_GASPP ; 06      ;; 05:4ee2 $3e $2d
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GASPP ; 07  ;; 05:4ee4 $5e $2d
     db   $3e, $54, $00, $00, $b2, $05, $63, $1d        ;; 05:4ee6 ????????
     db   $06, $00, $73, $1d, $a2, $05, $02, $1e        ;; 05:4eee ????????
     db   $71, $1d, $be, $05, $3e, $3a, $3e, $51        ;; 05:4ef6 ????????
@@ -1229,25 +1229,25 @@ data_05_4ed6:
     db   $80, $a2, $02, $1e, $3f, $05                  ;; 05:4fde ??????
 
 data_05_4fe4:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_HUSHIE       ;; 05:4fe4 $3e $30
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_HUSHIE   ;; 05:4fe6 $5e $30
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_HAMMO        ;; 05:4fe8 $3e $2f
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_HAMMO    ;; 05:4fea $5e $2f
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_LOOKIE       ;; 05:4fec $3e $4b
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_LOOKIE   ;; 05:4fee $5e $4b
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_NOWORRIE     ;; 05:4ff0 $3e $1f
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_NOWORRIE ;; 05:4ff2 $5e $1f
+    HamChatWheelRule_UseIfHave HAMCHAT_HUSHIE ; 00     ;; 05:4fe4 $3e $30
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HUSHIE ; 01 ;; 05:4fe6 $5e $30
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 02      ;; 05:4fe8 $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 03  ;; 05:4fea $5e $2f
+    HamChatWheelRule_UseIfHave HAMCHAT_LOOKIE ; 04     ;; 05:4fec $3e $4b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_LOOKIE ; 05 ;; 05:4fee $5e $4b
+    HamChatWheelRule_UseIfHave HAMCHAT_NOWORRIE ; 06   ;; 05:4ff0 $3e $1f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOWORRIE ; 07 ;; 05:4ff2 $5e $1f
     db   $70, $36, $be, $00                            ;; 05:4ff4 ????
 
 data_05_4ff8:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_HAMTEAM      ;; 05:4ff8 $3e $60
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_HAMTEAM  ;; 05:4ffa $5e $60
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_MINGLIE      ;; 05:4ffc $3e $27
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_MINGLIE  ;; 05:4ffe $5e $27
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HAMMO        ;; 05:5000 $3e $2f
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HAMMO    ;; 05:5002 $5e $2f
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_CHUKCHUK     ;; 05:5004 $3e $4a
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_CHUKCHUK ;; 05:5006 $5e $4a
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMTEAM ; 00    ;; 05:4ff8 $3e $60
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMTEAM ; 01 ;; 05:4ffa $5e $60
+    HamChatWheelRule_UseIfHave HAMCHAT_MINGLIE ; 02    ;; 05:4ffc $3e $27
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MINGLIE ; 03 ;; 05:4ffe $5e $27
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 04      ;; 05:5000 $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 05  ;; 05:5002 $5e $2f
+    HamChatWheelRule_UseIfHave HAMCHAT_CHUKCHUK ; 06   ;; 05:5004 $3e $4a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_CHUKCHUK ; 07 ;; 05:5006 $5e $4a
     db   $3e, $5f, $70, $23, $be, $60, $71, $2f        ;; 05:5008 ????????
     db   $be, $60, $70, $23, $be, $78, $70, $23        ;; 05:5010 ????????
     db   $be, $90, $71, $30, $be, $08, $71, $30        ;; 05:5018 ????????
@@ -1261,14 +1261,14 @@ data_05_4ff8:
     db   $70, $7d, $be, $02                            ;; 05:5058 ????
 
 data_05_505c:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_WITT         ;; 05:505c $3e $54
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_WITT     ;; 05:505e $5e $54
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_CLAPCLAP     ;; 05:5060 $3e $49
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_CLAPCLAP ;; 05:5062 $5e $49
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_GOODGO       ;; 05:5064 $3e $42
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_GOODGO   ;; 05:5066 $5e $42
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_STICKIE      ;; 05:5068 $3e $1c
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_STICKIE  ;; 05:506a $5e $1c
+    HamChatWheelRule_UseIfHave HAMCHAT_WITT ; 00       ;; 05:505c $3e $54
+    HamChatWheelRule_UseIfDontHave HAMCHAT_WITT ; 01   ;; 05:505e $5e $54
+    HamChatWheelRule_UseIfHave HAMCHAT_CLAPCLAP ; 02   ;; 05:5060 $3e $49
+    HamChatWheelRule_UseIfDontHave HAMCHAT_CLAPCLAP ; 03 ;; 05:5062 $5e $49
+    HamChatWheelRule_UseIfHave HAMCHAT_GOODGO ; 04     ;; 05:5064 $3e $42
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOODGO ; 05 ;; 05:5066 $5e $42
+    HamChatWheelRule_UseIfHave HAMCHAT_STICKIE ; 06    ;; 05:5068 $3e $1c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 07 ;; 05:506a $5e $1c
     db   $3f, $9e, $00, $00, $70, $7d, $a2, $04        ;; 05:506c ????????
     db   $04, $00, $42, $5c, $02, $1e, $00, $72        ;; 05:5074 ????????
     db   $73, $a2, $01, $06, $00, $b2, $01, $62        ;; 05:507c ????????
@@ -1280,28 +1280,28 @@ data_05_505c:
     db   $70, $73, $be, $03                            ;; 05:50ac ????
 
 data_05_50b0:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:50b0 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:50b1 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:50b2 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:50b3 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HAMCHU       ;; 05:50b4 $3e $41
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HAMCHU   ;; 05:50b6 $5e $41
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_WISHIE       ;; 05:50b8 $3e $24
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_WISHIE   ;; 05:50ba $5e $24
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_HUSHIE       ;; 05:50bc $3e $30
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_HUSHIE   ;; 05:50be $5e $30
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_BIZZAROO    ;; 05:50c0 $3e $34
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_BIZZAROO ;; 05:50c2 $5e $34
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:50b0 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:50b1 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:50b2 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:50b3 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMCHU ; 04     ;; 05:50b4 $3e $41
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMCHU ; 05 ;; 05:50b6 $5e $41
+    HamChatWheelRule_UseIfHave HAMCHAT_WISHIE ; 06     ;; 05:50b8 $3e $24
+    HamChatWheelRule_UseIfDontHave HAMCHAT_WISHIE ; 07 ;; 05:50ba $5e $24
+    HamChatWheelRule_UseIfHave HAMCHAT_HUSHIE ; 08     ;; 05:50bc $3e $30
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HUSHIE ; 09 ;; 05:50be $5e $30
+    HamChatWheelRule_UseIfHave HAMCHAT_BIZZAROO ; 10   ;; 05:50c0 $3e $34
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BIZZAROO ; 11 ;; 05:50c2 $5e $34
 
 data_05_50c4:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_BESTEST      ;; 05:50c4 $3e $46
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_BESTEST  ;; 05:50c6 $5e $46
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_HUSHIE       ;; 05:50c8 $3e $30
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_HUSHIE   ;; 05:50ca $5e $30
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_POOIE        ;; 05:50cc $3e $4f
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_POOIE    ;; 05:50ce $5e $4f
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_DINGBANG     ;; 05:50d0 $3e $2b
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_DINGBANG ;; 05:50d2 $5e $2b
+    HamChatWheelRule_UseIfHave HAMCHAT_BESTEST ; 00    ;; 05:50c4 $3e $46
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BESTEST ; 01 ;; 05:50c6 $5e $46
+    HamChatWheelRule_UseIfHave HAMCHAT_HUSHIE ; 02     ;; 05:50c8 $3e $30
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HUSHIE ; 03 ;; 05:50ca $5e $30
+    HamChatWheelRule_UseIfHave HAMCHAT_POOIE ; 04      ;; 05:50cc $3e $4f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_POOIE ; 05  ;; 05:50ce $5e $4f
+    HamChatWheelRule_UseIfHave HAMCHAT_DINGBANG ; 06   ;; 05:50d0 $3e $2b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_DINGBANG ; 07 ;; 05:50d2 $5e $2b
     db   $70, $37, $be, $00, $3e, $f6, $71, $23        ;; 05:50d4 ????????
     db   $be, $01, $70, $7d, $be, $03, $5e, $f6        ;; 05:50dc ????????
     db   $3f, $9f, $3e, $5d, $00, $00, $70, $0d        ;; 05:50e4 ????????
@@ -1311,14 +1311,14 @@ data_05_50c4:
     db   $a2, $06, $02, $1e, $3e, $f7                  ;; 05:5104 ??????
 
 data_05_510a:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_BYEQ         ;; 05:510a $3e $56
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_BYEQ     ;; 05:510c $5e $56
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_WONDACHU     ;; 05:510e $3e $10
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_WONDACHU ;; 05:5110 $5e $10
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_SPIFFIE      ;; 05:5112 $3e $18
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_SPIFFIE  ;; 05:5114 $5e $18
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_GIFTEE       ;; 05:5116 $3e $59
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_GIFTEE   ;; 05:5118 $5e $59
+    HamChatWheelRule_UseIfHave HAMCHAT_BYEQ ; 00       ;; 05:510a $3e $56
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BYEQ ; 01   ;; 05:510c $5e $56
+    HamChatWheelRule_UseIfHave HAMCHAT_WONDACHU ; 02   ;; 05:510e $3e $10
+    HamChatWheelRule_UseIfDontHave HAMCHAT_WONDACHU ; 03 ;; 05:5110 $5e $10
+    HamChatWheelRule_UseIfHave HAMCHAT_SPIFFIE ; 04    ;; 05:5112 $3e $18
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SPIFFIE ; 05 ;; 05:5114 $5e $18
+    HamChatWheelRule_UseIfHave HAMCHAT_GIFTEE ; 06     ;; 05:5116 $3e $59
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GIFTEE ; 07 ;; 05:5118 $5e $59
     db   $71, $23, $be, $02, $71, $22, $be, $05        ;; 05:511a ????????
     db   $71, $22, $be, $08, $70, $36, $be, $00        ;; 05:5122 ????????
     db   $71, $22, $be, $04, $71, $22, $be, $06        ;; 05:512a ????????
@@ -1328,25 +1328,25 @@ data_05_510a:
     db   $be, $02, $70, $80, $be, $03                  ;; 05:514a ??????
 
 data_05_5150:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_WONDACHU     ;; 05:5150 $3e $10
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_WONDACHU ;; 05:5152 $5e $10
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_SMOOCHIE     ;; 05:5154 $3e $1b
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_SMOOCHIE ;; 05:5156 $5e $1b
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_KOOCHIQ      ;; 05:5158 $3e $11
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_KOOCHIQ  ;; 05:515a $5e $11
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_LOOKIE       ;; 05:515c $3e $4b
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_LOOKIE   ;; 05:515e $5e $4b
+    HamChatWheelRule_UseIfHave HAMCHAT_WONDACHU ; 00   ;; 05:5150 $3e $10
+    HamChatWheelRule_UseIfDontHave HAMCHAT_WONDACHU ; 01 ;; 05:5152 $5e $10
+    HamChatWheelRule_UseIfHave HAMCHAT_SMOOCHIE ; 02   ;; 05:5154 $3e $1b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SMOOCHIE ; 03 ;; 05:5156 $5e $1b
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 04    ;; 05:5158 $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 05 ;; 05:515a $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_LOOKIE ; 06     ;; 05:515c $3e $4b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_LOOKIE ; 07 ;; 05:515e $5e $4b
     db   $b2, $01, $7e, $80                            ;; 05:5160 ????
 
 data_05_5164:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_OOPSIE       ;; 05:5164 $3e $29
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_OOPSIE   ;; 05:5166 $5e $29
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_GOODGO       ;; 05:5168 $3e $42
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_GOODGO   ;; 05:516a $5e $42
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_NOPOOKIE     ;; 05:516c $3e $3d
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_NOPOOKIE ;; 05:516e $5e $3d
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_BYEQ         ;; 05:5170 $3e $56
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_BYEQ     ;; 05:5172 $5e $56
+    HamChatWheelRule_UseIfHave HAMCHAT_OOPSIE ; 00     ;; 05:5164 $3e $29
+    HamChatWheelRule_UseIfDontHave HAMCHAT_OOPSIE ; 01 ;; 05:5166 $5e $29
+    HamChatWheelRule_UseIfHave HAMCHAT_GOODGO ; 02     ;; 05:5168 $3e $42
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOODGO ; 03 ;; 05:516a $5e $42
+    HamChatWheelRule_UseIfHave HAMCHAT_NOPOOKIE ; 04   ;; 05:516c $3e $3d
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOPOOKIE ; 05 ;; 05:516e $5e $3d
+    HamChatWheelRule_UseIfHave HAMCHAT_BYEQ ; 06       ;; 05:5170 $3e $56
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BYEQ ; 07   ;; 05:5172 $5e $56
     db   $3e, $5e, $70, $89, $be, $02, $ae, $01        ;; 05:5174 ????????
     db   $7e, $7f, $71, $28, $be, $01, $00, $00        ;; 05:517c ????????
     db   $72, $7f, $a2, $03, $06, $00, $b2, $03        ;; 05:5184 ????????
@@ -1369,82 +1369,82 @@ data_05_5164:
     db   $02, $1e, $5e, $fb, $3e, $12                  ;; 05:520c ??????
 
 data_05_5212:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_TADAH        ;; 05:5212 $3e $38
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_TADAH    ;; 05:5214 $5e $38
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_YEPP         ;; 05:5216 $3e $53
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_YEPP     ;; 05:5218 $5e $53
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_LOOKIE       ;; 05:521a $3e $4b
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_LOOKIE   ;; 05:521c $5e $4b
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_BLASHT       ;; 05:521e $3e $20
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_BLASHT   ;; 05:5220 $5e $20
+    HamChatWheelRule_UseIfHave HAMCHAT_TADAH ; 00      ;; 05:5212 $3e $38
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TADAH ; 01  ;; 05:5214 $5e $38
+    HamChatWheelRule_UseIfHave HAMCHAT_YEPP ; 02       ;; 05:5216 $3e $53
+    HamChatWheelRule_UseIfDontHave HAMCHAT_YEPP ; 03   ;; 05:5218 $5e $53
+    HamChatWheelRule_UseIfHave HAMCHAT_LOOKIE ; 04     ;; 05:521a $3e $4b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_LOOKIE ; 05 ;; 05:521c $5e $4b
+    HamChatWheelRule_UseIfHave HAMCHAT_BLASHT ; 06     ;; 05:521e $3e $20
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLASHT ; 07 ;; 05:5220 $5e $20
     db   $00, $00, $22, $12, $06, $00, $71, $29        ;; 05:5222 ????????
     db   $a2, $01, $02, $1e, $3f, $a1, $70, $4d        ;; 05:522a ????????
     db   $be, $0b                                      ;; 05:5232 ??
 
 data_05_5234:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_BESTEST      ;; 05:5234 $3e $46
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_BESTEST  ;; 05:5236 $5e $46
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_HOTCHU       ;; 05:5238 $3e $47
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_HOTCHU   ;; 05:523a $5e $47
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_POOIE        ;; 05:523c $3e $4f
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_POOIE    ;; 05:523e $5e $4f
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_FROSTT       ;; 05:5240 $3e $1e
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_FROSTT   ;; 05:5242 $5e $1e
+    HamChatWheelRule_UseIfHave HAMCHAT_BESTEST ; 00    ;; 05:5234 $3e $46
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BESTEST ; 01 ;; 05:5236 $5e $46
+    HamChatWheelRule_UseIfHave HAMCHAT_HOTCHU ; 02     ;; 05:5238 $3e $47
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HOTCHU ; 03 ;; 05:523a $5e $47
+    HamChatWheelRule_UseIfHave HAMCHAT_POOIE ; 04      ;; 05:523c $3e $4f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_POOIE ; 05  ;; 05:523e $5e $4f
+    HamChatWheelRule_UseIfHave HAMCHAT_FROSTT ; 06     ;; 05:5240 $3e $1e
+    HamChatWheelRule_UseIfDontHave HAMCHAT_FROSTT ; 07 ;; 05:5242 $5e $1e
 
 data_05_5244:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5244 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5245 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5246 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5247 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_LOOKIE       ;; 05:5248 $3e $4b
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_LOOKIE   ;; 05:524a $5e $4b
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_KOOCHIQ      ;; 05:524c $3e $11
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_KOOCHIQ  ;; 05:524e $5e $11
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5244 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5245 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5246 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5247 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_LOOKIE ; 04     ;; 05:5248 $3e $4b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_LOOKIE ; 05 ;; 05:524a $5e $4b
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 06    ;; 05:524c $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 07 ;; 05:524e $5e $11
 
 data_05_5250:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_HAMTAST      ;; 05:5250 $3e $57
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_HAMTAST  ;; 05:5252 $5e $57
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_BLUSHIE      ;; 05:5254 $3e $55
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_BLUSHIE  ;; 05:5256 $5e $55
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HAMSPAR      ;; 05:5258 $3e $1a
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HAMSPAR  ;; 05:525a $5e $1a
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_CHUKCHUK     ;; 05:525c $3e $4a
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_CHUKCHUK ;; 05:525e $5e $4a
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMTAST ; 00    ;; 05:5250 $3e $57
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMTAST ; 01 ;; 05:5252 $5e $57
+    HamChatWheelRule_UseIfHave HAMCHAT_BLUSHIE ; 02    ;; 05:5254 $3e $55
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLUSHIE ; 03 ;; 05:5256 $5e $55
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMSPAR ; 04    ;; 05:5258 $3e $1a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMSPAR ; 05 ;; 05:525a $5e $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_CHUKCHUK ; 06   ;; 05:525c $3e $4a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_CHUKCHUK ; 07 ;; 05:525e $5e $4a
     db   $5f, $0b, $3f, $a2, $70, $4d, $be, $0c        ;; 05:5260 ????????
 
 data_05_5268:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_BLANKO       ;; 05:5268 $3e $36
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_BLANKO   ;; 05:526a $5e $36
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_HAMMO        ;; 05:526c $3e $2f
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_HAMMO    ;; 05:526e $5e $2f
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_GASPP        ;; 05:5270 $3e $2d
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_GASPP    ;; 05:5272 $5e $2d
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_KOOCHIQ      ;; 05:5274 $3e $11
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_KOOCHIQ  ;; 05:5276 $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 00     ;; 05:5268 $3e $36
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLANKO ; 01 ;; 05:526a $5e $36
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 02      ;; 05:526c $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 03  ;; 05:526e $5e $2f
+    HamChatWheelRule_UseIfHave HAMCHAT_GASPP ; 04      ;; 05:5270 $3e $2d
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GASPP ; 05  ;; 05:5272 $5e $2d
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 06    ;; 05:5274 $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 07 ;; 05:5276 $5e $11
     db   $5f, $0a, $3e, $8f, $3e, $4e, $3f, $89        ;; 05:5278 ????????
 
 data_05_5280:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_HAMTAST      ;; 05:5280 $3e $57
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_HAMTAST  ;; 05:5282 $5e $57
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_SMIDGIE      ;; 05:5284 $3e $5c
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_SMIDGIE  ;; 05:5286 $5e $5c
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_BLANKO       ;; 05:5288 $3e $36
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_BLANKO   ;; 05:528a $5e $36
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_BESTEST      ;; 05:528c $3e $46
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_BESTEST  ;; 05:528e $5e $46
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMTAST ; 00    ;; 05:5280 $3e $57
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMTAST ; 01 ;; 05:5282 $5e $57
+    HamChatWheelRule_UseIfHave HAMCHAT_SMIDGIE ; 02    ;; 05:5284 $3e $5c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SMIDGIE ; 03 ;; 05:5286 $5e $5c
+    HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 04     ;; 05:5288 $3e $36
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLANKO ; 05 ;; 05:528a $5e $36
+    HamChatWheelRule_UseIfHave HAMCHAT_BESTEST ; 06    ;; 05:528c $3e $46
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BESTEST ; 07 ;; 05:528e $5e $46
     db   $6f, $2f, $be, $55, $6f, $2f, $be, $3c        ;; 05:5290 ????????
     db   $6f, $2f, $be, $32, $3f, $88, $72, $4e        ;; 05:5298 ????????
     db   $be, $04, $70, $4e, $be, $04                  ;; 05:52a0 ??????
 
 data_05_52a6:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_BLAHH        ;; 05:52a6 $3e $25
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_BLAHH    ;; 05:52a8 $5e $25
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_BLISSIE      ;; 05:52aa $3e $19
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_BLISSIE  ;; 05:52ac $5e $19
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HULAHULA     ;; 05:52ae $3e $3e
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HULAHULA ;; 05:52b0 $5e $3e
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_SEETRU       ;; 05:52b2 $3e $5a
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_SEETRU   ;; 05:52b4 $5e $5a
+    HamChatWheelRule_UseIfHave HAMCHAT_BLAHH ; 00      ;; 05:52a6 $3e $25
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLAHH ; 01  ;; 05:52a8 $5e $25
+    HamChatWheelRule_UseIfHave HAMCHAT_BLISSIE ; 02    ;; 05:52aa $3e $19
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLISSIE ; 03 ;; 05:52ac $5e $19
+    HamChatWheelRule_UseIfHave HAMCHAT_HULAHULA ; 04   ;; 05:52ae $3e $3e
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HULAHULA ; 05 ;; 05:52b0 $5e $3e
+    HamChatWheelRule_UseIfHave HAMCHAT_SEETRU ; 06     ;; 05:52b2 $3e $5a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SEETRU ; 07 ;; 05:52b4 $5e $5a
     db   $71, $2f, $be, $08, $3f, $06, $6e, $80        ;; 05:52b6 ????????
     db   $be, $02, $00, $00, $72, $7d, $a2, $02        ;; 05:52be ????????
     db   $06, $00, $b2, $02, $62, $7d, $02, $1e        ;; 05:52c6 ????????
@@ -1455,14 +1455,14 @@ data_05_52a6:
     db   $6e, $80, $be, $01                            ;; 05:52ee ????
 
 data_05_52f2:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_HAMTEAM      ;; 05:52f2 $3e $60
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_HAMTEAM  ;; 05:52f4 $5e $60
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_POOKIE       ;; 05:52f6 $3e $3a
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_POOKIE   ;; 05:52f8 $5e $3a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HAMMO        ;; 05:52fa $3e $2f
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HAMMO    ;; 05:52fc $5e $2f
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_CHUKCHUK     ;; 05:52fe $3e $4a
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_CHUKCHUK ;; 05:5300 $5e $4a
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMTEAM ; 00    ;; 05:52f2 $3e $60
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMTEAM ; 01 ;; 05:52f4 $5e $60
+    HamChatWheelRule_UseIfHave HAMCHAT_POOKIE ; 02     ;; 05:52f6 $3e $3a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_POOKIE ; 03 ;; 05:52f8 $5e $3a
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 04      ;; 05:52fa $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 05  ;; 05:52fc $5e $2f
+    HamChatWheelRule_UseIfHave HAMCHAT_CHUKCHUK ; 06   ;; 05:52fe $3e $4a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_CHUKCHUK ; 07 ;; 05:5300 $5e $4a
     db   $71, $26, $be, $78, $71, $26, $be, $90        ;; 05:5302 ????????
     db   $71, $26, $be, $18, $71, $26, $be, $30        ;; 05:530a ????????
     db   $71, $26, $be, $48, $71, $26, $be, $a8        ;; 05:5312 ????????
@@ -1567,79 +1567,79 @@ data_05_52f2:
     db   $08, $09                                      ;; 05:5444 ??
 
 data_05_5446:
-    HamChatWheelOption 0, $0a                          ;; 05:5446 $0a
-    HamChatWheelOption 1, $0b                          ;; 05:5447 $0b
-    HamChatWheelOption 2, $0c                          ;; 05:5448 $0c
-    HamChatWheelOption 3, $0d                          ;; 05:5449 $0d
-    HamChatWheelOption 4, $0e                          ;; 05:544a $0e
-    HamChatWheelOption 5, $0f                          ;; 05:544b $0f
-    HamChatWheelOption 6, $10                          ;; 05:544c $10
-    HamChatWheelOption 7, $0f                          ;; 05:544d $0f
-    HamChatWheelOption 8, $11                          ;; 05:544e $11
-    HamChatWheelOption 9, $0f                          ;; 05:544f $0f
-    HamChatWheelOption 10, $12                         ;; 05:5450 $12
-    HamChatWheelOption 11, $0f                         ;; 05:5451 $0f
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:5446 $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:5447 $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:5448 $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:5449 $0d
+    HamChatWheelOption $0e ; 04 Chukchuk               ;; 05:544a $0e
+    HamChatWheelOption $0f ; 05   ?                    ;; 05:544b $0f
+    HamChatWheelOption $10 ; 06 Hushgo                 ;; 05:544c $10
+    HamChatWheelOption $0f ; 07   ?                    ;; 05:544d $0f
+    HamChatWheelOption $11 ; 08 Meep-P                 ;; 05:544e $11
+    HamChatWheelOption $0f ; 09   ?                    ;; 05:544f $0f
+    HamChatWheelOption $12 ; 10 Hushie                 ;; 05:5450 $12
+    HamChatWheelOption $0f ; 11   ?                    ;; 05:5451 $0f
     db   $13, $14                                      ;; 05:5452 ??
 
 data_05_5454:
-    HamChatWheelOption 0, $0a                          ;; 05:5454 $0a
-    HamChatWheelOption 1, $0b                          ;; 05:5455 $0b
-    HamChatWheelOption 2, $0c                          ;; 05:5456 $0c
-    HamChatWheelOption 3, $0d                          ;; 05:5457 $0d
-    HamChatWheelOption 4, $15                          ;; 05:5458 $15
-    HamChatWheelOption 5, $16                          ;; 05:5459 $16
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:5454 $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:5455 $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:5456 $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:5457 $0d
+    HamChatWheelOption $15 ; 04 Lookie                 ;; 05:5458 $15
+    HamChatWheelOption $16 ; 05 Go-P                   ;; 05:5459 $16
 
 data_05_545a:
-    HamChatWheelOption 0, $0a                          ;; 05:545a $0a
-    HamChatWheelOption 1, $0b                          ;; 05:545b $0b
-    HamChatWheelOption 2, $0c                          ;; 05:545c $0c
-    HamChatWheelOption 3, $0d                          ;; 05:545d $0d
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:545a $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:545b $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:545c $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:545d $0d
 
 data_05_545e:
-    HamChatWheelOption 0, $0a                          ;; 05:545e $0a
-    HamChatWheelOption 1, $0b                          ;; 05:545f $0b
-    HamChatWheelOption 2, $0c                          ;; 05:5460 $0c
-    HamChatWheelOption 3, $0d                          ;; 05:5461 $0d
-    HamChatWheelOption 4, $17                          ;; 05:5462 $17
-    HamChatWheelOption 5, $0f                          ;; 05:5463 $0f
-    HamChatWheelOption 6, $18                          ;; 05:5464 $18
-    HamChatWheelOption 7, $0f                          ;; 05:5465 $0f
-    HamChatWheelOption 8, $19                          ;; 05:5466 $19
-    HamChatWheelOption 9, $0f                          ;; 05:5467 $0f
-    HamChatWheelOption 10, $1a                         ;; 05:5468 $1a
-    HamChatWheelOption 11, $0f                         ;; 05:5469 $0f
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:545e $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:545f $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:5460 $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:5461 $0d
+    HamChatWheelOption $17 ; 04 Delichu                ;; 05:5462 $17
+    HamChatWheelOption $0f ; 05   ?                    ;; 05:5463 $0f
+    HamChatWheelOption $18 ; 06 Koochi-Q               ;; 05:5464 $18
+    HamChatWheelOption $0f ; 07   ?                    ;; 05:5465 $0f
+    HamChatWheelOption $19 ; 08 Teenie                 ;; 05:5466 $19
+    HamChatWheelOption $0f ; 09   ?                    ;; 05:5467 $0f
+    HamChatWheelOption $1a ; 10 Mega-Q                 ;; 05:5468 $1a
+    HamChatWheelOption $0f ; 11   ?                    ;; 05:5469 $0f
 
 data_05_546a:
-    HamChatWheelOption 0, $0a                          ;; 05:546a $0a
-    HamChatWheelOption 1, $0b                          ;; 05:546b $0b
-    HamChatWheelOption 2, $0c                          ;; 05:546c $0c
-    HamChatWheelOption 3, $0d                          ;; 05:546d $0d
-    HamChatWheelOption 4, $18                          ;; 05:546e $18
-    HamChatWheelOption 5, $0f                          ;; 05:546f $0f
-    HamChatWheelOption 6, $1b                          ;; 05:5470 $1b
-    HamChatWheelOption 7, $0f                          ;; 05:5471 $0f
-    HamChatWheelOption 8, $16                          ;; 05:5472 $16
-    HamChatWheelOption 9, $0f                          ;; 05:5473 $0f
-    HamChatWheelOption 10, $1c                         ;; 05:5474 $1c
-    HamChatWheelOption 11, $0f                         ;; 05:5475 $0f
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:546a $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:546b $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:546c $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:546d $0d
+    HamChatWheelOption $18 ; 04 Koochi-Q               ;; 05:546e $18
+    HamChatWheelOption $0f ; 05   ?                    ;; 05:546f $0f
+    HamChatWheelOption $1b ; 06 Blanko                 ;; 05:5470 $1b
+    HamChatWheelOption $0f ; 07   ?                    ;; 05:5471 $0f
+    HamChatWheelOption $16 ; 08 Go-P                   ;; 05:5472 $16
+    HamChatWheelOption $0f ; 09   ?                    ;; 05:5473 $0f
+    HamChatWheelOption $1c ; 10 Gasp-P                 ;; 05:5474 $1c
+    HamChatWheelOption $0f ; 11   ?                    ;; 05:5475 $0f
 
 data_05_5476:
-    HamChatWheelOption 0, $16                          ;; 05:5476 $16
-    HamChatWheelOption 1, $0f                          ;; 05:5477 $0f
-    HamChatWheelOption 2, $1d                          ;; 05:5478 $1d
-    HamChatWheelOption 3, $0f                          ;; 05:5479 $0f
-    HamChatWheelOption 4, $1b                          ;; 05:547a $1b
-    HamChatWheelOption 5, $0f                          ;; 05:547b $0f
-    HamChatWheelOption 6, $1e                          ;; 05:547c $1e
-    HamChatWheelOption 7, $0f                          ;; 05:547d $0f
+    HamChatWheelOption $16 ; 00 Go-P                   ;; 05:5476 $16
+    HamChatWheelOption $0f ; 01   ?                    ;; 05:5477 $0f
+    HamChatWheelOption $1d ; 02 Zuzuzu                 ;; 05:5478 $1d
+    HamChatWheelOption $0f ; 03   ?                    ;; 05:5479 $0f
+    HamChatWheelOption $1b ; 04 Blanko                 ;; 05:547a $1b
+    HamChatWheelOption $0f ; 05   ?                    ;; 05:547b $0f
+    HamChatWheelOption $1e ; 06 Hammo                  ;; 05:547c $1e
+    HamChatWheelOption $0f ; 07   ?                    ;; 05:547d $0f
     db   $71, $1c, $be, $03, $71, $1c, $be, $04        ;; 05:547e ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:5486 ????????
 
 data_05_548e:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:548e $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:548f $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5490 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5491 $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:548e $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:548f $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5490 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5491 $1a
     db   $1a, $1a, $1a, $1a, $1a, $1a, $b2, $02        ;; 05:5492 ????????
     db   $7e, $39, $5e, $c4, $5f, $9f, $70, $0d        ;; 05:549a ????????
     db   $be, $0d, $70, $0d, $be, $0a, $3e, $a8        ;; 05:54a2 ????????
@@ -1667,18 +1667,18 @@ data_05_548e:
     db   $be, $03, $5e, $a6                            ;; 05:5552 ????
 
 data_05_5556:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5556 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5557 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5558 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5559 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_CHUKCHUK     ;; 05:555a $3e $4a
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_CHUKCHUK ;; 05:555c $5e $4a
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HUSHGO       ;; 05:555e $3e $32
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HUSHGO   ;; 05:5560 $5e $32
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_MEEPP        ;; 05:5562 $3e $33
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_MEEPP    ;; 05:5564 $5e $33
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_HUSHIE      ;; 05:5566 $3e $30
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_HUSHIE  ;; 05:5568 $5e $30
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5556 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5557 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5558 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5559 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_CHUKCHUK ; 04   ;; 05:555a $3e $4a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_CHUKCHUK ; 05 ;; 05:555c $5e $4a
+    HamChatWheelRule_UseIfHave HAMCHAT_HUSHGO ; 06     ;; 05:555e $3e $32
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HUSHGO ; 07 ;; 05:5560 $5e $32
+    HamChatWheelRule_UseIfHave HAMCHAT_MEEPP ; 08      ;; 05:5562 $3e $33
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MEEPP ; 09  ;; 05:5564 $5e $33
+    HamChatWheelRule_UseIfHave HAMCHAT_HUSHIE ; 10     ;; 05:5566 $3e $30
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HUSHIE ; 11 ;; 05:5568 $5e $30
     db   $71, $19, $be, $04, $71, $19, $be, $05        ;; 05:556a ????????
     db   $71, $19, $be, $06, $70, $36, $be, $00        ;; 05:5572 ????????
     db   $6f, $1c, $be, $78, $3e, $83, $6e, $1f        ;; 05:557a ????????
@@ -1718,18 +1718,18 @@ data_05_5556:
     db   $3e, $69, $70, $60, $be, $02                  ;; 05:568a ??????
 
 data_05_5690:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5690 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5691 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5692 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5693 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_DELICHU      ;; 05:5694 $3e $23
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_DELICHU  ;; 05:5696 $5e $23
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_KOOCHIQ      ;; 05:5698 $3e $11
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_KOOCHIQ  ;; 05:569a $5e $11
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_TEENIE       ;; 05:569c $3e $14
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_TEENIE   ;; 05:569e $5e $14
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_MEGAQ       ;; 05:56a0 $3e $15
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_MEGAQ   ;; 05:56a2 $5e $15
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5690 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5691 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5692 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5693 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_DELICHU ; 04    ;; 05:5694 $3e $23
+    HamChatWheelRule_UseIfDontHave HAMCHAT_DELICHU ; 05 ;; 05:5696 $5e $23
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 06    ;; 05:5698 $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 07 ;; 05:569a $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_TEENIE ; 08     ;; 05:569c $3e $14
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TEENIE ; 09 ;; 05:569e $5e $14
+    HamChatWheelRule_UseIfHave HAMCHAT_MEGAQ ; 10      ;; 05:56a0 $3e $15
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MEGAQ ; 11  ;; 05:56a2 $5e $15
     db   $3e, $68, $3e, $2f, $70, $0d, $be, $16        ;; 05:56a4 ????????
     db   $5f, $82, $70, $0d, $be, $33, $71, $09        ;; 05:56ac ????????
     db   $be, $03, $71, $09, $be, $04, $71, $09        ;; 05:56b4 ????????
@@ -1800,28 +1800,28 @@ data_05_5690:
     db   $3e, $84, $3f, $b2, $3f, $b3                  ;; 05:58bc ??????
 
 data_05_58c2:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:58c2 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:58c3 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:58c4 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:58c5 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_KOOCHIQ      ;; 05:58c6 $3e $11
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_KOOCHIQ  ;; 05:58c8 $5e $11
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_BLANKO       ;; 05:58ca $3e $36
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_BLANKO   ;; 05:58cc $5e $36
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_GOP          ;; 05:58ce $3e $45
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_GOP      ;; 05:58d0 $5e $45
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_GASPP       ;; 05:58d2 $3e $2d
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_GASPP   ;; 05:58d4 $5e $2d
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:58c2 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:58c3 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:58c4 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:58c5 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 04    ;; 05:58c6 $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 05 ;; 05:58c8 $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 06     ;; 05:58ca $3e $36
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLANKO ; 07 ;; 05:58cc $5e $36
+    HamChatWheelRule_UseIfHave HAMCHAT_GOP ; 08        ;; 05:58ce $3e $45
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 09    ;; 05:58d0 $5e $45
+    HamChatWheelRule_UseIfHave HAMCHAT_GASPP ; 10      ;; 05:58d2 $3e $2d
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GASPP ; 11  ;; 05:58d4 $5e $2d
 
 data_05_58d6:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_GOP          ;; 05:58d6 $3e $45
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_GOP      ;; 05:58d8 $5e $45
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_ZUZUZU       ;; 05:58da $3e $31
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_ZUZUZU   ;; 05:58dc $5e $31
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_BLANKO       ;; 05:58de $3e $36
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_BLANKO   ;; 05:58e0 $5e $36
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HAMMO        ;; 05:58e2 $3e $2f
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HAMMO    ;; 05:58e4 $5e $2f
+    HamChatWheelRule_UseIfHave HAMCHAT_GOP ; 00        ;; 05:58d6 $3e $45
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 01    ;; 05:58d8 $5e $45
+    HamChatWheelRule_UseIfHave HAMCHAT_ZUZUZU ; 02     ;; 05:58da $3e $31
+    HamChatWheelRule_UseIfDontHave HAMCHAT_ZUZUZU ; 03 ;; 05:58dc $5e $31
+    HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 04     ;; 05:58de $3e $36
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLANKO ; 05 ;; 05:58e0 $5e $36
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 06      ;; 05:58e2 $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 07  ;; 05:58e4 $5e $2f
     db   $70, $67, $be, $03, $6f, $0f, $be, $03        ;; 05:58e6 ????????
     db   $70, $67, $be, $01, $70, $67, $be, $02        ;; 05:58ee ????????
     db   $70, $67, $be, $04, $3f, $ad, $3f, $ac        ;; 05:58f6 ????????
@@ -1905,117 +1905,117 @@ data_05_58d6:
     db   $00, $01, $02, $03, $04                       ;; 05:59ed ?????
 
 data_05_59f2:
-    HamChatWheelOption 0, $05                          ;; 05:59f2 $05
-    HamChatWheelOption 1, $06                          ;; 05:59f3 $06
-    HamChatWheelOption 2, $07                          ;; 05:59f4 $07
-    HamChatWheelOption 3, $08                          ;; 05:59f5 $08
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:59f2 $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:59f3 $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:59f4 $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:59f5 $08
 
 data_05_59f6:
-    HamChatWheelOption 0, $05                          ;; 05:59f6 $05
-    HamChatWheelOption 1, $06                          ;; 05:59f7 $06
-    HamChatWheelOption 2, $07                          ;; 05:59f8 $07
-    HamChatWheelOption 3, $08                          ;; 05:59f9 $08
-    HamChatWheelOption 4, $09                          ;; 05:59fa $09
-    HamChatWheelOption 5, $0a                          ;; 05:59fb $0a
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:59f6 $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:59f7 $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:59f8 $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:59f9 $08
+    HamChatWheelOption $09 ; 04 Scoochie               ;; 05:59fa $09
+    HamChatWheelOption $0a ; 05 Go-P                   ;; 05:59fb $0a
 
 data_05_59fc:
-    HamChatWheelOption 0, $05                          ;; 05:59fc $05
-    HamChatWheelOption 1, $06                          ;; 05:59fd $06
-    HamChatWheelOption 2, $07                          ;; 05:59fe $07
-    HamChatWheelOption 3, $08                          ;; 05:59ff $08
-    HamChatWheelOption 4, $0b                          ;; 05:5a00 $0b
-    HamChatWheelOption 5, $0c                          ;; 05:5a01 $0c
-    HamChatWheelOption 6, $09                          ;; 05:5a02 $09
-    HamChatWheelOption 7, $0a                          ;; 05:5a03 $0a
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:59fc $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:59fd $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:59fe $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:59ff $08
+    HamChatWheelOption $0b ; 04 Pakapaka               ;; 05:5a00 $0b
+    HamChatWheelOption $0c ; 05 Scrit-T                ;; 05:5a01 $0c
+    HamChatWheelOption $09 ; 06 Scoochie               ;; 05:5a02 $09
+    HamChatWheelOption $0a ; 07 Go-P                   ;; 05:5a03 $0a
 
 data_05_5a04:
-    HamChatWheelOption 0, $05                          ;; 05:5a04 $05
-    HamChatWheelOption 1, $06                          ;; 05:5a05 $06
-    HamChatWheelOption 2, $07                          ;; 05:5a06 $07
-    HamChatWheelOption 3, $08                          ;; 05:5a07 $08
-    HamChatWheelOption 4, $0d                          ;; 05:5a08 $0d
-    HamChatWheelOption 5, $0e                          ;; 05:5a09 $0e
-    HamChatWheelOption 6, $0f                          ;; 05:5a0a $0f
-    HamChatWheelOption 7, $0e                          ;; 05:5a0b $0e
-    HamChatWheelOption 8, $10                          ;; 05:5a0c $10
-    HamChatWheelOption 9, $0e                          ;; 05:5a0d $0e
-    HamChatWheelOption 10, $11                         ;; 05:5a0e $11
-    HamChatWheelOption 11, $0e                         ;; 05:5a0f $0e
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a04 $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a05 $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a06 $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:5a07 $08
+    HamChatWheelOption $0d ; 04 Teenie                 ;; 05:5a08 $0d
+    HamChatWheelOption $0e ; 05   ?                    ;; 05:5a09 $0e
+    HamChatWheelOption $0f ; 06 Koochi-Q               ;; 05:5a0a $0f
+    HamChatWheelOption $0e ; 07   ?                    ;; 05:5a0b $0e
+    HamChatWheelOption $10 ; 08 Hamsolo                ;; 05:5a0c $10
+    HamChatWheelOption $0e ; 09   ?                    ;; 05:5a0d $0e
+    HamChatWheelOption $11 ; 10 Mega-Q                 ;; 05:5a0e $11
+    HamChatWheelOption $0e ; 11   ?                    ;; 05:5a0f $0e
 
 data_05_5a10:
-    HamChatWheelOption 0, $05                          ;; 05:5a10 $05
-    HamChatWheelOption 1, $06                          ;; 05:5a11 $06
-    HamChatWheelOption 2, $07                          ;; 05:5a12 $07
-    HamChatWheelOption 3, $08                          ;; 05:5a13 $08
-    HamChatWheelOption 4, $0b                          ;; 05:5a14 $0b
-    HamChatWheelOption 5, $09                          ;; 05:5a15 $09
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a10 $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a11 $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a12 $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:5a13 $08
+    HamChatWheelOption $0b ; 04 Pakapaka               ;; 05:5a14 $0b
+    HamChatWheelOption $09 ; 05 Scoochie               ;; 05:5a15 $09
 
 data_05_5a16:
-    HamChatWheelOption 0, $05                          ;; 05:5a16 $05
-    HamChatWheelOption 1, $06                          ;; 05:5a17 $06
-    HamChatWheelOption 2, $07                          ;; 05:5a18 $07
-    HamChatWheelOption 3, $08                          ;; 05:5a19 $08
-    HamChatWheelOption 4, $0c                          ;; 05:5a1a $0c
-    HamChatWheelOption 5, $12                          ;; 05:5a1b $12
-    HamChatWheelOption 6, $0e                          ;; 05:5a1c $0e
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a16 $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a17 $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a18 $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:5a19 $08
+    HamChatWheelOption $0c ; 04 Scrit-T                ;; 05:5a1a $0c
+    HamChatWheelOption $12 ; 05 Ta-dah                 ;; 05:5a1b $12
+    HamChatWheelOption $0e ; 06   ?                    ;; 05:5a1c $0e
     db   $13, $14                                      ;; 05:5a1d ??
 
 ; These are just the base 4 if Bijou is behind the tree.
 ; Otherwise it also has Scrit-T and Scoochie.
 BijouTreeOptions:
-    HamChatWheelOption 0, $05                          ;; 05:5a1f $05
-    HamChatWheelOption 1, $06                          ;; 05:5a20 $06
-    HamChatWheelOption 2, $07                          ;; 05:5a21 $07
-    HamChatWheelOption 3, $08                          ;; 05:5a22 $08
-    HamChatWheelOption 4, $0c                          ;; 05:5a23 $0c
-    HamChatWheelOption 5, $09                          ;; 05:5a24 $09
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a1f $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a20 $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a21 $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:5a22 $08
+    HamChatWheelOption $0c ; 04 Scrit-T                ;; 05:5a23 $0c
+    HamChatWheelOption $09 ; 05 Scoochie               ;; 05:5a24 $09
 
 data_05_5a25:
-    HamChatWheelOption 0, $05                          ;; 05:5a25 $05
-    HamChatWheelOption 1, $06                          ;; 05:5a26 $06
-    HamChatWheelOption 2, $07                          ;; 05:5a27 $07
-    HamChatWheelOption 3, $08                          ;; 05:5a28 $08
-    HamChatWheelOption 4, $0f                          ;; 05:5a29 $0f
-    HamChatWheelOption 5, $0e                          ;; 05:5a2a $0e
-    HamChatWheelOption 6, $15                          ;; 05:5a2b $15
-    HamChatWheelOption 7, $0e                          ;; 05:5a2c $0e
-    HamChatWheelOption 8, $10                          ;; 05:5a2d $10
-    HamChatWheelOption 9, $0e                          ;; 05:5a2e $0e
-    HamChatWheelOption 10, $0d                         ;; 05:5a2f $0d
-    HamChatWheelOption 11, $0e                         ;; 05:5a30 $0e
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a25 $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a26 $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a27 $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:5a28 $08
+    HamChatWheelOption $0f ; 04 Koochi-Q               ;; 05:5a29 $0f
+    HamChatWheelOption $0e ; 05   ?                    ;; 05:5a2a $0e
+    HamChatWheelOption $15 ; 06 Oopsie                 ;; 05:5a2b $15
+    HamChatWheelOption $0e ; 07   ?                    ;; 05:5a2c $0e
+    HamChatWheelOption $10 ; 08 Hamsolo                ;; 05:5a2d $10
+    HamChatWheelOption $0e ; 09   ?                    ;; 05:5a2e $0e
+    HamChatWheelOption $0d ; 10 Teenie                 ;; 05:5a2f $0d
+    HamChatWheelOption $0e ; 11   ?                    ;; 05:5a30 $0e
 
 data_05_5a31:
-    HamChatWheelOption 0, $05                          ;; 05:5a31 $05
-    HamChatWheelOption 1, $06                          ;; 05:5a32 $06
-    HamChatWheelOption 2, $07                          ;; 05:5a33 $07
-    HamChatWheelOption 3, $08                          ;; 05:5a34 $08
-    HamChatWheelOption 4, $0f                          ;; 05:5a35 $0f
-    HamChatWheelOption 5, $0e                          ;; 05:5a36 $0e
-    HamChatWheelOption 6, $0d                          ;; 05:5a37 $0d
-    HamChatWheelOption 7, $0e                          ;; 05:5a38 $0e
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a31 $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a32 $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a33 $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:5a34 $08
+    HamChatWheelOption $0f ; 04 Koochi-Q               ;; 05:5a35 $0f
+    HamChatWheelOption $0e ; 05   ?                    ;; 05:5a36 $0e
+    HamChatWheelOption $0d ; 06 Teenie                 ;; 05:5a37 $0d
+    HamChatWheelOption $0e ; 07   ?                    ;; 05:5a38 $0e
 
 ; These values correspond to indices in the 593e table.
 SadMaxwellOptions:
-    HamChatWheelOption 0, $05                          ;; 05:5a39 $05
-    HamChatWheelOption 1, $06                          ;; 05:5a3a $06
-    HamChatWheelOption 2, $07                          ;; 05:5a3b $07
-    HamChatWheelOption 3, $08                          ;; 05:5a3c $08
-    HamChatWheelOption 4, $0d                          ;; 05:5a3d $0d
-    HamChatWheelOption 5, $0e                          ;; 05:5a3e $0e
-    HamChatWheelOption 6, $16                          ;; 05:5a3f $16
-    HamChatWheelOption 7, $0e                          ;; 05:5a40 $0e
-    HamChatWheelOption 8, $17                          ;; 05:5a41 $17
-    HamChatWheelOption 9, $0e                          ;; 05:5a42 $0e
-    HamChatWheelOption 10, $15                         ;; 05:5a43 $15
-    HamChatWheelOption 11, $0e                         ;; 05:5a44 $0e
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a39 $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a3a $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a3b $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:5a3c $08
+    HamChatWheelOption $0d ; 04 Teenie                 ;; 05:5a3d $0d
+    HamChatWheelOption $0e ; 05   ?                    ;; 05:5a3e $0e
+    HamChatWheelOption $16 ; 06 Sparklie               ;; 05:5a3f $16
+    HamChatWheelOption $0e ; 07   ?                    ;; 05:5a40 $0e
+    HamChatWheelOption $17 ; 08 Nopibloo               ;; 05:5a41 $17
+    HamChatWheelOption $0e ; 09   ?                    ;; 05:5a42 $0e
+    HamChatWheelOption $15 ; 10 Oopsie                 ;; 05:5a43 $15
+    HamChatWheelOption $0e ; 11   ?                    ;; 05:5a44 $0e
     db   $71, $05, $be, $01, $71, $05, $be, $02        ;; 05:5a45 ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:5a4d ????????
 
 data_05_5a55:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5a55 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5a56 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5a57 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5a58 $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5a55 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5a56 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5a57 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5a58 $1a
     db   $1a, $b2, $02, $7e, $39, $3e, $ba, $70        ;; 05:5a59 ????????
     db   $4f, $be, $01, $70, $0d, $be, $0a, $70        ;; 05:5a61 ????????
     db   $0d, $be, $0b, $3e, $a8, $70, $4c, $be        ;; 05:5a69 ????????
@@ -2046,12 +2046,12 @@ data_05_5a55:
     db   $05, $be, $01, $70, $0d, $be, $14             ;; 05:5b31 ???????
 
 data_05_5b38:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5b38 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5b39 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5b3a $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5b3b $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:5b3c $1a
-    HamChatWheelRule_AlwaysUse 5                       ;; 05:5b3d $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5b38 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5b39 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5b3a $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5b3b $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:5b3c $1a
+    HamChatWheelRule_AlwaysUse ; 05                    ;; 05:5b3d $1a
     db   $3e, $bb, $70, $77, $be, $03, $00, $72        ;; 05:5b3e ????????
     db   $50, $a2, $01, $06, $00, $b2, $01, $62        ;; 05:5b46 ????????
     db   $50, $1e, $70, $39, $be, $01, $70, $53        ;; 05:5b4e ????????
@@ -2061,14 +2061,14 @@ data_05_5b38:
     db   $62, $39, $02, $1e                            ;; 05:5b6e ????
 
 data_05_5b72:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5b72 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5b73 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5b74 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5b75 $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:5b76 $1a
-    HamChatWheelRule_AlwaysUse 5                       ;; 05:5b77 $1a
-    HamChatWheelRule_AlwaysUse 6                       ;; 05:5b78 $1a
-    HamChatWheelRule_AlwaysUse 7                       ;; 05:5b79 $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5b72 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5b73 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5b74 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5b75 $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:5b76 $1a
+    HamChatWheelRule_AlwaysUse ; 05                    ;; 05:5b77 $1a
+    HamChatWheelRule_AlwaysUse ; 06                    ;; 05:5b78 $1a
+    HamChatWheelRule_AlwaysUse ; 07                    ;; 05:5b79 $1a
     db   $70, $50, $be, $00, $5e, $b3, $70, $53        ;; 05:5b7a ????????
     db   $be, $00, $70, $77, $be, $02, $70, $77        ;; 05:5b82 ????????
     db   $be, $01, $6e, $50, $be, $02, $3e, $15        ;; 05:5b8a ????????
@@ -2081,18 +2081,18 @@ data_05_5b72:
     db   $be, $29, $70, $0d, $be, $28                  ;; 05:5bc2 ??????
 
 data_05_5bc8:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5bc8 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5bc9 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5bca $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5bcb $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_TEENIE       ;; 05:5bcc $3e $14
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_TEENIE   ;; 05:5bce $5e $14
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_KOOCHIQ      ;; 05:5bd0 $3e $11
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_KOOCHIQ  ;; 05:5bd2 $5e $11
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_HAMSOLO      ;; 05:5bd4 $3e $13
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_HAMSOLO  ;; 05:5bd6 $5e $13
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_MEGAQ       ;; 05:5bd8 $3e $15
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_MEGAQ   ;; 05:5bda $5e $15
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5bc8 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5bc9 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5bca $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5bcb $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_TEENIE ; 04     ;; 05:5bcc $3e $14
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TEENIE ; 05 ;; 05:5bce $5e $14
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 06    ;; 05:5bd0 $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 07 ;; 05:5bd2 $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMSOLO ; 08    ;; 05:5bd4 $3e $13
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMSOLO ; 09 ;; 05:5bd6 $5e $13
+    HamChatWheelRule_UseIfHave HAMCHAT_MEGAQ ; 10      ;; 05:5bd8 $3e $15
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MEGAQ ; 11  ;; 05:5bda $5e $15
     db   $3f, $92, $3e, $68, $3e, $11, $5f, $66        ;; 05:5bdc ????????
     db   $5f, $8c, $70, $0d, $be, $2a, $6f, $00        ;; 05:5be4 ????????
     db   $be, $03, $71, $00, $be, $02, $71, $00        ;; 05:5bec ????????
@@ -2102,13 +2102,13 @@ data_05_5bc8:
     db   $3f, $86, $3e, $bd, $5e, $7b                  ;; 05:5c0c ??????
 
 data_05_5c12:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5c12 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5c13 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5c14 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5c15 $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:5c16 $1a
-    HamChatWheelRule_UseIfHave 5, HAMCHAT_TADAH        ;; 05:5c17 $3e $38
-    HamChatWheelRule_UseIfDontHave 6, HAMCHAT_TADAH    ;; 05:5c19 $5e $38
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5c12 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5c13 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5c14 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5c15 $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:5c16 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_TADAH ; 05      ;; 05:5c17 $3e $38
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TADAH ; 06  ;; 05:5c19 $5e $38
     db   $71, $05, $be, $a8, $3e, $26, $5f, $9a        ;; 05:5c1b ????????
     db   $70, $0d, $be, $1f, $70, $0d, $be, $43        ;; 05:5c23 ????????
     db   $3e, $23, $3f, $94, $70, $1f, $be, $00        ;; 05:5c2b ????????
@@ -2123,29 +2123,29 @@ data_05_5c12:
 ; These are just the base 4 if Bijou is behind the tree.
 ; Otherwise it also has Scrit-T and Scoochie.
 BijouTreeRules:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5c67 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5c68 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5c69 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5c6a $1a
-    HamChatWheelRule_DefaultCase_Pair 4, $6e, $52      ;; 05:5c6b $6e $52
-    HamChatWheelRule_DefaultCase_Pair 4, $be, $01      ;; 05:5c6d $be $01
-    HamChatWheelRule_DefaultCase_Pair 5, $6e, $52      ;; 05:5c6f $6e $52
-    HamChatWheelRule_DefaultCase_Pair 5, $be, $01      ;; 05:5c71 $be $01
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5c67 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5c68 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5c69 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5c6a $1a
+    HamChatWheelRule_DefaultCase_Pair $6e, $52 ; 04    ;; 05:5c6b $6e $52
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 05    ;; 05:5c6d $be $01
+    HamChatWheelRule_DefaultCase_Pair $6e, $52 ; 06    ;; 05:5c6f $6e $52
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 07    ;; 05:5c71 $be $01
     db   $6e, $52, $be, $01, $5e, $b8, $3f, $8f        ;; 05:5c73 ????????
 
 data_05_5c7b:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5c7b $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5c7c $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5c7d $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5c7e $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_KOOCHIQ      ;; 05:5c7f $3e $11
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_KOOCHIQ  ;; 05:5c81 $5e $11
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_OOPSIE       ;; 05:5c83 $3e $29
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_OOPSIE   ;; 05:5c85 $5e $29
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_HAMSOLO      ;; 05:5c87 $3e $13
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_HAMSOLO  ;; 05:5c89 $5e $13
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_TEENIE      ;; 05:5c8b $3e $14
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_TEENIE  ;; 05:5c8d $5e $14
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5c7b $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5c7c $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5c7d $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5c7e $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 04    ;; 05:5c7f $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 05 ;; 05:5c81 $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_OOPSIE ; 06     ;; 05:5c83 $3e $29
+    HamChatWheelRule_UseIfDontHave HAMCHAT_OOPSIE ; 07 ;; 05:5c85 $5e $29
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMSOLO ; 08    ;; 05:5c87 $3e $13
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMSOLO ; 09 ;; 05:5c89 $5e $13
+    HamChatWheelRule_UseIfHave HAMCHAT_TEENIE ; 10     ;; 05:5c8b $3e $14
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TEENIE ; 11 ;; 05:5c8d $5e $14
     db   $70, $23, $be, $18, $3e, $81, $3e, $e4        ;; 05:5c8f ????????
     db   $70, $54, $be, $01, $70, $55, $be, $02        ;; 05:5c97 ????????
     db   $5e, $e4, $70, $0d, $be, $33, $70, $0d        ;; 05:5c9f ????????
@@ -2184,14 +2184,14 @@ data_05_5c7b:
     db   $60, $63, $05, $02, $1e                       ;; 05:5da7 ?????
 
 data_05_5dac:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5dac $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5dad $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5dae $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5daf $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_KOOCHIQ      ;; 05:5db0 $3e $11
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_KOOCHIQ  ;; 05:5db2 $5e $11
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_TEENIE       ;; 05:5db4 $3e $14
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_TEENIE   ;; 05:5db6 $5e $14
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5dac $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5dad $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5dae $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5daf $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 04    ;; 05:5db0 $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 05 ;; 05:5db2 $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_TEENIE ; 06     ;; 05:5db4 $3e $14
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TEENIE ; 07 ;; 05:5db6 $5e $14
     db   $3e, $31, $3f, $91, $3e, $c7, $71, $02        ;; 05:5db8 ????????
     db   $be, $01, $70, $87, $be, $00, $3f, $0e        ;; 05:5dc0 ????????
     db   $71, $05, $be, $78, $5f, $90, $5f, $87        ;; 05:5dc8 ????????
@@ -2213,18 +2213,18 @@ data_05_5dac:
 
 ;@hamchatwheelrules amount=12
 SadMaxwellRules:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5e44 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5e45 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5e46 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5e47 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_TEENIE       ;; 05:5e48 $3e $14
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_TEENIE   ;; 05:5e4a $5e $14
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_SPARKLIE     ;; 05:5e4c $3e $26
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_SPARKLIE ;; 05:5e4e $5e $26
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_NOPIBLOO     ;; 05:5e50 $3e $2c
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_NOPIBLOO ;; 05:5e52 $5e $2c
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_OOPSIE      ;; 05:5e54 $3e $29
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_OOPSIE  ;; 05:5e56 $5e $29
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5e44 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5e45 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5e46 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5e47 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_TEENIE ; 04     ;; 05:5e48 $3e $14
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TEENIE ; 05 ;; 05:5e4a $5e $14
+    HamChatWheelRule_UseIfHave HAMCHAT_SPARKLIE ; 06   ;; 05:5e4c $3e $26
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SPARKLIE ; 07 ;; 05:5e4e $5e $26
+    HamChatWheelRule_UseIfHave HAMCHAT_NOPIBLOO ; 08   ;; 05:5e50 $3e $2c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOPIBLOO ; 09 ;; 05:5e52 $5e $2c
+    HamChatWheelRule_UseIfHave HAMCHAT_OOPSIE ; 10     ;; 05:5e54 $3e $29
+    HamChatWheelRule_UseIfDontHave HAMCHAT_OOPSIE ; 11 ;; 05:5e56 $5e $29
     db   $3e, $82, $6e, $57, $be, $02, $00, $6d        ;; 05:5e58 ????????
     db   $05, $a2, $60, $0e, $be, $01, $6f, $05        ;; 05:5e60 ????????
     db   $be, $48, $3f, $87, $3e, $34, $70, $86        ;; 05:5e68 ????????
@@ -2349,96 +2349,96 @@ SadMaxwellRules:
     db   $08, $09                                      ;; 05:6001 ??
 
 data_05_6003:
-    HamChatWheelOption 0, $0a                          ;; 05:6003 $0a
-    HamChatWheelOption 1, $0b                          ;; 05:6004 $0b
-    HamChatWheelOption 2, $0c                          ;; 05:6005 $0c
-    HamChatWheelOption 3, $0d                          ;; 05:6006 $0d
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6003 $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6004 $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:6005 $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:6006 $0d
     db   $0e, $0f, $10, $0e, $0f, $0a, $0b, $0c        ;; 05:6007 ????????
     db   $0d, $11, $12, $13, $12                       ;; 05:600f ?????
 
 data_05_6014:
-    HamChatWheelOption 0, $0a                          ;; 05:6014 $0a
-    HamChatWheelOption 1, $0b                          ;; 05:6015 $0b
-    HamChatWheelOption 2, $0c                          ;; 05:6016 $0c
-    HamChatWheelOption 3, $0d                          ;; 05:6017 $0d
-    HamChatWheelOption 4, $14                          ;; 05:6018 $14
-    HamChatWheelOption 5, $12                          ;; 05:6019 $12
-    HamChatWheelOption 6, $15                          ;; 05:601a $15
-    HamChatWheelOption 7, $12                          ;; 05:601b $12
-    HamChatWheelOption 8, $13                          ;; 05:601c $13
-    HamChatWheelOption 9, $12                          ;; 05:601d $12
-    HamChatWheelOption 10, $16                         ;; 05:601e $16
-    HamChatWheelOption 11, $12                         ;; 05:601f $12
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6014 $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6015 $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:6016 $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:6017 $0d
+    HamChatWheelOption $14 ; 04 Oopsie                 ;; 05:6018 $14
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6019 $12
+    HamChatWheelOption $15 ; 06 Goodgo                 ;; 05:601a $15
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:601b $12
+    HamChatWheelOption $13 ; 08 Hamchu                 ;; 05:601c $13
+    HamChatWheelOption $12 ; 09   ?                    ;; 05:601d $12
+    HamChatWheelOption $16 ; 10 Delichu                ;; 05:601e $16
+    HamChatWheelOption $12 ; 11   ?                    ;; 05:601f $12
 
 data_05_6020:
-    HamChatWheelOption 0, $0a                          ;; 05:6020 $0a
-    HamChatWheelOption 1, $0b                          ;; 05:6021 $0b
-    HamChatWheelOption 2, $0c                          ;; 05:6022 $0c
-    HamChatWheelOption 3, $0d                          ;; 05:6023 $0d
-    HamChatWheelOption 4, $17                          ;; 05:6024 $17
-    HamChatWheelOption 5, $12                          ;; 05:6025 $12
-    HamChatWheelOption 6, $18                          ;; 05:6026 $18
-    HamChatWheelOption 7, $12                          ;; 05:6027 $12
-    HamChatWheelOption 8, $13                          ;; 05:6028 $13
-    HamChatWheelOption 9, $12                          ;; 05:6029 $12
-    HamChatWheelOption 10, $19                         ;; 05:602a $19
-    HamChatWheelOption 11, $12                         ;; 05:602b $12
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6020 $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6021 $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:6022 $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:6023 $0d
+    HamChatWheelOption $17 ; 04 Mega-Q                 ;; 05:6024 $17
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6025 $12
+    HamChatWheelOption $18 ; 06 Huffpuff               ;; 05:6026 $18
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6027 $12
+    HamChatWheelOption $13 ; 08 Hamchu                 ;; 05:6028 $13
+    HamChatWheelOption $12 ; 09   ?                    ;; 05:6029 $12
+    HamChatWheelOption $19 ; 10 Dingbang               ;; 05:602a $19
+    HamChatWheelOption $12 ; 11   ?                    ;; 05:602b $12
 
 data_05_602c:
-    HamChatWheelOption 0, $0a                          ;; 05:602c $0a
-    HamChatWheelOption 1, $0b                          ;; 05:602d $0b
-    HamChatWheelOption 2, $0c                          ;; 05:602e $0c
-    HamChatWheelOption 3, $0d                          ;; 05:602f $0d
-    HamChatWheelOption 4, $1a                          ;; 05:6030 $1a
-    HamChatWheelOption 5, $12                          ;; 05:6031 $12
-    HamChatWheelOption 6, $1b                          ;; 05:6032 $1b
-    HamChatWheelOption 7, $12                          ;; 05:6033 $12
-    HamChatWheelOption 8, $1c                          ;; 05:6034 $1c
-    HamChatWheelOption 9, $12                          ;; 05:6035 $12
-    HamChatWheelOption 10, $10                         ;; 05:6036 $10
-    HamChatWheelOption 11, $12                         ;; 05:6037 $12
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:602c $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:602d $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:602e $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:602f $0d
+    HamChatWheelOption $1a ; 04 Gasp-P                 ;; 05:6030 $1a
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6031 $12
+    HamChatWheelOption $1b ; 06 Whawha                 ;; 05:6032 $1b
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6033 $12
+    HamChatWheelOption $1c ; 08 Bizzaroo               ;; 05:6034 $1c
+    HamChatWheelOption $12 ; 09   ?                    ;; 05:6035 $12
+    HamChatWheelOption $10 ; 10 Blash-T                ;; 05:6036 $10
+    HamChatWheelOption $12 ; 11   ?                    ;; 05:6037 $12
 
 data_05_6038:
-    HamChatWheelOption 0, $0a                          ;; 05:6038 $0a
-    HamChatWheelOption 1, $0b                          ;; 05:6039 $0b
-    HamChatWheelOption 2, $0c                          ;; 05:603a $0c
-    HamChatWheelOption 3, $0d                          ;; 05:603b $0d
-    HamChatWheelOption 4, $1d                          ;; 05:603c $1d
-    HamChatWheelOption 5, $12                          ;; 05:603d $12
-    HamChatWheelOption 6, $1e                          ;; 05:603e $1e
-    HamChatWheelOption 7, $12                          ;; 05:603f $12
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6038 $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6039 $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:603a $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:603b $0d
+    HamChatWheelOption $1d ; 04 Tuggie                 ;; 05:603c $1d
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:603d $12
+    HamChatWheelOption $1e ; 06 Stickie                ;; 05:603e $1e
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:603f $12
 
 data_05_6040:
-    HamChatWheelOption 0, $1f                          ;; 05:6040 $1f
-    HamChatWheelOption 1, $12                          ;; 05:6041 $12
-    HamChatWheelOption 2, $20                          ;; 05:6042 $20
-    HamChatWheelOption 3, $12                          ;; 05:6043 $12
-    HamChatWheelOption 4, $19                          ;; 05:6044 $19
-    HamChatWheelOption 5, $12                          ;; 05:6045 $12
-    HamChatWheelOption 6, $21                          ;; 05:6046 $21
-    HamChatWheelOption 7, $12                          ;; 05:6047 $12
+    HamChatWheelOption $1f ; 00 Meep-P                 ;; 05:6040 $1f
+    HamChatWheelOption $12 ; 01   ?                    ;; 05:6041 $12
+    HamChatWheelOption $20 ; 02 Chukchuk               ;; 05:6042 $20
+    HamChatWheelOption $12 ; 03   ?                    ;; 05:6043 $12
+    HamChatWheelOption $19 ; 04 Dingbang               ;; 05:6044 $19
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6045 $12
+    HamChatWheelOption $21 ; 06 Pooie                  ;; 05:6046 $21
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6047 $12
 
 data_05_6048:
-    HamChatWheelOption 0, $0a                          ;; 05:6048 $0a
-    HamChatWheelOption 1, $0b                          ;; 05:6049 $0b
-    HamChatWheelOption 2, $0c                          ;; 05:604a $0c
-    HamChatWheelOption 3, $0d                          ;; 05:604b $0d
-    HamChatWheelOption 4, $1c                          ;; 05:604c $1c
-    HamChatWheelOption 5, $12                          ;; 05:604d $12
-    HamChatWheelOption 6, $13                          ;; 05:604e $13
-    HamChatWheelOption 7, $12                          ;; 05:604f $12
-    HamChatWheelOption 8, $22                          ;; 05:6050 $22
-    HamChatWheelOption 9, $12                          ;; 05:6051 $12
-    HamChatWheelOption 10, $23                         ;; 05:6052 $23
-    HamChatWheelOption 11, $12                         ;; 05:6053 $12
+    HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6048 $0a
+    HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6049 $0b
+    HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:604a $0c
+    HamChatWheelOption $0d ; 03 Digdig                 ;; 05:604b $0d
+    HamChatWheelOption $1c ; 04 Bizzaroo               ;; 05:604c $1c
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:604d $12
+    HamChatWheelOption $13 ; 06 Hamchu                 ;; 05:604e $13
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:604f $12
+    HamChatWheelOption $22 ; 08 Koochi-Q               ;; 05:6050 $22
+    HamChatWheelOption $12 ; 09   ?                    ;; 05:6051 $12
+    HamChatWheelOption $23 ; 10 Smoochie               ;; 05:6052 $23
+    HamChatWheelOption $12 ; 11   ?                    ;; 05:6053 $12
     db   $70, $73, $be, $02, $71, $0a, $be, $05        ;; 05:6054 ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:605c ????????
 
 data_05_6064:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6064 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6065 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6066 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6067 $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6064 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6065 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6066 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6067 $1a
     db   $1a, $1a, $1a, $1a, $1a, $1a, $72, $0a        ;; 05:6068 ????????
     db   $be, $02, $3f, $93, $70, $4c, $be, $ff        ;; 05:6070 ????????
     db   $70, $72, $be, $03, $b2, $02, $7e, $39        ;; 05:6078 ????????
@@ -2500,18 +2500,18 @@ data_05_6064:
     db   $be, $01, $3f, $9d                            ;; 05:6238 ????
 
 data_05_623c:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:623c $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:623d $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:623e $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:623f $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_OOPSIE       ;; 05:6240 $3e $29
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_OOPSIE   ;; 05:6242 $5e $29
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_GOODGO       ;; 05:6244 $3e $42
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_GOODGO   ;; 05:6246 $5e $42
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_HAMCHU       ;; 05:6248 $3e $41
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_HAMCHU   ;; 05:624a $5e $41
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_DELICHU     ;; 05:624c $3e $23
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_DELICHU ;; 05:624e $5e $23
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:623c $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:623d $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:623e $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:623f $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_OOPSIE ; 04     ;; 05:6240 $3e $29
+    HamChatWheelRule_UseIfDontHave HAMCHAT_OOPSIE ; 05 ;; 05:6242 $5e $29
+    HamChatWheelRule_UseIfHave HAMCHAT_GOODGO ; 06     ;; 05:6244 $3e $42
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOODGO ; 07 ;; 05:6246 $5e $42
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMCHU ; 08     ;; 05:6248 $3e $41
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMCHU ; 09 ;; 05:624a $5e $41
+    HamChatWheelRule_UseIfHave HAMCHAT_DELICHU ; 10    ;; 05:624c $3e $23
+    HamChatWheelRule_UseIfDontHave HAMCHAT_DELICHU ; 11 ;; 05:624e $5e $23
     db   $00, $6d, $0a, $a2, $a8, $0e, $be, $01        ;; 05:6250 ????????
     db   $3e, $4c, $3e, $4d, $71, $0a, $be, $c0        ;; 05:6258 ????????
     db   $3f, $9e, $71, $09, $be, $00, $71, $09        ;; 05:6260 ????????
@@ -2535,36 +2535,36 @@ data_05_623c:
     db   $23, $84, $02, $1e                            ;; 05:62f0 ????
 
 data_05_62f4:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:62f4 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:62f5 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:62f6 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:62f7 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_MEGAQ        ;; 05:62f8 $3e $15
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_MEGAQ    ;; 05:62fa $5e $15
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HUFFPUFF     ;; 05:62fc $3e $4c
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HUFFPUFF ;; 05:62fe $5e $4c
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_HAMCHU       ;; 05:6300 $3e $41
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_HAMCHU   ;; 05:6302 $5e $41
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_DINGBANG    ;; 05:6304 $3e $2b
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_DINGBANG ;; 05:6306 $5e $2b
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:62f4 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:62f5 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:62f6 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:62f7 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_MEGAQ ; 04      ;; 05:62f8 $3e $15
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MEGAQ ; 05  ;; 05:62fa $5e $15
+    HamChatWheelRule_UseIfHave HAMCHAT_HUFFPUFF ; 06   ;; 05:62fc $3e $4c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HUFFPUFF ; 07 ;; 05:62fe $5e $4c
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMCHU ; 08     ;; 05:6300 $3e $41
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMCHU ; 09 ;; 05:6302 $5e $41
+    HamChatWheelRule_UseIfHave HAMCHAT_DINGBANG ; 10   ;; 05:6304 $3e $2b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_DINGBANG ; 11 ;; 05:6306 $5e $2b
     db   $3f, $85, $3f, $86, $5e, $d7, $3e, $6d        ;; 05:6308 ????????
     db   $3f, $87, $3e, $47, $3e, $28, $5f, $88        ;; 05:6310 ????????
     db   $3e, $1f, $3f, $89, $3e, $d8, $3f, $83        ;; 05:6318 ????????
     db   $70, $64, $be, $01                            ;; 05:6320 ????
 
 data_05_6324:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6324 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6325 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6326 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6327 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_GASPP        ;; 05:6328 $3e $2d
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_GASPP    ;; 05:632a $5e $2d
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_WHAWHA       ;; 05:632c $3e $2a
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_WHAWHA   ;; 05:632e $5e $2a
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_BIZZAROO     ;; 05:6330 $3e $34
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_BIZZAROO ;; 05:6332 $5e $34
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_BLASHT      ;; 05:6334 $3e $20
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_BLASHT  ;; 05:6336 $5e $20
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6324 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6325 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6326 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6327 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_GASPP ; 04      ;; 05:6328 $3e $2d
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GASPP ; 05  ;; 05:632a $5e $2d
+    HamChatWheelRule_UseIfHave HAMCHAT_WHAWHA ; 06     ;; 05:632c $3e $2a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_WHAWHA ; 07 ;; 05:632e $5e $2a
+    HamChatWheelRule_UseIfHave HAMCHAT_BIZZAROO ; 08   ;; 05:6330 $3e $34
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BIZZAROO ; 09 ;; 05:6332 $5e $34
+    HamChatWheelRule_UseIfHave HAMCHAT_BLASHT ; 10     ;; 05:6334 $3e $20
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLASHT ; 11 ;; 05:6336 $5e $20
     db   $71, $0a, $be, $a8, $70, $64, $be, $02        ;; 05:6338 ????????
     db   $3e, $29, $3f, $8b, $5e, $48, $3f, $26        ;; 05:6340 ????????
     db   $71, $0a, $be, $90, $70, $0d, $be, $3c        ;; 05:6348 ????????
@@ -2572,14 +2572,14 @@ data_05_6324:
     db   $be, $00, $5f, $a0, $3f, $8c                  ;; 05:6358 ??????
 
 data_05_635e:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:635e $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:635f $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6360 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6361 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_TUGGIE       ;; 05:6362 $3e $50
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_TUGGIE   ;; 05:6364 $5e $50
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_STICKIE      ;; 05:6366 $3e $1c
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_STICKIE  ;; 05:6368 $5e $1c
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:635e $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:635f $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6360 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6361 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_TUGGIE ; 04     ;; 05:6362 $3e $50
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TUGGIE ; 05 ;; 05:6364 $5e $50
+    HamChatWheelRule_UseIfHave HAMCHAT_STICKIE ; 06    ;; 05:6366 $3e $1c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 07 ;; 05:6368 $5e $1c
     db   $3e, $cf, $b2, $00, $7f, $06, $3f, $8d        ;; 05:636a ????????
     db   $71, $06, $be, $02, $b2, $78, $9f, $10        ;; 05:6372 ????????
     db   $93, $0e, $be, $44, $b2, $70, $9f, $0e        ;; 05:637a ????????
@@ -2595,28 +2595,28 @@ data_05_635e:
     db   $3f, $8e                                      ;; 05:63ca ??
 
 data_05_63cc:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_MEEPP        ;; 05:63cc $3e $33
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_MEEPP    ;; 05:63ce $5e $33
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_CHUKCHUK     ;; 05:63d0 $3e $4a
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_CHUKCHUK ;; 05:63d2 $5e $4a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_DINGBANG     ;; 05:63d4 $3e $2b
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_DINGBANG ;; 05:63d6 $5e $2b
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_POOIE        ;; 05:63d8 $3e $4f
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_POOIE    ;; 05:63da $5e $4f
+    HamChatWheelRule_UseIfHave HAMCHAT_MEEPP ; 00      ;; 05:63cc $3e $33
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MEEPP ; 01  ;; 05:63ce $5e $33
+    HamChatWheelRule_UseIfHave HAMCHAT_CHUKCHUK ; 02   ;; 05:63d0 $3e $4a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_CHUKCHUK ; 03 ;; 05:63d2 $5e $4a
+    HamChatWheelRule_UseIfHave HAMCHAT_DINGBANG ; 04   ;; 05:63d4 $3e $2b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_DINGBANG ; 05 ;; 05:63d6 $5e $2b
+    HamChatWheelRule_UseIfHave HAMCHAT_POOIE ; 06      ;; 05:63d8 $3e $4f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_POOIE ; 07  ;; 05:63da $5e $4f
 
 data_05_63dc:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:63dc $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:63dd $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:63de $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:63df $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_BIZZAROO     ;; 05:63e0 $3e $34
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_BIZZAROO ;; 05:63e2 $5e $34
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HAMCHU       ;; 05:63e4 $3e $41
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HAMCHU   ;; 05:63e6 $5e $41
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_KOOCHIQ      ;; 05:63e8 $3e $11
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_KOOCHIQ  ;; 05:63ea $5e $11
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_SMOOCHIE    ;; 05:63ec $3e $1b
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_SMOOCHIE ;; 05:63ee $5e $1b
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:63dc $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:63dd $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:63de $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:63df $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_BIZZAROO ; 04   ;; 05:63e0 $3e $34
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BIZZAROO ; 05 ;; 05:63e2 $5e $34
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMCHU ; 06     ;; 05:63e4 $3e $41
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMCHU ; 07 ;; 05:63e6 $5e $41
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 08    ;; 05:63e8 $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 09 ;; 05:63ea $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_SMOOCHIE ; 10   ;; 05:63ec $3e $1b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SMOOCHIE ; 11 ;; 05:63ee $5e $1b
     db   $3e, $28, $71, $08, $be, $0b, $b2, $00        ;; 05:63f0 ????????
     db   $7f, $07, $71, $08, $be, $06, $71, $08        ;; 05:63f8 ????????
     db   $be, $08, $71, $08, $be, $0c, $3f, $1e        ;; 05:6400 ????????
@@ -2757,163 +2757,163 @@ data_05_63dc:
     db   $08                                           ;; 05:660d ?
 
 data_05_660e:
-    HamChatWheelOption 0, $09                          ;; 05:660e $09
-    HamChatWheelOption 1, $0a                          ;; 05:660f $0a
-    HamChatWheelOption 2, $0b                          ;; 05:6610 $0b
-    HamChatWheelOption 3, $0c                          ;; 05:6611 $0c
-    HamChatWheelOption 4, $0b                          ;; 05:6612 $0b
-    HamChatWheelOption 5, $0d                          ;; 05:6613 $0d
-    HamChatWheelOption 6, $0b                          ;; 05:6614 $0b
+    HamChatWheelOption $09 ; 00 Go-P                   ;; 05:660e $09
+    HamChatWheelOption $0a ; 01 Zuzuzu                 ;; 05:660f $0a
+    HamChatWheelOption $0b ; 02   ?                    ;; 05:6610 $0b
+    HamChatWheelOption $0c ; 03 Blanko                 ;; 05:6611 $0c
+    HamChatWheelOption $0b ; 04   ?                    ;; 05:6612 $0b
+    HamChatWheelOption $0d ; 05 Hammo                  ;; 05:6613 $0d
+    HamChatWheelOption $0b ; 06   ?                    ;; 05:6614 $0b
     db   $0e, $0f                                      ;; 05:6615 ??
 
 data_05_6617:
-    HamChatWheelOption 0, $10                          ;; 05:6617 $10
-    HamChatWheelOption 1, $11                          ;; 05:6618 $11
-    HamChatWheelOption 2, $12                          ;; 05:6619 $12
-    HamChatWheelOption 3, $13                          ;; 05:661a $13
-    HamChatWheelOption 4, $14                          ;; 05:661b $14
-    HamChatWheelOption 5, $0b                          ;; 05:661c $0b
-    HamChatWheelOption 6, $15                          ;; 05:661d $15
-    HamChatWheelOption 7, $0b                          ;; 05:661e $0b
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6617 $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6618 $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6619 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:661a $13
+    HamChatWheelOption $14 ; 04 Nopibloo               ;; 05:661b $14
+    HamChatWheelOption $0b ; 05   ?                    ;; 05:661c $0b
+    HamChatWheelOption $15 ; 06 Stickie                ;; 05:661d $15
+    HamChatWheelOption $0b ; 07   ?                    ;; 05:661e $0b
 
 data_05_661f:
-    HamChatWheelOption 0, $10                          ;; 05:661f $10
-    HamChatWheelOption 1, $11                          ;; 05:6620 $11
-    HamChatWheelOption 2, $12                          ;; 05:6621 $12
-    HamChatWheelOption 3, $13                          ;; 05:6622 $13
-    HamChatWheelOption 4, $16                          ;; 05:6623 $16
-    HamChatWheelOption 5, $0b                          ;; 05:6624 $0b
-    HamChatWheelOption 6, $17                          ;; 05:6625 $17
-    HamChatWheelOption 7, $0b                          ;; 05:6626 $0b
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:661f $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6620 $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6621 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6622 $13
+    HamChatWheelOption $16 ; 04 Bizzaroo               ;; 05:6623 $16
+    HamChatWheelOption $0b ; 05   ?                    ;; 05:6624 $0b
+    HamChatWheelOption $17 ; 06 Scoochie               ;; 05:6625 $17
+    HamChatWheelOption $0b ; 07   ?                    ;; 05:6626 $0b
 
 data_05_6627:
-    HamChatWheelOption 0, $09                          ;; 05:6627 $09
-    HamChatWheelOption 1, $0b                          ;; 05:6628 $0b
-    HamChatWheelOption 2, $0a                          ;; 05:6629 $0a
-    HamChatWheelOption 3, $0b                          ;; 05:662a $0b
-    HamChatWheelOption 4, $0c                          ;; 05:662b $0c
-    HamChatWheelOption 5, $0b                          ;; 05:662c $0b
-    HamChatWheelOption 6, $0d                          ;; 05:662d $0d
-    HamChatWheelOption 7, $0b                          ;; 05:662e $0b
+    HamChatWheelOption $09 ; 00 Go-P                   ;; 05:6627 $09
+    HamChatWheelOption $0b ; 01   ?                    ;; 05:6628 $0b
+    HamChatWheelOption $0a ; 02 Zuzuzu                 ;; 05:6629 $0a
+    HamChatWheelOption $0b ; 03   ?                    ;; 05:662a $0b
+    HamChatWheelOption $0c ; 04 Blanko                 ;; 05:662b $0c
+    HamChatWheelOption $0b ; 05   ?                    ;; 05:662c $0b
+    HamChatWheelOption $0d ; 06 Hammo                  ;; 05:662d $0d
+    HamChatWheelOption $0b ; 07   ?                    ;; 05:662e $0b
 
 data_05_662f:
-    HamChatWheelOption 0, $10                          ;; 05:662f $10
-    HamChatWheelOption 1, $11                          ;; 05:6630 $11
-    HamChatWheelOption 2, $12                          ;; 05:6631 $12
-    HamChatWheelOption 3, $13                          ;; 05:6632 $13
-    HamChatWheelOption 4, $18                          ;; 05:6633 $18
-    HamChatWheelOption 5, $19                          ;; 05:6634 $19
-    HamChatWheelOption 6, $0b                          ;; 05:6635 $0b
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:662f $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6630 $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6631 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6632 $13
+    HamChatWheelOption $18 ; 04 Lookie                 ;; 05:6633 $18
+    HamChatWheelOption $19 ; 05 Spiffie                ;; 05:6634 $19
+    HamChatWheelOption $0b ; 06   ?                    ;; 05:6635 $0b
 
 data_05_6636:
-    HamChatWheelOption 0, $10                          ;; 05:6636 $10
-    HamChatWheelOption 1, $11                          ;; 05:6637 $11
-    HamChatWheelOption 2, $12                          ;; 05:6638 $12
-    HamChatWheelOption 3, $13                          ;; 05:6639 $13
-    HamChatWheelOption 4, $1a                          ;; 05:663a $1a
-    HamChatWheelOption 5, $0b                          ;; 05:663b $0b
-    HamChatWheelOption 6, $1b                          ;; 05:663c $1b
-    HamChatWheelOption 7, $0b                          ;; 05:663d $0b
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6636 $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6637 $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6638 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6639 $13
+    HamChatWheelOption $1a ; 04 Koochi-Q               ;; 05:663a $1a
+    HamChatWheelOption $0b ; 05   ?                    ;; 05:663b $0b
+    HamChatWheelOption $1b ; 06 Hamtast                ;; 05:663c $1b
+    HamChatWheelOption $0b ; 07   ?                    ;; 05:663d $0b
 
 data_05_663e:
-    HamChatWheelOption 0, $10                          ;; 05:663e $10
-    HamChatWheelOption 1, $11                          ;; 05:663f $11
-    HamChatWheelOption 2, $12                          ;; 05:6640 $12
-    HamChatWheelOption 3, $13                          ;; 05:6641 $13
-    HamChatWheelOption 4, $1c                          ;; 05:6642 $1c
-    HamChatWheelOption 5, $0b                          ;; 05:6643 $0b
-    HamChatWheelOption 6, $19                          ;; 05:6644 $19
-    HamChatWheelOption 7, $0b                          ;; 05:6645 $0b
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:663e $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:663f $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6640 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6641 $13
+    HamChatWheelOption $1c ; 04 Herk-Q                 ;; 05:6642 $1c
+    HamChatWheelOption $0b ; 05   ?                    ;; 05:6643 $0b
+    HamChatWheelOption $19 ; 06 Spiffie                ;; 05:6644 $19
+    HamChatWheelOption $0b ; 07   ?                    ;; 05:6645 $0b
 
 data_05_6646:
-    HamChatWheelOption 0, $10                          ;; 05:6646 $10
-    HamChatWheelOption 1, $11                          ;; 05:6647 $11
-    HamChatWheelOption 2, $12                          ;; 05:6648 $12
-    HamChatWheelOption 3, $13                          ;; 05:6649 $13
-    HamChatWheelOption 4, $1d                          ;; 05:664a $1d
-    HamChatWheelOption 5, $0b                          ;; 05:664b $0b
-    HamChatWheelOption 6, $1e                          ;; 05:664c $1e
-    HamChatWheelOption 7, $0b                          ;; 05:664d $0b
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6646 $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6647 $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6648 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6649 $13
+    HamChatWheelOption $1d ; 04 Goodgo                 ;; 05:664a $1d
+    HamChatWheelOption $0b ; 05   ?                    ;; 05:664b $0b
+    HamChatWheelOption $1e ; 06 Hamteam                ;; 05:664c $1e
+    HamChatWheelOption $0b ; 07   ?                    ;; 05:664d $0b
 
 data_05_664e:
-    HamChatWheelOption 0, $10                          ;; 05:664e $10
-    HamChatWheelOption 1, $11                          ;; 05:664f $11
-    HamChatWheelOption 2, $12                          ;; 05:6650 $12
-    HamChatWheelOption 3, $13                          ;; 05:6651 $13
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:664e $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:664f $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6650 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6651 $13
 
 data_05_6652:
-    HamChatWheelOption 0, $10                          ;; 05:6652 $10
-    HamChatWheelOption 1, $11                          ;; 05:6653 $11
-    HamChatWheelOption 2, $12                          ;; 05:6654 $12
-    HamChatWheelOption 3, $13                          ;; 05:6655 $13
-    HamChatWheelOption 4, $18                          ;; 05:6656 $18
-    HamChatWheelOption 5, $1f                          ;; 05:6657 $1f
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6652 $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6653 $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6654 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6655 $13
+    HamChatWheelOption $18 ; 04 Lookie                 ;; 05:6656 $18
+    HamChatWheelOption $1f ; 05 Tuggie                 ;; 05:6657 $1f
 
 data_05_6658:
-    HamChatWheelOption 0, $10                          ;; 05:6658 $10
-    HamChatWheelOption 1, $11                          ;; 05:6659 $11
-    HamChatWheelOption 2, $12                          ;; 05:665a $12
-    HamChatWheelOption 3, $13                          ;; 05:665b $13
-    HamChatWheelOption 4, $18                          ;; 05:665c $18
-    HamChatWheelOption 5, $20                          ;; 05:665d $20
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6658 $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6659 $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:665a $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:665b $13
+    HamChatWheelOption $18 ; 04 Lookie                 ;; 05:665c $18
+    HamChatWheelOption $20 ; 05 Scrit-T                ;; 05:665d $20
 
 data_05_665e:
-    HamChatWheelOption 0, $10                          ;; 05:665e $10
-    HamChatWheelOption 1, $11                          ;; 05:665f $11
-    HamChatWheelOption 2, $12                          ;; 05:6660 $12
-    HamChatWheelOption 3, $13                          ;; 05:6661 $13
-    HamChatWheelOption 4, $18                          ;; 05:6662 $18
-    HamChatWheelOption 5, $21                          ;; 05:6663 $21
-    HamChatWheelOption 6, $0b                          ;; 05:6664 $0b
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:665e $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:665f $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6660 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6661 $13
+    HamChatWheelOption $18 ; 04 Lookie                 ;; 05:6662 $18
+    HamChatWheelOption $21 ; 05 Chukchuk               ;; 05:6663 $21
+    HamChatWheelOption $0b ; 06   ?                    ;; 05:6664 $0b
 
 data_05_6665:
-    HamChatWheelOption 0, $10                          ;; 05:6665 $10
-    HamChatWheelOption 1, $11                          ;; 05:6666 $11
-    HamChatWheelOption 2, $12                          ;; 05:6667 $12
-    HamChatWheelOption 3, $13                          ;; 05:6668 $13
-    HamChatWheelOption 4, $17                          ;; 05:6669 $17
-    HamChatWheelOption 5, $20                          ;; 05:666a $20
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6665 $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6666 $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6667 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:6668 $13
+    HamChatWheelOption $17 ; 04 Scoochie               ;; 05:6669 $17
+    HamChatWheelOption $20 ; 05 Scrit-T                ;; 05:666a $20
 
 data_05_666b:
-    HamChatWheelOption 0, $10                          ;; 05:666b $10
-    HamChatWheelOption 1, $11                          ;; 05:666c $11
-    HamChatWheelOption 2, $12                          ;; 05:666d $12
-    HamChatWheelOption 3, $13                          ;; 05:666e $13
-    HamChatWheelOption 4, $22                          ;; 05:666f $22
-    HamChatWheelOption 5, $0b                          ;; 05:6670 $0b
-    HamChatWheelOption 6, $23                          ;; 05:6671 $23
-    HamChatWheelOption 7, $0b                          ;; 05:6672 $0b
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:666b $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:666c $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:666d $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:666e $13
+    HamChatWheelOption $22 ; 04 Krmpkrmp               ;; 05:666f $22
+    HamChatWheelOption $0b ; 05   ?                    ;; 05:6670 $0b
+    HamChatWheelOption $23 ; 06 Wishie                 ;; 05:6671 $23
+    HamChatWheelOption $0b ; 07   ?                    ;; 05:6672 $0b
     db   $24, $25, $26, $27                            ;; 05:6673 ????
 
 data_05_6677:
-    HamChatWheelOption 0, $10                          ;; 05:6677 $10
-    HamChatWheelOption 1, $11                          ;; 05:6678 $11
-    HamChatWheelOption 2, $12                          ;; 05:6679 $12
-    HamChatWheelOption 3, $13                          ;; 05:667a $13
-    HamChatWheelOption 4, $15                          ;; 05:667b $15
-    HamChatWheelOption 5, $1f                          ;; 05:667c $1f
+    HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6677 $10
+    HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6678 $11
+    HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6679 $12
+    HamChatWheelOption $13 ; 03 Digdig                 ;; 05:667a $13
+    HamChatWheelOption $15 ; 04 Stickie                ;; 05:667b $15
+    HamChatWheelOption $1f ; 05 Tuggie                 ;; 05:667c $1f
     db   $71, $11, $be, $06, $71, $11, $be, $07        ;; 05:667d ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:6685 ????????
 
 data_05_668d:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:668d $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:668e $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:668f $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6690 $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:6691 $1a
-    HamChatWheelRule_AlwaysUse 5                       ;; 05:6692 $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:668d $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:668e $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:668f $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6690 $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:6691 $1a
+    HamChatWheelRule_AlwaysUse ; 05                    ;; 05:6692 $1a
     db   $1a, $1a, $1a, $3f, $39, $b2, $02, $7e        ;; 05:6693 ????????
     db   $39, $3f, $33, $70, $0d, $be, $0a, $3e        ;; 05:669b ????????
     db   $03, $70, $37, $be, $00                       ;; 05:66a3 ?????
 
 data_05_66a8:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:66a8 $1a
-    HamChatWheelRule_UseIfHave 1, HAMCHAT_ZUZUZU       ;; 05:66a9 $3e $31
-    HamChatWheelRule_UseIfDontHave 2, HAMCHAT_ZUZUZU   ;; 05:66ab $5e $31
-    HamChatWheelRule_UseIfHave 3, HAMCHAT_BLANKO       ;; 05:66ad $3e $36
-    HamChatWheelRule_UseIfDontHave 4, HAMCHAT_BLANKO   ;; 05:66af $5e $36
-    HamChatWheelRule_UseIfHave 5, HAMCHAT_HAMMO        ;; 05:66b1 $3e $2f
-    HamChatWheelRule_UseIfDontHave 6, HAMCHAT_HAMMO    ;; 05:66b3 $5e $2f
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:66a8 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_ZUZUZU ; 01     ;; 05:66a9 $3e $31
+    HamChatWheelRule_UseIfDontHave HAMCHAT_ZUZUZU ; 02 ;; 05:66ab $5e $31
+    HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 03     ;; 05:66ad $3e $36
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLANKO ; 04 ;; 05:66af $5e $36
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 05      ;; 05:66b1 $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 06  ;; 05:66b3 $5e $2f
     db   $70, $67, $be, $01, $70, $67, $be, $02        ;; 05:66b5 ????????
     db   $70, $67, $be, $03, $70, $67, $be, $04        ;; 05:66bd ????????
     db   $3e, $f2, $70, $0d, $be, $1e, $3f, $80        ;; 05:66c5 ????????
@@ -2948,14 +2948,14 @@ data_05_66a8:
     db   $71, $11, $be, $d8                            ;; 05:67ad ????
 
 data_05_67b1:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:67b1 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:67b2 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:67b3 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:67b4 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_NOPIBLOO     ;; 05:67b5 $3e $2c
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_NOPIBLOO ;; 05:67b7 $5e $2c
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_STICKIE      ;; 05:67b9 $3e $1c
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_STICKIE  ;; 05:67bb $5e $1c
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:67b1 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:67b2 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:67b3 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:67b4 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_NOPIBLOO ; 04   ;; 05:67b5 $3e $2c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOPIBLOO ; 05 ;; 05:67b7 $5e $2c
+    HamChatWheelRule_UseIfHave HAMCHAT_STICKIE ; 06    ;; 05:67b9 $3e $1c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 07 ;; 05:67bb $5e $1c
     db   $5f, $95, $3f, $97, $3f, $37, $5f, $39        ;; 05:67bd ????????
     db   $70, $88, $be, $01, $70, $0d, $be, $3e        ;; 05:67c5 ????????
     db   $70, $0d, $be, $44, $70, $0d, $be, $3d        ;; 05:67cd ????????
@@ -2963,28 +2963,28 @@ data_05_67b1:
     db   $01, $62, $88, $1e, $6f, $11, $be, $04        ;; 05:67dd ????????
 
 data_05_67e5:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:67e5 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:67e6 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:67e7 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:67e8 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_BIZZAROO     ;; 05:67e9 $3e $34
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_BIZZAROO ;; 05:67eb $5e $34
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_SCOOCHIE     ;; 05:67ed $3e $22
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_SCOOCHIE ;; 05:67ef $5e $22
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:67e5 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:67e6 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:67e7 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:67e8 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_BIZZAROO ; 04   ;; 05:67e9 $3e $34
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BIZZAROO ; 05 ;; 05:67eb $5e $34
+    HamChatWheelRule_UseIfHave HAMCHAT_SCOOCHIE ; 06   ;; 05:67ed $3e $22
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SCOOCHIE ; 07 ;; 05:67ef $5e $22
     db   $00, $6d, $11, $a2, $48, $0e, $be, $01        ;; 05:67f1 ????????
     db   $3e, $18, $6f, $11, $be, $90, $3f, $a9        ;; 05:67f9 ????????
     db   $3f, $a8, $3f, $99, $5f, $98, $6f, $11        ;; 05:6801 ????????
     db   $be, $03                                      ;; 05:6809 ??
 
 data_05_680b:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_GOP          ;; 05:680b $3e $45
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_GOP      ;; 05:680d $5e $45
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_ZUZUZU       ;; 05:680f $3e $31
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_ZUZUZU   ;; 05:6811 $5e $31
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_BLANKO       ;; 05:6813 $3e $36
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_BLANKO   ;; 05:6815 $5e $36
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HAMMO        ;; 05:6817 $3e $2f
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HAMMO    ;; 05:6819 $5e $2f
+    HamChatWheelRule_UseIfHave HAMCHAT_GOP ; 00        ;; 05:680b $3e $45
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 01    ;; 05:680d $5e $45
+    HamChatWheelRule_UseIfHave HAMCHAT_ZUZUZU ; 02     ;; 05:680f $3e $31
+    HamChatWheelRule_UseIfDontHave HAMCHAT_ZUZUZU ; 03 ;; 05:6811 $5e $31
+    HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 04     ;; 05:6813 $3e $36
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLANKO ; 05 ;; 05:6815 $5e $36
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 06      ;; 05:6817 $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 07  ;; 05:6819 $5e $2f
     db   $70, $0d, $be, $3e, $5f, $84, $70, $88        ;; 05:681b ????????
     db   $be, $02, $70, $0d, $be, $3f, $70, $0d        ;; 05:6823 ????????
     db   $be, $46, $5f, $9a, $00, $72, $88, $a2        ;; 05:682b ????????
@@ -2992,13 +2992,13 @@ data_05_680b:
     db   $3f, $84, $71, $04, $be, $04                  ;; 05:683b ??????
 
 data_05_6841:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6841 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6842 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6843 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6844 $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:6845 $1a
-    HamChatWheelRule_UseIfHave 5, HAMCHAT_SPIFFIE      ;; 05:6846 $3e $18
-    HamChatWheelRule_UseIfDontHave 6, HAMCHAT_SPIFFIE  ;; 05:6848 $5e $18
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6841 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6842 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6843 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6844 $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:6845 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_SPIFFIE ; 05    ;; 05:6846 $3e $18
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SPIFFIE ; 06 ;; 05:6848 $5e $18
     db   $71, $04, $be, $05, $3e, $60, $70, $0d        ;; 05:684a ????????
     db   $be, $3f, $3f, $85, $70, $88, $be, $03        ;; 05:6852 ????????
     db   $70, $0d, $be, $40, $5f, $9b, $00, $72        ;; 05:685a ????????
@@ -3011,14 +3011,14 @@ data_05_6841:
     db   $3f, $3a, $71, $00, $be, $03                  ;; 05:6892 ??????
 
 data_05_6898:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6898 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6899 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:689a $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:689b $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_KOOCHIQ      ;; 05:689c $3e $11
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_KOOCHIQ  ;; 05:689e $5e $11
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HAMTAST      ;; 05:68a0 $3e $57
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HAMTAST  ;; 05:68a2 $5e $57
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6898 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6899 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:689a $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:689b $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 04    ;; 05:689c $3e $11
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 05 ;; 05:689e $5e $11
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMTAST ; 06    ;; 05:68a0 $3e $57
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMTAST ; 07 ;; 05:68a2 $5e $57
     db   $3f, $3b, $71, $11, $be, $60, $71, $11        ;; 05:68a4 ????????
     db   $be, $10, $3f, $aa, $5f, $9c, $70, $88        ;; 05:68ac ????????
     db   $be, $08, $5f, $a2, $00, $72, $88, $a2        ;; 05:68b4 ????????
@@ -3037,14 +3037,14 @@ data_05_6898:
     db   $70, $37, $be, $00                            ;; 05:691c ????
 
 data_05_6920:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6920 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6921 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6922 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6923 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HERKQ        ;; 05:6924 $3e $3b
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HERKQ    ;; 05:6926 $5e $3b
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_SPIFFIE      ;; 05:6928 $3e $18
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_SPIFFIE  ;; 05:692a $5e $18
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6920 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6921 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6922 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6923 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_HERKQ ; 04      ;; 05:6924 $3e $3b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HERKQ ; 05  ;; 05:6926 $5e $3b
+    HamChatWheelRule_UseIfHave HAMCHAT_SPIFFIE ; 06    ;; 05:6928 $3e $18
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SPIFFIE ; 07 ;; 05:692a $5e $18
     db   $3e, $16, $70, $82, $be, $01, $70, $82        ;; 05:692c ????????
     db   $be, $03, $00, $72, $88, $a2, $04, $06        ;; 05:6934 ????????
     db   $00, $b2, $04, $62, $88, $1e, $00, $72        ;; 05:693c ????????
@@ -3059,14 +3059,14 @@ data_05_6920:
     db   $3e, $cb                                      ;; 05:6984 ??
 
 data_05_6986:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6986 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6987 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6988 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6989 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_GOODGO       ;; 05:698a $3e $42
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_GOODGO   ;; 05:698c $5e $42
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HAMTEAM      ;; 05:698e $3e $60
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HAMTEAM  ;; 05:6990 $5e $60
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6986 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6987 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6988 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6989 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_GOODGO ; 04     ;; 05:698a $3e $42
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOODGO ; 05 ;; 05:698c $5e $42
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMTEAM ; 06    ;; 05:698e $3e $60
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMTEAM ; 07 ;; 05:6990 $5e $60
     db   $71, $09, $be, $04, $71, $09, $be, $07        ;; 05:6992 ????????
     db   $71, $09, $be, $09, $71, $09, $be, $0a        ;; 05:699a ????????
     db   $3e, $88, $5f, $88, $3f, $88, $71, $09        ;; 05:69a2 ????????
@@ -3080,13 +3080,13 @@ data_05_6986:
     db   $71, $0f, $be, $02, $3f, $8d                  ;; 05:69e2 ??????
 
 data_05_69e8:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:69e8 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:69e9 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:69ea $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:69eb $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:69ec $1a
-    HamChatWheelRule_UseIfHave 5, HAMCHAT_CHUKCHUK     ;; 05:69ed $3e $4a
-    HamChatWheelRule_UseIfDontHave 6, HAMCHAT_CHUKCHUK ;; 05:69ef $5e $4a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:69e8 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:69e9 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:69ea $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:69eb $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:69ec $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_CHUKCHUK ; 05   ;; 05:69ed $3e $4a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_CHUKCHUK ; 06 ;; 05:69ef $5e $4a
     db   $72, $28, $be, $65, $72, $8b, $7e, $28        ;; 05:69f1 ????????
     db   $70, $1f, $be, $00, $73, $0b, $be, $02        ;; 05:69f9 ????????
     db   $73, $0c, $be, $0a, $70, $28, $7e, $8b        ;; 05:6a01 ????????
@@ -3108,14 +3108,14 @@ data_05_69e8:
     db   $5f, $ab, $5f, $9d                            ;; 05:6a81 ????
 
 data_05_6a85:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6a85 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6a86 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6a87 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6a88 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_KRMPKRMP     ;; 05:6a89 $3e $21
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_KRMPKRMP ;; 05:6a8b $5e $21
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_WISHIE       ;; 05:6a8d $3e $24
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_WISHIE   ;; 05:6a8f $5e $24
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6a85 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6a86 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6a87 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6a88 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_KRMPKRMP ; 04   ;; 05:6a89 $3e $21
+    HamChatWheelRule_UseIfDontHave HAMCHAT_KRMPKRMP ; 05 ;; 05:6a8b $5e $21
+    HamChatWheelRule_UseIfHave HAMCHAT_WISHIE ; 06     ;; 05:6a8d $3e $24
+    HamChatWheelRule_UseIfDontHave HAMCHAT_WISHIE ; 07 ;; 05:6a8f $5e $24
     db   $72, $1f, $be, $03, $72, $1f, $be, $05        ;; 05:6a91 ????????
     db   $71, $06, $be, $01, $71, $06, $be, $02        ;; 05:6a99 ????????
     db   $71, $06, $be, $03, $71, $06, $be, $04        ;; 05:6aa1 ????????
@@ -3253,153 +3253,153 @@ data_05_6a85:
     db   $10                                           ;; 05:6c6a ?
 
 data_05_6c6b:
-    HamChatWheelOption 0, $0b                          ;; 05:6c6b $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6c6c $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6c6d $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6c6e $0e
-    HamChatWheelOption 4, $11                          ;; 05:6c6f $11
-    HamChatWheelOption 5, $12                          ;; 05:6c70 $12
-    HamChatWheelOption 6, $13                          ;; 05:6c71 $13
-    HamChatWheelOption 7, $12                          ;; 05:6c72 $12
-    HamChatWheelOption 8, $14                          ;; 05:6c73 $14
-    HamChatWheelOption 9, $12                          ;; 05:6c74 $12
-    HamChatWheelOption 10, $15                         ;; 05:6c75 $15
-    HamChatWheelOption 11, $12                         ;; 05:6c76 $12
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c6b $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c6c $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c6d $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6c6e $0e
+    HamChatWheelOption $11 ; 04 Bestest                ;; 05:6c6f $11
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6c70 $12
+    HamChatWheelOption $13 ; 06 Herk-Q                 ;; 05:6c71 $13
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6c72 $12
+    HamChatWheelOption $14 ; 08 No-P                   ;; 05:6c73 $14
+    HamChatWheelOption $12 ; 09   ?                    ;; 05:6c74 $12
+    HamChatWheelOption $15 ; 10 ShaShaa<32>            ;; 05:6c75 $15
+    HamChatWheelOption $12 ; 11   ?                    ;; 05:6c76 $12
 
 data_05_6c77:
-    HamChatWheelOption 0, $0b                          ;; 05:6c77 $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6c78 $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6c79 $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6c7a $0e
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c77 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c78 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c79 $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6c7a $0e
     db   $0b, $0c, $0d, $0e, $16, $12, $17, $12        ;; 05:6c7b ????????
     db   $18, $12, $19, $12                            ;; 05:6c83 ????
 
 data_05_6c87:
-    HamChatWheelOption 0, $0b                          ;; 05:6c87 $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6c88 $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6c89 $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6c8a $0e
-    HamChatWheelOption 4, $1a                          ;; 05:6c8b $1a
-    HamChatWheelOption 5, $1b                          ;; 05:6c8c $1b
-    HamChatWheelOption 6, $1c                          ;; 05:6c8d $1c
-    HamChatWheelOption 7, $1d                          ;; 05:6c8e $1d
-    HamChatWheelOption 8, $12                          ;; 05:6c8f $12
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c87 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c88 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c89 $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6c8a $0e
+    HamChatWheelOption $1a ; 04 Lookie                 ;; 05:6c8b $1a
+    HamChatWheelOption $1b ; 05 Scrit-T                ;; 05:6c8c $1b
+    HamChatWheelOption $1c ; 06 Go-P                   ;; 05:6c8d $1c
+    HamChatWheelOption $1d ; 07 Stickie                ;; 05:6c8e $1d
+    HamChatWheelOption $12 ; 08   ?                    ;; 05:6c8f $12
 
 data_05_6c90:
-    HamChatWheelOption 0, $0b                          ;; 05:6c90 $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6c91 $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6c92 $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6c93 $0e
-    HamChatWheelOption 4, $1a                          ;; 05:6c94 $1a
-    HamChatWheelOption 5, $1b                          ;; 05:6c95 $1b
-    HamChatWheelOption 6, $1c                          ;; 05:6c96 $1c
-    HamChatWheelOption 7, $1d                          ;; 05:6c97 $1d
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c90 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c91 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c92 $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6c93 $0e
+    HamChatWheelOption $1a ; 04 Lookie                 ;; 05:6c94 $1a
+    HamChatWheelOption $1b ; 05 Scrit-T                ;; 05:6c95 $1b
+    HamChatWheelOption $1c ; 06 Go-P                   ;; 05:6c96 $1c
+    HamChatWheelOption $1d ; 07 Stickie                ;; 05:6c97 $1d
 
 data_05_6c98:
-    HamChatWheelOption 0, $0b                          ;; 05:6c98 $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6c99 $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6c9a $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6c9b $0e
-    HamChatWheelOption 4, $1a                          ;; 05:6c9c $1a
-    HamChatWheelOption 5, $1e                          ;; 05:6c9d $1e
-    HamChatWheelOption 6, $1c                          ;; 05:6c9e $1c
-    HamChatWheelOption 7, $1e                          ;; 05:6c9f $1e
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c98 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c99 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c9a $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6c9b $0e
+    HamChatWheelOption $1a ; 04 Lookie                 ;; 05:6c9c $1a
+    HamChatWheelOption $1e ; 05  ?                     ;; 05:6c9d $1e
+    HamChatWheelOption $1c ; 06 Go-P                   ;; 05:6c9e $1c
+    HamChatWheelOption $1e ; 07  ?                     ;; 05:6c9f $1e
 
 data_05_6ca0:
-    HamChatWheelOption 0, $0b                          ;; 05:6ca0 $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6ca1 $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6ca2 $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6ca3 $0e
-    HamChatWheelOption 4, $1f                          ;; 05:6ca4 $1f
-    HamChatWheelOption 5, $12                          ;; 05:6ca5 $12
-    HamChatWheelOption 6, $20                          ;; 05:6ca6 $20
-    HamChatWheelOption 7, $12                          ;; 05:6ca7 $12
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6ca0 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6ca1 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6ca2 $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6ca3 $0e
+    HamChatWheelOption $1f ; 04 Meep-P                 ;; 05:6ca4 $1f
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6ca5 $12
+    HamChatWheelOption $20 ; 06 Tuggie                 ;; 05:6ca6 $20
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6ca7 $12
 
 data_05_6ca8:
-    HamChatWheelOption 0, $0b                          ;; 05:6ca8 $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6ca9 $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6caa $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6cab $0e
-    HamChatWheelOption 4, $21                          ;; 05:6cac $21
-    HamChatWheelOption 5, $12                          ;; 05:6cad $12
-    HamChatWheelOption 6, $1d                          ;; 05:6cae $1d
-    HamChatWheelOption 7, $12                          ;; 05:6caf $12
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6ca8 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6ca9 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6caa $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6cab $0e
+    HamChatWheelOption $21 ; 04 Hammo                  ;; 05:6cac $21
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6cad $12
+    HamChatWheelOption $1d ; 06 Stickie                ;; 05:6cae $1d
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6caf $12
     db   $0f, $14                                      ;; 05:6cb0 ??
 
 data_05_6cb2:
-    HamChatWheelOption 0, $0b                          ;; 05:6cb2 $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6cb3 $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6cb4 $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6cb5 $0e
-    HamChatWheelOption 4, $1d                          ;; 05:6cb6 $1d
-    HamChatWheelOption 5, $12                          ;; 05:6cb7 $12
-    HamChatWheelOption 6, $22                          ;; 05:6cb8 $22
-    HamChatWheelOption 7, $12                          ;; 05:6cb9 $12
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6cb2 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6cb3 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6cb4 $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6cb5 $0e
+    HamChatWheelOption $1d ; 04 Stickie                ;; 05:6cb6 $1d
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6cb7 $12
+    HamChatWheelOption $22 ; 06 Sparklie               ;; 05:6cb8 $22
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6cb9 $12
 
 data_05_6cba:
-    HamChatWheelOption 0, $0b                          ;; 05:6cba $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6cbb $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6cbc $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6cbd $0e
-    HamChatWheelOption 4, $23                          ;; 05:6cbe $23
-    HamChatWheelOption 5, $12                          ;; 05:6cbf $12
-    HamChatWheelOption 6, $16                          ;; 05:6cc0 $16
-    HamChatWheelOption 7, $12                          ;; 05:6cc1 $12
-    HamChatWheelOption 8, $24                          ;; 05:6cc2 $24
-    HamChatWheelOption 9, $12                          ;; 05:6cc3 $12
-    HamChatWheelOption 10, $11                         ;; 05:6cc4 $11
-    HamChatWheelOption 11, $12                         ;; 05:6cc5 $12
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6cba $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6cbb $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6cbc $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6cbd $0e
+    HamChatWheelOption $23 ; 04 Hushie                 ;; 05:6cbe $23
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6cbf $12
+    HamChatWheelOption $16 ; 06 Pooie                  ;; 05:6cc0 $16
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6cc1 $12
+    HamChatWheelOption $24 ; 08 Blanko                 ;; 05:6cc2 $24
+    HamChatWheelOption $12 ; 09   ?                    ;; 05:6cc3 $12
+    HamChatWheelOption $11 ; 10 Bestest                ;; 05:6cc4 $11
+    HamChatWheelOption $12 ; 11   ?                    ;; 05:6cc5 $12
 
 data_05_6cc6:
-    HamChatWheelOption 0, $1c                          ;; 05:6cc6 $1c
-    HamChatWheelOption 1, $12                          ;; 05:6cc7 $12
-    HamChatWheelOption 2, $25                          ;; 05:6cc8 $25
-    HamChatWheelOption 3, $12                          ;; 05:6cc9 $12
-    HamChatWheelOption 4, $24                          ;; 05:6cca $24
-    HamChatWheelOption 5, $12                          ;; 05:6ccb $12
-    HamChatWheelOption 6, $21                          ;; 05:6ccc $21
-    HamChatWheelOption 7, $12                          ;; 05:6ccd $12
+    HamChatWheelOption $1c ; 00 Go-P                   ;; 05:6cc6 $1c
+    HamChatWheelOption $12 ; 01   ?                    ;; 05:6cc7 $12
+    HamChatWheelOption $25 ; 02 Zuzuzu                 ;; 05:6cc8 $25
+    HamChatWheelOption $12 ; 03   ?                    ;; 05:6cc9 $12
+    HamChatWheelOption $24 ; 04 Blanko                 ;; 05:6cca $24
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6ccb $12
+    HamChatWheelOption $21 ; 06 Hammo                  ;; 05:6ccc $21
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6ccd $12
 
 data_05_6cce:
-    HamChatWheelOption 0, $0b                          ;; 05:6cce $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6ccf $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6cd0 $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6cd1 $0e
-    HamChatWheelOption 4, $1a                          ;; 05:6cd2 $1a
-    HamChatWheelOption 5, $1c                          ;; 05:6cd3 $1c
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6cce $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6ccf $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6cd0 $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6cd1 $0e
+    HamChatWheelOption $1a ; 04 Lookie                 ;; 05:6cd2 $1a
+    HamChatWheelOption $1c ; 05 Go-P                   ;; 05:6cd3 $1c
 
 data_05_6cd4:
-    HamChatWheelOption 0, $26                          ;; 05:6cd4 $26
-    HamChatWheelOption 1, $27                          ;; 05:6cd5 $27
+    HamChatWheelOption $26 ; 00 Game explanation       ;; 05:6cd4 $26
+    HamChatWheelOption $27 ; 01 Prize explanation      ;; 05:6cd5 $27
 
 data_05_6cd6:
-    HamChatWheelOption 0, $0b                          ;; 05:6cd6 $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6cd7 $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6cd8 $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6cd9 $0e
-    HamChatWheelOption 4, $28                          ;; 05:6cda $28
-    HamChatWheelOption 5, $12                          ;; 05:6cdb $12
-    HamChatWheelOption 6, $29                          ;; 05:6cdc $29
-    HamChatWheelOption 7, $12                          ;; 05:6cdd $12
-    HamChatWheelOption 8, $16                          ;; 05:6cde $16
-    HamChatWheelOption 9, $12                          ;; 05:6cdf $12
-    HamChatWheelOption 10, $1a                         ;; 05:6ce0 $1a
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6cd6 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6cd7 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6cd8 $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6cd9 $0e
+    HamChatWheelOption $28 ; 04 Chukchuk               ;; 05:6cda $28
+    HamChatWheelOption $12 ; 05   ?                    ;; 05:6cdb $12
+    HamChatWheelOption $29 ; 06 Ta-dah                 ;; 05:6cdc $29
+    HamChatWheelOption $12 ; 07   ?                    ;; 05:6cdd $12
+    HamChatWheelOption $16 ; 08 Pooie                  ;; 05:6cde $16
+    HamChatWheelOption $12 ; 09   ?                    ;; 05:6cdf $12
+    HamChatWheelOption $1a ; 10 Lookie                 ;; 05:6ce0 $1a
 
 data_05_6ce1:
-    HamChatWheelOption 0, $0b                          ;; 05:6ce1 $0b
-    HamChatWheelOption 1, $0c                          ;; 05:6ce2 $0c
-    HamChatWheelOption 2, $0d                          ;; 05:6ce3 $0d
-    HamChatWheelOption 3, $0e                          ;; 05:6ce4 $0e
-    HamChatWheelOption 4, $1a                          ;; 05:6ce5 $1a
-    HamChatWheelOption 5, $1d                          ;; 05:6ce6 $1d
+    HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6ce1 $0b
+    HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6ce2 $0c
+    HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6ce3 $0d
+    HamChatWheelOption $0e ; 03 Digdig                 ;; 05:6ce4 $0e
+    HamChatWheelOption $1a ; 04 Lookie                 ;; 05:6ce5 $1a
+    HamChatWheelOption $1d ; 05 Stickie                ;; 05:6ce6 $1d
     db   $71, $1e, $be, $08, $71, $1e, $be, $0a        ;; 05:6ce7 ????????
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:6cef ????????
 
 data_05_6cf7:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6cf7 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6cf8 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6cf9 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6cfa $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6cf7 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6cf8 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6cf9 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6cfa $1a
     db   $1a, $1a, $1a, $1a, $1a, $1a, $1a, $b2        ;; 05:6cfb ????????
     db   $02, $7e, $39, $70, $0d, $be, $15, $70        ;; 05:6d03 ????????
     db   $0d, $be, $0a, $3e, $a8, $70, $4c, $be        ;; 05:6d0b ????????
@@ -3436,18 +3436,18 @@ data_05_6cf7:
     db   $04                                           ;; 05:6e03 ?
 
 data_05_6e04:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6e04 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6e05 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6e06 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6e07 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_BESTEST      ;; 05:6e08 $3e $46
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_BESTEST  ;; 05:6e0a $5e $46
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HERKQ        ;; 05:6e0c $3e $3b
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HERKQ    ;; 05:6e0e $5e $3b
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_NOP          ;; 05:6e10 $3e $52
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_NOP      ;; 05:6e12 $5e $52
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_SHASHAA     ;; 05:6e14 $3e $39
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_SHASHAA ;; 05:6e16 $5e $39
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6e04 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6e05 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6e06 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6e07 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_BESTEST ; 04    ;; 05:6e08 $3e $46
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BESTEST ; 05 ;; 05:6e0a $5e $46
+    HamChatWheelRule_UseIfHave HAMCHAT_HERKQ ; 06      ;; 05:6e0c $3e $3b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HERKQ ; 07  ;; 05:6e0e $5e $3b
+    HamChatWheelRule_UseIfHave HAMCHAT_NOP ; 08        ;; 05:6e10 $3e $52
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOP ; 09    ;; 05:6e12 $5e $52
+    HamChatWheelRule_UseIfHave HAMCHAT_SHASHAA ; 10    ;; 05:6e14 $3e $39
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SHASHAA ; 11 ;; 05:6e16 $5e $39
     db   $3f, $94, $00, $70, $0d, $a2, $0a, $06        ;; 05:6e18 ????????
     db   $00, $70, $0d, $a2, $14, $1e, $3f, $82        ;; 05:6e20 ????????
     db   $00, $72, $39, $a2, $01, $06, $00, $b2        ;; 05:6e28 ????????
@@ -3472,15 +3472,15 @@ data_05_6e04:
     db   $6f, $a2, $04, $1e, $71, $0d, $be, $05        ;; 05:6ec0 ????????
 
 data_05_6ec8:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6ec8 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6ec9 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6eca $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6ecb $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:6ecc $1a
-    HamChatWheelRule_AlwaysUse 5                       ;; 05:6ecd $1a
-    HamChatWheelRule_AlwaysUse 6                       ;; 05:6ece $1a
-    HamChatWheelRule_UseIfHave 7, HAMCHAT_STICKIE      ;; 05:6ecf $3e $1c
-    HamChatWheelRule_UseIfDontHave 8, HAMCHAT_STICKIE  ;; 05:6ed1 $5e $1c
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6ec8 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6ec9 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6eca $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6ecb $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:6ecc $1a
+    HamChatWheelRule_AlwaysUse ; 05                    ;; 05:6ecd $1a
+    HamChatWheelRule_AlwaysUse ; 06                    ;; 05:6ece $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_STICKIE ; 07    ;; 05:6ecf $3e $1c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 08 ;; 05:6ed1 $5e $1c
     db   $71, $0d, $be, $03, $71, $00, $be, $01        ;; 05:6ed3 ????????
     db   $71, $00, $be, $02, $70, $6f, $be, $00        ;; 05:6edb ????????
     db   $71, $0d, $be, $06, $3e, $57, $71, $0d        ;; 05:6ee3 ????????
@@ -3495,14 +3495,14 @@ data_05_6ec8:
     db   $3e, $40, $70, $2a, $be, $01, $5f, $98        ;; 05:6f2b ????????
 
 data_05_6f33:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6f33 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6f34 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6f35 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6f36 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_LOOKIE       ;; 05:6f37 $3e $4b
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_LOOKIE   ;; 05:6f39 $5e $4b
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_GOP          ;; 05:6f3b $3e $45
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_GOP      ;; 05:6f3d $5e $45
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6f33 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6f34 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6f35 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6f36 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_LOOKIE ; 04     ;; 05:6f37 $3e $4b
+    HamChatWheelRule_UseIfDontHave HAMCHAT_LOOKIE ; 05 ;; 05:6f39 $5e $4b
+    HamChatWheelRule_UseIfHave HAMCHAT_GOP ; 06        ;; 05:6f3b $3e $45
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 07    ;; 05:6f3d $5e $45
     db   $3f, $9a, $3f, $98, $3f, $99, $6e, $04        ;; 05:6f3f ????????
     db   $a4, $06, $5f, $18, $5f, $28, $70, $2a        ;; 05:6f47 ????????
     db   $be, $00, $6e, $71, $be, $01, $3e, $af        ;; 05:6f4f ????????
@@ -3512,25 +3512,25 @@ data_05_6f33:
     db   $a8, $0e, $be, $01                            ;; 05:6f6f ????
 
 data_05_6f73:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6f73 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6f74 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6f75 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6f76 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_MEEPP        ;; 05:6f77 $3e $33
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_MEEPP    ;; 05:6f79 $5e $33
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_TUGGIE       ;; 05:6f7b $3e $50
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_TUGGIE   ;; 05:6f7d $5e $50
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6f73 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6f74 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6f75 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6f76 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_MEEPP ; 04      ;; 05:6f77 $3e $33
+    HamChatWheelRule_UseIfDontHave HAMCHAT_MEEPP ; 05  ;; 05:6f79 $5e $33
+    HamChatWheelRule_UseIfHave HAMCHAT_TUGGIE ; 06     ;; 05:6f7b $3e $50
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TUGGIE ; 07 ;; 05:6f7d $5e $50
     db   $71, $0f, $be, $01                            ;; 05:6f7f ????
 
 data_05_6f83:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:6f83 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:6f84 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:6f85 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:6f86 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HAMMO        ;; 05:6f87 $3e $2f
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HAMMO    ;; 05:6f89 $5e $2f
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_STICKIE      ;; 05:6f8b $3e $1c
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_STICKIE  ;; 05:6f8d $5e $1c
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6f83 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6f84 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:6f85 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:6f86 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 04      ;; 05:6f87 $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 05  ;; 05:6f89 $5e $2f
+    HamChatWheelRule_UseIfHave HAMCHAT_STICKIE ; 06    ;; 05:6f8b $3e $1c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 07 ;; 05:6f8d $5e $1c
     db   $71, $0f, $be, $00, $3e, $56, $70, $71        ;; 05:6f8f ????????
     db   $be, $00, $70, $71, $be, $01, $70, $71        ;; 05:6f97 ????????
     db   $be, $02, $71, $0f, $be, $02, $00, $6d        ;; 05:6f9f ????????
@@ -3561,14 +3561,14 @@ data_05_6f83:
     db   $3e, $e6, $5e, $e6                            ;; 05:7067 ????
 
 data_05_706b:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:706b $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:706c $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:706d $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:706e $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_STICKIE      ;; 05:706f $3e $1c
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_STICKIE  ;; 05:7071 $5e $1c
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_SPARKLIE     ;; 05:7073 $3e $26
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_SPARKLIE ;; 05:7075 $5e $26
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:706b $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:706c $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:706d $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:706e $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_STICKIE ; 04    ;; 05:706f $3e $1c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 05 ;; 05:7071 $5e $1c
+    HamChatWheelRule_UseIfHave HAMCHAT_SPARKLIE ; 06   ;; 05:7073 $3e $26
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SPARKLIE ; 07 ;; 05:7075 $5e $26
     db   $71, $12, $be, $05, $3e, $3d, $72, $6d        ;; 05:7077 ????????
     db   $be, $03, $70, $67, $be, $00, $70, $6d        ;; 05:707f ????????
     db   $be, $03, $71, $13, $be, $00, $5f, $9e        ;; 05:7087 ????????
@@ -3578,28 +3578,28 @@ data_05_706b:
     db   $70, $6d, $be, $00, $3f, $91                  ;; 05:70a7 ??????
 
 data_05_70ad:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:70ad $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:70ae $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:70af $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:70b0 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HUSHIE       ;; 05:70b1 $3e $30
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HUSHIE   ;; 05:70b3 $5e $30
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_POOIE        ;; 05:70b5 $3e $4f
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_POOIE    ;; 05:70b7 $5e $4f
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_BLANKO       ;; 05:70b9 $3e $36
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_BLANKO   ;; 05:70bb $5e $36
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_BESTEST     ;; 05:70bd $3e $46
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_BESTEST ;; 05:70bf $5e $46
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:70ad $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:70ae $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:70af $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:70b0 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_HUSHIE ; 04     ;; 05:70b1 $3e $30
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HUSHIE ; 05 ;; 05:70b3 $5e $30
+    HamChatWheelRule_UseIfHave HAMCHAT_POOIE ; 06      ;; 05:70b5 $3e $4f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_POOIE ; 07  ;; 05:70b7 $5e $4f
+    HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 08     ;; 05:70b9 $3e $36
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLANKO ; 09 ;; 05:70bb $5e $36
+    HamChatWheelRule_UseIfHave HAMCHAT_BESTEST ; 10    ;; 05:70bd $3e $46
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BESTEST ; 11 ;; 05:70bf $5e $46
 
 data_05_70c1:
-    HamChatWheelRule_UseIfHave 0, HAMCHAT_GOP          ;; 05:70c1 $3e $45
-    HamChatWheelRule_UseIfDontHave 1, HAMCHAT_GOP      ;; 05:70c3 $5e $45
-    HamChatWheelRule_UseIfHave 2, HAMCHAT_ZUZUZU       ;; 05:70c5 $3e $31
-    HamChatWheelRule_UseIfDontHave 3, HAMCHAT_ZUZUZU   ;; 05:70c7 $5e $31
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_BLANKO       ;; 05:70c9 $3e $36
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_BLANKO   ;; 05:70cb $5e $36
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_HAMMO        ;; 05:70cd $3e $2f
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_HAMMO    ;; 05:70cf $5e $2f
+    HamChatWheelRule_UseIfHave HAMCHAT_GOP ; 00        ;; 05:70c1 $3e $45
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 01    ;; 05:70c3 $5e $45
+    HamChatWheelRule_UseIfHave HAMCHAT_ZUZUZU ; 02     ;; 05:70c5 $3e $31
+    HamChatWheelRule_UseIfDontHave HAMCHAT_ZUZUZU ; 03 ;; 05:70c7 $5e $31
+    HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 04     ;; 05:70c9 $3e $36
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BLANKO ; 05 ;; 05:70cb $5e $36
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 06      ;; 05:70cd $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 07  ;; 05:70cf $5e $2f
     db   $70, $67, $be, $01, $70, $67, $be, $02        ;; 05:70d1 ????????
     db   $70, $67, $be, $03, $70, $67, $be, $04        ;; 05:70d9 ????????
     db   $71, $14, $be, $07, $3f, $9e, $3e, $3f        ;; 05:70e1 ????????
@@ -3621,17 +3621,17 @@ data_05_70c1:
     db   $3f, $29, $ae, $05, $7e, $04, $3f, $19        ;; 05:7161 ????????
 
 data_05_7169:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:7169 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:716a $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:716b $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:716c $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_CHUKCHUK     ;; 05:716d $3e $4a
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_CHUKCHUK ;; 05:716f $5e $4a
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_TADAH        ;; 05:7171 $3e $38
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_TADAH    ;; 05:7173 $5e $38
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_POOIE        ;; 05:7175 $3e $4f
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_POOIE    ;; 05:7177 $5e $4f
-    HamChatWheelRule_AlwaysUse 10                      ;; 05:7179 $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7169 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:716a $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:716b $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:716c $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_CHUKCHUK ; 04   ;; 05:716d $3e $4a
+    HamChatWheelRule_UseIfDontHave HAMCHAT_CHUKCHUK ; 05 ;; 05:716f $5e $4a
+    HamChatWheelRule_UseIfHave HAMCHAT_TADAH ; 06      ;; 05:7171 $3e $38
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TADAH ; 07  ;; 05:7173 $5e $38
+    HamChatWheelRule_UseIfHave HAMCHAT_POOIE ; 08      ;; 05:7175 $3e $4f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_POOIE ; 09  ;; 05:7177 $5e $4f
+    HamChatWheelRule_AlwaysUse ; 10                    ;; 05:7179 $1a
     db   $00, $6d, $1e, $a2, $60, $0e, $be, $01        ;; 05:717a ????????
     db   $71, $1e, $be, $48, $6e, $69, $be, $0c        ;; 05:7182 ????????
     db   $3e, $74, $5e, $28, $3e, $8a, $72, $1f        ;; 05:718a ????????
@@ -3745,126 +3745,126 @@ data_05_7169:
     db   $00, $01, $02, $03, $04, $05, $06, $07        ;; 05:7331 ????????
 
 data_05_7339:
-    HamChatWheelOption 0, $08                          ;; 05:7339 $08
-    HamChatWheelOption 1, $09                          ;; 05:733a $09
-    HamChatWheelOption 2, $0a                          ;; 05:733b $0a
-    HamChatWheelOption 3, $0b                          ;; 05:733c $0b
-    HamChatWheelOption 4, $0c                          ;; 05:733d $0c
-    HamChatWheelOption 5, $0d                          ;; 05:733e $0d
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7339 $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:733a $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:733b $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:733c $0b
+    HamChatWheelOption $0c ; 04 Lookie                 ;; 05:733d $0c
+    HamChatWheelOption $0d ; 05 Tuggie                 ;; 05:733e $0d
 
 data_05_733f:
-    HamChatWheelOption 0, $08                          ;; 05:733f $08
-    HamChatWheelOption 1, $09                          ;; 05:7340 $09
-    HamChatWheelOption 2, $0a                          ;; 05:7341 $0a
-    HamChatWheelOption 3, $0b                          ;; 05:7342 $0b
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:733f $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7340 $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7341 $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:7342 $0b
 
 data_05_7343:
-    HamChatWheelOption 0, $08                          ;; 05:7343 $08
-    HamChatWheelOption 1, $09                          ;; 05:7344 $09
-    HamChatWheelOption 2, $0a                          ;; 05:7345 $0a
-    HamChatWheelOption 3, $0b                          ;; 05:7346 $0b
-    HamChatWheelOption 4, $0e                          ;; 05:7347 $0e
-    HamChatWheelOption 5, $0f                          ;; 05:7348 $0f
-    HamChatWheelOption 6, $0d                          ;; 05:7349 $0d
-    HamChatWheelOption 7, $0f                          ;; 05:734a $0f
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7343 $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7344 $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7345 $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:7346 $0b
+    HamChatWheelOption $0e ; 04 Stickie                ;; 05:7347 $0e
+    HamChatWheelOption $0f ; 05   ?                    ;; 05:7348 $0f
+    HamChatWheelOption $0d ; 06 Tuggie                 ;; 05:7349 $0d
+    HamChatWheelOption $0f ; 07   ?                    ;; 05:734a $0f
 
 data_05_734b:
-    HamChatWheelOption 0, $08                          ;; 05:734b $08
-    HamChatWheelOption 1, $09                          ;; 05:734c $09
-    HamChatWheelOption 2, $0a                          ;; 05:734d $0a
-    HamChatWheelOption 3, $0b                          ;; 05:734e $0b
-    HamChatWheelOption 4, $10                          ;; 05:734f $10
-    HamChatWheelOption 5, $0c                          ;; 05:7350 $0c
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:734b $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:734c $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:734d $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:734e $0b
+    HamChatWheelOption $10 ; 04 Scrit-T                ;; 05:734f $10
+    HamChatWheelOption $0c ; 05 Lookie                 ;; 05:7350 $0c
 
 data_05_7351:
-    HamChatWheelOption 0, $08                          ;; 05:7351 $08
-    HamChatWheelOption 1, $09                          ;; 05:7352 $09
-    HamChatWheelOption 2, $0a                          ;; 05:7353 $0a
-    HamChatWheelOption 3, $0b                          ;; 05:7354 $0b
-    HamChatWheelOption 4, $11                          ;; 05:7355 $11
-    HamChatWheelOption 5, $0f                          ;; 05:7356 $0f
-    HamChatWheelOption 6, $12                          ;; 05:7357 $12
-    HamChatWheelOption 7, $0f                          ;; 05:7358 $0f
-    HamChatWheelOption 8, $13                          ;; 05:7359 $13
-    HamChatWheelOption 9, $0f                          ;; 05:735a $0f
-    HamChatWheelOption 10, $14                         ;; 05:735b $14
-    HamChatWheelOption 11, $0f                         ;; 05:735c $0f
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7351 $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7352 $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7353 $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:7354 $0b
+    HamChatWheelOption $11 ; 04 Hammo                  ;; 05:7355 $11
+    HamChatWheelOption $0f ; 05   ?                    ;; 05:7356 $0f
+    HamChatWheelOption $12 ; 06 Gasp-P                 ;; 05:7357 $12
+    HamChatWheelOption $0f ; 07   ?                    ;; 05:7358 $0f
+    HamChatWheelOption $13 ; 08 Pakapaka               ;; 05:7359 $13
+    HamChatWheelOption $0f ; 09   ?                    ;; 05:735a $0f
+    HamChatWheelOption $14 ; 10 Goodgo                 ;; 05:735b $14
+    HamChatWheelOption $0f ; 11   ?                    ;; 05:735c $0f
 
 data_05_735d:
-    HamChatWheelOption 0, $08                          ;; 05:735d $08
-    HamChatWheelOption 1, $09                          ;; 05:735e $09
-    HamChatWheelOption 2, $0a                          ;; 05:735f $0a
-    HamChatWheelOption 3, $0b                          ;; 05:7360 $0b
-    HamChatWheelOption 4, $15                          ;; 05:7361 $15
-    HamChatWheelOption 5, $16                          ;; 05:7362 $16
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:735d $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:735e $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:735f $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:7360 $0b
+    HamChatWheelOption $15 ; 04 Yep-P                  ;; 05:7361 $15
+    HamChatWheelOption $16 ; 05 No-P                   ;; 05:7362 $16
     db   $15, $16, $17, $18, $19, $1a                  ;; 05:7363 ??????
 
 data_05_7369:
-    HamChatWheelOption 0, $08                          ;; 05:7369 $08
-    HamChatWheelOption 1, $09                          ;; 05:736a $09
-    HamChatWheelOption 2, $0a                          ;; 05:736b $0a
-    HamChatWheelOption 3, $0b                          ;; 05:736c $0b
-    HamChatWheelOption 4, $13                          ;; 05:736d $13
-    HamChatWheelOption 5, $10                          ;; 05:736e $10
-    HamChatWheelOption 6, $1b                          ;; 05:736f $1b
-    HamChatWheelOption 7, $1c                          ;; 05:7370 $1c
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7369 $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:736a $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:736b $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:736c $0b
+    HamChatWheelOption $13 ; 04 Pakapaka               ;; 05:736d $13
+    HamChatWheelOption $10 ; 05 Scrit-T                ;; 05:736e $10
+    HamChatWheelOption $1b ; 06 Scoochie               ;; 05:736f $1b
+    HamChatWheelOption $1c ; 07 Go-P                   ;; 05:7370 $1c
 
 data_05_7371:
-    HamChatWheelOption 0, $08                          ;; 05:7371 $08
-    HamChatWheelOption 1, $09                          ;; 05:7372 $09
-    HamChatWheelOption 2, $0a                          ;; 05:7373 $0a
-    HamChatWheelOption 3, $0b                          ;; 05:7374 $0b
-    HamChatWheelOption 4, $10                          ;; 05:7375 $10
-    HamChatWheelOption 5, $1d                          ;; 05:7376 $1d
-    HamChatWheelOption 6, $0f                          ;; 05:7377 $0f
-    HamChatWheelOption 7, $1b                          ;; 05:7378 $1b
-    HamChatWheelOption 8, $1c                          ;; 05:7379 $1c
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7371 $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7372 $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7373 $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:7374 $0b
+    HamChatWheelOption $10 ; 04 Scrit-T                ;; 05:7375 $10
+    HamChatWheelOption $1d ; 05 Bizzaroo               ;; 05:7376 $1d
+    HamChatWheelOption $0f ; 06   ?                    ;; 05:7377 $0f
+    HamChatWheelOption $1b ; 07 Scoochie               ;; 05:7378 $1b
+    HamChatWheelOption $1c ; 08 Go-P                   ;; 05:7379 $1c
 
 data_05_737a:
-    HamChatWheelOption 0, $08                          ;; 05:737a $08
-    HamChatWheelOption 1, $09                          ;; 05:737b $09
-    HamChatWheelOption 2, $0a                          ;; 05:737c $0a
-    HamChatWheelOption 3, $0b                          ;; 05:737d $0b
-    HamChatWheelOption 4, $13                          ;; 05:737e $13
-    HamChatWheelOption 5, $0c                          ;; 05:737f $0c
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:737a $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:737b $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:737c $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:737d $0b
+    HamChatWheelOption $13 ; 04 Pakapaka               ;; 05:737e $13
+    HamChatWheelOption $0c ; 05 Lookie                 ;; 05:737f $0c
 
 data_05_7380:
-    HamChatWheelOption 0, $08                          ;; 05:7380 $08
-    HamChatWheelOption 1, $09                          ;; 05:7381 $09
-    HamChatWheelOption 2, $0a                          ;; 05:7382 $0a
-    HamChatWheelOption 3, $0b                          ;; 05:7383 $0b
-    HamChatWheelOption 4, $0d                          ;; 05:7384 $0d
-    HamChatWheelOption 5, $0f                          ;; 05:7385 $0f
-    HamChatWheelOption 6, $13                          ;; 05:7386 $13
-    HamChatWheelOption 7, $1b                          ;; 05:7387 $1b
-    HamChatWheelOption 8, $1c                          ;; 05:7388 $1c
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7380 $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7381 $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7382 $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:7383 $0b
+    HamChatWheelOption $0d ; 04 Tuggie                 ;; 05:7384 $0d
+    HamChatWheelOption $0f ; 05   ?                    ;; 05:7385 $0f
+    HamChatWheelOption $13 ; 06 Pakapaka               ;; 05:7386 $13
+    HamChatWheelOption $1b ; 07 Scoochie               ;; 05:7387 $1b
+    HamChatWheelOption $1c ; 08 Go-P                   ;; 05:7388 $1c
 
 data_05_7389:
-    HamChatWheelOption 0, $08                          ;; 05:7389 $08
-    HamChatWheelOption 1, $09                          ;; 05:738a $09
-    HamChatWheelOption 2, $0a                          ;; 05:738b $0a
-    HamChatWheelOption 3, $0b                          ;; 05:738c $0b
-    HamChatWheelOption 4, $0e                          ;; 05:738d $0e
-    HamChatWheelOption 5, $0d                          ;; 05:738e $0d
-    HamChatWheelOption 6, $0f                          ;; 05:738f $0f
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7389 $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:738a $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:738b $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:738c $0b
+    HamChatWheelOption $0e ; 04 Stickie                ;; 05:738d $0e
+    HamChatWheelOption $0d ; 05 Tuggie                 ;; 05:738e $0d
+    HamChatWheelOption $0f ; 06   ?                    ;; 05:738f $0f
 
 data_05_7390:
-    HamChatWheelOption 0, $08                          ;; 05:7390 $08
-    HamChatWheelOption 1, $09                          ;; 05:7391 $09
-    HamChatWheelOption 2, $0a                          ;; 05:7392 $0a
-    HamChatWheelOption 3, $0b                          ;; 05:7393 $0b
-    HamChatWheelOption 4, $1b                          ;; 05:7394 $1b
-    HamChatWheelOption 5, $13                          ;; 05:7395 $13
+    HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7390 $08
+    HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7391 $09
+    HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7392 $0a
+    HamChatWheelOption $0b ; 03 Digdig                 ;; 05:7393 $0b
+    HamChatWheelOption $1b ; 04 Scoochie               ;; 05:7394 $1b
+    HamChatWheelOption $13 ; 05 Pakapaka               ;; 05:7395 $13
     db   $71, $1c, $be, $09, $00, $6c, $07, $a2        ;; 05:7396 ????????
     db   $80, $0e, $be, $01                            ;; 05:739e ????
 
 data_05_73a2:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:73a2 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:73a3 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:73a4 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:73a5 $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:73a6 $1a
-    HamChatWheelRule_AlwaysUse 5                       ;; 05:73a7 $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:73a2 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:73a3 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:73a4 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:73a5 $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:73a6 $1a
+    HamChatWheelRule_AlwaysUse ; 05                    ;; 05:73a7 $1a
     db   $1a, $1a, $b2, $02, $7e, $39, $70, $0d        ;; 05:73a8 ????????
     db   $be, $14, $70, $0d, $be, $0a, $3e, $a8        ;; 05:73b0 ????????
     db   $70, $4c, $be, $10, $70, $4c, $be, $08        ;; 05:73b8 ????????
@@ -3889,14 +3889,14 @@ data_05_73a2:
     db   $3e, $03, $71, $03, $be, $04                  ;; 05:7450 ??????
 
 data_05_7456:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:7456 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:7457 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:7458 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:7459 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_STICKIE      ;; 05:745a $3e $1c
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_STICKIE  ;; 05:745c $5e $1c
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_TUGGIE       ;; 05:745e $3e $50
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_TUGGIE   ;; 05:7460 $5e $50
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7456 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:7457 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:7458 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:7459 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_STICKIE ; 04    ;; 05:745a $3e $1c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 05 ;; 05:745c $5e $1c
+    HamChatWheelRule_UseIfHave HAMCHAT_TUGGIE ; 06     ;; 05:745e $3e $50
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TUGGIE ; 07 ;; 05:7460 $5e $50
     db   $3f, $80, $71, $03, $be, $07, $3f, $81        ;; 05:7462 ????????
     db   $71, $03, $be, $07, $b2, $07, $7f, $03        ;; 05:746a ????????
     db   $71, $03, $be, $08, $71, $03, $be, $09        ;; 05:7472 ????????
@@ -3918,18 +3918,18 @@ data_05_7456:
     db   $3f, $8c                                      ;; 05:74f2 ??
 
 data_05_74f4:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:74f4 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:74f5 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:74f6 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:74f7 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_HAMMO        ;; 05:74f8 $3e $2f
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_HAMMO    ;; 05:74fa $5e $2f
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_GASPP        ;; 05:74fc $3e $2d
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_GASPP    ;; 05:74fe $5e $2d
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_PAKAPAKA     ;; 05:7500 $3e $44
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_PAKAPAKA ;; 05:7502 $5e $44
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_GOODGO      ;; 05:7504 $3e $42
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_GOODGO  ;; 05:7506 $5e $42
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:74f4 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:74f5 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:74f6 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:74f7 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 04      ;; 05:74f8 $3e $2f
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 05  ;; 05:74fa $5e $2f
+    HamChatWheelRule_UseIfHave HAMCHAT_GASPP ; 06      ;; 05:74fc $3e $2d
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GASPP ; 07  ;; 05:74fe $5e $2d
+    HamChatWheelRule_UseIfHave HAMCHAT_PAKAPAKA ; 08   ;; 05:7500 $3e $44
+    HamChatWheelRule_UseIfDontHave HAMCHAT_PAKAPAKA ; 09 ;; 05:7502 $5e $44
+    HamChatWheelRule_UseIfHave HAMCHAT_GOODGO ; 10     ;; 05:7504 $3e $42
+    HamChatWheelRule_UseIfDontHave HAMCHAT_GOODGO ; 11 ;; 05:7506 $5e $42
     db   $3f, $8b, $6e, $79, $be, $01, $3f, $91        ;; 05:7508 ????????
     db   $00, $6c, $78, $a2, $06, $0e, $be, $01        ;; 05:7510 ????????
     db   $00, $6d, $1c, $a2, $90, $0e, $be, $01        ;; 05:7518 ????????
@@ -4005,15 +4005,15 @@ data_05_74f4:
     db   $73, $14, $be, $03, $b2, $03, $7f, $14        ;; 05:7748 ????????
 
 data_05_7750:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:7750 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:7751 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:7752 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:7753 $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:7754 $1a
-    HamChatWheelRule_UseIfHave 5, HAMCHAT_BIZZAROO     ;; 05:7755 $3e $34
-    HamChatWheelRule_UseIfDontHave 6, HAMCHAT_BIZZAROO ;; 05:7757 $5e $34
-    HamChatWheelRule_AlwaysUse 7                       ;; 05:7759 $1a
-    HamChatWheelRule_AlwaysUse 8                       ;; 05:775a $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7750 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:7751 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:7752 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:7753 $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:7754 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_BIZZAROO ; 05   ;; 05:7755 $3e $34
+    HamChatWheelRule_UseIfDontHave HAMCHAT_BIZZAROO ; 06 ;; 05:7757 $5e $34
+    HamChatWheelRule_AlwaysUse ; 07                    ;; 05:7759 $1a
+    HamChatWheelRule_AlwaysUse ; 08                    ;; 05:775a $1a
     db   $3e, $ff, $70, $37, $be, $00, $71, $15        ;; 05:775b ????????
     db   $be, $03, $71, $15, $be, $05, $71, $1c        ;; 05:7763 ????????
     db   $be, $00, $73, $1c, $be, $48, $73, $1c        ;; 05:776b ????????
@@ -4034,12 +4034,12 @@ data_05_7750:
     db   $be, $01, $5e, $96                            ;; 05:77e3 ????
 
 data_05_77e7:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:77e7 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:77e8 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:77e9 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:77ea $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:77eb $1a
-    HamChatWheelRule_UseIfHave 5, HAMCHAT_LOOKIE       ;; 05:77ec $3e $4b
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:77e7 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:77e8 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:77e9 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:77ea $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:77eb $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_LOOKIE ; 05     ;; 05:77ec $3e $4b
     db   $6e, $04, $a4, $06, $5f, $1a, $6e, $04        ;; 05:77ee ????????
     db   $be, $06, $70, $2a, $be, $00, $70, $0d        ;; 05:77f6 ????????
     db   $be, $5a, $b2, $01, $7e, $75, $b2, $02        ;; 05:77fe ????????
@@ -4049,15 +4049,15 @@ data_05_77e7:
     db   $be, $05                                      ;; 05:781e ??
 
 data_05_7820:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:7820 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:7821 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:7822 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:7823 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_TUGGIE       ;; 05:7824 $3e $50
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_TUGGIE   ;; 05:7826 $5e $50
-    HamChatWheelRule_AlwaysUse 6                       ;; 05:7828 $1a
-    HamChatWheelRule_AlwaysUse 7                       ;; 05:7829 $1a
-    HamChatWheelRule_AlwaysUse 8                       ;; 05:782a $1a
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7820 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:7821 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:7822 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:7823 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_TUGGIE ; 04     ;; 05:7824 $3e $50
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TUGGIE ; 05 ;; 05:7826 $5e $50
+    HamChatWheelRule_AlwaysUse ; 06                    ;; 05:7828 $1a
+    HamChatWheelRule_AlwaysUse ; 07                    ;; 05:7829 $1a
+    HamChatWheelRule_AlwaysUse ; 08                    ;; 05:782a $1a
     db   $3e, $fc, $71, $18, $be, $04, $71, $18        ;; 05:782b ????????
     db   $be, $07, $00, $71, $18, $a2, $06, $06        ;; 05:7833 ????????
     db   $00, $71, $18, $a2, $08, $1e, $71, $18        ;; 05:783b ????????
@@ -4065,13 +4065,13 @@ data_05_7820:
     db   $be, $0a, $3e, $67, $3e, $fd                  ;; 05:784b ??????
 
 data_05_7851:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:7851 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:7852 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:7853 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:7854 $1a
-    HamChatWheelRule_AlwaysUse 4                       ;; 05:7855 $1a
-    HamChatWheelRule_UseIfHave 5, HAMCHAT_TUGGIE       ;; 05:7856 $3e $50
-    HamChatWheelRule_UseIfDontHave 6, HAMCHAT_TUGGIE   ;; 05:7858 $5e $50
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7851 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:7852 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:7853 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:7854 $1a
+    HamChatWheelRule_AlwaysUse ; 04                    ;; 05:7855 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_TUGGIE ; 05     ;; 05:7856 $3e $50
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TUGGIE ; 06 ;; 05:7858 $5e $50
     db   $3f, $4a, $71, $18, $be, $0e, $71, $17        ;; 05:785a ????????
     db   $be, $02, $71, $17, $be, $01, $71, $18        ;; 05:7862 ????????
     db   $be, $03, $71, $18, $be, $08, $71, $18        ;; 05:786a ????????

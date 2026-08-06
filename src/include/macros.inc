@@ -2,30 +2,30 @@ MACRO ARGUMENT_WORD
 dw \1
 ENDM
 MACRO HamChatWheelOption
-db \2
+db \1
 ENDM
 MACRO HamChatWheelRule_AlwaysUse
 db $1a
 ENDM
 MACRO HamChatWheelRule_DefaultCase_Pair
+db \1
 db \2
-db \3
 ENDM
 MACRO HamChatWheelRule_DefaultCase_Single
-db \2
+db \1
 ENDM
 MACRO HamChatWheelRule_DefaultCase_Trio
+db \1
 db \2
 db \3
-db \4
 ENDM
 MACRO HamChatWheelRule_UseIfDontHave
 db $5e
-db \2
+db \1
 ENDM
 MACRO HamChatWheelRule_UseIfHave
 db $3e
-db \2
+db \1
 ENDM
 MACRO Op02_Unknown_Jump
 db $02

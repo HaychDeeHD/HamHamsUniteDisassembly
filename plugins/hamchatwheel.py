@@ -99,13 +99,16 @@ def hamchatwheeloptions(memory, addr, amount="4"):
 class HamChatWheelOptionsBlock(Block):
     def __init__(self, memory, addr, amount):
         super().__init__(memory, addr, size=amount)
-        RomInfo.macros["HamChatWheelOption"] = "db \\2"
+        RomInfo.macros["HamChatWheelOption"] = "db \\1"
 
         self.amount = amount
 
     def export(self, file):
         for i in range(self.amount):
-            file.asmLine(1, "HamChatWheelOption", str(i), "$%02x" % self.memory.byte(file.addr))
+            optionValue = self.memory.byte(file.addr)
+            optionText = getHamChatWheelOptionText(file.addr, int(optionValue))
+            self.memory.addInlineComment(file.addr, " %02d %s" % (i, optionText))
+            file.asmLine(1, "HamChatWheelOption", "$%02x" % optionValue)
 
 @annotation(priority=1)
 def hamchatwheelrules(memory, addr, amount="4"):
@@ -115,12 +118,12 @@ class HamChatWheelRulesBlock(Block):
     def __init__(self, memory, addr, amount):
         super().__init__(memory, addr)
         RomInfo.macros["HamChatWheelRule_AlwaysUse"] = "db $1a"
-        RomInfo.macros["HamChatWheelRule_UseIfHave"] = "db $3e\ndb \\2"
-        RomInfo.macros["HamChatWheelRule_UseIfDontHave"] = "db $5e\ndb \\2"
-        RomInfo.macros["HamChatWheelRule_DefaultCase_Single"] = "db \\2"
-        RomInfo.macros["HamChatWheelRule_DefaultCase_Pair"] = "db \\2\ndb \\3"
+        RomInfo.macros["HamChatWheelRule_UseIfHave"] = "db $3e\ndb \\1"
+        RomInfo.macros["HamChatWheelRule_UseIfDontHave"] = "db $5e\ndb \\1"
+        RomInfo.macros["HamChatWheelRule_DefaultCase_Single"] = "db \\1"
+        RomInfo.macros["HamChatWheelRule_DefaultCase_Pair"] = "db \\1\ndb \\2"
         # TODO: I do not see any trios in bank 5. Remove?
-        RomInfo.macros["HamChatWheelRule_DefaultCase_Trio"] = "db \\2\ndb \\3\ndb \\4"
+        RomInfo.macros["HamChatWheelRule_DefaultCase_Trio"] = "db \\1\ndb \\2\ndb \\3"
         RomInfo.constants["INVENTORY"] = {v: k for k, v in BITARRAY_INDEX_TO_HAMCHAT.items()}
 
         self.hamChatWheelRulesArgsList = []
@@ -134,13 +137,13 @@ class HamChatWheelRulesBlock(Block):
             # 5e -> 010
             match ruleOpcode:
                 case 0x1A:
-                    self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_AlwaysUse", str(i)))
+                    self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_AlwaysUse"))
                     size += 1
                 case 0x3E | 0x3F:
-                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfHave", str(i), BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(addr + size + 1)]))
+                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfHave", BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(addr + size + 1)]))
                     size += 2
                 case 0x5E | 0x5F:
-                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfDontHave", str(i), BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(addr + size + 1)]))
+                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfDontHave", BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(addr + size + 1)]))
                     size += 2
                 case _:
                     # This works the same as the Op16 SubOps default case. See hamscript.py.
@@ -154,13 +157,13 @@ class HamChatWheelRulesBlock(Block):
                         byte2 = memory.byte(addr + size + 1)
                         byte3 = memory.byte(addr + size + 2)
                         if xbits == 0b000:
-                            self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_DefaultCase_Single", str(i), "$%02x" % firstByte))
+                            self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_DefaultCase_Single", "$%02x" % firstByte))
                             size += 1
                         elif xbits == 0b110:
-                            self.hamChatWheelRulesArgsList.append((3, "HamChatWheelRule_DefaultCase_Trio", str(i), "$%02x" % firstByte, "$%02x" % byte2, "$%02x" % byte3))
+                            self.hamChatWheelRulesArgsList.append((3, "HamChatWheelRule_DefaultCase_Trio", "$%02x" % firstByte, "$%02x" % byte2, "$%02x" % byte3))
                             size += 3
                         else:
-                            self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_DefaultCase_Pair", str(i), "$%02x" % firstByte, "$%02x" % byte2))
+                            self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_DefaultCase_Pair", "$%02x" % firstByte, "$%02x" % byte2))
                             size += 2
 
                         if ybits in [0b1101, 0b1110, 0b1111]:
@@ -170,5 +173,369 @@ class HamChatWheelRulesBlock(Block):
             self.resize(size)
 
     def export(self, file):
-        for hamChatWheelRuleArgs in self.hamChatWheelRulesArgsList:
+        for i, hamChatWheelRuleArgs in enumerate(self.hamChatWheelRulesArgsList):
+            self.memory.addInlineComment(file.addr, " %02d" % i)
             file.asmLine(*hamChatWheelRuleArgs)
+
+# Hardcoded to match the sections in bank 05. Ordered list of tuples.
+# Tup[0] is starting address in bank 05, Tup[1] is that section's text table.
+HAMCHATWHEELOPTIONS_MEANINGS_TABLE = [
+    # MISC (?)
+    (0x0000, [
+        "Game",                                
+        "Flag",                                
+        "H.H.Dic",                                
+        "Sound",                                
+        "Dance",                                
+        "Face",                                
+        "Machine",                                
+        "Ver",                                
+        "Ending",                                
+        "Epilog",                                
+        "Nobody",                                
+        "Bij Get",                                
+        "Oxn Get",                                
+        "Pas Get",                                
+        "All Get",                                
+        "Ham-Chat",                                
+        "Move",                                
+        "Save",                                
+        "SaveClr",                                
+        "Item",                                
+        "AllGet",                                
+        "SeedGet",                                
+        "Go-P",                                
+        "Zuzuzu",                                
+        "  ?  ",                                
+        "Blanko",                                
+        "Hammo",                                
+        "Hamha",                                
+        "Hif-hif",                                
+        "Tack-Q",                                
+        "Digdig",                                
+        "Pakapaka",                                
+        "Scrit-T",
+        "Scoochie",
+    ]),
+    # CLUBHOUSE
+    (0x448d, [
+        "LivingRoom",                     
+        "Boutique",                     
+        "Bijou",                     
+        "Maxwell",                     
+        "Oxnard",                     
+        "Pashmina",                     
+        "Panda",                     
+        "Jingle",                     
+        "Sandy",                     
+        "Stan",                     
+        "Penelope",                     
+        "Cappy",                     
+        "Howdy",                     
+        "Dexter",                     
+        "Boss",                     
+        "Snoozer",                     
+        "Dance Hall",                     
+        "01",                     
+        "02",                     
+        "03",                     
+        "04",                     
+        "05",                     
+        "06",                     
+        "07",                     
+        "08",                     
+        "09",                     
+        "10",                     
+        "Yep-P",                     
+        "No-P",                     
+        "ShaShaa<32>",                  
+        "  ?  ",                     
+        "Zuzuzu",                     
+        "Minglie",                     
+        "Noworrie",                     
+        "Hamha",                     
+        "Hif-hif",                     
+        "Tack-Q",                     
+        "Digdig",                     
+        "Mega-Q",                     
+        "Teenie",                     
+        "Sparklie",                     
+        "Hamsolo",                     
+        "Delichu",                     
+        "Thank-Q",                     
+        "Koochi-Q",                     
+        "Whawha",                     
+        "Blash-T",                     
+        "Shockie",                     
+        "Hamspar",                     
+        "Blahh",                     
+        "Hushie",                     
+        "Go-P",                     
+        "Blissie",                     
+        "Goodgo",                     
+        "Hamchu",                     
+        "Bizzaroo",                     
+        "Stickie",                     
+        "Meep-P",                     
+        "Nopookie",                     
+        "Nopibloo",                     
+        "Gasp-P",                     
+        "Hammo",                     
+        "Lookie",                     
+        "Hamteam",                     
+        "Chukchuk",                     
+        "Wit-T",                     
+        "Clapclap",                     
+        "Wishie",                     
+        "Bestest",                     
+        "Pooie",                     
+        "Dingbang",                     
+        "Bye-Q",                     
+        "Wondachu",                     
+        "Spiffie",                     
+        "Giftee",                     
+        "Smoochie",                     
+        "Oopsie",                     
+        "Ta-dah",                     
+        "Hotchu",                     
+        "Frost-T",                     
+        "Hamtast",                     
+        "Blushie",                     
+        "Blanko",                     
+        "Smidgie",                     
+        "Wabldobl",                     
+        "See-Tru",                     
+    ]),
+    # SUNFLOWER PARK
+    (0x531e, [
+        "sabaku1",                     
+        "sabaku2",                     
+        "sabaku3",                     
+        "sabaku4",                     
+        "kadan1",                     
+        "kadan2",                     
+        "kadan3",                     
+        "hanazono",                     
+        "suberidai1",                     
+        "J Gym",                     
+        "Hamha",                     
+        "Hif-hif",                     
+        "Tack-Q",                     
+        "Digdig",                     
+        "Chukchuk",                     
+        "  ?  ",                     
+        "Hushgo",                     
+        "Meep-P",                     
+        "Hushie",                     
+        "Yep-P",                     
+        "No-P",                     
+        "Lookie",                     
+        "Go-P",                     
+        "Delichu",                     
+        "Koochi-Q",                     
+        "Teenie",                     
+        "Mega-Q",                     
+        "Blanko",                     
+        "Gasp-P",                     
+        "Zuzuzu",                     
+        "Hammo",                     
+    ]),
+    # ACORN SHRINE
+    (0x590e, [
+        "deiriguti",                     
+        "keidai",                     
+        "mori3",                     
+        "mori5",                     
+        "ribbon",                     
+        "Hamha",                     
+        "Hif-hif",                     
+        "Tack-Q",                     
+        "Digdig",                     
+        "Scoochie",                     
+        "Go-P",                     
+        "Pakapaka",                     
+        "Scrit-T",                     
+        "Teenie",                     
+        "  ?  ",                     
+        "Koochi-Q",                     
+        "Hamsolo",                     
+        "Mega-Q",                     
+        "Ta-dah",                     
+        "Yep-P",                     
+        "No-P",                     
+        "Oopsie",                     
+        "Sparklie",                     
+        "Nopibloo",                     
+    ]),
+    # SUNFLOWER ELEMENTARY
+    (0x5ea0, [
+        "koumon",                     
+        "rika",                     
+        "1F-rouka",                     
+        "2F-rouka",                     
+        "1F-kaidan",                     
+        "uraniwa",                     
+        "namikimiti",                     
+        "kyuusyoku",                     
+        "kousaku",                     
+        "PC",                     
+        "Hamha",                     
+        "Hif-hif",                     
+        "Tack-Q",                     
+        "Digdig",                     
+        "Yep-P",                     
+        "No-P",                     
+        "Blash-T",                     
+        "Bestest",                     
+        "  ?  ",                     
+        "Hamchu",                     
+        "Oopsie",                     
+        "Goodgo",                     
+        "Delichu",                     
+        "Mega-Q",                     
+        "Huffpuff",                     
+        "Dingbang",                     
+        "Gasp-P",                     
+        "Whawha",                     
+        "Bizzaroo",                     
+        "Tuggie",                     
+        "Stickie",                     
+        "Meep-P",                     
+        "Chukchuk",                     
+        "Pooie",                     
+        "Koochi-Q",                     
+        "Smoochie",                     
+    ]),
+    # SKY GARDEN
+    (0x6458, [
+        "niwa1-naka",                     
+        "niwa1-R",                     
+        "niwa1-L",                     
+        "veranda1-D",                     
+        "veranda2",                     
+        "veranda4",                     
+        "funnsui",                     
+        "koisi-heya",                     
+        "veranda5",                     
+        "Go-P",                     
+        "Zuzuzu",                     
+        "  ?  ",                     
+        "Blanko",                     
+        "Hammo",                     
+        "Yep-P",                     
+        "No-P",                     
+        "Hamha",                     
+        "Hif-hif",                     
+        "Tack-Q",                     
+        "Digdig",                     
+        "Nopibloo",                     
+        "Stickie",                     
+        "Bizzaroo",                     
+        "Scoochie",                     
+        "Lookie",                     
+        "Spiffie",                     
+        "Koochi-Q",                     
+        "Hamtast",                     
+        "Herk-Q",                     
+        "Goodgo",                     
+        "Hamteam",                     
+        "Tuggie",                     
+        "Scrit-T",                     
+        "Chukchuk",                     
+        "Krmpkrmp",                     
+        "Wishie",                     
+        "Walnut    : 1 Seed",                     
+        "Carrot    : 3 Seeds",                     
+        "Strawberry: 5 Seeds",                     
+        "Cancel",                     
+    ]),
+    # RUINS
+    (0x6aa9, [
+        "syuuhen",                     
+        "iriguti",                     
+        "tokei-mae",                     
+        "TV-ura",                     
+        "staff room",                     
+        "Tack-QBowl",                     
+        "reozouko-2",                     
+        "reizouko-R",                     
+        "kanaami-L",                     
+        "furu-tire",                     
+        "kanaami-LD",                     
+        "Hamha",                     
+        "Hif-hif",                     
+        "Tack-Q",                     
+        "Digdig",                     
+        "Yep-P",                     
+        "Gasp-P",                     
+        "Bestest",                     
+        "  ?  ",                     
+        "Herk-Q",                     
+        "No-P",                     
+        "ShaShaa<32>",                  
+        "Pooie",                     
+        "Hamsolo",                     
+        "Koochi-Q",                     
+        "Clapclap",                     
+        "Lookie",                     
+        "Scrit-T",                     
+        "Go-P",                     
+        "Stickie",                     
+        " ? ",                     
+        "Meep-P",                     
+        "Tuggie",                     
+        "Hammo",                     
+        "Sparklie",                     
+        "Hushie",                     
+        "Blanko",                     
+        "Zuzuzu",                     
+        "Game explanation",                     
+        "Prize explanation",                     
+        "Chukchuk",                     
+        "Ta-dah",                     
+    ]),
+    # SUNFLOWER MARKET
+    (0x7202, [
+        "tuuro-C",                     
+        "seika-sita",                     
+        "bicycle",                     
+        "kasi-uriba",                     
+        "souko-L",                     
+        "innryou-D",                     
+        "register",                     
+        "uribasitaB",                     
+        "Hamha",                     
+        "Hif-hif",                     
+        "Tack-Q",                     
+        "Digdig",                     
+        "Lookie",                     
+        "Tuggie",                     
+        "Stickie",                     
+        "  ?  ",                     
+        "Scrit-T",                     
+        "Hammo",                     
+        "Gasp-P",                     
+        "Pakapaka",                     
+        "Goodgo",                     
+        "Yep-P",                     
+        "No-P",                     
+        "Flugo",                     
+        "Heat Patch",                     
+        "Striped Sticker",                     
+        "Cancel",                     
+        "Scoochie",                     
+        "Go-P",                     
+        "Bizzaroo",                     
+    ]),
+]
+
+def getHamChatWheelOptionText(addr, optionValue):
+    foundRegionTable = []
+    for startingAddress, regionTable in HAMCHATWHEELOPTIONS_MEANINGS_TABLE:
+        if startingAddress > addr:
+            break
+        foundRegionTable = regionTable
+    try: 
+        return foundRegionTable[optionValue]
+    except Exception as e:
+        raise Exception("HamChatWheelOption doesn't match nearest table $%04x, $%02x" % (addr, optionValue)) from e

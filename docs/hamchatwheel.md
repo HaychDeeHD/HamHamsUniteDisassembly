@@ -63,38 +63,38 @@ Here is the relevant data from each of those pointer locations:
 ```
 ;@hamchatwheeloptions amount=12
 SadMaxwellOptions:
-    HamChatWheelOption 0, $05                          ;; 05:5a39 $05
-    HamChatWheelOption 1, $06                          ;; 05:5a3a $06
-    HamChatWheelOption 2, $07                          ;; 05:5a3b $07
-    HamChatWheelOption 3, $08                          ;; 05:5a3c $08
-    HamChatWheelOption 4, $0d                          ;; 05:5a3d $0d
-    HamChatWheelOption 5, $0e                          ;; 05:5a3e $0e
-    HamChatWheelOption 6, $16                          ;; 05:5a3f $16
-    HamChatWheelOption 7, $0e                          ;; 05:5a40 $0e
-    HamChatWheelOption 8, $17                          ;; 05:5a41 $17
-    HamChatWheelOption 9, $0e                          ;; 05:5a42 $0e
-    HamChatWheelOption 10, $15                         ;; 05:5a43 $15
-    HamChatWheelOption 11, $0e                         ;; 05:5a44 $0e
+    HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a39 $05
+    HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a3a $06
+    HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a3b $07
+    HamChatWheelOption $08 ; 03 Digdig                 ;; 05:5a3c $08
+    HamChatWheelOption $0d ; 04 Teenie                 ;; 05:5a3d $0d
+    HamChatWheelOption $0e ; 05   ?                    ;; 05:5a3e $0e
+    HamChatWheelOption $16 ; 06 Sparklie               ;; 05:5a3f $16
+    HamChatWheelOption $0e ; 07   ?                    ;; 05:5a40 $0e
+    HamChatWheelOption $17 ; 08 Nopibloo               ;; 05:5a41 $17
+    HamChatWheelOption $0e ; 09   ?                    ;; 05:5a42 $0e
+    HamChatWheelOption $15 ; 10 Oopsie                 ;; 05:5a43 $15
+    HamChatWheelOption $0e ; 11   ?                    ;; 05:5a44 $0e
 ```
 
 ```
 ;@hamchatwheelrules amount=12
 SadMaxwellRules:
-    HamChatWheelRule_AlwaysUse 0                       ;; 05:5e44 $1a
-    HamChatWheelRule_AlwaysUse 1                       ;; 05:5e45 $1a
-    HamChatWheelRule_AlwaysUse 2                       ;; 05:5e46 $1a
-    HamChatWheelRule_AlwaysUse 3                       ;; 05:5e47 $1a
-    HamChatWheelRule_UseIfHave 4, HAMCHAT_TEENIE       ;; 05:5e48 $3e $14
-    HamChatWheelRule_UseIfDontHave 5, HAMCHAT_TEENIE   ;; 05:5e4a $5e $14
-    HamChatWheelRule_UseIfHave 6, HAMCHAT_SPARKLIE     ;; 05:5e4c $3e $26
-    HamChatWheelRule_UseIfDontHave 7, HAMCHAT_SPARKLIE ;; 05:5e4e $5e $26
-    HamChatWheelRule_UseIfHave 8, HAMCHAT_NOPIBLOO     ;; 05:5e50 $3e $2c
-    HamChatWheelRule_UseIfDontHave 9, HAMCHAT_NOPIBLOO ;; 05:5e52 $5e $2c
-    HamChatWheelRule_UseIfHave 10, HAMCHAT_OOPSIE      ;; 05:5e54 $3e $29
-    HamChatWheelRule_UseIfDontHave 11, HAMCHAT_OOPSIE  ;; 05:5e56 $5e $29
+    HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5e44 $1a
+    HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5e45 $1a
+    HamChatWheelRule_AlwaysUse ; 02                    ;; 05:5e46 $1a
+    HamChatWheelRule_AlwaysUse ; 03                    ;; 05:5e47 $1a
+    HamChatWheelRule_UseIfHave HAMCHAT_TEENIE ; 04     ;; 05:5e48 $3e $14
+    HamChatWheelRule_UseIfDontHave HAMCHAT_TEENIE ; 05 ;; 05:5e4a $5e $14
+    HamChatWheelRule_UseIfHave HAMCHAT_SPARKLIE ; 06   ;; 05:5e4c $3e $26
+    HamChatWheelRule_UseIfDontHave HAMCHAT_SPARKLIE ; 07 ;; 05:5e4e $5e $26
+    HamChatWheelRule_UseIfHave HAMCHAT_NOPIBLOO ; 08   ;; 05:5e50 $3e $2c
+    HamChatWheelRule_UseIfDontHave HAMCHAT_NOPIBLOO ; 09 ;; 05:5e52 $5e $2c
+    HamChatWheelRule_UseIfHave HAMCHAT_OOPSIE ; 10     ;; 05:5e54 $3e $29
+    HamChatWheelRule_UseIfDontHave HAMCHAT_OOPSIE ; 11 ;; 05:5e56 $5e $29
 ```
 
-Pay attention to the end-of-line comments to better understand the actual data. The macros I added are glorified comments and have ignored index arguments for reading convenience. 
+Pay attention to the end-of-line ';;' comments to better understand the actual data. The macros I added are mostly there to document; HamChatWheelOption does nothing but pass-through its 1 argument byte. I added inline comments to note the option/rule's index just for convenience.
 
 ### HamChatWheelOptions
 
