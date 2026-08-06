@@ -3,7 +3,7 @@ from block.base import Block
 from romInfo import RomInfo
 from memory.rom import RomMemory
 
-from hamtext import maybeCreateTextBlocks, addKnownTextAddress
+from hamtext import maybeCreateTextBlocks, addKnownTextAddress, getTextFromTextBlockAtAddress
 from hamchatwheel import HamChatWheelOptionsBlock, HamChatWheelRulesBlock
 
 
@@ -105,6 +105,16 @@ def label3ByteRomAddressArg(memory, addr, addrType=None):
     
     bank.addAutoLabel(pointer, None, labelType) 
     return bank.getLabel(pointer)
+
+def pullTextFrom3ByteRomAddressArg(memory, addr):
+    pointer = memory.word(addr)
+    bankNum = memory.byte(addr + 2)
+    bank = RomInfo.romBank(bankNum)
+    try:
+        referencedText = getTextFromTextBlockAtAddress(bank, pointer)
+    except Exception as e:
+        raise Exception('Text instruction at %s references non-text --> %s' % (serializeAddress(memory, addr), e)) from e
+    return referencedText
 
 class Op1CBlock(Block):
     def __init__(self, memory, addr):
@@ -595,6 +605,7 @@ class Op04Block(Block):
         self.label = label3ByteRomAddressArg(memory, addr + 1, "text")
 
     def export(self, file):
+        file.comment(pullTextFrom3ByteRomAddressArg(self.memory, file.addr + 1))
         file.asmLine(4, "Op04_Unknown_Text", str(self.label))
 
 class Op06Block(Block):
@@ -605,6 +616,7 @@ class Op06Block(Block):
         self.label = label3ByteRomAddressArg(memory, addr + 1, "text")
 
     def export(self, file):
+        file.comment(pullTextFrom3ByteRomAddressArg(self.memory, file.addr + 1))
         file.asmLine(4, "Op06_Unknown_Text", str(self.label))
 
 class Op10Block(Block):

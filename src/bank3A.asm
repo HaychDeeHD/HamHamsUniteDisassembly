@@ -228,6 +228,7 @@ call_3a_4281:
 call_3a_4299:
     Op1E_Call call_1d_6acd                             ;; 3a:4299 $1e $cd $6a $1d
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $03, $74, $11 ;; 3a:429d $4c $16 $10 $02 $00 $00 $00 $00 $03 $74 $11
+    ;;<EB><EA>Scoochie<E8>!<end>
     Op04_Unknown_Text data_21_7fdf                     ;; 3a:42a8 $04 $df $7f $21
     Op44_Unknown $60, $00                              ;; 3a:42ac $44 $60 $00
     Op1E_Call call_04_615d                             ;; 3a:42af $1e $5d $61 $04
@@ -248,6 +249,7 @@ call_3a_42bc:
 call_3a_42d4:
     Op1E_Call call_20_41b0                             ;; 3a:42d4 $1e $b0 $41 $20
     Op1E_Call call_1d_6ae8                             ;; 3a:42d8 $1e $e8 $6a $1d
+    ;;<E4>Your claws hurt.<E0>
     Op04_Unknown_Text data_21_7fec                     ;; 3a:42dc $04 $ec $7f $21
     Op1E_Call call_04_615d                             ;; 3a:42e0 $1e $5d $61 $04
     Op18_Jump call_3a_4011                             ;; 3a:42e4 $18 $11 $40 $3a
@@ -3166,6 +3168,7 @@ call_3a_7e60:
 
 call_3a_7ec4:
     Op1E_Call call_1d_6d65                             ;; 3a:7ec4 $1e $65 $6d $1d
+    ;;I put on a ton of<E4>olive oil. <E5>I hope<E4>I can slide really<E4>really far!<E0>
     Op04_Unknown_Text data_3c_723d                     ;; 3a:7ec8 $04 $3d $72 $3c
     Op1E_Call call_04_615d                             ;; 3a:7ecc $1e $5d $61 $04
     Op4C_Unknown $1a, $01, $00, $00, $00, $00, $00, $53, $56, $14 ;; 3a:7ed0 $4c $1a $01 $00 $00 $00 $00 $00 $53 $56 $14

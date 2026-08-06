@@ -71,6 +71,16 @@ def maybeCreateTextBlock(memory, addr, toAddress):
 
         addr += len(block)
 
+def getTextFromTextBlockAtAddress(memory, addr):
+    textBlock = memory[addr]
+
+    if textBlock is None:
+        raise Exception('TextBlock is None, %s' % serializeAddress(memory, addr))
+    if not isinstance(textBlock, TextBlock):
+        raise Exception('TextBlock not a TextBlock but %s, %s' % (type(textBlock), serializeAddress(memory, addr)))
+
+    return textBlock.text
+
 @annotation(priority=1)
 def hamstring(memory, addr, toAddress=None):
     addKnownTextAddress(memory, addr, int(toAddress, 16) if toAddress else None)
@@ -84,24 +94,19 @@ class TextBlock(Block):
 
         # Go until you hit a 0xE0 / 0xE1 eol byte or a 0x00 terminating byte
         size = 0
+        self.text = ""
         while addr + size < memory.base_address + 0x4000: 
             byte = memory.byte(addr + size)
             size += 1
+            try:
+                self.text += charmap[byte]
+            except KeyError:
+                self.text += "🤭" # Referred to as "F0" in build warnings.
             if byte in [0xE0, 0xE1, 0x00]:
                 break
 
         self.resize(size)
 
     def export(self, file):
-        size = len(self)
-        text = ""
-        for n in range(size):
-            byte = self.memory.byte(file.addr + n)
-            try:
-                text += charmap[byte]
-            except KeyError:
-                text += "🤭" # Referred to as "F0" in build warnings.
-        file.asmLine(size, "TXT", "\"%s\"" % (text), is_data=True)
+        file.asmLine(len(self), "TXT", "\"%s\"" % (self.text), is_data=True)
              
-
-        

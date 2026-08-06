@@ -901,6 +901,7 @@ call_1c_6b2f:
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, $09, $42, $10 ;; 1c:6b2f $4c $16 $08 $ff $00 $00 $00 $00 $09 $42 $10
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $7f, $57, $15 ;; 1c:6b3a $4c $1a $01 $04 $00 $00 $00 $00 $7f $57 $15
     Op1E_Call call_04_6d20                             ;; 1c:6b45 $1e $20 $6d $04
+    ;;Darn!<E0>
     Op04_Unknown_Text data_29_4000                     ;; 1c:6b49 $04 $00 $40 $29
     Op92_Unknown $00                                   ;; 1c:6b4d $92 $00
     Op18_Jump call_1c_7575                             ;; 1c:6b4f $18 $75 $75 $1c
@@ -911,14 +912,17 @@ call_1c_6b53:
     Op16_SubOps 1                                      ;; 1c:6b58 $16 $01
     SubOp_SetByte wC818, $00                           ;; 1c:6b5a $7f $00 $00
     Op1E_Call call_1d_6e1b                             ;; 1c:6b5d $1e $1b $6e $1d
+    ;;Hey there!<E3>Let's make a deal!<E3>I've got something<E4>lined up that you<E4>can't resist!<E3>Some cold Flugo<E4>for 20 Sunflower<E4>Seeds! <E5><end>
     Op04_Unknown_Text data_29_4006                     ;; 1c:6b61 $04 $06 $40 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $f1, $56, $15 ;; 1c:6b65 $4c $1a $01 $04 $00 $00 $00 $00 $f1 $56 $15
+    ;;It'll cure<E4>any cold in the<E4>blink of an eye.<E3><end>
     Op06_Unknown_Text data_29_4081                     ;; 1c:6b70 $06 $81 $40 $29
 
 call_1c_6b74:
     SCRIPT_RETURN_4A                                   ;; 1c:6b74 $4a
     Op3E_Compare_Branch 26, $f1, $56, $15, call_1c_6b74 ;; 1c:6b75 $3e $1a $f1 $56 $15 $74 $6b $1c
     Op1E_Call call_1c_77c8                             ;; 1c:6b7d $1e $c8 $77 $1c
+    ;;It's a steal, no?<E4>You want to buy<E4>some?<E0>
     Op06_Unknown_Text data_29_40ae                     ;; 1c:6b81 $06 $ae $40 $29
     Op92_Unknown $00                                   ;; 1c:6b85 $92 $00
     Op18_Jump call_1c_6cc6                             ;; 1c:6b87 $18 $c6 $6c $1c
@@ -931,30 +935,37 @@ call_1c_6b8b:
     Op16_SubOps 1                                      ;; 1c:6b94 $16 $01
     SubOp_SetByte wC818, $00                           ;; 1c:6b96 $7f $00 $00
     Op1E_Call call_1d_6e1b                             ;; 1c:6b99 $1e $1b $6e $1d
+    ;;Hey there!<E3>Let's make a deal!<E3>I've got something<E4>lined up that you<E4>can't resist!<E3>Some cold Flugo<E4>for 20 Sunflower<E4>Seeds! <E5>It'll cure<E4>any cold <end>
     Op04_Unknown_Text data_29_40d6                     ;; 1c:6b9d $04 $d6 $40 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $f1, $56, $15 ;; 1c:6ba1 $4c $1a $01 $04 $00 $00 $00 $00 $f1 $56 $15
+    ;;in the<E4>blink of an eye.<E3><end>
     Op06_Unknown_Text data_29_4165                     ;; 1c:6bac $06 $65 $41 $29
 
 call_1c_6bb0:
     SCRIPT_RETURN_4A                                   ;; 1c:6bb0 $4a
     Op3E_Compare_Branch 26, $f1, $56, $15, call_1c_6bb0 ;; 1c:6bb1 $3e $1a $f1 $56 $15 $b0 $6b $1c
     Op1E_Call call_1c_77c8                             ;; 1c:6bb9 $1e $c8 $77 $1c
+    ;;And<...><E3>A Heat Patch for<E4>9999 Sunflower<E4>Seeds! <E5>This is a<E4>must <end>
     Op06_Unknown_Text data_29_417e                     ;; 1c:6bbd $06 $7e $41 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $f1, $56, $15 ;; 1c:6bc1 $4c $1a $01 $04 $00 $00 $00 $00 $f1 $56 $15
+    ;;for those<E4>cold times!<E3><end>
     Op06_Unknown_Text data_29_41bb                     ;; 1c:6bcc $06 $bb $41 $29
 
 call_1c_6bd0:
     SCRIPT_RETURN_4A                                   ;; 1c:6bd0 $4a
     Op3E_Compare_Branch 26, $f1, $56, $15, call_1c_6bd0 ;; 1c:6bd1 $3e $1a $f1 $56 $15 $d0 $6b $1c
     Op1E_Call call_1c_77c8                             ;; 1c:6bd9 $1e $c8 $77 $1c
+    ;;And<...><E3>A Striped Sticker<E4>for 9999 Sunflower<E4>Seeds! <E5>This is<E4>what opens the<E4><end>
     Op06_Unknown_Text data_29_41d2                     ;; 1c:6bdd $06 $d2 $41 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $f1, $56, $15 ;; 1c:6be1 $4c $1a $01 $04 $00 $00 $00 $00 $f1 $56 $15
+    ;;register!<E3><end>
     Op06_Unknown_Text data_29_421c                     ;; 1c:6bec $06 $1c $42 $29
 
 call_1c_6bf0:
     SCRIPT_RETURN_4A                                   ;; 1c:6bf0 $4a
     Op3E_Compare_Branch 26, $f1, $56, $15, call_1c_6bf0 ;; 1c:6bf1 $3e $1a $f1 $56 $15 $f0 $6b $1c
     Op1E_Call call_1c_77c8                             ;; 1c:6bf9 $1e $c8 $77 $1c
+    ;;They're all great<E4>deals, no?<E3>What do you say?<E4>Interested?<E0>
     Op06_Unknown_Text data_29_4227                     ;; 1c:6bfd $06 $27 $42 $29
     Op92_Unknown $00                                   ;; 1c:6c01 $92 $00
     Op18_Jump call_1c_6d20                             ;; 1c:6c03 $18 $20 $6d $1c
@@ -965,30 +976,37 @@ call_1c_6c07:
     Op16_SubOps 1                                      ;; 1c:6c0c $16 $01
     SubOp_SetByte wC818, $02                           ;; 1c:6c0e $7f $00 $02
     Op1E_Call call_1d_6e1b                             ;; 1c:6c11 $1e $1b $6e $1d
+    ;;Hey there!<E3>Let's make a deal!<E3>I've got something<E4>lined up that you<E4>can't resist!<E3>Some cold Flugo<E4>for 2 Sunflower<E4>Seeds! <E5>It'll cure<E4>any cold <end>
     Op04_Unknown_Text data_29_4261                     ;; 1c:6c15 $04 $61 $42 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $f1, $56, $15 ;; 1c:6c19 $4c $1a $01 $04 $00 $00 $00 $00 $f1 $56 $15
+    ;;in the<E4>blink of an eye.<E3><end>
     Op06_Unknown_Text data_29_42ef                     ;; 1c:6c24 $06 $ef $42 $29
 
 call_1c_6c28:
     SCRIPT_RETURN_4A                                   ;; 1c:6c28 $4a
     Op3E_Compare_Branch 26, $f1, $56, $15, call_1c_6c28 ;; 1c:6c29 $3e $1a $f1 $56 $15 $28 $6c $1c
     Op1E_Call call_1c_77c8                             ;; 1c:6c31 $1e $c8 $77 $1c
+    ;;And<...><E3>A Heat Patch for<E4>10 Sunflower<E4>Seeds! <E5>This is a<E4>must for those<E4><end>
     Op06_Unknown_Text data_29_4308                     ;; 1c:6c35 $06 $08 $43 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $f1, $56, $15 ;; 1c:6c39 $4c $1a $01 $04 $00 $00 $00 $00 $f1 $56 $15
+    ;;cold times!<E3><end>
     Op06_Unknown_Text data_29_434d                     ;; 1c:6c44 $06 $4d $43 $29
 
 call_1c_6c48:
     SCRIPT_RETURN_4A                                   ;; 1c:6c48 $4a
     Op3E_Compare_Branch 26, $f1, $56, $15, call_1c_6c48 ;; 1c:6c49 $3e $1a $f1 $56 $15 $48 $6c $1c
     Op1E_Call call_1c_77c8                             ;; 1c:6c51 $1e $c8 $77 $1c
+    ;;And<...><E3>A Striped Sticker<E4>for 10 Sunflower<E4>Seeds! <E5>This is<E4>what opens the<E4><end>
     Op06_Unknown_Text data_29_435a                     ;; 1c:6c55 $06 $5a $43 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $f1, $56, $15 ;; 1c:6c59 $4c $1a $01 $04 $00 $00 $00 $00 $f1 $56 $15
+    ;;register!<E3><end>
     Op06_Unknown_Text data_29_43a2                     ;; 1c:6c64 $06 $a2 $43 $29
 
 call_1c_6c68:
     SCRIPT_RETURN_4A                                   ;; 1c:6c68 $4a
     Op3E_Compare_Branch 26, $f1, $56, $15, call_1c_6c68 ;; 1c:6c69 $3e $1a $f1 $56 $15 $68 $6c $1c
     Op1E_Call call_1c_77c8                             ;; 1c:6c71 $1e $c8 $77 $1c
+    ;;They're all great<E4>deals, no?<E3>What do you say?<E4>Interested?<E0>
     Op06_Unknown_Text data_29_43ad                     ;; 1c:6c75 $06 $ad $43 $29
     Op92_Unknown $00                                   ;; 1c:6c79 $92 $00
     Op18_Jump call_1c_6d20                             ;; 1c:6c7b $18 $20 $6d $1c
@@ -999,16 +1017,20 @@ call_1c_6c7f:
     Op16_SubOps 1                                      ;; 1c:6c84 $16 $01
     SubOp_SetByte wC818, $04                           ;; 1c:6c86 $7f $00 $04
     Op1E_Call call_1d_6e1b                             ;; 1c:6c89 $1e $1b $6e $1d
+    ;;Hey there!<E3>Let's make a deal!<E3>I've got something<E4>lined up that you<E4>can't resist!<E3>Some cold Flugo<E4>for 30 Sunflower<E4>Seeds! <E5><end>
     Op04_Unknown_Text data_29_43e7                     ;; 1c:6c8d $04 $e7 $43 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $f1, $56, $15 ;; 1c:6c91 $4c $1a $01 $04 $00 $00 $00 $00 $f1 $56 $15
+    ;;It'll cure<E4>any cold in the<E4>blink of an eye.<E3><end>
     Op06_Unknown_Text data_29_4462                     ;; 1c:6c9c $06 $62 $44 $29
 
 call_1c_6ca0:
     SCRIPT_RETURN_4A                                   ;; 1c:6ca0 $4a
     Op3E_Compare_Branch 26, $f1, $56, $15, call_1c_6ca0 ;; 1c:6ca1 $3e $1a $f1 $56 $15 $a0 $6c $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $e1, $56, $15 ;; 1c:6ca9 $4c $1a $01 $04 $00 $00 $00 $00 $e1 $56 $15
+    ;;What? <E5>You say I'm<E4>charging more than<E4>before? <E5>That's a<E4>lie! <E5>Why say such<E4>a thing? <E5><end>
     Op06_Unknown_Text data_29_448f                     ;; 1c:6cb4 $06 $8f $44 $29
     Op1E_Call call_1c_77c8                             ;; 1c:6cb8 $1e $c8 $77 $1c
+    ;;<...>But<E4>let's talk cash<...><E4>Are you buying?<E0>
     Op06_Unknown_Text data_29_44e5                     ;; 1c:6cbc $06 $e5 $44 $29
     Op92_Unknown $00                                   ;; 1c:6cc0 $92 $00
     Op18_Jump call_1c_6cc6                             ;; 1c:6cc2 $18 $c6 $6c $1c
@@ -1094,6 +1116,7 @@ call_1c_6d7f:
     Op1E_Call call_1c_77ab                             ;; 1c:6d84 $1e $ab $77 $1c
     Op1E_Call call_1c_77c8                             ;; 1c:6d88 $1e $c8 $77 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:6d8c $1e $1b $6e $1d
+    ;;Wow!<E4>Really?<E4>Really?<E0>
     Op04_Unknown_Text data_29_450b                     ;; 1c:6d90 $04 $0b $45 $29
     Op92_Unknown $00                                   ;; 1c:6d94 $92 $00
     Op18_Jump call_1c_6e41                             ;; 1c:6d96 $18 $41 $6e $1c
@@ -1104,6 +1127,7 @@ call_1c_6d9a:
     Op1E_Call call_1c_77ab                             ;; 1c:6d9f $1e $ab $77 $1c
     Op1E_Call call_1c_77c8                             ;; 1c:6da3 $1e $c8 $77 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:6da7 $1e $1b $6e $1d
+    ;;Wow!<E4>Really?<E4>Really?<E3>Which one?<E0>
     Op04_Unknown_Text data_29_4520                     ;; 1c:6dab $04 $20 $45 $29
     Op92_Unknown $00                                   ;; 1c:6daf $92 $00
 
@@ -1246,6 +1270,7 @@ call_1c_6ef1:
 call_1c_6f06:
     Op1E_Call call_1c_7239                             ;; 1c:6f06 $1e $39 $72 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:6f0a $1e $1b $6e $1d
+    ;;Thanks!<E3>Here you go.<E0>
     Op04_Unknown_Text data_29_4540                     ;; 1c:6f0e $04 $40 $45 $29
     Op92_Unknown $00                                   ;; 1c:6f12 $92 $00
     Op36_Unknown $0f, $75, $7f, $f2, $dd, $01          ;; 1c:6f14 $36 $0f $75 $7f $f2 $dd $01
@@ -1267,6 +1292,7 @@ call_1c_6f3e:
     Op1E_Call call_1c_661f                             ;; 1c:6f50 $1e $1f $66 $1c
     Op1E_Call call_1c_77ab                             ;; 1c:6f54 $1e $ab $77 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:6f58 $1e $1b $6e $1d
+    ;;Hee hee hee.<E3>Thanks a lot.<E4>Come again!<E3>Hee hee hee.<E0>
     Op04_Unknown_Text data_29_4555                     ;; 1c:6f5c $04 $55 $45 $29
     Op92_Unknown $00                                   ;; 1c:6f60 $92 $00
     Op18_Jump call_1c_72ec                             ;; 1c:6f62 $18 $ec $72 $1c
@@ -1309,6 +1335,7 @@ call_1c_6fa8:
 call_1c_6fbd:
     Op1E_Call call_1c_7239                             ;; 1c:6fbd $1e $39 $72 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:6fc1 $1e $1b $6e $1d
+    ;;Thanks!<E4>Here you go.<E0>
     Op04_Unknown_Text data_29_4589                     ;; 1c:6fc5 $04 $89 $45 $29
     Op92_Unknown $00                                   ;; 1c:6fc9 $92 $00
     Op36_Unknown $97, $74, $7f, $f2, $dd, $01          ;; 1c:6fcb $36 $97 $74 $7f $f2 $dd $01
@@ -1331,6 +1358,7 @@ call_1c_6ff5:
     Op1E_Call call_1c_661f                             ;; 1c:7012 $1e $1f $66 $1c
     Op1E_Call call_1c_77ab                             ;; 1c:7016 $1e $ab $77 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:701a $1e $1b $6e $1d
+    ;;Hee hee hee.<E3>Thanks a lot.<E4>Come again!<E3>Hee hee hee.<E0>
     Op04_Unknown_Text data_29_459e                     ;; 1c:701e $04 $9e $45 $29
     Op92_Unknown $00                                   ;; 1c:7022 $92 $00
     Op14_Unknown 1, $18, $76                           ;; 1c:7024 $14 $01 $18 $76
@@ -1380,6 +1408,7 @@ call_1c_7079:
 call_1c_708e:
     Op1E_Call call_1c_7239                             ;; 1c:708e $1e $39 $72 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:7092 $1e $1b $6e $1d
+    ;;Thanks!<E4>Here you go.<E0>
     Op04_Unknown_Text data_29_45d2                     ;; 1c:7096 $04 $d2 $45 $29
     Op92_Unknown $00                                   ;; 1c:709a $92 $00
     Op36_Unknown $8d, $74, $7f, $f2, $dd, $01          ;; 1c:709c $36 $8d $74 $7f $f2 $dd $01
@@ -1401,6 +1430,7 @@ call_1c_70c6:
     Op1E_Call call_1c_661f                             ;; 1c:70d8 $1e $1f $66 $1c
     Op1E_Call call_1c_77ab                             ;; 1c:70dc $1e $ab $77 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:70e0 $1e $1b $6e $1d
+    ;;Hee hee hee.<E3>Thanks a lot.<E4>Come again!<E3>Hee hee hee.<E0>
     Op04_Unknown_Text data_29_45e7                     ;; 1c:70e4 $04 $e7 $45 $29
     Op92_Unknown $00                                   ;; 1c:70e8 $92 $00
     Op14_Unknown 1, $0a, $75                           ;; 1c:70ea $14 $01 $0a $75
@@ -1416,10 +1446,13 @@ call_1c_70fd:
     Op1E_Call call_1c_77ab                             ;; 1c:70fd $1e $ab $77 $1c
     Op1E_Call call_1c_7802                             ;; 1c:7101 $1e $02 $78 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:7105 $1e $1b $6e $1d
+    ;;Darn<...><E3>I understand.<E3><end>
     Op04_Unknown_Text data_29_461b                     ;; 1c:7109 $04 $1b $46 $29
     Op1E_Call call_1c_77c8                             ;; 1c:710d $1e $c8 $77 $1c
+    ;;OK, OK!<E3>I'll give you<E4>a discounted price<E3>of one Sunflower<E4>Seed. How does<E4>that sound?<E3>That's an unbeat-<E4>able price, right?<E3><end>
     Op06_Unknown_Text data_29_4630                     ;; 1c:7111 $06 $30 $46 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $22, $57, $15 ;; 1c:7115 $4c $1a $01 $04 $00 $00 $00 $00 $22 $57 $15
+    ;;Come on!<E4>Just buy it!<E0>
     Op06_Unknown_Text data_29_46ab                     ;; 1c:7120 $06 $ab $46 $29
     Op92_Unknown $00                                   ;; 1c:7124 $92 $00
     Op16_SubOps 1                                      ;; 1c:7126 $16 $01
@@ -1469,6 +1502,7 @@ call_1c_718d:
     SubOp_SetByte wC819, $00                           ;; 1c:718f $7f $01 $00
     Op18_Jump call_1c_781f                             ;; 1c:7192 $18 $1f $78 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:7196 $1e $1b $6e $1d
+    ;;Buy it from me!<E4>Buy it from me!<E4>Buy it from me!<E3>Buy it from me!<E4>Buy it from me!<E4>Buy it from me!!<E0>
     Op04_Unknown_Text data_29_46c1                     ;; 1c:719a $04 $c1 $46 $29
     Op92_Unknown $00                                   ;; 1c:719e $92 $00
     Op18_Jump call_1c_6554                             ;; 1c:71a0 $18 $54 $65 $1c
@@ -1477,10 +1511,13 @@ call_1c_71a4:
     Op1E_Call call_1c_78ab                             ;; 1c:71a4 $1e $ab $78 $1c
     Op1E_Call call_1c_7802                             ;; 1c:71a8 $1e $02 $78 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:71ac $1e $1b $6e $1d
+    ;;Darn<...><E3>I understand.<E4><end>
     Op04_Unknown_Text data_29_4722                     ;; 1c:71b0 $04 $22 $47 $29
     Op1E_Call call_1c_77c8                             ;; 1c:71b4 $1e $c8 $77 $1c
+    ;;OK, OK!<E3>I'll give you<E4>a discounted price<E3>of one Sunflower<E4>Seed. How does<E4>that sound?<E3>That's an unbeat-<E4>able price, right?<E3><end>
     Op06_Unknown_Text data_29_4737                     ;; 1c:71b8 $06 $37 $47 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $22, $57, $15 ;; 1c:71bc $4c $1a $01 $04 $00 $00 $00 $00 $22 $57 $15
+    ;;Come on!<E4>Just buy it!<E0>
     Op06_Unknown_Text data_29_47b2                     ;; 1c:71c7 $06 $b2 $47 $29
     Op92_Unknown $00                                   ;; 1c:71cb $92 $00
     Op16_SubOps 1                                      ;; 1c:71cd $16 $01
@@ -1557,8 +1594,10 @@ call_1c_72a3:
 call_1c_72ad:
     Op1E_Call call_1c_77e5                             ;; 1c:72ad $1e $e5 $77 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:72b1 $1e $1b $6e $1d
+    ;;Huh?<E3>You don't have<E4>enough Sunflower<E4>Seeds!<E3><end>
     Op04_Unknown_Text data_29_47c8                     ;; 1c:72b5 $04 $c8 $47 $29
     Op1E_Call call_1c_7802                             ;; 1c:72b9 $1e $02 $78 $1c
+    ;;Darn it<...><E0>
     Op06_Unknown_Text data_29_47f5                     ;; 1c:72bd $06 $f5 $47 $29
     Op92_Unknown $00                                   ;; 1c:72c1 $92 $00
     Op18_Jump call_1c_7690                             ;; 1c:72c3 $18 $90 $76 $1c
@@ -1566,14 +1605,17 @@ call_1c_72ad:
 call_1c_72c7:
     Op1E_Call call_1c_77e5                             ;; 1c:72c7 $1e $e5 $77 $1c
     Op1E_Call call_1d_6e1b                             ;; 1c:72cb $1e $1b $6e $1d
+    ;;Huh?<E4>You've already<E4>got one!<E3>You should've<E4>told me before I<E4><end>
     Op04_Unknown_Text data_29_47fe                     ;; 1c:72cf $04 $fe $47 $29
     Op1E_Call call_1c_7802                             ;; 1c:72d3 $1e $02 $78 $1c
+    ;;wasted my breath!<E0>
     Op06_Unknown_Text data_29_483b                     ;; 1c:72d7 $06 $3b $48 $29
     Op92_Unknown $00                                   ;; 1c:72db $92 $00
     Op18_Jump call_1c_7690                             ;; 1c:72dd $18 $90 $76 $1c
 
 call_1c_72e1:
     Op1E_Call call_04_6d18                             ;; 1c:72e1 $1e $18 $6d $04
+    ;;Hee hee hee.<E3>Everyone's such a<E4>sucker here.<E3>And I'm cashing in<E4>BIG TIME! <E5>Oh, I'm<E4>so smart.<E3>Hee hee hee.<E0>
     Op04_Unknown_Text data_29_484d                     ;; 1c:72e5 $04 $4d $48 $29
     Op92_Unknown $00                                   ;; 1c:72e9 $92 $00
     SCRIPT_RETURN_20                                   ;; 1c:72eb $20
@@ -1981,6 +2023,7 @@ call_1c_781f:
     Op1E_Call call_1c_7bdf                             ;; 1c:783a $1e $df $7b $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $9d, $57, $15 ;; 1c:783e $4c $1a $01 $04 $00 $00 $00 $00 $9d $57 $15
     Op1E_Call call_1d_6e1b                             ;; 1c:7849 $1e $1b $6e $1d
+    ;;Buy it from me!<E4>Buy it from me!<E4>Buy it from me!<E3>Buy it from me!<E4>Buy it from me!<E4>Buy it from me!!<E0>
     Op04_Unknown_Text data_29_48b6                     ;; 1c:784d $04 $b6 $48 $29
     Op92_Unknown $00                                   ;; 1c:7851 $92 $00
     Op18_Jump call_1c_6554                             ;; 1c:7853 $18 $54 $65 $1c
@@ -1993,6 +2036,7 @@ call_1c_7857:
     Op1E_Call call_33_6c51                             ;; 1c:7864 $1e $51 $6c $33
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $9d, $57, $15 ;; 1c:7868 $4c $1a $01 $04 $00 $00 $00 $00 $9d $57 $15
     Op1E_Call call_1d_6e1b                             ;; 1c:7873 $1e $1b $6e $1d
+    ;;Buy it from me!<E4>Buy it from me!<E4>Buy it from me!<E3>Buy it from me!<E4>Buy it from me!<E4>Buy it from me!!<E0>
     Op04_Unknown_Text data_29_4917                     ;; 1c:7877 $04 $17 $49 $29
     Op92_Unknown $00                                   ;; 1c:787b $92 $00
     Op18_Jump call_33_63f5                             ;; 1c:787d $18 $f5 $63 $33
@@ -2005,6 +2049,7 @@ call_1c_7881:
     Op1E_Call call_33_48ef                             ;; 1c:788e $1e $ef $48 $33
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $9d, $57, $15 ;; 1c:7892 $4c $1a $01 $04 $00 $00 $00 $00 $9d $57 $15
     Op1E_Call call_1d_6e1b                             ;; 1c:789d $1e $1b $6e $1d
+    ;;Buy it from me!<E4>Buy it from me!<E4>Buy it from me!<E3>Buy it from me!<E4>Buy it from me!<E4>Buy it from me!!<E0>
     Op04_Unknown_Text data_29_4978                     ;; 1c:78a1 $04 $78 $49 $29
     Op92_Unknown $00                                   ;; 1c:78a5 $92 $00
     Op18_Jump call_33_400c                             ;; 1c:78a7 $18 $0c $40 $33
@@ -2292,18 +2337,22 @@ call_1c_7cd4:
     Op14_Unknown 1, $0a, $75                           ;; 1c:7d36 $14 $01 $0a $75
     SCRIPT_POINTER call_1c_7e3d                        ;; 1c:7d3a $3d $7e $1c
     Op1E_Call call_1d_6b91                             ;; 1c:7d3d $1e $91 $6b $1d
+    ;;<...>Is that clear?<E3>I'll hand this<E4>photo to the re-<E4>porter <E5>if you<E4>don't stop trick-<E4>ing people <E5>out of<E4>their money! <E5>Do<E4>you want that?<E0>
     Op04_Unknown_Text data_29_49d9                     ;; 1c:7d41 $04 $d9 $49 $29
     Op92_Unknown $00                                   ;; 1c:7d45 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $4e, $57, $15 ;; 1c:7d47 $4c $1a $01 $04 $00 $00 $00 $00 $4e $57 $15
     Op1E_Call call_1d_6e1b                             ;; 1c:7d52 $1e $1b $6e $1d
+    ;;I'm sorry!<E4>I'm sorry!<E3>I won't ever cheat<E4>people out of<E4>their money again!<E3>I'll even sell the<E4>Heat Patch to you<E3>for 10 Sunflower<E4>Seeds.<E0>
     Op04_Unknown_Text data_29_4a5d                     ;; 1c:7d56 $04 $5d $4a $29
     Op92_Unknown $00                                   ;; 1c:7d5a $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $47, $57, $15 ;; 1c:7d5c $4c $1a $01 $04 $00 $00 $00 $00 $47 $57 $15
     Op1E_Call call_1d_6b91                             ;; 1c:7d67 $1e $91 $6b $1d
+    ;;That's better.<E3>We just want to<E4>buy things at a<E4>fair price!<E3>Now, we know your<E4>tricks, so don't<E4>try it again!<E0>
     Op04_Unknown_Text data_29_4ae4                     ;; 1c:7d6b $04 $e4 $4a $29
     Op92_Unknown $00                                   ;; 1c:7d6f $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $4e, $57, $15 ;; 1c:7d71 $4c $1a $01 $04 $00 $00 $00 $00 $4e $57 $15
     Op1E_Call call_1d_6e1b                             ;; 1c:7d7c $1e $1b $6e $1d
+    ;;I know!<E4>I know!<E3>I understand!<E4>I won't ever do<E4>that again.<E0>
     Op04_Unknown_Text data_29_4b50                     ;; 1c:7d80 $04 $50 $4b $29
     Op92_Unknown $00                                   ;; 1c:7d84 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $47, $57, $15 ;; 1c:7d86 $4c $1a $01 $04 $00 $00 $00 $00 $47 $57 $15
@@ -2319,6 +2368,7 @@ call_1c_7db0:
     Op3E_Compare_Branch 22, $9b, $53, $12, call_1c_7db0 ;; 1c:7db1 $3e $16 $9b $53 $12 $b0 $7d $1c
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $71, $67, $14 ;; 1c:7db9 $4c $1e $01 $04 $00 $00 $00 $00 $71 $67 $14
     Op1E_Call call_1d_6b91                             ;; 1c:7dc4 $1e $91 $6b $1d
+    ;;Hey, <E7>.<E4>It's been settled.<E0>
     Op04_Unknown_Text data_29_4b8a                     ;; 1c:7dc8 $04 $8a $4b $29
     Op92_Unknown $00                                   ;; 1c:7dcc $92 $00
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $b6, $79, $14 ;; 1c:7dce $4c $1e $01 $04 $00 $00 $00 $00 $b6 $79 $14
@@ -2329,6 +2379,7 @@ call_1c_7dd9:
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $ea, $6f, $14 ;; 1c:7de2 $4c $1e $01 $04 $00 $00 $00 $00 $ea $6f $14
     Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, $61, $42, $10 ;; 1c:7ded $4c $16 $04 $ff $00 $00 $00 $00 $61 $42 $10
     Op1E_Call call_1d_6b91                             ;; 1c:7df8 $1e $91 $6b $1d
+    ;;He'll sell us the<E4>Heat Patch for 10<E4>Sunflower Seeds.<E3>It took a bit, but<E4>we can buy it at a<E4>fair price! <E5>Now,<E4>I'm worried about<E4>Dexter. I'm gonna<E4>head back.<E3>Hurry back with<E4>the Heat Patch,<E4>will you?<E3>See you there!<E0>
     Op04_Unknown_Text data_29_4ba5                     ;; 1c:7dfc $04 $a5 $4b $29
     Op92_Unknown $00                                   ;; 1c:7e00 $92 $00
     Op4C_Unknown $16, $ff, $12, $00, $00, $00, $00, $00, $00, $00 ;; 1c:7e02 $4c $16 $ff $12 $00 $00 $00 $00 $00 $00 $00
@@ -2345,18 +2396,22 @@ call_1c_7e18:
 
 call_1c_7e3d:
     Op1E_Call call_04_67d9                             ;; 1c:7e3d $1e $d9 $67 $04
+    ;;What do you say?<E3>Do you want me<E4>to spread the word<E4>that your business<E4>is a shady one?<E3>I'm serious. News<E4>like this spreads<E4>quickly, <E5>and soon<E4>everyone will know<E4>you're a cheat!<E3>I'd think long and<E4>hard about this!<E0>
     Op04_Unknown_Text data_29_4c7a                     ;; 1c:7e41 $04 $7a $4c $29
     Op92_Unknown $00                                   ;; 1c:7e45 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $4e, $57, $15 ;; 1c:7e47 $4c $1a $01 $04 $00 $00 $00 $00 $4e $57 $15
     Op1E_Call call_04_6d20                             ;; 1c:7e52 $1e $20 $6d $04
+    ;;I'm sorry!<E4>I'm sorry!<E4>I'm sorry!<E3>I won't ever<E4>cheat people out<E4>of their money!<E3>I'll even sell you<E4>the Sticker for 10<E4>Sunflower Seeds.<E0>
     Op04_Unknown_Text data_29_4d4e                     ;; 1c:7e56 $04 $4e $4d $29
     Op92_Unknown $00                                   ;; 1c:7e5a $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $47, $57, $15 ;; 1c:7e5c $4c $1a $01 $04 $00 $00 $00 $00 $47 $57 $15
     Op1E_Call call_04_67d9                             ;; 1c:7e67 $1e $d9 $67 $04
+    ;;Good!<E3>All we want is to<E4>purchase items at<E4>a fair price.<E3>I'll hang on to<E4>this photo, just<E4>in case you decide<E3>to return to your<E4>bad habits.<E3>Remember that!<E4>I'm not joking!<E0>
     Op04_Unknown_Text data_29_4dd4                     ;; 1c:7e6b $04 $d4 $4d $29
     Op92_Unknown $00                                   ;; 1c:7e6f $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $4e, $57, $15 ;; 1c:7e71 $4c $1a $01 $04 $00 $00 $00 $00 $4e $57 $15
     Op1E_Call call_04_6d20                             ;; 1c:7e7c $1e $20 $6d $04
+    ;;I know!<E4>I know!<E3>I understand!<E4>I won't ever do<E4>that again.<E0>
     Op04_Unknown_Text data_29_4e7d                     ;; 1c:7e80 $04 $7d $4e $29
     Op92_Unknown $00                                   ;; 1c:7e84 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $47, $57, $15 ;; 1c:7e86 $4c $1a $01 $04 $00 $00 $00 $00 $47 $57 $15
@@ -2418,6 +2473,7 @@ call_1c_7f3b:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $00, $54, $12 ;; 1c:7f3b $4c $16 $10 $ff $00 $00 $00 $00 $00 $54 $12
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $50, $6c, $09 ;; 1c:7f46 $4c $1e $01 $04 $00 $00 $00 $00 $50 $6c $09
     Op1E_Call call_1d_6b9e                             ;; 1c:7f51 $1e $9e $6b $1d
+    ;;Oh, <E7>!<E4>It's been settled.<E0>
     Op04_Unknown_Text data_29_4eb7                     ;; 1c:7f55 $04 $b7 $4e $29
     Op92_Unknown $00                                   ;; 1c:7f59 $92 $00
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $4d, $7c, $09 ;; 1c:7f5b $4c $1e $01 $04 $00 $00 $00 $00 $4d $7c $09
@@ -2428,6 +2484,7 @@ call_1c_7f66:
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $ea, $6c, $09 ;; 1c:7f6f $4c $1e $01 $04 $00 $00 $00 $00 $ea $6c $09
     Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, $61, $42, $10 ;; 1c:7f7a $4c $16 $04 $ff $00 $00 $00 $00 $61 $42 $10
     Op1E_Call call_1d_6b9e                             ;; 1c:7f85 $1e $9e $6b $1d
+    ;;He'll sell us the<E4>Sticker for 10<E4>Sunflower Seeds.<E3>Finally, a price<E4>we all agree to.<E3>Well, I'm worried<E4>about Howdy, <E5>so<E4>I'm gonna head<E4>back.<E3>Please bring the<E4>Sticker with you,<E3>OK?<E3>See you there!<E0>
     Op04_Unknown_Text data_29_4ed1                     ;; 1c:7f89 $04 $d1 $4e $29
     Op92_Unknown $00                                   ;; 1c:7f8d $92 $00
     Op4C_Unknown $16, $ff, $12, $00, $00, $00, $00, $00, $00, $00 ;; 1c:7f8f $4c $16 $ff $12 $00 $00 $00 $00 $00 $00 $00

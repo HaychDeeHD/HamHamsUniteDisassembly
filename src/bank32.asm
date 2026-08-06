@@ -329,8 +329,10 @@ call_32_438a:
     Op5A_Unknown $9d                                   ;; 32:43a5 $5a $9d
     Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:43a7 $42 $04 $01 $52 $57 $1b
     Op1E_Call call_1d_6da6                             ;; 32:43ad $1e $a6 $6d $1d
+    ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7e2f                     ;; 32:43b1 $04 $2f $7e $29
     Op1E_Call call_32_488f                             ;; 32:43b5 $1e $8f $48 $32
+    ;;Always face the<E4>person you're<E4>talking to!<E0>
     Op06_Unknown_Text data_29_7e43                     ;; 32:43b9 $06 $43 $7e $29
     Op1E_Call call_04_615d                             ;; 32:43bd $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:43c1 $56 $1a $5d $5f $14
@@ -343,8 +345,10 @@ call_32_43d4:
     Op56_WriteBitArrayIndex 26, $32, $5f, $14          ;; 32:43d8 $56 $1a $32 $5f $14
     Op5A_Unknown $9d                                   ;; 32:43dd $5a $9d
     Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:43df $42 $04 $01 $52 $57 $1b
+    ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7e6d                     ;; 32:43e5 $04 $6d $7e $29
     Op1E_Call call_32_488f                             ;; 32:43e9 $1e $8f $48 $32
+    ;;What kind of way<E4>is that to talk?<E3>Ham-Chat?<E4>Oh, the hamsters<E4>these days<...><E0>
     Op06_Unknown_Text data_29_7e81                     ;; 32:43ed $06 $81 $7e $29
     Op1E_Call call_04_615d                             ;; 32:43f1 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:43f5 $56 $1a $5d $5f $14
@@ -357,8 +361,10 @@ call_32_4408:
     Op56_WriteBitArrayIndex 26, $87, $60, $14          ;; 32:440b $56 $1a $87 $60 $14
     Op44_Unknown $0a, $00                              ;; 32:4410 $44 $0a $00
     Op1E_Call call_1d_6da6                             ;; 32:4413 $1e $a6 $6d $1d
+    ;;Y-You silly<...><E3>Oh, my head<...><E4><end>
     Op04_Unknown_Text data_29_7eca                     ;; 32:4417 $04 $ca $7e $29
     Op56_WriteBitArrayIndex 26, $97, $60, $14          ;; 32:441b $56 $1a $97 $60 $14
+    ;;I feel <EA>pooie<E8>.<E0>
     Op06_Unknown_Text data_29_7ee5                     ;; 32:4420 $06 $e5 $7e $29
 
 call_32_4424:
@@ -383,6 +389,7 @@ call_32_4441:
 call_32_4459:
     Op1E_Call call_20_4696                             ;; 32:4459 $1e $96 $46 $20
     Op1E_Call call_1d_6ae8                             ;; 32:445d $1e $e8 $6a $1d
+    ;;<E4>Smells old<...><E0>
     Op04_Unknown_Text data_29_7ef5                     ;; 32:4461 $04 $f5 $7e $29
     Op1E_Call call_04_615d                             ;; 32:4465 $1e $5d $61 $04
     Op18_Jump call_32_400c                             ;; 32:4469 $18 $0c $40 $32
@@ -407,8 +414,10 @@ call_32_4493:
     Op1E_Call call_1d_6da6                             ;; 32:449c $1e $a6 $6d $1d
     Op5A_Unknown $9d                                   ;; 32:44a0 $5a $9d
     Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:44a2 $42 $04 $01 $52 $57 $1b
+    ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7f02                     ;; 32:44a8 $04 $02 $7f $29
     Op1E_Call call_32_488f                             ;; 32:44ac $1e $8f $48 $32
+    ;;Go outside if you<E4>need to exercise!<E0>
     Op06_Unknown_Text data_29_7f16                     ;; 32:44b0 $06 $16 $7f $29
     Op1E_Call call_04_615d                             ;; 32:44b4 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:44b8 $56 $1a $5d $5f $14
@@ -440,8 +449,10 @@ call_32_44ec:
     Op5A_Unknown $9d                                   ;; 32:450b $5a $9d
     Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:450d $42 $04 $01 $52 $57 $1b
     Op1E_Call call_1d_6da6                             ;; 32:4513 $1e $a6 $6d $1d
+    ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7f3a                     ;; 32:4517 $04 $3a $7f $29
     Op44_Unknown $1e, $00                              ;; 32:451b $44 $1e $00
+    ;;Be respectful of<E4>your elders.<E0>
     Op06_Unknown_Text data_29_7f4e                     ;; 32:451e $06 $4e $7f $29
     Op1E_Call call_04_615d                             ;; 32:4522 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $f7, $5f, $14          ;; 32:4526 $56 $1a $f7 $5f $14
@@ -474,8 +485,10 @@ call_32_4565:
     Op5A_Unknown $9d                                   ;; 32:456e $5a $9d
     Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:4570 $42 $04 $01 $52 $57 $1b
     Op1E_Call call_1d_6da6                             ;; 32:4576 $1e $a6 $6d $1d
+    ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7f6c                     ;; 32:457a $04 $6c $7f $29
     Op1E_Call call_32_488f                             ;; 32:457e $1e $8f $48 $32
+    ;;Stop that!<E0>
     Op06_Unknown_Text data_29_7f80                     ;; 32:4582 $06 $80 $7f $29
     Op1E_Call call_04_615d                             ;; 32:4586 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:458a $56 $1a $5d $5f $14
@@ -605,8 +618,10 @@ call_32_46bf:
     SCRIPT_POINTER call_32_4709                        ;; 32:46da $09 $47 $32
     Op56_WriteBitArrayIndex 26, $32, $5f, $14          ;; 32:46dd $56 $1a $32 $5f $14
     Op1E_Call call_1d_6da6                             ;; 32:46e2 $1e $a6 $6d $1d
+    ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7f8b                     ;; 32:46e6 $04 $8b $7f $29
     Op1E_Call call_32_488f                             ;; 32:46ea $1e $8f $48 $32
+    ;;This is mine!<E4>All mine!<E0>
     Op06_Unknown_Text data_29_7f9f                     ;; 32:46ee $06 $9f $7f $29
     Op1E_Call call_04_615d                             ;; 32:46f2 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:46f6 $56 $1a $5d $5f $14
@@ -617,8 +632,10 @@ call_32_46bf:
 call_32_4709:
     Op56_WriteBitArrayIndex 26, $87, $60, $14          ;; 32:4709 $56 $1a $87 $60 $14
     Op1E_Call call_1d_6da6                             ;; 32:470e $1e $a6 $6d $1d
+    ;;Y-You silly<...><E3><end>
     Op04_Unknown_Text data_29_7fb7                     ;; 32:4712 $04 $b7 $7f $29
     Op1E_Call call_32_488f                             ;; 32:4716 $1e $8f $48 $32
+    ;;Th-This is mine!<E4>All mine!<E0>
     Op06_Unknown_Text data_29_7fc5                     ;; 32:471a $06 $c5 $7f $29
     Op1E_Call call_04_615d                             ;; 32:471e $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $4c, $60, $14          ;; 32:4722 $56 $1a $4c $60 $14
@@ -815,13 +832,16 @@ call_32_494f:
     Op1E_Call call_32_40c5                             ;; 32:4980 $1e $c5 $40 $32
     Op1E_Call call_1d_700b                             ;; 32:4984 $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 32:4988 $1e $e8 $6a $1d
+    ;;You learned<E4><E4><end>
     Op04_Unknown_Text data_29_7fe0                     ;; 32:498c $04 $e0 $7f $29
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $4f, $40, $0f ;; 32:4990 $4c $16 $08 $04 $00 $00 $00 $00 $4f $40 $0f
+    ;;<EB><EA>pooie<E8>.<end>
     Op06_Unknown_Text data_29_7fee                     ;; 32:499b $06 $ee $7f $29
 
 call_32_499f:
     SCRIPT_RETURN_4A                                   ;; 32:499f $4a
     Op3E_Compare_Branch 22, $4f, $40, $0f, call_32_499f ;; 32:49a0 $3e $16 $4f $40 $0f $9f $49 $32
+    ;;<E0>
     Op06_Unknown_Text data_29_7ff8                     ;; 32:49a8 $06 $f8 $7f $29
     Op1E_Call call_04_615d                             ;; 32:49ac $1e $5d $61 $04
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, $00, $00, $00 ;; 32:49b0 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
@@ -1172,6 +1192,7 @@ call_32_4dce:
 call_32_4dd2:
     Op1E_Call call_1d_6acd                             ;; 32:4dd2 $1e $cd $6a $1d
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $ab, $6b, $11 ;; 32:4dd6 $4c $16 $10 $02 $00 $00 $00 $00 $ab $6b $11
+    ;;<EB><EA>Scoochie<E8>!<end>
     Op04_Unknown_Text data_23_7fe2                     ;; 32:4de1 $04 $e2 $7f $23
     Op44_Unknown $10, $00                              ;; 32:4de5 $44 $10 $00
     Op92_Unknown $00                                   ;; 32:4de8 $92 $00
@@ -1367,6 +1388,7 @@ call_32_4fe3:
 call_32_4fe7:
     Op1E_Call call_1d_6acd                             ;; 32:4fe7 $1e $cd $6a $1d
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $ab, $6b, $11 ;; 32:4feb $4c $16 $10 $02 $00 $00 $00 $00 $ab $6b $11
+    ;;<EB><EA>Scoochie<E8>!<end>
     Op04_Unknown_Text data_23_7fef                     ;; 32:4ff6 $04 $ef $7f $23
     Op44_Unknown $10, $00                              ;; 32:4ffa $44 $10 $00
     Op92_Unknown $00                                   ;; 32:4ffd $92 $00
@@ -1907,6 +1929,7 @@ call_32_56a7:
     Op4E_Unknown_StoreValue 4, $01, $61, $40, $10      ;; 32:56ab $4e $04 $01 $61 $40 $10
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $b9, $5d, $10 ;; 32:56b1 $4c $16 $08 $04 $00 $00 $00 $00 $b9 $5d $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $fd, $5e, $10 ;; 32:56bc $4c $08 $01 $04 $00 $00 $00 $00 $fd $5e $10
+    ;;<EB><EA>Digdig<E8>!<end>
     Op04_Unknown_Text data_3c_601f                     ;; 32:56c7 $04 $1f $60 $3c
 
 call_32_56cb:
@@ -1949,6 +1972,7 @@ call_32_5721:
 call_32_5725:
     Op1E_Call call_20_465b                             ;; 32:5725 $1e $5b $46 $20
     Op1E_Call call_1d_6ae8                             ;; 32:5729 $1e $e8 $6a $1d
+    ;;<E4>I smell a hamster<...><E0>
     Op04_Unknown_Text data_3c_602a                     ;; 32:572d $04 $2a $60 $3c
     Op1E_Call call_04_615d                             ;; 32:5731 $1e $5d $61 $04
     Op18_Jump call_32_5366                             ;; 32:5735 $18 $66 $53 $32
@@ -1956,6 +1980,7 @@ call_32_5725:
 call_32_5739:
     Op1E_Call call_1d_6acd                             ;; 32:5739 $1e $cd $6a $1d
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, $d2, $69, $10 ;; 32:573d $4c $16 $ff $04 $00 $00 $00 $00 $d2 $69 $10
+    ;;<EB><EA>Digdig<E8>!<end>
     Op04_Unknown_Text data_3c_603e                     ;; 32:5748 $04 $3e $60 $3c
 
 call_32_574c:
@@ -1968,6 +1993,7 @@ call_32_574c:
     Op14_Unknown 1, $cc, $54                           ;; 32:575f $14 $01 $cc $54
     SCRIPT_POINTER call_32_5792                        ;; 32:5763 $92 $57 $32
     Op1E_Call call_1d_6c20                             ;; 32:5766 $1e $20 $6c $1d
+    ;;Shush!<E2>We'll get caught!<E0>
     Op04_Unknown_Text data_3c_6049                     ;; 32:576a $04 $49 $60 $3c
     Op92_Unknown $00                                   ;; 32:576e $92 $00
     Op4C_Unknown $16, $01, $04, $00, $00, $00, $00, $29, $6a, $10 ;; 32:5770 $4c $16 $01 $04 $00 $00 $00 $00 $29 $6a $10
@@ -2007,8 +2033,10 @@ call_32_57fb:
     Op44_Unknown $10, $00                              ;; 32:581a $44 $10 $00
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $27, $41, $16 ;; 32:581d $4c $1a $ff $04 $00 $00 $00 $00 $27 $41 $16
     Op1E_Call call_1d_6c20                             ;; 32:5828 $1e $20 $6c $1d
+    ;;Oh, no<...> The sand<E2>really wasn't a<E2>good hiding spot.<E3>I gotta find a new<E4>place to hide.<E0>
     Op04_Unknown_Text data_3c_6062                     ;; 32:582c $04 $62 $60 $3c
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $94, $45, $16 ;; 32:5830 $4c $1a $ff $04 $00 $00 $00 $00 $94 $45 $16
+    ;;<EA>Meep-P<E8>.<E0>
     Op04_Unknown_Text data_3c_60b7                     ;; 32:583b $04 $b7 $60 $3c
 
 call_32_583f:
@@ -2025,12 +2053,14 @@ call_32_5864:
     Op4E_Unknown_StoreValue 4, $01, $6d, $40, $10      ;; 32:586d $4e $04 $01 $6d $40 $10
     Op4C_Unknown $20, $01, $04, $00, $00, $00, $00, $90, $4b, $1a ;; 32:5873 $4c $20 $01 $04 $00 $00 $00 $00 $90 $4b $1a
     Op1E_Call call_1d_6c2d                             ;; 32:587e $1e $2d $6c $1d
+    ;;Found you!<E0>
     Op04_Unknown_Text data_3c_60c1                     ;; 32:5882 $04 $c1 $60 $3c
     Op92_Unknown $00                                   ;; 32:5886 $92 $00
     Op4E_Unknown_StoreValue 4, $01, $73, $40, $10      ;; 32:5888 $4e $04 $01 $73 $40 $10
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $37, $43, $16 ;; 32:588e $4c $1a $ff $04 $00 $00 $00 $00 $37 $43 $16
     Op4C_Unknown $1c, $01, $04, $00, $00, $00, $00, $48, $43, $16 ;; 32:5899 $4c $1c $01 $04 $00 $00 $00 $00 $48 $43 $16
     Op1E_Call call_1d_6c20                             ;; 32:58a4 $1e $20 $6c $1d
+    ;;Oh<...>you found me.<E0>
     Op04_Unknown_Text data_3c_60cc                     ;; 32:58a8 $04 $cc $60 $3c
     Op92_Unknown $00                                   ;; 32:58ac $92 $00
 
@@ -2049,6 +2079,7 @@ call_32_58ae:
 
 call_32_58f1:
     Op1E_Call call_1d_6c20                             ;; 32:58f1 $1e $20 $6c $1d
+    ;;Shush!<E2>We'll get caught!<E0>
     Op04_Unknown_Text data_3c_60dd                     ;; 32:58f5 $04 $dd $60 $3c
     Op92_Unknown $00                                   ;; 32:58f9 $92 $00
     Op4C_Unknown $16, $01, $04, $00, $00, $00, $00, $29, $6a, $10 ;; 32:58fb $4c $16 $01 $04 $00 $00 $00 $00 $29 $6a $10
@@ -2085,6 +2116,7 @@ call_32_5953:
     Op1E_Call call_32_5b97                             ;; 32:5953 $1e $97 $5b $32
     Op1E_Call call_32_5bea                             ;; 32:5957 $1e $ea $5b $32
     Op1E_Call call_1d_6c20                             ;; 32:595b $1e $20 $6c $1d
+    ;;Next time, I'll<E2>find a better<E2>place to hide.<E0>
     Op04_Unknown_Text data_3c_60f6                     ;; 32:595f $04 $f6 $60 $3c
     Op92_Unknown $00                                   ;; 32:5963 $92 $00
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $7e, $40, $16 ;; 32:5965 $4c $1a $ff $04 $00 $00 $00 $00 $7e $40 $16
@@ -2095,6 +2127,7 @@ call_32_5974:
     Op1E_Call call_32_5b97                             ;; 32:5978 $1e $97 $5b $32
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $a4, $46, $16 ;; 32:597c $4c $1a $ff $04 $00 $00 $00 $00 $a4 $46 $16
     Op1E_Call call_1d_6c20                             ;; 32:5987 $1e $20 $6c $1d
+    ;;<EA>hif-hif<E8><E0>
     Op04_Unknown_Text data_3c_6123                     ;; 32:598b $04 $23 $61 $3c
     Op92_Unknown $00                                   ;; 32:598f $92 $00
 
@@ -2114,6 +2147,7 @@ call_32_59a9:
     Op1E_Call call_20_4294                             ;; 32:59c9 $1e $94 $42 $20
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $94, $42, $16 ;; 32:59cd $4c $1a $ff $04 $00 $00 $00 $00 $94 $42 $16
     Op1E_Call call_1d_6c20                             ;; 32:59d8 $1e $20 $6c $1d
+    ;;Pshaw!<E3>I can easily<E2>dodge that!<E0>
     Op04_Unknown_Text data_3c_612d                     ;; 32:59dc $04 $2d $61 $3c
     Op92_Unknown $00                                   ;; 32:59e0 $92 $00
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $af, $4b, $16 ;; 32:59e2 $4c $1a $ff $04 $00 $00 $00 $00 $af $4b $16
@@ -2257,14 +2291,17 @@ call_32_5b19:
     Op1E_Call call_32_53e0                             ;; 32:5b46 $1e $e0 $53 $32
     Op1E_Call call_1d_700b                             ;; 32:5b4a $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 32:5b4e $1e $e8 $6a $1d
+    ;;You learned<E2><end>
     Op04_Unknown_Text data_3c_614d                     ;; 32:5b52 $04 $4d $61 $3c
     Op4E_Unknown_StoreValue 4, $01, $67, $40, $10      ;; 32:5b56 $4e $04 $01 $67 $40 $10
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $c5, $54, $0f ;; 32:5b5c $4c $16 $08 $04 $00 $00 $00 $00 $c5 $54 $0f
+    ;;<E4><EB><EA>meep-P<E8>.<end>
     Op06_Unknown_Text data_3c_615a                     ;; 32:5b67 $06 $5a $61 $3c
 
 call_32_5b6b:
     SCRIPT_RETURN_4A                                   ;; 32:5b6b $4a
     Op3E_Compare_Branch 22, $c5, $54, $0f, call_32_5b6b ;; 32:5b6c $3e $16 $c5 $54 $0f $6b $5b $32
+    ;;<E0>
     Op06_Unknown_Text data_3c_6166                     ;; 32:5b74 $06 $66 $61 $3c
     Op1E_Call call_04_615d                             ;; 32:5b78 $1e $5d $61 $04
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, $71, $42, $10 ;; 32:5b7c $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
@@ -2640,8 +2677,10 @@ call_32_6017:
     Op1E_Call call_1d_6ae8                             ;; 32:601b $1e $e8 $6a $1d
     Op14_Unknown 1, $e6, $69                           ;; 32:601f $14 $01 $e6 $69
     SCRIPT_POINTER call_32_602e                        ;; 32:6023 $2e $60 $32
+    ;;The Rock Door:<E4>100 grams of Rock<E4>opens the door.<E0>
     Op04_Unknown_Text data_3c_672a                     ;; 32:6026 $04 $2a $67 $3c
     Op18_Jump call_32_6032                             ;; 32:602a $18 $32 $60 $32
+    ;;A box is on top<E4>of the scale.<E3>It must be where<E4>you place the<E4>Rocks.<E0>
 
 call_32_602e:
     Op04_Unknown_Text data_3c_675b                     ;; 32:602e $04 $5b $67 $3c
@@ -2665,6 +2704,7 @@ call_32_603e:
 call_32_6056:
     Op1E_Call call_20_41b0                             ;; 32:6056 $1e $b0 $41 $20
     Op1E_Call call_1d_6ae8                             ;; 32:605a $1e $e8 $6a $1d
+    ;;It's a bit worn,<E4>but the paper is<E4>readable.<E0>
     Op04_Unknown_Text data_3c_679f                     ;; 32:605e $04 $9f $67 $3c
     Op1E_Call call_04_615d                             ;; 32:6062 $1e $5d $61 $04
     Op18_Jump call_32_5ce7                             ;; 32:6066 $18 $e7 $5c $32
@@ -2881,17 +2921,21 @@ call_32_6232:
     SCRIPT_POINTER call_32_6278                        ;; 32:6266 $78 $62 $32
     Op14_Unknown 1, $25, $6a                           ;; 32:6269 $14 $01 $25 $6a
     SCRIPT_POINTER call_32_6280                        ;; 32:626d $80 $62 $32
+    ;;What you put in<E4>weighs <end>
 
 call_32_6270:
     Op04_Unknown_Text data_3c_67cb                     ;; 32:6270 $04 $cb $67 $3c
     Op18_Jump call_32_6284                             ;; 32:6274 $18 $84 $62 $32
+    ;;The Heavy Rock<E4>weighs <end>
 
 call_32_6278:
     Op04_Unknown_Text data_3c_67e3                     ;; 32:6278 $04 $e3 $67 $3c
     Op18_Jump call_32_6284                             ;; 32:627c $18 $84 $62 $32
+    ;;Add the Rocks<E4>together, and it<E4>weighs <end>
 
 call_32_6280:
     Op04_Unknown_Text data_3c_67fa                     ;; 32:6280 $04 $fa $67 $3c
+    ;;<end>
 
 call_32_6284:
     Op06_Unknown_Text data_3c_6821                     ;; 32:6284 $06 $21 $68 $3c
@@ -2916,9 +2960,11 @@ call_32_62ad:
     Op74_PrepTableJumpIndex_Copy wC755                 ;; 32:62b3 $74 $55 $c7
     Op1E_Call call_33_4cbf                             ;; 32:62b6 $1e $bf $4c $33
     Op18_Jump call_32_62c2                             ;; 32:62ba $18 $c2 $62 $32
+    ;;100<end>
 
 call_32_62be:
     Op06_Unknown_Text data_3c_6822                     ;; 32:62be $06 $22 $68 $3c
+    ;; grams!<E0>
 
 call_32_62c2:
     Op06_Unknown_Text data_3c_6826                     ;; 32:62c2 $06 $26 $68 $3c
@@ -3150,6 +3196,7 @@ call_32_64f8:
 call_32_64f9:
     Op1E_Call call_1d_6acd                             ;; 32:64f9 $1e $cd $6a $1d
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $79, $59, $0f ;; 32:64fd $4c $16 $08 $04 $00 $00 $00 $00 $79 $59 $0f
+    ;;<EB><EA>Chukchuk<E8>!<end>
     Op04_Unknown_Text data_3c_682e                     ;; 32:6508 $04 $2e $68 $3c
 
 call_32_650c:
@@ -3581,6 +3628,7 @@ call_32_6a72:
     Op1E_Call call_1d_6acd                             ;; 32:6a72 $1e $cd $6a $1d
     Op4E_Unknown_StoreValue 4, $01, $61, $40, $10      ;; 32:6a76 $4e $04 $01 $61 $40 $10
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $8e, $5e, $10 ;; 32:6a7c $4c $16 $08 $04 $00 $00 $00 $00 $8e $5e $10
+    ;;<EB><EA>Digdig<E8>!<end>
     Op04_Unknown_Text data_3c_5ec4                     ;; 32:6a87 $04 $c4 $5e $3c
 
 call_32_6a8b:
@@ -3615,17 +3663,20 @@ call_32_6ad4:
     Op1E_Call call_32_6ec2                             ;; 32:6ad4 $1e $c2 $6e $32
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $cc, $75, $12 ;; 32:6ad8 $4c $1e $01 $04 $00 $00 $00 $00 $cc $75 $12
     Op1E_Call call_1d_6d24                             ;; 32:6ae3 $1e $24 $6d $1d
+    ;;Hmm? Oh, yes<...><E2><end>
     Op04_Unknown_Text data_3c_5ecf                     ;; 32:6ae7 $04 $cf $5e $3c
 
 call_32_6aeb:
     SCRIPT_RETURN_4A                                   ;; 32:6aeb $4a
     Op3E_Compare_Branch 30, $cc, $75, $12, call_32_6aeb ;; 32:6aec $3e $1e $cc $75 $12 $eb $6a $32
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $e8, $75, $12 ;; 32:6af4 $4c $1e $01 $04 $00 $00 $00 $00 $e8 $75 $12
+    ;;<EA>Ham<E8><...><EA>ha<E8><...><E3><end>
     Op06_Unknown_Text data_3c_5ede                     ;; 32:6aff $06 $de $5e $3c
 
 call_32_6b03:
     SCRIPT_RETURN_4A                                   ;; 32:6b03 $4a
     Op3E_Compare_Branch 30, $e8, $75, $12, call_32_6b03 ;; 32:6b04 $3e $1e $e8 $75 $12 $03 $6b $32
+    ;;Huh? That sounded<E2>funny? This is a<E2>resort, you know?!<E0>
     Op06_Unknown_Text data_3c_5eeb                     ;; 32:6b0c $06 $eb $5e $3c
     Op92_Unknown $00                                   ;; 32:6b10 $92 $00
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $dc, $75, $12 ;; 32:6b12 $4c $1e $01 $04 $00 $00 $00 $00 $dc $75 $12
@@ -3675,12 +3726,14 @@ call_32_6b85:
     Op1E_Call call_32_6ec2                             ;; 32:6b89 $1e $c2 $6e $32
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $cc, $75, $12 ;; 32:6b8d $4c $1e $01 $04 $00 $00 $00 $00 $cc $75 $12
     Op1E_Call call_1d_6d24                             ;; 32:6b98 $1e $24 $6d $1d
+    ;;Hmm? <end>
     Op04_Unknown_Text data_3c_5f21                     ;; 32:6b9c $04 $21 $5f $3c
 
 call_32_6ba0:
     SCRIPT_RETURN_4A                                   ;; 32:6ba0 $4a
     Op3E_Compare_Branch 30, $cc, $75, $12, call_32_6ba0 ;; 32:6ba1 $3e $1e $cc $75 $12 $a0 $6b $32
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $e8, $75, $12 ;; 32:6ba9 $4c $1e $01 $04 $00 $00 $00 $00 $e8 $75 $12
+    ;;<EA>Hamha<E8>!<E0>
     Op06_Unknown_Text data_3c_5f27                     ;; 32:6bb4 $06 $27 $5f $3c
 
 call_32_6bb8:
@@ -3709,6 +3762,7 @@ call_32_6bf2:
     Op3E_Compare_Branch 30, $cc, $75, $12, call_32_6bf2 ;; 32:6bf3 $3e $1e $cc $75 $12 $f2 $6b $32
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $fa, $75, $12 ;; 32:6bfb $4c $1e $01 $04 $00 $00 $00 $00 $fa $75 $12
     Op1E_Call call_1d_6d24                             ;; 32:6c06 $1e $24 $6d $1d
+    ;;Golf balls move<E2>oddly in the wind.<E0>
     Op04_Unknown_Text data_3c_5f30                     ;; 32:6c0a $04 $30 $5f $3c
     Op92_Unknown $00                                   ;; 32:6c0e $92 $00
     Op18_Jump call_32_6dfd                             ;; 32:6c10 $18 $fd $6d $32
@@ -3754,6 +3808,7 @@ call_32_6c75:
     Op3E_Compare_Branch 30, $cc, $75, $12, call_32_6c75 ;; 32:6c76 $3e $1e $cc $75 $12 $75 $6c $32
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $11, $76, $12 ;; 32:6c7e $4c $1e $01 $04 $00 $00 $00 $00 $11 $76 $12
     Op1E_Call call_1d_6d24                             ;; 32:6c89 $1e $24 $6d $1d
+    ;;Hey!<E3>That's rude!<end>
     Op04_Unknown_Text data_3c_5f53                     ;; 32:6c8d $04 $53 $5f $3c
     Op44_Unknown $10, $00                              ;; 32:6c91 $44 $10 $00
     Op92_Unknown $00                                   ;; 32:6c94 $92 $00
@@ -3781,6 +3836,7 @@ call_32_6cd7:
     Op4E_Unknown_StoreValue 4, $01, $6d, $40, $10      ;; 32:6cdb $4e $04 $01 $6d $40 $10
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $c7, $44, $0f ;; 32:6ce1 $4c $16 $08 $02 $00 $00 $00 $00 $c7 $44 $0f
     Op4C_Unknown $18, $01, $04, $00, $00, $00, $00, $76, $45, $0f ;; 32:6cec $4c $18 $01 $04 $00 $00 $00 $00 $76 $45 $0f
+    ;;<EA>Bizzaroo<E8>.<end>
     Op04_Unknown_Text data_3c_5f65                     ;; 32:6cf7 $04 $65 $5f $3c
 
 call_32_6cfb:
@@ -3791,21 +3847,25 @@ call_32_6cfb:
     Op1E_Call call_32_6ec2                             ;; 32:6d13 $1e $c2 $6e $32
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $cc, $75, $12 ;; 32:6d17 $4c $1e $01 $04 $00 $00 $00 $00 $cc $75 $12
     Op1E_Call call_1d_6d24                             ;; 32:6d22 $1e $24 $6d $1d
+    ;;Eh? Umm<...><end>
     Op04_Unknown_Text data_3c_5f71                     ;; 32:6d26 $04 $71 $5f $3c
 
 call_32_6d2a:
     SCRIPT_RETURN_4A                                   ;; 32:6d2a $4a
     Op3E_Compare_Branch 30, $cc, $75, $12, call_32_6d2a ;; 32:6d2b $3e $1e $cc $75 $12 $2a $6d $32
+    ;;<E2>I'm golfing!<E3>Resorts are all<E4>about golf. <E5>It's<E4>the only way to be<E4>a <end>
     Op06_Unknown_Text data_3c_5f7a                     ;; 32:6d33 $06 $7a $5f $3c
     Op32_Unknown $9c, $55, $7b, $00, $d4, $06          ;; 32:6d37 $32 $9c $55 $7b $00 $d4 $06
     Op4E_Unknown_StoreValue 4, $01, $79, $40, $10      ;; 32:6d3e $4e $04 $01 $79 $40 $10
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $18, $76, $12 ;; 32:6d44 $4c $1e $01 $04 $00 $00 $00 $00 $18 $76 $12
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $2a, $76, $12 ;; 32:6d4f $4c $08 $01 $04 $00 $00 $00 $00 $2a $76 $12
+    ;;<EA>spiffie<E8><E4><end>
     Op06_Unknown_Text data_3c_5fc0                     ;; 32:6d5a $06 $c0 $5f $3c
 
 call_32_6d5e:
     SCRIPT_RETURN_4A                                   ;; 32:6d5e $4a
     Op3E_Compare_Branch 30, $18, $76, $12, call_32_6d5e ;; 32:6d5f $3e $1e $18 $76 $12 $5e $6d $32
+    ;;hamster.<E0>
     Op06_Unknown_Text data_3c_5fcb                     ;; 32:6d67 $06 $cb $5f $3c
     Op92_Unknown $00                                   ;; 32:6d6b $92 $00
     Op16_SubOps 1                                      ;; 32:6d6d $16 $01
@@ -3832,6 +3892,7 @@ call_32_6d95:
     Op42_Unknown_StoreValue 7, $01, $9f, $72, $12      ;; 32:6da3 $42 $07 $01 $9f $72 $12
     Op1E_Call call_1d_6acd                             ;; 32:6da9 $1e $cd $6a $1d
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $ab, $6b, $11 ;; 32:6dad $4c $16 $10 $02 $00 $00 $00 $00 $ab $6b $11
+    ;;<EB><EA>Scoochie<E8>!<end>
     Op04_Unknown_Text data_3c_5fd4                     ;; 32:6db8 $04 $d4 $5f $3c
     Op44_Unknown $10, $00                              ;; 32:6dbc $44 $10 $00
     Op92_Unknown $00                                   ;; 32:6dbf $92 $00
@@ -3842,8 +3903,10 @@ call_32_6d95:
 call_32_6dca:
     Op1E_Call call_1d_6acd                             ;; 32:6dca $1e $cd $6a $1d
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $97, $6e, $11 ;; 32:6dce $4c $16 $10 $02 $00 $00 $00 $00 $97 $6e $11
+    ;;<EB><EA>Scoo<E8><...><E5><EB><EA>scoo<E8><...><E3><end>
     Op04_Unknown_Text data_3c_5fe1                     ;; 32:6dd9 $04 $e1 $5f $3c
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $a7, $6e, $11 ;; 32:6ddd $4c $16 $08 $02 $00 $00 $00 $00 $a7 $6e $11
+    ;;No <EB><EA>scoochie<E8><...><E0>
     Op06_Unknown_Text data_3c_5ff4                     ;; 32:6de8 $06 $f4 $5f $3c
     Op92_Unknown $00                                   ;; 32:6dec $92 $00
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, $09, $42, $10 ;; 32:6dee $4c $16 $08 $ff $00 $00 $00 $00 $09 $42 $10
@@ -3885,16 +3948,19 @@ call_32_6e35:
     Op1E_Call call_32_6695                             ;; 32:6e62 $1e $95 $66 $32
     Op1E_Call call_1d_700b                             ;; 32:6e66 $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 32:6e6a $1e $e8 $6a $1d
+    ;;You learned<E2><end>
     Op04_Unknown_Text data_3c_6004                     ;; 32:6e6e $04 $04 $60 $3c
     Op32_Unknown $9c, $55, $7b, $00, $d4, $06          ;; 32:6e72 $32 $9c $55 $7b $00 $d4 $06
     Op4E_Unknown_StoreValue 4, $01, $79, $40, $10      ;; 32:6e79 $4e $04 $01 $79 $40 $10
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $e7, $7d, $0f ;; 32:6e7f $4c $16 $08 $04 $00 $00 $00 $00 $e7 $7d $0f
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $45, $7e, $0f ;; 32:6e8a $4c $08 $01 $04 $00 $00 $00 $00 $45 $7e $0f
+    ;;<E4><EB><EA>spiffie<E8>.<end>
     Op06_Unknown_Text data_3c_6011                     ;; 32:6e95 $06 $11 $60 $3c
 
 call_32_6e99:
     SCRIPT_RETURN_4A                                   ;; 32:6e99 $4a
     Op3E_Compare_Branch 22, $e7, $7d, $0f, call_32_6e99 ;; 32:6e9a $3e $16 $e7 $7d $0f $99 $6e $32
+    ;;<E0>
     Op06_Unknown_Text data_3c_601e                     ;; 32:6ea2 $06 $1e $60 $3c
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $07, $7e, $0f ;; 32:6ea6 $4c $16 $08 $04 $00 $00 $00 $00 $07 $7e $0f
     Op1E_Call call_04_615d                             ;; 32:6eb1 $1e $5d $61 $04
@@ -4267,6 +4333,7 @@ call_32_7325:
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $9c, $5c, $10 ;; 32:735f $4c $16 $08 $04 $00 $00 $00 $00 $9c $5c $10
     Op4C_Unknown $18, $01, $04, $00, $00, $00, $00, $a6, $5d, $10 ;; 32:736a $4c $18 $01 $04 $00 $00 $00 $00 $a6 $5d $10
     Op1E_Call call_1d_6ae8                             ;; 32:7375 $1e $e8 $6a $1d
+    ;;Something is<E2>blocking the way.<E0>
     Op04_Unknown_Text data_3b_6d9a                     ;; 32:7379 $04 $9a $6d $3b
     Op92_Unknown $00                                   ;; 32:737d $92 $00
 
@@ -4346,10 +4413,13 @@ call_32_7428:
 call_32_744b:
     Op1E_Call call_32_7625                             ;; 32:744b $1e $25 $76 $32
     Op1E_Call call_1d_6eeb                             ;; 32:744f $1e $eb $6e $1d
+    ;;Be quiet, <end>
     Op04_Unknown_Text data_3b_6db9                     ;; 32:7453 $04 $b9 $6d $3b
     Op5A_Unknown $b1                                   ;; 32:7457 $5a $b1
+    ;;eek!<E4>Go away, <end>
     Op06_Unknown_Text data_3b_6dc4                     ;; 32:7459 $06 $c4 $6d $3b
     Op5A_Unknown $b1                                   ;; 32:745d $5a $b1
+    ;;eek!<E0>
     Op06_Unknown_Text data_3b_6dd3                     ;; 32:745f $06 $d3 $6d $3b
     Op92_Unknown $00                                   ;; 32:7463 $92 $00
     Op18_Jump call_32_6f8c                             ;; 32:7465 $18 $8c $6f $32
@@ -4358,13 +4428,17 @@ call_32_7469:
     Op1E_Call call_20_4696                             ;; 32:7469 $1e $96 $46 $20
     Op1E_Call call_32_7625                             ;; 32:746d $1e $25 $76 $32
     Op1E_Call call_1d_6ae8                             ;; 32:7471 $1e $e8 $6a $1d
+    ;;<E4>I smell a monkey<...><E0>
     Op04_Unknown_Text data_3b_6dd8                     ;; 32:7475 $04 $d8 $6d $3b
     Op92_Unknown $00                                   ;; 32:7479 $92 $00
     Op1E_Call call_1d_6eeb                             ;; 32:747b $1e $eb $6e $1d
+    ;;You're a rude<E2>hamster!<E4><end>
     Op04_Unknown_Text data_3b_6deb                     ;; 32:747f $04 $eb $6d $3b
     Op5A_Unknown $b1                                   ;; 32:7483 $5a $b1
+    ;;Go away, <end>
     Op06_Unknown_Text data_3b_6e03                     ;; 32:7485 $06 $03 $6e $3b
     Op5A_Unknown $b1                                   ;; 32:7489 $5a $b1
+    ;;eek!<E0>
     Op06_Unknown_Text data_3b_6e0d                     ;; 32:748b $06 $0d $6e $3b
     Op92_Unknown $00                                   ;; 32:748f $92 $00
     Op18_Jump call_32_6f8c                             ;; 32:7491 $18 $8c $6f $32
@@ -4388,12 +4462,16 @@ call_32_74c4:
     Op1E_Call call_32_7625                             ;; 32:74cd $1e $25 $76 $32
     Op1E_Call call_1d_6eeb                             ;; 32:74d1 $1e $eb $6e $1d
     Op5A_Unknown $b1                                   ;; 32:74d5 $5a $b1
+    ;;Eek! That was<E4>mean!<E3><end>
     Op04_Unknown_Text data_3b_6e12                     ;; 32:74d7 $04 $12 $6e $3b
     Op5A_Unknown $b1                                   ;; 32:74db $5a $b1
+    ;;You can't get away<E4><end>
     Op06_Unknown_Text data_3b_6e27                     ;; 32:74dd $06 $27 $6e $3b
     Op5A_Unknown $b1                                   ;; 32:74e1 $5a $b1
+    ;;with that, <end>
     Op06_Unknown_Text data_3b_6e3b                     ;; 32:74e3 $06 $3b $6e $3b
     Op5A_Unknown $b1                                   ;; 32:74e7 $5a $b1
+    ;;eek!<E0>
     Op06_Unknown_Text data_3b_6e47                     ;; 32:74e9 $06 $47 $6e $3b
     Op92_Unknown $00                                   ;; 32:74ed $92 $00
     Op1E_Call call_32_7684                             ;; 32:74ef $1e $84 $76 $32
@@ -4435,20 +4513,26 @@ call_32_753b:
     Op16_SubOps 1                                      ;; 32:753f $16 $01
     SubOp_SetFlag wC94A, 2                             ;; 32:7541 $3f $92
     Op1E_Call call_1d_6eeb                             ;; 32:7543 $1e $eb $6e $1d
+    ;;I'm so hungry<...><E2>I can't move, <end>
     Op04_Unknown_Text data_3b_6e4c                     ;; 32:7547 $04 $4c $6e $3b
     Op5A_Unknown $b1                                   ;; 32:754b $5a $b1
+    ;;eek.<E3>Please give me<E4>some food.<E4><end>
     Op06_Unknown_Text data_3b_6e6a                     ;; 32:754d $06 $6a $6e $3b
     Op5A_Unknown $b1                                   ;; 32:7551 $5a $b1
+    ;;EEK!<end>
     Op06_Unknown_Text data_3b_6e8a                     ;; 32:7553 $06 $8a $6e $3b
     Op16_SubOps 1                                      ;; 32:7557 $16 $01
     SubOp_SetByte wC736, $0a                           ;; 32:7559 $7e $1e $0a
     Op82_Run data_02_430b                              ;; 32:755c $82 $0b $43 $02
     Op14_Unknown 1, $61, $67                           ;; 32:7560 $14 $01 $61 $67
     SCRIPT_POINTER call_32_761b                        ;; 32:7564 $1b $76 $32
+    ;;<E3><end>
     Op06_Unknown_Text data_3b_6e8f                     ;; 32:7567 $06 $8f $6e $3b
     Op5A_Unknown $b1                                   ;; 32:756b $5a $b1
+    ;;EEK!<E2>You have a Banana?<E3><end>
     Op06_Unknown_Text data_3b_6e91                     ;; 32:756d $06 $91 $6e $3b
     Op5A_Unknown $b1                                   ;; 32:7571 $5a $b1
+    ;;My favorite!<E4>Give it to me!<E0>
     Op06_Unknown_Text data_3b_6eaa                     ;; 32:7573 $06 $aa $6e $3b
     Op92_Unknown $00                                   ;; 32:7577 $92 $00
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 32:7579 $82 $16 $74 $01
@@ -4474,14 +4558,18 @@ call_32_75ab:
     Op1E_Call call_32_7625                             ;; 32:75af $1e $25 $76 $32
     Op5A_Unknown $b1                                   ;; 32:75b3 $5a $b1
     Op1E_Call call_1d_6eeb                             ;; 32:75b5 $1e $eb $6e $1d
+    ;;Eeek!<E2>I've been saved!<E0>
     Op04_Unknown_Text data_3b_6ec6                     ;; 32:75b9 $04 $c6 $6e $3b
     Op92_Unknown $00                                   ;; 32:75bd $92 $00
     Op1E_Call call_32_773c                             ;; 32:75bf $1e $3c $77 $32
     Op1E_Call call_1d_6eeb                             ;; 32:75c3 $1e $eb $6e $1d
+    ;;I'll get out of<E4>your way as soon<E4>as I finish. <E5><end>
     Op04_Unknown_Text data_3b_6edd                     ;; 32:75c7 $04 $dd $6e $3b
     Op5A_Unknown $b1                                   ;; 32:75cb $5a $b1
+    ;;Until<E4>then, leave me<E4>alone while I eat.<end>
     Op06_Unknown_Text data_3b_6f0d                     ;; 32:75cd $06 $0d $6f $3b
     Op5A_Unknown $b1                                   ;; 32:75d1 $5a $b1
+    ;;<E0>
     Op06_Unknown_Text data_3b_6f35                     ;; 32:75d3 $06 $35 $6f $3b
     Op92_Unknown $00                                   ;; 32:75d7 $92 $00
     Op16_SubOps 1                                      ;; 32:75d9 $16 $01
@@ -4505,11 +4593,14 @@ call_32_75fd:
     Op1E_Call call_32_7625                             ;; 32:7601 $1e $25 $76 $32
     Op5A_Unknown $b1                                   ;; 32:7605 $5a $b1
     Op1E_Call call_1d_6eeb                             ;; 32:7607 $1e $eb $6e $1d
+    ;;Eek!<E2>I'm so hungry,<E2>I can't even move!<end>
     Op04_Unknown_Text data_3b_6f36                     ;; 32:760b $04 $36 $6f $3b
     Op5A_Unknown $b1                                   ;; 32:760f $5a $b1
+    ;;Eek!<E0>
     Op06_Unknown_Text data_3b_6f5d                     ;; 32:7611 $06 $5d $6f $3b
     Op92_Unknown $00                                   ;; 32:7615 $92 $00
     Op18_Jump call_32_6f8c                             ;; 32:7617 $18 $8c $6f $32
+    ;;<E0>
 
 call_32_761b:
     Op06_Unknown_Text data_3b_6f62                     ;; 32:761b $06 $62 $6f $3b
@@ -4661,12 +4752,14 @@ call_32_781e:
     Op14_Unknown 1, $7b, $67                           ;; 32:7827 $14 $01 $7b $67
     SCRIPT_POINTER call_32_783c                        ;; 32:782b $3c $78 $32
     Op1E_Call call_04_6e97                             ;; 32:782e $1e $97 $6e $04
+    ;;Oh, I was<E4>miserable! <E5>Thanks<E4>for helping me<E4>out. <E5>I'm a doctor.<E3>Let me know if<E4>you need any<E4>help. <E5>I'll do<E4>what I can.<E0>
     Op04_Unknown_Text data_3b_6f63                     ;; 32:7832 $04 $63 $6f $3b
     Op92_Unknown $00                                   ;; 32:7836 $92 $00
     Op18_Jump call_32_7846                             ;; 32:7838 $18 $46 $78 $32
 
 call_32_783c:
     Op1E_Call call_04_6e97                             ;; 32:783c $1e $97 $6e $04
+    ;;Oh, I felt<E4>miserable! <E5>Thanks<E4>for saving me<E4>yet again.<E3>Oh<...> I wonder<E4>if I've gained<E4>more weight again.<E0>
     Op04_Unknown_Text data_3b_6fda                     ;; 32:7840 $04 $da $6f $3b
     Op92_Unknown $00                                   ;; 32:7844 $92 $00
 
@@ -5012,11 +5105,13 @@ call_32_7c54:
     Op1E_Call call_32_7f44                             ;; 32:7c58 $1e $44 $7f $32
     Op1E_Call call_1d_6ef8                             ;; 32:7c5c $1e $f8 $6e $1d
     Op56_WriteBitArrayIndex 26, $9c, $76, $12          ;; 32:7c60 $56 $1a $9c $76 $12
+    ;;<EA>Hamha<E8>!<end>
     Op04_Unknown_Text data_3c_57a9                     ;; 32:7c65 $04 $a9 $57 $3c
 
 call_32_7c69:
     SCRIPT_RETURN_4A                                   ;; 32:7c69 $4a
     Op3E_Compare_Branch 26, $9c, $76, $12, call_32_7c69 ;; 32:7c6a $3e $1a $9c $76 $12 $69 $7c $32
+    ;;<E4>I'm, like, totally<E4>baking in the sun.<E0>
     Op06_Unknown_Text data_3c_57b2                     ;; 32:7c72 $06 $b2 $57 $3c
     Op1E_Call call_04_615d                             ;; 32:7c76 $1e $5d $61 $04
     Op18_Jump call_32_7e92                             ;; 32:7c7a $18 $92 $7e $32
@@ -5029,6 +5124,7 @@ call_32_7c7e:
 call_32_7c8b:
     SCRIPT_RETURN_4A                                   ;; 32:7c8b $4a
     Op3E_Compare_Branch 26, $a6, $76, $12, call_32_7c8b ;; 32:7c8c $3e $1a $a6 $76 $12 $8b $7c $32
+    ;;I smell, like,<E4>nice and toasty,<E4>right?<E0>
     Op04_Unknown_Text data_3c_57d9                     ;; 32:7c94 $04 $d9 $57 $3c
     Op1E_Call call_04_615d                             ;; 32:7c98 $1e $5d $61 $04
     Op18_Jump call_32_7e92                             ;; 32:7c9c $18 $92 $7e $32
@@ -5043,6 +5139,7 @@ call_32_7caf:
     Op1E_Call call_20_42bf                             ;; 32:7caf $1e $bf $42 $20
     Op56_WriteBitArrayIndex 26, $82, $76, $12          ;; 32:7cb3 $56 $1a $82 $76 $12
     Op1E_Call call_1d_6ef8                             ;; 32:7cb8 $1e $f8 $6e $1d
+    ;;So uncool! You're,<E4>like, making me<E4>feel so icky.<E0>
     Op04_Unknown_Text data_3c_5800                     ;; 32:7cbc $04 $00 $58 $3c
 
 call_32_7cc0:
@@ -5057,6 +5154,7 @@ call_32_7ce1:
     Op1E_Call call_20_44fe                             ;; 32:7ce1 $1e $fe $44 $20
     Op1E_Call call_1d_6ef8                             ;; 32:7ce5 $1e $f8 $6e $1d
     Op56_WriteBitArrayIndex 26, $82, $76, $12          ;; 32:7ce9 $56 $1a $82 $76 $12
+    ;;You're not gonna,<E4>like, find<E4>anything<E4>there.<E0>
     Op04_Unknown_Text data_3c_5831                     ;; 32:7cee $04 $31 $58 $3c
     Op1E_Call call_04_615d                             ;; 32:7cf2 $1e $5d $61 $04
     Op18_Jump call_32_7e92                             ;; 32:7cf6 $18 $92 $7e $32
@@ -5139,6 +5237,7 @@ call_32_7dab:
     Op1E_Call call_32_7f57                             ;; 32:7daf $1e $57 $7f $32
     Op56_WriteBitArrayIndex 26, $82, $76, $12          ;; 32:7db3 $56 $1a $82 $76 $12
     Op1E_Call call_1d_6ef8                             ;; 32:7db8 $1e $f8 $6e $1d
+    ;;It's, like,<E4>totally rude to<E4>stare at a girl.<E0>
     Op04_Unknown_Text data_3c_585e                     ;; 32:7dbc $04 $5e $58 $3c
     Op1E_Call call_04_615d                             ;; 32:7dc0 $1e $5d $61 $04
     Op18_Jump call_32_7e92                             ;; 32:7dc4 $18 $92 $7e $32
@@ -5158,8 +5257,10 @@ call_32_7de0:
     Op1E_Call call_32_7f44                             ;; 32:7de4 $1e $44 $7f $32
     Op56_WriteBitArrayIndex 26, $b5, $76, $12          ;; 32:7de8 $56 $1a $b5 $76 $12
     Op1E_Call call_1d_6ef8                             ;; 32:7ded $1e $f8 $6e $1d
+    ;;Like, oh my gosh!<E3>For real?<E3>A boy with<E4>stripes, like,<E4>told me the<E4>same thing!<E3>OK, I guess I<E4>don't mind making<E4>a <end>
     Op04_Unknown_Text data_3c_588b                     ;; 32:7df1 $04 $8b $58 $3c
     Op56_WriteBitArrayIndex 26, $c0, $76, $12          ;; 32:7df5 $56 $1a $c0 $76 $12
+    ;;<EA>hamteam<E8> with<E4>you, this time.<E0>
     Op06_Unknown_Text data_3c_58fc                     ;; 32:7dfa $06 $fc $58 $3c
 
 call_32_7dfe:
@@ -5204,6 +5305,7 @@ call_32_7e61:
     Op1E_Call call_20_4bf9                             ;; 32:7e61 $1e $f9 $4b $20
     Op1E_Call call_32_7f44                             ;; 32:7e65 $1e $44 $7f $32
     Op1E_Call call_1d_6ef8                             ;; 32:7e69 $1e $f8 $6e $1d
+    ;;The name of<E4>the boy who,<E4>like, came by<E4>here is Stan.<E0>
     Op04_Unknown_Text data_3c_591b                     ;; 32:7e6d $04 $1b $59 $3c
     Op18_Jump call_32_7e8a                             ;; 32:7e71 $18 $8a $7e $32
 
@@ -5212,6 +5314,7 @@ call_32_7e75:
     Op1E_Call call_32_7f44                             ;; 32:7e79 $1e $44 $7f $32
     Op56_WriteBitArrayIndex 26, $82, $76, $12          ;; 32:7e7d $56 $1a $82 $76 $12
     Op1E_Call call_1d_6ef8                             ;; 32:7e82 $1e $f8 $6e $1d
+    ;;That's, like,<E4>SO uncool.<E0>
     Op04_Unknown_Text data_3c_5950                     ;; 32:7e86 $04 $50 $59 $3c
 
 call_32_7e8a:
@@ -5234,6 +5337,7 @@ call_32_7ebc:
     SubOp_SetFlag wC948, 4                             ;; 32:7ec7 $3f $84
     Op56_WriteBitArrayIndex 26, $b5, $76, $12          ;; 32:7ec9 $56 $1a $b5 $76 $12
     Op1E_Call call_1d_6ef8                             ;; 32:7ece $1e $f8 $6e $1d
+    ;;Ha ha ha!<E4>You're so funny.<E0>
     Op04_Unknown_Text data_3c_5969                     ;; 32:7ed2 $04 $69 $59 $3c
     Op1E_Call call_04_615d                             ;; 32:7ed6 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $89, $76, $12          ;; 32:7eda $56 $1a $89 $76 $12
@@ -5306,8 +5410,10 @@ call_32_7f76:
     Op1E_Call call_32_7935                             ;; 32:7fa7 $1e $35 $79 $32
     Op1E_Call call_1d_700b                             ;; 32:7fab $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 32:7faf $1e $e8 $6a $1d
+    ;;You learned<E4><end>
     Op04_Unknown_Text data_3c_5984                     ;; 32:7fb3 $04 $84 $59 $3c
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, $e2, $65, $12 ;; 32:7fb7 $4c $16 $ff $04 $00 $00 $00 $00 $e2 $65 $12
+    ;;<E4><EB><EA>hamteam<E8>.<end>
     Op06_Unknown_Text data_3c_5991                     ;; 32:7fc2 $06 $91 $59 $3c
 
 call_32_7fc6:
@@ -5318,6 +5424,7 @@ call_32_7fc6:
 call_32_7fda:
     SCRIPT_RETURN_4A                                   ;; 32:7fda $4a
     Op3E_Compare_Branch 22, $5d, $66, $12, call_32_7fda ;; 32:7fdb $3e $16 $5d $66 $12 $da $7f $32
+    ;;<E0>
     Op06_Unknown_Text data_3c_599e                     ;; 32:7fe3 $06 $9e $59 $3c
     Op1E_Call call_04_615d                             ;; 32:7fe7 $1e $5d $61 $04
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $00, $00, $00 ;; 32:7feb $4c $16 $08 $02 $00 $00 $00 $00 $00 $00 $00

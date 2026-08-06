@@ -2582,6 +2582,7 @@ call_39_7c1d:
     Op3E_Compare_Branch 22, $cf, $52, $10, call_39_7c1d ;; 39:7c1e $3e $16 $cf $52 $10 $1d $7c $39
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $09, $42, $10 ;; 39:7c26 $4c $16 $08 $02 $00 $00 $00 $00 $09 $42 $10
     Op1E_Call call_1d_6ae8                             ;; 39:7c31 $1e $e8 $6a $1d
+    ;;<E4>Smells like a crow<...><E0>
     Op04_Unknown_Text data_35_7e5a                     ;; 39:7c35 $04 $5a $7e $35
     Op1E_Call call_04_615d                             ;; 39:7c39 $1e $5d $61 $04
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 39:7c3d $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
@@ -2590,6 +2591,7 @@ call_39_7c1d:
 call_39_7c4c:
     Op1E_Call call_1d_6acd                             ;; 39:7c4c $1e $cd $6a $1d
     Op4C_Unknown $16, $01, $04, $00, $00, $00, $00, $d5, $5e, $11 ;; 39:7c50 $4c $16 $01 $04 $00 $00 $00 $00 $d5 $5e $11
+    ;;<EB><EA>Tack-Q<E8>!<end>
     Op04_Unknown_Text data_35_7e6f                     ;; 39:7c5b $04 $6f $7e $35
     Op44_Unknown $32, $00                              ;; 39:7c5f $44 $32 $00
     Op1E_Call call_04_615d                             ;; 39:7c62 $1e $5d $61 $04
@@ -2698,20 +2700,26 @@ call_39_7d70:
     Op16_SubOps 1                                      ;; 39:7d82 $16 $01
     SubOp_SetByte wC72A, $b0                           ;; 39:7d84 $7e $12 $b0
     Op1E_Call call_1d_6e4f                             ;; 39:7d87 $1e $4f $6e $1d
+    ;;Caw! <end>
     Op04_Unknown_Text data_35_7e7a                     ;; 39:7d8b $04 $7a $7e $35
     Op1E_Call call_39_7e0a                             ;; 39:7d8f $1e $0a $7e $39
+    ;;<E4>How's it going?<E3>Hey, why are you<E4>collecting Rocks?<E4>Caw!<E3><end>
     Op06_Unknown_Text data_35_7e80                     ;; 39:7d93 $06 $80 $7e $35
     Op14_Unknown 1, $c5, $66                           ;; 39:7d97 $14 $01 $c5 $66
     SCRIPT_POINTER call_39_7da6                        ;; 39:7d9b $a6 $7d $39
+    ;;That's strange!<E3>Come to think<E4>of it, <E5>I see a ton<E4>of hamsters<E4>these days.<E3>Are you all born<E4>strange or what?<E4><end>
     Op06_Unknown_Text data_35_7eba                     ;; 39:7d9e $06 $ba $7e $35
     Op18_Jump call_39_7daa                             ;; 39:7da2 $18 $aa $7d $39
+    ;;Huh? <E5>Are these<E4>Rocks glamorous?<E4><...>What?<E5> Because<E4>you really like<E4>glam rock!<E3>Whatta a lame pun!<E3>You hamsters are<E4>a strange breed.<E3><end>
 
 call_39_7da6:
     Op06_Unknown_Text data_35_7f27                     ;; 39:7da6 $06 $27 $7f $35
+    ;;Bye, <end>
 
 call_39_7daa:
     Op06_Unknown_Text data_35_7fa9                     ;; 39:7daa $06 $a9 $7f $35
     Op1E_Call call_39_7dd1                             ;; 39:7dae $1e $d1 $7d $39
+    ;;<E4>Caw!<E0>
     Op06_Unknown_Text data_35_7faf                     ;; 39:7db2 $06 $af $7f $35
     Op1E_Call call_04_615d                             ;; 39:7db6 $1e $5d $61 $04
     Op16_SubOps 1                                      ;; 39:7dba $16 $01
@@ -2729,18 +2737,22 @@ call_39_7dd1:
     SCRIPT_POINTER call_39_7dfd                        ;; 39:7de3 $fd $7d $39
     Op14_Unknown 1, $c1, $66                           ;; 39:7de6 $14 $01 $c1 $66
     SCRIPT_POINTER call_39_7e05                        ;; 39:7dea $05 $7e $39
+    ;;<EA>go-P<E8>!<end>
 
 call_39_7ded:
     Op06_Unknown_Text data_35_7fb5                     ;; 39:7ded $06 $b5 $7f $35
     Op18_Jump call_39_7e09                             ;; 39:7df1 $18 $09 $7e $39
+    ;;<EA>zuzuzu<E8>!<end>
 
 call_39_7df5:
     Op06_Unknown_Text data_35_7fbd                     ;; 39:7df5 $06 $bd $7f $35
     Op18_Jump call_39_7e09                             ;; 39:7df9 $18 $09 $7e $39
+    ;;<EA>blanko<E8>!<end>
 
 call_39_7dfd:
     Op06_Unknown_Text data_35_7fc7                     ;; 39:7dfd $06 $c7 $7f $35
     Op18_Jump call_39_7e09                             ;; 39:7e01 $18 $09 $7e $39
+    ;;<EA>hammo<E8>!<end>
 
 call_39_7e05:
     Op06_Unknown_Text data_35_7fd1                     ;; 39:7e05 $06 $d1 $7f $35
@@ -2757,18 +2769,22 @@ call_39_7e0a:
     SCRIPT_POINTER call_39_7e36                        ;; 39:7e1c $36 $7e $39
     Op14_Unknown 1, $c1, $66                           ;; 39:7e1f $14 $01 $c1 $66
     SCRIPT_POINTER call_39_7e3e                        ;; 39:7e23 $3e $7e $39
+    ;;<end>
 
 call_39_7e26:
     Op06_Unknown_Text data_35_7fda                     ;; 39:7e26 $06 $da $7f $35
     Op18_Jump call_39_7e42                             ;; 39:7e2a $18 $42 $7e $39
+    ;;<end>
 
 call_39_7e2e:
     Op06_Unknown_Text data_35_7fdb                     ;; 39:7e2e $06 $db $7f $35
     Op18_Jump call_39_7e42                             ;; 39:7e32 $18 $42 $7e $39
+    ;;<end>
 
 call_39_7e36:
     Op06_Unknown_Text data_35_7fdc                     ;; 39:7e36 $06 $dc $7f $35
     Op18_Jump call_39_7e42                             ;; 39:7e3a $18 $42 $7e $39
+    ;;<end>
 
 call_39_7e3e:
     Op06_Unknown_Text data_35_7fdd                     ;; 39:7e3e $06 $dd $7f $35

@@ -396,12 +396,14 @@ call_1f_4528:
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $fa, $5b, $14 ;; 1f:453a $4c $1e $01 $04 $18 $00 $70 $00 $fa $5b $14
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $35, $42, $10 ;; 1f:4545 $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
     Op1E_Call call_1d_6d8c                             ;; 1f:4550 $1e $8c $6d $1d
+    ;;Welcome to <E2>Tack-Q Bowling,<E3><end>
     Op04_Unknown_Text data_29_4f93                     ;; 1f:4554 $04 $93 $4f $29
 
 call_1f_4558:
     SCRIPT_RETURN_4A                                   ;; 1f:4558 $4a
     Op3E_Compare_Branch 30, $fa, $5b, $14, call_1f_4558 ;; 1f:4559 $3e $1e $fa $5b $14 $58 $45 $1f
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $53, $5c, $14 ;; 1f:4561 $4c $1e $01 $04 $18 $00 $70 $00 $53 $5c $14
+    ;;the hottest game<E2>in town!<E5> It costs<E4>a mere 3 Sunflower<E4>Seeds to play.<E3>If you'd like to<E2>play, please go<E2>around to the<E2>right.<E0>
     Op06_Unknown_Text data_29_4fb0                     ;; 1f:456c $06 $b0 $4f $29
     Op92_Unknown $00                                   ;; 1f:4570 $92 $00
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $eb, $41, $1b ;; 1f:4572 $4c $1e $01 $04 $00 $00 $00 $00 $eb $41 $1b
@@ -417,18 +419,23 @@ call_1f_458a:
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $fa, $5b, $14 ;; 1f:4592 $4c $1e $01 $04 $18 $00 $70 $00 $fa $5b $14
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $35, $42, $10 ;; 1f:459d $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
     Op1E_Call call_1d_6d8c                             ;; 1f:45a8 $1e $8c $6d $1d
+    ;;Welcome,<E2><end>
     Op04_Unknown_Text data_29_502c                     ;; 1f:45ac $04 $2c $50 $29
 
 call_1f_45b0:
     SCRIPT_RETURN_4A                                   ;; 1f:45b0 $4a
     Op3E_Compare_Branch 30, $fa, $5b, $14, call_1f_45b0 ;; 1f:45b1 $3e $1e $fa $5b $14 $b0 $45 $1f
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $53, $5c, $14 ;; 1f:45b9 $4c $1e $01 $04 $18 $00 $70 $00 $53 $5c $14
+    ;;<end>
     Op06_Unknown_Text data_29_5036                     ;; 1f:45c4 $06 $36 $50 $29
     Op1E_Call call_36_7db9                             ;; 1f:45c8 $1e $b9 $7d $36
+    ;;!<E2>There's a new<E2>prize at stake.<E3>Check out the<E2>bulletin<end>
     Op06_Unknown_Text data_29_5037                     ;; 1f:45cc $06 $37 $50 $29
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $b2, $5c, $14 ;; 1f:45d0 $4c $1e $01 $04 $18 $00 $70 $00 $b2 $5c $14
+    ;; on your<E2>right to see what<E2>it is.<E3><end>
     Op06_Unknown_Text data_29_506e                     ;; 1f:45db $06 $6e $50 $29
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $eb, $41, $1b ;; 1f:45df $4c $1e $01 $04 $00 $00 $00 $00 $eb $41 $1b
+    ;;There's only one,<E2>so don't wait, or<E2>you'll lose out!<E3>It's 3 Sunflower<E2>Seeds per game.<E3>If you'd like to<E2>play, please go<E2>around to the<E2>right.<E0>
     Op06_Unknown_Text data_29_5091                     ;; 1f:45ea $06 $91 $50 $29
     Op92_Unknown $00                                   ;; 1f:45ee $92 $00
     Op1E_Call call_36_7a20                             ;; 1f:45f0 $1e $20 $7a $36
@@ -460,27 +467,34 @@ call_1f_462e:
     Op1E_Call call_36_7873                             ;; 1f:4639 $1e $73 $78 $36
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $fa, $5b, $14 ;; 1f:463d $4c $1e $01 $04 $18 $00 $70 $00 $fa $5b $14
     Op1E_Call call_1d_6d8c                             ;; 1f:4648 $1e $8c $6d $1d
+    ;;<EA>Hamha<E8>!<end>
     Op04_Unknown_Text data_29_511d                     ;; 1f:464c $04 $1d $51 $29
 
 call_1f_4650:
     SCRIPT_RETURN_4A                                   ;; 1f:4650 $4a
     Op3E_Compare_Branch 30, $fa, $5b, $14, call_1f_4650 ;; 1f:4651 $3e $1e $fa $5b $14 $50 $46 $1f
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $53, $5c, $14 ;; 1f:4659 $4c $1e $01 $04 $18 $00 $70 $00 $53 $5c $14
+    ;;<E3><end>
     Op06_Unknown_Text data_29_5126                     ;; 1f:4664 $06 $26 $51 $29
     Op14_Unknown 1, $57, $71                           ;; 1f:4668 $14 $01 $57 $71
     SCRIPT_POINTER call_1f_4684                        ;; 1f:466c $84 $46 $1f
+    ;;It's 3 Sunflower<E2>Seeds per game.<E3>Would you like<E2>to play?<E5> If so,<E4>please come<E4>around to the<E4>right.<E0>
     Op06_Unknown_Text data_29_5128                     ;; 1f:466f $06 $28 $51 $29
     Op92_Unknown $00                                   ;; 1f:4673 $92 $00
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $eb, $41, $1b ;; 1f:4675 $4c $1e $01 $04 $00 $00 $00 $00 $eb $41 $1b
     Op18_Jump call_1f_400c                             ;; 1f:4680 $18 $0c $40 $1f
+    ;;Howdy,<E2><end>
 
 call_1f_4684:
     Op06_Unknown_Text data_29_518a                     ;; 1f:4684 $06 $8a $51 $29
     Op1E_Call call_36_7db9                             ;; 1f:4688 $1e $b9 $7d $36
+    ;;!<E3>A whole bunch o'<E2>primo, new goods<E2>just arrived!<E3>Just check the<E2>message board<end>
     Op06_Unknown_Text data_29_5192                     ;; 1f:468c $06 $92 $51 $29
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $b2, $5c, $14 ;; 1f:4690 $4c $1e $01 $04 $18 $00 $70 $00 $b2 $5c $14
+    ;; over<E2>there.<E3><end>
     Op06_Unknown_Text data_29_51e1                     ;; 1f:469b $06 $e1 $51 $29
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $eb, $41, $1b ;; 1f:469f $4c $1e $01 $04 $00 $00 $00 $00 $eb $41 $1b
+    ;;Just remember,<E2>only one left, so<E2>you better hurry!<E3>It's only 3<E2>Sunflower Seeds<E2>per game.<E3>So, if you like<E2>games, take a look<E2>around!<E0>
     Op06_Unknown_Text data_29_51ef                     ;; 1f:46aa $06 $ef $51 $29
     Op92_Unknown $00                                   ;; 1f:46ae $92 $00
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $eb, $41, $1b ;; 1f:46b0 $4c $1e $01 $04 $00 $00 $00 $00 $eb $41 $1b
@@ -518,12 +532,14 @@ call_1f_46fd:
     Op1E_Call call_36_7873                             ;; 1f:470c $1e $73 $78 $36
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $fa, $5b, $14 ;; 1f:4710 $4c $1e $01 $04 $18 $00 $70 $00 $fa $5b $14
     Op1E_Call call_1d_6d8c                             ;; 1f:471b $1e $8c $6d $1d
+    ;;<EA>Hamha<E8>!<end>
     Op04_Unknown_Text data_29_5273                     ;; 1f:471f $04 $73 $52 $29
 
 call_1f_4723:
     SCRIPT_RETURN_4A                                   ;; 1f:4723 $4a
     Op3E_Compare_Branch 30, $fa, $5b, $14, call_1f_4723 ;; 1f:4724 $3e $1e $fa $5b $14 $23 $47 $1f
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $74, $5c, $14 ;; 1f:472c $4c $1e $01 $04 $18 $00 $70 $00 $74 $5c $14
+    ;;<end>
     Op06_Unknown_Text data_29_527c                     ;; 1f:4737 $06 $7c $52 $29
     Op14_Unknown 1, $5d, $71                           ;; 1f:473b $14 $01 $5d $71
     SCRIPT_POINTER call_1f_4777                        ;; 1f:473f $77 $47 $1f
@@ -531,19 +547,24 @@ call_1f_4723:
     SCRIPT_POINTER call_1f_476f                        ;; 1f:4746 $6f $47 $1f
     Op16_SubOps 1                                      ;; 1f:4749 $16 $01
     SubOp_SetFlag wC934, 5                             ;; 1f:474b $3e $e5
+    ;;<E2>This is your<E2>first time here,<E2>isn't it?<E3>To learn how<E2>to play, take a<E2>look at the<E2>sign<end>
     Op06_Unknown_Text data_29_527d                     ;; 1f:474d $06 $7d $52 $29
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $b2, $5c, $14 ;; 1f:4751 $4c $1e $01 $04 $18 $00 $70 $00 $b2 $5c $14
+    ;; over there.<E0>
     Op06_Unknown_Text data_29_52d4                     ;; 1f:475c $06 $d4 $52 $29
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $64, $5c, $14 ;; 1f:4760 $4c $1e $01 $04 $18 $00 $70 $00 $64 $5c $14
     Op18_Jump call_1f_477f                             ;; 1f:476b $18 $7f $47 $1f
+    ;;<E0>
 
 call_1f_476f:
     Op06_Unknown_Text data_29_52e1                     ;; 1f:476f $06 $e1 $52 $29
     Op18_Jump call_1f_477f                             ;; 1f:4773 $18 $7f $47 $1f
+    ;;<E2>Ah-haw!<E2>The Champ arrives!<E0>
 
 call_1f_4777:
     Op06_Unknown_Text data_29_52e2                     ;; 1f:4777 $06 $e2 $52 $29
     Op18_Jump call_1f_477f                             ;; 1f:477b $18 $7f $47 $1f
+    ;;It's 3 Sunflower<E2>Seeds per game.<E3>Would you like<E2>to play?<E0>
 
 call_1f_477f:
     Op04_Unknown_Text data_29_52fe                     ;; 1f:477f $04 $fe $52 $29
@@ -650,20 +671,25 @@ call_1f_4856:
 
 call_1f_487a:
     Op1E_Call call_1d_6ae8                             ;; 1f:487a $1e $e8 $6a $1d
+    ;;How to play:<E2>Simply do a <EA>tack-Q<E8> to<E2>the ball in front of<E2>you and pop as many<E2>balloons as you can.<E3><E4>You can play one game<E4>with 3 Sunflower<E4>Seeds.<E3>You can <EA>tack-Q<E8> 3 balls<E2>per game.<E3>You receive points for<E2>each balloon that you<E2>pop, and the blue ones<E2>are worth more, too.<E3>Your point total at the<E2>end determines<E2>your prize!<E3><E4>On your marks<...><E3>Get set<...><E3><EA>Tack-Q<E8>!<E0>
     Op04_Unknown_Text data_29_5337                     ;; 1f:487e $04 $37 $53 $29
     Op92_Unknown $00                                   ;; 1f:4882 $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:4884 $18 $0c $40 $1f
 
 call_1f_4888:
     Op1E_Call call_1d_6ae8                             ;; 1f:4888 $1e $e8 $6a $1d
+    ;;Current prizes<E2><E3><end>
     Op04_Unknown_Text data_29_549b                     ;; 1f:488c $04 $9b $54 $29
     Op14_Unknown 1, $61, $71                           ;; 1f:4890 $14 $01 $61 $71
     SCRIPT_POINTER call_1f_489f                        ;; 1f:4894 $9f $48 $1f
+    ;;Rock<E2>40-80 points<E2><E3><end>
     Op06_Unknown_Text data_29_54ac                     ;; 1f:4897 $06 $ac $54 $29
     Op18_Jump call_1f_48a3                             ;; 1f:489b $18 $a3 $48 $1f
+    ;;5 Sunflower Seeds<E2>40-80 points<E2><E3><end>
 
 call_1f_489f:
     Op06_Unknown_Text data_29_54c0                     ;; 1f:489f $06 $c0 $54 $29
+    ;;10 Sunflower Seeds<E2>90-120 points<E2><E3><end>
 
 call_1f_48a3:
     Op06_Unknown_Text data_29_54e1                     ;; 1f:48a3 $06 $e1 $54 $29
@@ -671,11 +697,14 @@ call_1f_48a3:
     SCRIPT_POINTER call_1f_48bd                        ;; 1f:48ab $bd $48 $1f
     Op14_Unknown 1, $67, $71                           ;; 1f:48ae $14 $01 $67 $71
     SCRIPT_POINTER call_1f_48bd                        ;; 1f:48b2 $bd $48 $1f
+    ;;Shogun Wig<E2>130-190 points<E2><E3>Star<E2>Above 200 points<E2><end>
     Op06_Unknown_Text data_29_5504                     ;; 1f:48b5 $06 $04 $55 $29
     Op18_Jump call_1f_48c1                             ;; 1f:48b9 $18 $c1 $48 $1f
+    ;;Shogun Wig<E2>Above 130 points<E2><end>
 
 call_1f_48bd:
     Op06_Unknown_Text data_29_5536                     ;; 1f:48bd $06 $36 $55 $29
+    ;;<E0>
 
 call_1f_48c1:
     Op06_Unknown_Text data_29_5553                     ;; 1f:48c1 $06 $53 $55 $29
@@ -697,8 +726,10 @@ call_1f_48e3:
     Op1E_Call call_36_7873                             ;; 1f:48e7 $1e $73 $78 $36
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $85, $5c, $14 ;; 1f:48eb $4c $1e $01 $04 $18 $00 $70 $00 $85 $5c $14
     Op1E_Call call_04_6bf1                             ;; 1f:48f6 $1e $f1 $6b $04
+    ;;Hey,<E2><end>
     Op04_Unknown_Text data_29_5554                     ;; 1f:48fa $04 $54 $55 $29
     Op1E_Call call_36_7db9                             ;; 1f:48fe $1e $b9 $7d $36
+    ;;!<E3>Please don't<E2>do that!<E0>
     Op06_Unknown_Text data_29_555a                     ;; 1f:4902 $06 $5a $55 $29
     Op92_Unknown $00                                   ;; 1f:4906 $92 $00
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $eb, $41, $1b ;; 1f:4908 $4c $1e $01 $04 $00 $00 $00 $00 $eb $41 $1b
@@ -759,6 +790,7 @@ call_1f_49a2:
     SCRIPT_RETURN_4A                                   ;; 1f:49a2 $4a
     Op3E_Compare_Branch 22, $d8, $50, $12, call_1f_49a2 ;; 1f:49a3 $3e $16 $d8 $50 $12 $a2 $49 $1f
     Op1E_Call call_1d_6ae8                             ;; 1f:49ab $1e $e8 $6a $1d
+    ;;Shogun Wig<E0>
     Op04_Unknown_Text data_29_5572                     ;; 1f:49af $04 $72 $55 $29
     Op92_Unknown $00                                   ;; 1f:49b3 $92 $00
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $1b, $51, $12 ;; 1f:49b5 $4c $16 $08 $02 $00 $00 $00 $00 $1b $51 $12
@@ -873,6 +905,7 @@ call_1f_4ad1:
     SCRIPT_RETURN_4A                                   ;; 1f:4ad1 $4a
     Op3E_Compare_Branch 22, $d8, $50, $12, call_1f_4ad1 ;; 1f:4ad2 $3e $16 $d8 $50 $12 $d1 $4a $1f
     Op1E_Call call_1d_6ae8                             ;; 1f:4ada $1e $e8 $6a $1d
+    ;;Shogun Wig<E0>
     Op04_Unknown_Text data_29_557d                     ;; 1f:4ade $04 $7d $55 $29
     Op92_Unknown $00                                   ;; 1f:4ae2 $92 $00
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $1b, $51, $12 ;; 1f:4ae4 $4c $16 $08 $02 $00 $00 $00 $00 $1b $51 $12
@@ -886,6 +919,7 @@ call_1f_4afc:
     Op1E_Call call_20_4bd8                             ;; 1f:4afc $1e $d8 $4b $20
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, $71, $42, $10 ;; 1f:4b00 $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
     Op1E_Call call_1d_6ae8                             ;; 1f:4b0b $1e $e8 $6a $1d
+    ;;Shogun Wig<E0>
     Op04_Unknown_Text data_29_5588                     ;; 1f:4b0f $04 $88 $55 $29
     Op92_Unknown $00                                   ;; 1f:4b13 $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:4b15 $18 $0c $40 $1f
@@ -1004,6 +1038,7 @@ call_1f_4c27:
     SCRIPT_RETURN_4A                                   ;; 1f:4c27 $4a
     Op3E_Compare_Branch 22, $d8, $50, $12, call_1f_4c27 ;; 1f:4c28 $3e $16 $d8 $50 $12 $27 $4c $1f
     Op1E_Call call_1d_6ae8                             ;; 1f:4c30 $1e $e8 $6a $1d
+    ;;Sunflower Seeds<E0>
     Op04_Unknown_Text data_29_5593                     ;; 1f:4c34 $04 $93 $55 $29
     Op92_Unknown $00                                   ;; 1f:4c38 $92 $00
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $1b, $51, $12 ;; 1f:4c3a $4c $16 $08 $02 $00 $00 $00 $00 $1b $51 $12
@@ -1116,6 +1151,7 @@ call_1f_4d52:
     SCRIPT_RETURN_4A                                   ;; 1f:4d52 $4a
     Op3E_Compare_Branch 22, $d8, $50, $12, call_1f_4d52 ;; 1f:4d53 $3e $16 $d8 $50 $12 $52 $4d $1f
     Op1E_Call call_1d_6ae8                             ;; 1f:4d5b $1e $e8 $6a $1d
+    ;;Rock<E0>
     Op04_Unknown_Text data_29_55a3                     ;; 1f:4d5f $04 $a3 $55 $29
     Op92_Unknown $00                                   ;; 1f:4d63 $92 $00
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, $1b, $51, $12 ;; 1f:4d65 $4c $16 $08 $02 $00 $00 $00 $00 $1b $51 $12
@@ -1178,6 +1214,7 @@ call_1f_4df9:
     Op1E_Call call_20_4042                             ;; 1f:4df9 $1e $42 $40 $20
     Op1E_Call call_36_77df                             ;; 1f:4dfd $1e $df $77 $36
     Op1E_Call call_1d_6b84                             ;; 1f:4e01 $1e $84 $6b $1d
+    ;;Mumble<...><E2>Look at<...>that<...><E2>Shogun Wig<...><E0>
     Op04_Unknown_Text data_29_55a8                     ;; 1f:4e05 $04 $a8 $55 $29
     Op92_Unknown $00                                   ;; 1f:4e09 $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:4e0b $18 $0c $40 $1f
@@ -1196,6 +1233,7 @@ call_1f_4e27:
     Op1E_Call call_20_465b                             ;; 1f:4e27 $1e $5b $46 $20
     Op1E_Call call_36_77df                             ;; 1f:4e2b $1e $df $77 $36
     Op1E_Call call_1d_6b84                             ;; 1f:4e2f $1e $84 $6b $1d
+    ;;Mumble<...><E2>Look at<...>that<...><E2>Shogun Wig<...><E0>
     Op04_Unknown_Text data_29_55ca                     ;; 1f:4e33 $04 $ca $55 $29
     Op92_Unknown $00                                   ;; 1f:4e37 $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:4e39 $18 $0c $40 $1f
@@ -1224,6 +1262,7 @@ call_1f_4e75:
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $eb, $41, $1b ;; 1f:4e79 $4c $1e $01 $04 $00 $00 $00 $00 $eb $41 $1b
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $1a, $78, $18 ;; 1f:4e84 $4c $1a $01 $04 $00 $00 $00 $00 $1a $78 $18
     Op1E_Call call_1d_6b84                             ;; 1f:4e8f $1e $84 $6b $1d
+    ;;Whoa<...><E2><E0>
     Op04_Unknown_Text data_29_55ec                     ;; 1f:4e93 $04 $ec $55 $29
 
 call_1f_4e97:
@@ -1242,18 +1281,24 @@ call_1f_4eca:
     Op14_Unknown 1, $8a, $71                           ;; 1f:4eca $14 $01 $8a $71
     SCRIPT_POINTER call_1f_4ed5                        ;; 1f:4ece $d5 $4e $1f
     Op18_Jump call_36_7d0e                             ;; 1f:4ed1 $18 $0e $7d $36
+    ;;<E7>!<E3><end>
 
 call_1f_4ed5:
     Op04_Unknown_Text data_29_55f3                     ;; 1f:4ed5 $04 $f3 $55 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $7a, $74, $18 ;; 1f:4ed9 $4c $1a $01 $04 $00 $00 $00 $00 $7a $74 $18
+    ;;Do you think this<E2>Shogun Wig would<E2>look great on me?<E3><end>
     Op06_Unknown_Text data_29_55f7                     ;; 1f:4ee4 $06 $f7 $55 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $1d, $75, $18 ;; 1f:4ee8 $4c $1a $01 $04 $00 $00 $00 $00 $1d $75 $18
+    ;;It's a Tack-Q<E2>Bowling prize.<E3><end>
     Op06_Unknown_Text data_29_562d                     ;; 1f:4ef3 $06 $2d $56 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $a7, $74, $18 ;; 1f:4ef7 $4c $1a $01 $04 $00 $00 $00 $00 $a7 $74 $18
+    ;;I know! I'm going<E2>to sign up for the<E2>competition!<E3><end>
     Op06_Unknown_Text data_29_564b                     ;; 1f:4f02 $06 $4b $56 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $97, $74, $18 ;; 1f:4f06 $4c $1a $01 $04 $00 $00 $00 $00 $97 $74 $18
+    ;;Umm<...> Actually,<E2>I doubt that I<E2>could play well<E2>enough to win,<E2>though.<E3>Hmm<...><E2><end>
     Op06_Unknown_Text data_29_567e                     ;; 1f:4f11 $06 $7e $56 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $d3, $74, $18 ;; 1f:4f15 $4c $1a $01 $04 $00 $00 $00 $00 $d3 $74 $18
+    ;;What should I<E2>do<...>?<E0>
     Op06_Unknown_Text data_29_56c9                     ;; 1f:4f20 $06 $c9 $56 $29
     Op92_Unknown $00                                   ;; 1f:4f24 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $73, $70, $18 ;; 1f:4f26 $4c $1a $01 $04 $00 $00 $00 $00 $73 $70 $18
@@ -1262,6 +1307,7 @@ call_1f_4ed5:
 call_1f_4f35:
     Op1E_Call call_20_42f7                             ;; 1f:4f35 $1e $f7 $42 $20
     Op1E_Call call_1d_6b84                             ;; 1f:4f39 $1e $84 $6b $1d
+    ;;Mumble<...><E2>Look at<...>that<...><E2>Shogun Wig<...><E0>
     Op04_Unknown_Text data_29_56dc                     ;; 1f:4f3d $04 $dc $56 $29
     Op92_Unknown $00                                   ;; 1f:4f41 $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:4f43 $18 $0c $40 $1f
@@ -1269,6 +1315,7 @@ call_1f_4f35:
 call_1f_4f47:
     Op1E_Call call_20_4294                             ;; 1f:4f47 $1e $94 $42 $20
     Op1E_Call call_1d_6b84                             ;; 1f:4f4b $1e $84 $6b $1d
+    ;;Mumble<...><E2>Look at<...>that<...><E2>Shogun Wig<...><E0>
     Op04_Unknown_Text data_29_56fe                     ;; 1f:4f4f $04 $fe $56 $29
     Op92_Unknown $00                                   ;; 1f:4f53 $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:4f55 $18 $0c $40 $1f
@@ -1287,6 +1334,7 @@ call_1f_4f71:
     Op1E_Call call_20_4310                             ;; 1f:4f71 $1e $10 $43 $20
     Op1E_Call call_36_77df                             ;; 1f:4f75 $1e $df $77 $36
     Op1E_Call call_1d_6b84                             ;; 1f:4f79 $1e $84 $6b $1d
+    ;;Mumble<...><E2>Look at<...>that<...><E2>Shogun Wig<...><E0>
     Op04_Unknown_Text data_29_5720                     ;; 1f:4f7d $04 $20 $57 $29
     Op92_Unknown $00                                   ;; 1f:4f81 $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:4f83 $18 $0c $40 $1f
@@ -1305,6 +1353,7 @@ call_1f_4f9f:
     Op1E_Call call_20_4b51                             ;; 1f:4f9f $1e $51 $4b $20
     Op1E_Call call_36_77df                             ;; 1f:4fa3 $1e $df $77 $36
     Op1E_Call call_1d_6b84                             ;; 1f:4fa7 $1e $84 $6b $1d
+    ;;Mumble<...><E2>Look at<...>that<...><E2>Shogun Wig<...><E0>
     Op04_Unknown_Text data_29_5742                     ;; 1f:4fab $04 $42 $57 $29
     Op92_Unknown $00                                   ;; 1f:4faf $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:4fb1 $18 $0c $40 $1f
@@ -1326,8 +1375,10 @@ call_1f_4fcd:
     Op1E_Call call_36_77df                             ;; 1f:4fd8 $1e $df $77 $36
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, $eb, $41, $1b ;; 1f:4fdc $4c $1e $01 $04 $00 $00 $00 $00 $eb $41 $1b
     Op1E_Call call_1d_6b84                             ;; 1f:4fe7 $1e $84 $6b $1d
+    ;;Mumble<...><E2>Look at<...>that<...><E2>Shogun Wig<...><E0>
     Op04_Unknown_Text data_29_5764                     ;; 1f:4feb $04 $64 $57 $29
     Op1E_Call call_36_784a                             ;; 1f:4fef $1e $4a $78 $36
+    ;;Hmm<...>?<E3><end>
     Op06_Unknown_Text data_29_5786                     ;; 1f:4ff3 $06 $86 $57 $29
     Op14_Unknown 1, $86, $71                           ;; 1f:4ff7 $14 $01 $86 $71
     SCRIPT_POINTER call_1f_500b                        ;; 1f:4ffb $0b $50 $1f
@@ -1346,6 +1397,7 @@ call_1f_500f:
     Op1E_Call call_36_77df                             ;; 1f:501c $1e $df $77 $36
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $52, $70, $18 ;; 1f:5020 $4c $1a $01 $04 $00 $00 $00 $00 $52 $70 $18
     Op1E_Call call_1d_6b84                             ;; 1f:502b $1e $84 $6b $1d
+    ;;<...> <...> <...><E2><end>
     Op04_Unknown_Text data_29_578d                     ;; 1f:502f $04 $8d $57 $29
     Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, $65, $4f, $12 ;; 1f:5033 $4c $16 $04 $ff $00 $00 $00 $00 $65 $4f $12
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $0f, $7a, $18 ;; 1f:503e $4c $1a $01 $04 $00 $00 $00 $00 $0f $7a $18
@@ -1354,33 +1406,41 @@ call_1f_5049:
     SCRIPT_RETURN_4A                                   ;; 1f:5049 $4a
     Op3E_Compare_Branch 22, $65, $4f, $12, call_1f_5049 ;; 1f:504a $3e $16 $65 $4f $12 $49 $50 $1f
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, $71, $42, $10 ;; 1f:5052 $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
+    ;;Did you win that,<end>
     Op06_Unknown_Text data_29_5794                     ;; 1f:505d $06 $94 $57 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $8d, $77, $18 ;; 1f:5061 $4c $1a $01 $04 $00 $00 $00 $00 $8d $77 $18
+    ;;<E2><E7>?<E3><end>
     Op06_Unknown_Text data_29_57a6                     ;; 1f:506c $06 $a6 $57 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $aa, $77, $18 ;; 1f:5070 $4c $1a $01 $04 $00 $00 $00 $00 $aa $77 $18
+    ;;Wow, that's<end>
     Op04_Unknown_Text data_29_57ab                     ;; 1f:507b $04 $ab $57 $29
 
 call_1f_507f:
     SCRIPT_RETURN_4A                                   ;; 1f:507f $4a
     Op3E_Compare_Branch 26, $aa, $77, $18, call_1f_507f ;; 1f:5080 $3e $1a $aa $77 $18 $7f $50 $1f
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $e2, $77, $18 ;; 1f:5088 $4c $1a $01 $04 $00 $00 $00 $00 $e2 $77 $18
+    ;;<E2>awesome!<end>
     Op06_Unknown_Text data_29_57b7                     ;; 1f:5093 $06 $b7 $57 $29
 
 call_1f_5097:
     SCRIPT_RETURN_4A                                   ;; 1f:5097 $4a
     Op3E_Compare_Branch 26, $e2, $77, $18, call_1f_5097 ;; 1f:5098 $3e $1a $e2 $77 $18 $97 $50 $1f
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $aa, $77, $18 ;; 1f:50a0 $4c $1a $01 $04 $00 $00 $00 $00 $aa $77 $18
+    ;;<E2>What? You got it<end>
     Op06_Unknown_Text data_29_57c1                     ;; 1f:50ab $06 $c1 $57 $29
 
 call_1f_50af:
     SCRIPT_RETURN_4A                                   ;; 1f:50af $4a
     Op3E_Compare_Branch 26, $aa, $77, $18, call_1f_50af ;; 1f:50b0 $3e $1a $aa $77 $18 $af $50 $1f
+    ;;<E2>for me?<E3>Really?<end>
     Op06_Unknown_Text data_29_57d3                     ;; 1f:50b8 $06 $d3 $57 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $5e, $76, $18 ;; 1f:50bc $4c $1a $01 $04 $00 $00 $00 $00 $5e $76 $18
     Op14_Unknown 1, $8c, $71                           ;; 1f:50c7 $14 $01 $8c $71
     SCRIPT_POINTER call_1f_50d6                        ;; 1f:50cb $d6 $50 $1f
+    ;;<E2>Oh, <EA>thank-Q<E8>!!<E0>
     Op06_Unknown_Text data_29_57e4                     ;; 1f:50ce $06 $e4 $57 $29
     Op18_Jump call_1f_50da                             ;; 1f:50d2 $18 $da $50 $1f
+    ;;<E2>Oh, thanks!!<E0>
 
 call_1f_50d6:
     Op06_Unknown_Text data_29_57f5                     ;; 1f:50d6 $06 $f5 $57 $29
@@ -1410,13 +1470,16 @@ call_1f_5140:
     SCRIPT_RETURN_4A                                   ;; 1f:5140 $4a
     Op14_Unknown 1, $5a, $6d                           ;; 1f:5141 $14 $01 $5a $6d
     SCRIPT_POINTER call_1f_5140                        ;; 1f:5145 $40 $51 $1f
+    ;;Oh, I feel so<end>
     Op04_Unknown_Text data_29_5803                     ;; 1f:5148 $04 $03 $58 $29
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $c5, $76, $18 ;; 1f:514c $4c $1a $01 $04 $00 $00 $00 $00 $c5 $76 $18
+    ;;<E2><EA>blissie<E8>.<end>
     Op06_Unknown_Text data_29_5811                     ;; 1f:5157 $06 $11 $58 $29
 
 call_1f_515b:
     SCRIPT_RETURN_4A                                   ;; 1f:515b $4a
     Op3E_Compare_Branch 26, $c5, $76, $18, call_1f_515b ;; 1f:515c $3e $1a $c5 $76 $18 $5b $51 $1f
+    ;;<E0>
     Op06_Unknown_Text data_29_581d                     ;; 1f:5164 $06 $1d $58 $29
     Op92_Unknown $00                                   ;; 1f:5168 $92 $00
     Op16_SubOps 1                                      ;; 1f:516a $16 $01
@@ -1425,6 +1488,7 @@ call_1f_515b:
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, $71, $42, $10 ;; 1f:5173 $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $83, $70, $18 ;; 1f:517e $4c $1a $01 $04 $00 $00 $00 $00 $83 $70 $18
     Op1E_Call call_1d_6b84                             ;; 1f:5189 $1e $84 $6b $1d
+    ;;Eh? The Clubhouse?<E3>Oh yeah, I totally<E2>forgot<...> I'll<E2>head back now.<E0>
     Op04_Unknown_Text data_29_581e                     ;; 1f:518d $04 $1e $58 $29
     Op92_Unknown $00                                   ;; 1f:5191 $92 $00
     Op5E_Unknown $80                                   ;; 1f:5193 $5e $80
@@ -1468,6 +1532,7 @@ call_1f_520e:
     Op1E_Call call_20_4021                             ;; 1f:520e $1e $21 $40 $20
     Op1E_Call call_36_77df                             ;; 1f:5212 $1e $df $77 $36
     Op1E_Call call_1d_6b84                             ;; 1f:5216 $1e $84 $6b $1d
+    ;;Mumble<...><E2>Look at<...>that<...><E2>Shogun Wig<...><E0>
     Op04_Unknown_Text data_29_5860                     ;; 1f:521a $04 $60 $58 $29
     Op92_Unknown $00                                   ;; 1f:521e $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:5220 $18 $0c $40 $1f
@@ -1486,6 +1551,7 @@ call_1f_523c:
     Op1E_Call call_20_4bd8                             ;; 1f:523c $1e $d8 $4b $20
     Op1E_Call call_36_77df                             ;; 1f:5240 $1e $df $77 $36
     Op1E_Call call_1d_6ae8                             ;; 1f:5244 $1e $e8 $6a $1d
+    ;;Cappy is totally<E2>distracted.<E0>
     Op04_Unknown_Text data_29_5882                     ;; 1f:5248 $04 $82 $58 $29
     Op92_Unknown $00                                   ;; 1f:524c $92 $00
     Op18_Jump call_1f_400c                             ;; 1f:524e $18 $0c $40 $1f
@@ -1543,6 +1609,7 @@ call_1f_52c4:
     Op1E_Call call_20_4c28                             ;; 1f:52c4 $1e $28 $4c $20
     Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, $61, $42, $10 ;; 1f:52c8 $4c $16 $04 $ff $00 $00 $00 $00 $61 $42 $10
     Op1E_Call call_1d_6d8c                             ;; 1f:52d3 $1e $8c $6d $1d
+    ;;Come again!<E0>
     Op04_Unknown_Text data_29_589f                     ;; 1f:52d7 $04 $9f $58 $29
     Op92_Unknown $00                                   ;; 1f:52db $92 $00
 
@@ -1557,8 +1624,10 @@ call_1f_52dd:
 
 call_1f_52fd:
     Op1E_Call call_1d_6d8c                             ;; 1f:52fd $1e $8c $6d $1d
+    ;;Oh<...><E2><end>
     Op04_Unknown_Text data_29_58ab                     ;; 1f:5301 $04 $ab $58 $29
     Op1E_Call call_36_7db9                             ;; 1f:5305 $1e $b9 $7d $36
+    ;;!<E3>You don't have<E2>enough Sunflower<E2>Seeds with you.<E3>Please come again!<E0>
     Op06_Unknown_Text data_29_58b0                     ;; 1f:5309 $06 $b0 $58 $29
     Op92_Unknown $00                                   ;; 1f:530d $92 $00
     Op18_Jump call_1f_52dd                             ;; 1f:530f $18 $dd $52 $1f
@@ -1567,6 +1636,7 @@ call_1f_5313:
     Op1E_Call call_20_4bf9                             ;; 1f:5313 $1e $f9 $4b $20
     Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, $61, $42, $10 ;; 1f:5317 $4c $16 $04 $ff $00 $00 $00 $00 $61 $42 $10
     Op1E_Call call_1d_6d8c                             ;; 1f:5322 $1e $8c $6d $1d
+    ;;Thank you.<E0>
     Op04_Unknown_Text data_29_58f5                     ;; 1f:5326 $04 $f5 $58 $29
     Op92_Unknown $00                                   ;; 1f:532a $92 $00
     Op16_SubOps 1                                      ;; 1f:532c $16 $01
@@ -1575,6 +1645,7 @@ call_1f_5313:
     Op14_Unknown 1, $90, $71                           ;; 1f:5335 $14 $01 $90 $71
     SCRIPT_POINTER call_1f_52fd                        ;; 1f:5339 $fd $52 $1f
     Op1E_Call call_1d_6d8c                             ;; 1f:533c $1e $8c $6d $1d
+    ;;I'll take<E2>3 Sunflower Seeds,<E2>then.<E0>
     Op04_Unknown_Text data_29_5900                     ;; 1f:5340 $04 $00 $59 $29
     Op92_Unknown $00                                   ;; 1f:5344 $92 $00
     Op16_SubOps 1                                      ;; 1f:5346 $16 $01
@@ -1586,7 +1657,9 @@ call_1f_5313:
     Op1E_Call call_1f_59fe                             ;; 1f:5359 $1e $fe $59 $1f
     Op5A_Unknown $ac                                   ;; 1f:535d $5a $ac
     Op1E_Call call_1d_6d8c                             ;; 1f:535f $1e $8c $6d $1d
+    ;;OK!<end>
     Op04_Unknown_Text data_29_5923                     ;; 1f:5363 $04 $23 $59 $29
+    ;;<E3>Let's <end>
     Op06_Unknown_Text data_29_5927                     ;; 1f:5367 $06 $27 $59 $29
     Op1E_Call call_36_7873                             ;; 1f:536b $1e $73 $78 $36
     Op4C_Unknown $1e, $01, $04, $18, $00, $75, $00, $d2, $5c, $14 ;; 1f:536f $4c $1e $01 $04 $18 $00 $75 $00 $d2 $5c $14
@@ -1599,6 +1672,7 @@ call_1f_5390:
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $25, $5d, $14 ;; 1f:5399 $4c $1e $01 $04 $18 $00 $70 $00 $25 $5d $14
     Op4C_Unknown $20, $01, $04, $00, $00, $00, $00, $15, $42, $1b ;; 1f:53a4 $4c $20 $01 $04 $00 $00 $00 $00 $15 $42 $1b
     Op4C_Unknown $22, $01, $04, $00, $00, $00, $00, $15, $42, $1b ;; 1f:53af $4c $22 $01 $04 $00 $00 $00 $00 $15 $42 $1b
+    ;;<EA>tack-Q<E8>!<E0>
     Op06_Unknown_Text data_29_592f                     ;; 1f:53ba $06 $2f $59 $29
 
 call_1f_53be:
@@ -1820,11 +1894,14 @@ call_1f_5635:
     Op14_Unknown 1, $a0, $71                           ;; 1f:56e6 $14 $01 $a0 $71
     SCRIPT_POINTER call_1f_5721                        ;; 1f:56ea $21 $57 $1f
     Op1E_Call call_1d_6d8c                             ;; 1f:56ed $1e $8c $6d $1d
+    ;;Thank you for<E2>playing!<E5> Your<E4>total score<E4>is <end>
     Op04_Unknown_Text data_29_5939                     ;; 1f:56f1 $04 $39 $59 $29
     Op1E_Call call_36_7b32                             ;; 1f:56f5 $1e $32 $7b $36
+    ;;0 points.<E3>That's not enough<E2>to win a prize.<E3>Please try again!<end>
     Op06_Unknown_Text data_29_5966                     ;; 1f:56f9 $06 $66 $59 $29
     Op1E_Call call_36_7873                             ;; 1f:56fd $1e $73 $78 $36
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $c2, $5c, $14 ;; 1f:5701 $4c $1e $01 $04 $18 $00 $70 $00 $c2 $5c $14
+    ;;<E0>
     Op06_Unknown_Text data_29_59a4                     ;; 1f:570c $06 $a4 $59 $29
     Op92_Unknown $00                                   ;; 1f:5710 $92 $00
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $ea, $5b, $14 ;; 1f:5712 $4c $1e $01 $04 $18 $00 $70 $00 $ea $5b $14
@@ -1834,8 +1911,10 @@ call_1f_5721:
     Op14_Unknown 1, $a4, $71                           ;; 1f:5721 $14 $01 $a4 $71
     SCRIPT_POINTER call_1f_575e                        ;; 1f:5725 $5e $57 $1f
     Op1E_Call call_1d_6d8c                             ;; 1f:5728 $1e $8c $6d $1d
+    ;;Congratulations!<E3>Your score<E2>is <end>
     Op04_Unknown_Text data_29_59a5                     ;; 1f:572c $04 $a5 $59 $29
     Op1E_Call call_36_7b32                             ;; 1f:5730 $1e $32 $7b $36
+    ;;0 points.<E3><end>
     Op06_Unknown_Text data_29_59c5                     ;; 1f:5734 $06 $c5 $59 $29
     Op1E_Call call_1f_57de                             ;; 1f:5738 $1e $de $57 $1f
     Op4C_Unknown $16, $04, $02, $48, $00, $78, $00, $61, $42, $10 ;; 1f:573c $4c $16 $04 $02 $48 $00 $78 $00 $61 $42 $10
@@ -1843,6 +1922,7 @@ call_1f_5721:
 call_1f_5747:
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $64, $5c, $14 ;; 1f:5747 $4c $1e $01 $04 $18 $00 $70 $00 $64 $5c $14
     Op1E_Call call_1d_6d8c                             ;; 1f:5752 $1e $8c $6d $1d
+    ;;Would you like<E2>to play again?<E0>
     Op04_Unknown_Text data_29_59d0                     ;; 1f:5756 $04 $d0 $59 $29
     Op18_Jump call_1f_5272                             ;; 1f:575a $18 $72 $52 $1f
 
@@ -1852,6 +1932,7 @@ call_1f_575e:
     Op16_SubOps 1                                      ;; 1f:5765 $16 $01
     SubOp_SetFlag wC941, 6                             ;; 1f:5767 $3f $4e
     Op1E_Call call_1d_6d8c                             ;; 1f:5769 $1e $8c $6d $1d
+    ;;Ohh<...>?<E3><end>
     Op04_Unknown_Text data_29_59ee                     ;; 1f:576d $04 $ee $59 $29
     Op4C_Unknown $1e, $01, $04, $18, $00, $75, $00, $d2, $5c, $14 ;; 1f:5771 $4c $1e $01 $04 $18 $00 $75 $00 $d2 $5c $14
 
@@ -1859,21 +1940,25 @@ call_1f_577c:
     SCRIPT_RETURN_4A                                   ;; 1f:577c $4a
     Op3E_Compare_Branch 30, $d2, $5c, $14, call_1f_577c ;; 1f:577d $3e $1e $d2 $5c $14 $7c $57 $1f
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $2f, $5e, $14 ;; 1f:5785 $4c $1e $01 $04 $18 $00 $70 $00 $2f $5e $14
+    ;;Your score is<...><E3>Oh, awesome!<E2>Unbelievable!<E3>Your score is<E2><end>
     Op06_Unknown_Text data_29_59f5                     ;; 1f:5790 $06 $f5 $59 $29
     Op14_Unknown 1, $a8, $71                           ;; 1f:5794 $14 $01 $a8 $71
     SCRIPT_POINTER call_1f_57ca                        ;; 1f:5798 $ca $57 $1f
+    ;;300 points!<E2><EA>Hamtast<E8>!<E3><end>
     Op06_Unknown_Text data_29_5a2e                     ;; 1f:579b $06 $2e $5a $29
 
 call_1f_579f:
     SCRIPT_RETURN_4A                                   ;; 1f:579f $4a
     Op3E_Compare_Branch 30, $2f, $5e, $14, call_1f_579f ;; 1f:57a0 $3e $1e $2f $5e $14 $9f $57 $1f
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, $64, $5c, $14 ;; 1f:57a8 $4c $1e $01 $04 $18 $00 $70 $00 $64 $5c $14
+    ;;Congratulations!<E3>I'm excited to say<E2>that you are now<E2>this store's ex-<E2>clusive Tack-Q<E2>Bowler!<E3>From now on, you<E2>will be known as<E2>The Champ.<E3><end>
     Op06_Unknown_Text data_29_5a46                     ;; 1f:57b3 $06 $46 $5a $29
 
 call_1f_57b7:
     Op1E_Call call_1f_57de                             ;; 1f:57b7 $1e $de $57 $1f
     Op4C_Unknown $16, $04, $02, $48, $00, $78, $00, $61, $42, $10 ;; 1f:57bb $4c $16 $04 $02 $48 $00 $78 $00 $61 $42 $10
     Op18_Jump call_1f_5747                             ;; 1f:57c6 $18 $47 $57 $1f
+    ;;300<E2>points!<E3><end>
 
 call_1f_57ca:
     Op06_Unknown_Text data_29_5ae0                     ;; 1f:57ca $06 $e0 $5a $29
@@ -1881,6 +1966,7 @@ call_1f_57ca:
 
 call_1f_57d2:
     Op1E_Call call_1d_6d8c                             ;; 1f:57d2 $1e $8c $6d $1d
+    ;;Whoa, awesome!<E3>You really are the<E2>champ!<E3>That's why you are<E2>the All-Time Pro<E2>Tack-Q Bowling<E2>Master!<E3><end>
     Op04_Unknown_Text data_29_5aed                     ;; 1f:57d6 $04 $ed $5a $29
     Op18_Jump call_1f_57b7                             ;; 1f:57da $18 $b7 $57 $1f
 
@@ -1895,7 +1981,9 @@ call_1f_57de:
     SCRIPT_POINTER call_1f_581e                        ;; 1f:57f7 $1e $58 $1f
     Op16_SubOps 1                                      ;; 1f:57fa $16 $01
     SubOp_SetFlag wC93D, 1                             ;; 1f:57fc $3f $29
+    ;;Your prize is<...><end>
     Op06_Unknown_Text data_29_5ad1                     ;; 1f:57fe $06 $d1 $5a $29
+    ;;<E2>a Rock.<E0>
     Op06_Unknown_Text data_29_5b52                     ;; 1f:5802 $06 $52 $5b $29
     Op1E_Call call_1d_7443                             ;; 1f:5806 $1e $43 $74 $1d
     Op16_SubOps 1                                      ;; 1f:580a $16 $01
@@ -1906,9 +1994,11 @@ call_1f_57de:
     SubOp_DefaultCase_Pair $76, $28                    ;; 1f:5816 $76 $28
     SubOp_DefaultCase_Pair $be, $03                    ;; 1f:5818 $be $03
     Op18_Jump call_1f_5918                             ;; 1f:581a $18 $18 $59 $1f
+    ;;Your prize is<...><end>
 
 call_1f_581e:
     Op06_Unknown_Text data_29_5ad1                     ;; 1f:581e $06 $d1 $5a $29
+    ;;<E2>5<E2>Sunflower Seeds.<E0>
     Op06_Unknown_Text data_29_5b5b                     ;; 1f:5822 $06 $5b $5b $29
     Op16_SubOps 1                                      ;; 1f:5826 $16 $01
     SubOp_SetByte wC736, $01                           ;; 1f:5828 $7e $1e $01
@@ -1916,9 +2006,11 @@ call_1f_581e:
     SubOp_SetByte wC737, $05                           ;; 1f:582d $7e $1f $05
     Op1E_Call call_1d_7127                             ;; 1f:5830 $1e $27 $71 $1d
     SCRIPT_RETURN_20                                   ;; 1f:5834 $20
+    ;;Your prize is<...><end>
 
 call_1f_5835:
     Op06_Unknown_Text data_29_5ad1                     ;; 1f:5835 $06 $d1 $5a $29
+    ;;<E2>10<E2>Sunflower Seeds.<E0>
     Op06_Unknown_Text data_29_5b6f                     ;; 1f:5839 $06 $6f $5b $29
     Op16_SubOps 1                                      ;; 1f:583d $16 $01
     SubOp_SetByte wC736, $01                           ;; 1f:583f $7e $1e $01
@@ -1931,7 +2023,9 @@ call_1f_5835:
 call_1f_5850:
     Op14_Unknown 1, $8a, $71                           ;; 1f:5850 $14 $01 $8a $71
     SCRIPT_POINTER call_1f_5875                        ;; 1f:5854 $75 $58 $1f
+    ;;Your prize is<...><end>
     Op06_Unknown_Text data_29_5ad1                     ;; 1f:5857 $06 $d1 $5a $29
+    ;;<E2>a Shogun<E2>Wig!<E0>
     Op06_Unknown_Text data_29_5b84                     ;; 1f:585b $06 $84 $5b $29
     Op16_SubOps 1                                      ;; 1f:585f $16 $01
     SubOp_SetByte wC736, $13                           ;; 1f:5861 $7e $1e $13
@@ -1946,21 +2040,29 @@ call_1f_5875:
     Op1C_TableJump 2                                   ;; 1f:5879 $1c $02
     SCRIPT_POINTER call_1f_588c                        ;; 1f:587b $8c $58 $1f
     SCRIPT_POINTER call_1f_589c                        ;; 1f:587e $9c $58 $1f
+    ;;You've won the<E2>Shogun Wig! Nice!<E3>You'll really wear<E2>it, right?<E3>Now, you'll just<E2>have to wait for<E2>me to deliver it!<E0>
     Op06_Unknown_Text data_29_5b93                     ;; 1f:5881 $06 $93 $5b $29
     Op92_Unknown $00                                   ;; 1f:5885 $92 $00
     Op1E_Call call_1d_783c                             ;; 1f:5887 $1e $3c $78 $1d
     SCRIPT_RETURN_20                                   ;; 1f:588b $20
+    ;;Your prize is<...><end>
 
 call_1f_588c:
     Op06_Unknown_Text data_29_5ad1                     ;; 1f:588c $06 $d1 $5a $29
+    ;;<E2>A Shogun Wig<...><E2><end>
     Op06_Unknown_Text data_29_5c06                     ;; 1f:5890 $06 $06 $5c $29
+    ;;Well, it looks<E2>like you already<E2>have one.<E3><end>
     Op06_Unknown_Text data_29_5c16                     ;; 1f:5894 $06 $16 $5c $29
     Op18_Jump call_1f_58a8                             ;; 1f:5898 $18 $a8 $58 $1f
+    ;;Your prize is<...><end>
 
 call_1f_589c:
     Op06_Unknown_Text data_29_5ad1                     ;; 1f:589c $06 $d1 $5a $29
+    ;;<E2>A Shogun Wig<...><E2><end>
     Op06_Unknown_Text data_29_5c41                     ;; 1f:58a0 $06 $41 $5c $29
+    ;;Well, it looks<E2>like you already<E2>have too many<E2>items<...><E3><end>
     Op06_Unknown_Text data_29_5c51                     ;; 1f:58a4 $06 $51 $5c $29
+    ;;So, how about<E2>I give you 20<E2>Sunflower Seeds?<E0>
 
 call_1f_58a8:
     Op06_Unknown_Text data_29_5c87                     ;; 1f:58a8 $06 $87 $5c $29
@@ -1980,7 +2082,9 @@ call_1f_58c1:
     SCRIPT_POINTER call_1f_5850                        ;; 1f:58cc $50 $58 $1f
     Op16_SubOps 1                                      ;; 1f:58cf $16 $01
     SubOp_SetFlag wC93B, 1                             ;; 1f:58d1 $3f $19
+    ;;Your prize is<...><end>
     Op06_Unknown_Text data_29_5ad1                     ;; 1f:58d3 $06 $d1 $5a $29
+    ;;<E2>A Star!<E0>
     Op06_Unknown_Text data_29_5cb4                     ;; 1f:58d7 $06 $b4 $5c $29
     Op16_SubOps 1                                      ;; 1f:58db $16 $01
     SubOp_SetByte wC736, $03                           ;; 1f:58dd $7e $1e $03

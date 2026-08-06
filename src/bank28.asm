@@ -382,6 +382,7 @@ call_28_44c6:
     Op44_Unknown $40, $00                              ;; 28:44da $44 $40 $00
     Op4C_Unknown $32, $01, $04, $00, $00, $00, $00, $64, $60, $17 ;; 28:44dd $4c $32 $01 $04 $00 $00 $00 $00 $64 $60 $17
     Op1E_Call call_1d_6b1c                             ;; 28:44e8 $1e $1c $6b $1d
+    ;;Wahh!<end>
     Op04_Unknown_Text data_33_7e55                     ;; 28:44ec $04 $55 $7e $33
     Op4C_Unknown $1a, $00, $00, $00, $00, $00, $00, $00, $00, $00 ;; 28:44f0 $4c $1a $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $00, $01, $04, $58, $00, $f0, $ff, $ea, $5e, $17 ;; 28:44fb $4c $00 $01 $04 $58 $00 $f0 $ff $ea $5e $17
@@ -440,6 +441,7 @@ call_28_45de:
     Op44_Unknown $70, $00                              ;; 28:45e9 $44 $70 $00
     Op1E_Call call_28_4f20                             ;; 28:45ec $1e $20 $4f $28
     Op1E_Call call_1d_6b1c                             ;; 28:45f0 $1e $1c $6b $1d
+    ;;Owee! Owee! Owee!<E3>I lost my balance.<E3>Ohhh, <E7> must<E2>have seen that<...> I<E2>look like a fool.<E0>
     Op04_Unknown_Text data_33_7e5b                     ;; 28:45f4 $04 $5b $7e $33
     Op92_Unknown $00                                   ;; 28:45f8 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:45fa $4c $1a $01 $04 $00 $00 $00 $00 $ec $64 $19
@@ -567,6 +569,7 @@ call_28_473b:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 28:473f $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $09, $65, $19 ;; 28:474a $4c $1a $ff $04 $00 $00 $00 $00 $09 $65 $19
     Op1E_Call call_1d_6b1c                             ;; 28:4755 $1e $1c $6b $1d
+    ;;Leave me alone<...><E2>I'm so embar-<E2>rassed<...><E0>
     Op04_Unknown_Text data_33_7eb1                     ;; 28:4759 $04 $b1 $7e $33
     Op92_Unknown $00                                   ;; 28:475d $92 $00
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:475f $4c $1a $ff $04 $00 $00 $00 $00 $ec $64 $19
@@ -600,6 +603,7 @@ call_28_47a6:
     Op1E_Call call_20_42bf                             ;; 28:47a6 $1e $bf $42 $20
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $19, $65, $19 ;; 28:47aa $4c $1a $01 $04 $00 $00 $00 $00 $19 $65 $19
     Op1E_Call call_1d_6b1c                             ;; 28:47b5 $1e $1c $6b $1d
+    ;;Gyah!<E3><end>
     Op04_Unknown_Text data_33_7ed7                     ;; 28:47b9 $04 $d7 $7e $33
 
 call_28_47bd:
@@ -610,6 +614,7 @@ call_28_47bd:
 call_28_47d1:
     SCRIPT_RETURN_4A                                   ;; 28:47d1 $4a
     Op3E_Compare_Branch 26, $19, $65, $19, call_28_47d1 ;; 28:47d2 $3e $1a $19 $65 $19 $d1 $47 $28
+    ;;That's mean,<E2><E7>!<E0>
     Op06_Unknown_Text data_33_7ede                     ;; 28:47da $06 $de $7e $33
     Op92_Unknown $00                                   ;; 28:47de $92 $00
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:47e0 $4c $1a $ff $04 $00 $00 $00 $00 $ec $64 $19
@@ -644,6 +649,7 @@ call_28_4827:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 28:482b $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $09, $65, $19 ;; 28:4836 $4c $1a $ff $04 $00 $00 $00 $00 $09 $65 $19
     Op1E_Call call_1d_6b1c                             ;; 28:4841 $1e $1c $6b $1d
+    ;;<...><...><E0>
     Op04_Unknown_Text data_33_7eee                     ;; 28:4845 $04 $ee $7e $33
     Op92_Unknown $00                                   ;; 28:4849 $92 $00
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:484b $4c $1a $ff $04 $00 $00 $00 $00 $ec $64 $19
@@ -664,6 +670,7 @@ call_28_4872:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 28:4876 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $09, $65, $19 ;; 28:4881 $4c $1a $ff $04 $00 $00 $00 $00 $09 $65 $19
     Op1E_Call call_1d_6b1c                             ;; 28:488c $1e $1c $6b $1d
+    ;;I'm not <EA>sparklie<E8><E2>at all.<E0>
     Op04_Unknown_Text data_33_7ef1                     ;; 28:4890 $04 $f1 $7e $33
     Op92_Unknown $00                                   ;; 28:4894 $92 $00
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:4896 $4c $1a $ff $04 $00 $00 $00 $00 $ec $64 $19
@@ -684,6 +691,7 @@ call_28_48bd:
     SubOp_SetByte wC76F, $04                           ;; 28:48bf $7e $57 $04
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $db, $4d, $0f ;; 28:48c2 $4c $16 $08 $04 $00 $00 $00 $00 $db $4d $0f
     Op1E_Call call_1d_6acd                             ;; 28:48cd $1e $cd $6a $1d
+    ;;<EA>Nopibloo<E8>!<end>
     Op04_Unknown_Text data_33_7f0c                     ;; 28:48d1 $04 $0c $7f $33
 
 call_28_48d5:
@@ -714,10 +722,12 @@ call_28_4955:
     SCRIPT_RETURN_4A                                   ;; 28:4955 $4a
     Op3E_Compare_Branch 22, $22, $50, $0f, call_28_4955 ;; 28:4956 $3e $16 $22 $50 $0f $55 $49 $28
     Op1E_Call call_1d_6b1c                             ;; 28:495e $1e $1c $6b $1d
+    ;;Ha ha! Ha ha hee!<E3>My troubles always<E2>go away when<E2>I see you,<E2><E7>.<E5> You're so<E0>
     Op04_Unknown_Text data_33_7f18                     ;; 28:4962 $04 $18 $7f $33
     Op4E_Unknown_StoreValue 4, $01, $6d, $40, $10      ;; 28:4966 $4e $04 $01 $6d $40 $10
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $5c, $6a, $19 ;; 28:496c $4c $1a $01 $04 $00 $00 $00 $00 $5c $6a $19
     Op4C_Unknown $18, $01, $04, $00, $00, $00, $00, $b2, $6a, $19 ;; 28:4977 $4c $18 $01 $04 $00 $00 $00 $00 $b2 $6a $19
+    ;;<EA>bizzaroo<E8>!<E0>
     Op04_Unknown_Text data_33_7f63                     ;; 28:4982 $04 $63 $7f $33
 
 call_28_4986:
@@ -728,8 +738,10 @@ call_28_4986:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 28:4995 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $b2, $64, $19 ;; 28:49a0 $4c $1a $01 $04 $00 $00 $00 $00 $b2 $64 $19
     Op1E_Call call_1d_6b1c                             ;; 28:49ab $1e $1c $6b $1d
+    ;;Huh?<E2>Everyone? <E5><end>
     Op04_Unknown_Text data_33_7f6f                     ;; 28:49af $04 $6f $7f $33
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $cf, $64, $19 ;; 28:49b3 $4c $1a $01 $04 $00 $00 $00 $00 $cf $64 $19
+    ;;Now?<E2>Well, let's go<E2>back to the<E2>Clubhouse, then.<E0>
     Op06_Unknown_Text data_33_7f80                     ;; 28:49be $06 $80 $7f $33
     Op92_Unknown $00                                   ;; 28:49c2 $92 $00
     Op5E_Unknown $80                                   ;; 28:49c4 $5e $80
@@ -797,6 +809,7 @@ call_28_4ab3:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, $87, $78, $17 ;; 28:4ab7 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $09, $65, $19 ;; 28:4ac2 $4c $1a $ff $04 $00 $00 $00 $00 $09 $65 $19
     Op1E_Call call_1d_6b1c                             ;; 28:4acd $1e $1c $6b $1d
+    ;;You're making me<E2>feel more sad<...><E0>
     Op04_Unknown_Text data_33_7fb1                     ;; 28:4ad1 $04 $b1 $7f $33
     Op92_Unknown $00                                   ;; 28:4ad5 $92 $00
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, $ec, $64, $19 ;; 28:4ad7 $4c $1a $ff $04 $00 $00 $00 $00 $ec $64 $19
@@ -1089,16 +1102,19 @@ call_28_4e9a:
     Op1E_Call call_28_4099                             ;; 28:4ec7 $1e $99 $40 $28
     Op1E_Call call_1d_700b                             ;; 28:4ecb $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 28:4ecf $1e $e8 $6a $1d
+    ;;You learned<E2><E2><end>
     Op04_Unknown_Text data_33_7fd1                     ;; 28:4ed3 $04 $d1 $7f $33
     Op4E_Unknown_StoreValue 4, $01, $6d, $40, $10      ;; 28:4ed7 $4e $04 $01 $6d $40 $10
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $c7, $44, $0f ;; 28:4edd $4c $16 $08 $04 $00 $00 $00 $00 $c7 $44 $0f
     Op4C_Unknown $18, $01, $04, $00, $00, $00, $00, $76, $45, $0f ;; 28:4ee8 $4c $18 $01 $04 $00 $00 $00 $00 $76 $45 $0f
+    ;;<EB><EA>bizzaroo<E8>.<end>
     Op06_Unknown_Text data_33_7fdf                     ;; 28:4ef3 $06 $df $7f $33
 
 call_28_4ef7:
     SCRIPT_RETURN_4A                                   ;; 28:4ef7 $4a
     Op3E_Compare_Branch 22, $c7, $44, $0f, call_28_4ef7 ;; 28:4ef8 $3e $16 $c7 $44 $0f $f7 $4e $28
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, $16, $45, $0f ;; 28:4f00 $4c $16 $08 $ff $00 $00 $00 $00 $16 $45 $0f
+    ;;<E0>
     Op06_Unknown_Text data_33_7fec                     ;; 28:4f0b $06 $ec $7f $33
     Op1E_Call call_04_615d                             ;; 28:4f0f $1e $5d $61 $04
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, $35, $42, $10 ;; 28:4f13 $4c $16 $10 $02 $00 $00 $00 $00 $35 $42 $10
@@ -1446,6 +1462,7 @@ call_28_5390:
     Op4E_Unknown_StoreValue 4, $01, $61, $40, $10      ;; 28:5394 $4e $04 $01 $61 $40 $10
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $b9, $5d, $10 ;; 28:539a $4c $16 $08 $04 $00 $00 $00 $00 $b9 $5d $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $fd, $5e, $10 ;; 28:53a5 $4c $08 $01 $04 $00 $00 $00 $00 $fd $5e $10
+    ;;<EB><EA>Digdig<E8>!<end>
     Op04_Unknown_Text data_37_59c8                     ;; 28:53b0 $04 $c8 $59 $37
 
 call_28_53b4:
@@ -1520,10 +1537,12 @@ call_28_5456:
     Op1E_Call call_28_5f21                             ;; 28:545e $1e $21 $5f $28
     Op1E_Call call_28_5e97                             ;; 28:5462 $1e $97 $5e $28
     Op1E_Call call_28_5e1f                             ;; 28:5466 $1e $1f $5e $28
+    ;;<E4>We're out on<E4>a picnic today.<E3>Isn't the view<E4>simply gorgeous?<E0>
     Op06_Unknown_Text data_37_59d3                     ;; 28:546a $06 $d3 $59 $37
     Op1E_Call call_04_615d                             ;; 28:546e $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:5472 $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:5476 $1e $90 $6e $1d
+    ;;<E4>Pretty, pretty!<E0>
     Op04_Unknown_Text data_37_5a11                     ;; 28:547a $04 $11 $5a $37
     Op1E_Call call_28_5e5b                             ;; 28:547e $1e $5b $5e $28
     Op1E_Call call_04_615d                             ;; 28:5482 $1e $5d $61 $04
@@ -1545,10 +1564,12 @@ call_28_54a2:
     Op44_Unknown $0a, $00                              ;; 28:54aa $44 $0a $00
     Op1E_Call call_28_5f21                             ;; 28:54ad $1e $21 $5f $28
     Op1E_Call call_1d_6df4                             ;; 28:54b1 $1e $f4 $6d $1d
+    ;;Oh, I'm sorry.<E3>I only made enough<E4>food for my<E4>children.<E0>
     Op04_Unknown_Text data_37_5a22                     ;; 28:54b5 $04 $22 $5a $37
     Op1E_Call call_04_615d                             ;; 28:54b9 $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:54bd $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:54c1 $1e $90 $6e $1d
+    ;;<E4>It's only for us!<E0>
     Op04_Unknown_Text data_37_5a5a                     ;; 28:54c5 $04 $5a $5a $37
     Op1E_Call call_28_5e5b                             ;; 28:54c9 $1e $5b $5e $28
     Op1E_Call call_04_615d                             ;; 28:54cd $1e $5d $61 $04
@@ -1578,10 +1599,12 @@ call_28_5503:
     Op1E_Call call_28_5e3d                             ;; 28:550a $1e $3d $5e $28
     Op1E_Call call_20_4294                             ;; 28:550e $1e $94 $42 $20
     Op1E_Call call_1d_6df4                             ;; 28:5512 $1e $f4 $6d $1d
+    ;;What are you<E4>doing? Give us a<E4>weather forecast!<E0>
     Op04_Unknown_Text data_37_5a6d                     ;; 28:5516 $04 $6d $5a $37
     Op1E_Call call_04_615d                             ;; 28:551a $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:551e $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:5522 $1e $90 $6e $1d
+    ;;<E4>Hurry, hurry!<E0>
     Op04_Unknown_Text data_37_5a9d                     ;; 28:5526 $04 $9d $5a $37
     Op1E_Call call_28_5e5b                             ;; 28:552a $1e $5b $5e $28
     Op1E_Call call_04_615d                             ;; 28:552e $1e $5d $61 $04
@@ -1591,6 +1614,7 @@ call_28_5536:
     Op1E_Call call_20_4294                             ;; 28:5536 $1e $94 $42 $20
     Op1E_Call call_28_5e3d                             ;; 28:553a $1e $3d $5e $28
     Op1E_Call call_1d_6df4                             ;; 28:553e $1e $f4 $6d $1d
+    ;;<EA>Tack-Q<E8>? What does<E4>that mean?<E3>Can you explain it<E4>more clearly?<E0>
     Op04_Unknown_Text data_37_5aac                     ;; 28:5542 $04 $ac $5a $37
     Op1E_Call call_28_5e5b                             ;; 28:5546 $1e $5b $5e $28
     Op1E_Call call_04_615d                             ;; 28:554a $1e $5d $61 $04
@@ -1622,11 +1646,13 @@ call_28_5578:
     Op56_WriteBitArrayIndex 32, $87, $55, $19          ;; 28:55a6 $56 $20 $87 $55 $19
     Op4C_Unknown $0e, $01, $04, $00, $00, $00, $00, $49, $59, $19 ;; 28:55ab $4c $0e $01 $04 $00 $00 $00 $00 $49 $59 $19
     Op1E_Call call_1d_6df4                             ;; 28:55b6 $1e $f4 $6d $1d
+    ;;Hey!<E3>What do you think<E4>you're doing?!<E0>
     Op04_Unknown_Text data_37_5aec                     ;; 28:55ba $04 $ec $5a $37
     Op1E_Call call_04_615d                             ;; 28:55be $1e $5d $61 $04
     Op56_WriteBitArrayIndex 30, $92, $55, $19          ;; 28:55c2 $56 $1e $92 $55 $19
     Op56_WriteBitArrayIndex 32, $bb, $55, $19          ;; 28:55c7 $56 $20 $bb $55 $19
     Op1E_Call call_1d_6e90                             ;; 28:55cc $1e $90 $6e $1d
+    ;;<E4>Boo! Boo!<E0>
     Op04_Unknown_Text data_37_5b12                     ;; 28:55d0 $04 $12 $5b $37
     Op1E_Call call_28_5dd5                             ;; 28:55d4 $1e $d5 $5d $28
     Op1E_Call call_04_615d                             ;; 28:55d8 $1e $5d $61 $04
@@ -1697,6 +1723,7 @@ call_28_568f:
     Op4E_Unknown_StoreValue 4, $01, $61, $40, $10      ;; 28:5693 $4e $04 $01 $61 $40 $10
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $9b, $60, $10 ;; 28:5699 $4c $16 $08 $04 $00 $00 $00 $00 $9b $60 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $9f, $5f, $10 ;; 28:56a4 $4c $08 $01 $04 $00 $00 $00 $00 $9f $5f $10
+    ;;<EB><EA>Digdig<E8>!<end>
     Op04_Unknown_Text data_37_5b1d                     ;; 28:56af $04 $1d $5b $37
     Op1E_Call call_28_5e45                             ;; 28:56b3 $1e $45 $5e $28
     Op56_WriteBitArrayIndex 30, $58, $58, $19          ;; 28:56b7 $56 $1e $58 $58 $19
@@ -1708,10 +1735,12 @@ call_28_56c1:
     Op1E_Call call_04_615d                             ;; 28:56ca $1e $5d $61 $04
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, $00, $00, $00 ;; 28:56ce $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_6df4                             ;; 28:56d9 $1e $f4 $6d $1d
+    ;;Hey!<E3>Knock it off!<E4>You'll get dirt<E4>in our lunch!<E0>
     Op04_Unknown_Text data_37_5b28                     ;; 28:56dd $04 $28 $5b $37
     Op1E_Call call_04_615d                             ;; 28:56e1 $1e $5d $61 $04
     Op1E_Call call_28_5ef8                             ;; 28:56e5 $1e $f8 $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:56e9 $1e $90 $6e $1d
+    ;;<E4>Messy! Messy!<E0>
     Op04_Unknown_Text data_37_5b59                     ;; 28:56ed $04 $59 $5b $37
     Op1E_Call call_28_5dd5                             ;; 28:56f1 $1e $d5 $5d $28
     Op56_WriteBitArrayIndex 30, $9e, $58, $19          ;; 28:56f5 $56 $1e $9e $58 $19
@@ -1736,12 +1765,15 @@ call_28_572c:
     Op1E_Call call_28_5f4d                             ;; 28:572c $1e $4d $5f $28
     Op1E_Call call_28_5e3d                             ;; 28:5730 $1e $3d $5e $28
     Op1E_Call call_1d_6df4                             ;; 28:5734 $1e $f4 $6d $1d
+    ;;Hey!<E4><end>
     Op04_Unknown_Text data_37_5b68                     ;; 28:5738 $04 $68 $5b $37
     Op44_Unknown $14, $00                              ;; 28:573c $44 $14 $00
+    ;;You can't come in<E4>with dirty feet!<E0>
     Op06_Unknown_Text data_37_5b6e                     ;; 28:573f $06 $6e $5b $37
     Op1E_Call call_04_615d                             ;; 28:5743 $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:5747 $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:574b $1e $90 $6e $1d
+    ;;<E4>Go away! Go away!<E0>
     Op04_Unknown_Text data_37_5b91                     ;; 28:574f $04 $91 $5b $37
     Op1E_Call call_28_5e5b                             ;; 28:5753 $1e $5b $5e $28
     Op1E_Call call_04_615d                             ;; 28:5757 $1e $5d $61 $04
@@ -1800,20 +1832,24 @@ call_28_57db:
     Op1E_Call call_28_5e3d                             ;; 28:57e7 $1e $3d $5e $28
     Op14_Unknown 1, $ab, $70                           ;; 28:57eb $14 $01 $ab $70
     SCRIPT_POINTER call_28_5812                        ;; 28:57ef $12 $58 $28
+    ;;<E4>Say, can I<E4>get the<E4>weather report?<E0>
     Op06_Unknown_Text data_37_5ba4                     ;; 28:57f2 $06 $a4 $5b $37
     Op1E_Call call_04_615d                             ;; 28:57f6 $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:57fa $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:57fe $1e $90 $6e $1d
+    ;;<E4>Hurry, hurry!<E0>
     Op04_Unknown_Text data_37_5bc8                     ;; 28:5802 $04 $c8 $5b $37
     Op1E_Call call_28_5e5b                             ;; 28:5806 $1e $5b $5e $28
     Op1E_Call call_04_615d                             ;; 28:580a $1e $5d $61 $04
     Op18_Jump call_28_50b4                             ;; 28:580e $18 $b4 $50 $28
+    ;;<E4>What's the latest<E4>report? Can you<E4>check, please?<E0>
 
 call_28_5812:
     Op06_Unknown_Text data_37_5bd7                     ;; 28:5812 $06 $d7 $5b $37
     Op1E_Call call_04_615d                             ;; 28:5816 $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:581a $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:581e $1e $90 $6e $1d
+    ;;<E4>Do it, do it!<E0>
     Op04_Unknown_Text data_37_5c09                     ;; 28:5822 $04 $09 $5c $37
     Op1E_Call call_28_5e5b                             ;; 28:5826 $1e $5b $5e $28
     Op1E_Call call_04_615d                             ;; 28:582a $1e $5d $61 $04
@@ -1832,9 +1868,11 @@ call_28_5832:
 call_28_584a:
     Op1E_Call call_20_463a                             ;; 28:584a $1e $3a $46 $20
     Op1E_Call call_1d_6ae8                             ;; 28:584e $1e $e8 $6a $1d
+    ;;<E7> smelled<E2>for moisture in<E2>the air!<E0>
     Op04_Unknown_Text data_37_5c18                     ;; 28:5852 $04 $18 $5c $37
     Op1E_Call call_04_615d                             ;; 28:5856 $1e $5d $61 $04
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, $62, $59, $10 ;; 28:585a $4c $16 $ff $04 $00 $00 $00 $00 $62 $59 $10
+    ;;<...>Rain clouds are<E4>approaching.<E0>
     Op04_Unknown_Text data_37_5c3b                     ;; 28:5865 $04 $3b $5c $37
 
 call_28_5869:
@@ -1846,10 +1884,12 @@ call_28_5869:
     Op44_Unknown $0a, $00                              ;; 28:5885 $44 $0a $00
     Op1E_Call call_28_5f21                             ;; 28:5888 $1e $21 $5f $28
     Op1E_Call call_1d_6df4                             ;; 28:588c $1e $f4 $6d $1d
+    ;;So, how was it?<E4>Tell us in one<E4>word.<E0>
     Op04_Unknown_Text data_37_5c59                     ;; 28:5890 $04 $59 $5c $37
     Op1E_Call call_04_615d                             ;; 28:5894 $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:5898 $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:589c $1e $90 $6e $1d
+    ;;<E4>Tell us! Tell us!<E0>
     Op04_Unknown_Text data_37_5c7e                     ;; 28:58a0 $04 $7e $5c $37
     Op1E_Call call_28_5e5b                             ;; 28:58a4 $1e $5b $5e $28
     Op16_SubOps 1                                      ;; 28:58a8 $16 $01
@@ -1900,7 +1940,9 @@ call_28_591d:
     Op1E_Call call_28_5f21                             ;; 28:5921 $1e $21 $5f $28
     Op1E_Call call_28_5e97                             ;; 28:5925 $1e $97 $5e $28
     Op1E_Call call_28_5e3d                             ;; 28:5929 $1e $3d $5e $28
+    ;;<...>?<E4><end>
     Op06_Unknown_Text data_37_5c91                     ;; 28:592d $06 $91 $5c $37
+    ;;What's that mean?<E3>Can't you use an<E4>easier word?<E0>
 
 call_28_5931:
     Op06_Unknown_Text data_37_5c95                     ;; 28:5931 $06 $95 $5c $37
@@ -1925,12 +1967,14 @@ call_28_5959:
     Op56_WriteBitArrayIndex 26, $af, $4f, $15          ;; 28:5965 $56 $1a $af $4f $15
     Op56_WriteBitArrayIndex 30, $fa, $55, $19          ;; 28:596a $56 $1e $fa $55 $19
     Op56_WriteBitArrayIndex 32, $09, $56, $19          ;; 28:596f $56 $20 $09 $56 $19
+    ;;<EA>Hif-hif<E8><...><end>
     Op04_Unknown_Text data_37_5cc5                     ;; 28:5974 $04 $c5 $5c $37
 
 call_28_5978:
     SCRIPT_RETURN_4A                                   ;; 28:5978 $4a
     Op3E_Compare_Branch 26, $af, $4f, $15, call_28_5978 ;; 28:5979 $3e $1a $af $4f $15 $78 $59 $28
     Op1E_Call call_28_5e3d                             ;; 28:5981 $1e $3d $5e $28
+    ;;?<E4><end>
     Op06_Unknown_Text data_37_5cd0                     ;; 28:5985 $06 $d0 $5c $37
     Op18_Jump call_28_5931                             ;; 28:5989 $18 $31 $59 $28
 
@@ -1953,10 +1997,12 @@ call_28_59a5:
     Op1E_Call call_28_5f21                             ;; 28:59c6 $1e $21 $5f $28
     Op44_Unknown $1e, $00                              ;; 28:59ca $44 $1e $00
     Op1E_Call call_1d_6df4                             ;; 28:59cd $1e $f4 $6d $1d
+    ;;What?<...> <EA>Hushie<E8>?!<E3>Don't give me<E4>that! Just say it!<E0>
     Op04_Unknown_Text data_37_5cd3                     ;; 28:59d1 $04 $d3 $5c $37
     Op1E_Call call_04_615d                             ;; 28:59d5 $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:59d9 $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:59dd $1e $90 $6e $1d
+    ;;<E4>Tell me, tell me.<E0>
     Op04_Unknown_Text data_37_5d06                     ;; 28:59e1 $04 $06 $5d $37
     Op1E_Call call_28_5e5b                             ;; 28:59e5 $1e $5b $5e $28
     Op1E_Call call_04_615d                             ;; 28:59e9 $1e $5d $61 $04
@@ -1978,6 +2024,7 @@ call_28_5a09:
     Op44_Unknown $0a, $00                              ;; 28:5a11 $44 $0a $00
     Op1E_Call call_28_5f21                             ;; 28:5a14 $1e $21 $5f $28
     Op1E_Call call_1d_6df4                             ;; 28:5a18 $1e $f4 $6d $1d
+    ;;Hm?<E5> <EA>Pooie<E8>?! <E3><end>
     Op04_Unknown_Text data_37_5d19                     ;; 28:5a1c $04 $19 $5d $37
     Op56_WriteBitArrayIndex 26, $af, $4f, $15          ;; 28:5a20 $56 $1a $af $4f $15
     Op56_WriteBitArrayIndex 30, $fa, $55, $19          ;; 28:5a25 $56 $1e $fa $55 $19
@@ -1987,11 +2034,13 @@ call_28_5a2f:
     SCRIPT_RETURN_4A                                   ;; 28:5a2f $4a
     Op3E_Compare_Branch 26, $af, $4f, $15, call_28_5a2f ;; 28:5a30 $3e $1a $af $4f $15 $2f $5a $28
     Op1E_Call call_28_5ed7                             ;; 28:5a38 $1e $d7 $5e $28
+    ;;You're right. <E5>The<E2>air is starting<E2>to feel <end>
     Op06_Unknown_Text data_37_5d2a                     ;; 28:5a3c $06 $2a $5d $37
     Op4E_Unknown_StoreValue 4, $01, $67, $40, $10      ;; 28:5a40 $4e $04 $01 $67 $40 $10
     Op56_WriteBitArrayIndex 26, $ee, $50, $15          ;; 28:5a46 $56 $1a $ee $50 $15
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $0e, $51, $15 ;; 28:5a4b $4c $08 $01 $04 $00 $00 $00 $00 $0e $51 $15
     Op4C_Unknown $0a, $01, $04, $00, $00, $00, $00, $4d, $51, $15 ;; 28:5a56 $4c $0a $01 $04 $00 $00 $00 $00 $4d $51 $15
+    ;;<EA>soak-Q<E8>!<E0>
     Op06_Unknown_Text data_37_5d56                     ;; 28:5a61 $06 $56 $5d $37
 
 call_28_5a65:
@@ -2003,10 +2052,12 @@ call_28_5a65:
     Op56_WriteBitArrayIndex 28, $57, $59, $19          ;; 28:5a7c $56 $1c $57 $59 $19
     Op56_WriteBitArrayIndex 26, $dd, $4f, $15          ;; 28:5a81 $56 $1a $dd $4f $15
     Op1E_Call call_1d_6df4                             ;; 28:5a86 $1e $f4 $6d $1d
+    ;;We have to go<E4>home right away!<E0>
     Op04_Unknown_Text data_37_5d60                     ;; 28:5a8a $04 $60 $5d $37
     Op1E_Call call_04_615d                             ;; 28:5a8e $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:5a92 $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:5a96 $1e $90 $6e $1d
+    ;;<E4>Hurry, hurry!<E0>
     Op04_Unknown_Text data_37_5d7f                     ;; 28:5a9a $04 $7f $5d $37
     Op1E_Call call_04_615d                             ;; 28:5a9e $1e $5d $61 $04
     Op1E_Call call_28_5dd5                             ;; 28:5aa2 $1e $d5 $5d $28
@@ -2061,12 +2112,15 @@ call_28_5b6e:
     Op44_Unknown $0a, $00                              ;; 28:5b76 $44 $0a $00
     Op1E_Call call_28_5f21                             ;; 28:5b79 $1e $21 $5f $28
     Op1E_Call call_1d_6df4                             ;; 28:5b7d $1e $f4 $6d $1d
+    ;;Did you go <EA>blanko<E8>?<E4><end>
     Op04_Unknown_Text data_37_5d8e                     ;; 28:5b81 $04 $8e $5d $37
     Op44_Unknown $28, $00                              ;; 28:5b85 $44 $28 $00
+    ;;Try it again,<E4>OK?<E0>
     Op06_Unknown_Text data_37_5da4                     ;; 28:5b88 $06 $a4 $5d $37
     Op1E_Call call_04_615d                             ;; 28:5b8c $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:5b90 $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:5b94 $1e $90 $6e $1d
+    ;;<E4>Again, again!<E0>
     Op04_Unknown_Text data_37_5db6                     ;; 28:5b98 $04 $b6 $5d $37
     Op1E_Call call_04_615d                             ;; 28:5b9c $1e $5d $61 $04
     Op1E_Call call_28_5e5b                             ;; 28:5ba0 $1e $5b $5e $28
@@ -2088,8 +2142,10 @@ call_28_5bc0:
     Op44_Unknown $0a, $00                              ;; 28:5bc8 $44 $0a $00
     Op1E_Call call_28_5f21                             ;; 28:5bcb $1e $21 $5f $28
     Op1E_Call call_1d_6df4                             ;; 28:5bcf $1e $f4 $6d $1d
+    ;;It's the <EA>bestest<E8><E4>weather?<E5> Good,<E4>we'll stay here<E4>for a while, then.<E3><end>
     Op04_Unknown_Text data_37_5dc5                     ;; 28:5bd3 $04 $c5 $5d $37
     Op1E_Call call_28_5e3d                             ;; 28:5bd7 $1e $3d $5e $28
+    ;;<...>I hope you know<E4>what you're doing<...><E0>
     Op06_Unknown_Text data_37_5e0c                     ;; 28:5bdb $06 $0c $5e $37
     Op1E_Call call_04_615d                             ;; 28:5bdf $1e $5d $61 $04
     Op1E_Call call_28_5e5b                             ;; 28:5be3 $1e $5b $5e $28
@@ -2111,10 +2167,12 @@ call_28_5bfc:
     Op16_SubOps 1                                      ;; 28:5c15 $16 $01
     SubOp_SetFlag wC938, 1                             ;; 28:5c17 $3f $01
     Op1E_Call call_1d_6df4                             ;; 28:5c19 $1e $f4 $6d $1d
+    ;;Hey! You have the<E4>Frog Badge with<E4>you!<E5> That means<E4>you can predict<E4>the weather,<E4>right?<E5> We're on<E4>a picnic today.<E3>Can you tell us<E4>what the weather<E4>will be today?<E3>Please?<E0>
     Op04_Unknown_Text data_37_5e30                     ;; 28:5c1d $04 $30 $5e $37
     Op1E_Call call_04_615d                             ;; 28:5c21 $1e $5d $61 $04
     Op1E_Call call_28_5eed                             ;; 28:5c25 $1e $ed $5e $28
     Op1E_Call call_1d_6e90                             ;; 28:5c29 $1e $90 $6e $1d
+    ;;<E4>Please, please!<E0>
     Op04_Unknown_Text data_37_5ed9                     ;; 28:5c2d $04 $d9 $5e $37
     Op16_SubOps 1                                      ;; 28:5c31 $16 $01
     SubOp_SetByte wC785, $01                           ;; 28:5c33 $7e $6d $01
@@ -2223,6 +2281,7 @@ call_28_5d34:
     Op4C_Unknown $38, $01, $04, $48, $00, $d8, $ff, $b9, $73, $1b ;; 28:5d38 $4c $38 $01 $04 $48 $00 $d8 $ff $b9 $73 $1b
     Op44_Unknown $28, $00                              ;; 28:5d43 $44 $28 $00
     Op1E_Call call_1d_6e4f                             ;; 28:5d46 $1e $4f $6e $1d
+    ;;Did you call me,<E4><end>
     Op04_Unknown_Text data_37_5eea                     ;; 28:5d4a $04 $ea $5e $37
     Op14_Unknown 1, $d1, $70                           ;; 28:5d4e $14 $01 $d1 $70
     SCRIPT_POINTER call_28_5d6a                        ;; 28:5d52 $6a $5d $28
@@ -2232,25 +2291,32 @@ call_28_5d34:
     SCRIPT_POINTER call_28_5d7a                        ;; 28:5d60 $7a $5d $28
     Op14_Unknown 1, $dd, $70                           ;; 28:5d63 $14 $01 $dd $70
     SCRIPT_POINTER call_28_5d82                        ;; 28:5d67 $82 $5d $28
+    ;;<EA>go-P<E8><end>
 
 call_28_5d6a:
     Op06_Unknown_Text data_37_5efc                     ;; 28:5d6a $06 $fc $5e $37
     Op18_Jump call_28_5d86                             ;; 28:5d6e $18 $86 $5d $28
+    ;;<EA>zuzuzu<E8><end>
 
 call_28_5d72:
     Op06_Unknown_Text data_37_5f03                     ;; 28:5d72 $06 $03 $5f $37
     Op18_Jump call_28_5d86                             ;; 28:5d76 $18 $86 $5d $28
+    ;;<EA>blanko<E8><end>
 
 call_28_5d7a:
     Op06_Unknown_Text data_37_5f0c                     ;; 28:5d7a $06 $0c $5f $37
     Op18_Jump call_28_5d86                             ;; 28:5d7e $18 $86 $5d $28
+    ;;<EA>hammo<E8><end>
 
 call_28_5d82:
     Op06_Unknown_Text data_37_5f15                     ;; 28:5d82 $06 $15 $5f $37
+    ;;?<E3>Yep, I remember!<E0>
 
 call_28_5d86:
     Op06_Unknown_Text data_37_5f1d                     ;; 28:5d86 $06 $1d $5f $37
+    ;;All the hamsters<E2>call this place<E2>The Ruins, but<E2>in my opinion,<E2>it's just a dump.<E0>
     Op04_Unknown_Text data_37_5f30                     ;; 28:5d8a $04 $30 $5f $37
+    ;;Oh, it sometimes<E4>turns into a<E4>restaurant, too.<E3>See you!<E0>
     Op04_Unknown_Text data_37_5f81                     ;; 28:5d8e $04 $81 $5f $37
     Op1E_Call call_04_615d                             ;; 28:5d92 $1e $5d $61 $04
     Op4C_Unknown $38, $01, $04, $00, $00, $00, $00, $e2, $73, $1b ;; 28:5d96 $4c $38 $01 $04 $00 $00 $00 $00 $e2 $73 $1b
@@ -2338,6 +2404,7 @@ call_28_5e97:
     Op56_WriteBitArrayIndex 30, $32, $55, $19          ;; 28:5ea0 $56 $1e $32 $55 $19
     Op56_WriteBitArrayIndex 32, $42, $55, $19          ;; 28:5ea5 $56 $20 $42 $55 $19
     Op1E_Call call_1d_6df4                             ;; 28:5eaa $1e $f4 $6d $1d
+    ;;<EA>Hamha<E8>!<end>
     Op04_Unknown_Text data_37_5fb9                     ;; 28:5eae $04 $b9 $5f $37
 
 call_28_5eb2:
@@ -2456,11 +2523,13 @@ call_28_6016:
     Op1E_Call call_28_515b                             ;; 28:6047 $1e $5b $51 $28
     Op1E_Call call_1d_700b                             ;; 28:604b $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 28:604f $1e $e8 $6a $1d
+    ;;You learned<E4><E4><end>
     Op04_Unknown_Text data_37_5fc2                     ;; 28:6053 $04 $c2 $5f $37
     Op4E_Unknown_StoreValue 4, $01, $67, $40, $10      ;; 28:6057 $4e $04 $01 $67 $40 $10
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $55, $5f, $0f ;; 28:605d $4c $16 $08 $04 $00 $00 $00 $00 $55 $5f $0f
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, $99, $5f, $0f ;; 28:6068 $4c $08 $01 $04 $00 $00 $00 $00 $99 $5f $0f
     Op4C_Unknown $0a, $01, $04, $00, $00, $00, $00, $d8, $5f, $0f ;; 28:6073 $4c $0a $01 $04 $00 $00 $00 $00 $d8 $5f $0f
+    ;;<EB><EA>soak-Q<E8>.<end>
     Op06_Unknown_Text data_37_5fd0                     ;; 28:607e $06 $d0 $5f $37
 
 call_28_6082:
@@ -2471,6 +2540,7 @@ call_28_6082:
 call_28_6096:
     SCRIPT_RETURN_4A                                   ;; 28:6096 $4a
     Op3E_Compare_Branch 22, $75, $5f, $0f, call_28_6096 ;; 28:6097 $3e $16 $75 $5f $0f $96 $60 $28
+    ;;<E0>
     Op06_Unknown_Text data_37_5fdb                     ;; 28:609f $06 $db $5f $37
     Op1E_Call call_04_615d                             ;; 28:60a3 $1e $5d $61 $04
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, $00, $00, $00 ;; 28:60a7 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
@@ -3066,6 +3136,7 @@ call_28_7597:
 call_28_75af:
     Op1E_Call call_04_6833                             ;; 28:75af $1e $33 $68 $04
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, $6d, $67, $0f ;; 28:75b3 $4c $16 $ff $04 $00 $00 $00 $00 $6d $67 $0f
+    ;;<EA>Tuggie<E8>!<end>
     Op04_Unknown_Text data_3c_599f                     ;; 28:75be $04 $9f $59 $3c
 
 call_28_75c2:
@@ -3164,6 +3235,7 @@ call_28_76ce:
     Op4C_Unknown $34, $01, $04, $00, $00, $06, $00, $f1, $7d, $19 ;; 28:76d9 $4c $34 $01 $04 $00 $00 $06 $00 $f1 $7d $19
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $12, $79, $1a ;; 28:76e4 $4c $1a $01 $04 $00 $00 $00 $00 $12 $79 $1a
     Op1E_Call call_1d_6b77                             ;; 28:76ef $1e $77 $6b $1d
+    ;;Ookwee!!<end>
     Op04_Unknown_Text data_3c_59a9                     ;; 28:76f3 $04 $a9 $59 $3c
 
 call_28_76f7:
@@ -3173,8 +3245,10 @@ call_28_76f7:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $0b, $79, $1a ;; 28:7702 $4c $1a $01 $04 $00 $00 $00 $00 $0b $79 $1a
     Op1E_Call call_28_7e19                             ;; 28:770d $1e $19 $7e $28
     Op1E_Call call_1d_6e9d                             ;; 28:7711 $1e $9d $6e $1d
+    ;;<end>
     Op04_Unknown_Text data_3c_59b2                     ;; 28:7715 $04 $b2 $59 $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7719 $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;Ribbit.<E3>Do you know<E2>this girl, ribbit?<E0>
     Op06_Unknown_Text data_3c_59b3                     ;; 28:7724 $06 $b3 $59 $3c
     Op92_Unknown $00                                   ;; 28:7728 $92 $00
     Op16_SubOps 1                                      ;; 28:772a $16 $01
@@ -3255,6 +3329,7 @@ call_28_783a:
     Op1E_Call call_1d_6b77                             ;; 28:7849 $1e $77 $6b $1d
     Op4C_Unknown $34, $01, $04, $00, $00, $06, $00, $f1, $7d, $19 ;; 28:784d $4c $34 $01 $04 $00 $00 $06 $00 $f1 $7d $19
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $12, $79, $1a ;; 28:7858 $4c $1a $01 $04 $00 $00 $00 $00 $12 $79 $1a
+    ;;Ookwee!<end>
     Op04_Unknown_Text data_3c_59da                     ;; 28:7863 $04 $da $59 $3c
 
 call_28_7867:
@@ -3264,10 +3339,13 @@ call_28_7867:
     Op1E_Call call_28_7e19                             ;; 28:7872 $1e $19 $7e $28
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $0b, $79, $1a ;; 28:7876 $4c $1a $01 $04 $00 $00 $00 $00 $0b $79 $1a
     Op1E_Call call_1d_6e9d                             ;; 28:7881 $1e $9d $6e $1d
+    ;;<end>
     Op04_Unknown_Text data_3c_59e2                     ;; 28:7885 $04 $e2 $59 $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7889 $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;You seem to get<E2>along well.<E3><end>
     Op06_Unknown_Text data_3c_59e3                     ;; 28:7894 $06 $e3 $59 $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7898 $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;Do you know her?<E0>
     Op06_Unknown_Text data_3c_5a00                     ;; 28:78a3 $06 $00 $5a $3c
     Op92_Unknown $00                                   ;; 28:78a7 $92 $00
     Op18_Jump call_28_70ff                             ;; 28:78a9 $18 $ff $70 $28
@@ -3305,8 +3383,10 @@ call_28_78e5:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $40, $79, $1a ;; 28:7915 $4c $1a $01 $04 $00 $00 $00 $00 $40 $79 $1a
     Op4C_Unknown $34, $01, $04, $30, $00, $06, $00, $17, $77, $19 ;; 28:7920 $4c $34 $01 $04 $30 $00 $06 $00 $17 $77 $19
     Op1E_Call call_1d_6e9d                             ;; 28:792b $1e $9d $6e $1d
+    ;;<end>
     Op04_Unknown_Text data_3c_5a11                     ;; 28:792f $04 $11 $5a $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7933 $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;Ribbit! Why did<E2>you do that?<E0>
     Op06_Unknown_Text data_3c_5a12                     ;; 28:793e $06 $12 $5a $3c
     Op92_Unknown $00                                   ;; 28:7942 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $0b, $79, $1a ;; 28:7944 $4c $1a $01 $04 $00 $00 $00 $00 $0b $79 $1a
@@ -3353,11 +3433,13 @@ call_28_79dc:
     Op4C_Unknown $34, $01, $04, $00, $00, $06, $00, $f1, $7d, $19 ;; 28:79eb $4c $34 $01 $04 $00 $00 $06 $00 $f1 $7d $19
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $12, $79, $1a ;; 28:79f6 $4c $1a $01 $04 $00 $00 $00 $00 $12 $79 $1a
     Op1E_Call call_1d_6b77                             ;; 28:7a01 $1e $77 $6b $1d
+    ;;Ookwee!<end>
     Op04_Unknown_Text data_3c_5a2f                     ;; 28:7a05 $04 $2f $5a $3c
 
 call_28_7a09:
     SCRIPT_RETURN_4A                                   ;; 28:7a09 $4a
     Op3E_Compare_Branch 52, $f1, $7d, $19, call_28_7a09 ;; 28:7a0a $3e $34 $f1 $7d $19 $09 $7a $28
+    ;;<E2>Ookwee! Ookwee!<end>
     Op06_Unknown_Text data_3c_5a37                     ;; 28:7a12 $06 $37 $5a $3c
     Op4C_Unknown $34, $01, $04, $00, $00, $00, $00, $43, $7e, $19 ;; 28:7a16 $4c $34 $01 $04 $00 $00 $00 $00 $43 $7e $19
 
@@ -3368,14 +3450,19 @@ call_28_7a21:
     Op1E_Call call_28_7e19                             ;; 28:7a2c $1e $19 $7e $28
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $0b, $79, $1a ;; 28:7a30 $4c $1a $01 $04 $00 $00 $00 $00 $0b $79 $1a
     Op1E_Call call_1d_6e9d                             ;; 28:7a3b $1e $9d $6e $1d
+    ;;<end>
     Op04_Unknown_Text data_3c_5a48                     ;; 28:7a3f $04 $48 $5a $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7a43 $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;Boy am I glad to<E2>see you!<E3>Do you know her?<E3><end>
     Op06_Unknown_Text data_3c_5a49                     ;; 28:7a4e $06 $49 $5a $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7a52 $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;Oh, good!<E3><end>
     Op06_Unknown_Text data_3c_5a75                     ;; 28:7a5d $06 $75 $5a $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7a61 $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;She seemed lost,<E2>so I decided to<E2>keep an eye on her<E3><end>
     Op06_Unknown_Text data_3c_5a80                     ;; 28:7a6c $06 $80 $5a $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7a70 $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;until someone came<E2>to get her.<E0>
     Op06_Unknown_Text data_3c_5ab5                     ;; 28:7a7b $06 $b5 $5a $3c
     Op92_Unknown $00                                   ;; 28:7a7f $92 $00
     Op42_Unknown_StoreValue 7, $01, $9d, $78, $1a      ;; 28:7a81 $42 $07 $01 $9d $78 $1a
@@ -3387,6 +3474,7 @@ call_28_7aa8:
     SCRIPT_RETURN_4A                                   ;; 28:7aa8 $4a
     Op3E_Compare_Branch 14, $e9, $78, $19, call_28_7aa8 ;; 28:7aa9 $3e $0e $e9 $78 $19 $a8 $7a $28
     Op1E_Call call_1d_6b77                             ;; 28:7ab1 $1e $77 $6b $1d
+    ;;Ookwee!<E2><EA>Bye-Q<E8>!<end>
     Op04_Unknown_Text data_3c_5ad4                     ;; 28:7ab5 $04 $d4 $5a $3c
     Op4C_Unknown $0e, $01, $04, $00, $00, $00, $00, $81, $7e, $19 ;; 28:7ab9 $4c $0e $01 $04 $00 $00 $00 $00 $81 $7e $19
 
@@ -3397,8 +3485,10 @@ call_28_7ac4:
     Op4C_Unknown $0e, $01, $04, $00, $00, $00, $00, $a7, $76, $19 ;; 28:7acf $4c $0e $01 $04 $00 $00 $00 $00 $a7 $76 $19
     Op42_Unknown_StoreValue 7, $01, $80, $77, $1a      ;; 28:7ada $42 $07 $01 $80 $77 $1a
     Op1E_Call call_1d_6e9d                             ;; 28:7ae0 $1e $9d $6e $1d
+    ;;<end>
     Op04_Unknown_Text data_3c_5ae5                     ;; 28:7ae4 $04 $e5 $5a $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7ae8 $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;Ribbit. Ribbit.<end>
     Op06_Unknown_Text data_3c_5ae6                     ;; 28:7af3 $06 $e6 $5a $3c
     Op44_Unknown $3c, $00                              ;; 28:7af7 $44 $3c $00
     Op92_Unknown $00                                   ;; 28:7afa $92 $00
@@ -3409,6 +3499,7 @@ call_28_7ac4:
     Op4C_Unknown $0e, $01, $04, $00, $00, $00, $00, $b7, $76, $19 ;; 28:7b10 $4c $0e $01 $04 $00 $00 $00 $00 $b7 $76 $19
     Op44_Unknown $10, $00                              ;; 28:7b1b $44 $10 $00
     Op1E_Call call_1d_6b77                             ;; 28:7b1e $1e $77 $6b $1d
+    ;;Ookwee!<E2>Ookwee! Ookwee!<E0>
     Op04_Unknown_Text data_3c_5af6                     ;; 28:7b22 $04 $f6 $5a $3c
     Op92_Unknown $00                                   ;; 28:7b26 $92 $00
     Op5E_Unknown $80                                   ;; 28:7b28 $5e $80
@@ -3458,12 +3549,16 @@ call_28_7ba6:
     Op4C_Unknown $34, $01, $04, $00, $00, $00, $00, $0b, $7d, $19 ;; 28:7bd1 $4c $34 $01 $04 $00 $00 $00 $00 $0b $7d $19
     Op4C_Unknown $1c, $01, $04, $00, $00, $00, $00, $1b, $7d, $19 ;; 28:7bdc $4c $1c $01 $04 $00 $00 $00 $00 $1b $7d $19
     Op1E_Call call_1d_6e9d                             ;; 28:7be7 $1e $9d $6e $1d
+    ;;<end>
     Op04_Unknown_Text data_3c_5b0e                     ;; 28:7beb $04 $0e $5b $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7bef $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;Wha-what are you<...>?<E3><end>
     Op06_Unknown_Text data_3c_5b0f                     ;; 28:7bfa $06 $0f $5b $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7bfe $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;;I don't believe<E2>it!<E5><end>
     Op06_Unknown_Text data_3c_5b23                     ;; 28:7c09 $06 $23 $5b $3c
     Op4C_Unknown $36, $01, $04, $00, $00, $00, $00, $fe, $78, $1a ;; 28:7c0d $4c $36 $01 $04 $00 $00 $00 $00 $fe $78 $1a
+    ;; You're no<E2>friend of hers,<E2>are you? Ribbit!<E0>
     Op06_Unknown_Text data_3c_5b38                     ;; 28:7c18 $06 $38 $5b $3c
     Op92_Unknown $00                                   ;; 28:7c1c $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, $47, $79, $1a ;; 28:7c1e $4c $1a $01 $04 $00 $00 $00 $00 $47 $79 $1a
@@ -3524,13 +3619,16 @@ call_28_7c9e:
     Op1E_Call call_28_717b                             ;; 28:7ccb $1e $7b $71 $28
     Op1E_Call call_1d_700b                             ;; 28:7ccf $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 28:7cd3 $1e $e8 $6a $1d
+    ;;You learned<E2><E2><end>
     Op04_Unknown_Text data_3c_5b64                     ;; 28:7cd7 $04 $64 $5b $3c
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, $00, $40, $0f ;; 28:7cdb $4c $16 $08 $04 $00 $00 $00 $00 $00 $40 $0f
+    ;;<EB><EA>bye-Q<E8>.<end>
     Op06_Unknown_Text data_3c_5b72                     ;; 28:7ce6 $06 $72 $5b $3c
 
 call_28_7cea:
     SCRIPT_RETURN_4A                                   ;; 28:7cea $4a
     Op3E_Compare_Branch 22, $00, $40, $0f, call_28_7cea ;; 28:7ceb $3e $16 $00 $40 $0f $ea $7c $28
+    ;;<E0>
     Op06_Unknown_Text data_3c_5b7c                     ;; 28:7cf3 $06 $7c $5b $3c
     Op1E_Call call_04_615d                             ;; 28:7cf7 $1e $5d $61 $04
     Op1E_Call call_28_7e4b                             ;; 28:7cfb $1e $4b $7e $28
