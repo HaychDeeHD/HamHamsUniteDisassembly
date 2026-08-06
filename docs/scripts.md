@@ -313,6 +313,8 @@ A return variant. Actually calls return so uses the real GBC callstack I guess?
 <a id="op4C"></a>
 ### Op4C 
 
+10 argument bytes, the last 3 of which are a 3 byte ROM address. It seems that whatever kind of data this points to occupies the 0F-1B banks.
+
 <a id="op4E"></a>
 ### Op4E 
 

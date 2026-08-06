@@ -187,16 +187,15 @@ db $48
 ENDM
 MACRO Op4C_Unknown
 db $4c
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
-db \<6>
-db \<7>
-db \<8>
-db \<9>
-db \<10>
+db \1
+db \2
+db \3
+db \4
+db \5
+db \6
+db \7
+dw \8
+db BANK(\8)
 ENDM
 MACRO Op4E_Unknown_StoreValue
 db $4e

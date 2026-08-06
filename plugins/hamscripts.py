@@ -663,6 +663,16 @@ class Op0CBlock(Op10OrOp0CBlock):
     def export(self, file):
         file.asmLine(6, "Op0C_HamChatWheel", str(self.count), str(self.optionsLabel), str(self.rulesLabel))
 
+class Op4CBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=11)
+        RomInfo.macros["Op4C_Unknown"] = "db $4c\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6\ndb \\7\ndw \\8\ndb BANK(\\8)"
+
+        self.endingPointerLabel = label3ByteRomAddressArg(memory, addr + 8)
+
+    def export(self, file):
+        file.asmLine(11, "Op4C_Unknown", *["$%02x" % self.memory.byte(file.addr + n) for n in range(1, 8)], str(self.endingPointerLabel))
+
 # Even though there are ophandlers not accounted for here, this list is apparently complete.
 # In the banks I have decoded I do not hit script instructions not present in this object.
 OPBLOCKS = {
@@ -694,7 +704,7 @@ OPBLOCKS = {
     0x46: makeGenericBlockClass(0x46, 1),
     0x48: makeGenericBlockClass(0x48, 1),
     0x4A: makeGenericBlockClass(0x4A, 1, "SCRIPT_RETURN_4A"),
-    0x4C: makeGenericBlockClass(0x4C, 11),
+    0x4C: Op4CBlock,
     0x4E: Op4EBlock,
     0x50: Op50Block,
     0x52: Op52Block,
