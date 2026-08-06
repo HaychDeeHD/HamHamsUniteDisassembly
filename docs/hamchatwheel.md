@@ -31,7 +31,7 @@ Here is what Bank 28, $4C2F looks like. This is hamscript that is reached when y
 call_28_46cf:
     Op82_Run data_01_7416                              ;; 28:46cf $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:46d3 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, $5a39, $5e44                ;; 28:46d7 $10 $0c $39 $5a $44 $5e
+    Op10_HamChatWheel 12, SadMaxwellOptions, SadMaxwellRules    ;; 28:46d7 $10 $0c $39 $5a $44 $5e
     Op1C_TableJump 12                                  ;; 28:46dd $1c $0c
     SCRIPT_POINTER SadMaxwellHamha                     ;; 28:46df $23 $47 $28
     SCRIPT_POINTER SadMaxwellHifHif                    ;; 28:46e2 $6e $47 $28
@@ -58,7 +58,7 @@ Op10 is responsible for presenting the player with their choices and accepting t
 
 The first argument to Op10 is the same number we've already seen: 12, the number of different possible choices that could appear counting each "?" separately and the length of the following jumptable.
 
-The next 4 bytes are a pair of 2 byte pointers that work together. $5A39, $5E44 in this example. The first points to HamChatOptions and the second to HamChatRules. *ALL* Op10 pointers point into bank 05. 
+The next 4 bytes are a pair of 2 byte pointers that work together. SadMaxwellOptions ($5A39) and SadMaxwellRules ($5E44) in this example. The first pointer will always point to a HamChatOptions and the second to a HamChatRules. *ALL* Op10 pointers point into bank 05. 
 
 Here is the relevant data from each of those pointer locations:
 
