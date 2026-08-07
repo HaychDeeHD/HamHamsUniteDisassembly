@@ -26,26 +26,30 @@ rst_00_0028:
 
 SECTION "isrVBlank", ROM0[$0040]
 
+; Signals window when VRAM can be modified.
 isrVBlank:
-    jp   jp_00_059a                                    ;; 00:0040 $c3 $9a $05
+    jp   VBlankInterruptHandler                        ;; 00:0040 $c3 $9a $05
     db   $ff, $ff, $ff, $ff, $ff                       ;; 00:0043 ?????
 
 SECTION "isrLCDC", ROM0[$0048]
 
+; aka STAT Interrupt. Multiple triggers, typically video related.
 isrLCDC:
-    jp   jp_00_085e                                    ;; 00:0048 $c3 $5e $08
+    jp   LCDCInterruptHandler                          ;; 00:0048 $c3 $5e $08
     db   $ff, $ff, $ff, $ff, $ff                       ;; 00:004b ?????
 
 SECTION "isrTimer", ROM0[$0050]
 
+; Not used.
 isrTimer:
-    jp   jp_00_048b                                    ;; 00:0050 $c3 $8b $04
+    jp   TimerInterruptHandler_Noop                         ;; 00:0050 $c3 $8b $04
     db   $ff, $ff, $ff, $ff, $ff                       ;; 00:0053 ?????
 
 SECTION "isrSerial", ROM0[$0058]
 
+; Related to linking Gameboys and transferring data.
 isrSerial:
-    jp   jp_00_048c                                    ;; 00:0058 $c3 $8c $04
+    jp   SerialInterruptHandler                        ;; 00:0058 $c3 $8c $04
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:005b ????????
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:0063 ????????
     db   $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff        ;; 00:006b ????????
@@ -464,10 +468,10 @@ call_00_0422:
     jr   NC, .jr_00_047d                               ;; 00:0487 $30 $f4
     jr   .jr_00_0432                                   ;; 00:0489 $18 $a7
 
-jp_00_048b:
+TimerInterruptHandler_Noop:
     reti                                               ;; 00:048b $d9
 
-jp_00_048c:
+SerialInterruptHandler:
     ld   A, [wC64E]                                    ;; 00:048c $fa $4e $c6
     cp   A, $01                                        ;; 00:048f $fe $01
     jr   Z, .jr_00_04be                                ;; 00:0491 $28 $2b
@@ -619,7 +623,7 @@ Ensure7bytesAtC625areZero:
     nop                                                ;; 00:0597 $00
     jr   .foundANonZero                                ;; 00:0598 $18 $fd
 
-jp_00_059a:
+VBlankInterruptHandler:
     di                                                 ;; 00:059a $f3
     push AF                                            ;; 00:059b $f5
     push BC                                            ;; 00:059c $c5
@@ -1055,7 +1059,7 @@ ReadInputs:
     ldh  [rP1], A                                      ;; 00:085b $e0 $00
     ret                                                ;; 00:085d $c9
 
-jp_00_085e:
+LCDCInterruptHandler:
     push AF                                            ;; 00:085e $f5
     push BC                                            ;; 00:085f $c5
     push DE                                            ;; 00:0860 $d5
