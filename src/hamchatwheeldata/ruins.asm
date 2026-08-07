@@ -326,11 +326,13 @@ data_05_6ce1:
     HamChatWheelOption $1d ; 05 Stickie                ;; 05:6ce6 $1d
 
 data_05_6ce7:
-    db   $71, $1e, $be, $08                            ;; 05:6ce7 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6ce7 $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $08 ; 01    ;; 05:6ce9 $be $08
 
 data_05_6ceb:
-    db   $71, $1e, $be, $0a, $00, $6c, $07, $a2        ;; 05:6ceb ????????
-    db   $80, $0e, $be, $01                            ;; 05:6cf3 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6ceb $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $0a ; 01    ;; 05:6ced $be $0a
+    db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:6cef ????????
 
 ; Paired with RuinsCoreFourHamChats, data_05_6cce, GameOrPrizeExplanation, data_05_6ce1, RuinsYesNo, data_05_6c65, data_05_6c90, data_05_6c5a
 RuinsAlwaysUsePile:
@@ -347,188 +349,265 @@ RuinsAlwaysUsePile:
     HamChatWheelRule_AlwaysUse ; 10                    ;; 05:6d01 $1a
 
 data_05_6d02:
-    db   $b2, $02, $7e, $39                            ;; 05:6d02 ????
+    HamChatWheelRule_DefaultCase_Pair $b2, $02 ; 00    ;; 05:6d02 $b2 $02
+    HamChatWheelRule_DefaultCase_Pair $7e, $39 ; 01    ;; 05:6d04 $7e $39
 
 data_05_6d06:
-    db   $70, $0d, $be, $15                            ;; 05:6d06 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6d06 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $15 ; 01    ;; 05:6d08 $be $15
 
 data_05_6d0a:
-    db   $70, $0d, $be, $0a                            ;; 05:6d0a ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6d0a $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $0a ; 01    ;; 05:6d0c $be $0a
 
 data_05_6d0e:
-    db   $3e, $a8                                      ;; 05:6d0e ??
+    HamChatWheelRule_UseIfHave 168 ; 00                ;; 05:6d0e $3e $a8
 
 data_05_6d10:
-    db   $70, $4c, $be, $10                            ;; 05:6d10 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $4c ; 00    ;; 05:6d10 $70 $4c
+    HamChatWheelRule_DefaultCase_Pair $be, $10 ; 01    ;; 05:6d12 $be $10
 
 data_05_6d14:
-    db   $70, $4c, $be, $08                            ;; 05:6d14 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $4c ; 00    ;; 05:6d14 $70 $4c
+    HamChatWheelRule_DefaultCase_Pair $be, $08 ; 01    ;; 05:6d16 $be $08
 
 data_05_6d18:
-    db   $70, $4c, $be, $04                            ;; 05:6d18 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $4c ; 00    ;; 05:6d18 $70 $4c
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:6d1a $be $04
 
 data_05_6d1c:
-    db   $70, $4c, $be, $02                            ;; 05:6d1c ????
+    HamChatWheelRule_DefaultCase_Pair $70, $4c ; 00    ;; 05:6d1c $70 $4c
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6d1e $be $02
 
 data_05_6d20:
-    db   $00, $72, $39, $a2, $01, $06, $00, $b2        ;; 05:6d20 ????????
-    db   $01, $62, $39, $1e                            ;; 05:6d28 ????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6d20 $00
+    HamChatWheelRule_DefaultCase_Pair $72, $39 ; 01    ;; 05:6d21 $72 $39
+    HamChatWheelRule_DefaultCase_Pair $a2, $01 ; 02    ;; 05:6d23 $a2 $01
+    HamChatWheelRule_DefaultCase_Single $06 ; 03       ;; 05:6d25 $06
+    HamChatWheelRule_DefaultCase_Single $00 ; 04       ;; 05:6d26 $00
+    HamChatWheelRule_DefaultCase_Pair $b2, $01 ; 05    ;; 05:6d27 $b2 $01
+    HamChatWheelRule_DefaultCase_Pair $62, $39 ; 06    ;; 05:6d29 $62 $39
+    HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:6d2b $1e
 
 data_05_6d2c:
-    db   $71, $1e, $be, $00                            ;; 05:6d2c ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6d2c $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6d2e $be $00
 
 data_05_6d30:
-    db   $71, $1e, $be, $01                            ;; 05:6d30 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6d30 $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6d32 $be $01
 
 data_05_6d34:
-    db   $71, $1e, $be, $02                            ;; 05:6d34 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6d34 $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6d36 $be $02
 
 data_05_6d38:
-    db   $71, $1e, $be, $03                            ;; 05:6d38 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6d38 $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6d3a $be $03
 
 data_05_6d3c:
-    db   $00, $6d, $1e, $a2, $78, $0e, $be, $01        ;; 05:6d3c ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6d3c $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6d3d $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $78 ; 02    ;; 05:6d3f $a2 $78
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6d41 $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6d42 $be $01
 
 data_05_6d44:
-    db   $00, $6d, $1e, $a2, $90, $0e, $be, $01        ;; 05:6d44 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6d44 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6d45 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $90 ; 02    ;; 05:6d47 $a2 $90
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6d49 $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6d4a $be $01
 
 data_05_6d4c:
-    db   $6f, $1e, $be, $01                            ;; 05:6d4c ????
+    HamChatWheelRule_DefaultCase_Pair $6f, $1e ; 00    ;; 05:6d4c $6f $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6d4e $be $01
 
 data_05_6d50:
-    db   $3f, $a5                                      ;; 05:6d50 ??
+    HamChatWheelRule_UseIfHave 421 ; 00                ;; 05:6d50 $3f $a5
 
 data_05_6d52:
-    db   $00, $6d, $1e, $a2, $30, $0e, $be, $01        ;; 05:6d52 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6d52 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6d53 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $30 ; 02    ;; 05:6d55 $a2 $30
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6d57 $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6d58 $be $01
 
 data_05_6d5a:
-    db   $70, $36, $be, $00                            ;; 05:6d5a ????
+    HamChatWheelRule_DefaultCase_Pair $70, $36 ; 00    ;; 05:6d5a $70 $36
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6d5c $be $00
 
 data_05_6d5e:
-    db   $3e, $73                                      ;; 05:6d5e ??
+    HamChatWheelRule_UseIfHave 115 ; 00                ;; 05:6d5e $3e $73
 
 data_05_6d60:
-    db   $3e, $eb                                      ;; 05:6d60 ??
+    HamChatWheelRule_UseIfHave 235 ; 00                ;; 05:6d60 $3e $eb
 
 data_05_6d62:
-    db   $6e, $1f, $be, $01                            ;; 05:6d62 ????
+    HamChatWheelRule_DefaultCase_Pair $6e, $1f ; 00    ;; 05:6d62 $6e $1f
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6d64 $be $01
 
 data_05_6d66:
-    db   $3f, $38                                      ;; 05:6d66 ??
+    HamChatWheelRule_UseIfHave 312 ; 00                ;; 05:6d66 $3f $38
 
 data_05_6d68:
-    db   $71, $1e, $be, $78                            ;; 05:6d68 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6d68 $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $78 ; 01    ;; 05:6d6a $be $78
 
 data_05_6d6c:
-    db   $3f, $a2                                      ;; 05:6d6c ??
+    HamChatWheelRule_UseIfHave 418 ; 00                ;; 05:6d6c $3f $a2
 
 data_05_6d6e:
-    db   $00, $6d, $1e, $a2, $30, $0e, $be, $01        ;; 05:6d6e ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6d6e $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6d6f $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $30 ; 02    ;; 05:6d71 $a2 $30
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6d73 $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6d74 $be $01
 
 data_05_6d76:
-    db   $00, $6d, $1e, $a2, $58, $0e, $be, $01        ;; 05:6d76 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6d76 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6d77 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $58 ; 02    ;; 05:6d79 $a2 $58
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6d7b $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6d7c $be $01
 
 data_05_6d7e:
-    db   $71, $1e, $be, $08                            ;; 05:6d7e ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6d7e $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $08 ; 01    ;; 05:6d80 $be $08
 
 data_05_6d82:
-    db   $00, $6d, $1e, $a2, $18, $0e, $be, $01        ;; 05:6d82 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6d82 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6d83 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $18 ; 02    ;; 05:6d85 $a2 $18
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6d87 $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6d88 $be $01
 
 data_05_6d8a:
-    db   $3e, $e2                                      ;; 05:6d8a ??
+    HamChatWheelRule_UseIfHave 226 ; 00                ;; 05:6d8a $3e $e2
 
 data_05_6d8c:
-    db   $6f, $21, $be, $02                            ;; 05:6d8c ????
+    HamChatWheelRule_DefaultCase_Pair $6f, $21 ; 00    ;; 05:6d8c $6f $21
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6d8e $be $02
 
 data_05_6d90:
-    db   $5e, $92                                      ;; 05:6d90 ??
+    HamChatWheelRule_UseIfDontHave 146 ; 00            ;; 05:6d90 $5e $92
 
 data_05_6d92:
-    db   $3e, $37                                      ;; 05:6d92 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_LOTSA ; 00      ;; 05:6d92 $3e $37
 
 data_05_6d94:
-    db   $71, $21, $be, $00                            ;; 05:6d94 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $21 ; 00    ;; 05:6d94 $71 $21
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6d96 $be $00
 
 data_05_6d98:
-    db   $71, $21, $be, $01                            ;; 05:6d98 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $21 ; 00    ;; 05:6d98 $71 $21
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6d9a $be $01
 
 data_05_6d9c:
-    db   $71, $21, $be, $02                            ;; 05:6d9c ????
+    HamChatWheelRule_DefaultCase_Pair $71, $21 ; 00    ;; 05:6d9c $71 $21
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6d9e $be $02
 
 data_05_6da0:
-    db   $71, $21, $be, $03                            ;; 05:6da0 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $21 ; 00    ;; 05:6da0 $71 $21
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6da2 $be $03
 
 data_05_6da4:
-    db   $71, $21, $be, $04                            ;; 05:6da4 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $21 ; 00    ;; 05:6da4 $71 $21
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:6da6 $be $04
 
 data_05_6da8:
-    db   $00, $6d, $1e, $a2, $10, $0e, $be, $01        ;; 05:6da8 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6da8 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6da9 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $10 ; 02    ;; 05:6dab $a2 $10
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6dad $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6dae $be $01
 
 data_05_6db0:
-    db   $70, $69, $be, $00                            ;; 05:6db0 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $69 ; 00    ;; 05:6db0 $70 $69
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6db2 $be $00
 
 data_05_6db4:
-    db   $70, $0d, $be, $1e                            ;; 05:6db4 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6db4 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $1e ; 01    ;; 05:6db6 $be $1e
 
 data_05_6db8:
-    db   $6e, $69, $be, $0a                            ;; 05:6db8 ????
+    HamChatWheelRule_DefaultCase_Pair $6e, $69 ; 00    ;; 05:6db8 $6e $69
+    HamChatWheelRule_DefaultCase_Pair $be, $0a ; 01    ;; 05:6dba $be $0a
 
 data_05_6dbc:
-    db   $6f, $0a, $be, $01                            ;; 05:6dbc ????
+    HamChatWheelRule_DefaultCase_Pair $6f, $0a ; 00    ;; 05:6dbc $6f $0a
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6dbe $be $01
 
 data_05_6dc0:
-    db   $70, $69, $be, $02                            ;; 05:6dc0 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $69 ; 00    ;; 05:6dc0 $70 $69
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6dc2 $be $02
 
 data_05_6dc4:
-    db   $72, $71, $be, $03                            ;; 05:6dc4 ????
+    HamChatWheelRule_DefaultCase_Pair $72, $71 ; 00    ;; 05:6dc4 $72 $71
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6dc6 $be $03
 
 data_05_6dc8:
-    db   $3e, $6f                                      ;; 05:6dc8 ??
+    HamChatWheelRule_UseIfHave 111 ; 00                ;; 05:6dc8 $3e $6f
 
 data_05_6dca:
-    db   $71, $09, $be, $00                            ;; 05:6dca ????
+    HamChatWheelRule_DefaultCase_Pair $71, $09 ; 00    ;; 05:6dca $71 $09
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6dcc $be $00
 
 data_05_6dce:
-    db   $71, $09, $be, $01                            ;; 05:6dce ????
+    HamChatWheelRule_DefaultCase_Pair $71, $09 ; 00    ;; 05:6dce $71 $09
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6dd0 $be $01
 
 data_05_6dd2:
-    db   $71, $09, $be, $02                            ;; 05:6dd2 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $09 ; 00    ;; 05:6dd2 $71 $09
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6dd4 $be $02
 
 data_05_6dd6:
-    db   $71, $09, $be, $03                            ;; 05:6dd6 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $09 ; 00    ;; 05:6dd6 $71 $09
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6dd8 $be $03
 
 data_05_6dda:
-    db   $70, $0d, $be, $14                            ;; 05:6dda ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6dda $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $14 ; 01    ;; 05:6ddc $be $14
 
 data_05_6dde:
-    db   $71, $0b, $be, $01                            ;; 05:6dde ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0b ; 00    ;; 05:6dde $71 $0b
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6de0 $be $01
 
 data_05_6de2:
-    db   $71, $0b, $be, $02                            ;; 05:6de2 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0b ; 00    ;; 05:6de2 $71 $0b
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6de4 $be $02
 
 data_05_6de6:
-    db   $71, $0b, $be, $03                            ;; 05:6de6 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0b ; 00    ;; 05:6de6 $71 $0b
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6de8 $be $03
 
 data_05_6dea:
-    db   $3f, $84                                      ;; 05:6dea ??
+    HamChatWheelRule_UseIfHave 388 ; 00                ;; 05:6dea $3f $84
 
 data_05_6dec:
-    db   $3e, $e3                                      ;; 05:6dec ??
+    HamChatWheelRule_UseIfHave 227 ; 00                ;; 05:6dec $3e $e3
 
 data_05_6dee:
-    db   $5f, $84                                      ;; 05:6dee ??
+    HamChatWheelRule_UseIfDontHave 388 ; 00            ;; 05:6dee $5f $84
 
 data_05_6df0:
-    db   $71, $1e, $be, $18                            ;; 05:6df0 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6df0 $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $18 ; 01    ;; 05:6df2 $be $18
 
 data_05_6df4:
-    db   $70, $69, $be, $01                            ;; 05:6df4 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $69 ; 00    ;; 05:6df4 $70 $69
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6df6 $be $01
 
 data_05_6df8:
-    db   $00, $6d, $1e, $a2, $18, $0e, $be, $01        ;; 05:6df8 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6df8 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6df9 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $18 ; 02    ;; 05:6dfb $a2 $18
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6dfd $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6dfe $be $01
 
 data_05_6e00:
-    db   $71, $0a, $be, $04                            ;; 05:6e00 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0a ; 00    ;; 05:6e00 $71 $0a
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:6e02 $be $04
 
 ; Paired with data_05_6c6b
 data_05_6e04:
@@ -546,69 +625,99 @@ data_05_6e04:
     HamChatWheelRule_UseIfDontHave HAMCHAT_SHASHAA ; 11 ;; 05:6e16 $5e $39
 
 data_05_6e18:
-    db   $3f, $94                                      ;; 05:6e18 ??
+    HamChatWheelRule_UseIfHave 404 ; 00                ;; 05:6e18 $3f $94
 
 data_05_6e1a:
-    db   $00, $70, $0d, $a2, $0a, $06, $00, $70        ;; 05:6e1a ????????
-    db   $0d, $a2, $14, $1e                            ;; 05:6e22 ????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6e1a $00
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 01    ;; 05:6e1b $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $a2, $0a ; 02    ;; 05:6e1d $a2 $0a
+    HamChatWheelRule_DefaultCase_Single $06 ; 03       ;; 05:6e1f $06
+    HamChatWheelRule_DefaultCase_Single $00 ; 04       ;; 05:6e20 $00
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 05    ;; 05:6e21 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $a2, $14 ; 06    ;; 05:6e23 $a2 $14
+    HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:6e25 $1e
 
 data_05_6e26:
-    db   $3f, $82                                      ;; 05:6e26 ??
+    HamChatWheelRule_UseIfHave 386 ; 00                ;; 05:6e26 $3f $82
 
 data_05_6e28:
-    db   $00, $72, $39, $a2, $01, $06, $00, $b2        ;; 05:6e28 ????????
-    db   $01, $62, $39, $1e                            ;; 05:6e30 ????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6e28 $00
+    HamChatWheelRule_DefaultCase_Pair $72, $39 ; 01    ;; 05:6e29 $72 $39
+    HamChatWheelRule_DefaultCase_Pair $a2, $01 ; 02    ;; 05:6e2b $a2 $01
+    HamChatWheelRule_DefaultCase_Single $06 ; 03       ;; 05:6e2d $06
+    HamChatWheelRule_DefaultCase_Single $00 ; 04       ;; 05:6e2e $00
+    HamChatWheelRule_DefaultCase_Pair $b2, $01 ; 05    ;; 05:6e2f $b2 $01
+    HamChatWheelRule_DefaultCase_Pair $62, $39 ; 06    ;; 05:6e31 $62 $39
+    HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:6e33 $1e
 
 data_05_6e34:
-    db   $5f, $95                                      ;; 05:6e34 ??
+    HamChatWheelRule_UseIfDontHave 405 ; 00            ;; 05:6e34 $5f $95
 
 data_05_6e36:
-    db   $3e, $03                                      ;; 05:6e36 ??
+    HamChatWheelRule_UseIfHave 3 ; 00                  ;; 05:6e36 $3e $03
 
 data_05_6e38:
-    db   $5f, $81                                      ;; 05:6e38 ??
+    HamChatWheelRule_UseIfDontHave 385 ; 00            ;; 05:6e38 $5f $81
 
 data_05_6e3a:
-    db   $71, $0c, $be, $05                            ;; 05:6e3a ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0c ; 00    ;; 05:6e3a $71 $0c
+    HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:6e3c $be $05
 
 data_05_6e3e:
-    db   $71, $0c, $be, $04                            ;; 05:6e3e ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0c ; 00    ;; 05:6e3e $71 $0c
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:6e40 $be $04
 
 data_05_6e42:
-    db   $3f, $83                                      ;; 05:6e42 ??
+    HamChatWheelRule_UseIfHave 387 ; 00                ;; 05:6e42 $3f $83
 
 data_05_6e44:
-    db   $71, $0c, $be, $06                            ;; 05:6e44 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0c ; 00    ;; 05:6e44 $71 $0c
+    HamChatWheelRule_DefaultCase_Pair $be, $06 ; 01    ;; 05:6e46 $be $06
 
 data_05_6e48:
-    db   $3e, $4f                                      ;; 05:6e48 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_POOIE ; 00      ;; 05:6e48 $3e $4f
 
 data_05_6e4a:
-    db   $71, $1d, $be, $00                            ;; 05:6e4a ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1d ; 00    ;; 05:6e4a $71 $1d
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6e4c $be $00
 
 data_05_6e4e:
-    db   $71, $1d, $be, $01                            ;; 05:6e4e ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1d ; 00    ;; 05:6e4e $71 $1d
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6e50 $be $01
 
 data_05_6e52:
-    db   $71, $1d, $be, $02                            ;; 05:6e52 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1d ; 00    ;; 05:6e52 $71 $1d
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6e54 $be $02
 
 data_05_6e56:
-    db   $71, $1d, $be, $03                            ;; 05:6e56 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1d ; 00    ;; 05:6e56 $71 $1d
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6e58 $be $03
 
 data_05_6e5a:
-    db   $70, $0d, $be, $3c                            ;; 05:6e5a ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6e5a $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $3c ; 01    ;; 05:6e5c $be $3c
 
 data_05_6e5e:
-    db   $70, $0d, $be, $28                            ;; 05:6e5e ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6e5e $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $28 ; 01    ;; 05:6e60 $be $28
 
 data_05_6e62:
-    db   $00, $6d, $1e, $a2, $48, $10, $be, $00        ;; 05:6e62 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6e62 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6e63 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $48 ; 02    ;; 05:6e65 $a2 $48
+    HamChatWheelRule_DefaultCase_Single $10 ; 03       ;; 05:6e67 $10
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 04    ;; 05:6e68 $be $00
 
 data_05_6e6a:
-    db   $00, $6d, $1e, $a2, $48, $0e, $be, $01        ;; 05:6e6a ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6e6a $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6e6b $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $48 ; 02    ;; 05:6e6d $a2 $48
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6e6f $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6e70 $be $01
 
 data_05_6e72:
-    db   $70, $63, $be, $03                            ;; 05:6e72 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $63 ; 00    ;; 05:6e72 $70 $63
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6e74 $be $03
 
 ; Paired with data_05_6c7b
 data_05_6e76:
@@ -626,59 +735,73 @@ data_05_6e76:
     HamChatWheelRule_UseIfDontHave HAMCHAT_CLAPCLAP ; 11 ;; 05:6e88 $5e $49
 
 data_05_6e8a:
-    db   $3e, $89                                      ;; 05:6e8a ??
+    HamChatWheelRule_UseIfHave 137 ; 00                ;; 05:6e8a $3e $89
 
 data_05_6e8c:
-    db   $71, $01, $be, $00                            ;; 05:6e8c ????
+    HamChatWheelRule_DefaultCase_Pair $71, $01 ; 00    ;; 05:6e8c $71 $01
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6e8e $be $00
 
 data_05_6e90:
-    db   $71, $01, $be, $01                            ;; 05:6e90 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $01 ; 00    ;; 05:6e90 $71 $01
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6e92 $be $01
 
 data_05_6e94:
-    db   $3e, $f0                                      ;; 05:6e94 ??
+    HamChatWheelRule_UseIfHave 240 ; 00                ;; 05:6e94 $3e $f0
 
 data_05_6e96:
-    db   $3f, $27                                      ;; 05:6e96 ??
+    HamChatWheelRule_UseIfHave 295 ; 00                ;; 05:6e96 $3f $27
 
 data_05_6e98:
-    db   $3e, $38                                      ;; 05:6e98 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_TADAH ; 00      ;; 05:6e98 $3e $38
 
 data_05_6e9a:
-    db   $70, $0d, $be, $28                            ;; 05:6e9a ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6e9a $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $28 ; 01    ;; 05:6e9c $be $28
 
 data_05_6e9e:
-    db   $3f, $86                                      ;; 05:6e9e ??
+    HamChatWheelRule_UseIfHave 390 ; 00                ;; 05:6e9e $3f $86
 
 data_05_6ea0:
-    db   $5f, $85                                      ;; 05:6ea0 ??
+    HamChatWheelRule_UseIfDontHave 389 ; 00            ;; 05:6ea0 $5f $85
 
 data_05_6ea2:
-    db   $3e, $e7                                      ;; 05:6ea2 ??
+    HamChatWheelRule_UseIfHave 231 ; 00                ;; 05:6ea2 $3e $e7
 
 data_05_6ea4:
-    db   $71, $00, $be, $00                            ;; 05:6ea4 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $00 ; 00    ;; 05:6ea4 $71 $00
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6ea6 $be $00
 
 data_05_6ea8:
-    db   $70, $0d, $be, $29                            ;; 05:6ea8 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6ea8 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $29 ; 01    ;; 05:6eaa $be $29
 
 data_05_6eac:
-    db   $5f, $96                                      ;; 05:6eac ??
+    HamChatWheelRule_UseIfDontHave 406 ; 00            ;; 05:6eac $5f $96
 
 data_05_6eae:
-    db   $71, $0d, $be, $11                            ;; 05:6eae ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0d ; 00    ;; 05:6eae $71 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $11 ; 01    ;; 05:6eb0 $be $11
 
 data_05_6eb2:
-    db   $5e, $e7                                      ;; 05:6eb2 ??
+    HamChatWheelRule_UseIfDontHave 231 ; 00            ;; 05:6eb2 $5e $e7
 
 data_05_6eb4:
-    db   $72, $6f, $be, $08                            ;; 05:6eb4 ????
+    HamChatWheelRule_DefaultCase_Pair $72, $6f ; 00    ;; 05:6eb4 $72 $6f
+    HamChatWheelRule_DefaultCase_Pair $be, $08 ; 01    ;; 05:6eb6 $be $08
 
 data_05_6eb8:
-    db   $00, $70, $6f, $a2, $01, $06, $00, $70        ;; 05:6eb8 ????????
-    db   $6f, $a2, $04, $1e                            ;; 05:6ec0 ????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6eb8 $00
+    HamChatWheelRule_DefaultCase_Pair $70, $6f ; 01    ;; 05:6eb9 $70 $6f
+    HamChatWheelRule_DefaultCase_Pair $a2, $01 ; 02    ;; 05:6ebb $a2 $01
+    HamChatWheelRule_DefaultCase_Single $06 ; 03       ;; 05:6ebd $06
+    HamChatWheelRule_DefaultCase_Single $00 ; 04       ;; 05:6ebe $00
+    HamChatWheelRule_DefaultCase_Pair $70, $6f ; 05    ;; 05:6ebf $70 $6f
+    HamChatWheelRule_DefaultCase_Pair $a2, $04 ; 06    ;; 05:6ec1 $a2 $04
+    HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:6ec3 $1e
 
 data_05_6ec4:
-    db   $71, $0d, $be, $05                            ;; 05:6ec4 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0d ; 00    ;; 05:6ec4 $71 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:6ec6 $be $05
 
 ; Paired with data_05_6c87
 data_05_6ec8:
@@ -693,88 +816,108 @@ data_05_6ec8:
     HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 08 ;; 05:6ed1 $5e $1c
 
 data_05_6ed3:
-    db   $71, $0d, $be, $03                            ;; 05:6ed3 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0d ; 00    ;; 05:6ed3 $71 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6ed5 $be $03
 
 data_05_6ed7:
-    db   $71, $00, $be, $01                            ;; 05:6ed7 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $00 ; 00    ;; 05:6ed7 $71 $00
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6ed9 $be $01
 
 data_05_6edb:
-    db   $71, $00, $be, $02                            ;; 05:6edb ????
+    HamChatWheelRule_DefaultCase_Pair $71, $00 ; 00    ;; 05:6edb $71 $00
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6edd $be $02
 
 data_05_6edf:
-    db   $70, $6f, $be, $00                            ;; 05:6edf ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6f ; 00    ;; 05:6edf $70 $6f
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6ee1 $be $00
 
 data_05_6ee3:
-    db   $71, $0d, $be, $06                            ;; 05:6ee3 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0d ; 00    ;; 05:6ee3 $71 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $06 ; 01    ;; 05:6ee5 $be $06
 
 data_05_6ee7:
-    db   $3e, $57                                      ;; 05:6ee7 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_HAMTAST ; 00    ;; 05:6ee7 $3e $57
 
 data_05_6ee9:
-    db   $71, $0d, $be, $0c                            ;; 05:6ee9 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0d ; 00    ;; 05:6ee9 $71 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $0c ; 01    ;; 05:6eeb $be $0c
 
 data_05_6eed:
-    db   $71, $0d, $be, $0b                            ;; 05:6eed ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0d ; 00    ;; 05:6eed $71 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $0b ; 01    ;; 05:6eef $be $0b
 
 data_05_6ef1:
-    db   $71, $0d, $be, $0d                            ;; 05:6ef1 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0d ; 00    ;; 05:6ef1 $71 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $0d ; 01    ;; 05:6ef3 $be $0d
 
 data_05_6ef5:
-    db   $71, $0d, $be, $08                            ;; 05:6ef5 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0d ; 00    ;; 05:6ef5 $71 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $08 ; 01    ;; 05:6ef7 $be $08
 
 data_05_6ef9:
-    db   $71, $0d, $be, $07                            ;; 05:6ef9 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0d ; 00    ;; 05:6ef9 $71 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $07 ; 01    ;; 05:6efb $be $07
 
 data_05_6efd:
-    db   $3e, $55                                      ;; 05:6efd ??
+    HamChatWheelRule_UseIfHave HAMCHAT_BLUSHIE ; 00    ;; 05:6efd $3e $55
 
 data_05_6eff:
-    db   $3e, $39                                      ;; 05:6eff ??
+    HamChatWheelRule_UseIfHave HAMCHAT_SHASHAA ; 00    ;; 05:6eff $3e $39
 
 data_05_6f01:
-    db   $5f, $88                                      ;; 05:6f01 ??
+    HamChatWheelRule_UseIfDontHave 392 ; 00            ;; 05:6f01 $5f $88
 
 data_05_6f03:
-    db   $70, $70, $be, $01                            ;; 05:6f03 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $70 ; 00    ;; 05:6f03 $70 $70
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6f05 $be $01
 
 data_05_6f07:
-    db   $70, $0d, $be, $32                            ;; 05:6f07 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6f07 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $32 ; 01    ;; 05:6f09 $be $32
 
 data_05_6f0b:
-    db   $70, $0d, $be, $2a                            ;; 05:6f0b ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6f0b $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $2a ; 01    ;; 05:6f0d $be $2a
 
 data_05_6f0f:
-    db   $3f, $88                                      ;; 05:6f0f ??
+    HamChatWheelRule_UseIfHave 392 ; 00                ;; 05:6f0f $3f $88
 
 data_05_6f11:
-    db   $5f, $97                                      ;; 05:6f11 ??
+    HamChatWheelRule_UseIfDontHave 407 ; 00            ;; 05:6f11 $5f $97
 
 data_05_6f13:
-    db   $73, $1e, $be, $a8                            ;; 05:6f13 ????
+    HamChatWheelRule_DefaultCase_Pair $73, $1e ; 00    ;; 05:6f13 $73 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $a8 ; 01    ;; 05:6f15 $be $a8
 
 data_05_6f17:
-    db   $71, $0e, $be, $07                            ;; 05:6f17 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0e ; 00    ;; 05:6f17 $71 $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $07 ; 01    ;; 05:6f19 $be $07
 
 data_05_6f1b:
-    db   $70, $70, $be, $02                            ;; 05:6f1b ????
+    HamChatWheelRule_DefaultCase_Pair $70, $70 ; 00    ;; 05:6f1b $70 $70
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6f1d $be $02
 
 data_05_6f1f:
-    db   $72, $69, $be, $0a                            ;; 05:6f1f ????
+    HamChatWheelRule_DefaultCase_Pair $72, $69 ; 00    ;; 05:6f1f $72 $69
+    HamChatWheelRule_DefaultCase_Pair $be, $0a ; 01    ;; 05:6f21 $be $0a
 
 data_05_6f23:
-    db   $70, $71, $be, $03                            ;; 05:6f23 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $71 ; 00    ;; 05:6f23 $70 $71
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6f25 $be $03
 
 data_05_6f27:
-    db   $b2, $00, $7e, $70                            ;; 05:6f27 ????
+    HamChatWheelRule_DefaultCase_Pair $b2, $00 ; 00    ;; 05:6f27 $b2 $00
+    HamChatWheelRule_DefaultCase_Pair $7e, $70 ; 01    ;; 05:6f29 $7e $70
 
 data_05_6f2b:
-    db   $3e, $40                                      ;; 05:6f2b ??
+    HamChatWheelRule_UseIfHave HAMCHAT_GRITT ; 00      ;; 05:6f2b $3e $40
 
 data_05_6f2d:
-    db   $70, $2a, $be, $01                            ;; 05:6f2d ????
+    HamChatWheelRule_DefaultCase_Pair $70, $2a ; 00    ;; 05:6f2d $70 $2a
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6f2f $be $01
 
 data_05_6f31:
-    db   $5f, $98                                      ;; 05:6f31 ??
+    HamChatWheelRule_UseIfDontHave 408 ; 00            ;; 05:6f31 $5f $98
 
 ; Paired with data_05_6c98
 data_05_6f33:
@@ -788,46 +931,59 @@ data_05_6f33:
     HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 07    ;; 05:6f3d $5e $45
 
 data_05_6f3f:
-    db   $3f, $9a                                      ;; 05:6f3f ??
+    HamChatWheelRule_UseIfHave 410 ; 00                ;; 05:6f3f $3f $9a
 
 data_05_6f41:
-    db   $3f, $98                                      ;; 05:6f41 ??
+    HamChatWheelRule_UseIfHave 408 ; 00                ;; 05:6f41 $3f $98
 
 data_05_6f43:
-    db   $3f, $99                                      ;; 05:6f43 ??
+    HamChatWheelRule_UseIfHave 409 ; 00                ;; 05:6f43 $3f $99
 
 data_05_6f45:
-    db   $6e, $04, $a4, $06, $5f, $18                  ;; 05:6f45 ??????
+    HamChatWheelRule_DefaultCase_Pair $6e, $04 ; 00    ;; 05:6f45 $6e $04
+    HamChatWheelRule_DefaultCase_Pair $a4, $06 ; 01    ;; 05:6f47 $a4 $06
+    HamChatWheelRule_DefaultCase_Pair $5f, $18 ; 02    ;; 05:6f49 $5f $18
 
 data_05_6f4b:
-    db   $5f, $28                                      ;; 05:6f4b ??
+    HamChatWheelRule_UseIfDontHave 296 ; 00            ;; 05:6f4b $5f $28
 
 data_05_6f4d:
-    db   $70, $2a, $be, $00                            ;; 05:6f4d ????
+    HamChatWheelRule_DefaultCase_Pair $70, $2a ; 00    ;; 05:6f4d $70 $2a
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6f4f $be $00
 
 data_05_6f51:
-    db   $6e, $71, $be, $01                            ;; 05:6f51 ????
+    HamChatWheelRule_DefaultCase_Pair $6e, $71 ; 00    ;; 05:6f51 $6e $71
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6f53 $be $01
 
 data_05_6f55:
-    db   $3e, $af                                      ;; 05:6f55 ??
+    HamChatWheelRule_UseIfHave 175 ; 00                ;; 05:6f55 $3e $af
 
 data_05_6f57:
-    db   $71, $1c, $7f, $1f                            ;; 05:6f57 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1c ; 00    ;; 05:6f57 $71 $1c
+    HamChatWheelRule_DefaultCase_Pair $7f, $1f ; 01    ;; 05:6f59 $7f $1f
 
 data_05_6f5b:
-    db   $71, $1f, $be, $00                            ;; 05:6f5b ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1f ; 00    ;; 05:6f5b $71 $1f
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6f5d $be $00
 
 data_05_6f5f:
-    db   $71, $1f, $be, $01                            ;; 05:6f5f ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1f ; 00    ;; 05:6f5f $71 $1f
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6f61 $be $01
 
 data_05_6f63:
-    db   $71, $1f, $be, $02                            ;; 05:6f63 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1f ; 00    ;; 05:6f63 $71 $1f
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6f65 $be $02
 
 data_05_6f67:
-    db   $71, $1f, $be, $03                            ;; 05:6f67 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1f ; 00    ;; 05:6f67 $71 $1f
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6f69 $be $03
 
 data_05_6f6b:
-    db   $00, $6d, $1e, $a2, $a8, $0e, $be, $01        ;; 05:6f6b ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6f6b $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6f6c $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $a8 ; 02    ;; 05:6f6e $a2 $a8
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6f70 $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6f71 $be $01
 
 ; Paired with data_05_6ca0
 data_05_6f73:
@@ -841,7 +997,8 @@ data_05_6f73:
     HamChatWheelRule_UseIfDontHave HAMCHAT_TUGGIE ; 07 ;; 05:6f7d $5e $50
 
 data_05_6f7f:
-    db   $71, $0f, $be, $01                            ;; 05:6f7f ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0f ; 00    ;; 05:6f7f $71 $0f
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6f81 $be $01
 
 ; Paired with data_05_6ca8
 data_05_6f83:
@@ -855,181 +1012,239 @@ data_05_6f83:
     HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 07 ;; 05:6f8d $5e $1c
 
 data_05_6f8f:
-    db   $71, $0f, $be, $00                            ;; 05:6f8f ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0f ; 00    ;; 05:6f8f $71 $0f
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6f91 $be $00
 
 data_05_6f93:
-    db   $3e, $56                                      ;; 05:6f93 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_BYEQ ; 00       ;; 05:6f93 $3e $56
 
 data_05_6f95:
-    db   $70, $71, $be, $00                            ;; 05:6f95 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $71 ; 00    ;; 05:6f95 $70 $71
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:6f97 $be $00
 
 data_05_6f99:
-    db   $70, $71, $be, $01                            ;; 05:6f99 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $71 ; 00    ;; 05:6f99 $70 $71
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6f9b $be $01
 
 data_05_6f9d:
-    db   $70, $71, $be, $02                            ;; 05:6f9d ????
+    HamChatWheelRule_DefaultCase_Pair $70, $71 ; 00    ;; 05:6f9d $70 $71
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6f9f $be $02
 
 data_05_6fa1:
-    db   $71, $0f, $be, $02                            ;; 05:6fa1 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $0f ; 00    ;; 05:6fa1 $71 $0f
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:6fa3 $be $02
 
 data_05_6fa5:
-    db   $00, $6d, $1e, $a2, $a8, $10, $be, $00        ;; 05:6fa5 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6fa5 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6fa6 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $a8 ; 02    ;; 05:6fa8 $a2 $a8
+    HamChatWheelRule_DefaultCase_Single $10 ; 03       ;; 05:6faa $10
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 04    ;; 05:6fab $be $00
 
 data_05_6fad:
-    db   $6f, $1e, $be, $78                            ;; 05:6fad ????
+    HamChatWheelRule_DefaultCase_Pair $6f, $1e ; 00    ;; 05:6fad $6f $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $78 ; 01    ;; 05:6faf $be $78
 
 data_05_6fb1:
-    db   $70, $6e, $be, $01                            ;; 05:6fb1 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6e ; 00    ;; 05:6fb1 $70 $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6fb3 $be $01
 
 data_05_6fb5:
-    db   $70, $6e, $be, $04                            ;; 05:6fb5 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6e ; 00    ;; 05:6fb5 $70 $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:6fb7 $be $04
 
 data_05_6fb9:
-    db   $3f, $9c                                      ;; 05:6fb9 ??
+    HamChatWheelRule_UseIfHave 412 ; 00                ;; 05:6fb9 $3f $9c
 
 data_05_6fbb:
-    db   $70, $0d, $be, $3d                            ;; 05:6fbb ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6fbb $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $3d ; 01    ;; 05:6fbd $be $3d
 
 data_05_6fbf:
-    db   $70, $0d, $be, $5a                            ;; 05:6fbf ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:6fbf $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $5a ; 01    ;; 05:6fc1 $be $5a
 
 data_05_6fc3:
-    db   $70, $6e, $be, $01                            ;; 05:6fc3 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6e ; 00    ;; 05:6fc3 $70 $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6fc5 $be $01
 
 data_05_6fc7:
-    db   $70, $6e, $be, $04                            ;; 05:6fc7 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6e ; 00    ;; 05:6fc7 $70 $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:6fc9 $be $04
 
 data_05_6fcb:
-    db   $3f, $9b                                      ;; 05:6fcb ??
+    HamChatWheelRule_UseIfHave 411 ; 00                ;; 05:6fcb $3f $9b
 
 data_05_6fcd:
-    db   $6f, $1e, $00, $aa, $78, $a2, $18, $1e        ;; 05:6fcd ????????
+    HamChatWheelRule_DefaultCase_Pair $6f, $1e ; 00    ;; 05:6fcd $6f $1e
+    HamChatWheelRule_DefaultCase_Single $00 ; 01       ;; 05:6fcf $00
+    HamChatWheelRule_DefaultCase_Pair $aa, $78 ; 02    ;; 05:6fd0 $aa $78
+    HamChatWheelRule_DefaultCase_Pair $a2, $18 ; 03    ;; 05:6fd2 $a2 $18
+    HamChatWheelRule_DefaultCase_Single $1e ; 04       ;; 05:6fd4 $1e
 
 data_05_6fd5:
-    db   $00, $6d, $1e, $a2, $3d, $0e, $be, $01        ;; 05:6fd5 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6fd5 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6fd6 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $3d ; 02    ;; 05:6fd8 $a2 $3d
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6fda $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6fdb $be $01
 
 data_05_6fdd:
-    db   $71, $1e, $be, $3d                            ;; 05:6fdd ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:6fdd $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $3d ; 01    ;; 05:6fdf $be $3d
 
 data_05_6fe1:
-    db   $00, $6d, $1e, $a2, $c0, $0e, $be, $01        ;; 05:6fe1 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6fe1 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6fe2 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $c0 ; 02    ;; 05:6fe4 $a2 $c0
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:6fe6 $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6fe7 $be $01
 
 data_05_6fe9:
-    db   $5f, $64                                      ;; 05:6fe9 ??
+    HamChatWheelRule_UseIfDontHave 356 ; 00            ;; 05:6fe9 $5f $64
 
 data_05_6feb:
-    db   $3f, $9d                                      ;; 05:6feb ??
+    HamChatWheelRule_UseIfHave 413 ; 00                ;; 05:6feb $3f $9d
 
 data_05_6fed:
-    db   $5e, $e8                                      ;; 05:6fed ??
+    HamChatWheelRule_UseIfDontHave 232 ; 00            ;; 05:6fed $5e $e8
 
 data_05_6fef:
-    db   $3f, $64                                      ;; 05:6fef ??
+    HamChatWheelRule_UseIfHave 356 ; 00                ;; 05:6fef $3f $64
 
 data_05_6ff1:
-    db   $72, $1f, $be, $05                            ;; 05:6ff1 ????
+    HamChatWheelRule_DefaultCase_Pair $72, $1f ; 00    ;; 05:6ff1 $72 $1f
+    HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:6ff3 $be $05
 
 data_05_6ff5:
-    db   $6e, $6e, $be, $01                            ;; 05:6ff5 ????
+    HamChatWheelRule_DefaultCase_Pair $6e, $6e ; 00    ;; 05:6ff5 $6e $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6ff7 $be $01
 
 data_05_6ff9:
-    db   $70, $6e, $be, $05                            ;; 05:6ff9 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6e ; 00    ;; 05:6ff9 $70 $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:6ffb $be $05
 
 data_05_6ffd:
-    db   $00, $6d, $1e, $a2, $d8, $0e, $be, $01        ;; 05:6ffd ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:6ffd $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:6ffe $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $d8 ; 02    ;; 05:7000 $a2 $d8
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:7002 $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:7003 $be $01
 
 data_05_7005:
-    db   $3e, $3c                                      ;; 05:7005 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_PANICQ ; 00     ;; 05:7005 $3e $3c
 
 data_05_7007:
-    db   $3e, $3b                                      ;; 05:7007 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_HERKQ ; 00      ;; 05:7007 $3e $3b
 
 data_05_7009:
-    db   $00, $6d, $1e, $a2, $18, $10, $be, $00        ;; 05:7009 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:7009 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:700a $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $18 ; 02    ;; 05:700c $a2 $18
+    HamChatWheelRule_DefaultCase_Single $10 ; 03       ;; 05:700e $10
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 04    ;; 05:700f $be $00
 
 data_05_7011:
-    db   $00, $6d, $1e, $a2, $78, $10, $be, $00        ;; 05:7011 ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:7011 $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:7012 $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $78 ; 02    ;; 05:7014 $a2 $78
+    HamChatWheelRule_DefaultCase_Single $10 ; 03       ;; 05:7016 $10
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 04    ;; 05:7017 $be $00
 
 data_05_7019:
-    db   $6e, $6e, $be, $04                            ;; 05:7019 ????
+    HamChatWheelRule_DefaultCase_Pair $6e, $6e ; 00    ;; 05:7019 $6e $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:701b $be $04
 
 data_05_701d:
-    db   $71, $10, $be, $01                            ;; 05:701d ????
+    HamChatWheelRule_DefaultCase_Pair $71, $10 ; 00    ;; 05:701d $71 $10
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:701f $be $01
 
 data_05_7021:
-    db   $71, $10, $be, $02                            ;; 05:7021 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $10 ; 00    ;; 05:7021 $71 $10
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:7023 $be $02
 
 data_05_7025:
-    db   $70, $6e, $be, $00                            ;; 05:7025 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6e ; 00    ;; 05:7025 $70 $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:7027 $be $00
 
 data_05_7029:
-    db   $70, $6e, $be, $02                            ;; 05:7029 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6e ; 00    ;; 05:7029 $70 $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:702b $be $02
 
 data_05_702d:
-    db   $6e, $6e, $be, $04                            ;; 05:702d ????
+    HamChatWheelRule_DefaultCase_Pair $6e, $6e ; 00    ;; 05:702d $6e $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:702f $be $04
 
 data_05_7031:
-    db   $70, $0d, $be, $3d                            ;; 05:7031 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:7031 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $3d ; 01    ;; 05:7033 $be $3d
 
 data_05_7035:
-    db   $70, $0d, $be, $3f                            ;; 05:7035 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:7035 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $3f ; 01    ;; 05:7037 $be $3f
 
 data_05_7039:
-    db   $72, $0d, $be, $3e                            ;; 05:7039 ????
+    HamChatWheelRule_DefaultCase_Pair $72, $0d ; 00    ;; 05:7039 $72 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $3e ; 01    ;; 05:703b $be $3e
 
 data_05_703d:
-    db   $5f, $8d                                      ;; 05:703d ??
+    HamChatWheelRule_UseIfDontHave 397 ; 00            ;; 05:703d $5f $8d
 
 data_05_703f:
-    db   $3f, $8d                                      ;; 05:703f ??
+    HamChatWheelRule_UseIfHave 397 ; 00                ;; 05:703f $3f $8d
 
 data_05_7041:
-    db   $3f, $89                                      ;; 05:7041 ??
+    HamChatWheelRule_UseIfHave 393 ; 00                ;; 05:7041 $3f $89
 
 data_05_7043:
-    db   $3f, $8c                                      ;; 05:7043 ??
+    HamChatWheelRule_UseIfHave 396 ; 00                ;; 05:7043 $3f $8c
 
 data_05_7045:
-    db   $3f, $8a                                      ;; 05:7045 ??
+    HamChatWheelRule_UseIfHave 394 ; 00                ;; 05:7045 $3f $8a
 
 data_05_7047:
-    db   $3f, $8b                                      ;; 05:7047 ??
+    HamChatWheelRule_UseIfHave 395 ; 00                ;; 05:7047 $3f $8b
 
 data_05_7049:
-    db   $3f, $22                                      ;; 05:7049 ??
+    HamChatWheelRule_UseIfHave 290 ; 00                ;; 05:7049 $3f $22
 
 data_05_704b:
-    db   $3f, $8e                                      ;; 05:704b ??
+    HamChatWheelRule_UseIfHave 398 ; 00                ;; 05:704b $3f $8e
 
 data_05_704d:
-    db   $70, $0d, $be, $3e                            ;; 05:704d ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:704d $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $3e ; 01    ;; 05:704f $be $3e
 
 data_05_7051:
-    db   $5f, $8c                                      ;; 05:7051 ??
+    HamChatWheelRule_UseIfDontHave 396 ; 00            ;; 05:7051 $5f $8c
 
 data_05_7053:
-    db   $71, $11, $be, $09                            ;; 05:7053 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $11 ; 00    ;; 05:7053 $71 $11
+    HamChatWheelRule_DefaultCase_Pair $be, $09 ; 01    ;; 05:7055 $be $09
 
 data_05_7057:
-    db   $71, $11, $be, $0a                            ;; 05:7057 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $11 ; 00    ;; 05:7057 $71 $11
+    HamChatWheelRule_DefaultCase_Pair $be, $0a ; 01    ;; 05:7059 $be $0a
 
 data_05_705b:
-    db   $71, $11, $be, $06                            ;; 05:705b ????
+    HamChatWheelRule_DefaultCase_Pair $71, $11 ; 00    ;; 05:705b $71 $11
+    HamChatWheelRule_DefaultCase_Pair $be, $06 ; 01    ;; 05:705d $be $06
 
 data_05_705f:
-    db   $70, $0d, $be, $3e                            ;; 05:705f ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:705f $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $3e ; 01    ;; 05:7061 $be $3e
 
 data_05_7063:
-    db   $3f, $90                                      ;; 05:7063 ??
+    HamChatWheelRule_UseIfHave 400 ; 00                ;; 05:7063 $3f $90
 
 data_05_7065:
-    db   $3f, $8f                                      ;; 05:7065 ??
+    HamChatWheelRule_UseIfHave 399 ; 00                ;; 05:7065 $3f $8f
 
 data_05_7067:
-    db   $3e, $e6                                      ;; 05:7067 ??
+    HamChatWheelRule_UseIfHave 230 ; 00                ;; 05:7067 $3e $e6
 
 data_05_7069:
-    db   $5e, $e6                                      ;; 05:7069 ??
+    HamChatWheelRule_UseIfDontHave 230 ; 00            ;; 05:7069 $5e $e6
 
 ; Paired with data_05_6cb2
 data_05_706b:
@@ -1043,49 +1258,61 @@ data_05_706b:
     HamChatWheelRule_UseIfDontHave HAMCHAT_SPARKLIE ; 07 ;; 05:7075 $5e $26
 
 data_05_7077:
-    db   $71, $12, $be, $05                            ;; 05:7077 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $12 ; 00    ;; 05:7077 $71 $12
+    HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:7079 $be $05
 
 data_05_707b:
-    db   $3e, $3d                                      ;; 05:707b ??
+    HamChatWheelRule_UseIfHave HAMCHAT_NOPOOKIE ; 00   ;; 05:707b $3e $3d
 
 data_05_707d:
-    db   $72, $6d, $be, $03                            ;; 05:707d ????
+    HamChatWheelRule_DefaultCase_Pair $72, $6d ; 00    ;; 05:707d $72 $6d
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:707f $be $03
 
 data_05_7081:
-    db   $70, $67, $be, $00                            ;; 05:7081 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $67 ; 00    ;; 05:7081 $70 $67
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:7083 $be $00
 
 data_05_7085:
-    db   $70, $6d, $be, $03                            ;; 05:7085 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6d ; 00    ;; 05:7085 $70 $6d
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:7087 $be $03
 
 data_05_7089:
-    db   $71, $13, $be, $00                            ;; 05:7089 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $13 ; 00    ;; 05:7089 $71 $13
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:708b $be $00
 
 data_05_708d:
-    db   $5f, $9e                                      ;; 05:708d ??
+    HamChatWheelRule_UseIfDontHave 414 ; 00            ;; 05:708d $5f $9e
 
 data_05_708f:
-    db   $71, $14, $be, $06                            ;; 05:708f ????
+    HamChatWheelRule_DefaultCase_Pair $71, $14 ; 00    ;; 05:708f $71 $14
+    HamChatWheelRule_DefaultCase_Pair $be, $06 ; 01    ;; 05:7091 $be $06
 
 data_05_7093:
-    db   $73, $14, $be, $06                            ;; 05:7093 ????
+    HamChatWheelRule_DefaultCase_Pair $73, $14 ; 00    ;; 05:7093 $73 $14
+    HamChatWheelRule_DefaultCase_Pair $be, $06 ; 01    ;; 05:7095 $be $06
 
 data_05_7097:
-    db   $b2, $00, $7e, $6d                            ;; 05:7097 ????
+    HamChatWheelRule_DefaultCase_Pair $b2, $00 ; 00    ;; 05:7097 $b2 $00
+    HamChatWheelRule_DefaultCase_Pair $7e, $6d ; 01    ;; 05:7099 $7e $6d
 
 data_05_709b:
-    db   $70, $6d, $be, $02                            ;; 05:709b ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6d ; 00    ;; 05:709b $70 $6d
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:709d $be $02
 
 data_05_709f:
-    db   $71, $14, $be, $03                            ;; 05:709f ????
+    HamChatWheelRule_DefaultCase_Pair $71, $14 ; 00    ;; 05:709f $71 $14
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:70a1 $be $03
 
 data_05_70a3:
-    db   $71, $14, $be, $05                            ;; 05:70a3 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $14 ; 00    ;; 05:70a3 $71 $14
+    HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:70a5 $be $05
 
 data_05_70a7:
-    db   $70, $6d, $be, $00                            ;; 05:70a7 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6d ; 00    ;; 05:70a7 $70 $6d
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:70a9 $be $00
 
 data_05_70ab:
-    db   $3f, $91                                      ;; 05:70ab ??
+    HamChatWheelRule_UseIfHave 401 ; 00                ;; 05:70ab $3f $91
 
 ; Paired with data_05_6cba
 data_05_70ad:
@@ -1114,125 +1341,162 @@ data_05_70c1:
     HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 07  ;; 05:70cf $5e $2f
 
 data_05_70d1:
-    db   $70, $67, $be, $01                            ;; 05:70d1 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $67 ; 00    ;; 05:70d1 $70 $67
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:70d3 $be $01
 
 data_05_70d5:
-    db   $70, $67, $be, $02                            ;; 05:70d5 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $67 ; 00    ;; 05:70d5 $70 $67
+    HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:70d7 $be $02
 
 data_05_70d9:
-    db   $70, $67, $be, $03                            ;; 05:70d9 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $67 ; 00    ;; 05:70d9 $70 $67
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:70db $be $03
 
 data_05_70dd:
-    db   $70, $67, $be, $04                            ;; 05:70dd ????
+    HamChatWheelRule_DefaultCase_Pair $70, $67 ; 00    ;; 05:70dd $70 $67
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:70df $be $04
 
 data_05_70e1:
-    db   $71, $14, $be, $07                            ;; 05:70e1 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $14 ; 00    ;; 05:70e1 $71 $14
+    HamChatWheelRule_DefaultCase_Pair $be, $07 ; 01    ;; 05:70e3 $be $07
 
 data_05_70e5:
-    db   $3f, $9e                                      ;; 05:70e5 ??
+    HamChatWheelRule_UseIfHave 414 ; 00                ;; 05:70e5 $3f $9e
 
 data_05_70e7:
-    db   $3e, $3f                                      ;; 05:70e7 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_SOAKQ ; 00      ;; 05:70e7 $3e $3f
 
 data_05_70e9:
-    db   $70, $0d, $be, $46                            ;; 05:70e9 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:70e9 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $46 ; 01    ;; 05:70eb $be $46
 
 data_05_70ed:
-    db   $00, $73, $15, $a2, $01, $06, $00, $b2        ;; 05:70ed ????????
-    db   $01, $63, $15, $1e                            ;; 05:70f5 ????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:70ed $00
+    HamChatWheelRule_DefaultCase_Pair $73, $15 ; 01    ;; 05:70ee $73 $15
+    HamChatWheelRule_DefaultCase_Pair $a2, $01 ; 02    ;; 05:70f0 $a2 $01
+    HamChatWheelRule_DefaultCase_Single $06 ; 03       ;; 05:70f2 $06
+    HamChatWheelRule_DefaultCase_Single $00 ; 04       ;; 05:70f3 $00
+    HamChatWheelRule_DefaultCase_Pair $b2, $01 ; 05    ;; 05:70f4 $b2 $01
+    HamChatWheelRule_DefaultCase_Pair $63, $15 ; 06    ;; 05:70f6 $63 $15
+    HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:70f8 $1e
 
 data_05_70f9:
-    db   $70, $0d, $be, $50                            ;; 05:70f9 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:70f9 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $50 ; 01    ;; 05:70fb $be $50
 
 data_05_70fd:
-    db   $5f, $9f                                      ;; 05:70fd ??
+    HamChatWheelRule_UseIfDontHave 415 ; 00            ;; 05:70fd $5f $9f
 
 data_05_70ff:
-    db   $5f, $92                                      ;; 05:70ff ??
+    HamChatWheelRule_UseIfDontHave 402 ; 00            ;; 05:70ff $5f $92
 
 data_05_7101:
-    db   $71, $16, $be, $08                            ;; 05:7101 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $16 ; 00    ;; 05:7101 $71 $16
+    HamChatWheelRule_DefaultCase_Pair $be, $08 ; 01    ;; 05:7103 $be $08
 
 data_05_7105:
-    db   $71, $16, $be, $09                            ;; 05:7105 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $16 ; 00    ;; 05:7105 $71 $16
+    HamChatWheelRule_DefaultCase_Pair $be, $09 ; 01    ;; 05:7107 $be $09
 
 data_05_7109:
-    db   $71, $16, $be, $0d                            ;; 05:7109 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $16 ; 00    ;; 05:7109 $71 $16
+    HamChatWheelRule_DefaultCase_Pair $be, $0d ; 01    ;; 05:710b $be $0d
 
 data_05_710d:
-    db   $70, $37, $be, $00                            ;; 05:710d ????
+    HamChatWheelRule_DefaultCase_Pair $70, $37 ; 00    ;; 05:710d $70 $37
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:710f $be $00
 
 data_05_7111:
-    db   $71, $16, $be, $0a                            ;; 05:7111 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $16 ; 00    ;; 05:7111 $71 $16
+    HamChatWheelRule_DefaultCase_Pair $be, $0a ; 01    ;; 05:7113 $be $0a
 
 data_05_7115:
-    db   $b2, $00, $7f, $15                            ;; 05:7115 ????
+    HamChatWheelRule_DefaultCase_Pair $b2, $00 ; 00    ;; 05:7115 $b2 $00
+    HamChatWheelRule_DefaultCase_Pair $7f, $15 ; 01    ;; 05:7117 $7f $15
 
 data_05_7119:
-    db   $71, $16, $be, $0b                            ;; 05:7119 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $16 ; 00    ;; 05:7119 $71 $16
+    HamChatWheelRule_DefaultCase_Pair $be, $0b ; 01    ;; 05:711b $be $0b
 
 data_05_711d:
-    db   $73, $1e, $be, $40                            ;; 05:711d ????
+    HamChatWheelRule_DefaultCase_Pair $73, $1e ; 00    ;; 05:711d $73 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $40 ; 01    ;; 05:711f $be $40
 
 data_05_7121:
-    db   $b2, $40, $7f, $1e                            ;; 05:7121 ????
+    HamChatWheelRule_DefaultCase_Pair $b2, $40 ; 00    ;; 05:7121 $b2 $40
+    HamChatWheelRule_DefaultCase_Pair $7f, $1e ; 01    ;; 05:7123 $7f $1e
 
 data_05_7125:
-    db   $3e, $25                                      ;; 05:7125 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_BLAHH ; 00      ;; 05:7125 $3e $25
 
 data_05_7127:
-    db   $5f, $a1                                      ;; 05:7127 ??
+    HamChatWheelRule_UseIfDontHave 417 ; 00            ;; 05:7127 $5f $a1
 
 data_05_7129:
-    db   $70, $69, $be, $0a                            ;; 05:7129 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $69 ; 00    ;; 05:7129 $70 $69
+    HamChatWheelRule_DefaultCase_Pair $be, $0a ; 01    ;; 05:712b $be $0a
 
 data_05_712d:
-    db   $70, $69, $be, $0b                            ;; 05:712d ????
+    HamChatWheelRule_DefaultCase_Pair $70, $69 ; 00    ;; 05:712d $70 $69
+    HamChatWheelRule_DefaultCase_Pair $be, $0b ; 01    ;; 05:712f $be $0b
 
 data_05_7131:
-    db   $70, $69, $be, $0c                            ;; 05:7131 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $69 ; 00    ;; 05:7131 $70 $69
+    HamChatWheelRule_DefaultCase_Pair $be, $0c ; 01    ;; 05:7133 $be $0c
 
 data_05_7135:
-    db   $70, $69, $be, $0d                            ;; 05:7135 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $69 ; 00    ;; 05:7135 $70 $69
+    HamChatWheelRule_DefaultCase_Pair $be, $0d ; 01    ;; 05:7137 $be $0d
 
 data_05_7139:
-    db   $70, $69, $be, $0e                            ;; 05:7139 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $69 ; 00    ;; 05:7139 $70 $69
+    HamChatWheelRule_DefaultCase_Pair $be, $0e ; 01    ;; 05:713b $be $0e
 
 data_05_713d:
-    db   $6e, $04, $a4, $06, $45, $19, $5f, $4b        ;; 05:713d ????????
+    HamChatWheelRule_DefaultCase_Pair $6e, $04 ; 00    ;; 05:713d $6e $04
+    HamChatWheelRule_DefaultCase_Pair $a4, $06 ; 01    ;; 05:713f $a4 $06
+    HamChatWheelRule_DefaultCase_Pair $45, $19 ; 02    ;; 05:7141 $45 $19
+    HamChatWheelRule_DefaultCase_Pair $5f, $4b ; 03    ;; 05:7143 $5f $4b
 
 data_05_7145:
-    db   $3f, $a0                                      ;; 05:7145 ??
+    HamChatWheelRule_UseIfHave 416 ; 00                ;; 05:7145 $3f $a0
 
 data_05_7147:
-    db   $70, $0d, $be, $46                            ;; 05:7147 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $0d ; 00    ;; 05:7147 $70 $0d
+    HamChatWheelRule_DefaultCase_Pair $be, $46 ; 01    ;; 05:7149 $be $46
 
 data_05_714b:
-    db   $70, $6e, $be, $03                            ;; 05:714b ????
+    HamChatWheelRule_DefaultCase_Pair $70, $6e ; 00    ;; 05:714b $70 $6e
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:714d $be $03
 
 data_05_714f:
-    db   $71, $1e, $be, $90                            ;; 05:714f ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:714f $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $90 ; 01    ;; 05:7151 $be $90
 
 data_05_7153:
-    db   $6e, $69, $be, $0b                            ;; 05:7153 ????
+    HamChatWheelRule_DefaultCase_Pair $6e, $69 ; 00    ;; 05:7153 $6e $69
+    HamChatWheelRule_DefaultCase_Pair $be, $0b ; 01    ;; 05:7155 $be $0b
 
 data_05_7157:
-    db   $6e, $04, $a4, $06, $5f, $19                  ;; 05:7157 ??????
+    HamChatWheelRule_DefaultCase_Pair $6e, $04 ; 00    ;; 05:7157 $6e $04
+    HamChatWheelRule_DefaultCase_Pair $a4, $06 ; 01    ;; 05:7159 $a4 $06
+    HamChatWheelRule_DefaultCase_Pair $5f, $19 ; 02    ;; 05:715b $5f $19
 
 data_05_715d:
-    db   $3f, $4e                                      ;; 05:715d ??
+    HamChatWheelRule_UseIfHave 334 ; 00                ;; 05:715d $3f $4e
 
 data_05_715f:
-    db   $3e, $e5                                      ;; 05:715f ??
+    HamChatWheelRule_UseIfHave 229 ; 00                ;; 05:715f $3e $e5
 
 data_05_7161:
-    db   $3f, $29                                      ;; 05:7161 ??
+    HamChatWheelRule_UseIfHave 297 ; 00                ;; 05:7161 $3f $29
 
 data_05_7163:
-    db   $ae, $05, $7e, $04                            ;; 05:7163 ????
+    HamChatWheelRule_DefaultCase_Pair $ae, $05 ; 00    ;; 05:7163 $ae $05
+    HamChatWheelRule_DefaultCase_Pair $7e, $04 ; 01    ;; 05:7165 $7e $04
 
 data_05_7167:
-    db   $3f, $19                                      ;; 05:7167 ??
+    HamChatWheelRule_UseIfHave 281 ; 00                ;; 05:7167 $3f $19
 
 ; Paired with data_05_6cd6
 data_05_7169:
@@ -1249,113 +1513,147 @@ data_05_7169:
     HamChatWheelRule_AlwaysUse ; 10                    ;; 05:7179 $1a
 
 data_05_717a:
-    db   $00, $6d, $1e, $a2, $60, $0e, $be, $01        ;; 05:717a ????????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:717a $00
+    HamChatWheelRule_DefaultCase_Pair $6d, $1e ; 01    ;; 05:717b $6d $1e
+    HamChatWheelRule_DefaultCase_Pair $a2, $60 ; 02    ;; 05:717d $a2 $60
+    HamChatWheelRule_DefaultCase_Single $0e ; 03       ;; 05:717f $0e
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:7180 $be $01
 
 data_05_7182:
-    db   $71, $1e, $be, $48                            ;; 05:7182 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:7182 $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $48 ; 01    ;; 05:7184 $be $48
 
 data_05_7186:
-    db   $6e, $69, $be, $0c                            ;; 05:7186 ????
+    HamChatWheelRule_DefaultCase_Pair $6e, $69 ; 00    ;; 05:7186 $6e $69
+    HamChatWheelRule_DefaultCase_Pair $be, $0c ; 01    ;; 05:7188 $be $0c
 
 data_05_718a:
-    db   $3e, $74                                      ;; 05:718a ??
+    HamChatWheelRule_UseIfHave 116 ; 00                ;; 05:718a $3e $74
 
 data_05_718c:
-    db   $5e, $28                                      ;; 05:718c ??
+    HamChatWheelRule_UseIfDontHave HAMCHAT_THANKQ ; 00 ;; 05:718c $5e $28
 
 data_05_718e:
-    db   $3e, $8a                                      ;; 05:718e ??
+    HamChatWheelRule_UseIfHave 138 ; 00                ;; 05:718e $3e $8a
 
 data_05_7190:
-    db   $72, $1f, $be, $03                            ;; 05:7190 ????
+    HamChatWheelRule_DefaultCase_Pair $72, $1f ; 00    ;; 05:7190 $72 $1f
+    HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:7192 $be $03
 
 data_05_7194:
-    db   $3f, $a3                                      ;; 05:7194 ??
+    HamChatWheelRule_UseIfHave 419 ; 00                ;; 05:7194 $3f $a3
 
 data_05_7196:
-    db   $3f, $80                                      ;; 05:7196 ??
+    HamChatWheelRule_UseIfHave 384 ; 00                ;; 05:7196 $3f $80
 
 data_05_7198:
-    db   $3f, $a4                                      ;; 05:7198 ??
+    HamChatWheelRule_UseIfHave 420 ; 00                ;; 05:7198 $3f $a4
 
 data_05_719a:
-    db   $5f, $a3                                      ;; 05:719a ??
+    HamChatWheelRule_UseIfDontHave 419 ; 00            ;; 05:719a $5f $a3
 
 data_05_719c:
-    db   $5f, $80                                      ;; 05:719c ??
+    HamChatWheelRule_UseIfDontHave 384 ; 00            ;; 05:719c $5f $80
 
 data_05_719e:
-    db   $5f, $a4                                      ;; 05:719e ??
+    HamChatWheelRule_UseIfDontHave 420 ; 00            ;; 05:719e $5f $a4
 
 data_05_71a0:
-    db   $6f, $20, $be, $04                            ;; 05:71a0 ????
+    HamChatWheelRule_DefaultCase_Pair $6f, $20 ; 00    ;; 05:71a0 $6f $20
+    HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:71a2 $be $04
 
 data_05_71a4:
-    db   $71, $20, $be, $1e                            ;; 05:71a4 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $20 ; 00    ;; 05:71a4 $71 $20
+    HamChatWheelRule_DefaultCase_Pair $be, $1e ; 01    ;; 05:71a6 $be $1e
 
 data_05_71a8:
-    db   $5e, $57                                      ;; 05:71a8 ??
+    HamChatWheelRule_UseIfDontHave HAMCHAT_HAMTAST ; 00 ;; 05:71a8 $5e $57
 
 data_05_71aa:
-    db   $6f, $20, $be, $14                            ;; 05:71aa ????
+    HamChatWheelRule_DefaultCase_Pair $6f, $20 ; 00    ;; 05:71aa $6f $20
+    HamChatWheelRule_DefaultCase_Pair $be, $14 ; 01    ;; 05:71ac $be $14
 
 data_05_71ae:
-    db   $6f, $20, $be, $0d                            ;; 05:71ae ????
+    HamChatWheelRule_DefaultCase_Pair $6f, $20 ; 00    ;; 05:71ae $6f $20
+    HamChatWheelRule_DefaultCase_Pair $be, $0d ; 01    ;; 05:71b0 $be $0d
 
 data_05_71b2:
-    db   $6f, $20, $be, $09                            ;; 05:71b2 ????
+    HamChatWheelRule_DefaultCase_Pair $6f, $20 ; 00    ;; 05:71b2 $6f $20
+    HamChatWheelRule_DefaultCase_Pair $be, $09 ; 01    ;; 05:71b4 $be $09
 
 data_05_71b6:
-    db   $6e, $1e, $be, $05                            ;; 05:71b6 ????
+    HamChatWheelRule_DefaultCase_Pair $6e, $1e ; 00    ;; 05:71b6 $6e $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:71b8 $be $05
 
 data_05_71ba:
-    db   $71, $19, $be, $00                            ;; 05:71ba ????
+    HamChatWheelRule_DefaultCase_Pair $71, $19 ; 00    ;; 05:71ba $71 $19
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:71bc $be $00
 
 data_05_71be:
-    db   $71, $19, $be, $01                            ;; 05:71be ????
+    HamChatWheelRule_DefaultCase_Pair $71, $19 ; 00    ;; 05:71be $71 $19
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:71c0 $be $01
 
 data_05_71c2:
-    db   $71, $1a, $be, $00                            ;; 05:71c2 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1a ; 00    ;; 05:71c2 $71 $1a
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:71c4 $be $00
 
 data_05_71c6:
-    db   $71, $1a, $be, $01                            ;; 05:71c6 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1a ; 00    ;; 05:71c6 $71 $1a
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:71c8 $be $01
 
 data_05_71ca:
-    db   $71, $1b, $be, $00                            ;; 05:71ca ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1b ; 00    ;; 05:71ca $71 $1b
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:71cc $be $00
 
 data_05_71ce:
-    db   $71, $1b, $be, $01                            ;; 05:71ce ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1b ; 00    ;; 05:71ce $71 $1b
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:71d0 $be $01
 
 data_05_71d2:
-    db   $3e, $19                                      ;; 05:71d2 ??
+    HamChatWheelRule_UseIfHave HAMCHAT_BLISSIE ; 00    ;; 05:71d2 $3e $19
 
 data_05_71d4:
-    db   $6f, $1e, $be, $60                            ;; 05:71d4 ????
+    HamChatWheelRule_DefaultCase_Pair $6f, $1e ; 00    ;; 05:71d4 $6f $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $60 ; 01    ;; 05:71d6 $be $60
 
 data_05_71d8:
-    db   $71, $1e, $be, $30                            ;; 05:71d8 ????
+    HamChatWheelRule_DefaultCase_Pair $71, $1e ; 00    ;; 05:71d8 $71 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $30 ; 01    ;; 05:71da $be $30
 
 data_05_71dc:
-    db   $70, $3c, $be, $00                            ;; 05:71dc ????
+    HamChatWheelRule_DefaultCase_Pair $70, $3c ; 00    ;; 05:71dc $70 $3c
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:71de $be $00
 
 data_05_71e0:
-    db   $00, $00, $70, $3f, $a2, $00, $04, $00        ;; 05:71e0 ????????
-    db   $70, $3c, $a2, $00, $02, $1e                  ;; 05:71e8 ??????
+    HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:71e0 $00
+    HamChatWheelRule_DefaultCase_Single $00 ; 01       ;; 05:71e1 $00
+    HamChatWheelRule_DefaultCase_Pair $70, $3f ; 02    ;; 05:71e2 $70 $3f
+    HamChatWheelRule_DefaultCase_Pair $a2, $00 ; 03    ;; 05:71e4 $a2 $00
+    HamChatWheelRule_DefaultCase_Single $04 ; 04       ;; 05:71e6 $04
+    HamChatWheelRule_DefaultCase_Single $00 ; 05       ;; 05:71e7 $00
+    HamChatWheelRule_DefaultCase_Pair $70, $3c ; 06    ;; 05:71e8 $70 $3c
+    HamChatWheelRule_DefaultCase_Pair $a2, $00 ; 07    ;; 05:71ea $a2 $00
+    HamChatWheelRule_DefaultCase_Single $02 ; 08       ;; 05:71ec $02
+    HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:71ed $1e
 
 data_05_71ee:
-    db   $70, $1f, $be, $01                            ;; 05:71ee ????
+    HamChatWheelRule_DefaultCase_Pair $70, $1f ; 00    ;; 05:71ee $70 $1f
+    HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:71f0 $be $01
 
 data_05_71f2:
-    db   $70, $66, $be, $00                            ;; 05:71f2 ????
+    HamChatWheelRule_DefaultCase_Pair $70, $66 ; 00    ;; 05:71f2 $70 $66
+    HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:71f4 $be $00
 
 data_05_71f6:
-    db   $3f, $2a                                      ;; 05:71f6 ??
+    HamChatWheelRule_UseIfHave 298 ; 00                ;; 05:71f6 $3f $2a
 
 data_05_71f8:
-    db   $3f, $93                                      ;; 05:71f8 ??
+    HamChatWheelRule_UseIfHave 403 ; 00                ;; 05:71f8 $3f $93
 
 data_05_71fa:
-    db   $73, $1e, $be, $c8                            ;; 05:71fa ????
+    HamChatWheelRule_DefaultCase_Pair $73, $1e ; 00    ;; 05:71fa $73 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $c8 ; 01    ;; 05:71fc $be $c8
 
 data_05_71fe:
-    db   $73, $1e, $be, $8c                            ;; 05:71fe ????
+    HamChatWheelRule_DefaultCase_Pair $73, $1e ; 00    ;; 05:71fe $73 $1e
+    HamChatWheelRule_DefaultCase_Pair $be, $8c ; 01    ;; 05:7200 $be $8c

@@ -375,6 +375,9 @@ class Op14Block(Block):
         bank5.addAutoLabel(pointer, None, None)
         self.label = bank5.getLabel(pointer)
 
+        if bank5[pointer] is None:
+            HamChatWheelRulesBlock(pointer, self.count)
+
         self.subBlock = ScriptPointersBlock(memory, addr + len(self), amount=self.count)
 
     def export(self, file):

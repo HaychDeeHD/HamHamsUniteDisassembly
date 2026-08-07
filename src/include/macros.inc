@@ -20,12 +20,14 @@ db \2
 db \3
 ENDM
 MACRO HamChatWheelRule_UseIfDontHave
-db $5e
-db \1
+
+db ($5e + (\1  >> 8))
+db (\1 & $FF)
 ENDM
 MACRO HamChatWheelRule_UseIfHave
-db $3e
-db \1
+
+db ($3e + (\1  >> 8))
+db (\1 & $FF)
 ENDM
 MACRO Op02_Unknown_Jump
 db $02

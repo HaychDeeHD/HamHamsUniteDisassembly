@@ -174,7 +174,7 @@ I have not observed this being used in any scripts.
 
 First arg is a count. This count determines the number of script pointers that will follow (and possibly something about the data pointed to).
 
-The second arg is a 2 byte Rom address for Bank05, which holds all the HamChatWheel data. I have not yet determined the structure of this data.
+The second arg is a 2 byte Rom address for Bank05, which holds all the HamChatWheel data. The referenced data fits the shape of HamChatWheelRules.
 
 Op14 is followed by a number of Script pointers equal to the first arg, count. I have not determined how they are used.
 

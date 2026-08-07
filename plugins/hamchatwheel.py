@@ -91,6 +91,12 @@ BITARRAY_INDEX_TO_HAMCHAT = {
 	0x60: "HAMCHAT_HAMTEAM",
 }
 
+def bitArrayIndexToHamchatOrDefault(bitArrayIndex):
+    try:
+        return BITARRAY_INDEX_TO_HAMCHAT[bitArrayIndex]
+    except KeyError:
+        return str(bitArrayIndex)
+
 @annotation(priority=1)
 def hamchatwheeloptions(memory, addr, amount="4"):
     HamChatWheelOptionsBlock(addr, int(amount))
@@ -126,11 +132,17 @@ class HamChatWheelRulesBlock(Block):
         bank5 = RomInfo.romBank(0x05)
         super().__init__(bank5, addr)
         RomInfo.macros["HamChatWheelRule_AlwaysUse"] = "db $1a"
-        RomInfo.macros["HamChatWheelRule_UseIfHave"] = "db $3e\ndb \\1"
-        RomInfo.macros["HamChatWheelRule_UseIfDontHave"] = "db $5e\ndb \\1"
+        # TODO Change SubOp macros to work like this one? Make helper functions to share?
+        RomInfo.macros["HamChatWheelRule_UseIfHave"] = r"""
+db ($3e + (\1  >> 8))
+db (\1 & $FF)
+"""
+        RomInfo.macros["HamChatWheelRule_UseIfDontHave"] = r"""
+db ($5e + (\1  >> 8))
+db (\1 & $FF)
+"""
         RomInfo.macros["HamChatWheelRule_DefaultCase_Single"] = "db \\1"
         RomInfo.macros["HamChatWheelRule_DefaultCase_Pair"] = "db \\1\ndb \\2"
-        # TODO: I do not see any trios in bank 5. Remove?
         RomInfo.macros["HamChatWheelRule_DefaultCase_Trio"] = "db \\1\ndb \\2\ndb \\3"
         RomInfo.constants["INVENTORY"] = {v: k for k, v in BITARRAY_INDEX_TO_HAMCHAT.items()}
 
@@ -161,14 +173,15 @@ class HamChatWheelRulesBlock(Block):
                     self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_AlwaysUse"))
                     size += 1
                 case 0x3E | 0x3F:
-                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfHave", BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(self.base_address + size + 1)]))
+                    bitArrayIndex = ((ruleOpcode & 0x01) << 8) + self.memory.byte(self.base_address + size + 1)
+                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfHave", bitArrayIndexToHamchatOrDefault(bitArrayIndex)))
                     size += 2
                 case 0x5E | 0x5F:
-                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfDontHave", BITARRAY_INDEX_TO_HAMCHAT[self.memory.byte(self.base_address + size + 1)]))
+                    bitArrayIndex = ((ruleOpcode & 0x01) << 8) + self.memory.byte(self.base_address + size + 1)
+                    self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfDontHave", bitArrayIndexToHamchatOrDefault(bitArrayIndex)))
                     size += 2
                 case _:
                     # This works the same as the Op16 SubOps default case. See hamscript.py.
-                    # TODO The gaps in bank 5 lead me to believe there could be more to the story.
                     while True:
                         firstByte = self.memory.byte(self.base_address + size)
 
@@ -193,11 +206,13 @@ class HamChatWheelRulesBlock(Block):
         if size > 0:
             self.resize(size)
 
+    # TODO Add referencedFrom comments?
     def export(self, file):
         prelineComments = self.memory.getComments(file.addr)
-        if prelineComments is not None and prelineComments[-1].startswith(" Paired with "):
+        if prelineComments is not None and prelineComments[-1].startswith(" Paired with"):
             prelineComments.pop() # Otherwise each run appends an additional comment
-        self.memory.addComment(file.addr, " Paired with %s" % ', '.join([str(block.label) for block in self.pairedOptionsBlocks]))
+        if len(self.pairedOptionsBlocks) != 0:
+            self.memory.addComment(file.addr, " Paired with %s" % ', '.join([str(block.label) for block in self.pairedOptionsBlocks]))
         for i, hamChatWheelRuleArgs in enumerate(self.hamChatWheelRulesArgsList):
             self.memory.addInlineComment(file.addr, " %02d" % i)
             file.asmLine(*hamChatWheelRuleArgs)

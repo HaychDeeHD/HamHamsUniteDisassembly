@@ -4393,7 +4393,7 @@ Op92:
     ld   [$2000], A                                    ;; 00:1f1f $ea $00 $20
     jp   jp_01_483d                                    ;; 00:1f22 $c3 $3d $48
 
-; $14 count byte byte [3-byte-address list]
+; $14 count + address-in-05 + [3-byte-address list]
 ; Calls 1f89 N times. That must use the input bytes somehow.
 ; If invocation # x 'fails'(?) then go to the xth address in the list.
 ; Else next address.
