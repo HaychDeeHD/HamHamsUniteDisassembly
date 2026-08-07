@@ -526,7 +526,7 @@ call_39_5256:
     Op4E_Unknown_StoreValue 5, $01, $c5, $6d, $19      ;; 39:529a $4e $05 $01 $c5 $6d $19
     Op32_Graphics data_7a_58e3, w6_DC60                ;; 39:52a0 $32 $e3 $58 $7a $60 $dc $06
     Op82_Run data_02_6d93                              ;; 39:52a7 $82 $93 $6d $02
-    Op38_Unknown $bd, $43, $7f, $86, $d9, $05, $0d     ;; 39:52ab $38 $bd $43 $7f $86 $d9 $05 $0d
+    Op38_Graphics data_7f_43bd, w5_D986, $0d           ;; 39:52ab $38 $bd $43 $7f $86 $d9 $05 $0d
     Op7E_Unknown $40, $d9, $05, $40, $99, $00, $c0, $00 ;; 39:52b3 $7e $40 $d9 $05 $40 $99 $00 $c0 $00
     Op52_WriteBytes wC665, $00, $04, $00               ;; 39:52bc $52 $65 $c6 $00 $04 $00
     Op52_WriteBytes wC667, $00, $01, $00               ;; 39:52c2 $52 $67 $c6 $00 $01 $00
@@ -581,74 +581,74 @@ call_39_5355:
 call_39_5362:
     Op14_Unknown 1, data_05_4285                       ;; 39:5362 $14 $01 $85 $42
     SCRIPT_POINTER call_39_5379                        ;; 39:5366 $79 $53 $39
-    Op38_Unknown $d3, $7c, $7f, $c8, $d8, $05, $02     ;; 39:5369 $38 $d3 $7c $7f $c8 $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $c8, $d8, $07, $02     ;; 39:5371 $38 $d9 $7c $7f $c8 $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D8C8, $02           ;; 39:5369 $38 $d3 $7c $7f $c8 $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D8C8, $02           ;; 39:5371 $38 $d9 $7c $7f $c8 $d8 $07 $02
 
 call_39_5379:
     Op14_Unknown 1, data_05_4287                       ;; 39:5379 $14 $01 $87 $42
     SCRIPT_POINTER call_39_5390                        ;; 39:537d $90 $53 $39
-    Op38_Unknown $d3, $7c, $7f, $6c, $d8, $05, $02     ;; 39:5380 $38 $d3 $7c $7f $6c $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $6c, $d8, $07, $02     ;; 39:5388 $38 $d9 $7c $7f $6c $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D86C, $02           ;; 39:5380 $38 $d3 $7c $7f $6c $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D86C, $02           ;; 39:5388 $38 $d9 $7c $7f $6c $d8 $07 $02
 
 call_39_5390:
     Op14_Unknown 1, data_05_4289                       ;; 39:5390 $14 $01 $89 $42
     SCRIPT_POINTER call_39_53a7                        ;; 39:5394 $a7 $53 $39
-    Op38_Unknown $d3, $7c, $7f, $c6, $d8, $05, $02     ;; 39:5397 $38 $d3 $7c $7f $c6 $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $c6, $d8, $07, $02     ;; 39:539f $38 $d9 $7c $7f $c6 $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D8C6, $02           ;; 39:5397 $38 $d3 $7c $7f $c6 $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D8C6, $02           ;; 39:539f $38 $d9 $7c $7f $c6 $d8 $07 $02
 
 call_39_53a7:
     Op14_Unknown 1, data_05_428b                       ;; 39:53a7 $14 $01 $8b $42
     SCRIPT_POINTER call_39_53be                        ;; 39:53ab $be $53 $39
-    Op38_Unknown $d3, $7c, $7f, $6a, $d8, $05, $02     ;; 39:53ae $38 $d3 $7c $7f $6a $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $6a, $d8, $07, $02     ;; 39:53b6 $38 $d9 $7c $7f $6a $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D86A, $02           ;; 39:53ae $38 $d3 $7c $7f $6a $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D86A, $02           ;; 39:53b6 $38 $d9 $7c $7f $6a $d8 $07 $02
 
 call_39_53be:
     Op14_Unknown 1, data_05_428d                       ;; 39:53be $14 $01 $8d $42
     SCRIPT_POINTER call_39_53d5                        ;; 39:53c2 $d5 $53 $39
-    Op38_Unknown $d3, $7c, $7f, $63, $d8, $05, $02     ;; 39:53c5 $38 $d3 $7c $7f $63 $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $63, $d8, $07, $02     ;; 39:53cd $38 $d9 $7c $7f $63 $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D863, $02           ;; 39:53c5 $38 $d3 $7c $7f $63 $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D863, $02           ;; 39:53cd $38 $d9 $7c $7f $63 $d8 $07 $02
 
 call_39_53d5:
     Op14_Unknown 1, data_05_428f                       ;; 39:53d5 $14 $01 $8f $42
     SCRIPT_POINTER call_39_53ec                        ;; 39:53d9 $ec $53 $39
-    Op38_Unknown $d3, $7c, $7f, $61, $d8, $05, $02     ;; 39:53dc $38 $d3 $7c $7f $61 $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $61, $d8, $07, $02     ;; 39:53e4 $38 $d9 $7c $7f $61 $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D861, $02           ;; 39:53dc $38 $d3 $7c $7f $61 $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D861, $02           ;; 39:53e4 $38 $d9 $7c $7f $61 $d8 $07 $02
 
 call_39_53ec:
     Op14_Unknown 1, data_05_4291                       ;; 39:53ec $14 $01 $91 $42
     SCRIPT_POINTER call_39_5403                        ;; 39:53f0 $03 $54 $39
-    Op38_Unknown $d3, $7c, $7f, $d1, $d8, $05, $02     ;; 39:53f3 $38 $d3 $7c $7f $d1 $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $d1, $d8, $07, $02     ;; 39:53fb $38 $d9 $7c $7f $d1 $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D8D1, $02           ;; 39:53f3 $38 $d3 $7c $7f $d1 $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D8D1, $02           ;; 39:53fb $38 $d9 $7c $7f $d1 $d8 $07 $02
 
 call_39_5403:
     Op14_Unknown 1, data_05_4293                       ;; 39:5403 $14 $01 $93 $42
     SCRIPT_POINTER call_39_541a                        ;; 39:5407 $1a $54 $39
-    Op38_Unknown $d3, $7c, $7f, $cf, $d8, $05, $02     ;; 39:540a $38 $d3 $7c $7f $cf $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $cf, $d8, $07, $02     ;; 39:5412 $38 $d9 $7c $7f $cf $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D8CF, $02           ;; 39:540a $38 $d3 $7c $7f $cf $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D8CF, $02           ;; 39:5412 $38 $d9 $7c $7f $cf $d8 $07 $02
 
 call_39_541a:
     Op14_Unknown 1, data_05_4295                       ;; 39:541a $14 $01 $95 $42
     SCRIPT_POINTER call_39_5431                        ;; 39:541e $31 $54 $39
-    Op38_Unknown $d3, $7c, $7f, $68, $d8, $05, $02     ;; 39:5421 $38 $d3 $7c $7f $68 $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $68, $d8, $07, $02     ;; 39:5429 $38 $d9 $7c $7f $68 $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D868, $02           ;; 39:5421 $38 $d3 $7c $7f $68 $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D868, $02           ;; 39:5429 $38 $d9 $7c $7f $68 $d8 $07 $02
 
 call_39_5431:
     Op14_Unknown 1, data_05_4297                       ;; 39:5431 $14 $01 $97 $42
     SCRIPT_POINTER call_39_5448                        ;; 39:5435 $48 $54 $39
-    Op38_Unknown $d3, $7c, $7f, $66, $d8, $05, $02     ;; 39:5438 $38 $d3 $7c $7f $66 $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $66, $d8, $07, $02     ;; 39:5440 $38 $d9 $7c $7f $66 $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D866, $02           ;; 39:5438 $38 $d3 $7c $7f $66 $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D866, $02           ;; 39:5440 $38 $d9 $7c $7f $66 $d8 $07 $02
 
 call_39_5448:
     Op14_Unknown 1, data_05_4299                       ;; 39:5448 $14 $01 $99 $42
     SCRIPT_POINTER call_39_545f                        ;; 39:544c $5f $54 $39
-    Op38_Unknown $d3, $7c, $7f, $6f, $d8, $05, $02     ;; 39:544f $38 $d3 $7c $7f $6f $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $6f, $d8, $07, $02     ;; 39:5457 $38 $d9 $7c $7f $6f $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D86F, $02           ;; 39:544f $38 $d3 $7c $7f $6f $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D86F, $02           ;; 39:5457 $38 $d9 $7c $7f $6f $d8 $07 $02
 
 call_39_545f:
     Op14_Unknown 1, data_05_429b                       ;; 39:545f $14 $01 $9b $42
     SCRIPT_POINTER call_39_5476                        ;; 39:5463 $76 $54 $39
-    Op38_Unknown $d3, $7c, $7f, $71, $d8, $05, $02     ;; 39:5466 $38 $d3 $7c $7f $71 $d8 $05 $02
-    Op38_Unknown $d9, $7c, $7f, $71, $d8, $07, $02     ;; 39:546e $38 $d9 $7c $7f $71 $d8 $07 $02
+    Op38_Graphics data_7f_7cd3, w5_D871, $02           ;; 39:5466 $38 $d3 $7c $7f $71 $d8 $05 $02
+    Op38_Graphics data_7f_7cd9, w7_D871, $02           ;; 39:546e $38 $d9 $7c $7f $71 $d8 $07 $02
 
 call_39_5476:
     Op7E_Unknown $60, $d8, $05, $60, $98, $00, $a0, $00 ;; 39:5476 $7e $60 $d8 $05 $60 $98 $00 $a0 $00
@@ -680,7 +680,7 @@ call_39_5489:
 
 call_39_54cf:
     Op48_Unknown                                       ;; 39:54cf $48
-    Op38_Unknown $29, $65, $7f, $46, $d9, $05, $08     ;; 39:54d0 $38 $29 $65 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_6529, w5_D946, $08           ;; 39:54d0 $38 $29 $65 $7f $46 $d9 $05 $08
     Op36_Graphics data_7a_7bdb, w6_DC60                ;; 39:54d8 $36 $db $7b $7a $60 $dc $06
     Op14_Unknown 1, data_05_4285                       ;; 39:54df $14 $01 $85 $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:54e3 $ad $56 $39
@@ -689,7 +689,7 @@ call_39_54cf:
 
 call_39_54f1:
     Op48_Unknown                                       ;; 39:54f1 $48
-    Op38_Unknown $1c, $65, $7f, $46, $d9, $05, $08     ;; 39:54f2 $38 $1c $65 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_651c, w5_D946, $08           ;; 39:54f2 $38 $1c $65 $7f $46 $d9 $05 $08
     Op36_Graphics data_78_71fe, w6_DC60                ;; 39:54fa $36 $fe $71 $78 $60 $dc $06
     Op14_Unknown 1, data_05_4287                       ;; 39:5501 $14 $01 $87 $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:5505 $ad $56 $39
@@ -698,7 +698,7 @@ call_39_54f1:
 
 call_39_5513:
     Op48_Unknown                                       ;; 39:5513 $48
-    Op38_Unknown $0f, $65, $7f, $46, $d9, $05, $08     ;; 39:5514 $38 $0f $65 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_650f, w5_D946, $08           ;; 39:5514 $38 $0f $65 $7f $46 $d9 $05 $08
     Op36_Graphics data_79_6cf0, w6_DC60                ;; 39:551c $36 $f0 $6c $79 $60 $dc $06
     Op14_Unknown 1, data_05_4289                       ;; 39:5523 $14 $01 $89 $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:5527 $ad $56 $39
@@ -707,7 +707,7 @@ call_39_5513:
 
 call_39_5535:
     Op48_Unknown                                       ;; 39:5535 $48
-    Op38_Unknown $02, $65, $7f, $46, $d9, $05, $08     ;; 39:5536 $38 $02 $65 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_6502, w5_D946, $08           ;; 39:5536 $38 $02 $65 $7f $46 $d9 $05 $08
     Op36_Graphics data_79_67aa, w6_DC60                ;; 39:553e $36 $aa $67 $79 $60 $dc $06
     Op14_Unknown 1, data_05_428b                       ;; 39:5545 $14 $01 $8b $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:5549 $ad $56 $39
@@ -716,7 +716,7 @@ call_39_5535:
 
 call_39_5557:
     Op48_Unknown                                       ;; 39:5557 $48
-    Op38_Unknown $f5, $64, $7f, $46, $d9, $05, $08     ;; 39:5558 $38 $f5 $64 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_64f5, w5_D946, $08           ;; 39:5558 $38 $f5 $64 $7f $46 $d9 $05 $08
     Op36_Graphics data_79_7b95, w6_DC60                ;; 39:5560 $36 $95 $7b $79 $60 $dc $06
     Op14_Unknown 1, data_05_428d                       ;; 39:5567 $14 $01 $8d $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:556b $ad $56 $39
@@ -725,7 +725,7 @@ call_39_5557:
 
 call_39_5579:
     Op48_Unknown                                       ;; 39:5579 $48
-    Op38_Unknown $e8, $64, $7f, $46, $d9, $05, $08     ;; 39:557a $38 $e8 $64 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_64e8, w5_D946, $08           ;; 39:557a $38 $e8 $64 $7f $46 $d9 $05 $08
     Op36_Graphics data_79_782a, w6_DC60                ;; 39:5582 $36 $2a $78 $79 $60 $dc $06
     Op14_Unknown 1, data_05_428f                       ;; 39:5589 $14 $01 $8f $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:558d $ad $56 $39
@@ -734,7 +734,7 @@ call_39_5579:
 
 call_39_559b:
     Op48_Unknown                                       ;; 39:559b $48
-    Op38_Unknown $db, $64, $7f, $46, $d9, $05, $08     ;; 39:559c $38 $db $64 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_64db, w5_D946, $08           ;; 39:559c $38 $db $64 $7f $46 $d9 $05 $08
     Op36_Graphics data_79_66c8, w6_DC60                ;; 39:55a4 $36 $c8 $66 $79 $60 $dc $06
     Op14_Unknown 1, data_05_4291                       ;; 39:55ab $14 $01 $91 $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:55af $ad $56 $39
@@ -743,7 +743,7 @@ call_39_559b:
 
 call_39_55bd:
     Op48_Unknown                                       ;; 39:55bd $48
-    Op38_Unknown $ce, $64, $7f, $46, $d9, $05, $08     ;; 39:55be $38 $ce $64 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_64ce, w5_D946, $08           ;; 39:55be $38 $ce $64 $7f $46 $d9 $05 $08
     Op36_Graphics data_79_6c10, w6_DC60                ;; 39:55c6 $36 $10 $6c $79 $60 $dc $06
     Op14_Unknown 1, data_05_4293                       ;; 39:55cd $14 $01 $93 $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:55d1 $ad $56 $39
@@ -752,7 +752,7 @@ call_39_55bd:
 
 call_39_55df:
     Op48_Unknown                                       ;; 39:55df $48
-    Op38_Unknown $c1, $64, $7f, $46, $d9, $05, $08     ;; 39:55e0 $38 $c1 $64 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_64c1, w5_D946, $08           ;; 39:55e0 $38 $c1 $64 $7f $46 $d9 $05 $08
     Op36_Graphics data_79_4b62, w6_DC60                ;; 39:55e8 $36 $62 $4b $79 $60 $dc $06
     Op14_Unknown 1, data_05_4295                       ;; 39:55ef $14 $01 $95 $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:55f3 $ad $56 $39
@@ -761,7 +761,7 @@ call_39_55df:
 
 call_39_5601:
     Op48_Unknown                                       ;; 39:5601 $48
-    Op38_Unknown $b4, $64, $7f, $46, $d9, $05, $08     ;; 39:5602 $38 $b4 $64 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_64b4, w5_D946, $08           ;; 39:5602 $38 $b4 $64 $7f $46 $d9 $05 $08
     Op36_Graphics data_7a_46bc, w6_DC60                ;; 39:560a $36 $bc $46 $7a $60 $dc $06
     Op14_Unknown 1, data_05_4297                       ;; 39:5611 $14 $01 $97 $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:5615 $ad $56 $39
@@ -770,7 +770,7 @@ call_39_5601:
 
 call_39_5623:
     Op48_Unknown                                       ;; 39:5623 $48
-    Op38_Unknown $a7, $64, $7f, $46, $d9, $05, $08     ;; 39:5624 $38 $a7 $64 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_64a7, w5_D946, $08           ;; 39:5624 $38 $a7 $64 $7f $46 $d9 $05 $08
     Op36_Graphics data_7a_61d1, w6_DC60                ;; 39:562c $36 $d1 $61 $7a $60 $dc $06
     Op14_Unknown 1, data_05_4299                       ;; 39:5633 $14 $01 $99 $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:5637 $ad $56 $39
@@ -779,7 +779,7 @@ call_39_5623:
 
 call_39_5645:
     Op48_Unknown                                       ;; 39:5645 $48
-    Op38_Unknown $9a, $64, $7f, $46, $d9, $05, $08     ;; 39:5646 $38 $9a $64 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_649a, w5_D946, $08           ;; 39:5646 $38 $9a $64 $7f $46 $d9 $05 $08
     Op36_Graphics data_79_7efa, w6_DC60                ;; 39:564e $36 $fa $7e $79 $60 $dc $06
     Op14_Unknown 1, data_05_429b                       ;; 39:5655 $14 $01 $9b $42
     SCRIPT_POINTER call_39_56ad                        ;; 39:5659 $ad $56 $39
@@ -788,25 +788,25 @@ call_39_5645:
 
 call_39_5667:
     Op48_Unknown                                       ;; 39:5667 $48
-    Op38_Unknown $43, $65, $7f, $46, $d9, $05, $08     ;; 39:5668 $38 $43 $65 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_6543, w5_D946, $08           ;; 39:5668 $38 $43 $65 $7f $46 $d9 $05 $08
     Op36_Graphics data_79_53c8, w6_DC60                ;; 39:5670 $36 $c8 $53 $79 $60 $dc $06
     Op36_Graphics data_7f_709b, w1_DDA2                ;; 39:5677 $36 $9b $70 $7f $a2 $dd $01
     Op18_Jump call_39_569d                             ;; 39:567e $18 $9d $56 $39
 
 call_39_5682:
     Op48_Unknown                                       ;; 39:5682 $48
-    Op38_Unknown $36, $65, $7f, $46, $d9, $05, $08     ;; 39:5683 $38 $36 $65 $7f $46 $d9 $05 $08
+    Op38_Graphics data_7f_6536, w5_D946, $08           ;; 39:5683 $38 $36 $65 $7f $46 $d9 $05 $08
     Op36_Graphics data_7a_74e3, w6_DC60                ;; 39:568b $36 $e3 $74 $7a $60 $dc $06
     Op36_Graphics data_7f_70c3, w1_DDA2                ;; 39:5692 $36 $c3 $70 $7f $a2 $dd $01
     Op18_Jump call_39_569d                             ;; 39:5699 $18 $9d $56 $39
 
 call_39_569d:
-    Op38_Unknown $bd, $43, $7f, $86, $d9, $05, $0d     ;; 39:569d $38 $bd $43 $7f $86 $d9 $05 $0d
+    Op38_Graphics data_7f_43bd, w5_D986, $0d           ;; 39:569d $38 $bd $43 $7f $86 $d9 $05 $0d
     Op36_Graphics data_7f_7073, w1_DD9A                ;; 39:56a5 $36 $73 $70 $7f $9a $dd $01
     SCRIPT_RETURN_20                                   ;; 39:56ac $20
 
 call_39_56ad:
-    Op38_Unknown $d4, $7d, $7e, $86, $d9, $05, $0d     ;; 39:56ad $38 $d4 $7d $7e $86 $d9 $05 $0d
+    Op38_Graphics data_7e_7dd4, w5_D986, $0d           ;; 39:56ad $38 $d4 $7d $7e $86 $d9 $05 $0d
     Op36_Graphics data_7f_5bfd, w1_DD9A                ;; 39:56b5 $36 $fd $5b $7f $9a $dd $01
     SCRIPT_RETURN_20                                   ;; 39:56bc $20
     Op16_SubOps 1                                      ;; 39:56bd $16 $01

@@ -686,10 +686,11 @@ class Op4CBlock(Block):
     def export(self, file):
         file.asmLine(11, "Op4C_Unknown", *["$%02x" % self.memory.byte(file.addr + n) for n in range(1, 8)], str(self.endingPointerLabel))
 
-class Op32Or34Or36Block(Block):
+class Op3xBlock(Block):
     def __init__(self, memory, addr, size):
         super().__init__(memory, addr, size=size)
         
+        # These point to graphics data.
         self.romLabel = label3ByteRomAddressArg(memory, addr + 1)
 
         ramPointer = memory.word(addr + 4)
@@ -698,7 +699,7 @@ class Op32Or34Or36Block(Block):
         ramBank.addAutoLabel(ramPointer, None, None)
         self.ramLabel = ramBank.getLabel(ramPointer)
 
-class Op32Block(Op32Or34Or36Block):
+class Op32Block(Op3xBlock):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=7)
         RomInfo.macros["Op32_Graphics"] = "db $32\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)"
@@ -706,7 +707,7 @@ class Op32Block(Op32Or34Or36Block):
     def export(self, file):
         file.asmLine(7, "Op32_Graphics", str(self.romLabel), str(self.ramLabel))
 
-class Op34Block(Op32Or34Or36Block):
+class Op34Block(Op3xBlock):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=8)
         RomInfo.macros["Op34_Graphics"] = "db $34\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)\ndb \\3"
@@ -714,13 +715,21 @@ class Op34Block(Op32Or34Or36Block):
     def export(self, file):
         file.asmLine(8, "Op34_Graphics", str(self.romLabel), str(self.ramLabel), "$%02x" % self.memory.byte(file.addr + 7))
 
-class Op36Block(Op32Or34Or36Block):
+class Op36Block(Op3xBlock):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=7)
         RomInfo.macros["Op36_Graphics"] = "db $36\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)"
 
     def export(self, file):
         file.asmLine(7, "Op36_Graphics", str(self.romLabel), str(self.ramLabel))
+
+class Op38Block(Op3xBlock):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=8)
+        RomInfo.macros["Op38_Graphics"] = "db $38\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)\ndb \\3"
+
+    def export(self, file):
+        file.asmLine(8, "Op38_Graphics", str(self.romLabel), str(self.ramLabel), "$%02x" % self.memory.byte(file.addr + 7))
 
 # Even though there are ophandlers not accounted for here, this list is apparently complete.
 # In the banks I have decoded I do not hit script instructions not present in this object.
@@ -743,7 +752,7 @@ OPBLOCKS = {
     0x32: Op32Block,
     0x34: Op34Block,
     0x36: Op36Block,
-    0x38: makeGenericBlockClass(0x38, 8),
+    0x38: Op38Block,
     0x3A: makeGenericBlockClass(0x3A, 11),
     0x3C: makeGenericBlockClass(0x3C, 11),
     0x3E: Op3EBlock,

@@ -1981,8 +1981,8 @@ call_2f_681e:
     ;;Hey,<E2><E7>!<E2><E7>!!!<E0>
     Op04_Unknown_Text data_3c_41c3                     ;; 2f:6865 $04 $c3 $41 $3c
     Op52_WriteBytes wC680, $00, $20, $00               ;; 2f:6869 $52 $80 $c6 $00 $20 $00
-    Op38_Unknown $75, $60, $7b, $00, $d8, $05, $10     ;; 2f:686f $38 $75 $60 $7b $00 $d8 $05 $10
-    Op38_Unknown $06, $42, $7e, $00, $d8, $07, $10     ;; 2f:6877 $38 $06 $42 $7e $00 $d8 $07 $10
+    Op38_Graphics data_7b_6075, w5_D800, $10           ;; 2f:686f $38 $75 $60 $7b $00 $d8 $05 $10
+    Op38_Graphics data_7e_4206, w7_D800, $10           ;; 2f:6877 $38 $06 $42 $7e $00 $d8 $07 $10
     Op7E_Unknown $00, $d8, $05, $00, $98, $00, $40, $02 ;; 2f:687f $7e $00 $d8 $05 $00 $98 $00 $40 $02
     Op7E_Unknown $00, $d8, $07, $00, $98, $01, $40, $02 ;; 2f:6888 $7e $00 $d8 $07 $00 $98 $01 $40 $02
     Op4C_Unknown $10, $01, $04, $18, $00, $30, $00, data_17_6a33 ;; 2f:6891 $4c $10 $01 $04 $18 $00 $30 $00 $33 $6a $17
@@ -2002,7 +2002,7 @@ call_2f_681e:
 
 call_2f_68c8:
     Op84_WriteByteNTimes w5_D800, 5, 1024, $01         ;; 2f:68c8 $84 $00 $d8 $05 $00 $04 $01
-    Op38_Unknown $47, $7f, $5d, $ee, $d9, $05, $04     ;; 2f:68cf $38 $47 $7f $5d $ee $d9 $05 $04
+    Op38_Graphics data_5d_7f47, w5_D9EE, $04           ;; 2f:68cf $38 $47 $7f $5d $ee $d9 $05 $04
     Op74_PrepTableJumpIndex_Copy wC755                 ;; 2f:68d7 $74 $55 $c7
     Op1C_TableJump 4                                   ;; 2f:68da $1c $04
     SCRIPT_POINTER call_2f_6933                        ;; 2f:68dc $33 $69 $2f
@@ -2039,158 +2039,158 @@ call_2f_6920:
     SCRIPT_RETURN_20                                   ;; 2f:6932 $20
 
 call_2f_6933:
-    Op38_Unknown $b9, $7d, $5d, $8b, $d8, $05, $08     ;; 2f:6933 $38 $b9 $7d $5d $8b $d8 $05 $08
-    Op38_Unknown $ca, $7f, $5d, $8b, $d8, $07, $08     ;; 2f:693b $38 $ca $7f $5d $8b $d8 $07 $08
-    Op38_Unknown $9e, $7c, $5d, $62, $d9, $05, $0c     ;; 2f:6943 $38 $9e $7c $5d $62 $d9 $05 $0c
-    Op38_Unknown $c4, $7f, $5d, $62, $d9, $07, $0c     ;; 2f:694b $38 $c4 $7f $5d $62 $d9 $07 $0c
+    Op38_Graphics data_5d_7db9, w5_D88B, $08           ;; 2f:6933 $38 $b9 $7d $5d $8b $d8 $05 $08
+    Op38_Graphics data_5d_7fca, w7_D88B, $08           ;; 2f:693b $38 $ca $7f $5d $8b $d8 $07 $08
+    Op38_Graphics data_5d_7c9e, w5_D962, $0c           ;; 2f:6943 $38 $9e $7c $5d $62 $d9 $05 $0c
+    Op38_Graphics data_5d_7fc4, w7_D962, $0c           ;; 2f:694b $38 $c4 $7f $5d $62 $d9 $07 $0c
     Op18_Jump call_2f_68eb                             ;; 2f:6953 $18 $eb $68 $2f
 
 call_2f_6957:
-    Op38_Unknown $b9, $7d, $5d, $b5, $d9, $05, $08     ;; 2f:6957 $38 $b9 $7d $5d $b5 $d9 $05 $08
-    Op38_Unknown $ca, $7f, $5d, $b5, $d9, $07, $08     ;; 2f:695f $38 $ca $7f $5d $b5 $d9 $07 $08
-    Op38_Unknown $9e, $7c, $5d, $8b, $da, $05, $0c     ;; 2f:6967 $38 $9e $7c $5d $8b $da $05 $0c
-    Op38_Unknown $c4, $7f, $5d, $8b, $da, $07, $0c     ;; 2f:696f $38 $c4 $7f $5d $8b $da $07 $0c
+    Op38_Graphics data_5d_7db9, w5_D9B5, $08           ;; 2f:6957 $38 $b9 $7d $5d $b5 $d9 $05 $08
+    Op38_Graphics data_5d_7fca, w7_D9B5, $08           ;; 2f:695f $38 $ca $7f $5d $b5 $d9 $07 $08
+    Op38_Graphics data_5d_7c9e, w5_DA8B, $0c           ;; 2f:6967 $38 $9e $7c $5d $8b $da $05 $0c
+    Op38_Graphics data_5d_7fc4, w7_DA8B, $0c           ;; 2f:696f $38 $c4 $7f $5d $8b $da $07 $0c
     Op18_Jump call_2f_68eb                             ;; 2f:6977 $18 $eb $68 $2f
 
 call_2f_697b:
-    Op38_Unknown $b9, $7d, $5d, $8d, $d8, $05, $08     ;; 2f:697b $38 $b9 $7d $5d $8d $d8 $05 $08
-    Op38_Unknown $ca, $7f, $5d, $8d, $d8, $07, $08     ;; 2f:6983 $38 $ca $7f $5d $8d $d8 $07 $08
-    Op38_Unknown $9e, $7c, $5d, $72, $d9, $05, $0c     ;; 2f:698b $38 $9e $7c $5d $72 $d9 $05 $0c
-    Op38_Unknown $c4, $7f, $5d, $72, $d9, $07, $0c     ;; 2f:6993 $38 $c4 $7f $5d $72 $d9 $07 $0c
+    Op38_Graphics data_5d_7db9, w5_D88D, $08           ;; 2f:697b $38 $b9 $7d $5d $8d $d8 $05 $08
+    Op38_Graphics data_5d_7fca, w7_D88D, $08           ;; 2f:6983 $38 $ca $7f $5d $8d $d8 $07 $08
+    Op38_Graphics data_5d_7c9e, w5_D972, $0c           ;; 2f:698b $38 $9e $7c $5d $72 $d9 $05 $0c
+    Op38_Graphics data_5d_7fc4, w7_D972, $0c           ;; 2f:6993 $38 $c4 $7f $5d $72 $d9 $07 $0c
     Op18_Jump call_2f_68eb                             ;; 2f:699b $18 $eb $68 $2f
 
 call_2f_699f:
-    Op38_Unknown $b9, $7d, $5d, $a3, $d9, $05, $08     ;; 2f:699f $38 $b9 $7d $5d $a3 $d9 $05 $08
-    Op38_Unknown $ca, $7f, $5d, $a3, $d9, $07, $08     ;; 2f:69a7 $38 $ca $7f $5d $a3 $d9 $07 $08
-    Op38_Unknown $9e, $7c, $5d, $89, $da, $05, $0c     ;; 2f:69af $38 $9e $7c $5d $89 $da $05 $0c
-    Op38_Unknown $c4, $7f, $5d, $89, $da, $07, $0c     ;; 2f:69b7 $38 $c4 $7f $5d $89 $da $07 $0c
+    Op38_Graphics data_5d_7db9, w5_D9A3, $08           ;; 2f:699f $38 $b9 $7d $5d $a3 $d9 $05 $08
+    Op38_Graphics data_5d_7fca, w7_D9A3, $08           ;; 2f:69a7 $38 $ca $7f $5d $a3 $d9 $07 $08
+    Op38_Graphics data_5d_7c9e, w5_DA89, $0c           ;; 2f:69af $38 $9e $7c $5d $89 $da $05 $0c
+    Op38_Graphics data_5d_7fc4, w7_DA89, $0c           ;; 2f:69b7 $38 $c4 $7f $5d $89 $da $07 $0c
     Op18_Jump call_2f_68eb                             ;; 2f:69bf $18 $eb $68 $2f
-    Op38_Unknown $b9, $7d, $5d, $cc, $d8, $05, $08     ;; 2f:69c3 $38 $b9 $7d $5d $cc $d8 $05 $08
-    Op38_Unknown $ca, $7f, $5d, $cc, $d8, $07, $08     ;; 2f:69cb $38 $ca $7f $5d $cc $d8 $07 $08
+    Op38_Graphics data_5d_7db9, w5_D8CC, $08           ;; 2f:69c3 $38 $b9 $7d $5d $cc $d8 $05 $08
+    Op38_Graphics data_5d_7fca, w7_D8CC, $08           ;; 2f:69cb $38 $ca $7f $5d $cc $d8 $07 $08
     Op18_Jump call_2f_68eb                             ;; 2f:69d3 $18 $eb $68 $2f
 
 call_2f_69d7:
     Op32_Graphics data_5d_6b12, w5_D4C0                ;; 2f:69d7 $32 $12 $6b $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $76, $d8, $05, $06     ;; 2f:69de $38 $6f $7d $5d $76 $d8 $05 $06
-    Op38_Unknown $ee, $7f, $5d, $76, $d8, $07, $06     ;; 2f:69e6 $38 $ee $7f $5d $76 $d8 $07 $06
+    Op38_Graphics data_5d_7d6f, w5_D876, $06           ;; 2f:69de $38 $6f $7d $5d $76 $d8 $05 $06
+    Op38_Graphics data_5d_7fee, w7_D876, $06           ;; 2f:69e6 $38 $ee $7f $5d $76 $d8 $07 $06
     Op4C_Unknown $1c, $01, $04, $c8, $00, $30, $00, data_1a_7a3d ;; 2f:69ee $4c $1c $01 $04 $c8 $00 $30 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $49, $7b, $1a      ;; 2f:69f9 $4e $06 $00 $49 $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:69ff $18 $20 $69 $2f
 
 call_2f_6a03:
     Op32_Graphics data_5d_6cd9, w5_D4C0                ;; 2f:6a03 $32 $d9 $6c $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $64, $d8, $05, $06     ;; 2f:6a0a $38 $6f $7d $5d $64 $d8 $05 $06
-    Op38_Unknown $f3, $7d, $5d, $64, $d8, $07, $06     ;; 2f:6a12 $38 $f3 $7d $5d $64 $d8 $07 $06
+    Op38_Graphics data_5d_7d6f, w5_D864, $06           ;; 2f:6a0a $38 $6f $7d $5d $64 $d8 $05 $06
+    Op38_Graphics data_5d_7df3, w7_D864, $06           ;; 2f:6a12 $38 $f3 $7d $5d $64 $d8 $07 $06
     Op4C_Unknown $1c, $01, $04, $38, $00, $30, $00, data_1a_7a3d ;; 2f:6a1a $4c $1c $01 $04 $38 $00 $30 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $5b, $7b, $1a      ;; 2f:6a25 $4e $06 $00 $5b $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6a2b $18 $20 $69 $2f
 
 call_2f_6a2f:
     Op32_Graphics data_5d_5fce, w5_D4C0                ;; 2f:6a2f $32 $ce $5f $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $97, $da, $05, $06     ;; 2f:6a36 $38 $6f $7d $5d $97 $da $05 $06
-    Op38_Unknown $ab, $7f, $5d, $97, $da, $07, $06     ;; 2f:6a3e $38 $ab $7f $5d $97 $da $07 $06
+    Op38_Graphics data_5d_7d6f, w5_DA97, $06           ;; 2f:6a36 $38 $6f $7d $5d $97 $da $05 $06
+    Op38_Graphics data_5d_7fab, w7_DA97, $06           ;; 2f:6a3e $38 $ab $7f $5d $97 $da $07 $06
     Op4C_Unknown $1c, $01, $04, $d0, $00, $b8, $00, data_1a_7a3d ;; 2f:6a46 $4c $1c $01 $04 $d0 $00 $b8 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $6d, $7b, $1a      ;; 2f:6a51 $4e $06 $00 $6d $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6a57 $18 $20 $69 $2f
 
 call_2f_6a5b:
     Op32_Graphics data_5d_61be, w5_D4C0                ;; 2f:6a5b $32 $be $61 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $83, $da, $05, $06     ;; 2f:6a62 $38 $6f $7d $5d $83 $da $05 $06
-    Op38_Unknown $ce, $7e, $5d, $83, $da, $07, $06     ;; 2f:6a6a $38 $ce $7e $5d $83 $da $07 $06
+    Op38_Graphics data_5d_7d6f, w5_DA83, $06           ;; 2f:6a62 $38 $6f $7d $5d $83 $da $05 $06
+    Op38_Graphics data_5d_7ece, w7_DA83, $06           ;; 2f:6a6a $38 $ce $7e $5d $83 $da $07 $06
     Op4C_Unknown $1c, $01, $04, $30, $00, $b8, $00, data_1a_7a3d ;; 2f:6a72 $4c $1c $01 $04 $30 $00 $b8 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $7f, $7b, $1a      ;; 2f:6a7d $4e $06 $00 $7f $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6a83 $18 $20 $69 $2f
 
 call_2f_6a87:
     Op32_Graphics data_5d_63ab, w5_D4C0                ;; 2f:6a87 $32 $ab $63 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $97, $da, $05, $06     ;; 2f:6a8e $38 $6f $7d $5d $97 $da $05 $06
-    Op38_Unknown $28, $7f, $5d, $97, $da, $07, $06     ;; 2f:6a96 $38 $28 $7f $5d $97 $da $07 $06
+    Op38_Graphics data_5d_7d6f, w5_DA97, $06           ;; 2f:6a8e $38 $6f $7d $5d $97 $da $05 $06
+    Op38_Graphics data_5d_7f28, w7_DA97, $06           ;; 2f:6a96 $38 $28 $7f $5d $97 $da $07 $06
     Op4C_Unknown $1c, $01, $04, $d0, $00, $b8, $00, data_1a_7a3d ;; 2f:6a9e $4c $1c $01 $04 $d0 $00 $b8 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $91, $7b, $1a      ;; 2f:6aa9 $4e $06 $00 $91 $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6aaf $18 $20 $69 $2f
 
 call_2f_6ab3:
     Op32_Graphics data_5d_694a, w5_D4C0                ;; 2f:6ab3 $32 $4a $69 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $83, $da, $05, $06     ;; 2f:6aba $38 $6f $7d $5d $83 $da $05 $06
-    Op38_Unknown $e8, $7f, $5d, $83, $da, $07, $06     ;; 2f:6ac2 $38 $e8 $7f $5d $83 $da $07 $06
+    Op38_Graphics data_5d_7d6f, w5_DA83, $06           ;; 2f:6aba $38 $6f $7d $5d $83 $da $05 $06
+    Op38_Graphics data_5d_7fe8, w7_DA83, $06           ;; 2f:6ac2 $38 $e8 $7f $5d $83 $da $07 $06
     Op4C_Unknown $1c, $01, $04, $30, $00, $b8, $00, data_1a_7a3d ;; 2f:6aca $4c $1c $01 $04 $30 $00 $b8 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $a3, $7b, $1a      ;; 2f:6ad5 $4e $06 $00 $a3 $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6adb $18 $20 $69 $2f
 
 call_2f_6adf:
     Op32_Graphics data_5d_59ce, w5_D4C0                ;; 2f:6adf $32 $ce $59 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $76, $d8, $05, $06     ;; 2f:6ae6 $38 $6f $7d $5d $76 $d8 $05 $06
-    Op38_Unknown $1d, $7f, $5d, $76, $d8, $07, $06     ;; 2f:6aee $38 $1d $7f $5d $76 $d8 $07 $06
+    Op38_Graphics data_5d_7d6f, w5_D876, $06           ;; 2f:6ae6 $38 $6f $7d $5d $76 $d8 $05 $06
+    Op38_Graphics data_5d_7f1d, w7_D876, $06           ;; 2f:6aee $38 $1d $7f $5d $76 $d8 $07 $06
     Op4C_Unknown $1c, $01, $04, $c8, $00, $30, $00, data_1a_7a3d ;; 2f:6af6 $4c $1c $01 $04 $c8 $00 $30 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $b5, $7b, $1a      ;; 2f:6b01 $4e $06 $00 $b5 $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6b07 $18 $20 $69 $2f
 
 call_2f_6b0b:
     Op32_Graphics data_5d_5bd0, w5_D4C0                ;; 2f:6b0b $32 $d0 $5b $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $97, $da, $05, $06     ;; 2f:6b12 $38 $6f $7d $5d $97 $da $05 $06
-    Op38_Unknown $79, $7f, $5d, $97, $da, $07, $06     ;; 2f:6b1a $38 $79 $7f $5d $97 $da $07 $06
+    Op38_Graphics data_5d_7d6f, w5_DA97, $06           ;; 2f:6b12 $38 $6f $7d $5d $97 $da $05 $06
+    Op38_Graphics data_5d_7f79, w7_DA97, $06           ;; 2f:6b1a $38 $79 $7f $5d $97 $da $07 $06
     Op4C_Unknown $1c, $01, $04, $d0, $00, $b8, $00, data_1a_7a3d ;; 2f:6b22 $4c $1c $01 $04 $d0 $00 $b8 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $c7, $7b, $1a      ;; 2f:6b2d $4e $06 $00 $c7 $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6b33 $18 $20 $69 $2f
 
 call_2f_6b37:
     Op32_Graphics data_5d_6596, w5_D4C0                ;; 2f:6b37 $32 $96 $65 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $64, $d8, $05, $06     ;; 2f:6b3e $38 $6f $7d $5d $64 $d8 $05 $06
-    Op38_Unknown $e2, $7f, $5d, $64, $d8, $07, $06     ;; 2f:6b46 $38 $e2 $7f $5d $64 $d8 $07 $06
+    Op38_Graphics data_5d_7d6f, w5_D864, $06           ;; 2f:6b3e $38 $6f $7d $5d $64 $d8 $05 $06
+    Op38_Graphics data_5d_7fe2, w7_D864, $06           ;; 2f:6b46 $38 $e2 $7f $5d $64 $d8 $07 $06
     Op4C_Unknown $1c, $01, $04, $38, $00, $30, $00, data_1a_7a3d ;; 2f:6b4e $4c $1c $01 $04 $38 $00 $30 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $d9, $7b, $1a      ;; 2f:6b59 $4e $06 $00 $d9 $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6b5f $18 $20 $69 $2f
 
 call_2f_6b63:
     Op32_Graphics data_5d_5dd0, w5_D4C0                ;; 2f:6b63 $32 $d0 $5d $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $76, $d8, $05, $06     ;; 2f:6b6a $38 $6f $7d $5d $76 $d8 $05 $06
-    Op38_Unknown $dc, $7f, $5d, $76, $d8, $07, $06     ;; 2f:6b72 $38 $dc $7f $5d $76 $d8 $07 $06
+    Op38_Graphics data_5d_7d6f, w5_D876, $06           ;; 2f:6b6a $38 $6f $7d $5d $76 $d8 $05 $06
+    Op38_Graphics data_5d_7fdc, w7_D876, $06           ;; 2f:6b72 $38 $dc $7f $5d $76 $d8 $07 $06
     Op4C_Unknown $1c, $01, $04, $c8, $00, $30, $00, data_1a_7a3d ;; 2f:6b7a $4c $1c $01 $04 $c8 $00 $30 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $eb, $7b, $1a      ;; 2f:6b85 $4e $06 $00 $eb $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6b8b $18 $20 $69 $2f
 
 call_2f_6b8f:
     Op32_Graphics data_5d_677b, w5_D4C0                ;; 2f:6b8f $32 $7b $67 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $97, $da, $05, $06     ;; 2f:6b96 $38 $6f $7d $5d $97 $da $05 $06
-    Op38_Unknown $bd, $7e, $5d, $97, $da, $07, $06     ;; 2f:6b9e $38 $bd $7e $5d $97 $da $07 $06
+    Op38_Graphics data_5d_7d6f, w5_DA97, $06           ;; 2f:6b96 $38 $6f $7d $5d $97 $da $05 $06
+    Op38_Graphics data_5d_7ebd, w7_DA97, $06           ;; 2f:6b9e $38 $bd $7e $5d $97 $da $07 $06
     Op4C_Unknown $1c, $01, $04, $d0, $00, $b8, $00, data_1a_7a3d ;; 2f:6ba6 $4c $1c $01 $04 $d0 $00 $b8 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $fd, $7b, $1a      ;; 2f:6bb1 $4e $06 $00 $fd $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6bb7 $18 $20 $69 $2f
 
 call_2f_6bbb:
     Op32_Graphics data_5d_55c9, w5_D4C0                ;; 2f:6bbb $32 $c9 $55 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $64, $d8, $05, $06     ;; 2f:6bc2 $38 $6f $7d $5d $64 $d8 $05 $06
-    Op38_Unknown $d6, $7f, $5d, $64, $d8, $07, $06     ;; 2f:6bca $38 $d6 $7f $5d $64 $d8 $07 $06
+    Op38_Graphics data_5d_7d6f, w5_D864, $06           ;; 2f:6bc2 $38 $6f $7d $5d $64 $d8 $05 $06
+    Op38_Graphics data_5d_7fd6, w7_D864, $06           ;; 2f:6bca $38 $d6 $7f $5d $64 $d8 $07 $06
     Op4C_Unknown $1c, $01, $04, $38, $00, $30, $00, data_1a_7a3d ;; 2f:6bd2 $4c $1c $01 $04 $38 $00 $30 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $0f, $7c, $1a      ;; 2f:6bdd $4e $06 $00 $0f $7c $1a
     Op18_Jump call_2f_6920                             ;; 2f:6be3 $18 $20 $69 $2f
 
 call_2f_6be7:
     Op32_Graphics data_5d_57cc, w5_D4C0                ;; 2f:6be7 $32 $cc $57 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $83, $da, $05, $06     ;; 2f:6bee $38 $6f $7d $5d $83 $da $05 $06
-    Op38_Unknown $d0, $7f, $5d, $83, $da, $07, $06     ;; 2f:6bf6 $38 $d0 $7f $5d $83 $da $07 $06
+    Op38_Graphics data_5d_7d6f, w5_DA83, $06           ;; 2f:6bee $38 $6f $7d $5d $83 $da $05 $06
+    Op38_Graphics data_5d_7fd0, w7_DA83, $06           ;; 2f:6bf6 $38 $d0 $7f $5d $83 $da $07 $06
     Op4C_Unknown $1c, $01, $04, $30, $00, $b8, $00, data_1a_7a3d ;; 2f:6bfe $4c $1c $01 $04 $30 $00 $b8 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $21, $7c, $1a      ;; 2f:6c09 $4e $06 $00 $21 $7c $1a
     Op18_Jump call_2f_6920                             ;; 2f:6c0f $18 $20 $69 $2f
 
 call_2f_6c13:
     Op32_Graphics data_5d_53be, w5_D4C0                ;; 2f:6c13 $32 $be $53 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $76, $d8, $05, $06     ;; 2f:6c1a $38 $6f $7d $5d $76 $d8 $05 $06
-    Op38_Unknown $ac, $7e, $5d, $76, $d8, $07, $06     ;; 2f:6c22 $38 $ac $7e $5d $76 $d8 $07 $06
+    Op38_Graphics data_5d_7d6f, w5_D876, $06           ;; 2f:6c1a $38 $6f $7d $5d $76 $d8 $05 $06
+    Op38_Graphics data_5d_7eac, w7_D876, $06           ;; 2f:6c22 $38 $ac $7e $5d $76 $d8 $07 $06
     Op4C_Unknown $1c, $01, $04, $c8, $00, $30, $00, data_1a_7a3d ;; 2f:6c2a $4c $1c $01 $04 $c8 $00 $30 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $33, $7c, $1a      ;; 2f:6c35 $4e $06 $00 $33 $7c $1a
     Op18_Jump call_2f_6920                             ;; 2f:6c3b $18 $20 $69 $2f
 
 call_2f_6c3f:
     Op32_Graphics data_5d_694a, w5_D4C0                ;; 2f:6c3f $32 $4a $69 $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $64, $d8, $05, $06     ;; 2f:6c46 $38 $6f $7d $5d $64 $d8 $05 $06
-    Op38_Unknown $e8, $7f, $5d, $64, $d8, $07, $06     ;; 2f:6c4e $38 $e8 $7f $5d $64 $d8 $07 $06
+    Op38_Graphics data_5d_7d6f, w5_D864, $06           ;; 2f:6c46 $38 $6f $7d $5d $64 $d8 $05 $06
+    Op38_Graphics data_5d_7fe8, w7_D864, $06           ;; 2f:6c4e $38 $e8 $7f $5d $64 $d8 $07 $06
     Op4C_Unknown $1c, $01, $04, $38, $00, $30, $00, data_1a_7a3d ;; 2f:6c56 $4c $1c $01 $04 $38 $00 $30 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $a3, $7b, $1a      ;; 2f:6c61 $4e $06 $00 $a3 $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6c67 $18 $20 $69 $2f
     Op32_Graphics data_5d_5dd0, w5_D4C0                ;; 2f:6c6b $32 $d0 $5d $5d $c0 $d4 $05
-    Op38_Unknown $6f, $7d, $5d, $83, $da, $05, $06     ;; 2f:6c72 $38 $6f $7d $5d $83 $da $05 $06
-    Op38_Unknown $dc, $7f, $5d, $83, $da, $07, $06     ;; 2f:6c7a $38 $dc $7f $5d $83 $da $07 $06
+    Op38_Graphics data_5d_7d6f, w5_DA83, $06           ;; 2f:6c72 $38 $6f $7d $5d $83 $da $05 $06
+    Op38_Graphics data_5d_7fdc, w7_DA83, $06           ;; 2f:6c7a $38 $dc $7f $5d $83 $da $07 $06
     Op4C_Unknown $1c, $01, $04, $30, $00, $b8, $00, data_1a_7a3d ;; 2f:6c82 $4c $1c $01 $04 $30 $00 $b8 $00 $3d $7a $1a
     Op4E_Unknown_StoreValue 6, $00, $d9, $7b, $1a      ;; 2f:6c8d $4e $06 $00 $d9 $7b $1a
     Op18_Jump call_2f_6920                             ;; 2f:6c93 $18 $20 $69 $2f

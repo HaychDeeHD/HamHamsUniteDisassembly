@@ -109,15 +109,13 @@ db BANK(\1)
 dw \2
 db BANK(\2)
 ENDM
-MACRO Op38_Unknown
+MACRO Op38_Graphics
 db $38
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
-db \<6>
-db \<7>
+dw \1
+db BANK(\1)
+dw \2
+db BANK(\2)
+db \3
 ENDM
 MACRO Op3A_Unknown
 db $3a
