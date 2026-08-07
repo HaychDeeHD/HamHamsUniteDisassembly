@@ -172,7 +172,7 @@ I have not observed this being used in any scripts.
 <a id="op14"></a>
 ### Op14 
 
-First arg is a count. This count determines the number of script pointers that will following (and possibly something about the data pointed to).
+First arg is a count. This count determines the number of script pointers that will follow (and possibly something about the data pointed to).
 
 The second arg is a 2 byte Rom address for Bank05, which holds all the HamChatWheel data. I have not yet determined the structure of this data.
 
