@@ -1896,7 +1896,7 @@ call_30_67f4:
     Op4E_Unknown_StoreValue 5, $01, $8d, $6a, $1b      ;; 30:6801 $4e $05 $01 $8d $6a $1b
     Op44_Unknown $08, $00                              ;; 30:6807 $44 $08 $00
     Op4C_Unknown $38, $00, $00, $00, $00, $00, $00, zero_pointer ;; 30:680a $4c $38 $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op42_Unknown_StoreValue 4, $01, $1d, $68, $1b      ;; 30:6815 $42 $04 $01 $1d $68 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_681d       ;; 30:6815 $42 $04 $01 $1d $68 $1b
     Op4E_Unknown_StoreValue 4, $01, $2c, $6a, $1b      ;; 30:681b $4e $04 $01 $2c $6a $1b
     Op4E_Unknown_StoreValue 5, $01, $50, $6a, $1b      ;; 30:6821 $4e $05 $01 $50 $6a $1b
     Op44_Unknown $08, $00                              ;; 30:6827 $44 $08 $00
@@ -1911,7 +1911,7 @@ call_30_683a:
     Op4E_Unknown_StoreValue 4, $01, $74, $6a, $1b      ;; 30:683a $4e $04 $01 $74 $6a $1b
     Op4E_Unknown_StoreValue 5, $01, $8d, $6a, $1b      ;; 30:6840 $4e $05 $01 $8d $6a $1b
     Op44_Unknown $08, $00                              ;; 30:6846 $44 $08 $00
-    Op42_Unknown_StoreValue 4, $01, $44, $68, $1b      ;; 30:6849 $42 $04 $01 $44 $68 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_6844       ;; 30:6849 $42 $04 $01 $44 $68 $1b
     Op4C_Unknown $38, $01, $04, $48, $00, $30, $00, data_1b_686b ;; 30:684f $4c $38 $01 $04 $48 $00 $30 $00 $6b $68 $1b
     Op4E_Unknown_StoreValue 4, $01, $2c, $6a, $1b      ;; 30:685a $4e $04 $01 $2c $6a $1b
     Op4E_Unknown_StoreValue 5, $01, $62, $6a, $1b      ;; 30:6860 $4e $05 $01 $62 $6a $1b

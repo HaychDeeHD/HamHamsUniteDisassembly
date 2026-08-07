@@ -2629,42 +2629,42 @@ call_29_7ac3:
     SCRIPT_RETURN_20                                   ;; 29:7ad1 $20
 
 call_29_7ad2:
-    Op42_Unknown_StoreValue 4, $01, $57, $63, $18      ;; 29:7ad2 $42 $04 $01 $57 $63 $18
-    Op42_Unknown_StoreValue 5, $01, $75, $63, $18      ;; 29:7ad8 $42 $05 $01 $75 $63 $18
+    Op42_Unknown_StoreValue 4, $01, data_18_6357       ;; 29:7ad2 $42 $04 $01 $57 $63 $18
+    Op42_Unknown_StoreValue 5, $01, data_18_6375       ;; 29:7ad8 $42 $05 $01 $75 $63 $18
     Op68_CopyBytes 1, wC832, w3_D6E6, $03              ;; 29:7ade $68 $01 $32 $c8 $e6 $d6 $03
     Op14_Unknown 1, data_05_4db6                       ;; 29:7ae5 $14 $01 $b6 $4d
     SCRIPT_POINTER call_29_7af3                        ;; 29:7ae9 $f3 $7a $29
-    Op42_Unknown_StoreValue 3, $01, $93, $63, $18      ;; 29:7aec $42 $03 $01 $93 $63 $18
+    Op42_Unknown_StoreValue 3, $01, data_18_6393       ;; 29:7aec $42 $03 $01 $93 $63 $18
     SCRIPT_RETURN_20                                   ;; 29:7af2 $20
 
 call_29_7af3:
-    Op42_Unknown_StoreValue 3, $01, $39, $63, $18      ;; 29:7af3 $42 $03 $01 $39 $63 $18
+    Op42_Unknown_StoreValue 3, $01, data_18_6339       ;; 29:7af3 $42 $03 $01 $39 $63 $18
     SCRIPT_RETURN_20                                   ;; 29:7af9 $20
 
 call_29_7afa:
-    Op42_Unknown_StoreValue 3, $01, $39, $63, $18      ;; 29:7afa $42 $03 $01 $39 $63 $18
-    Op42_Unknown_StoreValue 5, $01, $75, $63, $18      ;; 29:7b00 $42 $05 $01 $75 $63 $18
+    Op42_Unknown_StoreValue 3, $01, data_18_6339       ;; 29:7afa $42 $03 $01 $39 $63 $18
+    Op42_Unknown_StoreValue 5, $01, data_18_6375       ;; 29:7b00 $42 $05 $01 $75 $63 $18
     Op68_CopyBytes 1, wC832, w3_D707, $03              ;; 29:7b06 $68 $01 $32 $c8 $07 $d7 $03
     Op14_Unknown 1, data_05_4db6                       ;; 29:7b0d $14 $01 $b6 $4d
     SCRIPT_POINTER call_29_7b1b                        ;; 29:7b11 $1b $7b $29
-    Op42_Unknown_StoreValue 4, $01, $b1, $63, $18      ;; 29:7b14 $42 $04 $01 $b1 $63 $18
+    Op42_Unknown_StoreValue 4, $01, data_18_63b1       ;; 29:7b14 $42 $04 $01 $b1 $63 $18
     SCRIPT_RETURN_20                                   ;; 29:7b1a $20
 
 call_29_7b1b:
-    Op42_Unknown_StoreValue 4, $01, $57, $63, $18      ;; 29:7b1b $42 $04 $01 $57 $63 $18
+    Op42_Unknown_StoreValue 4, $01, data_18_6357       ;; 29:7b1b $42 $04 $01 $57 $63 $18
     SCRIPT_RETURN_20                                   ;; 29:7b21 $20
 
 call_29_7b22:
-    Op42_Unknown_StoreValue 3, $01, $39, $63, $18      ;; 29:7b22 $42 $03 $01 $39 $63 $18
-    Op42_Unknown_StoreValue 4, $01, $57, $63, $18      ;; 29:7b28 $42 $04 $01 $57 $63 $18
+    Op42_Unknown_StoreValue 3, $01, data_18_6339       ;; 29:7b22 $42 $03 $01 $39 $63 $18
+    Op42_Unknown_StoreValue 4, $01, data_18_6357       ;; 29:7b28 $42 $04 $01 $57 $63 $18
     Op68_CopyBytes 1, wC832, w3_D728, $03              ;; 29:7b2e $68 $01 $32 $c8 $28 $d7 $03
     Op14_Unknown 1, data_05_4db6                       ;; 29:7b35 $14 $01 $b6 $4d
     SCRIPT_POINTER call_29_7b43                        ;; 29:7b39 $43 $7b $29
-    Op42_Unknown_StoreValue 5, $01, $cf, $63, $18      ;; 29:7b3c $42 $05 $01 $cf $63 $18
+    Op42_Unknown_StoreValue 5, $01, data_18_63cf       ;; 29:7b3c $42 $05 $01 $cf $63 $18
     SCRIPT_RETURN_20                                   ;; 29:7b42 $20
 
 call_29_7b43:
-    Op42_Unknown_StoreValue 5, $01, $75, $63, $18      ;; 29:7b43 $42 $05 $01 $75 $63 $18
+    Op42_Unknown_StoreValue 5, $01, data_18_6375       ;; 29:7b43 $42 $05 $01 $75 $63 $18
     SCRIPT_RETURN_20                                   ;; 29:7b49 $20
 
 call_29_7b4a:
@@ -2676,15 +2676,15 @@ call_29_7b4a:
     SCRIPT_RETURN_20                                   ;; 29:7b58 $20
 
 call_29_7b59:
-    Op42_Unknown_StoreValue 3, $01, $ed, $63, $18      ;; 29:7b59 $42 $03 $01 $ed $63 $18
+    Op42_Unknown_StoreValue 3, $01, data_18_63ed       ;; 29:7b59 $42 $03 $01 $ed $63 $18
     SCRIPT_RETURN_20                                   ;; 29:7b5f $20
 
 call_29_7b60:
-    Op42_Unknown_StoreValue 4, $01, $4d, $64, $18      ;; 29:7b60 $42 $04 $01 $4d $64 $18
+    Op42_Unknown_StoreValue 4, $01, data_18_644d       ;; 29:7b60 $42 $04 $01 $4d $64 $18
     SCRIPT_RETURN_20                                   ;; 29:7b66 $20
 
 call_29_7b67:
-    Op42_Unknown_StoreValue 5, $01, $ad, $64, $18      ;; 29:7b67 $42 $05 $01 $ad $64 $18
+    Op42_Unknown_StoreValue 5, $01, data_18_64ad       ;; 29:7b67 $42 $05 $01 $ad $64 $18
     SCRIPT_RETURN_20                                   ;; 29:7b6d $20
 
 call_29_7b6e:
@@ -2696,15 +2696,15 @@ call_29_7b6e:
     SCRIPT_RETURN_20                                   ;; 29:7b7c $20
 
 call_29_7b7d:
-    Op42_Unknown_StoreValue 6, $01, $1d, $64, $18      ;; 29:7b7d $42 $06 $01 $1d $64 $18
+    Op42_Unknown_StoreValue 6, $01, data_18_641d       ;; 29:7b7d $42 $06 $01 $1d $64 $18
     SCRIPT_RETURN_20                                   ;; 29:7b83 $20
 
 call_29_7b84:
-    Op42_Unknown_StoreValue 7, $01, $7d, $64, $18      ;; 29:7b84 $42 $07 $01 $7d $64 $18
+    Op42_Unknown_StoreValue 7, $01, data_18_647d       ;; 29:7b84 $42 $07 $01 $7d $64 $18
     SCRIPT_RETURN_20                                   ;; 29:7b8a $20
 
 call_29_7b8b:
-    Op42_Unknown_StoreValue 8, $01, $dd, $64, $18      ;; 29:7b8b $42 $08 $01 $dd $64 $18
+    Op42_Unknown_StoreValue 8, $01, data_18_64dd       ;; 29:7b8b $42 $08 $01 $dd $64 $18
     SCRIPT_RETURN_20                                   ;; 29:7b91 $20
 
 call_29_7b92:

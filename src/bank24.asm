@@ -339,7 +339,7 @@ call_24_4450:
     SCRIPT_POINTER call_24_4464                        ;; 24:4454 $64 $44 $24
     Op16_SubOps 1                                      ;; 24:4457 $16 $01
     SubOp_SetFlag wC948, 6                             ;; 24:4459 $3f $86
-    Op42_Unknown_StoreValue 8, $01, $7e, $7e, $10      ;; 24:445b $42 $08 $01 $7e $7e $10
+    Op42_Unknown_StoreValue 8, $01, data_10_7e7e       ;; 24:445b $42 $08 $01 $7e $7e $10
     Op44_Unknown $0e, $00                              ;; 24:4461 $44 $0e $00
 
 call_24_4464:
@@ -964,7 +964,7 @@ call_24_4b8a:
     Op04_Unknown_Text data_39_682f                     ;; 24:4bc8 $04 $2f $68 $39
     Op1E_Call call_04_615d                             ;; 24:4bcc $1e $5d $61 $04
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_14_4cab ;; 24:4bd0 $4c $1a $01 $04 $00 $00 $00 $00 $ab $4c $14
-    Op42_Unknown_StoreValue 4, $01, $c8, $7f, $10      ;; 24:4bdb $42 $04 $01 $c8 $7f $10
+    Op42_Unknown_StoreValue 4, $01, data_10_7fc8       ;; 24:4bdb $42 $04 $01 $c8 $7f $10
     Op44_Unknown $10, $00                              ;; 24:4be1 $44 $10 $00
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_10_4235 ;; 24:4be4 $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
 
@@ -972,7 +972,7 @@ call_24_4bef:
     SCRIPT_RETURN_4A                                   ;; 24:4bef $4a
     Op3E_Compare_Branch 26, $ab, $4c, $14, call_24_4bef ;; 24:4bf0 $3e $1a $ab $4c $14 $ef $4b $24
     Op4E_Unknown_StoreValue 4, $01, $73, $40, $10      ;; 24:4bf8 $4e $04 $01 $73 $40 $10
-    Op42_Unknown_StoreValue 3, $00, $00, $40, $10      ;; 24:4bfe $42 $03 $00 $00 $40 $10
+    Op42_Unknown_StoreValue 3, $00, data_10_4000       ;; 24:4bfe $42 $03 $00 $00 $40 $10
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_14_50dc ;; 24:4c04 $4c $1a $01 $04 $00 $00 $00 $00 $dc $50 $14
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_14_521e ;; 24:4c0f $4c $08 $01 $04 $00 $00 $00 $00 $1e $52 $14
 
@@ -1001,7 +1001,7 @@ call_24_4c4a:
     ;;You haven't<E4>checked what's<E4>inside yet?<E0>
     Op06_Unknown_Text data_39_6867                     ;; 24:4c77 $06 $67 $68 $39
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_14_4cab ;; 24:4c7b $4c $1a $01 $04 $00 $00 $00 $00 $ab $4c $14
-    Op42_Unknown_StoreValue 4, $01, $c8, $7f, $10      ;; 24:4c86 $42 $04 $01 $c8 $7f $10
+    Op42_Unknown_StoreValue 4, $01, data_10_7fc8       ;; 24:4c86 $42 $04 $01 $c8 $7f $10
     Op1E_Call call_04_615d                             ;; 24:4c8c $1e $5d $61 $04
     Op44_Unknown $10, $00                              ;; 24:4c90 $44 $10 $00
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_10_4235 ;; 24:4c93 $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
@@ -1027,7 +1027,7 @@ call_24_4cd7:
     ;;It's just a Rock<...><E0>
     Op04_Unknown_Text data_39_688e                     ;; 24:4ce4 $04 $8e $68 $39
     Op1E_Call call_04_615d                             ;; 24:4ce8 $1e $5d $61 $04
-    Op42_Unknown_StoreValue 4, $01, $dd, $7f, $10      ;; 24:4cec $42 $04 $01 $dd $7f $10
+    Op42_Unknown_StoreValue 4, $01, data_10_7fdd       ;; 24:4cec $42 $04 $01 $dd $7f $10
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_14_4de7 ;; 24:4cf2 $4c $1a $01 $04 $00 $00 $00 $00 $e7 $4d $14
 
 call_24_4cfd:
@@ -1400,7 +1400,7 @@ call_24_51bd:
     SCRIPT_POINTER call_24_51e0                        ;; 24:51d0 $e0 $51 $24
     Op16_SubOps 1                                      ;; 24:51d3 $16 $01
     SubOp_ClearFlag wC948, 6                           ;; 24:51d5 $5f $86
-    Op42_Unknown_StoreValue 8, $01, $23, $7f, $10      ;; 24:51d7 $42 $08 $01 $23 $7f $10
+    Op42_Unknown_StoreValue 8, $01, data_10_7f23       ;; 24:51d7 $42 $08 $01 $23 $7f $10
     Op44_Unknown $0e, $00                              ;; 24:51dd $44 $0e $00
 
 call_24_51e0:
@@ -2208,7 +2208,7 @@ call_24_5b30:
     SCRIPT_POINTER call_24_5c68                        ;; 24:5b42 $68 $5c $24
     Op1E_Call call_1d_6acd                             ;; 24:5b45 $1e $cd $6a $1d
     Op4E_Unknown_StoreValue 4, $01, $73, $40, $10      ;; 24:5b49 $4e $04 $01 $73 $40 $10
-    Op42_Unknown_StoreValue 3, $00, $00, $40, $10      ;; 24:5b4f $42 $03 $00 $00 $40 $10
+    Op42_Unknown_StoreValue 3, $00, data_10_4000       ;; 24:5b4f $42 $03 $00 $00 $40 $10
     Op4C_Unknown $16, $10, $04, $00, $00, $00, $00, data_10_5a9b ;; 24:5b55 $4c $16 $10 $04 $00 $00 $00 $00 $9b $5a $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_10_5bee ;; 24:5b60 $4c $08 $01 $04 $00 $00 $00 $00 $ee $5b $10
     ;;<EB><EA>Tack-Q<E8>!<end>

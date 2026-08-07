@@ -2298,7 +2298,7 @@ call_1e_5d94:
     Op1E_Call call_1e_6f59                             ;; 1e:5dd8 $1e $59 $6f $1e
     Op14_Unknown 1, data_05_766e                       ;; 1e:5ddc $14 $01 $6e $76
     SCRIPT_POINTER call_1e_5ded                        ;; 1e:5de0 $ed $5d $1e
-    Op42_Unknown_StoreValue 8, $01, $eb, $4f, $1b      ;; 1e:5de3 $42 $08 $01 $eb $4f $1b
+    Op42_Unknown_StoreValue 8, $01, data_1b_4feb       ;; 1e:5de3 $42 $08 $01 $eb $4f $1b
     Op18_Jump call_1e_5df1                             ;; 1e:5de9 $18 $f1 $5d $1e
 
 call_1e_5ded:
@@ -2325,13 +2325,13 @@ call_1e_5e12:
     SCRIPT_POINTER call_1e_5e7a                        ;; 1e:5e2f $7a $5e $1e
 
 call_1e_5e32:
-    Op42_Unknown_StoreValue 8, $00, $00, $00, $00      ;; 1e:5e32 $42 $08 $00 $00 $00 $00
+    Op42_Unknown_StoreValue 8, $00, zero_pointer       ;; 1e:5e32 $42 $08 $00 $00 $00 $00
     Op4C_Unknown $1a, $01, $04, $4c, $00, $70, $00, data_15_4206 ;; 1e:5e38 $4c $1a $01 $04 $4c $00 $70 $00 $06 $42 $15
     Op4C_Unknown $10, $01, $04, $00, $00, $00, $00, data_15_466e ;; 1e:5e43 $4c $10 $01 $04 $00 $00 $00 $00 $6e $46 $15
     Op18_Jump call_1e_5e7a                             ;; 1e:5e4e $18 $7a $5e $1e
 
 call_1e_5e52:
-    Op42_Unknown_StoreValue 8, $00, $00, $00, $00      ;; 1e:5e52 $42 $08 $00 $00 $00 $00
+    Op42_Unknown_StoreValue 8, $00, zero_pointer       ;; 1e:5e52 $42 $08 $00 $00 $00 $00
     Op4C_Unknown $10, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:5e58 $4c $10 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $1a, $01, $04, $4c, $00, $70, $00, data_15_4e3b ;; 1e:5e63 $4c $1a $01 $04 $4c $00 $70 $00 $3b $4e $15
     Op18_Jump call_1e_5e7a                             ;; 1e:5e6e $18 $7a $5e $1e
@@ -2492,7 +2492,7 @@ call_1e_5fed:
     Op18_Jump call_1e_5cc5                             ;; 1e:6001 $18 $c5 $5c $1e
 
 call_1e_6005:
-    Op42_Unknown_StoreValue 7, $01, $b0, $4f, $1b      ;; 1e:6005 $42 $07 $01 $b0 $4f $1b
+    Op42_Unknown_StoreValue 7, $01, data_1b_4fb0       ;; 1e:6005 $42 $07 $01 $b0 $4f $1b
     Op16_SubOps 1                                      ;; 1e:600b $16 $01
     SubOp_SetFlag wC948, 5                             ;; 1e:600d $3f $85
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_12_5633 ;; 1e:600f $4c $16 $08 $ff $00 $00 $00 $00 $33 $56 $12
@@ -2505,7 +2505,7 @@ call_1e_6005:
 call_1e_602a:
     SCRIPT_RETURN_4A                                   ;; 1e:602a $4a
     Op3E_Compare_Branch 22, $33, $56, $12, call_1e_602a ;; 1e:602b $3e $16 $33 $56 $12 $2a $60 $1e
-    Op42_Unknown_StoreValue 7, $01, $9c, $4f, $1b      ;; 1e:6033 $42 $07 $01 $9c $4f $1b
+    Op42_Unknown_StoreValue 7, $01, data_1b_4f9c       ;; 1e:6033 $42 $07 $01 $9c $4f $1b
     SCRIPT_RETURN_4A                                   ;; 1e:6039 $4a
     Op3E_Compare_Branch 22, $ab, $56, $12, call_1e_602a ;; 1e:603a $3e $16 $ab $56 $12 $2a $60 $1e
     Op18_Jump call_1e_5cc5                             ;; 1e:6042 $18 $c5 $5c $1e
@@ -2555,12 +2555,12 @@ call_1e_609b:
 call_1e_60aa:
     SCRIPT_RETURN_4A                                   ;; 1e:60aa $4a
     Op3E_Compare_Branch 22, $f7, $56, $12, call_1e_60aa ;; 1e:60ab $3e $16 $f7 $56 $12 $aa $60 $1e
-    Op42_Unknown_StoreValue 7, $01, $b0, $4f, $1b      ;; 1e:60b3 $42 $07 $01 $b0 $4f $1b
+    Op42_Unknown_StoreValue 7, $01, data_1b_4fb0       ;; 1e:60b3 $42 $07 $01 $b0 $4f $1b
 
 call_1e_60b9:
     SCRIPT_RETURN_4A                                   ;; 1e:60b9 $4a
     Op3E_Compare_Branch 22, $43, $57, $12, call_1e_60b9 ;; 1e:60ba $3e $16 $43 $57 $12 $b9 $60 $1e
-    Op42_Unknown_StoreValue 7, $01, $9c, $4f, $1b      ;; 1e:60c2 $42 $07 $01 $9c $4f $1b
+    Op42_Unknown_StoreValue 7, $01, data_1b_4f9c       ;; 1e:60c2 $42 $07 $01 $9c $4f $1b
     Op18_Jump call_1e_5cc5                             ;; 1e:60c8 $18 $c5 $5c $1e
 
 call_1e_60cc:
@@ -2632,7 +2632,7 @@ call_1e_615f:
 call_1e_6177:
     Op1E_Call call_20_4042                             ;; 1e:6177 $1e $42 $40 $20
     Op1E_Call call_1e_76b8                             ;; 1e:617b $1e $b8 $76 $1e
-    Op42_Unknown_StoreValue 8, $01, $47, $50, $1b      ;; 1e:617f $42 $08 $01 $47 $50 $1b
+    Op42_Unknown_StoreValue 8, $01, data_1b_5047       ;; 1e:617f $42 $08 $01 $47 $50 $1b
     Op44_Unknown $50, $00                              ;; 1e:6185 $44 $50 $00
     Op18_Jump call_1e_5cc5                             ;; 1e:6188 $18 $c5 $5c $1e
 
@@ -2649,7 +2649,7 @@ call_1e_618c:
 call_1e_61a4:
     Op1E_Call call_20_465b                             ;; 1e:61a4 $1e $5b $46 $20
     Op1E_Call call_1e_76b8                             ;; 1e:61a8 $1e $b8 $76 $1e
-    Op42_Unknown_StoreValue 8, $01, $c4, $4f, $1b      ;; 1e:61ac $42 $08 $01 $c4 $4f $1b
+    Op42_Unknown_StoreValue 8, $01, data_1b_4fc4       ;; 1e:61ac $42 $08 $01 $c4 $4f $1b
     Op4C_Unknown $1a, $01, $04, $4c, $00, $70, $00, data_15_4715 ;; 1e:61b2 $4c $1a $01 $04 $4c $00 $70 $00 $15 $47 $15
     Op4C_Unknown $10, $01, $04, $00, $00, $00, $00, data_15_4788 ;; 1e:61bd $4c $10 $01 $04 $00 $00 $00 $00 $88 $47 $15
 
@@ -2756,7 +2756,7 @@ call_1e_62e6:
 
 call_1e_62fe:
     Op1E_Call call_20_42f7                             ;; 1e:62fe $1e $f7 $42 $20
-    Op42_Unknown_StoreValue 8, $01, $c4, $4f, $1b      ;; 1e:6302 $42 $08 $01 $c4 $4f $1b
+    Op42_Unknown_StoreValue 8, $01, data_1b_4fc4       ;; 1e:6302 $42 $08 $01 $c4 $4f $1b
     Op4C_Unknown $1a, $01, $04, $4c, $00, $70, $00, data_15_4cb0 ;; 1e:6308 $4c $1a $01 $04 $4c $00 $70 $00 $b0 $4c $15
     Op1E_Call call_1d_6dda                             ;; 1e:6313 $1e $da $6d $1d
     ;;Hmmm?<E4>What's going on?<E0>
@@ -2772,7 +2772,7 @@ call_1e_6333:
     SCRIPT_RETURN_4A                                   ;; 1e:6333 $4a
     Op3E_Compare_Branch 26, $02, $4d, $15, call_1e_6333 ;; 1e:6334 $3e $1a $02 $4d $15 $33 $63 $1e
     Op4C_Unknown $1a, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:633c $4c $1a $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op42_Unknown_StoreValue 8, $01, $eb, $4f, $1b      ;; 1e:6347 $42 $08 $01 $eb $4f $1b
+    Op42_Unknown_StoreValue 8, $01, data_1b_4feb       ;; 1e:6347 $42 $08 $01 $eb $4f $1b
     Op18_Jump call_1e_5cc5                             ;; 1e:634d $18 $c5 $5c $1e
 
 call_1e_6351:
@@ -3889,9 +3889,9 @@ call_1e_7082:
     Op3E_Compare_Branch 26, $c1, $47, $15, call_1e_7082 ;; 1e:7083 $3e $1a $c1 $47 $15 $82 $70 $1e
     Op4C_Unknown $1a, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:708b $4c $1a $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $10, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:7096 $4c $10 $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op42_Unknown_StoreValue 8, $01, $47, $50, $1b      ;; 1e:70a1 $42 $08 $01 $47 $50 $1b
+    Op42_Unknown_StoreValue 8, $01, data_1b_5047       ;; 1e:70a1 $42 $08 $01 $47 $50 $1b
     Op44_Unknown $50, $00                              ;; 1e:70a7 $44 $50 $00
-    Op42_Unknown_StoreValue 8, $01, $eb, $4f, $1b      ;; 1e:70aa $42 $08 $01 $eb $4f $1b
+    Op42_Unknown_StoreValue 8, $01, data_1b_4feb       ;; 1e:70aa $42 $08 $01 $eb $4f $1b
     SCRIPT_RETURN_20                                   ;; 1e:70b0 $20
 
 call_1e_70b1:
@@ -3901,9 +3901,9 @@ call_1e_70bc:
     SCRIPT_RETURN_4A                                   ;; 1e:70bc $4a
     Op3E_Compare_Branch 26, $35, $48, $15, call_1e_70bc ;; 1e:70bd $3e $1a $35 $48 $15 $bc $70 $1e
     Op4C_Unknown $1a, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:70c5 $4c $1a $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op42_Unknown_StoreValue 8, $01, $47, $50, $1b      ;; 1e:70d0 $42 $08 $01 $47 $50 $1b
+    Op42_Unknown_StoreValue 8, $01, data_1b_5047       ;; 1e:70d0 $42 $08 $01 $47 $50 $1b
     Op44_Unknown $50, $00                              ;; 1e:70d6 $44 $50 $00
-    Op42_Unknown_StoreValue 8, $01, $eb, $4f, $1b      ;; 1e:70d9 $42 $08 $01 $eb $4f $1b
+    Op42_Unknown_StoreValue 8, $01, data_1b_4feb       ;; 1e:70d9 $42 $08 $01 $eb $4f $1b
     SCRIPT_RETURN_20                                   ;; 1e:70df $20
 
 call_1e_70e0:
@@ -4379,7 +4379,7 @@ call_1e_776a:
 call_1e_7783:
     Op1E_Call call_1d_6acd                             ;; 1e:7783 $1e $cd $6a $1d
     Op4E_Unknown_StoreValue 4, $01, $73, $40, $10      ;; 1e:7787 $4e $04 $01 $73 $40 $10
-    Op42_Unknown_StoreValue 3, $00, $00, $40, $10      ;; 1e:778d $42 $03 $00 $00 $40 $10
+    Op42_Unknown_StoreValue 3, $00, data_10_4000       ;; 1e:778d $42 $03 $00 $00 $40 $10
     Op4C_Unknown $16, $10, $04, $00, $00, $00, $00, data_10_5a9b ;; 1e:7793 $4c $16 $10 $04 $00 $00 $00 $00 $9b $5a $10
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, data_10_5bee ;; 1e:779e $4c $1e $01 $04 $00 $00 $00 $00 $ee $5b $10
     ;;<EB><EA>Tack-Q<E8>!<end>

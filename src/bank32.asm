@@ -110,7 +110,7 @@ call_32_4114:
     Op18_Jump call_32_4178                             ;; 32:412a $18 $78 $41 $32
 
 call_32_412e:
-    Op42_Unknown_StoreValue 5, $01, $89, $56, $1b      ;; 32:412e $42 $05 $01 $89 $56 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_5689       ;; 32:412e $42 $05 $01 $89 $56 $1b
     Op84_WriteByteNTimes w3_D171, 3, 3, $80            ;; 32:4134 $84 $71 $d1 $03 $03 $00 $80
     Op84_WriteByteNTimes w3_D18F, 3, 3, $80            ;; 32:413b $84 $8f $d1 $03 $03 $00 $80
     Op84_WriteByteNTimes w3_D1AD, 3, 3, $80            ;; 32:4142 $84 $ad $d1 $03 $03 $00 $80
@@ -327,7 +327,7 @@ call_32_438a:
     SCRIPT_POINTER call_32_43d4                        ;; 32:439d $d4 $43 $32
     Op56_WriteBitArrayIndex 26, $32, $5f, $14          ;; 32:43a0 $56 $1a $32 $5f $14
     Op5A_Unknown $9d                                   ;; 32:43a5 $5a $9d
-    Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:43a7 $42 $04 $01 $52 $57 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_5752       ;; 32:43a7 $42 $04 $01 $52 $57 $1b
     Op1E_Call call_1d_6da6                             ;; 32:43ad $1e $a6 $6d $1d
     ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7e2f                     ;; 32:43b1 $04 $2f $7e $29
@@ -336,7 +336,7 @@ call_32_438a:
     Op06_Unknown_Text data_29_7e43                     ;; 32:43b9 $06 $43 $7e $29
     Op1E_Call call_04_615d                             ;; 32:43bd $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:43c1 $56 $1a $5d $5f $14
-    Op42_Unknown_StoreValue 4, $01, $6f, $58, $1b      ;; 32:43c6 $42 $04 $01 $6f $58 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_586f       ;; 32:43c6 $42 $04 $01 $6f $58 $1b
     Op1E_Call call_32_488f                             ;; 32:43cc $1e $8f $48 $32
     Op18_Jump call_32_400c                             ;; 32:43d0 $18 $0c $40 $32
 
@@ -344,7 +344,7 @@ call_32_43d4:
     Op1E_Call call_1d_6da6                             ;; 32:43d4 $1e $a6 $6d $1d
     Op56_WriteBitArrayIndex 26, $32, $5f, $14          ;; 32:43d8 $56 $1a $32 $5f $14
     Op5A_Unknown $9d                                   ;; 32:43dd $5a $9d
-    Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:43df $42 $04 $01 $52 $57 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_5752       ;; 32:43df $42 $04 $01 $52 $57 $1b
     ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7e6d                     ;; 32:43e5 $04 $6d $7e $29
     Op1E_Call call_32_488f                             ;; 32:43e9 $1e $8f $48 $32
@@ -352,7 +352,7 @@ call_32_43d4:
     Op06_Unknown_Text data_29_7e81                     ;; 32:43ed $06 $81 $7e $29
     Op1E_Call call_04_615d                             ;; 32:43f1 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:43f5 $56 $1a $5d $5f $14
-    Op42_Unknown_StoreValue 4, $01, $6f, $58, $1b      ;; 32:43fa $42 $04 $01 $6f $58 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_586f       ;; 32:43fa $42 $04 $01 $6f $58 $1b
     Op1E_Call call_32_488f                             ;; 32:4400 $1e $8f $48 $32
     Op18_Jump call_32_400c                             ;; 32:4404 $18 $0c $40 $32
 
@@ -413,7 +413,7 @@ call_32_4493:
     Op56_WriteBitArrayIndex 26, $32, $5f, $14          ;; 32:4497 $56 $1a $32 $5f $14
     Op1E_Call call_1d_6da6                             ;; 32:449c $1e $a6 $6d $1d
     Op5A_Unknown $9d                                   ;; 32:44a0 $5a $9d
-    Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:44a2 $42 $04 $01 $52 $57 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_5752       ;; 32:44a2 $42 $04 $01 $52 $57 $1b
     ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7f02                     ;; 32:44a8 $04 $02 $7f $29
     Op1E_Call call_32_488f                             ;; 32:44ac $1e $8f $48 $32
@@ -421,7 +421,7 @@ call_32_4493:
     Op06_Unknown_Text data_29_7f16                     ;; 32:44b0 $06 $16 $7f $29
     Op1E_Call call_04_615d                             ;; 32:44b4 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:44b8 $56 $1a $5d $5f $14
-    Op42_Unknown_StoreValue 4, $01, $6f, $58, $1b      ;; 32:44bd $42 $04 $01 $6f $58 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_586f       ;; 32:44bd $42 $04 $01 $6f $58 $1b
     Op1E_Call call_32_488f                             ;; 32:44c3 $1e $8f $48 $32
     Op18_Jump call_32_400c                             ;; 32:44c7 $18 $0c $40 $32
 
@@ -447,7 +447,7 @@ call_32_44ec:
     Op56_WriteBitArrayIndex 26, $bf, $5f, $14          ;; 32:4503 $56 $1a $bf $5f $14
     Op44_Unknown $12, $00                              ;; 32:4508 $44 $12 $00
     Op5A_Unknown $9d                                   ;; 32:450b $5a $9d
-    Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:450d $42 $04 $01 $52 $57 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_5752       ;; 32:450d $42 $04 $01 $52 $57 $1b
     Op1E_Call call_1d_6da6                             ;; 32:4513 $1e $a6 $6d $1d
     ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7f3a                     ;; 32:4517 $04 $3a $7f $29
@@ -460,7 +460,7 @@ call_32_44ec:
 call_32_452b:
     SCRIPT_RETURN_4A                                   ;; 32:452b $4a
     Op3E_Compare_Branch 26, $f7, $5f, $14, call_32_452b ;; 32:452c $3e $1a $f7 $5f $14 $2b $45 $32
-    Op42_Unknown_StoreValue 4, $01, $6f, $58, $1b      ;; 32:4534 $42 $04 $01 $6f $58 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_586f       ;; 32:4534 $42 $04 $01 $6f $58 $1b
     Op1E_Call call_32_488f                             ;; 32:453a $1e $8f $48 $32
     Op18_Jump call_32_400c                             ;; 32:453e $18 $0c $40 $32
 
@@ -483,7 +483,7 @@ call_32_4565:
     Op1E_Call call_20_44fe                             ;; 32:4565 $1e $fe $44 $20
     Op56_WriteBitArrayIndex 26, $32, $5f, $14          ;; 32:4569 $56 $1a $32 $5f $14
     Op5A_Unknown $9d                                   ;; 32:456e $5a $9d
-    Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:4570 $42 $04 $01 $52 $57 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_5752       ;; 32:4570 $42 $04 $01 $52 $57 $1b
     Op1E_Call call_1d_6da6                             ;; 32:4576 $1e $a6 $6d $1d
     ;;You silly hamster!<E3><end>
     Op04_Unknown_Text data_29_7f6c                     ;; 32:457a $04 $6c $7f $29
@@ -492,7 +492,7 @@ call_32_4565:
     Op06_Unknown_Text data_29_7f80                     ;; 32:4582 $06 $80 $7f $29
     Op1E_Call call_04_615d                             ;; 32:4586 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:458a $56 $1a $5d $5f $14
-    Op42_Unknown_StoreValue 4, $01, $6f, $58, $1b      ;; 32:458f $42 $04 $01 $6f $58 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_586f       ;; 32:458f $42 $04 $01 $6f $58 $1b
     Op1E_Call call_32_488f                             ;; 32:4595 $1e $8f $48 $32
     Op18_Jump call_32_400c                             ;; 32:4599 $18 $0c $40 $32
 
@@ -568,7 +568,7 @@ call_32_4634:
 call_32_464c:
     Op1E_Call call_20_42f7                             ;; 32:464c $1e $f7 $42 $20
     Op5A_Unknown $a9                                   ;; 32:4650 $5a $a9
-    Op42_Unknown_StoreValue 4, $01, $b0, $56, $1b      ;; 32:4652 $42 $04 $01 $b0 $56 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_56b0       ;; 32:4652 $42 $04 $01 $b0 $56 $1b
     Op44_Unknown $14, $00                              ;; 32:4658 $44 $14 $00
     Op16_SubOps 1                                      ;; 32:465b $16 $01
     SubOp_SetFlag wC948, 3                             ;; 32:465d $3f $83
@@ -607,7 +607,7 @@ call_32_469b:
 call_32_46b3:
     Op1E_Call call_20_42bf                             ;; 32:46b3 $1e $bf $42 $20
     Op5A_Unknown $9d                                   ;; 32:46b7 $5a $9d
-    Op42_Unknown_StoreValue 4, $01, $52, $57, $1b      ;; 32:46b9 $42 $04 $01 $52 $57 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_5752       ;; 32:46b9 $42 $04 $01 $52 $57 $1b
 
 call_32_46bf:
     SCRIPT_RETURN_4A                                   ;; 32:46bf $4a
@@ -625,7 +625,7 @@ call_32_46bf:
     Op06_Unknown_Text data_29_7f9f                     ;; 32:46ee $06 $9f $7f $29
     Op1E_Call call_04_615d                             ;; 32:46f2 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $5d, $5f, $14          ;; 32:46f6 $56 $1a $5d $5f $14
-    Op42_Unknown_StoreValue 4, $01, $6f, $58, $1b      ;; 32:46fb $42 $04 $01 $6f $58 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_586f       ;; 32:46fb $42 $04 $01 $6f $58 $1b
     Op1E_Call call_32_488f                             ;; 32:4701 $1e $8f $48 $32
     Op18_Jump call_32_400c                             ;; 32:4705 $18 $0c $40 $32
 
@@ -639,7 +639,7 @@ call_32_4709:
     Op06_Unknown_Text data_29_7fc5                     ;; 32:471a $06 $c5 $7f $29
     Op1E_Call call_04_615d                             ;; 32:471e $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, $4c, $60, $14          ;; 32:4722 $56 $1a $4c $60 $14
-    Op42_Unknown_StoreValue 4, $01, $6f, $58, $1b      ;; 32:4727 $42 $04 $01 $6f $58 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_586f       ;; 32:4727 $42 $04 $01 $6f $58 $1b
     Op1E_Call call_32_488f                             ;; 32:472d $1e $8f $48 $32
     Op18_Jump call_32_400c                             ;; 32:4731 $18 $0c $40 $32
 
@@ -786,7 +786,7 @@ call_32_48d9:
     Op18_Jump call_32_48fd                             ;; 32:48f3 $18 $fd $48 $32
 
 call_32_48f7:
-    Op42_Unknown_StoreValue 4, $01, $2b, $57, $1b      ;; 32:48f7 $42 $04 $01 $2b $57 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_572b       ;; 32:48f7 $42 $04 $01 $2b $57 $1b
 
 call_32_48fd:
     SCRIPT_RETURN_20                                   ;; 32:48fd $20
@@ -1722,7 +1722,7 @@ call_32_53e0:
     Op32_Graphics data_6d_72de, w6_D000                ;; 32:5428 $32 $de $72 $6d $00 $d0 $06
     Op14_Unknown 1, data_05_549c                       ;; 32:542f $14 $01 $9c $54
     SCRIPT_POINTER call_32_545a                        ;; 32:5433 $5a $54 $32
-    Op42_Unknown_StoreValue 8, $01, $df, $48, $1a      ;; 32:5436 $42 $08 $01 $df $48 $1a
+    Op42_Unknown_StoreValue 8, $01, data_1a_48df       ;; 32:5436 $42 $08 $01 $df $48 $1a
     Op14_Unknown 1, data_05_549e                       ;; 32:543c $14 $01 $9e $54
     SCRIPT_POINTER call_32_5456                        ;; 32:5440 $56 $54 $32
     Op1E_Call call_32_5ca6                             ;; 32:5443 $1e $a6 $5c $32
@@ -2010,7 +2010,7 @@ call_32_5792:
     SubOp_SetFlag wC930, 4                             ;; 32:5794 $3e $c4
     Op16_SubOps 1                                      ;; 32:5796 $16 $01
     SubOp_SetFlag wC94B, 7                             ;; 32:5798 $3f $9f
-    Op42_Unknown_StoreValue 8, $01, $10, $48, $1a      ;; 32:579a $42 $08 $01 $10 $48 $1a
+    Op42_Unknown_StoreValue 8, $01, data_1a_4810       ;; 32:579a $42 $08 $01 $10 $48 $1a
     Op4E_Unknown_StoreValue 4, $01, $97, $40, $10      ;; 32:57a0 $4e $04 $01 $97 $40 $10
     Op4C_Unknown $1a, $01, $04, $c0, $00, $48, $00, data_16_420b ;; 32:57a6 $4c $1a $01 $04 $c0 $00 $48 $00 $0b $42 $16
     Op4C_Unknown $1c, $01, $04, $00, $00, $00, $00, data_10_72ef ;; 32:57b1 $4c $1c $01 $04 $00 $00 $00 $00 $ef $72 $10
@@ -2977,7 +2977,7 @@ call_32_62c2:
     Op16_SubOps 1                                      ;; 32:62dc $16 $01
     SubOp_SetFlag wC93D, 5                             ;; 32:62de $3f $2d
     Op5A_Unknown $bc                                   ;; 32:62e0 $5a $bc
-    Op42_Unknown_StoreValue 4, $01, $98, $61, $1b      ;; 32:62e2 $42 $04 $01 $98 $61 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_6198       ;; 32:62e2 $42 $04 $01 $98 $61 $1b
     Op1E_Call call_32_63da                             ;; 32:62e8 $1e $da $63 $32
     Op44_Unknown $20, $00                              ;; 32:62ec $44 $20 $00
     Op18_Jump call_32_62f7                             ;; 32:62ef $18 $f7 $62 $32
@@ -3050,7 +3050,7 @@ call_32_63d3:
     SCRIPT_RETURN_20                                   ;; 32:63d3 $20
 
 call_32_63d4:
-    Op42_Unknown_StoreValue 4, $01, $c1, $61, $1b      ;; 32:63d4 $42 $04 $01 $c1 $61 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_61c1       ;; 32:63d4 $42 $04 $01 $c1 $61 $1b
 
 call_32_63da:
     Op84_WriteByteNTimes w3_D1D1, 3, 3, $43            ;; 32:63da $84 $d1 $d1 $03 $03 $00 $43
@@ -3073,43 +3073,43 @@ call_32_63f0:
     SCRIPT_RETURN_20                                   ;; 32:6410 $20
 
 call_32_6411:
-    Op42_Unknown_StoreValue 4, $01, $ce, $5f, $1b      ;; 32:6411 $42 $04 $01 $ce $5f $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_5fce       ;; 32:6411 $42 $04 $01 $ce $5f $1b
     SCRIPT_RETURN_20                                   ;; 32:6417 $20
 
 call_32_6418:
-    Op42_Unknown_StoreValue 4, $01, $e2, $5f, $1b      ;; 32:6418 $42 $04 $01 $e2 $5f $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_5fe2       ;; 32:6418 $42 $04 $01 $e2 $5f $1b
     SCRIPT_RETURN_20                                   ;; 32:641e $20
 
 call_32_641f:
-    Op42_Unknown_StoreValue 4, $01, $f6, $5f, $1b      ;; 32:641f $42 $04 $01 $f6 $5f $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_5ff6       ;; 32:641f $42 $04 $01 $f6 $5f $1b
     SCRIPT_RETURN_20                                   ;; 32:6425 $20
 
 call_32_6426:
-    Op42_Unknown_StoreValue 4, $01, $0a, $60, $1b      ;; 32:6426 $42 $04 $01 $0a $60 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_600a       ;; 32:6426 $42 $04 $01 $0a $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:642c $20
 
 call_32_642d:
-    Op42_Unknown_StoreValue 4, $01, $1e, $60, $1b      ;; 32:642d $42 $04 $01 $1e $60 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_601e       ;; 32:642d $42 $04 $01 $1e $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:6433 $20
 
 call_32_6434:
-    Op42_Unknown_StoreValue 4, $01, $32, $60, $1b      ;; 32:6434 $42 $04 $01 $32 $60 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_6032       ;; 32:6434 $42 $04 $01 $32 $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:643a $20
 
 call_32_643b:
-    Op42_Unknown_StoreValue 4, $01, $46, $60, $1b      ;; 32:643b $42 $04 $01 $46 $60 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_6046       ;; 32:643b $42 $04 $01 $46 $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:6441 $20
 
 call_32_6442:
-    Op42_Unknown_StoreValue 4, $01, $5a, $60, $1b      ;; 32:6442 $42 $04 $01 $5a $60 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_605a       ;; 32:6442 $42 $04 $01 $5a $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:6448 $20
 
 call_32_6449:
-    Op42_Unknown_StoreValue 4, $01, $6e, $60, $1b      ;; 32:6449 $42 $04 $01 $6e $60 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_606e       ;; 32:6449 $42 $04 $01 $6e $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:644f $20
 
 call_32_6450:
-    Op42_Unknown_StoreValue 4, $01, $82, $60, $1b      ;; 32:6450 $42 $04 $01 $82 $60 $1b
+    Op42_Unknown_StoreValue 4, $01, data_1b_6082       ;; 32:6450 $42 $04 $01 $82 $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:6456 $20
 
 call_32_6457:
@@ -3127,43 +3127,43 @@ call_32_6457:
     SCRIPT_RETURN_20                                   ;; 32:6477 $20
 
 call_32_6478:
-    Op42_Unknown_StoreValue 5, $01, $96, $60, $1b      ;; 32:6478 $42 $05 $01 $96 $60 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_6096       ;; 32:6478 $42 $05 $01 $96 $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:647e $20
 
 call_32_647f:
-    Op42_Unknown_StoreValue 5, $01, $aa, $60, $1b      ;; 32:647f $42 $05 $01 $aa $60 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_60aa       ;; 32:647f $42 $05 $01 $aa $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:6485 $20
 
 call_32_6486:
-    Op42_Unknown_StoreValue 5, $01, $be, $60, $1b      ;; 32:6486 $42 $05 $01 $be $60 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_60be       ;; 32:6486 $42 $05 $01 $be $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:648c $20
 
 call_32_648d:
-    Op42_Unknown_StoreValue 5, $01, $d2, $60, $1b      ;; 32:648d $42 $05 $01 $d2 $60 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_60d2       ;; 32:648d $42 $05 $01 $d2 $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:6493 $20
 
 call_32_6494:
-    Op42_Unknown_StoreValue 5, $01, $e6, $60, $1b      ;; 32:6494 $42 $05 $01 $e6 $60 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_60e6       ;; 32:6494 $42 $05 $01 $e6 $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:649a $20
 
 call_32_649b:
-    Op42_Unknown_StoreValue 5, $01, $fa, $60, $1b      ;; 32:649b $42 $05 $01 $fa $60 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_60fa       ;; 32:649b $42 $05 $01 $fa $60 $1b
     SCRIPT_RETURN_20                                   ;; 32:64a1 $20
 
 call_32_64a2:
-    Op42_Unknown_StoreValue 5, $01, $0e, $61, $1b      ;; 32:64a2 $42 $05 $01 $0e $61 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_610e       ;; 32:64a2 $42 $05 $01 $0e $61 $1b
     SCRIPT_RETURN_20                                   ;; 32:64a8 $20
 
 call_32_64a9:
-    Op42_Unknown_StoreValue 5, $01, $22, $61, $1b      ;; 32:64a9 $42 $05 $01 $22 $61 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_6122       ;; 32:64a9 $42 $05 $01 $22 $61 $1b
     SCRIPT_RETURN_20                                   ;; 32:64af $20
 
 call_32_64b0:
-    Op42_Unknown_StoreValue 5, $01, $36, $61, $1b      ;; 32:64b0 $42 $05 $01 $36 $61 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_6136       ;; 32:64b0 $42 $05 $01 $36 $61 $1b
     SCRIPT_RETURN_20                                   ;; 32:64b6 $20
 
 call_32_64b7:
-    Op42_Unknown_StoreValue 5, $01, $4a, $61, $1b      ;; 32:64b7 $42 $05 $01 $4a $61 $1b
+    Op42_Unknown_StoreValue 5, $01, data_1b_614a       ;; 32:64b7 $42 $05 $01 $4a $61 $1b
     SCRIPT_RETURN_20                                   ;; 32:64bd $20
 
 call_32_64be:
@@ -3188,7 +3188,7 @@ call_32_64be:
 call_32_64ed:
     Op16_SubOps 1                                      ;; 32:64ed $16 $01
     SubOp_SetByte wC7A3, $64                           ;; 32:64ef $7e $8b $64
-    Op42_Unknown_StoreValue 6, $01, $5e, $61, $1b      ;; 32:64f2 $42 $06 $01 $5e $61 $1b
+    Op42_Unknown_StoreValue 6, $01, data_1b_615e       ;; 32:64f2 $42 $06 $01 $5e $61 $1b
 
 call_32_64f8:
     SCRIPT_RETURN_20                                   ;; 32:64f8 $20
@@ -3385,7 +3385,7 @@ call_32_6784:
 
 call_32_678c:
     Op4C_Unknown $16, $08, $02, $78, $00, $d0, $ff, data_11_6c83 ;; 32:678c $4c $16 $08 $02 $78 $00 $d0 $ff $83 $6c $11
-    Op42_Unknown_StoreValue 7, $01, $9f, $72, $12      ;; 32:6797 $42 $07 $01 $9f $72 $12
+    Op42_Unknown_StoreValue 7, $01, data_12_729f       ;; 32:6797 $42 $07 $01 $9f $72 $12
 
 call_32_679d:
     Op14_Unknown 1, data_05_66f7                       ;; 32:679d $14 $01 $f7 $66
@@ -3503,7 +3503,7 @@ call_32_6927:
 call_32_6932:
     SCRIPT_RETURN_4A                                   ;; 32:6932 $4a
     Op3E_Compare_Branch 22, $18, $6d, $11, call_32_6932 ;; 32:6933 $3e $16 $18 $6d $11 $32 $69 $32
-    Op42_Unknown_StoreValue 7, $01, $c6, $72, $12      ;; 32:693b $42 $07 $01 $c6 $72 $12
+    Op42_Unknown_StoreValue 7, $01, data_12_72c6       ;; 32:693b $42 $07 $01 $c6 $72 $12
 
 call_32_6941:
     Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 32:6941 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
@@ -3889,7 +3889,7 @@ call_32_6d95:
     Op68_CopyBytes 1, wC829, w1_D20E, $01              ;; 32:6d95 $68 $01 $29 $c8 $0e $d2 $01
     Op14_Unknown 1, data_05_67f1                       ;; 32:6d9c $14 $01 $f1 $67
     SCRIPT_POINTER call_32_6dca                        ;; 32:6da0 $ca $6d $32
-    Op42_Unknown_StoreValue 7, $01, $9f, $72, $12      ;; 32:6da3 $42 $07 $01 $9f $72 $12
+    Op42_Unknown_StoreValue 7, $01, data_12_729f       ;; 32:6da3 $42 $07 $01 $9f $72 $12
     Op1E_Call call_1d_6acd                             ;; 32:6da9 $1e $cd $6a $1d
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, data_11_6bab ;; 32:6dad $4c $16 $10 $02 $00 $00 $00 $00 $ab $6b $11
     ;;<EB><EA>Scoochie<E8>!<end>

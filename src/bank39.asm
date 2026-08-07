@@ -897,7 +897,7 @@ call_39_5760:
 
 call_39_57ce:
     Op4C_Unknown $16, $08, $02, $60, $00, $e0, $ff, data_11_5fa5 ;; 39:57ce $4c $16 $08 $02 $60 $00 $e0 $ff $a5 $5f $11
-    Op42_Unknown_StoreValue 3, $00, $00, $40, $10      ;; 39:57d9 $42 $03 $00 $00 $40 $10
+    Op42_Unknown_StoreValue 3, $00, data_10_4000       ;; 39:57d9 $42 $03 $00 $00 $40 $10
     Op18_Jump call_39_57ef                             ;; 39:57df $18 $ef $57 $39
 
 call_39_57e3:

@@ -1374,12 +1374,12 @@ call_3a_6287:
     Op4C_Unknown $3a, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3a:63a8 $4c $3a $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3c, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3a:63b3 $4c $3c $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3e, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3a:63be $4c $3e $01 $00 $00 $00 $00 $00 $43 $61 $04
-    Op42_Unknown_StoreValue 4, $00, $50, $61, $04      ;; 3a:63c9 $42 $04 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 5, $00, $50, $61, $04      ;; 3a:63cf $42 $05 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 6, $00, $50, $61, $04      ;; 3a:63d5 $42 $06 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 7, $00, $50, $61, $04      ;; 3a:63db $42 $07 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 8, $00, $50, $61, $04      ;; 3a:63e1 $42 $08 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 9, $00, $50, $61, $04      ;; 3a:63e7 $42 $09 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 4, $00, data_04_6150       ;; 3a:63c9 $42 $04 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 5, $00, data_04_6150       ;; 3a:63cf $42 $05 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 6, $00, data_04_6150       ;; 3a:63d5 $42 $06 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 7, $00, data_04_6150       ;; 3a:63db $42 $07 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 8, $00, data_04_6150       ;; 3a:63e1 $42 $08 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 9, $00, data_04_6150       ;; 3a:63e7 $42 $09 $00 $50 $61 $04
     SCRIPT_RETURN_20                                   ;; 3a:63ed $20
 
 call_3a_63ee:

@@ -215,12 +215,12 @@ call_3c_4532:
     Op4C_Unknown $3a, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:464c $4c $3a $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3c, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:4657 $4c $3c $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3e, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:4662 $4c $3e $01 $00 $00 $00 $00 $00 $43 $61 $04
-    Op42_Unknown_StoreValue 4, $00, $50, $61, $04      ;; 3c:466d $42 $04 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 5, $00, $50, $61, $04      ;; 3c:4673 $42 $05 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 6, $00, $50, $61, $04      ;; 3c:4679 $42 $06 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 7, $00, $50, $61, $04      ;; 3c:467f $42 $07 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 8, $00, $50, $61, $04      ;; 3c:4685 $42 $08 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 9, $00, $50, $61, $04      ;; 3c:468b $42 $09 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 4, $00, data_04_6150       ;; 3c:466d $42 $04 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 5, $00, data_04_6150       ;; 3c:4673 $42 $05 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 6, $00, data_04_6150       ;; 3c:4679 $42 $06 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 7, $00, data_04_6150       ;; 3c:467f $42 $07 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 8, $00, data_04_6150       ;; 3c:4685 $42 $08 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 9, $00, data_04_6150       ;; 3c:468b $42 $09 $00 $50 $61 $04
     SCRIPT_RETURN_20                                   ;; 3c:4691 $20
 
 call_3c_4692:
@@ -548,12 +548,12 @@ call_3c_4e25:
     Op4C_Unknown $3a, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:4f45 $4c $3a $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3c, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:4f50 $4c $3c $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3e, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:4f5b $4c $3e $01 $00 $00 $00 $00 $00 $43 $61 $04
-    Op42_Unknown_StoreValue 4, $00, $50, $61, $04      ;; 3c:4f66 $42 $04 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 5, $00, $50, $61, $04      ;; 3c:4f6c $42 $05 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 6, $00, $50, $61, $04      ;; 3c:4f72 $42 $06 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 7, $00, $50, $61, $04      ;; 3c:4f78 $42 $07 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 8, $00, $50, $61, $04      ;; 3c:4f7e $42 $08 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 9, $00, $50, $61, $04      ;; 3c:4f84 $42 $09 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 4, $00, data_04_6150       ;; 3c:4f66 $42 $04 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 5, $00, data_04_6150       ;; 3c:4f6c $42 $05 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 6, $00, data_04_6150       ;; 3c:4f72 $42 $06 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 7, $00, data_04_6150       ;; 3c:4f78 $42 $07 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 8, $00, data_04_6150       ;; 3c:4f7e $42 $08 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 9, $00, data_04_6150       ;; 3c:4f84 $42 $09 $00 $50 $61 $04
     SCRIPT_RETURN_20                                   ;; 3c:4f8a $20
 
 call_3c_4f8b:
@@ -840,12 +840,12 @@ call_3c_544f:
     Op4C_Unknown $3a, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:556f $4c $3a $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3c, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:557a $4c $3c $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3e, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:5585 $4c $3e $01 $00 $00 $00 $00 $00 $43 $61 $04
-    Op42_Unknown_StoreValue 4, $00, $50, $61, $04      ;; 3c:5590 $42 $04 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 5, $00, $50, $61, $04      ;; 3c:5596 $42 $05 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 6, $00, $50, $61, $04      ;; 3c:559c $42 $06 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 7, $00, $50, $61, $04      ;; 3c:55a2 $42 $07 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 8, $00, $50, $61, $04      ;; 3c:55a8 $42 $08 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 9, $00, $50, $61, $04      ;; 3c:55ae $42 $09 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 4, $00, data_04_6150       ;; 3c:5590 $42 $04 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 5, $00, data_04_6150       ;; 3c:5596 $42 $05 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 6, $00, data_04_6150       ;; 3c:559c $42 $06 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 7, $00, data_04_6150       ;; 3c:55a2 $42 $07 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 8, $00, data_04_6150       ;; 3c:55a8 $42 $08 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 9, $00, data_04_6150       ;; 3c:55ae $42 $09 $00 $50 $61 $04
     SCRIPT_RETURN_20                                   ;; 3c:55b4 $20
     Op16_SubOps 1                                      ;; 3c:55b5 $16 $01
     SubOp_SetByte wC724, $02                           ;; 3c:55b7 $7e $0c $02
@@ -946,12 +946,12 @@ call_3c_5649:
     Op4C_Unknown $3a, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:5763 $4c $3a $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3c, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:576e $4c $3c $01 $00 $00 $00 $00 $00 $43 $61 $04
     Op4C_Unknown $3e, $01, $00, $00, $00, $00, $00, data_04_6143 ;; 3c:5779 $4c $3e $01 $00 $00 $00 $00 $00 $43 $61 $04
-    Op42_Unknown_StoreValue 4, $00, $50, $61, $04      ;; 3c:5784 $42 $04 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 5, $00, $50, $61, $04      ;; 3c:578a $42 $05 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 6, $00, $50, $61, $04      ;; 3c:5790 $42 $06 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 7, $00, $50, $61, $04      ;; 3c:5796 $42 $07 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 8, $00, $50, $61, $04      ;; 3c:579c $42 $08 $00 $50 $61 $04
-    Op42_Unknown_StoreValue 9, $00, $50, $61, $04      ;; 3c:57a2 $42 $09 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 4, $00, data_04_6150       ;; 3c:5784 $42 $04 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 5, $00, data_04_6150       ;; 3c:578a $42 $05 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 6, $00, data_04_6150       ;; 3c:5790 $42 $06 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 7, $00, data_04_6150       ;; 3c:5796 $42 $07 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 8, $00, data_04_6150       ;; 3c:579c $42 $08 $00 $50 $61 $04
+    Op42_Unknown_StoreValue 9, $00, data_04_6150       ;; 3c:57a2 $42 $09 $00 $50 $61 $04
     SCRIPT_RETURN_20                                   ;; 3c:57a8 $20
 
 data_3c_57a9:

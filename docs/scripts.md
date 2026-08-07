@@ -310,6 +310,10 @@ Op3E will use the first byte as an index to pull a 3 byte address out of the ODB
 <a id="op42"></a>
 ### Op42 
 
+5 argument bytes, the last 3 of which are a 3 byte ROM address. It seems that whatever kind of data this points to occupies the 0F-1B banks.
+
+Compare with Op4C.
+
 <a id="op44"></a>
 ### Op44 
 
@@ -332,6 +336,8 @@ A return variant. Actually calls return so uses the real GBC callstack I guess?
 ### Op4C 
 
 10 argument bytes, the last 3 of which are a 3 byte ROM address. It seems that whatever kind of data this points to occupies the 0F-1B banks.
+
+Compare with Op42.
 
 <a id="op4E"></a>
 ### Op4E 

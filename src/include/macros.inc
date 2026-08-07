@@ -165,9 +165,8 @@ MACRO Op42_Unknown_StoreValue
 db $42
 db \1
 db \2
-db \3
-db \4
-db \5
+dw \3
+db BANK(\3)
 ENDM
 MACRO Op44_Unknown
 db $44

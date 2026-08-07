@@ -2156,7 +2156,7 @@ call_23_5c64:
     Op14_Unknown 1, data_05_5b92                       ;; 23:5c9d $14 $01 $92 $5b
     SCRIPT_POINTER call_23_5cb5                        ;; 23:5ca1 $b5 $5c $23
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, zero_pointer ;; 23:5ca4 $4c $16 $ff $04 $00 $00 $00 $00 $00 $00 $00
-    Op42_Unknown_StoreValue 8, $01, $b1, $49, $17      ;; 23:5caf $42 $08 $01 $b1 $49 $17
+    Op42_Unknown_StoreValue 8, $01, data_17_49b1       ;; 23:5caf $42 $08 $01 $b1 $49 $17
 
 call_23_5cb5:
     Op4C_Unknown $1a, $01, $04, $78, $00, $2a, $00, data_19_61de ;; 23:5cb5 $4c $1a $01 $04 $78 $00 $2a $00 $de $61 $19
@@ -2171,7 +2171,7 @@ call_23_5cc9:
     SCRIPT_POINTER call_23_5ce5                        ;; 23:5cce $e5 $5c $23
     Op3E_Compare_Branch 26, $2e, $62, $19, call_23_5cc9 ;; 23:5cd1 $3e $1a $2e $62 $19 $c9 $5c $23
     Op44_Unknown $30, $00                              ;; 23:5cd9 $44 $30 $00
-    Op42_Unknown_StoreValue 8, $01, $be, $49, $17      ;; 23:5cdc $42 $08 $01 $be $49 $17
+    Op42_Unknown_StoreValue 8, $01, data_17_49be       ;; 23:5cdc $42 $08 $01 $be $49 $17
     Op44_Unknown $20, $00                              ;; 23:5ce2 $44 $20 $00
 
 call_23_5ce5:
