@@ -3332,7 +3332,7 @@ call_3b_77fc:
     SCRIPT_POINTER call_3b_787e                        ;; 3b:7846 $7e $78 $3b
     Op18_Jump call_3b_7876                             ;; 3b:7849 $18 $76 $78 $3b
     Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 3b:784d $36 $fd $77 $7f $9a $dd $01
-    Op0C_HamChatWheel 5, data_05_59ed, data_05_5a55    ;; 3b:7854 $0c $05 $ed $59 $55 $5a
+    Op0C_HamChatWheel 5, data_05_59ed, AcornShrineAlwaysUsePile1 ;; 3b:7854 $0c $05 $ed $59 $55 $5a
     Op1E_Call call_04_5b22                             ;; 3b:785a $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 3b:785e $44 $09 $00
     Op1C_TableJump 5                                   ;; 3b:7861 $1c $05

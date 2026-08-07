@@ -110,12 +110,15 @@ class HamChatWheelOptionsBlock(Block):
 
         self.amount = amount
         self.label = bank5.getLabel(addr)
+        self.referencedFrom = []
         self.pairedRuleBlocks = []
 
     def export(self, file):
         prelineComments = self.memory.getComments(file.addr)
-        if prelineComments is not None and prelineComments[-1].startswith(" Paired with "):
-            prelineComments.pop() # Otherwise each run appends an additional comment
+        if prelineComments is not None:
+            prelineComments[:] = [comment for comment in prelineComments if not comment.startswith(" Paired with") and not comment.startswith(" Referenced from") ]
+        if len(self.referencedFrom) != 0:
+            self.memory.addComment(file.addr, " Referenced from %s" % ', '.join(self.referencedFrom))
         self.memory.addComment(file.addr, " Paired with %s" % ', '.join([str(block.label) for block in self.pairedRuleBlocks]))
         for i in range(self.amount):
             optionValue = self.memory.byte(file.addr)
@@ -147,6 +150,7 @@ db (\1 & $FF)
         RomInfo.constants["INVENTORY"] = {v: k for k, v in BITARRAY_INDEX_TO_HAMCHAT.items()}
 
         self.label = bank5.getLabel(addr)
+        self.referencedFrom = []
         self.pairedOptionsBlocks = []
         self.amount = amount
         self.computeRules()
@@ -206,11 +210,12 @@ db (\1 & $FF)
         if size > 0:
             self.resize(size)
 
-    # TODO Add referencedFrom comments?
     def export(self, file):
         prelineComments = self.memory.getComments(file.addr)
-        if prelineComments is not None and prelineComments[-1].startswith(" Paired with"):
-            prelineComments.pop() # Otherwise each run appends an additional comment
+        if prelineComments is not None:
+            prelineComments[:] = [comment for comment in prelineComments if not comment.startswith(" Paired with") and not comment.startswith(" Referenced from") ]
+        if len(self.referencedFrom) != 0:
+            self.memory.addComment(file.addr, " Referenced from %s" % ', '.join(self.referencedFrom))
         if len(self.pairedOptionsBlocks) != 0:
             self.memory.addComment(file.addr, " Paired with %s" % ', '.join([str(block.label) for block in self.pairedOptionsBlocks]))
         for i, hamChatWheelRuleArgs in enumerate(self.hamChatWheelRulesArgsList):

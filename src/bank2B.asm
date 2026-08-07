@@ -1320,7 +1320,7 @@ call_2b_519c:
 call_2b_51f1:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:51f1 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:51f5 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2b:51f9 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2b:51f9 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2b:51ff $1c $04
     SCRIPT_POINTER call_2b_520d                        ;; 2b:5201 $0d $52 $2b
     SCRIPT_POINTER call_2b_522d                        ;; 2b:5204 $2d $52 $2b
@@ -1454,7 +1454,7 @@ call_2b_531b:
 call_2b_532e:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:532e $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:5332 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2b:5336 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2b:5336 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2b:533c $1c $04
     SCRIPT_POINTER call_2b_520d                        ;; 2b:533e $0d $52 $2b
     SCRIPT_POINTER call_2b_522d                        ;; 2b:5341 $2d $52 $2b
@@ -1565,7 +1565,7 @@ call_2b_5495:
 call_2b_54a8:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:54a8 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:54ac $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2b:54b0 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2b:54b0 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2b:54b6 $1c $04
     SCRIPT_POINTER call_2b_520d                        ;; 2b:54b8 $0d $52 $2b
     SCRIPT_POINTER call_2b_54c4                        ;; 2b:54bb $c4 $54 $2b
@@ -1661,7 +1661,7 @@ call_2b_5593:
 call_2b_55c2:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:55c2 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:55c6 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2b:55ca $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2b:55ca $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2b:55d0 $1c $04
     SCRIPT_POINTER call_2b_55fe                        ;; 2b:55d2 $fe $55 $2b
     SCRIPT_POINTER call_2b_564a                        ;; 2b:55d5 $4a $56 $2b
@@ -1949,7 +1949,7 @@ call_2b_595c:
 call_2b_597f:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:597f $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:5983 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2b:5987 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2b:5987 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2b:598d $1c $04
     SCRIPT_POINTER call_2b_55fe                        ;; 2b:598f $fe $55 $2b
     SCRIPT_POINTER call_2b_564a                        ;; 2b:5992 $4a $56 $2b
@@ -1986,7 +1986,7 @@ call_2b_59c0:
 call_2b_59de:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:59de $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:59e2 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2b:59e6 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2b:59e6 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2b:59ec $1c $04
     SCRIPT_POINTER call_2b_59fa                        ;; 2b:59ee $fa $59 $2b
     SCRIPT_POINTER call_2b_5a2d                        ;; 2b:59f1 $2d $5a $2b
@@ -2109,7 +2109,7 @@ call_2b_5b10:
 call_2b_5b2a:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:5b2a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:5b2e $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2b:5b32 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2b:5b32 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2b:5b38 $1c $04
     SCRIPT_POINTER call_2b_59fa                        ;; 2b:5b3a $fa $59 $2b
     SCRIPT_POINTER call_2b_522d                        ;; 2b:5b3d $2d $52 $2b
@@ -2179,7 +2179,7 @@ call_2b_5bea:
 call_2b_5bfd:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:5bfd $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:5c01 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2b:5c05 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2b:5c05 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2b:5c0b $1c $04
     SCRIPT_POINTER call_2b_520d                        ;; 2b:5c0d $0d $52 $2b
     SCRIPT_POINTER call_2b_5c19                        ;; 2b:5c10 $19 $5c $2b

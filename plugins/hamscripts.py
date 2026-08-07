@@ -8,7 +8,7 @@ from hamchatwheel import HamChatWheelOptionsBlock, HamChatWheelRulesBlock
 
 
 def serializeAddress(memory, addr):
-    return  "%02x:%04x." % (memory.bankNumber, addr)
+    return  "%02x:%04x" % (memory.bankNumber, addr)
 
 # A heatmap of all the opcodes that stop script decoding and their counts.
 # Used to assess which opcodes are most valuable to implement.
@@ -376,7 +376,8 @@ class Op14Block(Block):
         self.label = bank5.getLabel(pointer)
 
         if bank5[pointer] is None:
-            HamChatWheelRulesBlock(pointer, self.count)
+            rulesBlock = HamChatWheelRulesBlock(pointer, self.count)
+            rulesBlock.referencedFrom.append(serializeAddress(memory, addr))
 
         self.subBlock = ScriptPointersBlock(memory, addr + len(self), amount=self.count)
 
@@ -650,8 +651,10 @@ class Op10OrOp0CBlock(Block):
 
         self.optionsLabel = bank5.getLabel(optionspointer)
         self.rulesLabel = bank5.getLabel(rulespointer)
+        self.optionsBlock.referencedFrom.append(serializeAddress(memory, addr))
         if self.rulesBlock not in self.optionsBlock.pairedRuleBlocks:
             self.optionsBlock.pairedRuleBlocks.append(self.rulesBlock)
+        self.rulesBlock.referencedFrom.append(serializeAddress(memory, addr))
         if self.optionsBlock not in self.rulesBlock.pairedOptionsBlocks:
             self.rulesBlock.pairedOptionsBlocks.append(self.optionsBlock) 
 

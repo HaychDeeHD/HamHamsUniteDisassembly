@@ -2759,7 +2759,7 @@ call_2a_631e:
 call_2a_6331:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:6331 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2a:6335 $1e $1d $6f $1d
-    Op10_HamChatWheel 6, data_05_5a10, data_05_5b38    ;; 2a:6339 $10 $06 $10 $5a $38 $5b
+    Op10_HamChatWheel 6, data_05_5a10, AcornShrineAlwaysUsePile2 ;; 2a:6339 $10 $06 $10 $5a $38 $5b
     Op1C_TableJump 6                                   ;; 2a:633f $1c $06
     SCRIPT_POINTER call_2a_6353                        ;; 2a:6341 $53 $63 $2a
     SCRIPT_POINTER call_2a_63b8                        ;; 2a:6344 $b8 $63 $2a
@@ -3108,7 +3108,7 @@ call_2a_676a:
 call_2a_677c:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:677c $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2a:6780 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2a:6784 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2a:6784 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2a:678a $1c $04
     SCRIPT_POINTER call_2a_67bd                        ;; 2a:678c $bd $67 $2a
     SCRIPT_POINTER call_2a_67ec                        ;; 2a:678f $ec $67 $2a
@@ -3321,7 +3321,7 @@ call_2a_6a80:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2a:6a80 $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2a:6a84 $50 $1d $c3 $00 $90
     Op1E_Call call_1d_6f1d                             ;; 2a:6a89 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2a:6a8d $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2a:6a8d $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2a:6a93 $1c $04
     SCRIPT_POINTER call_2a_6ac6                        ;; 2a:6a95 $c6 $6a $2a
     SCRIPT_POINTER call_2a_6af5                        ;; 2a:6a98 $f5 $6a $2a

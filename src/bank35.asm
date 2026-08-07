@@ -1430,7 +1430,7 @@ call_35_5452:
     Op82_Run data_01_73cc                              ;; 35:5452 $82 $cc $73 $01
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 35:5456 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 35:545a $1e $1d $6f $1d
-    Op0C_HamChatWheel 2, AcornShrineYesNo, data_05_5a55 ;; 35:545e $0c $02 $1d $5a $55 $5a
+    Op0C_HamChatWheel 2, AcornShrineYesNo, AcornShrineAlwaysUsePile1 ;; 35:545e $0c $02 $1d $5a $55 $5a
     Op1C_TableJump 2                                   ;; 35:5464 $1c $02
     SCRIPT_POINTER call_35_546c                        ;; 35:5466 $6c $54 $35
     SCRIPT_POINTER call_35_54b5                        ;; 35:5469 $b5 $54 $35

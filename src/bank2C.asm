@@ -207,7 +207,7 @@ call_2c_4270:
 call_2c_42b3:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2c:42b3 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2c:42b7 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2c:42bb $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2c:42bb $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2c:42c1 $1c $04
     SCRIPT_POINTER call_2c_42cf                        ;; 2c:42c3 $cf $42 $2c
     SCRIPT_POINTER call_2c_42ef                        ;; 2c:42c6 $ef $42 $2c
@@ -341,7 +341,7 @@ call_2c_43ec:
 call_2c_43ff:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2c:43ff $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2c:4403 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2c:4407 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2c:4407 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2c:440d $1c $04
     SCRIPT_POINTER call_2c_42cf                        ;; 2c:440f $cf $42 $2c
     SCRIPT_POINTER call_2c_441b                        ;; 2c:4412 $1b $44 $2c
@@ -467,7 +467,7 @@ call_2c_45cb:
 call_2c_45de:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2c:45de $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2c:45e2 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2c:45e6 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2c:45e6 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2c:45ec $1c $04
     SCRIPT_POINTER call_2c_45fa                        ;; 2c:45ee $fa $45 $2c
     SCRIPT_POINTER call_2c_4656                        ;; 2c:45f1 $56 $46 $2c
@@ -560,7 +560,7 @@ call_2c_46d0:
 call_2c_46e3:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2c:46e3 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2c:46e7 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2c:46eb $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2c:46eb $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2c:46f1 $1c $04
     SCRIPT_POINTER call_2c_4703                        ;; 2c:46f3 $03 $47 $2c
     SCRIPT_POINTER call_2c_4b00                        ;; 2c:46f6 $00 $4b $2c
@@ -994,7 +994,7 @@ call_2c_4c8a:
 call_2c_4c9d:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2c:4c9d $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2c:4ca1 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2c:4ca5 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2c:4ca5 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2c:4cab $1c $04
     SCRIPT_POINTER call_2c_42cf                        ;; 2c:4cad $cf $42 $2c
     SCRIPT_POINTER call_2c_42ef                        ;; 2c:4cb0 $ef $42 $2c
@@ -1014,7 +1014,7 @@ call_2c_4ccc:
     SCRIPT_POINTER call_2c_42b3                        ;; 2c:4cd0 $b3 $42 $2c
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2c:4cd3 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2c:4cd7 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2c:4cdb $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2c:4cdb $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2c:4ce1 $1c $04
     SCRIPT_POINTER call_2c_4cef                        ;; 2c:4ce3 $ef $4c $2c
     SCRIPT_POINTER call_2c_4cf3                        ;; 2c:4ce6 $f3 $4c $2c
@@ -1095,7 +1095,7 @@ call_2c_4d89:
 call_2c_4d9c:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2c:4d9c $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2c:4da0 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 2c:4da4 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2c:4da4 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2c:4daa $1c $04
     SCRIPT_POINTER call_2c_42cf                        ;; 2c:4dac $cf $42 $2c
     SCRIPT_POINTER call_2c_42ef                        ;; 2c:4daf $ef $42 $2c

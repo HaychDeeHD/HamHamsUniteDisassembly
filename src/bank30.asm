@@ -471,7 +471,7 @@ call_30_4e25:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 30:4e2c $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 30:4e30 $50 $1d $c3 $00 $90
     Op1E_Call call_1d_6f1d                             ;; 30:4e35 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 30:4e39 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 30:4e39 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 30:4e3f $1c $04
     SCRIPT_POINTER call_30_4ea1                        ;; 30:4e41 $a1 $4e $30
     SCRIPT_POINTER call_30_4f0f                        ;; 30:4e44 $0f $4f $30

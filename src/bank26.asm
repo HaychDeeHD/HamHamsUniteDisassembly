@@ -2790,7 +2790,7 @@ call_26_6602:
 call_26_6695:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 26:6695 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 26:6699 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 26:669d $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 26:669d $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 26:66a3 $1c $04
     SCRIPT_POINTER call_26_66b1                        ;; 26:66a5 $b1 $66 $26
     SCRIPT_POINTER call_26_66d1                        ;; 26:66a8 $d1 $66 $26
@@ -2916,7 +2916,7 @@ call_26_67c9:
 call_26_67dc:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 26:67dc $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 26:67e0 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_59fc, data_05_5b72    ;; 26:67e4 $10 $08 $fc $59 $72 $5b
+    Op10_HamChatWheel 8, data_05_59fc, AcornShrineAlwaysUsePile3 ;; 26:67e4 $10 $08 $fc $59 $72 $5b
     Op1C_TableJump 8                                   ;; 26:67ea $1c $08
     SCRIPT_POINTER call_26_66b1                        ;; 26:67ec $b1 $66 $26
     SCRIPT_POINTER call_26_66d1                        ;; 26:67ef $d1 $66 $26
@@ -3118,7 +3118,7 @@ call_26_6a3c:
 call_26_6a59:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 26:6a59 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 26:6a5d $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 26:6a61 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 26:6a61 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 26:6a67 $1c $04
     SCRIPT_POINTER call_26_6a75                        ;; 26:6a69 $75 $6a $26
     SCRIPT_POINTER call_26_6bec                        ;; 26:6a6c $ec $6b $26
@@ -3431,7 +3431,7 @@ call_26_6f02:
 call_26_6f1f:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 26:6f1f $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 26:6f23 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 26:6f27 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 26:6f27 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 26:6f2d $1c $04
     SCRIPT_POINTER call_26_6f3b                        ;; 26:6f2f $3b $6f $26
     SCRIPT_POINTER call_26_6bec                        ;; 26:6f32 $ec $6b $26
@@ -3539,7 +3539,7 @@ call_26_707b:
 call_26_7098:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 26:7098 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 26:709c $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_59fc, data_05_5b72    ;; 26:70a0 $10 $08 $fc $59 $72 $5b
+    Op10_HamChatWheel 8, data_05_59fc, AcornShrineAlwaysUsePile3 ;; 26:70a0 $10 $08 $fc $59 $72 $5b
     Op1C_TableJump 8                                   ;; 26:70a6 $1c $08
     SCRIPT_POINTER call_26_70c0                        ;; 26:70a8 $c0 $70 $26
     SCRIPT_POINTER call_26_6bec                        ;; 26:70ab $ec $6b $26
@@ -3628,7 +3628,7 @@ call_26_71c9:
 call_26_71dc:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 26:71dc $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 26:71e0 $1e $1d $6f $1d
-    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, data_05_5a55 ;; 26:71e4 $10 $04 $f2 $59 $55 $5a
+    Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 26:71e4 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 26:71ea $1c $04
     SCRIPT_POINTER call_26_66b1                        ;; 26:71ec $b1 $66 $26
     SCRIPT_POINTER call_26_71f8                        ;; 26:71ef $f8 $71 $26
