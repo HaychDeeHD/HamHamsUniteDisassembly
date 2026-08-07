@@ -135,7 +135,7 @@ data_3c_4495:
     Op14_Unknown 1, data_05_6058                       ;; 3c:44dd $14 $01 $58 $60
     SCRIPT_POINTER call_3c_4528                        ;; 3c:44e1 $28 $45 $3c
     Op18_Jump call_33_521b                             ;; 3c:44e4 $18 $1b $52 $33
-    Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 3c:44e8 $36 $fd $77 $7f $9a $dd $01
+    Op36_Graphics data_7f_77fd, w1_DD9A                ;; 3c:44e8 $36 $fd $77 $7f $9a $dd $01
     Op0C_HamChatWheel 10, data_05_5ff9, SunflowerElementaryAlwaysUsePile ;; 3c:44ef $0c $0a $f9 $5f $64 $60
     Op1E_Call call_04_5b22                             ;; 3c:44f5 $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 3c:44f9 $44 $09 $00
@@ -461,7 +461,7 @@ data_3c_4d76:
     Op14_Unknown 1, data_05_6681                       ;; 3c:4dc0 $14 $01 $81 $66
     SCRIPT_POINTER call_3c_4e0c                        ;; 3c:4dc4 $0c $4e $3c
     Op18_Jump call_3a_4000                             ;; 3c:4dc7 $18 $00 $40 $3a
-    Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 3c:4dcb $36 $fd $77 $7f $9a $dd $01
+    Op36_Graphics data_7f_77fd, w1_DD9A                ;; 3c:4dcb $36 $fd $77 $7f $9a $dd $01
     Op0C_HamChatWheel 9, data_05_6605, SkyGardenAlwaysUsePile ;; 3c:4dd2 $0c $09 $05 $66 $8d $66
     Op1E_Call call_04_5b22                             ;; 3c:4dd8 $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 3c:4ddc $44 $09 $00
@@ -755,7 +755,7 @@ data_3c_53b5:
     Op16_SubOps 1                                      ;; 3c:53f7 $16 $01
     SubOp_SetByte wC779, $00                           ;; 3c:53f9 $7e $61 $00
     Op18_Jump call_22_5639                             ;; 3c:53fc $18 $39 $56 $22
-    Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 3c:5400 $36 $fd $77 $7f $9a $dd $01
+    Op36_Graphics data_7f_77fd, w1_DD9A                ;; 3c:5400 $36 $fd $77 $7f $9a $dd $01
     Op0C_HamChatWheel 11, data_05_6c5a, RuinsAlwaysUsePile ;; 3c:5407 $0c $0b $5a $6c $f7 $6c
     Op1E_Call call_04_5b22                             ;; 3c:540d $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 3c:5411 $44 $09 $00
@@ -864,7 +864,7 @@ call_3c_544f:
     Op14_Unknown 1, data_05_5482                       ;; 3c:55ef $14 $01 $82 $54
     SCRIPT_POINTER call_3c_563c                        ;; 3c:55f3 $3c $56 $3c
     Op18_Jump call_32_535a                             ;; 3c:55f6 $18 $5a $53 $32
-    Op36_Unknown $fd, $77, $7f, $9a, $dd, $01          ;; 3c:55fa $36 $fd $77 $7f $9a $dd $01
+    Op36_Graphics data_7f_77fd, w1_DD9A                ;; 3c:55fa $36 $fd $77 $7f $9a $dd $01
     Op0C_HamChatWheel 10, data_05_543c, SunflowerParkAlwaysUsePile ;; 3c:5601 $0c $0a $3c $54 $8e $54
     Op1E_Call call_04_5b22                             ;; 3c:5607 $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 3c:560b $44 $09 $00
@@ -1580,19 +1580,19 @@ call_3c_6a5b:
     Op50_WriteByte wC720, $00, $16                     ;; 3c:6a5b $50 $20 $c7 $00 $16
     Op82_Run data_01_6844                              ;; 3c:6a60 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3c:6a64 $4a
-    Op32_Unknown $00, $40, $68, $00, $d0, $05          ;; 3c:6a65 $32 $00 $40 $68 $00 $d0 $05
-    Op32_Unknown $26, $77, $7b, $00, $d0, $07          ;; 3c:6a6c $32 $26 $77 $7b $00 $d0 $07
+    Op32_Graphics data_68_4000, w5_D000                ;; 3c:6a65 $32 $00 $40 $68 $00 $d0 $05
+    Op32_Graphics data_7b_7726, w7_D000                ;; 3c:6a6c $32 $26 $77 $7b $00 $d0 $07
     Op14_Unknown 1, data_05_71f8                       ;; 3c:6a73 $14 $01 $f8 $71
     SCRIPT_POINTER call_3c_6aa4                        ;; 3c:6a77 $a4 $6a $3c
-    Op34_Unknown $08, $70, $78, $00, $d8, $05, $1e     ;; 3c:6a7a $34 $08 $70 $78 $00 $d8 $05 $1e
-    Op34_Unknown $aa, $6b, $7b, $00, $d8, $07, $1e     ;; 3c:6a82 $34 $aa $6b $7b $00 $d8 $07 $1e
+    Op34_Graphics data_78_7008, w5_D800, $1e           ;; 3c:6a7a $34 $08 $70 $78 $00 $d8 $05 $1e
+    Op34_Graphics data_7b_6baa, w7_D800, $1e           ;; 3c:6a82 $34 $aa $6b $7b $00 $d8 $07 $1e
     Op4C_Unknown $16, $08, $02, $f8, $ff, $30, $00, data_1a_7e57 ;; 3c:6a8a $4c $16 $08 $02 $f8 $ff $30 $00 $57 $7e $1a
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 3c:6a95 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
     Op18_Jump call_3c_6aca                             ;; 3c:6aa0 $18 $ca $6a $3c
 
 call_3c_6aa4:
-    Op34_Unknown $f9, $6a, $7b, $00, $d8, $05, $1e     ;; 3c:6aa4 $34 $f9 $6a $7b $00 $d8 $05 $1e
-    Op34_Unknown $24, $79, $7b, $00, $d8, $07, $1e     ;; 3c:6aac $34 $24 $79 $7b $00 $d8 $07 $1e
+    Op34_Graphics data_7b_6af9, w5_D800, $1e           ;; 3c:6aa4 $34 $f9 $6a $7b $00 $d8 $05 $1e
+    Op34_Graphics data_7b_7924, w7_D800, $1e           ;; 3c:6aac $34 $24 $79 $7b $00 $d8 $07 $1e
     Op4C_Unknown $16, $08, $02, $08, $00, $e8, $ff, data_1a_7eeb ;; 3c:6ab4 $4c $16 $08 $02 $08 $00 $e8 $ff $eb $7e $1a
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $a0, $00, $90, $00 ;; 3c:6abf $3a $00 $00 $a0 $90 $50 $48 $a0 $00 $90 $00
 
@@ -1669,13 +1669,13 @@ call_3c_6c0b:
     Op1E_Call call_3c_46d3                             ;; 3c:6c0b $1e $d3 $46 $3c
     SCRIPT_RETURN_4A                                   ;; 3c:6c0f $4a
     Op1E_Call call_04_61cf                             ;; 3c:6c10 $1e $cf $61 $04
-    Op32_Unknown $47, $5d, $6b, $00, $d0, $05          ;; 3c:6c14 $32 $47 $5d $6b $00 $d0 $05
-    Op32_Unknown $d6, $5c, $74, $00, $d0, $07          ;; 3c:6c1b $32 $d6 $5c $74 $00 $d0 $07
-    Op34_Unknown $b2, $4c, $75, $00, $d8, $05, $1e     ;; 3c:6c22 $34 $b2 $4c $75 $00 $d8 $05 $1e
-    Op34_Unknown $32, $59, $7c, $00, $d8, $07, $1e     ;; 3c:6c2a $34 $32 $59 $7c $00 $d8 $07 $1e
-    Op36_Unknown $ed, $51, $77, $00, $d0, $03          ;; 3c:6c32 $36 $ed $51 $77 $00 $d0 $03
-    Op32_Unknown $0d, $7d, $6d, $00, $d4, $06          ;; 3c:6c39 $32 $0d $7d $6d $00 $d4 $06
-    Op32_Unknown $de, $72, $6d, $00, $d0, $06          ;; 3c:6c40 $32 $de $72 $6d $00 $d0 $06
+    Op32_Graphics data_6b_5d47, w5_D000                ;; 3c:6c14 $32 $47 $5d $6b $00 $d0 $05
+    Op32_Graphics data_74_5cd6, w7_D000                ;; 3c:6c1b $32 $d6 $5c $74 $00 $d0 $07
+    Op34_Graphics data_75_4cb2, w5_D800, $1e           ;; 3c:6c22 $34 $b2 $4c $75 $00 $d8 $05 $1e
+    Op34_Graphics data_7c_5932, w7_D800, $1e           ;; 3c:6c2a $34 $32 $59 $7c $00 $d8 $07 $1e
+    Op36_Graphics data_77_51ed, w3_D000                ;; 3c:6c32 $36 $ed $51 $77 $00 $d0 $03
+    Op32_Graphics data_6d_7d0d, w6_D400                ;; 3c:6c39 $32 $0d $7d $6d $00 $d4 $06
+    Op32_Graphics data_6d_72de, w6_D000                ;; 3c:6c40 $32 $de $72 $6d $00 $d0 $06
     Op4C_Unknown $16, $10, $02, $60, $00, $94, $00, data_11_6714 ;; 3c:6c47 $4c $16 $10 $02 $60 $00 $94 $00 $14 $67 $11
     Op16_SubOps 1                                      ;; 3c:6c52 $16 $01
     SubOp_SetByte wC764, $ff                           ;; 3c:6c54 $7e $4c $ff
@@ -1830,9 +1830,9 @@ call_3c_6f68:
     Op52_WriteBytes wC680, $00, $00, $00               ;; 3c:6f79 $52 $80 $c6 $00 $00 $00
     Op50_WriteByte wC67C, $00, $00                     ;; 3c:6f7f $50 $7c $c6 $00 $00
     Op52_WriteBytes wC67D, $00, $00, $00               ;; 3c:6f84 $52 $7d $c6 $00 $00 $00
-    Op32_Unknown $90, $54, $6a, $00, $d0, $05          ;; 3c:6f8a $32 $90 $54 $6a $00 $d0 $05
-    Op34_Unknown $36, $5b, $77, $00, $d8, $05, $14     ;; 3c:6f91 $34 $36 $5b $77 $00 $d8 $05 $14
-    Op34_Unknown $6e, $72, $7c, $00, $d8, $07, $14     ;; 3c:6f99 $34 $6e $72 $7c $00 $d8 $07 $14
+    Op32_Graphics data_6a_5490, w5_D000                ;; 3c:6f8a $32 $90 $54 $6a $00 $d0 $05
+    Op34_Graphics data_77_5b36, w5_D800, $14           ;; 3c:6f91 $34 $36 $5b $77 $00 $d8 $05 $14
+    Op34_Graphics data_7c_726e, w7_D800, $14           ;; 3c:6f99 $34 $6e $72 $7c $00 $d8 $07 $14
     Op16_SubOps 1                                      ;; 3c:6fa1 $16 $01
     SubOp_SetWord wC756, $3800                         ;; 3c:6fa3 $9e $3e $00 $38
     Op16_SubOps 1                                      ;; 3c:6fa7 $16 $01

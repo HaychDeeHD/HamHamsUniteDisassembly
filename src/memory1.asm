@@ -858,10 +858,46 @@ w1_DD9A:
     ds 1                                               ;; dd9a
 
 w1_DD9B:
-    ds 63                                              ;; dd9b
+    ds 7                                               ;; dd9b
+
+w1_DDA2:
+    ds 8                                               ;; dda2
+
+w1_DDAA:
+    ds 16                                              ;; ddaa
+
+w1_DDBA:
+    ds 8                                               ;; ddba
+
+w1_DDC2:
+    ds 16                                              ;; ddc2
+
+w1_DDD2:
+    ds 8                                               ;; ddd2
 
 w1_DDDA:
-    ds 63                                              ;; ddda
+    ds 8                                               ;; ddda
+
+w1_DDE2:
+    ds 8                                               ;; dde2
+
+w1_DDEA:
+    ds 8                                               ;; ddea
+
+w1_DDF2:
+    ds 8                                               ;; ddf2
+
+w1_DDFA:
+    ds 8                                               ;; ddfa
+
+w1_DE02:
+    ds 8                                               ;; de02
+
+w1_DE0A:
+    ds 14                                              ;; de0a
+
+w1_DE18:
+    ds 1                                               ;; de18
 
 w1_DE19:
     ds 167                                             ;; de19

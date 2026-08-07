@@ -6,7 +6,12 @@ INCLUDE "include/charmaps.inc"
 INCLUDE "include/constants.inc"
 
 SECTION "wram3", WRAMX[$d000], BANK[$3]
-    ds 93                                              ;; d000
+
+w3_D000:
+    ds 90                                              ;; d000
+
+w3_D05A:
+    ds 3                                               ;; d05a
 
 w3_D05D:
     ds 3                                               ;; d05d
@@ -105,7 +110,10 @@ w3_D0AC:
     ds 1                                               ;; d0ac
 
 w3_D0AD:
-    ds 10                                              ;; d0ad
+    ds 7                                               ;; d0ad
+
+w3_D0B4:
+    ds 3                                               ;; d0b4
 
 w3_D0B7:
     ds 3                                               ;; d0b7
@@ -225,7 +233,10 @@ w3_D108:
     ds 5                                               ;; d108
 
 w3_D10D:
-    ds 3                                               ;; d10d
+    ds 1                                               ;; d10d
+
+w3_D10E:
+    ds 2                                               ;; d10e
 
 w3_D110:
     ds 1                                               ;; d110
@@ -678,7 +689,10 @@ w3_D217:
     ds 1                                               ;; d217
 
 w3_D218:
-    ds 7                                               ;; d218
+    ds 4                                               ;; d218
+
+w3_D21C:
+    ds 3                                               ;; d21c
 
 w3_D21F:
     ds 3                                               ;; d21f
@@ -783,7 +797,10 @@ w3_D26F:
     ds 1                                               ;; d26f
 
 w3_D270:
-    ds 9                                               ;; d270
+    ds 6                                               ;; d270
+
+w3_D276:
+    ds 3                                               ;; d276
 
 w3_D279:
     ds 3                                               ;; d279

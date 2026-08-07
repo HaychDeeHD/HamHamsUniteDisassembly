@@ -87,33 +87,27 @@ db \<1>
 db \<2>
 db \<3>
 ENDM
-MACRO Op32_Unknown
+MACRO Op32_Graphics
 db $32
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
-db \<6>
+dw \1
+db BANK(\1)
+dw \2
+db BANK(\2)
 ENDM
-MACRO Op34_Unknown
+MACRO Op34_Graphics
 db $34
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
-db \<6>
-db \<7>
+dw \1
+db BANK(\1)
+dw \2
+db BANK(\2)
+db \3
 ENDM
-MACRO Op36_Unknown
+MACRO Op36_Graphics
 db $36
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
-db \<6>
+dw \1
+db BANK(\1)
+dw \2
+db BANK(\2)
 ENDM
 MACRO Op38_Unknown
 db $38

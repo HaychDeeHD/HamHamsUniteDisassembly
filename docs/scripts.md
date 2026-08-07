@@ -265,11 +265,25 @@ I have not observed this being used in any scripts.
 <a id="op32"></a>
 ### Op32 
 
+Ops 32, 34, and 36 are variants of each other.
+
+Takes 2 3-byte addresses as arguments.
+
+The first is a Rom address in the bank range of 0A-0E or 5D-7F (end). These banks contain graphics data.
+
+The second is a WRAM address, including a WRAM bank. I've only observed these addresses being in wram banks other than bank 0.
+
+What these Ops do with this is still unknown.
+
 <a id="op34"></a>
 ### Op34 
 
+Same arguments as Op32 except there is an additional final byte.
+
 <a id="op36"></a>
 ### Op36 
+
+Same arguments as Op32.
 
 <a id="op38"></a>
 ### Op38 

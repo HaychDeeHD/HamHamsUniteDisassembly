@@ -319,7 +319,7 @@ call_20_441c:
     Op4C_Unknown $0a, $01, $04, $00, $00, $00, $00, data_10_6041 ;; 20:4431 $4c $0a $01 $04 $00 $00 $00 $00 $41 $60 $10
     ;;<EB><EA>Digdig<E8>!<end>
     Op04_Unknown_Text data_2f_4719                     ;; 20:443c $04 $19 $47 $2f
-    Op36_Unknown $13, $76, $7f, $da, $dd, $01          ;; 20:4440 $36 $13 $76 $7f $da $dd $01
+    Op36_Graphics data_7f_7613, w1_DDDA                ;; 20:4440 $36 $13 $76 $7f $da $dd $01
     Op44_Unknown $10, $00                              ;; 20:4447 $44 $10 $00
 
 call_20_444a:
@@ -684,7 +684,7 @@ call_20_4910:
     SCRIPT_RETURN_20                                   ;; 20:4928 $20
 
 call_20_4929:
-    Op32_Unknown $9c, $55, $7b, $00, $d4, $06          ;; 20:4929 $32 $9c $55 $7b $00 $d4 $06
+    Op32_Graphics data_7b_559c, w6_D400                ;; 20:4929 $32 $9c $55 $7b $00 $d4 $06
     Op1E_Call call_1d_6acd                             ;; 20:4930 $1e $cd $6a $1d
     Op4E_Unknown_StoreValue 4, $01, $b5, $40, $10      ;; 20:4934 $4e $04 $01 $b5 $40 $10
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_0f_5465 ;; 20:493a $4c $16 $08 $04 $00 $00 $00 $00 $65 $54 $0f
@@ -869,7 +869,7 @@ call_20_4b7b:
     SCRIPT_RETURN_4A                                   ;; 20:4b7b $4a
     Op3E_Compare_Branch 22, $ca, $59, $0f, call_20_4b7b ;; 20:4b7c $3e $16 $ca $59 $0f $7b $4b $20
     SCRIPT_RETURN_20                                   ;; 20:4b84 $20
-    Op32_Unknown $a9, $69, $71, $00, $d4, $06          ;; 20:4b85 $32 $a9 $69 $71 $00 $d4 $06
+    Op32_Graphics data_71_69a9, w6_D400                ;; 20:4b85 $32 $a9 $69 $71 $00 $d4 $06
     Op1E_Call call_1d_6acd                             ;; 20:4b8c $1e $cd $6a $1d
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_0f_5a27 ;; 20:4b90 $4c $16 $08 $04 $00 $00 $00 $00 $27 $5a $0f
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_0f_5ad3 ;; 20:4b9b $4c $08 $01 $04 $00 $00 $00 $00 $d3 $5a $0f
@@ -886,7 +886,7 @@ call_20_4baa:
 call_20_4bc7:
     SCRIPT_RETURN_4A                                   ;; 20:4bc7 $4a
     Op3E_Compare_Branch 22, $60, $5a, $0f, call_20_4bc7 ;; 20:4bc8 $3e $16 $60 $5a $0f $c7 $4b $20
-    Op32_Unknown $0d, $7d, $6d, $00, $d4, $06          ;; 20:4bd0 $32 $0d $7d $6d $00 $d4 $06
+    Op32_Graphics data_6d_7d0d, w6_D400                ;; 20:4bd0 $32 $0d $7d $6d $00 $d4 $06
     SCRIPT_RETURN_20                                   ;; 20:4bd7 $20
 
 call_20_4bd8:
@@ -1183,7 +1183,7 @@ call_20_4fbf:
     SCRIPT_RETURN_20                                   ;; 20:4fd7 $20
 
 call_20_4fd8:
-    Op32_Unknown $7a, $70, $7d, $00, $d4, $06          ;; 20:4fd8 $32 $7a $70 $7d $00 $d4 $06
+    Op32_Graphics data_7d_707a, w6_D400                ;; 20:4fd8 $32 $7a $70 $7d $00 $d4 $06
     SCRIPT_RETURN_4A                                   ;; 20:4fdf $4a
     Op1E_Call call_1d_6acd                             ;; 20:4fe0 $1e $cd $6a $1d
     Op4E_Unknown_StoreValue 4, $01, $aa, $6d, $0f      ;; 20:4fe4 $4e $04 $01 $aa $6d $0f
@@ -1437,7 +1437,7 @@ call_20_534b:
     SCRIPT_RETURN_20                                   ;; 20:5354 $20
 
 call_20_5355:
-    Op32_Unknown $7f, $49, $79, $00, $d4, $06          ;; 20:5355 $32 $7f $49 $79 $00 $d4 $06
+    Op32_Graphics data_79_497f, w6_D400                ;; 20:5355 $32 $7f $49 $79 $00 $d4 $06
     Op1E_Call call_1d_6acd                             ;; 20:535c $1e $cd $6a $1d
     Op4E_Unknown_StoreValue 4, $01, $79, $40, $10      ;; 20:5360 $4e $04 $01 $79 $40 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_0f_7dd0 ;; 20:5366 $4c $08 $01 $04 $00 $00 $00 $00 $d0 $7d $0f
@@ -1455,11 +1455,11 @@ call_20_5398:
     SCRIPT_RETURN_4A                                   ;; 20:5398 $4a
     Op3E_Compare_Branch 22, $6b, $7d, $0f, call_20_5398 ;; 20:5399 $3e $16 $6b $7d $0f $98 $53 $20
     SCRIPT_RETURN_20                                   ;; 20:53a1 $20
-    Op32_Unknown $0d, $7d, $6d, $00, $d4, $06          ;; 20:53a2 $32 $0d $7d $6d $00 $d4 $06
+    Op32_Graphics data_6d_7d0d, w6_D400                ;; 20:53a2 $32 $0d $7d $6d $00 $d4 $06
     SCRIPT_RETURN_20                                   ;; 20:53a9 $20
 
 call_20_53aa:
-    Op32_Unknown $9c, $55, $7b, $00, $d4, $06          ;; 20:53aa $32 $9c $55 $7b $00 $d4 $06
+    Op32_Graphics data_7b_559c, w6_D400                ;; 20:53aa $32 $9c $55 $7b $00 $d4 $06
     Op1E_Call call_1d_6acd                             ;; 20:53b1 $1e $cd $6a $1d
     Op4E_Unknown_StoreValue 4, $01, $79, $40, $10      ;; 20:53b5 $4e $04 $01 $79 $40 $10
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, data_0f_7de7 ;; 20:53bb $4c $16 $ff $04 $00 $00 $00 $00 $e7 $7d $0f
@@ -1776,17 +1776,17 @@ call_20_57ce:
     Op82_Run data_01_6844                              ;; 20:57d3 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 20:57d7 $4a
     Op1E_Call call_04_61cf                             ;; 20:57d8 $1e $cf $61 $04
-    Op32_Unknown $ec, $5f, $63, $00, $d0, $05          ;; 20:57dc $32 $ec $5f $63 $00 $d0 $05
-    Op32_Unknown $32, $63, $6f, $a0, $dc, $04          ;; 20:57e3 $32 $32 $63 $6f $a0 $dc $04
-    Op32_Unknown $33, $47, $5f, $00, $d0, $07          ;; 20:57ea $32 $33 $47 $5f $00 $d0 $07
-    Op32_Unknown $8b, $51, $6c, $00, $d2, $04          ;; 20:57f1 $32 $8b $51 $6c $00 $d2 $04
-    Op32_Unknown $ab, $77, $7c, $00, $d8, $04          ;; 20:57f8 $32 $ab $77 $7c $00 $d8 $04
-    Op34_Unknown $31, $7c, $6f, $00, $d8, $05, $1e     ;; 20:57ff $34 $31 $7c $6f $00 $d8 $05 $1e
-    Op34_Unknown $e3, $7b, $75, $00, $d8, $07, $1e     ;; 20:5807 $34 $e3 $7b $75 $00 $d8 $07 $1e
-    Op36_Unknown $cf, $43, $79, $00, $d0, $03          ;; 20:580f $36 $cf $43 $79 $00 $d0 $03
-    Op32_Unknown $0d, $7d, $6d, $00, $d4, $06          ;; 20:5816 $32 $0d $7d $6d $00 $d4 $06
-    Op32_Unknown $de, $72, $6d, $00, $d0, $06          ;; 20:581d $32 $de $72 $6d $00 $d0 $06
-    Op32_Unknown $b4, $59, $7a, $c0, $d2, $06          ;; 20:5824 $32 $b4 $59 $7a $c0 $d2 $06
+    Op32_Graphics data_63_5fec, w5_D000                ;; 20:57dc $32 $ec $5f $63 $00 $d0 $05
+    Op32_Graphics data_6f_6332, w4_DCA0                ;; 20:57e3 $32 $32 $63 $6f $a0 $dc $04
+    Op32_Graphics data_5f_4733, w7_D000                ;; 20:57ea $32 $33 $47 $5f $00 $d0 $07
+    Op32_Graphics data_6c_518b, w4_D200                ;; 20:57f1 $32 $8b $51 $6c $00 $d2 $04
+    Op32_Graphics data_7c_77ab, w4_D800                ;; 20:57f8 $32 $ab $77 $7c $00 $d8 $04
+    Op34_Graphics data_6f_7c31, w5_D800, $1e           ;; 20:57ff $34 $31 $7c $6f $00 $d8 $05 $1e
+    Op34_Graphics data_75_7be3, w7_D800, $1e           ;; 20:5807 $34 $e3 $7b $75 $00 $d8 $07 $1e
+    Op36_Graphics data_79_43cf, w3_D000                ;; 20:580f $36 $cf $43 $79 $00 $d0 $03
+    Op32_Graphics data_6d_7d0d, w6_D400                ;; 20:5816 $32 $0d $7d $6d $00 $d4 $06
+    Op32_Graphics data_6d_72de, w6_D000                ;; 20:581d $32 $de $72 $6d $00 $d0 $06
+    Op32_Graphics data_7a_59b4, w6_D2C0                ;; 20:5824 $32 $b4 $59 $7a $c0 $d2 $06
     Op1E_Call call_20_6c8e                             ;; 20:582b $1e $8e $6c $20
     Op1E_Call call_20_6d11                             ;; 20:582f $1e $11 $6d $20
     Op1E_Call call_20_6d82                             ;; 20:5833 $1e $82 $6d $20
@@ -2700,7 +2700,7 @@ call_20_63b1:
     Op4C_Unknown $16, $ff, $ff, $18, $00, $00, $00, zero_pointer ;; 20:63bf $4c $16 $ff $ff $18 $00 $00 $00 $00 $00 $00
 
 call_20_63ca:
-    Op36_Unknown $19, $75, $7f, $f2, $dd, $01          ;; 20:63ca $36 $19 $75 $7f $f2 $dd $01
+    Op36_Graphics data_7f_7519, w1_DDF2                ;; 20:63ca $36 $19 $75 $7f $f2 $dd $01
     Op1E_Call call_20_6a29                             ;; 20:63d1 $1e $29 $6a $20
     Op4E_Unknown_StoreValue 4, $01, $73, $40, $10      ;; 20:63d5 $4e $04 $01 $73 $40 $10
     Op4C_Unknown $1a, $ff, $ff, $00, $00, $00, $00, data_16_5232 ;; 20:63db $4c $1a $ff $ff $00 $00 $00 $00 $32 $52 $16
@@ -2731,7 +2731,7 @@ call_20_6441:
     Op3E_Compare_Branch 26, $55, $52, $16, call_20_6441 ;; 20:6442 $3e $1a $55 $52 $16 $41 $64 $20
     ;;<E4>Wow! This stuff<E4>really works!<E4>I feel great.<E3>Thanks! Please<end>
     Op06_Unknown_Text data_25_7c60                     ;; 20:644a $06 $60 $7c $25
-    Op36_Unknown $41, $75, $7f, $f2, $dd, $01          ;; 20:644e $36 $41 $75 $7f $f2 $dd $01
+    Op36_Graphics data_7f_7541, w1_DDF2                ;; 20:644e $36 $41 $75 $7f $f2 $dd $01
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_40c2 ;; 20:6455 $4c $1a $01 $04 $00 $00 $00 $00 $c2 $40 $16
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_15_78c7 ;; 20:6460 $4c $08 $01 $04 $00 $00 $00 $00 $c7 $78 $15
 
@@ -2773,7 +2773,7 @@ call_20_64c5:
 call_20_64de:
     Op16_SubOps 1                                      ;; 20:64de $16 $01
     SubOp_SetFlag wC944, 0                             ;; 20:64e0 $3f $60
-    Op36_Unknown $0f, $75, $7f, $f2, $dd, $01          ;; 20:64e2 $36 $0f $75 $7f $f2 $dd $01
+    Op36_Graphics data_7f_750f, w1_DDF2                ;; 20:64e2 $36 $0f $75 $7f $f2 $dd $01
     Op1E_Call call_20_6a29                             ;; 20:64e9 $1e $29 $6a $20
     Op4E_Unknown_StoreValue 4, $01, $73, $40, $10      ;; 20:64ed $4e $04 $01 $73 $40 $10
     Op4C_Unknown $1a, $ff, $ff, $00, $00, $00, $00, data_16_5232 ;; 20:64f3 $4c $1a $ff $ff $00 $00 $00 $00 $32 $52 $16
@@ -2804,7 +2804,7 @@ call_20_6559:
     Op3E_Compare_Branch 26, $55, $52, $16, call_20_6559 ;; 20:655a $3e $1a $55 $52 $16 $59 $65 $20
     ;;<E3>Wow, I feel<E4>so much better.<E3><end>
     Op06_Unknown_Text data_25_7cef                     ;; 20:6562 $06 $ef $7c $25
-    Op36_Unknown $41, $75, $7f, $f2, $dd, $01          ;; 20:6566 $36 $41 $75 $7f $f2 $dd $01
+    Op36_Graphics data_7f_7541, w1_DDF2                ;; 20:6566 $36 $41 $75 $7f $f2 $dd $01
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_40c2 ;; 20:656d $4c $1a $01 $04 $00 $00 $00 $00 $c2 $40 $16
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_15_78c7 ;; 20:6578 $4c $08 $01 $04 $00 $00 $00 $00 $c7 $78 $15
 
@@ -3528,15 +3528,15 @@ call_20_6e97:
 call_20_6e9b:
     SCRIPT_RETURN_4A                                   ;; 20:6e9b $4a
     Op1E_Call call_04_61cf                             ;; 20:6e9c $1e $cf $61 $04
-    Op32_Unknown $52, $4a, $6a, $00, $d0, $05          ;; 20:6ea0 $32 $52 $4a $6a $00 $d0 $05
-    Op32_Unknown $64, $73, $7e, $00, $df, $04          ;; 20:6ea7 $32 $64 $73 $7e $00 $df $04
-    Op32_Unknown $16, $46, $65, $00, $d0, $07          ;; 20:6eae $32 $16 $46 $65 $00 $d0 $07
-    Op32_Unknown $d0, $6d, $7a, $00, $d2, $04          ;; 20:6eb5 $32 $d0 $6d $7a $00 $d2 $04
-    Op34_Unknown $ee, $72, $71, $00, $d8, $05, $1e     ;; 20:6ebc $34 $ee $72 $71 $00 $d8 $05 $1e
-    Op34_Unknown $f8, $72, $78, $00, $d8, $07, $1e     ;; 20:6ec4 $34 $f8 $72 $78 $00 $d8 $07 $1e
-    Op36_Unknown $ed, $51, $77, $00, $d0, $03          ;; 20:6ecc $36 $ed $51 $77 $00 $d0 $03
-    Op32_Unknown $0d, $7d, $6d, $00, $d4, $06          ;; 20:6ed3 $32 $0d $7d $6d $00 $d4 $06
-    Op32_Unknown $de, $72, $6d, $00, $d0, $06          ;; 20:6eda $32 $de $72 $6d $00 $d0 $06
+    Op32_Graphics data_6a_4a52, w5_D000                ;; 20:6ea0 $32 $52 $4a $6a $00 $d0 $05
+    Op32_Graphics data_7e_7364, w4_DF00                ;; 20:6ea7 $32 $64 $73 $7e $00 $df $04
+    Op32_Graphics data_65_4616, w7_D000                ;; 20:6eae $32 $16 $46 $65 $00 $d0 $07
+    Op32_Graphics data_7a_6dd0, w4_D200                ;; 20:6eb5 $32 $d0 $6d $7a $00 $d2 $04
+    Op34_Graphics data_71_72ee, w5_D800, $1e           ;; 20:6ebc $34 $ee $72 $71 $00 $d8 $05 $1e
+    Op34_Graphics data_78_72f8, w7_D800, $1e           ;; 20:6ec4 $34 $f8 $72 $78 $00 $d8 $07 $1e
+    Op36_Graphics data_77_51ed, w3_D000                ;; 20:6ecc $36 $ed $51 $77 $00 $d0 $03
+    Op32_Graphics data_6d_7d0d, w6_D400                ;; 20:6ed3 $32 $0d $7d $6d $00 $d4 $06
+    Op32_Graphics data_6d_72de, w6_D000                ;; 20:6eda $32 $de $72 $6d $00 $d0 $06
     Op14_Unknown 1, data_05_620c                       ;; 20:6ee1 $14 $01 $0c $62
     SCRIPT_POINTER call_20_6efe                        ;; 20:6ee5 $fe $6e $20
     Op4C_Unknown $34, $01, $04, $00, $00, $00, $00, data_1b_7749 ;; 20:6ee8 $4c $34 $01 $04 $00 $00 $00 $00 $49 $77 $1b
@@ -4489,7 +4489,7 @@ call_20_7a2d:
     ;;Oh, finally! Some<E4>Flower Tea!<E0>
     Op04_Unknown_Text data_39_5d84                     ;; 20:7a50 $04 $84 $5d $39
     Op92_Unknown $00                                   ;; 20:7a54 $92 $00
-    Op36_Unknown $c9, $74, $7f, $fa, $dd, $01          ;; 20:7a56 $36 $c9 $74 $7f $fa $dd $01
+    Op36_Graphics data_7f_74c9, w1_DDFA                ;; 20:7a56 $36 $c9 $74 $7f $fa $dd $01
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_10_4209 ;; 20:7a5d $4c $16 $08 $ff $00 $00 $00 $00 $09 $42 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_1b_7718 ;; 20:7a68 $4c $08 $01 $04 $00 $00 $00 $00 $18 $77 $1b
 
