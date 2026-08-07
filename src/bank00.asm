@@ -42,7 +42,7 @@ SECTION "isrTimer", ROM0[$0050]
 
 ; Not used.
 isrTimer:
-    jp   TimerInterruptHandler_Noop                         ;; 00:0050 $c3 $8b $04
+    jp   TimerInterruptHandler_Noop                    ;; 00:0050 $c3 $8b $04
     db   $ff, $ff, $ff, $ff, $ff                       ;; 00:0053 ?????
 
 SECTION "isrSerial", ROM0[$0058]

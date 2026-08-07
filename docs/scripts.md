@@ -172,7 +172,11 @@ I have not observed this being used in any scripts.
 <a id="op14"></a>
 ### Op14 
 
-Args are count, 2 bytes, then any number of 3 byte addresses (presumably the number matches arg1).
+First arg is a count. This count determines the number of script pointers that will following (and possibly something about the data pointed to).
+
+The second arg is a 2 byte Rom address for Bank05, which holds all the HamChatWheel data. I have not yet determined the structure of this data.
+
+Op14 is followed by a number of Script pointers equal to the first arg, count. I have not determined how they are used.
 
 <a id="op16"></a>
 ### Op16 - Begin SubOps
