@@ -396,7 +396,7 @@ call_25_443d:
 call_25_4460:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 25:4460 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 25:4464 $1e $1d $6f $1d
-    Op10_HamChatWheel 9, data_05_7380, data_05_7820    ;; 25:4468 $10 $09 $80 $73 $20 $78
+    Op10_HamChatWheel 9, CookieBoxWords, data_05_7820  ;; 25:4468 $10 $09 $80 $73 $20 $78
     Op1C_TableJump 9                                   ;; 25:446e $1c $09
     SCRIPT_POINTER call_25_4493                        ;; 25:4470 $93 $44 $25
     SCRIPT_POINTER call_25_4517                        ;; 25:4473 $17 $45 $25
@@ -872,7 +872,7 @@ call_25_49f6:
     SCRIPT_POINTER call_25_4a28                        ;; 25:49fa $28 $4a $25
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 25:49fd $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 25:4a01 $1e $1d $6f $1d
-    Op10_HamChatWheel 9, data_05_7380, data_05_7820    ;; 25:4a05 $10 $09 $80 $73 $20 $78
+    Op10_HamChatWheel 9, CookieBoxWords, data_05_7820  ;; 25:4a05 $10 $09 $80 $73 $20 $78
     Op1C_TableJump 9                                   ;; 25:4a0b $1c $09
     SCRIPT_POINTER call_25_4a48                        ;; 25:4a0d $48 $4a $25
     SCRIPT_POINTER call_25_42d6                        ;; 25:4a10 $d6 $42 $25
@@ -1195,7 +1195,7 @@ call_25_4e18:
 call_25_4e30:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 25:4e30 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 25:4e34 $1e $1d $6f $1d
-    Op10_HamChatWheel 7, data_05_7389, data_05_7851    ;; 25:4e38 $10 $07 $89 $73 $51 $78
+    Op10_HamChatWheel 7, StuckWords2, data_05_7851     ;; 25:4e38 $10 $07 $89 $73 $51 $78
     Op1C_TableJump 7                                   ;; 25:4e3e $1c $07
     SCRIPT_POINTER call_25_4296                        ;; 25:4e40 $96 $42 $25
     SCRIPT_POINTER call_25_42d6                        ;; 25:4e43 $d6 $42 $25
@@ -2027,7 +2027,7 @@ call_25_5931:
     Op16_SubOps 1                                      ;; 25:5939 $16 $01
     SubOp_SetByte wC72A, $00                           ;; 25:593b $7e $12 $00
     Op1E_Call call_1d_6f1d                             ;; 25:593e $1e $1d $6f $1d
-    Op0C_HamChatWheel 12, data_05_6c7b, data_05_6e76   ;; 25:5942 $0c $0c $7b $6c $76 $6e
+    Op0C_HamChatWheel 12, DancerWords, data_05_6e76    ;; 25:5942 $0c $0c $7b $6c $76 $6e
     Op1C_TableJump 12                                  ;; 25:5948 $1c $0c
     SCRIPT_POINTER call_25_5992                        ;; 25:594a $92 $59 $25
     SCRIPT_POINTER call_25_5a3d                        ;; 25:594d $3d $5a $25

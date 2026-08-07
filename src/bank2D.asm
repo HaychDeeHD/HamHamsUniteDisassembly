@@ -255,7 +255,7 @@ call_2d_42c5:
 call_2d_42ff:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:42ff $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:4303 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_47e7, data_05_4ea6    ;; 2d:4307 $10 $08 $e7 $47 $a6 $4e
+    Op10_HamChatWheel 8, ClubhouseMaxwellWords, data_05_4ea6 ;; 2d:4307 $10 $08 $e7 $47 $a6 $4e
     Op1C_TableJump 8                                   ;; 2d:430d $1c $08
     SCRIPT_POINTER call_2d_454d                        ;; 2d:430f $4d $45 $2d
     SCRIPT_POINTER call_2d_432b                        ;; 2d:4312 $2b $43 $2d
@@ -2576,7 +2576,7 @@ call_2d_5ea8:
     SubOp_SetByte wC828, $01                           ;; 2d:5eaa $7f $10 $01
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:5ead $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:5eb1 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_546a, data_05_58c2   ;; 2d:5eb5 $10 $0c $6a $54 $c2 $58
+    Op10_HamChatWheel 12, ScarfCrowWords, data_05_58c2 ;; 2d:5eb5 $10 $0c $6a $54 $c2 $58
     Op1C_TableJump 12                                  ;; 2d:5ebb $1c $0c
     SCRIPT_POINTER call_2d_60cf                        ;; 2d:5ebd $cf $60 $2d
     SCRIPT_POINTER call_2d_60ef                        ;; 2d:5ec0 $ef $60 $2d
@@ -2615,7 +2615,7 @@ call_2d_5f11:
     SubOp_SetByte wC828, $03                           ;; 2d:5f13 $7f $10 $03
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:5f16 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:5f1a $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_5476, data_05_58d6    ;; 2d:5f1e $10 $08 $76 $54 $d6 $58
+    Op10_HamChatWheel 8, ParkCrowFriendWords, data_05_58d6 ;; 2d:5f1e $10 $08 $76 $54 $d6 $58
     Op1C_TableJump 8                                   ;; 2d:5f24 $1c $08
     SCRIPT_POINTER call_2d_6261                        ;; 2d:5f26 $61 $62 $2d
     SCRIPT_POINTER call_2d_5f3e                        ;; 2d:5f29 $3e $5f $2d
@@ -3053,7 +3053,7 @@ call_2d_6333:
 call_2d_6379:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:6379 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:637d $1e $1d $6f $1d
-    Op0C_HamChatWheel 8, data_05_5476, data_05_58d6    ;; 2d:6381 $0c $08 $76 $54 $d6 $58
+    Op0C_HamChatWheel 8, ParkCrowFriendWords, data_05_58d6 ;; 2d:6381 $0c $08 $76 $54 $d6 $58
     Op1C_TableJump 8                                   ;; 2d:6387 $1c $08
     SCRIPT_POINTER call_2d_63a9                        ;; 2d:6389 $a9 $63 $2d
     SCRIPT_POINTER call_2d_63a1                        ;; 2d:638c $a1 $63 $2d
@@ -4548,7 +4548,7 @@ call_2d_74ff:
 call_2d_7517:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:7517 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:751b $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_7343, data_05_7456    ;; 2d:751f $10 $08 $43 $73 $56 $74
+    Op10_HamChatWheel 8, StuckWords1, data_05_7456     ;; 2d:751f $10 $08 $43 $73 $56 $74
     Op1C_TableJump 8                                   ;; 2d:7525 $1c $08
     SCRIPT_POINTER call_2d_7547                        ;; 2d:7527 $47 $75 $2d
     SCRIPT_POINTER call_2d_756f                        ;; 2d:752a $6f $75 $2d
@@ -4871,7 +4871,7 @@ call_2d_78bc:
 call_2d_78df:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:78df $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:78e3 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_7343, data_05_7456    ;; 2d:78e7 $10 $08 $43 $73 $56 $74
+    Op10_HamChatWheel 8, StuckWords1, data_05_7456     ;; 2d:78e7 $10 $08 $43 $73 $56 $74
     Op1C_TableJump 8                                   ;; 2d:78ed $1c $08
     SCRIPT_POINTER call_2d_790f                        ;; 2d:78ef $0f $79 $2d
     SCRIPT_POINTER call_2d_79b0                        ;; 2d:78f2 $b0 $79 $2d

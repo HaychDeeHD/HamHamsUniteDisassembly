@@ -2298,7 +2298,7 @@ call_36_60fb:
 call_36_610e:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 36:610e $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 36:6112 $1e $1d $6f $1d
-    Op10_HamChatWheel 6, data_05_59f6, AcornShrineAlwaysUsePile2 ;; 36:6116 $10 $06 $f6 $59 $38 $5b
+    Op10_HamChatWheel 6, MediumTreeWords, AcornShrineAlwaysUsePile2 ;; 36:6116 $10 $06 $f6 $59 $38 $5b
     Op1C_TableJump 6                                   ;; 36:611c $1c $06
     SCRIPT_POINTER call_36_5f5e                        ;; 36:611e $5e $5f $36
     SCRIPT_POINTER call_36_5f7e                        ;; 36:6121 $7e $5f $36

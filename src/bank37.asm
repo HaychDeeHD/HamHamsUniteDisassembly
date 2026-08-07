@@ -1707,7 +1707,7 @@ call_37_6328:
 call_37_633b:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 37:633b $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 37:633f $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_6c98, data_05_6f33    ;; 37:6343 $10 $08 $98 $6c $33 $6f
+    Op10_HamChatWheel 8, TreasureWords, data_05_6f33   ;; 37:6343 $10 $08 $98 $6c $33 $6f
     Op1C_TableJump 8                                   ;; 37:6349 $1c $08
     SCRIPT_POINTER call_37_6363                        ;; 37:634b $63 $63 $37
     SCRIPT_POINTER call_37_6383                        ;; 37:634e $83 $63 $37

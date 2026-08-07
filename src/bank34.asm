@@ -4408,7 +4408,7 @@ call_34_78a4:
 call_34_78c1:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 34:78c1 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 34:78c5 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_6636, data_05_6898    ;; 34:78c9 $10 $08 $36 $66 $98 $68
+    Op10_HamChatWheel 8, ThirstyLoungingGirlWords, data_05_6898 ;; 34:78c9 $10 $08 $36 $66 $98 $68
     Op1C_TableJump 8                                   ;; 34:78cf $1c $08
     SCRIPT_POINTER call_34_78e9                        ;; 34:78d1 $e9 $78 $34
     SCRIPT_POINTER call_34_7909                        ;; 34:78d4 $09 $79 $34

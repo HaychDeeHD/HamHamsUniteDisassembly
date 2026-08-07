@@ -95,7 +95,7 @@ AcornShrineCoreFourHamChats:
 
 ; Referenced from 36:6116
 ; Paired with AcornShrineAlwaysUsePile2
-data_05_59f6:
+MediumTreeWords:
     HamChatWheelOption $05 ; 00 Hamha                  ;; 05:59f6 $05
     HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:59f7 $06
     HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:59f8 $07
@@ -105,7 +105,7 @@ data_05_59f6:
 
 ; Referenced from 26:67e4, 26:70a0
 ; Paired with AcornShrineAlwaysUsePile3
-data_05_59fc:
+ThickTreeWords:
     HamChatWheelOption $05 ; 00 Hamha                  ;; 05:59fc $05
     HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:59fd $06
     HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:59fe $07
@@ -117,7 +117,7 @@ data_05_59fc:
 
 ; Referenced from 30:4e55
 ; Paired with data_05_5bc8
-data_05_5a04:
+FlowerHamsterWords:
     HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a04 $05
     HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a05 $06
     HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a06 $07
@@ -133,7 +133,7 @@ data_05_5a04:
 
 ; Referenced from 2a:6339
 ; Paired with AcornShrineAlwaysUsePile2
-data_05_5a10:
+ThinTreeWithHamsterWords:
     HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a10 $05
     HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a11 $06
     HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a12 $07
@@ -172,7 +172,7 @@ BijouTreeOptions:
 
 ; Referenced from 23:6101, 23:6443
 ; Paired with data_05_5c7b
-data_05_5a25:
+SadBijouOptions:
     HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a25 $05
     HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a26 $06
     HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a27 $07
@@ -188,7 +188,7 @@ data_05_5a25:
 
 ; Referenced from 2b:55a2
 ; Paired with data_05_5dac
-data_05_5a31:
+SleepingHamsterWords:
     HamChatWheelOption $05 ; 00 Hamha                  ;; 05:5a31 $05
     HamChatWheelOption $06 ; 01 Hif-hif                ;; 05:5a32 $06
     HamChatWheelOption $07 ; 02 Tack-Q                 ;; 05:5a33 $07
@@ -526,7 +526,7 @@ data_05_5b34:
     HamChatWheelRule_DefaultCase_Pair $be, $14 ; 01    ;; 05:5b36 $be $14
 
 ; Referenced from 2a:6339, 36:6116
-; Paired with data_05_5a10, data_05_59f6
+; Paired with ThinTreeWithHamsterWords, MediumTreeWords
 AcornShrineAlwaysUsePile2:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5b38 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5b39 $1a
@@ -594,7 +594,7 @@ data_05_5b64:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:5b71 $1e
 
 ; Referenced from 26:67e4, 26:70a0
-; Paired with data_05_59fc
+; Paired with ThickTreeWords
 AcornShrineAlwaysUsePile3:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5b72 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5b73 $1a
@@ -720,7 +720,7 @@ data_05_5bc4:
     HamChatWheelRule_DefaultCase_Pair $be, $28 ; 01    ;; 05:5bc6 $be $28
 
 ; Referenced from 30:4e55
-; Paired with data_05_5a04
+; Paired with FlowerHamsterWords
 data_05_5bc8:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5bc8 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5bc9 $1a
@@ -967,7 +967,7 @@ data_05_5c79:
     HamChatWheelRule_UseIfHave 399 ; 00                ;; 05:5c79 $3f $8f
 
 ; Referenced from 23:6101, 23:6443
-; Paired with data_05_5a25
+; Paired with SadBijouOptions
 data_05_5c7b:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5c7b $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5c7c $1a
@@ -1306,7 +1306,7 @@ data_05_5d9e:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:5dab $1e
 
 ; Referenced from 2b:55a2
-; Paired with data_05_5a31
+; Paired with SleepingHamsterWords
 data_05_5dac:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5dac $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5dad $1a

@@ -481,7 +481,7 @@ call_30_4e25:
 call_30_4e4d:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 30:4e4d $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 30:4e51 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_5a04, data_05_5bc8   ;; 30:4e55 $10 $0c $04 $5a $c8 $5b
+    Op10_HamChatWheel 12, FlowerHamsterWords, data_05_5bc8 ;; 30:4e55 $10 $0c $04 $5a $c8 $5b
     Op1C_TableJump 12                                  ;; 30:4e5b $1c $0c
     SCRIPT_POINTER call_30_4ea1                        ;; 30:4e5d $a1 $4e $30
     SCRIPT_POINTER call_30_4f0f                        ;; 30:4e60 $0f $4f $30
@@ -1508,7 +1508,7 @@ call_30_63b3:
 call_30_63cb:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 30:63cb $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 30:63cf $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_6038, data_05_635e    ;; 30:63d3 $10 $08 $38 $60 $5e $63
+    Op10_HamChatWheel 8, ComputerWords, data_05_635e   ;; 30:63d3 $10 $08 $38 $60 $5e $63
     Op1C_TableJump 8                                   ;; 30:63d9 $1c $08
     SCRIPT_POINTER call_30_629d                        ;; 30:63db $9d $62 $30
     SCRIPT_POINTER call_30_62bd                        ;; 30:63de $bd $62 $30
@@ -3312,7 +3312,7 @@ call_30_7a03:
 call_30_7a22:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 30:7a22 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 30:7a26 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_545e, data_05_5690   ;; 30:7a2a $10 $0c $5e $54 $90 $56
+    Op10_HamChatWheel 12, CricketHamsterWords, data_05_5690 ;; 30:7a2a $10 $0c $5e $54 $90 $56
     Op1C_TableJump 12                                  ;; 30:7a30 $1c $0c
     SCRIPT_POINTER call_30_79eb                        ;; 30:7a32 $eb $79 $30
     SCRIPT_POINTER call_30_7a5e                        ;; 30:7a35 $5e $7a $30

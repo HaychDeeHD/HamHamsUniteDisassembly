@@ -3946,7 +3946,7 @@ call_20_73a1:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 20:73a1 $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 20:73a5 $82 $cc $73 $01
     Op1E_Call call_1d_6f1d                             ;; 20:73a9 $1e $1d $6f $1d
-    Op0C_HamChatWheel 8, data_05_600c, data_05_6228    ;; 20:73ad $0c $08 $0c $60 $28 $62
+    Op0C_HamChatWheel 8, DozingBestestHamsterWords, data_05_6228 ;; 20:73ad $0c $08 $0c $60 $28 $62
     Op1C_TableJump 8                                   ;; 20:73b3 $1c $08
     SCRIPT_POINTER call_20_73cd                        ;; 20:73b5 $cd $73 $20
     SCRIPT_POINTER call_20_7415                        ;; 20:73b8 $15 $74 $20
@@ -4244,7 +4244,7 @@ call_20_774b:
 call_20_7753:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 20:7753 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 20:7757 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_6014, data_05_623c   ;; 20:775b $10 $0c $14 $60 $3c $62
+    Op10_HamChatWheel 12, StuffedHamsterWords, data_05_623c ;; 20:775b $10 $0c $14 $60 $3c $62
     Op1C_TableJump 12                                  ;; 20:7761 $1c $0c
     SCRIPT_POINTER call_20_7787                        ;; 20:7763 $87 $77 $20
     SCRIPT_POINTER call_20_77cb                        ;; 20:7766 $cb $77 $20

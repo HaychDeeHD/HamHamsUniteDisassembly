@@ -3700,7 +3700,7 @@ call_32_6b32:
 call_32_6b45:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 32:6b45 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 32:6b49 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_661f, data_05_67e5    ;; 32:6b4d $10 $08 $1f $66 $e5 $67
+    Op10_HamChatWheel 8, GolfHoleWords, data_05_67e5   ;; 32:6b4d $10 $08 $1f $66 $e5 $67
     Op1C_TableJump 8                                   ;; 32:6b53 $1c $08
     SCRIPT_POINTER call_32_6b6d                        ;; 32:6b55 $6d $6b $32
     SCRIPT_POINTER call_32_6bc7                        ;; 32:6b58 $c7 $6b $32
@@ -5168,7 +5168,7 @@ call_32_7cfa:
 
 call_32_7d0a:
     Op1E_Call call_1d_6f1d                             ;; 32:7d0a $1e $1d $6f $1d
-    Op10_HamChatWheel 7, data_05_662f, data_05_6841    ;; 32:7d0e $10 $07 $2f $66 $41 $68
+    Op10_HamChatWheel 7, SpiffieLoungingGirlWords, data_05_6841 ;; 32:7d0e $10 $07 $2f $66 $41 $68
     Op1C_TableJump 7                                   ;; 32:7d14 $1c $07
     SCRIPT_POINTER call_32_7d33                        ;; 32:7d16 $33 $7d $32
     SCRIPT_POINTER call_32_7d4b                        ;; 32:7d19 $4b $7d $32

@@ -147,7 +147,7 @@ data_05_6c5a:
 
 ; Referenced from 23:4696
 ; Paired with RuinsAlwaysUsePile
-data_05_6c65:
+FranticCappyWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c65 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c66 $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c67 $0d
@@ -157,7 +157,7 @@ data_05_6c65:
 
 ; Referenced from 23:4bcf
 ; Paired with data_05_6e04
-data_05_6c6b:
+OutsideFrogWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c6b $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c6c $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c6d $0d
@@ -181,7 +181,7 @@ RuinsCoreFourHamChats:
 
 ; Referenced from 25:5942
 ; Paired with data_05_6e76
-data_05_6c7b:
+DancerWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c7b $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c7c $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c7d $0d
@@ -197,7 +197,7 @@ data_05_6c7b:
 
 ; Referenced from 27:65c1
 ; Paired with data_05_6ec8
-data_05_6c87:
+ToyCarWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c87 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c88 $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c89 $0d
@@ -222,7 +222,7 @@ data_05_6c90:
 
 ; Referenced from 37:6343
 ; Paired with data_05_6f33
-data_05_6c98:
+TreasureWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6c98 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6c99 $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6c9a $0d
@@ -234,7 +234,7 @@ data_05_6c98:
 
 ; Referenced from 28:7557
 ; Paired with data_05_6f73
-data_05_6ca0:
+PondPlugWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6ca0 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6ca1 $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6ca2 $0d
@@ -246,7 +246,7 @@ data_05_6ca0:
 
 ; Referenced from 28:7802
 ; Paired with data_05_6f83
-data_05_6ca8:
+PenelopeFrogWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6ca8 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6ca9 $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6caa $0d
@@ -264,7 +264,7 @@ RuinsYesNo:
 
 ; Referenced from 35:639f
 ; Paired with data_05_706b
-data_05_6cb2:
+FrightenedHighHamsterWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6cb2 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6cb3 $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6cb4 $0d
@@ -276,7 +276,7 @@ data_05_6cb2:
 
 ; Referenced from 28:58d5
 ; Paired with data_05_70ad
-data_05_6cba:
+WeatherWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6cba $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6cbb $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6cbc $0d
@@ -292,7 +292,7 @@ data_05_6cba:
 
 ; Referenced from 28:5c62
 ; Paired with data_05_70c1
-CrowFriendWords:
+RuinsCrowFriendWords:
     HamChatWheelOption $1c ; 00 Go-P                   ;; 05:6cc6 $1c
     HamChatWheelOption $12 ; 01   ?                    ;; 05:6cc7 $12
     HamChatWheelOption $25 ; 02 Zuzuzu                 ;; 05:6cc8 $25
@@ -320,7 +320,7 @@ GameOrPrizeExplanation:
 
 ; Referenced from 1f:4932, 1f:4db8
 ; Paired with data_05_7169
-data_05_6cd6:
+EntrancedCappyWords:
     HamChatWheelOption $0b ; 00 Hamha                  ;; 05:6cd6 $0b
     HamChatWheelOption $0c ; 01 Hif-hif                ;; 05:6cd7 $0c
     HamChatWheelOption $0d ; 02 Tack-Q                 ;; 05:6cd8 $0d
@@ -355,7 +355,7 @@ data_05_6ceb:
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:6cef ????????
 
 ; Referenced from 34:657e, 34:673e, 34:67be, 34:683b, 34:68be, 34:6d19, 34:6f10, 34:7058, 1f:47a4, 1f:4867, 1f:49ec, 1f:4b66, 1f:4c91, 1f:527e, 23:4696, 23:4ff3, 23:518d, 23:5329, 27:6456, 27:673a, 27:6772, 27:6a66, 27:6d26, 27:6d80, 27:6e2b, 27:6f64, 28:528b, 28:5364, 28:542a, 28:57ab, 28:7423, 32:4247, 32:435e, 32:45c1, 32:4620, 32:4687, 32:4755, 32:47b1, 35:61b6, 35:62f6, 35:6607, 35:71d1, 35:736d, 35:75cf, 35:7634, 3c:5407, 22:7591
-; Paired with RuinsCoreFourHamChats, data_05_6cce, GameOrPrizeExplanation, data_05_6ce1, RuinsYesNo, data_05_6c65, data_05_6c90, data_05_6c5a
+; Paired with RuinsCoreFourHamChats, data_05_6cce, GameOrPrizeExplanation, data_05_6ce1, RuinsYesNo, FranticCappyWords, data_05_6c90, data_05_6c5a
 RuinsAlwaysUsePile:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6cf7 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6cf8 $1a
@@ -692,7 +692,7 @@ data_05_6e00:
     HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:6e02 $be $04
 
 ; Referenced from 23:4bcf
-; Paired with data_05_6c6b
+; Paired with OutsideFrogWords
 data_05_6e04:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6e04 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6e05 $1a
@@ -824,7 +824,7 @@ data_05_6e72:
     HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6e74 $be $03
 
 ; Referenced from 25:5942
-; Paired with data_05_6c7b
+; Paired with DancerWords
 data_05_6e76:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6e76 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6e77 $1a
@@ -927,7 +927,7 @@ data_05_6ec4:
     HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:6ec6 $be $05
 
 ; Referenced from 27:65c1
-; Paired with data_05_6c87
+; Paired with ToyCarWords
 data_05_6ec8:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6ec8 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6ec9 $1a
@@ -1072,7 +1072,7 @@ data_05_6f31:
     HamChatWheelRule_UseIfDontHave 408 ; 00            ;; 05:6f31 $5f $98
 
 ; Referenced from 37:6343
-; Paired with data_05_6c98
+; Paired with TreasureWords
 data_05_6f33:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6f33 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6f34 $1a
@@ -1153,7 +1153,7 @@ data_05_6f6b:
     HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6f71 $be $01
 
 ; Referenced from 28:7557
-; Paired with data_05_6ca0
+; Paired with PondPlugWords
 data_05_6f73:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6f73 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6f74 $1a
@@ -1170,7 +1170,7 @@ data_05_6f7f:
     HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6f81 $be $01
 
 ; Referenced from 28:7802
-; Paired with data_05_6ca8
+; Paired with PenelopeFrogWords
 data_05_6f83:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6f83 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6f84 $1a
@@ -1476,7 +1476,7 @@ data_05_7069:
     HamChatWheelRule_UseIfDontHave 230 ; 00            ;; 05:7069 $5e $e6
 
 ; Referenced from 35:639f
-; Paired with data_05_6cb2
+; Paired with FrightenedHighHamsterWords
 data_05_706b:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:706b $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:706c $1a
@@ -1560,7 +1560,7 @@ data_05_70ab:
     HamChatWheelRule_UseIfHave 401 ; 00                ;; 05:70ab $3f $91
 
 ; Referenced from 28:58d5
-; Paired with data_05_6cba
+; Paired with WeatherWords
 data_05_70ad:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:70ad $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:70ae $1a
@@ -1576,7 +1576,7 @@ data_05_70ad:
     HamChatWheelRule_UseIfDontHave HAMCHAT_BESTEST ; 11 ;; 05:70bf $5e $46
 
 ; Referenced from 28:5c62
-; Paired with CrowFriendWords
+; Paired with RuinsCrowFriendWords
 data_05_70c1:
     HamChatWheelRule_UseIfHave HAMCHAT_GOP ; 00        ;; 05:70c1 $3e $45
     HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 01    ;; 05:70c3 $5e $45
@@ -1786,7 +1786,7 @@ data_05_7167:
     HamChatWheelRule_UseIfHave 281 ; 00                ;; 05:7167 $3f $19
 
 ; Referenced from 1f:4932, 1f:4db8
-; Paired with data_05_6cd6
+; Paired with EntrancedCappyWords
 data_05_7169:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7169 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:716a $1a

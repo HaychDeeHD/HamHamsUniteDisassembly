@@ -139,7 +139,7 @@ data_05_6605:
 
 ; Referenced from 39:7c8e
 ; Paired with data_05_66a8
-data_05_660e:
+SkyGardenCrowFriendWords:
     HamChatWheelOption $09 ; 00 Go-P                   ;; 05:660e $09
     HamChatWheelOption $0a ; 01 Zuzuzu                 ;; 05:660f $0a
     HamChatWheelOption $0b ; 02   ?                    ;; 05:6610 $0b
@@ -156,7 +156,7 @@ SkyGardenYesNo:
 
 ; Referenced from 31:5044
 ; Paired with data_05_67b1
-data_05_6617:
+SadFallenHamster:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6617 $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6618 $11
     HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6619 $12
@@ -168,7 +168,7 @@ data_05_6617:
 
 ; Referenced from 32:6b4d
 ; Paired with data_05_67e5
-data_05_661f:
+GolfHoleWords:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:661f $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6620 $11
     HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6621 $12
@@ -192,7 +192,7 @@ data_05_6627:
 
 ; Referenced from 32:7d0e
 ; Paired with data_05_6841
-data_05_662f:
+SpiffieLoungingGirlWords:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:662f $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6630 $11
     HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6631 $12
@@ -203,7 +203,7 @@ data_05_662f:
 
 ; Referenced from 34:78c9
 ; Paired with data_05_6898
-data_05_6636:
+ThirstyLoungingGirlWords:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6636 $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6637 $11
     HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6638 $12
@@ -227,7 +227,7 @@ data_05_663e:
 
 ; Referenced from 2f:71dd
 ; Paired with data_05_6986
-data_05_6646:
+SandyTeamUpWords:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6646 $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6647 $11
     HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6648 $12
@@ -247,7 +247,7 @@ SkyGardenCoreFourHamChats:
 
 ; Referenced from 2c:7abf
 ; Paired with SkyGardenAlwaysUsePile
-data_05_6652:
+BenchSandyWords:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6652 $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6653 $11
     HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6654 $12
@@ -288,7 +288,7 @@ data_05_6665:
 
 ; Referenced from 2a:558d, 2a:586e
 ; Paired with data_05_6a85
-data_05_666b:
+BartenderWords:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:666b $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:666c $11
     HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:666d $12
@@ -308,7 +308,7 @@ BartenderOfferings:
 
 ; Referenced from 2a:5a56
 ; Paired with SkyGardenAlwaysUsePile
-data_05_6677:
+FountainPlugWords:
     HamChatWheelOption $10 ; 00 Hamha                  ;; 05:6677 $10
     HamChatWheelOption $11 ; 01 Hif-hif                ;; 05:6678 $11
     HamChatWheelOption $12 ; 02 Tack-Q                 ;; 05:6679 $12
@@ -328,7 +328,7 @@ data_05_6681:
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:6685 ????????
 
 ; Referenced from 32:5f65, 32:7585, 32:7e23, 2c:7812, 2c:7abf, 38:6f26, 2a:5248, 2a:568e, 2a:58db, 2a:5a56, 2d:56b8, 30:70d3, 36:430d, 3c:4dd2, 3a:41e7
-; Paired with data_05_6658, SkyGardenYesNo, SkyGardenCoreFourHamChats, data_05_6652, BartenderOfferings, data_05_6677, data_05_6605, data_05_6665
+; Paired with data_05_6658, SkyGardenYesNo, SkyGardenCoreFourHamChats, BenchSandyWords, BartenderOfferings, FountainPlugWords, data_05_6605, data_05_6665
 SkyGardenAlwaysUsePile:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:668d $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:668e $1a
@@ -368,7 +368,7 @@ data_05_66a4:
     HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:66a6 $be $00
 
 ; Referenced from 39:7c8e
-; Paired with data_05_660e
+; Paired with SkyGardenCrowFriendWords
 data_05_66a8:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:66a8 $1a
     HamChatWheelRule_UseIfHave HAMCHAT_ZUZUZU ; 01     ;; 05:66a9 $3e $31
@@ -733,7 +733,7 @@ data_05_67ad:
     HamChatWheelRule_DefaultCase_Pair $be, $d8 ; 01    ;; 05:67af $be $d8
 
 ; Referenced from 31:5044
-; Paired with data_05_6617
+; Paired with SadFallenHamster
 data_05_67b1:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:67b1 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:67b2 $1a
@@ -797,7 +797,7 @@ data_05_67e1:
     HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:67e3 $be $04
 
 ; Referenced from 32:6b4d
-; Paired with data_05_661f
+; Paired with GolfHoleWords
 data_05_67e5:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:67e5 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:67e6 $1a
@@ -907,7 +907,7 @@ data_05_683d:
     HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:683f $be $04
 
 ; Referenced from 32:7d0e
-; Paired with data_05_662f
+; Paired with SpiffieLoungingGirlWords
 data_05_6841:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6841 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6842 $1a
@@ -1018,7 +1018,7 @@ data_05_6894:
     HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:6896 $be $03
 
 ; Referenced from 34:78c9
-; Paired with data_05_6636
+; Paired with ThirstyLoungingGirlWords
 data_05_6898:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6898 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6899 $1a
@@ -1319,7 +1319,7 @@ data_05_6984:
     HamChatWheelRule_UseIfHave 203 ; 00                ;; 05:6984 $3e $cb
 
 ; Referenced from 2f:71dd
-; Paired with data_05_6646
+; Paired with SandyTeamUpWords
 data_05_6986:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6986 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6987 $1a
@@ -1651,7 +1651,7 @@ data_05_6a83:
     HamChatWheelRule_UseIfDontHave 413 ; 00            ;; 05:6a83 $5f $9d
 
 ; Referenced from 2a:558d, 2a:586e
-; Paired with data_05_666b
+; Paired with BartenderWords
 data_05_6a85:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6a85 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6a86 $1a

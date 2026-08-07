@@ -520,7 +520,7 @@ call_23_4686:
     Op1E_Call call_23_542a                             ;; 23:468a $1e $2a $54 $23
     Op82_Run data_01_73cc                              ;; 23:468e $82 $cc $73 $01
     Op1E_Call call_1d_6f1d                             ;; 23:4692 $1e $1d $6f $1d
-    Op0C_HamChatWheel 6, data_05_6c65, RuinsAlwaysUsePile ;; 23:4696 $0c $06 $65 $6c $f7 $6c
+    Op0C_HamChatWheel 6, FranticCappyWords, RuinsAlwaysUsePile ;; 23:4696 $0c $06 $65 $6c $f7 $6c
     Op1C_TableJump 6                                   ;; 23:469c $1c $06
     SCRIPT_POINTER call_23_46b0                        ;; 23:469e $b0 $46 $23
     SCRIPT_POINTER call_23_46ff                        ;; 23:46a1 $ff $46 $23
@@ -901,7 +901,7 @@ call_23_4bb4:
 call_23_4bc7:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 23:4bc7 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 23:4bcb $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_6c6b, data_05_6e04   ;; 23:4bcf $10 $0c $6b $6c $04 $6e
+    Op10_HamChatWheel 12, OutsideFrogWords, data_05_6e04 ;; 23:4bcf $10 $0c $6b $6c $04 $6e
     Op1C_TableJump 12                                  ;; 23:4bd5 $1c $0c
     SCRIPT_POINTER call_23_4bfb                        ;; 23:4bd7 $fb $4b $23
     SCRIPT_POINTER call_23_4c65                        ;; 23:4bda $65 $4c $23
@@ -2469,7 +2469,7 @@ call_23_60e1:
 call_23_60f9:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 23:60f9 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 23:60fd $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_5a25, data_05_5c7b   ;; 23:6101 $10 $0c $25 $5a $7b $5c
+    Op10_HamChatWheel 12, SadBijouOptions, data_05_5c7b ;; 23:6101 $10 $0c $25 $5a $7b $5c
     Op1C_TableJump 12                                  ;; 23:6107 $1c $0c
     SCRIPT_POINTER call_23_62e1                        ;; 23:6109 $e1 $62 $23
     SCRIPT_POINTER call_23_6326                        ;; 23:610c $26 $63 $23
@@ -2743,7 +2743,7 @@ call_23_6429:
 call_23_643b:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 23:643b $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 23:643f $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_5a25, data_05_5c7b   ;; 23:6443 $10 $0c $25 $5a $7b $5c
+    Op10_HamChatWheel 12, SadBijouOptions, data_05_5c7b ;; 23:6443 $10 $0c $25 $5a $7b $5c
     Op1C_TableJump 12                                  ;; 23:6449 $1c $0c
     SCRIPT_POINTER call_23_62e1                        ;; 23:644b $e1 $62 $23
     SCRIPT_POINTER call_23_6326                        ;; 23:644e $26 $63 $23

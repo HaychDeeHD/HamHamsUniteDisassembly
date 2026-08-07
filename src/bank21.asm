@@ -395,7 +395,7 @@ call_21_44c4:
 
 call_21_44d4:
     Op1E_Call call_1d_6f1d                             ;; 21:44d4 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_5446, data_05_5556   ;; 21:44d8 $10 $0c $46 $54 $56 $55
+    Op10_HamChatWheel 12, SadOxnardWords, data_05_5556 ;; 21:44d8 $10 $0c $46 $54 $56 $55
     Op1C_TableJump 12                                  ;; 21:44de $1c $0c
     SCRIPT_POINTER call_21_4504                        ;; 21:44e0 $04 $45 $21
     SCRIPT_POINTER call_21_4524                        ;; 21:44e3 $24 $45 $21
@@ -2172,7 +2172,7 @@ call_21_5b30:
 call_21_5b5a:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 21:5b5a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 21:5b5e $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_6020, data_05_62f4   ;; 21:5b62 $10 $0c $20 $60 $f4 $62
+    Op10_HamChatWheel 12, TeaTotingHamsterWords, data_05_62f4 ;; 21:5b62 $10 $0c $20 $60 $f4 $62
     Op1C_TableJump 12                                  ;; 21:5b68 $1c $0c
     SCRIPT_POINTER call_21_5b8e                        ;; 21:5b6a $8e $5b $21
     SCRIPT_POINTER call_21_5c42                        ;; 21:5b6d $42 $5c $21
@@ -2917,7 +2917,7 @@ call_21_6601:
 call_21_6629:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 21:6629 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 21:662d $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_602c, data_05_6324   ;; 21:6631 $10 $0c $2c $60 $24 $63
+    Op10_HamChatWheel 12, SkeletonWords, data_05_6324  ;; 21:6631 $10 $0c $2c $60 $24 $63
     Op1C_TableJump 12                                  ;; 21:6637 $1c $0c
     SCRIPT_POINTER call_21_6710                        ;; 21:6639 $10 $67 $21
     SCRIPT_POINTER call_21_673c                        ;; 21:663c $3c $67 $21

@@ -149,7 +149,7 @@ SunflowerElementaryYesNo:
 
 ; Referenced from 20:73ad
 ; Paired with data_05_6228
-data_05_600c:
+DozingBestestHamsterWords:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:600c $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:600d $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:600e $0c
@@ -161,7 +161,7 @@ data_05_600c:
 
 ; Referenced from 20:775b
 ; Paired with data_05_623c
-data_05_6014:
+StuffedHamsterWords:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6014 $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6015 $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:6016 $0c
@@ -177,7 +177,7 @@ data_05_6014:
 
 ; Referenced from 21:5b62
 ; Paired with data_05_62f4
-data_05_6020:
+TeaTotingHamsterWords:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6020 $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6021 $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:6022 $0c
@@ -193,7 +193,7 @@ data_05_6020:
 
 ; Referenced from 21:6631
 ; Paired with data_05_6324
-data_05_602c:
+SkeletonWords:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:602c $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:602d $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:602e $0c
@@ -209,7 +209,7 @@ data_05_602c:
 
 ; Referenced from 30:63d3
 ; Paired with data_05_635e
-data_05_6038:
+ComputerWords:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6038 $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6039 $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:603a $0c
@@ -221,7 +221,7 @@ data_05_6038:
 
 ; Referenced from 2e:4f47
 ; Paired with data_05_63cc
-data_05_6040:
+JinglePooieWords:
     HamChatWheelOption $1f ; 00 Meep-P                 ;; 05:6040 $1f
     HamChatWheelOption $12 ; 01   ?                    ;; 05:6041 $12
     HamChatWheelOption $20 ; 02 Chukchuk               ;; 05:6042 $20
@@ -233,7 +233,7 @@ data_05_6040:
 
 ; Referenced from 2e:5065
 ; Paired with data_05_63dc
-data_05_6048:
+JingleSongWords:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:6048 $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:6049 $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:604a $0c
@@ -849,7 +849,7 @@ data_05_6220:
     HamChatWheelRule_DefaultCase_Pair $be, $01 ; 04    ;; 05:6226 $be $01
 
 ; Referenced from 20:73ad
-; Paired with data_05_600c
+; Paired with DozingBestestHamsterWords
 data_05_6228:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6228 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6229 $1a
@@ -874,7 +874,7 @@ data_05_623a:
     HamChatWheelRule_UseIfHave 413 ; 00                ;; 05:623a $3f $9d
 
 ; Referenced from 20:775b
-; Paired with data_05_6014
+; Paired with StuffedHamsterWords
 data_05_623c:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:623c $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:623d $1a
@@ -1093,7 +1093,7 @@ data_05_62ea:
     HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:62f3 $1e
 
 ; Referenced from 21:5b62
-; Paired with data_05_6020
+; Paired with TeaTotingHamsterWords
 data_05_62f4:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:62f4 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:62f5 $1a
@@ -1162,7 +1162,7 @@ data_05_6320:
     HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:6322 $be $01
 
 ; Referenced from 21:6631
-; Paired with data_05_602c
+; Paired with SkeletonWords
 data_05_6324:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:6324 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:6325 $1a
@@ -1236,7 +1236,7 @@ data_05_635c:
     HamChatWheelRule_UseIfHave 396 ; 00                ;; 05:635c $3f $8c
 
 ; Referenced from 30:63d3
-; Paired with data_05_6038
+; Paired with ComputerWords
 data_05_635e:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:635e $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:635f $1a
@@ -1377,7 +1377,7 @@ data_05_63ca:
     HamChatWheelRule_UseIfHave 398 ; 00                ;; 05:63ca $3f $8e
 
 ; Referenced from 2e:4f47
-; Paired with data_05_6040
+; Paired with JinglePooieWords
 data_05_63cc:
     HamChatWheelRule_UseIfHave HAMCHAT_MEEPP ; 00      ;; 05:63cc $3e $33
     HamChatWheelRule_UseIfDontHave HAMCHAT_MEEPP ; 01  ;; 05:63ce $5e $33
@@ -1389,7 +1389,7 @@ data_05_63cc:
     HamChatWheelRule_UseIfDontHave HAMCHAT_POOIE ; 07  ;; 05:63da $5e $4f
 
 ; Referenced from 2e:5065
-; Paired with data_05_6048
+; Paired with JingleSongWords
 data_05_63dc:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:63dc $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:63dd $1a

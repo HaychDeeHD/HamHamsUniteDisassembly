@@ -1212,7 +1212,7 @@ call_2e_4f02:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2e:4f3a $82 $16 $74 $01
     Op56_WriteBitArrayIndex 26, $85, $5f, $1a          ;; 2e:4f3e $56 $1a $85 $5f $1a
     Op1E_Call call_1d_6f1d                             ;; 2e:4f43 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_6040, data_05_63cc    ;; 2e:4f47 $10 $08 $40 $60 $cc $63
+    Op10_HamChatWheel 8, JinglePooieWords, data_05_63cc ;; 2e:4f47 $10 $08 $40 $60 $cc $63
     Op1C_TableJump 8                                   ;; 2e:4f4d $1c $08
     SCRIPT_POINTER call_2e_4f67                        ;; 2e:4f4f $67 $4f $2e
     SCRIPT_POINTER call_2e_5028                        ;; 2e:4f52 $28 $50 $2e
@@ -1326,7 +1326,7 @@ call_2e_5045:
 call_2e_505d:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2e:505d $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2e:5061 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_6048, data_05_63dc   ;; 2e:5065 $10 $0c $48 $60 $dc $63
+    Op10_HamChatWheel 12, JingleSongWords, data_05_63dc ;; 2e:5065 $10 $0c $48 $60 $dc $63
     Op1C_TableJump 12                                  ;; 2e:506b $1c $0c
     SCRIPT_POINTER call_2e_5091                        ;; 2e:506d $91 $50 $2e
     SCRIPT_POINTER call_2e_50c6                        ;; 2e:5070 $c6 $50 $2e

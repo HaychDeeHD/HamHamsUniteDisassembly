@@ -353,7 +353,7 @@ TutorialCoreFourHamChats:
 
 ; Referenced from 2c:6d0b
 ; Paired with data_05_4e18
-data_05_47cf:
+ClubhouseBijouWords:
     HamChatWheelOption $26 ; 00 Mega-Q                 ;; 05:47cf $26
     HamChatWheelOption $1e ; 01   ?                    ;; 05:47d0 $1e
     HamChatWheelOption $27 ; 02 Teenie                 ;; 05:47d1 $27
@@ -377,7 +377,7 @@ data_05_47d7:
 
 ; Referenced from 2c:743c
 ; Paired with data_05_4e40
-data_05_47df:
+ClubhouseBihouAfterStanWords:
     HamChatWheelOption $2d ; 00 Whawha                 ;; 05:47df $2d
     HamChatWheelOption $1e ; 01   ?                    ;; 05:47e0 $1e
     HamChatWheelOption $2e ; 02 Blash-T                ;; 05:47e1 $2e
@@ -389,7 +389,7 @@ data_05_47df:
 
 ; Referenced from 2d:4307
 ; Paired with data_05_4ea6
-data_05_47e7:
+ClubhouseMaxwellWords:
     HamChatWheelOption $29 ; 00 Hamsolo                ;; 05:47e7 $29
     HamChatWheelOption $1e ; 01   ?                    ;; 05:47e8 $1e
     HamChatWheelOption $31 ; 02 Blahh                  ;; 05:47e9 $31
@@ -437,7 +437,7 @@ data_05_47ff:
 
 ; Referenced from 26:4616, 26:49cd, 27:4695, 27:48ff
 ; Paired with data_05_4fe4
-data_05_4807:
+ClubhousePashminaWords:
     HamChatWheelOption $32 ; 00 Hushie                 ;; 05:4807 $32
     HamChatWheelOption $1e ; 01   ?                    ;; 05:4808 $1e
     HamChatWheelOption $3d ; 02 Hammo                  ;; 05:4809 $3d
@@ -451,7 +451,7 @@ data_05_4807:
 ; One of them has checks Pookie where you would expect to check Minglie. Possible mistake?
 ; Referenced from 26:4d73, 27:4ca6, 31:5b2c
 ; Paired with data_05_4ff8, data_05_52f2
-data_05_480f:
+ClubhouseRoamingStanWords:
     HamChatWheelOption $3f ; 00 Hamteam                ;; 05:480f $3f
     HamChatWheelOption $1e ; 01   ?                    ;; 05:4810 $1e
     HamChatWheelOption $20 ; 02 Minglie                ;; 05:4811 $20
@@ -475,7 +475,7 @@ data_05_4817:
 
 ; Referenced from 33:5d32
 ; Paired with data_05_50b0
-data_05_481f:
+ClubhousePandaWords:
     HamChatWheelOption $22 ; 00 Hamha                  ;; 05:481f $22
     HamChatWheelOption $23 ; 01 Hif-hif                ;; 05:4820 $23
     HamChatWheelOption $24 ; 02 Tack-Q                 ;; 05:4821 $24
@@ -503,7 +503,7 @@ data_05_482b:
 
 ; Referenced from 2b:6f27
 ; Paired with data_05_510a
-data_05_4833:
+ClubhouseJingleWords:
     HamChatWheelOption $47 ; 00 Bye-Q                  ;; 05:4833 $47
     HamChatWheelOption $1e ; 01   ?                    ;; 05:4834 $1e
     HamChatWheelOption $48 ; 02 Wondachu               ;; 05:4835 $48
@@ -515,7 +515,7 @@ data_05_4833:
 
 ; Referenced from 35:4bba
 ; Paired with data_05_5150
-data_05_483b:
+ClubhouseSandyWords:
     HamChatWheelOption $48 ; 00 Wondachu               ;; 05:483b $48
     HamChatWheelOption $1e ; 01   ?                    ;; 05:483c $1e
     HamChatWheelOption $4b ; 02 Smoochie               ;; 05:483d $4b
@@ -551,7 +551,7 @@ data_05_484b:
 
 ; Referenced from 33:70d9, 2f:7ba0
 ; Paired with data_05_5234
-data_05_4853:
+ClubhouseDexterWords:
     HamChatWheelOption $44 ; 00 Bestest                ;; 05:4853 $44
     HamChatWheelOption $1e ; 01   ?                    ;; 05:4854 $1e
     HamChatWheelOption $4e ; 02 Hotchu                 ;; 05:4855 $4e
@@ -2365,7 +2365,7 @@ data_05_4e0a:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:4e17 $1e
 
 ; Referenced from 2c:6d0b
-; Paired with data_05_47cf
+; Paired with ClubhouseBijouWords
 data_05_4e18:
     HamChatWheelRule_UseIfHave HAMCHAT_MEGAQ ; 00      ;; 05:4e18 $3e $15
     HamChatWheelRule_UseIfDontHave HAMCHAT_MEGAQ ; 01  ;; 05:4e1a $5e $15
@@ -2402,7 +2402,7 @@ data_05_4e3e:
     HamChatWheelRule_UseIfDontHave HAMCHAT_TOOTRU ; 00 ;; 05:4e3e $5e $51
 
 ; Referenced from 2c:743c
-; Paired with data_05_47df
+; Paired with ClubhouseBihouAfterStanWords
 data_05_4e40:
     HamChatWheelRule_UseIfHave HAMCHAT_WHAWHA ; 00     ;; 05:4e40 $3e $2a
     HamChatWheelRule_UseIfDontHave HAMCHAT_WHAWHA ; 01 ;; 05:4e42 $5e $2a
@@ -2511,7 +2511,7 @@ data_05_4ea4:
     HamChatWheelRule_UseIfHave 411 ; 00                ;; 05:4ea4 $3f $9b
 
 ; Referenced from 2d:4307
-; Paired with data_05_47e7
+; Paired with ClubhouseMaxwellWords
 data_05_4ea6:
     HamChatWheelRule_UseIfHave HAMCHAT_HAMSOLO ; 00    ;; 05:4ea6 $3e $13
     HamChatWheelRule_UseIfDontHave HAMCHAT_HAMSOLO ; 01 ;; 05:4ea8 $5e $13
@@ -2834,7 +2834,7 @@ data_05_4fe2:
     HamChatWheelRule_UseIfHave 261 ; 00                ;; 05:4fe2 $3f $05
 
 ; Referenced from 26:4616, 26:49cd, 27:4695, 27:48ff
-; Paired with data_05_4807
+; Paired with ClubhousePashminaWords
 data_05_4fe4:
     HamChatWheelRule_UseIfHave HAMCHAT_HUSHIE ; 00     ;; 05:4fe4 $3e $30
     HamChatWheelRule_UseIfDontHave HAMCHAT_HUSHIE ; 01 ;; 05:4fe6 $5e $30
@@ -2851,7 +2851,7 @@ data_05_4ff4:
     HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:4ff6 $be $00
 
 ; Referenced from 26:4d73, 27:4ca6
-; Paired with data_05_480f
+; Paired with ClubhouseRoamingStanWords
 data_05_4ff8:
     HamChatWheelRule_UseIfHave HAMCHAT_HAMTEAM ; 00    ;; 05:4ff8 $3e $60
     HamChatWheelRule_UseIfDontHave HAMCHAT_HAMTEAM ; 01 ;; 05:4ffa $5e $60
@@ -3055,7 +3055,7 @@ data_05_50ac:
     HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:50ae $be $03
 
 ; Referenced from 33:5d32
-; Paired with data_05_481f
+; Paired with ClubhousePandaWords
 data_05_50b0:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:50b0 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:50b1 $1a
@@ -3149,7 +3149,7 @@ data_05_5108:
     HamChatWheelRule_UseIfHave 247 ; 00                ;; 05:5108 $3e $f7
 
 ; Referenced from 2b:6f27
-; Paired with data_05_4833
+; Paired with ClubhouseJingleWords
 data_05_510a:
     HamChatWheelRule_UseIfHave HAMCHAT_BYEQ ; 00       ;; 05:510a $3e $56
     HamChatWheelRule_UseIfDontHave HAMCHAT_BYEQ ; 01   ;; 05:510c $5e $56
@@ -3224,7 +3224,7 @@ data_05_514c:
     HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:514e $be $03
 
 ; Referenced from 35:4bba
-; Paired with data_05_483b
+; Paired with ClubhouseSandyWords
 data_05_5150:
     HamChatWheelRule_UseIfHave HAMCHAT_WONDACHU ; 00   ;; 05:5150 $3e $10
     HamChatWheelRule_UseIfDontHave HAMCHAT_WONDACHU ; 01 ;; 05:5152 $5e $10
@@ -3466,7 +3466,7 @@ data_05_5230:
     HamChatWheelRule_DefaultCase_Pair $be, $0b ; 01    ;; 05:5232 $be $0b
 
 ; Referenced from 33:70d9, 2f:7ba0
-; Paired with data_05_4853
+; Paired with ClubhouseDexterWords
 data_05_5234:
     HamChatWheelRule_UseIfHave HAMCHAT_BESTEST ; 00    ;; 05:5234 $3e $46
     HamChatWheelRule_UseIfDontHave HAMCHAT_BESTEST ; 01 ;; 05:5236 $5e $46
@@ -3662,7 +3662,7 @@ data_05_52ee:
 ; That HamChatWheelOptions is also the only one to be shared by 2 rules.
 ; Possibly a mistake?
 ; Referenced from 31:5b2c
-; Paired with data_05_480f
+; Paired with ClubhouseRoamingStanWords
 data_05_52f2:
     HamChatWheelRule_UseIfHave HAMCHAT_HAMTEAM ; 00    ;; 05:52f2 $3e $60
     HamChatWheelRule_UseIfDontHave HAMCHAT_HAMTEAM ; 01 ;; 05:52f4 $5e $60

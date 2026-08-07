@@ -113,7 +113,7 @@ data_05_543c:
 
 ; Referenced from 21:44d8
 ; Paired with data_05_5556
-data_05_5446:
+SadOxnardWords:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:5446 $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:5447 $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:5448 $0c
@@ -153,7 +153,7 @@ SunflowerParkCoreFourHamChats:
 
 ; Referenced from 30:7a2a
 ; Paired with data_05_5690
-data_05_545e:
+CricketHamsterWords:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:545e $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:545f $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:5460 $0c
@@ -169,7 +169,7 @@ data_05_545e:
 
 ; Referenced from 2d:5eb5
 ; Paired with data_05_58c2
-data_05_546a:
+ScarfCrowWords:
     HamChatWheelOption $0a ; 00 Hamha                  ;; 05:546a $0a
     HamChatWheelOption $0b ; 01 Hif-hif                ;; 05:546b $0b
     HamChatWheelOption $0c ; 02 Tack-Q                 ;; 05:546c $0c
@@ -185,7 +185,7 @@ data_05_546a:
 
 ; Referenced from 2d:5f1e, 2d:6381
 ; Paired with data_05_58d6
-data_05_5476:
+ParkCrowFriendWords:
     HamChatWheelOption $16 ; 00 Go-P                   ;; 05:5476 $16
     HamChatWheelOption $0f ; 01   ?                    ;; 05:5477 $0f
     HamChatWheelOption $1d ; 02 Zuzuzu                 ;; 05:5478 $1d
@@ -473,7 +473,7 @@ data_05_5554:
     HamChatWheelRule_UseIfDontHave 166 ; 00            ;; 05:5554 $5e $a6
 
 ; Referenced from 21:44d8
-; Paired with data_05_5446
+; Paired with SadOxnardWords
 data_05_5556:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5556 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5557 $1a
@@ -880,7 +880,7 @@ data_05_568c:
     HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:568e $be $02
 
 ; Referenced from 30:7a2a
-; Paired with data_05_545e
+; Paired with CricketHamsterWords
 data_05_5690:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:5690 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:5691 $1a
@@ -1667,7 +1667,7 @@ data_05_58c0:
     HamChatWheelRule_UseIfHave 435 ; 00                ;; 05:58c0 $3f $b3
 
 ; Referenced from 2d:5eb5
-; Paired with data_05_546a
+; Paired with ScarfCrowWords
 data_05_58c2:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:58c2 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:58c3 $1a
@@ -1683,7 +1683,7 @@ data_05_58c2:
     HamChatWheelRule_UseIfDontHave HAMCHAT_GASPP ; 11  ;; 05:58d4 $5e $2d
 
 ; Referenced from 2d:5f1e, 2d:6381
-; Paired with data_05_5476
+; Paired with ParkCrowFriendWords
 data_05_58d6:
     HamChatWheelRule_UseIfHave HAMCHAT_GOP ; 00        ;; 05:58d6 $3e $45
     HamChatWheelRule_UseIfDontHave HAMCHAT_GOP ; 01    ;; 05:58d8 $5e $45

@@ -755,7 +755,7 @@ call_35_4b9f:
 call_35_4bb2:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 35:4bb2 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 35:4bb6 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_483b, data_05_5150    ;; 35:4bba $10 $08 $3b $48 $50 $51
+    Op10_HamChatWheel 8, ClubhouseSandyWords, data_05_5150 ;; 35:4bba $10 $08 $3b $48 $50 $51
     Op1C_TableJump 8                                   ;; 35:4bc0 $1c $08
     SCRIPT_POINTER call_35_4bfe                        ;; 35:4bc2 $fe $4b $35
     SCRIPT_POINTER call_35_4bde                        ;; 35:4bc5 $de $4b $35
@@ -2296,7 +2296,7 @@ call_35_637f:
 call_35_6397:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 35:6397 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 35:639b $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_6cb2, data_05_706b    ;; 35:639f $10 $08 $b2 $6c $6b $70
+    Op10_HamChatWheel 8, FrightenedHighHamsterWords, data_05_706b ;; 35:639f $10 $08 $b2 $6c $6b $70
     Op1C_TableJump 8                                   ;; 35:63a5 $1c $08
     SCRIPT_POINTER call_35_63bf                        ;; 35:63a7 $bf $63 $35
     SCRIPT_POINTER call_35_6423                        ;; 35:63aa $23 $64 $35

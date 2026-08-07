@@ -1909,7 +1909,7 @@ call_28_58b5:
 call_28_58cd:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 28:58cd $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:58d1 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_6cba, data_05_70ad   ;; 28:58d5 $10 $0c $ba $6c $ad $70
+    Op10_HamChatWheel 12, WeatherWords, data_05_70ad   ;; 28:58d5 $10 $0c $ba $6c $ad $70
     Op1C_TableJump 12                                  ;; 28:58db $1c $0c
     SCRIPT_POINTER call_28_5905                        ;; 28:58dd $05 $59 $28
     SCRIPT_POINTER call_28_5941                        ;; 28:58e0 $41 $59 $28
@@ -2192,7 +2192,7 @@ call_28_5c42:
 call_28_5c5a:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 28:5c5a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:5c5e $1e $1d $6f $1d
-    Op10_HamChatWheel 8, CrowFriendWords, data_05_70c1 ;; 28:5c62 $10 $08 $c6 $6c $c1 $70
+    Op10_HamChatWheel 8, RuinsCrowFriendWords, data_05_70c1 ;; 28:5c62 $10 $08 $c6 $6c $c1 $70
     Op1C_TableJump 8                                   ;; 28:5c68 $1c $08
     SCRIPT_POINTER call_28_5c8a                        ;; 28:5c6a $8a $5c $28
     SCRIPT_POINTER call_28_5c82                        ;; 28:5c6d $82 $5c $28
@@ -3098,7 +3098,7 @@ call_28_753c:
 call_28_754f:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 28:754f $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:7553 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_6ca0, data_05_6f73    ;; 28:7557 $10 $08 $a0 $6c $73 $6f
+    Op10_HamChatWheel 8, PondPlugWords, data_05_6f73   ;; 28:7557 $10 $08 $a0 $6c $73 $6f
     Op1C_TableJump 8                                   ;; 28:755d $1c $08
     SCRIPT_POINTER call_28_7437                        ;; 28:755f $37 $74 $28
     SCRIPT_POINTER call_28_74c6                        ;; 28:7562 $c6 $74 $28
@@ -3302,7 +3302,7 @@ call_28_77e7:
 call_28_77fa:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 28:77fa $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 28:77fe $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_6ca8, data_05_6f83    ;; 28:7802 $10 $08 $a8 $6c $83 $6f
+    Op10_HamChatWheel 8, PenelopeFrogWords, data_05_6f83 ;; 28:7802 $10 $08 $a8 $6c $83 $6f
     Op1C_TableJump 8                                   ;; 28:7808 $1c $08
     SCRIPT_POINTER call_28_7822                        ;; 28:780a $22 $78 $28
     SCRIPT_POINTER call_28_78ad                        ;; 28:780d $ad $78 $28

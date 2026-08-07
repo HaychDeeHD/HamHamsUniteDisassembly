@@ -411,7 +411,7 @@ call_1d_44d3:
 call_1d_44e0:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:44e0 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1d:44e4 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_7351, data_05_74f4   ;; 1d:44e8 $10 $0c $51 $73 $f4 $74
+    Op10_HamChatWheel 12, CompetingDexterHowdyWords, data_05_74f4 ;; 1d:44e8 $10 $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1d:44ee $1c $0c
     SCRIPT_POINTER call_1d_4514                        ;; 1d:44f0 $14 $45 $1d
     SCRIPT_POINTER call_1d_45e2                        ;; 1d:44f3 $e2 $45 $1d
@@ -833,7 +833,7 @@ call_1d_4bcf:
 call_1d_4bdc:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:4bdc $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1d:4be0 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_7351, data_05_74f4   ;; 1d:4be4 $10 $0c $51 $73 $f4 $74
+    Op10_HamChatWheel 12, CompetingDexterHowdyWords, data_05_74f4 ;; 1d:4be4 $10 $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1d:4bea $1c $0c
     SCRIPT_POINTER call_1d_4c10                        ;; 1d:4bec $10 $4c $1d
     SCRIPT_POINTER call_1d_4c3d                        ;; 1d:4bef $3d $4c $1d
@@ -1030,7 +1030,7 @@ call_1d_4de5:
 call_1d_4df2:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:4df2 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1d:4df6 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_7351, data_05_74f4   ;; 1d:4dfa $10 $0c $51 $73 $f4 $74
+    Op10_HamChatWheel 12, CompetingDexterHowdyWords, data_05_74f4 ;; 1d:4dfa $10 $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1d:4e00 $1c $0c
     SCRIPT_POINTER call_1d_4e26                        ;; 1d:4e02 $26 $4e $1d
     SCRIPT_POINTER call_1d_4e53                        ;; 1d:4e05 $53 $4e $1d
@@ -1216,7 +1216,7 @@ call_1d_4fe2:
 call_1d_4fef:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:4fef $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1d:4ff3 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_7351, data_05_74f4   ;; 1d:4ff7 $10 $0c $51 $73 $f4 $74
+    Op10_HamChatWheel 12, CompetingDexterHowdyWords, data_05_74f4 ;; 1d:4ff7 $10 $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1d:4ffd $1c $0c
     SCRIPT_POINTER call_1d_5023                        ;; 1d:4fff $23 $50 $1d
     SCRIPT_POINTER call_1d_509a                        ;; 1d:5002 $9a $50 $1d
@@ -1497,7 +1497,7 @@ call_1d_5445:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:5445 $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 1d:5449 $50 $1d $c3 $00 $90
     Op1E_Call call_1d_6f1d                             ;; 1d:544e $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_7351, data_05_74f4   ;; 1d:5452 $10 $0c $51 $73 $f4 $74
+    Op10_HamChatWheel 12, CompetingDexterHowdyWords, data_05_74f4 ;; 1d:5452 $10 $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1d:5458 $1c $0c
     SCRIPT_POINTER call_1d_5506                        ;; 1d:545a $06 $55 $1d
     SCRIPT_POINTER call_1d_5566                        ;; 1d:545d $66 $55 $1d
@@ -1543,7 +1543,7 @@ call_1d_54c5:
 call_1d_54d2:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:54d2 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1d:54d6 $1e $1d $6f $1d
-    Op10_HamChatWheel 12, data_05_7351, data_05_74f4   ;; 1d:54da $10 $0c $51 $73 $f4 $74
+    Op10_HamChatWheel 12, CompetingDexterHowdyWords, data_05_74f4 ;; 1d:54da $10 $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1d:54e0 $1c $0c
     SCRIPT_POINTER call_1d_5506                        ;; 1d:54e2 $06 $55 $1d
     SCRIPT_POINTER call_1d_5566                        ;; 1d:54e5 $66 $55 $1d
@@ -1994,7 +1994,7 @@ call_1d_5b08:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1d:5b08 $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 1d:5b0c $82 $cc $73 $01
     Op1E_Call call_1d_6f1d                             ;; 1d:5b10 $1e $1d $6f $1d
-    Op0C_HamChatWheel 12, data_05_7351, data_05_74f4   ;; 1d:5b14 $0c $0c $51 $73 $f4 $74
+    Op0C_HamChatWheel 12, CompetingDexterHowdyWords, data_05_74f4 ;; 1d:5b14 $0c $0c $51 $73 $f4 $74
     Op1C_TableJump 12                                  ;; 1d:5b1a $1c $0c
     SCRIPT_POINTER call_1d_5b40                        ;; 1d:5b1c $40 $5b $1d
     SCRIPT_POINTER call_1d_5b79                        ;; 1d:5b1f $79 $5b $1d

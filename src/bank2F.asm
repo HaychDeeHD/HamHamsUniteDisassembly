@@ -2634,7 +2634,7 @@ call_2f_71ce:
     SCRIPT_POINTER call_2f_7398                        ;; 2f:71d2 $98 $73 $2f
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2f:71d5 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2f:71d9 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_6646, data_05_6986    ;; 2f:71dd $10 $08 $46 $66 $86 $69
+    Op10_HamChatWheel 8, SandyTeamUpWords, data_05_6986 ;; 2f:71dd $10 $08 $46 $66 $86 $69
     Op1C_TableJump 8                                   ;; 2f:71e3 $1c $08
     SCRIPT_POINTER call_2f_7205                        ;; 2f:71e5 $05 $72 $2f
     SCRIPT_POINTER call_2f_7243                        ;; 2f:71e8 $43 $72 $2f
@@ -3412,7 +3412,7 @@ call_2f_7b8f:
 call_2f_7b98:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2f:7b98 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2f:7b9c $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_4853, data_05_5234    ;; 2f:7ba0 $10 $08 $53 $48 $34 $52
+    Op10_HamChatWheel 8, ClubhouseDexterWords, data_05_5234 ;; 2f:7ba0 $10 $08 $53 $48 $34 $52
     Op1C_TableJump 8                                   ;; 2f:7ba6 $1c $08
     SCRIPT_POINTER call_2f_7c85                        ;; 2f:7ba8 $85 $7c $2f
     SCRIPT_POINTER call_2f_7bc4                        ;; 2f:7bab $c4 $7b $2f

@@ -126,7 +126,7 @@ SunflowerMarketCoreFourHamChats:
 
 ; Referenced from 2d:751f, 2d:78e7
 ; Paired with data_05_7456
-data_05_7343:
+StuckWords1:
     HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7343 $08
     HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7344 $09
     HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7345 $0a
@@ -138,7 +138,7 @@ data_05_7343:
 
 ; Referenced from 2a:43db
 ; Paired with data_05_73a2
-data_05_734b:
+PosterWords:
     HamChatWheelOption $08 ; 00 Hamha                  ;; 05:734b $08
     HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:734c $09
     HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:734d $0a
@@ -148,7 +148,7 @@ data_05_734b:
 
 ; Referenced from 1d:44e8, 1d:4be4, 1d:4dfa, 1d:4ff7, 1d:5452, 1d:54da, 1d:5b14, 1e:4357, 1e:48dc, 1e:4b6d, 1e:5045, 1e:5202, 1e:5760
 ; Paired with data_05_74f4
-data_05_7351:
+CompetingDexterHowdyWords:
     HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7351 $08
     HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7352 $09
     HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7353 $0a
@@ -200,7 +200,7 @@ data_05_7369:
 
 ; Referenced from 27:56f1, 27:5ce3, 27:5d16
 ; Paired with data_05_7750
-data_05_7371:
+MimicHamsterWords:
     HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7371 $08
     HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7372 $09
     HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7373 $0a
@@ -223,7 +223,7 @@ data_05_737a:
 
 ; Referenced from 25:4468, 25:4a05
 ; Paired with data_05_7820
-data_05_7380:
+CookieBoxWords:
     HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7380 $08
     HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:7381 $09
     HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:7382 $0a
@@ -236,7 +236,7 @@ data_05_7380:
 
 ; Referenced from 25:4e38
 ; Paired with data_05_7851
-data_05_7389:
+StuckWords2:
     HamChatWheelOption $08 ; 00 Hamha                  ;; 05:7389 $08
     HamChatWheelOption $09 ; 01 Hif-hif                ;; 05:738a $09
     HamChatWheelOption $0a ; 02 Tack-Q                 ;; 05:738b $0a
@@ -262,7 +262,7 @@ data_05_7396:
     db   $00, $6c, $07, $a2, $80, $0e, $be, $01        ;; 05:739a ????????
 
 ; Referenced from 1c:6a34, 1c:6cd2, 1c:6d31, 1c:6dec, 1c:713f, 1c:71eb, 20:5d87, 33:683f, 33:798e, 33:4433, 1d:426c, 1d:431b, 2d:73af, 2d:74cb, 2d:782a, 2d:78cb, 1e:5eed, 1e:60f0, 1e:614b, 1e:6359, 1e:6620, 1e:69ff, 1e:6b78, 1e:6d28, 1e:6e5d, 36:7e5b, 25:4282, 25:43f1, 25:444c, 25:47d9, 25:4882, 25:4a2c, 25:4da6, 27:54bd, 27:5678, 27:5b7f, 27:5cc3, 2a:43db, 2a:7069, 2a:72ee, 2a:73ed, 3b:4194, 3b:44a2, 3b:4aaf, 3b:4bfc, 3b:7196, 3b:72ae
-; Paired with data_05_735d, SunflowerMarketYesNo, FlugoSellerWares, data_05_7339, SunflowerMarketCoreFourHamChats, data_05_7369, data_05_7331, data_05_734b, data_05_7390
+; Paired with data_05_735d, SunflowerMarketYesNo, FlugoSellerWares, data_05_7339, SunflowerMarketCoreFourHamChats, data_05_7369, data_05_7331, PosterWords, data_05_7390
 data_05_73a2:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:73a2 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:73a3 $1a
@@ -499,7 +499,7 @@ data_05_7452:
     HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:7454 $be $04
 
 ; Referenced from 2d:751f, 2d:78e7
-; Paired with data_05_7343
+; Paired with StuckWords1
 data_05_7456:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7456 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:7457 $1a
@@ -712,7 +712,7 @@ data_05_74f2:
     HamChatWheelRule_UseIfHave 396 ; 00                ;; 05:74f2 $3f $8c
 
 ; Referenced from 1d:44e8, 1d:4be4, 1d:4dfa, 1d:4ff7, 1d:5452, 1d:54da, 1d:5b14, 1e:4357, 1e:48dc, 1e:4b6d, 1e:5045, 1e:5202, 1e:5760
-; Paired with data_05_7351
+; Paired with CompetingDexterHowdyWords
 data_05_74f4:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:74f4 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:74f5 $1a
@@ -1463,7 +1463,7 @@ data_05_774c:
     HamChatWheelRule_DefaultCase_Pair $7f, $14 ; 01    ;; 05:774e $7f $14
 
 ; Referenced from 27:56f1, 27:5ce3, 27:5d16
-; Paired with data_05_7371
+; Paired with MimicHamsterWords
 data_05_7750:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7750 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:7751 $1a
@@ -1743,7 +1743,7 @@ data_05_781c:
     HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:781e $be $05
 
 ; Referenced from 25:4468, 25:4a05
-; Paired with data_05_7380
+; Paired with CookieBoxWords
 data_05_7820:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7820 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:7821 $1a
@@ -1804,7 +1804,7 @@ data_05_784f:
     HamChatWheelRule_UseIfHave 253 ; 00                ;; 05:784f $3e $fd
 
 ; Referenced from 25:4e38
-; Paired with data_05_7389
+; Paired with StuckWords2
 data_05_7851:
     HamChatWheelRule_AlwaysUse ; 00                    ;; 05:7851 $1a
     HamChatWheelRule_AlwaysUse ; 01                    ;; 05:7852 $1a

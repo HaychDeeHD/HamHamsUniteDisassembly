@@ -1647,7 +1647,7 @@ call_2b_5593:
     SCRIPT_POINTER call_2b_55c2                        ;; 2b:5597 $c2 $55 $2b
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:559a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:559e $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_5a31, data_05_5dac    ;; 2b:55a2 $10 $08 $31 $5a $ac $5d
+    Op10_HamChatWheel 8, SleepingHamsterWords, data_05_5dac ;; 2b:55a2 $10 $08 $31 $5a $ac $5d
     Op1C_TableJump 8                                   ;; 2b:55a8 $1c $08
     SCRIPT_POINTER call_2b_55fe                        ;; 2b:55aa $fe $55 $2b
     SCRIPT_POINTER call_2b_564a                        ;; 2b:55ad $4a $56 $2b
@@ -3658,7 +3658,7 @@ call_2b_6f1b:
     Op1E_Call call_04_615d                             ;; 2b:6f1b $1e $5d $61 $04
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2b:6f1f $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2b:6f23 $1e $1d $6f $1d
-    Op10_HamChatWheel 8, data_05_4833, data_05_510a    ;; 2b:6f27 $10 $08 $33 $48 $0a $51
+    Op10_HamChatWheel 8, ClubhouseJingleWords, data_05_510a ;; 2b:6f27 $10 $08 $33 $48 $0a $51
     Op1C_TableJump 8                                   ;; 2b:6f2d $1c $08
     SCRIPT_POINTER call_2b_7194                        ;; 2b:6f2f $94 $71 $2b
     SCRIPT_POINTER call_2b_6f4b                        ;; 2b:6f32 $4b $6f $2b

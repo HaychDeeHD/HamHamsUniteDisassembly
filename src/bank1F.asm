@@ -744,7 +744,7 @@ call_1f_48e3:
 call_1f_492a:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1f:492a $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1f:492e $1e $1d $6f $1d
-    Op10_HamChatWheel 11, data_05_6cd6, data_05_7169   ;; 1f:4932 $10 $0b $d6 $6c $69 $71
+    Op10_HamChatWheel 11, EntrancedCappyWords, data_05_7169 ;; 1f:4932 $10 $0b $d6 $6c $69 $71
     Op1C_TableJump 11                                  ;; 1f:4938 $1c $0b
     SCRIPT_POINTER call_1f_4de1                        ;; 1f:493a $e1 $4d $1f
     SCRIPT_POINTER call_1f_4e0f                        ;; 1f:493d $0f $4e $1f
@@ -1186,7 +1186,7 @@ call_1f_4d9d:
 call_1f_4db0:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 1f:4db0 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 1f:4db4 $1e $1d $6f $1d
-    Op10_HamChatWheel 11, data_05_6cd6, data_05_7169   ;; 1f:4db8 $10 $0b $d6 $6c $69 $71
+    Op10_HamChatWheel 11, EntrancedCappyWords, data_05_7169 ;; 1f:4db8 $10 $0b $d6 $6c $69 $71
     Op1C_TableJump 11                                  ;; 1f:4dbe $1c $0b
     SCRIPT_POINTER call_1f_4de1                        ;; 1f:4dc0 $e1 $4d $1f
     SCRIPT_POINTER call_1f_4e0f                        ;; 1f:4dc3 $0f $4e $1f
