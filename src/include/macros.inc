@@ -65,7 +65,7 @@ db \1
 ENDM
 MACRO Op18_Jump
 db $18
-dw \1
+dw \<1>
 db BANK(\1)
 ENDM
 MACRO Op1A_Unknown
@@ -78,7 +78,7 @@ db \1
 ENDM
 MACRO Op1E_Call
 db $1e
-dw \1
+dw \<1>
 db BANK(\1)
 ENDM
 MACRO Op2A_MaybeCodeJump
@@ -142,12 +142,12 @@ db \6
 db \7
 ENDM
 MACRO Op3E_Compare_Branch
-db $3E
-db \1
-db \2
-db \3
-db \4
-dw \5
+db $3e
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+dw \<5>
 db BANK(\5)
 ENDM
 MACRO Op40_Unknown

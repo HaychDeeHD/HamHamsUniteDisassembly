@@ -6,7 +6,6 @@ from hamchatwheel import HamChatWheelOptionsBlock, HamChatWheelRulesBlock
 from scripthelpers import label3ByteRomAddressArg, serializeAddress, pullTextFrom3ByteRomAddressArg
 
 
-
 # Size includes the opcode here.
 def makeGenericBlockClass(opcode, size, macroName=None):
     className = "Op%02xBlock" % opcode
@@ -29,7 +28,10 @@ class OpBlock(Block):
         self.declaredArgObjs = []
 
     def declare3ByteRomAddressArg(self, rawIndex, addrType=None):
-        self.declaredArgObjs.append(ThreeByteRomAddressArg(self.memory, self.base_address + rawIndex, rawIndex))
+        self.declaredArgObjs.append(ThreeByteRomAddressArg(self.memory, self.base_address + rawIndex, rawIndex, addrType=addrType))
+
+    def declareDecimalArg(self, rawIndex):
+        self.declaredArgObjs.append(SingleDecimalByteArg(self.memory, self.base_address, rawIndex))
 
     def finalize(self):
         self.__finalizeArgBytes()
@@ -102,8 +104,33 @@ class ThreeByteRomAddressArg(ArgObj):
     def __repr__(self):
         return str(self.label)
 
+class SingleDecimalByteArg(SingleByteArg):
+    def __repr__(self):
+        return str(self.value)
+
 ############################################
 # OpBlocks that have been migrated to subclass OpBlock
+
+# TODO could these just be obj fields or function arguments instead?
+
+class Op18Block(OpBlock):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, 0x18, size=4, macroName="Op18_Jump")
+        self.declare3ByteRomAddressArg(1, "script")
+        self.finalize()
+
+class Op1EBlock(OpBlock):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, 0x1E, size=4, macroName="Op1E_Call")
+        self.declare3ByteRomAddressArg(1, "script")
+        self.finalize()
+
+class Op3EBlock(OpBlock):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, 0x3E, size=8, macroName="Op3E_Compare_Branch")
+        self.declareDecimalArg(1)
+        self.declare3ByteRomAddressArg(5, "script")
+        self.finalize()
 
 class Op4CBlock(OpBlock):
     def __init__(self, memory, addr):
@@ -275,27 +302,6 @@ dw \2
         for subOpArgs in self.subOpArgsList:
             file.asmLine(*subOpArgs)
 
-class Op18Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=4)
-        RomInfo.macros["Op18_Jump"] = "db $18\ndw \\1\ndb BANK(\\1)"
-
-        self.label = label3ByteRomAddressArg(memory, addr + 1, "script")
-
-
-    def export(self, file):
-        file.asmLine(4, "Op18_Jump", str(self.label))
-
-class Op1EBlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=4)
-        RomInfo.macros["Op1E_Call"] = "db $1e\ndw \\1\ndb BANK(\\1)"
-
-        self.label = label3ByteRomAddressArg(memory, addr + 1, "script")
-
-    def export(self, file):
-        file.asmLine(4, "Op1E_Call", str(self.label))
-
 class Op50Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=5)
@@ -384,20 +390,6 @@ class Op14Block(Block):
         arg1 = self.memory.byte(file.addr + 2)
         arg2 = self.memory.byte(file.addr + 3)
         file.asmLine(4, "Op14_Unknown", str(self.count), str(self.label))
-
-class Op3EBlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 8)
-        RomInfo.macros["Op3E_Compare_Branch"] = "db $3E\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndw \\5\ndb BANK(\\5)"
-
-        self.label = label3ByteRomAddressArg(memory, addr + 5, "script")
-
-    def export(self, file):
-        offset = self.memory.byte(file.addr + 1)
-        golden1 = self.memory.byte(file.addr + 2)
-        golden2 = self.memory.byte(file.addr + 3)
-        golden3 = self.memory.byte(file.addr + 4)
-        file.asmLine(8, "Op3E_Compare_Branch", str(offset), "$%02x" % golden1, "$%02x" % golden2, "$%02x" % golden3, str(self.label))
 
 class Op74Block(Block):
     def __init__(self, memory, addr):
