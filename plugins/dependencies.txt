@@ -1,0 +1,20 @@
+
+Any plugin that defines an annotation is a potential entry point.
+
+
+
+            (entry) hamscripts                  (entry) rst
+                   |
+                   |
+        --------------------------------------
+        |           |                        |
+        |           |                        |
+        v           v                        v
+    opblocks ---> scripthelpers ----> (entry) hamtext
+        |
+        |
+        v
+(entry) hamchatwheel
+
+
+(rst is has no dependency relations with any of the other plugins.)
