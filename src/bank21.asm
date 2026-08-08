@@ -118,7 +118,7 @@ call_21_4163:
     Op18_Jump call_21_417d                             ;; 21:4167 $18 $7d $41 $21
 
 call_21_416b:
-    Op56_WriteBitArrayIndex 22, $24, $62, $12          ;; 21:416b $56 $16 $24 $62 $12
+    Op56_WriteBitArrayIndex 22, data_12_6224           ;; 21:416b $56 $16 $24 $62 $12
     Op16_SubOps 1                                      ;; 21:4170 $16 $01
     SubOp_SetByte wC742, $00                           ;; 21:4172 $7e $2a $00
     Op18_Jump call_21_4212                             ;; 21:4175 $18 $12 $42 $21
@@ -1517,7 +1517,7 @@ call_21_5267:
     SCRIPT_RETURN_4A                                   ;; 21:5267 $4a
     Op3E_Compare_Branch 22, $3f, $55, $10, call_21_5267 ;; 21:5268 $3e $16 $3f $55 $10 $67 $52 $21
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_10_558f ;; 21:5270 $4c $16 $08 $04 $00 $00 $00 $00 $8f $55 $10
-    Op56_WriteBitArrayIndex 8, $31, $6a, $15           ;; 21:527b $56 $08 $31 $6a $15
+    Op56_WriteBitArrayIndex 8, data_15_6a31            ;; 21:527b $56 $08 $31 $6a $15
     Op1E_Call call_04_615d                             ;; 21:5280 $1e $5d $61 $04
 
 call_21_5284:

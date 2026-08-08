@@ -1219,7 +1219,7 @@ call_2b_5076:
     Op18_Jump call_2b_50b9                             ;; 2b:509b $18 $b9 $50 $2b
 
 call_2b_509f:
-    Op56_WriteBitArrayIndex 22, $24, $62, $12          ;; 2b:509f $56 $16 $24 $62 $12
+    Op56_WriteBitArrayIndex 22, data_12_6224           ;; 2b:509f $56 $16 $24 $62 $12
     Op16_SubOps 1                                      ;; 2b:50a4 $16 $01
     SubOp_SetByte wC742, $00                           ;; 2b:50a6 $7e $2a $00
     Op18_Jump call_2b_514e                             ;; 2b:50a9 $18 $4e $51 $2b
@@ -3634,10 +3634,10 @@ call_2b_6ed1:
     SCRIPT_POINTER call_2b_6f05                        ;; 2b:6ee4 $05 $6f $2b
     ;;<...><E5><end>
     Op04_Unknown_Text data_37_5380                     ;; 2b:6ee7 $04 $80 $53 $37
-    Op56_WriteBitArrayIndex 30, $20, $5f, $1a          ;; 2b:6eeb $56 $1e $20 $5f $1a
+    Op56_WriteBitArrayIndex 30, data_1a_5f20           ;; 2b:6eeb $56 $1e $20 $5f $1a
     ;;That's not right.<E3><end>
     Op06_Unknown_Text data_37_5383                     ;; 2b:6ef0 $06 $83 $53 $37
-    Op56_WriteBitArrayIndex 30, $25, $7b, $1b          ;; 2b:6ef4 $56 $1e $25 $7b $1b
+    Op56_WriteBitArrayIndex 30, data_1b_7b25           ;; 2b:6ef4 $56 $1e $25 $7b $1b
     ;;I wanna write a<E4>sad love song,<E3>but I've got a bad<E4>case of writer's<E4>block.<E3>Can you think of<E4>any good lyrics?<E0>
     Op06_Unknown_Text data_37_5396                     ;; 2b:6ef9 $06 $96 $53 $37
     Op16_SubOps 1                                      ;; 2b:6efd $16 $01
@@ -3647,10 +3647,10 @@ call_2b_6ed1:
 
 call_2b_6f05:
     Op04_Unknown_Text data_37_5402                     ;; 2b:6f05 $04 $02 $54 $37
-    Op56_WriteBitArrayIndex 30, $20, $5f, $1a          ;; 2b:6f09 $56 $1e $20 $5f $1a
+    Op56_WriteBitArrayIndex 30, data_1a_5f20           ;; 2b:6f09 $56 $1e $20 $5f $1a
     ;;I'm still working<E4>on the lyrics.<E3><end>
     Op06_Unknown_Text data_37_5408                     ;; 2b:6f0e $06 $08 $54 $37
-    Op56_WriteBitArrayIndex 30, $25, $7b, $1b          ;; 2b:6f12 $56 $1e $25 $7b $1b
+    Op56_WriteBitArrayIndex 30, data_1b_7b25           ;; 2b:6f12 $56 $1e $25 $7b $1b
     ;;I want to capture<E4>the emotion of a<E4>sad love song.<E0>
     Op06_Unknown_Text data_37_542a                     ;; 2b:6f17 $06 $2a $54 $37
 
@@ -3778,7 +3778,7 @@ call_2b_7053:
 
 call_2b_705b:
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, data_17_7887 ;; 2b:705b $4c $16 $10 $02 $00 $00 $00 $00 $87 $78 $17
-    Op56_WriteBitArrayIndex 26, $57, $5f, $1a          ;; 2b:7066 $56 $1a $57 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5f57           ;; 2b:7066 $56 $1a $57 $5f $1a
     Op1E_Call call_1d_6b50                             ;; 2b:706b $1e $50 $6b $1d
     ;;<EA>Ham-HA<E8>!<E3><end>
     Op04_Unknown_Text data_37_545c                     ;; 2b:706f $04 $5c $54 $37
@@ -3786,11 +3786,11 @@ call_2b_705b:
 call_2b_7073:
     SCRIPT_RETURN_4A                                   ;; 2b:7073 $4a
     Op3E_Compare_Branch 26, $57, $5f, $1a, call_2b_7073 ;; 2b:7074 $3e $1a $57 $5f $1a $73 $70 $2b
-    Op56_WriteBitArrayIndex 26, $b5, $5f, $1a          ;; 2b:707c $56 $1a $b5 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5fb5           ;; 2b:707c $56 $1a $b5 $5f $1a
     ;;Thanks to you,<E4>I finally finished<E4>another song!<E3>If I'm ever stuck<E4>again, I hope you<E4>will help me out!<E0>
     Op06_Unknown_Text data_37_5467                     ;; 2b:7081 $06 $67 $54 $37
     Op1E_Call call_04_615d                             ;; 2b:7085 $1e $5d $61 $04
-    Op56_WriteBitArrayIndex 26, $25, $7b, $1b          ;; 2b:7089 $56 $1a $25 $7b $1b
+    Op56_WriteBitArrayIndex 26, data_1b_7b25           ;; 2b:7089 $56 $1a $25 $7b $1b
     Op18_Jump call_2b_6bee                             ;; 2b:708e $18 $ee $6b $2b
 
 call_2b_7092:
@@ -3804,7 +3804,7 @@ call_2b_7092:
 call_2b_70b5:
     SCRIPT_RETURN_4A                                   ;; 2b:70b5 $4a
     Op3E_Compare_Branch 26, $57, $5f, $1a, call_2b_70b5 ;; 2b:70b6 $3e $1a $57 $5f $1a $b5 $70 $2b
-    Op56_WriteBitArrayIndex 26, $b5, $5f, $1a          ;; 2b:70be $56 $1a $b5 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5fb5           ;; 2b:70be $56 $1a $b5 $5f $1a
     ;;My new song is<E4>finished.<E3>I feel so alive!<E3>Hey, do you mind<E4>listening to it?<E0>
     Op06_Unknown_Text data_37_54d3                     ;; 2b:70c3 $06 $d3 $54 $37
     Op1E_Call call_04_615d                             ;; 2b:70c7 $1e $5d $61 $04
@@ -3844,7 +3844,7 @@ call_2b_7126:
 
 call_2b_713e:
     Op1E_Call call_2b_7168                             ;; 2b:713e $1e $68 $71 $2b
-    Op56_WriteBitArrayIndex 26, $25, $7b, $1b          ;; 2b:7142 $56 $1a $25 $7b $1b
+    Op56_WriteBitArrayIndex 26, data_1b_7b25           ;; 2b:7142 $56 $1a $25 $7b $1b
     Op18_Jump call_2b_6bee                             ;; 2b:7147 $18 $ee $6b $2b
 
 call_2b_714b:
@@ -3884,12 +3884,12 @@ call_2b_71ac:
     Op1E_Call call_1d_6b50                             ;; 2b:71bf $1e $50 $6b $1d
     ;;<end>
     Op04_Unknown_Text data_37_5561                     ;; 2b:71c3 $04 $61 $55 $37
-    Op56_WriteBitArrayIndex 26, $b5, $5f, $1a          ;; 2b:71c7 $56 $1a $b5 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5fb5           ;; 2b:71c7 $56 $1a $b5 $5f $1a
     Op4C_Unknown $30, $01, $04, $00, $00, $00, $00, data_1a_63e6 ;; 2b:71cc $4c $30 $01 $04 $00 $00 $00 $00 $e6 $63 $1a
     Op4E_Unknown_StoreValue 4, $01, data_10_406d       ;; 2b:71d7 $4e $04 $01 $6d $40 $10
     ;;That's it!<E3>That's the perfect<E4>phrase for a sad<E4>love song.<E3><E7>,<E3><end>
     Op06_Unknown_Text data_37_5562                     ;; 2b:71dd $06 $62 $55 $37
-    Op56_WriteBitArrayIndex 26, $fb, $63, $1a          ;; 2b:71e1 $56 $1a $fb $63 $1a
+    Op56_WriteBitArrayIndex 26, data_1a_63fb           ;; 2b:71e1 $56 $1a $fb $63 $1a
 
 call_2b_71e6:
     SCRIPT_RETURN_4A                                   ;; 2b:71e6 $4a
@@ -3989,7 +3989,7 @@ call_2b_72f8:
 call_2b_72fc:
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, data_17_7887 ;; 2b:72fc $4c $16 $10 $02 $00 $00 $00 $00 $87 $78 $17
     Op1E_Call call_2b_77e3                             ;; 2b:7307 $1e $e3 $77 $2b
-    Op56_WriteBitArrayIndex 26, $e5, $5e, $1a          ;; 2b:730b $56 $1a $e5 $5e $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5ee5           ;; 2b:730b $56 $1a $e5 $5e $1a
     Op1E_Call call_1d_6b50                             ;; 2b:7310 $1e $50 $6b $1d
     ;;No, it's like<...><E0>
     Op04_Unknown_Text data_37_5619                     ;; 2b:7314 $04 $19 $56 $37
@@ -4629,7 +4629,7 @@ call_2b_7b27:
     Op18_Jump call_2b_7b44                             ;; 2b:7b32 $18 $44 $7b $2b
 
 call_2b_7b36:
-    Op56_WriteBitArrayIndex 22, $24, $62, $12          ;; 2b:7b36 $56 $16 $24 $62 $12
+    Op56_WriteBitArrayIndex 22, data_12_6224           ;; 2b:7b36 $56 $16 $24 $62 $12
     Op16_SubOps 1                                      ;; 2b:7b3b $16 $01
     SubOp_SetByte wC742, $00                           ;; 2b:7b3d $7e $2a $00
     Op18_Jump call_2b_7bd9                             ;; 2b:7b40 $18 $d9 $7b $2b

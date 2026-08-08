@@ -625,8 +625,8 @@ OPBLOCKS = {
     0x50: Op50Block, # Can't use standard 3ram because address can be Vram.
     0x52: Op52Block, # Can't use standard 3ram because address can be Vram.
     0x54: makeOpBlockFromArgString(0x54, 'b'),
-    0x56: makeOpBlockFromArgString(0x56, 'd,b,b,b', "Op56_WriteBitArrayIndex"), # TODO change these 3 b's to 3rom
-    0x58: makeOpBlockFromArgString(0x58, 'd,b,b,b,b', "Op58_WriteBitArrayIndex"), # TODO change last 3 b's to 3rom
+    0x56: makeOpBlockFromArgString(0x56, 'd,3Rom', "Op56_WriteBitArrayIndex"),
+    0x58: makeOpBlockFromArgString(0x58, 'd,b,3Rom', "Op58_WriteBitArrayIndex"),
     0x5A: makeOpBlockFromArgString(0x5A, 'b'),
     0x5E: makeOpBlockFromArgString(0x5E, 'b'),
     0x68: Op68Block, # Shared wram bank arg that may not be relevant to both 2ram's

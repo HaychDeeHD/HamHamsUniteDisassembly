@@ -117,7 +117,7 @@ call_2e_4147:
     Op18_Jump call_2e_416f                             ;; 2e:415d $18 $6f $41 $2e
 
 call_2e_4161:
-    Op56_WriteBitArrayIndex 22, $24, $62, $12          ;; 2e:4161 $56 $16 $24 $62 $12
+    Op56_WriteBitArrayIndex 22, data_12_6224           ;; 2e:4161 $56 $16 $24 $62 $12
     Op16_SubOps 1                                      ;; 2e:4166 $16 $01
     SubOp_SetByte wC742, $00                           ;; 2e:4168 $7e $2a $00
     Op18_Jump call_2e_4190                             ;; 2e:416b $18 $90 $41 $2e
@@ -1197,7 +1197,7 @@ call_2e_4f02:
     SubOp_SetByte wC78A, $01                           ;; 2e:4f04 $7e $72 $01
     Op1E_Call call_2e_56f9                             ;; 2e:4f07 $1e $f9 $56 $2e
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_10_4235 ;; 2e:4f0b $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
-    Op56_WriteBitArrayIndex 26, $85, $5f, $1a          ;; 2e:4f16 $56 $1a $85 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5f85           ;; 2e:4f16 $56 $1a $85 $5f $1a
     Op1E_Call call_1d_6b50                             ;; 2e:4f1b $1e $50 $6b $1d
     ;;Hey, <E7>.<E4>How are you?<E3>I'm<...>uh<...>what do<E4>you call it<...><E4>You know<...><E0>
     Op04_Unknown_Text data_3a_70fc                     ;; 2e:4f1f $04 $fc $70 $3a
@@ -1210,7 +1210,7 @@ call_2e_4f02:
     Op16_SubOps 1                                      ;; 2e:4f36 $16 $01
     SubOp_SetFlag wC949, 6                             ;; 2e:4f38 $3f $8e
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2e:4f3a $82 $16 $74 $01
-    Op56_WriteBitArrayIndex 26, $85, $5f, $1a          ;; 2e:4f3e $56 $1a $85 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5f85           ;; 2e:4f3e $56 $1a $85 $5f $1a
     Op1E_Call call_1d_6f1d                             ;; 2e:4f43 $1e $1d $6f $1d
     Op10_HamChatWheel 8, JinglePooieWords, data_05_63cc ;; 2e:4f47 $10 $08 $40 $60 $cc $63
     Op1C_TableJump 8                                   ;; 2e:4f4d $1c $08
@@ -1279,15 +1279,15 @@ call_2e_4fcf:
 
 call_2e_4fe7:
     Op1E_Call call_20_4021                             ;; 2e:4fe7 $1e $21 $40 $20
-    Op56_WriteBitArrayIndex 26, $95, $5f, $1a          ;; 2e:4feb $56 $1a $95 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5f95           ;; 2e:4feb $56 $1a $95 $5f $1a
     Op1E_Call call_1d_6b50                             ;; 2e:4ff0 $1e $50 $6b $1d
     Op1E_Call call_2e_5725                             ;; 2e:4ff4 $1e $25 $57 $2e
     ;;That's it.<E4><end>
     Op04_Unknown_Text data_3a_7137                     ;; 2e:4ff8 $04 $37 $71 $3a
-    Op56_WriteBitArrayIndex 26, $85, $5f, $1a          ;; 2e:4ffc $56 $1a $85 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5f85           ;; 2e:4ffc $56 $1a $85 $5f $1a
     ;;I'm feeling<E4>very <EA>pooie<E8>.<E3>I guess it's like<E4>writer's block,<E4>you know?<E3>I can't think of<E4>any lyrics for<E4>the song <E5>I'll play<E4>during a <end>
     Op06_Unknown_Text data_3a_7143                     ;; 2e:5001 $06 $43 $71 $3a
-    Op56_WriteBitArrayIndex 26, $c3, $63, $1a          ;; 2e:5005 $56 $1a $c3 $63 $1a
+    Op56_WriteBitArrayIndex 26, data_1a_63c3           ;; 2e:5005 $56 $1a $c3 $63 $1a
     ;;<EA>clapclap<E8>.<E0>
     Op06_Unknown_Text data_3a_71c7                     ;; 2e:500a $06 $c7 $71 $3a
 
@@ -1304,7 +1304,7 @@ call_2e_5028:
     Op1E_Call ShowHaventLearnedWord                    ;; 2e:5028 $1e $1d $4e $33
 
 call_2e_502c:
-    Op56_WriteBitArrayIndex 26, $9b, $5e, $1a          ;; 2e:502c $56 $1a $9b $5e $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5e9b           ;; 2e:502c $56 $1a $9b $5e $1a
     Op18_Jump call_2e_4c1e                             ;; 2e:5031 $18 $1e $4c $2e
 
 call_2e_5035:
@@ -1354,7 +1354,7 @@ call_2e_5091:
 call_2e_50a9:
     Op1E_Call call_20_4042                             ;; 2e:50a9 $1e $42 $40 $20
     Op1E_Call call_2e_5725                             ;; 2e:50ad $1e $25 $57 $2e
-    Op56_WriteBitArrayIndex 26, $85, $5f, $1a          ;; 2e:50b1 $56 $1a $85 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5f85           ;; 2e:50b1 $56 $1a $85 $5f $1a
     Op1E_Call call_1d_6b50                             ;; 2e:50b6 $1e $50 $6b $1d
     ;;Hmm<...> <E5>That's<E4>totally wrong.<E0>
     Op04_Unknown_Text data_3a_71d8                     ;; 2e:50ba $04 $d8 $71 $3a
@@ -1376,7 +1376,7 @@ call_2e_50de:
     Op1E_Call call_2e_5725                             ;; 2e:50e2 $1e $25 $57 $2e
 
 call_2e_50e6:
-    Op56_WriteBitArrayIndex 26, $85, $5f, $1a          ;; 2e:50e6 $56 $1a $85 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5f85           ;; 2e:50e6 $56 $1a $85 $5f $1a
     Op1E_Call call_1d_6b50                             ;; 2e:50eb $1e $50 $6b $1d
     ;;Hmm<...> <E5>That's<E4>not quite right<...><E0>
     Op04_Unknown_Text data_3a_71f4                     ;; 2e:50ef $04 $f4 $71 $3a
@@ -1395,7 +1395,7 @@ call_2e_50fb:
 
 call_2e_5113:
     Op1E_Call call_20_42bf                             ;; 2e:5113 $1e $bf $42 $20
-    Op56_WriteBitArrayIndex 26, $7d, $63, $1a          ;; 2e:5117 $56 $1a $7d $63 $1a
+    Op56_WriteBitArrayIndex 26, data_1a_637d           ;; 2e:5117 $56 $1a $7d $63 $1a
 
 call_2e_511c:
     SCRIPT_RETURN_4A                                   ;; 2e:511c $4a
@@ -1404,7 +1404,7 @@ call_2e_511c:
     Op18_Jump call_2e_5139                             ;; 2e:5130 $18 $39 $51 $2e
 
 call_2e_5134:
-    Op56_WriteBitArrayIndex 26, $85, $5f, $1a          ;; 2e:5134 $56 $1a $85 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5f85           ;; 2e:5134 $56 $1a $85 $5f $1a
 
 call_2e_5139:
     Op1E_Call call_1d_6b50                             ;; 2e:5139 $1e $50 $6b $1d
@@ -1456,7 +1456,7 @@ call_2e_5191:
 call_2e_51a9:
     Op1E_Call call_20_4a8d                             ;; 2e:51a9 $1e $8d $4a $20
     Op1E_Call call_2e_5725                             ;; 2e:51ad $1e $25 $57 $2e
-    Op56_WriteBitArrayIndex 26, $c5, $5f, $1a          ;; 2e:51b1 $56 $1a $c5 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5fc5           ;; 2e:51b1 $56 $1a $c5 $5f $1a
     Op1E_Call call_1d_6b50                             ;; 2e:51b6 $1e $50 $6b $1d
     ;;Don't annoy me.<E0>
     Op04_Unknown_Text data_3a_7220                     ;; 2e:51ba $04 $20 $72 $3a
@@ -1493,7 +1493,7 @@ call_2e_5202:
     Op1E_Call call_2e_5725                             ;; 2e:5206 $1e $25 $57 $2e
     Op4E_Unknown_StoreValue 4, $01, data_10_406d       ;; 2e:520a $4e $04 $01 $6d $40 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_1a_63e6 ;; 2e:5210 $4c $08 $01 $04 $00 $00 $00 $00 $e6 $63 $1a
-    Op56_WriteBitArrayIndex 26, $95, $5f, $1a          ;; 2e:521b $56 $1a $95 $5f $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5f95           ;; 2e:521b $56 $1a $95 $5f $1a
     Op1E_Call call_1d_6b50                             ;; 2e:5220 $1e $50 $6b $1d
     ;;Yeah, that's it!<E3>It should be a<E4><EA>smoochie<E8> song!<E3>You're absolutely<E4>right. <E5><end>
     Op04_Unknown_Text data_3a_7230                     ;; 2e:5224 $04 $30 $72 $3a
@@ -1513,10 +1513,10 @@ call_2e_523b:
     Op1E_Call call_04_615d                             ;; 2e:523f $1e $5d $61 $04
     Op5E_Unknown $80                                   ;; 2e:5243 $5e $80
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, data_10_433e ;; 2e:5245 $4c $16 $08 $02 $00 $00 $00 $00 $3e $43 $10
-    Op56_WriteBitArrayIndex 26, $59, $61, $1a          ;; 2e:5250 $56 $1a $59 $61 $1a
+    Op56_WriteBitArrayIndex 26, data_1a_6159           ;; 2e:5250 $56 $1a $59 $61 $1a
     Op44_Unknown $18, $00                              ;; 2e:5255 $44 $18 $00
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, data_10_4b93 ;; 2e:5258 $4c $16 $08 $02 $00 $00 $00 $00 $93 $4b $10
-    Op56_WriteBitArrayIndex 26, $35, $62, $1a          ;; 2e:5263 $56 $1a $35 $62 $1a
+    Op56_WriteBitArrayIndex 26, data_1a_6235           ;; 2e:5263 $56 $1a $35 $62 $1a
     Op44_Unknown $0e, $00                              ;; 2e:5268 $44 $0e $00
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_10_4c83 ;; 2e:526b $4c $16 $08 $04 $00 $00 $00 $00 $83 $4c $10
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_1a_6278 ;; 2e:5276 $4c $1a $01 $04 $00 $00 $00 $00 $78 $62 $1a
@@ -1528,7 +1528,7 @@ call_2e_5281:
     SubOp_SetByte wC78A, $03                           ;; 2e:528c $7e $72 $03
     Op50_WriteByte wC720, $00, $14                     ;; 2e:528f $50 $20 $c7 $00 $14
     Op82_Run data_01_6844                              ;; 2e:5294 $82 $44 $68 $01
-    Op56_WriteBitArrayIndex 26, $c7, $61, $1a          ;; 2e:5298 $56 $1a $c7 $61 $1a
+    Op56_WriteBitArrayIndex 26, data_1a_61c7           ;; 2e:5298 $56 $1a $c7 $61 $1a
     Op44_Unknown $10, $00                              ;; 2e:529d $44 $10 $00
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_17_77d2 ;; 2e:52a0 $4c $16 $08 $04 $00 $00 $00 $00 $d2 $77 $17
     Op52_WriteBytes w1_D20B, $01, $ab, $00             ;; 2e:52ab $52 $0b $d2 $01 $ab $00
@@ -1550,7 +1550,7 @@ call_2e_52cf:
     Op1E_Call ShowHaventLearnedWord                    ;; 2e:52cf $1e $1d $4e $33
 
 call_2e_52d3:
-    Op56_WriteBitArrayIndex 26, $9b, $5e, $1a          ;; 2e:52d3 $56 $1a $9b $5e $1a
+    Op56_WriteBitArrayIndex 26, data_1a_5e9b           ;; 2e:52d3 $56 $1a $9b $5e $1a
     Op18_Jump call_2e_4c1e                             ;; 2e:52d8 $18 $1e $4c $2e
 
 call_2e_52dc:
@@ -1656,7 +1656,7 @@ call_2e_53ce:
 
 call_2e_53ed:
     Op1E_Call call_20_42bf                             ;; 2e:53ed $1e $bf $42 $20
-    Op56_WriteBitArrayIndex 52, $fb, $72, $1b          ;; 2e:53f1 $56 $34 $fb $72 $1b
+    Op56_WriteBitArrayIndex 52, data_1b_72fb           ;; 2e:53f1 $56 $34 $fb $72 $1b
     Op1E_Call call_1d_6e28                             ;; 2e:53f6 $1e $28 $6e $1d
     ;;Ouch<...>!<E4>That wasn't<E4>very nice!<E0>
     Op04_Unknown_Text data_3a_736f                     ;; 2e:53fa $04 $6f $73 $3a
@@ -1676,7 +1676,7 @@ call_2e_5411:
 
 call_2e_5429:
     Op1E_Call call_20_4310                             ;; 2e:5429 $1e $10 $43 $20
-    Op56_WriteBitArrayIndex 52, $fb, $72, $1b          ;; 2e:542d $56 $34 $fb $72 $1b
+    Op56_WriteBitArrayIndex 52, data_1b_72fb           ;; 2e:542d $56 $34 $fb $72 $1b
     Op1E_Call call_1d_6e28                             ;; 2e:5432 $1e $28 $6e $1d
     ;;Hack, Hack!<E4>You're such a<E4>messy hamster!<E0>
     Op04_Unknown_Text data_3a_738d                     ;; 2e:5436 $04 $8d $73 $3a

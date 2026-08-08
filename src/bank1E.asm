@@ -113,7 +113,7 @@ call_1e_4142:
     Op18_Jump call_1e_415f                             ;; 1e:414d $18 $5f $41 $1e
 
 call_1e_4151:
-    Op56_WriteBitArrayIndex 22, $24, $62, $12          ;; 1e:4151 $56 $16 $24 $62 $12
+    Op56_WriteBitArrayIndex 22, data_12_6224           ;; 1e:4151 $56 $16 $24 $62 $12
     Op16_SubOps 1                                      ;; 1e:4156 $16 $01
     SubOp_SetByte wC742, $00                           ;; 1e:4158 $7e $2a $00
     Op18_Jump call_1e_41f4                             ;; 1e:415b $18 $f4 $41 $1e
@@ -2929,7 +2929,7 @@ call_1e_6527:
 call_1e_653f:
     Op1E_Call call_20_4310                             ;; 1e:653f $1e $10 $43 $20
     Op4C_Unknown $10, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:6543 $4c $10 $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:654e $56 $1a $3b $4e $15
+    Op56_WriteBitArrayIndex 26, data_15_4e3b           ;; 1e:654e $56 $1a $3b $4e $15
     Op1E_Call call_1d_6dda                             ;; 1e:6553 $1e $da $6d $1d
     ;;Stop, matie!<E4>You're ruining<E4>the field.<E0>
     Op04_Unknown_Text data_30_5a1a                     ;; 1e:6557 $04 $1a $5a $30
@@ -3296,7 +3296,7 @@ call_1e_6941:
     ;;What the heck?<E3>C'mon, Matie!<E4>You've got to try<E4>harder than that!<E3><end>
     Op06_Unknown_Text data_30_5ada                     ;; 1e:6945 $06 $da $5a $30
     Op4C_Unknown $10, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:6949 $4c $10 $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6954 $56 $1a $3b $4e $15
+    Op56_WriteBitArrayIndex 26, data_15_4e3b           ;; 1e:6954 $56 $1a $3b $4e $15
     ;;That's not enough!<E0>
     Op06_Unknown_Text data_30_5b1c                     ;; 1e:6959 $06 $1c $5b $30
     Op18_Jump call_1e_69d7                             ;; 1e:695d $18 $d7 $69 $1e
@@ -3400,7 +3400,7 @@ call_1e_6a72:
 
 call_1e_6aa9:
     Op4C_Unknown $10, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:6aa9 $4c $10 $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6ab4 $56 $1a $3b $4e $15
+    Op56_WriteBitArrayIndex 26, data_15_4e3b           ;; 1e:6ab4 $56 $1a $3b $4e $15
     ;;Yes! That's it!<E4>Great, matie!!<E4>Perfect!<E3><end>
     Op06_Unknown_Text data_30_5d18                     ;; 1e:6ab9 $06 $18 $5d $30
     Op4C_Unknown $1a, $01, $04, $4c, $00, $70, $00, data_15_4e8e ;; 1e:6abd $4c $1a $01 $04 $4c $00 $70 $00 $8e $4e $15
@@ -3410,7 +3410,7 @@ call_1e_6aa9:
     ;;Whoopee!<E4><end>
     Op06_Unknown_Text data_30_5d70                     ;; 1e:6ad0 $06 $70 $5d $30
     Op4C_Unknown $3a, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:6ad4 $4c $3a $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6adf $56 $1a $3b $4e $15
+    Op56_WriteBitArrayIndex 26, data_15_4e3b           ;; 1e:6adf $56 $1a $3b $4e $15
     ;;Congratulations!<E3><end>
     Op06_Unknown_Text data_30_5d7a                     ;; 1e:6ae4 $06 $7a $5d $30
     Op1E_Call call_1e_7184                             ;; 1e:6ae8 $1e $84 $71 $1e
@@ -3441,7 +3441,7 @@ call_1e_6b1d:
     ;;Matie!<E4>Thank you<...><E4><end>
     Op06_Unknown_Text data_30_5def                     ;; 1e:6b29 $06 $ef $5d $30
     Op4C_Unknown $3a, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:6b2d $4c $3a $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6b38 $56 $1a $3b $4e $15
+    Op56_WriteBitArrayIndex 26, data_15_4e3b           ;; 1e:6b38 $56 $1a $3b $4e $15
     ;;Thank you<...>!<E0>
     Op06_Unknown_Text data_30_5e02                     ;; 1e:6b3d $06 $02 $5e $30
 
@@ -3611,7 +3611,7 @@ call_1e_6cce:
     Op1E_Call call_1d_6dda                             ;; 1e:6cfe $1e $da $6d $1d
     ;;No!<E4>No, no, no!<E3><end>
     Op04_Unknown_Text data_30_5e0e                     ;; 1e:6d02 $04 $0e $5e $30
-    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6d06 $56 $1a $3b $4e $15
+    Op56_WriteBitArrayIndex 26, data_15_4e3b           ;; 1e:6d06 $56 $1a $3b $4e $15
     ;;Matie!<E3>Let's try this<E4>again from the<E4>beginning,<E3>OK?!<E0>
     Op06_Unknown_Text data_30_5e1f                     ;; 1e:6d0b $06 $1f $5e $30
     Op1E_Call call_04_615d                             ;; 1e:6d0f $1e $5d $61 $04
@@ -3668,7 +3668,7 @@ call_1e_6d92:
     Op1E_Call call_1d_6dda                             ;; 1e:6daa $1e $da $6d $1d
     ;;What?!<E3>Matie!<E3>You can't quit<E4>now! Look how<E4>far we've come<...><E3>How do you expect<E4>to win at anything<E3>with that<E4><end>
     Op04_Unknown_Text data_30_5e75                     ;; 1e:6dae $04 $75 $5e $30
-    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6db2 $56 $1a $3b $4e $15
+    Op56_WriteBitArrayIndex 26, data_15_4e3b           ;; 1e:6db2 $56 $1a $3b $4e $15
     ;;attitude?!<E0>
     Op06_Unknown_Text data_30_5ee0                     ;; 1e:6db7 $06 $e0 $5e $30
     Op1E_Call call_04_615d                             ;; 1e:6dbb $1e $5d $61 $04
@@ -3691,7 +3691,7 @@ call_1e_6dd9:
     Op1E_Call call_1e_7208                             ;; 1e:6de7 $1e $08 $72 $1e
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 1e:6deb $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     Op4C_Unknown $10, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:6df6 $4c $10 $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op56_WriteBitArrayIndex 26, $3b, $4e, $15          ;; 1e:6e01 $56 $1a $3b $4e $15
+    Op56_WriteBitArrayIndex 26, data_15_4e3b           ;; 1e:6e01 $56 $1a $3b $4e $15
     Op1E_Call call_1d_6dda                             ;; 1e:6e06 $1e $da $6d $1d
     ;;Matie!<E4>You did it!<E4>You really did it!<E3>I knew you would!<E4>I believed in you<E4>from the start!<E3>Now, we'll call<E4>you the Thunder<E4>Matie! <E5>Oh, isn't<E4>it great to be<E4>young? <E5><end>
     Op04_Unknown_Text data_30_5eeb                     ;; 1e:6e0a $04 $eb $5e $30

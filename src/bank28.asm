@@ -1636,30 +1636,30 @@ call_28_5552:
 
 call_28_5578:
     Op42_Unknown_StoreValue 4, $01, data_19_4fe5       ;; 28:5578 $42 $04 $01 $e5 $4f $19
-    Op56_WriteBitArrayIndex 26, $ed, $4f, $15          ;; 28:557e $56 $1a $ed $4f $15
-    Op56_WriteBitArrayIndex 30, $52, $55, $19          ;; 28:5583 $56 $1e $52 $55 $19
-    Op56_WriteBitArrayIndex 32, $67, $55, $19          ;; 28:5588 $56 $20 $67 $55 $19
+    Op56_WriteBitArrayIndex 26, data_15_4fed           ;; 28:557e $56 $1a $ed $4f $15
+    Op56_WriteBitArrayIndex 30, data_19_5552           ;; 28:5583 $56 $1e $52 $55 $19
+    Op56_WriteBitArrayIndex 32, data_19_5567           ;; 28:5588 $56 $20 $67 $55 $19
     Op4C_Unknown $0e, $01, $04, $00, $00, $00, $00, data_19_5937 ;; 28:558d $4c $0e $01 $04 $00 $00 $00 $00 $37 $59 $19
     Op1E_Call call_20_4294                             ;; 28:5598 $1e $94 $42 $20
-    Op56_WriteBitArrayIndex 26, $1d, $50, $15          ;; 28:559c $56 $1a $1d $50 $15
-    Op56_WriteBitArrayIndex 30, $7c, $55, $19          ;; 28:55a1 $56 $1e $7c $55 $19
-    Op56_WriteBitArrayIndex 32, $87, $55, $19          ;; 28:55a6 $56 $20 $87 $55 $19
+    Op56_WriteBitArrayIndex 26, data_15_501d           ;; 28:559c $56 $1a $1d $50 $15
+    Op56_WriteBitArrayIndex 30, data_19_557c           ;; 28:55a1 $56 $1e $7c $55 $19
+    Op56_WriteBitArrayIndex 32, data_19_5587           ;; 28:55a6 $56 $20 $87 $55 $19
     Op4C_Unknown $0e, $01, $04, $00, $00, $00, $00, data_19_5949 ;; 28:55ab $4c $0e $01 $04 $00 $00 $00 $00 $49 $59 $19
     Op1E_Call call_1d_6df4                             ;; 28:55b6 $1e $f4 $6d $1d
     ;;Hey!<E3>What do you think<E4>you're doing?!<E0>
     Op04_Unknown_Text data_37_5aec                     ;; 28:55ba $04 $ec $5a $37
     Op1E_Call call_04_615d                             ;; 28:55be $1e $5d $61 $04
-    Op56_WriteBitArrayIndex 30, $92, $55, $19          ;; 28:55c2 $56 $1e $92 $55 $19
-    Op56_WriteBitArrayIndex 32, $bb, $55, $19          ;; 28:55c7 $56 $20 $bb $55 $19
+    Op56_WriteBitArrayIndex 30, data_19_5592           ;; 28:55c2 $56 $1e $92 $55 $19
+    Op56_WriteBitArrayIndex 32, data_19_55bb           ;; 28:55c7 $56 $20 $bb $55 $19
     Op1E_Call call_1d_6e90                             ;; 28:55cc $1e $90 $6e $1d
     ;;<E4>Boo! Boo!<E0>
     Op04_Unknown_Text data_37_5b12                     ;; 28:55d0 $04 $12 $5b $37
     Op1E_Call call_28_5dd5                             ;; 28:55d4 $1e $d5 $5d $28
     Op1E_Call call_04_615d                             ;; 28:55d8 $1e $5d $61 $04
     Op4C_Unknown $0e, $00, $00, $00, $00, $00, $00, zero_pointer ;; 28:55dc $4c $0e $00 $00 $00 $00 $00 $00 $00 $00 $00
-    Op56_WriteBitArrayIndex 26, $2d, $50, $15          ;; 28:55e7 $56 $1a $2d $50 $15
-    Op56_WriteBitArrayIndex 30, $e4, $55, $19          ;; 28:55ec $56 $1e $e4 $55 $19
-    Op56_WriteBitArrayIndex 32, $ef, $55, $19          ;; 28:55f1 $56 $20 $ef $55 $19
+    Op56_WriteBitArrayIndex 26, data_15_502d           ;; 28:55e7 $56 $1a $2d $50 $15
+    Op56_WriteBitArrayIndex 30, data_19_55e4           ;; 28:55ec $56 $1e $e4 $55 $19
+    Op56_WriteBitArrayIndex 32, data_19_55ef           ;; 28:55f1 $56 $20 $ef $55 $19
     Op42_Unknown_StoreValue 4, $01, data_19_4fbe       ;; 28:55f6 $42 $04 $01 $be $4f $19
     Op44_Unknown $10, $00                              ;; 28:55fc $44 $10 $00
     Op1E_Call call_28_5e5b                             ;; 28:55ff $1e $5b $5e $28
@@ -1726,8 +1726,8 @@ call_28_568f:
     ;;<EB><EA>Digdig<E8>!<end>
     Op04_Unknown_Text data_37_5b1d                     ;; 28:56af $04 $1d $5b $37
     Op1E_Call call_28_5e45                             ;; 28:56b3 $1e $45 $5e $28
-    Op56_WriteBitArrayIndex 30, $58, $58, $19          ;; 28:56b7 $56 $1e $58 $58 $19
-    Op56_WriteBitArrayIndex 32, $7b, $58, $19          ;; 28:56bc $56 $20 $7b $58 $19
+    Op56_WriteBitArrayIndex 30, data_19_5858           ;; 28:56b7 $56 $1e $58 $58 $19
+    Op56_WriteBitArrayIndex 32, data_19_587b           ;; 28:56bc $56 $20 $7b $58 $19
 
 call_28_56c1:
     SCRIPT_RETURN_4A                                   ;; 28:56c1 $4a
@@ -1743,8 +1743,8 @@ call_28_56c1:
     ;;<E4>Messy! Messy!<E0>
     Op04_Unknown_Text data_37_5b59                     ;; 28:56ed $04 $59 $5b $37
     Op1E_Call call_28_5dd5                             ;; 28:56f1 $1e $d5 $5d $28
-    Op56_WriteBitArrayIndex 30, $9e, $58, $19          ;; 28:56f5 $56 $1e $9e $58 $19
-    Op56_WriteBitArrayIndex 32, $be, $58, $19          ;; 28:56fa $56 $20 $be $58 $19
+    Op56_WriteBitArrayIndex 30, data_19_589e           ;; 28:56f5 $56 $1e $9e $58 $19
+    Op56_WriteBitArrayIndex 32, data_19_58be           ;; 28:56fa $56 $20 $be $58 $19
 
 call_28_56ff:
     SCRIPT_RETURN_4A                                   ;; 28:56ff $4a
@@ -1964,9 +1964,9 @@ call_28_5959:
     Op1E_Call call_20_465b                             ;; 28:5959 $1e $5b $46 $20
     Op1E_Call call_28_5f21                             ;; 28:595d $1e $21 $5f $28
     Op1E_Call call_1d_6df4                             ;; 28:5961 $1e $f4 $6d $1d
-    Op56_WriteBitArrayIndex 26, $af, $4f, $15          ;; 28:5965 $56 $1a $af $4f $15
-    Op56_WriteBitArrayIndex 30, $fa, $55, $19          ;; 28:596a $56 $1e $fa $55 $19
-    Op56_WriteBitArrayIndex 32, $09, $56, $19          ;; 28:596f $56 $20 $09 $56 $19
+    Op56_WriteBitArrayIndex 26, data_15_4faf           ;; 28:5965 $56 $1a $af $4f $15
+    Op56_WriteBitArrayIndex 30, data_19_55fa           ;; 28:596a $56 $1e $fa $55 $19
+    Op56_WriteBitArrayIndex 32, data_19_5609           ;; 28:596f $56 $20 $09 $56 $19
     ;;<EA>Hif-hif<E8><...><end>
     Op04_Unknown_Text data_37_5cc5                     ;; 28:5974 $04 $c5 $5c $37
 
@@ -2026,9 +2026,9 @@ call_28_5a09:
     Op1E_Call call_1d_6df4                             ;; 28:5a18 $1e $f4 $6d $1d
     ;;Hm?<E5> <EA>Pooie<E8>?! <E3><end>
     Op04_Unknown_Text data_37_5d19                     ;; 28:5a1c $04 $19 $5d $37
-    Op56_WriteBitArrayIndex 26, $af, $4f, $15          ;; 28:5a20 $56 $1a $af $4f $15
-    Op56_WriteBitArrayIndex 30, $fa, $55, $19          ;; 28:5a25 $56 $1e $fa $55 $19
-    Op56_WriteBitArrayIndex 32, $09, $56, $19          ;; 28:5a2a $56 $20 $09 $56 $19
+    Op56_WriteBitArrayIndex 26, data_15_4faf           ;; 28:5a20 $56 $1a $af $4f $15
+    Op56_WriteBitArrayIndex 30, data_19_55fa           ;; 28:5a25 $56 $1e $fa $55 $19
+    Op56_WriteBitArrayIndex 32, data_19_5609           ;; 28:5a2a $56 $20 $09 $56 $19
 
 call_28_5a2f:
     SCRIPT_RETURN_4A                                   ;; 28:5a2f $4a
@@ -2037,7 +2037,7 @@ call_28_5a2f:
     ;;You're right. <E5>The<E2>air is starting<E2>to feel <end>
     Op06_Unknown_Text data_37_5d2a                     ;; 28:5a3c $06 $2a $5d $37
     Op4E_Unknown_StoreValue 4, $01, data_10_4067       ;; 28:5a40 $4e $04 $01 $67 $40 $10
-    Op56_WriteBitArrayIndex 26, $ee, $50, $15          ;; 28:5a46 $56 $1a $ee $50 $15
+    Op56_WriteBitArrayIndex 26, data_15_50ee           ;; 28:5a46 $56 $1a $ee $50 $15
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_15_510e ;; 28:5a4b $4c $08 $01 $04 $00 $00 $00 $00 $0e $51 $15
     Op4C_Unknown $0a, $01, $04, $00, $00, $00, $00, data_15_514d ;; 28:5a56 $4c $0a $01 $04 $00 $00 $00 $00 $4d $51 $15
     ;;<EA>soak-Q<E8>!<E0>
@@ -2049,8 +2049,8 @@ call_28_5a65:
     Op1E_Call call_04_615d                             ;; 28:5a6e $1e $5d $61 $04
     Op1E_Call call_28_6016                             ;; 28:5a72 $1e $16 $60 $28
     Op4E_Unknown_StoreValue 4, $01, data_10_406d       ;; 28:5a76 $4e $04 $01 $6d $40 $10
-    Op56_WriteBitArrayIndex 28, $57, $59, $19          ;; 28:5a7c $56 $1c $57 $59 $19
-    Op56_WriteBitArrayIndex 26, $dd, $4f, $15          ;; 28:5a81 $56 $1a $dd $4f $15
+    Op56_WriteBitArrayIndex 28, data_19_5957           ;; 28:5a7c $56 $1c $57 $59 $19
+    Op56_WriteBitArrayIndex 26, data_15_4fdd           ;; 28:5a81 $56 $1a $dd $4f $15
     Op1E_Call call_1d_6df4                             ;; 28:5a86 $1e $f4 $6d $1d
     ;;We have to go<E4>home right away!<E0>
     Op04_Unknown_Text data_37_5d60                     ;; 28:5a8a $04 $60 $5d $37
@@ -2062,31 +2062,31 @@ call_28_5a65:
     Op1E_Call call_04_615d                             ;; 28:5a9e $1e $5d $61 $04
     Op1E_Call call_28_5dd5                             ;; 28:5aa2 $1e $d5 $5d $28
     Op1E_Call call_28_5da8                             ;; 28:5aa6 $1e $a8 $5d $28
-    Op56_WriteBitArrayIndex 26, $44, $50, $15          ;; 28:5aaa $56 $1a $44 $50 $15
+    Op56_WriteBitArrayIndex 26, data_15_5044           ;; 28:5aaa $56 $1a $44 $50 $15
     Op44_Unknown $14, $00                              ;; 28:5aaf $44 $14 $00
-    Op56_WriteBitArrayIndex 30, $5e, $57, $19          ;; 28:5ab2 $56 $1e $5e $57 $19
+    Op56_WriteBitArrayIndex 30, data_19_575e           ;; 28:5ab2 $56 $1e $5e $57 $19
     Op44_Unknown $14, $00                              ;; 28:5ab7 $44 $14 $00
-    Op56_WriteBitArrayIndex 32, $89, $57, $19          ;; 28:5aba $56 $20 $89 $57 $19
+    Op56_WriteBitArrayIndex 32, data_19_5789           ;; 28:5aba $56 $20 $89 $57 $19
     Op1E_Call call_28_5dd5                             ;; 28:5abf $1e $d5 $5d $28
-    Op56_WriteBitArrayIndex 26, $7c, $50, $15          ;; 28:5ac3 $56 $1a $7c $50 $15
-    Op56_WriteBitArrayIndex 30, $b4, $57, $19          ;; 28:5ac8 $56 $1e $b4 $57 $19
-    Op56_WriteBitArrayIndex 32, $c3, $57, $19          ;; 28:5acd $56 $20 $c3 $57 $19
+    Op56_WriteBitArrayIndex 26, data_15_507c           ;; 28:5ac3 $56 $1a $7c $50 $15
+    Op56_WriteBitArrayIndex 30, data_19_57b4           ;; 28:5ac8 $56 $1e $b4 $57 $19
+    Op56_WriteBitArrayIndex 32, data_19_57c3           ;; 28:5acd $56 $20 $c3 $57 $19
     Op44_Unknown $0e, $00                              ;; 28:5ad2 $44 $0e $00
     Op42_Unknown_StoreValue 5, $01, data_19_500f       ;; 28:5ad5 $42 $05 $01 $0f $50 $19
     Op4C_Unknown $10, $01, $04, $a8, $00, $48, $00, data_19_58fc ;; 28:5adb $4c $10 $01 $04 $a8 $00 $48 $00 $fc $58 $19
     Op44_Unknown $1e, $00                              ;; 28:5ae6 $44 $1e $00
-    Op56_WriteBitArrayIndex 26, $15, $4f, $15          ;; 28:5ae9 $56 $1a $15 $4f $15
-    Op56_WriteBitArrayIndex 30, $d2, $57, $19          ;; 28:5aee $56 $1e $d2 $57 $19
-    Op56_WriteBitArrayIndex 32, $f9, $57, $19          ;; 28:5af3 $56 $20 $f9 $57 $19
+    Op56_WriteBitArrayIndex 26, data_15_4f15           ;; 28:5ae9 $56 $1a $15 $4f $15
+    Op56_WriteBitArrayIndex 30, data_19_57d2           ;; 28:5aee $56 $1e $d2 $57 $19
+    Op56_WriteBitArrayIndex 32, data_19_57f9           ;; 28:5af3 $56 $20 $f9 $57 $19
 
 call_28_5af8:
     SCRIPT_RETURN_4A                                   ;; 28:5af8 $4a
     Op3E_Compare_Branch 16, $fc, $58, $19, call_28_5af8 ;; 28:5af9 $3e $10 $fc $58 $19 $f8 $5a $28
     Op4C_Unknown $10, $01, $04, $00, $00, $00, $00, data_19_58de ;; 28:5b01 $4c $10 $01 $04 $00 $00 $00 $00 $de $58 $19
-    Op56_WriteBitArrayIndex 30, $20, $58, $19          ;; 28:5b0c $56 $1e $20 $58 $19
-    Op56_WriteBitArrayIndex 32, $3c, $58, $19          ;; 28:5b11 $56 $20 $3c $58 $19
+    Op56_WriteBitArrayIndex 30, data_19_5820           ;; 28:5b0c $56 $1e $20 $58 $19
+    Op56_WriteBitArrayIndex 32, data_19_583c           ;; 28:5b11 $56 $20 $3c $58 $19
     Op44_Unknown $10, $00                              ;; 28:5b16 $44 $10 $00
-    Op56_WriteBitArrayIndex 26, $a6, $50, $15          ;; 28:5b19 $56 $1a $a6 $50 $15
+    Op56_WriteBitArrayIndex 26, data_15_50a6           ;; 28:5b19 $56 $1a $a6 $50 $15
     Op44_Unknown $64, $00                              ;; 28:5b1e $44 $64 $00
     Op16_SubOps 1                                      ;; 28:5b21 $16 $01
     SubOp_SetByte wC785, $03                           ;; 28:5b23 $7e $6d $03
@@ -2358,11 +2358,11 @@ call_28_5e1f:
     Op1E_Call call_28_5ed7                             ;; 28:5e23 $1e $d7 $5e $28
     Op14_Unknown 1, data_05_7093                       ;; 28:5e27 $14 $01 $93 $70
     SCRIPT_POINTER call_28_5e37                        ;; 28:5e2b $37 $5e $28
-    Op56_WriteBitArrayIndex 26, $9f, $4f, $15          ;; 28:5e2e $56 $1a $9f $4f $15
+    Op56_WriteBitArrayIndex 26, data_15_4f9f           ;; 28:5e2e $56 $1a $9f $4f $15
     Op18_Jump call_28_5e3c                             ;; 28:5e33 $18 $3c $5e $28
 
 call_28_5e37:
-    Op56_WriteBitArrayIndex 26, $8f, $4f, $15          ;; 28:5e37 $56 $1a $8f $4f $15
+    Op56_WriteBitArrayIndex 26, data_15_4f8f           ;; 28:5e37 $56 $1a $8f $4f $15
 
 call_28_5e3c:
     SCRIPT_RETURN_20                                   ;; 28:5e3c $20
@@ -2374,11 +2374,11 @@ call_28_5e3d:
 call_28_5e45:
     Op14_Unknown 1, data_05_7093                       ;; 28:5e45 $14 $01 $93 $70
     SCRIPT_POINTER call_28_5e55                        ;; 28:5e49 $55 $5e $28
-    Op56_WriteBitArrayIndex 26, $7f, $4f, $15          ;; 28:5e4c $56 $1a $7f $4f $15
+    Op56_WriteBitArrayIndex 26, data_15_4f7f           ;; 28:5e4c $56 $1a $7f $4f $15
     Op18_Jump call_28_5e5a                             ;; 28:5e51 $18 $5a $5e $28
 
 call_28_5e55:
-    Op56_WriteBitArrayIndex 26, $6f, $4f, $15          ;; 28:5e55 $56 $1a $6f $4f $15
+    Op56_WriteBitArrayIndex 26, data_15_4f6f           ;; 28:5e55 $56 $1a $6f $4f $15
 
 call_28_5e5a:
     SCRIPT_RETURN_20                                   ;; 28:5e5a $20
@@ -2400,9 +2400,9 @@ call_28_5e80:
 
 call_28_5e97:
     Op1E_Call call_28_5dd5                             ;; 28:5e97 $1e $d5 $5d $28
-    Op56_WriteBitArrayIndex 26, $35, $4f, $15          ;; 28:5e9b $56 $1a $35 $4f $15
-    Op56_WriteBitArrayIndex 30, $32, $55, $19          ;; 28:5ea0 $56 $1e $32 $55 $19
-    Op56_WriteBitArrayIndex 32, $42, $55, $19          ;; 28:5ea5 $56 $20 $42 $55 $19
+    Op56_WriteBitArrayIndex 26, data_15_4f35           ;; 28:5e9b $56 $1a $35 $4f $15
+    Op56_WriteBitArrayIndex 30, data_19_5532           ;; 28:5ea0 $56 $1e $32 $55 $19
+    Op56_WriteBitArrayIndex 32, data_19_5542           ;; 28:5ea5 $56 $20 $42 $55 $19
     Op1E_Call call_1d_6df4                             ;; 28:5eaa $1e $f4 $6d $1d
     ;;<EA>Hamha<E8>!<end>
     Op04_Unknown_Text data_37_5fb9                     ;; 28:5eae $04 $b9 $5f $37
@@ -2415,38 +2415,38 @@ call_28_5eb2:
     SCRIPT_RETURN_20                                   ;; 28:5ecb $20
 
 call_28_5ecc:
-    Op56_WriteBitArrayIndex 30, $cc, $54, $19          ;; 28:5ecc $56 $1e $cc $54 $19
-    Op56_WriteBitArrayIndex 32, $d3, $54, $19          ;; 28:5ed1 $56 $20 $d3 $54 $19
+    Op56_WriteBitArrayIndex 30, data_19_54cc           ;; 28:5ecc $56 $1e $cc $54 $19
+    Op56_WriteBitArrayIndex 32, data_19_54d3           ;; 28:5ed1 $56 $20 $d3 $54 $19
     SCRIPT_RETURN_20                                   ;; 28:5ed6 $20
 
 call_28_5ed7:
-    Op56_WriteBitArrayIndex 30, $da, $54, $19          ;; 28:5ed7 $56 $1e $da $54 $19
-    Op56_WriteBitArrayIndex 32, $e2, $54, $19          ;; 28:5edc $56 $20 $e2 $54 $19
+    Op56_WriteBitArrayIndex 30, data_19_54da           ;; 28:5ed7 $56 $1e $da $54 $19
+    Op56_WriteBitArrayIndex 32, data_19_54e2           ;; 28:5edc $56 $20 $e2 $54 $19
     SCRIPT_RETURN_20                                   ;; 28:5ee1 $20
-    Op56_WriteBitArrayIndex 30, $b0, $54, $19          ;; 28:5ee2 $56 $1e $b0 $54 $19
-    Op56_WriteBitArrayIndex 32, $b7, $54, $19          ;; 28:5ee7 $56 $20 $b7 $54 $19
+    Op56_WriteBitArrayIndex 30, data_19_54b0           ;; 28:5ee2 $56 $1e $b0 $54 $19
+    Op56_WriteBitArrayIndex 32, data_19_54b7           ;; 28:5ee7 $56 $20 $b7 $54 $19
     SCRIPT_RETURN_20                                   ;; 28:5eec $20
 
 call_28_5eed:
-    Op56_WriteBitArrayIndex 30, $ba, $56, $19          ;; 28:5eed $56 $1e $ba $56 $19
-    Op56_WriteBitArrayIndex 32, $e3, $56, $19          ;; 28:5ef2 $56 $20 $e3 $56 $19
+    Op56_WriteBitArrayIndex 30, data_19_56ba           ;; 28:5eed $56 $1e $ba $56 $19
+    Op56_WriteBitArrayIndex 32, data_19_56e3           ;; 28:5ef2 $56 $20 $e3 $56 $19
     SCRIPT_RETURN_20                                   ;; 28:5ef7 $20
 
 call_28_5ef8:
-    Op56_WriteBitArrayIndex 30, $0c, $57, $19          ;; 28:5ef8 $56 $1e $0c $57 $19
-    Op56_WriteBitArrayIndex 32, $35, $57, $19          ;; 28:5efd $56 $20 $35 $57 $19
+    Op56_WriteBitArrayIndex 30, data_19_570c           ;; 28:5ef8 $56 $1e $0c $57 $19
+    Op56_WriteBitArrayIndex 32, data_19_5735           ;; 28:5efd $56 $20 $35 $57 $19
     SCRIPT_RETURN_20                                   ;; 28:5f02 $20
 
 call_28_5f03:
     Op1E_Call call_28_5dd5                             ;; 28:5f03 $1e $d5 $5d $28
-    Op56_WriteBitArrayIndex 30, $ea, $54, $19          ;; 28:5f07 $56 $1e $ea $54 $19
-    Op56_WriteBitArrayIndex 32, $69, $56, $19          ;; 28:5f0c $56 $20 $69 $56 $19
+    Op56_WriteBitArrayIndex 30, data_19_54ea           ;; 28:5f07 $56 $1e $ea $54 $19
+    Op56_WriteBitArrayIndex 32, data_19_5669           ;; 28:5f0c $56 $20 $69 $56 $19
     SCRIPT_RETURN_20                                   ;; 28:5f11 $20
 
 call_28_5f12:
     Op1E_Call call_28_5dd5                             ;; 28:5f12 $1e $d5 $5d $28
-    Op56_WriteBitArrayIndex 30, $18, $56, $19          ;; 28:5f16 $56 $1e $18 $56 $19
-    Op56_WriteBitArrayIndex 32, $f1, $54, $19          ;; 28:5f1b $56 $20 $f1 $54 $19
+    Op56_WriteBitArrayIndex 30, data_19_5618           ;; 28:5f16 $56 $1e $18 $56 $19
+    Op56_WriteBitArrayIndex 32, data_19_54f1           ;; 28:5f1b $56 $20 $f1 $54 $19
     SCRIPT_RETURN_20                                   ;; 28:5f20 $20
 
 call_28_5f21:

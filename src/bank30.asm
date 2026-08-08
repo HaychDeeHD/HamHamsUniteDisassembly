@@ -1607,35 +1607,35 @@ call_30_64aa:
 call_30_64c2:
     Op1E_Call call_20_4042                             ;; 30:64c2 $1e $42 $40 $20
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 30:64c6 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
-    Op56_WriteBitArrayIndex 26, $c2, $40, $16          ;; 30:64d1 $56 $1a $c2 $40 $16
+    Op56_WriteBitArrayIndex 26, data_16_40c2           ;; 30:64d1 $56 $1a $c2 $40 $16
     Op1E_Call call_1d_6c47                             ;; 30:64d6 $1e $47 $6c $1d
     ;;<end>
     Op04_Unknown_Text data_3b_7cc6                     ;; 30:64da $04 $c6 $7c $3b
-    Op56_WriteBitArrayIndex 26, $40, $45, $16          ;; 30:64de $56 $1a $40 $45 $16
+    Op56_WriteBitArrayIndex 26, data_16_4540           ;; 30:64de $56 $1a $40 $45 $16
     ;;<EA>Hamha<E8>!<E3><end>
     Op06_Unknown_Text data_3b_7cc7                     ;; 30:64e3 $06 $c7 $7c $3b
 
 call_30_64e7:
     SCRIPT_RETURN_4A                                   ;; 30:64e7 $4a
     Op3E_Compare_Branch 26, $40, $45, $16, call_30_64e7 ;; 30:64e8 $3e $1a $40 $45 $16 $e7 $64 $30
-    Op56_WriteBitArrayIndex 26, $e1, $56, $16          ;; 30:64f0 $56 $1a $e1 $56 $16
+    Op56_WriteBitArrayIndex 26, data_16_56e1           ;; 30:64f0 $56 $1a $e1 $56 $16
     Op14_Unknown 1, data_05_636a                       ;; 30:64f5 $14 $01 $6a $63
     SCRIPT_POINTER call_30_6534                        ;; 30:64f9 $34 $65 $30
     Op16_SubOps 1                                      ;; 30:64fc $16 $01
     SubOp_SetFlag wC931, 7                             ;; 30:64fe $3e $cf
     ;;Would it be OK<E4>if I called that<E4>little thing <E5>in<E4>front of the box<E4>a mouse?<E3>Is it OK?<E4><end>
     Op06_Unknown_Text data_3b_7cd1                     ;; 30:6500 $06 $d1 $7c $3b
-    Op56_WriteBitArrayIndex 26, $f1, $56, $16          ;; 30:6504 $56 $1a $f1 $56 $16
+    Op56_WriteBitArrayIndex 26, data_16_56f1           ;; 30:6504 $56 $1a $f1 $56 $16
     ;;<EA>Wishie<E8>?<E0>
     Op06_Unknown_Text data_3b_7d27                     ;; 30:6509 $06 $27 $7d $3b
 
 call_30_650d:
     SCRIPT_RETURN_4A                                   ;; 30:650d $4a
     Op3E_Compare_Branch 26, $f1, $56, $16, call_30_650d ;; 30:650e $3e $1a $f1 $56 $16 $0d $65 $30
-    Op56_WriteBitArrayIndex 26, $48, $57, $16          ;; 30:6516 $56 $1a $48 $57 $16
+    Op56_WriteBitArrayIndex 26, data_16_5748           ;; 30:6516 $56 $1a $48 $57 $16
     Op1E_Call call_04_615d                             ;; 30:651b $1e $5d $61 $04
     Op1E_Call call_30_69b2                             ;; 30:651f $1e $b2 $69 $30
-    Op56_WriteBitArrayIndex 26, $e1, $56, $16          ;; 30:6523 $56 $1a $e1 $56 $16
+    Op56_WriteBitArrayIndex 26, data_16_56e1           ;; 30:6523 $56 $1a $e1 $56 $16
     Op1E_Call call_1d_6c47                             ;; 30:6528 $1e $47 $6c $1d
     ;;What?<E4>That's a <EA>gasp-P<E8><E4>question?<E3>You're right, but<E4>you know what?<E3>That thing over<E4>there buzzes some-<E4>times. <E5>I think<E4>there's something<E4>inside.<E0>
     Op04_Unknown_Text data_3b_7d31                     ;; 30:652c $04 $31 $7d $3b
@@ -1647,7 +1647,7 @@ call_30_6534:
 
 call_30_6538:
     Op1E_Call call_04_615d                             ;; 30:6538 $1e $5d $61 $04
-    Op56_WriteBitArrayIndex 26, $aa, $56, $16          ;; 30:653c $56 $1a $aa $56 $16
+    Op56_WriteBitArrayIndex 26, data_16_56aa           ;; 30:653c $56 $1a $aa $56 $16
     Op18_Jump call_30_6095                             ;; 30:6541 $18 $95 $60 $30
 
 call_30_6545:
@@ -1663,11 +1663,11 @@ call_30_6545:
 call_30_655d:
     Op1E_Call call_20_465b                             ;; 30:655d $1e $5b $46 $20
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 30:6561 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
-    Op56_WriteBitArrayIndex 26, $e1, $56, $16          ;; 30:656c $56 $1a $e1 $56 $16
+    Op56_WriteBitArrayIndex 26, data_16_56e1           ;; 30:656c $56 $1a $e1 $56 $16
     Op1E_Call call_1d_6c47                             ;; 30:6571 $1e $47 $6c $1d
     ;;Oh, I know! I bet<E4>there are bugs<E4>working inside.<E3><end>
     Op04_Unknown_Text data_3b_7dfd                     ;; 30:6575 $04 $fd $7d $3b
-    Op56_WriteBitArrayIndex 26, $95, $57, $16          ;; 30:6579 $56 $1a $95 $57 $16
+    Op56_WriteBitArrayIndex 26, data_16_5795           ;; 30:6579 $56 $1a $95 $57 $16
 
 call_30_657e:
     SCRIPT_RETURN_4A                                   ;; 30:657e $4a
@@ -1675,11 +1675,11 @@ call_30_657e:
     Op44_Unknown $14, $00                              ;; 30:6587 $44 $14 $00
     ;;But<...> I can't<E4>smell them.<E3><end>
     Op06_Unknown_Text data_3b_7e2f                     ;; 30:658a $06 $2f $7e $3b
-    Op56_WriteBitArrayIndex 26, $66, $57, $16          ;; 30:658e $56 $1a $66 $57 $16
+    Op56_WriteBitArrayIndex 26, data_16_5766           ;; 30:658e $56 $1a $66 $57 $16
     ;;So, maybe there<E4>are no bugs.<E0>
     Op06_Unknown_Text data_3b_7e49                     ;; 30:6593 $06 $49 $7e $3b
     Op1E_Call call_04_615d                             ;; 30:6597 $1e $5d $61 $04
-    Op56_WriteBitArrayIndex 26, $84, $57, $16          ;; 30:659b $56 $1a $84 $57 $16
+    Op56_WriteBitArrayIndex 26, data_16_5784           ;; 30:659b $56 $1a $84 $57 $16
     Op44_Unknown $08, $00                              ;; 30:65a0 $44 $08 $00
     Op18_Jump call_30_6095                             ;; 30:65a3 $18 $95 $60 $30
 
@@ -1696,7 +1696,7 @@ call_30_65a7:
 call_30_65bf:
     Op1E_Call call_20_42f7                             ;; 30:65bf $1e $f7 $42 $20
     Op44_Unknown $3c, $00                              ;; 30:65c3 $44 $3c $00
-    Op56_WriteBitArrayIndex 26, $e1, $56, $16          ;; 30:65c6 $56 $1a $e1 $56 $16
+    Op56_WriteBitArrayIndex 26, data_16_56e1           ;; 30:65c6 $56 $1a $e1 $56 $16
     Op1E_Call call_1d_6c47                             ;; 30:65cb $1e $47 $6c $1d
     Op14_Unknown 1, data_05_636a                       ;; 30:65cf $14 $01 $6a $63
     SCRIPT_POINTER call_30_65de                        ;; 30:65d3 $de $65 $30
@@ -1710,7 +1710,7 @@ call_30_65de:
 
 call_30_65e2:
     Op1E_Call call_04_615d                             ;; 30:65e2 $1e $5d $61 $04
-    Op56_WriteBitArrayIndex 26, $aa, $56, $16          ;; 30:65e6 $56 $1a $aa $56 $16
+    Op56_WriteBitArrayIndex 26, data_16_56aa           ;; 30:65e6 $56 $1a $aa $56 $16
     Op18_Jump call_30_6095                             ;; 30:65eb $18 $95 $60 $30
 
 call_30_65ef:
@@ -3348,7 +3348,7 @@ call_30_7a76:
     Op04_Unknown_Text data_1d_7d18                     ;; 30:7a7e $04 $18 $7d $1d
     Op1E_Call call_04_615d                             ;; 30:7a82 $1e $5d $61 $04
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, data_10_4271 ;; 30:7a86 $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
-    Op56_WriteBitArrayIndex 28, $ff, $49, $18          ;; 30:7a91 $56 $1c $ff $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49ff           ;; 30:7a91 $56 $1c $ff $49 $18
     Op1E_Call call_1d_6caf                             ;; 30:7a96 $1e $af $6c $1d
     ;;This Cucumber is<E4>Tricket's favorite<E4>food.<E0>
     Op04_Unknown_Text data_1d_7d2f                     ;; 30:7a9a $04 $2f $7d $1d
@@ -3357,7 +3357,7 @@ call_30_7a76:
     SubOp_SetByte wC778, $02                           ;; 30:7aa4 $7e $60 $02
 
 call_30_7aa7:
-    Op56_WriteBitArrayIndex 28, $a6, $49, $18          ;; 30:7aa7 $56 $1c $a6 $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49a6           ;; 30:7aa7 $56 $1c $a6 $49 $18
     Op44_Unknown $0a, $00                              ;; 30:7aac $44 $0a $00
     Op18_Jump call_30_760c                             ;; 30:7aaf $18 $0c $76 $30
 
@@ -3375,9 +3375,9 @@ call_30_7acb:
     Op1E_Call call_20_47c5                             ;; 30:7acb $1e $c5 $47 $20
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, data_10_4271 ;; 30:7acf $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
     Op44_Unknown $14, $00                              ;; 30:7ada $44 $14 $00
-    Op56_WriteBitArrayIndex 28, $ff, $49, $18          ;; 30:7add $56 $1c $ff $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49ff           ;; 30:7add $56 $1c $ff $49 $18
     Op44_Unknown $06, $00                              ;; 30:7ae2 $44 $06 $00
-    Op56_WriteBitArrayIndex 28, $d5, $49, $18          ;; 30:7ae5 $56 $1c $d5 $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49d5           ;; 30:7ae5 $56 $1c $d5 $49 $18
     Op1E_Call call_1d_6caf                             ;; 30:7aea $1e $af $6c $1d
     ;;Nooo!<E3>You can't eat<E4>Tricket!<E0>
     Op04_Unknown_Text data_1d_7d59                     ;; 30:7aee $04 $59 $7d $1d
@@ -3398,11 +3398,11 @@ call_30_7b12:
     Op1E_Call call_20_4796                             ;; 30:7b12 $1e $96 $47 $20
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, data_10_4271 ;; 30:7b16 $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
     Op44_Unknown $14, $00                              ;; 30:7b21 $44 $14 $00
-    Op56_WriteBitArrayIndex 28, $ff, $49, $18          ;; 30:7b24 $56 $1c $ff $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49ff           ;; 30:7b24 $56 $1c $ff $49 $18
     Op1E_Call call_1d_6caf                             ;; 30:7b29 $1e $af $6c $1d
     ;;Yes. He's<E4>very <end>
     Op04_Unknown_Text data_1d_7d76                     ;; 30:7b2d $04 $76 $7d $1d
-    Op56_WriteBitArrayIndex 28, $1c, $4b, $18          ;; 30:7b31 $56 $1c $1c $4b $18
+    Op56_WriteBitArrayIndex 28, data_18_4b1c           ;; 30:7b31 $56 $1c $1c $4b $18
     ;;<EA>koochi-Q<E8>.<E3><end>
     Op06_Unknown_Text data_1d_7d86                     ;; 30:7b36 $06 $86 $7d $1d
 
@@ -3411,7 +3411,7 @@ call_30_7b3a:
     Op3E_Compare_Branch 28, $1c, $4b, $18, call_30_7b3a ;; 30:7b3b $3e $1c $1c $4b $18 $3a $7b $30
     ;;He's a pet, but<E4>he's also my<E4><end>
     Op06_Unknown_Text data_1d_7d93                     ;; 30:7b43 $06 $93 $7d $1d
-    Op56_WriteBitArrayIndex 28, $73, $4b, $18          ;; 30:7b47 $56 $1c $73 $4b $18
+    Op56_WriteBitArrayIndex 28, data_18_4b73           ;; 30:7b47 $56 $1c $73 $4b $18
     ;;<EA>hammo<E8>.<E3>Isn't that great?<E0>
     Op06_Unknown_Text data_1d_7db1                     ;; 30:7b4c $06 $b1 $7d $1d
 
@@ -3421,7 +3421,7 @@ call_30_7b50:
     Op1E_Call call_04_615d                             ;; 30:7b59 $1e $5d $61 $04
     Op1E_Call call_30_7e54                             ;; 30:7b5d $1e $54 $7e $30
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, data_10_4271 ;; 30:7b61 $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
-    Op56_WriteBitArrayIndex 28, $ff, $49, $18          ;; 30:7b6c $56 $1c $ff $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49ff           ;; 30:7b6c $56 $1c $ff $49 $18
     Op1E_Call call_1d_6caf                             ;; 30:7b71 $1e $af $6c $1d
     ;;This Cucumber is<E4>Tricket's favorite<E4>food. <E5><end>
     Op04_Unknown_Text data_1d_7dcc                     ;; 30:7b75 $04 $cc $7d $1d
@@ -3430,7 +3430,7 @@ call_30_7b50:
     ;;Oh, I know!<E4>I'll give you this<E4>Cucumber. <E5>Tricket<E4>will follow you<E4>all the way here<E3>if you are holding<E4>it. <E5>Please bring<E4>my Tricket back.<E0>
     Op06_Unknown_Text data_1d_7df8                     ;; 30:7b80 $06 $f8 $7d $1d
     Op1E_Call call_04_615d                             ;; 30:7b84 $1e $5d $61 $04
-    Op56_WriteBitArrayIndex 28, $10, $4a, $18          ;; 30:7b88 $56 $1c $10 $4a $18
+    Op56_WriteBitArrayIndex 28, data_18_4a10           ;; 30:7b88 $56 $1c $10 $4a $18
     Op44_Unknown $0a, $00                              ;; 30:7b8d $44 $0a $00
     Op16_SubOps 1                                      ;; 30:7b90 $16 $01
     SubOp_SetFlag wC925, 0                             ;; 30:7b92 $3e $68
@@ -3464,9 +3464,9 @@ call_30_7bd6:
     Op1E_Call call_20_46cd                             ;; 30:7bd6 $1e $cd $46 $20
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, data_10_4271 ;; 30:7bda $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
     Op44_Unknown $14, $00                              ;; 30:7be5 $44 $14 $00
-    Op56_WriteBitArrayIndex 28, $ff, $49, $18          ;; 30:7be8 $56 $1c $ff $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49ff           ;; 30:7be8 $56 $1c $ff $49 $18
     Op44_Unknown $06, $00                              ;; 30:7bed $44 $06 $00
-    Op56_WriteBitArrayIndex 28, $21, $4a, $18          ;; 30:7bf0 $56 $1c $21 $4a $18
+    Op56_WriteBitArrayIndex 28, data_18_4a21           ;; 30:7bf0 $56 $1c $21 $4a $18
     Op1E_Call call_1d_6caf                             ;; 30:7bf5 $1e $af $6c $1d
     ;;Yes.<E3>He's very<E4><EA>teenie<E8>.<E0>
     Op04_Unknown_Text data_1d_7eb2                     ;; 30:7bf9 $04 $b2 $7e $1d
@@ -3487,9 +3487,9 @@ call_30_7c1d:
     Op1E_Call call_20_46fc                             ;; 30:7c1d $1e $fc $46 $20
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, data_10_4271 ;; 30:7c21 $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
     Op44_Unknown $14, $00                              ;; 30:7c2c $44 $14 $00
-    Op56_WriteBitArrayIndex 28, $ff, $49, $18          ;; 30:7c2f $56 $1c $ff $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49ff           ;; 30:7c2f $56 $1c $ff $49 $18
     Op44_Unknown $06, $00                              ;; 30:7c34 $44 $06 $00
-    Op56_WriteBitArrayIndex 28, $59, $4a, $18          ;; 30:7c37 $56 $1c $59 $4a $18
+    Op56_WriteBitArrayIndex 28, data_18_4a59           ;; 30:7c37 $56 $1c $59 $4a $18
     Op1E_Call call_1d_6caf                             ;; 30:7c3c $1e $af $6c $1d
     ;;No, Tricket isn't<E4><EA>mega-Q<E8>.<E0>
     Op04_Unknown_Text data_1d_7ecb                     ;; 30:7c40 $04 $cb $7e $1d
@@ -3502,9 +3502,9 @@ call_30_7c4c:
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, data_10_4271 ;; 30:7c51 $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
     Op44_Unknown $0a, $00                              ;; 30:7c5c $44 $0a $00
     Op4C_Unknown $18, $01, $04, $00, $00, $00, $00, data_16_736d ;; 30:7c5f $4c $18 $01 $04 $00 $00 $00 $00 $6d $73 $16
-    Op56_WriteBitArrayIndex 28, $c4, $49, $18          ;; 30:7c6a $56 $1c $c4 $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49c4           ;; 30:7c6a $56 $1c $c4 $49 $18
     Op44_Unknown $1e, $00                              ;; 30:7c6f $44 $1e $00
-    Op56_WriteBitArrayIndex 28, $79, $4a, $18          ;; 30:7c72 $56 $1c $79 $4a $18
+    Op56_WriteBitArrayIndex 28, data_18_4a79           ;; 30:7c72 $56 $1c $79 $4a $18
     Op44_Unknown $0a, $00                              ;; 30:7c77 $44 $0a $00
     Op1E_Call call_1d_6caf                             ;; 30:7c7a $1e $af $6c $1d
     ;;Oh, Tricket!<E3>Where did you go?<E4>I've been worried<E4>sick about you!<E0>
@@ -3518,7 +3518,7 @@ call_30_7c4c:
     Op82_Run UpdateCollectibleInventory                ;; 30:7c9b $82 $31 $42 $02
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_10_4209 ;; 30:7c9f $4c $16 $08 $ff $00 $00 $00 $00 $09 $42 $10
     Op1E_Call call_30_7f50                             ;; 30:7caa $1e $50 $7f $30
-    Op56_WriteBitArrayIndex 28, $59, $49, $18          ;; 30:7cae $56 $1c $59 $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_4959           ;; 30:7cae $56 $1c $59 $49 $18
     Op4C_Unknown $1a, $01, $04, $c0, $00, $a8, $00, data_1a_4f5b ;; 30:7cb3 $4c $1a $01 $04 $c0 $00 $a8 $00 $5b $4f $1a
     Op1E_Call call_1d_6caf                             ;; 30:7cbe $1e $af $6c $1d
     ;;I'll give you<E4><o'>this' <E5>as a reward<E4>for finding my<E4>Tricket.<E0>
@@ -3578,16 +3578,16 @@ call_30_7d69:
     Op1E_Call call_20_4042                             ;; 30:7d69 $1e $42 $40 $20
     Op4C_Unknown $16, $02, $ff, $00, $00, $00, $00, data_10_4271 ;; 30:7d6d $4c $16 $02 $ff $00 $00 $00 $00 $71 $42 $10
     Op44_Unknown $06, $00                              ;; 30:7d78 $44 $06 $00
-    Op56_WriteBitArrayIndex 26, $75, $4f, $1a          ;; 30:7d7b $56 $1a $75 $4f $1a
-    Op56_WriteBitArrayIndex 28, $59, $49, $18          ;; 30:7d80 $56 $1c $59 $49 $18
+    Op56_WriteBitArrayIndex 26, data_1a_4f75           ;; 30:7d7b $56 $1a $75 $4f $1a
+    Op56_WriteBitArrayIndex 28, data_18_4959           ;; 30:7d80 $56 $1c $59 $49 $18
     Op1E_Call call_1d_6caf                             ;; 30:7d85 $1e $af $6c $1d
     ;;<EA>Hamha<E8>!<E3>It's great having<E4>Tricket back!<E0>
     Op04_Unknown_Text data_1d_7f62                     ;; 30:7d89 $04 $62 $7f $1d
     Op1E_Call call_04_615d                             ;; 30:7d8d $1e $5d $61 $04
 
 call_30_7d91:
-    Op56_WriteBitArrayIndex 28, $a2, $43, $18          ;; 30:7d91 $56 $1c $a2 $43 $18
-    Op56_WriteBitArrayIndex 26, $62, $4f, $1a          ;; 30:7d96 $56 $1a $62 $4f $1a
+    Op56_WriteBitArrayIndex 28, data_18_43a2           ;; 30:7d91 $56 $1c $a2 $43 $18
+    Op56_WriteBitArrayIndex 26, data_1a_4f62           ;; 30:7d96 $56 $1a $62 $4f $1a
     Op18_Jump call_30_760c                             ;; 30:7d9b $18 $0c $76 $30
 
 call_30_7d9f:
@@ -3602,8 +3602,8 @@ call_30_7d9f:
 
 call_30_7db7:
     Op1E_Call call_20_465b                             ;; 30:7db7 $1e $5b $46 $20
-    Op56_WriteBitArrayIndex 28, $69, $4a, $18          ;; 30:7dbb $56 $1c $69 $4a $18
-    Op56_WriteBitArrayIndex 26, $5b, $4f, $1a          ;; 30:7dc0 $56 $1a $5b $4f $1a
+    Op56_WriteBitArrayIndex 28, data_18_4a69           ;; 30:7dbb $56 $1c $69 $4a $18
+    Op56_WriteBitArrayIndex 26, data_1a_4f5b           ;; 30:7dc0 $56 $1a $5b $4f $1a
     Op1E_Call call_1d_6caf                             ;; 30:7dc5 $1e $af $6c $1d
     ;;Hey! I saw that.<E3>You drooled when<E4>you looked at<E4>Tricket!<E0>
     Op04_Unknown_Text data_1d_7f8b                     ;; 30:7dc9 $04 $8b $7f $1d
@@ -3681,7 +3681,7 @@ call_30_7ea4:
     Op44_Unknown $06, $00                              ;; 30:7ed6 $44 $06 $00
 
 call_30_7ed9:
-    Op56_WriteBitArrayIndex 28, $a6, $49, $18          ;; 30:7ed9 $56 $1c $a6 $49 $18
+    Op56_WriteBitArrayIndex 28, data_18_49a6           ;; 30:7ed9 $56 $1c $a6 $49 $18
     SCRIPT_RETURN_20                                   ;; 30:7ede $20
 
 call_30_7edf:

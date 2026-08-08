@@ -170,7 +170,7 @@ call_1f_4247:
     Op18_Jump call_1f_425d                             ;; 1f:424b $18 $5d $42 $1f
 
 call_1f_424f:
-    Op56_WriteBitArrayIndex 22, $24, $62, $12          ;; 1f:424f $56 $16 $24 $62 $12
+    Op56_WriteBitArrayIndex 22, data_12_6224           ;; 1f:424f $56 $16 $24 $62 $12
     Op16_SubOps 1                                      ;; 1f:4254 $16 $01
     SubOp_SetByte wC742, $00                           ;; 1f:4256 $7e $2a $00
     Op18_Jump call_1f_42f2                             ;; 1f:4259 $18 $f2 $42 $1f
@@ -4829,7 +4829,7 @@ call_1f_7fa6:
     Op1C_TableJump 1                                   ;; 1f:7faf $1c $01
     SCRIPT_POINTER call_1f_79fc                        ;; 1f:7fb1 $fc $79 $1f
     Op1E_Call call_35_4000                             ;; 1f:7fb4 $1e $00 $40 $35
-    Op58_WriteBitArrayIndex 0, $00, $00, $00, $00      ;; 1f:7fb8 $58 $00 $00 $00 $00 $00
+    Op58_WriteBitArrayIndex 0, $00, zero_pointer       ;; 1f:7fb8 $58 $00 $00 $00 $00 $00
     Op1C_TableJump 1                                   ;; 1f:7fbe $1c $01
     SCRIPT_POINTER call_1f_79fc                        ;; 1f:7fc0 $fc $79 $1f
     Op1E_Call call_35_4537                             ;; 1f:7fc3 $1e $37 $45 $35

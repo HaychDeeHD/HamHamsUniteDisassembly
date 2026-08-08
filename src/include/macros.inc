@@ -214,17 +214,15 @@ ENDM
 MACRO Op56_WriteBitArrayIndex
 db $56
 db \<1>
-db \<2>
-db \<3>
-db \<4>
+dw \<2>
+db BANK(\2)
 ENDM
 MACRO Op58_WriteBitArrayIndex
 db $58
 db \<1>
 db \<2>
-db \<3>
-db \<4>
-db \<5>
+dw \<3>
+db BANK(\3)
 ENDM
 MACRO Op5A_Unknown
 db $5a

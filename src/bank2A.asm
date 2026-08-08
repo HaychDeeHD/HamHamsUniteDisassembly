@@ -4735,11 +4735,11 @@ call_2a_7e92:
 call_2a_7eb5:
     Op1E_Call call_2a_7fbd                             ;; 2a:7eb5 $1e $bd $7f $2a
     Op1E_Call call_1d_6d7f                             ;; 2a:7eb9 $1e $7f $6d $1d
-    Op56_WriteBitArrayIndex 26, $32, $59, $14          ;; 2a:7ebd $56 $1a $32 $59 $14
+    Op56_WriteBitArrayIndex 26, data_14_5932           ;; 2a:7ebd $56 $1a $32 $59 $14
     ;;<EA>Hamha<E8>!<E3><end>
     Op04_Unknown_Text data_3c_7167                     ;; 2a:7ec2 $04 $67 $71 $3c
     Op44_Unknown $14, $00                              ;; 2a:7ec6 $44 $14 $00
-    Op56_WriteBitArrayIndex 26, $21, $59, $14          ;; 2a:7ec9 $56 $1a $21 $59 $14
+    Op56_WriteBitArrayIndex 26, data_14_5921           ;; 2a:7ec9 $56 $1a $21 $59 $14
     ;;Wanna try a<E4>Ham-Jam right now?<E0>
     Op06_Unknown_Text data_3c_7171                     ;; 2a:7ece $06 $71 $71 $3c
     Op1E_Call call_04_615d                             ;; 2a:7ed2 $1e $5d $61 $04
@@ -4786,7 +4786,7 @@ call_2a_7f1c:
 
 call_2a_7f42:
     Op1E_Call call_20_4c28                             ;; 2a:7f42 $1e $28 $4c $20
-    Op56_WriteBitArrayIndex 26, $21, $59, $14          ;; 2a:7f46 $56 $1a $21 $59 $14
+    Op56_WriteBitArrayIndex 26, data_14_5921           ;; 2a:7f46 $56 $1a $21 $59 $14
     Op18_Jump call_2a_7c5a                             ;; 2a:7f4b $18 $5a $7c $2a
 
 call_2a_7f4f:
@@ -4805,7 +4805,7 @@ call_2a_7f62:
     Op04_Unknown_Text data_3c_7190                     ;; 2a:7f71 $04 $90 $71 $3c
     Op44_Unknown $08, $00                              ;; 2a:7f75 $44 $08 $00
     Op1E_Call call_04_615d                             ;; 2a:7f78 $1e $5d $61 $04
-    Op56_WriteBitArrayIndex 26, $4d, $5b, $14          ;; 2a:7f7c $56 $1a $4d $5b $14
+    Op56_WriteBitArrayIndex 26, data_14_5b4d           ;; 2a:7f7c $56 $1a $4d $5b $14
     Op1E_Call call_1d_6d7f                             ;; 2a:7f81 $1e $7f $6d $1d
     ;;What<E4><end>
     Op04_Unknown_Text data_3c_719b                     ;; 2a:7f85 $04 $9b $71 $3c
@@ -4817,7 +4817,7 @@ call_2a_7f89:
     ;;are you doing?!<E0>
     Op06_Unknown_Text data_3c_71a1                     ;; 2a:7f9d $06 $a1 $71 $3c
     Op1E_Call call_04_615d                             ;; 2a:7fa1 $1e $5d $61 $04
-    Op56_WriteBitArrayIndex 26, $21, $59, $14          ;; 2a:7fa5 $56 $1a $21 $59 $14
+    Op56_WriteBitArrayIndex 26, data_14_5921           ;; 2a:7fa5 $56 $1a $21 $59 $14
     Op18_Jump call_2a_7c5a                             ;; 2a:7faa $18 $5a $7c $2a
 
 call_2a_7fae:

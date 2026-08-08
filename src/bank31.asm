@@ -81,7 +81,7 @@ call_31_40e9:
     Op18_Jump call_31_4106                             ;; 31:40f4 $18 $06 $41 $31
 
 call_31_40f8:
-    Op56_WriteBitArrayIndex 22, $24, $62, $12          ;; 31:40f8 $56 $16 $24 $62 $12
+    Op56_WriteBitArrayIndex 22, data_12_6224           ;; 31:40f8 $56 $16 $24 $62 $12
     Op16_SubOps 1                                      ;; 31:40fd $16 $01
     SubOp_SetByte wC742, $00                           ;; 31:40ff $7e $2a $00
     Op18_Jump call_31_419b                             ;; 31:4102 $18 $9b $41 $31
@@ -3634,7 +3634,7 @@ call_31_6e9d:
     Op06_Unknown_Text data_36_72a6                     ;; 31:6eb1 $06 $a6 $72 $36
 
 call_31_6eb5:
-    Op56_WriteBitArrayIndex 26, $3b, $67, $13          ;; 31:6eb5 $56 $1a $3b $67 $13
+    Op56_WriteBitArrayIndex 26, data_13_673b           ;; 31:6eb5 $56 $1a $3b $67 $13
     ;;Too bad that I<E4>remembered some<E4>Ham-Chat words<E3>before you!!!<E3>Ha ha ha!<E0>
     Op06_Unknown_Text data_36_72d0                     ;; 31:6eba $06 $d0 $72 $36
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_13_6980 ;; 31:6ebe $4c $1a $01 $04 $00 $00 $00 $00 $80 $69 $13
@@ -3854,17 +3854,17 @@ call_31_71a4:
 
 call_31_71c7:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 31:71c7 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
-    Op56_WriteBitArrayIndex 26, $3d, $7a, $1b          ;; 31:71d2 $56 $1a $3d $7a $1b
+    Op56_WriteBitArrayIndex 26, data_1b_7a3d           ;; 31:71d2 $56 $1a $3d $7a $1b
     Op1E_Call call_1d_6b02                             ;; 31:71d7 $1e $02 $6b $1d
     ;;Hey, <EA>hamha<E8>!<E3>Now that you've<E4>got Ham-Chat<E4>down, <E5>you should<E4>try to <EA>hamtast<E8><E4>your Ham-Jam!<E0>
     Op04_Unknown_Text data_36_75ce                     ;; 31:71db $04 $ce $75 $36
-    Op56_WriteBitArrayIndex 26, $8b, $69, $13          ;; 31:71df $56 $1a $8b $69 $13
+    Op56_WriteBitArrayIndex 26, data_13_698b           ;; 31:71df $56 $1a $8b $69 $13
     ;;It's tough showing<E3><end>
     Op04_Unknown_Text data_36_762a                     ;; 31:71e4 $04 $2a $76 $36
-    Op56_WriteBitArrayIndex 26, $1f, $67, $13          ;; 31:71e8 $56 $1a $1f $67 $13
+    Op56_WriteBitArrayIndex 26, data_13_671f           ;; 31:71e8 $56 $1a $1f $67 $13
     ;;your Ham-Jam when<E4>it's finished,<E5> but<E4><end>
     Op06_Unknown_Text data_36_763e                     ;; 31:71ed $06 $3e $76 $36
-    Op56_WriteBitArrayIndex 26, $49, $67, $13          ;; 31:71f1 $56 $1a $49 $67 $13
+    Op56_WriteBitArrayIndex 26, data_13_6749           ;; 31:71f1 $56 $1a $49 $67 $13
     ;;give it a try,<E4><EA>hammo<E8>!<E0>
     Op06_Unknown_Text data_36_7665                     ;; 31:71f6 $06 $65 $76 $36
     Op18_Jump call_31_725b                             ;; 31:71fa $18 $5b $72 $31
@@ -3876,7 +3876,7 @@ call_31_71fe:
     Op04_Unknown_Text data_36_767d                     ;; 31:7206 $04 $7d $76 $36
     Op1E_Call call_04_615d                             ;; 31:720a $1e $5d $61 $04
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 31:720e $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
-    Op56_WriteBitArrayIndex 26, $34, $67, $13          ;; 31:7219 $56 $1a $34 $67 $13
+    Op56_WriteBitArrayIndex 26, data_13_6734           ;; 31:7219 $56 $1a $34 $67 $13
     Op1E_Call call_1d_6b02                             ;; 31:721e $1e $02 $6b $1d
     ;;You like that?<E3>Smells great, huh?<E3>I put my heart and<E4>soul into growing<E4>that flower!<E0>
     Op04_Unknown_Text data_36_7691                     ;; 31:7222 $04 $91 $76 $36
@@ -3884,7 +3884,7 @@ call_31_71fe:
 
 call_31_722a:
     Op1E_Call call_20_42f7                             ;; 31:722a $1e $f7 $42 $20
-    Op56_WriteBitArrayIndex 26, $26, $67, $13          ;; 31:722e $56 $1a $26 $67 $13
+    Op56_WriteBitArrayIndex 26, data_13_6726           ;; 31:722e $56 $1a $26 $67 $13
     Op1E_Call call_1d_6b02                             ;; 31:7233 $1e $02 $6b $1d
     ;;Hey, don't <EA>tack-Q<E8><E4>so much in here!<E3>You're making such<E4>a mess!<E0>
     Op04_Unknown_Text data_36_76e5                     ;; 31:7237 $04 $e5 $76 $36
@@ -3892,14 +3892,14 @@ call_31_722a:
 
 call_31_723f:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 31:723f $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
-    Op56_WriteBitArrayIndex 26, $26, $67, $13          ;; 31:724a $56 $1a $26 $67 $13
+    Op56_WriteBitArrayIndex 26, data_13_6726           ;; 31:724a $56 $1a $26 $67 $13
     Op1E_Call call_1d_6b02                             ;; 31:724f $1e $02 $6b $1d
     ;;Hey, don't <EA>digdig<E8><E4>in my room!<E3>You're making a<E4>mess!<E0>
     Op04_Unknown_Text data_36_7725                     ;; 31:7253 $04 $25 $77 $36
     Op18_Jump call_31_725b                             ;; 31:7257 $18 $5b $72 $31
 
 call_31_725b:
-    Op56_WriteBitArrayIndex 26, $1f, $67, $13          ;; 31:725b $56 $1a $1f $67 $13
+    Op56_WriteBitArrayIndex 26, data_13_671f           ;; 31:725b $56 $1a $1f $67 $13
     Op1E_Call call_04_615d                             ;; 31:7260 $1e $5d $61 $04
     Op18_Jump call_31_69bf                             ;; 31:7264 $18 $bf $69 $31
 
