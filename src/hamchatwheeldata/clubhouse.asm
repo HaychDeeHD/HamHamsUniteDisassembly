@@ -684,7 +684,7 @@ data_05_48b4:
     HamChatWheelRule_DefaultCase_Pair $7e, $39 ; 01    ;; 05:48b6 $7e $39
 
 ; Referenced from 25:68a5
-data_05_48b8:
+useIfHave_384_48b8:
     HamChatWheelRule_UseIfHave 384 ; 00                ;; 05:48b8 $3f $80
 
 ; Referenced from 25:68b9
@@ -819,7 +819,7 @@ data_05_4940:
     HamChatWheelRule_UseIfDontHave HAMCHAT_NOWORRIE ; 07 ;; 05:494e $5e $1f
 
 ; Referenced from 25:6b5d
-data_05_4950:
+useIfHave_204_4950:
     HamChatWheelRule_UseIfHave 204 ; 00                ;; 05:4950 $3e $cc
 
 ; Referenced from 25:6b98
@@ -833,7 +833,7 @@ data_05_4956:
     HamChatWheelRule_DefaultCase_Pair $be, $0b ; 01    ;; 05:4958 $be $0b
 
 ; Referenced from 25:6c5f
-data_05_495a:
+useIfHave_bluhoo_495a:
     HamChatWheelRule_UseIfHave HAMCHAT_BLUHOO ; 00     ;; 05:495a $3e $5b
 
 ; Referenced from 25:6d62
@@ -877,15 +877,15 @@ data_05_4978:
     HamChatWheelRule_DefaultCase_Pair $be, $ff ; 01    ;; 05:497a $be $ff
 
 ; Referenced from 25:6e04
-data_05_497c:
+useIfDontHave_5_497c:
     HamChatWheelRule_UseIfDontHave 5 ; 00              ;; 05:497c $5e $05
 
 ; Referenced from 25:6e16
-data_05_497e:
+useIfDontHave_7_497e:
     HamChatWheelRule_UseIfDontHave 7 ; 00              ;; 05:497e $5e $07
 
 ; Referenced from 25:6e33
-data_05_4980:
+useIfDontHave_8_4980:
     HamChatWheelRule_UseIfDontHave 8 ; 00              ;; 05:4980 $5e $08
 
 ; Referenced from 25:6f8e
@@ -894,7 +894,7 @@ data_05_4982:
     HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:4984 $be $01
 
 ; Referenced from 25:6f95
-data_05_4986:
+useIfHave_oopsie_4986:
     HamChatWheelRule_UseIfHave HAMCHAT_OOPSIE ; 00     ;; 05:4986 $3e $29
 
 ; Referenced from 25:6fa2
@@ -923,7 +923,7 @@ data_05_499a:
     HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:499c $be $05
 
 ; Referenced from 25:6fc8
-data_05_499e:
+useIfHave_koochiq_499e:
     HamChatWheelRule_UseIfHave HAMCHAT_KOOCHIQ ; 00    ;; 05:499e $3e $11
 
 ; Referenced from 25:6fd5
@@ -932,7 +932,7 @@ data_05_49a0:
     HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:49a2 $be $03
 
 ; Referenced from 25:6fdc
-data_05_49a4:
+useIfHave_335_49a4:
     HamChatWheelRule_UseIfHave 335 ; 00                ;; 05:49a4 $3f $4f
 
 ; Referenced from 25:6fe9
@@ -941,7 +941,7 @@ data_05_49a6:
     HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:49a8 $be $04
 
 ; Referenced from 25:6ff0
-data_05_49aa:
+useIfHave_336_49aa:
     HamChatWheelRule_UseIfHave 336 ; 00                ;; 05:49aa $3f $50
 
 ; Referenced from 25:7008
@@ -950,7 +950,7 @@ data_05_49ac:
     HamChatWheelRule_DefaultCase_Pair $be, $06 ; 01    ;; 05:49ae $be $06
 
 ; Referenced from 25:700f
-data_05_49b0:
+useIfHave_chukchuk_49b0:
     HamChatWheelRule_UseIfHave HAMCHAT_CHUKCHUK ; 00   ;; 05:49b0 $3e $4a
 
 ; Referenced from 25:701c
@@ -959,7 +959,7 @@ data_05_49b2:
     HamChatWheelRule_DefaultCase_Pair $be, $07 ; 01    ;; 05:49b4 $be $07
 
 ; Referenced from 25:7023
-data_05_49b6:
+useIfHave_337_49b6:
     HamChatWheelRule_UseIfHave 337 ; 00                ;; 05:49b6 $3f $51
 
 ; Referenced from 25:7030
@@ -968,7 +968,7 @@ data_05_49b8:
     HamChatWheelRule_DefaultCase_Pair $be, $0a ; 01    ;; 05:49ba $be $0a
 
 ; Referenced from 25:7037
-data_05_49bc:
+useIfHave_blanko_49bc:
     HamChatWheelRule_UseIfHave HAMCHAT_BLANKO ; 00     ;; 05:49bc $3e $36
 
 ; Referenced from 25:7044
@@ -977,11 +977,11 @@ data_05_49be:
     HamChatWheelRule_DefaultCase_Pair $be, $22 ; 01    ;; 05:49c0 $be $22
 
 ; Referenced from 25:704b
-data_05_49c2:
+useIfHave_212_49c2:
     HamChatWheelRule_UseIfHave 212 ; 00                ;; 05:49c2 $3e $d4
 
 ; Referenced from 25:7052
-data_05_49c4:
+useIfHave_357_49c4:
     HamChatWheelRule_UseIfHave 357 ; 00                ;; 05:49c4 $3f $65
 
 ; Referenced from 25:7063
@@ -1000,7 +1000,7 @@ data_05_49ce:
     HamChatWheelRule_DefaultCase_Pair $be, $08 ; 01    ;; 05:49d0 $be $08
 
 ; Referenced from 25:7087
-data_05_49d2:
+useIfHave_338_49d2:
     HamChatWheelRule_UseIfHave 338 ; 00                ;; 05:49d2 $3f $52
 
 ; Referenced from 25:7094
@@ -1009,7 +1009,7 @@ data_05_49d4:
     HamChatWheelRule_DefaultCase_Pair $be, $0b ; 01    ;; 05:49d6 $be $0b
 
 ; Referenced from 25:709b
-data_05_49d8:
+useIfHave_wishie_49d8:
     HamChatWheelRule_UseIfHave HAMCHAT_WISHIE ; 00     ;; 05:49d8 $3e $24
 
 ; Referenced from 25:70a8
@@ -1018,7 +1018,7 @@ data_05_49da:
     HamChatWheelRule_DefaultCase_Pair $be, $0c ; 01    ;; 05:49dc $be $0c
 
 ; Referenced from 25:70af
-data_05_49de:
+useIfHave_smoochie_49de:
     HamChatWheelRule_UseIfHave HAMCHAT_SMOOCHIE ; 00   ;; 05:49de $3e $1b
 
 ; Referenced from 25:70b6
@@ -1036,7 +1036,7 @@ data_05_49e8:
     HamChatWheelRule_DefaultCase_Pair $be, $0d ; 01    ;; 05:49ea $be $0d
 
 ; Referenced from 25:70ce
-data_05_49ec:
+useIfHave_339_49ec:
     HamChatWheelRule_UseIfHave 339 ; 00                ;; 05:49ec $3f $53
 
 ; Referenced from 25:70db
@@ -1045,7 +1045,7 @@ data_05_49ee:
     HamChatWheelRule_DefaultCase_Pair $be, $0e ; 01    ;; 05:49f0 $be $0e
 
 ; Referenced from 25:70e2
-data_05_49f2:
+useIfHave_109_49f2:
     HamChatWheelRule_UseIfHave 109 ; 00                ;; 05:49f2 $3e $6d
 
 ; Referenced from 25:70e9
@@ -1063,7 +1063,7 @@ data_05_49fc:
     HamChatWheelRule_DefaultCase_Pair $be, $0f ; 01    ;; 05:49fe $be $0f
 
 ; Referenced from 25:7101
-data_05_4a00:
+useIfHave_340_4a00:
     HamChatWheelRule_UseIfHave 340 ; 00                ;; 05:4a00 $3f $54
 
 ; Referenced from 25:7108
@@ -1081,7 +1081,7 @@ data_05_4a0a:
     HamChatWheelRule_DefaultCase_Pair $be, $10 ; 01    ;; 05:4a0c $be $10
 
 ; Referenced from 25:7120
-data_05_4a0e:
+useIfHave_hamteam_4a0e:
     HamChatWheelRule_UseIfHave HAMCHAT_HAMTEAM ; 00    ;; 05:4a0e $3e $60
 
 ; Referenced from 25:7127
@@ -1160,7 +1160,7 @@ data_05_4a4e:
     HamChatWheelRule_DefaultCase_Pair $be, $14 ; 01    ;; 05:4a50 $be $14
 
 ; Referenced from 25:7191
-data_05_4a52:
+useIfHave_345_4a52:
     HamChatWheelRule_UseIfHave 345 ; 00                ;; 05:4a52 $3f $59
 
 ; Referenced from 25:719e
@@ -1169,7 +1169,7 @@ data_05_4a54:
     HamChatWheelRule_DefaultCase_Pair $be, $15 ; 01    ;; 05:4a56 $be $15
 
 ; Referenced from 25:71a5
-data_05_4a58:
+useIfHave_hammo_4a58:
     HamChatWheelRule_UseIfHave HAMCHAT_HAMMO ; 00      ;; 05:4a58 $3e $2f
 
 ; Referenced from 25:71b2
@@ -1178,7 +1178,7 @@ data_05_4a5a:
     HamChatWheelRule_DefaultCase_Pair $be, $16 ; 01    ;; 05:4a5c $be $16
 
 ; Referenced from 25:71b9
-data_05_4a5e:
+useIfHave_pooie_4a5e:
     HamChatWheelRule_UseIfHave HAMCHAT_POOIE ; 00      ;; 05:4a5e $3e $4f
 
 ; Referenced from 25:71c0
@@ -1196,7 +1196,7 @@ data_05_4a68:
     HamChatWheelRule_DefaultCase_Pair $be, $17 ; 01    ;; 05:4a6a $be $17
 
 ; Referenced from 25:71d8
-data_05_4a6c:
+useIfHave_111_4a6c:
     HamChatWheelRule_UseIfHave 111 ; 00                ;; 05:4a6c $3e $6f
 
 ; Referenced from 25:71df
@@ -1224,7 +1224,7 @@ data_05_4a7e:
     HamChatWheelRule_DefaultCase_Pair $be, $19 ; 01    ;; 05:4a80 $be $19
 
 ; Referenced from 25:720b
-data_05_4a82:
+useIfHave_347_4a82:
     HamChatWheelRule_UseIfHave 347 ; 00                ;; 05:4a82 $3f $5b
 
 ; Referenced from 25:7212
@@ -1258,7 +1258,7 @@ data_05_4a94:
     HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:4a9f $1e
 
 ; Referenced from 25:723f
-data_05_4aa0:
+useIfDontHave_hammo_4aa0:
     HamChatWheelRule_UseIfDontHave HAMCHAT_HAMMO ; 00  ;; 05:4aa0 $5e $2f
 
 ; Referenced from 25:7250
@@ -1267,11 +1267,11 @@ data_05_4aa2:
     HamChatWheelRule_DefaultCase_Pair $be, $1b ; 01    ;; 05:4aa4 $be $1b
 
 ; Referenced from 25:7257
-data_05_4aa6:
+useIfDontHave_129_4aa6:
     HamChatWheelRule_UseIfDontHave 129 ; 00            ;; 05:4aa6 $5e $81
 
 ; Referenced from 25:725e
-data_05_4aa8:
+useIfHave_goodgo_4aa8:
     HamChatWheelRule_UseIfHave HAMCHAT_GOODGO ; 00     ;; 05:4aa8 $3e $42
 
 ; Referenced from 25:7265
@@ -1280,7 +1280,7 @@ data_05_4aaa:
     HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:4aac $be $01
 
 ; Referenced from 25:7273
-data_05_4aae:
+useIfDontHave_goodgo_4aae:
     HamChatWheelRule_UseIfDontHave HAMCHAT_GOODGO ; 00 ;; 05:4aae $5e $42
 
 ; Referenced from 25:7284
@@ -1289,7 +1289,7 @@ data_05_4ab0:
     HamChatWheelRule_DefaultCase_Pair $be, $1c ; 01    ;; 05:4ab2 $be $1c
 
 ; Referenced from 25:728b
-data_05_4ab4:
+useIfHave_krmpkrmp_4ab4:
     HamChatWheelRule_UseIfHave HAMCHAT_KRMPKRMP ; 00   ;; 05:4ab4 $3e $21
 
 ; Referenced from 25:7292
@@ -1307,11 +1307,11 @@ data_05_4abe:
     HamChatWheelRule_DefaultCase_Pair $be, $1d ; 01    ;; 05:4ac0 $be $1d
 
 ; Referenced from 25:72aa
-data_05_4ac2:
+useIfHave_348_4ac2:
     HamChatWheelRule_UseIfHave 348 ; 00                ;; 05:4ac2 $3f $5c
 
 ; Referenced from 25:72b1
-data_05_4ac4:
+useIfHave_349_4ac4:
     HamChatWheelRule_UseIfHave 349 ; 00                ;; 05:4ac4 $3f $5d
 
 ; Referenced from 25:72c2
@@ -1320,11 +1320,11 @@ data_05_4ac6:
     HamChatWheelRule_DefaultCase_Pair $be, $1e ; 01    ;; 05:4ac8 $be $1e
 
 ; Referenced from 25:72c9
-data_05_4aca:
+useIfHave_119_4aca:
     HamChatWheelRule_UseIfHave 119 ; 00                ;; 05:4aca $3e $77
 
 ; Referenced from 25:72d0
-data_05_4acc:
+useIfHave_350_4acc:
     HamChatWheelRule_UseIfHave 350 ; 00                ;; 05:4acc $3f $5e
 
 ; Referenced from 25:72e1
@@ -1338,7 +1338,7 @@ data_05_4ad2:
     HamChatWheelRule_DefaultCase_Pair $7e, $75 ; 01    ;; 05:4ad4 $7e $75
 
 ; Referenced from 25:72ef
-data_05_4ad6:
+useIfHave_351_4ad6:
     HamChatWheelRule_UseIfHave 351 ; 00                ;; 05:4ad6 $3f $5f
 
 ; Referenced from 25:7300
@@ -1370,11 +1370,11 @@ data_05_4aec:
     HamChatWheelRule_DefaultCase_Pair $be, $21 ; 01    ;; 05:4aee $be $21
 
 ; Referenced from 25:7326
-data_05_4af0:
+useIfHave_226_4af0:
     HamChatWheelRule_UseIfHave 226 ; 00                ;; 05:4af0 $3e $e2
 
 ; Referenced from 25:732d
-data_05_4af2:
+useIfHave_352_4af2:
     HamChatWheelRule_UseIfHave 352 ; 00                ;; 05:4af2 $3f $60
 
 ; Referenced from 31:6a7d
@@ -1398,7 +1398,7 @@ data_05_4b00:
     HamChatWheelRule_DefaultCase_Pair $7e, $04 ; 01    ;; 05:4b02 $7e $04
 
 ; Referenced from 25:73b4
-data_05_4b04:
+useIfHave_385_4b04:
     HamChatWheelRule_UseIfHave 385 ; 00                ;; 05:4b04 $3f $81
 
 ; Referenced from 25:7492
@@ -1462,7 +1462,7 @@ data_05_4b32:
     HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:4b34 $be $02
 
 ; Referenced from 25:75b9
-data_05_4b36:
+useIfDontHave_386_4b36:
     HamChatWheelRule_UseIfDontHave 386 ; 00            ;; 05:4b36 $5f $82
 
 ; Referenced from 25:7654
@@ -1625,43 +1625,43 @@ data_05_4bc4:
     HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:4bc6 $be $00
 
 ; Referenced from 31:674e
-data_05_4bc8:
+useIfHave_129_4bc8:
     HamChatWheelRule_UseIfHave 129 ; 00                ;; 05:4bc8 $3e $81
 
 ; Referenced from 31:67ed
-data_05_4bca:
+useIfHave_130_4bca:
     HamChatWheelRule_UseIfHave 130 ; 00                ;; 05:4bca $3e $82
 
 ; Referenced from 31:66d5
-data_05_4bcc:
+useIfHave_131_4bcc:
     HamChatWheelRule_UseIfHave 131 ; 00                ;; 05:4bcc $3e $83
 
 ; Referenced from 31:67a5
-data_05_4bce:
+useIfHave_132_4bce:
     HamChatWheelRule_UseIfHave 132 ; 00                ;; 05:4bce $3e $84
 
 ; Referenced from 37:7acf
-data_05_4bd0:
+useIfHave_133_4bd0:
     HamChatWheelRule_UseIfHave 133 ; 00                ;; 05:4bd0 $3e $85
 
 ; Referenced from 2b:6d36
-data_05_4bd2:
+useIfHave_134_4bd2:
     HamChatWheelRule_UseIfHave 134 ; 00                ;; 05:4bd2 $3e $86
 
 ; Referenced from 38:648a
-data_05_4bd4:
+useIfHave_135_4bd4:
     HamChatWheelRule_UseIfHave 135 ; 00                ;; 05:4bd4 $3e $87
 
 ; Referenced from 31:673f
-data_05_4bd6:
+useIfHave_137_4bd6:
     HamChatWheelRule_UseIfHave 137 ; 00                ;; 05:4bd6 $3e $89
 
 ; Referenced from 31:66c6
-data_05_4bd8:
+useIfHave_138_4bd8:
     HamChatWheelRule_UseIfHave 138 ; 00                ;; 05:4bd8 $3e $8a
 
 ; Referenced from 38:64b1
-data_05_4bda:
+useIfHave_139_4bda:
     HamChatWheelRule_UseIfHave 139 ; 00                ;; 05:4bda $3e $8b
 
 ; Referenced from 2c:5c0e
@@ -1675,11 +1675,11 @@ data_05_4be0:
     HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:4be2 $be $02
 
 ; Referenced from 37:4690
-data_05_4be4:
+useIfDontHave_134_4be4:
     HamChatWheelRule_UseIfDontHave 134 ; 00            ;; 05:4be4 $5e $86
 
 ; Referenced from 37:4682
-data_05_4be6:
+useIfDontHave_133_4be6:
     HamChatWheelRule_UseIfDontHave 133 ; 00            ;; 05:4be6 $5e $85
 
 ; Referenced from 37:7a09
@@ -1708,27 +1708,27 @@ data_05_4bf8:
     HamChatWheelRule_DefaultCase_Pair $be, $f1 ; 01    ;; 05:4bfa $be $f1
 
 ; Referenced from 37:7c3f
-data_05_4bfc:
+useIfHave_3_4bfc:
     HamChatWheelRule_UseIfHave 3 ; 00                  ;; 05:4bfc $3e $03
 
 ; Referenced from 37:467b
-data_05_4bfe:
+useIfDontHave_138_4bfe:
     HamChatWheelRule_UseIfDontHave 138 ; 00            ;; 05:4bfe $5e $8a
 
 ; Referenced from 27:450b
-data_05_4c00:
+useIfDontHave_137_4c00:
     HamChatWheelRule_UseIfDontHave 137 ; 00            ;; 05:4c00 $5e $89
 
 ; Referenced from 26:44e6
-data_05_4c02:
+useIfDontHave_132_4c02:
     HamChatWheelRule_UseIfDontHave 132 ; 00            ;; 05:4c02 $5e $84
 
 ; Referenced from 33:709e
-data_05_4c04:
+useIfDontHave_130_4c04:
     HamChatWheelRule_UseIfDontHave 130 ; 00            ;; 05:4c04 $5e $82
 
 ; Referenced from 37:4674
-data_05_4c06:
+useIfDontHave_131_4c06:
     HamChatWheelRule_UseIfDontHave 131 ; 00            ;; 05:4c06 $5e $83
 
 ; Referenced from 31:62fc
@@ -1772,19 +1772,19 @@ data_05_4c24:
     HamChatWheelRule_DefaultCase_Pair $be, $c0 ; 01    ;; 05:4c26 $be $c0
 
 ; Referenced from 2c:6e1f
-data_05_4c28:
+useIfDontHave_139_4c28:
     HamChatWheelRule_UseIfDontHave 139 ; 00            ;; 05:4c28 $5e $8b
 
 ; Referenced from 2c:6e26
-data_05_4c2a:
+useIfDontHave_140_4c2a:
     HamChatWheelRule_UseIfDontHave 140 ; 00            ;; 05:4c2a $5e $8c
 
 ; Referenced from 37:4689
-data_05_4c2c:
+useIfDontHave_136_4c2c:
     HamChatWheelRule_UseIfDontHave 136 ; 00            ;; 05:4c2c $5e $88
 
 ; Referenced from 2c:6e03
-data_05_4c2e:
+useIfDontHave_135_4c2e:
     HamChatWheelRule_UseIfDontHave 135 ; 00            ;; 05:4c2e $5e $87
 
 ; Referenced from 36:65ca
@@ -1793,7 +1793,7 @@ data_05_4c30:
     HamChatWheelRule_DefaultCase_Pair $be, $0a ; 01    ;; 05:4c32 $be $0a
 
 ; Referenced from 36:6892
-data_05_4c34:
+useIfHave_135_4c34:
     HamChatWheelRule_UseIfHave 135 ; 00                ;; 05:4c34 $3e $87
 
 ; Referenced from 36:6704
@@ -1839,7 +1839,7 @@ data_05_4c56:
     HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:4c58 $be $00
 
 ; Referenced from 24:6be7
-data_05_4c5a:
+useIfHave_401_4c5a:
     HamChatWheelRule_UseIfHave 401 ; 00                ;; 05:4c5a $3f $91
 
 ; Referenced from 24:6bee
@@ -1920,19 +1920,19 @@ data_05_4ca0:
     HamChatWheelRule_DefaultCase_Pair $be, $79 ; 01    ;; 05:4ca2 $be $79
 
 ; Referenced from 24:6f25
-data_05_4ca4:
+useIfDontHave_398_4ca4:
     HamChatWheelRule_UseIfDontHave 398 ; 00            ;; 05:4ca4 $5f $8e
 
 ; Referenced from 24:6f31
-data_05_4ca6:
+useIfDontHave_399_4ca6:
     HamChatWheelRule_UseIfDontHave 399 ; 00            ;; 05:4ca6 $5f $8f
 
 ; Referenced from 24:6f3d
-data_05_4ca8:
+useIfDontHave_400_4ca8:
     HamChatWheelRule_UseIfDontHave 400 ; 00            ;; 05:4ca8 $5f $90
 
 ; Referenced from 24:6f49
-data_05_4caa:
+useIfDontHave_397_4caa:
     HamChatWheelRule_UseIfDontHave 397 ; 00            ;; 05:4caa $5f $8d
 
 ; Referenced from 24:6fe5
@@ -1986,7 +1986,7 @@ data_05_4cd0:
     HamChatWheelRule_DefaultCase_Pair $be, $7f ; 01    ;; 05:4cd2 $be $7f
 
 ; Referenced from 24:72ca
-data_05_4cd4:
+useIfDontHave_396_4cd4:
     HamChatWheelRule_UseIfDontHave 396 ; 00            ;; 05:4cd4 $5f $8c
 
 ; Referenced from 24:74cf
@@ -2025,19 +2025,19 @@ data_05_4cee:
     HamChatWheelRule_DefaultCase_Pair $be, $7f ; 01    ;; 05:4cf0 $be $7f
 
 ; Referenced from 24:7b49
-data_05_4cf2:
+useIfDontHave_237_4cf2:
     HamChatWheelRule_UseIfDontHave 237 ; 00            ;; 05:4cf2 $5e $ed
 
 ; Referenced from 24:7b56
-data_05_4cf4:
+useIfDontHave_238_4cf4:
     HamChatWheelRule_UseIfDontHave 238 ; 00            ;; 05:4cf4 $5e $ee
 
 ; Referenced from 24:7b63
-data_05_4cf6:
+useIfDontHave_242_4cf6:
     HamChatWheelRule_UseIfDontHave 242 ; 00            ;; 05:4cf6 $5e $f2
 
 ; Referenced from 24:7b70
-data_05_4cf8:
+useIfDontHave_240_4cf8:
     HamChatWheelRule_UseIfDontHave 240 ; 00            ;; 05:4cf8 $5e $f0
 
 ; Referenced from 2c:5b92
@@ -2051,7 +2051,7 @@ data_05_4cfe:
     HamChatWheelRule_DefaultCase_Pair $7e, $85 ; 01    ;; 05:4d00 $7e $85
 
 ; Referenced from 2c:5ba0
-data_05_4d02:
+useIfHave_250_4d02:
     HamChatWheelRule_UseIfHave 250 ; 00                ;; 05:4d02 $3e $fa
 
 ; Referenced from 2c:5cc7
@@ -2115,11 +2115,11 @@ data_05_4d30:
     HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:4d32 $be $02
 
 ; Referenced from 2c:6134
-data_05_4d34:
+useIfHave_387_4d34:
     HamChatWheelRule_UseIfHave 387 ; 00                ;; 05:4d34 $3f $83
 
 ; Referenced from 2c:614a
-data_05_4d36:
+useIfDontHave_387_4d36:
     HamChatWheelRule_UseIfDontHave 387 ; 00            ;; 05:4d36 $5f $83
 
 ; Referenced from 2c:670c
@@ -2143,11 +2143,11 @@ TutorialHamChatRules:
     HamChatWheelRule_DefaultCase_Pair $be, $04 ; 15    ;; 05:4d56 $be $04
 
 ; Referenced from 2c:68a2
-data_05_4d58:
+useIfDontHave_250_4d58:
     HamChatWheelRule_UseIfDontHave 250 ; 00            ;; 05:4d58 $5e $fa
 
 ; Referenced from 2a:7d46
-data_05_4d5a:
+useIfHave_402_4d5a:
     HamChatWheelRule_UseIfHave 402 ; 00                ;; 05:4d5a $3f $92
 
 ; Referenced from 2a:7d4d
@@ -2232,7 +2232,7 @@ data_05_4d9c:
     HamChatWheelRule_DefaultCase_Pair $be, $0e ; 01    ;; 05:4d9e $be $0e
 
 ; Referenced from 29:71c9
-data_05_4da0:
+useIfDontHave_404_4da0:
     HamChatWheelRule_UseIfDontHave 404 ; 00            ;; 05:4da0 $5f $94
 
 ; Referenced from 29:7444
@@ -2251,11 +2251,11 @@ data_05_4daa:
     HamChatWheelRule_DefaultCase_Pair $be, $90 ; 01    ;; 05:4dac $be $90
 
 ; Referenced from 29:7540
-data_05_4dae:
+useIfHave_405_4dae:
     HamChatWheelRule_UseIfHave 405 ; 00                ;; 05:4dae $3f $95
 
 ; Referenced from 29:773f
-data_05_4db0:
+useIfDontHave_405_4db0:
     HamChatWheelRule_UseIfDontHave 405 ; 00            ;; 05:4db0 $5f $95
 
 ; Referenced from 29:7954
@@ -2269,7 +2269,7 @@ data_05_4db6:
     HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:4db8 $be $00
 
 ; Referenced from 29:7d77
-data_05_4dba:
+useIfDontHave_403_4dba:
     HamChatWheelRule_UseIfDontHave 403 ; 00            ;; 05:4dba $5f $93
 
 ; Referenced from 2c:68f6
@@ -2293,7 +2293,7 @@ data_05_4dc2:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:4dcf $1e
 
 ; Referenced from 35:4835
-data_05_4dd0:
+useIfHave_389_4dd0:
     HamChatWheelRule_UseIfHave 389 ; 00                ;; 05:4dd0 $3f $85
 
 ; Referenced from 35:48fb
@@ -2389,7 +2389,7 @@ data_05_4e28:
     HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 07 ;; 05:4e36 $5e $11
 
 ; Referenced from 2c:6e39
-data_05_4e38:
+useIfHave_388_4e38:
     HamChatWheelRule_UseIfHave 388 ; 00                ;; 05:4e38 $3f $84
 
 ; Referenced from 2c:70eb
@@ -2398,7 +2398,7 @@ data_05_4e3a:
     HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:4e3c $be $02
 
 ; Referenced from 31:6dba
-data_05_4e3e:
+useIfDontHave_tootru_4e3e:
     HamChatWheelRule_UseIfDontHave HAMCHAT_TOOTRU ; 00 ;; 05:4e3e $5e $51
 
 ; Referenced from 2c:743c
@@ -2414,11 +2414,11 @@ data_05_4e40:
     HamChatWheelRule_UseIfDontHave HAMCHAT_HAMSPAR ; 07 ;; 05:4e4e $5e $1a
 
 ; Referenced from 2d:403f
-data_05_4e50:
+useIfHave_410_4e50:
     HamChatWheelRule_UseIfHave 410 ; 00                ;; 05:4e50 $3f $9a
 
 ; Referenced from 2d:4046
-data_05_4e52:
+useIfHave_408_4e52:
     HamChatWheelRule_UseIfHave 408 ; 00                ;; 05:4e52 $3f $98
 
 ; Referenced from 2d:40cb
@@ -2453,7 +2453,7 @@ data_05_4e66:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:4e73 $1e
 
 ; Referenced from 2d:4158
-data_05_4e74:
+useIfHave_406_4e74:
     HamChatWheelRule_UseIfHave 406 ; 00                ;; 05:4e74 $3f $96
 
 ; Referenced from 2d:4179
@@ -2470,7 +2470,7 @@ data_05_4e76:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:4e83 $1e
 
 ; Referenced from 2d:4180
-data_05_4e84:
+useIfHave_407_4e84:
     HamChatWheelRule_UseIfHave 407 ; 00                ;; 05:4e84 $3f $97
 
 ; Referenced from 2d:41b5
@@ -2498,7 +2498,7 @@ data_05_4e94:
     HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:4e9d $1e
 
 ; Referenced from 2d:4268
-data_05_4e9e:
+useIfDontHave_265_4e9e:
     HamChatWheelRule_UseIfDontHave 265 ; 00            ;; 05:4e9e $5f $09
 
 ; Referenced from 2d:42ce
@@ -2507,7 +2507,7 @@ data_05_4ea0:
     HamChatWheelRule_DefaultCase_Pair $be, $04 ; 01    ;; 05:4ea2 $be $04
 
 ; Referenced from 2d:42d5
-data_05_4ea4:
+useIfHave_411_4ea4:
     HamChatWheelRule_UseIfHave 411 ; 00                ;; 05:4ea4 $3f $9b
 
 ; Referenced from 2d:4307
@@ -2559,7 +2559,7 @@ data_05_4ed6:
     HamChatWheelRule_UseIfDontHave HAMCHAT_GASPP ; 07  ;; 05:4ee4 $5e $2d
 
 ; Referenced from 2d:47ae
-data_05_4ee6:
+useIfHave_witt_4ee6:
     HamChatWheelRule_UseIfHave HAMCHAT_WITT ; 00       ;; 05:4ee6 $3e $54
 
 ; Referenced from 2d:484e
@@ -2581,11 +2581,11 @@ data_05_4ef6:
     HamChatWheelRule_DefaultCase_Pair $be, $05 ; 01    ;; 05:4ef8 $be $05
 
 ; Referenced from 2d:4979
-data_05_4efa:
+useIfHave_pookie_4efa:
     HamChatWheelRule_UseIfHave HAMCHAT_POOKIE ; 00     ;; 05:4efa $3e $3a
 
 ; Referenced from 2d:4b3e
-data_05_4efc:
+useIfHave_tootru_4efc:
     HamChatWheelRule_UseIfHave HAMCHAT_TOOTRU ; 00     ;; 05:4efc $3e $51
 
 ; Referenced from 2d:4bb7
@@ -2720,7 +2720,7 @@ data_05_4f7c:
     HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:4f7e $be $02
 
 ; Referenced from 26:412d
-data_05_4f80:
+useIfHave_263_4f80:
     HamChatWheelRule_UseIfHave 263 ; 00                ;; 05:4f80 $3f $07
 
 ; Referenced from 26:419c
@@ -2746,7 +2746,7 @@ data_05_4f8a:
     HamChatWheelRule_DefaultCase_Single $1e ; 08       ;; 05:4f95 $1e
 
 ; Referenced from 27:421b
-data_05_4f96:
+useIfHave_390_4f96:
     HamChatWheelRule_UseIfHave 390 ; 00                ;; 05:4f96 $3f $86
 
 ; Referenced from 27:4247
@@ -2763,11 +2763,11 @@ data_05_4f98:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:4fa5 $1e
 
 ; Referenced from 26:4257
-data_05_4fa6:
+useIfHave_391_4fa6:
     HamChatWheelRule_UseIfHave 391 ; 00                ;; 05:4fa6 $3f $87
 
 ; Referenced from 26:427b
-data_05_4fa8:
+useIfHave_264_4fa8:
     HamChatWheelRule_UseIfHave 264 ; 00                ;; 05:4fa8 $3f $08
 
 ; Referenced from 31:6a9d
@@ -2805,7 +2805,7 @@ data_05_4fbe:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:4fcb $1e
 
 ; Referenced from 26:4508
-data_05_4fcc:
+useIfHave_269_4fcc:
     HamChatWheelRule_UseIfHave 269 ; 00                ;; 05:4fcc $3f $0d
 
 ; Referenced from 26:4525
@@ -2830,7 +2830,7 @@ data_05_4fd6:
     HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:4fe1 $1e
 
 ; Referenced from 27:4618
-data_05_4fe2:
+useIfHave_261_4fe2:
     HamChatWheelRule_UseIfHave 261 ; 00                ;; 05:4fe2 $3f $05
 
 ; Referenced from 26:4616, 26:49cd, 27:4695, 27:48ff
@@ -2863,7 +2863,7 @@ data_05_4ff8:
     HamChatWheelRule_UseIfDontHave HAMCHAT_CHUKCHUK ; 07 ;; 05:5006 $5e $4a
 
 ; Referenced from 26:4e5c
-data_05_5008:
+useIfHave_gorush_5008:
     HamChatWheelRule_UseIfHave HAMCHAT_GORUSH ; 00     ;; 05:5008 $3e $5f
 
 ; Referenced from 26:4fd2
@@ -2907,7 +2907,7 @@ data_05_5026:
     HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:5028 $be $02
 
 ; Referenced from 37:4025
-data_05_502a:
+useIfHave_413_502a:
     HamChatWheelRule_UseIfHave 413 ; 00                ;; 05:502a $3f $9d
 
 ; Referenced from 37:402c
@@ -2938,15 +2938,15 @@ data_05_5040:
     HamChatWheelRule_DefaultCase_Pair $7e, $7d ; 01    ;; 05:5042 $7e $7d
 
 ; Referenced from 37:40c9
-data_05_5044:
+useIfHave_ouchichi_5044:
     HamChatWheelRule_UseIfHave HAMCHAT_OUCHICHI ; 00   ;; 05:5044 $3e $17
 
 ; Referenced from 37:40d0
-data_05_5046:
+useIfDontHave_413_5046:
     HamChatWheelRule_UseIfDontHave 413 ; 00            ;; 05:5046 $5f $9d
 
 ; Referenced from 37:40f5
-data_05_5048:
+useIfHave_412_5048:
     HamChatWheelRule_UseIfHave 412 ; 00                ;; 05:5048 $3f $9c
 
 ; Referenced from 37:4183
@@ -2980,7 +2980,7 @@ data_05_505c:
     HamChatWheelRule_UseIfDontHave HAMCHAT_STICKIE ; 07 ;; 05:506a $5e $1c
 
 ; Referenced from 33:5b22
-data_05_506c:
+useIfHave_414_506c:
     HamChatWheelRule_UseIfHave 414 ; 00                ;; 05:506c $3f $9e
 
 ; Referenced from 33:5b29
@@ -3007,11 +3007,11 @@ data_05_507a:
     HamChatWheelRule_DefaultCase_Single $1e ; 07       ;; 05:5085 $1e
 
 ; Referenced from 33:5bad
-data_05_5086:
+useIfHave_113_5086:
     HamChatWheelRule_UseIfHave 113 ; 00                ;; 05:5086 $3e $71
 
 ; Referenced from 33:5bb4
-data_05_5088:
+useIfHave_254_5088:
     HamChatWheelRule_UseIfHave 254 ; 00                ;; 05:5088 $3e $fe
 
 ; Referenced from 33:5bbf
@@ -3033,7 +3033,7 @@ data_05_508e:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:509b $1e
 
 ; Referenced from 33:5be7
-data_05_509c:
+useIfHave_smidgie_509c:
     HamChatWheelRule_UseIfHave HAMCHAT_SMIDGIE ; 00    ;; 05:509c $3e $5c
 
 ; Referenced from 33:5c1c
@@ -3088,7 +3088,7 @@ data_05_50d4:
     HamChatWheelRule_DefaultCase_Pair $be, $00 ; 01    ;; 05:50d6 $be $00
 
 ; Referenced from 2b:6bd1
-data_05_50d8:
+useIfHave_246_50d8:
     HamChatWheelRule_UseIfHave 246 ; 00                ;; 05:50d8 $3e $f6
 
 ; Referenced from 2b:6c7e
@@ -3102,15 +3102,15 @@ data_05_50de:
     HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:50e0 $be $03
 
 ; Referenced from 2b:6d18
-data_05_50e2:
+useIfDontHave_246_50e2:
     HamChatWheelRule_UseIfDontHave 246 ; 00            ;; 05:50e2 $5e $f6
 
 ; Referenced from 2b:6d28
-data_05_50e4:
+useIfHave_415_50e4:
     HamChatWheelRule_UseIfHave 415 ; 00                ;; 05:50e4 $3f $9f
 
 ; Referenced from 2b:6d2f
-data_05_50e6:
+useIfHave_givehoo_50e6:
     HamChatWheelRule_UseIfHave HAMCHAT_GIVEHOO ; 00    ;; 05:50e6 $3e $5d
 
 ; Referenced from 2b:6da1
@@ -3145,7 +3145,7 @@ data_05_50fa:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:5107 $1e
 
 ; Referenced from 2b:6ee0
-data_05_5108:
+useIfHave_247_5108:
     HamChatWheelRule_UseIfHave 247 ; 00                ;; 05:5108 $3e $f7
 
 ; Referenced from 2b:6f27
@@ -3253,7 +3253,7 @@ data_05_5164:
     HamChatWheelRule_UseIfDontHave HAMCHAT_BYEQ ; 07   ;; 05:5172 $5e $56
 
 ; Referenced from 35:4ef1
-data_05_5174:
+useIfHave_hampact_5174:
     HamChatWheelRule_UseIfHave HAMCHAT_HAMPACT ; 00    ;; 05:5174 $3e $5e
 
 ; Referenced from 26:4038
@@ -3344,7 +3344,7 @@ data_05_51c8:
     HamChatWheelRule_DefaultCase_Pair $be, $09 ; 01    ;; 05:51ca $be $09
 
 ; Referenced from 26:4922
-data_05_51cc:
+useIfHave_thankq_51cc:
     HamChatWheelRule_UseIfHave HAMCHAT_THANKQ ; 00     ;; 05:51cc $3e $28
 
 ; Referenced from 26:502a
@@ -3373,7 +3373,7 @@ data_05_51de:
     HamChatWheelRule_DefaultCase_Pair $be, $c0 ; 01    ;; 05:51e0 $be $c0
 
 ; Referenced from 36:4ea2
-data_05_51e2:
+useIfHave_416_51e2:
     HamChatWheelRule_UseIfHave 416 ; 00                ;; 05:51e2 $3f $a0
 
 ; Referenced from 36:4ea9
@@ -3399,11 +3399,11 @@ data_05_51f4:
     HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:51f6 $be $01
 
 ; Referenced from 36:4f52
-data_05_51f8:
+useIfDontHave_grabb_51f8:
     HamChatWheelRule_UseIfDontHave HAMCHAT_GRABB ; 00  ;; 05:51f8 $5e $12
 
 ; Referenced from 36:4f77
-data_05_51fa:
+useIfHave_251_51fa:
     HamChatWheelRule_UseIfHave 251 ; 00                ;; 05:51fa $3e $fb
 
 ; Referenced from 36:4f8d
@@ -3425,11 +3425,11 @@ data_05_5200:
     HamChatWheelRule_DefaultCase_Single $1e ; 09       ;; 05:520d $1e
 
 ; Referenced from 36:50f2
-data_05_520e:
+useIfDontHave_251_520e:
     HamChatWheelRule_UseIfDontHave 251 ; 00            ;; 05:520e $5e $fb
 
 ; Referenced from 36:5122
-data_05_5210:
+useIfHave_grabb_5210:
     HamChatWheelRule_UseIfHave HAMCHAT_GRABB ; 00      ;; 05:5210 $3e $12
 
 ; Referenced from 36:5131
@@ -3457,7 +3457,7 @@ data_05_5222:
     HamChatWheelRule_DefaultCase_Single $1e ; 08       ;; 05:522d $1e
 
 ; Referenced from 33:6cc6
-data_05_522e:
+useIfHave_417_522e:
     HamChatWheelRule_UseIfHave 417 ; 00                ;; 05:522e $3f $a1
 
 ; Referenced from 33:6d4c
@@ -3502,11 +3502,11 @@ data_05_5250:
     HamChatWheelRule_UseIfDontHave HAMCHAT_CHUKCHUK ; 07 ;; 05:525e $5e $4a
 
 ; Referenced from 33:7529
-data_05_5260:
+useIfDontHave_267_5260:
     HamChatWheelRule_UseIfDontHave 267 ; 00            ;; 05:5260 $5f $0b
 
 ; Referenced from 2f:7799
-data_05_5262:
+useIfHave_418_5262:
     HamChatWheelRule_UseIfHave 418 ; 00                ;; 05:5262 $3f $a2
 
 ; Referenced from 2f:781f
@@ -3527,19 +3527,19 @@ data_05_5268:
     HamChatWheelRule_UseIfDontHave HAMCHAT_KOOCHIQ ; 07 ;; 05:5276 $5e $11
 
 ; Referenced from 2f:7f85
-data_05_5278:
+useIfDontHave_266_5278:
     HamChatWheelRule_UseIfDontHave 266 ; 00            ;; 05:5278 $5f $0a
 
 ; Referenced from 31:6a8f
-data_05_527a:
+useIfHave_143_527a:
     HamChatWheelRule_UseIfHave 143 ; 00                ;; 05:527a $3e $8f
 
 ; Referenced from 31:6ced
-data_05_527c:
+useIfHave_greatchu_527c:
     HamChatWheelRule_UseIfHave HAMCHAT_GREATCHU ; 00   ;; 05:527c $3e $4e
 
 ; Referenced from 31:6cf4
-data_05_527e:
+useIfHave_393_527e:
     HamChatWheelRule_UseIfHave 393 ; 00                ;; 05:527e $3f $89
 
 ; Referenced from 31:6d4b
@@ -3570,7 +3570,7 @@ data_05_5298:
     HamChatWheelRule_DefaultCase_Pair $be, $32 ; 01    ;; 05:529a $be $32
 
 ; Referenced from 31:735b
-data_05_529c:
+useIfHave_392_529c:
     HamChatWheelRule_UseIfHave 392 ; 00                ;; 05:529c $3f $88
 
 ; Referenced from 37:6c93
@@ -3601,7 +3601,7 @@ data_05_52b6:
     HamChatWheelRule_DefaultCase_Pair $be, $08 ; 01    ;; 05:52b8 $be $08
 
 ; Referenced from 31:5524
-data_05_52ba:
+useIfHave_262_52ba:
     HamChatWheelRule_UseIfHave 262 ; 00                ;; 05:52ba $3f $06
 
 ; Referenced from 31:55e3

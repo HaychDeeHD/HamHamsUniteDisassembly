@@ -344,24 +344,23 @@ class Op68Block(Block):
 class Op14Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 4)
-        RomInfo.macros["Op14_Unknown"] = "db $14\ndb \\1\ndw \\2"
+        RomInfo.macros["Op14_BranchWithHamChatWheelRules"] = "db $14\ndb \\1\ndw \\2"
 
         self.count = memory.byte(addr + 1)
         pointer = memory.word(addr + 2)
         bank5 = RomInfo.romBank(0x05)
+        # The HamChatRulesBlock may overwrite this with a more descriptive label.
         bank5.addAutoLabel(pointer, None, None)
-        self.label = bank5.getLabel(pointer)
 
-        if bank5[pointer] is None:
-            rulesBlock = HamChatWheelRulesBlock(pointer, self.count)
-            rulesBlock.referencedFrom.append(serializeAddress(memory, addr))
+        self.rulesBlock = bank5[pointer]
+        if self.rulesBlock is None:
+            self.rulesBlock = HamChatWheelRulesBlock(pointer, self.count)
+            self.rulesBlock.referencedFrom.append(serializeAddress(memory, addr))
 
         self.subBlock = ScriptPointersBlock(memory, addr + len(self), amount=self.count)
 
     def export(self, file):
-        arg1 = self.memory.byte(file.addr + 2)
-        arg2 = self.memory.byte(file.addr + 3)
-        file.asmLine(4, "Op14_Unknown", str(self.count), str(self.label))
+        file.asmLine(4, "Op14_BranchWithHamChatWheelRules", str(self.count), str(self.rulesBlock.label))
 
 class Op74Block(Block):
     def __init__(self, memory, addr):

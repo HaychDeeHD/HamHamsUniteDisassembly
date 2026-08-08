@@ -54,7 +54,7 @@ db \1
 dw \2
 dw \3
 ENDM
-MACRO Op14_Unknown
+MACRO Op14_BranchWithHamChatWheelRules
 db $14
 db \1
 dw \2

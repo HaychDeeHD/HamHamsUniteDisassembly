@@ -391,12 +391,12 @@ call_1c_6554:
     Op18_Jump call_1c_6554                             ;; 1c:6598 $18 $54 $65 $1c
 
 call_1c_659c:
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:659c $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:659c $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_65c1                        ;; 1c:65a0 $c1 $65 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:65a3 $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:65a3 $14 $01 $82 $75
     SCRIPT_POINTER call_1c_65c5                        ;; 1c:65a7 $c5 $65 $1c
     Op1E_Call call_1d_68f9                             ;; 1c:65aa $1e $f9 $68 $1d
-    Op14_Unknown 1, data_05_73aa                       ;; 1c:65ae $14 $01 $aa $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73aa   ;; 1c:65ae $14 $01 $aa $73
     SCRIPT_POINTER call_1c_6554                        ;; 1c:65b2 $54 $65 $1c
     Op1E_Call call_1c_6648                             ;; 1c:65b5 $1e $48 $66 $1c
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 1c:65b9 $82 $42 $74 $01
@@ -409,12 +409,12 @@ call_1c_65c5:
     Op18_Jump call_33_643d                             ;; 1c:65c5 $18 $3d $64 $33
 
 call_1c_65c9:
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:65c9 $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:65c9 $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_65ee                        ;; 1c:65cd $ee $65 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:65d0 $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:65d0 $14 $01 $82 $75
     SCRIPT_POINTER call_1c_65f2                        ;; 1c:65d4 $f2 $65 $1c
     Op1E_Call call_1d_69f1                             ;; 1c:65d7 $1e $f1 $69 $1d
-    Op14_Unknown 1, data_05_73aa                       ;; 1c:65db $14 $01 $aa $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73aa   ;; 1c:65db $14 $01 $aa $73
     SCRIPT_POINTER call_1c_6554                        ;; 1c:65df $54 $65 $1c
     Op1E_Call call_1c_6648                             ;; 1c:65e2 $1e $48 $66 $1c
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 1c:65e6 $82 $42 $74 $01
@@ -427,9 +427,9 @@ call_1c_65f2:
     Op18_Jump call_33_6454                             ;; 1c:65f2 $18 $54 $64 $33
 
 call_1c_65f6:
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:65f6 $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:65f6 $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_660d                        ;; 1c:65fa $0d $66 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:65fd $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:65fd $14 $01 $82 $75
     SCRIPT_POINTER call_1c_6616                        ;; 1c:6601 $16 $66 $1c
     Op1E_Call call_1d_6aa1                             ;; 1c:6604 $1e $a1 $6a $1d
     Op1E_Call call_1c_6648                             ;; 1c:6608 $1e $48 $66 $1c
@@ -446,9 +446,9 @@ call_1c_6616:
     SCRIPT_RETURN_20                                   ;; 1c:661e $20
 
 call_1c_661f:
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:661f $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:661f $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_6636                        ;; 1c:6623 $36 $66 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:6626 $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:6626 $14 $01 $82 $75
     SCRIPT_POINTER call_1c_663f                        ;; 1c:662a $3f $66 $1c
     Op1E_Call call_1d_6a78                             ;; 1c:662d $1e $78 $6a $1d
     Op1E_Call call_1c_6648                             ;; 1c:6631 $1e $48 $66 $1c
@@ -465,9 +465,9 @@ call_1c_663f:
     SCRIPT_RETURN_20                                   ;; 1c:6647 $20
 
 call_1c_6648:
-    Op14_Unknown 1, data_05_75c4                       ;; 1c:6648 $14 $01 $c4 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c4   ;; 1c:6648 $14 $01 $c4 $75
     SCRIPT_POINTER call_1c_6663                        ;; 1c:664c $63 $66 $1c
-    Op14_Unknown 1, data_05_75c8                       ;; 1c:664f $14 $01 $c8 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c8   ;; 1c:664f $14 $01 $c8 $75
     SCRIPT_POINTER call_1c_6663                        ;; 1c:6653 $63 $66 $1c
     Op50_WriteByte wC720, $00, $17                     ;; 1c:6656 $50 $20 $c7 $00 $17
     Op82_Run data_01_6844                              ;; 1c:665b $82 $44 $68 $01
@@ -490,20 +490,20 @@ call_1c_666c:
     Op32_Graphics data_6d_7d0d, w6_D400                ;; 1c:66a4 $32 $0d $7d $6d $00 $d4 $06
     Op32_Graphics data_6d_72de, w6_D000                ;; 1c:66ab $32 $de $72 $6d $00 $d0 $06
     Op32_Graphics data_7a_59b4, w6_D2C0                ;; 1c:66b2 $32 $b4 $59 $7a $c0 $d2 $06
-    Op14_Unknown 1, data_05_7554                       ;; 1c:66b9 $14 $01 $54 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7554   ;; 1c:66b9 $14 $01 $54 $75
     SCRIPT_POINTER call_1c_6833                        ;; 1c:66bd $33 $68 $1c
-    Op14_Unknown 1, data_05_75cc                       ;; 1c:66c0 $14 $01 $cc $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75cc   ;; 1c:66c0 $14 $01 $cc $75
     SCRIPT_POINTER call_1c_6833                        ;; 1c:66c4 $33 $68 $1c
     Op1E_Call call_1c_79d9                             ;; 1c:66c7 $1e $d9 $79 $1c
     Op16_SubOps 1                                      ;; 1c:66cb $16 $01
     SubOp_SetByte wC73D, $2f                           ;; 1c:66cd $7e $25 $2f
-    Op14_Unknown 1, data_05_743c                       ;; 1c:66d0 $14 $01 $3c $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_743c   ;; 1c:66d0 $14 $01 $3c $74
     SCRIPT_POINTER call_1c_66fb                        ;; 1c:66d4 $fb $66 $1c
-    Op14_Unknown 1, data_05_75d0                       ;; 1c:66d7 $14 $01 $d0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75d0   ;; 1c:66d7 $14 $01 $d0 $75
     SCRIPT_POINTER call_1c_670a                        ;; 1c:66db $0a $67 $1c
-    Op14_Unknown 1, data_05_75d4                       ;; 1c:66de $14 $01 $d4 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75d4   ;; 1c:66de $14 $01 $d4 $75
     SCRIPT_POINTER call_1c_6718                        ;; 1c:66e2 $18 $67 $1c
-    Op14_Unknown 1, data_05_75d8                       ;; 1c:66e5 $14 $01 $d8 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75d8   ;; 1c:66e5 $14 $01 $d8 $75
     SCRIPT_POINTER call_1c_6720                        ;; 1c:66e9 $20 $67 $1c
     Op4C_Unknown $16, $08, $02, $60, $00, $90, $00, data_10_40c2 ;; 1c:66ec $4c $16 $08 $02 $60 $00 $90 $00 $c2 $40 $10
     Op18_Jump call_1c_6724                             ;; 1c:66f7 $18 $24 $67 $1c
@@ -525,13 +525,13 @@ call_1c_6720:
     Op82_Run data_01_782b                              ;; 1c:6720 $82 $2b $78 $01
 
 call_1c_6724:
-    Op14_Unknown 1, data_05_73b8                       ;; 1c:6724 $14 $01 $b8 $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73b8   ;; 1c:6724 $14 $01 $b8 $73
     SCRIPT_POINTER call_1c_6744                        ;; 1c:6728 $44 $67 $1c
-    Op14_Unknown 1, data_05_73bc                       ;; 1c:672b $14 $01 $bc $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73bc   ;; 1c:672b $14 $01 $bc $73
     SCRIPT_POINTER call_1c_6753                        ;; 1c:672f $53 $67 $1c
-    Op14_Unknown 1, data_05_73c0                       ;; 1c:6732 $14 $01 $c0 $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73c0   ;; 1c:6732 $14 $01 $c0 $73
     SCRIPT_POINTER call_1c_6762                        ;; 1c:6736 $62 $67 $1c
-    Op14_Unknown 1, data_05_73c4                       ;; 1c:6739 $14 $01 $c4 $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73c4   ;; 1c:6739 $14 $01 $c4 $73
     SCRIPT_POINTER call_1c_6771                        ;; 1c:673d $71 $67 $1c
     Op18_Jump call_1c_67b9                             ;; 1c:6740 $18 $b9 $67 $1c
 
@@ -556,7 +556,7 @@ call_1c_6780:
     Op80_CopyNBytes wC7DA, $00, w1_D20E, $01, 2        ;; 1c:6789 $80 $da $c7 $00 $0e $d2 $01 $02 $00
     Op50_WriteByte w1_D215, $01, $80                   ;; 1c:6792 $50 $15 $d2 $01 $80
     Op50_WriteByte w1_D20D, $01, $80                   ;; 1c:6797 $50 $0d $d2 $01 $80
-    Op14_Unknown 1, data_05_73c8                       ;; 1c:679c $14 $01 $c8 $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73c8   ;; 1c:679c $14 $01 $c8 $73
     SCRIPT_POINTER call_1c_67b9                        ;; 1c:67a0 $b9 $67 $1c
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_10_557e ;; 1c:67a3 $4c $16 $08 $ff $00 $00 $00 $00 $7e $55 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_10_5601 ;; 1c:67ae $4c $08 $01 $04 $00 $00 $00 $00 $01 $56 $10
@@ -597,7 +597,7 @@ call_1c_6833:
     Op18_Jump call_1c_7bff                             ;; 1c:6833 $18 $ff $7b $1c
 
 call_1c_6837:
-    Op14_Unknown 1, data_05_7482                       ;; 1c:6837 $14 $01 $82 $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_7482   ;; 1c:6837 $14 $01 $82 $74
     SCRIPT_POINTER call_1c_684c                        ;; 1c:683b $4c $68 $1c
     Op16_SubOps 1                                      ;; 1c:683e $16 $01
     SubOp_SetByte wC818, $00                           ;; 1c:6840 $7f $00 $00
@@ -677,7 +677,7 @@ call_1c_68f4:
 
 call_1c_68f8:
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 1c:68f8 $68 $01 $34 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_7498                       ;; 1c:68ff $14 $01 $98 $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_7498   ;; 1c:68ff $14 $01 $98 $74
     SCRIPT_POINTER call_1c_6867                        ;; 1c:6903 $67 $68 $1c
     Op18_Jump call_1c_684d                             ;; 1c:6906 $18 $4d $68 $1c
 
@@ -703,7 +703,7 @@ call_1c_6939:
 
 call_1c_693d:
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 1c:693d $68 $01 $34 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_7498                       ;; 1c:6944 $14 $01 $98 $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_7498   ;; 1c:6944 $14 $01 $98 $74
     SCRIPT_POINTER call_1c_6867                        ;; 1c:6948 $67 $68 $1c
     Op18_Jump call_1c_684d                             ;; 1c:694b $18 $4d $68 $1c
 
@@ -769,17 +769,17 @@ call_1c_69d4:
 call_1c_69e3:
     Op1E_Call call_1c_77ab                             ;; 1c:69e3 $1e $ab $77 $1c
     Op1E_Call call_1c_77c8                             ;; 1c:69e7 $1e $c8 $77 $1c
-    Op14_Unknown 1, data_05_7586                       ;; 1c:69eb $14 $01 $86 $75
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_139_7586 ;; 1c:69eb $14 $01 $86 $75
     SCRIPT_POINTER call_1c_6c7f                        ;; 1c:69ef $7f $6c $1c
-    Op14_Unknown 1, data_05_7568                       ;; 1c:69f2 $14 $01 $68 $75
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_140_7568 ;; 1c:69f2 $14 $01 $68 $75
     SCRIPT_POINTER call_1c_6c7f                        ;; 1c:69f6 $7f $6c $1c
-    Op14_Unknown 1, data_05_7588                       ;; 1c:69f9 $14 $01 $88 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7588   ;; 1c:69f9 $14 $01 $88 $75
     SCRIPT_POINTER call_1c_6c07                        ;; 1c:69fd $07 $6c $1c
-    Op14_Unknown 1, data_05_758c                       ;; 1c:6a00 $14 $01 $8c $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_758c   ;; 1c:6a00 $14 $01 $8c $75
     SCRIPT_POINTER call_1c_6c07                        ;; 1c:6a04 $07 $6c $1c
-    Op14_Unknown 1, data_05_7590                       ;; 1c:6a07 $14 $01 $90 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7590   ;; 1c:6a07 $14 $01 $90 $75
     SCRIPT_POINTER call_1c_6b8b                        ;; 1c:6a0b $8b $6b $1c
-    Op14_Unknown 1, data_05_7594                       ;; 1c:6a0e $14 $01 $94 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7594   ;; 1c:6a0e $14 $01 $94 $75
     SCRIPT_POINTER call_1c_6b8b                        ;; 1c:6a12 $8b $6b $1c
     Op18_Jump call_1c_6b53                             ;; 1c:6a15 $18 $53 $6b $1c
 
@@ -873,13 +873,13 @@ call_1c_6ae6:
     Op1E_Call call_20_4bf9                             ;; 1c:6ae6 $1e $f9 $4b $20
     Op16_SubOps 1                                      ;; 1c:6aea $16 $01
     SubOp_SetByte wC819, $01                           ;; 1c:6aec $7f $01 $01
-    Op14_Unknown 1, data_05_7586                       ;; 1c:6aef $14 $01 $86 $75
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_139_7586 ;; 1c:6aef $14 $01 $86 $75
     SCRIPT_POINTER call_1c_6d7f                        ;; 1c:6af3 $7f $6d $1c
-    Op14_Unknown 1, data_05_7568                       ;; 1c:6af6 $14 $01 $68 $75
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_140_7568 ;; 1c:6af6 $14 $01 $68 $75
     SCRIPT_POINTER call_1c_6d7f                        ;; 1c:6afa $7f $6d $1c
-    Op14_Unknown 1, data_05_7590                       ;; 1c:6afd $14 $01 $90 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7590   ;; 1c:6afd $14 $01 $90 $75
     SCRIPT_POINTER call_1c_6d9a                        ;; 1c:6b01 $9a $6d $1c
-    Op14_Unknown 1, data_05_7594                       ;; 1c:6b04 $14 $01 $94 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7594   ;; 1c:6b04 $14 $01 $94 $75
     SCRIPT_POINTER call_1c_6d9a                        ;; 1c:6b08 $9a $6d $1c
     Op18_Jump call_1c_6d7f                             ;; 1c:6b0b $18 $7f $6d $1c
 
@@ -1137,9 +1137,9 @@ call_1c_6db1:
     Op50_WriteByte wC65D, $00, $01                     ;; 1c:6db9 $50 $5d $c6 $00 $01
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 1c:6dbe $50 $1d $c3 $00 $90
     Op68_CopyBytes 1, wC763, w1_D20E, $01              ;; 1c:6dc3 $68 $01 $63 $c7 $0e $d2 $01
-    Op14_Unknown 1, data_05_75dc                       ;; 1c:6dca $14 $01 $dc $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75dc   ;; 1c:6dca $14 $01 $dc $75
     SCRIPT_POINTER call_1c_6dd8                        ;; 1c:6dce $d8 $6d $1c
-    Op14_Unknown 1, data_05_75e0                       ;; 1c:6dd1 $14 $01 $e0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75e0   ;; 1c:6dd1 $14 $01 $e0 $75
     SCRIPT_POINTER call_1c_6de8                        ;; 1c:6dd5 $e8 $6d $1c
 
 call_1c_6dd8:
@@ -1197,22 +1197,22 @@ call_1c_6e41:
     Op16_SubOps 1                                      ;; 1c:6e41 $16 $01
     SubOp_SetByte wC736, $11                           ;; 1c:6e43 $7e $1e $11
     Op82_Run data_02_430b                              ;; 1c:6e46 $82 $0b $43 $02
-    Op14_Unknown 1, data_05_73f2                       ;; 1c:6e4a $14 $01 $f2 $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73f2   ;; 1c:6e4a $14 $01 $f2 $73
     SCRIPT_POINTER call_1c_72c7                        ;; 1c:6e4e $c7 $72 $1c
-    Op14_Unknown 1, data_05_75e4                       ;; 1c:6e51 $14 $01 $e4 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75e4   ;; 1c:6e51 $14 $01 $e4 $75
     SCRIPT_POINTER call_1c_6e8d                        ;; 1c:6e55 $8d $6e $1c
-    Op14_Unknown 1, data_05_75e8                       ;; 1c:6e58 $14 $01 $e8 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75e8   ;; 1c:6e58 $14 $01 $e8 $75
     SCRIPT_POINTER call_1c_6ea6                        ;; 1c:6e5c $a6 $6e $1c
-    Op14_Unknown 1, data_05_75ec                       ;; 1c:6e5f $14 $01 $ec $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75ec   ;; 1c:6e5f $14 $01 $ec $75
     SCRIPT_POINTER call_1c_6ebf                        ;; 1c:6e63 $bf $6e $1c
-    Op14_Unknown 1, data_05_75f0                       ;; 1c:6e66 $14 $01 $f0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75f0   ;; 1c:6e66 $14 $01 $f0 $75
     SCRIPT_POINTER call_1c_6ed8                        ;; 1c:6e6a $d8 $6e $1c
-    Op14_Unknown 1, data_05_75f4                       ;; 1c:6e6d $14 $01 $f4 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75f4   ;; 1c:6e6d $14 $01 $f4 $75
     SCRIPT_POINTER call_1c_6ef1                        ;; 1c:6e71 $f1 $6e $1c
     Op16_SubOps 1                                      ;; 1c:6e74 $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:6e76 $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:6e79 $82 $0b $43 $02
-    Op14_Unknown 1, data_05_75f8                       ;; 1c:6e7d $14 $01 $f8 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75f8   ;; 1c:6e7d $14 $01 $f8 $75
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:6e81 $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:6e84 $16 $01
     SubOp_SetByte wC737, $ec                           ;; 1c:6e86 $7e $1f $ec
@@ -1222,7 +1222,7 @@ call_1c_6e8d:
     Op16_SubOps 1                                      ;; 1c:6e8d $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:6e8f $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:6e92 $82 $0b $43 $02
-    Op14_Unknown 1, data_05_75fc                       ;; 1c:6e96 $14 $01 $fc $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75fc   ;; 1c:6e96 $14 $01 $fc $75
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:6e9a $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:6e9d $16 $01
     SubOp_SetByte wC737, $ed                           ;; 1c:6e9f $7e $1f $ed
@@ -1232,7 +1232,7 @@ call_1c_6ea6:
     Op16_SubOps 1                                      ;; 1c:6ea6 $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:6ea8 $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:6eab $82 $0b $43 $02
-    Op14_Unknown 1, data_05_7600                       ;; 1c:6eaf $14 $01 $00 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7600   ;; 1c:6eaf $14 $01 $00 $76
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:6eb3 $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:6eb6 $16 $01
     SubOp_SetByte wC737, $fe                           ;; 1c:6eb8 $7e $1f $fe
@@ -1242,7 +1242,7 @@ call_1c_6ebf:
     Op16_SubOps 1                                      ;; 1c:6ebf $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:6ec1 $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:6ec4 $82 $0b $43 $02
-    Op14_Unknown 1, data_05_7604                       ;; 1c:6ec8 $14 $01 $04 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7604   ;; 1c:6ec8 $14 $01 $04 $76
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:6ecc $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:6ecf $16 $01
     SubOp_SetByte wC737, $ff                           ;; 1c:6ed1 $7e $1f $ff
@@ -1252,7 +1252,7 @@ call_1c_6ed8:
     Op16_SubOps 1                                      ;; 1c:6ed8 $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:6eda $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:6edd $82 $0b $43 $02
-    Op14_Unknown 1, data_05_7608                       ;; 1c:6ee1 $14 $01 $08 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7608   ;; 1c:6ee1 $14 $01 $08 $76
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:6ee5 $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:6ee8 $16 $01
     SubOp_SetByte wC737, $e2                           ;; 1c:6eea $7e $1f $e2
@@ -1262,7 +1262,7 @@ call_1c_6ef1:
     Op16_SubOps 1                                      ;; 1c:6ef1 $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:6ef3 $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:6ef6 $82 $0b $43 $02
-    Op14_Unknown 1, data_05_760c                       ;; 1c:6efa $14 $01 $0c $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_760c   ;; 1c:6efa $14 $01 $0c $76
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:6efe $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:6f01 $16 $01
     SubOp_SetByte wC737, $e3                           ;; 1c:6f03 $7e $1f $e3
@@ -1301,13 +1301,13 @@ call_1c_6f66:
     Op16_SubOps 1                                      ;; 1c:6f66 $16 $01
     SubOp_SetByte wC736, $18                           ;; 1c:6f68 $7e $1e $18
     Op82_Run data_02_430b                              ;; 1c:6f6b $82 $0b $43 $02
-    Op14_Unknown 1, data_05_73f2                       ;; 1c:6f6f $14 $01 $f2 $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73f2   ;; 1c:6f6f $14 $01 $f2 $73
     SCRIPT_POINTER call_1c_72c7                        ;; 1c:6f73 $c7 $72 $1c
-    Op14_Unknown 1, data_05_75e4                       ;; 1c:6f76 $14 $01 $e4 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75e4   ;; 1c:6f76 $14 $01 $e4 $75
     SCRIPT_POINTER call_1c_6f8b                        ;; 1c:6f7a $8b $6f $1c
-    Op14_Unknown 1, data_05_75e8                       ;; 1c:6f7d $14 $01 $e8 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75e8   ;; 1c:6f7d $14 $01 $e8 $75
     SCRIPT_POINTER call_1c_6f8f                        ;; 1c:6f81 $8f $6f $1c
-    Op14_Unknown 1, data_05_75ec                       ;; 1c:6f84 $14 $01 $ec $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75ec   ;; 1c:6f84 $14 $01 $ec $75
     SCRIPT_POINTER call_1c_6fa8                        ;; 1c:6f88 $a8 $6f $1c
 
 call_1c_6f8b:
@@ -1317,7 +1317,7 @@ call_1c_6f8f:
     Op16_SubOps 1                                      ;; 1c:6f8f $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:6f91 $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:6f94 $82 $0b $43 $02
-    Op14_Unknown 1, data_05_7610                       ;; 1c:6f98 $14 $01 $10 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7610   ;; 1c:6f98 $14 $01 $10 $76
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:6f9c $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:6f9f $16 $01
     SubOp_SetByte wC737, $f6                           ;; 1c:6fa1 $7e $1f $f6
@@ -1327,7 +1327,7 @@ call_1c_6fa8:
     Op16_SubOps 1                                      ;; 1c:6fa8 $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:6faa $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:6fad $82 $0b $43 $02
-    Op14_Unknown 1, data_05_7614                       ;; 1c:6fb1 $14 $01 $14 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7614   ;; 1c:6fb1 $14 $01 $14 $76
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:6fb5 $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:6fb8 $16 $01
     SubOp_SetByte wC737, $f7                           ;; 1c:6fba $7e $1f $f7
@@ -1361,7 +1361,7 @@ call_1c_6ff5:
     ;;Hee hee hee.<E3>Thanks a lot.<E4>Come again!<E3>Hee hee hee.<E0>
     Op04_Unknown_Text data_29_459e                     ;; 1c:701e $04 $9e $45 $29
     Op92_Unknown $00                                   ;; 1c:7022 $92 $00
-    Op14_Unknown 1, data_05_7618                       ;; 1c:7024 $14 $01 $18 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7618   ;; 1c:7024 $14 $01 $18 $76
     SCRIPT_POINTER call_1c_702f                        ;; 1c:7028 $2f $70 $1c
     Op18_Jump call_1c_72ec                             ;; 1c:702b $18 $ec $72 $1c
 
@@ -1374,13 +1374,13 @@ call_1c_7037:
     Op16_SubOps 1                                      ;; 1c:7037 $16 $01
     SubOp_SetByte wC736, $19                           ;; 1c:7039 $7e $1e $19
     Op82_Run data_02_430b                              ;; 1c:703c $82 $0b $43 $02
-    Op14_Unknown 1, data_05_73f2                       ;; 1c:7040 $14 $01 $f2 $73
+    Op14_BranchWithHamChatWheelRules 1, data_05_73f2   ;; 1c:7040 $14 $01 $f2 $73
     SCRIPT_POINTER call_1c_72c7                        ;; 1c:7044 $c7 $72 $1c
-    Op14_Unknown 1, data_05_75e4                       ;; 1c:7047 $14 $01 $e4 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75e4   ;; 1c:7047 $14 $01 $e4 $75
     SCRIPT_POINTER call_1c_705c                        ;; 1c:704b $5c $70 $1c
-    Op14_Unknown 1, data_05_75e8                       ;; 1c:704e $14 $01 $e8 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75e8   ;; 1c:704e $14 $01 $e8 $75
     SCRIPT_POINTER call_1c_7060                        ;; 1c:7052 $60 $70 $1c
-    Op14_Unknown 1, data_05_75ec                       ;; 1c:7055 $14 $01 $ec $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75ec   ;; 1c:7055 $14 $01 $ec $75
     SCRIPT_POINTER call_1c_7079                        ;; 1c:7059 $79 $70 $1c
 
 call_1c_705c:
@@ -1390,7 +1390,7 @@ call_1c_7060:
     Op16_SubOps 1                                      ;; 1c:7060 $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:7062 $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:7065 $82 $0b $43 $02
-    Op14_Unknown 1, data_05_7610                       ;; 1c:7069 $14 $01 $10 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7610   ;; 1c:7069 $14 $01 $10 $76
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:706d $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:7070 $16 $01
     SubOp_SetByte wC737, $f6                           ;; 1c:7072 $7e $1f $f6
@@ -1400,7 +1400,7 @@ call_1c_7079:
     Op16_SubOps 1                                      ;; 1c:7079 $16 $01
     SubOp_SetByte wC736, $01                           ;; 1c:707b $7e $1e $01
     Op82_Run data_02_430b                              ;; 1c:707e $82 $0b $43 $02
-    Op14_Unknown 1, data_05_7614                       ;; 1c:7082 $14 $01 $14 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7614   ;; 1c:7082 $14 $01 $14 $76
     SCRIPT_POINTER call_1c_72ad                        ;; 1c:7086 $ad $72 $1c
     Op16_SubOps 1                                      ;; 1c:7089 $16 $01
     SubOp_SetByte wC737, $f7                           ;; 1c:708b $7e $1f $f7
@@ -1433,7 +1433,7 @@ call_1c_70c6:
     ;;Hee hee hee.<E3>Thanks a lot.<E4>Come again!<E3>Hee hee hee.<E0>
     Op04_Unknown_Text data_29_45e7                     ;; 1c:70e4 $04 $e7 $45 $29
     Op92_Unknown $00                                   ;; 1c:70e8 $92 $00
-    Op14_Unknown 1, data_05_750a                       ;; 1c:70ea $14 $01 $0a $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_750a   ;; 1c:70ea $14 $01 $0a $75
     SCRIPT_POINTER call_1c_70f5                        ;; 1c:70ee $f5 $70 $1c
     Op18_Jump call_1c_72ec                             ;; 1c:70f1 $18 $ec $72 $1c
 
@@ -1623,19 +1623,19 @@ call_1c_72e1:
 call_1c_72ec:
     Op16_SubOps 1                                      ;; 1c:72ec $16 $01
     SubOp_SetByte wC819, $00                           ;; 1c:72ee $7f $01 $00
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:72f1 $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:72f1 $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_74a3                        ;; 1c:72f5 $a3 $74 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:72f8 $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:72f8 $14 $01 $82 $75
     SCRIPT_POINTER call_1c_73d1                        ;; 1c:72fc $d1 $73 $1c
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:72ff $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_761c                       ;; 1c:7306 $14 $01 $1c $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_761c   ;; 1c:7306 $14 $01 $1c $76
     SCRIPT_POINTER call_1c_736f                        ;; 1c:730a $6f $73 $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5ada ;; 1c:730d $4c $1a $01 $04 $00 $00 $00 $00 $da $5a $15
 
 call_1c_7318:
     SCRIPT_RETURN_4A                                   ;; 1c:7318 $4a
     Op3E_Compare_Branch 26, data_15_5ada, call_1c_7318 ;; 1c:7319 $3e $1a $da $5a $15 $18 $73 $1c
-    Op14_Unknown 1, data_05_7620                       ;; 1c:7321 $14 $01 $20 $76
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_386_7620 ;; 1c:7321 $14 $01 $20 $76
     SCRIPT_POINTER call_1c_735e                        ;; 1c:7325 $5e $73 $1c
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, zero_pointer ;; 1c:7328 $4c $16 $ff $04 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $1a, $01, $12, $00, $00, $00, $00, data_15_5808 ;; 1c:7333 $4c $1a $01 $12 $00 $00 $00 $00 $08 $58 $15
@@ -1658,7 +1658,7 @@ call_1c_736f:
 call_1c_737a:
     SCRIPT_RETURN_4A                                   ;; 1c:737a $4a
     Op3E_Compare_Branch 26, data_15_5a58, call_1c_737a ;; 1c:737b $3e $1a $58 $5a $15 $7a $73 $1c
-    Op14_Unknown 1, data_05_7620                       ;; 1c:7383 $14 $01 $20 $76
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_386_7620 ;; 1c:7383 $14 $01 $20 $76
     SCRIPT_POINTER call_1c_73c0                        ;; 1c:7387 $c0 $73 $1c
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, zero_pointer ;; 1c:738a $4c $16 $ff $04 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $1a, $01, $12, $00, $00, $00, $00, data_15_5843 ;; 1c:7395 $4c $1a $01 $12 $00 $00 $00 $00 $43 $58 $15
@@ -1677,14 +1677,14 @@ call_1c_73c0:
 
 call_1c_73d1:
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:73d1 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_7622                       ;; 1c:73d8 $14 $01 $22 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7622   ;; 1c:73d8 $14 $01 $22 $76
     SCRIPT_POINTER call_1c_7441                        ;; 1c:73dc $41 $74 $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5938 ;; 1c:73df $4c $1a $01 $04 $00 $00 $00 $00 $38 $59 $15
 
 call_1c_73ea:
     SCRIPT_RETURN_4A                                   ;; 1c:73ea $4a
     Op3E_Compare_Branch 26, data_15_5938, call_1c_73ea ;; 1c:73eb $3e $1a $38 $59 $15 $ea $73 $1c
-    Op14_Unknown 1, data_05_7620                       ;; 1c:73f3 $14 $01 $20 $76
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_386_7620 ;; 1c:73f3 $14 $01 $20 $76
     SCRIPT_POINTER call_1c_7430                        ;; 1c:73f7 $30 $74 $1c
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, zero_pointer ;; 1c:73fa $4c $16 $ff $04 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $1a, $01, $12, $00, $00, $00, $00, data_15_5850 ;; 1c:7405 $4c $1a $01 $12 $00 $00 $00 $00 $50 $58 $15
@@ -1707,7 +1707,7 @@ call_1c_7441:
 call_1c_744c:
     SCRIPT_RETURN_4A                                   ;; 1c:744c $4a
     Op3E_Compare_Branch 26, data_15_59bc, call_1c_744c ;; 1c:744d $3e $1a $bc $59 $15 $4c $74 $1c
-    Op14_Unknown 1, data_05_7620                       ;; 1c:7455 $14 $01 $20 $76
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_386_7620 ;; 1c:7455 $14 $01 $20 $76
     SCRIPT_POINTER call_1c_7492                        ;; 1c:7459 $92 $74 $1c
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, zero_pointer ;; 1c:745c $4c $16 $ff $04 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $1a, $01, $12, $00, $00, $00, $00, data_15_5808 ;; 1c:7467 $4c $1a $01 $12 $00 $00 $00 $00 $08 $58 $15
@@ -1726,14 +1726,14 @@ call_1c_7492:
 
 call_1c_74a3:
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:74a3 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_7626                       ;; 1c:74aa $14 $01 $26 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7626   ;; 1c:74aa $14 $01 $26 $76
     SCRIPT_POINTER call_1c_7513                        ;; 1c:74ae $13 $75 $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5917 ;; 1c:74b1 $4c $1a $01 $04 $00 $00 $00 $00 $17 $59 $15
 
 call_1c_74bc:
     SCRIPT_RETURN_4A                                   ;; 1c:74bc $4a
     Op3E_Compare_Branch 26, data_15_5917, call_1c_74bc ;; 1c:74bd $3e $1a $17 $59 $15 $bc $74 $1c
-    Op14_Unknown 1, data_05_7620                       ;; 1c:74c5 $14 $01 $20 $76
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_386_7620 ;; 1c:74c5 $14 $01 $20 $76
     SCRIPT_POINTER call_1c_7502                        ;; 1c:74c9 $02 $75 $1c
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, zero_pointer ;; 1c:74cc $4c $16 $ff $04 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5850 ;; 1c:74d7 $4c $1a $01 $04 $00 $00 $00 $00 $50 $58 $15
@@ -1756,7 +1756,7 @@ call_1c_7513:
 call_1c_751e:
     SCRIPT_RETURN_4A                                   ;; 1c:751e $4a
     Op3E_Compare_Branch 26, data_15_58ea, call_1c_751e ;; 1c:751f $3e $1a $ea $58 $15 $1e $75 $1c
-    Op14_Unknown 1, data_05_7620                       ;; 1c:7527 $14 $01 $20 $76
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_386_7620 ;; 1c:7527 $14 $01 $20 $76
     SCRIPT_POINTER call_1c_7564                        ;; 1c:752b $64 $75 $1c
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, zero_pointer ;; 1c:752e $4c $16 $ff $04 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5843 ;; 1c:7539 $4c $1a $01 $04 $00 $00 $00 $00 $43 $58 $15
@@ -1776,12 +1776,12 @@ call_1c_7564:
 call_1c_7575:
     Op16_SubOps 1                                      ;; 1c:7575 $16 $01
     SubOp_SetByte wC819, $00                           ;; 1c:7577 $7f $01 $00
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:757a $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:757a $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_7638                        ;; 1c:757e $38 $76 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:7581 $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:7581 $14 $01 $82 $75
     SCRIPT_POINTER call_1c_75e0                        ;; 1c:7585 $e0 $75 $1c
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:7588 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_762a                       ;; 1c:758f $14 $01 $2a $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_762a   ;; 1c:758f $14 $01 $2a $76
     SCRIPT_POINTER call_1c_75bb                        ;; 1c:7593 $bb $75 $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5d86 ;; 1c:7596 $4c $1a $01 $04 $00 $00 $00 $00 $86 $5d $15
 
@@ -1808,7 +1808,7 @@ call_1c_75c6:
 
 call_1c_75e0:
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:75e0 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_7622                       ;; 1c:75e7 $14 $01 $22 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7622   ;; 1c:75e7 $14 $01 $22 $76
     SCRIPT_POINTER call_1c_7613                        ;; 1c:75eb $13 $76 $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5c54 ;; 1c:75ee $4c $1a $01 $04 $00 $00 $00 $00 $54 $5c $15
 
@@ -1835,7 +1835,7 @@ call_1c_761e:
 
 call_1c_7638:
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:7638 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_7626                       ;; 1c:763f $14 $01 $26 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7626   ;; 1c:763f $14 $01 $26 $76
     SCRIPT_POINTER call_1c_766b                        ;; 1c:7643 $6b $76 $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5c23 ;; 1c:7646 $4c $1a $01 $04 $00 $00 $00 $00 $23 $5c $15
 
@@ -1863,12 +1863,12 @@ call_1c_7676:
 call_1c_7690:
     Op16_SubOps 1                                      ;; 1c:7690 $16 $01
     SubOp_SetByte wC819, $00                           ;; 1c:7692 $7f $01 $00
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:7695 $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:7695 $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_7753                        ;; 1c:7699 $53 $77 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:769c $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:769c $14 $01 $82 $75
     SCRIPT_POINTER call_1c_76fb                        ;; 1c:76a0 $fb $76 $1c
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:76a3 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_761c                       ;; 1c:76aa $14 $01 $1c $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_761c   ;; 1c:76aa $14 $01 $1c $76
     SCRIPT_POINTER call_1c_76d6                        ;; 1c:76ae $d6 $76 $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5d86 ;; 1c:76b1 $4c $1a $01 $04 $00 $00 $00 $00 $86 $5d $15
 
@@ -1895,7 +1895,7 @@ call_1c_76e1:
 
 call_1c_76fb:
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:76fb $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_7622                       ;; 1c:7702 $14 $01 $22 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7622   ;; 1c:7702 $14 $01 $22 $76
     SCRIPT_POINTER call_1c_772e                        ;; 1c:7706 $2e $77 $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5c54 ;; 1c:7709 $4c $1a $01 $04 $00 $00 $00 $00 $54 $5c $15
 
@@ -1922,7 +1922,7 @@ call_1c_7739:
 
 call_1c_7753:
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:7753 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_7626                       ;; 1c:775a $14 $01 $26 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7626   ;; 1c:775a $14 $01 $26 $76
     SCRIPT_POINTER call_1c_7786                        ;; 1c:775e $86 $77 $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5c23 ;; 1c:7761 $4c $1a $01 $04 $00 $00 $00 $00 $23 $5c $15
 
@@ -1948,9 +1948,9 @@ call_1c_7791:
     Op18_Jump call_33_400c                             ;; 1c:77a7 $18 $0c $40 $33
 
 call_1c_77ab:
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:77ab $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:77ab $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_77c3                        ;; 1c:77af $c3 $77 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:77b2 $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:77b2 $14 $01 $82 $75
     SCRIPT_POINTER call_1c_77be                        ;; 1c:77b6 $be $77 $1c
     Op1E_Call call_1c_78ab                             ;; 1c:77b9 $1e $ab $78 $1c
     SCRIPT_RETURN_20                                   ;; 1c:77bd $20
@@ -1964,9 +1964,9 @@ call_1c_77c3:
     SCRIPT_RETURN_20                                   ;; 1c:77c7 $20
 
 call_1c_77c8:
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:77c8 $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:77c8 $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_77e0                        ;; 1c:77cc $e0 $77 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:77cf $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:77cf $14 $01 $82 $75
     SCRIPT_POINTER call_1c_77db                        ;; 1c:77d3 $db $77 $1c
     Op1E_Call call_1c_790a                             ;; 1c:77d6 $1e $0a $79 $1c
     SCRIPT_RETURN_20                                   ;; 1c:77da $20
@@ -1980,9 +1980,9 @@ call_1c_77e0:
     SCRIPT_RETURN_20                                   ;; 1c:77e4 $20
 
 call_1c_77e5:
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:77e5 $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:77e5 $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_77fd                        ;; 1c:77e9 $fd $77 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:77ec $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:77ec $14 $01 $82 $75
     SCRIPT_POINTER call_1c_77f8                        ;; 1c:77f0 $f8 $77 $1c
     Op1E_Call call_1c_794f                             ;; 1c:77f3 $1e $4f $79 $1c
     SCRIPT_RETURN_20                                   ;; 1c:77f7 $20
@@ -1996,9 +1996,9 @@ call_1c_77fd:
     SCRIPT_RETURN_20                                   ;; 1c:7801 $20
 
 call_1c_7802:
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:7802 $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:7802 $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_781a                        ;; 1c:7806 $1a $78 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:7809 $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:7809 $14 $01 $82 $75
     SCRIPT_POINTER call_1c_7815                        ;; 1c:780d $15 $78 $1c
     Op1E_Call call_1c_7994                             ;; 1c:7810 $1e $94 $79 $1c
     SCRIPT_RETURN_20                                   ;; 1c:7814 $20
@@ -2012,9 +2012,9 @@ call_1c_781a:
     SCRIPT_RETURN_20                                   ;; 1c:781e $20
 
 call_1c_781f:
-    Op14_Unknown 1, data_05_75c0                       ;; 1c:781f $14 $01 $c0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c0   ;; 1c:781f $14 $01 $c0 $75
     SCRIPT_POINTER call_1c_7881                        ;; 1c:7823 $81 $78 $1c
-    Op14_Unknown 1, data_05_7582                       ;; 1c:7826 $14 $01 $82 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_7582   ;; 1c:7826 $14 $01 $82 $75
     SCRIPT_POINTER call_1c_7857                        ;; 1c:782a $57 $78 $1c
     Op1E_Call call_1c_78ab                             ;; 1c:782d $1e $ab $78 $1c
     Op16_SubOps 1                                      ;; 1c:7831 $16 $01
@@ -2056,17 +2056,17 @@ call_1c_7881:
 
 call_1c_78ab:
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 1c:78ab $68 $01 $34 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_75a2                       ;; 1c:78b2 $14 $01 $a2 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75a2   ;; 1c:78b2 $14 $01 $a2 $75
     SCRIPT_POINTER call_1c_78cc                        ;; 1c:78b6 $cc $78 $1c
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:78b9 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_74b2                       ;; 1c:78c0 $14 $01 $b2 $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_74b2   ;; 1c:78c0 $14 $01 $b2 $74
     SCRIPT_POINTER call_1c_78fe                        ;; 1c:78c4 $fe $78 $1c
     Op18_Jump call_1c_78f2                             ;; 1c:78c7 $18 $f2 $78 $1c
     SCRIPT_RETURN_20                                   ;; 1c:78cb $20
 
 call_1c_78cc:
     Op68_CopyBytes 1, wC834, w1_BeginRegionD1FD, $01   ;; 1c:78cc $68 $01 $34 $c8 $fd $d1 $01
-    Op14_Unknown 1, data_05_7404                       ;; 1c:78d3 $14 $01 $04 $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_7404   ;; 1c:78d3 $14 $01 $04 $74
     SCRIPT_POINTER call_1c_78e6                        ;; 1c:78d7 $e6 $78 $1c
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, data_10_4235 ;; 1c:78da $4c $16 $10 $02 $00 $00 $00 $00 $35 $42 $10
     SCRIPT_RETURN_20                                   ;; 1c:78e5 $20
@@ -2085,10 +2085,10 @@ call_1c_78fe:
 
 call_1c_790a:
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 1c:790a $68 $01 $34 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_75a2                       ;; 1c:7911 $14 $01 $a2 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75a2   ;; 1c:7911 $14 $01 $a2 $75
     SCRIPT_POINTER call_1c_792b                        ;; 1c:7915 $2b $79 $1c
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:7918 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_74b2                       ;; 1c:791f $14 $01 $b2 $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_74b2   ;; 1c:791f $14 $01 $b2 $74
     SCRIPT_POINTER call_1c_7943                        ;; 1c:7923 $43 $79 $1c
     Op18_Jump call_1c_7937                             ;; 1c:7926 $18 $37 $79 $1c
     SCRIPT_RETURN_20                                   ;; 1c:792a $20
@@ -2107,10 +2107,10 @@ call_1c_7943:
 
 call_1c_794f:
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 1c:794f $68 $01 $34 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_75a2                       ;; 1c:7956 $14 $01 $a2 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75a2   ;; 1c:7956 $14 $01 $a2 $75
     SCRIPT_POINTER call_1c_7970                        ;; 1c:795a $70 $79 $1c
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:795d $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_74b2                       ;; 1c:7964 $14 $01 $b2 $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_74b2   ;; 1c:7964 $14 $01 $b2 $74
     SCRIPT_POINTER call_1c_7988                        ;; 1c:7968 $88 $79 $1c
     Op18_Jump call_1c_797c                             ;; 1c:796b $18 $7c $79 $1c
     SCRIPT_RETURN_20                                   ;; 1c:796f $20
@@ -2129,10 +2129,10 @@ call_1c_7988:
 
 call_1c_7994:
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 1c:7994 $68 $01 $34 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_75a2                       ;; 1c:799b $14 $01 $a2 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75a2   ;; 1c:799b $14 $01 $a2 $75
     SCRIPT_POINTER call_1c_79b5                        ;; 1c:799f $b5 $79 $1c
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:79a2 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_74b2                       ;; 1c:79a9 $14 $01 $b2 $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_74b2   ;; 1c:79a9 $14 $01 $b2 $74
     SCRIPT_POINTER call_1c_79cd                        ;; 1c:79ad $cd $79 $1c
     Op18_Jump call_1c_79c1                             ;; 1c:79b0 $18 $c1 $79 $1c
     SCRIPT_RETURN_20                                   ;; 1c:79b4 $20
@@ -2150,9 +2150,9 @@ call_1c_79cd:
     SCRIPT_RETURN_20                                   ;; 1c:79d8 $20
 
 call_1c_79d9:
-    Op14_Unknown 1, data_05_75c4                       ;; 1c:79d9 $14 $01 $c4 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c4   ;; 1c:79d9 $14 $01 $c4 $75
     SCRIPT_POINTER call_1c_79f4                        ;; 1c:79dd $f4 $79 $1c
-    Op14_Unknown 1, data_05_75c8                       ;; 1c:79e0 $14 $01 $c8 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75c8   ;; 1c:79e0 $14 $01 $c8 $75
     SCRIPT_POINTER call_1c_7a46                        ;; 1c:79e4 $46 $7a $1c
     Op50_WriteByte wC720, $00, $17                     ;; 1c:79e7 $50 $20 $c7 $00 $17
     Op82_Run data_01_6844                              ;; 1c:79ec $82 $44 $68 $01
@@ -2168,7 +2168,7 @@ call_1c_79f4:
     Op84_WriteByteNTimes w3_D16E, 3, 3, $48            ;; 1c:7a1e $84 $6e $d1 $03 $03 $00 $48
     Op84_WriteByteNTimes w3_D18C, 3, 3, $48            ;; 1c:7a25 $84 $8c $d1 $03 $03 $00 $48
     Op84_WriteByteNTimes w3_D1AA, 3, 3, $48            ;; 1c:7a2c $84 $aa $d1 $03 $03 $00 $48
-    Op14_Unknown 1, data_05_75b2                       ;; 1c:7a33 $14 $01 $b2 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75b2   ;; 1c:7a33 $14 $01 $b2 $75
     SCRIPT_POINTER call_1c_7a45                        ;; 1c:7a37 $45 $7a $1c
     Op4C_Unknown $1a, $01, $04, $30, $00, $48, $00, data_15_5679 ;; 1c:7a3a $4c $1a $01 $04 $30 $00 $48 $00 $79 $56 $15
 
@@ -2203,7 +2203,7 @@ call_1c_7a46:
     Op84_WriteByteNTimes w3_D1CE, 3, 3, $4a            ;; 1c:7aee $84 $ce $d1 $03 $03 $00 $4a
     Op84_WriteByteNTimes w3_D1EC, 3, 3, $4a            ;; 1c:7af5 $84 $ec $d1 $03 $03 $00 $4a
     Op84_WriteByteNTimes w3_D20A, 3, 3, $4a            ;; 1c:7afc $84 $0a $d2 $03 $03 $00 $4a
-    Op14_Unknown 1, data_05_75b2                       ;; 1c:7b03 $14 $01 $b2 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75b2   ;; 1c:7b03 $14 $01 $b2 $75
     SCRIPT_POINTER call_1c_7b15                        ;; 1c:7b07 $15 $7b $1c
     Op4C_Unknown $1a, $01, $04, $30, $00, $48, $00, data_15_579d ;; 1c:7b0a $4c $1a $01 $04 $30 $00 $48 $00 $9d $57 $15
 
@@ -2242,9 +2242,9 @@ call_1c_7b16:
     SCRIPT_RETURN_20                                   ;; 1c:7bde $20
 
 call_1c_7bdf:
-    Op14_Unknown 1, data_05_75b6                       ;; 1c:7bdf $14 $01 $b6 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75b6   ;; 1c:7bdf $14 $01 $b6 $75
     SCRIPT_POINTER call_1c_7bee                        ;; 1c:7be3 $ee $7b $1c
-    Op14_Unknown 1, data_05_75ba                       ;; 1c:7be6 $14 $01 $ba $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75ba   ;; 1c:7be6 $14 $01 $ba $75
     SCRIPT_POINTER call_1c_7bf3                        ;; 1c:7bea $f3 $7b $1c
     SCRIPT_RETURN_20                                   ;; 1c:7bed $20
 
@@ -2262,7 +2262,7 @@ call_1c_7bff:
     Op1E_Call call_1c_79d9                             ;; 1c:7c04 $1e $d9 $79 $1c
     Op1E_Call call_1c_7bdf                             ;; 1c:7c08 $1e $df $7b $1c
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5747 ;; 1c:7c0c $4c $1a $01 $04 $00 $00 $00 $00 $47 $57 $15
-    Op14_Unknown 1, data_05_750a                       ;; 1c:7c17 $14 $01 $0a $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_750a   ;; 1c:7c17 $14 $01 $0a $75
     SCRIPT_POINTER call_1c_7c2d                        ;; 1c:7c1b $2d $7c $1c
     Op4C_Unknown $1e, $01, $04, $30, $00, $68, $00, data_14_6fda ;; 1c:7c1e $4c $1e $01 $04 $30 $00 $68 $00 $da $6f $14
     Op18_Jump call_1c_7c38                             ;; 1c:7c29 $18 $38 $7c $1c
@@ -2273,11 +2273,11 @@ call_1c_7c2d:
 call_1c_7c38:
     Op16_SubOps 1                                      ;; 1c:7c38 $16 $01
     SubOp_SetByte wC73D, $2f                           ;; 1c:7c3a $7e $25 $2f
-    Op14_Unknown 1, data_05_743c                       ;; 1c:7c3d $14 $01 $3c $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_743c   ;; 1c:7c3d $14 $01 $3c $74
     SCRIPT_POINTER call_1c_7c61                        ;; 1c:7c41 $61 $7c $1c
-    Op14_Unknown 1, data_05_75d0                       ;; 1c:7c44 $14 $01 $d0 $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_75d0   ;; 1c:7c44 $14 $01 $d0 $75
     SCRIPT_POINTER call_1c_7c70                        ;; 1c:7c48 $70 $7c $1c
-    Op14_Unknown 1, data_05_757a                       ;; 1c:7c4b $14 $01 $7a $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_757a   ;; 1c:7c4b $14 $01 $7a $75
     SCRIPT_POINTER call_1c_7c7e                        ;; 1c:7c4f $7e $7c $1c
     Op4C_Unknown $16, $08, $02, $60, $00, $90, $00, data_10_40c2 ;; 1c:7c52 $4c $16 $08 $02 $60 $00 $90 $00 $c2 $40 $10
     Op18_Jump call_1c_7c86                             ;; 1c:7c5d $18 $86 $7c $1c
@@ -2334,7 +2334,7 @@ call_1c_7cd4:
     SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 1c:7d1e $5e $03
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, zero_pointer ;; 1c:7d20 $4c $16 $ff $04 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $1e, $ff, $12, $00, $00, $00, $00, zero_pointer ;; 1c:7d2b $4c $1e $ff $12 $00 $00 $00 $00 $00 $00 $00
-    Op14_Unknown 1, data_05_750a                       ;; 1c:7d36 $14 $01 $0a $75
+    Op14_BranchWithHamChatWheelRules 1, data_05_750a   ;; 1c:7d36 $14 $01 $0a $75
     SCRIPT_POINTER call_1c_7e3d                        ;; 1c:7d3a $3d $7e $1c
     Op1E_Call call_1d_6b91                             ;; 1c:7d3d $1e $91 $6b $1d
     ;;<...>Is that clear?<E3>I'll hand this<E4>photo to the re-<E4>porter <E5>if you<E4>don't stop trick-<E4>ing people <E5>out of<E4>their money! <E5>Do<E4>you want that?<E0>
@@ -2416,14 +2416,14 @@ call_1c_7e3d:
     Op92_Unknown $00                                   ;; 1c:7e84 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_5747 ;; 1c:7e86 $4c $1a $01 $04 $00 $00 $00 $00 $47 $57 $15
     Op68_CopyBytes 1, wC834, w1_BeginRegionD1FD, $01   ;; 1c:7e91 $68 $01 $34 $c8 $fd $d1 $01
-    Op14_Unknown 1, data_05_762e                       ;; 1c:7e98 $14 $01 $2e $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_762e   ;; 1c:7e98 $14 $01 $2e $76
     SCRIPT_POINTER call_1c_7f23                        ;; 1c:7e9c $23 $7f $1c
-    Op14_Unknown 1, data_05_7404                       ;; 1c:7e9f $14 $01 $04 $74
+    Op14_BranchWithHamChatWheelRules 1, data_05_7404   ;; 1c:7e9f $14 $01 $04 $74
     SCRIPT_POINTER call_1c_7f0b                        ;; 1c:7ea3 $0b $7f $1c
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:7ea6 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_7632                       ;; 1c:7ead $14 $01 $32 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7632   ;; 1c:7ead $14 $01 $32 $76
     SCRIPT_POINTER call_1c_7eed                        ;; 1c:7eb1 $ed $7e $1c
-    Op14_Unknown 1, data_05_7636                       ;; 1c:7eb4 $14 $01 $36 $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_7636   ;; 1c:7eb4 $14 $01 $36 $76
     SCRIPT_POINTER call_1c_7ed9                        ;; 1c:7eb8 $d9 $7e $1c
 
 call_1c_7ebb:
@@ -2432,7 +2432,7 @@ call_1c_7ebb:
 call_1c_7ec6:
     SCRIPT_RETURN_4A                                   ;; 1c:7ec6 $4a
     Op68_CopyBytes 1, wC834, w1_D216, $01              ;; 1c:7ec7 $68 $01 $34 $c8 $16 $d2 $01
-    Op14_Unknown 1, data_05_763a                       ;; 1c:7ece $14 $01 $3a $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_763a   ;; 1c:7ece $14 $01 $3a $76
     SCRIPT_POINTER call_1c_7ec6                        ;; 1c:7ed2 $c6 $7e $1c
     Op18_Jump call_1c_7eed                             ;; 1c:7ed5 $18 $ed $7e $1c
 
@@ -2449,7 +2449,7 @@ call_1c_7eed:
 call_1c_7ef8:
     SCRIPT_RETURN_4A                                   ;; 1c:7ef8 $4a
     Op68_CopyBytes 1, wC834, w1_D20E, $01              ;; 1c:7ef9 $68 $01 $34 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_763e                       ;; 1c:7f00 $14 $01 $3e $76
+    Op14_BranchWithHamChatWheelRules 1, data_05_763e   ;; 1c:7f00 $14 $01 $3e $76
     SCRIPT_POINTER call_1c_7ef8                        ;; 1c:7f04 $f8 $7e $1c
     Op18_Jump call_1c_7f3b                             ;; 1c:7f07 $18 $3b $7f $1c
 

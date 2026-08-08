@@ -233,7 +233,7 @@ call_30_4aec:
 
 call_30_4b25:
     Op1E_Call call_1d_68f9                             ;; 30:4b25 $1e $f9 $68 $1d
-    Op14_Unknown 1, data_05_5a5a                       ;; 30:4b29 $14 $01 $5a $5a
+    Op14_BranchWithHamChatWheelRules 1, data_05_5a5a   ;; 30:4b29 $14 $01 $5a $5a
     SCRIPT_POINTER call_30_4aec                        ;; 30:4b2d $ec $4a $30
     Op1E_Call call_30_4b57                             ;; 30:4b30 $1e $57 $4b $30
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 30:4b34 $82 $42 $74 $01
@@ -241,7 +241,7 @@ call_30_4b25:
 
 call_30_4b3c:
     Op1E_Call call_1d_69f1                             ;; 30:4b3c $1e $f1 $69 $1d
-    Op14_Unknown 1, data_05_5a5a                       ;; 30:4b40 $14 $01 $5a $5a
+    Op14_BranchWithHamChatWheelRules 1, data_05_5a5a   ;; 30:4b40 $14 $01 $5a $5a
     SCRIPT_POINTER call_30_4aec                        ;; 30:4b44 $ec $4a $30
     Op16_SubOps 1                                      ;; 30:4b47 $16 $01
     SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 30:4b49 $5e $03
@@ -263,7 +263,7 @@ call_30_4b57:
     Op32_Graphics data_6d_7d0d, w6_D400                ;; 30:4b91 $32 $0d $7d $6d $00 $d4 $06
     Op32_Graphics data_7b_5ce1, w4_D200                ;; 30:4b98 $32 $e1 $5c $7b $00 $d2 $04
     Op32_Graphics data_6d_72de, w6_D000                ;; 30:4b9f $32 $de $72 $6d $00 $d0 $06
-    Op14_Unknown 1, data_05_5bba                       ;; 30:4ba6 $14 $01 $ba $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_403_5bba ;; 30:4ba6 $14 $01 $ba $5b
     SCRIPT_POINTER call_30_4bbc                        ;; 30:4baa $bc $4b $30
     Op4C_Unknown $1e, $01, $04, $48, $00, $79, $00, data_1a_5762 ;; 30:4bad $4c $1e $01 $04 $48 $00 $79 $00 $62 $57 $1a
     Op18_Jump call_30_4bd2                             ;; 30:4bb8 $18 $d2 $4b $30
@@ -273,9 +273,9 @@ call_30_4bbc:
     Op4C_Unknown $1e, $01, $04, $48, $00, $79, $00, data_1a_579c ;; 30:4bc7 $4c $1e $01 $04 $48 $00 $79 $00 $9c $57 $1a
 
 call_30_4bd2:
-    Op14_Unknown 1, data_05_5bbc                       ;; 30:4bd2 $14 $01 $bc $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_105_5bbc ;; 30:4bd2 $14 $01 $bc $5b
     SCRIPT_POINTER call_30_4bef                        ;; 30:4bd6 $ef $4b $30
-    Op14_Unknown 1, data_05_5bbe                       ;; 30:4bd9 $14 $01 $be $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_411_5bbe ;; 30:4bd9 $14 $01 $be $5b
     SCRIPT_POINTER call_30_4bef                        ;; 30:4bdd $ef $4b $30
     Op4C_Unknown $0c, $01, $04, $90, $00, $48, $00, data_15_64c3 ;; 30:4be0 $4c $0c $01 $04 $90 $00 $48 $00 $c3 $64 $15
     Op18_Jump call_30_4bf7                             ;; 30:4beb $18 $f7 $4b $30
@@ -288,11 +288,11 @@ call_30_4bef:
 call_30_4bf7:
     Op16_SubOps 1                                      ;; 30:4bf7 $16 $01
     SubOp_SetByte wC73D, $0f                           ;; 30:4bf9 $7e $25 $0f
-    Op14_Unknown 1, data_05_5b5c                       ;; 30:4bfc $14 $01 $5c $5b
+    Op14_BranchWithHamChatWheelRules 1, data_05_5b5c   ;; 30:4bfc $14 $01 $5c $5b
     SCRIPT_POINTER call_30_4c20                        ;; 30:4c00 $20 $4c $30
-    Op14_Unknown 1, data_05_5bc0                       ;; 30:4c03 $14 $01 $c0 $5b
+    Op14_BranchWithHamChatWheelRules 1, data_05_5bc0   ;; 30:4c03 $14 $01 $c0 $5b
     SCRIPT_POINTER call_30_4c28                        ;; 30:4c07 $28 $4c $30
-    Op14_Unknown 1, data_05_5b60                       ;; 30:4c0a $14 $01 $60 $5b
+    Op14_BranchWithHamChatWheelRules 1, data_05_5b60   ;; 30:4c0a $14 $01 $60 $5b
     SCRIPT_POINTER call_30_4c30                        ;; 30:4c0e $30 $4c $30
     Op4C_Unknown $16, $08, $02, $90, $00, $60, $00, data_10_40c2 ;; 30:4c11 $4c $16 $08 $02 $90 $00 $60 $00 $c2 $40 $10
     Op18_Jump call_30_4c34                             ;; 30:4c1c $18 $34 $4c $30
@@ -309,13 +309,13 @@ call_30_4c30:
     Op82_Run data_01_782b                              ;; 30:4c30 $82 $2b $78 $01
 
 call_30_4c34:
-    Op14_Unknown 1, data_05_5a6e                       ;; 30:4c34 $14 $01 $6e $5a
+    Op14_BranchWithHamChatWheelRules 1, data_05_5a6e   ;; 30:4c34 $14 $01 $6e $5a
     SCRIPT_POINTER call_30_4c54                        ;; 30:4c38 $54 $4c $30
-    Op14_Unknown 1, data_05_5a72                       ;; 30:4c3b $14 $01 $72 $5a
+    Op14_BranchWithHamChatWheelRules 1, data_05_5a72   ;; 30:4c3b $14 $01 $72 $5a
     SCRIPT_POINTER call_30_4c63                        ;; 30:4c3f $63 $4c $30
-    Op14_Unknown 1, data_05_5a76                       ;; 30:4c42 $14 $01 $76 $5a
+    Op14_BranchWithHamChatWheelRules 1, data_05_5a76   ;; 30:4c42 $14 $01 $76 $5a
     SCRIPT_POINTER call_30_4c72                        ;; 30:4c46 $72 $4c $30
-    Op14_Unknown 1, data_05_5a7a                       ;; 30:4c49 $14 $01 $7a $5a
+    Op14_BranchWithHamChatWheelRules 1, data_05_5a7a   ;; 30:4c49 $14 $01 $7a $5a
     SCRIPT_POINTER call_30_4c81                        ;; 30:4c4d $81 $4c $30
     Op18_Jump call_30_4cc5                             ;; 30:4c50 $18 $c5 $4c $30
 
@@ -339,7 +339,7 @@ call_30_4c8c:
     Op80_CopyNBytes wC7DA, $00, w1_D20E, $01, 2        ;; 30:4c95 $80 $da $c7 $00 $0e $d2 $01 $02 $00
     Op50_WriteByte w1_D215, $01, $80                   ;; 30:4c9e $50 $15 $d2 $01 $80
     Op50_WriteByte w1_D20D, $01, $80                   ;; 30:4ca3 $50 $0d $d2 $01 $80
-    Op14_Unknown 1, data_05_5b64                       ;; 30:4ca8 $14 $01 $64 $5b
+    Op14_BranchWithHamChatWheelRules 1, data_05_5b64   ;; 30:4ca8 $14 $01 $64 $5b
     SCRIPT_POINTER call_30_4cc5                        ;; 30:4cac $c5 $4c $30
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_10_557e ;; 30:4caf $4c $16 $08 $ff $00 $00 $00 $00 $7e $55 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_10_5601 ;; 30:4cba $4c $08 $01 $04 $00 $00 $00 $00 $01 $56 $10
@@ -379,7 +379,7 @@ call_30_4cc5:
     SCRIPT_RETURN_20                                   ;; 30:4d49 $20
 
 call_30_4d4a:
-    Op14_Unknown 1, data_05_5bc4                       ;; 30:4d4a $14 $01 $c4 $5b
+    Op14_BranchWithHamChatWheelRules 1, data_05_5bc4   ;; 30:4d4a $14 $01 $c4 $5b
     SCRIPT_POINTER call_30_4d59                        ;; 30:4d4e $59 $4d $30
     Op16_SubOps 1                                      ;; 30:4d51 $16 $01
     SubOp_ClearFlag 411 ; Bit 3 of wC94B               ;; 30:4d53 $5f $9b
@@ -466,7 +466,7 @@ call_30_4e12:
     Op18_Jump call_30_4aec                             ;; 30:4e21 $18 $ec $4a $30
 
 call_30_4e25:
-    Op14_Unknown 1, data_05_5bba                       ;; 30:4e25 $14 $01 $ba $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_403_5bba ;; 30:4e25 $14 $01 $ba $5b
     SCRIPT_POINTER call_30_4e4d                        ;; 30:4e29 $4d $4e $30
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 30:4e2c $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 30:4e30 $50 $1d $c3 $00 $90
@@ -523,7 +523,7 @@ call_30_4ea1:
 call_30_4eb9:
     Op1E_Call call_20_4042                             ;; 30:4eb9 $1e $42 $40 $20
     Op1E_Call call_1d_6d31                             ;; 30:4ebd $1e $31 $6d $1d
-    Op14_Unknown 1, data_05_5bba                       ;; 30:4ec1 $14 $01 $ba $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_403_5bba ;; 30:4ec1 $14 $01 $ba $5b
     SCRIPT_POINTER call_30_4ee0                        ;; 30:4ec5 $e0 $4e $30
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, data_1a_5769 ;; 30:4ec8 $4c $1e $01 $04 $00 $00 $00 $00 $69 $57 $1a
 
@@ -556,7 +556,7 @@ call_30_4f0f:
     SCRIPT_POINTER call_30_4f27                        ;; 30:4f24 $27 $4f $30
 
 call_30_4f27:
-    Op14_Unknown 1, data_05_5bba                       ;; 30:4f27 $14 $01 $ba $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_403_5bba ;; 30:4f27 $14 $01 $ba $5b
     SCRIPT_POINTER call_30_4f9d                        ;; 30:4f2b $9d $4f $30
     Op1E_Call call_20_463a                             ;; 30:4f2e $1e $3a $46 $20
     Op16_SubOps 1                                      ;; 30:4f32 $16 $01
@@ -591,7 +591,7 @@ call_30_4f9d:
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, data_1a_5801 ;; 30:4fd5 $4c $1e $01 $04 $00 $00 $00 $00 $01 $58 $1a
     ;;It's perfect for a<E2><EA>koochi-Q<E8> like me.<E0>
     Op04_Unknown_Text data_3a_4be2                     ;; 30:4fe0 $04 $e2 $4b $3a
-    Op14_Unknown 1, data_05_5ae6                       ;; 30:4fe4 $14 $01 $e6 $5a
+    Op14_BranchWithHamChatWheelRules 1, data_05_5ae6   ;; 30:4fe4 $14 $01 $e6 $5a
     SCRIPT_POINTER call_30_501f                        ;; 30:4fe8 $1f $50 $30
     Op4C_Unknown $30, $01, $04, $48, $00, $78, $00, data_14_41f2 ;; 30:4feb $4c $30 $01 $04 $48 $00 $78 $00 $f2 $41 $14
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, data_1a_580c ;; 30:4ff6 $4c $1e $01 $04 $00 $00 $00 $00 $0c $58 $1a
@@ -621,7 +621,7 @@ call_30_503b:
     SCRIPT_POINTER call_30_5053                        ;; 30:5050 $53 $50 $30
 
 call_30_5053:
-    Op14_Unknown 1, data_05_5bba                       ;; 30:5053 $14 $01 $ba $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_403_5bba ;; 30:5053 $14 $01 $ba $5b
     SCRIPT_POINTER call_30_5098                        ;; 30:5057 $98 $50 $30
     Op1E_Call call_20_42f7                             ;; 30:505a $1e $f7 $42 $20
     Op4C_Unknown $30, $01, $04, $48, $00, $78, $00, data_14_40e9 ;; 30:505e $4c $30 $01 $04 $48 $00 $78 $00 $e9 $40 $14
@@ -668,7 +668,7 @@ call_30_5104:
     SCRIPT_POINTER call_30_511c                        ;; 30:5119 $1c $51 $30
 
 call_30_511c:
-    Op14_Unknown 1, data_05_5bba                       ;; 30:511c $14 $01 $ba $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_403_5bba ;; 30:511c $14 $01 $ba $5b
     SCRIPT_POINTER call_30_512b                        ;; 30:5120 $2b $51 $30
     Op1E_Call call_20_4310                             ;; 30:5123 $1e $10 $43 $20
     Op18_Jump call_30_5178                             ;; 30:5127 $18 $78 $51 $30
@@ -751,9 +751,9 @@ call_30_5256:
     Op1E_Call call_20_4762                             ;; 30:5256 $1e $62 $47 $20
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 30:525a $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     Op1E_Call call_1d_6d31                             ;; 30:5265 $1e $31 $6d $1d
-    Op14_Unknown 1, data_05_5ae6                       ;; 30:5269 $14 $01 $e6 $5a
+    Op14_BranchWithHamChatWheelRules 1, data_05_5ae6   ;; 30:5269 $14 $01 $e6 $5a
     SCRIPT_POINTER call_30_528b                        ;; 30:526d $8b $52 $30
-    Op14_Unknown 1, data_05_5bdc                       ;; 30:5270 $14 $01 $dc $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_402_5bdc ;; 30:5270 $14 $01 $dc $5b
     SCRIPT_POINTER call_30_5283                        ;; 30:5274 $83 $52 $30
     ;;Oh<...> Well, I hope<E2>you see them soon.<E0>
     Op04_Unknown_Text data_3a_4d45                     ;; 30:5277 $04 $45 $4d $3a
@@ -831,9 +831,9 @@ call_30_5359:
     Op18_Jump call_30_4aec                             ;; 30:5378 $18 $ec $4a $30
 
 call_30_537c:
-    Op14_Unknown 1, data_05_5bbe                       ;; 30:537c $14 $01 $be $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_411_5bbe ;; 30:537c $14 $01 $be $5b
     SCRIPT_POINTER call_30_54c0                        ;; 30:5380 $c0 $54 $30
-    Op14_Unknown 1, data_05_5bde                       ;; 30:5383 $14 $01 $de $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_104_5bde ;; 30:5383 $14 $01 $de $5b
     SCRIPT_POINTER call_30_5417                        ;; 30:5387 $17 $54 $30
     Op4E_Unknown_StoreValue 4, $01, data_10_4073       ;; 30:538a $4e $04 $01 $73 $40 $10
     Op1E_Call call_20_465b                             ;; 30:5390 $1e $5b $46 $20
@@ -919,7 +919,7 @@ call_30_54c0:
     Op18_Jump call_30_4aec                             ;; 30:54c4 $18 $ec $4a $30
 
 call_30_54c8:
-    Op14_Unknown 1, data_05_5be0                       ;; 30:54c8 $14 $01 $e0 $5b
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_koochiq_5be0 ;; 30:54c8 $14 $01 $e0 $5b
     SCRIPT_POINTER call_30_5548                        ;; 30:54cc $48 $55 $30
     Op50_WriteByte wBitArrayIndexC715, $00, $06        ;; 30:54cf $50 $15 $c7 $00 $06
     Op82_Run ObtainHamChatFromC715                     ;; 30:54d4 $82 $d9 $6d $02
@@ -1261,7 +1261,7 @@ call_30_6095:
 
 call_30_60db:
     Op1E_Call call_1d_68f9                             ;; 30:60db $1e $f9 $68 $1d
-    Op14_Unknown 1, data_05_607c                       ;; 30:60df $14 $01 $7c $60
+    Op14_BranchWithHamChatWheelRules 1, data_05_607c   ;; 30:60df $14 $01 $7c $60
     SCRIPT_POINTER call_30_6095                        ;; 30:60e3 $95 $60 $30
     Op1E_Call call_30_6123                             ;; 30:60e6 $1e $23 $61 $30
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 30:60ea $82 $42 $74 $01
@@ -1269,7 +1269,7 @@ call_30_60db:
 
 call_30_60f2:
     Op1E_Call call_1d_69f1                             ;; 30:60f2 $1e $f1 $69 $1d
-    Op14_Unknown 1, data_05_607c                       ;; 30:60f6 $14 $01 $7c $60
+    Op14_BranchWithHamChatWheelRules 1, data_05_607c   ;; 30:60f6 $14 $01 $7c $60
     SCRIPT_POINTER call_30_6095                        ;; 30:60fa $95 $60 $30
     Op16_SubOps 1                                      ;; 30:60fd $16 $01
     SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 30:60ff $5e $03
@@ -1278,7 +1278,7 @@ call_30_60f2:
     Op18_Jump call_30_6095                             ;; 30:6109 $18 $95 $60 $30
 
 call_30_610d:
-    Op14_Unknown 1, data_05_634c                       ;; 30:610d $14 $01 $4c $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_634c   ;; 30:610d $14 $01 $4c $63
     SCRIPT_POINTER call_30_611d                        ;; 30:6111 $1d $61 $30
     Op16_SubOps 1                                      ;; 30:6114 $16 $01
     SubOp_ClearFlag 396 ; Bit 4 of wC949               ;; 30:6116 $5f $8c
@@ -1305,12 +1305,12 @@ call_30_6123:
     Op4C_Unknown $36, $00, $00, $00, $00, $00, $00, zero_pointer ;; 30:616d $4c $36 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $38, $00, $00, $00, $00, $00, $00, zero_pointer ;; 30:6178 $4c $38 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $1a, $01, $04, $c0, $00, $48, $00, data_16_56aa ;; 30:6183 $4c $1a $01 $04 $c0 $00 $48 $00 $aa $56 $16
-    Op14_Unknown 1, data_05_6350                       ;; 30:618e $14 $01 $50 $63
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_396_6350 ;; 30:618e $14 $01 $50 $63
     SCRIPT_POINTER call_30_6199                        ;; 30:6192 $99 $61 $30
     Op1E_Call call_30_6669                             ;; 30:6195 $1e $69 $66 $30
 
 call_30_6199:
-    Op14_Unknown 1, data_05_6352                       ;; 30:6199 $14 $01 $52 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_6352   ;; 30:6199 $14 $01 $52 $63
     SCRIPT_POINTER call_30_61af                        ;; 30:619d $af $61 $30
     Op4C_Unknown $16, $08, $02, $a8, $00, $a8, $00, data_10_40c2 ;; 30:61a0 $4c $16 $08 $02 $a8 $00 $a8 $00 $c2 $40 $10
     Op18_Jump call_30_61ba                             ;; 30:61ab $18 $ba $61 $30
@@ -1319,7 +1319,7 @@ call_30_61af:
     Op4C_Unknown $16, $10, $02, $c0, $00, $f4, $00, data_10_450b ;; 30:61af $4c $16 $10 $02 $c0 $00 $f4 $00 $0b $45 $10
 
 call_30_61ba:
-    Op14_Unknown 1, data_05_6356                       ;; 30:61ba $14 $01 $56 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_6356   ;; 30:61ba $14 $01 $56 $63
     SCRIPT_POINTER call_30_61d5                        ;; 30:61be $d5 $61 $30
     Op4C_Unknown $16, $08, $ff, $60, $00, $48, $00, data_10_40c2 ;; 30:61c1 $4c $16 $08 $ff $60 $00 $48 $00 $c2 $40 $10
     Op16_SubOps 1                                      ;; 30:61cc $16 $01
@@ -1330,11 +1330,11 @@ call_30_61d5:
     Op1E_Call call_34_593a                             ;; 30:61d5 $1e $3a $59 $34
 
 call_30_61d9:
-    Op14_Unknown 1, data_05_609e                       ;; 30:61d9 $14 $01 $9e $60
+    Op14_BranchWithHamChatWheelRules 1, data_05_609e   ;; 30:61d9 $14 $01 $9e $60
     SCRIPT_POINTER call_30_6208                        ;; 30:61dd $08 $62 $30
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_10_557e ;; 30:61e0 $4c $16 $08 $ff $00 $00 $00 $00 $7e $55 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_10_5601 ;; 30:61eb $4c $08 $01 $04 $00 $00 $00 $00 $01 $56 $10
-    Op14_Unknown 1, data_05_635a                       ;; 30:61f6 $14 $01 $5a $63
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_416_635a ;; 30:61f6 $14 $01 $5a $63
     SCRIPT_POINTER call_30_6208                        ;; 30:61fa $08 $62 $30
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_40c2 ;; 30:61fd $4c $1a $01 $04 $00 $00 $00 $00 $c2 $40 $16
 
@@ -1346,7 +1346,7 @@ call_30_6208:
     Op4E_Unknown_StoreValue 6, $01, data_16_405a       ;; 30:6219 $4e $06 $01 $5a $40 $16
     Op4E_Unknown_StoreValue 7, $01, data_10_407f       ;; 30:621f $4e $07 $01 $7f $40 $10
     Op4E_Unknown_StoreValue 8, $01, data_1b_6a1a       ;; 30:6225 $4e $08 $01 $1a $6a $1b
-    Op14_Unknown 1, data_05_635c                       ;; 30:622b $14 $01 $5c $63
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_396_635c ;; 30:622b $14 $01 $5c $63
     SCRIPT_POINTER call_30_623c                        ;; 30:622f $3c $62 $30
     Op4E_Unknown_StoreValue 5, $01, data_1b_69f6       ;; 30:6232 $4e $05 $01 $f6 $69 $1b
     Op18_Jump call_30_6242                             ;; 30:6238 $18 $42 $62 $30
@@ -1356,7 +1356,7 @@ call_30_623c:
 
 call_30_6242:
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 30:6242 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
-    Op14_Unknown 1, data_05_60fa                       ;; 30:624d $14 $01 $fa $60
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_3_60fa ;; 30:624d $14 $01 $fa $60
     SCRIPT_POINTER call_30_6257                        ;; 30:6251 $57 $62 $30
     Op44_Unknown $08, $00                              ;; 30:6254 $44 $08 $00
 
@@ -1560,7 +1560,7 @@ call_30_6437:
 
 call_30_644f:
     Op1E_Call call_20_4f0c                             ;; 30:644f $1e $0c $4f $20
-    Op14_Unknown 1, data_05_635c                       ;; 30:6453 $14 $01 $5c $63
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_396_635c ;; 30:6453 $14 $01 $5c $63
     SCRIPT_POINTER call_30_646a                        ;; 30:6457 $6a $64 $30
     Op16_SubOps 1                                      ;; 30:645a $16 $01
     SubOp_SetFlag 396 ; Bit 4 of wC949                 ;; 30:645c $3f $8c
@@ -1619,7 +1619,7 @@ call_30_64e7:
     SCRIPT_RETURN_4A                                   ;; 30:64e7 $4a
     Op3E_Compare_Branch 26, data_16_4540, call_30_64e7 ;; 30:64e8 $3e $1a $40 $45 $16 $e7 $64 $30
     Op56_WriteBitArrayIndex 26, data_16_56e1           ;; 30:64f0 $56 $1a $e1 $56 $16
-    Op14_Unknown 1, data_05_636a                       ;; 30:64f5 $14 $01 $6a $63
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_207_636a ;; 30:64f5 $14 $01 $6a $63
     SCRIPT_POINTER call_30_6534                        ;; 30:64f9 $34 $65 $30
     Op16_SubOps 1                                      ;; 30:64fc $16 $01
     SubOp_SetFlag 207 ; Bit 7 of wC931                 ;; 30:64fe $3e $cf
@@ -1698,7 +1698,7 @@ call_30_65bf:
     Op44_Unknown $3c, $00                              ;; 30:65c3 $44 $3c $00
     Op56_WriteBitArrayIndex 26, data_16_56e1           ;; 30:65c6 $56 $1a $e1 $56 $16
     Op1E_Call call_1d_6c47                             ;; 30:65cb $1e $47 $6c $1d
-    Op14_Unknown 1, data_05_636a                       ;; 30:65cf $14 $01 $6a $63
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_207_636a ;; 30:65cf $14 $01 $6a $63
     SCRIPT_POINTER call_30_65de                        ;; 30:65d3 $de $65 $30
     ;;Huh? What's that?<E4>Do I want to know<E4>what's inside<...><E0>
     Op04_Unknown_Text data_3b_7e66                     ;; 30:65d6 $04 $66 $7e $3b
@@ -1769,7 +1769,7 @@ call_30_6679:
     Op32_Graphics data_6d_5a5a, w5_D000                ;; 30:667a $32 $5a $5a $6d $00 $d0 $05
     Op34_Graphics data_7a_7a52, w5_D800, $15           ;; 30:6681 $34 $52 $7a $7a $00 $d8 $05 $15
     Op34_Graphics data_7d_60d8, w7_D800, $15           ;; 30:6689 $34 $d8 $60 $7d $00 $d8 $07 $15
-    Op14_Unknown 1, data_05_636c                       ;; 30:6691 $14 $01 $6c $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_636c   ;; 30:6691 $14 $01 $6c $63
     SCRIPT_POINTER call_30_66b9                        ;; 30:6695 $b9 $66 $30
     Op4C_Unknown $16, $08, $02, $60, $00, $78, $00, data_10_4235 ;; 30:6698 $4c $16 $08 $02 $60 $00 $78 $00 $35 $42 $10
     Op4C_Unknown $34, $01, $04, $00, $00, $00, $00, data_11_6831 ;; 30:66a3 $4c $34 $01 $04 $00 $00 $00 $00 $31 $68 $11
@@ -1797,7 +1797,7 @@ call_30_66f9:
     SCRIPT_RETURN_4A                                   ;; 30:66fd $4a
     Op68_CopyBytes 2, wC826, w1_D216, $01              ;; 30:66fe $68 $02 $26 $c8 $16 $d2 $01
     Op68_CopyBytes 2, wC828, w1_D20E, $01              ;; 30:6705 $68 $02 $28 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_6370                       ;; 30:670c $14 $01 $70 $63
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_397_6370 ;; 30:670c $14 $01 $70 $63
     SCRIPT_POINTER call_30_6722                        ;; 30:6710 $22 $67 $30
     Op16_SubOps 1                                      ;; 30:6713 $16 $01
     SubOp_SetFlag 397 ; Bit 5 of wC949                 ;; 30:6715 $3f $8d
@@ -1854,17 +1854,17 @@ call_30_6781:
 
 call_30_679c:
     Op1E_Call call_30_6942                             ;; 30:679c $1e $42 $69 $30
-    Op14_Unknown 1, data_05_6372                       ;; 30:67a0 $14 $01 $72 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_6372   ;; 30:67a0 $14 $01 $72 $63
     SCRIPT_POINTER call_30_686d                        ;; 30:67a4 $6d $68 $30
-    Op14_Unknown 1, data_05_6376                       ;; 30:67a7 $14 $01 $76 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_6376   ;; 30:67a7 $14 $01 $76 $63
     SCRIPT_POINTER call_30_67df                        ;; 30:67ab $df $67 $30
-    Op14_Unknown 1, data_05_637a                       ;; 30:67ae $14 $01 $7a $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_637a   ;; 30:67ae $14 $01 $7a $63
     SCRIPT_POINTER call_30_67df                        ;; 30:67b2 $df $67 $30
-    Op14_Unknown 1, data_05_637e                       ;; 30:67b5 $14 $01 $7e $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_637e   ;; 30:67b5 $14 $01 $7e $63
     SCRIPT_POINTER call_30_67df                        ;; 30:67b9 $df $67 $30
-    Op14_Unknown 1, data_05_6382                       ;; 30:67bc $14 $01 $82 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_6382   ;; 30:67bc $14 $01 $82 $63
     SCRIPT_POINTER call_30_67ce                        ;; 30:67c0 $ce $67 $30
-    Op14_Unknown 1, data_05_6386                       ;; 30:67c3 $14 $01 $86 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_6386   ;; 30:67c3 $14 $01 $86 $63
     SCRIPT_POINTER call_30_67d9                        ;; 30:67c7 $d9 $67 $30
     Op18_Jump call_30_67df                             ;; 30:67ca $18 $df $67 $30
 
@@ -1884,7 +1884,7 @@ call_30_67df:
 
 call_30_67e5:
     Op1E_Call call_30_6942                             ;; 30:67e5 $1e $42 $69 $30
-    Op14_Unknown 1, data_05_6372                       ;; 30:67e9 $14 $01 $72 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_6372   ;; 30:67e9 $14 $01 $72 $63
     SCRIPT_POINTER call_30_67f4                        ;; 30:67ed $f4 $67 $30
     Op18_Jump call_30_682e                             ;; 30:67f0 $18 $2e $68 $30
 
@@ -1950,25 +1950,25 @@ call_30_68c0:
     Op18_Jump call_30_66f9                             ;; 30:68f2 $18 $f9 $66 $30
 
 call_30_68f6:
-    Op14_Unknown 1, data_05_638a                       ;; 30:68f6 $14 $01 $8a $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_638a   ;; 30:68f6 $14 $01 $8a $63
     SCRIPT_POINTER call_30_6903                        ;; 30:68fa $03 $69 $30
     Op16_SubOps 1                                      ;; 30:68fd $16 $01
     SubOp_SetWord wC826, $3000                         ;; 30:68ff $9f $0e $00 $30
 
 call_30_6903:
-    Op14_Unknown 1, data_05_638e                       ;; 30:6903 $14 $01 $8e $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_638e   ;; 30:6903 $14 $01 $8e $63
     SCRIPT_POINTER call_30_6910                        ;; 30:6907 $10 $69 $30
     Op16_SubOps 1                                      ;; 30:690a $16 $01
     SubOp_SetWord wC826, $9000                         ;; 30:690c $9f $0e $00 $90
 
 call_30_6910:
-    Op14_Unknown 1, data_05_6392                       ;; 30:6910 $14 $01 $92 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_6392   ;; 30:6910 $14 $01 $92 $63
     SCRIPT_POINTER call_30_691d                        ;; 30:6914 $1d $69 $30
     Op16_SubOps 1                                      ;; 30:6917 $16 $01
     SubOp_SetWord wC828, $6c00                         ;; 30:6919 $9f $10 $00 $6c
 
 call_30_691d:
-    Op14_Unknown 1, data_05_6396                       ;; 30:691d $14 $01 $96 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_6396   ;; 30:691d $14 $01 $96 $63
     SCRIPT_POINTER call_30_692a                        ;; 30:6921 $2a $69 $30
     Op16_SubOps 1                                      ;; 30:6924 $16 $01
     SubOp_SetWord wC828, $8400                         ;; 30:6926 $9f $10 $00 $84
@@ -1993,11 +1993,11 @@ call_30_695a:
     SCRIPT_RETURN_4A                                   ;; 30:695a $4a
     Op3E_Compare_Branch 22, data_11_6806, call_30_695a ;; 30:695b $3e $16 $06 $68 $11 $5a $69 $30
     SCRIPT_RETURN_20                                   ;; 30:6963 $20
-    Op14_Unknown 1, data_05_639a                       ;; 30:6964 $14 $01 $9a $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_639a   ;; 30:6964 $14 $01 $9a $63
     SCRIPT_POINTER call_30_6988                        ;; 30:6968 $88 $69 $30
-    Op14_Unknown 1, data_05_639e                       ;; 30:696b $14 $01 $9e $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_639e   ;; 30:696b $14 $01 $9e $63
     SCRIPT_POINTER call_30_6997                        ;; 30:696f $97 $69 $30
-    Op14_Unknown 1, data_05_63a2                       ;; 30:6972 $14 $01 $a2 $63
+    Op14_BranchWithHamChatWheelRules 1, data_05_63a2   ;; 30:6972 $14 $01 $a2 $63
     SCRIPT_POINTER call_30_69a6                        ;; 30:6976 $a6 $69 $30
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_10_4209 ;; 30:6979 $4c $16 $08 $ff $00 $00 $00 $00 $09 $42 $10
     Op18_Jump call_30_69b1                             ;; 30:6984 $18 $b1 $69 $30
@@ -2017,7 +2017,7 @@ call_30_69b1:
     SCRIPT_RETURN_20                                   ;; 30:69b1 $20
 
 call_30_69b2:
-    Op14_Unknown 1, data_05_63a6                       ;; 30:69b2 $14 $01 $a6 $63
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_wishie_63a6 ;; 30:69b2 $14 $01 $a6 $63
     SCRIPT_POINTER call_30_6a32                        ;; 30:69b6 $32 $6a $30
     Op16_SubOps 1                                      ;; 30:69b9 $16 $01
     SubOp_SetFlag 416 ; Bit 0 of wC94C                 ;; 30:69bb $3f $a0
@@ -2055,7 +2055,7 @@ call_30_6a32:
     SCRIPT_RETURN_20                                   ;; 30:6a32 $20
 
 call_30_6a33:
-    Op14_Unknown 1, data_05_63a8                       ;; 30:6a33 $14 $01 $a8 $63
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_smoochie_63a8 ;; 30:6a33 $14 $01 $a8 $63
     SCRIPT_POINTER call_30_6ab9                        ;; 30:6a37 $b9 $6a $30
     Op16_SubOps 1                                      ;; 30:6a3a $16 $01
     SubOp_ClearFlag 416 ; Bit 0 of wC94C               ;; 30:6a3c $5f $a0
@@ -2152,7 +2152,7 @@ call_30_6b4c:
 
 call_30_6b8b:
     Op1E_Call call_1d_68f9                             ;; 30:6b8b $1e $f9 $68 $1d
-    Op14_Unknown 1, data_05_6698                       ;; 30:6b8f $14 $01 $98 $66
+    Op14_BranchWithHamChatWheelRules 1, data_05_6698   ;; 30:6b8f $14 $01 $98 $66
     SCRIPT_POINTER call_30_6b4c                        ;; 30:6b93 $4c $6b $30
     Op1E_Call call_30_6bb9                             ;; 30:6b96 $1e $b9 $6b $30
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 30:6b9a $82 $42 $74 $01
@@ -2160,7 +2160,7 @@ call_30_6b8b:
 
 call_30_6ba2:
     Op1E_Call call_1d_69f1                             ;; 30:6ba2 $1e $f1 $69 $1d
-    Op14_Unknown 1, data_05_6698                       ;; 30:6ba6 $14 $01 $98 $66
+    Op14_BranchWithHamChatWheelRules 1, data_05_6698   ;; 30:6ba6 $14 $01 $98 $66
     SCRIPT_POINTER call_30_6b4c                        ;; 30:6baa $4c $6b $30
     Op1E_Call call_30_6bb9                             ;; 30:6bad $1e $b9 $6b $30
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 30:6bb1 $82 $42 $74 $01
@@ -2183,9 +2183,9 @@ call_30_6bb9:
     Op1E_Call call_30_7328                             ;; 30:6c08 $1e $28 $73 $30
     Op16_SubOps 1                                      ;; 30:6c0c $16 $01
     SubOp_SetByte wC73D, $3c                           ;; 30:6c0e $7e $25 $3c
-    Op14_Unknown 1, data_05_66f3                       ;; 30:6c11 $14 $01 $f3 $66
+    Op14_BranchWithHamChatWheelRules 1, data_05_66f3   ;; 30:6c11 $14 $01 $f3 $66
     SCRIPT_POINTER call_30_6c2e                        ;; 30:6c15 $2e $6c $30
-    Op14_Unknown 1, data_05_667d                       ;; 30:6c18 $14 $01 $7d $66
+    Op14_BranchWithHamChatWheelRules 1, data_05_667d   ;; 30:6c18 $14 $01 $7d $66
     SCRIPT_POINTER call_30_6c36                        ;; 30:6c1c $36 $6c $30
     Op4C_Unknown $16, $08, $02, $c0, $00, $90, $00, data_10_40c2 ;; 30:6c1f $4c $16 $08 $02 $c0 $00 $90 $00 $c2 $40 $10
     Op18_Jump call_30_6c41                             ;; 30:6c2a $18 $41 $6c $30
@@ -2198,13 +2198,13 @@ call_30_6c36:
     Op4C_Unknown $16, $04, $02, $c0, $00, $90, $00, data_10_4761 ;; 30:6c36 $4c $16 $04 $02 $c0 $00 $90 $00 $61 $47 $10
 
 call_30_6c41:
-    Op14_Unknown 1, data_05_66f7                       ;; 30:6c41 $14 $01 $f7 $66
+    Op14_BranchWithHamChatWheelRules 1, data_05_66f7   ;; 30:6c41 $14 $01 $f7 $66
     SCRIPT_POINTER call_30_6c61                        ;; 30:6c45 $61 $6c $30
-    Op14_Unknown 1, data_05_66fb                       ;; 30:6c48 $14 $01 $fb $66
+    Op14_BranchWithHamChatWheelRules 1, data_05_66fb   ;; 30:6c48 $14 $01 $fb $66
     SCRIPT_POINTER call_30_6c70                        ;; 30:6c4c $70 $6c $30
-    Op14_Unknown 1, data_05_66ff                       ;; 30:6c4f $14 $01 $ff $66
+    Op14_BranchWithHamChatWheelRules 1, data_05_66ff   ;; 30:6c4f $14 $01 $ff $66
     SCRIPT_POINTER call_30_6c7f                        ;; 30:6c53 $7f $6c $30
-    Op14_Unknown 1, data_05_6703                       ;; 30:6c56 $14 $01 $03 $67
+    Op14_BranchWithHamChatWheelRules 1, data_05_6703   ;; 30:6c56 $14 $01 $03 $67
     SCRIPT_POINTER call_30_6c8e                        ;; 30:6c5a $8e $6c $30
     Op18_Jump call_30_6cd6                             ;; 30:6c5d $18 $d6 $6c $30
 
@@ -2229,7 +2229,7 @@ call_30_6c9d:
     Op80_CopyNBytes wC7DA, $00, w1_D20E, $01, 2        ;; 30:6ca6 $80 $da $c7 $00 $0e $d2 $01 $02 $00
     Op50_WriteByte w1_D215, $01, $80                   ;; 30:6caf $50 $15 $d2 $01 $80
     Op50_WriteByte w1_D20D, $01, $80                   ;; 30:6cb4 $50 $0d $d2 $01 $80
-    Op14_Unknown 1, data_05_6707                       ;; 30:6cb9 $14 $01 $07 $67
+    Op14_BranchWithHamChatWheelRules 1, data_05_6707   ;; 30:6cb9 $14 $01 $07 $67
     SCRIPT_POINTER call_30_6cd6                        ;; 30:6cbd $d6 $6c $30
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_10_557e ;; 30:6cc0 $4c $16 $08 $ff $00 $00 $00 $00 $7e $55 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_10_5601 ;; 30:6ccb $4c $08 $01 $04 $00 $00 $00 $00 $01 $56 $10
@@ -2271,7 +2271,7 @@ call_30_6d1b:
     SCRIPT_RETURN_20                                   ;; 30:6d57 $20
 
 call_30_6d58:
-    Op14_Unknown 1, data_05_6713                       ;; 30:6d58 $14 $01 $13 $67
+    Op14_BranchWithHamChatWheelRules 1, data_05_6713   ;; 30:6d58 $14 $01 $13 $67
     SCRIPT_POINTER call_30_6d67                        ;; 30:6d5c $67 $6d $30
     Op16_SubOps 1                                      ;; 30:6d5f $16 $01
     SubOp_ClearFlag 423 ; Bit 7 of wC94C               ;; 30:6d61 $5f $a7
@@ -2423,7 +2423,7 @@ call_30_6ed8:
     Op54_Unknown $01                                   ;; 30:6eee $54 $01
 
 call_30_6ef0:
-    Op14_Unknown 1, data_05_6717                       ;; 30:6ef0 $14 $01 $17 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_163_6717 ;; 30:6ef0 $14 $01 $17 $67
     SCRIPT_POINTER call_30_6f0a                        ;; 30:6ef4 $0a $6f $30
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 30:6ef7 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 30:6efb $1c $03
@@ -2466,7 +2466,7 @@ call_30_6f57:
     Op16_SubOps 1                                      ;; 30:6f64 $16 $01
     SubOp_SetByte wC736, $09                           ;; 30:6f66 $7e $1e $09
     Op82_Run data_02_430b                              ;; 30:6f69 $82 $0b $43 $02
-    Op14_Unknown 1, data_05_6719                       ;; 30:6f6d $14 $01 $19 $67
+    Op14_BranchWithHamChatWheelRules 1, data_05_6719   ;; 30:6f6d $14 $01 $19 $67
     SCRIPT_POINTER call_30_6f7a                        ;; 30:6f71 $7a $6f $30
     Op92_Unknown $00                                   ;; 30:6f74 $92 $00
     Op18_Jump call_30_6b4c                             ;; 30:6f76 $18 $4c $6b $30
@@ -2479,7 +2479,7 @@ call_30_6f7a:
 call_30_6f89:
     SCRIPT_RETURN_4A                                   ;; 30:6f89 $4a
     Op3E_Compare_Branch 26, data_1b_48df, call_30_6f89 ;; 30:6f8a $3e $1a $df $48 $1b $89 $6f $30
-    Op14_Unknown 1, data_05_671d                       ;; 30:6f92 $14 $01 $1d $67
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_wishie_671d ;; 30:6f92 $14 $01 $1d $67
     SCRIPT_POINTER call_30_6fac                        ;; 30:6f96 $ac $6f $30
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_1b_4acf ;; 30:6f99 $4c $1a $01 $04 $00 $00 $00 $00 $cf $4a $1b
     ;;<EA>Wishie<E8>!<end>
@@ -2508,7 +2508,7 @@ call_30_6fd6:
 
 call_30_6fde:
     Op68_CopyBytes 1, wC829, w1_D20E, $01              ;; 30:6fde $68 $01 $29 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_671f                       ;; 30:6fe5 $14 $01 $1f $67
+    Op14_BranchWithHamChatWheelRules 1, data_05_671f   ;; 30:6fe5 $14 $01 $1f $67
     SCRIPT_POINTER call_30_6db8                        ;; 30:6fe9 $b8 $6d $30
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_1b_4907 ;; 30:6fec $4c $1a $01 $04 $00 $00 $00 $00 $07 $49 $1b
     Op1E_Call call_20_4294                             ;; 30:6ff7 $1e $94 $42 $20
@@ -2539,9 +2539,9 @@ call_30_7030:
 
 call_30_703d:
     Op68_CopyBytes 1, wC829, w1_D20E, $01              ;; 30:703d $68 $01 $29 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_671f                       ;; 30:7044 $14 $01 $1f $67
+    Op14_BranchWithHamChatWheelRules 1, data_05_671f   ;; 30:7044 $14 $01 $1f $67
     SCRIPT_POINTER call_30_70ac                        ;; 30:7048 $ac $70 $30
-    Op14_Unknown 1, data_05_6723                       ;; 30:704b $14 $01 $23 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_127_6723 ;; 30:704b $14 $01 $23 $67
     SCRIPT_POINTER call_30_7091                        ;; 30:704f $91 $70 $30
     Op1E_Call call_20_43df                             ;; 30:7052 $1e $df $43 $20
     Op1E_Call call_1d_7c33                             ;; 30:7056 $1e $33 $7c $1d
@@ -2563,7 +2563,7 @@ call_30_703d:
     Op18_Jump call_30_6b4c                             ;; 30:708d $18 $4c $6b $30
 
 call_30_7091:
-    Op14_Unknown 1, data_05_6725                       ;; 30:7091 $14 $01 $25 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_423_6725 ;; 30:7091 $14 $01 $25 $67
     SCRIPT_POINTER call_30_70ac                        ;; 30:7095 $ac $70 $30
     Op16_SubOps 1                                      ;; 30:7098 $16 $01
     SubOp_SetFlag 423 ; Bit 7 of wC94C                 ;; 30:709a $3f $a7
@@ -2631,7 +2631,7 @@ call_30_712a:
 call_30_7142:
     Op1E_Call call_20_4c28                             ;; 30:7142 $1e $28 $4c $20
     Op1E_Call call_30_72e8                             ;; 30:7146 $1e $e8 $72 $30
-    Op14_Unknown 1, data_05_6727                       ;; 30:714a $14 $01 $27 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_164_6727 ;; 30:714a $14 $01 $27 $67
     SCRIPT_POINTER call_30_715c                        ;; 30:714e $5c $71 $30
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_1b_499c ;; 30:7151 $4c $1a $01 $04 $00 $00 $00 $00 $9c $49 $1b
 
@@ -2641,7 +2641,7 @@ call_30_715c:
     ;;Please!<E2>I'm a collector.<E2>Please understand.<E0>
     Op04_Unknown_Text data_3b_474a                     ;; 30:716b $04 $4a $47 $3b
     Op92_Unknown $00                                   ;; 30:716f $92 $00
-    Op14_Unknown 1, data_05_6727                       ;; 30:7171 $14 $01 $27 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_164_6727 ;; 30:7171 $14 $01 $27 $67
     SCRIPT_POINTER call_30_718c                        ;; 30:7175 $8c $71 $30
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_1b_49d1 ;; 30:7178 $4c $1a $01 $04 $00 $00 $00 $00 $d1 $49 $1b
 
@@ -2689,7 +2689,7 @@ call_30_71ce:
 call_30_71f4:
     SCRIPT_RETURN_4A                                   ;; 30:71f4 $4a
     Op3E_Compare_Branch 30, data_1b_4a62, call_30_71f4 ;; 30:71f5 $3e $1e $62 $4a $1b $f4 $71 $30
-    Op14_Unknown 1, data_05_6729                       ;; 30:71fd $14 $01 $29 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_400_6729 ;; 30:71fd $14 $01 $29 $67
     SCRIPT_POINTER call_30_7234                        ;; 30:7201 $34 $72 $30
     ;;Now that our set<E4>is finished, <E5>I<E4>don't know what to<E4>do next. <E5>We were<E4>talking about what<E4>to collect next.<E0>
     Op06_Unknown_Text data_3b_4781                     ;; 30:7204 $06 $81 $47 $3b
@@ -2733,7 +2733,7 @@ call_30_7264:
     Op18_Jump call_30_6b4c                             ;; 30:7268 $18 $4c $6b $30
 
 call_30_726c:
-    Op14_Unknown 1, data_05_672b                       ;; 30:726c $14 $01 $2b $67
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_hamtast_672b ;; 30:726c $14 $01 $2b $67
     SCRIPT_POINTER call_30_72e7                        ;; 30:7270 $e7 $72 $30
     Op92_Unknown $00                                   ;; 30:7273 $92 $00
     Op50_WriteByte wBitArrayIndexC715, $00, $4c        ;; 30:7275 $50 $15 $c7 $00 $4c
@@ -2773,10 +2773,10 @@ call_30_72e7:
 
 call_30_72e8:
     Op68_CopyBytes 1, wC829, w1_D20E, $01              ;; 30:72e8 $68 $01 $29 $c8 $0e $d2 $01
-    Op14_Unknown 1, data_05_671f                       ;; 30:72ef $14 $01 $1f $67
+    Op14_BranchWithHamChatWheelRules 1, data_05_671f   ;; 30:72ef $14 $01 $1f $67
     SCRIPT_POINTER call_30_731c                        ;; 30:72f3 $1c $73 $30
     Op68_CopyBytes 1, wC829, w1_BeginRegionD1FD, $01   ;; 30:72f6 $68 $01 $29 $c8 $fd $d1 $01
-    Op14_Unknown 1, data_05_672d                       ;; 30:72fd $14 $01 $2d $67
+    Op14_BranchWithHamChatWheelRules 1, data_05_672d   ;; 30:72fd $14 $01 $2d $67
     SCRIPT_POINTER call_30_7310                        ;; 30:7301 $10 $73 $30
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, data_10_4235 ;; 30:7304 $4c $16 $10 $02 $00 $00 $00 $00 $35 $42 $10
     SCRIPT_RETURN_20                                   ;; 30:730f $20
@@ -2790,11 +2790,11 @@ call_30_731c:
     SCRIPT_RETURN_20                                   ;; 30:7327 $20
 
 call_30_7328:
-    Op14_Unknown 1, data_05_6731                       ;; 30:7328 $14 $01 $31 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_123_6731 ;; 30:7328 $14 $01 $31 $67
     SCRIPT_POINTER call_30_73ac                        ;; 30:732c $ac $73 $30
-    Op14_Unknown 1, data_05_6727                       ;; 30:732f $14 $01 $27 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_164_6727 ;; 30:732f $14 $01 $27 $67
     SCRIPT_POINTER call_30_736b                        ;; 30:7333 $6b $73 $30
-    Op14_Unknown 1, data_05_6733                       ;; 30:7336 $14 $01 $33 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_163_6733 ;; 30:7336 $14 $01 $33 $67
     SCRIPT_POINTER call_30_7354                        ;; 30:733a $54 $73 $30
     Op4C_Unknown $1e, $01, $04, $30, $00, $28, $00, data_1b_488e ;; 30:733d $4c $1e $01 $04 $30 $00 $28 $00 $8e $48 $1b
     Op4C_Unknown $1a, $01, $04, $30, $00, $48, $00, data_1b_48a4 ;; 30:7348 $4c $1a $01 $04 $30 $00 $48 $00 $a4 $48 $1b
@@ -2834,7 +2834,7 @@ call_30_73ed:
     Op16_SubOps 1                                      ;; 30:7407 $16 $01
     SubOp_SetFlag 163 ; Bit 3 of wC92C                 ;; 30:7409 $3e $a3
     Op1E_Call call_1d_6c54                             ;; 30:740b $1e $54 $6c $1d
-    Op14_Unknown 1, data_05_6735                       ;; 30:740f $14 $01 $35 $67
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_oopsie_6735 ;; 30:740f $14 $01 $35 $67
     SCRIPT_POINTER call_30_7429                        ;; 30:7413 $29 $74 $30
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, data_1b_4aa2 ;; 30:7416 $4c $1e $01 $04 $00 $00 $00 $00 $a2 $4a $1b
     ;;<EA>Oopsie<E8><...><E3><end>
@@ -2984,7 +2984,7 @@ call_30_760c:
 
 call_30_7645:
     Op1E_Call call_1d_68f9                             ;; 30:7645 $1e $f9 $68 $1d
-    Op14_Unknown 1, data_05_5498                       ;; 30:7649 $14 $01 $98 $54
+    Op14_BranchWithHamChatWheelRules 1, data_05_5498   ;; 30:7649 $14 $01 $98 $54
     SCRIPT_POINTER call_30_760c                        ;; 30:764d $0c $76 $30
     Op1E_Call call_30_7688                             ;; 30:7650 $1e $88 $76 $30
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 30:7654 $82 $42 $74 $01
@@ -2992,7 +2992,7 @@ call_30_7645:
 
 call_30_765c:
     Op1E_Call call_1d_69f1                             ;; 30:765c $1e $f1 $69 $1d
-    Op14_Unknown 1, data_05_5498                       ;; 30:7660 $14 $01 $98 $54
+    Op14_BranchWithHamChatWheelRules 1, data_05_5498   ;; 30:7660 $14 $01 $98 $54
     SCRIPT_POINTER call_30_760c                        ;; 30:7664 $0c $76 $30
     Op16_SubOps 1                                      ;; 30:7667 $16 $01
     SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 30:7669 $5e $03
@@ -3001,7 +3001,7 @@ call_30_765c:
     Op18_Jump call_30_760c                             ;; 30:7673 $18 $0c $76 $30
 
 call_30_7677:
-    Op14_Unknown 1, data_05_5674                       ;; 30:7677 $14 $01 $74 $56
+    Op14_BranchWithHamChatWheelRules 1, data_05_5674   ;; 30:7677 $14 $01 $74 $56
     SCRIPT_POINTER call_30_7682                        ;; 30:767b $82 $76 $30
     Op16_SubOps 1                                      ;; 30:767e $16 $01
     SubOp_ClearFlag 385 ; Bit 1 of wC948               ;; 30:7680 $5f $81
@@ -3023,14 +3023,14 @@ call_30_7688:
     Op32_Graphics data_6d_7d0d, w6_D400                ;; 30:76b7 $32 $0d $7d $6d $00 $d4 $06
     Op32_Graphics data_6d_72de, w6_D000                ;; 30:76be $32 $de $72 $6d $00 $d0 $06
     Op32_Graphics data_7b_5ce1, w4_D200                ;; 30:76c5 $32 $e1 $5c $7b $00 $d2 $04
-    Op14_Unknown 1, data_05_5678                       ;; 30:76cc $14 $01 $78 $56
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_385_5678 ;; 30:76cc $14 $01 $78 $56
     SCRIPT_POINTER call_30_76d7                        ;; 30:76d0 $d7 $76 $30
     Op1E_Call call_30_7fa3                             ;; 30:76d3 $1e $a3 $7f $30
 
 call_30_76d7:
-    Op14_Unknown 1, data_05_567a                       ;; 30:76d7 $14 $01 $7a $56
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_105_567a ;; 30:76d7 $14 $01 $7a $56
     SCRIPT_POINTER call_30_76ea                        ;; 30:76db $ea $76 $30
-    Op14_Unknown 1, data_05_567c                       ;; 30:76de $14 $01 $7c $56
+    Op14_BranchWithHamChatWheelRules 1, data_05_567c   ;; 30:76de $14 $01 $7c $56
     SCRIPT_POINTER call_30_76f9                        ;; 30:76e2 $f9 $76 $30
     Op50_WriteByte w3_D28B, $03, $44                   ;; 30:76e5 $50 $8b $d2 $03 $44
 
@@ -3045,11 +3045,11 @@ call_30_76f9:
 call_30_770f:
     Op16_SubOps 1                                      ;; 30:770f $16 $01
     SubOp_SetByte wC73D, $05                           ;; 30:7711 $7e $25 $05
-    Op14_Unknown 1, data_05_5512                       ;; 30:7714 $14 $01 $12 $55
+    Op14_BranchWithHamChatWheelRules 1, data_05_5512   ;; 30:7714 $14 $01 $12 $55
     SCRIPT_POINTER call_30_7738                        ;; 30:7718 $38 $77 $30
-    Op14_Unknown 1, data_05_550e                       ;; 30:771b $14 $01 $0e $55
+    Op14_BranchWithHamChatWheelRules 1, data_05_550e   ;; 30:771b $14 $01 $0e $55
     SCRIPT_POINTER call_30_7740                        ;; 30:771f $40 $77 $30
-    Op14_Unknown 1, data_05_5680                       ;; 30:7722 $14 $01 $80 $56
+    Op14_BranchWithHamChatWheelRules 1, data_05_5680   ;; 30:7722 $14 $01 $80 $56
     SCRIPT_POINTER call_30_7748                        ;; 30:7726 $48 $77 $30
     Op4C_Unknown $16, $08, $02, $60, $00, $78, $00, data_10_40c2 ;; 30:7729 $4c $16 $08 $02 $60 $00 $78 $00 $c2 $40 $10
     Op18_Jump call_30_7774                             ;; 30:7734 $18 $74 $77 $30
@@ -3070,9 +3070,9 @@ call_30_7748:
 
 call_30_7774:
     Op1E_Call call_34_593a                             ;; 30:7774 $1e $3a $59 $34
-    Op14_Unknown 1, data_05_5648                       ;; 30:7778 $14 $01 $48 $56
+    Op14_BranchWithHamChatWheelRules 1, data_05_5648   ;; 30:7778 $14 $01 $48 $56
     SCRIPT_POINTER call_30_7794                        ;; 30:777c $94 $77 $30
-    Op14_Unknown 1, data_05_5684                       ;; 30:777f $14 $01 $84 $56
+    Op14_BranchWithHamChatWheelRules 1, useIfDontHave_421_5684 ;; 30:777f $14 $01 $84 $56
     SCRIPT_POINTER call_30_7794                        ;; 30:7783 $94 $77 $30
     Op4C_Unknown $1c, $01, $04, $00, $00, $00, $00, data_18_4a10 ;; 30:7786 $4c $1c $01 $04 $00 $00 $00 $00 $10 $4a $18
     Op44_Unknown $0a, $00                              ;; 30:7791 $44 $0a $00
@@ -3086,7 +3086,7 @@ call_30_7794:
     Op4E_Unknown_StoreValue 8, $01, data_15_624e       ;; 30:77ae $4e $08 $01 $4e $62 $15
     Op4E_Unknown_StoreValue 9, $01, data_1a_58da       ;; 30:77b4 $4e $09 $01 $da $58 $1a
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 30:77ba $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
-    Op14_Unknown 1, data_05_5680                       ;; 30:77c5 $14 $01 $80 $56
+    Op14_BranchWithHamChatWheelRules 1, data_05_5680   ;; 30:77c5 $14 $01 $80 $56
     SCRIPT_POINTER call_30_77da                        ;; 30:77c9 $da $77 $30
     Op4E_Unknown_StoreValue 6, $01, data_18_4024       ;; 30:77cc $4e $06 $01 $24 $40 $18
     Op1E_Call call_33_4d12                             ;; 30:77d2 $1e $12 $4d $33
@@ -3096,7 +3096,7 @@ call_30_77da:
     Op4E_Unknown_StoreValue 6, $01, data_14_4048       ;; 30:77da $4e $06 $01 $48 $40 $14
     Op44_Unknown $60, $00                              ;; 30:77e0 $44 $60 $00
     Op4E_Unknown_StoreValue 6, $01, data_18_4024       ;; 30:77e3 $4e $06 $01 $24 $40 $18
-    Op14_Unknown 1, data_05_567c                       ;; 30:77e9 $14 $01 $7c $56
+    Op14_BranchWithHamChatWheelRules 1, data_05_567c   ;; 30:77e9 $14 $01 $7c $56
     SCRIPT_POINTER call_30_77ff                        ;; 30:77ed $ff $77 $30
     Op4C_Unknown $1c, $01, $04, $c0, $00, $a8, $00, data_18_4979 ;; 30:77f0 $4c $1c $01 $04 $c0 $00 $a8 $00 $79 $49 $18
     Op18_Jump call_30_7815                             ;; 30:77fb $18 $15 $78 $30
@@ -3266,9 +3266,9 @@ call_30_7994:
     Op54_Unknown $00                                   ;; 30:79a0 $54 $00
 
 call_30_79a2:
-    Op14_Unknown 1, data_05_5686                       ;; 30:79a2 $14 $01 $86 $56
+    Op14_BranchWithHamChatWheelRules 1, data_05_5686   ;; 30:79a2 $14 $01 $86 $56
     SCRIPT_POINTER call_30_7d1d                        ;; 30:79a6 $1d $7d $30
-    Op14_Unknown 1, data_05_568a                       ;; 30:79a9 $14 $01 $8a $56
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_105_568a ;; 30:79a9 $14 $01 $8a $56
     SCRIPT_POINTER call_30_7c4c                        ;; 30:79ad $4c $7c $30
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 30:79b0 $50 $1d $c3 $00 $d0
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 30:79b5 $82 $c3 $74 $01
@@ -3279,7 +3279,7 @@ call_30_79a2:
     Op18_Jump call_30_760c                             ;; 30:79c4 $18 $0c $76 $30
 
 call_30_79c8:
-    Op14_Unknown 1, data_05_568c                       ;; 30:79c8 $14 $01 $8c $56
+    Op14_BranchWithHamChatWheelRules 1, data_05_568c   ;; 30:79c8 $14 $01 $8c $56
     SCRIPT_POINTER call_30_7a22                        ;; 30:79cc $22 $7a $30
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 30:79cf $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 30:79d3 $1e $1d $6f $1d
@@ -3425,7 +3425,7 @@ call_30_7b50:
     Op1E_Call call_1d_6caf                             ;; 30:7b71 $1e $af $6c $1d
     ;;This Cucumber is<E4>Tricket's favorite<E4>food. <E5><end>
     Op04_Unknown_Text data_1d_7dcc                     ;; 30:7b75 $04 $cc $7d $1d
-    Op14_Unknown 1, data_05_56a4                       ;; 30:7b79 $14 $01 $a4 $56
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_104_56a4 ;; 30:7b79 $14 $01 $a4 $56
     SCRIPT_POINTER call_30_7bb2                        ;; 30:7b7d $b2 $7b $30
     ;;Oh, I know!<E4>I'll give you this<E4>Cucumber. <E5>Tricket<E4>will follow you<E4>all the way here<E3>if you are holding<E4>it. <E5>Please bring<E4>my Tricket back.<E0>
     Op06_Unknown_Text data_1d_7df8                     ;; 30:7b80 $06 $f8 $7d $1d
@@ -3648,7 +3648,7 @@ call_30_7e10:
     Op18_Jump call_30_760c                             ;; 30:7e50 $18 $0c $76 $30
 
 call_30_7e54:
-    Op14_Unknown 1, data_05_56a6                       ;; 30:7e54 $14 $01 $a6 $56
+    Op14_BranchWithHamChatWheelRules 1, useIfHave_hammo_56a6 ;; 30:7e54 $14 $01 $a6 $56
     SCRIPT_POINTER call_30_7ed9                        ;; 30:7e58 $d9 $7e $30
     Op16_SubOps 1                                      ;; 30:7e5b $16 $01
     SubOp_SetFlag 421 ; Bit 5 of wC94C                 ;; 30:7e5d $3f $a5

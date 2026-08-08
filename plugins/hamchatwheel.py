@@ -174,14 +174,17 @@ db (\1 & $FF)
             match ruleOpcode:
                 case 0x1A:
                     self.hamChatWheelRulesArgsList.append((1, "HamChatWheelRule_AlwaysUse"))
+                    self.maybeLabelSelf("alwaysUse") # Seems there's never actually an Op14 pointing at an alwaysUse.
                     size += 1
                 case 0x3E | 0x3F:
                     bitArrayIndex = ((ruleOpcode & 0x01) << 8) + self.memory.byte(self.base_address + size + 1)
                     self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfHave", bitArrayIndexToHamchatOrDefault(bitArrayIndex)))
+                    self.maybeLabelSelf("useIfHave_" + bitArrayIndexToHamchatOrDefault(bitArrayIndex).lower().replace("hamchat_", ""))
                     size += 2
                 case 0x5E | 0x5F:
                     bitArrayIndex = ((ruleOpcode & 0x01) << 8) + self.memory.byte(self.base_address + size + 1)
                     self.hamChatWheelRulesArgsList.append((2, "HamChatWheelRule_UseIfDontHave", bitArrayIndexToHamchatOrDefault(bitArrayIndex)))
+                    self.maybeLabelSelf("useIfDontHave_" + bitArrayIndexToHamchatOrDefault(bitArrayIndex).lower().replace("hamchat_", ""))
                     size += 2
                 case _:
                     # This works the same as the Op16 SubOps default case. See hamscript.py.
@@ -208,6 +211,11 @@ db (\1 & $FF)
 
         if size > 0:
             self.resize(size)
+
+    def maybeLabelSelf(self, labelPrefix):
+        if self.amount == 1:
+            self.memory.addLabel(self.base_address, labelPrefix + '_%04x' % self.base_address)
+            self.label = self.memory.getLabel(self.base_address)
 
     def export(self, file):
         prelineComments = self.memory.getComments(file.addr)

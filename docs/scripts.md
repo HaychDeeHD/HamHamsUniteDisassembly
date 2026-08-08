@@ -176,7 +176,34 @@ First arg is a count. This count determines the number of script pointers that w
 
 The second arg is a 2 byte Rom address for Bank05, which holds all the HamChatWheel data. The referenced data fits the shape of HamChatWheelRules.
 
-Op14 is followed by a number of Script pointers equal to the first arg, count. I have not determined how they are used.
+Op14 is followed by a number of Script pointers equal to the first arg, count.
+
+Op14 goes down the list of HamChatWheelRules and jumps using the Script pointer of whichever one matches first. If none of the rules conditions are met, script execution continues with the instruction after the Op14.
+
+Typical usage example:
+```
+~~~ script bank
+
+doSomethingIfHaveDelichuAndSparklie:
+  Op14 1 missingDelichuRule
+  SCRIPT_POINTER giveUp
+  Op14 1 missingSparklieRule
+  SCRIPT_POINTER giveUp
+  <do something>
+
+giveUp:
+  <return>
+
+~~~ bank 05
+
+missingDelichuRule:
+  HamChatWheelRule_UseIfDontHave HAMCHAT_DELICHU
+
+missingSparklieRule:
+  HamChatWheelRule_UseIfDontHave HAMCHAT_SPARKLIE
+```
+
+This is a typical usage, even though the back to back Op14's could be combined into 1. The HamChatWheelRules are capable of determining any bitArrayIndex state, not just those for HamChats. One use case for many Op14's is checking whether you have everything from an area to make the sunflower on the map spin.
 
 <a id="op16"></a>
 ### Op16 - Begin SubOps
