@@ -536,7 +536,7 @@ OPBLOCKS = {
     0x3E: makeOpBlockFromArgString(0x3E, 'd,3Rom,3RomS', "Op3E_Compare_Branch"),
     0x40: makeOpBlockFromArgString(0x40, 'b,b,b,b'),
     0x42: makeOpBlockFromArgString(0x42, 'd,b,3Rom', "Op42_Unknown_StoreValue"),
-    0x44: makeOpBlockFromArgString(0x44, 'b,b'),
+    0x44: makeOpBlockFromArgString(0x44, 'b,b'), # Could hardcode the second byte as 00.
     0x46: makeOpBlockFromArgString(0x46, None),
     0x48: makeOpBlockFromArgString(0x48, None),
     0x4A: makeOpBlockFromArgString(0x4A, None, "SCRIPT_RETURN_4A"),
@@ -550,7 +550,7 @@ OPBLOCKS = {
     0x5A: makeOpBlockFromArgString(0x5A, 'b'),
     0x5E: makeOpBlockFromArgString(0x5E, 'b'),
     0x68: Op68Block, # Shared wram bank arg that may not be relevant to both 2ram's
-    0x6A: makeOpBlockFromArgString(0x6A, 'b,b,b,b'),
+    0x6A: makeOpBlockFromArgString(0x6A, 'b,b,b,b'), # Speculatively 2 2byte Ram addresses, 0000 or FFXX (HRAM).
     0x74: Op74Block, # Need 2 byte Wram Address
     0x76: makeOpBlockFromArgString(0x76, 'b', "Op76_PrepTableJumpIndex_Write"),
     0x7E: makeOpBlockFromArgString(0x7E, '3Ram,b,b,b,b,b'),

@@ -332,6 +332,8 @@ Compare with Op4C and Op4E.
 
 seems to happen after chat select etc
 
+2 byte args. The second byte arg appears to always be $00.
+
 <a id="op46"></a>
 ### Op46 
 
@@ -409,6 +411,8 @@ Copy wram bytes from one location to another (can't copy between 2 non-zero bank
 
 <a id="op6A"></a>
 ### Op6A 
+
+Takes 4 arg bytes. These have the appearance of being 2 2-byte RAM addresses. Their values are always either $00 $00 or something beginning in $ff. So this Op could have something to do with HRAM.
 
 <a id="op74"></a>
 ### Op74 
