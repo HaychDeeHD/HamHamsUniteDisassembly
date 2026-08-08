@@ -2345,6 +2345,8 @@ call_03_4f06:
     ld   [wImportantBitArrayThingC35B], A              ;; 03:50a1 $ea $5b $c3
     call call_03_5b04                                  ;; 03:50a4 $cd $04 $5b
     ret                                                ;; 03:50a7 $c9
+
+data_03_50a8:
     ld   A, $46                                        ;; 03:50a8 $3e $46
     ld_long_store rLYC, A                              ;; 03:50aa $ea $45 $ff
     ld   [wC66F], A                                    ;; 03:50ad $ea $6f $c6
@@ -2385,6 +2387,8 @@ call_03_4f06:
     pop  AF                                            ;; 03:50f4 $f1
     ld_long_store rSVBK, A                             ;; 03:50f5 $ea $70 $ff
     jp   jp_00_08c8                                    ;; 03:50f8 $c3 $c8 $08
+
+data_03_50fb:
     ld   A, $57                                        ;; 03:50fb $3e $57
     ld_long_store rLYC, A                              ;; 03:50fd $ea $45 $ff
     ld   [wC66F], A                                    ;; 03:5100 $ea $6f $c6
@@ -3729,6 +3733,8 @@ call_03_596a:
 
 call_03_5987:
     ret                                                ;; 03:5987 $c9
+
+data_03_5988:
     ld   A, $80                                        ;; 03:5988 $3e $80
     ld   [wC66F], A                                    ;; 03:598a $ea $6f $c6
     ld   HL, wC679                                     ;; 03:598d $21 $79 $c6

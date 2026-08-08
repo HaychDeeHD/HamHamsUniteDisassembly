@@ -1653,7 +1653,7 @@ call_29_6f0c:
     Op50_WriteByte wC67C, $00, $00                     ;; 29:6f2c $50 $7c $c6 $00 $00
     Op52_WriteBytes wC67D, $00, $00, $00               ;; 29:6f31 $52 $7d $c6 $00 $00 $00
     Op50_WriteByte wC676, $00, $a7                     ;; 29:6f37 $50 $76 $c6 $00 $a7
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 29:6f3c $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 29:6f3c $8e $00 $88 $59 $03
     Op32_Graphics data_66_6396, w4_D800                ;; 29:6f41 $32 $96 $63 $66 $00 $d8 $04
     Op32_Graphics data_68_670c, w5_D000                ;; 29:6f48 $32 $0c $67 $68 $00 $d0 $05
     Op32_Graphics data_6b_586f, w6_D800                ;; 29:6f4f $32 $6f $58 $6b $00 $d8 $06
@@ -2045,7 +2045,7 @@ call_29_7419:
     Op44_Unknown $1e, $00                              ;; 29:7423 $44 $1e $00
     Op1E_Call call_04_5b22                             ;; 29:7426 $1e $22 $5b $04
     Op1E_Call call_3a_6287                             ;; 29:742a $1e $87 $62 $3a
-    Op8E_StoreAddress 0, $00, $00, $00                 ;; 29:742e $8e $00 $00 $00 $00
+    Op8E_StoreAddress 0, zero_pointer                  ;; 29:742e $8e $00 $00 $00 $00
     Op52_WriteBytes wC679, $00, $de, $08               ;; 29:7433 $52 $79 $c6 $00 $de $08
     Op50_WriteByte wC67B, $00, $00                     ;; 29:7439 $50 $7b $c6 $00 $00
     Op50_WriteByte w1_D000, $01, $00                   ;; 29:743e $50 $00 $d0 $01 $00
@@ -2553,7 +2553,7 @@ call_29_7a05:
     Op1E_Call call_04_5b22                             ;; 29:7a12 $1e $22 $5b $04
     Op14_Unknown 1, data_05_4dae                       ;; 29:7a16 $14 $01 $ae $4d
     SCRIPT_POINTER call_29_7a33                        ;; 29:7a1a $33 $7a $29
-    Op8E_StoreAddress 0, $00, $00, $00                 ;; 29:7a1d $8e $00 $00 $00 $00
+    Op8E_StoreAddress 0, zero_pointer                  ;; 29:7a1d $8e $00 $00 $00 $00
     Op52_WriteBytes wC679, $00, $de, $08               ;; 29:7a22 $52 $79 $c6 $00 $de $08
     Op50_WriteByte wC67B, $00, $00                     ;; 29:7a28 $50 $7b $c6 $00 $00
     Op50_WriteByte w1_D000, $01, $00                   ;; 29:7a2d $50 $00 $d0 $01 $00

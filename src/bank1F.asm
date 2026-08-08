@@ -56,7 +56,7 @@ call_1f_406e:
     Op1E_Call call_1d_68f9                             ;; 1f:4098 $1e $f9 $68 $1d
     Op14_Unknown 1, data_05_6d02                       ;; 1f:409c $14 $01 $02 $6d
     SCRIPT_POINTER call_1f_400c                        ;; 1f:40a0 $0c $40 $1f
-    Op8E_StoreAddress 0, $00, $00, $00                 ;; 1f:40a3 $8e $00 $00 $00 $00
+    Op8E_StoreAddress 0, zero_pointer                  ;; 1f:40a3 $8e $00 $00 $00 $00
     Op1E_Call call_1f_40fa                             ;; 1f:40a8 $1e $fa $40 $1f
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 1f:40ac $82 $42 $74 $01
     Op18_Jump call_1f_400c                             ;; 1f:40b0 $18 $0c $40 $1f
@@ -71,7 +71,7 @@ call_1f_40b4:
     Op1E_Call call_1d_69f1                             ;; 1f:40de $1e $f1 $69 $1d
     Op14_Unknown 1, data_05_6d02                       ;; 1f:40e2 $14 $01 $02 $6d
     SCRIPT_POINTER call_1f_40f2                        ;; 1f:40e6 $f2 $40 $1f
-    Op8E_StoreAddress 0, $00, $00, $00                 ;; 1f:40e9 $8e $00 $00 $00 $00
+    Op8E_StoreAddress 0, zero_pointer                  ;; 1f:40e9 $8e $00 $00 $00 $00
     Op1E_Call call_1f_40fa                             ;; 1f:40ee $1e $fa $40 $1f
 
 call_1f_40f2:
@@ -148,7 +148,7 @@ call_1f_41cd:
     Op68_CopyBytes 1, wC77E, wC81F, $00                ;; 1f:41fd $68 $01 $7e $c7 $1f $c8 $00
     Op82_Run data_02_67da                              ;; 1f:4204 $82 $da $67 $02
     SCRIPT_RETURN_4A                                   ;; 1f:4208 $4a
-    Op8E_StoreAddress 0, $f4, $67, $02                 ;; 1f:4209 $8e $00 $f4 $67 $02
+    Op8E_StoreAddress 0, data_02_67f4                  ;; 1f:4209 $8e $00 $f4 $67 $02
     Op42_Unknown_StoreValue 8, $01, data_1b_4000       ;; 1f:420e $42 $08 $01 $00 $40 $1b
     Op42_Unknown_StoreValue 9, $01, data_1b_405c       ;; 1f:4214 $42 $09 $01 $5c $40 $1b
     Op16_SubOps 1                                      ;; 1f:421a $16 $01
@@ -1653,7 +1653,7 @@ call_1f_5313:
     Op16_SubOps 1                                      ;; 1f:534b $16 $01
     SubOp_SetByte wC737, $fd                           ;; 1f:534d $7e $1f $fd
     Op1E_Call call_36_7a7a                             ;; 1f:5350 $1e $7a $7a $36
-    Op8E_StoreAddress 0, $00, $00, $00                 ;; 1f:5354 $8e $00 $00 $00 $00
+    Op8E_StoreAddress 0, zero_pointer                  ;; 1f:5354 $8e $00 $00 $00 $00
     Op1E_Call call_1f_59fe                             ;; 1f:5359 $1e $fe $59 $1f
     Op5A_Unknown $ac                                   ;; 1f:535d $5a $ac
     Op1E_Call call_1d_6d8c                             ;; 1f:535f $1e $8c $6d $1d
@@ -1698,8 +1698,8 @@ call_1f_53be:
     Op4C_Unknown $26, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1f:5442 $4c $26 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op4C_Unknown $24, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1f:544d $4c $24 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op82_Run data_02_68a6                              ;; 1f:5458 $82 $a6 $68 $02
-    Op8E_StoreAddress 0, $cb, $68, $02                 ;; 1f:545c $8e $00 $cb $68 $02
-    Op8E_StoreAddress 1, $df, $69, $02                 ;; 1f:5461 $8e $01 $df $69 $02
+    Op8E_StoreAddress 0, data_02_68cb                  ;; 1f:545c $8e $00 $cb $68 $02
+    Op8E_StoreAddress 1, data_02_69df                  ;; 1f:5461 $8e $01 $df $69 $02
     Op1E_Call call_36_78f8                             ;; 1f:5466 $1e $f8 $78 $36
     Op16_SubOps 1                                      ;; 1f:546a $16 $01
     SubOp_ClearFlag wC94C, 3                           ;; 1f:546c $5f $a3
@@ -1870,8 +1870,8 @@ call_1f_5635:
     Op4C_Unknown $16, $04, $02, $48, $00, $78, $00, data_10_4261 ;; 1f:5661 $4c $16 $04 $02 $48 $00 $78 $00 $61 $42 $10
     Op1E_Call call_36_7873                             ;; 1f:566c $1e $73 $78 $36
     Op4C_Unknown $1e, $01, $04, $18, $00, $70, $00, data_14_5c64 ;; 1f:5670 $4c $1e $01 $04 $18 $00 $70 $00 $64 $5c $14
-    Op8E_StoreAddress 0, $00, $00, $00                 ;; 1f:567b $8e $00 $00 $00 $00
-    Op8E_StoreAddress 1, $00, $00, $00                 ;; 1f:5680 $8e $01 $00 $00 $00
+    Op8E_StoreAddress 0, zero_pointer                  ;; 1f:567b $8e $00 $00 $00 $00
+    Op8E_StoreAddress 1, zero_pointer                  ;; 1f:5680 $8e $01 $00 $00 $00
     Op16_SubOps 1                                      ;; 1f:5685 $16 $01
     SubOp_SetByte wC830, $00                           ;; 1f:5687 $7f $18 $00
     Op16_SubOps 1                                      ;; 1f:568a $16 $01
@@ -1883,7 +1883,7 @@ call_1f_5635:
     Op4C_Unknown $30, $01, $04, $80, $01, $08, $00, data_1b_42b9 ;; 1f:5699 $4c $30 $01 $04 $80 $01 $08 $00 $b9 $42 $1b
     Op4C_Unknown $32, $01, $04, $40, $01, $28, $00, data_1b_42cc ;; 1f:56a4 $4c $32 $01 $04 $40 $01 $28 $00 $cc $42 $1b
     Op4C_Unknown $34, $01, $04, $c0, $01, $28, $00, data_1b_42cc ;; 1f:56af $4c $34 $01 $04 $c0 $01 $28 $00 $cc $42 $1b
-    Op8E_StoreAddress 0, $f4, $67, $02                 ;; 1f:56ba $8e $00 $f4 $67 $02
+    Op8E_StoreAddress 0, data_02_67f4                  ;; 1f:56ba $8e $00 $f4 $67 $02
     Op4E_Unknown_StoreValue 4, $01, data_10_4049       ;; 1f:56bf $4e $04 $01 $49 $40 $10
     Op4E_Unknown_StoreValue 5, $01, data_10_407f       ;; 1f:56c5 $4e $05 $01 $7f $40 $10
     Op4E_Unknown_StoreValue 6, $01, data_15_6284       ;; 1f:56cb $4e $06 $01 $84 $62 $15
@@ -2285,7 +2285,7 @@ call_1f_5af6:
     Op50_WriteByte wCFF9, $00, $19                     ;; 1f:5b57 $50 $f9 $cf $00 $19
     Op4E_Unknown_StoreValue 4, $01, data_19_4058       ;; 1f:5b5c $4e $04 $01 $58 $40 $19
     Op4E_Unknown_StoreValue 14, $01, data_19_406a      ;; 1f:5b62 $4e $0e $01 $6a $40 $19
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:5b68 $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:5b68 $8e $00 $88 $59 $03
     Op44_Unknown $09, $00                              ;; 1f:5b6d $44 $09 $00
     Op50_WriteByte wButtonsOfInterest, $00, $3f        ;; 1f:5b70 $50 $1d $c3 $00 $3f
 
@@ -2451,7 +2451,7 @@ call_1f_5d5d:
 call_1f_5d68:
     Op16_SubOps 1                                      ;; 1f:5d68 $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:5d6a $7e $0d $08
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:5d6d $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:5d6d $8e $00 $88 $59 $03
     Op50_WriteByte w1_D887, $01, $01                   ;; 1f:5d72 $50 $87 $d8 $01 $01
     Op50_WriteByte w1_D8FF, $01, $01                   ;; 1f:5d77 $50 $ff $d8 $01 $01
     Op44_Unknown $09, $00                              ;; 1f:5d7c $44 $09 $00
@@ -2573,7 +2573,7 @@ call_1f_5f45:
 call_1f_5f63:
     Op16_SubOps 1                                      ;; 1f:5f63 $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:5f65 $7e $0d $08
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:5f68 $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:5f68 $8e $00 $88 $59 $03
     Op4E_Unknown_StoreValue 13, $01, data_19_4ccd      ;; 1f:5f6d $4e $0d $01 $cd $4c $19
     Op4E_Unknown_StoreValue 14, $01, data_19_4954      ;; 1f:5f73 $4e $0e $01 $54 $49 $19
     Op44_Unknown $09, $00                              ;; 1f:5f79 $44 $09 $00
@@ -2711,7 +2711,7 @@ call_1f_610c:
     Op42_Unknown_StoreValue 12, $00, data_19_4b36      ;; 1f:61c5 $42 $0c $00 $36 $4b $19
     Op16_SubOps 1                                      ;; 1f:61cb $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:61cd $7e $0d $08
-    Op8E_StoreAddress 0, $a8, $50, $03                 ;; 1f:61d0 $8e $00 $a8 $50 $03
+    Op8E_StoreAddress 0, data_03_50a8                  ;; 1f:61d0 $8e $00 $a8 $50 $03
     Op82_Run data_03_473f                              ;; 1f:61d5 $82 $3f $47 $03
     Op16_SubOps 1                                      ;; 1f:61d9 $16 $01
     SubOp_SetByte wC81A, $0a                           ;; 1f:61db $7f $02 $0a
@@ -2750,7 +2750,7 @@ call_1f_6219:
     Op50_WriteByte w3_D657, $03, $00                   ;; 1f:6252 $50 $57 $d6 $03 $00
     Op16_SubOps 1                                      ;; 1f:6257 $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:6259 $7e $0d $08
-    Op8E_StoreAddress 0, $fb, $50, $03                 ;; 1f:625c $8e $00 $fb $50 $03
+    Op8E_StoreAddress 0, data_03_50fb                  ;; 1f:625c $8e $00 $fb $50 $03
     Op52_WriteBytes w3_D630, $03, $01, $01             ;; 1f:6261 $52 $30 $d6 $03 $01 $01
     Op68_CopyBytes 1, wC81A, w3_D636, $03              ;; 1f:6267 $68 $01 $1a $c8 $36 $d6 $03
     Op14_Unknown 1, data_05_438e                       ;; 1f:626e $14 $01 $8e $43
@@ -2935,7 +2935,7 @@ call_1f_64d4:
     Op4E_Unknown_StoreValue 14, $01, data_19_4ccd      ;; 1f:64f2 $4e $0e $01 $cd $4c $19
     Op16_SubOps 1                                      ;; 1f:64f8 $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:64fa $7e $0d $08
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:64fd $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:64fd $8e $00 $88 $59 $03
     Op44_Unknown $09, $00                              ;; 1f:6502 $44 $09 $00
     Op18_Jump call_1f_5ae7                             ;; 1f:6505 $18 $e7 $5a $1f
 
@@ -3106,7 +3106,7 @@ call_1f_6711:
     Op44_Unknown $1e, $00                              ;; 1f:671d $44 $1e $00
     Op1E_Call call_04_5f51                             ;; 1f:6720 $1e $51 $5f $04
     Op4C_Unknown $16, $00, $00, $00, $00, $00, $00, data_10_4106 ;; 1f:6724 $4c $16 $00 $00 $00 $00 $00 $00 $06 $41 $10
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:672f $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:672f $8e $00 $88 $59 $03
     Op1E_Call call_29_6e87                             ;; 1f:6734 $1e $87 $6e $29
     Op50_WriteByte w3_D506, $03, $03                   ;; 1f:6738 $50 $06 $d5 $03 $03
     Op50_WriteByte wC672, $00, $e7                     ;; 1f:673d $50 $72 $c6 $00 $e7
@@ -3307,7 +3307,7 @@ call_1f_69df:
     Op50_WriteByte w3_D65D, $03, $00                   ;; 1f:6a0b $50 $5d $d6 $03 $00
     Op16_SubOps 1                                      ;; 1f:6a10 $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:6a12 $7e $0d $08
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:6a15 $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:6a15 $8e $00 $88 $59 $03
     Op32_Graphics data_0b_4906, w5_D000                ;; 1f:6a1a $32 $06 $49 $0b $00 $d0 $05
     Op32_Graphics data_72_4d6f, w6_D800                ;; 1f:6a21 $32 $6f $4d $72 $00 $d8 $06
     Op32_Graphics data_72_69e5, w7_D000                ;; 1f:6a28 $32 $e5 $69 $72 $00 $d0 $07
@@ -3407,7 +3407,7 @@ call_1f_6b33:
     SubOp_SetByte wC725, $08                           ;; 1f:6b9b $7e $0d $08
     Op4E_Unknown_StoreValue 4, $01, data_19_4aee       ;; 1f:6b9e $4e $04 $01 $ee $4a $19
     Op4E_Unknown_StoreValue 14, $01, data_19_4b00      ;; 1f:6ba4 $4e $0e $01 $00 $4b $19
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:6baa $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:6baa $8e $00 $88 $59 $03
     Op4C_Unknown $1c, $01, $00, $00, $00, $00, $00, data_19_49e3 ;; 1f:6baf $4c $1c $01 $00 $00 $00 $00 $00 $e3 $49 $19
 
 call_1f_6bba:
@@ -3446,7 +3446,7 @@ call_1f_6c02:
     Op52_WriteBytes wC67D, $00, $00, $00               ;; 1f:6c26 $52 $7d $c6 $00 $00 $00
     Op16_SubOps 1                                      ;; 1f:6c2c $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:6c2e $7e $0d $08
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:6c31 $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:6c31 $8e $00 $88 $59 $03
     Op32_Graphics data_0b_7358, w5_D000                ;; 1f:6c36 $32 $58 $73 $0b $00 $d0 $05
     Op32_Graphics data_0b_598f, w4_D000                ;; 1f:6c3d $32 $8f $59 $0b $00 $d0 $04
     Op32_Graphics data_0b_74de, w4_D800                ;; 1f:6c44 $32 $de $74 $0b $00 $d8 $04
@@ -3556,7 +3556,7 @@ call_1f_6dbd:
     Op52_WriteBytes wC67D, $00, $00, $00               ;; 1f:6de1 $52 $7d $c6 $00 $00 $00
     Op16_SubOps 1                                      ;; 1f:6de7 $16 $01
     SubOp_SetByte wC725, $08                           ;; 1f:6de9 $7e $0d $08
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:6dec $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:6dec $8e $00 $88 $59 $03
     Op32_Graphics data_0b_7358, w5_D000                ;; 1f:6df1 $32 $58 $73 $0b $00 $d0 $05
     Op32_Graphics data_0b_598f, w4_D000                ;; 1f:6df8 $32 $8f $59 $0b $00 $d0 $04
     Op32_Graphics data_0b_74de, w4_D800                ;; 1f:6dff $32 $de $74 $0b $00 $d8 $04
@@ -3821,7 +3821,7 @@ call_1f_71a2:
 call_1f_71bb:
     Op1E_Call call_04_5b22                             ;; 1f:71bb $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 1f:71bf $44 $09 $00
-    Op8E_StoreAddress 0, $00, $00, $00                 ;; 1f:71c2 $8e $00 $00 $00 $00
+    Op8E_StoreAddress 0, zero_pointer                  ;; 1f:71c2 $8e $00 $00 $00 $00
     Op52_WriteBytes wC679, $00, $de, $08               ;; 1f:71c7 $52 $79 $c6 $00 $de $08
     Op50_WriteByte wC67B, $00, $00                     ;; 1f:71cd $50 $7b $c6 $00 $00
     Op1E_Call call_04_5f51                             ;; 1f:71d2 $1e $51 $5f $04
@@ -3841,7 +3841,7 @@ call_1f_71fa:
     Op1E_Call call_04_5b22                             ;; 1f:71fa $1e $22 $5b $04
     Op44_Unknown $1e, $00                              ;; 1f:71fe $44 $1e $00
     Op1E_Call call_04_5f51                             ;; 1f:7201 $1e $51 $5f $04
-    Op8E_StoreAddress 0, $88, $59, $03                 ;; 1f:7205 $8e $00 $88 $59 $03
+    Op8E_StoreAddress 0, data_03_5988                  ;; 1f:7205 $8e $00 $88 $59 $03
     Op16_SubOps 1                                      ;; 1f:720a $16 $01
     SubOp_SetByte wC81A, $00                           ;; 1f:720c $7f $02 $00
     Op16_SubOps 1                                      ;; 1f:720f $16 $01

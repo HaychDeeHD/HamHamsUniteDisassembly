@@ -6359,6 +6359,8 @@ call_01_7284:
     ld   [wBitArrayIndexC715], A                       ;; 01:728a $ea $15 $c7
     call InteractWithBitArray                          ;; 01:728d $cd $04 $3d
     ret                                                ;; 01:7290 $c9
+
+data_01_7291:
     db   $fa, $70, $ff, $f5, $3e, $01, $ea, $70        ;; 01:7291 ????????
     db   $ff, $21, $03, $d2, $7e, $fe, $f6, $28        ;; 01:7299 ????????
     db   $2f, $fe, $be, $28, $2b, $fe, $13, $28        ;; 01:72a1 ????????

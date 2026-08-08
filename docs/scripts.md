@@ -459,12 +459,12 @@ I have not observed this being used in any scripts.
 <a id="op8E"></a>
 ### Op8E 
 
-8E/90/98 Arg1 offset 1-4 into table of wram addresses. Write Arg2-4 there. [C3C4, C3E8)
+8E/90/98 Arg1 offset 1-4 into table of wram addresses. Write Arg2-4 (a 3 byte rom address) there. [C3C4, C3E8)
 
 <a id="op90"></a>
 ### Op90 
 
-8E/90/98 Arg1 offset 1-4 into table of wram addresses. Write Arg2-4 there. [C3C4, C3E8)
+8E/90/98 Arg1 offset 1-4 into table of wram addresses. Write Arg2-4 (a 3 byte rom address) there. [C3C4, C3E8)
 
 <a id="op92"></a>
 ### Op92 
@@ -484,4 +484,4 @@ I have not observed this being used in any scripts.
 <a id="op98"></a>
 ### Op98 
 
-8E/90/98 Arg1 offset 1-4 into table of wram addresses. Write Arg2-4 there. [C3C4, C3E8)
+8E/90/98 Arg1 offset 1-4 into table of wram addresses. Write Arg2-4 (a 3 byte rom address) there. [C3C4, C3E8)

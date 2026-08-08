@@ -296,17 +296,15 @@ db \<6>
 ENDM
 MACRO Op8E_StoreAddress
 db $8e
-db \1
-db \2
-db \3
-db \4
+db \<1>
+dw \<2>
+db BANK(\2)
 ENDM
 MACRO Op90_StoreAddress
 db $90
-db \1
-db \2
-db \3
-db \4
+db \<1>
+dw \<2>
+db BANK(\2)
 ENDM
 MACRO Op92_Unknown
 db $92

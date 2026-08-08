@@ -371,84 +371,6 @@ class Op74Block(Block):
     def export(self, file):
         file.asmLine(3, "Op74_PrepTableJumpIndex_Copy", str(self.label))
 
-class Op8EBlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 5)
-        RomInfo.macros["Op8E_StoreAddress"] = "db $8e\ndb \\1\ndb \\2\ndb \\3\ndb \\4"
-        # RomInfo.macros["Op8E_StoreAddress"] = "db $8e\ndb \\1\ndw \\2\ndb BANK(\\2)"
-
-        # It looks like the payloads are 3-byte rom addresses. 
-        # However, there may have been counterexamples. Found Op90 using 01:D
-        # TODO make this a label again.
-        # pointer = memory.word(addr + 2)
-        # bankNum = memory.byte(addr + 4)
-        # bank = RomInfo.romBank(bankNum)
-        # bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
-
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        # pointer = self.memory.word(file.addr + 2)
-        # bankNum = self.memory.byte(file.addr + 4)
-        # bank = RomInfo.romBank(bankNum)
-        # label = bank.getLabel(pointer)
-        # file.asmLine(5, "Op8E_StoreAddress", str(index), str(label))
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        file.asmLine(5, "Op8E_StoreAddress", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4)
-
-class Op90Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 5)
-        RomInfo.macros["Op90_StoreAddress"] = "db $90\ndb \\1\ndb \\2\ndb \\3\ndb \\4"
-        # RomInfo.macros["Op90_StoreAddress"] = "db $90\ndb \\1\ndw \\2\ndb BANK(\\2)"
-
-        # It looks like the payloads are 3-byte rom addresses. 
-        # However, there may have been counterexamples. Found Op90 using 01:D919 (04:5bb7)
-        # TODO make this a label again.
-        # pointer = memory.word(addr + 2)
-        # bankNum = memory.byte(addr + 4)
-        # bank = RomInfo.romBank(bankNum)
-        # bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
-
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        # pointer = self.memory.word(file.addr + 2)
-        # bankNum = self.memory.byte(file.addr + 4)
-        # bank = RomInfo.romBank(bankNum)
-        # label = bank.getLabel(pointer)
-        # file.asmLine(5, "Op90_StoreAddress", str(index), str(label))
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        file.asmLine(5, "Op90_StoreAddress", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4)
-
-class Op98Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 5)
-        RomInfo.macros["Op98_StoreAddress"] = "db $98\ndb \\1\ndb \\2\ndb \\3\ndb \\4"
-        # RomInfo.macros["Op98_StoreAddress"] = "db $98\ndb \\1\ndw \\2\ndb BANK(\\2)"
-
-        # It looks like the payloads are 3-byte rom addresses. 
-        # However, there may have been counterexamples. Found Op90 using 01:D
-        # TODO make this a label again.
-        # pointer = memory.word(addr + 2)
-        # bankNum = memory.byte(addr + 4)
-        # bank = RomInfo.romBank(bankNum)
-        # bank.addAutoLabel(pointer, None, "call") # "call" makes the label nonlocal and prefixes with "call".
-
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        # pointer = self.memory.word(file.addr + 2)
-        # bankNum = self.memory.byte(file.addr + 4)
-        # bank = RomInfo.romBank(bankNum)
-        # label = bank.getLabel(pointer)
-        # file.asmLine(5, "Op98_StoreAddress", str(index), str(label))
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        file.asmLine(5, "Op98_StoreAddress", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4)
-
 class Op84Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 7)
@@ -615,13 +537,13 @@ OPBLOCKS = {
     0x3C: Op3CBlock, # Need 2 byte Wram Address
     0x3E: makeOpBlockFromArgString(0x3E, 'd,b,b,b,3RomS', "Op3E_Compare_Branch"),
     0x40: makeOpBlockFromArgString(0x40, 'b,b,b,b'),
-    0x42: makeOpBlockFromArgString(0x42, 'd,b,3rom', "Op42_Unknown_StoreValue"),
+    0x42: makeOpBlockFromArgString(0x42, 'd,b,3Rom', "Op42_Unknown_StoreValue"),
     0x44: makeOpBlockFromArgString(0x44, 'b,b'),
     0x46: makeOpBlockFromArgString(0x46, None),
     0x48: makeOpBlockFromArgString(0x48, None),
     0x4A: makeOpBlockFromArgString(0x4A, None, "SCRIPT_RETURN_4A"),
     0x4C: makeOpBlockFromArgString(0x4C, 'b,b,b,b,b,b,b,3Rom'),
-    0x4E: makeOpBlockFromArgString(0x4E, 'd,b,3rom', "Op4E_Unknown_StoreValue"),
+    0x4E: makeOpBlockFromArgString(0x4E, 'd,b,3Rom', "Op4E_Unknown_StoreValue"),
     0x50: Op50Block, # Can't use standard 3ram because address can be Vram.
     0x52: Op52Block, # Can't use standard 3ram because address can be Vram.
     0x54: makeOpBlockFromArgString(0x54, 'b'),
@@ -633,13 +555,13 @@ OPBLOCKS = {
     0x6A: makeOpBlockFromArgString(0x6A, 'b,b,b,b'),
     0x74: Op74Block, # Need 2 byte Wram Address
     0x76: makeOpBlockFromArgString(0x76, 'b', "Op76_PrepTableJumpIndex_Write"),
-    0x7E: makeOpBlockFromArgString(0x7E, '3ram,b,b,b,b,b'),
+    0x7E: makeOpBlockFromArgString(0x7E, '3Ram,b,b,b,b,b'),
     0x80: Op80Block, # Can't rely on BANK(label). To verify.
     0x82: Op82Block, # Subblocks
     0x84: Op84Block, # Can't use standard 3ram because address can be Vram.
-    0x86: makeOpBlockFromArgString(0x86, '3ram,b,b,b,b,b'),
-    0x8E: Op8EBlock, # TODO needs repairing. Put back 3rom.
-    0x90: Op90Block, # TODO needs repairing. Put back 3rom.
+    0x86: makeOpBlockFromArgString(0x86, '3Ram,b,b,b,b,b'),
+    0x8E: makeOpBlockFromArgString(0x8E, 'd,3Rom', "Op8E_StoreAddress"),
+    0x90: makeOpBlockFromArgString(0x90, 'd,3Rom', "Op90_StoreAddress"),
     0x92: makeOpBlockFromArgString(0x92, 'b'),
-    0x98: Op98Block, # TODO needs repairing. Put back 3rom.
+    0x98: makeOpBlockFromArgString(0x98, 'd,3Rom', "Op98_StoreAddress"),
 }
