@@ -496,38 +496,6 @@ class Op98Block(Block):
         arg4 = self.memory.byte(file.addr + 4)
         file.asmLine(5, "Op98_StoreAddress", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4)
 
-class Op4EBlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 6)
-        RomInfo.macros["Op4E_Unknown_StoreValue"] = "db $4e\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5"
-
-        # TODO args 3-5 look like a rom address. (When not all zeroes.)
-        # Could make 2 macros, one for zero case and one otherwise to use labels.
-        # Same might apply to Op42.
-
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        arg5 = self.memory.byte(file.addr + 5)
-        file.asmLine(6, "Op4E_Unknown_StoreValue", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
-
-class Op42Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 6)
-        RomInfo.macros["Op42_Unknown_StoreValue"] = "db $42\ndb \\1\ndb \\2\ndw \\3\ndb BANK(\\3)"
-
-        # Note sometimes these 3 address bytes are $00 $00 $00.
-        # I think this op writes this address somewhere, maybe a stack.
-        # Writing the zero address could be like popping the stack. Just conjecture.
-        self.label = label3ByteRomAddressArg(memory, addr + 3)
-
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        file.asmLine(6, "Op42_Unknown_StoreValue", str(index), "$%02x" % arg2, str(self.label))
-
 class Op58Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 6)
@@ -676,6 +644,21 @@ class Op0CBlock(Op10OrOp0CBlock):
     def export(self, file):
         file.asmLine(6, "Op0C_HamChatWheel", str(self.count), str(self.optionsLabel), str(self.rulesLabel))
 
+class Op42Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 6)
+        RomInfo.macros["Op42_Unknown_StoreValue"] = "db $42\ndb \\1\ndb \\2\ndw \\3\ndb BANK(\\3)"
+
+        # Note sometimes these 3 address bytes are $00 $00 $00.
+        # I think this op writes this address somewhere, maybe a stack.
+        # Writing the zero address could be like popping the stack. Just conjecture.
+        self.label = label3ByteRomAddressArg(memory, addr + 3)
+
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        arg2 = self.memory.byte(file.addr + 2)
+        file.asmLine(6, "Op42_Unknown_StoreValue", str(index), "$%02x" % arg2, str(self.label))
+
 class Op4CBlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=11)
@@ -685,6 +668,21 @@ class Op4CBlock(Block):
 
     def export(self, file):
         file.asmLine(11, "Op4C_Unknown", *["$%02x" % self.memory.byte(file.addr + n) for n in range(1, 8)], str(self.endingPointerLabel))
+
+class Op4EBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size = 6)
+        RomInfo.macros["Op4E_Unknown_StoreValue"] = "db $4e\ndb \\1\ndb \\2\ndw \\3\ndb BANK(\\3)"
+
+        # Note sometimes these 3 address bytes are $00 $00 $00.
+        # I think this op writes this address somewhere, maybe a stack.
+        # Writing the zero address could be like popping the stack. Just conjecture.
+        self.label = label3ByteRomAddressArg(memory, addr + 3)
+
+    def export(self, file):
+        index = self.memory.byte(file.addr + 1)
+        arg2 = self.memory.byte(file.addr + 2)
+        file.asmLine(6, "Op4E_Unknown_StoreValue", str(index), "$%02x" % arg2, str(self.label))
 
 class Op3xBlock(Block):
     def __init__(self, memory, addr, size):

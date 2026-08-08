@@ -351,6 +351,10 @@ Compare with Op42.
 <a id="op4E"></a>
 ### Op4E 
 
+5 argument bytes, the last 3 of which are a 3 byte ROM address. It seems that whatever kind of data this points to occupies the 0F-1B banks.
+
+Compare with Op4C.
+
 <a id="op50"></a>
 ### Op50 - Write Byte
 
