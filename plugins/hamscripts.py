@@ -73,23 +73,6 @@ def hamscript(memory, addr):
     # Some script blocks mark text blocks, so process those.
     maybeCreateTextBlocks()
 
-# Size includes the opcode here.
-def makeGenericBlockClass(opcode, size, macroName=None):
-    className = "Op%02xBlock" % opcode
-    if macroName is None:
-        macroName = "Op%02X_Unknown" % opcode
-    __class__ = type(className, (Block,), {})
-    def basicInit(self, memory, addr):
-        super().__init__(memory, addr, size=size)
-        RomInfo.macros[macroName] = "db $%02x" % opcode + "".join(["\ndb \\<%s>" % str(n) for n in range(1, size)])
-
-    def basicExport(self, file):
-        file.asmLine(size, macroName, *["$%02x" % self.memory.byte(file.addr + n) for n in range(1, size)])
-    
-    __class__.__init__ = basicInit
-    __class__.export = basicExport
-    return __class__
-
 def label3ByteRomAddressArg(memory, addr, addrType=None):
     pointer = memory.word(addr)
     bankNum = memory.byte(addr + 2)
@@ -114,6 +97,114 @@ def pullTextFrom3ByteRomAddressArg(memory, addr):
         return getTextFromTextBlockAtAddress(bank, pointer)
     except Exception as e:
         raise Exception('Text instruction at %s references non-text --> %s' % (serializeAddress(memory, addr), e)) from e
+
+
+# Size includes the opcode here.
+def makeGenericBlockClass(opcode, size, macroName=None):
+    className = "Op%02xBlock" % opcode
+    __class__ = type(className, (OpBlock,), {})
+
+    def basicInit(self, memory, addr):
+        super().__init__(memory, addr, opcode, size=size, macroName=macroName)
+        self.finalize()
+    
+    __class__.__init__ = basicInit
+    return __class__
+
+class OpBlock(Block):
+    def __init__(self, memory, addr, opcode, size, macroName=None):
+        super().__init__(memory, addr, size=size)
+        self.opcode = opcode
+        self.macroName = macroName or "Op%02X_Unknown" % opcode
+
+        # TODO For now it's expected that you declare these in order.
+        self.declaredArgObjs = []
+
+    def declare3ByteRomAddressArg(self, rawIndex, addrType=None):
+        self.declaredArgObjs.append(ThreeByteRomAddressArg(self.memory, self.base_address + rawIndex, rawIndex))
+
+    def finalize(self):
+        self.__finalizeArgBytes()
+        RomInfo.macros[self.macroName] = "db $%02x\n" % self.opcode + "\n".join(argObj.macroStr(i + 1) for i, argObj in enumerate(self.finalArgObjs))
+
+    def __finalizeArgBytes(self):
+        # Adding an end sentinel simplifies the fill algorithm.
+        self.declaredArgObjs.append(EndSentinelArg(len(self)))
+        self.finalArgObjs = []
+        countedLength = 1; # opcode
+        for argObj in self.declaredArgObjs:
+            if argObj.rawIndex < countedLength:
+                raise Exception("Overlapping Op args")
+            elif argObj.rawIndex > countedLength:
+                # Fill the gaps with SingleByteArgs
+                for i in range(countedLength, argObj.rawIndex):
+                    self.finalArgObjs.append(SingleByteArg(self.memory, self.base_address, i))
+                    countedLength += 1
+
+            countedLength += len(argObj)
+            if countedLength > len(self):
+                raise Exception("Declared arg bytes for OpBlock out of bounds.")
+            self.finalArgObjs.append(argObj)
+        # Pop out the sentinel. This just prevents there from being an extra trailing separator in the Op / macro.
+        self.finalArgObjs.pop() 
+
+    def export(self, file):
+        file.asmLine(len(self), self.macroName, *[str(argObj) for argObj in self.finalArgObjs])
+
+class ArgObj:
+    def __init__(self, rawIndex, *, size=0):
+        self.rawIndex = rawIndex
+        self.size = size
+    
+    def __len__(self):
+        return self.size
+    
+    def macroStr(self, index):
+        return ""
+
+    def __repr__(self):
+        return ""
+
+class SingleByteArg(ArgObj):
+    def __init__(self, memory, addr, rawIndex):
+        super().__init__(rawIndex, size=1)
+        self.value = memory.byte(addr + rawIndex)
+
+    def macroStr(self, index):
+        return "db \\<%s>" % str(index)
+
+    def __repr__(self):
+        return "$%02x" % self.value
+
+# Does not represent a real arg, but the end of the arg list.
+# Just useful for the loop that fills the argObj list to have one marking the end of the list.
+class EndSentinelArg(ArgObj):
+    def __init__(self, rawIndex):
+        super().__init__(rawIndex, size=0)
+
+class ThreeByteRomAddressArg(ArgObj):
+    def __init__(self, memory, addr, rawIndex, addrType=None):
+        super().__init__(rawIndex, size=3)
+        self.label = label3ByteRomAddressArg(memory, addr, addrType=addrType)
+
+    def macroStr(self, index):
+        # TODO can remove str or repetition?
+        return "dw \\<%s>\ndb BANK(\\%s)" % (str(index), str(index))
+
+    def __repr__(self):
+        return str(self.label)
+
+############################################
+# OpBlocks that have been migrated to subclass OpBlock
+
+class Op4CBlock(OpBlock):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, 0x4C, size=11)
+        self.declare3ByteRomAddressArg(8)
+        self.finalize()
+
+############################################
+# OpBlocks that still subclass Block
 
 class Op1CBlock(Block):
     def __init__(self, memory, addr):
@@ -658,16 +749,6 @@ class Op42Block(Block):
         index = self.memory.byte(file.addr + 1)
         arg2 = self.memory.byte(file.addr + 2)
         file.asmLine(6, "Op42_Unknown_StoreValue", str(index), "$%02x" % arg2, str(self.label))
-
-class Op4CBlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=11)
-        RomInfo.macros["Op4C_Unknown"] = "db $4c\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6\ndb \\7\ndw \\8\ndb BANK(\\8)"
-
-        self.endingPointerLabel = label3ByteRomAddressArg(memory, addr + 8)
-
-    def export(self, file):
-        file.asmLine(11, "Op4C_Unknown", *["$%02x" % self.memory.byte(file.addr + n) for n in range(1, 8)], str(self.endingPointerLabel))
 
 class Op4EBlock(Block):
     def __init__(self, memory, addr):
