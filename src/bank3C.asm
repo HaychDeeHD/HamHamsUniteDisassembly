@@ -227,7 +227,7 @@ call_3c_4692:
     Op14_Unknown 1, data_05_606e                       ;; 3c:4692 $14 $01 $6e $60
     SCRIPT_POINTER call_3c_469d                        ;; 3c:4696 $9d $46 $3c
     Op16_SubOps 1                                      ;; 3c:4699 $16 $01
-    SubOp_SetFlag wC94A, 3                             ;; 3c:469b $3f $93
+    SubOp_SetFlag 403 ; Bit 3 of wC94A                 ;; 3c:469b $3f $93
 
 call_3c_469d:
     SCRIPT_RETURN_20                                   ;; 3c:469d $20
@@ -238,20 +238,20 @@ call_3c_469e:
     Op14_Unknown 1, data_05_6074                       ;; 3c:46a5 $14 $01 $74 $60
     SCRIPT_POINTER call_3c_46c1                        ;; 3c:46a9 $c1 $46 $3c
     Op16_SubOps 1                                      ;; 3c:46ac $16 $01
-    SubOp_SetFlag wC94A, 3                             ;; 3c:46ae $3f $93
+    SubOp_SetFlag 403 ; Bit 3 of wC94A                 ;; 3c:46ae $3f $93
 
 call_3c_46b0:
     Op50_WriteByte wC720, $00, $14                     ;; 3c:46b0 $50 $20 $c7 $00 $14
     Op82_Run data_01_6844                              ;; 3c:46b5 $82 $44 $68 $01
     Op16_SubOps 1                                      ;; 3c:46b9 $16 $01
-    SubOp_ClearFlag wC935, 1                           ;; 3c:46bb $5e $e9
+    SubOp_ClearFlag 233 ; Bit 1 of wC935               ;; 3c:46bb $5e $e9
     Op18_Jump call_3c_46d2                             ;; 3c:46bd $18 $d2 $46 $3c
 
 call_3c_46c1:
     Op50_WriteByte wC720, $00, $13                     ;; 3c:46c1 $50 $20 $c7 $00 $13
     Op82_Run data_01_6844                              ;; 3c:46c6 $82 $44 $68 $01
     Op16_SubOps 1                                      ;; 3c:46ca $16 $01
-    SubOp_SetFlag wC935, 1                             ;; 3c:46cc $3e $e9
+    SubOp_SetFlag 233 ; Bit 1 of wC935                 ;; 3c:46cc $3e $e9
     Op18_Jump call_3c_46d2                             ;; 3c:46ce $18 $d2 $46 $3c
 
 call_3c_46d2:
@@ -1571,7 +1571,7 @@ data_3c_6a2e:
     TXT  "Oops<...> I feel bad<E2>about that<...><E0>" ;; 3c:6a2e ?????????????????????????????
 ;@hamscript
     Op16_SubOps 1                                      ;; 3c:6a4b $16 $01
-    SubOp_ClearFlag wC94A, 3                           ;; 3c:6a4d $5f $93
+    SubOp_ClearFlag 403 ; Bit 3 of wC94A               ;; 3c:6a4d $5f $93
     Op1E_Call call_3c_6a5b                             ;; 3c:6a4f $1e $5b $6a $3c
     Op1E_Call call_3c_6b15                             ;; 3c:6a53 $1e $15 $6b $3c
     Op18_Jump call_3c_6b31                             ;; 3c:6a57 $18 $31 $6b $3c
@@ -1630,7 +1630,7 @@ call_3c_6b15:
     Op14_Unknown 1, data_05_71fa                       ;; 3c:6b1d $14 $01 $fa $71
     SCRIPT_POINTER call_3c_6b15                        ;; 3c:6b21 $15 $6b $3c
     Op16_SubOps 1                                      ;; 3c:6b24 $16 $01
-    SubOp_SetFlag wC94A, 3                             ;; 3c:6b26 $3f $93
+    SubOp_SetFlag 403 ; Bit 3 of wC94A                 ;; 3c:6b26 $3f $93
     Op1E_Call call_3c_544f                             ;; 3c:6b28 $1e $4f $54 $3c
     Op1E_Call call_3c_6a5b                             ;; 3c:6b2c $1e $5b $6a $3c
     SCRIPT_RETURN_20                                   ;; 3c:6b30 $20

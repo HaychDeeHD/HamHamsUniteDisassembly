@@ -1621,11 +1621,11 @@ call_29_6ebb:
     Op50_WriteByte wC31A, $00, $18                     ;; 29:6eca $50 $1a $c3 $00 $18
     Op50_WriteByte rst_00_0020, $00, $05               ;; 29:6ecf $50 $20 $00 $00 $05
     Op16_SubOps 1                                      ;; 29:6ed4 $16 $01
-    SubOp_ClearFlag wC94A, 5                           ;; 29:6ed6 $5f $95
+    SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:6ed6 $5f $95
     Op16_SubOps 1                                      ;; 29:6ed8 $16 $01
-    SubOp_ClearFlag wC94A, 3                           ;; 29:6eda $5f $93
+    SubOp_ClearFlag 403 ; Bit 3 of wC94A               ;; 29:6eda $5f $93
     Op16_SubOps 1                                      ;; 29:6edc $16 $01
-    SubOp_ClearFlag wC94A, 4                           ;; 29:6ede $5f $94
+    SubOp_ClearFlag 404 ; Bit 4 of wC94A               ;; 29:6ede $5f $94
     Op16_SubOps 1                                      ;; 29:6ee0 $16 $01
     SubOp_SetByte wC833, $01                           ;; 29:6ee2 $7f $1b $01
     Op16_SubOps 1                                      ;; 29:6ee5 $16 $01
@@ -1682,7 +1682,7 @@ call_29_6f0c:
     SubOp_SetWord wC752, $5000                         ;; 29:6fbc $9e $3a $00 $50
     Op1E_Call call_29_7bbf                             ;; 29:6fc0 $1e $bf $7b $29
     Op16_SubOps 1                                      ;; 29:6fc4 $16 $01
-    SubOp_ClearFlag wC94A, 3                           ;; 29:6fc6 $5f $93
+    SubOp_ClearFlag 403 ; Bit 3 of wC94A               ;; 29:6fc6 $5f $93
     Op1E_Call call_29_7d5e                             ;; 29:6fc8 $1e $5e $7d $29
     Op4E_Unknown_StoreValue 4, $01, data_18_6926       ;; 29:6fcc $4e $04 $01 $26 $69 $18
     Op4E_Unknown_StoreValue 14, $01, data_18_6988      ;; 29:6fd2 $4e $0e $01 $88 $69 $18
@@ -1774,7 +1774,7 @@ call_29_709b:
     Op16_SubOps 1                                      ;; 29:70ce $16 $01
     SubOp_SetWord wC852, $0008                         ;; 29:70d0 $9f $3a $08 $00
     Op16_SubOps 1                                      ;; 29:70d4 $16 $01
-    SubOp_ClearFlag wC94A, 4                           ;; 29:70d6 $5f $94
+    SubOp_ClearFlag 404 ; Bit 4 of wC94A               ;; 29:70d6 $5f $94
     Op1E_Call call_29_7153                             ;; 29:70d8 $1e $53 $71 $29
     Op18_Jump call_29_6fff                             ;; 29:70dc $18 $ff $6f $29
 
@@ -1796,7 +1796,7 @@ call_29_70e0:
     Op16_SubOps 1                                      ;; 29:7113 $16 $01
     SubOp_SetWord wC852, $00f8                         ;; 29:7115 $9f $3a $f8 $00
     Op16_SubOps 1                                      ;; 29:7119 $16 $01
-    SubOp_ClearFlag wC94A, 4                           ;; 29:711b $5f $94
+    SubOp_ClearFlag 404 ; Bit 4 of wC94A               ;; 29:711b $5f $94
     Op1E_Call call_29_7153                             ;; 29:711d $1e $53 $71 $29
     Op18_Jump call_29_6fff                             ;; 29:7121 $18 $ff $6f $29
 
@@ -2029,7 +2029,7 @@ call_29_7356:
     Op1E_Call call_29_7a99                             ;; 29:73f7 $1e $99 $7a $29
     Op1E_Call call_29_7c40                             ;; 29:73fb $1e $40 $7c $29
     Op16_SubOps 1                                      ;; 29:73ff $16 $01
-    SubOp_SetFlag wC94A, 3                             ;; 29:7401 $3f $93
+    SubOp_SetFlag 403 ; Bit 3 of wC94A                 ;; 29:7401 $3f $93
     Op1E_Call call_29_7d5e                             ;; 29:7403 $1e $5e $7d $29
     Op1E_Call call_29_7125                             ;; 29:7407 $1e $25 $71 $29
     Op1E_Call call_29_7ac3                             ;; 29:740b $1e $c3 $7a $29
@@ -2168,7 +2168,7 @@ call_29_757b:
     Op16_SubOps 1                                      ;; 29:7581 $16 $01
     SubOp_SetWord wC852, $00f8                         ;; 29:7583 $9f $3a $f8 $00
     Op16_SubOps 1                                      ;; 29:7587 $16 $01
-    SubOp_SetFlag wC94A, 4                             ;; 29:7589 $3f $94
+    SubOp_SetFlag 404 ; Bit 4 of wC94A                 ;; 29:7589 $3f $94
     Op1E_Call call_29_7182                             ;; 29:758b $1e $82 $71 $29
     Op18_Jump call_29_74d8                             ;; 29:758f $18 $d8 $74 $29
 
@@ -2230,7 +2230,7 @@ call_29_75f6:
     Op16_SubOps 1                                      ;; 29:7629 $16 $01
     SubOp_SetWord wC852, $0008                         ;; 29:762b $9f $3a $08 $00
     Op16_SubOps 1                                      ;; 29:762f $16 $01
-    SubOp_SetFlag wC94A, 4                             ;; 29:7631 $3f $94
+    SubOp_SetFlag 404 ; Bit 4 of wC94A                 ;; 29:7631 $3f $94
     Op1E_Call call_29_7153                             ;; 29:7633 $1e $53 $71 $29
     Op18_Jump call_29_74d8                             ;; 29:7637 $18 $d8 $74 $29
 
@@ -2252,7 +2252,7 @@ call_29_763b:
     Op16_SubOps 1                                      ;; 29:766e $16 $01
     SubOp_SetWord wC852, $00f8                         ;; 29:7670 $9f $3a $f8 $00
     Op16_SubOps 1                                      ;; 29:7674 $16 $01
-    SubOp_SetFlag wC94A, 4                             ;; 29:7676 $3f $94
+    SubOp_SetFlag 404 ; Bit 4 of wC94A                 ;; 29:7676 $3f $94
     Op1E_Call call_29_7153                             ;; 29:7678 $1e $53 $71 $29
     Op18_Jump call_29_74d8                             ;; 29:767c $18 $d8 $74 $29
 
@@ -2287,7 +2287,7 @@ call_29_76fe:
     Op50_WriteByte wC675, $00, $60                     ;; 29:76fe $50 $75 $c6 $00 $60
     Op4C_Unknown $20, $01, $00, $0f, $00, $76, $00, data_18_650d ;; 29:7703 $4c $20 $01 $00 $0f $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:770e $16 $01
-    SubOp_ClearFlag wC94A, 5                           ;; 29:7710 $5f $95
+    SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:7710 $5f $95
     Op50_WriteByte wButtonsOfInterest, $00, $33        ;; 29:7712 $50 $1d $c3 $00 $33
 
 call_29_7717:
@@ -2302,7 +2302,7 @@ call_29_7717:
 
 call_29_772e:
     Op16_SubOps 1                                      ;; 29:772e $16 $01
-    SubOp_SetFlag wC94A, 5                             ;; 29:7730 $3f $95
+    SubOp_SetFlag 405 ; Bit 5 of wC94A                 ;; 29:7730 $3f $95
     Op5A_Unknown $8b                                   ;; 29:7732 $5a $8b
 
 call_29_7734:
@@ -2333,7 +2333,7 @@ call_29_776d:
     SCRIPT_POINTER call_29_7717                        ;; 29:7771 $17 $77 $29
     Op4C_Unknown $20, $01, $00, $0f, $00, $76, $00, data_18_650d ;; 29:7774 $4c $20 $01 $00 $0f $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:777f $16 $01
-    SubOp_ClearFlag wC94A, 5                           ;; 29:7781 $5f $95
+    SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:7781 $5f $95
     Op5A_Unknown $84                                   ;; 29:7783 $5a $84
     Op18_Jump call_29_7717                             ;; 29:7785 $18 $17 $77 $29
 
@@ -2342,7 +2342,7 @@ call_29_7789:
     SCRIPT_POINTER call_29_7717                        ;; 29:778d $17 $77 $29
     Op4C_Unknown $20, $01, $00, $4f, $00, $76, $00, data_18_650d ;; 29:7790 $4c $20 $01 $00 $4f $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:779b $16 $01
-    SubOp_SetFlag wC94A, 5                             ;; 29:779d $3f $95
+    SubOp_SetFlag 405 ; Bit 5 of wC94A                 ;; 29:779d $3f $95
     Op5A_Unknown $84                                   ;; 29:779f $5a $84
     Op18_Jump call_29_7717                             ;; 29:77a1 $18 $17 $77 $29
 
@@ -2380,7 +2380,7 @@ call_29_77e2:
     SubOp_SetWord wC752, $4800                         ;; 29:77ff $9e $3a $00 $48
     Op1E_Call call_29_7bbf                             ;; 29:7803 $1e $bf $7b $29
     Op16_SubOps 1                                      ;; 29:7807 $16 $01
-    SubOp_ClearFlag wC94A, 3                           ;; 29:7809 $5f $93
+    SubOp_ClearFlag 403 ; Bit 3 of wC94A               ;; 29:7809 $5f $93
     Op1E_Call call_29_7d5e                             ;; 29:780b $1e $5e $7d $29
     Op4E_Unknown_StoreValue 4, $01, data_18_694a       ;; 29:780f $4e $04 $01 $4a $69 $18
     Op44_Unknown $3c, $00                              ;; 29:7815 $44 $3c $00
@@ -2388,7 +2388,7 @@ call_29_77e2:
     Op4E_Unknown_StoreValue 4, $01, data_18_695c       ;; 29:781a $4e $04 $01 $5c $69 $18
     Op44_Unknown $04, $00                              ;; 29:7820 $44 $04 $00
     Op16_SubOps 1                                      ;; 29:7823 $16 $01
-    SubOp_SetFlag wC94A, 3                             ;; 29:7825 $3f $93
+    SubOp_SetFlag 403 ; Bit 3 of wC94A                 ;; 29:7825 $3f $93
     Op1E_Call call_29_7d5e                             ;; 29:7827 $1e $5e $7d $29
     Op44_Unknown $1e, $00                              ;; 29:782b $44 $1e $00
     Op1E_Call call_04_5b22                             ;; 29:782e $1e $22 $5b $04
@@ -2401,7 +2401,7 @@ call_29_77e2:
     SubOp_SetWord wC752, $5000                         ;; 29:784d $9e $3a $00 $50
     Op1E_Call call_29_7bbf                             ;; 29:7851 $1e $bf $7b $29
     Op16_SubOps 1                                      ;; 29:7855 $16 $01
-    SubOp_ClearFlag wC94A, 3                           ;; 29:7857 $5f $93
+    SubOp_ClearFlag 403 ; Bit 3 of wC94A               ;; 29:7857 $5f $93
     Op1E_Call call_29_7d5e                             ;; 29:7859 $1e $5e $7d $29
     Op4E_Unknown_StoreValue 4, $01, data_18_6976       ;; 29:785d $4e $04 $01 $76 $69 $18
     Op4E_Unknown_StoreValue 14, $01, data_18_6988      ;; 29:7863 $4e $0e $01 $88 $69 $18
@@ -2410,7 +2410,7 @@ call_29_77e2:
     Op34_Graphics data_7e_542f, w7_D980, $14           ;; 29:7874 $34 $2f $54 $7e $80 $d9 $07 $14
     Op4C_Unknown $20, $01, $00, $07, $00, $76, $00, data_18_650d ;; 29:787c $4c $20 $01 $00 $07 $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:7887 $16 $01
-    SubOp_ClearFlag wC94A, 5                           ;; 29:7889 $5f $95
+    SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:7889 $5f $95
     Op50_WriteByte wButtonsOfInterest, $00, $13        ;; 29:788b $50 $1d $c3 $00 $13
 
 call_29_7890:
@@ -2504,7 +2504,7 @@ call_29_797b:
     SCRIPT_POINTER call_29_7890                        ;; 29:797f $90 $78 $29
     Op4C_Unknown $20, $01, $00, $07, $00, $76, $00, data_18_650d ;; 29:7982 $4c $20 $01 $00 $07 $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:798d $16 $01
-    SubOp_ClearFlag wC94A, 5                           ;; 29:798f $5f $95
+    SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:798f $5f $95
     Op5A_Unknown $84                                   ;; 29:7991 $5a $84
     Op18_Jump call_29_7890                             ;; 29:7993 $18 $90 $78 $29
 
@@ -2513,7 +2513,7 @@ call_29_7997:
     SCRIPT_POINTER call_29_7890                        ;; 29:799b $90 $78 $29
     Op4C_Unknown $20, $01, $00, $4f, $00, $76, $00, data_18_650d ;; 29:799e $4c $20 $01 $00 $4f $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:79a9 $16 $01
-    SubOp_SetFlag wC94A, 5                             ;; 29:79ab $3f $95
+    SubOp_SetFlag 405 ; Bit 5 of wC94A                 ;; 29:79ab $3f $95
     Op5A_Unknown $84                                   ;; 29:79ad $5a $84
     Op18_Jump call_29_7890                             ;; 29:79af $18 $90 $78 $29
 
@@ -2522,7 +2522,7 @@ call_29_79b3:
     Op34_Graphics data_7e_50be, w7_D980, $14           ;; 29:79bb $34 $be $50 $7e $80 $d9 $07 $14
     Op4C_Unknown $20, $01, $00, $07, $00, $76, $00, data_18_650d ;; 29:79c3 $4c $20 $01 $00 $07 $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:79ce $16 $01
-    SubOp_ClearFlag wC94A, 5                           ;; 29:79d0 $5f $95
+    SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:79d0 $5f $95
     Op50_WriteByte wButtonsOfInterest, $00, $13        ;; 29:79d2 $50 $1d $c3 $00 $13
 
 call_29_79d7:
@@ -2567,7 +2567,7 @@ call_29_7a37:
     SCRIPT_POINTER call_29_79d7                        ;; 29:7a3b $d7 $79 $29
     Op4C_Unknown $20, $01, $00, $07, $00, $76, $00, data_18_650d ;; 29:7a3e $4c $20 $01 $00 $07 $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:7a49 $16 $01
-    SubOp_ClearFlag wC94A, 5                           ;; 29:7a4b $5f $95
+    SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:7a4b $5f $95
     Op5A_Unknown $84                                   ;; 29:7a4d $5a $84
     Op18_Jump call_29_79d7                             ;; 29:7a4f $18 $d7 $79 $29
 
@@ -2576,7 +2576,7 @@ call_29_7a53:
     SCRIPT_POINTER call_29_79d7                        ;; 29:7a57 $d7 $79 $29
     Op4C_Unknown $20, $01, $00, $4f, $00, $76, $00, data_18_650d ;; 29:7a5a $4c $20 $01 $00 $4f $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:7a65 $16 $01
-    SubOp_SetFlag wC94A, 5                             ;; 29:7a67 $3f $95
+    SubOp_SetFlag 405 ; Bit 5 of wC94A                 ;; 29:7a67 $3f $95
     Op5A_Unknown $84                                   ;; 29:7a69 $5a $84
     Op18_Jump call_29_79d7                             ;; 29:7a6b $18 $d7 $79 $29
 

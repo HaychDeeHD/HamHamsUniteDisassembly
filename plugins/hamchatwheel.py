@@ -135,7 +135,6 @@ class HamChatWheelRulesBlock(Block):
         bank5 = RomInfo.romBank(0x05)
         super().__init__(bank5, addr)
         RomInfo.macros["HamChatWheelRule_AlwaysUse"] = "db $1a"
-        # TODO Change SubOp macros to work like this one? Make helper functions to share?
         RomInfo.macros["HamChatWheelRule_UseIfHave"] = r"""
 db ($3e + (\1  >> 8))
 db (\1 & $FF)

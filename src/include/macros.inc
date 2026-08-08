@@ -321,8 +321,8 @@ db $4a
 ENDM
 MACRO SubOp_ClearFlag
 
-db ($5e + (((\1 - $c918) * 8 + \2) >> 8))
-db (((\1 - $c918) * 8 + \2) & $FF)
+db ($5e + (\1  >> 8))
+db (\1 & $FF)
 ENDM
 MACRO SubOp_DefaultCase_Pair
 db \1
@@ -341,8 +341,8 @@ db \2
 ENDM
 MACRO SubOp_SetFlag
 
-db ($3e + (((\1 - $c918) * 8 + \2) >> 8))
-db (((\1 - $c918) * 8 + \2) & $FF)
+db ($3e + (\1  >> 8))
+db (\1 & $FF)
 ENDM
 MACRO SubOp_SetWord
 

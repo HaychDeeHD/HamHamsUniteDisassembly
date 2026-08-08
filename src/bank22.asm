@@ -509,7 +509,7 @@ call_22_5639:
 
 call_22_5645:
     Op16_SubOps 1                                      ;; 22:5645 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 22:5647 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 22:5647 $5e $03
     Op82_Run data_01_73cc                              ;; 22:5649 $82 $cc $73 $01
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 22:564d $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 22:5651 $50 $1d $c3 $00 $d0
@@ -581,7 +581,7 @@ call_22_56be:
 call_22_573b:
     Op4C_Unknown $16, $08, $02, $36, $00, $64, $00, data_10_4aff ;; 22:573b $4c $16 $08 $02 $36 $00 $64 $00 $ff $4a $10
     Op16_SubOps 1                                      ;; 22:5746 $16 $01
-    SubOp_ClearFlag wC92D, 0                           ;; 22:5748 $5e $a8
+    SubOp_ClearFlag 168 ; Bit 0 of wC92D               ;; 22:5748 $5e $a8
     Op18_Jump call_22_57f6                             ;; 22:574a $18 $f6 $57 $22
 
 call_22_574e:
@@ -659,7 +659,7 @@ call_22_57f6:
     Op16_SubOps 1                                      ;; 22:5871 $16 $01
     SubOp_SetByte wC836, $00                           ;; 22:5873 $7f $1e $00
     Op16_SubOps 1                                      ;; 22:5876 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 22:5878 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 22:5878 $5e $03
     SCRIPT_RETURN_20                                   ;; 22:587a $20
 
 call_22_587b:
@@ -668,9 +668,9 @@ call_22_587b:
     Op16_SubOps 1                                      ;; 22:5882 $16 $01
     SubOp_SetByte wC836, $00                           ;; 22:5884 $7f $1e $00
     Op16_SubOps 1                                      ;; 22:5887 $16 $01
-    SubOp_ClearFlag wC94C, 5                           ;; 22:5889 $5f $a5
+    SubOp_ClearFlag 421 ; Bit 5 of wC94C               ;; 22:5889 $5f $a5
     Op16_SubOps 1                                      ;; 22:588b $16 $01
-    SubOp_ClearFlag wC94C, 2                           ;; 22:588d $5f $a2
+    SubOp_ClearFlag 418 ; Bit 2 of wC94C               ;; 22:588d $5f $a2
     Op16_SubOps 1                                      ;; 22:588f $16 $01
     SubOp_SetByte wC839, $00                           ;; 22:5891 $7f $21 $00
 
@@ -1019,13 +1019,13 @@ call_22_5c86:
 call_22_5ca9:
     Op1E_Call call_22_6763                             ;; 22:5ca9 $1e $63 $67 $22
     Op16_SubOps 1                                      ;; 22:5cad $16 $01
-    SubOp_SetFlag wC92A, 0                             ;; 22:5caf $3e $90
+    SubOp_SetFlag 144 ; Bit 0 of wC92A                 ;; 22:5caf $3e $90
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, data_16_4c46 ;; 22:5cb1 $4c $1a $ff $04 $00 $00 $00 $00 $46 $4c $16
     Op1E_Call call_1d_6c06                             ;; 22:5cbc $1e $06 $6c $1d
     Op14_Unknown 1, data_05_6d50                       ;; 22:5cc0 $14 $01 $50 $6d
     SCRIPT_POINTER call_22_5cec                        ;; 22:5cc4 $ec $5c $22
     Op16_SubOps 1                                      ;; 22:5cc7 $16 $01
-    SubOp_SetFlag wC94C, 5                             ;; 22:5cc9 $3f $a5
+    SubOp_SetFlag 421 ; Bit 5 of wC94C                 ;; 22:5cc9 $3f $a5
     ;;<EA>Hamha<E8>!<E3>I'm a good<E2>hamaritan.<E3>Huh?<E2>Have we met?<E3>Whatever<...> By the<E2>way, have you <E2>heard of the<E2>Ruins?<E5> It's a<E4>strange place<E4>where <EA>lotsa<E8><end>
     Op04_Unknown_Text data_1e_7840                     ;; 22:5ccb $04 $40 $78 $1e
     Op1E_Call call_22_685f                             ;; 22:5ccf $1e $5f $68 $22
@@ -1210,7 +1210,7 @@ call_22_5f22:
     Op14_Unknown 1, data_05_6d50                       ;; 22:5f3c $14 $01 $50 $6d
     SCRIPT_POINTER call_22_5f64                        ;; 22:5f40 $64 $5f $22
     Op16_SubOps 1                                      ;; 22:5f43 $16 $01
-    SubOp_SetFlag wC94C, 5                             ;; 22:5f45 $3f $a5
+    SubOp_SetFlag 421 ; Bit 5 of wC94C                 ;; 22:5f45 $3f $a5
     ;;<EA>H<E8>-<EA>Hamha<E8><...><E3>I'm a good ham<...><E2>The Ruins<...><E3>Beyond here<...><E2><EA>Lotsa<E8> strange<...><end>
     Op04_Unknown_Text data_1e_79b7                     ;; 22:5f47 $04 $b7 $79 $1e
     Op1E_Call call_22_685f                             ;; 22:5f4b $1e $5f $68 $22
@@ -1237,14 +1237,14 @@ call_22_5f6c:
     ;;I guess it's true,<E2>the doc's Flugo+<E2>is the real deal.<E0>
     Op06_Unknown_Text data_1e_7a95                     ;; 22:5f87 $06 $95 $7a $1e
     Op16_SubOps 1                                      ;; 22:5f8b $16 $01
-    SubOp_SetFlag wC93F, 0                             ;; 22:5f8d $3f $38
+    SubOp_SetFlag 312 ; Bit 0 of wC93F                 ;; 22:5f8d $3f $38
     Op18_Jump call_22_5fa3                             ;; 22:5f8f $18 $a3 $5f $22
     ;;Eh?<E5> You brought<E2>more Flugo?<E3>It's from the Ham-<E2>Swap?<E5> That won't<E4>work! I need some<E4>from the doctor!<E0>
 
 call_22_5f93:
     Op06_Unknown_Text data_1e_7acb                     ;; 22:5f93 $06 $cb $7a $1e
     Op16_SubOps 1                                      ;; 22:5f97 $16 $01
-    SubOp_SetFlag wC93F, 0                             ;; 22:5f99 $3f $38
+    SubOp_SetFlag 312 ; Bit 0 of wC93F                 ;; 22:5f99 $3f $38
     Op18_Jump call_22_5fa3                             ;; 22:5f9b $18 $a3 $5f $22
     ;;<EA>Ham<E8><...><EA>ha<E8><...><E2>I can't stand<E2>being sick<...><E0>
 
@@ -1424,7 +1424,7 @@ call_22_6215:
     Op92_Unknown $00                                   ;; 22:6219 $92 $00
     Op4C_Unknown $08, $00, $00, $00, $00, $00, $00, zero_pointer ;; 22:621b $4c $08 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op16_SubOps 1                                      ;; 22:6226 $16 $01
-    SubOp_SetFlag wC934, 2                             ;; 22:6228 $3e $e2
+    SubOp_SetFlag 226 ; Bit 2 of wC934                 ;; 22:6228 $3e $e2
     Op16_SubOps 1                                      ;; 22:622a $16 $01
     SubOp_SetByte wC839, $04                           ;; 22:622c $7f $21 $04
     Op1E_Call call_22_6b01                             ;; 22:622f $1e $01 $6b $22
@@ -1450,7 +1450,7 @@ call_22_6262:
 
 call_22_627b:
     Op16_SubOps 1                                      ;; 22:627b $16 $01
-    SubOp_SetFlag wC944, 0                             ;; 22:627d $3f $60
+    SubOp_SetFlag 352 ; Bit 0 of wC944                 ;; 22:627d $3f $60
     Op36_Graphics data_7f_750f, w1_DDF2                ;; 22:627f $36 $0f $75 $7f $f2 $dd $01
     Op1E_Call call_22_6763                             ;; 22:6286 $1e $63 $67 $22
     Op4E_Unknown_StoreValue 4, $01, data_10_4073       ;; 22:628a $4e $04 $01 $73 $40 $10
@@ -1497,7 +1497,7 @@ call_22_632d:
     Op92_Unknown $00                                   ;; 22:6331 $92 $00
     Op4C_Unknown $08, $00, $00, $00, $00, $00, $00, zero_pointer ;; 22:6333 $4c $08 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op16_SubOps 1                                      ;; 22:633e $16 $01
-    SubOp_SetFlag wC935, 3                             ;; 22:6340 $3e $eb
+    SubOp_SetFlag 235 ; Bit 3 of wC935                 ;; 22:6340 $3e $eb
     Op16_SubOps 1                                      ;; 22:6342 $16 $01
     SubOp_SetByte wC839, $03                           ;; 22:6344 $7f $21 $03
     Op1E_Call call_22_6ac1                             ;; 22:6347 $1e $c1 $6a $22
@@ -1600,7 +1600,7 @@ call_22_6438:
     Op14_Unknown 1, data_05_6d50                       ;; 22:644b $14 $01 $50 $6d
     SCRIPT_POINTER call_22_6488                        ;; 22:644f $88 $64 $22
     Op16_SubOps 1                                      ;; 22:6452 $16 $01
-    SubOp_SetFlag wC94C, 5                             ;; 22:6454 $3f $a5
+    SubOp_SetFlag 421 ; Bit 5 of wC94C                 ;; 22:6454 $3f $a5
     ;;<EA>Hamha<E8>!<end>
     Op04_Unknown_Text data_1e_7d6c                     ;; 22:6456 $04 $6c $7d $1e
 
@@ -1734,7 +1734,7 @@ call_22_660a:
     Op14_Unknown 1, data_05_6d50                       ;; 22:6617 $14 $01 $50 $6d
     SCRIPT_POINTER call_22_6643                        ;; 22:661b $43 $66 $22
     Op16_SubOps 1                                      ;; 22:661e $16 $01
-    SubOp_SetFlag wC94C, 5                             ;; 22:6620 $3f $a5
+    SubOp_SetFlag 421 ; Bit 5 of wC94C                 ;; 22:6620 $3f $a5
     ;;<E3>I'm a good<E2>hamaritan.<E3>Did you know that<E2>there are <EA>lotsa<E8><end>
     Op06_Unknown_Text data_1e_7eb7                     ;; 22:6622 $06 $b7 $7e $1e
     Op1E_Call call_22_685f                             ;; 22:6626 $1e $5f $68 $22
@@ -1826,7 +1826,7 @@ call_22_6725:
 
 call_22_674f:
     Op16_SubOps 1                                      ;; 22:674f $16 $01
-    SubOp_SetFlag wC94C, 2                             ;; 22:6751 $3f $a2
+    SubOp_SetFlag 418 ; Bit 2 of wC94C                 ;; 22:6751 $3f $a2
     Op1E_Call call_20_43df                             ;; 22:6753 $1e $df $43 $20
     Op1E_Call call_33_4dfd                             ;; 22:6757 $1e $fd $4d $33
     Op1E_Call call_1d_7116                             ;; 22:675b $1e $16 $71 $1d
@@ -1891,7 +1891,7 @@ call_22_6825:
 
 call_22_6831:
     Op16_SubOps 1                                      ;; 22:6831 $16 $01
-    SubOp_SetFlag wC93E, 5                             ;; 22:6833 $3f $35
+    SubOp_SetFlag 309 ; Bit 5 of wC93E                 ;; 22:6833 $3f $35
     Op14_Unknown 1, data_05_6d8a                       ;; 22:6835 $14 $01 $8a $6d
     SCRIPT_POINTER call_22_6853                        ;; 22:6839 $53 $68 $22
     Op14_Unknown 1, data_05_6d8c                       ;; 22:683c $14 $01 $8c $6d
@@ -1899,7 +1899,7 @@ call_22_6831:
     Op14_Unknown 1, data_05_6d90                       ;; 22:6843 $14 $01 $90 $6d
     SCRIPT_POINTER call_22_6852                        ;; 22:6847 $52 $68 $22
     Op16_SubOps 1                                      ;; 22:684a $16 $01
-    SubOp_SetFlag wC92A, 0                             ;; 22:684c $3e $90
+    SubOp_SetFlag 144 ; Bit 0 of wC92A                 ;; 22:684c $3e $90
     Op18_Jump call_22_6859                             ;; 22:684e $18 $59 $68 $22
 
 call_22_6852:
@@ -1935,7 +1935,7 @@ call_22_688d:
     Op50_WriteByte wBitArrayIndexC715, $00, $2c        ;; 22:6896 $50 $15 $c7 $00 $2c
     Op82_Run ObtainHamChatFromC715                     ;; 22:689b $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 22:689f $16 $01
-    SubOp_SetFlag wC91E, 7                             ;; 22:68a1 $3e $37
+    SubOp_SetFlag 55 ; Bit 7 of wC91E                  ;; 22:68a1 $3e $37
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 22:68a3 $68 $01 $64 $c7 $fd $d1 $01
     Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 22:68aa $68 $02 $d8 $c7 $16 $d2 $01
     Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 22:68b1 $68 $02 $da $c7 $0e $d2 $01
@@ -2168,7 +2168,7 @@ call_22_6c73:
 
 call_22_6c77:
     Op16_SubOps 1                                      ;; 22:6c77 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 22:6c79 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 22:6c79 $5e $03
     Op82_Run data_01_73cc                              ;; 22:6c7b $82 $cc $73 $01
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 22:6c7f $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 22:6c83 $50 $1d $c3 $00 $d0
@@ -2367,7 +2367,7 @@ call_22_6f5d:
     Op42_Unknown_StoreValue 7, $01, data_04_6150       ;; 22:6f60 $42 $07 $01 $50 $61 $04
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_15_43d6 ;; 22:6f66 $4c $1a $01 $04 $00 $00 $00 $00 $d6 $43 $15
     Op16_SubOps 1                                      ;; 22:6f71 $16 $01
-    SubOp_SetFlag wC94B, 3                             ;; 22:6f73 $3f $9b
+    SubOp_SetFlag 411 ; Bit 3 of wC94B                 ;; 22:6f73 $3f $9b
 
 call_22_6f75:
     Op3C_Unknown data_17_7a66, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:6f75 $3c $66 $7a $17 $fd $d1 $00 $00 $00 $00 $ff
@@ -2385,7 +2385,7 @@ call_22_6f80:
     Op16_SubOps 1                                      ;; 22:6f9f $16 $01
     SubOp_SetByte wC836, $00                           ;; 22:6fa1 $7f $1e $00
     Op16_SubOps 1                                      ;; 22:6fa4 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 22:6fa6 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 22:6fa6 $5e $03
     SCRIPT_RETURN_20                                   ;; 22:6fa8 $20
 
 call_22_6fa9:
@@ -2396,11 +2396,11 @@ call_22_6fa9:
     Op16_SubOps 1                                      ;; 22:6fb5 $16 $01
     SubOp_SetByte wC828, $00                           ;; 22:6fb7 $7f $10 $00
     Op16_SubOps 1                                      ;; 22:6fba $16 $01
-    SubOp_ClearFlag wC94B, 4                           ;; 22:6fbc $5f $9c
+    SubOp_ClearFlag 412 ; Bit 4 of wC94B               ;; 22:6fbc $5f $9c
     Op16_SubOps 1                                      ;; 22:6fbe $16 $01
-    SubOp_ClearFlag wC94B, 3                           ;; 22:6fc0 $5f $9b
+    SubOp_ClearFlag 411 ; Bit 3 of wC94B               ;; 22:6fc0 $5f $9b
     Op16_SubOps 1                                      ;; 22:6fc2 $16 $01
-    SubOp_ClearFlag wC94B, 5                           ;; 22:6fc4 $5f $9d
+    SubOp_ClearFlag 413 ; Bit 5 of wC94B               ;; 22:6fc4 $5f $9d
 
 call_22_6fc6:
     SCRIPT_RETURN_20                                   ;; 22:6fc6 $20
@@ -2417,7 +2417,7 @@ call_22_6fc7:
 
 call_22_6fe1:
     Op16_SubOps 1                                      ;; 22:6fe1 $16 $01
-    SubOp_ClearFlag wC94B, 5                           ;; 22:6fe3 $5f $9d
+    SubOp_ClearFlag 413 ; Bit 5 of wC94B               ;; 22:6fe3 $5f $9d
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 22:6fe5 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 22:6fe9 $1c $03
     SCRIPT_POINTER call_22_6ccb                        ;; 22:6feb $cb $6c $22
@@ -2517,7 +2517,7 @@ call_22_7108:
     SCRIPT_RETURN_4A                                   ;; 22:7108 $4a
     Op3E_Compare_Branch 22, data_12_4925, call_22_7108 ;; 22:7109 $3e $16 $25 $49 $12 $08 $71 $22
     Op16_SubOps 1                                      ;; 22:7111 $16 $01
-    SubOp_ClearFlag wC94B, 3                           ;; 22:7113 $5f $9b
+    SubOp_ClearFlag 411 ; Bit 3 of wC94B               ;; 22:7113 $5f $9b
     Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:7115 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op18_Jump call_22_6c77                             ;; 22:7120 $18 $77 $6c $22
 
@@ -2533,7 +2533,7 @@ call_22_7143:
     SCRIPT_RETURN_4A                                   ;; 22:7143 $4a
     Op3E_Compare_Branch 22, data_12_4914, call_22_7143 ;; 22:7144 $3e $16 $14 $49 $12 $43 $71 $22
     Op16_SubOps 1                                      ;; 22:714c $16 $01
-    SubOp_ClearFlag wC94B, 3                           ;; 22:714e $5f $9b
+    SubOp_ClearFlag 411 ; Bit 3 of wC94B               ;; 22:714e $5f $9b
     Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:7150 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op18_Jump call_22_6c77                             ;; 22:715b $18 $77 $6c $22
 
@@ -2672,7 +2672,7 @@ call_22_72d1:
     SCRIPT_POINTER call_22_700b                        ;; 22:72e2 $0b $70 $22
     SCRIPT_POINTER call_22_72f0                        ;; 22:72e5 $f0 $72 $22
     Op16_SubOps 1                                      ;; 22:72e8 $16 $01
-    SubOp_ClearFlag wC94B, 5                           ;; 22:72ea $5f $9d
+    SubOp_ClearFlag 413 ; Bit 5 of wC94B               ;; 22:72ea $5f $9d
 
 call_22_72ec:
     Op18_Jump call_22_6c77                             ;; 22:72ec $18 $77 $6c $22
@@ -2681,7 +2681,7 @@ call_22_72f0:
     Op14_Unknown 1, data_05_6feb                       ;; 22:72f0 $14 $01 $eb $6f
     SCRIPT_POINTER call_22_72ec                        ;; 22:72f4 $ec $72 $22
     Op16_SubOps 1                                      ;; 22:72f7 $16 $01
-    SubOp_SetFlag wC94B, 5                             ;; 22:72f9 $3f $9d
+    SubOp_SetFlag 413 ; Bit 5 of wC94B                 ;; 22:72f9 $3f $9d
     Op42_Unknown_StoreValue 7, $01, data_19_4dfc       ;; 22:72fb $42 $07 $01 $fc $4d $19
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_12_4692 ;; 22:7301 $4c $16 $08 $ff $00 $00 $00 $00 $92 $46 $12
 
@@ -2702,7 +2702,7 @@ call_22_7328:
     SCRIPT_POINTER call_22_700b                        ;; 22:7339 $0b $70 $22
     SCRIPT_POINTER call_22_7347                        ;; 22:733c $47 $73 $22
     Op16_SubOps 1                                      ;; 22:733f $16 $01
-    SubOp_ClearFlag wC94B, 5                           ;; 22:7341 $5f $9d
+    SubOp_ClearFlag 413 ; Bit 5 of wC94B               ;; 22:7341 $5f $9d
 
 call_22_7343:
     Op18_Jump call_22_6c77                             ;; 22:7343 $18 $77 $6c $22
@@ -2711,7 +2711,7 @@ call_22_7347:
     Op14_Unknown 1, data_05_6feb                       ;; 22:7347 $14 $01 $eb $6f
     SCRIPT_POINTER call_22_7343                        ;; 22:734b $43 $73 $22
     Op16_SubOps 1                                      ;; 22:734e $16 $01
-    SubOp_SetFlag wC94B, 5                             ;; 22:7350 $3f $9d
+    SubOp_SetFlag 413 ; Bit 5 of wC94B                 ;; 22:7350 $3f $9d
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_12_479d ;; 22:7352 $4c $16 $08 $ff $00 $00 $00 $00 $9d $47 $12
 
 call_22_735d:
@@ -2743,7 +2743,7 @@ call_22_73a5:
     Op3E_Compare_Branch 22, data_12_48b4, call_22_73a5 ;; 22:73a6 $3e $16 $b4 $48 $12 $a5 $73 $22
     Op4C_Unknown $32, $01, $04, $00, $00, $00, $00, data_19_5072 ;; 22:73ae $4c $32 $01 $04 $00 $00 $00 $00 $72 $50 $19
     Op16_SubOps 1                                      ;; 22:73b9 $16 $01
-    SubOp_SetFlag wC94B, 3                             ;; 22:73bb $3f $9b
+    SubOp_SetFlag 411 ; Bit 3 of wC94B                 ;; 22:73bb $3f $9b
     Op3C_Unknown data_17_7a66, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:73bd $3c $66 $7a $17 $fd $d1 $00 $00 $00 $00 $ff
     Op18_Jump call_22_6c77                             ;; 22:73c8 $18 $77 $6c $22
 
@@ -2765,7 +2765,7 @@ call_22_73f2:
     Op3E_Compare_Branch 22, data_12_48e4, call_22_73f2 ;; 22:73f3 $3e $16 $e4 $48 $12 $f2 $73 $22
     Op4C_Unknown $32, $01, $04, $00, $00, $00, $00, data_19_5072 ;; 22:73fb $4c $32 $01 $04 $00 $00 $00 $00 $72 $50 $19
     Op16_SubOps 1                                      ;; 22:7406 $16 $01
-    SubOp_SetFlag wC94B, 3                             ;; 22:7408 $3f $9b
+    SubOp_SetFlag 411 ; Bit 3 of wC94B                 ;; 22:7408 $3f $9b
     Op3C_Unknown data_17_7a66, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:740a $3c $66 $7a $17 $fd $d1 $00 $00 $00 $00 $ff
     Op18_Jump call_22_6c77                             ;; 22:7415 $18 $77 $6c $22
 
@@ -2794,7 +2794,7 @@ call_22_743c:
     Op1E_Call call_1d_711e                             ;; 22:745c $1e $1e $71 $1d
     Op1E_Call call_22_7ed1                             ;; 22:7460 $1e $d1 $7e $22
     Op16_SubOps 1                                      ;; 22:7464 $16 $01
-    SubOp_SetFlag wC94B, 4                             ;; 22:7466 $3f $9c
+    SubOp_SetFlag 412 ; Bit 4 of wC94B                 ;; 22:7466 $3f $9c
     Op18_Jump call_22_6c77                             ;; 22:7468 $18 $77 $6c $22
 
 call_22_746c:
@@ -2839,7 +2839,7 @@ call_22_74b2:
 
 call_22_74db:
     Op16_SubOps 1                                      ;; 22:74db $16 $01
-    SubOp_SetFlag wC935, 0                             ;; 22:74dd $3e $e8
+    SubOp_SetFlag 232 ; Bit 0 of wC935                 ;; 22:74dd $3e $e8
     ;;<E3>You're a customer?<E3>I'm famous <end>
     Op06_Unknown_Text data_37_662e                     ;; 22:74df $06 $2e $66 $37
     Op1E_Call call_22_7d65                             ;; 22:74e3 $1e $65 $7d $22
@@ -2909,7 +2909,7 @@ call_22_759f:
     Op50_WriteByte wBitArrayIndexC715, $00, $48        ;; 22:75a4 $50 $15 $c7 $00 $48
     Op82_Run ObtainHamChatFromC715                     ;; 22:75a9 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 22:75ad $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 22:75af $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 22:75af $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 22:75b1 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 22:75b4 $1c $02
     SCRIPT_POINTER call_22_6ccb                        ;; 22:75b6 $cb $6c $22
@@ -2921,7 +2921,7 @@ call_22_75bc:
     Op50_WriteByte wBitArrayIndexC715, $00, $47        ;; 22:75c1 $50 $15 $c7 $00 $47
     Op82_Run ObtainHamChatFromC715                     ;; 22:75c6 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 22:75ca $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 22:75cc $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 22:75cc $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 22:75ce $74 $5e $c6
     Op1C_TableJump 2                                   ;; 22:75d1 $1c $02
     SCRIPT_POINTER call_22_6ccb                        ;; 22:75d3 $cb $6c $22
@@ -2987,7 +2987,7 @@ call_22_769f:
     SCRIPT_RETURN_4A                                   ;; 22:769f $4a
     Op3E_Compare_Branch 26, data_15_439e, call_22_769f ;; 22:76a0 $3e $1a $9e $43 $15 $9f $76 $22
     Op16_SubOps 1                                      ;; 22:76a8 $16 $01
-    SubOp_SetFlag wC944, 4                             ;; 22:76aa $3f $64
+    SubOp_SetFlag 356 ; Bit 4 of wC944                 ;; 22:76aa $3f $64
     Op16_SubOps 1                                      ;; 22:76ac $16 $01
     SubOp_SetByte wC828, $02                           ;; 22:76ae $7f $10 $02
     Op18_Jump call_22_6c77                             ;; 22:76b1 $18 $77 $6c $22
@@ -3353,7 +3353,7 @@ call_22_7b8b:
     Op50_WriteByte wBitArrayIndexC715, $00, $31        ;; 22:7b92 $50 $15 $c7 $00 $31
     Op82_Run ObtainHamChatFromC715                     ;; 22:7b97 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 22:7b9b $16 $01
-    SubOp_SetFlag wC91F, 4                             ;; 22:7b9d $3e $3c
+    SubOp_SetFlag 60 ; Bit 4 of wC91F                  ;; 22:7b9d $3e $3c
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 22:7b9f $68 $01 $64 $c7 $fd $d1 $01
     Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 22:7ba6 $68 $02 $d8 $c7 $16 $d2 $01
     Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 22:7bad $68 $02 $da $c7 $0e $d2 $01
@@ -3386,7 +3386,7 @@ call_22_7c00:
     Op50_WriteByte wBitArrayIndexC715, $00, $30        ;; 22:7c07 $50 $15 $c7 $00 $30
     Op82_Run ObtainHamChatFromC715                     ;; 22:7c0c $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 22:7c10 $16 $01
-    SubOp_SetFlag wC91F, 3                             ;; 22:7c12 $3e $3b
+    SubOp_SetFlag 59 ; Bit 3 of wC91F                  ;; 22:7c12 $3e $3b
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 22:7c14 $68 $01 $64 $c7 $fd $d1 $01
     Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 22:7c1b $68 $02 $d8 $c7 $16 $d2 $01
     Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 22:7c22 $68 $02 $da $c7 $0e $d2 $01
@@ -3638,7 +3638,7 @@ call_22_7f83:
     Op3E_Compare_Branch 8, data_1a_4e99, call_22_7f83  ;; 22:7f84 $3e $08 $99 $4e $1a $83 $7f $22
     Op44_Unknown $40, $00                              ;; 22:7f8c $44 $40 $00
     Op16_SubOps 1                                      ;; 22:7f8f $16 $01
-    SubOp_SetFlag wC92C, 7                             ;; 22:7f91 $3e $a7
+    SubOp_SetFlag 167 ; Bit 7 of wC92C                 ;; 22:7f91 $3e $a7
     Op1E_Call call_1d_6aa1                             ;; 22:7f93 $1e $a1 $6a $1d
     Op1E_Call call_22_6cf9                             ;; 22:7f97 $1e $f9 $6c $22
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 22:7f9b $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17

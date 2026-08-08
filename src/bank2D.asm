@@ -11,11 +11,11 @@ SECTION "bank2d", ROMX[$4000], BANK[$2d]
     Op14_Unknown 1, data_05_4b06                       ;; 2d:4004 $14 $01 $06 $4b
     SCRIPT_POINTER call_2d_4032                        ;; 2d:4008 $32 $40 $2d
     Op16_SubOps 1                                      ;; 2d:400b $16 $01
-    SubOp_ClearFlag wC94B, 3                           ;; 2d:400d $5f $9b
+    SubOp_ClearFlag 411 ; Bit 3 of wC94B               ;; 2d:400d $5f $9b
     Op16_SubOps 1                                      ;; 2d:400f $16 $01
-    SubOp_ClearFlag wC94B, 1                           ;; 2d:4011 $5f $99
+    SubOp_ClearFlag 409 ; Bit 1 of wC94B               ;; 2d:4011 $5f $99
     Op16_SubOps 1                                      ;; 2d:4013 $16 $01
-    SubOp_ClearFlag wC94B, 2                           ;; 2d:4015 $5f $9a
+    SubOp_ClearFlag 410 ; Bit 2 of wC94B               ;; 2d:4015 $5f $9a
     Op16_SubOps 1                                      ;; 2d:4017 $16 $01
     SubOp_SetByte wC835, $00                           ;; 2d:4019 $7f $1d $00
     Op16_SubOps 1                                      ;; 2d:401c $16 $01
@@ -23,11 +23,11 @@ SECTION "bank2d", ROMX[$4000], BANK[$2d]
     Op16_SubOps 1                                      ;; 2d:4021 $16 $01
     SubOp_SetByte wC836, $00                           ;; 2d:4023 $7f $1e $00
     Op16_SubOps 1                                      ;; 2d:4026 $16 $01
-    SubOp_ClearFlag wC94A, 6                           ;; 2d:4028 $5f $96
+    SubOp_ClearFlag 406 ; Bit 6 of wC94A               ;; 2d:4028 $5f $96
     Op16_SubOps 1                                      ;; 2d:402a $16 $01
-    SubOp_ClearFlag wC94A, 7                           ;; 2d:402c $5f $97
+    SubOp_ClearFlag 407 ; Bit 7 of wC94A               ;; 2d:402c $5f $97
     Op16_SubOps 1                                      ;; 2d:402e $16 $01
-    SubOp_ClearFlag wC94B, 0                           ;; 2d:4030 $5f $98
+    SubOp_ClearFlag 408 ; Bit 0 of wC94B               ;; 2d:4030 $5f $98
 
 call_2d_4032:
     Op1E_Call call_2d_409e                             ;; 2d:4032 $1e $9e $40 $2d
@@ -48,7 +48,7 @@ call_2d_405b:
     Op82_Run data_01_73cc                              ;; 2d:405b $82 $cc $73 $01
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:405f $82 $16 $74 $01
     Op16_SubOps 1                                      ;; 2d:4063 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:4065 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:4065 $5e $03
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 2d:4067 $2a $00 $00 $00
     Op68_CopyBytes 1, wC835, wOp1CScriptTableIndexC53A, $00 ;; 2d:406b $68 $01 $35 $c8 $3a $c5 $00
     Op1C_TableJump 6                                   ;; 2d:4072 $1c $06
@@ -170,7 +170,7 @@ call_2d_41d6:
     Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 2d:4227 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2d:4232 $52 $01 $d0 $01 $fd $d1
     Op16_SubOps 1                                      ;; 2d:4238 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:423a $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:423a $5e $03
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2d:423c $50 $fd $d0 $02 $fe
     Op16_SubOps 1                                      ;; 2d:4241 $16 $01
     SubOp_SetByte wC751, $00                           ;; 2d:4243 $7e $39 $00
@@ -186,7 +186,7 @@ call_2d_4258:
     Op16_SubOps 1                                      ;; 2d:4258 $16 $01
     SubOp_SetByte wC765, $00                           ;; 2d:425a $7e $4d $00
     Op16_SubOps 1                                      ;; 2d:425d $16 $01
-    SubOp_SetFlag wC928, 2                             ;; 2d:425f $3e $82
+    SubOp_SetFlag 130 ; Bit 2 of wC928                 ;; 2d:425f $3e $82
     Op14_Unknown 1, data_05_4e94                       ;; 2d:4261 $14 $01 $94 $4e
     SCRIPT_POINTER call_2d_4282                        ;; 2d:4265 $82 $42 $2d
     Op14_Unknown 1, data_05_4e9e                       ;; 2d:4268 $14 $01 $9e $4e
@@ -194,14 +194,14 @@ call_2d_4258:
     Op16_SubOps 1                                      ;; 2d:426f $16 $01
     SubOp_SetByte wC796, $03                           ;; 2d:4271 $7e $7e $03
     Op16_SubOps 1                                      ;; 2d:4274 $16 $01
-    SubOp_SetFlag wC94B, 2                             ;; 2d:4276 $3f $9a
+    SubOp_SetFlag 410 ; Bit 2 of wC94B                 ;; 2d:4276 $3f $9a
     SCRIPT_RETURN_20                                   ;; 2d:4278 $20
 
 call_2d_4279:
     Op16_SubOps 1                                      ;; 2d:4279 $16 $01
     SubOp_SetByte wC796, $02                           ;; 2d:427b $7e $7e $02
     Op16_SubOps 1                                      ;; 2d:427e $16 $01
-    SubOp_SetFlag wC94B, 2                             ;; 2d:4280 $3f $9a
+    SubOp_SetFlag 410 ; Bit 2 of wC94B                 ;; 2d:4280 $3f $9a
 
 call_2d_4282:
     SCRIPT_RETURN_20                                   ;; 2d:4282 $20
@@ -212,7 +212,7 @@ call_2d_4283:
     Op04_Unknown_Text data_35_67ea                     ;; 2d:4287 $04 $ea $67 $35
     Op1E_Call call_04_615d                             ;; 2d:428b $1e $5d $61 $04
     Op16_SubOps 1                                      ;; 2d:428f $16 $01
-    SubOp_SetFlag wC94B, 0                             ;; 2d:4291 $3f $98
+    SubOp_SetFlag 408 ; Bit 0 of wC94B                 ;; 2d:4291 $3f $98
     Op18_Jump call_2d_405b                             ;; 2d:4293 $18 $5b $40 $2d
 
 call_2d_4297:
@@ -221,7 +221,7 @@ call_2d_4297:
     Op04_Unknown_Text data_35_6847                     ;; 2d:429b $04 $47 $68 $35
     Op1E_Call call_04_615d                             ;; 2d:429f $1e $5d $61 $04
     Op16_SubOps 1                                      ;; 2d:42a3 $16 $01
-    SubOp_SetFlag wC94B, 0                             ;; 2d:42a5 $3f $98
+    SubOp_SetFlag 408 ; Bit 0 of wC94B                 ;; 2d:42a5 $3f $98
     Op18_Jump call_2d_405b                             ;; 2d:42a7 $18 $5b $40 $2d
 
 call_2d_42ab:
@@ -390,7 +390,7 @@ call_2d_4455:
     Op14_Unknown 1, data_05_48b4                       ;; 2d:4459 $14 $01 $b4 $48
     SCRIPT_POINTER call_2d_405b                        ;; 2d:445d $5b $40 $2d
     Op16_SubOps 1                                      ;; 2d:4460 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:4462 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:4462 $5e $03
     Op1E_Call call_2d_409e                             ;; 2d:4464 $1e $9e $40 $2d
     Op18_Jump call_2d_405b                             ;; 2d:4468 $18 $5b $40 $2d
 
@@ -419,7 +419,7 @@ call_2d_448e:
     Op06_Unknown_Text data_35_68a6                     ;; 2d:44ab $06 $a6 $68 $35
     Op1E_Call call_04_615d                             ;; 2d:44af $1e $5d $61 $04
     Op16_SubOps 1                                      ;; 2d:44b3 $16 $01
-    SubOp_SetFlag wC94B, 3                             ;; 2d:44b5 $3f $9b
+    SubOp_SetFlag 411 ; Bit 3 of wC94B                 ;; 2d:44b5 $3f $9b
     Op18_Jump call_2d_405b                             ;; 2d:44b7 $18 $5b $40 $2d
 
 call_2d_44bb:
@@ -469,7 +469,7 @@ call_2d_454d:
     Op50_WriteByte wBitArrayIndexC715, $00, $08        ;; 2d:454d $50 $15 $c7 $00 $08
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4552 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4556 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4558 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4558 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:455a $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:455d $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:455f $3e $44 $2d
@@ -488,7 +488,7 @@ call_2d_4584:
     Op50_WriteByte wBitArrayIndexC715, $00, $1a        ;; 2d:4584 $50 $15 $c7 $00 $1a
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4589 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:458d $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:458f $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:458f $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:4591 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:4594 $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:4596 $3e $44 $2d
@@ -515,7 +515,7 @@ call_2d_45dd:
     Op50_WriteByte wBitArrayIndexC715, $00, $25        ;; 2d:45dd $50 $15 $c7 $00 $25
     Op82_Run ObtainHamChatFromC715                     ;; 2d:45e2 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:45e6 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:45e8 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:45e8 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:45ea $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:45ed $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:45ef $3e $44 $2d
@@ -536,7 +536,7 @@ call_2d_461e:
     Op50_WriteByte wBitArrayIndexC715, $00, $3a        ;; 2d:461e $50 $15 $c7 $00 $3a
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4623 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4627 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4629 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4629 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:462b $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:462e $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:4630 $3e $44 $2d
@@ -559,7 +559,7 @@ call_2d_465d:
     Op50_WriteByte wBitArrayIndexC715, $00, $0e        ;; 2d:465d $50 $15 $c7 $00 $0e
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4662 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4666 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4668 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4668 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:466a $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:466d $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:466f $3e $44 $2d
@@ -582,7 +582,7 @@ call_2d_46a2:
     Op50_WriteByte wBitArrayIndexC715, $00, $37        ;; 2d:46a2 $50 $15 $c7 $00 $37
     Op82_Run ObtainHamChatFromC715                     ;; 2d:46a7 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:46ab $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:46ad $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:46ad $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:46af $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:46b2 $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:46b4 $3e $44 $2d
@@ -605,7 +605,7 @@ call_2d_46e7:
     Op50_WriteByte wBitArrayIndexC715, $00, $36        ;; 2d:46e7 $50 $15 $c7 $00 $36
     Op82_Run ObtainHamChatFromC715                     ;; 2d:46ec $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:46f0 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:46f2 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:46f2 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:46f4 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:46f7 $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:46f9 $3e $44 $2d
@@ -626,7 +626,7 @@ call_2d_4728:
     Op50_WriteByte wBitArrayIndexC715, $00, $29        ;; 2d:4728 $50 $15 $c7 $00 $29
     Op82_Run ObtainHamChatFromC715                     ;; 2d:472d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4731 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4733 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4733 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:4735 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:4738 $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:473a $3e $44 $2d
@@ -671,16 +671,16 @@ call_2d_4786:
     Op50_WriteByte wBitArrayIndexC715, $00, $49        ;; 2d:47b5 $50 $15 $c7 $00 $49
     Op82_Run ObtainHamChatFromC715                     ;; 2d:47ba $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:47be $16 $01
-    SubOp_SetFlag wC922, 4                             ;; 2d:47c0 $3e $54
+    SubOp_SetFlag 84 ; Bit 4 of wC922                  ;; 2d:47c0 $3e $54
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 2d:47c2 $68 $01 $64 $c7 $fd $d1 $01
     Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 2d:47c9 $68 $02 $d8 $c7 $16 $d2 $01
     Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 2d:47d0 $68 $02 $da $c7 $0e $d2 $01
     Op1E_Call call_1d_6fd4                             ;; 2d:47d7 $1e $d4 $6f $1d
     Op16_SubOps 1                                      ;; 2d:47db $16 $01
-    SubOp_SetFlag wC94B, 1                             ;; 2d:47dd $3f $99
+    SubOp_SetFlag 409 ; Bit 1 of wC94B                 ;; 2d:47dd $3f $99
     Op1E_Call call_2d_409e                             ;; 2d:47df $1e $9e $40 $2d
     Op16_SubOps 1                                      ;; 2d:47e3 $16 $01
-    SubOp_ClearFlag wC94B, 1                           ;; 2d:47e5 $5f $99
+    SubOp_ClearFlag 409 ; Bit 1 of wC94B               ;; 2d:47e5 $5f $99
     Op1E_Call call_1d_700b                             ;; 2d:47e7 $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 2d:47eb $1e $e8 $6a $1d
     ;;You learned<E4><E4><end>
@@ -707,7 +707,7 @@ call_2d_4836:
     Op50_WriteByte wBitArrayIndexC715, $00, $11        ;; 2d:4836 $50 $15 $c7 $00 $11
     Op82_Run ObtainHamChatFromC715                     ;; 2d:483b $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:483f $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4841 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4841 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:4843 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:4846 $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:4848 $3e $44 $2d
@@ -740,7 +740,7 @@ call_2d_488c:
     Op50_WriteByte wBitArrayIndexC715, $00, $28        ;; 2d:488c $50 $15 $c7 $00 $28
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4891 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4895 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4897 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4897 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:4899 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:489c $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:489e $3e $44 $2d
@@ -764,7 +764,7 @@ call_2d_48d0:
     Op50_WriteByte wBitArrayIndexC715, $00, $32        ;; 2d:48d0 $50 $15 $c7 $00 $32
     Op82_Run ObtainHamChatFromC715                     ;; 2d:48d5 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:48d9 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:48db $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:48db $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:48dd $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:48e0 $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:48e2 $3e $44 $2d
@@ -791,7 +791,7 @@ call_2d_491d:
     Op50_WriteByte wBitArrayIndexC715, $00, $21        ;; 2d:491d $50 $15 $c7 $00 $21
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4922 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4926 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4928 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4928 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:492a $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:492d $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:492f $3e $44 $2d
@@ -822,16 +822,16 @@ call_2d_4963:
     Op50_WriteByte wBitArrayIndexC715, $00, $2f        ;; 2d:4980 $50 $15 $c7 $00 $2f
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4985 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4989 $16 $01
-    SubOp_SetFlag wC91F, 2                             ;; 2d:498b $3e $3a
+    SubOp_SetFlag 58 ; Bit 2 of wC91F                  ;; 2d:498b $3e $3a
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 2d:498d $68 $01 $64 $c7 $fd $d1 $01
     Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 2d:4994 $68 $02 $d8 $c7 $16 $d2 $01
     Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 2d:499b $68 $02 $da $c7 $0e $d2 $01
     Op1E_Call call_1d_6fd4                             ;; 2d:49a2 $1e $d4 $6f $1d
     Op16_SubOps 1                                      ;; 2d:49a6 $16 $01
-    SubOp_SetFlag wC94A, 6                             ;; 2d:49a8 $3f $96
+    SubOp_SetFlag 406 ; Bit 6 of wC94A                 ;; 2d:49a8 $3f $96
     Op1E_Call call_2d_409e                             ;; 2d:49aa $1e $9e $40 $2d
     Op16_SubOps 1                                      ;; 2d:49ae $16 $01
-    SubOp_ClearFlag wC94A, 6                           ;; 2d:49b0 $5f $96
+    SubOp_ClearFlag 406 ; Bit 6 of wC94A               ;; 2d:49b0 $5f $96
     Op1E_Call call_1d_700b                             ;; 2d:49b2 $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 2d:49b6 $1e $e8 $6a $1d
     ;;You learned<E4><E4><end>
@@ -861,7 +861,7 @@ call_2d_4a14:
     Op50_WriteByte wBitArrayIndexC715, $00, $14        ;; 2d:4a14 $50 $15 $c7 $00 $14
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4a19 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4a1d $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4a1f $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4a1f $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:4a21 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:4a24 $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:4a26 $3e $44 $2d
@@ -885,7 +885,7 @@ call_2d_4a58:
     Op50_WriteByte wBitArrayIndexC715, $00, $11        ;; 2d:4a58 $50 $15 $c7 $00 $11
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4a5d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4a61 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4a63 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4a63 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:4a65 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:4a68 $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:4a6a $3e $44 $2d
@@ -918,7 +918,7 @@ call_2d_4aae:
     Op50_WriteByte wBitArrayIndexC715, $00, $21        ;; 2d:4aae $50 $15 $c7 $00 $21
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4ab3 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4ab7 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4ab9 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4ab9 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:4abb $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:4abe $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:4ac0 $3e $44 $2d
@@ -942,7 +942,7 @@ call_2d_4af2:
     Op50_WriteByte wBitArrayIndexC715, $00, $22        ;; 2d:4af2 $50 $15 $c7 $00 $22
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4af7 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4afb $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:4afd $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:4afd $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:4aff $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:4b02 $1c $02
     SCRIPT_POINTER call_2d_443e                        ;; 2d:4b04 $3e $44 $2d
@@ -971,16 +971,16 @@ call_2d_4b24:
     Op50_WriteByte wBitArrayIndexC715, $00, $46        ;; 2d:4b45 $50 $15 $c7 $00 $46
     Op82_Run ObtainHamChatFromC715                     ;; 2d:4b4a $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:4b4e $16 $01
-    SubOp_SetFlag wC922, 1                             ;; 2d:4b50 $3e $51
+    SubOp_SetFlag 81 ; Bit 1 of wC922                  ;; 2d:4b50 $3e $51
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 2d:4b52 $68 $01 $64 $c7 $fd $d1 $01
     Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 2d:4b59 $68 $02 $d8 $c7 $16 $d2 $01
     Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 2d:4b60 $68 $02 $da $c7 $0e $d2 $01
     Op1E_Call call_1d_6fd4                             ;; 2d:4b67 $1e $d4 $6f $1d
     Op16_SubOps 1                                      ;; 2d:4b6b $16 $01
-    SubOp_SetFlag wC94A, 7                             ;; 2d:4b6d $3f $97
+    SubOp_SetFlag 407 ; Bit 7 of wC94A                 ;; 2d:4b6d $3f $97
     Op1E_Call call_2d_409e                             ;; 2d:4b6f $1e $9e $40 $2d
     Op16_SubOps 1                                      ;; 2d:4b73 $16 $01
-    SubOp_ClearFlag wC94A, 7                           ;; 2d:4b75 $5f $97
+    SubOp_ClearFlag 407 ; Bit 7 of wC94A               ;; 2d:4b75 $5f $97
     Op1E_Call call_1d_700b                             ;; 2d:4b77 $1e $0b $70 $1d
     Op1E_Call call_1d_6ae8                             ;; 2d:4b7b $1e $e8 $6a $1d
     ;;You learned<E4><E4><end>
@@ -1109,7 +1109,7 @@ call_2d_4cca:
 
 call_2d_4cd9:
     Op16_SubOps 1                                      ;; 2d:4cd9 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:4cdb $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:4cdb $5e $03
     Op82_Run data_01_73cc                              ;; 2d:4cdd $82 $cc $73 $01
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:4ce1 $82 $16 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:4ce5 $50 $1d $c3 $00 $d0
@@ -1321,7 +1321,7 @@ call_2d_4f86:
     Op16_SubOps 1                                      ;; 2d:4fb0 $16 $01
     SubOp_SetByte wC829, $00                           ;; 2d:4fb2 $7f $11 $00
     Op16_SubOps 1                                      ;; 2d:4fb5 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:4fb7 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:4fb7 $5e $03
     SCRIPT_RETURN_20                                   ;; 2d:4fb9 $20
 
 call_2d_4fba:
@@ -1330,13 +1330,13 @@ call_2d_4fba:
     Op16_SubOps 1                                      ;; 2d:4fc1 $16 $01
     SubOp_SetByte wC829, $00                           ;; 2d:4fc3 $7f $11 $00
     Op16_SubOps 1                                      ;; 2d:4fc6 $16 $01
-    SubOp_ClearFlag wC94B, 7                           ;; 2d:4fc8 $5f $9f
+    SubOp_ClearFlag 415 ; Bit 7 of wC94B               ;; 2d:4fc8 $5f $9f
     Op16_SubOps 1                                      ;; 2d:4fca $16 $01
-    SubOp_ClearFlag wC94C, 0                           ;; 2d:4fcc $5f $a0
+    SubOp_ClearFlag 416 ; Bit 0 of wC94C               ;; 2d:4fcc $5f $a0
     Op16_SubOps 1                                      ;; 2d:4fce $16 $01
-    SubOp_ClearFlag wC94C, 1                           ;; 2d:4fd0 $5f $a1
+    SubOp_ClearFlag 417 ; Bit 1 of wC94C               ;; 2d:4fd0 $5f $a1
     Op16_SubOps 1                                      ;; 2d:4fd2 $16 $01
-    SubOp_ClearFlag wC94C, 2                           ;; 2d:4fd4 $5f $a2
+    SubOp_ClearFlag 418 ; Bit 2 of wC94C               ;; 2d:4fd4 $5f $a2
 
 call_2d_4fd6:
     SCRIPT_RETURN_20                                   ;; 2d:4fd6 $20
@@ -1485,7 +1485,7 @@ call_2d_5180:
     Op14_Unknown 1, data_05_68ca                       ;; 2d:5180 $14 $01 $ca $68
     SCRIPT_POINTER call_2d_518f                        ;; 2d:5184 $8f $51 $2d
     Op16_SubOps 1                                      ;; 2d:5187 $16 $01
-    SubOp_SetFlag wC94B, 7                             ;; 2d:5189 $3f $9f
+    SubOp_SetFlag 415 ; Bit 7 of wC94B                 ;; 2d:5189 $3f $9f
     Op18_Jump call_2d_5612                             ;; 2d:518b $18 $12 $56 $2d
 
 call_2d_518f:
@@ -1611,7 +1611,7 @@ call_2d_52d3:
 
 call_2d_52f6:
     Op16_SubOps 1                                      ;; 2d:52f6 $16 $01
-    SubOp_SetFlag wC94C, 0                             ;; 2d:52f8 $3f $a0
+    SubOp_SetFlag 416 ; Bit 0 of wC94C                 ;; 2d:52f8 $3f $a0
     Op1E_Call call_2d_53fc                             ;; 2d:52fa $1e $fc $53 $2d
     Op1E_Call call_2d_54d6                             ;; 2d:52fe $1e $d6 $54 $2d
     Op1E_Call call_1d_6ec4                             ;; 2d:5302 $1e $c4 $6e $1d
@@ -1685,7 +1685,7 @@ call_2d_53d4:
     Op14_Unknown 1, data_05_68d4                       ;; 2d:53d4 $14 $01 $d4 $68
     SCRIPT_POINTER call_2d_53f4                        ;; 2d:53d8 $f4 $53 $2d
     Op16_SubOps 1                                      ;; 2d:53db $16 $01
-    SubOp_SetFlag wC94C, 1                             ;; 2d:53dd $3f $a1
+    SubOp_SetFlag 417 ; Bit 1 of wC94C                 ;; 2d:53dd $3f $a1
     Op1E_Call call_20_465b                             ;; 2d:53df $1e $5b $46 $20
     Op1E_Call call_2d_58af                             ;; 2d:53e3 $1e $af $58 $2d
     Op16_SubOps 1                                      ;; 2d:53e7 $16 $01
@@ -1841,7 +1841,7 @@ call_2d_5612:
     Op14_Unknown 1, data_05_6779                       ;; 2d:561a $14 $01 $79 $67
     SCRIPT_POINTER call_2d_563e                        ;; 2d:561e $3e $56 $2d
     Op16_SubOps 1                                      ;; 2d:5621 $16 $01
-    SubOp_SetFlag wC93F, 5                             ;; 2d:5623 $3f $3d
+    SubOp_SetFlag 317 ; Bit 5 of wC93F                 ;; 2d:5623 $3f $3d
     Op1E_Call call_1d_6ed1                             ;; 2d:5625 $1e $d1 $6e $1d
     ;;I'm sorry, but the<E2>doctor's not in<E2>right now. <E5>Please<E4>check back later!<E0>
     Op04_Unknown_Text data_39_6492                     ;; 2d:5629 $04 $92 $64 $39
@@ -1851,7 +1851,7 @@ call_2d_5612:
 
 call_2d_563e:
     Op16_SubOps 1                                      ;; 2d:563e $16 $01
-    SubOp_SetFlag wC93F, 4                             ;; 2d:5640 $3f $3c
+    SubOp_SetFlag 316 ; Bit 4 of wC93F                 ;; 2d:5640 $3f $3c
     Op1E_Call call_1d_6ed1                             ;; 2d:5642 $1e $d1 $6e $1d
     ;;What luck! The<E2>doctor's back now!<E3>Apparently, he got<E2>stuck in a gutter<E2>again. <E5>Thankfully,<E4>a good hamaritan<E2>saved him. <E5>I'll go<E2>get him for you.<E0>
     Op04_Unknown_Text data_39_64da                     ;; 2d:5646 $04 $da $64 $39
@@ -1884,7 +1884,7 @@ call_2d_56a4:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:56a8 $82 $16 $74 $01
     Op82_Run data_01_73cc                              ;; 2d:56ac $82 $cc $73 $01
     Op16_SubOps 1                                      ;; 2d:56b0 $16 $01
-    SubOp_SetFlag wC94C, 2                             ;; 2d:56b2 $3f $a2
+    SubOp_SetFlag 418 ; Bit 2 of wC94C                 ;; 2d:56b2 $3f $a2
     Op1E_Call call_1d_6f1d                             ;; 2d:56b4 $1e $1d $6f $1d
     Op0C_HamChatWheel 2, SkyGardenYesNo, SkyGardenAlwaysUsePile ;; 2d:56b8 $0c $02 $15 $66 $8d $66
     Op1C_TableJump 2                                   ;; 2d:56be $1c $02
@@ -1895,7 +1895,7 @@ call_2d_56c6:
     Op50_WriteByte wBitArrayIndexC715, $00, $48        ;; 2d:56c6 $50 $15 $c7 $00 $48
     Op82_Run ObtainHamChatFromC715                     ;; 2d:56cb $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:56cf $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:56d1 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:56d1 $3e $03
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2d:56d3 $50 $1d $c3 $00 $90
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:56d8 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:56db $1c $02
@@ -1904,7 +1904,7 @@ call_2d_56c6:
 
 call_2d_56e3:
     Op16_SubOps 1                                      ;; 2d:56e3 $16 $01
-    SubOp_ClearFlag wC94C, 2                           ;; 2d:56e5 $5f $a2
+    SubOp_ClearFlag 418 ; Bit 2 of wC94C               ;; 2d:56e5 $5f $a2
     Op1E_Call call_20_4bf9                             ;; 2d:56e7 $1e $f9 $4b $20
     Op1E_Call call_2d_53fc                             ;; 2d:56eb $1e $fc $53 $2d
     Op14_Unknown 1, data_05_677b                       ;; 2d:56ef $14 $01 $7b $67
@@ -1983,7 +1983,7 @@ call_2d_57d0:
     Op50_WriteByte wBitArrayIndexC715, $00, $47        ;; 2d:57d0 $50 $15 $c7 $00 $47
     Op82_Run ObtainHamChatFromC715                     ;; 2d:57d5 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:57d9 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:57db $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:57db $3e $03
     Op50_WriteByte wButtonsOfInterest, $00, $90        ;; 2d:57dd $50 $1d $c3 $00 $90
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:57e2 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:57e5 $1c $02
@@ -1992,7 +1992,7 @@ call_2d_57d0:
 
 call_2d_57ed:
     Op16_SubOps 1                                      ;; 2d:57ed $16 $01
-    SubOp_ClearFlag wC94C, 2                           ;; 2d:57ef $5f $a2
+    SubOp_ClearFlag 418 ; Bit 2 of wC94C               ;; 2d:57ef $5f $a2
     Op1E_Call call_20_4c28                             ;; 2d:57f1 $1e $28 $4c $20
     Op1E_Call call_2d_53fc                             ;; 2d:57f5 $1e $fc $53 $2d
     Op1E_Call call_1d_6ec4                             ;; 2d:57f9 $1e $c4 $6e $1d
@@ -2011,7 +2011,7 @@ call_2d_5821:
     Op3E_Compare_Branch 8, data_1a_4e99, call_2d_5821  ;; 2d:5822 $3e $08 $99 $4e $1a $21 $58 $2d
     Op44_Unknown $40, $00                              ;; 2d:582a $44 $40 $00
     Op16_SubOps 1                                      ;; 2d:582d $16 $01
-    SubOp_SetFlag wC92C, 7                             ;; 2d:582f $3e $a7
+    SubOp_SetFlag 167 ; Bit 7 of wC92C                 ;; 2d:582f $3e $a7
     Op1E_Call call_1d_6aa1                             ;; 2d:5831 $1e $a1 $6a $1d
     Op1E_Call call_2d_4d49                             ;; 2d:5835 $1e $49 $4d $2d
     Op1E_Call call_2d_53fc                             ;; 2d:5839 $1e $fc $53 $2d
@@ -2047,9 +2047,9 @@ call_2d_5887:
 
 call_2d_58a6:
     Op16_SubOps 1                                      ;; 2d:58a6 $16 $01
-    SubOp_ClearFlag wC93F, 4                           ;; 2d:58a8 $5f $3c
+    SubOp_ClearFlag 316 ; Bit 4 of wC93F               ;; 2d:58a8 $5f $3c
     Op16_SubOps 1                                      ;; 2d:58aa $16 $01
-    SubOp_ClearFlag wC93E, 4                           ;; 2d:58ac $5f $34
+    SubOp_ClearFlag 308 ; Bit 4 of wC93E               ;; 2d:58ac $5f $34
 
 call_2d_58ae:
     SCRIPT_RETURN_20                                   ;; 2d:58ae $20
@@ -2097,9 +2097,9 @@ call_2d_5951:
     Op14_Unknown 1, data_05_5864                       ;; 2d:5951 $14 $01 $64 $58
     SCRIPT_POINTER call_2d_5965                        ;; 2d:5955 $65 $59 $2d
     Op16_SubOps 1                                      ;; 2d:5958 $16 $01
-    SubOp_ClearFlag wC94E, 2                           ;; 2d:595a $5f $b2
+    SubOp_ClearFlag 434 ; Bit 2 of wC94E               ;; 2d:595a $5f $b2
     Op16_SubOps 1                                      ;; 2d:595c $16 $01
-    SubOp_ClearFlag wC94E, 3                           ;; 2d:595e $5f $b3
+    SubOp_ClearFlag 435 ; Bit 3 of wC94E               ;; 2d:595e $5f $b3
     Op16_SubOps 1                                      ;; 2d:5960 $16 $01
     SubOp_SetByte wC827, $00                           ;; 2d:5962 $7f $0f $00
 
@@ -2242,7 +2242,7 @@ call_2d_5a69:
     Op1E_Call call_33_4c9d                             ;; 2d:5ab6 $1e $9d $4c $33
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2d:5aba $52 $01 $d0 $01 $fd $d1
     Op16_SubOps 1                                      ;; 2d:5ac0 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:5ac2 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:5ac2 $5e $03
     Op16_SubOps 1                                      ;; 2d:5ac4 $16 $01
     SubOp_SetByte wC751, $00                           ;; 2d:5ac6 $7e $39 $00
     Op16_SubOps 1                                      ;; 2d:5ac9 $16 $01
@@ -2351,7 +2351,7 @@ call_2d_5bd3:
     Op14_Unknown 1, data_05_54c6                       ;; 2d:5bd4 $14 $01 $c6 $54
     SCRIPT_POINTER call_2d_5bd3                        ;; 2d:5bd8 $d3 $5b $2d
     Op16_SubOps 1                                      ;; 2d:5bdb $16 $01
-    SubOp_SetFlag wC94E, 3                             ;; 2d:5bdd $3f $b3
+    SubOp_SetFlag 435 ; Bit 3 of wC94E                 ;; 2d:5bdd $3f $b3
     Op14_Unknown 1, data_05_58b8                       ;; 2d:5bdf $14 $01 $b8 $58
     SCRIPT_POINTER call_2d_5c5c                        ;; 2d:5be3 $5c $5c $2d
     Op14_Unknown 1, data_05_58ba                       ;; 2d:5be6 $14 $01 $ba $58
@@ -2378,7 +2378,7 @@ call_2d_5c22:
     Op44_Unknown $28, $00                              ;; 2d:5c3b $44 $28 $00
     Op56_WriteBitArrayIndex 26, data_1a_4012           ;; 2d:5c3e $56 $1a $12 $40 $1a
     Op16_SubOps 1                                      ;; 2d:5c43 $16 $01
-    SubOp_SetFlag wC933, 3                             ;; 2d:5c45 $3e $db
+    SubOp_SetFlag 219 ; Bit 3 of wC933                 ;; 2d:5c45 $3e $db
     Op16_SubOps 1                                      ;; 2d:5c47 $16 $01
     SubOp_SetByte wC82A, $02                           ;; 2d:5c49 $7f $12 $02
 
@@ -2454,7 +2454,7 @@ call_2d_5d3b:
     Op50_WriteByte wBitArrayIndexC715, $00, $3b        ;; 2d:5d49 $50 $15 $c7 $00 $3b
     Op82_Run ObtainHamChatFromC715                     ;; 2d:5d4e $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:5d52 $16 $01
-    SubOp_SetFlag wC920, 6                             ;; 2d:5d54 $3e $46
+    SubOp_SetFlag 70 ; Bit 6 of wC920                  ;; 2d:5d54 $3e $46
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 2d:5d56 $68 $01 $64 $c7 $fd $d1 $01
     Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 2d:5d5d $68 $02 $d8 $c7 $16 $d2 $01
     Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 2d:5d64 $68 $02 $da $c7 $0e $d2 $01
@@ -2495,13 +2495,13 @@ call_2d_5dea:
     SCRIPT_RETURN_4A                                   ;; 2d:5dea $4a
     Op3E_Compare_Branch 26, data_1a_42a2, call_2d_5dea ;; 2d:5deb $3e $1a $a2 $42 $1a $ea $5d $2d
     Op16_SubOps 1                                      ;; 2d:5df3 $16 $01
-    SubOp_SetFlag wC933, 1                             ;; 2d:5df5 $3e $d9
+    SubOp_SetFlag 217 ; Bit 1 of wC933                 ;; 2d:5df5 $3e $d9
     Op16_SubOps 1                                      ;; 2d:5df7 $16 $01
     SubOp_SetByte wC82A, $04                           ;; 2d:5df9 $7f $12 $04
     Op16_SubOps 1                                      ;; 2d:5dfc $16 $01
-    SubOp_SetFlag wC919, 0                             ;; 2d:5dfe $3e $08
+    SubOp_SetFlag 8 ; Bit 0 of wC919                   ;; 2d:5dfe $3e $08
     Op16_SubOps 1                                      ;; 2d:5e00 $16 $01
-    SubOp_SetFlag wC919, 2                             ;; 2d:5e02 $3e $0a
+    SubOp_SetFlag 10 ; Bit 2 of wC919                  ;; 2d:5e02 $3e $0a
     Op5E_Unknown $80                                   ;; 2d:5e04 $5e $80
     Op5A_Unknown $90                                   ;; 2d:5e06 $5a $90
     Op1E_Call call_3c_5649                             ;; 2d:5e08 $1e $49 $56 $3c
@@ -2535,7 +2535,7 @@ call_2d_5e3a:
     Op14_Unknown 1, data_05_54c6                       ;; 2d:5e3b $14 $01 $c6 $54
     SCRIPT_POINTER call_2d_5e3a                        ;; 2d:5e3f $3a $5e $2d
     Op16_SubOps 1                                      ;; 2d:5e42 $16 $01
-    SubOp_SetFlag wC94E, 3                             ;; 2d:5e44 $3f $b3
+    SubOp_SetFlag 435 ; Bit 3 of wC94E                 ;; 2d:5e44 $3f $b3
 
 call_2d_5e46:
     Op4C_Unknown $16, $10, $04, $00, $00, $00, $00, data_10_4235 ;; 2d:5e46 $4c $16 $10 $04 $00 $00 $00 $00 $35 $42 $10
@@ -2547,7 +2547,7 @@ call_2d_5e58:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:5e5c $82 $16 $74 $01
     SCRIPT_RETURN_4A                                   ;; 2d:5e60 $4a
     Op16_SubOps 1                                      ;; 2d:5e61 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:5e63 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:5e63 $5e $03
     Op50_WriteByte wButtonsOfInterest, $00, $d4        ;; 2d:5e65 $50 $1d $c3 $00 $d4
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:5e6a $82 $c3 $74 $01
     Op1C_TableJump 4                                   ;; 2d:5e6e $1c $04
@@ -2600,7 +2600,7 @@ call_2d_5ee9:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:5eed $82 $16 $74 $01
     SCRIPT_RETURN_4A                                   ;; 2d:5ef1 $4a
     Op16_SubOps 1                                      ;; 2d:5ef2 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:5ef4 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:5ef4 $5e $03
     Op50_WriteByte wButtonsOfInterest, $00, $d4        ;; 2d:5ef6 $50 $1d $c3 $00 $d4
     Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2d:5efb $82 $b7 $74 $01
     Op1C_TableJump 4                                   ;; 2d:5eff $1c $04
@@ -2635,7 +2635,7 @@ call_2d_5f46:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:5f4a $82 $16 $74 $01
     SCRIPT_RETURN_4A                                   ;; 2d:5f4e $4a
     Op16_SubOps 1                                      ;; 2d:5f4f $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:5f51 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:5f51 $5e $03
     Op50_WriteByte wButtonsOfInterest, $00, $c2        ;; 2d:5f53 $50 $1d $c3 $00 $c2
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:5f58 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2d:5f5c $1c $03
@@ -2649,7 +2649,7 @@ call_2d_5f6b:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:5f6f $82 $16 $74 $01
     SCRIPT_RETURN_4A                                   ;; 2d:5f73 $4a
     Op16_SubOps 1                                      ;; 2d:5f74 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:5f76 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:5f76 $5e $03
     Op50_WriteByte wButtonsOfInterest, $00, $c4        ;; 2d:5f78 $50 $1d $c3 $00 $c4
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:5f7d $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2d:5f81 $1c $03
@@ -2794,7 +2794,7 @@ call_2d_60cf:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:60cf $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:60d4 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:60d8 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:60da $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:60da $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:60dc $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:60df $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:60e1 $a9 $60 $2d
@@ -2808,7 +2808,7 @@ call_2d_60ef:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:60ef $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 2d:60f4 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:60f8 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:60fa $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:60fa $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:60fc $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:60ff $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:6101 $a9 $60 $2d
@@ -2822,7 +2822,7 @@ call_2d_610f:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:610f $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6114 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6118 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:611a $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:611a $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:611c $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:611f $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:6121 $a9 $60 $2d
@@ -2840,7 +2840,7 @@ call_2d_613e:
     Op14_Unknown 1, data_05_54c6                       ;; 2d:613f $14 $01 $c6 $54
     SCRIPT_POINTER call_2d_613e                        ;; 2d:6143 $3e $61 $2d
     Op16_SubOps 1                                      ;; 2d:6146 $16 $01
-    SubOp_SetFlag wC94D, 4                             ;; 2d:6148 $3f $ac
+    SubOp_SetFlag 428 ; Bit 4 of wC94D                 ;; 2d:6148 $3f $ac
     Op1E_Call call_3c_5647                             ;; 2d:614a $1e $47 $56 $3c
     Op1A_Unknown $0b                                   ;; 2d:614e $1a $0b
 
@@ -2848,7 +2848,7 @@ call_2d_6150:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:6150 $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6155 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6159 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:615b $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:615b $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:615d $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6160 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:6162 $a9 $60 $2d
@@ -2872,7 +2872,7 @@ call_2d_6190:
     Op50_WriteByte wBitArrayIndexC715, $00, $06        ;; 2d:6190 $50 $15 $c7 $00 $06
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6195 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6199 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:619b $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:619b $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:619d $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:61a0 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:61a2 $a9 $60 $2d
@@ -2886,7 +2886,7 @@ call_2d_61b0:
     Op50_WriteByte wBitArrayIndexC715, $00, $2b        ;; 2d:61b0 $50 $15 $c7 $00 $2b
     Op82_Run ObtainHamChatFromC715                     ;; 2d:61b5 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:61b9 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:61bb $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:61bb $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:61bd $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:61c0 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:61c2 $a9 $60 $2d
@@ -2900,7 +2900,7 @@ call_2d_61d0:
     Op50_WriteByte wBitArrayIndexC715, $00, $2b        ;; 2d:61d0 $50 $15 $c7 $00 $2b
     Op82_Run ObtainHamChatFromC715                     ;; 2d:61d5 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:61d9 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:61db $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:61db $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:61dd $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:61e0 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:61e2 $a9 $60 $2d
@@ -2916,7 +2916,7 @@ call_2d_61f7:
     Op50_WriteByte wBitArrayIndexC715, $00, $3a        ;; 2d:61f7 $50 $15 $c7 $00 $3a
     Op82_Run ObtainHamChatFromC715                     ;; 2d:61fc $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6200 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6202 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6202 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6204 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6207 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:6209 $a9 $60 $2d
@@ -2965,7 +2965,7 @@ call_2d_6261:
     Op50_WriteByte wBitArrayIndexC715, $00, $3a        ;; 2d:6261 $50 $15 $c7 $00 $3a
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6266 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:626a $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:626c $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:626c $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:626e $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6271 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:6273 $a9 $60 $2d
@@ -2981,7 +2981,7 @@ call_2d_6288:
     Op50_WriteByte wBitArrayIndexC715, $00, $22        ;; 2d:6288 $50 $15 $c7 $00 $22
     Op82_Run ObtainHamChatFromC715                     ;; 2d:628d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6291 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6293 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6293 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6295 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6298 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:629a $a9 $60 $2d
@@ -3048,7 +3048,7 @@ call_2d_6333:
     Op04_Unknown_Text data_39_5068                     ;; 2d:636d $04 $68 $50 $39
     Op1E_Call call_04_615d                             ;; 2d:6371 $1e $5d $61 $04
     Op16_SubOps 1                                      ;; 2d:6375 $16 $01
-    SubOp_SetFlag wC933, 4                             ;; 2d:6377 $3e $dc
+    SubOp_SetFlag 220 ; Bit 4 of wC933                 ;; 2d:6377 $3e $dc
 
 call_2d_6379:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:6379 $82 $16 $74 $01
@@ -3072,7 +3072,7 @@ call_2d_63a9:
     Op50_WriteByte wBitArrayIndexC715, $00, $3a        ;; 2d:63a9 $50 $15 $c7 $00 $3a
     Op82_Run ObtainHamChatFromC715                     ;; 2d:63ae $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:63b2 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:63b4 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:63b4 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:63b6 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:63b9 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:63bb $a9 $60 $2d
@@ -3088,7 +3088,7 @@ call_2d_63ce:
     Op50_WriteByte wBitArrayIndexC715, $00, $26        ;; 2d:63ce $50 $15 $c7 $00 $26
     Op82_Run ObtainHamChatFromC715                     ;; 2d:63d3 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:63d7 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:63d9 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:63d9 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:63db $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:63de $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:63e0 $a9 $60 $2d
@@ -3104,7 +3104,7 @@ call_2d_63f3:
     Op50_WriteByte wBitArrayIndexC715, $00, $2b        ;; 2d:63f3 $50 $15 $c7 $00 $2b
     Op82_Run ObtainHamChatFromC715                     ;; 2d:63f8 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:63fc $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:63fe $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:63fe $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6400 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6403 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:6405 $a9 $60 $2d
@@ -3120,7 +3120,7 @@ call_2d_6418:
     Op50_WriteByte wBitArrayIndexC715, $00, $24        ;; 2d:6418 $50 $15 $c7 $00 $24
     Op82_Run ObtainHamChatFromC715                     ;; 2d:641d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6421 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6423 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6423 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6425 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6428 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:642a $a9 $60 $2d
@@ -3231,7 +3231,7 @@ call_2d_6517:
     Op50_WriteByte wBitArrayIndexC715, $00, $26        ;; 2d:6517 $50 $15 $c7 $00 $26
     Op82_Run ObtainHamChatFromC715                     ;; 2d:651c $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6520 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6522 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6522 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6524 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6527 $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:6529 $a9 $60 $2d
@@ -3247,7 +3247,7 @@ call_2d_653e:
     Op50_WriteByte wBitArrayIndexC715, $00, $24        ;; 2d:653e $50 $15 $c7 $00 $24
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6543 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6547 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6549 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6549 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:654b $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:654e $1c $02
     SCRIPT_POINTER call_2d_60a9                        ;; 2d:6550 $a9 $60 $2d
@@ -3265,7 +3265,7 @@ call_2d_6556:
 
 call_2d_6574:
     Op16_SubOps 1                                      ;; 2d:6574 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:6576 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:6576 $5e $03
     Op82_Run data_01_73cc                              ;; 2d:6578 $82 $cc $73 $01
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:657c $82 $16 $74 $01
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 2d:6580 $2a $00 $00 $00
@@ -3299,7 +3299,7 @@ call_2d_65cb:
     Op14_Unknown 1, data_05_5a5a                       ;; 2d:65cf $14 $01 $5a $5a
     SCRIPT_POINTER call_2d_6574                        ;; 2d:65d3 $74 $65 $2d
     Op16_SubOps 1                                      ;; 2d:65d6 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:65d8 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:65d8 $5e $03
     Op1E_Call call_2d_65e6                             ;; 2d:65da $1e $e6 $65 $2d
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 2d:65de $82 $42 $74 $01
     Op18_Jump call_2d_6574                             ;; 2d:65e2 $18 $74 $65 $2d
@@ -3460,7 +3460,7 @@ call_2d_6802:
     Op16_SubOps 1                                      ;; 2d:6838 $16 $01
     SubOp_SetByte wC81D, $00                           ;; 2d:683a $7f $05 $00
     Op16_SubOps 1                                      ;; 2d:683d $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:683f $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:683f $5e $03
     SCRIPT_RETURN_20                                   ;; 2d:6841 $20
 
 call_2d_6842:
@@ -3477,7 +3477,7 @@ call_2d_685e:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:685e $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6863 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6867 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6869 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6869 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:686b $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:686e $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6870 $b4 $65 $2d
@@ -3491,7 +3491,7 @@ call_2d_687e:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:687e $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6883 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6887 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6889 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6889 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:688b $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:688e $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6890 $b4 $65 $2d
@@ -3505,7 +3505,7 @@ call_2d_689e:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:689e $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:68a3 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:68a7 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:68a9 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:68a9 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:68ab $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:68ae $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:68b0 $b4 $65 $2d
@@ -3519,7 +3519,7 @@ call_2d_68be:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:68be $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:68c3 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:68c7 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:68c9 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:68c9 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:68cb $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:68ce $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:68d0 $b4 $65 $2d
@@ -3554,7 +3554,7 @@ call_2d_6902:
 
 call_2d_6922:
     Op16_SubOps 1                                      ;; 2d:6922 $16 $01
-    SubOp_ClearFlag wC930, 0                           ;; 2d:6924 $5e $c0
+    SubOp_ClearFlag 192 ; Bit 0 of wC930               ;; 2d:6924 $5e $c0
     Op50_WriteByte w1_BeginRegionD1FD, $01, $04        ;; 2d:6926 $50 $fd $d1 $01 $04
     Op82_Run data_01_77e1                              ;; 2d:692b $82 $e1 $77 $01
     Op1E_Call call_3b_7880                             ;; 2d:692f $1e $80 $78 $3b
@@ -3572,7 +3572,7 @@ call_2d_6935:
 
 call_2d_6950:
     Op16_SubOps 1                                      ;; 2d:6950 $16 $01
-    SubOp_ClearFlag wC930, 0                           ;; 2d:6952 $5e $c0
+    SubOp_ClearFlag 192 ; Bit 0 of wC930               ;; 2d:6952 $5e $c0
     Op50_WriteByte w1_BeginRegionD1FD, $01, $02        ;; 2d:6954 $50 $fd $d1 $01 $02
     Op82_Run data_01_77e1                              ;; 2d:6959 $82 $e1 $77 $01
     Op1E_Call call_3b_7880                             ;; 2d:695d $1e $80 $78 $3b
@@ -3597,7 +3597,7 @@ call_2d_6975:
 
 call_2d_6995:
     Op16_SubOps 1                                      ;; 2d:6995 $16 $01
-    SubOp_ClearFlag wC930, 0                           ;; 2d:6997 $5e $c0
+    SubOp_ClearFlag 192 ; Bit 0 of wC930               ;; 2d:6997 $5e $c0
     Op50_WriteByte w1_BeginRegionD1FD, $01, $10        ;; 2d:6999 $50 $fd $d1 $01 $10
     Op82_Run data_01_77e1                              ;; 2d:699e $82 $e1 $77 $01
     Op1E_Call call_3b_7880                             ;; 2d:69a2 $1e $80 $78 $3b
@@ -3616,7 +3616,7 @@ call_2d_69a8:
 
 call_2d_69c8:
     Op16_SubOps 1                                      ;; 2d:69c8 $16 $01
-    SubOp_ClearFlag wC930, 0                           ;; 2d:69ca $5e $c0
+    SubOp_ClearFlag 192 ; Bit 0 of wC930               ;; 2d:69ca $5e $c0
     Op50_WriteByte w1_BeginRegionD1FD, $01, $08        ;; 2d:69cc $50 $fd $d1 $01 $08
     Op82_Run data_01_77e1                              ;; 2d:69d1 $82 $e1 $77 $01
     Op1E_Call call_3b_7880                             ;; 2d:69d5 $1e $80 $78 $3b
@@ -3644,7 +3644,7 @@ call_2d_6a0a:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:6a0a $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6a0f $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6a13 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6a15 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6a15 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6a17 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6a1a $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6a1c $b4 $65 $2d
@@ -3654,7 +3654,7 @@ call_2d_6a22:
     Op14_Unknown 1, data_05_5cb6                       ;; 2d:6a22 $14 $01 $b6 $5c
     SCRIPT_POINTER call_2d_68be                        ;; 2d:6a26 $be $68 $2d
     Op16_SubOps 1                                      ;; 2d:6a29 $16 $01
-    SubOp_SetFlag wC930, 0                             ;; 2d:6a2b $3e $c0
+    SubOp_SetFlag 192 ; Bit 0 of wC930                 ;; 2d:6a2b $3e $c0
     Op1E_Call call_20_43df                             ;; 2d:6a2d $1e $df $43 $20
     Op1E_Call call_1d_7116                             ;; 2d:6a31 $1e $16 $71 $1d
     Op18_Jump call_2d_6574                             ;; 2d:6a35 $18 $74 $65 $2d
@@ -3677,7 +3677,7 @@ call_2d_6a59:
 
 call_2d_6a69:
     Op16_SubOps 1                                      ;; 2d:6a69 $16 $01
-    SubOp_SetFlag wC934, 4                             ;; 2d:6a6b $3e $e4
+    SubOp_SetFlag 228 ; Bit 4 of wC934                 ;; 2d:6a6b $3e $e4
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_10_77d4 ;; 2d:6a6d $4c $16 $10 $ff $00 $00 $00 $00 $d4 $77 $10
     Op34_Graphics data_7f_664c, w7_D900, $0c           ;; 2d:6a78 $34 $4c $66 $7f $00 $d9 $07 $0c
     Op36_Graphics data_7e_7c21, w3_D1C2                ;; 2d:6a80 $36 $21 $7c $7e $c2 $d1 $03
@@ -3725,7 +3725,7 @@ call_2d_6af9:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:6b00 $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6b05 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6b09 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6b0b $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6b0b $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6b0d $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6b10 $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6b12 $b4 $65 $2d
@@ -3755,7 +3755,7 @@ call_2d_6b6c:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:6b6c $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6b71 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6b75 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6b77 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6b77 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6b79 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6b7c $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6b7e $b4 $65 $2d
@@ -3821,7 +3821,7 @@ call_2d_6c51:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:6c51 $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6c56 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6c5a $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6c5c $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6c5c $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6c5e $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6c61 $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6c63 $b4 $65 $2d
@@ -3866,7 +3866,7 @@ call_2d_6cca:
     Op14_Unknown 1, data_05_5cd2                       ;; 2d:6ccf $14 $01 $d2 $5c
     SCRIPT_POINTER call_2d_6574                        ;; 2d:6cd3 $74 $65 $2d
     Op16_SubOps 1                                      ;; 2d:6cd6 $16 $01
-    SubOp_ClearFlag wC934, 4                           ;; 2d:6cd8 $5e $e4
+    SubOp_ClearFlag 228 ; Bit 4 of wC934               ;; 2d:6cd8 $5e $e4
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:6cda $50 $1d $c3 $00 $d0
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, data_10_7890 ;; 2d:6cdf $4c $16 $10 $02 $00 $00 $00 $00 $90 $78 $10
     Op34_Graphics data_7f_6658, w7_D900, $0c           ;; 2d:6cea $34 $58 $66 $7f $00 $d9 $07 $0c
@@ -3936,7 +3936,7 @@ RooftopHamsterHamha:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:6dbc $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6dc1 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6dc5 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6dc7 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6dc7 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6dc9 $74 $5e $c6
 ; My guess is that these table jumps of size 2 fork on whether the hamster is there or not.
     Op1C_TableJump 2                                   ;; 2d:6dcc $1c $02
@@ -4003,7 +4003,7 @@ RooftopHamsterHifHif:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:6ea6 $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6eab $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6eaf $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6eb1 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6eb1 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6eb3 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6eb6 $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6eb8 $b4 $65 $2d
@@ -4031,7 +4031,7 @@ RooftopHamsterTackQ:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:6f08 $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6f0d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6f11 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6f13 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6f13 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6f15 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6f18 $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6f1a $b4 $65 $2d
@@ -4089,7 +4089,7 @@ RooftopHamsterDigDig:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:6fc8 $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6fcd $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6fd1 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:6fd3 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6fd3 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:6fd5 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6fd8 $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:6fda $b4 $65 $2d
@@ -4126,7 +4126,7 @@ call_2d_703b:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:703b $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7040 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7044 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:7046 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:7046 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7048 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:704b $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:704d $b4 $65 $2d
@@ -4188,7 +4188,7 @@ call_2d_70e6:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:70e6 $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:70eb $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:70ef $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:70f1 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:70f1 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:70f3 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:70f6 $1c $02
     SCRIPT_POINTER call_2d_65b4                        ;; 2d:70f8 $b4 $65 $2d
@@ -4246,7 +4246,7 @@ call_2d_7182:
 
 call_2d_71a3:
     Op16_SubOps 1                                      ;; 2d:71a3 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:71a5 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:71a5 $5e $03
     Op82_Run data_01_73cc                              ;; 2d:71a7 $82 $cc $73 $01
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:71ab $82 $16 $74 $01
     Op2A_MaybeCodeJump $00, $00, $00                   ;; 2d:71af $2a $00 $00 $00
@@ -4282,7 +4282,7 @@ call_2d_7206:
     Op14_Unknown 1, data_05_73aa                       ;; 2d:720a $14 $01 $aa $73
     SCRIPT_POINTER call_2d_71a3                        ;; 2d:720e $a3 $71 $2d
     Op16_SubOps 1                                      ;; 2d:7211 $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:7213 $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:7213 $5e $03
     Op1E_Call call_2d_723b                             ;; 2d:7215 $1e $3b $72 $2d
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 2d:7219 $82 $42 $74 $01
     Op18_Jump call_2d_71a3                             ;; 2d:721d $18 $a3 $71 $2d
@@ -4293,9 +4293,9 @@ call_2d_7221:
     Op16_SubOps 1                                      ;; 2d:7228 $16 $01
     SubOp_SetByte wC81A, $00                           ;; 2d:722a $7f $02 $00
     Op16_SubOps 1                                      ;; 2d:722d $16 $01
-    SubOp_ClearFlag wC948, 0                           ;; 2d:722f $5f $80
+    SubOp_ClearFlag 384 ; Bit 0 of wC948               ;; 2d:722f $5f $80
     Op16_SubOps 1                                      ;; 2d:7231 $16 $01
-    SubOp_ClearFlag wC948, 1                           ;; 2d:7233 $5f $81
+    SubOp_ClearFlag 385 ; Bit 1 of wC948               ;; 2d:7233 $5f $81
 
 call_2d_7235:
     Op16_SubOps 1                                      ;; 2d:7235 $16 $01
@@ -4386,7 +4386,7 @@ call_2d_736d:
     Op3E_Compare_Branch 22, data_10_46f3, call_2d_736d ;; 2d:737e $3e $16 $f3 $46 $10 $6d $73 $2d
     Op1E_Call call_34_591e                             ;; 2d:7386 $1e $1e $59 $34
     Op16_SubOps 1                                      ;; 2d:738a $16 $01
-    SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:738c $5e $03
+    SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:738c $5e $03
     Op16_SubOps 1                                      ;; 2d:738e $16 $01
     SubOp_SetByte wC751, $00                           ;; 2d:7390 $7e $39 $00
     Op16_SubOps 1                                      ;; 2d:7393 $16 $01
@@ -4396,7 +4396,7 @@ call_2d_736d:
     Op16_SubOps 1                                      ;; 2d:739d $16 $01
     SubOp_SetByte wC834, $00                           ;; 2d:739f $7f $1c $00
     Op16_SubOps 1                                      ;; 2d:73a2 $16 $01
-    SubOp_ClearFlag wC94A, 4                           ;; 2d:73a4 $5f $94
+    SubOp_ClearFlag 404 ; Bit 4 of wC94A               ;; 2d:73a4 $5f $94
     SCRIPT_RETURN_20                                   ;; 2d:73a6 $20
 
 call_2d_73a7:
@@ -4413,7 +4413,7 @@ call_2d_73c3:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:73c3 $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:73c8 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:73cc $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:73ce $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:73ce $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:73d0 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:73d3 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:73d5 $ef $71 $2d
@@ -4427,7 +4427,7 @@ call_2d_73e3:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:73e3 $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 2d:73e8 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:73ec $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:73ee $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:73ee $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:73f0 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:73f3 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:73f5 $ef $71 $2d
@@ -4441,7 +4441,7 @@ call_2d_7403:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:7403 $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7408 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:740c $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:740e $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:740e $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7410 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:7413 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7415 $ef $71 $2d
@@ -4455,7 +4455,7 @@ call_2d_7423:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:7423 $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7428 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:742c $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:742e $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:742e $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7430 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:7433 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7435 $ef $71 $2d
@@ -4526,7 +4526,7 @@ call_2d_74df:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:74df $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:74e4 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:74e8 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:74ea $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:74ea $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:74ec $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:74ef $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:74f1 $ef $71 $2d
@@ -4567,7 +4567,7 @@ call_2d_7547:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:7547 $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:754c $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7550 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:7552 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:7552 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7554 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:7557 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7559 $ef $71 $2d
@@ -4583,7 +4583,7 @@ call_2d_756f:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:756f $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7574 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7578 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:757a $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:757a $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:757c $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:757f $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7581 $ef $71 $2d
@@ -4598,7 +4598,7 @@ call_2d_7593:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:7593 $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7598 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:759c $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:759e $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:759e $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:75a0 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:75a3 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:75a5 $ef $71 $2d
@@ -4640,7 +4640,7 @@ call_2d_7624:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:7624 $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7629 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:762d $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:762f $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:762f $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7631 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:7634 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7636 $ef $71 $2d
@@ -4655,7 +4655,7 @@ call_2d_7648:
     Op50_WriteByte wBitArrayIndexC715, $00, $11        ;; 2d:7648 $50 $15 $c7 $00 $11
     Op82_Run ObtainHamChatFromC715                     ;; 2d:764d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7651 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:7653 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:7653 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7655 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:7658 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:765a $ef $71 $2d
@@ -4675,7 +4675,7 @@ call_2d_767c:
     Op50_WriteByte wBitArrayIndexC715, $00, $45        ;; 2d:767c $50 $15 $c7 $00 $45
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7681 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7685 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:7687 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:7687 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7689 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:768c $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:768e $ef $71 $2d
@@ -4738,7 +4738,7 @@ call_2d_7735:
     SubOp_SetByte wC737, $01                           ;; 2d:7745 $7e $1f $01
     Op82_Run UpdateCollectibleInventory                ;; 2d:7748 $82 $31 $42 $02
     Op16_SubOps 1                                      ;; 2d:774c $16 $01
-    SubOp_SetFlag wC94A, 4                             ;; 2d:774e $3f $94
+    SubOp_SetFlag 404 ; Bit 4 of wC94A                 ;; 2d:774e $3f $94
     Op1E_Call call_2d_7c7c                             ;; 2d:7750 $1e $7c $7c $2d
     Op1E_Call call_1d_6a78                             ;; 2d:7754 $1e $78 $6a $1d
     Op1E_Call call_2d_723b                             ;; 2d:7758 $1e $3b $72 $2d
@@ -4819,7 +4819,7 @@ call_2d_783e:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:783e $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7843 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7847 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:7849 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:7849 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:784b $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:784e $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7850 $ef $71 $2d
@@ -4831,7 +4831,7 @@ call_2d_7856:
     Op14_Unknown 1, data_05_7462                       ;; 2d:785d $14 $01 $62 $74
     SCRIPT_POINTER call_2d_7874                        ;; 2d:7861 $74 $78 $2d
     Op16_SubOps 1                                      ;; 2d:7864 $16 $01
-    SubOp_SetFlag wC948, 0                             ;; 2d:7866 $3f $80
+    SubOp_SetFlag 384 ; Bit 0 of wC948                 ;; 2d:7866 $3f $80
     Op1E_Call call_20_45ce                             ;; 2d:7868 $1e $ce $45 $20
     Op1E_Call call_1d_711e                             ;; 2d:786c $1e $1e $71 $1d
     Op18_Jump call_2d_71a3                             ;; 2d:7870 $18 $a3 $71 $2d
@@ -4890,7 +4890,7 @@ call_2d_790f:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:790f $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7914 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7918 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:791a $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:791a $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:791c $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:791f $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7921 $ef $71 $2d
@@ -4910,7 +4910,7 @@ call_2d_793c:
     Op14_Unknown 1, data_05_7468                       ;; 2d:7945 $14 $01 $68 $74
     SCRIPT_POINTER call_2d_7973                        ;; 2d:7949 $73 $79 $2d
     Op16_SubOps 1                                      ;; 2d:794c $16 $01
-    SubOp_SetFlag wC948, 1                             ;; 2d:794e $3f $81
+    SubOp_SetFlag 385 ; Bit 1 of wC948                 ;; 2d:794e $3f $81
     Op56_WriteBitArrayIndex 26, data_13_4815           ;; 2d:7950 $56 $1a $15 $48 $13
     ;;<E3>Even though I<E4>cherish this like<E4>no other, <E5>I want<E4>you to have it.<E3><end>
     Op06_Unknown_Text data_39_42c5                     ;; 2d:7955 $06 $c5 $42 $39
@@ -4926,7 +4926,7 @@ call_2d_7961:
 
 call_2d_7973:
     Op16_SubOps 1                                      ;; 2d:7973 $16 $01
-    SubOp_ClearFlag wC948, 1                           ;; 2d:7975 $5f $81
+    SubOp_ClearFlag 385 ; Bit 1 of wC948               ;; 2d:7975 $5f $81
     Op56_WriteBitArrayIndex 26, data_13_41cc           ;; 2d:7977 $56 $1a $cc $41 $13
     ;;<E3><...>So I just need to<E4>say<...>the ball <E5>that<E4>was a <end>
     Op06_Unknown_Text data_39_430b                     ;; 2d:797c $06 $0b $43 $39
@@ -4953,7 +4953,7 @@ call_2d_79b0:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:79b0 $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 2d:79b5 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:79b9 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:79bb $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:79bb $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:79bd $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:79c0 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:79c2 $ef $71 $2d
@@ -4977,7 +4977,7 @@ call_2d_79f3:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:79f3 $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:79f8 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:79fc $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:79fe $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:79fe $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7a00 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:7a03 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7a05 $ef $71 $2d
@@ -5008,7 +5008,7 @@ call_2d_7a4c:
     Op50_WriteByte wBitArrayIndexC715, $00, $11        ;; 2d:7a4c $50 $15 $c7 $00 $11
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7a51 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7a55 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:7a57 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:7a57 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7a59 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:7a5c $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7a5e $ef $71 $2d
@@ -5034,7 +5034,7 @@ call_2d_7a97:
     Op50_WriteByte wBitArrayIndexC715, $00, $45        ;; 2d:7a97 $50 $15 $c7 $00 $45
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7a9c $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7aa0 $16 $01
-    SubOp_SetFlag wBitArrayC918, 3                     ;; 2d:7aa2 $3e $03
+    SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:7aa2 $3e $03
     Op74_PrepTableJumpIndex_Copy wC65E                 ;; 2d:7aa4 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:7aa7 $1c $02
     SCRIPT_POINTER call_2d_71ef                        ;; 2d:7aa9 $ef $71 $2d
@@ -5234,11 +5234,11 @@ call_2d_7d4d:
     Op14_Unknown 1, data_05_747a                       ;; 2d:7d4d $14 $01 $7a $74
     SCRIPT_POINTER call_2d_7dc2                        ;; 2d:7d51 $c2 $7d $2d
     Op16_SubOps 1                                      ;; 2d:7d54 $16 $01
-    SubOp_SetFlag wC94A, 4                             ;; 2d:7d56 $3f $94
+    SubOp_SetFlag 404 ; Bit 4 of wC94A                 ;; 2d:7d56 $3f $94
     Op50_WriteByte wBitArrayIndexC715, $00, $4e        ;; 2d:7d58 $50 $15 $c7 $00 $4e
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7d5d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7d61 $16 $01
-    SubOp_SetFlag wC923, 1                             ;; 2d:7d63 $3e $59
+    SubOp_SetFlag 89 ; Bit 1 of wC923                  ;; 2d:7d63 $3e $59
     Op68_CopyBytes 1, wC764, w1_BeginRegionD1FD, $01   ;; 2d:7d65 $68 $01 $64 $c7 $fd $d1 $01
     Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 2d:7d6c $68 $02 $d8 $c7 $16 $d2 $01
     Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 2d:7d73 $68 $02 $da $c7 $0e $d2 $01

@@ -173,12 +173,12 @@ class SubOpsBlock(Block):
     def __init__(self, memory, addr, amount):
         super().__init__(memory, addr)
         RomInfo.macros["SubOp_SetFlag"] = r"""
-db ($3e + (((\1 - $c918) * 8 + \2) >> 8))
-db (((\1 - $c918) * 8 + \2) & $FF)
+db ($3e + (\1  >> 8))
+db (\1 & $FF)
 """
         RomInfo.macros["SubOp_ClearFlag"] = r"""
-db ($5e + (((\1 - $c918) * 8 + \2) >> 8))
-db (((\1 - $c918) * 8 + \2) & $FF)
+db ($5e + (\1  >> 8))
+db (\1 & $FF)
 """
         RomInfo.macros["SubOp_SetByte"] = r"""
 db ($7e + ((\1 - $c718) >> 8))
@@ -194,6 +194,7 @@ dw \2
         RomInfo.macros["SubOp_DefaultCase_Trio"] = "db \\1\ndb \\2\ndb \\3"
 
         self.subOpArgsList = []
+        self.subOpCommentsList =[]
         size = 0
         for n in range(amount):
             # 7 highest bits are the opcode. The lowest bit is a 9th high bit for the first arg. (Except in 'other' case.)
@@ -207,20 +208,23 @@ dw \2
                     RomInfo.getWRam().addAutoLabel(byteContainingFlag, None, None)
                     label = RomInfo.getWRam().getLabel(byteContainingFlag)
                     bitOfFlag = arg1 % 8
-                    self.subOpArgsList.append((2, "SubOp_SetFlag", str(label), str(bitOfFlag)))
+                    self.subOpArgsList.append((2, "SubOp_SetFlag", str(arg1)))
+                    self.subOpCommentsList.append(" Bit %s of %s" % (str(bitOfFlag), str(label)))
                     size += 2
                 case 0x5E:
                     byteContainingFlag = 0xC918 + (arg1 // 8)
                     RomInfo.getWRam().addAutoLabel(byteContainingFlag, None, None)
                     label = RomInfo.getWRam().getLabel(byteContainingFlag)
                     bitOfFlag = arg1 % 8
-                    self.subOpArgsList.append((2, "SubOp_ClearFlag", str(label), str(bitOfFlag)))
+                    self.subOpArgsList.append((2, "SubOp_ClearFlag", str(arg1)))
+                    self.subOpCommentsList.append(" Bit %s of %s" % (str(bitOfFlag), str(label)))
                     size += 2
                 case 0x7E:
                     addressToWrite = 0xC718 + arg1
                     RomInfo.getWRam().addAutoLabel(addressToWrite, None, None)
                     label = RomInfo.getWRam().getLabel(addressToWrite)
                     self.subOpArgsList.append((3, "SubOp_SetByte", str(label), "$%02x" % memory.byte(addr + size + 2)))
+                    self.subOpCommentsList.append(None)
                     size += 3
                 case 0x9E:
                     addressToWrite = 0xC718 + arg1
@@ -229,6 +233,7 @@ dw \2
                     if label == None:
                         raise Exception("No label for ram address", "$%04x" % addressToWrite)
                     self.subOpArgsList.append((4, "SubOp_SetWord", str(label), "$%04x" % memory.word(addr + size + 2)))
+                    self.subOpCommentsList.append(None)
                     size += 4
                 case _:
                     # The default subop case is mostly a series of Op+BitarrayIndex 2 byte pairs -- 7 bit op and 9 bit index.
@@ -250,9 +255,11 @@ dw \2
                         if xbits == 0b110:
                             byte3 = memory.byte(addr + size + 2)
                             self.subOpArgsList.append((3, "SubOp_DefaultCase_Trio", "$%02x" % byte1, "$%02x" % byte2, "$%02x" % byte3))
+                            self.subOpCommentsList.append(None)
                             size += 3
                         else:
                             self.subOpArgsList.append((2, "SubOp_DefaultCase_Pair", "$%02x" % byte1, "$%02x" % byte2))
+                            self.subOpCommentsList.append(None)
                             size += 2
 
                         if ybits in [0b1101, 0b1110, 0b1111]:
@@ -261,7 +268,10 @@ dw \2
         self.resize(size)
 
     def export(self, file):
-        for subOpArgs in self.subOpArgsList:
+        print('zipped lens', len(self.subOpArgsList), len(self.subOpCommentsList))
+        for subOpArgs, subOpComment in zip(self.subOpArgsList, self.subOpCommentsList):
+            if subOpComment:
+                self.memory.addInlineComment(file.addr, subOpComment)
             file.asmLine(*subOpArgs)
 
 class Op50Block(Block):
