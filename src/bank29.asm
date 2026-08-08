@@ -2324,7 +2324,7 @@ call_29_774e:
 
 call_29_7759:
     SCRIPT_RETURN_4A                                   ;; 29:7759 $4a
-    Op3E_Compare_Branch 32, $27, $65, $18, call_29_7759 ;; 29:775a $3e $20 $27 $65 $18 $59 $77 $29
+    Op3E_Compare_Branch 32, data_18_6527, call_29_7759 ;; 29:775a $3e $20 $27 $65 $18 $59 $77 $29
     Op68_CopyBytes 1, wC832, w1_D2FC, $01              ;; 29:7762 $68 $01 $32 $c8 $fc $d2 $01
     Op18_Jump call_29_7734                             ;; 29:7769 $18 $34 $77 $29
 
@@ -2436,7 +2436,7 @@ call_29_78b3:
 
 call_29_78be:
     SCRIPT_RETURN_4A                                   ;; 29:78be $4a
-    Op3E_Compare_Branch 32, $27, $65, $18, call_29_78be ;; 29:78bf $3e $20 $27 $65 $18 $be $78 $29
+    Op3E_Compare_Branch 32, data_18_6527, call_29_78be ;; 29:78bf $3e $20 $27 $65 $18 $be $78 $29
     Op14_Unknown 1, data_05_4db0                       ;; 29:78c7 $14 $01 $b0 $4d
     SCRIPT_POINTER call_29_78f2                        ;; 29:78cb $f2 $78 $29
     Op50_WriteByte w1_D259, $01, $00                   ;; 29:78ce $50 $59 $d2 $01 $00
@@ -2548,7 +2548,7 @@ call_29_79fa:
 
 call_29_7a05:
     SCRIPT_RETURN_4A                                   ;; 29:7a05 $4a
-    Op3E_Compare_Branch 32, $27, $65, $18, call_29_7a05 ;; 29:7a06 $3e $20 $27 $65 $18 $05 $7a $29
+    Op3E_Compare_Branch 32, data_18_6527, call_29_7a05 ;; 29:7a06 $3e $20 $27 $65 $18 $05 $7a $29
     Op1E_Call call_3a_6281                             ;; 29:7a0e $1e $81 $62 $3a
     Op1E_Call call_04_5b22                             ;; 29:7a12 $1e $22 $5b $04
     Op14_Unknown 1, data_05_4dae                       ;; 29:7a16 $14 $01 $ae $4d

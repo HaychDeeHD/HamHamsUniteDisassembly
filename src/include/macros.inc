@@ -144,11 +144,10 @@ ENDM
 MACRO Op3E_Compare_Branch
 db $3e
 db \<1>
-db \<2>
-db \<3>
-db \<4>
-dw \<5>
-db BANK(\5)
+dw \<2>
+db BANK(\2)
+dw \<3>
+db BANK(\3)
 ENDM
 MACRO Op40_Unknown
 db $40

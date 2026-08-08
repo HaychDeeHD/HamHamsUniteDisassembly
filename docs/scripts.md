@@ -243,17 +243,19 @@ Some kind of 'return' or 'invoke callback'?
 
 If C324-5 contains (address) data, the handler will jump there. This is not a *script* jump, it's a `jp`.
 
-If there is no address to jump to, the 3 arg bytes are written to wram 01:D037-9 and then more unkown stuff happens.
-
-Presumably, this op always takes 3 arg bytes?
+If there is no address to jump to, the 3 arg bytes (which happen to always be $00 $00 $00) are written to wram 01:D037-9 and then more unknown stuff happens.
 
 <a id="op2C"></a>
 ### Op2C 
+
+I have not observed this being used in any scripts.
 
 Same as 2A but first write arg1 to C39A. Takes 4 arg bytes total.
 
 <a id="op2E"></a>
 ### Op2E 
+
+I have not observed this being used in any scripts.
 
 Same as 2A but first copies C6A0-2 address (minus 1) to C53C-E.
 
@@ -292,6 +294,8 @@ Same arguments as Op34.
 
 <a id="op3A"></a>
 ### Op3A 
+
+10 bytes of args. Just about always begins with `$00, $00, $a0, $90, $50, $48`
 
 <a id="op3C"></a>
 ### Op3C 

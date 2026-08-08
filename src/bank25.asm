@@ -181,7 +181,7 @@ call_25_41ff:
 
 call_25_4250:
     SCRIPT_RETURN_4A                                   ;; 25:4250 $4a
-    Op3E_Compare_Branch 22, $1e, $64, $11, call_25_4250 ;; 25:4251 $3e $16 $1e $64 $11 $50 $42 $25
+    Op3E_Compare_Branch 22, data_11_641e, call_25_4250 ;; 25:4251 $3e $16 $1e $64 $11 $50 $42 $25
     Op1E_Call call_34_591e                             ;; 25:4259 $1e $1e $59 $34
     Op16_SubOps 1                                      ;; 25:425d $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 25:425f $5e $03
@@ -433,7 +433,7 @@ call_25_44ab:
 
 call_25_44ca:
     SCRIPT_RETURN_4A                                   ;; 25:44ca $4a
-    Op3E_Compare_Branch 26, $b7, $45, $14, call_25_44ca ;; 25:44cb $3e $1a $b7 $45 $14 $ca $44 $25
+    Op3E_Compare_Branch 26, data_14_45b7, call_25_44ca ;; 25:44cb $3e $1a $b7 $45 $14 $ca $44 $25
     Op14_Unknown 1, data_05_782b                       ;; 25:44d3 $14 $01 $2b $78
     SCRIPT_POINTER call_25_44ff                        ;; 25:44d7 $ff $44 $25
     ;;Hey, you!<E3>Do you know <E5>what<E4>the second most<E4>delicious food in<E4>the world is?<E3>I bet you don't.<E0>
@@ -514,7 +514,7 @@ call_25_4572:
 
 call_25_45b9:
     SCRIPT_RETURN_4A                                   ;; 25:45b9 $4a
-    Op3E_Compare_Branch 22, $3a, $5f, $12, call_25_45b9 ;; 25:45ba $3e $16 $3a $5f $12 $b9 $45 $25
+    Op3E_Compare_Branch 22, data_12_5f3a, call_25_45b9 ;; 25:45ba $3e $16 $3a $5f $12 $b9 $45 $25
     Op4C_Unknown $1a, $01, $04, $48, $00, $8a, $00, data_14_481d ;; 25:45c2 $4c $1a $01 $04 $48 $00 $8a $00 $1d $48 $14
     Op1E_Call call_04_615d                             ;; 25:45cd $1e $5d $61 $04
     Op1E_Call call_1d_6d58                             ;; 25:45d1 $1e $58 $6d $1d
@@ -532,7 +532,7 @@ call_25_45b9:
 
 call_25_4602:
     SCRIPT_RETURN_4A                                   ;; 25:4602 $4a
-    Op3E_Compare_Branch 22, $ac, $5f, $12, call_25_4602 ;; 25:4603 $3e $16 $ac $5f $12 $02 $46 $25
+    Op3E_Compare_Branch 22, data_12_5fac, call_25_4602 ;; 25:4603 $3e $16 $ac $5f $12 $02 $46 $25
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, zero_pointer ;; 25:460b $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_04_615d                             ;; 25:4616 $1e $5d $61 $04
     Op16_SubOps 1                                      ;; 25:461a $16 $01
@@ -727,7 +727,7 @@ call_25_4844:
 
 call_25_4855:
     SCRIPT_RETURN_4A                                   ;; 25:4855 $4a
-    Op3E_Compare_Branch 22, $35, $5b, $10, call_25_4855 ;; 25:4856 $3e $16 $35 $5b $10 $55 $48 $25
+    Op3E_Compare_Branch 22, data_10_5b35, call_25_4855 ;; 25:4856 $3e $16 $35 $5b $10 $55 $48 $25
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, zero_pointer ;; 25:485e $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_04_615d                             ;; 25:4869 $1e $5d $61 $04
     Op56_WriteBitArrayIndex 26, data_14_467b           ;; 25:486d $56 $1a $7b $46 $14
@@ -822,7 +822,7 @@ call_25_490e:
 
 call_25_497d:
     SCRIPT_RETURN_4A                                   ;; 25:497d $4a
-    Op3E_Compare_Branch 22, $35, $5b, $10, call_25_497d ;; 25:497e $3e $16 $35 $5b $10 $7d $49 $25
+    Op3E_Compare_Branch 22, data_10_5b35, call_25_497d ;; 25:497e $3e $16 $35 $5b $10 $7d $49 $25
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, zero_pointer ;; 25:4986 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_6d58                             ;; 25:4991 $1e $58 $6d $1d
     ;;Oh, no<...> These<E4>are my cookies!<E0>
@@ -949,7 +949,7 @@ call_25_4a97:
 
 call_25_4ad7:
     SCRIPT_RETURN_4A                                   ;; 25:4ad7 $4a
-    Op3E_Compare_Branch 26, $28, $48, $14, call_25_4ad7 ;; 25:4ad8 $3e $1a $28 $48 $14 $d7 $4a $25
+    Op3E_Compare_Branch 26, data_14_4828, call_25_4ad7 ;; 25:4ad8 $3e $1a $28 $48 $14 $d7 $4a $25
     Op1E_Call call_04_615d                             ;; 25:4ae0 $1e $5d $61 $04
     Op16_SubOps 1                                      ;; 25:4ae4 $16 $01
     SubOp_SetByte wC78D, $02                           ;; 25:4ae6 $7e $75 $02
@@ -1087,7 +1087,7 @@ call_25_4c35:
 
 call_25_4ca8:
     SCRIPT_RETURN_4A                                   ;; 25:4ca8 $4a
-    Op3E_Compare_Branch 22, $3f, $55, $10, call_25_4ca8 ;; 25:4ca9 $3e $16 $3f $55 $10 $a8 $4c $25
+    Op3E_Compare_Branch 22, data_10_553f, call_25_4ca8 ;; 25:4ca9 $3e $16 $3f $55 $10 $a8 $4c $25
     Op56_WriteBitArrayIndex 26, data_14_48c8           ;; 25:4cb1 $56 $1a $c8 $48 $14
     Op44_Unknown $1e, $00                              ;; 25:4cb6 $44 $1e $00
     Op4C_Unknown $08, $00, $00, $00, $00, $00, $00, zero_pointer ;; 25:4cb9 $4c $08 $00 $00 $00 $00 $00 $00 $00 $00 $00
@@ -1099,7 +1099,7 @@ call_25_4ca8:
 
 call_25_4cd2:
     SCRIPT_RETURN_4A                                   ;; 25:4cd2 $4a
-    Op3E_Compare_Branch 26, $c8, $48, $14, call_25_4cd2 ;; 25:4cd3 $3e $1a $c8 $48 $14 $d2 $4c $25
+    Op3E_Compare_Branch 26, data_14_48c8, call_25_4cd2 ;; 25:4cd3 $3e $1a $c8 $48 $14 $d2 $4c $25
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 25:4cdb $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     ;;Munch<...> Munch<...><E4>They're<...>not too<E4>sweet<...>yet <E5>there's<E4>a hint<...>of love<...><E4>in there<...> Wait<...>!<E3>Yep<...> No doubt!<E3>This cookie tastes<E4>familiar!<E3><end>
     Op06_Unknown_Text data_30_490a                     ;; 25:4ce6 $06 $0a $49 $30
@@ -1124,7 +1124,7 @@ call_25_4cd2:
 
 call_25_4d38:
     SCRIPT_RETURN_4A                                   ;; 25:4d38 $4a
-    Op3E_Compare_Branch 26, $5b, $48, $14, call_25_4d38 ;; 25:4d39 $3e $1a $5b $48 $14 $38 $4d $25
+    Op3E_Compare_Branch 26, data_14_485b, call_25_4d38 ;; 25:4d39 $3e $1a $5b $48 $14 $38 $4d $25
     Op4C_Unknown $1a, $00, $00, $00, $00, $00, $00, zero_pointer ;; 25:4d41 $4c $1a $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op50_WriteByte w1_D000, $01, $00                   ;; 25:4d4c $50 $00 $d0 $01 $00
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_17_7991 ;; 25:4d51 $4c $16 $08 $ff $00 $00 $00 $00 $91 $79 $17
@@ -1238,8 +1238,8 @@ call_25_4eb6:
 
 call_25_4ec5:
     SCRIPT_RETURN_4A                                   ;; 25:4ec5 $4a
-    Op3E_Compare_Branch 16, $42, $70, $1b, call_25_4ec5 ;; 25:4ec6 $3e $10 $42 $70 $1b $c5 $4e $25
-    Op3E_Compare_Branch 16, $8d, $70, $1b, call_25_4ec5 ;; 25:4ece $3e $10 $8d $70 $1b $c5 $4e $25
+    Op3E_Compare_Branch 16, data_1b_7042, call_25_4ec5 ;; 25:4ec6 $3e $10 $42 $70 $1b $c5 $4e $25
+    Op3E_Compare_Branch 16, data_1b_708d, call_25_4ec5 ;; 25:4ece $3e $10 $8d $70 $1b $c5 $4e $25
     Op16_SubOps 1                                      ;; 25:4ed6 $16 $01
     SubOp_SetFlag wC949, 1                             ;; 25:4ed8 $3f $89
     Op16_SubOps 1                                      ;; 25:4eda $16 $01
@@ -1478,12 +1478,12 @@ call_25_51bb:
 
 call_25_5204:
     SCRIPT_RETURN_4A                                   ;; 25:5204 $4a
-    Op3E_Compare_Branch 22, $8b, $76, $0f, call_25_5204 ;; 25:5205 $3e $16 $8b $76 $0f $04 $52 $25
+    Op3E_Compare_Branch 22, data_0f_768b, call_25_5204 ;; 25:5205 $3e $16 $8b $76 $0f $04 $52 $25
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, data_0f_76b5 ;; 25:520d $4c $16 $08 $02 $00 $00 $00 $00 $b5 $76 $0f
 
 call_25_5218:
     SCRIPT_RETURN_4A                                   ;; 25:5218 $4a
-    Op3E_Compare_Branch 22, $b5, $76, $0f, call_25_5218 ;; 25:5219 $3e $16 $b5 $76 $0f $18 $52 $25
+    Op3E_Compare_Branch 22, data_0f_76b5, call_25_5218 ;; 25:5219 $3e $16 $b5 $76 $0f $18 $52 $25
     ;;<E0>
     Op06_Unknown_Text data_30_4ad0                     ;; 25:5221 $06 $d0 $4a $30
     Op1E_Call call_04_615d                             ;; 25:5225 $1e $5d $61 $04
@@ -1505,7 +1505,7 @@ call_25_524c:
 
 call_25_526d:
     SCRIPT_RETURN_4A                                   ;; 25:526d $4a
-    Op3E_Compare_Branch 22, $81, $69, $10, call_25_526d ;; 25:526e $3e $16 $81 $69 $10 $6d $52 $25
+    Op3E_Compare_Branch 22, data_10_6981, call_25_526d ;; 25:526e $3e $16 $81 $69 $10 $6d $52 $25
     Op1E_Call call_04_615d                             ;; 25:5276 $1e $5d $61 $04
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, data_10_4235 ;; 25:527a $4c $16 $10 $02 $00 $00 $00 $00 $35 $42 $10
     SCRIPT_RETURN_20                                   ;; 25:5285 $20
@@ -1524,7 +1524,7 @@ call_25_529a:
 
 call_25_52b6:
     SCRIPT_RETURN_4A                                   ;; 25:52b6 $4a
-    Op3E_Compare_Branch 22, $cf, $52, $10, call_25_52b6 ;; 25:52b7 $3e $16 $cf $52 $10 $b6 $52 $25
+    Op3E_Compare_Branch 22, data_10_52cf, call_25_52b6 ;; 25:52b7 $3e $16 $cf $52 $10 $b6 $52 $25
     SCRIPT_RETURN_20                                   ;; 25:52bf $20
 
 call_25_52c0:
@@ -1541,7 +1541,7 @@ call_25_52cc:
 
 call_25_52db:
     SCRIPT_RETURN_4A                                   ;; 25:52db $4a
-    Op3E_Compare_Branch 22, $07, $66, $1a, call_25_52db ;; 25:52dc $3e $16 $07 $66 $1a $db $52 $25
+    Op3E_Compare_Branch 22, data_1a_6607, call_25_52db ;; 25:52dc $3e $16 $07 $66 $1a $db $52 $25
     Op1E_Call call_04_615d                             ;; 25:52e4 $1e $5d $61 $04
     SCRIPT_RETURN_20                                   ;; 25:52e8 $20
 
@@ -1550,7 +1550,7 @@ call_25_52e9:
 
 call_25_52f4:
     SCRIPT_RETURN_4A                                   ;; 25:52f4 $4a
-    Op3E_Compare_Branch 22, $38, $6f, $1b, call_25_52f4 ;; 25:52f5 $3e $16 $38 $6f $1b $f4 $52 $25
+    Op3E_Compare_Branch 22, data_1b_6f38, call_25_52f4 ;; 25:52f5 $3e $16 $38 $6f $1b $f4 $52 $25
     SCRIPT_RETURN_20                                   ;; 25:52fd $20
     Op1E_Call call_3a_63ee                             ;; 25:52fe $1e $ee $63 $3a
     Op1E_Call call_25_559b                             ;; 25:5302 $1e $9b $55 $25
@@ -1859,7 +1859,7 @@ call_25_56af:
 
 call_25_56ba:
     SCRIPT_RETURN_4A                                   ;; 25:56ba $4a
-    Op3E_Compare_Branch 22, $78, $40, $12, call_25_56ba ;; 25:56bb $3e $16 $78 $40 $12 $ba $56 $25
+    Op3E_Compare_Branch 22, data_12_4078, call_25_56ba ;; 25:56bb $3e $16 $78 $40 $12 $ba $56 $25
     Op4C_Unknown $16, $ff, $04, $00, $00, $00, $00, data_17_76c8 ;; 25:56c3 $4c $16 $ff $04 $00 $00 $00 $00 $c8 $76 $17
     Op52_WriteBytes w1_D20B, $01, $80, $ff             ;; 25:56ce $52 $0b $d2 $01 $80 $ff
     Op52_WriteBytes w1_D213, $01, $00, $ff             ;; 25:56d4 $52 $13 $d2 $01 $00 $ff
@@ -1878,7 +1878,7 @@ call_25_56fd:
 
 call_25_5716:
     SCRIPT_RETURN_4A                                   ;; 25:5716 $4a
-    Op3E_Compare_Branch 22, $18, $6d, $11, call_25_5716 ;; 25:5717 $3e $16 $18 $6d $11 $16 $57 $25
+    Op3E_Compare_Branch 22, data_11_6d18, call_25_5716 ;; 25:5717 $3e $16 $18 $6d $11 $16 $57 $25
     Op18_Jump call_25_530a                             ;; 25:571f $18 $0a $53 $25
 
 call_25_5723:
@@ -1908,7 +1908,7 @@ call_25_5759:
 
 call_25_576a:
     SCRIPT_RETURN_4A                                   ;; 25:576a $4a
-    Op3E_Compare_Branch 28, $c4, $7f, $0f, call_25_576a ;; 25:576b $3e $1c $c4 $7f $0f $6a $57 $25
+    Op3E_Compare_Branch 28, data_0f_7fc4, call_25_576a ;; 25:576b $3e $1c $c4 $7f $0f $6a $57 $25
     Op42_Unknown_StoreValue 8, $01, data_0f_7f9d       ;; 25:5773 $42 $08 $01 $9d $7f $0f
     Op18_Jump call_25_530a                             ;; 25:5779 $18 $0a $53 $25
 
@@ -2204,7 +2204,7 @@ call_25_5b5a:
 
 call_25_5b6d:
     SCRIPT_RETURN_4A                                   ;; 25:5b6d $4a
-    Op3E_Compare_Branch 22, $4f, $40, $0f, call_25_5b6d ;; 25:5b6e $3e $16 $4f $40 $0f $6d $5b $25
+    Op3E_Compare_Branch 22, data_0f_404f, call_25_5b6d ;; 25:5b6e $3e $16 $4f $40 $0f $6d $5b $25
     Op1E_Call call_04_615d                             ;; 25:5b76 $1e $5d $61 $04
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, data_10_4271 ;; 25:5b7a $4c $16 $ff $02 $00 $00 $00 $00 $71 $42 $10
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, data_13_500d ;; 25:5b85 $4c $1a $ff $04 $00 $00 $00 $00 $0d $50 $13
@@ -2232,7 +2232,7 @@ call_25_5bb6:
 
 call_25_5bc9:
     SCRIPT_RETURN_4A                                   ;; 25:5bc9 $4a
-    Op3E_Compare_Branch 22, $09, $49, $0f, call_25_5bc9 ;; 25:5bca $3e $16 $09 $49 $0f $c9 $5b $25
+    Op3E_Compare_Branch 22, data_0f_4909, call_25_5bc9 ;; 25:5bca $3e $16 $09 $49 $0f $c9 $5b $25
     Op1E_Call call_04_615d                             ;; 25:5bd2 $1e $5d $61 $04
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, data_10_4271 ;; 25:5bd6 $4c $16 $ff $02 $00 $00 $00 $00 $71 $42 $10
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, data_13_500d ;; 25:5be1 $4c $1a $ff $04 $00 $00 $00 $00 $0d $50 $13
@@ -2260,14 +2260,14 @@ call_25_5c12:
 
 call_25_5c25:
     SCRIPT_RETURN_4A                                   ;; 25:5c25 $4a
-    Op3E_Compare_Branch 22, $bb, $49, $0f, call_25_5c25 ;; 25:5c26 $3e $16 $bb $49 $0f $25 $5c $25
+    Op3E_Compare_Branch 22, data_0f_49bb, call_25_5c25 ;; 25:5c26 $3e $16 $bb $49 $0f $25 $5c $25
     Op1E_Call call_04_615d                             ;; 25:5c2e $1e $5d $61 $04
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, data_10_4271 ;; 25:5c32 $4c $16 $ff $02 $00 $00 $00 $00 $71 $42 $10
     Op4C_Unknown $1a, $ff, $04, $00, $00, $00, $00, data_13_50a6 ;; 25:5c3d $4c $1a $ff $04 $00 $00 $00 $00 $a6 $50 $13
 
 call_25_5c48:
     SCRIPT_RETURN_4A                                   ;; 25:5c48 $4a
-    Op3E_Compare_Branch 26, $a6, $50, $13, call_25_5c48 ;; 25:5c49 $3e $1a $a6 $50 $13 $48 $5c $25
+    Op3E_Compare_Branch 26, data_13_50a6, call_25_5c48 ;; 25:5c49 $3e $1a $a6 $50 $13 $48 $5c $25
     Op14_Unknown 1, data_05_6e72                       ;; 25:5c51 $14 $01 $72 $6e
     SCRIPT_POINTER call_25_5cbc                        ;; 25:5c55 $bc $5c $25
     Op14_Unknown 1, data_05_6e8a                       ;; 25:5c58 $14 $01 $8a $6e
@@ -2281,7 +2281,7 @@ call_25_5c48:
 
 call_25_5c76:
     SCRIPT_RETURN_4A                                   ;; 25:5c76 $4a
-    Op3E_Compare_Branch 26, $b9, $4f, $13, call_25_5c76 ;; 25:5c77 $3e $1a $b9 $4f $13 $76 $5c $25
+    Op3E_Compare_Branch 26, data_13_4fb9, call_25_5c76 ;; 25:5c77 $3e $1a $b9 $4f $13 $76 $5c $25
     ;;<E4>my dance!<E0>
     Op06_Unknown_Text data_39_6d4e                     ;; 25:5c7f $06 $4e $6d $39
     Op92_Unknown $00                                   ;; 25:5c83 $92 $00
@@ -2297,7 +2297,7 @@ call_25_5c89:
 
 call_25_5ca0:
     SCRIPT_RETURN_4A                                   ;; 25:5ca0 $4a
-    Op3E_Compare_Branch 26, $b9, $4f, $13, call_25_5ca0 ;; 25:5ca1 $3e $1a $b9 $4f $13 $a0 $5c $25
+    Op3E_Compare_Branch 26, data_13_4fb9, call_25_5ca0 ;; 25:5ca1 $3e $1a $b9 $4f $13 $a0 $5c $25
     ;; my Ham-<E2>Jam to say that<heart><E0>
     Op06_Unknown_Text data_39_6d76                     ;; 25:5ca9 $06 $76 $6d $39
     Op92_Unknown $00                                   ;; 25:5cad $92 $00
@@ -2352,7 +2352,7 @@ call_25_5ce2:
 
 call_25_5d5c:
     SCRIPT_RETURN_4A                                   ;; 25:5d5c $4a
-    Op3E_Compare_Branch 8, $1e, $7c, $15, call_25_5d69 ;; 25:5d5d $3e $08 $1e $7c $15 $69 $5d $25
+    Op3E_Compare_Branch 8, data_15_7c1e, call_25_5d69  ;; 25:5d5d $3e $08 $1e $7c $15 $69 $5d $25
     Op18_Jump call_25_5d5c                             ;; 25:5d65 $18 $5c $5d $25
 
 call_25_5d69:
@@ -2611,7 +2611,7 @@ call_25_622b:
 
 call_25_6244:
     SCRIPT_RETURN_4A                                   ;; 25:6244 $4a
-    Op3E_Compare_Branch 22, $02, $6c, $11, call_25_6244 ;; 25:6245 $3e $16 $02 $6c $11 $44 $62 $25
+    Op3E_Compare_Branch 22, data_11_6c02, call_25_6244 ;; 25:6245 $3e $16 $02 $6c $11 $44 $62 $25
     Op18_Jump call_25_530a                             ;; 25:624d $18 $0a $53 $25
 
 call_25_6251:
@@ -2680,7 +2680,7 @@ call_25_62be:
 
 call_25_630a:
     SCRIPT_RETURN_4A                                   ;; 25:630a $4a
-    Op3E_Compare_Branch 22, $34, $58, $0f, call_25_630a ;; 25:630b $3e $16 $34 $58 $0f $0a $63 $25
+    Op3E_Compare_Branch 22, data_0f_5834, call_25_630a ;; 25:630b $3e $16 $34 $58 $0f $0a $63 $25
     ;;<E0>
     Op06_Unknown_Text data_39_6ef4                     ;; 25:6313 $06 $f4 $6e $39
     Op1E_Call call_04_615d                             ;; 25:6317 $1e $5d $61 $04
@@ -3258,7 +3258,7 @@ call_25_69eb:
 
 call_25_69fc:
     SCRIPT_RETURN_4A                                   ;; 25:69fc $4a
-    Op3E_Compare_Branch 22, $35, $5b, $10, call_25_69fc ;; 25:69fd $3e $16 $35 $5b $10 $fc $69 $25
+    Op3E_Compare_Branch 22, data_10_5b35, call_25_69fc ;; 25:69fd $3e $16 $35 $5b $10 $fc $69 $25
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, zero_pointer ;; 25:6a05 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     Op56_WriteBitArrayIndex 26, data_13_7974           ;; 25:6a10 $56 $1a $74 $79 $13
     Op1E_Call call_20_42fb                             ;; 25:6a15 $1e $fb $42 $20
@@ -3476,7 +3476,7 @@ call_25_6c18:
 
 call_25_6c52:
     SCRIPT_RETURN_4A                                   ;; 25:6c52 $4a
-    Op3E_Compare_Branch 48, $be, $6e, $17, call_25_6c52 ;; 25:6c53 $3e $30 $be $6e $17 $52 $6c $25
+    Op3E_Compare_Branch 48, data_17_6ebe, call_25_6c52 ;; 25:6c53 $3e $30 $be $6e $17 $52 $6c $25
     Op1E_Call call_04_615d                             ;; 25:6c5b $1e $5d $61 $04
     Op14_Unknown 1, data_05_495a                       ;; 25:6c5f $14 $01 $5a $49
     SCRIPT_POINTER call_25_6ce4                        ;; 25:6c63 $e4 $6c $25
@@ -3505,7 +3505,7 @@ call_25_6c52:
 
 call_25_6cc4:
     SCRIPT_RETURN_4A                                   ;; 25:6cc4 $4a
-    Op3E_Compare_Branch 22, $a4, $70, $12, call_25_6cc4 ;; 25:6cc5 $3e $16 $a4 $70 $12 $c4 $6c $25
+    Op3E_Compare_Branch 22, data_12_70a4, call_25_6cc4 ;; 25:6cc5 $3e $16 $a4 $70 $12 $c4 $6c $25
     ;;<E0>
     Op06_Unknown_Text data_1c_4c03                     ;; 25:6ccd $06 $03 $4c $1c
     Op1E_Call call_04_615d                             ;; 25:6cd1 $1e $5d $61 $04
@@ -4468,13 +4468,13 @@ call_25_767a:
 
 call_25_76b3:
     SCRIPT_RETURN_4A                                   ;; 25:76b3 $4a
-    Op3E_Compare_Branch 22, $90, $58, $10, call_25_76b3 ;; 25:76b4 $3e $16 $90 $58 $10 $b3 $76 $25
+    Op3E_Compare_Branch 22, data_10_5890, call_25_76b3 ;; 25:76b4 $3e $16 $90 $58 $10 $b3 $76 $25
     ;;<...><...><...><end>
     Op04_Unknown_Text data_1c_4c6b                     ;; 25:76bc $04 $6b $4c $1c
 
 call_25_76c0:
     SCRIPT_RETURN_4A                                   ;; 25:76c0 $4a
-    Op3E_Compare_Branch 22, $51, $59, $10, call_25_76c0 ;; 25:76c1 $3e $16 $51 $59 $10 $c0 $76 $25
+    Op3E_Compare_Branch 22, data_10_5951, call_25_76c0 ;; 25:76c1 $3e $16 $51 $59 $10 $c0 $76 $25
     Op1E_Call call_04_615d                             ;; 25:76c9 $1e $5d $61 $04
     SCRIPT_RETURN_20                                   ;; 25:76cd $20
 

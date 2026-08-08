@@ -109,7 +109,7 @@ call_3b_4124:
 
 call_3b_4163:
     Op1E_Call call_33_4d29                             ;; 3b:4163 $1e $29 $4d $33
-    Op3E_Compare_Branch 22, $3e, $43, $10, call_3b_4163 ;; 3b:4167 $3e $16 $3e $43 $10 $63 $41 $3b
+    Op3E_Compare_Branch 22, data_10_433e, call_3b_4163 ;; 3b:4167 $3e $16 $3e $43 $10 $63 $41 $3b
     Op1E_Call call_34_591e                             ;; 3b:416f $1e $1e $59 $34
     Op16_SubOps 1                                      ;; 3b:4173 $16 $01
     SubOp_SetByte wC834, $00                           ;; 3b:4175 $7f $1c $00
@@ -377,7 +377,7 @@ call_3b_4432:
 
 call_3b_4471:
     Op1E_Call call_33_4d29                             ;; 3b:4471 $1e $29 $4d $33
-    Op3E_Compare_Branch 22, $3e, $43, $10, call_3b_4471 ;; 3b:4475 $3e $16 $3e $43 $10 $71 $44 $3b
+    Op3E_Compare_Branch 22, data_10_433e, call_3b_4471 ;; 3b:4475 $3e $16 $3e $43 $10 $71 $44 $3b
     Op1E_Call call_34_591e                             ;; 3b:447d $1e $1e $59 $34
     Op16_SubOps 1                                      ;; 3b:4481 $16 $01
     SubOp_SetByte wC834, $00                           ;; 3b:4483 $7f $1c $00
@@ -745,8 +745,8 @@ call_3b_4a45:
 
 call_3b_4a72:
     Op1E_Call call_33_4d29                             ;; 3b:4a72 $1e $29 $4d $33
-    Op3E_Compare_Branch 22, $bb, $57, $12, call_3b_4a72 ;; 3b:4a76 $3e $16 $bb $57 $12 $72 $4a $3b
-    Op3E_Compare_Branch 22, $b4, $52, $19, call_3b_4a72 ;; 3b:4a7e $3e $16 $b4 $52 $19 $72 $4a $3b
+    Op3E_Compare_Branch 22, data_12_57bb, call_3b_4a72 ;; 3b:4a76 $3e $16 $bb $57 $12 $72 $4a $3b
+    Op3E_Compare_Branch 22, data_19_52b4, call_3b_4a72 ;; 3b:4a7e $3e $16 $b4 $52 $19 $72 $4a $3b
     Op1E_Call call_34_591e                             ;; 3b:4a86 $1e $1e $59 $34
     Op16_SubOps 1                                      ;; 3b:4a8a $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 3b:4a8c $5e $03
@@ -2870,7 +2870,7 @@ call_3b_7134:
 
 call_3b_7161:
     Op1E_Call call_33_4d29                             ;; 3b:7161 $1e $29 $4d $33
-    Op3E_Compare_Branch 22, $bb, $57, $12, call_3b_7161 ;; 3b:7165 $3e $16 $bb $57 $12 $61 $71 $3b
+    Op3E_Compare_Branch 22, data_12_57bb, call_3b_7161 ;; 3b:7165 $3e $16 $bb $57 $12 $61 $71 $3b
     Op1E_Call call_34_591e                             ;; 3b:716d $1e $1e $59 $34
     Op16_SubOps 1                                      ;; 3b:7171 $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 3b:7173 $5e $03

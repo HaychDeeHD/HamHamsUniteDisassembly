@@ -526,16 +526,14 @@ OPBLOCKS = {
     0x1C: Op1CBlock, # Subblocks
     0x1E: makeOpBlockFromArgString(0x1E, '3RomS', "Op1E_Call"),
     0x20: makeOpBlockFromArgString(0x20, None, "SCRIPT_RETURN_20"),
-    0x2A: makeOpBlockFromArgString(0x2A, 'b,b,b', "Op2A_MaybeCodeJump"),
-    0x2C: makeOpBlockFromArgString(0x2C, 'b,b,b,b', "Op2C_MaybeCodeJump"),
-    0x2E: makeOpBlockFromArgString(0x2E, 'b,b,b', "Op2E_MaybeCodeJump"),
+    0x2A: makeOpBlockFromArgString(0x2A, 'b,b,b', "Op2A_MaybeCodeJump"), # Could replace 3 macro args with hardcoded zeroes.
     0x32: makeOpBlockFromArgString(0x32, '3Rom,3Ram', "Op32_Graphics"),
     0x34: makeOpBlockFromArgString(0x34, '3Rom,3Ram,b', "Op34_Graphics"),
     0x36: makeOpBlockFromArgString(0x36, '3Rom,3Ram', "Op36_Graphics"),
     0x38: makeOpBlockFromArgString(0x38, '3Rom,3Ram,b', "Op38_Graphics"),
     0x3A: makeOpBlockFromArgString(0x3A, 'b,b,b,b,b,b,b,b,b,b'),
     0x3C: Op3CBlock, # Need 2 byte Wram Address
-    0x3E: makeOpBlockFromArgString(0x3E, 'd,b,b,b,3RomS', "Op3E_Compare_Branch"),
+    0x3E: makeOpBlockFromArgString(0x3E, 'd,3Rom,3RomS', "Op3E_Compare_Branch"),
     0x40: makeOpBlockFromArgString(0x40, 'b,b,b,b'),
     0x42: makeOpBlockFromArgString(0x42, 'd,b,3Rom', "Op42_Unknown_StoreValue"),
     0x44: makeOpBlockFromArgString(0x44, 'b,b'),

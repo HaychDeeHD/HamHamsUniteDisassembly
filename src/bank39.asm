@@ -924,7 +924,7 @@ call_39_57ef:
 
 call_39_5834:
     Op1E_Call call_33_4d29                             ;; 39:5834 $1e $29 $4d $33
-    Op3E_Compare_Branch 22, $a5, $5f, $11, call_39_5834 ;; 39:5838 $3e $16 $a5 $5f $11 $34 $58 $39
+    Op3E_Compare_Branch 22, data_11_5fa5, call_39_5834 ;; 39:5838 $3e $16 $a5 $5f $11 $34 $58 $39
     Op1E_Call call_34_591e                             ;; 39:5840 $1e $1e $59 $34
     Op16_SubOps 1                                      ;; 39:5844 $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 39:5846 $5e $03
@@ -1298,7 +1298,7 @@ call_39_5f16:
 
 call_39_5f21:
     SCRIPT_RETURN_4A                                   ;; 39:5f21 $4a
-    Op3E_Compare_Branch 22, $ab, $70, $10, call_39_5f21 ;; 39:5f22 $3e $16 $ab $70 $10 $21 $5f $39
+    Op3E_Compare_Branch 22, data_10_70ab, call_39_5f21 ;; 39:5f22 $3e $16 $ab $70 $10 $21 $5f $39
     Op4C_Unknown $16, $04, $02, $00, $00, $00, $00, data_10_4271 ;; 39:5f2a $4c $16 $04 $02 $00 $00 $00 $00 $71 $42 $10
 
 call_39_5f35:
@@ -1523,7 +1523,7 @@ call_39_61cf:
 
 call_39_61e5:
     SCRIPT_RETURN_4A                                   ;; 39:61e5 $4a
-    Op3E_Compare_Branch 22, $85, $4f, $10, call_39_61e5 ;; 39:61e6 $3e $16 $85 $4f $10 $e5 $61 $39
+    Op3E_Compare_Branch 22, data_10_4f85, call_39_61e5 ;; 39:61e6 $3e $16 $85 $4f $10 $e5 $61 $39
     Op16_SubOps 1                                      ;; 39:61ee $16 $01
     SubOp_SetFlag wC94C, 7                             ;; 39:61f0 $3f $a7
 
@@ -2536,7 +2536,7 @@ call_39_7b5d:
 
 call_39_7b9c:
     SCRIPT_RETURN_4A                                   ;; 39:7b9c $4a
-    Op3E_Compare_Branch 22, $1e, $64, $11, call_39_7b9c ;; 39:7b9d $3e $16 $1e $64 $11 $9c $7b $39
+    Op3E_Compare_Branch 22, data_11_641e, call_39_7b9c ;; 39:7b9d $3e $16 $1e $64 $11 $9c $7b $39
     Op1E_Call call_34_591e                             ;; 39:7ba5 $1e $1e $59 $34
     Op16_SubOps 1                                      ;; 39:7ba9 $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 39:7bab $5e $03
@@ -2579,7 +2579,7 @@ call_39_7bfd:
 
 call_39_7c1d:
     SCRIPT_RETURN_4A                                   ;; 39:7c1d $4a
-    Op3E_Compare_Branch 22, $cf, $52, $10, call_39_7c1d ;; 39:7c1e $3e $16 $cf $52 $10 $1d $7c $39
+    Op3E_Compare_Branch 22, data_10_52cf, call_39_7c1d ;; 39:7c1e $3e $16 $cf $52 $10 $1d $7c $39
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, data_10_4209 ;; 39:7c26 $4c $16 $08 $02 $00 $00 $00 $00 $09 $42 $10
     Op1E_Call call_1d_6ae8                             ;; 39:7c31 $1e $e8 $6a $1d
     ;;<E4>Smells like a crow<...><E0>

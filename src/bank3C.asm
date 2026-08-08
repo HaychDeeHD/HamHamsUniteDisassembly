@@ -1693,7 +1693,7 @@ call_3c_6c0b:
 
 call_3c_6c8d:
     SCRIPT_RETURN_4A                                   ;; 3c:6c8d $4a
-    Op3E_Compare_Branch 22, $14, $67, $11, call_3c_6c8d ;; 3c:6c8e $3e $16 $14 $67 $11 $8d $6c $3c
+    Op3E_Compare_Branch 22, data_11_6714, call_3c_6c8d ;; 3c:6c8e $3e $16 $14 $67 $11 $8d $6c $3c
     Op44_Unknown $10, $00                              ;; 3c:6c96 $44 $10 $00
     Op1E_Call call_3c_4530                             ;; 3c:6c99 $1e $30 $45 $3c
     Op16_SubOps 1                                      ;; 3c:6c9d $16 $01
