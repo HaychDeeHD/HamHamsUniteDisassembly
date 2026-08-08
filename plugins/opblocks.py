@@ -6,79 +6,62 @@ from hamchatwheel import HamChatWheelOptionsBlock, HamChatWheelRulesBlock
 from scripthelpers import label3ByteRomAddressArg, serializeAddress, pullTextFrom3ByteRomAddressArg
 
 
-# Size includes the opcode here.
-def makeGenericBlockClass(opcode, size, macroName=None):
+def makeOpBlockFromArgString(opcode, argtypestr, macroName=None):
+    macroName = macroName or "Op%02X_Unknown" % opcode
     className = "Op%02xBlock" % opcode
-    __class__ = type(className, (OpBlock,), {})
+    __class__ = type(className, (Block,), {})
 
     def basicInit(self, memory, addr):
-        super().__init__(memory, addr, opcode, size=size, macroName=macroName)
-        self.finalize()
+        super().__init__(memory, addr, size=1)
+
+        self.argObjs = []
+
+        if argtypestr is None:
+            RomInfo.macros[macroName] = "db $%02x" % opcode
+            return
+
+        countedBytes = 1 # opcode
+        for argtypechar in argtypestr.lower().split(','):
+            match argtypechar:
+                case 'b':
+                    addedArg = SingleByteArg(memory, addr + countedBytes)
+                case 'd':
+                    addedArg = SingleDecimalByteArg(memory, addr + countedBytes)
+                case '3rom' | '3romg':
+                    # For now, pointers to graphics data have no special handling, but could in the future.
+                    addedArg = ThreeByteRomAddressArg(memory, addr + countedBytes)
+                case '3roms':
+                    addedArg = ThreeByteRomAddressArg(memory, addr + countedBytes, "script")
+                case '3romt':
+                    addedArg = ThreeByteRomAddressArg(memory, addr + countedBytes, "text")
+                case '3ram':
+                    addedArg = ThreeByteRamAddressArg(memory, addr + countedBytes)
+                case _:
+                    raise Exception("Unsupported arg type")
+            self.argObjs.append(addedArg)
+            countedBytes += len(addedArg)
+
+        self.resize(countedBytes)
+        RomInfo.macros[macroName] = "db $%02x\n" % opcode + "\n".join(argObj.macroStr(i + 1) for i, argObj in enumerate(self.argObjs))
     
+    def basicExport(self, file):
+        file.asmLine(len(self), macroName, *[str(argObj) for argObj in self.argObjs])
+
     __class__.__init__ = basicInit
+    __class__.export = basicExport
     return __class__
 
-class OpBlock(Block):
-    def __init__(self, memory, addr, opcode, size, macroName=None):
-        super().__init__(memory, addr, size=size)
-        self.opcode = opcode
-        self.macroName = macroName or "Op%02X_Unknown" % opcode
-
-        # TODO For now it's expected that you declare these in order.
-        self.declaredArgObjs = []
-
-    def declare3ByteRomAddressArg(self, rawIndex, addrType=None):
-        self.declaredArgObjs.append(ThreeByteRomAddressArg(self.memory, self.base_address + rawIndex, rawIndex, addrType=addrType))
-
-    def declareDecimalArg(self, rawIndex):
-        self.declaredArgObjs.append(SingleDecimalByteArg(self.memory, self.base_address, rawIndex))
-
-    def finalize(self):
-        self.__finalizeArgBytes()
-        RomInfo.macros[self.macroName] = "db $%02x\n" % self.opcode + "\n".join(argObj.macroStr(i + 1) for i, argObj in enumerate(self.finalArgObjs))
-
-    def __finalizeArgBytes(self):
-        # Adding an end sentinel simplifies the fill algorithm.
-        self.declaredArgObjs.append(EndSentinelArg(len(self)))
-        self.finalArgObjs = []
-        countedLength = 1; # opcode
-        for argObj in self.declaredArgObjs:
-            if argObj.rawIndex < countedLength:
-                raise Exception("Overlapping Op args")
-            elif argObj.rawIndex > countedLength:
-                # Fill the gaps with SingleByteArgs
-                for i in range(countedLength, argObj.rawIndex):
-                    self.finalArgObjs.append(SingleByteArg(self.memory, self.base_address, i))
-                    countedLength += 1
-
-            countedLength += len(argObj)
-            if countedLength > len(self):
-                raise Exception("Declared arg bytes for OpBlock out of bounds.")
-            self.finalArgObjs.append(argObj)
-        # Pop out the sentinel. This just prevents there from being an extra trailing separator in the Op / macro.
-        self.finalArgObjs.pop() 
-
-    def export(self, file):
-        file.asmLine(len(self), self.macroName, *[str(argObj) for argObj in self.finalArgObjs])
-
 class ArgObj:
-    def __init__(self, rawIndex, *, size=0):
-        self.rawIndex = rawIndex
+    def __init__(self, *, size=0):
         self.size = size
     
     def __len__(self):
         return self.size
-    
-    def macroStr(self, index):
-        return ""
-
-    def __repr__(self):
-        return ""
 
 class SingleByteArg(ArgObj):
-    def __init__(self, memory, addr, rawIndex):
-        super().__init__(rawIndex, size=1)
-        self.value = memory.byte(addr + rawIndex)
+    def __init__(self, memory, addr):
+        super().__init__(size=1)
+        self.value = memory.byte(addr)
 
     def macroStr(self, index):
         return "db \\<%s>" % str(index)
@@ -86,60 +69,39 @@ class SingleByteArg(ArgObj):
     def __repr__(self):
         return "$%02x" % self.value
 
-# Does not represent a real arg, but the end of the arg list.
-# Just useful for the loop that fills the argObj list to have one marking the end of the list.
-class EndSentinelArg(ArgObj):
-    def __init__(self, rawIndex):
-        super().__init__(rawIndex, size=0)
+class SingleDecimalByteArg(SingleByteArg):
+    def __repr__(self):
+        return str(self.value)
 
 class ThreeByteRomAddressArg(ArgObj):
-    def __init__(self, memory, addr, rawIndex, addrType=None):
-        super().__init__(rawIndex, size=3)
+    def __init__(self, memory, addr, addrType=None):
+        super().__init__(size=3)
         self.label = label3ByteRomAddressArg(memory, addr, addrType=addrType)
 
     def macroStr(self, index):
-        # TODO can remove str or repetition?
         return "dw \\<%s>\ndb BANK(\\%s)" % (str(index), str(index))
 
     def __repr__(self):
         return str(self.label)
 
-class SingleDecimalByteArg(SingleByteArg):
+class ThreeByteRamAddressArg(ArgObj):
+    def __init__(self, memory, addr):
+        super().__init__(size=3)
+
+        ramPointer = memory.word(addr)
+        ramBankNum = memory.byte(addr + 2)
+        ramBank = RomInfo.getWRam(ramBankNum)
+        ramBank.addAutoLabel(ramPointer, None, None)
+        self.label = ramBank.getLabel(ramPointer)
+
+    def macroStr(self, index):
+        return "dw \\<%s>\ndb BANK(\\%s)" % (str(index), str(index))
+
     def __repr__(self):
-        return str(self.value)
+        return str(self.label)
 
-############################################
-# OpBlocks that have been migrated to subclass OpBlock
 
-# TODO could these just be obj fields or function arguments instead?
-
-class Op18Block(OpBlock):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, 0x18, size=4, macroName="Op18_Jump")
-        self.declare3ByteRomAddressArg(1, "script")
-        self.finalize()
-
-class Op1EBlock(OpBlock):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, 0x1E, size=4, macroName="Op1E_Call")
-        self.declare3ByteRomAddressArg(1, "script")
-        self.finalize()
-
-class Op3EBlock(OpBlock):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, 0x3E, size=8, macroName="Op3E_Compare_Branch")
-        self.declareDecimalArg(1)
-        self.declare3ByteRomAddressArg(5, "script")
-        self.finalize()
-
-class Op4CBlock(OpBlock):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, 0x4C, size=11)
-        self.declare3ByteRomAddressArg(8)
-        self.finalize()
-
-############################################
-# OpBlocks that still subclass Block
+##############################################################################################
 
 class Op1CBlock(Block):
     def __init__(self, memory, addr):
@@ -487,31 +449,6 @@ class Op98Block(Block):
         arg4 = self.memory.byte(file.addr + 4)
         file.asmLine(5, "Op98_StoreAddress", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4)
 
-class Op58Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 6)
-        RomInfo.macros["Op58_WriteBitArrayIndex"] = "db $58\ndb \\1\ndb \\2\ndb \\3\ndb \\4\ndb \\5"
-    
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        arg5 = self.memory.byte(file.addr + 5)
-        file.asmLine(6, "Op58_WriteBitArrayIndex", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4, "$%02x" % arg5)
-
-class Op56Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 5)
-        RomInfo.macros["Op56_WriteBitArrayIndex"] = "db $56\ndb \\1\ndb \\2\ndb \\3\ndb \\4"
-    
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        arg3 = self.memory.byte(file.addr + 3)
-        arg4 = self.memory.byte(file.addr + 4)
-        file.asmLine(5, "Op56_WriteBitArrayIndex", str(index), "$%02x" % arg2, "$%02x" % arg3, "$%02x" % arg4)
-
 class Op84Block(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size = 7)
@@ -635,81 +572,6 @@ class Op0CBlock(Op10OrOp0CBlock):
     def export(self, file):
         file.asmLine(6, "Op0C_HamChatWheel", str(self.count), str(self.optionsLabel), str(self.rulesLabel))
 
-class Op42Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 6)
-        RomInfo.macros["Op42_Unknown_StoreValue"] = "db $42\ndb \\1\ndb \\2\ndw \\3\ndb BANK(\\3)"
-
-        # Note sometimes these 3 address bytes are $00 $00 $00.
-        # I think this op writes this address somewhere, maybe a stack.
-        # Writing the zero address could be like popping the stack. Just conjecture.
-        self.label = label3ByteRomAddressArg(memory, addr + 3)
-
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        file.asmLine(6, "Op42_Unknown_StoreValue", str(index), "$%02x" % arg2, str(self.label))
-
-class Op4EBlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size = 6)
-        RomInfo.macros["Op4E_Unknown_StoreValue"] = "db $4e\ndb \\1\ndb \\2\ndw \\3\ndb BANK(\\3)"
-
-        # Note sometimes these 3 address bytes are $00 $00 $00.
-        # I think this op writes this address somewhere, maybe a stack.
-        # Writing the zero address could be like popping the stack. Just conjecture.
-        self.label = label3ByteRomAddressArg(memory, addr + 3)
-
-    def export(self, file):
-        index = self.memory.byte(file.addr + 1)
-        arg2 = self.memory.byte(file.addr + 2)
-        file.asmLine(6, "Op4E_Unknown_StoreValue", str(index), "$%02x" % arg2, str(self.label))
-
-class Op3xBlock(Block):
-    def __init__(self, memory, addr, size):
-        super().__init__(memory, addr, size=size)
-        
-        # These point to graphics data.
-        self.romLabel = label3ByteRomAddressArg(memory, addr + 1)
-
-        ramPointer = memory.word(addr + 4)
-        ramBankNum = memory.byte(addr + 6)
-        ramBank = RomInfo.getWRam(ramBankNum)
-        ramBank.addAutoLabel(ramPointer, None, None)
-        self.ramLabel = ramBank.getLabel(ramPointer)
-
-class Op32Block(Op3xBlock):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=7)
-        RomInfo.macros["Op32_Graphics"] = "db $32\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)"
-
-    def export(self, file):
-        file.asmLine(7, "Op32_Graphics", str(self.romLabel), str(self.ramLabel))
-
-class Op34Block(Op3xBlock):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=8)
-        RomInfo.macros["Op34_Graphics"] = "db $34\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)\ndb \\3"
-
-    def export(self, file):
-        file.asmLine(8, "Op34_Graphics", str(self.romLabel), str(self.ramLabel), "$%02x" % self.memory.byte(file.addr + 7))
-
-class Op36Block(Op3xBlock):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=7)
-        RomInfo.macros["Op36_Graphics"] = "db $36\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)"
-
-    def export(self, file):
-        file.asmLine(7, "Op36_Graphics", str(self.romLabel), str(self.ramLabel))
-
-class Op38Block(Op3xBlock):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=8)
-        RomInfo.macros["Op38_Graphics"] = "db $38\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb BANK(\\2)\ndb \\3"
-
-    def export(self, file):
-        file.asmLine(8, "Op38_Graphics", str(self.romLabel), str(self.ramLabel), "$%02x" % self.memory.byte(file.addr + 7))
-
 class Op3CBlock(Block):
     def __init__(self, memory, addr):
         super().__init__(memory, addr, size=11)
@@ -725,86 +587,59 @@ class Op3CBlock(Block):
     def export(self, file):
         file.asmLine(11, "Op3C_Unknown", str(self.romLabel), str(self.ramLabel), *["$%02x" % self.memory.byte(file.addr + n) for n in range(6, 11)])
 
-class Op7EBlock(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=9)
-        RomInfo.macros["Op7E_Unknown"] = "db $7e\ndw \\1\ndb BANK(\\1)\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
-
-        ramPointer = memory.word(addr + 1)
-        ramBankNum = memory.byte(addr + 3)
-        ramBank = RomInfo.getWRam(ramBankNum)
-        ramBank.addAutoLabel(ramPointer, None, None)
-        self.ramLabel = ramBank.getLabel(ramPointer)
-
-    def export(self, file):
-        file.asmLine(9, "Op7E_Unknown", str(self.ramLabel), *["$%02x" % self.memory.byte(file.addr + n) for n in range(4, 9)])
-
-class Op86Block(Block):
-    def __init__(self, memory, addr):
-        super().__init__(memory, addr, size=9)
-        RomInfo.macros["Op86_Unknown"] = "db $86\ndw \\1\ndb BANK(\\1)\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
-
-        ramPointer = memory.word(addr + 1)
-        ramBankNum = memory.byte(addr + 3)
-        ramBank = RomInfo.getWRam(ramBankNum)
-        ramBank.addAutoLabel(ramPointer, None, None)
-        self.ramLabel = ramBank.getLabel(ramPointer)
-
-    def export(self, file):
-        file.asmLine(9, "Op86_Unknown", str(self.ramLabel), *["$%02x" % self.memory.byte(file.addr + n) for n in range(4, 9)])
-
 
 # Even though there are ophandlers not accounted for here, this list is apparently complete.
 # In the banks I have decoded I do not hit script instructions not present in this object.
+# Inline comments are reasons why a manual Block class is still being used.
 OPBLOCKS = {
-    0x02: makeGenericBlockClass(0x02, 1, "Op02_Unknown_Jump"),
-    0x04: Op04Block,
-    0x06: Op06Block,
-    0x0C: Op0CBlock,
-    0x10: Op10Block,
-    0x14: Op14Block,
-    0x16: Op16Block,
-    0x18: Op18Block,
-    0x1A: makeGenericBlockClass(0x1A, 2),
-    0x1C: Op1CBlock,
-    0x1E: Op1EBlock,
-    0x20: makeGenericBlockClass(0x20, 1, "SCRIPT_RETURN_20"),
-    0x2A: makeGenericBlockClass(0x2A, 4, "Op2A_MaybeCodeJump"),
-    0x2C: makeGenericBlockClass(0x2C, 5, "Op2C_MaybeCodeJump"),
-    0x2E: makeGenericBlockClass(0x2E, 4, "Op2E_MaybeCodeJump"),
-    0x32: Op32Block,
-    0x34: Op34Block,
-    0x36: Op36Block,
-    0x38: Op38Block,
-    0x3A: makeGenericBlockClass(0x3A, 11),
-    0x3C: Op3CBlock,
-    0x3E: Op3EBlock,
-    0x40: makeGenericBlockClass(0x40, 5),
-    0x42: Op42Block,
-    0x44: makeGenericBlockClass(0x44, 3),
-    0x46: makeGenericBlockClass(0x46, 1),
-    0x48: makeGenericBlockClass(0x48, 1),
-    0x4A: makeGenericBlockClass(0x4A, 1, "SCRIPT_RETURN_4A"),
-    0x4C: Op4CBlock,
-    0x4E: Op4EBlock,
-    0x50: Op50Block,
-    0x52: Op52Block,
-    0x54: makeGenericBlockClass(0x54, 2),
-    0x56: Op56Block,
-    0x58: Op58Block,
-    0x5A: makeGenericBlockClass(0x5A, 2),
-    0x5E: makeGenericBlockClass(0x5E, 2),
-    0x68: Op68Block,
-    0x6A: makeGenericBlockClass(0x6A, 5),
-    0x74: Op74Block,
-    0x76: makeGenericBlockClass(0x76, 2, "Op76_PrepTableJumpIndex_Write"),
-    0x7E: Op7EBlock,
-    0x80: Op80Block,
-    0x82: Op82Block,
-    0x84: Op84Block,
-    0x86: Op86Block,
-    0x8E: Op8EBlock,
-    0x90: Op90Block,
-    0x92: makeGenericBlockClass(0x92, 2),
-    0x98: Op98Block,
+    0x02: makeOpBlockFromArgString(0x02, None, "Op02_Unknown_Jump"),
+    0x04: Op04Block, # Need to overwrite base export -- or provide callback hook -- to leave text comment.
+    0x06: Op06Block, # Need to overwrite base export -- or provide callback hook -- to leave text comment.
+    0x0C: Op0CBlock, # Doing lots of custom stuff to referenced blocks and comments.
+    0x10: Op10Block, # Doing lots of custom stuff to referenced blocks and comments.
+    0x14: Op14Block, # Doing lots of custom stuff to referenced blocks and comments.
+    0x16: Op16Block, # Subblocks
+    0x18: makeOpBlockFromArgString(0x18, '3RomS', "Op18_Jump"),
+    0x1A: makeOpBlockFromArgString(0x1A, 'b'),
+    0x1C: Op1CBlock, # Subblocks
+    0x1E: makeOpBlockFromArgString(0x1E, '3RomS', "Op1E_Call"),
+    0x20: makeOpBlockFromArgString(0x20, None, "SCRIPT_RETURN_20"),
+    0x2A: makeOpBlockFromArgString(0x2A, 'b,b,b', "Op2A_MaybeCodeJump"),
+    0x2C: makeOpBlockFromArgString(0x2C, 'b,b,b,b', "Op2C_MaybeCodeJump"),
+    0x2E: makeOpBlockFromArgString(0x2E, 'b,b,b', "Op2E_MaybeCodeJump"),
+    0x32: makeOpBlockFromArgString(0x32, '3Rom,3Ram', "Op32_Graphics"),
+    0x34: makeOpBlockFromArgString(0x34, '3Rom,3Ram,b', "Op34_Graphics"),
+    0x36: makeOpBlockFromArgString(0x36, '3Rom,3Ram', "Op36_Graphics"),
+    0x38: makeOpBlockFromArgString(0x38, '3Rom,3Ram,b', "Op38_Graphics"),
+    0x3A: makeOpBlockFromArgString(0x3A, 'b,b,b,b,b,b,b,b,b,b'),
+    0x3C: Op3CBlock, # Need 2 byte Wram Address
+    0x3E: makeOpBlockFromArgString(0x3E, 'd,b,b,b,3RomS', "Op3E_Compare_Branch"),
+    0x40: makeOpBlockFromArgString(0x40, 'b,b,b,b'),
+    0x42: makeOpBlockFromArgString(0x42, 'd,b,3rom', "Op42_Unknown_StoreValue"),
+    0x44: makeOpBlockFromArgString(0x44, 'b,b'),
+    0x46: makeOpBlockFromArgString(0x46, None),
+    0x48: makeOpBlockFromArgString(0x48, None),
+    0x4A: makeOpBlockFromArgString(0x4A, None, "SCRIPT_RETURN_4A"),
+    0x4C: makeOpBlockFromArgString(0x4C, 'b,b,b,b,b,b,b,3Rom'),
+    0x4E: makeOpBlockFromArgString(0x4E, 'd,b,3rom', "Op4E_Unknown_StoreValue"),
+    0x50: Op50Block, # Can't use standard 3ram because address can be Vram.
+    0x52: Op52Block, # Can't use standard 3ram because address can be Vram.
+    0x54: makeOpBlockFromArgString(0x54, 'b'),
+    0x56: makeOpBlockFromArgString(0x56, 'd,b,b,b', "Op56_WriteBitArrayIndex"), # TODO change these 3 b's to 3rom
+    0x58: makeOpBlockFromArgString(0x58, 'd,b,b,b,b', "Op58_WriteBitArrayIndex"), # TODO change last 3 b's to 3rom
+    0x5A: makeOpBlockFromArgString(0x5A, 'b'),
+    0x5E: makeOpBlockFromArgString(0x5E, 'b'),
+    0x68: Op68Block, # Shared wram bank arg that may not be relevant to both 2ram's
+    0x6A: makeOpBlockFromArgString(0x6A, 'b,b,b,b'),
+    0x74: Op74Block, # Need 2 byte Wram Address
+    0x76: makeOpBlockFromArgString(0x76, 'b', "Op76_PrepTableJumpIndex_Write"),
+    0x7E: makeOpBlockFromArgString(0x7E, '3ram,b,b,b,b,b'),
+    0x80: Op80Block, # Can't rely on BANK(label). To verify.
+    0x82: Op82Block, # Subblocks
+    0x84: Op84Block, # Can't use standard 3ram because address can be Vram.
+    0x86: makeOpBlockFromArgString(0x86, '3ram,b,b,b,b,b'),
+    0x8E: Op8EBlock, # TODO needs repairing. Put back 3rom.
+    0x90: Op90Block, # TODO needs repairing. Put back 3rom.
+    0x92: makeOpBlockFromArgString(0x92, 'b'),
+    0x98: Op98Block, # TODO needs repairing. Put back 3rom.
 }

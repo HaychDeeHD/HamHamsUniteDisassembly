@@ -265,7 +265,7 @@ I have not observed this being used in any scripts.
 <a id="op32"></a>
 ### Op32 
 
-Ops 32, 34, and 36 are variants of each other.
+Ops 32, 34, 36, and 38 are variants of each other.
 
 Takes 2 3-byte addresses as arguments.
 
@@ -319,9 +319,9 @@ Op3E will use the first byte as an index to pull a 3 byte address out of the ODB
 <a id="op42"></a>
 ### Op42 
 
-5 argument bytes, the last 3 of which are a 3 byte ROM address. It seems that whatever kind of data this points to occupies the 0F-1B banks.
+5 argument bytes, the last 3 of which are a 3 byte ROM address. It seems that whatever kind of data this points to occupies the 09-1B banks.
 
-Compare with Op4C.
+Compare with Op4C and Op4E.
 
 <a id="op44"></a>
 ### Op44 
@@ -344,16 +344,16 @@ A return variant. Actually calls return so uses the real GBC callstack I guess?
 <a id="op4C"></a>
 ### Op4C 
 
-10 argument bytes, the last 3 of which are a 3 byte ROM address. It seems that whatever kind of data this points to occupies the 0F-1B banks.
+10 argument bytes, the last 3 of which are a 3 byte ROM address. It seems that whatever kind of data this points to occupies the 09-1B banks.
 
-Compare with Op42.
+Compare with Op42 and Op4E.
 
 <a id="op4E"></a>
 ### Op4E 
 
 5 argument bytes, the last 3 of which are a 3 byte ROM address. It seems that whatever kind of data this points to occupies the 0F-1B banks.
 
-Compare with Op4C.
+Compare with Op42 and Op4C.
 
 <a id="op50"></a>
 ### Op50 - Write Byte

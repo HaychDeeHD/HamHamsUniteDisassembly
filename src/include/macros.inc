@@ -89,33 +89,33 @@ db \<3>
 ENDM
 MACRO Op32_Graphics
 db $32
-dw \1
+dw \<1>
 db BANK(\1)
-dw \2
+dw \<2>
 db BANK(\2)
 ENDM
 MACRO Op34_Graphics
 db $34
-dw \1
+dw \<1>
 db BANK(\1)
-dw \2
+dw \<2>
 db BANK(\2)
-db \3
+db \<3>
 ENDM
 MACRO Op36_Graphics
 db $36
-dw \1
+dw \<1>
 db BANK(\1)
-dw \2
+dw \<2>
 db BANK(\2)
 ENDM
 MACRO Op38_Graphics
 db $38
-dw \1
+dw \<1>
 db BANK(\1)
-dw \2
+dw \<2>
 db BANK(\2)
-db \3
+db \<3>
 ENDM
 MACRO Op3A_Unknown
 db $3a
@@ -159,9 +159,9 @@ db \<4>
 ENDM
 MACRO Op42_Unknown_StoreValue
 db $42
-db \1
-db \2
-dw \3
+db \<1>
+db \<2>
+dw \<3>
 db BANK(\3)
 ENDM
 MACRO Op44_Unknown
@@ -189,9 +189,9 @@ db BANK(\8)
 ENDM
 MACRO Op4E_Unknown_StoreValue
 db $4e
-db \1
-db \2
-dw \3
+db \<1>
+db \<2>
+dw \<3>
 db BANK(\3)
 ENDM
 MACRO Op50_WriteByte
@@ -213,18 +213,18 @@ db \<1>
 ENDM
 MACRO Op56_WriteBitArrayIndex
 db $56
-db \1
-db \2
-db \3
-db \4
+db \<1>
+db \<2>
+db \<3>
+db \<4>
 ENDM
 MACRO Op58_WriteBitArrayIndex
 db $58
-db \1
-db \2
-db \3
-db \4
-db \5
+db \<1>
+db \<2>
+db \<3>
+db \<4>
+db \<5>
 ENDM
 MACRO Op5A_Unknown
 db $5a
@@ -258,13 +258,13 @@ db \<1>
 ENDM
 MACRO Op7E_Unknown
 db $7e
-dw \1
+dw \<1>
 db BANK(\1)
-db \2
-db \3
-db \4
-db \5
-db \6
+db \<2>
+db \<3>
+db \<4>
+db \<5>
+db \<6>
 ENDM
 MACRO Op80_CopyNBytes
 db $80
@@ -288,13 +288,13 @@ db \4
 ENDM
 MACRO Op86_Unknown
 db $86
-dw \1
+dw \<1>
 db BANK(\1)
-db \2
-db \3
-db \4
-db \5
-db \6
+db \<2>
+db \<3>
+db \<4>
+db \<5>
+db \<6>
 ENDM
 MACRO Op8E_StoreAddress
 db $8e
