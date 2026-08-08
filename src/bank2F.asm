@@ -3229,7 +3229,7 @@ call_2f_78b4:
     Op1E_Call call_33_4d12                             ;; 2f:78fe $1e $12 $4d $33
     Op14_Unknown 1, data_05_5264                       ;; 2f:7902 $14 $01 $64 $52
     SCRIPT_POINTER call_2f_7914                        ;; 2f:7906 $14 $79 $2f
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2f:7909 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 2f:7909 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
 
 call_2f_7914:
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2f:7914 $52 $01 $d0 $01 $fd $d1
@@ -3387,7 +3387,7 @@ call_2f_7b36:
     ;;Say, look around<E4>and tell me what<E4>you think,<E3><E7>.<E0>
     Op04_Unknown_Text data_38_53a1                     ;; 2f:7b4e $04 $a1 $53 $38
     Op1E_Call call_04_615d                             ;; 2f:7b52 $1e $5d $61 $04
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2f:7b56 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 2f:7b56 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op16_SubOps 1                                      ;; 2f:7b61 $16 $01
     SubOp_SetFlag wC939, 1                             ;; 2f:7b63 $3f $09
     Op14_Unknown 1, data_05_4c04                       ;; 2f:7b65 $14 $01 $04 $4c

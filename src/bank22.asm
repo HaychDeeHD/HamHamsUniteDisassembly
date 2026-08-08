@@ -646,7 +646,7 @@ call_22_57f6:
     Op4E_Unknown_StoreValue 9, $01, $ca, $72, $1b      ;; 22:5832 $4e $09 $01 $ca $72 $1b
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 22:5838 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
     Op1E_Call call_33_4d12                             ;; 22:5843 $1e $12 $4d $33
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 22:5847 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:5847 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 22:5852 $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 22:5858 $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 22:585d $50 $fd $d0 $02 $fe
@@ -2359,7 +2359,7 @@ call_22_6efc:
     Op1E_Call call_33_4d12                             ;; 22:6f43 $1e $12 $4d $33
     Op14_Unknown 1, data_05_6fcb                       ;; 22:6f47 $14 $01 $cb $6f
     SCRIPT_POINTER call_22_6f75                        ;; 22:6f4b $75 $6f $22
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 22:6f4e $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:6f4e $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op18_Jump call_22_6f80                             ;; 22:6f59 $18 $80 $6f $22
 
 call_22_6f5d:
@@ -2370,7 +2370,7 @@ call_22_6f5d:
     SubOp_SetFlag wC94B, 3                             ;; 22:6f73 $3f $9b
 
 call_22_6f75:
-    Op3C_Unknown $66, $7a, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 22:6f75 $3c $66 $7a $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_7a66, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:6f75 $3c $66 $7a $17 $fd $d1 $00 $00 $00 $00 $ff
 
 call_22_6f80:
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 22:6f80 $52 $01 $d0 $01 $fd $d1
@@ -2518,7 +2518,7 @@ call_22_7108:
     Op3E_Compare_Branch 22, $25, $49, $12, call_22_7108 ;; 22:7109 $3e $16 $25 $49 $12 $08 $71 $22
     Op16_SubOps 1                                      ;; 22:7111 $16 $01
     SubOp_ClearFlag wC94B, 3                           ;; 22:7113 $5f $9b
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 22:7115 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:7115 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op18_Jump call_22_6c77                             ;; 22:7120 $18 $77 $6c $22
 
 call_22_7124:
@@ -2534,7 +2534,7 @@ call_22_7143:
     Op3E_Compare_Branch 22, $14, $49, $12, call_22_7143 ;; 22:7144 $3e $16 $14 $49 $12 $43 $71 $22
     Op16_SubOps 1                                      ;; 22:714c $16 $01
     SubOp_ClearFlag wC94B, 3                           ;; 22:714e $5f $9b
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 22:7150 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:7150 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op18_Jump call_22_6c77                             ;; 22:715b $18 $77 $6c $22
 
 call_22_715f:
@@ -2744,7 +2744,7 @@ call_22_73a5:
     Op4C_Unknown $32, $01, $04, $00, $00, $00, $00, data_19_5072 ;; 22:73ae $4c $32 $01 $04 $00 $00 $00 $00 $72 $50 $19
     Op16_SubOps 1                                      ;; 22:73b9 $16 $01
     SubOp_SetFlag wC94B, 3                             ;; 22:73bb $3f $9b
-    Op3C_Unknown $66, $7a, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 22:73bd $3c $66 $7a $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_7a66, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:73bd $3c $66 $7a $17 $fd $d1 $00 $00 $00 $00 $ff
     Op18_Jump call_22_6c77                             ;; 22:73c8 $18 $77 $6c $22
 
 call_22_73cc:
@@ -2766,7 +2766,7 @@ call_22_73f2:
     Op4C_Unknown $32, $01, $04, $00, $00, $00, $00, data_19_5072 ;; 22:73fb $4c $32 $01 $04 $00 $00 $00 $00 $72 $50 $19
     Op16_SubOps 1                                      ;; 22:7406 $16 $01
     SubOp_SetFlag wC94B, 3                             ;; 22:7408 $3f $9b
-    Op3C_Unknown $66, $7a, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 22:740a $3c $66 $7a $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_7a66, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 22:740a $3c $66 $7a $17 $fd $d1 $00 $00 $00 $00 $ff
     Op18_Jump call_22_6c77                             ;; 22:7415 $18 $77 $6c $22
 
 call_22_7419:

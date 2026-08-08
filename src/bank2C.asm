@@ -188,7 +188,7 @@ call_2c_426a:
 call_2c_4270:
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 2c:4270 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
     Op1E_Call call_33_4d12                             ;; 2c:427b $1e $12 $4d $33
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2c:427f $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 2c:427f $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2c:428a $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2c:4290 $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2c:4295 $50 $fd $d0 $02 $fe
@@ -1636,7 +1636,7 @@ call_2c_5edc:
     Op1E_Call call_33_4d12                             ;; 2c:5eea $1e $12 $4d $33
     Op14_Unknown 1, data_05_4bdc                       ;; 2c:5eee $14 $01 $dc $4b
     SCRIPT_POINTER call_2c_5f00                        ;; 2c:5ef2 $00 $5f $2c
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2c:5ef5 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 2c:5ef5 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
 
 call_2c_5f00:
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2c:5f00 $52 $01 $d0 $01 $fd $d1
@@ -2597,7 +2597,7 @@ call_2c_6b3e:
     SCRIPT_RETURN_4A                                   ;; 2c:6b3e $4a
     Op3E_Compare_Branch 22, $0b, $45, $10, call_2c_6b3e ;; 2c:6b3f $3e $16 $0b $45 $10 $3e $6b $2c
     Op3E_Compare_Branch 26, $dc, $6b, $1b, call_2c_6b3e ;; 2c:6b47 $3e $1a $dc $6b $1b $3e $6b $2c
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2c:6b4f $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 2c:6b4f $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2c:6b5a $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2c:6b60 $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2c:6b65 $50 $fd $d0 $02 $fe

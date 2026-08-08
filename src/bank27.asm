@@ -279,7 +279,7 @@ call_27_43ee:
     Op3E_Compare_Branch 22, $0b, $45, $10, call_27_43ee ;; 27:43ef $3e $16 $0b $45 $10 $ee $43 $27
     Op3E_Compare_Branch 26, $44, $46, $1a, call_27_43ee ;; 27:43f7 $3e $1a $44 $46 $1a $ee $43 $27
     Op3E_Compare_Branch 26, $1d, $47, $1a, call_27_43ee ;; 27:43ff $3e $1a $1d $47 $1a $ee $43 $27
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 27:4407 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 27:4407 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 27:4412 $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 27:4418 $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 27:441d $50 $fd $d0 $02 $fe
@@ -4320,7 +4320,7 @@ call_27_7505:
     Op3A_Unknown $00, $00, $a0, $90, $50, $48, $f0, $00, $f0, $00 ;; 27:7541 $3a $00 $00 $a0 $90 $50 $48 $f0 $00 $f0 $00
     Op44_Unknown $08, $00                              ;; 27:754c $44 $08 $00
     Op1E_Call call_33_4d12                             ;; 27:754f $1e $12 $4d $33
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 27:7553 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 27:7553 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 27:755e $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 27:7564 $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 27:7569 $50 $fd $d0 $02 $fe
@@ -5092,7 +5092,7 @@ call_27_7e71:
     Op18_Jump call_27_7e71                             ;; 27:7e7a $18 $71 $7e $27
 
 call_27_7e7e:
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 27:7e7e $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 27:7e7e $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 27:7e89 $52 $01 $d0 $01 $fd $d1
     Op16_SubOps 1                                      ;; 27:7e8f $16 $01
     SubOp_SetByte wC725, $0b                           ;; 27:7e91 $7e $0d $0b

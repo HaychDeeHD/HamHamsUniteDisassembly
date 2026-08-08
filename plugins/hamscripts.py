@@ -731,6 +731,21 @@ class Op38Block(Op3xBlock):
     def export(self, file):
         file.asmLine(8, "Op38_Graphics", str(self.romLabel), str(self.ramLabel), "$%02x" % self.memory.byte(file.addr + 7))
 
+class Op3CBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=11)
+        RomInfo.macros["Op3C_Unknown"] = "db $3c\ndw \\1\ndb BANK(\\1)\ndw \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6\ndb \\7"
+
+        self.romLabel = label3ByteRomAddressArg(memory, addr + 1)
+
+        ramPointer = memory.word(addr + 4)
+        ramBank1 = RomInfo.getWRam(1)
+        ramBank1.addAutoLabel(ramPointer, None, None)
+        self.ramLabel = ramBank1.getLabel(ramPointer)
+
+    def export(self, file):
+        file.asmLine(11, "Op3C_Unknown", str(self.romLabel), str(self.ramLabel), *["$%02x" % self.memory.byte(file.addr + n) for n in range(6, 11)])
+
 # Even though there are ophandlers not accounted for here, this list is apparently complete.
 # In the banks I have decoded I do not hit script instructions not present in this object.
 OPBLOCKS = {
@@ -754,7 +769,7 @@ OPBLOCKS = {
     0x36: Op36Block,
     0x38: Op38Block,
     0x3A: makeGenericBlockClass(0x3A, 11),
-    0x3C: makeGenericBlockClass(0x3C, 11),
+    0x3C: Op3CBlock,
     0x3E: Op3EBlock,
     0x40: makeGenericBlockClass(0x40, 5),
     0x42: Op42Block,

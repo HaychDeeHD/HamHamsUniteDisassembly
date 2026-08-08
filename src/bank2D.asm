@@ -167,7 +167,7 @@ call_2d_41d6:
     Op4E_Unknown_StoreValue 15, $01, $b6, $62, $14     ;; 2d:421a $4e $0f $01 $b6 $62 $14
     Op44_Unknown $08, $00                              ;; 2d:4220 $44 $08 $00
     Op1E_Call call_33_4d12                             ;; 2d:4223 $1e $12 $4d $33
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2d:4227 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 2d:4227 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2d:4232 $52 $01 $d0 $01 $fd $d1
     Op16_SubOps 1                                      ;; 2d:4238 $16 $01
     SubOp_ClearFlag wBitArrayC918, 3                   ;; 2d:423a $5e $03
@@ -1308,7 +1308,7 @@ call_2d_4f82:
     Op1E_Call call_33_4d29                             ;; 2d:4f82 $1e $29 $4d $33
 
 call_2d_4f86:
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2d:4f86 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 2d:4f86 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2d:4f91 $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:4f97 $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2d:4f9c $50 $fd $d0 $02 $fe
@@ -3447,7 +3447,7 @@ call_2d_67ae:
 call_2d_6802:
     Op1E_Call call_33_4d29                             ;; 2d:6802 $1e $29 $4d $33
     Op3E_Compare_Branch 22, $9b, $79, $10, call_2d_6802 ;; 2d:6806 $3e $16 $9b $79 $10 $02 $68 $2d
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 2d:680e $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 2d:680e $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 2d:6819 $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:681f $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 2d:6824 $50 $fd $d0 $02 $fe

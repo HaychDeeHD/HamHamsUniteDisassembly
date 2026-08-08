@@ -165,7 +165,7 @@ call_31_4213:
     Op3E_Compare_Branch 22, $02, $6c, $11, call_31_4213 ;; 31:4214 $3e $16 $02 $6c $11 $13 $42 $31
 
 call_31_421c:
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 31:421c $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 31:421c $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 31:4227 $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 31:422d $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 31:4232 $50 $fd $d0 $02 $fe
@@ -974,7 +974,7 @@ call_31_4cf4:
     Op3E_Compare_Branch 22, $18, $6d, $11, call_31_4cf4 ;; 31:4cf5 $3e $16 $18 $6d $11 $f4 $4c $31
 
 call_31_4cfd:
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 31:4cfd $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 31:4cfd $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 31:4d08 $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 31:4d0e $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 31:4d13 $50 $fd $d0 $02 $fe
@@ -1806,7 +1806,7 @@ call_31_57f8:
     SCRIPT_RETURN_4A                                   ;; 31:57f8 $4a
     Op3E_Compare_Branch 22, $0b, $45, $10, call_31_57f8 ;; 31:57f9 $3e $16 $0b $45 $10 $f8 $57 $31
     Op3E_Compare_Branch 26, $c4, $79, $1b, call_31_57f8 ;; 31:5801 $3e $1a $c4 $79 $1b $f8 $57 $31
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 31:5809 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 31:5809 $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 31:5814 $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 31:581a $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 31:581f $50 $fd $d0 $02 $fe
@@ -3004,7 +3004,7 @@ call_31_665d:
     Op3E_Compare_Branch 22, $ac, $43, $10, call_31_665d ;; 31:6666 $3e $16 $ac $43 $10 $5d $66 $31
 
 call_31_666e:
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 31:666e $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 31:666e $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 31:6679 $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 31:667f $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 31:6684 $50 $fd $d0 $02 $fe
@@ -3388,7 +3388,7 @@ call_31_6bb0:
 call_31_6bc6:
     SCRIPT_RETURN_4A                                   ;; 31:6bc6 $4a
     Op3E_Compare_Branch 22, $0b, $45, $10, call_31_6bc6 ;; 31:6bc7 $3e $16 $0b $45 $10 $c6 $6b $31
-    Op3C_Unknown $0e, $71, $17, $fd, $d1, $00, $00, $00, $00, $ff ;; 31:6bcf $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
+    Op3C_Unknown data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff ;; 31:6bcf $3c $0e $71 $17 $fd $d1 $00 $00 $00 $00 $ff
     Op52_WriteBytes w1_D001, $01, $fd, $d1             ;; 31:6bda $52 $01 $d0 $01 $fd $d1
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 31:6be0 $50 $1d $c3 $00 $d0
     Op50_WriteByte w2_D0FD, $02, $fe                   ;; 31:6be5 $50 $fd $d0 $02 $fe

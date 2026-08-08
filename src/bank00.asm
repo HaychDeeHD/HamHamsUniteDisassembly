@@ -2857,6 +2857,7 @@ Op86:
     call call_00_285c                                  ;; 00:13da $cd $5c $28
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:13dd $c3 $14 $0a
 
+; Judging from where the arg values get stored, they may come as 5 pairs of bytes.
 Op3A:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:13e0 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:13e3 $2a
@@ -2877,6 +2878,7 @@ Op3A:
     ld   A, [HL+]                                      ;; 00:1400 $2a
     ld   [wC357], A                                    ;; 00:1401 $ea $57 $c3
     ld   B, A                                          ;; 00:1404 $47
+; Arg 8 in B, arg 7 in C. BC >> 3 (div by 8).
     srl  B                                             ;; 00:1405 $cb $38
     rr   C                                             ;; 00:1407 $cb $19
     srl  B                                             ;; 00:1409 $cb $38
@@ -3097,6 +3099,10 @@ jp_00_152b:
     ld   [wDunnoCheckBeforeConsultingJumpArrayC323], A ;; 00:159a $ea $23 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:159d $c3 $14 $0a
 
+; First 3 bytes are a 3 byte rom address.
+; The next 2 are a 2 byte address in WRAM bank 1.
+; Then there's 5 more bytes that get copied to C356-A.
+; Then other stuff happens.
 Op3C:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:15a0 $cd $69 $0a
     ld   A, $01                                        ;; 00:15a3 $3e $01

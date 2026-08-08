@@ -296,6 +296,13 @@ Same arguments as Op34.
 <a id="op3C"></a>
 ### Op3C 
 
+First 3 bytes are a 3 byte rom address. The following 2 bytes are a WRAM address that will always refer to WRAM bank 1.
+
+Every call to Op3C takes one of these 2 argument sets, mostly the first:
+
+* `data_17_7a66, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff` 
+* `data_17_710e, w1_BeginRegionD1FD, $00, $00, $00, $00, $ff`
+
 <a id="op3E"></a>
 ### Op3E - Conditional Script Jump
 

@@ -132,16 +132,14 @@ db \<10>
 ENDM
 MACRO Op3C_Unknown
 db $3c
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
-db \<6>
-db \<7>
-db \<8>
-db \<9>
-db \<10>
+dw \1
+db BANK(\1)
+dw \2
+db \3
+db \4
+db \5
+db \6
+db \7
 ENDM
 MACRO Op3E_Compare_Branch
 db $3E
