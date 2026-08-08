@@ -415,6 +415,10 @@ Write the given arg byte to C53A. Used as an index into a script table (Op 1C).
 <a id="op7E"></a>
 ### Op7E 
 
+The first 3 bytes are a WRAM address. Then there are 5 more bytes.
+
+Same arg structure as Op86.
+
 <a id="op80"></a>
 ### Op80 
 
@@ -438,6 +442,10 @@ Op84 writes the payload byte to the specified location for the next N contiguous
 
 <a id="op86"></a>
 ### Op86 
+
+The first 3 bytes are a WRAM address. Then there are 5 more bytes.
+
+Same arg structure as Op7E.
 
 <a id="op88"></a>
 ### Op88 

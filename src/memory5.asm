@@ -11,7 +11,10 @@ w5_D000:
     ds 16                                              ;; d000
 
 w5_D010:
-    ds 496                                             ;; d010
+    ds 48                                              ;; d010
+
+w5_D040:
+    ds 448                                             ;; d040
 
 w5_D200:
     ds 256                                             ;; d200
@@ -68,7 +71,10 @@ w5_D84A:
     ds 1                                               ;; d84a
 
 w5_D84B:
-    ds 22                                              ;; d84b
+    ds 21                                              ;; d84b
+
+w5_D860:
+    ds 1                                               ;; d860
 
 w5_D861:
     ds 2                                               ;; d861
@@ -155,16 +161,25 @@ w5_D8CF:
     ds 2                                               ;; d8cf
 
 w5_D8D1:
-    ds 16                                              ;; d8d1
+    ds 15                                              ;; d8d1
+
+w5_D8E0:
+    ds 1                                               ;; d8e0
 
 w5_D8E1:
-    ds 39                                              ;; d8e1
+    ds 31                                              ;; d8e1
+
+w5_D900:
+    ds 8                                               ;; d900
 
 w5_D908:
     ds 24                                              ;; d908
 
 w5_D920:
-    ds 38                                              ;; d920
+    ds 32                                              ;; d920
+
+w5_D940:
+    ds 6                                               ;; d940
 
 w5_D946:
     ds 28                                              ;; d946
@@ -233,7 +248,10 @@ w5_DA20:
     ds 15                                              ;; da20
 
 w5_DA2F:
-    ds 19                                              ;; da2f
+    ds 17                                              ;; da2f
+
+w5_DA40:
+    ds 2                                               ;; da40
 
 w5_DA42:
     ds 65                                              ;; da42
@@ -266,7 +284,13 @@ w5_DAE0:
     ds 24                                              ;; dae0
 
 w5_DAF8:
-    ds 264                                             ;; daf8
+    ds 8                                               ;; daf8
+
+w5_DB00:
+    ds 192                                             ;; db00
+
+w5_DBC0:
+    ds 64                                              ;; dbc0
 
 w5_DC00:
     ds 6                                               ;; dc00
@@ -290,19 +314,28 @@ w5_DC62:
     ds 64                                              ;; dc62
 
 w5_DCA2:
-    ds 32                                              ;; dca2
+    ds 30                                              ;; dca2
+
+w5_DCC0:
+    ds 2                                               ;; dcc0
 
 w5_DCC2:
     ds 9                                               ;; dcc2
 
 w5_DCCB:
-    ds 151                                             ;; dccb
+    ds 149                                             ;; dccb
+
+w5_DD60:
+    ds 2                                               ;; dd60
 
 w5_DD62:
     ds 9                                               ;; dd62
 
 w5_DD6B:
-    ds 149                                             ;; dd6b
+    ds 21                                              ;; dd6b
+
+w5_DD80:
+    ds 128                                             ;; dd80
 
 w5_DE00:
     ds 512                                             ;; de00

@@ -746,6 +746,35 @@ class Op3CBlock(Block):
     def export(self, file):
         file.asmLine(11, "Op3C_Unknown", str(self.romLabel), str(self.ramLabel), *["$%02x" % self.memory.byte(file.addr + n) for n in range(6, 11)])
 
+class Op7EBlock(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=9)
+        RomInfo.macros["Op7E_Unknown"] = "db $7e\ndw \\1\ndb BANK(\\1)\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
+
+        ramPointer = memory.word(addr + 1)
+        ramBankNum = memory.byte(addr + 3)
+        ramBank = RomInfo.getWRam(ramBankNum)
+        ramBank.addAutoLabel(ramPointer, None, None)
+        self.ramLabel = ramBank.getLabel(ramPointer)
+
+    def export(self, file):
+        file.asmLine(9, "Op7E_Unknown", str(self.ramLabel), *["$%02x" % self.memory.byte(file.addr + n) for n in range(4, 9)])
+
+class Op86Block(Block):
+    def __init__(self, memory, addr):
+        super().__init__(memory, addr, size=9)
+        RomInfo.macros["Op86_Unknown"] = "db $86\ndw \\1\ndb BANK(\\1)\ndb \\2\ndb \\3\ndb \\4\ndb \\5\ndb \\6"
+
+        ramPointer = memory.word(addr + 1)
+        ramBankNum = memory.byte(addr + 3)
+        ramBank = RomInfo.getWRam(ramBankNum)
+        ramBank.addAutoLabel(ramPointer, None, None)
+        self.ramLabel = ramBank.getLabel(ramPointer)
+
+    def export(self, file):
+        file.asmLine(9, "Op86_Unknown", str(self.ramLabel), *["$%02x" % self.memory.byte(file.addr + n) for n in range(4, 9)])
+
+
 # Even though there are ophandlers not accounted for here, this list is apparently complete.
 # In the banks I have decoded I do not hit script instructions not present in this object.
 OPBLOCKS = {
@@ -790,11 +819,11 @@ OPBLOCKS = {
     0x6A: makeGenericBlockClass(0x6A, 5),
     0x74: Op74Block,
     0x76: makeGenericBlockClass(0x76, 2, "Op76_PrepTableJumpIndex_Write"),
-    0x7E: makeGenericBlockClass(0x7E, 9),
+    0x7E: Op7EBlock,
     0x80: Op80Block,
     0x82: Op82Block,
     0x84: Op84Block,
-    0x86: makeGenericBlockClass(0x86, 9),
+    0x86: Op86Block,
     0x8E: Op8EBlock,
     0x90: Op90Block,
     0x92: makeGenericBlockClass(0x92, 2),

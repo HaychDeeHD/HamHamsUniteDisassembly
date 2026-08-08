@@ -62,7 +62,10 @@ w7_D84A:
     ds 1                                               ;; d84a
 
 w7_D84B:
-    ds 22                                              ;; d84b
+    ds 21                                              ;; d84b
+
+w7_D860:
+    ds 1                                               ;; d860
 
 w7_D861:
     ds 2                                               ;; d861
@@ -218,13 +221,19 @@ w7_DA07:
     ds 3                                               ;; da07
 
 w7_DA0A:
-    ds 36                                              ;; da0a
+    ds 22                                              ;; da0a
+
+w7_DA20:
+    ds 14                                              ;; da20
 
 w7_DA2E:
     ds 1                                               ;; da2e
 
 w7_DA2F:
-    ds 19                                              ;; da2f
+    ds 17                                              ;; da2f
+
+w7_DA40:
+    ds 2                                               ;; da40
 
 w7_DA42:
     ds 12                                              ;; da42
@@ -266,7 +275,13 @@ w7_DAE3:
     ds 21                                              ;; dae3
 
 w7_DAF8:
-    ds 264                                             ;; daf8
+    ds 8                                               ;; daf8
+
+w7_DB00:
+    ds 192                                             ;; db00
+
+w7_DBC0:
+    ds 64                                              ;; dbc0
 
 w7_DC00:
     ds 11                                              ;; dc00
@@ -281,4 +296,10 @@ w7_DC62:
     ds 64                                              ;; dc62
 
 w7_DCA2:
-    ds 862                                             ;; dca2
+    ds 30                                              ;; dca2
+
+w7_DCC0:
+    ds 192                                             ;; dcc0
+
+w7_DD80:
+    ds 640                                             ;; dd80

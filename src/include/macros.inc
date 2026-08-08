@@ -259,14 +259,13 @@ db \<1>
 ENDM
 MACRO Op7E_Unknown
 db $7e
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
-db \<6>
-db \<7>
-db \<8>
+dw \1
+db BANK(\1)
+db \2
+db \3
+db \4
+db \5
+db \6
 ENDM
 MACRO Op80_CopyNBytes
 db $80
@@ -290,14 +289,13 @@ db \4
 ENDM
 MACRO Op86_Unknown
 db $86
-db \<1>
-db \<2>
-db \<3>
-db \<4>
-db \<5>
-db \<6>
-db \<7>
-db \<8>
+dw \1
+db BANK(\1)
+db \2
+db \3
+db \4
+db \5
+db \6
 ENDM
 MACRO Op8E_StoreAddress
 db $8e
