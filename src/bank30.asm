@@ -501,7 +501,7 @@ call_30_4e81:
     Op82_Run ObtainHamChatFromC715                     ;; 30:4e86 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:4e8a $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:4e8c $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:4e8e $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:4e8e $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:4e91 $1c $02
     SCRIPT_POINTER call_30_4e99                        ;; 30:4e93 $99 $4e $30
     SCRIPT_POINTER call_30_4e99                        ;; 30:4e96 $99 $4e $30
@@ -515,7 +515,7 @@ call_30_4ea1:
     Op82_Run ObtainHamChatFromC715                     ;; 30:4ea6 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:4eaa $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:4eac $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:4eae $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:4eae $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:4eb1 $1c $02
     SCRIPT_POINTER call_30_4b25                        ;; 30:4eb3 $25 $4b $30
     SCRIPT_POINTER call_30_4eb9                        ;; 30:4eb6 $b9 $4e $30
@@ -550,7 +550,7 @@ call_30_4f0f:
     Op82_Run ObtainHamChatFromC715                     ;; 30:4f14 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:4f18 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:4f1a $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:4f1c $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:4f1c $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:4f1f $1c $02
     SCRIPT_POINTER call_30_4b25                        ;; 30:4f21 $25 $4b $30
     SCRIPT_POINTER call_30_4f27                        ;; 30:4f24 $27 $4f $30
@@ -615,7 +615,7 @@ call_30_503b:
     Op82_Run ObtainHamChatFromC715                     ;; 30:5040 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:5044 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:5046 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:5048 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:5048 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:504b $1c $02
     SCRIPT_POINTER call_30_4b25                        ;; 30:504d $25 $4b $30
     SCRIPT_POINTER call_30_5053                        ;; 30:5050 $53 $50 $30
@@ -662,7 +662,7 @@ call_30_5104:
     Op82_Run ObtainHamChatFromC715                     ;; 30:5109 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:510d $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:510f $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:5111 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:5111 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:5114 $1c $02
     SCRIPT_POINTER call_30_4b25                        ;; 30:5116 $25 $4b $30
     SCRIPT_POINTER call_30_511c                        ;; 30:5119 $1c $51 $30
@@ -696,7 +696,7 @@ call_30_517c:
     Op82_Run ObtainHamChatFromC715                     ;; 30:5181 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:5185 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:5187 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:5189 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:5189 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:518c $1c $02
     SCRIPT_POINTER call_30_4b25                        ;; 30:518e $25 $4b $30
     SCRIPT_POINTER call_30_5194                        ;; 30:5191 $94 $51 $30
@@ -719,7 +719,7 @@ call_30_51dd:
     Op82_Run ObtainHamChatFromC715                     ;; 30:51e2 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:51e6 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:51e8 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:51ea $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:51ea $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:51ed $1c $02
     SCRIPT_POINTER call_30_4b25                        ;; 30:51ef $25 $4b $30
     SCRIPT_POINTER call_30_51f5                        ;; 30:51f2 $f5 $51 $30
@@ -742,7 +742,7 @@ call_30_523e:
     Op82_Run ObtainHamChatFromC715                     ;; 30:5243 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:5247 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:5249 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:524b $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:524b $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:524e $1c $02
     SCRIPT_POINTER call_30_4b25                        ;; 30:5250 $25 $4b $30
     SCRIPT_POINTER call_30_5256                        ;; 30:5253 $56 $52 $30
@@ -791,7 +791,7 @@ call_30_52e5:
     Op82_Run ObtainHamChatFromC715                     ;; 30:52ea $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:52ee $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:52f0 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:52f2 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:52f2 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:52f5 $1c $02
     SCRIPT_POINTER call_30_4b25                        ;; 30:52f7 $25 $4b $30
     SCRIPT_POINTER call_30_52fd                        ;; 30:52fa $fd $52 $30
@@ -1393,7 +1393,7 @@ call_30_629d:
     Op82_Run ObtainHamChatFromC715                     ;; 30:62a2 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:62a6 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:62a8 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:62aa $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:62aa $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:62ad $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:62af $db $60 $30
     SCRIPT_POINTER call_30_62b5                        ;; 30:62b2 $b5 $62 $30
@@ -1407,7 +1407,7 @@ call_30_62bd:
     Op82_Run ObtainHamChatFromC715                     ;; 30:62c2 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:62c6 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:62c8 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:62ca $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:62ca $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:62cd $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:62cf $db $60 $30
     SCRIPT_POINTER call_30_62d5                        ;; 30:62d2 $d5 $62 $30
@@ -1421,7 +1421,7 @@ call_30_62dd:
     Op82_Run ObtainHamChatFromC715                     ;; 30:62e2 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:62e6 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:62e8 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:62ea $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:62ea $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:62ed $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:62ef $db $60 $30
     SCRIPT_POINTER call_30_62f5                        ;; 30:62f2 $f5 $62 $30
@@ -1435,7 +1435,7 @@ call_30_62fd:
     Op82_Run ObtainHamChatFromC715                     ;; 30:6302 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:6306 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:6308 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:630a $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:630a $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:630d $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:630f $db $60 $30
     SCRIPT_POINTER call_30_6315                        ;; 30:6312 $15 $63 $30
@@ -1525,7 +1525,7 @@ call_30_63f7:
     Op82_Run ObtainHamChatFromC715                     ;; 30:63fc $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:6400 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:6402 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:6404 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:6404 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:6407 $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:6409 $db $60 $30
     SCRIPT_POINTER call_30_640f                        ;; 30:640c $0f $64 $30
@@ -1539,7 +1539,7 @@ call_30_6417:
     Op82_Run ObtainHamChatFromC715                     ;; 30:641c $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:6420 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:6422 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:6424 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:6424 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:6427 $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:6429 $db $60 $30
     SCRIPT_POINTER call_30_642f                        ;; 30:642c $2f $64 $30
@@ -1553,7 +1553,7 @@ call_30_6437:
     Op82_Run ObtainHamChatFromC715                     ;; 30:643c $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:6440 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:6442 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:6444 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:6444 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:6447 $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:6449 $db $60 $30
     SCRIPT_POINTER call_30_644f                        ;; 30:644c $4f $64 $30
@@ -1599,7 +1599,7 @@ call_30_64aa:
     Op82_Run ObtainHamChatFromC715                     ;; 30:64af $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:64b3 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:64b5 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:64b7 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:64b7 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:64ba $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:64bc $db $60 $30
     SCRIPT_POINTER call_30_64c2                        ;; 30:64bf $c2 $64 $30
@@ -1655,7 +1655,7 @@ call_30_6545:
     Op82_Run ObtainHamChatFromC715                     ;; 30:654a $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:654e $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:6550 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:6552 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:6552 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:6555 $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:6557 $db $60 $30
     SCRIPT_POINTER call_30_655d                        ;; 30:655a $5d $65 $30
@@ -1688,7 +1688,7 @@ call_30_65a7:
     Op82_Run ObtainHamChatFromC715                     ;; 30:65ac $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:65b0 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:65b2 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:65b4 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:65b4 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:65b7 $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:65b9 $db $60 $30
     SCRIPT_POINTER call_30_65bf                        ;; 30:65bc $bf $65 $30
@@ -1737,7 +1737,7 @@ call_30_6623:
     Op82_Run ObtainHamChatFromC715                     ;; 30:6628 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:662c $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:662e $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:6630 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:6630 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:6633 $1c $02
     SCRIPT_POINTER call_30_60db                        ;; 30:6635 $db $60 $30
     SCRIPT_POINTER call_30_663b                        ;; 30:6638 $3b $66 $30
@@ -2598,7 +2598,7 @@ call_30_70e1:
     Op82_Run ObtainHamChatFromC715                     ;; 30:70e6 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:70ea $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:70ec $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:70ee $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:70ee $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:70f1 $1c $02
     SCRIPT_POINTER call_30_6b8b                        ;; 30:70f3 $8b $6b $30
     SCRIPT_POINTER call_30_70f9                        ;; 30:70f6 $f9 $70 $30
@@ -2623,7 +2623,7 @@ call_30_712a:
     Op82_Run ObtainHamChatFromC715                     ;; 30:712f $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7133 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7135 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7137 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7137 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:713a $1c $02
     SCRIPT_POINTER call_30_6b8b                        ;; 30:713c $8b $6b $30
     SCRIPT_POINTER call_30_7142                        ;; 30:713f $42 $71 $30
@@ -3132,7 +3132,7 @@ call_30_7848:
     Op82_Run ObtainHamChatFromC715                     ;; 30:784d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7851 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7853 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7855 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7855 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7858 $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:785a $45 $76 $30
     SCRIPT_POINTER call_30_7860                        ;; 30:785d $60 $78 $30
@@ -3146,7 +3146,7 @@ call_30_7868:
     Op82_Run ObtainHamChatFromC715                     ;; 30:786d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7871 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7873 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7875 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7875 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7878 $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:787a $45 $76 $30
     SCRIPT_POINTER call_30_7880                        ;; 30:787d $80 $78 $30
@@ -3160,7 +3160,7 @@ call_30_7888:
     Op82_Run ObtainHamChatFromC715                     ;; 30:788d $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7891 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7893 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7895 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7895 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7898 $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:789a $45 $76 $30
     SCRIPT_POINTER call_30_78a0                        ;; 30:789d $a0 $78 $30
@@ -3174,7 +3174,7 @@ call_30_78a8:
     Op82_Run ObtainHamChatFromC715                     ;; 30:78ad $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:78b1 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:78b3 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:78b5 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:78b5 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:78b8 $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:78ba $45 $76 $30
     SCRIPT_POINTER call_30_78c0                        ;; 30:78bd $c0 $78 $30
@@ -3239,7 +3239,7 @@ call_30_795c:
     Op82_Run ObtainHamChatFromC715                     ;; 30:7961 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7965 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7967 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7969 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7969 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:796c $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:796e $45 $76 $30
     SCRIPT_POINTER call_30_7974                        ;; 30:7971 $74 $79 $30
@@ -3253,7 +3253,7 @@ call_30_797c:
     Op82_Run ObtainHamChatFromC715                     ;; 30:7981 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7985 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7987 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7989 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7989 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:798c $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:798e $45 $76 $30
     SCRIPT_POINTER call_30_7994                        ;; 30:7991 $94 $79 $30
@@ -3295,7 +3295,7 @@ call_30_79eb:
     Op82_Run ObtainHamChatFromC715                     ;; 30:79f0 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:79f4 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:79f6 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:79f8 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:79f8 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:79fb $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:79fd $45 $76 $30
     SCRIPT_POINTER call_30_7a03                        ;; 30:7a00 $03 $7a $30
@@ -3336,7 +3336,7 @@ call_30_7a5e:
     Op82_Run ObtainHamChatFromC715                     ;; 30:7a63 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7a67 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7a69 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7a6b $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7a6b $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7a6e $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:7a70 $45 $76 $30
     SCRIPT_POINTER call_30_7a76                        ;; 30:7a73 $76 $7a $30
@@ -3366,7 +3366,7 @@ call_30_7ab3:
     Op82_Run ObtainHamChatFromC715                     ;; 30:7ab8 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7abc $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7abe $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7ac0 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7ac0 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7ac3 $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:7ac5 $45 $76 $30
     SCRIPT_POINTER call_30_7acb                        ;; 30:7ac8 $cb $7a $30
@@ -3389,7 +3389,7 @@ call_30_7afa:
     Op82_Run ObtainHamChatFromC715                     ;; 30:7aff $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7b03 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7b05 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7b07 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7b07 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7b0a $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:7b0c $45 $76 $30
     SCRIPT_POINTER call_30_7b12                        ;; 30:7b0f $12 $7b $30
@@ -3455,7 +3455,7 @@ call_30_7bbe:
     Op82_Run ObtainHamChatFromC715                     ;; 30:7bc3 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7bc7 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7bc9 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7bcb $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7bcb $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7bce $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:7bd0 $45 $76 $30
     SCRIPT_POINTER call_30_7bd6                        ;; 30:7bd3 $d6 $7b $30
@@ -3478,7 +3478,7 @@ call_30_7c05:
     Op82_Run ObtainHamChatFromC715                     ;; 30:7c0a $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7c0e $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7c10 $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7c12 $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7c12 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7c15 $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:7c17 $45 $76 $30
     SCRIPT_POINTER call_30_7c1d                        ;; 30:7c1a $1d $7c $30
@@ -3569,7 +3569,7 @@ call_30_7d51:
     Op82_Run ObtainHamChatFromC715                     ;; 30:7d56 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7d5a $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7d5c $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7d5e $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7d5e $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7d61 $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:7d63 $45 $76 $30
     SCRIPT_POINTER call_30_7d69                        ;; 30:7d66 $69 $7d $30
@@ -3595,7 +3595,7 @@ call_30_7d9f:
     Op82_Run ObtainHamChatFromC715                     ;; 30:7da4 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 30:7da8 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 30:7daa $3e $03
-    Op74_PrepTableJumpIndex_Copy wC65E                 ;; 30:7dac $74 $5e $c6
+    Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 30:7dac $74 $5e $c6
     Op1C_TableJump 2                                   ;; 30:7daf $1c $02
     SCRIPT_POINTER call_30_7645                        ;; 30:7db1 $45 $76 $30
     SCRIPT_POINTER call_30_7db7                        ;; 30:7db4 $b7 $7d $30

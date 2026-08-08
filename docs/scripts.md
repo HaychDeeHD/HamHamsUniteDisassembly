@@ -446,6 +446,8 @@ Takes 4 arg bytes. These have the appearance of being 2 2-byte RAM addresses. Th
 
 Copy byte at given 2 byte address to C53A. Used as an index into a script table (Op 1C).
 
+The most frequent argument given to Op74 is C65E by a good margin (~85% of calls).
+
 <a id="op76"></a>
 ### Op76 
 

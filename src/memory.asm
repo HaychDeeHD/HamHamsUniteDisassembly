@@ -691,7 +691,10 @@ wStoredScriptAddress:
 wC65D:
     ds 1                                               ;; c65d
 
-wC65E:
+; 85% of Op74 calls pull a jumptable index from this address.
+; There are only references other than that:
+;  2 writes in HamChatWheel handler code. Always assign 0, 1, or 2.
+wCommonJumpTableIndexSourceC65E:
     ds 1                                               ;; c65e
 
 wC65F:

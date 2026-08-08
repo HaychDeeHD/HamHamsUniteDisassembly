@@ -2857,7 +2857,7 @@ OpenHamchatWheel_Maybe:
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 01:529e $c3 $39 $0a
 .jr_01_52a1:
     xor  A, A                                          ;; 01:52a1 $af
-    ld   [wC65E], A                                    ;; 01:52a2 $ea $5e $c6
+    ld   [wCommonJumpTableIndexSourceC65E], A          ;; 01:52a2 $ea $5e $c6
     ld   A, [wC390]                                    ;; 01:52a5 $fa $90 $c3
     ld   [wC39C], A                                    ;; 01:52a8 $ea $9c $c3
     ld   A, [wC391]                                    ;; 01:52ab $fa $91 $c3
@@ -2908,7 +2908,7 @@ OpenHamchatWheel_Maybe:
 .jp_01_530a:
     ld   A, $02                                        ;; 01:530a $3e $02
 .jr_01_530c:
-    ld   [wC65E], A                                    ;; 01:530c $ea $5e $c6
+    ld   [wCommonJumpTableIndexSourceC65E], A          ;; 01:530c $ea $5e $c6
     ld   A, [wC38F]                                    ;; 01:530f $fa $8f $c3
     ld   E, A                                          ;; 01:5312 $5f
     ld   D, $00                                        ;; 01:5313 $16 $00
