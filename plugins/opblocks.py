@@ -556,8 +556,8 @@ OPBLOCKS = {
     0x54: makeOpBlockFromArgString(0x54, 'b'),
     0x56: makeOpBlockFromArgString(0x56, 'd,3Rom', "Op56_WriteBitArrayIndex"),
     0x58: makeOpBlockFromArgString(0x58, 'd,b,3Rom', "Op58_WriteBitArrayIndex"),
-    0x5A: makeOpBlockFromArgString(0x5A, 'b'),
-    0x5E: makeOpBlockFromArgString(0x5E, 'b'),
+    0x5A: makeOpBlockFromArgString(0x5A, 'b', "Op5A_PlaySoundEffect"),
+    0x5E: makeOpBlockFromArgString(0x5E, 'b', "Op5E_PlaySong"),
     0x68: Op68Block, # Shared wram bank arg that may not be relevant to both 2ram's
     0x6A: makeOpBlockFromArgString(0x6A, 'b,b,b,b'), # Speculatively 2 2byte Ram addresses, 0000 or FFXX (HRAM).
     0x74: Op74Block, # Need 2 byte Wram Address

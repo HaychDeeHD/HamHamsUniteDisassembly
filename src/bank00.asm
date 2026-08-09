@@ -1222,9 +1222,9 @@ JumpUsingOpTableUsingIndexFromC322:
     dw   Op54                                          ;; 00:09ce pP $2a
     dw   Op56                                          ;; 00:09d0 pP $2b
     dw   Op58                                          ;; 00:09d2 pP $2c
-    dw   Op5A                                          ;; 00:09d4 pP $2d
-    dw   Op5C                                          ;; 00:09d6 ?? $2e
-    dw   Op5E_WriteToCFF9                              ;; 00:09d8 pP $2f
+    dw   Op5A_WriteToCFF0_ifLastBitOfC662              ;; 00:09d4 pP $2d
+    dw   Op5C_WriteToCFF1_ifPenultimateBitOfC662       ;; 00:09d6 ?? $2e
+    dw   Op5E_WriteToCFF9_handler                      ;; 00:09d8 pP $2f
     dw   Op60                                          ;; 00:09da ?? $30
     dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09dc ?? $31
     dw   CallNextScriptInstruction_PrepArgAddr         ;; 00:09de ?? $32
@@ -2000,8 +2000,8 @@ Op82_Execute:
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ea1 $c3 $14 $0a
     db   $3e, $08, $ea, $26, $c3, $c3, $14, $0a        ;; 00:0ea4 ????????
 
-; The fact that this and 5C reference HamJam flags makes me wonder if they're related to the HamChat animations/sounds.
-Op5A:
+; Loads the arg byte into CFF0 if the last bit of C662 is set.
+Op5A_WriteToCFF0_ifLastBitOfC662:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0eac $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0eaf $2a
     ld   B, A                                          ;; 00:0eb0 $47
@@ -2009,13 +2009,14 @@ Op5A:
     and  A, $01                                        ;; 00:0eb4 $e6 $01
     jr   NZ, .end                                      ;; 00:0eb6 $20 $04
     ld   A, B                                          ;; 00:0eb8 $78
-    ld   [wCFF0], A                                    ;; 00:0eb9 $ea $f0 $cf
+    ld   [wSoundEffect1], A                            ;; 00:0eb9 $ea $f0 $cf
 .end:
     ld   A, $01                                        ;; 00:0ebc $3e $01
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ebe $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ec1 $c3 $14 $0a
 
-Op5C:
+; Loads the arg byte into CFF1 if the second to last bit of C662 is set.
+Op5C_WriteToCFF1_ifPenultimateBitOfC662:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0ec4 $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0ec7 $2a
     ld   B, A                                          ;; 00:0ec8 $47
@@ -2023,16 +2024,16 @@ Op5C:
     and  A, $02                                        ;; 00:0ecc $e6 $02
     jr   NZ, .end                                      ;; 00:0ece $20 $04
     ld   A, B                                          ;; 00:0ed0 $78
-    ld   [wCFF1], A                                    ;; 00:0ed1 $ea $f1 $cf
+    ld   [wSoundEffect2], A                            ;; 00:0ed1 $ea $f1 $cf
 .end:
     ld   A, $01                                        ;; 00:0ed4 $3e $01
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ed6 $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ed9 $c3 $14 $0a
 
-Op5E_WriteToCFF9:
+Op5E_WriteToCFF9_handler:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0edc $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0edf $2a
-    ld   [wCFF9], A                                    ;; 00:0ee0 $ea $f9 $cf
+    ld   [wSongToPlay], A                              ;; 00:0ee0 $ea $f9 $cf
     ld   A, $01                                        ;; 00:0ee3 $3e $01
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ee5 $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ee8 $c3 $14 $0a
@@ -2041,7 +2042,7 @@ Op60:
     call LoadValueFromAddressStoredAtC6A0ToAViaHL_AndBankSwitch ;; 00:0eeb $cd $69 $0a
     ld   A, [HL+]                                      ;; 00:0eee $2a
     ld   A, $80                                        ;; 00:0eef $3e $80
-    ld   [wCFF0], A                                    ;; 00:0ef1 $ea $f0 $cf
+    ld   [wSoundEffect1], A                            ;; 00:0ef1 $ea $f0 $cf
     ld   A, $01                                        ;; 00:0ef4 $3e $01
     ld   [wLengthOfPreviousInstructionC326], A         ;; 00:0ef6 $ea $26 $c3
     jp   CallNextScriptInstruction_PrepArgAddr         ;; 00:0ef9 $c3 $14 $0a
@@ -6525,19 +6526,19 @@ jr_00_2bec:
     ld   A, [wHamJamFlagsC662]                         ;; 00:2d98 $fa $62 $c6
     and  A, $02                                        ;; 00:2d9b $e6 $02
     jp   NZ, .jp_00_2cd5                               ;; 00:2d9d $c2 $d5 $2c
-    ld   HL, wCFF1                                     ;; 00:2da0 $21 $f1 $cf
+    ld   HL, wSoundEffect2                             ;; 00:2da0 $21 $f1 $cf
     jr   .jr_00_2dbd                                   ;; 00:2da3 $18 $18
 .data_00_2da5:
     ld   A, [wHamJamFlagsC662]                         ;; 00:2da5 $fa $62 $c6
     and  A, $04                                        ;; 00:2da8 $e6 $04
     jp   NZ, .jp_00_2cd5                               ;; 00:2daa $c2 $d5 $2c
-    ld   HL, wCFF2                                     ;; 00:2dad $21 $f2 $cf
+    ld   HL, wSoundEffect3                             ;; 00:2dad $21 $f2 $cf
     jr   .jr_00_2dbd                                   ;; 00:2db0 $18 $0b
 .data_00_2db2:
     ld   A, [wHamJamFlagsC662]                         ;; 00:2db2 $fa $62 $c6
     and  A, $08                                        ;; 00:2db5 $e6 $08
     jp   NZ, .jp_00_2cd5                               ;; 00:2db7 $c2 $d5 $2c
-    ld   HL, wCFF3                                     ;; 00:2dba $21 $f3 $cf
+    ld   HL, wSoundEffect4                             ;; 00:2dba $21 $f3 $cf
 .jr_00_2dbd:
     ld   A, [DE]                                       ;; 00:2dbd $1a
     ld   [HL], A                                       ;; 00:2dbe $77
@@ -7450,7 +7451,7 @@ data_00_33e7:
     jr   NZ, jr_00_340b                                ;; 00:33ec $20 $1d
     ld   A, [DE]                                       ;; 00:33ee $1a
     inc  DE                                            ;; 00:33ef $13
-    ld   [wCFF2], A                                    ;; 00:33f0 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 00:33f0 $ea $f2 $cf
     call call_00_30d1                                  ;; 00:33f3 $cd $d1 $30
     jp   jp_00_301f                                    ;; 00:33f6 $c3 $1f $30
 
@@ -7460,7 +7461,7 @@ data_00_33f9:
     jr   NZ, jr_00_340b                                ;; 00:33fe $20 $0b
     ld   A, [DE]                                       ;; 00:3400 $1a
     inc  DE                                            ;; 00:3401 $13
-    ld   [wCFF3], A                                    ;; 00:3402 $ea $f3 $cf
+    ld   [wSoundEffect4], A                            ;; 00:3402 $ea $f3 $cf
     call call_00_30d1                                  ;; 00:3405 $cd $d1 $30
     jp   jp_00_301f                                    ;; 00:3408 $c3 $1f $30
 

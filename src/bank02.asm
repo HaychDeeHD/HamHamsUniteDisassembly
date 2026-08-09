@@ -440,7 +440,7 @@ data_02_43cc:
     ret                                                ;; 02:43f7 $c9
 .jr_02_43f8:
     ld   A, $8b                                        ;; 02:43f8 $3e $8b
-    ld   [wCFF2], A                                    ;; 02:43fa $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 02:43fa $ea $f2 $cf
     ld   A, $01                                        ;; 02:43fd $3e $01
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:43ff $ea $3a $c5
     ret                                                ;; 02:4402 $c9
@@ -454,7 +454,7 @@ data_02_43cc:
     sub  A, $08                                        ;; 02:440d $d6 $08
     ld   [wC761], A                                    ;; 02:440f $ea $61 $c7
     ld   A, $84                                        ;; 02:4412 $3e $84
-    ld   [wCFF2], A                                    ;; 02:4414 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 02:4414 $ea $f2 $cf
     ld   A, [wC75A]                                    ;; 02:4417 $fa $5a $c7
     dec  A                                             ;; 02:441a $3d
     ld   [wC75A], A                                    ;; 02:441b $ea $5a $c7
@@ -470,7 +470,7 @@ data_02_43cc:
     ret  Z                                             ;; 02:4432 $c8
     ld   [wC761], A                                    ;; 02:4433 $ea $61 $c7
     ld   A, $84                                        ;; 02:4436 $3e $84
-    ld   [wCFF2], A                                    ;; 02:4438 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 02:4438 $ea $f2 $cf
     ld   A, [wC75A]                                    ;; 02:443b $fa $5a $c7
     inc  A                                             ;; 02:443e $3c
     ld   [wC75A], A                                    ;; 02:443f $ea $5a $c7
@@ -488,7 +488,7 @@ data_02_43cc:
     dec  A                                             ;; 02:4457 $3d
     ld   [wC761], A                                    ;; 02:4458 $ea $61 $c7
     ld   A, $84                                        ;; 02:445b $3e $84
-    ld   [wCFF2], A                                    ;; 02:445d $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 02:445d $ea $f2 $cf
     jr   .jp_02_447c                                   ;; 02:4460 $18 $1a
 .jp_02_4462:
     ld   A, [wC761]                                    ;; 02:4462 $fa $61 $c7
@@ -501,7 +501,7 @@ data_02_43cc:
     ret  Z                                             ;; 02:4471 $c8
     ld   [wC761], A                                    ;; 02:4472 $ea $61 $c7
     ld   A, $84                                        ;; 02:4475 $3e $84
-    ld   [wCFF2], A                                    ;; 02:4477 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 02:4477 $ea $f2 $cf
     jr   .jp_02_447c                                   ;; 02:447a $18 $00
 .jp_02_447c:
     call call_02_45b1                                  ;; 02:447c $cd $b1 $45
@@ -2524,7 +2524,7 @@ data_02_621f:
     ld   HL, w1_D23C                                   ;; 02:62a3 $21 $3c $d2
     ld   [HL], C                                       ;; 02:62a6 $71
     ld   A, $84                                        ;; 02:62a7 $3e $84
-    ld   [wCFF2], A                                    ;; 02:62a9 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 02:62a9 $ea $f2 $cf
     ld   A, $04                                        ;; 02:62ac $3e $04
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:62ae $ea $3a $c5
     jp   .jp_02_6243                                   ;; 02:62b1 $c3 $43 $62
@@ -2585,7 +2585,7 @@ data_02_62bb:
     ld   HL, w1_D272                                   ;; 02:6317 $21 $72 $d2
     ld   [HL], C                                       ;; 02:631a $71
     ld   A, $84                                        ;; 02:631b $3e $84
-    ld   [wCFF2], A                                    ;; 02:631d $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 02:631d $ea $f2 $cf
     jp   .jp_02_62d7                                   ;; 02:6320 $c3 $d7 $62
 .data_02_6323:
     db   $16, $58                                      ;; 02:6323 .?
@@ -4583,7 +4583,7 @@ data_02_796d:
     inc  A                                             ;; 02:798f $3c
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:7990 $ea $3a $c5
     ld   A, $88                                        ;; 02:7993 $3e $88
-    ld   [wCFF2], A                                    ;; 02:7995 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 02:7995 $ea $f2 $cf
     jr   .jr_02_79aa                                   ;; 02:7998 $18 $10
 .jr_02_799a:
     ld   A, $51                                        ;; 02:799a $3e $51
@@ -4593,7 +4593,7 @@ data_02_796d:
     xor  A, A                                          ;; 02:79a1 $af
     ld   [wOp1CScriptTableIndexC53A], A                ;; 02:79a2 $ea $3a $c5
     ld   A, $8e                                        ;; 02:79a5 $3e $8e
-    ld   [wCFF2], A                                    ;; 02:79a7 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 02:79a7 $ea $f2 $cf
 .jr_02_79aa:
     pop  AF                                            ;; 02:79aa $f1
     ld_long_store rSVBK, A                             ;; 02:79ab $ea $70 $ff

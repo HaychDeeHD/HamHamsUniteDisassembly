@@ -470,7 +470,7 @@ call_34_478e:
     Op44_Unknown $18, $00                              ;; 34:47c6 $44 $18 $00
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, data_09_7bec ;; 34:47c9 $4c $1e $01 $04 $00 $00 $00 $00 $ec $7b $09
     Op44_Unknown $18, $00                              ;; 34:47d4 $44 $18 $00
-    Op5E_Unknown $80                                   ;; 34:47d7 $5e $80
+    Op5E_PlaySong $80                                  ;; 34:47d7 $5e $80
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_10_4c83 ;; 34:47d9 $4c $16 $08 $04 $00 $00 $00 $00 $83 $4c $10
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, data_09_759e ;; 34:47e4 $4c $1e $01 $04 $00 $00 $00 $00 $9e $75 $09
 
@@ -496,7 +496,7 @@ call_34_4819:
     Op44_Unknown $18, $00                              ;; 34:484b $44 $18 $00
     Op4C_Unknown $22, $01, $04, $00, $00, $00, $00, data_14_7955 ;; 34:484e $4c $22 $01 $04 $00 $00 $00 $00 $55 $79 $14
     Op44_Unknown $18, $00                              ;; 34:4859 $44 $18 $00
-    Op5E_Unknown $80                                   ;; 34:485c $5e $80
+    Op5E_PlaySong $80                                  ;; 34:485c $5e $80
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_10_4c83 ;; 34:485e $4c $16 $08 $04 $00 $00 $00 $00 $83 $4c $10
     Op4C_Unknown $22, $01, $04, $00, $00, $00, $00, data_14_7176 ;; 34:4869 $4c $22 $01 $04 $00 $00 $00 $00 $76 $71 $14
 
@@ -508,8 +508,8 @@ call_34_4874:
     Op4C_Unknown $22, $01, $04, $00, $00, $00, $00, data_14_78f3 ;; 34:4886 $4c $22 $01 $04 $00 $00 $00 $00 $f3 $78 $14
     Op4C_Unknown $16, $01, $04, $00, $00, $00, $00, data_10_4950 ;; 34:4891 $4c $16 $01 $04 $00 $00 $00 $00 $50 $49 $10
     Op44_Unknown $10, $00                              ;; 34:489c $44 $10 $00
-    Op5E_Unknown $80                                   ;; 34:489f $5e $80
-    Op5A_Unknown $90                                   ;; 34:48a1 $5a $90
+    Op5E_PlaySong $80                                  ;; 34:489f $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 34:48a1 $5a $90
     Op1E_Call call_36_7e94                             ;; 34:48a3 $1e $94 $7e $36
     Op14_BranchWithHamChatWheelRules 1, useIfHave_139_7586 ;; 34:48a7 $14 $01 $86 $75
     SCRIPT_POINTER call_34_48b8                        ;; 34:48ab $b8 $48 $34
@@ -844,8 +844,8 @@ call_34_4c80:
 call_34_4c8d:
     SCRIPT_RETURN_4A                                   ;; 34:4c8d $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_34_4c8d ;; 34:4c8e $3e $16 $1b $5e $10 $8d $4c $34
-    Op5E_Unknown $80                                   ;; 34:4c96 $5e $80
-    Op5A_Unknown $90                                   ;; 34:4c98 $5a $90
+    Op5E_PlaySong $80                                  ;; 34:4c96 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 34:4c98 $5a $90
     Op1E_Call call_3b_7882                             ;; 34:4c9a $1e $82 $78 $3b
     Op54_Unknown $00                                   ;; 34:4c9e $54 $00
 
@@ -2073,7 +2073,7 @@ call_34_5c2e:
     SCRIPT_POINTER call_34_5c3b                        ;; 34:5c32 $3b $5c $34
     Op16_SubOps 1                                      ;; 34:5c35 $16 $01
     SubOp_SetFlag 173 ; Bit 5 of wC92D                 ;; 34:5c37 $3e $ad
-    Op5A_Unknown $a3                                   ;; 34:5c39 $5a $a3
+    Op5A_PlaySoundEffect $a3                           ;; 34:5c39 $5a $a3
 
 call_34_5c3b:
     Op1E_Call call_33_4d29                             ;; 34:5c3b $1e $29 $4d $33

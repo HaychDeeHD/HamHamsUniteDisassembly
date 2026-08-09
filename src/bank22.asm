@@ -766,8 +766,8 @@ call_22_5973:
 call_22_5980:
     SCRIPT_RETURN_4A                                   ;; 22:5980 $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_22_5980 ;; 22:5981 $3e $16 $1b $5e $10 $80 $59 $22
-    Op5E_Unknown $80                                   ;; 22:5989 $5e $80
-    Op5A_Unknown $90                                   ;; 22:598b $5a $90
+    Op5E_PlaySong $80                                  ;; 22:5989 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 22:598b $5a $90
     Op1E_Call call_3c_544f                             ;; 22:598d $1e $4f $54 $3c
     Op54_Unknown $00                                   ;; 22:5991 $54 $00
 
@@ -2614,8 +2614,8 @@ call_22_7222:
 call_22_722f:
     SCRIPT_RETURN_4A                                   ;; 22:722f $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_22_722f ;; 22:7230 $3e $16 $1b $5e $10 $2f $72 $22
-    Op5E_Unknown $80                                   ;; 22:7238 $5e $80
-    Op5A_Unknown $90                                   ;; 22:723a $5a $90
+    Op5E_PlaySong $80                                  ;; 22:7238 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 22:723a $5a $90
     Op1E_Call call_3c_544f                             ;; 22:723c $1e $4f $54 $3c
     Op54_Unknown $00                                   ;; 22:7240 $54 $00
 

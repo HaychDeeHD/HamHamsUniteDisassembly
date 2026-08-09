@@ -23,7 +23,7 @@ call_35_4000:
     Op32_Graphics data_6c_5e64, w7_D000                ;; 35:402f $32 $64 $5e $6c $00 $d0 $07
     Op34_Graphics data_78_4111, w5_D800, $14           ;; 35:4036 $34 $11 $41 $78 $00 $d8 $05 $14
     Op34_Graphics data_7c_6eb1, w7_D800, $14           ;; 35:403e $34 $b1 $6e $7c $00 $d8 $07 $14
-    Op5A_Unknown $82                                   ;; 35:4046 $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:4046 $5a $82
     Op74_PrepTableJumpIndex_Copy wC3E8                 ;; 35:4048 $74 $e8 $c3
     Op1C_TableJump 3                                   ;; 35:404b $1c $03
     SCRIPT_POINTER call_35_41b8                        ;; 35:404d $b8 $41 $35
@@ -44,7 +44,7 @@ call_35_4000:
     Op1E_Call call_35_45a3                             ;; 35:40a0 $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:40a4 $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:40a6 $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:40a9 $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:40a9 $5a $82
     Op34_Graphics data_7f_58f5, w5_D84A, $09           ;; 35:40ab $34 $f5 $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_66d0, w7_D84A, $09           ;; 35:40b3 $34 $d0 $66 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_59cd, w5_D908, $0a           ;; 35:40bb $34 $cd $59 $7f $08 $d9 $05 $0a
@@ -60,7 +60,7 @@ call_35_4000:
     Op1E_Call call_35_45a3                             ;; 35:40f5 $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:40f9 $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:40fb $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:40fe $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:40fe $5a $82
     Op34_Graphics data_7f_58e1, w5_D84A, $09           ;; 35:4100 $34 $e1 $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_60ac, w7_D84A, $09           ;; 35:4108 $34 $ac $60 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_5395, w5_D908, $0a           ;; 35:4110 $34 $95 $53 $7f $08 $d9 $05 $0a
@@ -76,7 +76,7 @@ call_35_4000:
     Op1E_Call call_35_45a3                             ;; 35:414a $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:414e $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:4150 $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:4153 $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:4153 $5a $82
     Op34_Graphics data_7f_58cd, w5_D84A, $09           ;; 35:4155 $34 $cd $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_694c, w7_D84A, $09           ;; 35:415d $34 $4c $69 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_537f, w5_D908, $0a           ;; 35:4165 $34 $7f $53 $7f $08 $d9 $05 $0a
@@ -112,7 +112,7 @@ call_35_41b8:
     Op1E_Call call_35_45a3                             ;; 35:4202 $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:4206 $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:4208 $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:420b $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:420b $5a $82
     Op34_Graphics data_7f_58a5, w5_D84A, $09           ;; 35:420d $34 $a5 $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_6936, w7_D84A, $09           ;; 35:4215 $34 $36 $69 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_5353, w5_D908, $0a           ;; 35:421d $34 $53 $53 $7f $08 $d9 $05 $0a
@@ -128,7 +128,7 @@ call_35_41b8:
     Op1E_Call call_35_45a3                             ;; 35:4257 $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:425b $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:425d $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:4260 $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:4260 $5a $82
     Op34_Graphics data_7f_5891, w5_D84A, $09           ;; 35:4262 $34 $91 $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_66c4, w7_D84A, $09           ;; 35:426a $34 $c4 $66 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_533d, w5_D908, $0a           ;; 35:4272 $34 $3d $53 $7f $08 $d9 $05 $0a
@@ -144,7 +144,7 @@ call_35_41b8:
     Op1E_Call call_35_45a3                             ;; 35:42ac $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:42b0 $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:42b2 $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:42b5 $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:42b5 $5a $82
     Op34_Graphics data_7f_587d, w5_D84A, $09           ;; 35:42b7 $34 $7d $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_648d, w7_D84A, $09           ;; 35:42bf $34 $8d $64 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_5327, w5_D908, $0a           ;; 35:42c7 $34 $27 $53 $7f $08 $d9 $05 $0a
@@ -179,7 +179,7 @@ call_35_4313:
     Op1E_Call call_35_45a3                             ;; 35:435d $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:4361 $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:4363 $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:4366 $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:4366 $5a $82
     Op34_Graphics data_7f_5841, w5_D84A, $09           ;; 35:4368 $34 $41 $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_609d, w7_D84A, $09           ;; 35:4370 $34 $9d $60 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_52e5, w5_D908, $0a           ;; 35:4378 $34 $e5 $52 $7f $08 $d9 $05 $0a
@@ -195,7 +195,7 @@ call_35_4313:
     Op1E_Call call_35_45a3                             ;; 35:43b2 $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:43b6 $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:43b8 $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:43bb $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:43bb $5a $82
     Op34_Graphics data_7f_5855, w5_D84A, $09           ;; 35:43bd $34 $55 $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_66b8, w7_D84A, $09           ;; 35:43c5 $34 $b8 $66 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_52fb, w5_D908, $0a           ;; 35:43cd $34 $fb $52 $7f $08 $d9 $05 $0a
@@ -230,7 +230,7 @@ call_35_4419:
     Op1E_Call call_35_45a3                             ;; 35:4463 $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:4467 $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:4469 $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:446c $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:446c $5a $82
     Op34_Graphics data_7f_5819, w5_D84A, $09           ;; 35:446e $34 $19 $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_66ac, w7_D84A, $09           ;; 35:4476 $34 $ac $66 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_52b9, w5_D908, $0a           ;; 35:447e $34 $b9 $52 $7f $08 $d9 $05 $0a
@@ -246,7 +246,7 @@ call_35_4419:
     Op1E_Call call_35_45a3                             ;; 35:44b8 $1e $a3 $45 $35
     Op1C_TableJump 1                                   ;; 35:44bc $1c $01
     SCRIPT_POINTER call_35_452d                        ;; 35:44be $2d $45 $35
-    Op5A_Unknown $82                                   ;; 35:44c1 $5a $82
+    Op5A_PlaySoundEffect $82                           ;; 35:44c1 $5a $82
     Op34_Graphics data_7f_5805, w5_D84A, $09           ;; 35:44c3 $34 $05 $58 $7f $4a $d8 $05 $09
     Op34_Graphics data_7f_66a0, w7_D84A, $09           ;; 35:44cb $34 $a0 $66 $7f $4a $d8 $07 $09
     Op34_Graphics data_7f_52a3, w5_D908, $0a           ;; 35:44d3 $34 $a3 $52 $7f $08 $d9 $05 $0a
@@ -290,7 +290,7 @@ call_35_4537:
     Op34_Graphics data_7f_792d, w7_D800, $14           ;; 35:4557 $34 $2d $79 $7f $00 $d8 $07 $14
     Op36_Graphics data_7f_7055, w1_DDD2                ;; 35:455f $36 $55 $70 $7f $d2 $dd $01
     Op6A_Unknown $00, $00, $00, $00                    ;; 35:4566 $6a $00 $00 $00 $00
-    Op5E_Unknown $80                                   ;; 35:456b $5e $80
+    Op5E_PlaySong $80                                  ;; 35:456b $5e $80
     Op44_Unknown $78, $00                              ;; 35:456d $44 $78 $00
     Op1E_Call call_04_5b22                             ;; 35:4570 $1e $22 $5b $04
     Op44_Unknown $09, $00                              ;; 35:4574 $44 $09 $00
@@ -1597,14 +1597,14 @@ call_35_5602:
 
 call_35_5625:
     Op4C_Unknown $1c, $01, $04, $20, $00, $a8, $00, data_1a_5e47 ;; 35:5625 $4c $1c $01 $04 $20 $00 $a8 $00 $47 $5e $1a
-    Op5A_Unknown $cb                                   ;; 35:5630 $5a $cb
+    Op5A_PlaySoundEffect $cb                           ;; 35:5630 $5a $cb
     Op1E_Call call_1d_6e35                             ;; 35:5632 $1e $35 $6e $1d
     ;;Coo Coo!<E0>
     Op04_Unknown_Text data_3a_5fa2                     ;; 35:5636 $04 $a2 $5f $3a
     Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, data_10_4261 ;; 35:563a $4c $16 $04 $ff $00 $00 $00 $00 $61 $42 $10
     ;;If you make a girl<E2>cry,<E5> then you must<E2>apologize<end>
     Op04_Unknown_Text data_3a_5fab                     ;; 35:5645 $04 $ab $5f $3a
-    Op5A_Unknown $cb                                   ;; 35:5649 $5a $cb
+    Op5A_PlaySoundEffect $cb                           ;; 35:5649 $5a $cb
     ;; like<E2>crazy!<E0>
     Op06_Unknown_Text data_3a_5fdc                     ;; 35:564b $06 $dc $5f $3a
     Op92_Unknown $00                                   ;; 35:564f $92 $00
@@ -1620,7 +1620,7 @@ call_35_5660:
 
 call_35_566e:
     Op4C_Unknown $1c, $01, $04, $20, $00, $a8, $00, data_1a_5e47 ;; 35:566e $4c $1c $01 $04 $20 $00 $a8 $00 $47 $5e $1a
-    Op5A_Unknown $cb                                   ;; 35:5679 $5a $cb
+    Op5A_PlaySoundEffect $cb                           ;; 35:5679 $5a $cb
     Op1E_Call call_1d_6e35                             ;; 35:567b $1e $35 $6e $1d
     ;;Coo Coo!<E0>
     Op04_Unknown_Text data_3a_5ffc                     ;; 35:567f $04 $fc $5f $3a
@@ -1637,7 +1637,7 @@ call_35_56a3:
 call_35_56ae:
     SCRIPT_RETURN_4A                                   ;; 35:56ae $4a
     Op3E_Compare_Branch 28, data_1a_5e5a, call_35_56ae ;; 35:56af $3e $1c $5a $5e $1a $ae $56 $35
-    Op5A_Unknown $cb                                   ;; 35:56b7 $5a $cb
+    Op5A_PlaySoundEffect $cb                           ;; 35:56b7 $5a $cb
     Op1E_Call call_1d_6e35                             ;; 35:56b9 $1e $35 $6e $1d
     ;;Coo Coo!<E0>
     Op04_Unknown_Text data_3a_6047                     ;; 35:56bd $04 $47 $60 $3a
@@ -3033,7 +3033,7 @@ call_35_7280:
     Op14_BranchWithHamChatWheelRules 1, useIfDontHave_392_6f01 ;; 35:728e $14 $01 $01 $6f
     SCRIPT_POINTER call_35_72a2                        ;; 35:7292 $a2 $72 $35
     Op42_Unknown_StoreValue 8, $00, data_04_6150       ;; 35:7295 $42 $08 $00 $50 $61 $04
-    Op5A_Unknown $07                                   ;; 35:729b $5a $07
+    Op5A_PlaySoundEffect $07                           ;; 35:729b $5a $07
     SCRIPT_RETURN_4A                                   ;; 35:729d $4a
     Op16_SubOps 1                                      ;; 35:729e $16 $01
     SubOp_ClearFlag 392 ; Bit 0 of wC949               ;; 35:72a0 $5f $88
@@ -3063,7 +3063,7 @@ call_35_72d5:
     Op14_BranchWithHamChatWheelRules 1, useIfDontHave_392_6f01 ;; 35:72e0 $14 $01 $01 $6f
     SCRIPT_POINTER call_35_72f4                        ;; 35:72e4 $f4 $72 $35
     Op42_Unknown_StoreValue 8, $00, data_04_6150       ;; 35:72e7 $42 $08 $00 $50 $61 $04
-    Op5A_Unknown $07                                   ;; 35:72ed $5a $07
+    Op5A_PlaySoundEffect $07                           ;; 35:72ed $5a $07
     SCRIPT_RETURN_4A                                   ;; 35:72ef $4a
     Op16_SubOps 1                                      ;; 35:72f0 $16 $01
     SubOp_ClearFlag 392 ; Bit 0 of wC949               ;; 35:72f2 $5f $88
@@ -3088,7 +3088,7 @@ call_35_7319:
     Op14_BranchWithHamChatWheelRules 1, useIfDontHave_392_6f01 ;; 35:7324 $14 $01 $01 $6f
     SCRIPT_POINTER call_35_7338                        ;; 35:7328 $38 $73 $35
     Op42_Unknown_StoreValue 8, $00, data_04_6150       ;; 35:732b $42 $08 $00 $50 $61 $04
-    Op5A_Unknown $07                                   ;; 35:7331 $5a $07
+    Op5A_PlaySoundEffect $07                           ;; 35:7331 $5a $07
     SCRIPT_RETURN_4A                                   ;; 35:7333 $4a
     Op16_SubOps 1                                      ;; 35:7334 $16 $01
     SubOp_ClearFlag 392 ; Bit 0 of wC949               ;; 35:7336 $5f $88

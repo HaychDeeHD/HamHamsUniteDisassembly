@@ -844,8 +844,8 @@ call_38_4a54:
 call_38_4a61:
     SCRIPT_RETURN_4A                                   ;; 38:4a61 $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_38_4a61 ;; 38:4a62 $3e $16 $1b $5e $10 $61 $4a $38
-    Op5E_Unknown $80                                   ;; 38:4a6a $5e $80
-    Op5A_Unknown $90                                   ;; 38:4a6c $5a $90
+    Op5E_PlaySong $80                                  ;; 38:4a6a $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 38:4a6c $5a $90
     Op1E_Call call_3c_4532                             ;; 38:4a6e $1e $32 $45 $3c
     Op50_WriteByte wCA92, $00, $05                     ;; 38:4a72 $50 $92 $ca $00 $05
     Op54_Unknown $01                                   ;; 38:4a77 $54 $01
@@ -1186,7 +1186,7 @@ call_38_4ec9:
 call_38_4eee:
     SCRIPT_RETURN_4A                                   ;; 38:4eee $4a
     Op3E_Compare_Branch 14, data_13_5bec, call_38_4eee ;; 38:4eef $3e $0e $ec $5b $13 $ee $4e $38
-    Op5A_Unknown $b4                                   ;; 38:4ef7 $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 38:4ef7 $5a $b4
     Op36_Graphics data_04_5e1c, w1_DDAA                ;; 38:4ef9 $36 $1c $5e $04 $aa $dd $01
     Op36_Graphics data_04_5e26, w1_DDDA                ;; 38:4f00 $36 $26 $5e $04 $da $dd $01
     Op44_Unknown $04, $00                              ;; 38:4f07 $44 $04 $00
@@ -1710,7 +1710,7 @@ call_38_59d8:
     Op16_SubOps 1                                      ;; 38:59e1 $16 $01
     SubOp_SetByte wC72A, $00                           ;; 38:59e3 $7e $12 $00
     Op1E_Call call_1d_6d8c                             ;; 38:59e6 $1e $8c $6d $1d
-    Op5A_Unknown $09                                   ;; 38:59ea $5a $09
+    Op5A_PlaySoundEffect $09                           ;; 38:59ea $5a $09
     ;;<EA>Hamha<E8>!<E3><end>
     Op04_Unknown_Text data_3c_433c                     ;; 38:59ec $04 $3c $43 $3c
     Op44_Unknown $3c, $00                              ;; 38:59f0 $44 $3c $00
@@ -3568,19 +3568,19 @@ call_38_6ed6:
     ;;Hey, <end>
     Op04_Unknown_Text data_3c_6617                     ;; 38:6ef0 $04 $17 $66 $3c
     Op1E_Call call_38_6fd2                             ;; 38:6ef4 $1e $d2 $6f $38
-    Op5A_Unknown $bf                                   ;; 38:6ef8 $5a $bf
+    Op5A_PlaySoundEffect $bf                           ;; 38:6ef8 $5a $bf
     ;;<E2>Need a ride, caw?<E3>You sure get <E2>around for a tiny<E2>fellow, don't you?<E3><end>
     Op06_Unknown_Text data_3c_661d                     ;; 38:6efa $06 $1d $66 $3c
-    Op5A_Unknown $bf                                   ;; 38:6efe $5a $bf
+    Op5A_PlaySoundEffect $bf                           ;; 38:6efe $5a $bf
     ;;I'm your <end>
     Op06_Unknown_Text data_3c_6664                     ;; 38:6f00 $06 $64 $66 $3c
     Op1E_Call call_38_6fd2                             ;; 38:6f04 $1e $d2 $6f $38
     ;;,<E3>so let me take you<E4>where you want to<E4>go.<E3><end>
     Op06_Unknown_Text data_3c_666e                     ;; 38:6f08 $06 $6e $66 $3c
-    Op5A_Unknown $bf                                   ;; 38:6f0c $5a $bf
+    Op5A_PlaySoundEffect $bf                           ;; 38:6f0c $5a $bf
     ;;Need a ride, caw?<E0>
     Op06_Unknown_Text data_3c_669a                     ;; 38:6f0e $06 $9a $66 $3c
-    Op5A_Unknown $bf                                   ;; 38:6f12 $5a $bf
+    Op5A_PlaySoundEffect $bf                           ;; 38:6f12 $5a $bf
     ;;Where to, caw?<E0>
     Op04_Unknown_Text data_3c_66ac                     ;; 38:6f14 $04 $ac $66 $3c
     Op92_Unknown $00                                   ;; 38:6f18 $92 $00
@@ -3607,15 +3607,15 @@ call_38_6f4c:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 38:6f50 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
     Op16_SubOps 1                                      ;; 38:6f5b $16 $01
     SubOp_SetFlag 168 ; Bit 0 of wC92D                 ;; 38:6f5d $3e $a8
-    Op5A_Unknown $bf                                   ;; 38:6f5f $5a $bf
+    Op5A_PlaySoundEffect $bf                           ;; 38:6f5f $5a $bf
     Op1E_Call call_1d_6e4f                             ;; 38:6f61 $1e $4f $6e $1d
     ;;Let's go, caw!<E0>
     Op04_Unknown_Text data_3c_66bb                     ;; 38:6f65 $04 $bb $66 $3c
     Op92_Unknown $00                                   ;; 38:6f69 $92 $00
     Op4C_Unknown $38, $01, $04, $00, $00, $00, $00, data_1b_73b9 ;; 38:6f6b $4c $38 $01 $04 $00 $00 $00 $00 $b9 $73 $1b
     Op44_Unknown $08, $00                              ;; 38:6f76 $44 $08 $00
-    Op5E_Unknown $80                                   ;; 38:6f79 $5e $80
-    Op5A_Unknown $90                                   ;; 38:6f7b $5a $90
+    Op5E_PlaySong $80                                  ;; 38:6f79 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 38:6f7b $5a $90
     Op1E_Call call_3c_4e25                             ;; 38:6f7d $1e $25 $4e $3c
     Op54_Unknown $00                                   ;; 38:6f81 $54 $00
 

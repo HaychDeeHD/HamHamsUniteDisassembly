@@ -2007,8 +2007,8 @@ call_20_5af2:
 call_20_5aff:
     SCRIPT_RETURN_4A                                   ;; 20:5aff $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_20_5aff ;; 20:5b00 $3e $16 $1b $5e $10 $ff $5a $20
-    Op5E_Unknown $80                                   ;; 20:5b08 $5e $80
-    Op5A_Unknown $90                                   ;; 20:5b0a $5a $90
+    Op5E_PlaySong $80                                  ;; 20:5b08 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 20:5b0a $5a $90
     Op1E_Call call_36_7e94                             ;; 20:5b0c $1e $94 $7e $36
     Op54_Unknown $00                                   ;; 20:5b10 $54 $00
 
@@ -4185,7 +4185,7 @@ call_20_768b:
     Op1E_Call call_20_7d05                             ;; 20:768b $1e $05 $7d $20
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, data_13_51a8 ;; 20:768f $4c $1e $01 $04 $00 $00 $00 $00 $a8 $51 $13
     Op4C_Unknown $1c, $01, $04, $00, $00, $00, $00, data_13_51f0 ;; 20:769a $4c $1c $01 $04 $00 $00 $00 $00 $f0 $51 $13
-    Op5A_Unknown $c2                                   ;; 20:76a5 $5a $c2
+    Op5A_PlaySoundEffect $c2                           ;; 20:76a5 $5a $c2
     Op1E_Call call_1d_6bec                             ;; 20:76a7 $1e $ec $6b $1d
     ;;Ugh<...> <end>
     Op04_Unknown_Text data_39_5cf3                     ;; 20:76ab $04 $f3 $5c $39
@@ -4204,7 +4204,7 @@ call_20_76d1:
     Op1E_Call call_20_7d05                             ;; 20:76d1 $1e $05 $7d $20
     Op4C_Unknown $1e, $01, $04, $00, $00, $00, $00, data_13_51a8 ;; 20:76d5 $4c $1e $01 $04 $00 $00 $00 $00 $a8 $51 $13
     Op4C_Unknown $1c, $01, $04, $00, $00, $00, $00, data_13_51f0 ;; 20:76e0 $4c $1c $01 $04 $00 $00 $00 $00 $f0 $51 $13
-    Op5A_Unknown $c2                                   ;; 20:76eb $5a $c2
+    Op5A_PlaySoundEffect $c2                           ;; 20:76eb $5a $c2
     Op1E_Call call_1d_6bec                             ;; 20:76ed $1e $ec $6b $1d
     ;;Burp!<end>
     Op04_Unknown_Text data_39_5d0b                     ;; 20:76f1 $04 $0b $5d $39

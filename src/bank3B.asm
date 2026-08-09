@@ -1808,7 +1808,7 @@ call_3b_6170:
     Op18_Jump call_3b_6198                             ;; 3b:6192 $18 $98 $61 $3b
 
 call_3b_6196:
-    Op5A_Unknown $83                                   ;; 3b:6196 $5a $83
+    Op5A_PlaySoundEffect $83                           ;; 3b:6196 $5a $83
 
 call_3b_6198:
     Op42_Unknown_StoreValue 4, $01, data_19_73cb       ;; 3b:6198 $42 $04 $01 $cb $73 $19
@@ -1824,7 +1824,7 @@ call_3b_61b8:
     Op18_Jump call_3b_61e0                             ;; 3b:61da $18 $e0 $61 $3b
 
 call_3b_61de:
-    Op5A_Unknown $83                                   ;; 3b:61de $5a $83
+    Op5A_PlaySoundEffect $83                           ;; 3b:61de $5a $83
 
 call_3b_61e0:
     Op42_Unknown_StoreValue 4, $01, data_19_73cb       ;; 3b:61e0 $42 $04 $01 $cb $73 $19
@@ -1840,7 +1840,7 @@ call_3b_6200:
     Op18_Jump call_3b_6228                             ;; 3b:6222 $18 $28 $62 $3b
 
 call_3b_6226:
-    Op5A_Unknown $83                                   ;; 3b:6226 $5a $83
+    Op5A_PlaySoundEffect $83                           ;; 3b:6226 $5a $83
 
 call_3b_6228:
     Op42_Unknown_StoreValue 4, $01, data_19_73df       ;; 3b:6228 $42 $04 $01 $df $73 $19
@@ -3364,7 +3364,7 @@ call_3b_787e:
     Op1A_Unknown $07                                   ;; 3b:787e $1a $07
 
 call_3b_7880:
-    Op5A_Unknown $a4                                   ;; 3b:7880 $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 3b:7880 $5a $a4
 
 call_3b_7882:
     Op1E_Call call_04_5b22                             ;; 3b:7882 $1e $22 $5b $04

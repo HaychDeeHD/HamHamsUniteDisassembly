@@ -303,8 +303,8 @@ call_3a_433a:
     Op1A_Unknown $09                                   ;; 3a:4376 $1a $09
 
 call_3a_4378:
-    Op5E_Unknown $80                                   ;; 3a:4378 $5e $80
-    Op5A_Unknown $90                                   ;; 3a:437a $5a $90
+    Op5E_PlaySong $80                                  ;; 3a:4378 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 3a:437a $5a $90
     Op1E_Call call_3c_4e25                             ;; 3a:437c $1e $25 $4e $3c
     Op54_Unknown $00                                   ;; 3a:4380 $54 $00
 
@@ -1338,7 +1338,7 @@ call_3a_6280:
     SCRIPT_RETURN_20                                   ;; 3a:6280 $20
 
 call_3a_6281:
-    Op5A_Unknown $a4                                   ;; 3a:6281 $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 3a:6281 $5a $a4
 
 call_3a_6283:
     Op1E_Call call_04_5b76                             ;; 3a:6283 $1e $76 $5b $04

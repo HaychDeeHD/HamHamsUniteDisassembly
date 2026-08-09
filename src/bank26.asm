@@ -1579,7 +1579,7 @@ call_26_5486:
     Op18_Jump call_26_6185                             ;; 26:5486 $18 $85 $61 $26
 
 call_26_548a:
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:548a $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:548a $50 $f2 $cf $00 $84
     Op18_Jump call_26_546c                             ;; 26:548f $18 $6c $54 $26
 
 call_26_5493:
@@ -1596,7 +1596,7 @@ call_26_54af:
     Op18_Jump call_26_546c                             ;; 26:54af $18 $6c $54 $26
 
 call_26_54b3:
-    Op5A_Unknown $83                                   ;; 26:54b3 $5a $83
+    Op5A_PlaySoundEffect $83                           ;; 26:54b3 $5a $83
     Op1E_Call call_04_5b22                             ;; 26:54b5 $1e $22 $5b $04
     Op44_Unknown $0a, $00                              ;; 26:54b9 $44 $0a $00
     Op18_Jump call_26_54d3                             ;; 26:54bc $18 $d3 $54 $26
@@ -1704,7 +1704,7 @@ call_26_5627:
     Op82_Run data_02_7aa9                              ;; 26:5659 $82 $a9 $7a $02
     Op1C_TableJump 1                                   ;; 26:565d $1c $01
     SCRIPT_POINTER call_26_56eb                        ;; 26:565f $eb $56 $26
-    Op5A_Unknown $a2                                   ;; 26:5662 $5a $a2
+    Op5A_PlaySoundEffect $a2                           ;; 26:5662 $5a $a2
     Op4C_Unknown $1e, $00, $04, $00, $00, $00, $00, zero_pointer ;; 26:5664 $4c $1e $00 $04 $00 $00 $00 $00 $00 $00 $00
     Op82_Run data_02_76de                              ;; 26:566f $82 $de $76 $02
     SCRIPT_RETURN_4A                                   ;; 26:5673 $4a
@@ -1770,7 +1770,7 @@ call_26_5715:
     Op18_Jump call_26_5715                             ;; 26:5734 $18 $15 $57 $26
 
 call_26_5738:
-    Op5A_Unknown $83                                   ;; 26:5738 $5a $83
+    Op5A_PlaySoundEffect $83                           ;; 26:5738 $5a $83
     Op1E_Call call_04_5b22                             ;; 26:573a $1e $22 $5b $04
     Op44_Unknown $0a, $00                              ;; 26:573e $44 $0a $00
     SCRIPT_RETURN_4A                                   ;; 26:5741 $4a
@@ -1815,7 +1815,7 @@ call_26_5805:
     Op18_Jump call_26_5805                             ;; 26:5818 $18 $05 $58 $26
 
 call_26_581c:
-    Op50_WriteByte wCFF2, $00, $88                     ;; 26:581c $50 $f2 $cf $00 $88
+    Op50_WriteByte wSoundEffect3, $00, $88             ;; 26:581c $50 $f2 $cf $00 $88
     Op68_CopyBytes 1, wC763, wC75F, $00                ;; 26:5821 $68 $01 $63 $c7 $5f $c7 $00
     Op14_BranchWithHamChatWheelRules 1, data_05_4324   ;; 26:5828 $14 $01 $24 $43
     SCRIPT_POINTER call_26_5865                        ;; 26:582c $65 $58 $26
@@ -1836,7 +1836,7 @@ call_26_5859:
     Op18_Jump call_26_5869                             ;; 26:585c $18 $69 $58 $26
 
 call_26_5860:
-    Op50_WriteByte wCFF2, $00, $8b                     ;; 26:5860 $50 $f2 $cf $00 $8b
+    Op50_WriteByte wSoundEffect3, $00, $8b             ;; 26:5860 $50 $f2 $cf $00 $8b
 
 call_26_5865:
     Op82_Run data_02_7ace                              ;; 26:5865 $82 $ce $7a $02
@@ -1855,7 +1855,7 @@ call_26_5882:
 call_26_5886:
     Op14_BranchWithHamChatWheelRules 1, data_05_432c   ;; 26:5886 $14 $01 $2c $43
     SCRIPT_POINTER call_26_5805                        ;; 26:588a $05 $58 $26
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:588d $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:588d $50 $f2 $cf $00 $84
     Op16_SubOps 1                                      ;; 26:5892 $16 $01
     SubOp_SetByte wC75F, $00                           ;; 26:5894 $7e $47 $00
     Op4C_Unknown $1e, $01, $00, $00, $00, $58, $00, zero_pointer ;; 26:5897 $4c $1e $01 $00 $00 $00 $58 $00 $00 $00 $00
@@ -1864,7 +1864,7 @@ call_26_5886:
 call_26_58a6:
     Op14_BranchWithHamChatWheelRules 1, data_05_4330   ;; 26:58a6 $14 $01 $30 $43
     SCRIPT_POINTER call_26_5805                        ;; 26:58aa $05 $58 $26
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:58ad $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:58ad $50 $f2 $cf $00 $84
     Op16_SubOps 1                                      ;; 26:58b2 $16 $01
     SubOp_SetByte wC75F, $01                           ;; 26:58b4 $7e $47 $01
     Op4C_Unknown $1e, $01, $00, $00, $00, $70, $00, zero_pointer ;; 26:58b7 $4c $1e $01 $00 $00 $00 $70 $00 $00 $00 $00
@@ -2414,7 +2414,7 @@ call_26_612b:
     Op18_Jump call_26_5710                             ;; 26:617c $18 $10 $57 $26
 
 call_26_6180:
-    Op50_WriteByte wCFF2, $00, $8b                     ;; 26:6180 $50 $f2 $cf $00 $8b
+    Op50_WriteByte wSoundEffect3, $00, $8b             ;; 26:6180 $50 $f2 $cf $00 $8b
 
 call_26_6185:
     Op1E_Call call_04_5b22                             ;; 26:6185 $1e $22 $5b $04
@@ -2438,7 +2438,7 @@ call_26_61f9:
 call_26_6201:
     Op14_BranchWithHamChatWheelRules 1, data_05_4334   ;; 26:6201 $14 $01 $34 $43
     SCRIPT_POINTER call_26_6221                        ;; 26:6205 $21 $62 $26
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:6208 $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:6208 $50 $f2 $cf $00 $84
     Op16_SubOps 1                                      ;; 26:620d $16 $01
     SubOp_DefaultCase_Pair $78, $49                    ;; 26:620f $78 $49
     SubOp_DefaultCase_Pair $be, $01                    ;; 26:6211 $be $01
@@ -2457,7 +2457,7 @@ call_26_6221:
 call_26_622d:
     Op14_BranchWithHamChatWheelRules 1, data_05_4338   ;; 26:622d $14 $01 $38 $43
     SCRIPT_POINTER call_26_5715                        ;; 26:6231 $15 $57 $26
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:6234 $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:6234 $50 $f2 $cf $00 $84
     Op16_SubOps 1                                      ;; 26:6239 $16 $01
     SubOp_DefaultCase_Pair $76, $49                    ;; 26:623b $76 $49
     SubOp_DefaultCase_Pair $be, $01                    ;; 26:623d $be $01
@@ -2471,7 +2471,7 @@ call_26_624d:
     Op82_Run data_02_7359                              ;; 26:624d $82 $59 $73 $02
     Op14_BranchWithHamChatWheelRules 1, data_05_433c   ;; 26:6251 $14 $01 $3c $43
     SCRIPT_POINTER call_26_5715                        ;; 26:6255 $15 $57 $26
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:6258 $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:6258 $50 $f2 $cf $00 $84
     Op16_SubOps 1                                      ;; 26:625d $16 $01
     SubOp_DefaultCase_Pair $78, $49                    ;; 26:625f $78 $49
     SubOp_DefaultCase_Pair $be, $04                    ;; 26:6261 $be $04
@@ -2487,7 +2487,7 @@ call_26_627f:
     Op82_Run data_02_7369                              ;; 26:627f $82 $69 $73 $02
     Op14_BranchWithHamChatWheelRules 1, data_05_433c   ;; 26:6283 $14 $01 $3c $43
     SCRIPT_POINTER call_26_5715                        ;; 26:6287 $15 $57 $26
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:628a $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:628a $50 $f2 $cf $00 $84
     Op16_SubOps 1                                      ;; 26:628f $16 $01
     SubOp_DefaultCase_Pair $76, $49                    ;; 26:6291 $76 $49
     SubOp_DefaultCase_Pair $be, $04                    ;; 26:6293 $be $04
@@ -2500,7 +2500,7 @@ call_26_627f:
     Op18_Jump call_26_5715                             ;; 26:62ad $18 $15 $57 $26
 
 call_26_62b1:
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:62b1 $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:62b1 $50 $f2 $cf $00 $84
     Op4C_Unknown $1e, $01, $04, $10, $00, $39, $00, data_1a_6b1c ;; 26:62b6 $4c $1e $01 $04 $10 $00 $39 $00 $1c $6b $1a
     Op82_Run call_02_750d                              ;; 26:62c1 $82 $0d $75 $02
     Op50_WriteByte wButtonsOfInterest, $00, $e7        ;; 26:62c5 $50 $1d $c3 $00 $e7
@@ -2519,7 +2519,7 @@ call_26_62ca:
 
 call_26_62e7:
     Op4C_Unknown $1e, $01, $04, $08, $00, $48, $00, data_1a_6b0e ;; 26:62e7 $4c $1e $01 $04 $08 $00 $48 $00 $0e $6b $1a
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:62f2 $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:62f2 $50 $f2 $cf $00 $84
     Op18_Jump call_26_5710                             ;; 26:62f7 $18 $10 $57 $26
 
 call_26_62fb:
@@ -2535,7 +2535,7 @@ call_26_6308:
     Op18_Jump call_26_62ca                             ;; 26:6311 $18 $ca $62 $26
 
 call_26_6315:
-    Op50_WriteByte wCFF2, $00, $84                     ;; 26:6315 $50 $f2 $cf $00 $84
+    Op50_WriteByte wSoundEffect3, $00, $84             ;; 26:6315 $50 $f2 $cf $00 $84
     Op82_Run data_02_7a15                              ;; 26:631a $82 $15 $7a $02
     Op82_Run data_02_7560                              ;; 26:631e $82 $60 $75 $02
     Op82_Run data_02_7592                              ;; 26:6322 $82 $92 $75 $02
@@ -2942,7 +2942,7 @@ call_26_6820:
     Op1E_Call call_20_42bf                             ;; 26:6820 $1e $bf $42 $20
     Op14_BranchWithHamChatWheelRules 1, data_05_5b7a   ;; 26:6824 $14 $01 $7a $5b
     SCRIPT_POINTER call_26_690c                        ;; 26:6828 $0c $69 $26
-    Op5A_Unknown $9a                                   ;; 26:682b $5a $9a
+    Op5A_PlaySoundEffect $9a                           ;; 26:682b $5a $9a
     Op14_BranchWithHamChatWheelRules 1, data_05_5abe   ;; 26:682d $14 $01 $be $5a
     SCRIPT_POINTER call_26_63dd                        ;; 26:6831 $dd $63 $26
     Op14_BranchWithHamChatWheelRules 1, data_05_5ac2   ;; 26:6834 $14 $01 $c2 $5a

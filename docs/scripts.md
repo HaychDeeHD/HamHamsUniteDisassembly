@@ -414,17 +414,21 @@ Same as Op50 but with 2 payload bytes.
 
 Maybe write the arg byte to CFF0. Only do so if the last bit of C662 is set.
 
-I saw that C662 was involved with the HamJam. It makes me wonder whether Op5A is related to animation/sound.
+CFF0 and the 3 bytes after it are involved somehow in playing sound effects.
 
 <a id="op5C"></a>
 ### Op5C 
 
 I have not observed this being used in any scripts.
 
+Maybe write the arg byte to CFF1. Only do so if the second to last bit of C662 is set.
+
 <a id="op5E"></a>
 ### Op5E 
 
 Writes the singular arg byte to `wCFF9`. I don't yet know what is special about this WRAM address. 
+
+Most of the time (93% of uses) the argument is $80. I've also seen $18, $1a, $1b.
 
 <a id="op60"></a>
 ### Op60 

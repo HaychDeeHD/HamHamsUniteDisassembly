@@ -2923,7 +2923,7 @@ OpenHamchatWheel_Maybe:
     and  A, $04                                        ;; 01:5325 $e6 $04
     jp   NZ, .load5476_ReturnAddress                   ;; 01:5327 $c2 $69 $54
     ld   A, $88                                        ;; 01:532a $3e $88
-    ld   [wCFF2], A                                    ;; 01:532c $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 01:532c $ea $f2 $cf
     jp   .load5476_ReturnAddress                       ;; 01:532f $c3 $69 $54
 .jp_01_5332:
     ld   A, [wSubOpsLoopCountdownC38A]                 ;; 01:5332 $fa $8a $c3
@@ -2947,7 +2947,7 @@ OpenHamchatWheel_Maybe:
     and  A, $04                                        ;; 01:5362 $e6 $04
     jp   NZ, JumpUsingOpTableUsingIndexFromC322_IfC323 ;; 01:5364 $c2 $39 $0a
     ld   A, $86                                        ;; 01:5367 $3e $86
-    ld   [wCFF2], A                                    ;; 01:5369 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 01:5369 $ea $f2 $cf
     jp   JumpUsingOpTableUsingIndexFromC322_IfC323     ;; 01:536c $c3 $39 $0a
 .jp_01_536f:
     ld   A, [wC483]                                    ;; 01:536f $fa $83 $c4
@@ -4037,7 +4037,7 @@ call_01_5bdc:
     and  A, $08                                        ;; 01:5bdf $e6 $08
     ret  NZ                                            ;; 01:5be1 $c0
     ld   A, $84                                        ;; 01:5be2 $3e $84
-    ld   [wCFF3], A                                    ;; 01:5be4 $ea $f3 $cf
+    ld   [wSoundEffect4], A                            ;; 01:5be4 $ea $f3 $cf
     ret                                                ;; 01:5be7 $c9
     db   $21, $9b, $c3, $34, $7e, $e6, $08, $28        ;; 01:5be8 ????????
     db   $04, $cd, $13, $59, $c9, $cd, $39, $59        ;; 01:5bf0 ????????
@@ -5503,12 +5503,12 @@ call_01_66b6:
     db   $3e, $80, $ea, $f9, $cf, $c9                  ;; 01:683e ??????
 
 data_01_6844:
-    ld   A, [wCFFA]                                    ;; 01:6844 $fa $fa $cf
+    ld   A, [wCurrentlyPlayingSong]                    ;; 01:6844 $fa $fa $cf
     ld   B, A                                          ;; 01:6847 $47
     ld   A, [wC720]                                    ;; 01:6848 $fa $20 $c7
     cp   A, B                                          ;; 01:684b $b8
     jr   Z, .jr_01_6852                                ;; 01:684c $28 $04
-    ld   [wCFF9], A                                    ;; 01:684e $ea $f9 $cf
+    ld   [wSongToPlay], A                              ;; 01:684e $ea $f9 $cf
     ret                                                ;; 01:6851 $c9
 .jr_01_6852:
     ld   A, [wCFFC]                                    ;; 01:6852 $fa $fc $cf
@@ -5543,7 +5543,7 @@ data_01_68ab:
 
 data_01_68ba:
     ld   A, [wC720]                                    ;; 01:68ba $fa $20 $c7
-    ld   [wCFF9], A                                    ;; 01:68bd $ea $f9 $cf
+    ld   [wSongToPlay], A                              ;; 01:68bd $ea $f9 $cf
     ld   A, $08                                        ;; 01:68c0 $3e $08
     ld   [wCFFD], A                                    ;; 01:68c2 $ea $fd $cf
     ld   A, $40                                        ;; 01:68c5 $3e $40
@@ -5651,7 +5651,7 @@ call_01_6957:
 
 call_01_6994:
     ld   A, $88                                        ;; 01:6994 $3e $88
-    ld   [wCFF2], A                                    ;; 01:6996 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 01:6996 $ea $f2 $cf
     ld   A, [wC663]                                    ;; 01:6999 $fa $63 $c6
     sla  A                                             ;; 01:699c $cb $27
     ld   E, A                                          ;; 01:699e $5f
@@ -5792,7 +5792,7 @@ call_01_6a90:
 
 call_01_6acf:
     ld   A, $8b                                        ;; 01:6acf $3e $8b
-    ld   [wCFF2], A                                    ;; 01:6ad1 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 01:6ad1 $ea $f2 $cf
     ld   A, [wC663]                                    ;; 01:6ad4 $fa $63 $c6
     sla  A                                             ;; 01:6ad7 $cb $27
     ld   E, A                                          ;; 01:6ad9 $5f
@@ -5925,7 +5925,7 @@ call_01_6ba8:
     db   $01, $05                                      ;; 01:6c84 ??
 .data_01_6c86:
     ld   A, $84                                        ;; 01:6c86 $3e $84
-    ld   [wCFF2], A                                    ;; 01:6c88 $ea $f2 $cf
+    ld   [wSoundEffect3], A                            ;; 01:6c88 $ea $f2 $cf
     ld   A, [wC317]                                    ;; 01:6c8b $fa $17 $c3
     bit  3, A                                          ;; 01:6c8e $cb $5f
     jr   NZ, .jr_01_6c9c                               ;; 01:6c90 $20 $0a

@@ -273,7 +273,7 @@ call_2e_4325:
     SCRIPT_POINTER call_2e_433e                        ;; 2e:4332 $3e $43 $2e
     Op16_SubOps 1                                      ;; 2e:4335 $16 $01
     SubOp_SetFlag 171 ; Bit 3 of wC92D                 ;; 2e:4337 $3e $ab
-    Op5A_Unknown $a3                                   ;; 2e:4339 $5a $a3
+    Op5A_PlaySoundEffect $a3                           ;; 2e:4339 $5a $a3
     Op44_Unknown $70, $00                              ;; 2e:433b $44 $70 $00
 
 call_2e_433e:
@@ -347,7 +347,7 @@ call_2e_43f2:
     ;;What?<E3>Boss is calling<E4>for us?<E3>OK, I'll go<E4>with you back to<E4>the Clubhouse.<E0>
     Op06_Unknown_Text data_3c_495f                     ;; 2e:4403 $06 $5f $49 $3c
     Op1E_Call call_04_615d                             ;; 2e:4407 $1e $5d $61 $04
-    Op5E_Unknown $80                                   ;; 2e:440b $5e $80
+    Op5E_PlaySong $80                                  ;; 2e:440b $5e $80
     Op14_BranchWithHamChatWheelRules 1, data_05_61c6   ;; 2e:440d $14 $01 $c6 $61
     SCRIPT_POINTER call_2e_4423                        ;; 2e:4411 $23 $44 $2e
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, data_1b_54fa ;; 2e:4414 $4c $16 $10 $02 $00 $00 $00 $00 $fa $54 $1b
@@ -395,8 +395,8 @@ call_2e_44ad:
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_17_77d2 ;; 2e:44d2 $4c $16 $08 $04 $00 $00 $00 $00 $d2 $77 $17
     Op52_WriteBytes w1_D20B, $01, $ab, $00             ;; 2e:44dd $52 $0b $d2 $01 $ab $00
     Op44_Unknown $18, $00                              ;; 2e:44e3 $44 $18 $00
-    Op5E_Unknown $80                                   ;; 2e:44e6 $5e $80
-    Op5A_Unknown $90                                   ;; 2e:44e8 $5a $90
+    Op5E_PlaySong $80                                  ;; 2e:44e6 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 2e:44e8 $5a $90
     Op1E_Call call_3c_4532                             ;; 2e:44ea $1e $32 $45 $3c
     Op14_BranchWithHamChatWheelRules 1, useIfHave_133_61ca ;; 2e:44ee $14 $01 $ca $61
     SCRIPT_POINTER call_2e_44fd                        ;; 2e:44f2 $fd $44 $2e
@@ -928,7 +928,7 @@ call_2e_4bf9:
     SCRIPT_POINTER call_2e_4c1e                        ;; 2e:4c12 $1e $4c $2e
     Op16_SubOps 1                                      ;; 2e:4c15 $16 $01
     SubOp_SetFlag 172 ; Bit 4 of wC92D                 ;; 2e:4c17 $3e $ac
-    Op5A_Unknown $a3                                   ;; 2e:4c19 $5a $a3
+    Op5A_PlaySoundEffect $a3                           ;; 2e:4c19 $5a $a3
     Op44_Unknown $70, $00                              ;; 2e:4c1b $44 $70 $00
 
 call_2e_4c1e:
@@ -1174,8 +1174,8 @@ call_2e_4eb6:
 
 call_2e_4ece:
     Op1E_Call call_20_43a4                             ;; 2e:4ece $1e $a4 $43 $20
-    Op5E_Unknown $80                                   ;; 2e:4ed2 $5e $80
-    Op5A_Unknown $90                                   ;; 2e:4ed4 $5a $90
+    Op5E_PlaySong $80                                  ;; 2e:4ed2 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 2e:4ed4 $5a $90
     Op1E_Call call_3c_4532                             ;; 2e:4ed6 $1e $32 $45 $3c
     Op54_Unknown $00                                   ;; 2e:4eda $54 $00
 
@@ -1511,7 +1511,7 @@ call_2e_5237:
 call_2e_523b:
     Op06_Unknown_Text data_3a_7291                     ;; 2e:523b $06 $91 $72 $3a
     Op1E_Call call_04_615d                             ;; 2e:523f $1e $5d $61 $04
-    Op5E_Unknown $80                                   ;; 2e:5243 $5e $80
+    Op5E_PlaySong $80                                  ;; 2e:5243 $5e $80
     Op4C_Unknown $16, $08, $02, $00, $00, $00, $00, data_10_433e ;; 2e:5245 $4c $16 $08 $02 $00 $00 $00 $00 $3e $43 $10
     Op56_WriteBitArrayIndex 26, data_1a_6159           ;; 2e:5250 $56 $1a $59 $61 $1a
     Op44_Unknown $18, $00                              ;; 2e:5255 $44 $18 $00
@@ -1533,8 +1533,8 @@ call_2e_5281:
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_17_77d2 ;; 2e:52a0 $4c $16 $08 $04 $00 $00 $00 $00 $d2 $77 $17
     Op52_WriteBytes w1_D20B, $01, $ab, $00             ;; 2e:52ab $52 $0b $d2 $01 $ab $00
     Op44_Unknown $20, $00                              ;; 2e:52b1 $44 $20 $00
-    Op5E_Unknown $80                                   ;; 2e:52b4 $5e $80
-    Op5A_Unknown $90                                   ;; 2e:52b6 $5a $90
+    Op5E_PlaySong $80                                  ;; 2e:52b4 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 2e:52b6 $5a $90
     Op1E_Call call_3c_4532                             ;; 2e:52b8 $1e $32 $45 $3c
     Op14_BranchWithHamChatWheelRules 1, useIfHave_134_620c ;; 2e:52bc $14 $01 $0c $62
     SCRIPT_POINTER call_2e_52cd                        ;; 2e:52c0 $cd $52 $2e
@@ -4057,8 +4057,8 @@ call_2e_72cd:
     SCRIPT_RETURN_4A                                   ;; 2e:72cd $4a
     Op3E_Compare_Branch 22, data_10_5e8e, call_2e_72cd ;; 2e:72ce $3e $16 $8e $5e $10 $cd $72 $2e
     Op1E_Call call_04_615d                             ;; 2e:72d6 $1e $5d $61 $04
-    Op5E_Unknown $80                                   ;; 2e:72da $5e $80
-    Op5A_Unknown $90                                   ;; 2e:72dc $5a $90
+    Op5E_PlaySong $80                                  ;; 2e:72da $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 2e:72dc $5a $90
     Op1E_Call call_36_7e94                             ;; 2e:72de $1e $94 $7e $36
     Op54_Unknown $00                                   ;; 2e:72e2 $54 $00
 
@@ -4540,7 +4540,7 @@ call_2e_7905:
 call_2e_792f:
     SCRIPT_RETURN_4A                                   ;; 2e:792f $4a
     Op3E_Compare_Branch 26, data_13_5b4e, call_2e_792f ;; 2e:7930 $3e $1a $4e $5b $13 $2f $79 $2e
-    Op5A_Unknown $b4                                   ;; 2e:7938 $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 2e:7938 $5a $b4
     Op36_Graphics data_04_5e1c, w1_DDAA                ;; 2e:793a $36 $1c $5e $04 $aa $dd $01
     Op36_Graphics data_04_5e26, w1_DDDA                ;; 2e:7941 $36 $26 $5e $04 $da $dd $01
     Op44_Unknown $04, $00                              ;; 2e:7948 $44 $04 $00

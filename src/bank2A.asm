@@ -14,7 +14,7 @@ SECTION "bank2a", ROMX[$4000], BANK[$2a]
     SCRIPT_POINTER call_2a_401c                        ;; 2a:4010 $1c $40 $2a
     Op16_SubOps 1                                      ;; 2a:4013 $16 $01
     SubOp_SetFlag 176 ; Bit 0 of wC92E                 ;; 2a:4015 $3e $b0
-    Op5A_Unknown $a3                                   ;; 2a:4017 $5a $a3
+    Op5A_PlaySoundEffect $a3                           ;; 2a:4017 $5a $a3
     Op44_Unknown $70, $00                              ;; 2a:4019 $44 $70 $00
 
 call_2a_401c:
@@ -472,7 +472,7 @@ call_2a_455c:
     Op4C_Unknown $1a, $01, $04, $64, $00, $60, $00, data_13_5531 ;; 2a:4585 $4c $1a $01 $04 $64 $00 $60 $00 $31 $55 $13
     Op44_Unknown $18, $00                              ;; 2a:4590 $44 $18 $00
     Op42_Unknown_StoreValue 7, $01, data_1a_6525       ;; 2a:4593 $42 $07 $01 $25 $65 $1a
-    Op5A_Unknown $b4                                   ;; 2a:4599 $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 2a:4599 $5a $b4
     Op36_Graphics data_04_5e1c, w1_DDAA                ;; 2a:459b $36 $1c $5e $04 $aa $dd $01
     Op36_Graphics data_04_5e26, w1_DDDA                ;; 2a:45a2 $36 $26 $5e $04 $da $dd $01
     Op44_Unknown $04, $00                              ;; 2a:45a9 $44 $04 $00
@@ -492,13 +492,13 @@ call_2a_45e0:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_13_55df ;; 2a:45e9 $4c $1a $01 $04 $00 $00 $00 $00 $df $55 $13
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_13_560d ;; 2a:45f4 $4c $08 $01 $04 $00 $00 $00 $00 $0d $56 $13
     Op44_Unknown $10, $00                              ;; 2a:45ff $44 $10 $00
-    Op5A_Unknown $b4                                   ;; 2a:4602 $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 2a:4602 $5a $b4
     Op36_Graphics data_04_5e1c, w1_DDAA                ;; 2a:4604 $36 $1c $5e $04 $aa $dd $01
     Op36_Graphics data_04_5e26, w1_DDDA                ;; 2a:460b $36 $26 $5e $04 $da $dd $01
     Op44_Unknown $04, $00                              ;; 2a:4612 $44 $04 $00
     Op1E_Call call_2a_4e52                             ;; 2a:4615 $1e $52 $4e $2a
     Op44_Unknown $10, $00                              ;; 2a:4619 $44 $10 $00
-    Op5A_Unknown $b4                                   ;; 2a:461c $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 2a:461c $5a $b4
     Op36_Graphics data_04_5e1c, w1_DDAA                ;; 2a:461e $36 $1c $5e $04 $aa $dd $01
     Op36_Graphics data_04_5e26, w1_DDDA                ;; 2a:4625 $36 $26 $5e $04 $da $dd $01
     Op44_Unknown $04, $00                              ;; 2a:462c $44 $04 $00
@@ -1544,7 +1544,7 @@ call_2a_53b9:
     Op1E_Call call_20_42f7                             ;; 2a:53b9 $1e $f7 $42 $20
     Op14_BranchWithHamChatWheelRules 1, useIfHave_313_6696 ;; 2a:53bd $14 $01 $96 $66
     SCRIPT_POINTER call_2a_53c9                        ;; 2a:53c1 $c9 $53 $2a
-    Op50_WriteByte wCFF2, $00, $bb                     ;; 2a:53c4 $50 $f2 $cf $00 $bb
+    Op50_WriteByte wSoundEffect3, $00, $bb             ;; 2a:53c4 $50 $f2 $cf $00 $bb
 
 call_2a_53c9:
     Op18_Jump call_2a_4f6a                             ;; 2a:53c9 $18 $6a $4f $2a
@@ -1569,7 +1569,7 @@ call_2a_53ed:
 call_2a_53ff:
     Op50_WriteByte w1_BeginRegionD1FD, $01, $04        ;; 2a:53ff $50 $fd $d1 $01 $04
     Op82_Run data_01_77e1                              ;; 2a:5404 $82 $e1 $77 $01
-    Op50_WriteByte wCFF2, $00, $07                     ;; 2a:5408 $50 $f2 $cf $00 $07
+    Op50_WriteByte wSoundEffect3, $00, $07             ;; 2a:5408 $50 $f2 $cf $00 $07
     Op1E_Call call_3c_4e23                             ;; 2a:540d $1e $23 $4e $3c
     Op1A_Unknown $11                                   ;; 2a:5411 $1a $11
 
@@ -1587,7 +1587,7 @@ call_2a_5413:
 call_2a_5433:
     Op50_WriteByte w1_BeginRegionD1FD, $01, $08        ;; 2a:5433 $50 $fd $d1 $01 $08
     Op82_Run data_01_77e1                              ;; 2a:5438 $82 $e1 $77 $01
-    Op50_WriteByte wCFF2, $00, $07                     ;; 2a:543c $50 $f2 $cf $00 $07
+    Op50_WriteByte wSoundEffect3, $00, $07             ;; 2a:543c $50 $f2 $cf $00 $07
     Op1E_Call call_3c_4e23                             ;; 2a:5441 $1e $23 $4e $3c
     Op1A_Unknown $12                                   ;; 2a:5445 $1a $12
 
@@ -1622,7 +1622,7 @@ call_2a_54b6:
     Op1E_Call call_20_42f7                             ;; 2a:54b6 $1e $f7 $42 $20
     Op14_BranchWithHamChatWheelRules 1, useIfHave_313_6696 ;; 2a:54ba $14 $01 $96 $66
     SCRIPT_POINTER call_2a_54c6                        ;; 2a:54be $c6 $54 $2a
-    Op50_WriteByte wCFF2, $00, $bb                     ;; 2a:54c1 $50 $f2 $cf $00 $bb
+    Op50_WriteByte wSoundEffect3, $00, $bb             ;; 2a:54c1 $50 $f2 $cf $00 $bb
 
 call_2a_54c6:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_12_7759 ;; 2a:54c6 $4c $1a $01 $04 $00 $00 $00 $00 $59 $77 $12
@@ -1882,7 +1882,7 @@ call_2a_57b9:
     SCRIPT_RETURN_4A                                   ;; 2a:57b9 $4a
     Op3E_Compare_Branch 26, data_12_7830, call_2a_57b9 ;; 2a:57ba $3e $1a $30 $78 $12 $b9 $57 $2a
     Op42_Unknown_StoreValue 8, $01, data_12_7473       ;; 2a:57c2 $42 $08 $01 $73 $74 $12
-    Op50_WriteByte wCFF2, $00, $bb                     ;; 2a:57c8 $50 $f2 $cf $00 $bb
+    Op50_WriteByte wSoundEffect3, $00, $bb             ;; 2a:57c8 $50 $f2 $cf $00 $bb
     Op44_Unknown $20, $00                              ;; 2a:57cd $44 $20 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_12_7896 ;; 2a:57d0 $4c $1a $01 $04 $00 $00 $00 $00 $96 $78 $12
 
@@ -2151,7 +2151,7 @@ call_2a_5ac8:
     Op1E_Call call_20_42f7                             ;; 2a:5ac8 $1e $f7 $42 $20
     Op14_BranchWithHamChatWheelRules 1, useIfHave_313_6696 ;; 2a:5acc $14 $01 $96 $66
     SCRIPT_POINTER call_2a_5ad8                        ;; 2a:5ad0 $d8 $5a $2a
-    Op50_WriteByte wCFF2, $00, $bb                     ;; 2a:5ad3 $50 $f2 $cf $00 $bb
+    Op50_WriteByte wSoundEffect3, $00, $bb             ;; 2a:5ad3 $50 $f2 $cf $00 $bb
 
 call_2a_5ad8:
     Op18_Jump call_2a_4f6a                             ;; 2a:5ad8 $18 $6a $4f $2a
@@ -2249,7 +2249,7 @@ call_2a_5bd6:
 call_2a_5c05:
     SCRIPT_RETURN_4A                                   ;; 2a:5c05 $4a
     Op3E_Compare_Branch 22, data_11_6eff, call_2a_5c05 ;; 2a:5c06 $3e $16 $ff $6e $11 $05 $5c $2a
-    Op5A_Unknown $d9                                   ;; 2a:5c0e $5a $d9
+    Op5A_PlaySoundEffect $d9                           ;; 2a:5c0e $5a $d9
     Op44_Unknown $30, $00                              ;; 2a:5c10 $44 $30 $00
     Op42_Unknown_StoreValue 9, $01, data_12_7502       ;; 2a:5c13 $42 $09 $01 $02 $75 $12
     Op42_Unknown_StoreValue 8, $01, data_12_73b0       ;; 2a:5c19 $42 $08 $01 $b0 $73 $12
@@ -2965,8 +2965,8 @@ call_2a_65d9:
     Op16_SubOps 1                                      ;; 2a:65e6 $16 $01
     SubOp_ClearFlag 189 ; Bit 5 of wC92F               ;; 2a:65e8 $5e $bd
     Op50_WriteByte w1_D000, $01, $00                   ;; 2a:65ea $50 $00 $d0 $01 $00
-    Op5E_Unknown $80                                   ;; 2a:65ef $5e $80
-    Op5A_Unknown $90                                   ;; 2a:65f1 $5a $90
+    Op5E_PlaySong $80                                  ;; 2a:65ef $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 2a:65f1 $5a $90
     Op1E_Call call_3b_7882                             ;; 2a:65f3 $1e $82 $78 $3b
     Op50_WriteByte wCA92, $00, $02                     ;; 2a:65f7 $50 $92 $ca $00 $02
     Op54_Unknown $01                                   ;; 2a:65fc $54 $01
@@ -4152,8 +4152,8 @@ call_2a_758b:
 call_2a_7598:
     SCRIPT_RETURN_4A                                   ;; 2a:7598 $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_2a_7598 ;; 2a:7599 $3e $16 $1b $5e $10 $98 $75 $2a
-    Op5E_Unknown $80                                   ;; 2a:75a1 $5e $80
-    Op5A_Unknown $90                                   ;; 2a:75a3 $5a $90
+    Op5E_PlaySong $80                                  ;; 2a:75a1 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 2a:75a3 $5a $90
     Op1E_Call call_36_7e94                             ;; 2a:75a5 $1e $94 $7e $36
     Op54_Unknown $00                                   ;; 2a:75a9 $54 $00
 
@@ -4231,7 +4231,7 @@ call_2a_76cf:
     ;;Oh, nooooo!<E4>Ohno, ohno, ohno,<E4>ohno, ohno, ohno.<E0>
     Op04_Unknown_Text data_3a_44d7                     ;; 2a:76d8 $04 $d7 $44 $3a
     Op92_Unknown $00                                   ;; 2a:76dc $92 $00
-    Op5A_Unknown $b4                                   ;; 2a:76de $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 2a:76de $5a $b4
     Op36_Graphics data_04_5e1c, w1_DDAA                ;; 2a:76e0 $36 $1c $5e $04 $aa $dd $01
     Op36_Graphics data_04_5e26, w1_DDDA                ;; 2a:76e7 $36 $26 $5e $04 $da $dd $01
     Op44_Unknown $04, $00                              ;; 2a:76ee $44 $04 $00
@@ -4278,7 +4278,7 @@ call_2a_7764:
     Op4C_Unknown $0a, $01, $04, $00, $00, $00, $00, data_1a_69c2 ;; 2a:77b2 $4c $0a $01 $04 $00 $00 $00 $00 $c2 $69 $1a
     Op4C_Unknown $0c, $01, $04, $00, $00, $00, $00, data_1a_6986 ;; 2a:77bd $4c $0c $01 $04 $00 $00 $00 $00 $86 $69 $1a
     Op44_Unknown $10, $00                              ;; 2a:77c8 $44 $10 $00
-    Op5A_Unknown $b4                                   ;; 2a:77cb $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 2a:77cb $5a $b4
     Op36_Graphics data_04_5e1c, w1_DDAA                ;; 2a:77cd $36 $1c $5e $04 $aa $dd $01
     Op36_Graphics data_04_5e26, w1_DDDA                ;; 2a:77d4 $36 $26 $5e $04 $da $dd $01
     Op44_Unknown $04, $00                              ;; 2a:77db $44 $04 $00
@@ -4473,7 +4473,7 @@ call_2a_7b31:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_10_4235 ;; 2a:7b31 $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
     Op16_SubOps 1                                      ;; 2a:7b3c $16 $01
     SubOp_SetByte wC71E, $00                           ;; 2a:7b3e $7e $06 $00
-    Op5A_Unknown $c8                                   ;; 2a:7b41 $5a $c8
+    Op5A_PlaySoundEffect $c8                           ;; 2a:7b41 $5a $c8
     Op1E_Call call_1d_6ae8                             ;; 2a:7b43 $1e $e8 $6a $1d
     ;;<E4>Click<...> Ding!<E0>
     Op04_Unknown_Text data_3a_4752                     ;; 2a:7b47 $04 $52 $47 $3a

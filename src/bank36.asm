@@ -1939,7 +1939,7 @@ data_36_5c61:
     SCRIPT_POINTER call_36_5cd1                        ;; 36:5c92 $d1 $5c $36
     Op16_SubOps 1                                      ;; 36:5c95 $16 $01
     SubOp_SetFlag 333 ; Bit 5 of wC941                 ;; 36:5c97 $3f $4d
-    Op5A_Unknown $a3                                   ;; 36:5c99 $5a $a3
+    Op5A_PlaySoundEffect $a3                           ;; 36:5c99 $5a $a3
     Op44_Unknown $70, $00                              ;; 36:5c9b $44 $70 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_17_49cf ;; 36:5c9e $4c $1a $01 $04 $00 $00 $00 $00 $cf $49 $17
     Op36_Graphics data_7f_7df8, w1_DE18                ;; 36:5ca9 $36 $f8 $7d $7f $18 $de $01
@@ -2281,8 +2281,8 @@ call_36_60d6:
 call_36_60e3:
     SCRIPT_RETURN_4A                                   ;; 36:60e3 $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_36_60e3 ;; 36:60e4 $3e $16 $1b $5e $10 $e3 $60 $36
-    Op5E_Unknown $80                                   ;; 36:60ec $5e $80
-    Op5A_Unknown $90                                   ;; 36:60ee $5a $90
+    Op5E_PlaySong $80                                  ;; 36:60ec $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 36:60ee $5a $90
     Op1E_Call call_3b_7882                             ;; 36:60f0 $1e $82 $78 $3b
     Op50_WriteByte wCA92, $00, $01                     ;; 36:60f4 $50 $92 $ca $00 $01
     Op54_Unknown $01                                   ;; 36:60f9 $54 $01
@@ -2336,7 +2336,7 @@ call_36_617d:
 call_36_6188:
     SCRIPT_RETURN_4A                                   ;; 36:6188 $4a
     Op3E_Compare_Branch 22, data_10_5b35, call_36_6188 ;; 36:6189 $3e $16 $35 $5b $10 $88 $61 $36
-    Op5A_Unknown $9a                                   ;; 36:6191 $5a $9a
+    Op5A_PlaySoundEffect $9a                           ;; 36:6191 $5a $9a
     Op14_BranchWithHamChatWheelRules 1, data_05_5abe   ;; 36:6193 $14 $01 $be $5a
     SCRIPT_POINTER call_36_5d4b                        ;; 36:6197 $4b $5d $36
     Op14_BranchWithHamChatWheelRules 1, data_05_5ac2   ;; 36:619a $14 $01 $c2 $5a
@@ -2909,7 +2909,7 @@ call_36_68c9:
     SCRIPT_RETURN_4A                                   ;; 36:68dc $4a
     Op42_Unknown_StoreValue 4, $01, data_17_6a12       ;; 36:68dd $42 $04 $01 $12 $6a $17
     Op4C_Unknown $16, $02, $04, $00, $00, $00, $00, data_17_6f79 ;; 36:68e3 $4c $16 $02 $04 $00 $00 $00 $00 $79 $6f $17
-    Op5A_Unknown $a4                                   ;; 36:68ee $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 36:68ee $5a $a4
     Op44_Unknown $17, $00                              ;; 36:68f0 $44 $17 $00
     Op48_Unknown                                       ;; 36:68f3 $48
     Op38_Graphics data_7b_49cb, w5_D808, $08           ;; 36:68f4 $38 $cb $49 $7b $08 $d8 $05 $08
@@ -3460,7 +3460,7 @@ call_36_7a20:
     SCRIPT_RETURN_20                                   ;; 36:7a79 $20
 
 call_36_7a7a:
-    Op5A_Unknown $c8                                   ;; 36:7a7a $5a $c8
+    Op5A_PlaySoundEffect $c8                           ;; 36:7a7a $5a $c8
     Op1E_Call call_1d_6ae8                             ;; 36:7a7c $1e $e8 $6a $1d
     ;;You now have <end>
     Op04_Unknown_Text data_29_5cd8                     ;; 36:7a80 $04 $d8 $5c $29
@@ -3669,7 +3669,7 @@ call_36_7c2e:
     ;;Huh? Boss is<E2>calling for us?<E2>OK<...><E3>Let's head back<E2>to the Clubhouse<...><E0>
     Op06_Unknown_Text data_29_5ddb                     ;; 36:7c72 $06 $db $5d $29
     Op92_Unknown $00                                   ;; 36:7c76 $92 $00
-    Op5E_Unknown $80                                   ;; 36:7c78 $5e $80
+    Op5E_PlaySong $80                                  ;; 36:7c78 $5e $80
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_18_79a1 ;; 36:7c7a $4c $1a $01 $04 $00 $00 $00 $00 $a1 $79 $18
     Op68_CopyBytes 1, wC836, w1_D216, $01              ;; 36:7c85 $68 $01 $36 $c8 $16 $d2 $01
     Op14_BranchWithHamChatWheelRules 1, data_05_6e6a   ;; 36:7c8c $14 $01 $6a $6e
@@ -3722,7 +3722,7 @@ call_36_7d0e:
     ;;Wha? Clubhouse?<E3>OK. I better get<E2>back there.<E0>
     Op06_Unknown_Text data_29_5e9c                     ;; 36:7d43 $06 $9c $5e $29
     Op92_Unknown $00                                   ;; 36:7d47 $92 $00
-    Op5E_Unknown $80                                   ;; 36:7d49 $5e $80
+    Op5E_PlaySong $80                                  ;; 36:7d49 $5e $80
     Op4C_Unknown $16, $04, $ff, $00, $00, $00, $00, data_12_4f65 ;; 36:7d4b $4c $16 $04 $ff $00 $00 $00 $00 $65 $4f $12
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_18_7a0f ;; 36:7d56 $4c $1a $01 $04 $00 $00 $00 $00 $0f $7a $18
 
@@ -3828,7 +3828,7 @@ call_36_7e90:
     Op1A_Unknown $08                                   ;; 36:7e90 $1a $08
 
 call_36_7e92:
-    Op5A_Unknown $a4                                   ;; 36:7e92 $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 36:7e92 $5a $a4
 
 call_36_7e94:
     Op1E_Call call_04_5b22                             ;; 36:7e94 $1e $22 $5b $04

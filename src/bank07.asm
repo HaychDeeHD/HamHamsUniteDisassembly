@@ -2054,7 +2054,7 @@ call_07_5b0c:
     inc  C                                             ;; 07:5b28 $0c
     dec  B                                             ;; 07:5b29 $05
 .jr_07_5b2a:
-    ld   HL, wCFF0                                     ;; 07:5b2a $21 $f0 $cf
+    ld   HL, wSoundEffect1                             ;; 07:5b2a $21 $f0 $cf
     ld   A, C                                          ;; 07:5b2d $79
     add  A, L                                          ;; 07:5b2e $85
     ld   L, A                                          ;; 07:5b2f $6f
@@ -2210,13 +2210,13 @@ call_07_5c20:
     ld   [wCF00], A                                    ;; 07:5c30 $ea $00 $cf
     and  A, $80                                        ;; 07:5c33 $e6 $80
     ret  Z                                             ;; 07:5c35 $c8
-    ld   A, [wCFF9]                                    ;; 07:5c36 $fa $f9 $cf
+    ld   A, [wSongToPlay]                              ;; 07:5c36 $fa $f9 $cf
     cp   A, $80                                        ;; 07:5c39 $fe $80
     jp   Z, jp_07_5c8e                                 ;; 07:5c3b $ca $8e $5c
     and  A, A                                          ;; 07:5c3e $a7
     jp   Z, jp_07_5c7e                                 ;; 07:5c3f $ca $7e $5c
-    ld   A, [wCFF9]                                    ;; 07:5c42 $fa $f9 $cf
-    ld   [wCFFA], A                                    ;; 07:5c45 $ea $fa $cf
+    ld   A, [wSongToPlay]                              ;; 07:5c42 $fa $f9 $cf
+    ld   [wCurrentlyPlayingSong], A                    ;; 07:5c45 $ea $fa $cf
     ld   B, $0a                                        ;; 07:5c48 $06 $0a
     cp   A, $2b                                        ;; 07:5c4a $fe $2b
     jr   NC, .jr_07_5c56                               ;; 07:5c4c $30 $08
@@ -2228,13 +2228,13 @@ call_07_5c20:
     ld   A, B                                          ;; 07:5c56 $78
     ld   [wCF01], A                                    ;; 07:5c57 $ea $01 $cf
     xor  A, A                                          ;; 07:5c5a $af
-    ld   [wCFF9], A                                    ;; 07:5c5b $ea $f9 $cf
+    ld   [wSongToPlay], A                              ;; 07:5c5b $ea $f9 $cf
     ld   HL, wCED8                                     ;; 07:5c5e $21 $d8 $ce
     ld   [HL], $19                                     ;; 07:5c61 $36 $19
     inc  L                                             ;; 07:5c63 $2c
     ld   [HL], $cf                                     ;; 07:5c64 $36 $cf
     call call_07_5d63                                  ;; 07:5c66 $cd $63 $5d
-    ld   A, [wCFFA]                                    ;; 07:5c69 $fa $fa $cf
+    ld   A, [wCurrentlyPlayingSong]                    ;; 07:5c69 $fa $fa $cf
     dec  A                                             ;; 07:5c6c $3d
     ld   HL, data_07_702d                              ;; 07:5c6d $21 $2d $70
     sla  A                                             ;; 07:5c70 $cb $27
@@ -2250,7 +2250,7 @@ data_07_5c73:
     jr   jp_07_5c98                                    ;; 07:5c7c $18 $1a
 
 jp_07_5c7e:
-    ld   A, [wCFFA]                                    ;; 07:5c7e $fa $fa $cf
+    ld   A, [wCurrentlyPlayingSong]                    ;; 07:5c7e $fa $fa $cf
     and  A, A                                          ;; 07:5c81 $a7
     ret  Z                                             ;; 07:5c82 $c8
     ld   HL, wCED8                                     ;; 07:5c83 $21 $d8 $ce
@@ -2261,8 +2261,8 @@ jp_07_5c7e:
 
 jp_07_5c8e:
     xor  A, A                                          ;; 07:5c8e $af
-    ld   [wCFF9], A                                    ;; 07:5c8f $ea $f9 $cf
-    ld   [wCFFA], A                                    ;; 07:5c92 $ea $fa $cf
+    ld   [wSongToPlay], A                              ;; 07:5c8f $ea $f9 $cf
+    ld   [wCurrentlyPlayingSong], A                    ;; 07:5c92 $ea $fa $cf
     jp   call_07_5d63                                  ;; 07:5c95 $c3 $63 $5d
 
 jp_07_5c98:
@@ -2285,7 +2285,7 @@ jp_07_5c98:
     inc  HL                                            ;; 07:5cac $23
     or   A, [HL]                                       ;; 07:5cad $b6
     jr   NZ, .jp_07_5cb4                               ;; 07:5cae $20 $04
-    ld   [wCFFA], A                                    ;; 07:5cb0 $ea $fa $cf
+    ld   [wCurrentlyPlayingSong], A                    ;; 07:5cb0 $ea $fa $cf
     ret                                                ;; 07:5cb3 $c9
 .jp_07_5cb4:
     ld   HL, wCEDA                                     ;; 07:5cb4 $21 $da $ce
@@ -2828,7 +2828,7 @@ jp_07_5f82:
     ld   [wCF0F], A                                    ;; 07:600c $ea $0f $cf
     ld   [wCF10], A                                    ;; 07:600f $ea $10 $cf
     ld   [wCF11], A                                    ;; 07:6012 $ea $11 $cf
-    ld   [wCFFA], A                                    ;; 07:6015 $ea $fa $cf
+    ld   [wCurrentlyPlayingSong], A                    ;; 07:6015 $ea $fa $cf
     ld   [wCF20], A                                    ;; 07:6018 $ea $20 $cf
     xor  A, A                                          ;; 07:601b $af
     ld   [wCF00], A                                    ;; 07:601c $ea $00 $cf

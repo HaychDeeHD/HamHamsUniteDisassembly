@@ -14,7 +14,7 @@ SECTION "bank21", ROMX[$4000], BANK[$21]
     SCRIPT_POINTER call_21_401c                        ;; 21:4010 $1c $40 $21
     Op16_SubOps 1                                      ;; 21:4013 $16 $01
     SubOp_SetFlag 170 ; Bit 2 of wC92D                 ;; 21:4015 $3e $aa
-    Op5A_Unknown $a3                                   ;; 21:4017 $5a $a3
+    Op5A_PlaySoundEffect $a3                           ;; 21:4017 $5a $a3
     Op44_Unknown $70, $00                              ;; 21:4019 $44 $70 $00
 
 call_21_401c:
@@ -568,7 +568,7 @@ call_21_46e9:
 call_21_46ff:
     Op06_Unknown_Text data_26_7676                     ;; 21:46ff $06 $76 $76 $26
     Op92_Unknown $00                                   ;; 21:4703 $92 $00
-    Op5E_Unknown $80                                   ;; 21:4705 $5e $80
+    Op5E_PlaySong $80                                  ;; 21:4705 $5e $80
     Op14_BranchWithHamChatWheelRules 1, data_05_5550   ;; 21:4707 $14 $01 $50 $55
     SCRIPT_POINTER call_21_4724                        ;; 21:470b $24 $47 $21
     Op14_BranchWithHamChatWheelRules 1, data_05_5572   ;; 21:470e $14 $01 $72 $55
@@ -603,8 +603,8 @@ call_21_4753:
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_17_77d2 ;; 21:4785 $4c $16 $08 $04 $00 $00 $00 $00 $d2 $77 $17
     Op52_WriteBytes w1_D20B, $01, $ab, $00             ;; 21:4790 $52 $0b $d2 $01 $ab $00
     Op44_Unknown $40, $00                              ;; 21:4796 $44 $40 $00
-    Op5E_Unknown $80                                   ;; 21:4799 $5e $80
-    Op5A_Unknown $90                                   ;; 21:479b $5a $90
+    Op5E_PlaySong $80                                  ;; 21:4799 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 21:479b $5a $90
     Op1E_Call call_3c_5649                             ;; 21:479d $1e $49 $56 $3c
     Op14_BranchWithHamChatWheelRules 1, useIfHave_131_557e ;; 21:47a1 $14 $01 $7e $55
     SCRIPT_POINTER call_21_47b2                        ;; 21:47a5 $b2 $47 $21
@@ -1807,7 +1807,7 @@ call_21_5644:
     SCRIPT_RETURN_20                                   ;; 21:56ad $20
 
 call_21_56ae:
-    Op5A_Unknown $c8                                   ;; 21:56ae $5a $c8
+    Op5A_PlaySoundEffect $c8                           ;; 21:56ae $5a $c8
     Op1E_Call call_1d_6ae8                             ;; 21:56b0 $1e $e8 $6a $1d
     ;;You have <end>
     Op04_Unknown_Text data_26_7ff0                     ;; 21:56b4 $04 $f0 $7f $26

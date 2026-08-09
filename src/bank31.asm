@@ -3062,7 +3062,7 @@ call_31_670c:
     SCRIPT_RETURN_4A                                   ;; 31:671f $4a
     Op42_Unknown_StoreValue 4, $01, data_17_6a12       ;; 31:6720 $42 $04 $01 $12 $6a $17
     Op4C_Unknown $16, $02, $04, $00, $00, $00, $00, data_17_6f79 ;; 31:6726 $4c $16 $02 $04 $00 $00 $00 $00 $79 $6f $17
-    Op5A_Unknown $a4                                   ;; 31:6731 $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 31:6731 $5a $a4
     Op44_Unknown $12, $00                              ;; 31:6733 $44 $12 $00
     Op48_Unknown                                       ;; 31:6736 $48
     Op38_Graphics data_7b_4a8a, w5_D808, $08           ;; 31:6737 $38 $8a $4a $7b $08 $d8 $05 $08
@@ -3159,7 +3159,7 @@ call_31_686b:
     Op7E_Unknown w7_D810, $10, $98, $01, $b0, $03      ;; 31:6875 $7e $10 $d8 $07 $10 $98 $01 $b0 $03
     Op42_Unknown_StoreValue 4, $01, data_17_6a05       ;; 31:687e $42 $04 $01 $05 $6a $17
     Op4C_Unknown $16, $04, $04, $00, $00, $00, $00, data_17_6f17 ;; 31:6884 $4c $16 $04 $04 $00 $00 $00 $00 $17 $6f $17
-    Op5A_Unknown $a4                                   ;; 31:688f $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 31:688f $5a $a4
     Op44_Unknown $12, $00                              ;; 31:6891 $44 $12 $00
     Op48_Unknown                                       ;; 31:6894 $48
     Op38_Graphics data_79_7e21, w5_D810, $08           ;; 31:6895 $38 $21 $7e $79 $10 $d8 $05 $08
@@ -4364,8 +4364,8 @@ call_31_76ee:
 
 call_31_7706:
     Op1E_Call call_20_43a4                             ;; 31:7706 $1e $a4 $43 $20
-    Op5E_Unknown $80                                   ;; 31:770a $5e $80
-    Op5A_Unknown $90                                   ;; 31:770c $5a $90
+    Op5E_PlaySong $80                                  ;; 31:770a $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 31:770c $5a $90
     Op1E_Call call_3c_5649                             ;; 31:770e $1e $49 $56 $3c
     Op54_Unknown $00                                   ;; 31:7712 $54 $00
 
@@ -4428,12 +4428,12 @@ call_31_77ae:
     Op16_SubOps 1                                      ;; 31:77b5 $16 $01
     SubOp_SetFlag 402 ; Bit 2 of wC94A                 ;; 31:77b7 $3f $92
     Op44_Unknown $14, $00                              ;; 31:77b9 $44 $14 $00
-    Op5A_Unknown $b3                                   ;; 31:77bc $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:77bc $5a $b3
     Op42_Unknown_StoreValue 7, $01, data_16_66c2       ;; 31:77be $42 $07 $01 $c2 $66 $16
     Op16_SubOps 1                                      ;; 31:77c4 $16 $01
     SubOp_SetFlag 401 ; Bit 1 of wC94A                 ;; 31:77c6 $3f $91
     Op44_Unknown $0a, $00                              ;; 31:77c8 $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:77cb $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:77cb $5a $b3
     Op42_Unknown_StoreValue 8, $01, data_16_6649       ;; 31:77cd $42 $08 $01 $49 $66 $16
     Op18_Jump call_31_7855                             ;; 31:77d3 $18 $55 $78 $31
 
@@ -4450,17 +4450,17 @@ call_31_77e9:
     Op16_SubOps 1                                      ;; 31:77f0 $16 $01
     SubOp_SetFlag 405 ; Bit 5 of wC94A                 ;; 31:77f2 $3f $95
     Op44_Unknown $14, $00                              ;; 31:77f4 $44 $14 $00
-    Op5A_Unknown $b3                                   ;; 31:77f7 $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:77f7 $5a $b3
     Op42_Unknown_StoreValue 7, $01, data_16_687d       ;; 31:77f9 $42 $07 $01 $7d $68 $16
     Op16_SubOps 1                                      ;; 31:77ff $16 $01
     SubOp_SetFlag 404 ; Bit 4 of wC94A                 ;; 31:7801 $3f $94
     Op44_Unknown $0a, $00                              ;; 31:7803 $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:7806 $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:7806 $5a $b3
     Op42_Unknown_StoreValue 8, $01, data_16_6804       ;; 31:7808 $42 $08 $01 $04 $68 $16
     Op16_SubOps 1                                      ;; 31:780e $16 $01
     SubOp_SetFlag 406 ; Bit 6 of wC94A                 ;; 31:7810 $3f $96
     Op44_Unknown $0a, $00                              ;; 31:7812 $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:7815 $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:7815 $5a $b3
     Op42_Unknown_StoreValue 6, $01, data_16_6943       ;; 31:7817 $42 $06 $01 $43 $69 $16
     Op18_Jump call_31_7855                             ;; 31:781d $18 $55 $78 $31
 
@@ -4470,17 +4470,17 @@ call_31_7821:
     Op16_SubOps 1                                      ;; 31:7828 $16 $01
     SubOp_SetFlag 408 ; Bit 0 of wC94B                 ;; 31:782a $3f $98
     Op44_Unknown $14, $00                              ;; 31:782c $44 $14 $00
-    Op5A_Unknown $b3                                   ;; 31:782f $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:782f $5a $b3
     Op42_Unknown_StoreValue 7, $01, data_16_6a35       ;; 31:7831 $42 $07 $01 $35 $6a $16
     Op16_SubOps 1                                      ;; 31:7837 $16 $01
     SubOp_SetFlag 409 ; Bit 1 of wC94B                 ;; 31:7839 $3f $99
     Op44_Unknown $0a, $00                              ;; 31:783b $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:783e $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:783e $5a $b3
     Op42_Unknown_StoreValue 6, $01, data_16_6afb       ;; 31:7840 $42 $06 $01 $fb $6a $16
     Op16_SubOps 1                                      ;; 31:7846 $16 $01
     SubOp_SetFlag 407 ; Bit 7 of wC94A                 ;; 31:7848 $3f $97
     Op44_Unknown $0a, $00                              ;; 31:784a $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:784d $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:784d $5a $b3
     Op42_Unknown_StoreValue 8, $01, data_16_69bc       ;; 31:784f $42 $08 $01 $bc $69 $16
 
 call_31_7855:
@@ -4567,17 +4567,17 @@ call_31_794a:
     Op16_SubOps 1                                      ;; 31:7951 $16 $01
     SubOp_SetFlag 411 ; Bit 3 of wC94B                 ;; 31:7953 $3f $9b
     Op44_Unknown $14, $00                              ;; 31:7955 $44 $14 $00
-    Op5A_Unknown $b3                                   ;; 31:7958 $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:7958 $5a $b3
     Op42_Unknown_StoreValue 7, $01, data_16_6bed       ;; 31:795a $42 $07 $01 $ed $6b $16
     Op16_SubOps 1                                      ;; 31:7960 $16 $01
     SubOp_SetFlag 412 ; Bit 4 of wC94B                 ;; 31:7962 $3f $9c
     Op44_Unknown $0a, $00                              ;; 31:7964 $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:7967 $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:7967 $5a $b3
     Op42_Unknown_StoreValue 6, $01, data_16_6c66       ;; 31:7969 $42 $06 $01 $66 $6c $16
     Op16_SubOps 1                                      ;; 31:796f $16 $01
     SubOp_SetFlag 410 ; Bit 2 of wC94B                 ;; 31:7971 $3f $9a
     Op44_Unknown $0a, $00                              ;; 31:7973 $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:7976 $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:7976 $5a $b3
     Op42_Unknown_StoreValue 8, $01, data_16_6b74       ;; 31:7978 $42 $08 $01 $74 $6b $16
     Op18_Jump call_31_79f1                             ;; 31:797e $18 $f1 $79 $31
 
@@ -4587,17 +4587,17 @@ call_31_7982:
     Op16_SubOps 1                                      ;; 31:7989 $16 $01
     SubOp_SetFlag 396 ; Bit 4 of wC949                 ;; 31:798b $3f $8c
     Op44_Unknown $14, $00                              ;; 31:798d $44 $14 $00
-    Op5A_Unknown $b3                                   ;; 31:7990 $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:7990 $5a $b3
     Op42_Unknown_StoreValue 7, $01, data_16_6da5       ;; 31:7992 $42 $07 $01 $a5 $6d $16
     Op16_SubOps 1                                      ;; 31:7998 $16 $01
     SubOp_SetFlag 413 ; Bit 5 of wC94B                 ;; 31:799a $3f $9d
     Op44_Unknown $0a, $00                              ;; 31:799c $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:799f $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:799f $5a $b3
     Op42_Unknown_StoreValue 8, $01, data_16_6d2c       ;; 31:79a1 $42 $08 $01 $2c $6d $16
     Op16_SubOps 1                                      ;; 31:79a7 $16 $01
     SubOp_SetFlag 397 ; Bit 5 of wC949                 ;; 31:79a9 $3f $8d
     Op44_Unknown $0a, $00                              ;; 31:79ab $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:79ae $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:79ae $5a $b3
     Op42_Unknown_StoreValue 6, $01, data_16_6e1e       ;; 31:79b0 $42 $06 $01 $1e $6e $16
     Op18_Jump call_31_79f1                             ;; 31:79b6 $18 $f1 $79 $31
 
@@ -4614,12 +4614,12 @@ call_31_79cc:
     Op16_SubOps 1                                      ;; 31:79d3 $16 $01
     SubOp_SetFlag 399 ; Bit 7 of wC949                 ;; 31:79d5 $3f $8f
     Op44_Unknown $14, $00                              ;; 31:79d7 $44 $14 $00
-    Op5A_Unknown $b3                                   ;; 31:79da $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:79da $5a $b3
     Op42_Unknown_StoreValue 8, $01, data_16_6f60       ;; 31:79dc $42 $08 $01 $60 $6f $16
     Op16_SubOps 1                                      ;; 31:79e2 $16 $01
     SubOp_SetFlag 400 ; Bit 0 of wC94A                 ;; 31:79e4 $3f $90
     Op44_Unknown $0a, $00                              ;; 31:79e6 $44 $0a $00
-    Op5A_Unknown $b3                                   ;; 31:79e9 $5a $b3
+    Op5A_PlaySoundEffect $b3                           ;; 31:79e9 $5a $b3
     Op42_Unknown_StoreValue 7, $01, data_16_6fd9       ;; 31:79eb $42 $07 $01 $d9 $6f $16
 
 call_31_79f1:

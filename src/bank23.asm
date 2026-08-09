@@ -375,7 +375,7 @@ call_23_4479:
     SCRIPT_RETURN_4A                                   ;; 23:4479 $4a
     Op3E_Compare_Branch 10, data_1b_58e8, call_23_4479 ;; 23:447a $3e $0a $e8 $58 $1b $79 $44 $23
     Op4E_Unknown_StoreValue 4, $01, data_10_4073       ;; 23:4482 $4e $04 $01 $73 $40 $10
-    Op5A_Unknown $cf                                   ;; 23:4488 $5a $cf
+    Op5A_PlaySoundEffect $cf                           ;; 23:4488 $5a $cf
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_12_4021 ;; 23:448a $4c $16 $08 $ff $00 $00 $00 $00 $21 $40 $12
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_12_4042 ;; 23:4495 $4c $08 $01 $04 $00 $00 $00 $00 $42 $40 $12
 
@@ -406,7 +406,7 @@ call_23_44fa:
     SCRIPT_RETURN_4A                                   ;; 23:44fa $4a
     Op3E_Compare_Branch 10, data_1b_5918, call_23_44fa ;; 23:44fb $3e $0a $18 $59 $1b $fa $44 $23
     Op4E_Unknown_StoreValue 4, $01, data_10_4073       ;; 23:4503 $4e $04 $01 $73 $40 $10
-    Op5A_Unknown $d0                                   ;; 23:4509 $5a $d0
+    Op5A_PlaySoundEffect $d0                           ;; 23:4509 $5a $d0
     Op4C_Unknown $16, $08, $ff, $00, $00, $00, $00, data_12_4021 ;; 23:450b $4c $16 $08 $ff $00 $00 $00 $00 $21 $40 $12
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_12_4042 ;; 23:4516 $4c $08 $01 $04 $00 $00 $00 $00 $42 $40 $12
 
@@ -433,7 +433,7 @@ call_23_4565:
 call_23_4570:
     SCRIPT_RETURN_4A                                   ;; 23:4570 $4a
     Op3E_Compare_Branch 10, data_1b_5948, call_23_4570 ;; 23:4571 $3e $0a $48 $59 $1b $70 $45 $23
-    Op5A_Unknown $d1                                   ;; 23:4579 $5a $d1
+    Op5A_PlaySoundEffect $d1                           ;; 23:4579 $5a $d1
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_10_7558 ;; 23:457b $4c $16 $08 $04 $00 $00 $00 $00 $58 $75 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_10_761d ;; 23:4586 $4c $08 $01 $04 $00 $00 $00 $00 $1d $76 $10
     Op44_Unknown $80, $00                              ;; 23:4591 $44 $80 $00
@@ -479,7 +479,7 @@ call_23_45f7:
 call_23_460b:
     SCRIPT_RETURN_4A                                   ;; 23:460b $4a
     Op3E_Compare_Branch 22, data_17_7887, call_23_460b ;; 23:460c $3e $16 $87 $78 $17 $0b $46 $23
-    Op5A_Unknown $d2                                   ;; 23:4614 $5a $d2
+    Op5A_PlaySoundEffect $d2                           ;; 23:4614 $5a $d2
     Op1E_Call call_1d_6da6                             ;; 23:4616 $1e $a6 $6d $1d
     ;;Aaahhh!<E0>
     Op04_Unknown_Text data_35_58a0                     ;; 23:461a $04 $a0 $58 $35
@@ -767,7 +767,7 @@ call_23_49a2:
     Op4E_Unknown_StoreValue 4, $01, data_10_4073       ;; 23:49b7 $4e $04 $01 $73 $40 $10
     Op4C_Unknown $1a, $01, $12, $18, $00, $a8, $00, data_18_7564 ;; 23:49bd $4c $1a $01 $12 $18 $00 $a8 $00 $64 $75 $18
     Op44_Unknown $30, $00                              ;; 23:49c8 $44 $30 $00
-    Op5A_Unknown $a3                                   ;; 23:49cb $5a $a3
+    Op5A_PlaySoundEffect $a3                           ;; 23:49cb $5a $a3
     Op44_Unknown $70, $00                              ;; 23:49cd $44 $70 $00
     Op4C_Unknown $1c, $01, $04, $00, $00, $00, $00, data_18_7574 ;; 23:49d0 $4c $1c $01 $04 $00 $00 $00 $00 $74 $75 $18
     Op1E_Call call_1d_6b84                             ;; 23:49db $1e $84 $6b $1d
@@ -1972,8 +1972,8 @@ call_23_5a3a:
 
 call_23_5a46:
     Op1E_Call call_20_43a4                             ;; 23:5a46 $1e $a4 $43 $20
-    Op5E_Unknown $80                                   ;; 23:5a4a $5e $80
-    Op5A_Unknown $90                                   ;; 23:5a4c $5a $90
+    Op5E_PlaySong $80                                  ;; 23:5a4a $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 23:5a4c $5a $90
     Op1E_Call call_3b_7882                             ;; 23:5a4e $1e $82 $78 $3b
     Op54_Unknown $00                                   ;; 23:5a52 $54 $00
 
@@ -2035,8 +2035,8 @@ call_23_5a9b:
     ARGUMENT_WORD $c764                                ;; 23:5af7 $64 $c7
     Op68_CopyBytes 2, wC7D8, w1_D216, $01              ;; 23:5af9 $68 $02 $d8 $c7 $16 $d2 $01
     Op68_CopyBytes 2, wC7DA, w1_D20E, $01              ;; 23:5b00 $68 $02 $da $c7 $0e $d2 $01
-    Op5E_Unknown $80                                   ;; 23:5b07 $5e $80
-    Op5A_Unknown $90                                   ;; 23:5b09 $5a $90
+    Op5E_PlaySong $80                                  ;; 23:5b07 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 23:5b09 $5a $90
     Op1E_Call call_2b_5d51                             ;; 23:5b0b $1e $51 $5d $2b
     Op1E_Call call_23_564c                             ;; 23:5b0f $1e $4c $56 $23
     Op14_BranchWithHamChatWheelRules 1, data_05_5c61   ;; 23:5b13 $14 $01 $61 $5c
@@ -2133,7 +2133,7 @@ call_23_5c21:
 
 call_23_5c2c:
     Op1E_Call call_20_42bf                             ;; 23:5c2c $1e $bf $42 $20
-    Op5A_Unknown $9a                                   ;; 23:5c30 $5a $9a
+    Op5A_PlaySoundEffect $9a                           ;; 23:5c30 $5a $9a
     Op4C_Unknown $20, $01, $04, $24, $00, $b4, $ff, data_17_4cca ;; 23:5c32 $4c $20 $01 $04 $24 $00 $b4 $ff $ca $4c $17
     Op44_Unknown $04, $00                              ;; 23:5c3d $44 $04 $00
     Op4C_Unknown $22, $01, $04, $30, $00, $ae, $ff, data_17_4cca ;; 23:5c40 $4c $22 $01 $04 $30 $00 $ae $ff $ca $4c $17
@@ -2181,7 +2181,7 @@ call_23_5ce5:
 
 call_23_5cff:
     Op1E_Call call_20_42bf                             ;; 23:5cff $1e $bf $42 $20
-    Op5A_Unknown $9a                                   ;; 23:5d03 $5a $9a
+    Op5A_PlaySoundEffect $9a                           ;; 23:5d03 $5a $9a
     Op14_BranchWithHamChatWheelRules 1, data_05_5abe   ;; 23:5d05 $14 $01 $be $5a
     SCRIPT_POINTER call_26_63dd                        ;; 23:5d09 $dd $63 $26
     Op14_BranchWithHamChatWheelRules 1, data_05_5ac2   ;; 23:5d0c $14 $01 $c2 $5a
@@ -3082,7 +3082,7 @@ call_23_6892:
     ;;Huh?<E3>Boss is calling<E2>for us?<E3>OK, then.<E2>Let's head back to<E2>the Clubhouse<heart><E0>
     Op04_Unknown_Text data_3a_595e                     ;; 23:689b $04 $5e $59 $3a
     Op1E_Call call_04_615d                             ;; 23:689f $1e $5d $61 $04
-    Op5E_Unknown $80                                   ;; 23:68a3 $5e $80
+    Op5E_PlaySong $80                                  ;; 23:68a3 $5e $80
     SCRIPT_RETURN_20                                   ;; 23:68a5 $20
 
 call_23_68a6:
@@ -3100,8 +3100,8 @@ call_23_68a6:
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_17_77d2 ;; 23:68cf $4c $16 $08 $04 $00 $00 $00 $00 $d2 $77 $17
     Op52_WriteBytes w1_D20B, $01, $ab, $00             ;; 23:68da $52 $0b $d2 $01 $ab $00
     Op44_Unknown $50, $00                              ;; 23:68e0 $44 $50 $00
-    Op5E_Unknown $80                                   ;; 23:68e3 $5e $80
-    Op5A_Unknown $90                                   ;; 23:68e5 $5a $90
+    Op5E_PlaySong $80                                  ;; 23:68e3 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 23:68e5 $5a $90
     Op1E_Call call_3b_7882                             ;; 23:68e7 $1e $82 $78 $3b
     Op14_BranchWithHamChatWheelRules 1, data_05_5a9e   ;; 23:68eb $14 $01 $9e $5a
     SCRIPT_POINTER call_23_68f7                        ;; 23:68ef $f7 $68 $23

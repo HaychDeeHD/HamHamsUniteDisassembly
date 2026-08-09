@@ -4296,7 +4296,7 @@ call_1e_7627:
     Op36_Graphics data_7f_74bf, w1_DDFA                ;; 1e:7627 $36 $bf $74 $7f $fa $dd $01
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_10_553f ;; 1e:762e $4c $16 $08 $04 $00 $00 $00 $00 $3f $55 $10
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_15_782f ;; 1e:7639 $4c $08 $01 $04 $00 $00 $00 $00 $2f $78 $15
-    Op5A_Unknown $d8                                   ;; 1e:7644 $5a $d8
+    Op5A_PlaySoundEffect $d8                           ;; 1e:7644 $5a $d8
     Op1E_Call call_1d_6ae8                             ;; 1e:7646 $1e $e8 $6a $1d
     ;;You got<E4><o\">Young 'n Wild<c\">!<E3>Try dancing to it!<E0>
     Op04_Unknown_Text data_30_601c                     ;; 1e:764a $04 $1c $60 $30

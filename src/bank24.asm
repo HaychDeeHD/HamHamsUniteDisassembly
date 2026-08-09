@@ -521,8 +521,8 @@ call_24_4633:
 call_24_4640:
     SCRIPT_RETURN_4A                                   ;; 24:4640 $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_24_4640 ;; 24:4641 $3e $16 $1b $5e $10 $40 $46 $24
-    Op5E_Unknown $80                                   ;; 24:4649 $5e $80
-    Op5A_Unknown $90                                   ;; 24:464b $5a $90
+    Op5E_PlaySong $80                                  ;; 24:4649 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 24:464b $5a $90
     Op1E_Call call_3c_5649                             ;; 24:464d $1e $49 $56 $3c
     Op50_WriteByte wCA92, $00, $04                     ;; 24:4651 $50 $92 $ca $00 $04
     Op54_Unknown $01                                   ;; 24:4656 $54 $01
@@ -2031,8 +2031,8 @@ call_24_5940:
 call_24_594d:
     SCRIPT_RETURN_4A                                   ;; 24:594d $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_24_594d ;; 24:594e $3e $16 $1b $5e $10 $4d $59 $24
-    Op5E_Unknown $80                                   ;; 24:5956 $5e $80
-    Op5A_Unknown $90                                   ;; 24:5958 $5a $90
+    Op5E_PlaySong $80                                  ;; 24:5956 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 24:5958 $5a $90
     Op1E_Call call_3b_7882                             ;; 24:595a $1e $82 $78 $3b
     Op54_Unknown $00                                   ;; 24:595e $54 $00
 
@@ -2222,7 +2222,7 @@ call_24_5b6f:
 call_24_5b7a:
     SCRIPT_RETURN_4A                                   ;; 24:5b7a $4a
     Op3E_Compare_Branch 22, data_10_5b35, call_24_5b7a ;; 24:5b7b $3e $16 $35 $5b $10 $7a $5b $24
-    Op5A_Unknown $9a                                   ;; 24:5b83 $5a $9a
+    Op5A_PlaySoundEffect $9a                           ;; 24:5b83 $5a $9a
     Op14_BranchWithHamChatWheelRules 1, data_05_5abe   ;; 24:5b85 $14 $01 $be $5a
     SCRIPT_POINTER call_24_5482                        ;; 24:5b89 $82 $54 $24
     Op14_BranchWithHamChatWheelRules 1, data_05_5ac2   ;; 24:5b8c $14 $01 $c2 $5a
@@ -3638,7 +3638,7 @@ call_24_6cd0:
     Op18_Jump call_24_6cd0                             ;; 24:6ce9 $18 $d0 $6c $24
 
 call_24_6ced:
-    Op5A_Unknown $8b                                   ;; 24:6ced $5a $8b
+    Op5A_PlaySoundEffect $8b                           ;; 24:6ced $5a $8b
     Op1E_Call call_24_7716                             ;; 24:6cef $1e $16 $77 $24
     Op1E_Call call_24_7726                             ;; 24:6cf3 $1e $26 $77 $24
     Op18_Jump call_24_71b4                             ;; 24:6cf7 $18 $b4 $71 $24
@@ -3659,16 +3659,16 @@ call_24_6cfb:
     SCRIPT_POINTER call_24_6d89                        ;; 24:6d31 $89 $6d $24
 
 call_24_6d34:
-    Op5A_Unknown $88                                   ;; 24:6d34 $5a $88
+    Op5A_PlaySoundEffect $88                           ;; 24:6d34 $5a $88
     Op1E_Call call_24_7716                             ;; 24:6d36 $1e $16 $77 $24
     Op18_Jump call_24_6e47                             ;; 24:6d3a $18 $47 $6e $24
 
 call_24_6d3e:
-    Op5A_Unknown $8e                                   ;; 24:6d3e $5a $8e
+    Op5A_PlaySoundEffect $8e                           ;; 24:6d3e $5a $8e
     Op18_Jump call_24_6cd0                             ;; 24:6d40 $18 $d0 $6c $24
 
 call_24_6d44:
-    Op5A_Unknown $8e                                   ;; 24:6d44 $5a $8e
+    Op5A_PlaySoundEffect $8e                           ;; 24:6d44 $5a $8e
     ;;I'm so sorry, but<E4>that particular<E4>item is sold out.<E3>Please wait for<E4>our next shipment<E4>to arrive.<E0>
     Op04_Unknown_Text data_39_459e                     ;; 24:6d46 $04 $9e $45 $39
     ;;Do you want to<E4>keep shopping?<E0>
@@ -3683,7 +3683,7 @@ call_24_6d44:
 
 call_24_6d69:
     Op50_WriteByte wC65D, $00, $00                     ;; 24:6d69 $50 $5d $c6 $00 $00
-    Op5A_Unknown $48                                   ;; 24:6d6e $5a $48
+    Op5A_PlaySoundEffect $48                           ;; 24:6d6e $5a $48
     Op44_Unknown $3c, $00                              ;; 24:6d70 $44 $3c $00
     Op16_SubOps 1                                      ;; 24:6d73 $16 $01
     SubOp_SetFlag 401 ; Bit 1 of wC94A                 ;; 24:6d75 $3f $91
@@ -3691,12 +3691,12 @@ call_24_6d69:
 
 call_24_6d7b:
     Op50_WriteByte wC65D, $00, $00                     ;; 24:6d7b $50 $5d $c6 $00 $00
-    Op5A_Unknown $47                                   ;; 24:6d80 $5a $47
+    Op5A_PlaySoundEffect $47                           ;; 24:6d80 $5a $47
     Op44_Unknown $3c, $00                              ;; 24:6d82 $44 $3c $00
     Op18_Jump call_24_719b                             ;; 24:6d85 $18 $9b $71 $24
 
 call_24_6d89:
-    Op5A_Unknown $8e                                   ;; 24:6d89 $5a $8e
+    Op5A_PlaySoundEffect $8e                           ;; 24:6d89 $5a $8e
     Op1E_Call call_1d_6d8c                             ;; 24:6d8b $1e $8c $6d $1d
     ;;Whoa!<E3>It seems you<E4>currently have<E4>thirty items!<E3>Make some space in<E4>your dresser and<E4>come shop again!<E0>
     Op04_Unknown_Text data_39_461d                     ;; 24:6d8f $04 $1d $46 $39
@@ -3715,7 +3715,7 @@ call_24_6d9b:
     SubOp_DefaultCase_Pair $79, $0c                    ;; 24:6db8 $79 $0c
     SubOp_DefaultCase_Pair $be, $01                    ;; 24:6dba $be $01
     Op1E_Call call_24_792d                             ;; 24:6dbc $1e $2d $79 $24
-    Op5A_Unknown $84                                   ;; 24:6dc0 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 24:6dc0 $5a $84
     Op18_Jump call_24_6cd0                             ;; 24:6dc2 $18 $d0 $6c $24
 
 call_24_6dc6:
@@ -3730,7 +3730,7 @@ call_24_6dc6:
     SubOp_DefaultCase_Pair $77, $0c                    ;; 24:6de3 $77 $0c
     SubOp_DefaultCase_Pair $be, $01                    ;; 24:6de5 $be $01
     Op1E_Call call_24_792d                             ;; 24:6de7 $1e $2d $79 $24
-    Op5A_Unknown $84                                   ;; 24:6deb $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 24:6deb $5a $84
     Op18_Jump call_24_6cd0                             ;; 24:6ded $18 $d0 $6c $24
 
 call_24_6df1:
@@ -3745,7 +3745,7 @@ call_24_6df1:
     SubOp_DefaultCase_Pair $79, $0c                    ;; 24:6e0e $79 $0c
     SubOp_DefaultCase_Pair $be, $02                    ;; 24:6e10 $be $02
     Op1E_Call call_24_792d                             ;; 24:6e12 $1e $2d $79 $24
-    Op5A_Unknown $84                                   ;; 24:6e16 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 24:6e16 $5a $84
     Op18_Jump call_24_6cd0                             ;; 24:6e18 $18 $d0 $6c $24
 
 call_24_6e1c:
@@ -3760,7 +3760,7 @@ call_24_6e1c:
     SubOp_DefaultCase_Pair $77, $0c                    ;; 24:6e39 $77 $0c
     SubOp_DefaultCase_Pair $be, $02                    ;; 24:6e3b $be $02
     Op1E_Call call_24_792d                             ;; 24:6e3d $1e $2d $79 $24
-    Op5A_Unknown $84                                   ;; 24:6e41 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 24:6e41 $5a $84
     Op18_Jump call_24_6cd0                             ;; 24:6e43 $18 $d0 $6c $24
 
 call_24_6e47:
@@ -3876,7 +3876,7 @@ call_24_6f95:
 
 call_24_6fb0:
     Op50_WriteByte wC65D, $00, $00                     ;; 24:6fb0 $50 $5d $c6 $00 $00
-    Op5A_Unknown $48                                   ;; 24:6fb5 $5a $48
+    Op5A_PlaySoundEffect $48                           ;; 24:6fb5 $5a $48
     Op44_Unknown $3c, $00                              ;; 24:6fb7 $44 $3c $00
     Op68_CopyBytes 2, wC754, wC84C, $00                ;; 24:6fba $68 $02 $54 $c7 $4c $c8 $00
     Op68_CopyBytes 1, wC756, wC823, $00                ;; 24:6fc1 $68 $01 $56 $c7 $23 $c8 $00
@@ -3887,11 +3887,11 @@ call_24_6fb0:
     Op82_Run data_03_5a05                              ;; 24:6fe1 $82 $05 $5a $03
     Op14_BranchWithHamChatWheelRules 1, data_05_4cac   ;; 24:6fe5 $14 $01 $ac $4c
     SCRIPT_POINTER call_24_6ff2                        ;; 24:6fe9 $f2 $6f $24
-    Op5A_Unknown $94                                   ;; 24:6fec $5a $94
+    Op5A_PlaySoundEffect $94                           ;; 24:6fec $5a $94
     Op18_Jump call_24_6ff4                             ;; 24:6fee $18 $f4 $6f $24
 
 call_24_6ff2:
-    Op5A_Unknown $8e                                   ;; 24:6ff2 $5a $8e
+    Op5A_PlaySoundEffect $8e                           ;; 24:6ff2 $5a $8e
 
 call_24_6ff4:
     Op44_Unknown $1e, $00                              ;; 24:6ff4 $44 $1e $00
@@ -3945,7 +3945,7 @@ call_24_705b:
     Op44_Unknown $1e, $00                              ;; 24:7078 $44 $1e $00
     Op68_CopyBytes 2, wC754, wC84C, $00                ;; 24:707b $68 $02 $54 $c7 $4c $c8 $00
     Op82_Run data_03_73ea                              ;; 24:7082 $82 $ea $73 $03
-    Op5A_Unknown $c8                                   ;; 24:7086 $5a $c8
+    Op5A_PlaySoundEffect $c8                           ;; 24:7086 $5a $c8
     Op7E_Unknown w5_D940, $40, $99, $00, $40, $00      ;; 24:7088 $7e $40 $d9 $05 $40 $99 $00 $40 $00
     Op18_Jump call_24_70fb                             ;; 24:7091 $18 $fb $70 $24
 
@@ -3957,7 +3957,7 @@ call_24_7095:
 
 call_24_70a1:
     Op50_WriteByte wC65D, $00, $00                     ;; 24:70a1 $50 $5d $c6 $00 $00
-    Op5A_Unknown $47                                   ;; 24:70a6 $5a $47
+    Op5A_PlaySoundEffect $47                           ;; 24:70a6 $5a $47
     Op44_Unknown $3c, $00                              ;; 24:70a8 $44 $3c $00
     Op1E_Call call_1d_6d8c                             ;; 24:70ab $1e $8c $6d $1d
     Op18_Jump call_24_70fb                             ;; 24:70af $18 $fb $70 $24
@@ -3995,7 +3995,7 @@ call_24_70fb:
 
 call_24_711a:
     Op50_WriteByte wC65D, $00, $00                     ;; 24:711a $50 $5d $c6 $00 $00
-    Op5A_Unknown $48                                   ;; 24:711f $5a $48
+    Op5A_PlaySoundEffect $48                           ;; 24:711f $5a $48
     Op44_Unknown $3c, $00                              ;; 24:7121 $44 $3c $00
     Op82_Run data_03_778e                              ;; 24:7124 $82 $8e $77 $03
     Op1C_TableJump 2                                   ;; 24:7128 $1c $02
@@ -4043,7 +4043,7 @@ call_24_7189:
 
 call_24_7191:
     Op50_WriteByte wC65D, $00, $00                     ;; 24:7191 $50 $5d $c6 $00 $00
-    Op5A_Unknown $47                                   ;; 24:7196 $5a $47
+    Op5A_PlaySoundEffect $47                           ;; 24:7196 $5a $47
     Op44_Unknown $3c, $00                              ;; 24:7198 $44 $3c $00
 
 call_24_719b:
@@ -4095,10 +4095,10 @@ call_24_7204:
     Op4E_Unknown_StoreValue 11, $01, data_15_623c      ;; 24:7219 $4e $0b $01 $3c $62 $15
     Op58_WriteBitArrayIndex 22, $08, data_17_7991      ;; 24:721f $58 $16 $08 $91 $79 $17
     Op44_Unknown $04, $00                              ;; 24:7225 $44 $04 $00
-    Op5A_Unknown $94                                   ;; 24:7228 $5a $94
+    Op5A_PlaySoundEffect $94                           ;; 24:7228 $5a $94
     Op4C_Unknown $08, $01, $04, $48, $00, $68, $00, data_15_64c3 ;; 24:722a $4c $08 $01 $04 $48 $00 $68 $00 $c3 $64 $15
     Op44_Unknown $34, $00                              ;; 24:7235 $44 $34 $00
-    Op5A_Unknown $95                                   ;; 24:7238 $5a $95
+    Op5A_PlaySoundEffect $95                           ;; 24:7238 $5a $95
     Op56_WriteBitArrayIndex 8, data_15_67e6            ;; 24:723a $56 $08 $e6 $67 $15
     Op44_Unknown $32, $00                              ;; 24:723f $44 $32 $00
     Op1E_Call call_04_5b22                             ;; 24:7242 $1e $22 $5b $04
@@ -4121,10 +4121,10 @@ call_24_7204:
     Op1E_Call call_24_68f5                             ;; 24:727c $1e $f5 $68 $24
     Op4E_Unknown_StoreValue 11, $01, data_15_623c      ;; 24:7280 $4e $0b $01 $3c $62 $15
     Op56_WriteBitArrayIndex 26, data_14_5e0f           ;; 24:7286 $56 $1a $0f $5e $14
-    Op5A_Unknown $94                                   ;; 24:728b $5a $94
+    Op5A_PlaySoundEffect $94                           ;; 24:728b $5a $94
     Op4C_Unknown $08, $01, $04, $48, $00, $38, $00, data_15_64c3 ;; 24:728d $4c $08 $01 $04 $48 $00 $38 $00 $c3 $64 $15
     Op44_Unknown $34, $00                              ;; 24:7298 $44 $34 $00
-    Op5A_Unknown $95                                   ;; 24:729b $5a $95
+    Op5A_PlaySoundEffect $95                           ;; 24:729b $5a $95
     Op56_WriteBitArrayIndex 8, data_15_67e6            ;; 24:729d $56 $08 $e6 $67 $15
     Op44_Unknown $32, $00                              ;; 24:72a2 $44 $32 $00
     Op56_WriteBitArrayIndex 26, data_14_5bda           ;; 24:72a5 $56 $1a $da $5b $14

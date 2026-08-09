@@ -560,7 +560,7 @@ call_39_5308:
     Op18_Jump call_39_52ee                             ;; 39:5334 $18 $ee $52 $39
 
 call_39_5338:
-    Op5A_Unknown $95                                   ;; 39:5338 $5a $95
+    Op5A_PlaySoundEffect $95                           ;; 39:5338 $5a $95
     Op1E_Call call_04_5b22                             ;; 39:533a $1e $22 $5b $04
     Op44_Unknown $0a, $00                              ;; 39:533e $44 $0a $00
     Op4E_Unknown_StoreValue 4, $00, zero_pointer       ;; 39:5341 $4e $04 $00 $00 $00 $00
@@ -1621,8 +1621,8 @@ call_39_62c1:
 
 call_39_62db:
     Op1E_Call call_20_43a4                             ;; 39:62db $1e $a4 $43 $20
-    Op5E_Unknown $80                                   ;; 39:62df $5e $80
-    Op5A_Unknown $90                                   ;; 39:62e1 $5a $90
+    Op5E_PlaySong $80                                  ;; 39:62df $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 39:62e1 $5a $90
     Op1E_Call call_3c_5649                             ;; 39:62e3 $1e $49 $56 $3c
     Op50_WriteByte wCA92, $00, $03                     ;; 39:62e7 $50 $92 $ca $00 $03
     Op54_Unknown $01                                   ;; 39:62ec $54 $01

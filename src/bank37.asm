@@ -3333,7 +3333,7 @@ call_37_7ca1:
     Op34_Graphics data_7d_73f0, w7_D818, $08           ;; 37:7ca9 $34 $f0 $73 $7d $18 $d8 $07 $08
     Op42_Unknown_StoreValue 4, $01, data_17_6a05       ;; 37:7cb1 $42 $04 $01 $05 $6a $17
     Op4C_Unknown $16, $04, $04, $00, $00, $00, $00, data_17_6f17 ;; 37:7cb7 $4c $16 $04 $04 $00 $00 $00 $00 $17 $6f $17
-    Op5A_Unknown $a4                                   ;; 37:7cc2 $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 37:7cc2 $5a $a4
     Op44_Unknown $12, $00                              ;; 37:7cc4 $44 $12 $00
     Op48_Unknown                                       ;; 37:7cc7 $48
     Op38_Graphics data_7b_5424, w5_D810, $08           ;; 37:7cc8 $38 $24 $54 $7b $10 $d8 $05 $08

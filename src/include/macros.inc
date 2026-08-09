@@ -223,11 +223,11 @@ db \<2>
 dw \<3>
 db BANK(\3)
 ENDM
-MACRO Op5A_Unknown
+MACRO Op5A_PlaySoundEffect
 db $5a
 db \<1>
 ENDM
-MACRO Op5E_Unknown
+MACRO Op5E_PlaySong
 db $5e
 db \<1>
 ENDM

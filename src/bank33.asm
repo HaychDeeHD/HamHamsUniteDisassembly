@@ -1152,7 +1152,7 @@ call_33_4e17:
 
 ShowHaventLearnedWord:
     Op1E_Call call_1d_6ae8                             ;; 33:4e1d $1e $e8 $6a $1d
-    Op5A_Unknown $8e                                   ;; 33:4e21 $5a $8e
+    Op5A_PlaySoundEffect $8e                           ;; 33:4e21 $5a $8e
     ;;You haven't learned<E4>that word yet.<E0>
     Op04_Unknown_Text haveNotLearnedWordText           ;; 33:4e23 $04 $b2 $4a $2f
     Op1E_Call call_04_615d                             ;; 33:4e27 $1e $5d $61 $04
@@ -1175,7 +1175,7 @@ call_33_4e3d:
     Op16_SubOps 1                                      ;; 33:4e4d $16 $01
     SubOp_SetByte wC742, $01                           ;; 33:4e4f $7e $2a $01
     Op44_Unknown $1e, $00                              ;; 33:4e52 $44 $1e $00
-    Op5A_Unknown $a2                                   ;; 33:4e55 $5a $a2
+    Op5A_PlaySoundEffect $a2                           ;; 33:4e55 $5a $a2
     Op1E_Call call_1d_6ae8                             ;; 33:4e57 $1e $e8 $6a $1d
     ;;Yes! You got all<E4><end>
     Op04_Unknown_Text data_2f_4af3                     ;; 33:4e5b $04 $f3 $4a $2f
@@ -1294,7 +1294,7 @@ call_33_506e:
 
 call_33_508a:
     Op56_WriteBitArrayIndex 22, data_12_6235           ;; 33:508a $56 $16 $35 $62 $12
-    Op5A_Unknown $d8                                   ;; 33:508f $5a $d8
+    Op5A_PlaySoundEffect $d8                           ;; 33:508f $5a $d8
     Op1E_Call call_1d_6ae8                             ;; 33:5091 $1e $e8 $6a $1d
     ;;You got<E4><o\">Little Star<c\">!<E3>Try dancing to it!<E0>
     Op04_Unknown_Text data_2f_4b13                     ;; 33:5095 $04 $13 $4b $2f
@@ -1620,8 +1620,8 @@ call_33_5512:
 
 call_33_552a:
     Op1E_Call call_20_43a4                             ;; 33:552a $1e $a4 $43 $20
-    Op5E_Unknown $80                                   ;; 33:552e $5e $80
-    Op5A_Unknown $90                                   ;; 33:5530 $5a $90
+    Op5E_PlaySong $80                                  ;; 33:552e $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 33:5530 $5a $90
     Op1E_Call call_3c_4532                             ;; 33:5532 $1e $32 $45 $3c
     Op54_Unknown $00                                   ;; 33:5536 $54 $00
 
@@ -1736,7 +1736,7 @@ call_33_5653:
     Op1E_Call call_20_42bf                             ;; 33:5653 $1e $bf $42 $20
     Op42_Unknown_StoreValue 8, $01, data_1b_5a8d       ;; 33:5657 $42 $08 $01 $8d $5a $1b
     Op1E_Call call_1d_6e76                             ;; 33:565d $1e $76 $6e $1d
-    Op5A_Unknown $c1                                   ;; 33:5661 $5a $c1
+    Op5A_PlaySoundEffect $c1                           ;; 33:5661 $5a $c1
     ;;Woof! Woof!<E0>
     Op04_Unknown_Text data_3c_5c1a                     ;; 33:5663 $04 $1a $5c $3c
     Op1E_Call call_04_615d                             ;; 33:5667 $1e $5d $61 $04
@@ -1817,7 +1817,7 @@ call_33_575b:
     Op3E_Compare_Branch 22, data_11_62ac, call_33_575b ;; 33:575c $3e $16 $ac $62 $11 $5b $57 $33
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, zero_pointer ;; 33:5764 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_6e76                             ;; 33:576f $1e $76 $6e $1d
-    Op5A_Unknown $c0                                   ;; 33:5773 $5a $c0
+    Op5A_PlaySoundEffect $c0                           ;; 33:5773 $5a $c0
     ;;Grrrrruff, gruff!<E0>
     Op04_Unknown_Text data_3c_5cef                     ;; 33:5775 $04 $ef $5c $3c
     Op1E_Call call_04_615d                             ;; 33:5779 $1e $5d $61 $04
@@ -1859,7 +1859,7 @@ call_33_57f9:
     Op56_WriteBitArrayIndex 28, data_1b_5b63           ;; 33:57fd $56 $1c $63 $5b $1b
     Op42_Unknown_StoreValue 8, $01, data_1b_5a8d       ;; 33:5802 $42 $08 $01 $8d $5a $1b
     Op1E_Call call_1d_6e76                             ;; 33:5808 $1e $76 $6e $1d
-    Op5A_Unknown $c1                                   ;; 33:580c $5a $c1
+    Op5A_PlaySoundEffect $c1                           ;; 33:580c $5a $c1
     ;;Woof! Woof!<E0>
     Op04_Unknown_Text data_3c_5d02                     ;; 33:580e $04 $02 $5d $3c
     Op1E_Call call_04_615d                             ;; 33:5812 $1e $5d $61 $04
@@ -1890,7 +1890,7 @@ call_33_584a:
 call_33_5865:
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_10_4235 ;; 33:5865 $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
     Op1E_Call call_1d_6e76                             ;; 33:5870 $1e $76 $6e $1d
-    Op5A_Unknown $c0                                   ;; 33:5874 $5a $c0
+    Op5A_PlaySoundEffect $c0                           ;; 33:5874 $5a $c0
     ;;Woof!<E0>
     Op04_Unknown_Text data_3c_5d29                     ;; 33:5876 $04 $29 $5d $3c
     Op4C_Unknown $16, $10, $02, $00, $00, $00, $00, data_11_619c ;; 33:587a $4c $16 $10 $02 $00 $00 $00 $00 $9c $61 $11
@@ -4510,8 +4510,8 @@ call_33_78d6:
 call_33_78e3:
     SCRIPT_RETURN_4A                                   ;; 33:78e3 $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_33_78e3 ;; 33:78e4 $3e $16 $1b $5e $10 $e3 $78 $33
-    Op5E_Unknown $80                                   ;; 33:78ec $5e $80
-    Op5A_Unknown $90                                   ;; 33:78ee $5a $90
+    Op5E_PlaySong $80                                  ;; 33:78ec $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 33:78ee $5a $90
     Op1E_Call call_36_7e94                             ;; 33:78f0 $1e $94 $7e $36
     Op50_WriteByte wCA92, $00, $09                     ;; 33:78f4 $50 $92 $ca $00 $09
     Op54_Unknown $01                                   ;; 33:78f9 $54 $01
@@ -4556,7 +4556,7 @@ call_33_7953:
     Op1E_Call call_33_7d28                             ;; 33:7963 $1e $28 $7d $33
     ;;<E4>I<...>I'm so hungry.<E3>My stomach's so<E4>empty,<end>
     Op06_Unknown_Text data_39_76c6                     ;; 33:7967 $06 $c6 $76 $39
-    Op5A_Unknown $b8                                   ;; 33:796b $5a $b8
+    Op5A_PlaySoundEffect $b8                           ;; 33:796b $5a $b8
     ;; I could<E4>eat the Clubhouse!<E0>
     Op06_Unknown_Text data_39_76ef                     ;; 33:796d $06 $ef $76 $39
     Op92_Unknown $00                                   ;; 33:7971 $92 $00
@@ -4748,7 +4748,7 @@ call_33_7b4d:
     SCRIPT_POINTER call_33_7c5f                        ;; 33:7b58 $5f $7c $33
     Op1E_Call call_20_42bf                             ;; 33:7b5b $1e $bf $42 $20
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_13_4ad7 ;; 33:7b5f $4c $1a $01 $04 $00 $00 $00 $00 $d7 $4a $13
-    Op5A_Unknown $b8                                   ;; 33:7b6a $5a $b8
+    Op5A_PlaySoundEffect $b8                           ;; 33:7b6a $5a $b8
     Op1E_Call call_1d_6bc5                             ;; 33:7b6c $1e $c5 $6b $1d
     ;;Ugh<...><E0>
     Op04_Unknown_Text data_39_7a24                     ;; 33:7b70 $04 $24 $7a $39
@@ -4776,7 +4776,7 @@ call_33_7b92:
 call_33_7bb0:
     SCRIPT_RETURN_4A                                   ;; 33:7bb0 $4a
     Op3E_Compare_Branch 30, data_13_5c82, call_33_7bb0 ;; 33:7bb1 $3e $1e $82 $5c $13 $b0 $7b $33
-    Op5A_Unknown $b4                                   ;; 33:7bb9 $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 33:7bb9 $5a $b4
     Op36_Graphics data_04_5e1c, w1_DDAA                ;; 33:7bbb $36 $1c $5e $04 $aa $dd $01
     Op36_Graphics data_04_5e26, w1_DDDA                ;; 33:7bc2 $36 $26 $5e $04 $da $dd $01
     Op44_Unknown $04, $00                              ;; 33:7bc9 $44 $04 $00
@@ -4804,7 +4804,7 @@ call_33_7c08:
     Op1E_Call call_1d_6bc5                             ;; 33:7c38 $1e $c5 $6b $1d
     ;;Oh<...> I'm so<E4>hungry, my stomach<E4><end>
     Op04_Unknown_Text data_39_7a31                     ;; 33:7c3c $04 $31 $7a $39
-    Op5A_Unknown $b8                                   ;; 33:7c40 $5a $b8
+    Op5A_PlaySoundEffect $b8                           ;; 33:7c40 $5a $b8
     ;;is gurgling.<E0>
     Op06_Unknown_Text data_39_7a50                     ;; 33:7c42 $06 $50 $7a $39
     Op92_Unknown $00                                   ;; 33:7c46 $92 $00

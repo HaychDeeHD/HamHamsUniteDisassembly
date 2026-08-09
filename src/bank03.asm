@@ -182,12 +182,12 @@ data_03_411a:
     dec  A                                             ;; 03:412c $3d
     ld   DE, data_03_6315                              ;; 03:412d $11 $15 $63
     call call_03_572e                                  ;; 03:4130 $cd $2e $57
-    ld   A, [wCFFA]                                    ;; 03:4133 $fa $fa $cf
+    ld   A, [wCurrentlyPlayingSong]                    ;; 03:4133 $fa $fa $cf
     cp   A, [HL]                                       ;; 03:4136 $be
     jr   Z, .jr_03_413d                                ;; 03:4137 $28 $04
     ld   A, [HL]                                       ;; 03:4139 $7e
 .jr_03_413a:
-    ld   [wCFF9], A                                    ;; 03:413a $ea $f9 $cf
+    ld   [wSongToPlay], A                              ;; 03:413a $ea $f9 $cf
 .jr_03_413d:
     jp   call_03_5806                                  ;; 03:413d $c3 $06 $58
 
@@ -936,7 +936,7 @@ call_03_467b:
     ld   DE, data_03_6315                              ;; 03:467e $11 $15 $63
     call call_03_572e                                  ;; 03:4681 $cd $2e $57
     ld   A, [HL]                                       ;; 03:4684 $7e
-    ld   [wCFF9], A                                    ;; 03:4685 $ea $f9 $cf
+    ld   [wSongToPlay], A                              ;; 03:4685 $ea $f9 $cf
     ld   HL, wC6B0                                     ;; 03:4688 $21 $b0 $c6
     xor  A, A                                          ;; 03:468b $af
     ld   [HL+], A                                      ;; 03:468c $22
@@ -978,7 +978,7 @@ call_03_46aa:
 
 call_03_46d2:
     call call_03_562a                                  ;; 03:46d2 $cd $2a $56
-    ld   A, [wCFFA]                                    ;; 03:46d5 $fa $fa $cf
+    ld   A, [wCurrentlyPlayingSong]                    ;; 03:46d5 $fa $fa $cf
     and  A, A                                          ;; 03:46d8 $a7
     ret  NZ                                            ;; 03:46d9 $c0
     ld   A, $04                                        ;; 03:46da $3e $04
@@ -1166,7 +1166,7 @@ call_03_4825:
     xor  A, A                                          ;; 03:4838 $af
     call call_03_5622                                  ;; 03:4839 $cd $22 $56
     ld   A, $80                                        ;; 03:483c $3e $80
-    ld   [wCFF9], A                                    ;; 03:483e $ea $f9 $cf
+    ld   [wSongToPlay], A                              ;; 03:483e $ea $f9 $cf
     ld   A, $06                                        ;; 03:4841 $3e $06
     ld   [w1_D507], A                                  ;; 03:4843 $ea $07 $d5
     xor  A, A                                          ;; 03:4846 $af
@@ -1316,7 +1316,7 @@ call_03_493d:
     ld   DE, data_03_6315                              ;; 03:4943 $11 $15 $63
     call call_03_572e                                  ;; 03:4946 $cd $2e $57
     ld   A, [HL]                                       ;; 03:4949 $7e
-    ld   [wCFF9], A                                    ;; 03:494a $ea $f9 $cf
+    ld   [wSongToPlay], A                              ;; 03:494a $ea $f9 $cf
     ld   HL, wC6B0                                     ;; 03:494d $21 $b0 $c6
     xor  A, A                                          ;; 03:4950 $af
     ld   [HL+], A                                      ;; 03:4951 $22
@@ -1407,7 +1407,7 @@ call_03_49c2:
     ld   [HL+], A                                      ;; 03:49db $22
     ld   [HL], A                                       ;; 03:49dc $77
     ld   A, $80                                        ;; 03:49dd $3e $80
-    ld   [wCFF9], A                                    ;; 03:49df $ea $f9 $cf
+    ld   [wSongToPlay], A                              ;; 03:49df $ea $f9 $cf
     ld   A, $0a                                        ;; 03:49e2 $3e $0a
     ld   [w1_D508], A                                  ;; 03:49e4 $ea $08 $d5
     ret                                                ;; 03:49e7 $c9
@@ -1481,7 +1481,7 @@ call_03_4a27:
     ret                                                ;; 03:4a40 $c9
 
 call_03_4a41:
-    ld   A, [wCFFA]                                    ;; 03:4a41 $fa $fa $cf
+    ld   A, [wCurrentlyPlayingSong]                    ;; 03:4a41 $fa $fa $cf
     and  A, A                                          ;; 03:4a44 $a7
     ret  NZ                                            ;; 03:4a45 $c0
     ld_long_load A, rSVBK                              ;; 03:4a46 $fa $70 $ff

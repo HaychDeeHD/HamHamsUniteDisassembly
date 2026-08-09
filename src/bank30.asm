@@ -893,7 +893,7 @@ call_30_544d:
     Op1E_Call call_1d_6ae8                             ;; 30:5467 $1e $e8 $6a $1d
     ;;<E2>You got Tricket.<E2><end>
     Op04_Unknown_Text data_3a_4e63                     ;; 30:546b $04 $63 $4e $3a
-    Op5A_Unknown $d9                                   ;; 30:546f $5a $d9
+    Op5A_PlaySoundEffect $d9                           ;; 30:546f $5a $d9
     Op44_Unknown $30, $00                              ;; 30:5471 $44 $30 $00
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_10_558f ;; 30:5474 $4c $16 $08 $04 $00 $00 $00 $00 $8f $55 $10
     Op4C_Unknown $0c, $01, $04, $00, $00, $00, $00, data_1a_58bf ;; 30:547f $4c $0c $01 $04 $00 $00 $00 $00 $bf $58 $1a
@@ -1564,7 +1564,7 @@ call_30_644f:
     SCRIPT_POINTER call_30_646a                        ;; 30:6457 $6a $64 $30
     Op16_SubOps 1                                      ;; 30:645a $16 $01
     SubOp_SetFlag 396 ; Bit 4 of wC949                 ;; 30:645c $3f $8c
-    Op5A_Unknown $ad                                   ;; 30:645e $5a $ad
+    Op5A_PlaySoundEffect $ad                           ;; 30:645e $5a $ad
     Op4E_Unknown_StoreValue 9, $01, data_1b_6a9a       ;; 30:6460 $4e $09 $01 $9a $6a $1b
     Op1E_Call call_30_6669                             ;; 30:6466 $1e $69 $66 $30
 
@@ -1869,17 +1869,17 @@ call_30_679c:
     Op18_Jump call_30_67df                             ;; 30:67ca $18 $df $67 $30
 
 call_30_67ce:
-    Op5A_Unknown $88                                   ;; 30:67ce $5a $88
+    Op5A_PlaySoundEffect $88                           ;; 30:67ce $5a $88
     Op16_SubOps 1                                      ;; 30:67d0 $16 $01
     SubOp_SetByte wC81E, $02                           ;; 30:67d2 $7f $06 $02
     Op18_Jump call_30_683a                             ;; 30:67d5 $18 $3a $68 $30
 
 call_30_67d9:
-    Op5A_Unknown $8b                                   ;; 30:67d9 $5a $8b
+    Op5A_PlaySoundEffect $8b                           ;; 30:67d9 $5a $8b
     Op18_Jump call_30_682e                             ;; 30:67db $18 $2e $68 $30
 
 call_30_67df:
-    Op5A_Unknown $8e                                   ;; 30:67df $5a $8e
+    Op5A_PlaySoundEffect $8e                           ;; 30:67df $5a $8e
     Op18_Jump call_30_66f9                             ;; 30:67e1 $18 $f9 $66 $30
 
 call_30_67e5:
@@ -1889,7 +1889,7 @@ call_30_67e5:
     Op18_Jump call_30_682e                             ;; 30:67f0 $18 $2e $68 $30
 
 call_30_67f4:
-    Op5A_Unknown $8b                                   ;; 30:67f4 $5a $8b
+    Op5A_PlaySoundEffect $8b                           ;; 30:67f4 $5a $8b
     Op16_SubOps 1                                      ;; 30:67f6 $16 $01
     SubOp_SetByte wC81E, $01                           ;; 30:67f8 $7f $06 $01
     Op4E_Unknown_StoreValue 4, $01, data_1b_6a74       ;; 30:67fb $4e $04 $01 $74 $6a $1b
@@ -1985,7 +1985,7 @@ call_30_692b:
     SCRIPT_RETURN_20                                   ;; 30:6941 $20
 
 call_30_6942:
-    Op5A_Unknown $b5                                   ;; 30:6942 $5a $b5
+    Op5A_PlaySoundEffect $b5                           ;; 30:6942 $5a $b5
     Op4C_Unknown $16, $ff, $ff, $00, $00, $00, $00, data_11_6806 ;; 30:6944 $4c $16 $ff $ff $00 $00 $00 $00 $06 $68 $11
     Op4C_Unknown $34, $ff, $ff, $00, $00, $00, $00, data_11_683f ;; 30:694f $4c $34 $ff $ff $00 $00 $00 $00 $3f $68 $11
 
@@ -2374,8 +2374,8 @@ call_30_6e51:
 call_30_6e5e:
     SCRIPT_RETURN_4A                                   ;; 30:6e5e $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_30_6e5e ;; 30:6e5f $3e $16 $1b $5e $10 $5e $6e $30
-    Op5E_Unknown $80                                   ;; 30:6e67 $5e $80
-    Op5A_Unknown $90                                   ;; 30:6e69 $5a $90
+    Op5E_PlaySong $80                                  ;; 30:6e67 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 30:6e69 $5a $90
     Op1E_Call call_3c_4e25                             ;; 30:6e6b $1e $25 $4e $3c
     Op54_Unknown $00                                   ;; 30:6e6f $54 $00
 
@@ -2416,8 +2416,8 @@ call_30_6ecb:
 call_30_6ed8:
     SCRIPT_RETURN_4A                                   ;; 30:6ed8 $4a
     Op3E_Compare_Branch 22, data_10_5e1b, call_30_6ed8 ;; 30:6ed9 $3e $16 $1b $5e $10 $d8 $6e $30
-    Op5E_Unknown $80                                   ;; 30:6ee1 $5e $80
-    Op5A_Unknown $90                                   ;; 30:6ee3 $5a $90
+    Op5E_PlaySong $80                                  ;; 30:6ee1 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 30:6ee3 $5a $90
     Op1E_Call call_3c_4e25                             ;; 30:6ee5 $1e $25 $4e $3c
     Op50_WriteByte wCA92, $00, $06                     ;; 30:6ee9 $50 $92 $ca $00 $06
     Op54_Unknown $01                                   ;; 30:6eee $54 $01
@@ -3260,8 +3260,8 @@ call_30_797c:
 
 call_30_7994:
     Op1E_Call call_20_43a4                             ;; 30:7994 $1e $a4 $43 $20
-    Op5E_Unknown $80                                   ;; 30:7998 $5e $80
-    Op5A_Unknown $90                                   ;; 30:799a $5a $90
+    Op5E_PlaySong $80                                  ;; 30:7998 $5e $80
+    Op5A_PlaySoundEffect $90                           ;; 30:799a $5a $90
     Op1E_Call call_3c_5649                             ;; 30:799c $1e $49 $56 $3c
     Op54_Unknown $00                                   ;; 30:79a0 $54 $00
 

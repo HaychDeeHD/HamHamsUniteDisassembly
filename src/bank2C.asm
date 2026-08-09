@@ -387,7 +387,7 @@ call_2c_447d:
     Op42_Unknown_StoreValue 8, $01, data_17_4312       ;; 2c:44bd $42 $08 $01 $12 $43 $17
     ;;<EB>Achoo!<end>
     Op04_Unknown_Text data_3a_63fb                     ;; 2c:44c3 $04 $fb $63 $3a
-    Op5A_Unknown $90                                   ;; 2c:44c7 $5a $90
+    Op5A_PlaySoundEffect $90                           ;; 2c:44c7 $5a $90
 
 call_2c_44c9:
     SCRIPT_RETURN_4A                                   ;; 2c:44c9 $4a
@@ -2148,7 +2148,7 @@ call_2c_6543:
     SubOp_SetByte wC754, $01                           ;; 2c:6549 $7e $3c $01
     Op50_WriteByte w3_D636, $03, $00                   ;; 2c:654c $50 $36 $d6 $03 $00
     Op1E_Call call_1f_5a7d                             ;; 2c:6551 $1e $7d $5a $1f
-    Op5E_Unknown $80                                   ;; 2c:6555 $5e $80
+    Op5E_PlaySong $80                                  ;; 2c:6555 $5e $80
     Op50_WriteByte wCFFC, $00, $80                     ;; 2c:6557 $50 $fc $cf $00 $80
     Op18_Jump call_2c_5c05                             ;; 2c:655c $18 $05 $5c $2c
 
@@ -3417,7 +3417,7 @@ call_2c_7666:
     SCRIPT_POINTER call_2c_7683                        ;; 2c:7677 $83 $76 $2c
     Op16_SubOps 1                                      ;; 2c:767a $16 $01
     SubOp_SetFlag 174 ; Bit 6 of wC92D                 ;; 2c:767c $3e $ae
-    Op5A_Unknown $a3                                   ;; 2c:767e $5a $a3
+    Op5A_PlaySoundEffect $a3                           ;; 2c:767e $5a $a3
     Op44_Unknown $70, $00                              ;; 2c:7680 $44 $70 $00
 
 call_2c_7683:
@@ -3928,7 +3928,7 @@ call_2c_7bd6:
     ;;Did you need to<E4>tell me something?<E3>Oh, we're meeting<E4>the others at the<E4>Clubhouse?<E3>OK, let's go.<E0>
     Op04_Unknown_Text data_2d_7e80                     ;; 2c:7bf4 $04 $80 $7e $2d
     Op1E_Call call_04_615d                             ;; 2c:7bf8 $1e $5d $61 $04
-    Op5E_Unknown $80                                   ;; 2c:7bfc $5e $80
+    Op5E_PlaySong $80                                  ;; 2c:7bfc $5e $80
     Op32_Graphics data_7b_559c, w6_D400                ;; 2c:7bfe $32 $9c $55 $7b $00 $d4 $06
     Op4E_Unknown_StoreValue 4, $01, data_16_7fdb       ;; 2c:7c05 $4e $04 $01 $db $7f $16
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_16_7f8e ;; 2c:7c0b $4c $08 $01 $04 $00 $00 $00 $00 $8e $7f $16
@@ -4221,7 +4221,7 @@ call_2c_7f97:
     SCRIPT_POINTER call_2c_7fa7                        ;; 2c:7f9e $a7 $7f $2c
     Op16_SubOps 1                                      ;; 2c:7fa1 $16 $01
     SubOp_SetFlag 174 ; Bit 6 of wC92D                 ;; 2c:7fa3 $3e $ae
-    Op5A_Unknown $a3                                   ;; 2c:7fa5 $5a $a3
+    Op5A_PlaySoundEffect $a3                           ;; 2c:7fa5 $5a $a3
 
 call_2c_7fa7:
     Op44_Unknown $70, $00                              ;; 2c:7fa7 $44 $70 $00

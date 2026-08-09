@@ -1600,7 +1600,7 @@ call_29_6e87:
     Op50_WriteByte w3_D507, $03, $00                   ;; 29:6e87 $50 $07 $d5 $03 $00
     Op50_WriteByte w3_D508, $03, $00                   ;; 29:6e8c $50 $08 $d5 $03 $00
     Op50_WriteByte w3_D7A9, $03, $00                   ;; 29:6e91 $50 $a9 $d7 $03 $00
-    Op68_CopyBytes 1, wC81A, wCFFA, $00                ;; 29:6e96 $68 $01 $1a $c8 $fa $cf $00
+    Op68_CopyBytes 1, wC81A, wCurrentlyPlayingSong, $00 ;; 29:6e96 $68 $01 $1a $c8 $fa $cf $00
     Op14_BranchWithHamChatWheelRules 1, data_05_438e   ;; 29:6e9d $14 $01 $8e $43
     SCRIPT_POINTER call_29_6eae                        ;; 29:6ea1 $ae $6e $29
     Op50_WriteByte wCFFD, $00, $03                     ;; 29:6ea4 $50 $fd $cf $00 $03
@@ -1711,7 +1711,7 @@ call_29_7003:
     Op1E_Call call_29_7a6f                             ;; 29:7013 $1e $6f $7a $29
     Op50_WriteByte wC676, $00, $07                     ;; 29:7017 $50 $76 $c6 $00 $07
     Op50_WriteByte wC675, $00, $90                     ;; 29:701c $50 $75 $c6 $00 $90
-    Op5A_Unknown $88                                   ;; 29:7021 $5a $88
+    Op5A_PlaySoundEffect $88                           ;; 29:7021 $5a $88
     Op16_SubOps 1                                      ;; 29:7023 $16 $01
     SubOp_SetByte wC832, $90                           ;; 29:7025 $7f $1a $90
 
@@ -1739,7 +1739,7 @@ call_29_7053:
     Op1E_Call call_29_7a99                             ;; 29:7065 $1e $99 $7a $29
     Op1E_Call call_29_7ac3                             ;; 29:7069 $1e $c3 $7a $29
     Op1E_Call call_29_7125                             ;; 29:706d $1e $25 $71 $29
-    Op5A_Unknown $84                                   ;; 29:7071 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:7071 $5a $84
     Op18_Jump call_29_6fff                             ;; 29:7073 $18 $ff $6f $29
 
 call_29_7077:
@@ -1753,7 +1753,7 @@ call_29_7077:
     Op1E_Call call_29_7a99                             ;; 29:7089 $1e $99 $7a $29
     Op1E_Call call_29_7ac3                             ;; 29:708d $1e $c3 $7a $29
     Op1E_Call call_29_7125                             ;; 29:7091 $1e $25 $71 $29
-    Op5A_Unknown $84                                   ;; 29:7095 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:7095 $5a $84
     Op18_Jump call_29_6fff                             ;; 29:7097 $18 $ff $6f $29
 
 call_29_709b:
@@ -1764,7 +1764,7 @@ call_29_709b:
     Op82_Run data_03_754c                              ;; 29:70a8 $82 $4c $75 $03
     Op14_BranchWithHamChatWheelRules 1, data_05_4c7e   ;; 29:70ac $14 $01 $7e $4c
     SCRIPT_POINTER call_29_6fff                        ;; 29:70b0 $ff $6f $29
-    Op5A_Unknown $84                                   ;; 29:70b3 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:70b3 $5a $84
     Op82_Run data_03_7565                              ;; 29:70b5 $82 $65 $75 $03
     Op68_CopyBytes 1, wC831, wC755, $00                ;; 29:70b9 $68 $01 $31 $c8 $55 $c7 $00
     Op82_Run data_03_75a1                              ;; 29:70c0 $82 $a1 $75 $03
@@ -1786,7 +1786,7 @@ call_29_70e0:
     Op82_Run data_03_754c                              ;; 29:70ed $82 $4c $75 $03
     Op14_BranchWithHamChatWheelRules 1, data_05_4c7e   ;; 29:70f1 $14 $01 $7e $4c
     SCRIPT_POINTER call_29_6fff                        ;; 29:70f5 $ff $6f $29
-    Op5A_Unknown $84                                   ;; 29:70f8 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:70f8 $5a $84
     Op82_Run data_03_7565                              ;; 29:70fa $82 $65 $75 $03
     Op68_CopyBytes 1, wC831, wC755, $00                ;; 29:70fe $68 $01 $31 $c8 $55 $c7 $00
     Op82_Run data_03_7582                              ;; 29:7105 $82 $82 $75 $03
@@ -1940,7 +1940,7 @@ call_29_7286:
 
 call_29_729d:
     Op50_WriteByte w1_D2E3, $01, $00                   ;; 29:729d $50 $e3 $d2 $01 $00
-    Op5A_Unknown $8b                                   ;; 29:72a2 $5a $8b
+    Op5A_PlaySoundEffect $8b                           ;; 29:72a2 $5a $8b
     Op1E_Call call_29_74bb                             ;; 29:72a4 $1e $bb $74 $29
     Op1E_Call call_29_7a99                             ;; 29:72a8 $1e $99 $7a $29
     Op18_Jump call_29_6fd9                             ;; 29:72ac $18 $d9 $6f $29
@@ -1955,7 +1955,7 @@ call_29_72b0:
     SCRIPT_POINTER call_29_7419                        ;; 29:72c3 $19 $74 $29
 
 call_29_72c6:
-    Op5A_Unknown $b4                                   ;; 29:72c6 $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 29:72c6 $5a $b4
     Op34_Graphics data_7f_68f4, w5_DC22, $03           ;; 29:72c8 $34 $f4 $68 $7f $22 $dc $05 $03
     Op44_Unknown $1e, $00                              ;; 29:72d0 $44 $1e $00
     Op1E_Call call_04_5b22                             ;; 29:72d3 $1e $22 $5b $04
@@ -1964,7 +1964,7 @@ call_29_72c6:
     Op18_Jump call_29_77e2                             ;; 29:72de $18 $e2 $77 $29
 
 call_29_72e2:
-    Op5A_Unknown $db                                   ;; 29:72e2 $5a $db
+    Op5A_PlaySoundEffect $db                           ;; 29:72e2 $5a $db
     Op34_Graphics data_7f_5277, w5_DC06, $05           ;; 29:72e4 $34 $77 $52 $7f $06 $dc $05 $05
     Op44_Unknown $1e, $00                              ;; 29:72ec $44 $1e $00
     Op50_WriteByte w1_D259, $01, $00                   ;; 29:72ef $50 $59 $d2 $01 $00
@@ -1990,7 +1990,7 @@ call_29_72e2:
     Op18_Jump call_29_6fd9                             ;; 29:7352 $18 $d9 $6f $29
 
 call_29_7356:
-    Op5A_Unknown $de                                   ;; 29:7356 $5a $de
+    Op5A_PlaySoundEffect $de                           ;; 29:7356 $5a $de
     Op68_CopyBytes 1, wC754, w3_D6E6, $03              ;; 29:7358 $68 $01 $54 $c7 $e6 $d6 $03
     Op68_CopyBytes 1, wC755, w3_D707, $03              ;; 29:735f $68 $01 $55 $c7 $07 $d7 $03
     Op82_Run data_03_59f0                              ;; 29:7366 $82 $f0 $59 $03
@@ -2036,11 +2036,11 @@ call_29_7356:
     Op18_Jump call_29_74d8                             ;; 29:740f $18 $d8 $74 $29
 
 call_29_7413:
-    Op5A_Unknown $8e                                   ;; 29:7413 $5a $8e
+    Op5A_PlaySoundEffect $8e                           ;; 29:7413 $5a $8e
     Op18_Jump call_29_746a                             ;; 29:7415 $18 $6a $74 $29
 
 call_29_7419:
-    Op5A_Unknown $8b                                   ;; 29:7419 $5a $8b
+    Op5A_PlaySoundEffect $8b                           ;; 29:7419 $5a $8b
     Op34_Graphics data_7f_68de, w5_DC30, $03           ;; 29:741b $34 $de $68 $7f $30 $dc $05 $03
     Op44_Unknown $1e, $00                              ;; 29:7423 $44 $1e $00
     Op1E_Call call_04_5b22                             ;; 29:7426 $1e $22 $5b $04
@@ -2057,7 +2057,7 @@ call_29_7444:
     Op16_SubOps 1                                      ;; 29:744b $16 $01
     SubOp_DefaultCase_Pair $79, $18                    ;; 29:744d $79 $18
     SubOp_DefaultCase_Pair $be, $01                    ;; 29:744f $be $01
-    Op5A_Unknown $84                                   ;; 29:7451 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:7451 $5a $84
     Op18_Jump call_29_746a                             ;; 29:7453 $18 $6a $74 $29
 
 call_29_7457:
@@ -2066,7 +2066,7 @@ call_29_7457:
     Op16_SubOps 1                                      ;; 29:745e $16 $01
     SubOp_DefaultCase_Pair $77, $18                    ;; 29:7460 $77 $18
     SubOp_DefaultCase_Pair $be, $01                    ;; 29:7462 $be $01
-    Op5A_Unknown $84                                   ;; 29:7464 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:7464 $5a $84
     Op18_Jump call_29_746a                             ;; 29:7466 $18 $6a $74 $29
 
 call_29_746a:
@@ -2138,11 +2138,11 @@ call_29_7509:
     Op18_Jump call_29_752b                             ;; 29:7521 $18 $2b $75 $29
 
 call_29_7525:
-    Op5A_Unknown $8e                                   ;; 29:7525 $5a $8e
+    Op5A_PlaySoundEffect $8e                           ;; 29:7525 $5a $8e
     Op18_Jump call_29_74d8                             ;; 29:7527 $18 $d8 $74 $29
 
 call_29_752b:
-    Op5A_Unknown $88                                   ;; 29:752b $5a $88
+    Op5A_PlaySoundEffect $88                           ;; 29:752b $5a $88
     Op1E_Call call_29_77a5                             ;; 29:752d $1e $a5 $77 $29
     Op50_WriteByte w3_D749, $03, $00                   ;; 29:7531 $50 $49 $d7 $03 $00
     Op50_WriteByte w3_D74A, $03, $00                   ;; 29:7536 $50 $4a $d7 $03 $00
@@ -2195,7 +2195,7 @@ call_29_75ae:
     Op1E_Call call_29_7a99                             ;; 29:75c0 $1e $99 $7a $29
     Op1E_Call call_29_7ac3                             ;; 29:75c4 $1e $c3 $7a $29
     Op1E_Call call_29_7125                             ;; 29:75c8 $1e $25 $71 $29
-    Op5A_Unknown $84                                   ;; 29:75cc $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:75cc $5a $84
     Op18_Jump call_29_74d8                             ;; 29:75ce $18 $d8 $74 $29
 
 call_29_75d2:
@@ -2209,7 +2209,7 @@ call_29_75d2:
     Op1E_Call call_29_7a99                             ;; 29:75e4 $1e $99 $7a $29
     Op1E_Call call_29_7ac3                             ;; 29:75e8 $1e $c3 $7a $29
     Op1E_Call call_29_7125                             ;; 29:75ec $1e $25 $71 $29
-    Op5A_Unknown $84                                   ;; 29:75f0 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:75f0 $5a $84
     Op18_Jump call_29_74d8                             ;; 29:75f2 $18 $d8 $74 $29
 
 call_29_75f6:
@@ -2220,7 +2220,7 @@ call_29_75f6:
     Op82_Run data_03_754c                              ;; 29:7603 $82 $4c $75 $03
     Op14_BranchWithHamChatWheelRules 1, data_05_4c7e   ;; 29:7607 $14 $01 $7e $4c
     SCRIPT_POINTER call_29_74d8                        ;; 29:760b $d8 $74 $29
-    Op5A_Unknown $84                                   ;; 29:760e $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:760e $5a $84
     Op82_Run data_03_7565                              ;; 29:7610 $82 $65 $75 $03
     Op68_CopyBytes 1, wC831, wC755, $00                ;; 29:7614 $68 $01 $31 $c8 $55 $c7 $00
     Op82_Run data_03_75e6                              ;; 29:761b $82 $e6 $75 $03
@@ -2242,7 +2242,7 @@ call_29_763b:
     Op82_Run data_03_754c                              ;; 29:7648 $82 $4c $75 $03
     Op14_BranchWithHamChatWheelRules 1, data_05_4c7e   ;; 29:764c $14 $01 $7e $4c
     SCRIPT_POINTER call_29_74d8                        ;; 29:7650 $d8 $74 $29
-    Op5A_Unknown $84                                   ;; 29:7653 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:7653 $5a $84
     Op82_Run data_03_7565                              ;; 29:7655 $82 $65 $75 $03
     Op68_CopyBytes 1, wC831, wC755, $00                ;; 29:7659 $68 $01 $31 $c8 $55 $c7 $00
     Op82_Run data_03_75c0                              ;; 29:7660 $82 $c0 $75 $03
@@ -2303,7 +2303,7 @@ call_29_7717:
 call_29_772e:
     Op16_SubOps 1                                      ;; 29:772e $16 $01
     SubOp_SetFlag 405 ; Bit 5 of wC94A                 ;; 29:7730 $3f $95
-    Op5A_Unknown $8b                                   ;; 29:7732 $5a $8b
+    Op5A_PlaySoundEffect $8b                           ;; 29:7732 $5a $8b
 
 call_29_7734:
     Op50_WriteByte wC675, $00, $90                     ;; 29:7734 $50 $75 $c6 $00 $90
@@ -2313,11 +2313,11 @@ call_29_7734:
 call_29_773f:
     Op14_BranchWithHamChatWheelRules 1, useIfDontHave_405_4db0 ;; 29:773f $14 $01 $b0 $4d
     SCRIPT_POINTER call_29_774c                        ;; 29:7743 $4c $77 $29
-    Op5A_Unknown $47                                   ;; 29:7746 $5a $47
+    Op5A_PlaySoundEffect $47                           ;; 29:7746 $5a $47
     Op18_Jump call_29_774e                             ;; 29:7748 $18 $4e $77 $29
 
 call_29_774c:
-    Op5A_Unknown $48                                   ;; 29:774c $5a $48
+    Op5A_PlaySoundEffect $48                           ;; 29:774c $5a $48
 
 call_29_774e:
     Op4C_Unknown $20, $01, $00, $00, $00, $00, $00, data_18_6527 ;; 29:774e $4c $20 $01 $00 $00 $00 $00 $00 $27 $65 $18
@@ -2334,7 +2334,7 @@ call_29_776d:
     Op4C_Unknown $20, $01, $00, $0f, $00, $76, $00, data_18_650d ;; 29:7774 $4c $20 $01 $00 $0f $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:777f $16 $01
     SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:7781 $5f $95
-    Op5A_Unknown $84                                   ;; 29:7783 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:7783 $5a $84
     Op18_Jump call_29_7717                             ;; 29:7785 $18 $17 $77 $29
 
 call_29_7789:
@@ -2343,7 +2343,7 @@ call_29_7789:
     Op4C_Unknown $20, $01, $00, $4f, $00, $76, $00, data_18_650d ;; 29:7790 $4c $20 $01 $00 $4f $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:779b $16 $01
     SubOp_SetFlag 405 ; Bit 5 of wC94A                 ;; 29:779d $3f $95
-    Op5A_Unknown $84                                   ;; 29:779f $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:779f $5a $84
     Op18_Jump call_29_7717                             ;; 29:77a1 $18 $17 $77 $29
 
 call_29_77a5:
@@ -2384,7 +2384,7 @@ call_29_77e2:
     Op1E_Call call_29_7d5e                             ;; 29:780b $1e $5e $7d $29
     Op4E_Unknown_StoreValue 4, $01, data_18_694a       ;; 29:780f $4e $04 $01 $4a $69 $18
     Op44_Unknown $3c, $00                              ;; 29:7815 $44 $3c $00
-    Op5A_Unknown $b4                                   ;; 29:7818 $5a $b4
+    Op5A_PlaySoundEffect $b4                           ;; 29:7818 $5a $b4
     Op4E_Unknown_StoreValue 4, $01, data_18_695c       ;; 29:781a $4e $04 $01 $5c $69 $18
     Op44_Unknown $04, $00                              ;; 29:7820 $44 $04 $00
     Op16_SubOps 1                                      ;; 29:7823 $16 $01
@@ -2425,11 +2425,11 @@ call_29_7890:
 call_29_78a4:
     Op14_BranchWithHamChatWheelRules 1, useIfDontHave_405_4db0 ;; 29:78a4 $14 $01 $b0 $4d
     SCRIPT_POINTER call_29_78b1                        ;; 29:78a8 $b1 $78 $29
-    Op5A_Unknown $47                                   ;; 29:78ab $5a $47
+    Op5A_PlaySoundEffect $47                           ;; 29:78ab $5a $47
     Op18_Jump call_29_78b3                             ;; 29:78ad $18 $b3 $78 $29
 
 call_29_78b1:
-    Op5A_Unknown $48                                   ;; 29:78b1 $5a $48
+    Op5A_PlaySoundEffect $48                           ;; 29:78b1 $5a $48
 
 call_29_78b3:
     Op4C_Unknown $20, $01, $00, $00, $00, $00, $00, data_18_6527 ;; 29:78b3 $4c $20 $01 $00 $00 $00 $00 $00 $27 $65 $18
@@ -2505,7 +2505,7 @@ call_29_797b:
     Op4C_Unknown $20, $01, $00, $07, $00, $76, $00, data_18_650d ;; 29:7982 $4c $20 $01 $00 $07 $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:798d $16 $01
     SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:798f $5f $95
-    Op5A_Unknown $84                                   ;; 29:7991 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:7991 $5a $84
     Op18_Jump call_29_7890                             ;; 29:7993 $18 $90 $78 $29
 
 call_29_7997:
@@ -2514,7 +2514,7 @@ call_29_7997:
     Op4C_Unknown $20, $01, $00, $4f, $00, $76, $00, data_18_650d ;; 29:799e $4c $20 $01 $00 $4f $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:79a9 $16 $01
     SubOp_SetFlag 405 ; Bit 5 of wC94A                 ;; 29:79ab $3f $95
-    Op5A_Unknown $84                                   ;; 29:79ad $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:79ad $5a $84
     Op18_Jump call_29_7890                             ;; 29:79af $18 $90 $78 $29
 
 call_29_79b3:
@@ -2537,11 +2537,11 @@ call_29_79d7:
 call_29_79eb:
     Op14_BranchWithHamChatWheelRules 1, useIfDontHave_405_4db0 ;; 29:79eb $14 $01 $b0 $4d
     SCRIPT_POINTER call_29_79f8                        ;; 29:79ef $f8 $79 $29
-    Op5A_Unknown $47                                   ;; 29:79f2 $5a $47
+    Op5A_PlaySoundEffect $47                           ;; 29:79f2 $5a $47
     Op18_Jump call_29_79fa                             ;; 29:79f4 $18 $fa $79 $29
 
 call_29_79f8:
-    Op5A_Unknown $48                                   ;; 29:79f8 $5a $48
+    Op5A_PlaySoundEffect $48                           ;; 29:79f8 $5a $48
 
 call_29_79fa:
     Op4C_Unknown $20, $01, $00, $00, $00, $00, $00, data_18_6527 ;; 29:79fa $4c $20 $01 $00 $00 $00 $00 $00 $27 $65 $18
@@ -2568,7 +2568,7 @@ call_29_7a37:
     Op4C_Unknown $20, $01, $00, $07, $00, $76, $00, data_18_650d ;; 29:7a3e $4c $20 $01 $00 $07 $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:7a49 $16 $01
     SubOp_ClearFlag 405 ; Bit 5 of wC94A               ;; 29:7a4b $5f $95
-    Op5A_Unknown $84                                   ;; 29:7a4d $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:7a4d $5a $84
     Op18_Jump call_29_79d7                             ;; 29:7a4f $18 $d7 $79 $29
 
 call_29_7a53:
@@ -2577,7 +2577,7 @@ call_29_7a53:
     Op4C_Unknown $20, $01, $00, $4f, $00, $76, $00, data_18_650d ;; 29:7a5a $4c $20 $01 $00 $4f $00 $76 $00 $0d $65 $18
     Op16_SubOps 1                                      ;; 29:7a65 $16 $01
     SubOp_SetFlag 405 ; Bit 5 of wC94A                 ;; 29:7a67 $3f $95
-    Op5A_Unknown $84                                   ;; 29:7a69 $5a $84
+    Op5A_PlaySoundEffect $84                           ;; 29:7a69 $5a $84
     Op18_Jump call_29_79d7                             ;; 29:7a6b $18 $d7 $79 $29
 
 call_29_7a6f:

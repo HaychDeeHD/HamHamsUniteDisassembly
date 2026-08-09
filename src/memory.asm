@@ -2144,16 +2144,36 @@ wCF1F:
 wCF20:
     ds 208                                             ;; cf20
 
-wCFF0:
+; These next 4 registers are definitely for id's of sound effects to play.
+; 09 Hamha
+; 0A TackQ
+; 0C hifhif (x3)
+; 0D digdig
+; 29 wondachu
+; (In the dictionary lots of stuff gets loaded to d000 after picking a word)
+; It looks like this becomes 0x90 temporarily when going between maps.
+; $A4 between screens of same map.
+; Also changes values temporarily when hitting start or select (menu open/close).
+; Or when receiving an item that takes you to inventory screen.
+; If I manually set this to $90 it plays the menu/map open chime.
+; $88 plays the "option chosen" sound.
+; $C6 plays the item count-up sound.
+; $BF plays the crow caw
+; $83 open dictionary bloop
+; $94 is a higher version of $90. Happens when I read th clubhouse directory.
+wSoundEffect1:
     ds 1                                               ;; cff0
 
-wCFF1:
+wSoundEffect2:
     ds 1                                               ;; cff1
 
-wCFF2:
+; Setting this to $84 plays the cursor move sound (item menu)
+wSoundEffect3:
     ds 1                                               ;; cff2
 
-wCFF3:
+; It looks like this becomes $9B temporarily when transitioning screens (same map).
+; Setting to 9B plays the hamster running sound.
+wSoundEffect4:
     ds 1                                               ;; cff3
 
 wCFF4:
@@ -2165,10 +2185,17 @@ wCFF7:
 wCFF8:
     ds 1                                               ;; cff8
 
-wCFF9:
+; Setting to 01 changes BGM to title music
+; 04 is dancer song
+; 0E is clubhouse
+; Other hamjam songs and stuff in there
+; Goes back to zero right after it's used to start the song.
+wSongToPlay:
     ds 1                                               ;; cff9
 
-wCFFA:
+; Obtains the value of CFF9 shortly after it is changed.
+; Currently playing song. Goes to 00 if song ends.
+wCurrentlyPlayingSong:
     ds 1                                               ;; cffa
 
 wCFFB:

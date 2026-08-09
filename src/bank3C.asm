@@ -182,7 +182,7 @@ call_3c_452e:
     Op1A_Unknown $0a                                   ;; 3c:452e $1a $0a
 
 call_3c_4530:
-    Op5A_Unknown $a4                                   ;; 3c:4530 $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 3c:4530 $5a $a4
 
 call_3c_4532:
     Op1E_Call call_04_5b22                             ;; 3c:4532 $1e $22 $5b $04
@@ -514,7 +514,7 @@ call_3c_4e1c:
     SCRIPT_RETURN_20                                   ;; 3c:4e22 $20
 
 call_3c_4e23:
-    Op5A_Unknown $a4                                   ;; 3c:4e23 $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 3c:4e23 $5a $a4
 
 call_3c_4e25:
     Op4E_Unknown_StoreValue 9, $00, zero_pointer       ;; 3c:4e25 $4e $09 $00 $00 $00 $00
@@ -806,7 +806,7 @@ call_3c_544b:
     Op1A_Unknown $0b                                   ;; 3c:544b $1a $0b
 
 call_3c_544d:
-    Op5A_Unknown $a4                                   ;; 3c:544d $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 3c:544d $5a $a4
 
 call_3c_544f:
     Op4E_Unknown_StoreValue 9, $00, zero_pointer       ;; 3c:544f $4e $09 $00 $00 $00 $00
@@ -913,7 +913,7 @@ call_3c_5645:
     Op1A_Unknown $0a                                   ;; 3c:5645 $1a $0a
 
 call_3c_5647:
-    Op5A_Unknown $a4                                   ;; 3c:5647 $5a $a4
+    Op5A_PlaySoundEffect $a4                           ;; 3c:5647 $5a $a4
 
 call_3c_5649:
     Op1E_Call call_04_5b22                             ;; 3c:5649 $1e $22 $5b $04
