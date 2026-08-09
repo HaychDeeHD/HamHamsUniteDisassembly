@@ -1766,7 +1766,8 @@ wCAB8:
 wCAB9:
     ds 1                                               ;; cab9
 
-wCABA:
+; Either 07 or 0A. Usually goes back to 07.
+currentSoundBank:
     ds 1                                               ;; caba
 
 wCABB:
@@ -2145,6 +2146,9 @@ wCF20:
     ds 208                                             ;; cf20
 
 ; These next 4 registers are definitely for id's of sound effects to play.
+; Probably correspond to the gameboy's 4 audio channels?
+; Setting different values in each at the same time overlapped the effects.
+; It could actually be up to 8 of these CFF0-7 registers.
 ; 09 Hamha
 ; 0A TackQ
 ; 0C hifhif (x3)

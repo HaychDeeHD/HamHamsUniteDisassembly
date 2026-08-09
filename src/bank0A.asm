@@ -6,6 +6,7 @@ INCLUDE "include/charmaps.inc"
 INCLUDE "include/constants.inc"
 
 SECTION "bank0a", ROMX[$4000], BANK[$0a]
+; The beginning of this bank matches bank 07.
     db   $c3, $82, $5f, $cd, $0c, $5b, $cd, $20        ;; 0a:4000 ????????
     db   $5c, $c3, $25, $60, $fa, $02, $cf, $ea        ;; 0a:4008 ????????
     db   $ba, $ca, $ea, $00, $20                       ;; 0a:4010 ?????
@@ -22,7 +23,7 @@ SECTION "bank0a", ROMX[$4000], BANK[$0a]
 
 jr_0a_4044:
     ld   A, $07                                        ;; 0a:4044 $3e $07
-    ld   [wCABA], A                                    ;; 0a:4046 $ea $ba $ca
+    ld   [currentSoundBank], A                         ;; 0a:4046 $ea $ba $ca
     ld   [$2000], A                                    ;; 0a:4049 $ea $00 $20
     ret                                                ;; 0a:404c $c9
 

@@ -22,7 +22,7 @@ SECTION "bank08", ROMX[$4000], BANK[$08]
 
 jr_08_4044:
     ld   A, $07                                        ;; 08:4044 $3e $07
-    ld   [wCABA], A                                    ;; 08:4046 $ea $ba $ca
+    ld   [currentSoundBank], A                         ;; 08:4046 $ea $ba $ca
     ld   [$2000], A                                    ;; 08:4049 $ea $00 $20
     ret                                                ;; 08:404c $c9
 
