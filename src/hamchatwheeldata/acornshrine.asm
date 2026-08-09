@@ -1000,6 +1000,9 @@ data_05_5c97:
     HamChatWheelRule_DefaultCase_Pair $70, $54 ; 00    ;; 05:5c97 $70 $54
     HamChatWheelRule_DefaultCase_Pair $be, $01 ; 01    ;; 05:5c99 $be $01
 
+; Very similar to checkRooftopHamsterState
+; Maybe this one is exact match and other is bitmask?
+; If this is met, the rooftop hamster is not there. Meaning == 02 I think.
 ; Referenced from 2d:6680
 data_05_5c9b:
     HamChatWheelRule_DefaultCase_Pair $70, $55 ; 00    ;; 05:5c9b $70 $55
@@ -1079,6 +1082,8 @@ data_05_5cda:
     HamChatWheelRule_DefaultCase_Pair $73, $05 ; 00    ;; 05:5cda $73 $05
     HamChatWheelRule_DefaultCase_Pair $be, $48 ; 01    ;; 05:5cdc $be $48
 
+; If this condition is met, the Rooftop hamster is not there.
+; Maybe it's if I'm stood on another tile?
 ; Referenced from 2d:6d99
 data_05_5cde:
     HamChatWheelRule_DefaultCase_Single $00 ; 00       ;; 05:5cde $00
@@ -1097,8 +1102,13 @@ data_05_5cec:
     HamChatWheelRule_DefaultCase_Pair $70, $55 ; 00    ;; 05:5cec $70 $55
     HamChatWheelRule_DefaultCase_Pair $be, $03 ; 01    ;; 05:5cee $be $03
 
+; Somehow these rules determine whether you've interacted with RooftopHamster before.
+; i.e. This rule is satisfied if C76D is 01 (?), 02, or 03.
+; C76D is the 0x55th byte in the PlayerStateRegion!
+; The value being 2 or 3 could be checked with bit #2 (1 indexed)
+; Or else 0x02 could be a bitmask for checking that byte.
 ; Referenced from 2d:6ebe
-data_05_5cf0:
+checkRooftopHamsterState:
     HamChatWheelRule_DefaultCase_Pair $6e, $55 ; 00    ;; 05:5cf0 $6e $55
     HamChatWheelRule_DefaultCase_Pair $be, $02 ; 01    ;; 05:5cf2 $be $02
 

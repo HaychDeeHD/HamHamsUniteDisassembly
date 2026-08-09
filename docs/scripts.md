@@ -251,6 +251,8 @@ Op1C jumps the script to the instruction in the table at that index.
 
 Commonly, the Op1C script jumptable lists all the handlers for the dialog options in the HamChat Wheel (including `?` options). C53A is set by Op74 or Op76, and (I suspect) also by Op10 after the player selects a HamChat.
 
+I suspect that if the jumptable index is out of bounds, code execution continues to whatever follows the Op1C call and its jumptable.
+
 <a id="op1E"></a>
 ### Op1E - Script Call
 

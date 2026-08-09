@@ -3260,10 +3260,10 @@ call_2d_6556:
     Op18_Jump call_2d_5ee9                             ;; 2d:6561 $18 $e9 $5e $2d
     Op1E_Call call_2d_65e6                             ;; 2d:6565 $1e $e6 $65 $2d
     Op14_BranchWithHamChatWheelRules 1, useIfDontHave_358_5be2 ;; 2d:6569 $14 $01 $e2 $5b
-    SCRIPT_POINTER call_2d_6574                        ;; 2d:656d $74 $65 $2d
+    SCRIPT_POINTER innerReturnWhenDone_6574            ;; 2d:656d $74 $65 $2d
     Op1E_Call call_30_555f                             ;; 2d:6570 $1e $5f $55 $30
 
-call_2d_6574:
+innerReturnWhenDone_6574:
     Op16_SubOps 1                                      ;; 2d:6574 $16 $01
     SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:6576 $5e $03
     Op82_Run data_01_73cc                              ;; 2d:6578 $82 $cc $73 $01
@@ -3277,32 +3277,32 @@ call_2d_6574:
     SCRIPT_POINTER call_2d_69db                        ;; 2d:6592 $db $69 $2d
     SCRIPT_POINTER call_2d_6a39                        ;; 2d:6595 $39 $6a $2d
     SCRIPT_POINTER call_2d_6c22                        ;; 2d:6598 $22 $6c $2d
-    SCRIPT_POINTER call_2d_6c86                        ;; 2d:659b $86 $6c $2d
+    SCRIPT_POINTER rooftopCheckDirections_6c86                        ;; 2d:659b $86 $6c $2d
     SCRIPT_POINTER call_2d_7061                        ;; 2d:659e $61 $70 $2d
     Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2d:65a1 $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2d:65a5 $1c $03
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:65a7 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:65aa $cb $65 $2d
-    SCRIPT_POINTER call_2d_6842                        ;; 2d:65ad $42 $68 $2d
-    Op18_Jump call_2d_6574                             ;; 2d:65b0 $18 $74 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:65a7 $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:65aa $cb $65 $2d
+    SCRIPT_POINTER bPressed_6842                        ;; 2d:65ad $42 $68 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:65b0 $18 $74 $65 $2d
 
-call_2d_65b4:
+startPressed_65b4:
     Op1E_Call call_1d_68f9                             ;; 2d:65b4 $1e $f9 $68 $1d
     Op14_BranchWithHamChatWheelRules 1, data_05_5a5a   ;; 2d:65b8 $14 $01 $5a $5a
-    SCRIPT_POINTER call_2d_6574                        ;; 2d:65bc $74 $65 $2d
+    SCRIPT_POINTER innerReturnWhenDone_6574            ;; 2d:65bc $74 $65 $2d
     Op1E_Call call_2d_65e6                             ;; 2d:65bf $1e $e6 $65 $2d
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 2d:65c3 $82 $42 $74 $01
-    Op18_Jump call_2d_6574                             ;; 2d:65c7 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:65c7 $18 $74 $65 $2d
 
-call_2d_65cb:
+selectPressed_65cb:
     Op1E_Call call_1d_69f1                             ;; 2d:65cb $1e $f1 $69 $1d
     Op14_BranchWithHamChatWheelRules 1, data_05_5a5a   ;; 2d:65cf $14 $01 $5a $5a
-    SCRIPT_POINTER call_2d_6574                        ;; 2d:65d3 $74 $65 $2d
+    SCRIPT_POINTER innerReturnWhenDone_6574            ;; 2d:65d3 $74 $65 $2d
     Op16_SubOps 1                                      ;; 2d:65d6 $16 $01
     SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:65d8 $5e $03
     Op1E_Call call_2d_65e6                             ;; 2d:65da $1e $e6 $65 $2d
     Op82_Run JumpToScriptAddressStoredInC65AtoC_ifNonzero ;; 2d:65de $82 $42 $74 $01
-    Op18_Jump call_2d_6574                             ;; 2d:65e2 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:65e2 $18 $74 $65 $2d
 
 call_2d_65e6:
     Op50_WriteByte wC720, $00, $12                     ;; 2d:65e6 $50 $20 $c7 $00 $12
@@ -3463,43 +3463,43 @@ call_2d_6802:
     SubOp_ClearFlag 3 ; Bit 3 of wBitArrayC918         ;; 2d:683f $5e $03
     SCRIPT_RETURN_20                                   ;; 2d:6841 $20
 
-call_2d_6842:
+bPressed_6842:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:6842 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:6846 $1e $1d $6f $1d
     Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2d:684a $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2d:6850 $1c $04
-    SCRIPT_POINTER call_2d_685e                        ;; 2d:6852 $5e $68 $2d
-    SCRIPT_POINTER call_2d_687e                        ;; 2d:6855 $7e $68 $2d
+    SCRIPT_POINTER basicHamha_685e                     ;; 2d:6852 $5e $68 $2d
+    SCRIPT_POINTER basicHifHif_687e                    ;; 2d:6855 $7e $68 $2d
     SCRIPT_POINTER call_2d_689e                        ;; 2d:6858 $9e $68 $2d
-    SCRIPT_POINTER call_2d_68be                        ;; 2d:685b $be $68 $2d
+    SCRIPT_POINTER basicDigDig_68be                    ;; 2d:685b $be $68 $2d
 
-call_2d_685e:
+basicHamha_685e:
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:685e $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6863 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6867 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6869 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:686b $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:686e $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6870 $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6870 $b4 $65 $2d
     SCRIPT_POINTER call_2d_6876                        ;; 2d:6873 $76 $68 $2d
 
 call_2d_6876:
     Op1E_Call call_20_4042                             ;; 2d:6876 $1e $42 $40 $20
-    Op18_Jump call_2d_6574                             ;; 2d:687a $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:687a $18 $74 $65 $2d
 
-call_2d_687e:
+basicHifHif_687e:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:687e $50 $15 $c7 $00 $01
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6883 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6887 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6889 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:688b $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:688e $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6890 $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6890 $b4 $65 $2d
     SCRIPT_POINTER call_2d_6896                        ;; 2d:6893 $96 $68 $2d
 
 call_2d_6896:
     Op1E_Call call_20_463a                             ;; 2d:6896 $1e $3a $46 $20
-    Op18_Jump call_2d_6574                             ;; 2d:689a $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:689a $18 $74 $65 $2d
 
 call_2d_689e:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:689e $50 $15 $c7 $00 $02
@@ -3508,21 +3508,21 @@ call_2d_689e:
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:68a9 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:68ab $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:68ae $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:68b0 $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:68b0 $b4 $65 $2d
     SCRIPT_POINTER call_2d_68b6                        ;; 2d:68b3 $b6 $68 $2d
 
 call_2d_68b6:
     Op1E_Call call_20_4294                             ;; 2d:68b6 $1e $94 $42 $20
-    Op18_Jump call_2d_6574                             ;; 2d:68ba $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:68ba $18 $74 $65 $2d
 
-call_2d_68be:
+basicDigDig_68be:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:68be $50 $15 $c7 $00 $03
     Op82_Run ObtainHamChatFromC715                     ;; 2d:68c3 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:68c7 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:68c9 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:68cb $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:68ce $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:68d0 $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:68d0 $b4 $65 $2d
     SCRIPT_POINTER call_2d_68d6                        ;; 2d:68d3 $d6 $68 $2d
 
 call_2d_68d6:
@@ -3533,26 +3533,28 @@ call_2d_68d6:
 
 call_2d_68eb:
     Op1E_Call call_20_4310                             ;; 2d:68eb $1e $10 $43 $20
-    Op18_Jump call_2d_6574                             ;; 2d:68ef $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:68ef $18 $74 $65 $2d
 
 call_2d_68f3:
     Op14_BranchWithHamChatWheelRules 1, data_05_5cad   ;; 2d:68f3 $14 $01 $ad $5c
     SCRIPT_POINTER call_2d_68eb                        ;; 2d:68f7 $eb $68 $2d
     Op1E_Call call_2d_712b                             ;; 2d:68fa $1e $2b $71 $2d
-    Op18_Jump call_2d_6574                             ;; 2d:68fe $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:68fe $18 $74 $65 $2d
 
 call_2d_6902:
     Op50_WriteByte wButtonsOfInterest, $00, $d2        ;; 2d:6902 $50 $1d $c3 $00 $d2
+    ; ^ Selects buttons AND Left
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:6907 $82 $c3 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:690b $50 $1d $c3 $00 $d0
+    ; ^ Selects just buttons (for next caller?)
     Op1C_TableJump 4                                   ;; 2d:6910 $1c $04
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6912 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:6915 $cb $65 $2d
-    SCRIPT_POINTER call_2d_6842                        ;; 2d:6918 $42 $68 $2d
-    SCRIPT_POINTER call_2d_6922                        ;; 2d:691b $22 $69 $2d
-    Op18_Jump call_2d_6574                             ;; 2d:691e $18 $74 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6912 $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:6915 $cb $65 $2d
+    SCRIPT_POINTER bPressed_6842                        ;; 2d:6918 $42 $68 $2d
+    SCRIPT_POINTER aPressed_6922                        ;; 2d:691b $22 $69 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:691e $18 $74 $65 $2d
 
-call_2d_6922:
+aPressed_6922:
     Op16_SubOps 1                                      ;; 2d:6922 $16 $01
     SubOp_ClearFlag 192 ; Bit 0 of wC930               ;; 2d:6924 $5e $c0
     Op50_WriteByte w1_BeginRegionD1FD, $01, $04        ;; 2d:6926 $50 $fd $d1 $01 $04
@@ -3562,15 +3564,16 @@ call_2d_6922:
 
 call_2d_6935:
     Op50_WriteByte wButtonsOfInterest, $00, $d1        ;; 2d:6935 $50 $1d $c3 $00 $d1
+    ; ^ Selects buttons AND Right
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:693a $82 $c3 $74 $01
     Op1C_TableJump 4                                   ;; 2d:693e $1c $04
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6940 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:6943 $cb $65 $2d
-    SCRIPT_POINTER call_2d_6963                        ;; 2d:6946 $63 $69 $2d
-    SCRIPT_POINTER call_2d_6950                        ;; 2d:6949 $50 $69 $2d
-    Op18_Jump call_2d_6574                             ;; 2d:694c $18 $74 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6940 $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:6943 $cb $65 $2d
+    SCRIPT_POINTER bPressed_6963                        ;; 2d:6946 $63 $69 $2d
+    SCRIPT_POINTER aPressed_6950                        ;; 2d:6949 $50 $69 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:694c $18 $74 $65 $2d
 
-call_2d_6950:
+aPressed_6950:
     Op16_SubOps 1                                      ;; 2d:6950 $16 $01
     SubOp_ClearFlag 192 ; Bit 0 of wC930               ;; 2d:6952 $5e $c0
     Op50_WriteByte w1_BeginRegionD1FD, $01, $02        ;; 2d:6954 $50 $fd $d1 $01 $02
@@ -3578,7 +3581,7 @@ call_2d_6950:
     Op1E_Call call_3b_7880                             ;; 2d:695d $1e $80 $78 $3b
     Op1A_Unknown $0c                                   ;; 2d:6961 $1a $0c
 
-call_2d_6963:
+bPressed_6963:
     Op68_CopyBytes 1, wC73B, w1_D20E, $01              ;; 2d:6963 $68 $01 $3b $c7 $0e $d2 $01
     Op14_BranchWithHamChatWheelRules 1, data_05_5cb1   ;; 2d:696a $14 $01 $b1 $5c
     SCRIPT_POINTER call_2d_6c22                        ;; 2d:696e $22 $6c $2d
@@ -3589,11 +3592,11 @@ call_2d_6975:
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:697a $82 $c3 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:697e $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 2d:6983 $1c $04
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6985 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:6988 $cb $65 $2d
-    SCRIPT_POINTER call_2d_6842                        ;; 2d:698b $42 $68 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6985 $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:6988 $cb $65 $2d
+    SCRIPT_POINTER bPressed_6842                        ;; 2d:698b $42 $68 $2d
     SCRIPT_POINTER call_2d_6995                        ;; 2d:698e $95 $69 $2d
-    Op18_Jump call_2d_6574                             ;; 2d:6991 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6991 $18 $74 $65 $2d
 
 call_2d_6995:
     Op16_SubOps 1                                      ;; 2d:6995 $16 $01
@@ -3608,11 +3611,11 @@ call_2d_69a8:
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:69ad $82 $c3 $74 $01
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:69b1 $50 $1d $c3 $00 $d0
     Op1C_TableJump 4                                   ;; 2d:69b6 $1c $04
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:69b8 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:69bb $cb $65 $2d
-    SCRIPT_POINTER call_2d_6842                        ;; 2d:69be $42 $68 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:69b8 $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:69bb $cb $65 $2d
+    SCRIPT_POINTER bPressed_6842                        ;; 2d:69be $42 $68 $2d
     SCRIPT_POINTER call_2d_69c8                        ;; 2d:69c1 $c8 $69 $2d
-    Op18_Jump call_2d_6574                             ;; 2d:69c4 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:69c4 $18 $74 $65 $2d
 
 call_2d_69c8:
     Op16_SubOps 1                                      ;; 2d:69c8 $16 $01
@@ -3625,18 +3628,18 @@ call_2d_69c8:
 call_2d_69db:
     Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2d:69db $82 $b7 $74 $01
     Op1C_TableJump 3                                   ;; 2d:69df $1c $03
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:69e1 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:69e4 $cb $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:69e1 $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:69e4 $cb $65 $2d
     SCRIPT_POINTER call_2d_69ee                        ;; 2d:69e7 $ee $69 $2d
-    Op18_Jump call_2d_6574                             ;; 2d:69ea $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:69ea $18 $74 $65 $2d
 
 call_2d_69ee:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:69ee $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:69f2 $1e $1d $6f $1d
     Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2d:69f6 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2d:69fc $1c $04
-    SCRIPT_POINTER call_2d_685e                        ;; 2d:69fe $5e $68 $2d
-    SCRIPT_POINTER call_2d_687e                        ;; 2d:6a01 $7e $68 $2d
+    SCRIPT_POINTER basicHamha_685e                     ;; 2d:69fe $5e $68 $2d
+    SCRIPT_POINTER basicHifHif_687e                    ;; 2d:6a01 $7e $68 $2d
     SCRIPT_POINTER call_2d_689e                        ;; 2d:6a04 $9e $68 $2d
     SCRIPT_POINTER call_2d_6a0a                        ;; 2d:6a07 $0a $6a $2d
 
@@ -3647,33 +3650,34 @@ call_2d_6a0a:
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6a15 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:6a17 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6a1a $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6a1c $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6a1c $b4 $65 $2d
     SCRIPT_POINTER call_2d_6a22                        ;; 2d:6a1f $22 $6a $2d
 
 call_2d_6a22:
     Op14_BranchWithHamChatWheelRules 1, useIfHave_192_5cb6 ;; 2d:6a22 $14 $01 $b6 $5c
-    SCRIPT_POINTER call_2d_68be                        ;; 2d:6a26 $be $68 $2d
+    SCRIPT_POINTER basicDigDig_68be                    ;; 2d:6a26 $be $68 $2d
     Op16_SubOps 1                                      ;; 2d:6a29 $16 $01
     SubOp_SetFlag 192 ; Bit 0 of wC930                 ;; 2d:6a2b $3e $c0
     Op1E_Call call_20_43df                             ;; 2d:6a2d $1e $df $43 $20
     Op1E_Call call_1d_7116                             ;; 2d:6a31 $1e $16 $71 $1d
-    Op18_Jump call_2d_6574                             ;; 2d:6a35 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6a35 $18 $74 $65 $2d
 
 call_2d_6a39:
     Op68_CopyBytes 1, wC73B, w1_D216, $01              ;; 2d:6a39 $68 $01 $3b $c7 $16 $d2 $01
     Op14_BranchWithHamChatWheelRules 1, data_05_5cb8   ;; 2d:6a40 $14 $01 $b8 $5c
     SCRIPT_POINTER call_2d_6ac5                        ;; 2d:6a44 $c5 $6a $2d
     Op50_WriteByte wButtonsOfInterest, $00, $08        ;; 2d:6a47 $50 $1d $c3 $00 $08
+    ; ^ Just checking if Up is pressed
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:6a4c $82 $c3 $74 $01
     Op1C_TableJump 1                                   ;; 2d:6a50 $1c $01
-    SCRIPT_POINTER call_2d_6a59                        ;; 2d:6a52 $59 $6a $2d
+    SCRIPT_POINTER upPressed_6a59                        ;; 2d:6a52 $59 $6a $2d
     Op18_Jump call_2d_6ac5                             ;; 2d:6a55 $18 $c5 $6a $2d
 
-call_2d_6a59:
+upPressed_6a59:
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:6a59 $50 $1d $c3 $00 $d0
     Op14_BranchWithHamChatWheelRules 1, data_05_5b96   ;; 2d:6a5e $14 $01 $96 $5b
     SCRIPT_POINTER call_2d_6a69                        ;; 2d:6a62 $69 $6a $2d
-    Op18_Jump call_2d_6574                             ;; 2d:6a65 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6a65 $18 $74 $65 $2d
 
 call_2d_6a69:
     Op16_SubOps 1                                      ;; 2d:6a69 $16 $01
@@ -3686,7 +3690,7 @@ call_2d_6a87:
     SCRIPT_RETURN_4A                                   ;; 2d:6a87 $4a
     Op3E_Compare_Branch 22, data_10_77d4, call_2d_6a87 ;; 2d:6a88 $3e $16 $d4 $77 $10 $87 $6a $2d
     Op14_BranchWithHamChatWheelRules 1, data_05_5c9b   ;; 2d:6a90 $14 $01 $9b $5c
-    SCRIPT_POINTER call_2d_6574                        ;; 2d:6a94 $74 $65 $2d
+    SCRIPT_POINTER innerReturnWhenDone_6574            ;; 2d:6a94 $74 $65 $2d
 
 call_2d_6a97:
     SCRIPT_RETURN_4A                                   ;; 2d:6a97 $4a
@@ -3698,16 +3702,16 @@ call_2d_6a97:
     Op04_Unknown_Text data_39_7e43                     ;; 2d:6aae $04 $43 $7e $39
     Op1E_Call call_04_615d                             ;; 2d:6ab2 $1e $5d $61 $04
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_407e ;; 2d:6ab6 $4c $1a $01 $04 $00 $00 $00 $00 $7e $40 $16
-    Op18_Jump call_2d_6574                             ;; 2d:6ac1 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6ac1 $18 $74 $65 $2d
 
 call_2d_6ac5:
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:6ac5 $50 $1d $c3 $00 $d0
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:6aca $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2d:6ace $1c $03
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6ad0 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:6ad3 $cb $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6ad0 $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:6ad3 $cb $65 $2d
     SCRIPT_POINTER call_2d_6add                        ;; 2d:6ad6 $dd $6a $2d
-    Op18_Jump call_2d_6574                             ;; 2d:6ad9 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6ad9 $18 $74 $65 $2d
 
 call_2d_6add:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:6add $82 $16 $74 $01
@@ -3715,26 +3719,26 @@ call_2d_6add:
     Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2d:6ae5 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2d:6aeb $1c $04
     SCRIPT_POINTER call_2d_6af9                        ;; 2d:6aed $f9 $6a $2d
-    SCRIPT_POINTER call_2d_687e                        ;; 2d:6af0 $7e $68 $2d
+    SCRIPT_POINTER basicHifHif_687e                    ;; 2d:6af0 $7e $68 $2d
     SCRIPT_POINTER call_2d_6b6c                        ;; 2d:6af3 $6c $6b $2d
-    SCRIPT_POINTER call_2d_68be                        ;; 2d:6af6 $be $68 $2d
+    SCRIPT_POINTER basicDigDig_68be                    ;; 2d:6af6 $be $68 $2d
 
 call_2d_6af9:
     Op14_BranchWithHamChatWheelRules 1, data_05_5cc6   ;; 2d:6af9 $14 $01 $c6 $5c
-    SCRIPT_POINTER call_2d_685e                        ;; 2d:6afd $5e $68 $2d
+    SCRIPT_POINTER basicHamha_685e                     ;; 2d:6afd $5e $68 $2d
     Op50_WriteByte wBitArrayIndexC715, $00, $00        ;; 2d:6b00 $50 $15 $c7 $00 $00
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6b05 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6b09 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6b0b $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:6b0d $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6b10 $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6b12 $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6b12 $b4 $65 $2d
     SCRIPT_POINTER call_2d_6b18                        ;; 2d:6b15 $18 $6b $2d
 
 call_2d_6b18:
     Op1E_Call call_20_4042                             ;; 2d:6b18 $1e $42 $40 $20
     Op14_BranchWithHamChatWheelRules 1, data_05_5cca   ;; 2d:6b1c $14 $01 $ca $5c
-    SCRIPT_POINTER call_2d_6574                        ;; 2d:6b20 $74 $65 $2d
+    SCRIPT_POINTER innerReturnWhenDone_6574            ;; 2d:6b20 $74 $65 $2d
     Op16_SubOps 1                                      ;; 2d:6b23 $16 $01
     SubOp_SetByte wC76C, $02                           ;; 2d:6b25 $7e $54 $02
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_17_7887 ;; 2d:6b28 $4c $16 $10 $ff $00 $00 $00 $00 $87 $78 $17
@@ -3749,7 +3753,7 @@ call_2d_6b5a:
     Op3E_Compare_Branch 12, data_17_52f5, call_2d_6b5a ;; 2d:6b5b $3e $0c $f5 $52 $17 $5a $6b $2d
     Op16_SubOps 1                                      ;; 2d:6b63 $16 $01
     SubOp_SetByte wC76C, $00                           ;; 2d:6b65 $7e $54 $00
-    Op18_Jump call_2d_6574                             ;; 2d:6b68 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6b68 $18 $74 $65 $2d
 
 call_2d_6b6c:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:6b6c $50 $15 $c7 $00 $02
@@ -3758,7 +3762,7 @@ call_2d_6b6c:
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6b77 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:6b79 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6b7c $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6b7e $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6b7e $b4 $65 $2d
     SCRIPT_POINTER call_2d_6b84                        ;; 2d:6b81 $84 $6b $2d
 
 call_2d_6b84:
@@ -3775,7 +3779,7 @@ call_2d_6bad:
     SCRIPT_RETURN_4A                                   ;; 2d:6bad $4a
     Op3E_Compare_Branch 22, data_10_5b35, call_2d_6bad ;; 2d:6bae $3e $16 $35 $5b $10 $ad $6b $2d
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, zero_pointer ;; 2d:6bb6 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
-    Op18_Jump call_2d_6574                             ;; 2d:6bc1 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6bc1 $18 $74 $65 $2d
 
 call_2d_6bc5:
     Op1E_Call call_1d_6acd                             ;; 2d:6bc5 $1e $cd $6a $1d
@@ -3797,34 +3801,36 @@ call_2d_6c0a:
     SCRIPT_RETURN_4A                                   ;; 2d:6c0a $4a
     Op3E_Compare_Branch 22, data_10_5b35, call_2d_6c0a ;; 2d:6c0b $3e $16 $35 $5b $10 $0a $6c $2d
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, zero_pointer ;; 2d:6c13 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
-    Op18_Jump call_2d_6574                             ;; 2d:6c1e $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6c1e $18 $74 $65 $2d
 
 call_2d_6c22:
     Op82_Run SetScriptTableIndexFromInputs_NewlyPressed ;; 2d:6c22 $82 $b7 $74 $01
+    ; $dx must have already been written to wButtonsOfInterest
     Op1C_TableJump 3                                   ;; 2d:6c26 $1c $03
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6c28 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:6c2b $cb $65 $2d
-    SCRIPT_POINTER call_2d_6c35                        ;; 2d:6c2e $35 $6c $2d
-    Op18_Jump call_2d_6574                             ;; 2d:6c31 $18 $74 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6c28 $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:6c2b $cb $65 $2d
+    SCRIPT_POINTER aPressed_6c35                        ;; 2d:6c2e $35 $6c $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6c31 $18 $74 $65 $2d
 
-call_2d_6c35:
+aPressed_6c35:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:6c35 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:6c39 $1e $1d $6f $1d
     Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2d:6c3d $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2d:6c43 $1c $04
-    SCRIPT_POINTER call_2d_685e                        ;; 2d:6c45 $5e $68 $2d
-    SCRIPT_POINTER call_2d_687e                        ;; 2d:6c48 $7e $68 $2d
-    SCRIPT_POINTER call_2d_6c51                        ;; 2d:6c4b $51 $6c $2d
-    SCRIPT_POINTER call_2d_68be                        ;; 2d:6c4e $be $68 $2d
+    ; Everything is normal except tackQ. Could be rock wall, etc.
+    SCRIPT_POINTER basicHamha_685e                     ;; 2d:6c45 $5e $68 $2d
+    SCRIPT_POINTER basicHifHif_687e                    ;; 2d:6c48 $7e $68 $2d
+    SCRIPT_POINTER tackq_6c51                        ;; 2d:6c4b $51 $6c $2d
+    SCRIPT_POINTER basicDigDig_68be                    ;; 2d:6c4e $be $68 $2d
 
-call_2d_6c51:
+tackq_6c51:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:6c51 $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:6c56 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:6c5a $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6c5c $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:6c5e $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6c61 $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6c63 $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6c63 $b4 $65 $2d
     SCRIPT_POINTER call_2d_6c69                        ;; 2d:6c66 $69 $6c $2d
 
 call_2d_6c69:
@@ -3836,35 +3842,39 @@ call_2d_6c69:
 
 call_2d_6c7e:
     Op1E_Call call_20_42f7                             ;; 2d:6c7e $1e $f7 $42 $20
-    Op18_Jump call_2d_6574                             ;; 2d:6c82 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6c82 $18 $74 $65 $2d
 
-call_2d_6c86:
+rooftopCheckDirections_6c86:
     Op68_CopyBytes 1, wC81D, w1_D216, $01              ;; 2d:6c86 $68 $01 $1d $c8 $16 $d2 $01
     Op14_BranchWithHamChatWheelRules 1, data_05_5cce   ;; 2d:6c8d $14 $01 $ce $5c
-    SCRIPT_POINTER call_2d_6caf                        ;; 2d:6c91 $af $6c $2d
+    SCRIPT_POINTER altRooftopCheckDirections                        ;; 2d:6c91 $af $6c $2d
     Op50_WriteByte wButtonsOfInterest, $00, $0f        ;; 2d:6c94 $50 $1d $c3 $00 $0f
+; ^ Select only directions for use in following jumptable.
+; Order is Up Down Left Right
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:6c99 $82 $c3 $74 $01
     Op1C_TableJump 4                                   ;; 2d:6c9d $1c $04
-    SCRIPT_POINTER call_2d_710c                        ;; 2d:6c9f $0c $71 $2d
-    SCRIPT_POINTER call_2d_711b                        ;; 2d:6ca2 $1b $71 $2d
-    SCRIPT_POINTER call_2d_6d18                        ;; 2d:6ca5 $18 $6d $2d
-    SCRIPT_POINTER call_2d_6d3a                        ;; 2d:6ca8 $3a $6d $2d
-    Op18_Jump call_2d_6d7a                             ;; 2d:6cab $18 $7a $6d $2d
+    SCRIPT_POINTER upPressed_710c                      ;; 2d:6c9f $0c $71 $2d
+    SCRIPT_POINTER downPressed_711b                        ;; 2d:6ca2 $1b $71 $2d
+    SCRIPT_POINTER leftPressed_6d18                        ;; 2d:6ca5 $18 $6d $2d
+    SCRIPT_POINTER rightPressed_6d3a                        ;; 2d:6ca8 $3a $6d $2d
+    Op18_Jump rooftopHamsterNoDirectionPressed                             ;; 2d:6cab $18 $7a $6d $2d
 
-call_2d_6caf:
+altRooftopCheckDirections:
     Op50_WriteByte wButtonsOfInterest, $00, $0f        ;; 2d:6caf $50 $1d $c3 $00 $0f
+; ^ Select only directions for use in following jumptable.
+; Order is Up Down Left Right
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:6cb4 $82 $c3 $74 $01
     Op1C_TableJump 4                                   ;; 2d:6cb8 $1c $04
-    SCRIPT_POINTER call_2d_710c                        ;; 2d:6cba $0c $71 $2d
-    SCRIPT_POINTER call_2d_6cca                        ;; 2d:6cbd $ca $6c $2d
-    SCRIPT_POINTER call_2d_6d18                        ;; 2d:6cc0 $18 $6d $2d
-    SCRIPT_POINTER call_2d_6d3a                        ;; 2d:6cc3 $3a $6d $2d
-    Op18_Jump call_2d_6d7a                             ;; 2d:6cc6 $18 $7a $6d $2d
+    SCRIPT_POINTER upPressed_710c                      ;; 2d:6cba $0c $71 $2d
+    SCRIPT_POINTER leftPressed_6cca                        ;; 2d:6cbd $ca $6c $2d
+    SCRIPT_POINTER leftPressed_6d18                        ;; 2d:6cc0 $18 $6d $2d
+    SCRIPT_POINTER rightPressed_6d3a                        ;; 2d:6cc3 $3a $6d $2d
+    Op18_Jump rooftopHamsterNoDirectionPressed                             ;; 2d:6cc6 $18 $7a $6d $2d
 
-call_2d_6cca:
+leftPressed_6cca:
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:6cca $50 $1d $c3 $00 $d0
     Op14_BranchWithHamChatWheelRules 1, data_05_5cd2   ;; 2d:6ccf $14 $01 $d2 $5c
-    SCRIPT_POINTER call_2d_6574                        ;; 2d:6cd3 $74 $65 $2d
+    SCRIPT_POINTER innerReturnWhenDone_6574            ;; 2d:6cd3 $74 $65 $2d
     Op16_SubOps 1                                      ;; 2d:6cd6 $16 $01
     SubOp_ClearFlag 228 ; Bit 4 of wC934               ;; 2d:6cd8 $5e $e4
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:6cda $50 $1d $c3 $00 $d0
@@ -3876,11 +3886,11 @@ call_2d_6cf9:
     SCRIPT_RETURN_4A                                   ;; 2d:6cf9 $4a
     Op3E_Compare_Branch 22, data_10_7890, call_2d_6cf9 ;; 2d:6cfa $3e $16 $90 $78 $10 $f9 $6c $2d
     Op14_BranchWithHamChatWheelRules 1, data_05_5c9b   ;; 2d:6d02 $14 $01 $9b $5c
-    SCRIPT_POINTER call_2d_6574                        ;; 2d:6d06 $74 $65 $2d
+    SCRIPT_POINTER innerReturnWhenDone_6574            ;; 2d:6d06 $74 $65 $2d
     Op4C_Unknown $1a, $01, $04, $48, $00, $60, $00, data_16_497f ;; 2d:6d09 $4c $1a $01 $04 $48 $00 $60 $00 $7f $49 $16
-    Op18_Jump call_2d_6574                             ;; 2d:6d14 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6d14 $18 $74 $65 $2d
 
-call_2d_6d18:
+leftPressed_6d18:
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:6d18 $50 $1d $c3 $00 $d0
     Op4C_Unknown $16, $04, $16, $00, $00, $00, $00, data_10_795e ;; 2d:6d1d $4c $16 $04 $16 $00 $00 $00 $00 $5e $79 $10
 
@@ -3888,16 +3898,16 @@ call_2d_6d28:
     SCRIPT_RETURN_4A                                   ;; 2d:6d28 $4a
     Op3E_Compare_Branch 22, data_10_795e, call_2d_6d28 ;; 2d:6d29 $3e $16 $5e $79 $10 $28 $6d $2d
     Op50_WriteByte w1_D1FF, $01, $02                   ;; 2d:6d31 $50 $ff $d1 $01 $02
-    Op18_Jump call_2d_6574                             ;; 2d:6d36 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6d36 $18 $74 $65 $2d
 
-call_2d_6d3a:
+rightPressed_6d3a:
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:6d3a $50 $1d $c3 $00 $d0
     Op68_CopyBytes 1, wC81D, w1_D216, $01              ;; 2d:6d3f $68 $01 $1d $c8 $16 $d2 $01
     Op14_BranchWithHamChatWheelRules 1, data_05_5cda   ;; 2d:6d46 $14 $01 $da $5c
     SCRIPT_POINTER call_2d_6d5d                        ;; 2d:6d4a $5d $6d $2d
     Op4C_Unknown $16, $02, $16, $00, $00, $00, $00, data_10_41c5 ;; 2d:6d4d $4c $16 $02 $16 $00 $00 $00 $00 $c5 $41 $10
     SCRIPT_RETURN_4A                                   ;; 2d:6d58 $4a
-    Op18_Jump call_2d_6574                             ;; 2d:6d59 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6d59 $18 $74 $65 $2d
 
 call_2d_6d5d:
     Op4C_Unknown $16, $02, $16, $00, $00, $00, $00, data_10_799b ;; 2d:6d5d $4c $16 $02 $16 $00 $00 $00 $00 $9b $79 $10
@@ -3906,23 +3916,24 @@ call_2d_6d68:
     SCRIPT_RETURN_4A                                   ;; 2d:6d68 $4a
     Op3E_Compare_Branch 22, data_10_799b, call_2d_6d68 ;; 2d:6d69 $3e $16 $9b $79 $10 $68 $6d $2d
     Op50_WriteByte w1_D1FF, $01, $02                   ;; 2d:6d71 $50 $ff $d1 $01 $02
-    Op18_Jump call_2d_6574                             ;; 2d:6d76 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6d76 $18 $74 $65 $2d
 
-call_2d_6d7a:
+rooftopHamsterNoDirectionPressed:
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:6d7a $50 $1d $c3 $00 $d0
+; ^ $d0 means Start Select A
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:6d7f $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2d:6d83 $1c $03
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6d85 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:6d88 $cb $65 $2d
-    SCRIPT_POINTER call_2d_6d92                        ;; 2d:6d8b $92 $6d $2d
-    Op18_Jump call_2d_6574                             ;; 2d:6d8e $18 $74 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6d85 $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:6d88 $cb $65 $2d
+    SCRIPT_POINTER rooftopHamsterPressA                ;; 2d:6d8b $92 $6d $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6d8e $18 $74 $65 $2d
 
 ; Rooftop Hamster (Nopibloo giver)
-call_2d_6d92:
+rooftopHamsterPressA:
     Op14_BranchWithHamChatWheelRules 1, data_05_5c9b   ;; 2d:6d92 $14 $01 $9b $5c
-    SCRIPT_POINTER call_2d_701f                        ;; 2d:6d96 $1f $70 $2d
+    SCRIPT_POINTER RooftopHamsterNotThereShowWheel     ;; 2d:6d96 $1f $70 $2d
     Op14_BranchWithHamChatWheelRules 1, data_05_5cde   ;; 2d:6d99 $14 $01 $de $5c
-    SCRIPT_POINTER call_2d_701f                        ;; 2d:6d9d $1f $70 $2d
+    SCRIPT_POINTER RooftopHamsterNotThereShowWheel     ;; 2d:6d9d $1f $70 $2d
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:6da0 $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:6da4 $1e $1d $6f $1d
     Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2d:6da8 $10 $04 $f2 $59 $55 $5a
@@ -3938,9 +3949,8 @@ RooftopHamsterHamha:
     Op16_SubOps 1                                      ;; 2d:6dc5 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6dc7 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:6dc9 $74 $5e $c6
-; My guess is that these table jumps of size 2 fork on whether the hamster is there or not.
     Op1C_TableJump 2                                   ;; 2d:6dcc $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6dce $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6dce $b4 $65 $2d
     SCRIPT_POINTER call_2d_6dd4                        ;; 2d:6dd1 $d4 $6d $2d
 
 call_2d_6dd4:
@@ -3980,7 +3990,7 @@ call_2d_6e32:
     Op92_Unknown $00                                   ;; 2d:6e52 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_4b11 ;; 2d:6e54 $4c $1a $01 $04 $00 $00 $00 $00 $11 $4b $16
     Op44_Unknown $3c, $00                              ;; 2d:6e5f $44 $3c $00
-    Op18_Jump call_2d_6574                             ;; 2d:6e62 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6e62 $18 $74 $65 $2d
 
 call_2d_6e66:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_40c2 ;; 2d:6e66 $4c $1a $01 $04 $00 $00 $00 $00 $c2 $40 $16
@@ -3997,7 +4007,7 @@ call_2d_6e93:
     ;;Hey, you.<E2>Wanna play?<E0>
     Op06_Unknown_Text data_39_7ea7                     ;; 2d:6e9c $06 $a7 $7e $39
     Op92_Unknown $00                                   ;; 2d:6ea0 $92 $00
-    Op18_Jump call_2d_6574                             ;; 2d:6ea2 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6ea2 $18 $74 $65 $2d
 
 RooftopHamsterHifHif:
     Op50_WriteByte wBitArrayIndexC715, $00, $01        ;; 2d:6ea6 $50 $15 $c7 $00 $01
@@ -4006,16 +4016,16 @@ RooftopHamsterHifHif:
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6eb1 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:6eb3 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6eb6 $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6eb8 $b4 $65 $2d
-    SCRIPT_POINTER call_2d_6ebe                        ;; 2d:6ebb $be $6e $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6eb8 $b4 $65 $2d
+    SCRIPT_POINTER RooftopHamsterHifHifContinued       ;; 2d:6ebb $be $6e $2d
 
-call_2d_6ebe:
-    Op14_BranchWithHamChatWheelRules 1, data_05_5cf0   ;; 2d:6ebe $14 $01 $f0 $5c
-    SCRIPT_POINTER call_2d_6eca                        ;; 2d:6ec2 $ca $6e $2d
+RooftopHamsterHifHifContinued:
+    Op14_BranchWithHamChatWheelRules 1, checkRooftopHamsterState ;; 2d:6ebe $14 $01 $f0 $5c
+    SCRIPT_POINTER RooftopHamsterHifHif_afterMarkInteracted ;; 2d:6ec2 $ca $6e $2d
     Op16_SubOps 1                                      ;; 2d:6ec5 $16 $01
     SubOp_SetByte wRoofTopHamsterStateC76D, $01        ;; 2d:6ec7 $7e $55 $01
 
-call_2d_6eca:
+RooftopHamsterHifHif_afterMarkInteracted:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_40c2 ;; 2d:6eca $4c $1a $01 $04 $00 $00 $00 $00 $c2 $40 $16
     Op1E_Call call_20_4696                             ;; 2d:6ed5 $1e $96 $46 $20
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_10_4235 ;; 2d:6ed9 $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
@@ -4025,7 +4035,7 @@ call_2d_6eca:
     Op04_Unknown_Text data_39_7ebd                     ;; 2d:6ef3 $04 $bd $7e $39
     Op92_Unknown $00                                   ;; 2d:6ef7 $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_407e ;; 2d:6ef9 $4c $1a $01 $04 $00 $00 $00 $00 $7e $40 $16
-    Op18_Jump call_2d_6574                             ;; 2d:6f04 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6f04 $18 $74 $65 $2d
 
 RooftopHamsterTackQ:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:6f08 $50 $15 $c7 $00 $02
@@ -4034,11 +4044,11 @@ RooftopHamsterTackQ:
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6f13 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:6f15 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6f18 $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6f1a $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6f1a $b4 $65 $2d
     SCRIPT_POINTER call_2d_6f20                        ;; 2d:6f1d $20 $6f $2d
 
 call_2d_6f20:
-    Op14_BranchWithHamChatWheelRules 1, data_05_5cf0   ;; 2d:6f20 $14 $01 $f0 $5c
+    Op14_BranchWithHamChatWheelRules 1, checkRooftopHamsterState ;; 2d:6f20 $14 $01 $f0 $5c
     SCRIPT_POINTER call_2d_6f2c                        ;; 2d:6f24 $2c $6f $2d
     Op16_SubOps 1                                      ;; 2d:6f27 $16 $01
     SubOp_SetByte wRoofTopHamsterStateC76D, $01        ;; 2d:6f29 $7e $55 $01
@@ -4048,7 +4058,7 @@ call_2d_6f2c:
     ;;It's not safe <E4>to do that here.<E0>
     Op04_Unknown_Text data_39_7ee0                     ;; 2d:6f30 $04 $e0 $7e $39
     Op92_Unknown $00                                   ;; 2d:6f34 $92 $00
-    Op18_Jump call_2d_6574                             ;; 2d:6f36 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6f36 $18 $74 $65 $2d
     Op1E_Call call_1d_6acd                             ;; 2d:6f3a $1e $cd $6a $1d
     Op4E_Unknown_StoreValue 4, $01, data_10_4073       ;; 2d:6f3e $4e $04 $01 $73 $40 $10
     Op42_Unknown_StoreValue 3, $00, data_10_4000       ;; 2d:6f44 $42 $03 $00 $00 $40 $10
@@ -4083,7 +4093,7 @@ call_2d_6f9f:
     Op92_Unknown $00                                   ;; 2d:6fac $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_407e ;; 2d:6fae $4c $1a $01 $04 $00 $00 $00 $00 $7e $40 $16
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, zero_pointer ;; 2d:6fb9 $4c $16 $ff $02 $00 $00 $00 $00 $00 $00 $00
-    Op18_Jump call_2d_6574                             ;; 2d:6fc4 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:6fc4 $18 $74 $65 $2d
 
 RooftopHamsterDigDig:
     Op50_WriteByte wBitArrayIndexC715, $00, $03        ;; 2d:6fc8 $50 $15 $c7 $00 $03
@@ -4092,16 +4102,16 @@ RooftopHamsterDigDig:
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:6fd3 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:6fd5 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:6fd8 $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:6fda $b4 $65 $2d
-    SCRIPT_POINTER call_2d_6fe0                        ;; 2d:6fdd $e0 $6f $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:6fda $b4 $65 $2d
+    SCRIPT_POINTER RooftopHamsterDigDigContinued       ;; 2d:6fdd $e0 $6f $2d
 
-call_2d_6fe0:
-    Op14_BranchWithHamChatWheelRules 1, data_05_5cf0   ;; 2d:6fe0 $14 $01 $f0 $5c
-    SCRIPT_POINTER call_2d_6fec                        ;; 2d:6fe4 $ec $6f $2d
+RooftopHamsterDigDigContinued:
+    Op14_BranchWithHamChatWheelRules 1, checkRooftopHamsterState ;; 2d:6fe0 $14 $01 $f0 $5c
+    SCRIPT_POINTER RooftopHamsterDigDig_afterMarkInteracted ;; 2d:6fe4 $ec $6f $2d
     Op16_SubOps 1                                      ;; 2d:6fe7 $16 $01
     SubOp_SetByte wRoofTopHamsterStateC76D, $01        ;; 2d:6fe9 $7e $55 $01
 
-call_2d_6fec:
+RooftopHamsterDigDig_afterMarkInteracted:
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_40d2 ;; 2d:6fec $4c $1a $01 $04 $00 $00 $00 $00 $d2 $40 $16
     Op1E_Call call_20_4310                             ;; 2d:6ff7 $1e $10 $43 $20
     Op4C_Unknown $16, $10, $ff, $00, $00, $00, $00, data_10_4235 ;; 2d:6ffb $4c $16 $10 $ff $00 $00 $00 $00 $35 $42 $10
@@ -4110,41 +4120,43 @@ call_2d_6fec:
     Op04_Unknown_Text data_39_7f3e                     ;; 2d:700a $04 $3e $7f $39
     Op92_Unknown $00                                   ;; 2d:700e $92 $00
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_407e ;; 2d:7010 $4c $1a $01 $04 $00 $00 $00 $00 $7e $40 $16
-    Op18_Jump call_2d_6574                             ;; 2d:701b $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:701b $18 $74 $65 $2d
 
-call_2d_701f:
+RooftopHamsterNotThereShowWheel:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:701f $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:7023 $1e $1d $6f $1d
     Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2d:7027 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2d:702d $1c $04
-    SCRIPT_POINTER call_2d_685e                        ;; 2d:702f $5e $68 $2d
-    SCRIPT_POINTER call_2d_687e                        ;; 2d:7032 $7e $68 $2d
-    SCRIPT_POINTER call_2d_703b                        ;; 2d:7035 $3b $70 $2d
-    SCRIPT_POINTER call_2d_68be                        ;; 2d:7038 $be $68 $2d
+    SCRIPT_POINTER basicHamha_685e                     ;; 2d:702f $5e $68 $2d
+    SCRIPT_POINTER basicHifHif_687e                    ;; 2d:7032 $7e $68 $2d
+    SCRIPT_POINTER rooftopTackq                        ;; 2d:7035 $3b $70 $2d
+    SCRIPT_POINTER basicDigDig_68be                    ;; 2d:7038 $be $68 $2d
 
-call_2d_703b:
+rooftopTackq:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:703b $50 $15 $c7 $00 $02
     Op82_Run ObtainHamChatFromC715                     ;; 2d:7040 $82 $d9 $6d $02
     Op16_SubOps 1                                      ;; 2d:7044 $16 $01
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:7046 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:7048 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:704b $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:704d $b4 $65 $2d
-    SCRIPT_POINTER call_2d_7053                        ;; 2d:7050 $53 $70 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:704d $b4 $65 $2d
+    SCRIPT_POINTER rofftopTackqWarning                 ;; 2d:7050 $53 $70 $2d
 
-call_2d_7053:
+rofftopTackqWarning:
     Op1E_Call call_1d_6ae8                             ;; 2d:7053 $1e $e8 $6a $1d
     ;;It's not safe <E4>to do that here.<E0>
     Op04_Unknown_Text data_39_7f61                     ;; 2d:7057 $04 $61 $7f $39
     Op92_Unknown $00                                   ;; 2d:705b $92 $00
-    Op18_Jump call_2d_6574                             ;; 2d:705d $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:705d $18 $74 $65 $2d
 
 call_2d_7061:
     Op50_WriteByte wButtonsOfInterest, $00, $0f        ;; 2d:7061 $50 $1d $c3 $00 $0f
+; ^ Select only directions for use in following jumptable.
+; Order is Up Down Left Right
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:7066 $82 $c3 $74 $01
     Op1C_TableJump 4                                   ;; 2d:706a $1c $04
-    SCRIPT_POINTER call_2d_710c                        ;; 2d:706c $0c $71 $2d
-    SCRIPT_POINTER call_2d_711b                        ;; 2d:706f $1b $71 $2d
+    SCRIPT_POINTER upPressed_710c                      ;; 2d:706c $0c $71 $2d
+    SCRIPT_POINTER downPressed_711b                        ;; 2d:706f $1b $71 $2d
     SCRIPT_POINTER call_2d_707c                        ;; 2d:7072 $7c $70 $2d
     SCRIPT_POINTER call_2d_7090                        ;; 2d:7075 $90 $70 $2d
     Op18_Jump call_2d_70b2                             ;; 2d:7078 $18 $b2 $70 $2d
@@ -4163,26 +4175,26 @@ call_2d_70a0:
     SCRIPT_RETURN_4A                                   ;; 2d:70a0 $4a
     Op3E_Compare_Branch 22, data_10_799b, call_2d_70a0 ;; 2d:70a1 $3e $16 $9b $79 $10 $a0 $70 $2d
     Op50_WriteByte w1_D1FF, $01, $02                   ;; 2d:70a9 $50 $ff $d1 $01 $02
-    Op18_Jump call_2d_6574                             ;; 2d:70ae $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:70ae $18 $74 $65 $2d
 
 call_2d_70b2:
     Op50_WriteByte wButtonsOfInterest, $00, $d0        ;; 2d:70b2 $50 $1d $c3 $00 $d0
     Op82_Run SetScriptTableIndexFromInputs_PressedDirs_NewlyPressedButtons ;; 2d:70b7 $82 $c3 $74 $01
     Op1C_TableJump 3                                   ;; 2d:70bb $1c $03
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:70bd $b4 $65 $2d
-    SCRIPT_POINTER call_2d_65cb                        ;; 2d:70c0 $cb $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:70bd $b4 $65 $2d
+    SCRIPT_POINTER selectPressed_65cb                  ;; 2d:70c0 $cb $65 $2d
     SCRIPT_POINTER call_2d_70ca                        ;; 2d:70c3 $ca $70 $2d
-    Op18_Jump call_2d_6574                             ;; 2d:70c6 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:70c6 $18 $74 $65 $2d
 
 call_2d_70ca:
     Op82_Run StoreNextScriptAddressInC65AtoC           ;; 2d:70ca $82 $16 $74 $01
     Op1E_Call call_1d_6f1d                             ;; 2d:70ce $1e $1d $6f $1d
     Op10_HamChatWheel 4, AcornShrineCoreFourHamChats, AcornShrineAlwaysUsePile1 ;; 2d:70d2 $10 $04 $f2 $59 $55 $5a
     Op1C_TableJump 4                                   ;; 2d:70d8 $1c $04
-    SCRIPT_POINTER call_2d_685e                        ;; 2d:70da $5e $68 $2d
-    SCRIPT_POINTER call_2d_687e                        ;; 2d:70dd $7e $68 $2d
+    SCRIPT_POINTER basicHamha_685e                     ;; 2d:70da $5e $68 $2d
+    SCRIPT_POINTER basicHifHif_687e                    ;; 2d:70dd $7e $68 $2d
     SCRIPT_POINTER call_2d_70e6                        ;; 2d:70e0 $e6 $70 $2d
-    SCRIPT_POINTER call_2d_68be                        ;; 2d:70e3 $be $68 $2d
+    SCRIPT_POINTER basicDigDig_68be                    ;; 2d:70e3 $be $68 $2d
 
 call_2d_70e6:
     Op50_WriteByte wBitArrayIndexC715, $00, $02        ;; 2d:70e6 $50 $15 $c7 $00 $02
@@ -4191,7 +4203,7 @@ call_2d_70e6:
     SubOp_SetFlag 3 ; Bit 3 of wBitArrayC918           ;; 2d:70f1 $3e $03
     Op74_PrepTableJumpIndex_Copy wCommonJumpTableIndexSourceC65E ;; 2d:70f3 $74 $5e $c6
     Op1C_TableJump 2                                   ;; 2d:70f6 $1c $02
-    SCRIPT_POINTER call_2d_65b4                        ;; 2d:70f8 $b4 $65 $2d
+    SCRIPT_POINTER startPressed_65b4                   ;; 2d:70f8 $b4 $65 $2d
     SCRIPT_POINTER call_2d_70fe                        ;; 2d:70fb $fe $70 $2d
 
 call_2d_70fe:
@@ -4199,18 +4211,19 @@ call_2d_70fe:
     ;;It's not safe <E4>to do that here.<E0>
     Op04_Unknown_Text data_39_7f81                     ;; 2d:7102 $04 $81 $7f $39
     Op92_Unknown $00                                   ;; 2d:7106 $92 $00
-    Op18_Jump call_2d_6574                             ;; 2d:7108 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:7108 $18 $74 $65 $2d
 
-call_2d_710c:
+; Maybe this means show back sprite?
+upPressed_710c:
     Op4C_Unknown $16, $10, $16, $00, $00, $00, $00, data_10_413d ;; 2d:710c $4c $16 $10 $16 $00 $00 $00 $00 $3d $41 $10
     Op18_Jump call_2d_7126                             ;; 2d:7117 $18 $26 $71 $2d
 
-call_2d_711b:
+downPressed_711b:
     Op4C_Unknown $16, $08, $16, $00, $00, $00, $00, data_10_40c2 ;; 2d:711b $4c $16 $08 $16 $00 $00 $00 $00 $c2 $40 $10
 
 call_2d_7126:
     SCRIPT_RETURN_4A                                   ;; 2d:7126 $4a
-    Op18_Jump call_2d_6574                             ;; 2d:7127 $18 $74 $65 $2d
+    Op18_Jump innerReturnWhenDone_6574                 ;; 2d:7127 $18 $74 $65 $2d
 
 call_2d_712b:
     Op1E_Call call_1d_6acd                             ;; 2d:712b $1e $cd $6a $1d
