@@ -268,7 +268,6 @@ dw \2
         self.resize(size)
 
     def export(self, file):
-        print('zipped lens', len(self.subOpArgsList), len(self.subOpCommentsList))
         for subOpArgs, subOpComment in zip(self.subOpArgsList, self.subOpCommentsList):
             if subOpComment:
                 self.memory.addInlineComment(file.addr, subOpComment)

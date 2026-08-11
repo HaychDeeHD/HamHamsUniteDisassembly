@@ -30,8 +30,8 @@ def maybeCreateScriptBlocks():
     while len(scriptAddressesStack):
         memory, addr = scriptAddressesStack.pop()
         maybeCreateScriptBlock(memory, addr)
-    print("Done processing @hamscript for " + serializeAddress(memory, addr))
-    print(sorted(blockingOpcodes.items(), key=lambda item: item[1], reverse=True))
+    # print("Done processing @hamscript for " + serializeAddress(memory, addr))
+    # print(sorted(blockingOpcodes.items(), key=lambda item: item[1], reverse=True))
 
 def maybeCreateScriptBlock(memory, addr):
     while addr - memory.base_address < 0x4000:
