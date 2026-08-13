@@ -26,7 +26,7 @@ call_0a_4405:
     ld   [wCE00], A                                    ;; 0a:4418 $ea $00 $ce
     ld   A, D                                          ;; 0a:441b $7a
     ld   [wCE01], A                                    ;; 0a:441c $ea $01 $ce
-    ld   A, [wCF02]                                    ;; 0a:441f $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 0a:441f $fa $02 $cf
     ld   [wCEEC], A                                    ;; 0a:4422 $ea $ec $ce
     xor  A, A                                          ;; 0a:4425 $af
     ld   [wCE02], A                                    ;; 0a:4426 $ea $02 $ce
@@ -51,7 +51,7 @@ call_0a_4405:
     ld   [wCE1B], A                                    ;; 0a:4447 $ea $1b $ce
     ld   A, D                                          ;; 0a:444a $7a
     ld   [wCE1C], A                                    ;; 0a:444b $ea $1c $ce
-    ld   A, [wCF02]                                    ;; 0a:444e $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 0a:444e $fa $02 $cf
     ld   [wCEED], A                                    ;; 0a:4451 $ea $ed $ce
     xor  A, A                                          ;; 0a:4454 $af
     ld   [wCE1D], A                                    ;; 0a:4455 $ea $1d $ce
@@ -76,7 +76,7 @@ call_0a_4405:
     ld   [wCE36], A                                    ;; 0a:4476 $ea $36 $ce
     ld   A, D                                          ;; 0a:4479 $7a
     ld   [wCE37], A                                    ;; 0a:447a $ea $37 $ce
-    ld   A, [wCF02]                                    ;; 0a:447d $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 0a:447d $fa $02 $cf
     ld   [wCEEE], A                                    ;; 0a:4480 $ea $ee $ce
     xor  A, A                                          ;; 0a:4483 $af
     ld   [wCE38], A                                    ;; 0a:4484 $ea $38 $ce
@@ -101,7 +101,7 @@ call_0a_4405:
     ld   [wCE51], A                                    ;; 0a:44a3 $ea $51 $ce
     ld   A, D                                          ;; 0a:44a6 $7a
     ld   [wCE52], A                                    ;; 0a:44a7 $ea $52 $ce
-    ld   A, [wCF02]                                    ;; 0a:44aa $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 0a:44aa $fa $02 $cf
     ld   [wCEEF], A                                    ;; 0a:44ad $ea $ef $ce
     xor  A, A                                          ;; 0a:44b0 $af
     ld   [wCE53], A                                    ;; 0a:44b1 $ea $53 $ce
@@ -120,7 +120,7 @@ call_0a_44c0:
     inc  L                                             ;; 0a:44c9 $2c
     ld   D, [HL]                                       ;; 0a:44ca $56
     ld   A, [DE]                                       ;; 0a:44cb $1a
-    ld   [wCEEB], A                                    ;; 0a:44cc $ea $eb $ce
+    ld   [channelControl_4_CEEB], A                    ;; 0a:44cc $ea $eb $ce
     inc  DE                                            ;; 0a:44cf $13
     ld   [HL], D                                       ;; 0a:44d0 $72
     dec  L                                             ;; 0a:44d1 $2d
@@ -339,9 +339,9 @@ call_0a_44c0:
     ld   A, C                                          ;; 0a:470b $79
     cpl                                                ;; 0a:470c $2f
     ld   C, A                                          ;; 0a:470d $4f
-    ld   A, [wCF15]                                    ;; 0a:470e $fa $15 $cf
+    ld   A, [w_rNR51Value_CF14]                        ;; 0a:470e $fa $15 $cf
     and  A, C                                          ;; 0a:4711 $a1
-    ld   [wCF15], A                                    ;; 0a:4712 $ea $15 $cf
+    ld   [w_rNR51Value_CF14], A                        ;; 0a:4712 $ea $15 $cf
     ret                                                ;; 0a:4715 $c9
 .data_0a_4716:
     ld   A, $02                                        ;; 0a:4716 $3e $02

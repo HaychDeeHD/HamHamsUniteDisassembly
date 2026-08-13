@@ -150,7 +150,7 @@ jp_0a_40ec:
     ld   A, [wCEE8]                                    ;; 0a:40ec $fa $e8 $ce
     cp   A, $03                                        ;; 0a:40ef $fe $03
     jp   Z, .jp_0a_4157                                ;; 0a:40f1 $ca $57 $41
-    ld   A, [wCEEB]                                    ;; 0a:40f4 $fa $eb $ce
+    ld   A, [channelControl_4_CEEB]                    ;; 0a:40f4 $fa $eb $ce
     ld   E, A                                          ;; 0a:40f7 $5f
     and  A, $01                                        ;; 0a:40f8 $e6 $01
     ld   C, A                                          ;; 0a:40fa $4f
@@ -227,7 +227,7 @@ jp_0a_40ec:
     ld   [HL], A                                       ;; 0a:4155 $77
     ret                                                ;; 0a:4156 $c9
 .jp_0a_4157:
-    ld   A, [wCEEB]                                    ;; 0a:4157 $fa $eb $ce
+    ld   A, [channelControl_4_CEEB]                    ;; 0a:4157 $fa $eb $ce
     ld   E, A                                          ;; 0a:415a $5f
     ld   D, $00                                        ;; 0a:415b $16 $00
     dec  E                                             ;; 0a:415d $1d
@@ -411,7 +411,7 @@ data_0a_427c:
     db   $03, $6f, $7e, $e6, $fe, $77, $c9             ;; 0a:429a ???????
 
 data_0a_42a1:
-    ld   A, [wCEEB]                                    ;; 0a:42a1 $fa $eb $ce
+    ld   A, [channelControl_4_CEEB]                    ;; 0a:42a1 $fa $eb $ce
     sub  A, $d0                                        ;; 0a:42a4 $d6 $d0
     ld   E, A                                          ;; 0a:42a6 $5f
     ld   D, $00                                        ;; 0a:42a7 $16 $00

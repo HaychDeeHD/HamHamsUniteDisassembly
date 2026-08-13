@@ -118,7 +118,7 @@ call_09_448d:
     inc  L                                             ;; 09:4496 $2c
     ld   D, [HL]                                       ;; 09:4497 $56
     ld   A, [DE]                                       ;; 09:4498 $1a
-    ld   [wCEEB], A                                    ;; 09:4499 $ea $eb $ce
+    ld   [channelControl_4_CEEB], A                    ;; 09:4499 $ea $eb $ce
     inc  DE                                            ;; 09:449c $13
     ld   [HL], D                                       ;; 09:449d $72
     dec  L                                             ;; 09:449e $2d

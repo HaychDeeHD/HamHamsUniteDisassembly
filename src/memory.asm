@@ -1920,7 +1920,9 @@ wCE81:
 wCE83:
     ds 2                                               ;; ce83
 
-wCE85:
+; CE84-5 channel 1 note?
+; The latter one is 0 when no sound, between 04-08 otherwise.
+channelControl_1_CE85:
     ds 2                                               ;; ce85
 
 wCE87:
@@ -1944,7 +1946,8 @@ wCE9D:
 wCE9E:
     ds 2                                               ;; ce9e
 
-wCEA0:
+; CE9F-A0 channel 2 note
+channelControl_2_CEA0:
     ds 2                                               ;; cea0
 
 wCEA2:
@@ -1968,7 +1971,8 @@ wCEB7:
 wCEB9:
     ds 2                                               ;; ceb9
 
-wCEBB:
+; CEBA-B channel 3 note
+channelControl_3_CEBB:
     ds 2                                               ;; cebb
 
 wCEBD:
@@ -2046,7 +2050,8 @@ wCEE8:
 wCEE9:
     ds 2                                               ;; cee9
 
-wCEEB:
+; Percussion note
+channelControl_4_CEEB:
     ds 1                                               ;; ceeb
 
 wCEEC:
@@ -2064,10 +2069,10 @@ wCEEF:
 wCF00:
     ds 1                                               ;; cf00
 
-wCF01:
+soundBankToUseCF01:
     ds 1                                               ;; cf01
 
-wCF02:
+soundBankToUseCF02:
     ds 2                                               ;; cf02
 
 wCF04:
@@ -2118,10 +2123,10 @@ wCF12:
 wCF13:
     ds 1                                               ;; cf13
 
-wCF14:
+w_rNR50Value_CF14:
     ds 1                                               ;; cf14
 
-wCF15:
+w_rNR51Value_CF14:
     ds 2                                               ;; cf15
 
 wCF17:
@@ -2130,10 +2135,10 @@ wCF17:
 wCF19:
     ds 2                                               ;; cf19
 
-wCF1B:
+w_rNR50Value_CF1B:
     ds 1                                               ;; cf1b
 
-wCF1C:
+w_rNR51Value_CF1B:
     ds 2                                               ;; cf1c
 
 wCF1E:

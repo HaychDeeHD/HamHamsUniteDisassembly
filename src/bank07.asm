@@ -11,24 +11,31 @@ INCLUDE "soundHandlers/soundHandlers_copy07.asm"
 
 ; HL will be a value from the bigSoundTable
 ; Looks like it just sets a bunch of CExx registers.
+; Most of them get set from CF02, which will hold a bank number.
+; Some are values from the bigSoundTable.
 call_07_4405:
     ld   A, [HL+]                                      ;; 07:4405 $2a
     ld   E, A                                          ;; 07:4406 $5f
     ld   A, [HL+]                                      ;; 07:4407 $2a
     and  A, A                                          ;; 07:4408 $a7
-    jr   Z, .jr_07_4434                                ;; 07:4409 $28 $29
+    jr   Z, .doneRegisterSetting                       ;; 07:4409 $28 $29
     ld   D, A                                          ;; 07:440b $57
+; The bigSoundTable value got put into DE.
+; If it's nonzero,
     ld   A, [wCEDC]                                    ;; 07:440c $fa $dc $ce
+; I think B was last modified in BC = wCFxx ?
     cp   A, B                                          ;; 07:440f $b8
-    jr   NC, .jr_07_4434                               ;; 07:4410 $30 $22
+; If B is not bigger than A, skip
+    jr   NC, .doneRegisterSetting                      ;; 07:4410 $30 $22
     ld   A, B                                          ;; 07:4412 $78
     dec  A                                             ;; 07:4413 $3d
     ld   [wCEDC], A                                    ;; 07:4414 $ea $dc $ce
     ld   A, E                                          ;; 07:4417 $7b
+; CE00-1 gets DE, the value from the bigSoundTable
     ld   [wCE00], A                                    ;; 07:4418 $ea $00 $ce
     ld   A, D                                          ;; 07:441b $7a
     ld   [wCE01], A                                    ;; 07:441c $ea $01 $ce
-    ld   A, [wCF02]                                    ;; 07:441f $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 07:441f $fa $02 $cf
     ld   [wCEEC], A                                    ;; 07:4422 $ea $ec $ce
     xor  A, A                                          ;; 07:4425 $af
     ld   [wCE02], A                                    ;; 07:4426 $ea $02 $ce
@@ -36,24 +43,26 @@ call_07_4405:
     ld   [wCE0D], A                                    ;; 07:442c $ea $0d $ce
     ld   A, $01                                        ;; 07:442f $3e $01
     ld   [wCE09], A                                    ;; 07:4431 $ea $09 $ce
-.jr_07_4434:
+; Read 2 more bytes from bigSoundTable, do similar thing.
+.doneRegisterSetting:
     ld   A, [HL+]                                      ;; 07:4434 $2a
     ld   E, A                                          ;; 07:4435 $5f
     ld   A, [HL+]                                      ;; 07:4436 $2a
     and  A, A                                          ;; 07:4437 $a7
-    jr   Z, .jr_07_4463                                ;; 07:4438 $28 $29
+    jr   Z, .doneSecondRegisterSetting                 ;; 07:4438 $28 $29
     ld   D, A                                          ;; 07:443a $57
     ld   A, [wCEDD]                                    ;; 07:443b $fa $dd $ce
     cp   A, B                                          ;; 07:443e $b8
-    jr   NC, .jr_07_4463                               ;; 07:443f $30 $22
+    jr   NC, .doneSecondRegisterSetting                ;; 07:443f $30 $22
     ld   A, B                                          ;; 07:4441 $78
     dec  A                                             ;; 07:4442 $3d
     ld   [wCEDD], A                                    ;; 07:4443 $ea $dd $ce
     ld   A, E                                          ;; 07:4446 $7b
+; CE1B-C gets DE, the second value from the bigSoundTable
     ld   [wCE1B], A                                    ;; 07:4447 $ea $1b $ce
     ld   A, D                                          ;; 07:444a $7a
     ld   [wCE1C], A                                    ;; 07:444b $ea $1c $ce
-    ld   A, [wCF02]                                    ;; 07:444e $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 07:444e $fa $02 $cf
     ld   [wCEED], A                                    ;; 07:4451 $ea $ed $ce
     xor  A, A                                          ;; 07:4454 $af
     ld   [wCE1D], A                                    ;; 07:4455 $ea $1d $ce
@@ -61,24 +70,26 @@ call_07_4405:
     ld   [wCE28], A                                    ;; 07:445b $ea $28 $ce
     ld   A, $01                                        ;; 07:445e $3e $01
     ld   [wCE24], A                                    ;; 07:4460 $ea $24 $ce
-.jr_07_4463:
+; Same deal a third time.
+.doneSecondRegisterSetting:
     ld   A, [HL+]                                      ;; 07:4463 $2a
     ld   E, A                                          ;; 07:4464 $5f
     ld   A, [HL+]                                      ;; 07:4465 $2a
     and  A, A                                          ;; 07:4466 $a7
-    jr   Z, jr_07_4492                                 ;; 07:4467 $28 $29
+    jr   Z, doneThirdRegisterSetting                   ;; 07:4467 $28 $29
     ld   D, A                                          ;; 07:4469 $57
     ld   A, [wCEDE]                                    ;; 07:446a $fa $de $ce
     cp   A, B                                          ;; 07:446d $b8
-    jr   NC, jr_07_4492                                ;; 07:446e $30 $22
+    jr   NC, doneThirdRegisterSetting                  ;; 07:446e $30 $22
     ld   A, B                                          ;; 07:4470 $78
     dec  A                                             ;; 07:4471 $3d
     ld   [wCEDE], A                                    ;; 07:4472 $ea $de $ce
     ld   A, E                                          ;; 07:4475 $7b
+; CE36-7 gets DE, the third value from the bigSoundTable
     ld   [wCE36], A                                    ;; 07:4476 $ea $36 $ce
     ld   A, D                                          ;; 07:4479 $7a
     ld   [wCE37], A                                    ;; 07:447a $ea $37 $ce
-    ld   A, [wCF02]                                    ;; 07:447d $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 07:447d $fa $02 $cf
     ld   [wCEEE], A                                    ;; 07:4480 $ea $ee $ce
     xor  A, A                                          ;; 07:4483 $af
     ld   [wCE38], A                                    ;; 07:4484 $ea $38 $ce
@@ -89,7 +100,8 @@ call_07_448d:
     ld   A, $01                                        ;; 07:448d $3e $01
     ld   [wCE3F], A                                    ;; 07:448f $ea $3f $ce
 
-jr_07_4492:
+; It's happening a 4th time, then return.
+doneThirdRegisterSetting:
     ld   A, [HL+]                                      ;; 07:4492 $2a
     ld   E, A                                          ;; 07:4493 $5f
     ld   A, [HL+]                                      ;; 07:4494 $2a
@@ -103,10 +115,11 @@ jr_07_4492:
     dec  A                                             ;; 07:449e $3d
     ld   [wCEDF], A                                    ;; 07:449f $ea $df $ce
     ld   A, E                                          ;; 07:44a2 $7b
+; CE51-2 gets DE, the 4th value from the bigSoundTable
     ld   [wCE51], A                                    ;; 07:44a3 $ea $51 $ce
     ld   A, D                                          ;; 07:44a6 $7a
     ld   [wCE52], A                                    ;; 07:44a7 $ea $52 $ce
-    ld   A, [wCF02]                                    ;; 07:44aa $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 07:44aa $fa $02 $cf
     ld   [wCEEF], A                                    ;; 07:44ad $ea $ef $ce
     xor  A, A                                          ;; 07:44b0 $af
     ld   [wCE53], A                                    ;; 07:44b1 $ea $53 $ce
@@ -125,7 +138,7 @@ call_07_44c0:
     inc  L                                             ;; 07:44c9 $2c
     ld   D, [HL]                                       ;; 07:44ca $56
     ld   A, [DE]                                       ;; 07:44cb $1a
-    ld   [wCEEB], A                                    ;; 07:44cc $ea $eb $ce
+    ld   [channelControl_4_CEEB], A                    ;; 07:44cc $ea $eb $ce
     inc  DE                                            ;; 07:44cf $13
     ld   [HL], D                                       ;; 07:44d0 $72
     dec  L                                             ;; 07:44d1 $2d
@@ -430,9 +443,9 @@ call_07_46e8:
     ld   A, C                                          ;; 07:470b $79
     cpl                                                ;; 07:470c $2f
     ld   C, A                                          ;; 07:470d $4f
-    ld   A, [wCF15]                                    ;; 07:470e $fa $15 $cf
+    ld   A, [w_rNR51Value_CF14]                        ;; 07:470e $fa $15 $cf
     and  A, C                                          ;; 07:4711 $a1
-    ld   [wCF15], A                                    ;; 07:4712 $ea $15 $cf
+    ld   [w_rNR51Value_CF14], A                        ;; 07:4712 $ea $15 $cf
     ret                                                ;; 07:4715 $c9
 
 call_07_4716:
@@ -1579,7 +1592,7 @@ call_07_5b0c:
 ; Write $12 to CED8
     ld   [HL], $12                                     ;; 07:5b0f $36 $12
     inc  L                                             ;; 07:5b11 $2c
-; Write $CF to CED9
+; Write $CF to CED9. (So $CF12 together)
     ld   [HL], $cf                                     ;; 07:5b12 $36 $cf
     ld   A, [wCFF8]                                    ;; 07:5b14 $fa $f8 $cf
     and  A, A                                          ;; 07:5b17 $a7
@@ -1600,6 +1613,7 @@ call_07_5b0c:
     jr   Z, .afterLoop                                 ;; 07:5b26 $28 $2f
     inc  C                                             ;; 07:5b28 $0c
     dec  B                                             ;; 07:5b29 $05
+; This starts as SoundEffect1 but loops through 8 registers.
 .doLoop:
     ld   HL, wSoundEffect1                             ;; 07:5b2a $21 $f0 $cf
     ld   A, C                                          ;; 07:5b2d $79
@@ -1620,7 +1634,7 @@ call_07_5b0c:
 .dIsSet:
     ld   A, D                                          ;; 07:5b3d $7a
 ; Write D to CF02
-    ld   [wCF02], A                                    ;; 07:5b3e $ea $02 $cf
+    ld   [soundBankToUseCF02], A                       ;; 07:5b3e $ea $02 $cf
     pop  AF                                            ;; 07:5b41 $f1
 ; Pop out the sound effect value and decrement it
     dec  A                                             ;; 07:5b42 $3d
@@ -1638,23 +1652,27 @@ call_07_5b0c:
     ld   A, [HL+]                                      ;; 07:5b4f $2a
     ld   H, [HL]                                       ;; 07:5b50 $66
     ld   L, A                                          ;; 07:5b51 $6f
+; "do stuff" is mostly populate registers with values.
     call switchBankToCF02_doStuff1_backTo07_07_400c    ;; 07:5b52 $cd $0c $40
     jr   .prepNextLoop                                 ;; 07:5b55 $18 $cc
 .afterLoop:
     xor  A, A                                          ;; 07:5b57 $af
+; wCEE8 is a loop counter, but different stuff happens each loop.
     ld   [wCEE8], A                                    ;; 07:5b58 $ea $e8 $ce
-.jp_07_5b5b:
+.topOfFourPassLoop:
     ld   HL, wCEDA                                     ;; 07:5b5b $21 $da $ce
     ld   A, [wCEE8]                                    ;; 07:5b5e $fa $e8 $ce
     cp   A, $01                                        ;; 07:5b61 $fe $01
-    jr   Z, .jr_07_5b85                                ;; 07:5b63 $28 $20
+    jr   Z, .secondLoopPass                            ;; 07:5b63 $28 $20
     cp   A, $02                                        ;; 07:5b65 $fe $02
-    jr   Z, .jr_07_5b9d                                ;; 07:5b67 $28 $34
+    jr   Z, .thirdLoopPass                             ;; 07:5b67 $28 $34
     cp   A, $03                                        ;; 07:5b69 $fe $03
-    jr   Z, .jr_07_5bb5                                ;; 07:5b6b $28 $48
+    jr   Z, .fourthLoopPass                            ;; 07:5b6b $28 $48
+; This is the first pass code.
     ld   A, [wCEDC]                                    ;; 07:5b6d $fa $dc $ce
     and  A, A                                          ;; 07:5b70 $a7
-    jp   Z, .jp_07_5c13                                ;; 07:5b71 $ca $13 $5c
+    jp   Z, .prepNextPassInFourPassLoop                ;; 07:5b71 $ca $13 $5c
+; wCEDA-B gets the value $CE00
     ld   [HL], $00                                     ;; 07:5b74 $36 $00
     inc  L                                             ;; 07:5b76 $2c
     ld   [HL], $ce                                     ;; 07:5b77 $36 $ce
@@ -1662,11 +1680,11 @@ call_07_5b0c:
     ld   BC, wCF0A                                     ;; 07:5b7c $01 $0a $cf
     ld   A, [wCEEC]                                    ;; 07:5b7f $fa $ec $ce
     ld   D, A                                          ;; 07:5b82 $57
-    jr   .jr_07_5bcb                                   ;; 07:5b83 $18 $46
-.jr_07_5b85:
+    jr   .afterLoopPass                                ;; 07:5b83 $18 $46
+.secondLoopPass:
     ld   A, [wCEDD]                                    ;; 07:5b85 $fa $dd $ce
     and  A, A                                          ;; 07:5b88 $a7
-    jp   Z, .jp_07_5c13                                ;; 07:5b89 $ca $13 $5c
+    jp   Z, .prepNextPassInFourPassLoop                ;; 07:5b89 $ca $13 $5c
     ld   [HL], $1b                                     ;; 07:5b8c $36 $1b
     inc  L                                             ;; 07:5b8e $2c
     ld   [HL], $ce                                     ;; 07:5b8f $36 $ce
@@ -1674,11 +1692,11 @@ call_07_5b0c:
     ld   BC, wCF0B                                     ;; 07:5b94 $01 $0b $cf
     ld   A, [wCEED]                                    ;; 07:5b97 $fa $ed $ce
     ld   D, A                                          ;; 07:5b9a $57
-    jr   .jr_07_5bcb                                   ;; 07:5b9b $18 $2e
-.jr_07_5b9d:
+    jr   .afterLoopPass                                ;; 07:5b9b $18 $2e
+.thirdLoopPass:
     ld   A, [wCEDE]                                    ;; 07:5b9d $fa $de $ce
     and  A, A                                          ;; 07:5ba0 $a7
-    jp   Z, .jp_07_5c13                                ;; 07:5ba1 $ca $13 $5c
+    jp   Z, .prepNextPassInFourPassLoop                ;; 07:5ba1 $ca $13 $5c
     ld   [HL], $36                                     ;; 07:5ba4 $36 $36
     inc  L                                             ;; 07:5ba6 $2c
     ld   [HL], $ce                                     ;; 07:5ba7 $36 $ce
@@ -1686,11 +1704,11 @@ call_07_5b0c:
     ld   BC, wCF0C                                     ;; 07:5bac $01 $0c $cf
     ld   A, [wCEEE]                                    ;; 07:5baf $fa $ee $ce
     ld   D, A                                          ;; 07:5bb2 $57
-    jr   .jr_07_5bcb                                   ;; 07:5bb3 $18 $16
-.jr_07_5bb5:
+    jr   .afterLoopPass                                ;; 07:5bb3 $18 $16
+.fourthLoopPass:
     ld   A, [wCEDF]                                    ;; 07:5bb5 $fa $df $ce
     and  A, A                                          ;; 07:5bb8 $a7
-    jp   Z, .jp_07_5c13                                ;; 07:5bb9 $ca $13 $5c
+    jp   Z, .prepNextPassInFourPassLoop                ;; 07:5bb9 $ca $13 $5c
     ld   [HL], $51                                     ;; 07:5bbc $36 $51
     inc  L                                             ;; 07:5bbe $2c
     ld   [HL], $ce                                     ;; 07:5bbf $36 $ce
@@ -1698,20 +1716,23 @@ call_07_5b0c:
     ld   BC, wCF0D                                     ;; 07:5bc4 $01 $0d $cf
     ld   A, [wCEEF]                                    ;; 07:5bc7 $fa $ef $ce
     ld   D, A                                          ;; 07:5bca $57
-.jr_07_5bcb:
+; Each pass set a hardcoded HL (and BC) value.
+.afterLoopPass:
     ld   A, [HL]                                       ;; 07:5bcb $7e
     and  A, A                                          ;; 07:5bcc $a7
-    jr   Z, .jr_07_5bd3                                ;; 07:5bcd $28 $04
+    jr   Z, .valueWas_00orF0orGreater                  ;; 07:5bcd $28 $04
     cp   A, $f0                                        ;; 07:5bcf $fe $f0
-    jr   C, .jr_07_5bdf                                ;; 07:5bd1 $38 $0c
-.jr_07_5bd3:
+    jr   C, .valueWas_00thruF0                         ;; 07:5bd1 $38 $0c
+; Reached if value == 0 or value >= F0
+.valueWas_00orF0orGreater:
     push HL                                            ;; 07:5bd3 $e5
     ld   A, D                                          ;; 07:5bd4 $7a
-    ld   [wCF02], A                                    ;; 07:5bd5 $ea $02 $cf
+    ld   [soundBankToUseCF02], A                       ;; 07:5bd5 $ea $02 $cf
     call switchBankToCF02_doStuff2_backTo07_07_401a    ;; 07:5bd8 $cd $1a $40
     pop  HL                                            ;; 07:5bdb $e1
-    jp   .jp_07_5b5b                                   ;; 07:5bdc $c3 $5b $5b
-.jr_07_5bdf:
+    jp   .topOfFourPassLoop                            ;; 07:5bdc $c3 $5b $5b
+; This is reached only if value was strictly between 00 and F0.
+.valueWas_00thruF0:
     dec  [HL]                                          ;; 07:5bdf $35
     inc  L                                             ;; 07:5be0 $2c
     ld   A, [HL]                                       ;; 07:5be1 $7e
@@ -1725,7 +1746,7 @@ call_07_5b0c:
 .jr_07_5bee:
     ld   A, [HL]                                       ;; 07:5bee $7e
     and  A, $80                                        ;; 07:5bef $e6 $80
-    jr   Z, .jp_07_5c13                                ;; 07:5bf1 $28 $20
+    jr   Z, .prepNextPassInFourPassLoop                ;; 07:5bf1 $28 $20
     inc  L                                             ;; 07:5bf3 $2c
     ld   A, [HL]                                       ;; 07:5bf4 $7e
     and  A, A                                          ;; 07:5bf5 $a7
@@ -1733,13 +1754,13 @@ call_07_5b0c:
     cp   A, $ff                                        ;; 07:5bf8 $fe $ff
     jr   Z, .jr_07_5bff                                ;; 07:5bfa $28 $03
     dec  [HL]                                          ;; 07:5bfc $35
-    jr   .jp_07_5c13                                   ;; 07:5bfd $18 $14
+    jr   .prepNextPassInFourPassLoop                   ;; 07:5bfd $18 $14
 .jr_07_5bff:
     dec  L                                             ;; 07:5bff $2d
     ld   A, [HL]                                       ;; 07:5c00 $7e
     and  A, $7f                                        ;; 07:5c01 $e6 $7f
     ld   [HL], A                                       ;; 07:5c03 $77
-    jr   .jp_07_5c13                                   ;; 07:5c04 $18 $0d
+    jr   .prepNextPassInFourPassLoop                   ;; 07:5c04 $18 $0d
 .jr_07_5c06:
     call call_07_5efe                                  ;; 07:5c06 $cd $fe $5e
     ld   HL, wCF0A                                     ;; 07:5c09 $21 $0a $cf
@@ -1747,13 +1768,13 @@ call_07_5b0c:
     add  A, L                                          ;; 07:5c0f $85
     ld   L, A                                          ;; 07:5c10 $6f
     ld   [HL], $02                                     ;; 07:5c11 $36 $02
-.jp_07_5c13:
+.prepNextPassInFourPassLoop:
     ld   A, [wCEE8]                                    ;; 07:5c13 $fa $e8 $ce
     inc  A                                             ;; 07:5c16 $3c
     cp   A, $04                                        ;; 07:5c17 $fe $04
     ret  Z                                             ;; 07:5c19 $c8
     ld   [wCEE8], A                                    ;; 07:5c1a $ea $e8 $ce
-    jp   .jp_07_5b5b                                   ;; 07:5c1d $c3 $5b $5b
+    jp   .topOfFourPassLoop                            ;; 07:5c1d $c3 $5b $5b
 
 call_07_5c20:
     ld   A, [wCFFB]                                    ;; 07:5c20 $fa $fb $cf
@@ -1783,7 +1804,7 @@ call_07_5c20:
     ld   B, $08                                        ;; 07:5c54 $06 $08
 .jr_07_5c56:
     ld   A, B                                          ;; 07:5c56 $78
-    ld   [wCF01], A                                    ;; 07:5c57 $ea $01 $cf
+    ld   [soundBankToUseCF01], A                       ;; 07:5c57 $ea $01 $cf
     xor  A, A                                          ;; 07:5c5a $af
     ld   [wSongToPlay], A                              ;; 07:5c5b $ea $f9 $cf
     ld   HL, wCED8                                     ;; 07:5c5e $21 $d8 $ce
@@ -1950,9 +1971,9 @@ call_07_5d63:
     ld   [wCED4], A                                    ;; 07:5d6f $ea $d4 $ce
     ld   A, $80                                        ;; 07:5d72 $3e $80
     ld   [wCEB7], A                                    ;; 07:5d74 $ea $b7 $ce
-    ld   [wCE85], A                                    ;; 07:5d77 $ea $85 $ce
-    ld   [wCEA0], A                                    ;; 07:5d7a $ea $a0 $ce
-    ld   [wCEBB], A                                    ;; 07:5d7d $ea $bb $ce
+    ld   [channelControl_1_CE85], A                    ;; 07:5d77 $ea $85 $ce
+    ld   [channelControl_2_CEA0], A                    ;; 07:5d7a $ea $a0 $ce
+    ld   [channelControl_3_CEBB], A                    ;; 07:5d7d $ea $bb $ce
     ld   [wCED6], A                                    ;; 07:5d80 $ea $d6 $ce
     xor  A, A                                          ;; 07:5d83 $af
     ld   [wCE6C], A                                    ;; 07:5d84 $ea $6c $ce
@@ -1981,7 +2002,7 @@ call_07_5d63:
     ld   [wCF10], A                                    ;; 07:5dc8 $ea $10 $cf
     ld   [wCF11], A                                    ;; 07:5dcb $ea $11 $cf
     ld   A, $ff                                        ;; 07:5dce $3e $ff
-    ld   [wCF1C], A                                    ;; 07:5dd0 $ea $1c $cf
+    ld   [w_rNR51Value_CF1B], A                        ;; 07:5dd0 $ea $1c $cf
     ret                                                ;; 07:5dd3 $c9
 
 call_07_5dd4:
@@ -2321,21 +2342,21 @@ call_07_5efe:
     ld   [HL], D                                       ;; 07:5f80 $72
     ret                                                ;; 07:5f81 $c9
 
-jp_07_5f82:
+resetAllSoundRegisters:
     xor  A, A                                          ;; 07:5f82 $af
     ld_long_store rNR52, A                             ;; 07:5f83 $ea $26 $ff
     ld   A, $80                                        ;; 07:5f86 $3e $80
     ld_long_store rNR52, A                             ;; 07:5f88 $ea $26 $ff
-    ld   A, $77                                        ;; 07:5f8b $3e $77
+    ld   A, $77 ; Max volume for L/R                   ;; 07:5f8b $3e $77
     ld_long_store rNR50, A                             ;; 07:5f8d $ea $24 $ff
-    ld   [wCF14], A                                    ;; 07:5f90 $ea $14 $cf
-    ld   [wCF1B], A                                    ;; 07:5f93 $ea $1b $cf
+    ld   [w_rNR50Value_CF14], A                        ;; 07:5f90 $ea $14 $cf
+    ld   [w_rNR50Value_CF1B], A                        ;; 07:5f93 $ea $1b $cf
     ld   A, $ff                                        ;; 07:5f96 $3e $ff
-    ld_long_store rNR51, A                             ;; 07:5f98 $ea $25 $ff
+    ld_long_store rNR51, A ; Set all channels to play in both L/R ;; 07:5f98 $ea $25 $ff
     xor  A, A                                          ;; 07:5f9b $af
-    ld_long_store rNR51, A                             ;; 07:5f9c $ea $25 $ff
-    ld   [wCF15], A                                    ;; 07:5f9f $ea $15 $cf
-    ld   [wCF1C], A                                    ;; 07:5fa2 $ea $1c $cf
+    ld_long_store rNR51, A ; Set all channels to play in neither L/R ;; 07:5f9c $ea $25 $ff
+    ld   [w_rNR51Value_CF14], A                        ;; 07:5f9f $ea $15 $cf
+    ld   [w_rNR51Value_CF1B], A                        ;; 07:5fa2 $ea $1c $cf
     ld_long_store rNR30, A                             ;; 07:5fa5 $ea $1a $ff
     ld_long_store rNR32, A                             ;; 07:5fa8 $ea $1c $ff
     xor  A, A                                          ;; 07:5fab $af
@@ -2356,7 +2377,7 @@ jp_07_5f82:
     ld   A, $80                                        ;; 07:5fce $3e $80
     ld   [wCE4B], A                                    ;; 07:5fd0 $ea $4b $ce
     ld   A, $ff                                        ;; 07:5fd3 $3e $ff
-    ld   [wCF1C], A                                    ;; 07:5fd5 $ea $1c $cf
+    ld   [w_rNR51Value_CF1B], A                        ;; 07:5fd5 $ea $1c $cf
     xor  A, A                                          ;; 07:5fd8 $af
     ld   [wCEDC], A                                    ;; 07:5fd9 $ea $dc $ce
     ld   [wCEDD], A                                    ;; 07:5fdc $ea $dd $ce
@@ -2388,29 +2409,32 @@ jp_07_5f82:
 
 jp_07_6025:
     call call_07_6278                                  ;; 07:6025 $cd $78 $62
-    ld   A, [wCF1C]                                    ;; 07:6028 $fa $1c $cf
+    ld   A, [w_rNR51Value_CF1B]                        ;; 07:6028 $fa $1c $cf
     ld   B, A                                          ;; 07:602b $47
-    ld   A, [wCF15]                                    ;; 07:602c $fa $15 $cf
+    ld   A, [w_rNR51Value_CF14]                        ;; 07:602c $fa $15 $cf
     or   A, B                                          ;; 07:602f $b0
     ld   [wCF09], A                                    ;; 07:6030 $ea $09 $cf
-    ld   A, [wCF14]                                    ;; 07:6033 $fa $14 $cf
+; This code just sets rNR50 to [CF14]
+; rNR50 is global volume, between 1 and 8 for L/R.
+    ld   A, [w_rNR50Value_CF14]                        ;; 07:6033 $fa $14 $cf
     ld   B, A                                          ;; 07:6036 $47
     ld_long_load A, rNR50                              ;; 07:6037 $fa $24 $ff
     cp   A, B                                          ;; 07:603a $b8
-    jr   Z, .jr_07_6041                                ;; 07:603b $28 $04
+    jr   Z, .doneSetting_rNR50                         ;; 07:603b $28 $04
     ld   A, B                                          ;; 07:603d $78
     ld_long_store rNR50, A                             ;; 07:603e $ea $24 $ff
-.jr_07_6041:
+.doneSetting_rNR50:
     xor  A, A                                          ;; 07:6041 $af
-    ld   [wCF15], A                                    ;; 07:6042 $ea $15 $cf
+    ld   [w_rNR51Value_CF14], A                        ;; 07:6042 $ea $15 $cf
     ld   A, [wCF0A]                                    ;; 07:6045 $fa $0a $cf
     and  A, A                                          ;; 07:6048 $a7
     jr   Z, .jr_07_6064                                ;; 07:6049 $28 $19
     ld   B, A                                          ;; 07:604b $47
     xor  A, A                                          ;; 07:604c $af
     ld   [wCF0E], A                                    ;; 07:604d $ea $0e $cf
+; This value in rNR51 will output just channel 1.
     ld   A, $11                                        ;; 07:6050 $3e $11
-    ld   [wCF15], A                                    ;; 07:6052 $ea $15 $cf
+    ld   [w_rNR51Value_CF14], A                        ;; 07:6052 $ea $15 $cf
     bit  7, B                                          ;; 07:6055 $cb $78
     jr   NZ, .jr_07_60a6                               ;; 07:6057 $20 $4d
     ld   A, B                                          ;; 07:6059 $78
@@ -2461,9 +2485,10 @@ jp_07_6025:
     ld   B, A                                          ;; 07:60ac $47
     xor  A, A                                          ;; 07:60ad $af
     ld   [wCF0F], A                                    ;; 07:60ae $ea $0f $cf
-    ld   A, [wCF15]                                    ;; 07:60b1 $fa $15 $cf
+    ld   A, [w_rNR51Value_CF14]                        ;; 07:60b1 $fa $15 $cf
+; This value in rNR51 will output just channel 2.
     or   A, $22                                        ;; 07:60b4 $f6 $22
-    ld   [wCF15], A                                    ;; 07:60b6 $ea $15 $cf
+    ld   [w_rNR51Value_CF14], A                        ;; 07:60b6 $ea $15 $cf
     bit  7, B                                          ;; 07:60b9 $cb $78
     jr   NZ, .jr_07_6107                               ;; 07:60bb $20 $4a
     ld   A, B                                          ;; 07:60bd $78
@@ -2513,9 +2538,10 @@ jp_07_6025:
     ld   B, A                                          ;; 07:610d $47
     xor  A, A                                          ;; 07:610e $af
     ld   [wCF10], A                                    ;; 07:610f $ea $10 $cf
-    ld   A, [wCF15]                                    ;; 07:6112 $fa $15 $cf
+    ld   A, [w_rNR51Value_CF14]                        ;; 07:6112 $fa $15 $cf
+; This value in rNR51 will output just channel 4.
     or   A, $44                                        ;; 07:6115 $f6 $44
-    ld   [wCF15], A                                    ;; 07:6117 $ea $15 $cf
+    ld   [w_rNR51Value_CF14], A                        ;; 07:6117 $ea $15 $cf
     bit  7, B                                          ;; 07:611a $cb $78
     jp   NZ, .jp_07_61d2                               ;; 07:611c $c2 $d2 $61
     ld   A, B                                          ;; 07:611f $78
@@ -2629,9 +2655,9 @@ jp_07_6025:
     ld   B, A                                          ;; 07:61d8 $47
     xor  A, A                                          ;; 07:61d9 $af
     ld   [wCF11], A                                    ;; 07:61da $ea $11 $cf
-    ld   A, [wCF15]                                    ;; 07:61dd $fa $15 $cf
+    ld   A, [w_rNR51Value_CF14]                        ;; 07:61dd $fa $15 $cf
     or   A, $88                                        ;; 07:61e0 $f6 $88
-    ld   [wCF15], A                                    ;; 07:61e2 $ea $15 $cf
+    ld   [w_rNR51Value_CF14], A                        ;; 07:61e2 $ea $15 $cf
     bit  7, B                                          ;; 07:61e5 $cb $78
     jp   NZ, jp_07_6266                                ;; 07:61e7 $c2 $66 $62
     ld   A, B                                          ;; 07:61ea $78
@@ -2719,9 +2745,9 @@ call_07_6248:
 jp_07_6266:
     ld_long_load A, rNR51                              ;; 07:6266 $fa $25 $ff
     ld   C, A                                          ;; 07:6269 $4f
-    ld   A, [wCF1C]                                    ;; 07:626a $fa $1c $cf
+    ld   A, [w_rNR51Value_CF1B]                        ;; 07:626a $fa $1c $cf
     ld   B, A                                          ;; 07:626d $47
-    ld   A, [wCF15]                                    ;; 07:626e $fa $15 $cf
+    ld   A, [w_rNR51Value_CF14]                        ;; 07:626e $fa $15 $cf
     or   A, B                                          ;; 07:6271 $b0
     cp   A, C                                          ;; 07:6272 $b9
     ret  Z                                             ;; 07:6273 $c8
@@ -2772,8 +2798,8 @@ call_07_6278:
     ret  Z                                             ;; 07:62c6 $c8
     ld   A, $77                                        ;; 07:62c7 $3e $77
     ld_long_store rNR50, A                             ;; 07:62c9 $ea $24 $ff
-    ld   [wCF14], A                                    ;; 07:62cc $ea $14 $cf
-    ld   [wCF1B], A                                    ;; 07:62cf $ea $1b $cf
+    ld   [w_rNR50Value_CF14], A                        ;; 07:62cc $ea $14 $cf
+    ld   [w_rNR50Value_CF1B], A                        ;; 07:62cf $ea $1b $cf
     ret                                                ;; 07:62d2 $c9
 .jr_07_62d3:
     xor  A, A                                          ;; 07:62d3 $af
@@ -2783,14 +2809,14 @@ call_07_6278:
     ret  Z                                             ;; 07:62dc $c8
     ld   A, $00                                        ;; 07:62dd $3e $00
     ld_long_store rNR50, A                             ;; 07:62df $ea $24 $ff
-    ld   [wCF14], A                                    ;; 07:62e2 $ea $14 $cf
-    ld   [wCF1B], A                                    ;; 07:62e5 $ea $1b $cf
+    ld   [w_rNR50Value_CF14], A                        ;; 07:62e2 $ea $14 $cf
+    ld   [w_rNR50Value_CF1B], A                        ;; 07:62e5 $ea $1b $cf
     ret                                                ;; 07:62e8 $c9
 .jr_07_62e9:
     xor  A, A                                          ;; 07:62e9 $af
     ld_long_store rNR50, A                             ;; 07:62ea $ea $24 $ff
-    ld   [wCF14], A                                    ;; 07:62ed $ea $14 $cf
-    ld   [wCF1B], A                                    ;; 07:62f0 $ea $1b $cf
+    ld   [w_rNR50Value_CF14], A                        ;; 07:62ed $ea $14 $cf
+    ld   [w_rNR50Value_CF1B], A                        ;; 07:62f0 $ea $1b $cf
     ld   A, $40                                        ;; 07:62f3 $3e $40
     ld   [wCFFC], A                                    ;; 07:62f5 $ea $fc $cf
     ld   A, [wCFFD]                                    ;; 07:62f8 $fa $fd $cf
@@ -2802,8 +2828,8 @@ call_07_6278:
     jr   Z, .jr_07_6312                                ;; 07:6304 $28 $0c
     add  A, $11                                        ;; 07:6306 $c6 $11
     ld_long_store rNR50, A                             ;; 07:6308 $ea $24 $ff
-    ld   [wCF14], A                                    ;; 07:630b $ea $14 $cf
-    ld   [wCF1B], A                                    ;; 07:630e $ea $1b $cf
+    ld   [w_rNR50Value_CF14], A                        ;; 07:630b $ea $14 $cf
+    ld   [w_rNR50Value_CF1B], A                        ;; 07:630e $ea $1b $cf
     ret                                                ;; 07:6311 $c9
 .jr_07_6312:
     ld   A, $80                                        ;; 07:6312 $3e $80
@@ -2815,8 +2841,8 @@ call_07_6278:
     jr   Z, .jr_07_632b                                ;; 07:631d $28 $0c
     sub  A, $11                                        ;; 07:631f $d6 $11
     ld_long_store rNR50, A                             ;; 07:6321 $ea $24 $ff
-    ld   [wCF14], A                                    ;; 07:6324 $ea $14 $cf
-    ld   [wCF1B], A                                    ;; 07:6327 $ea $1b $cf
+    ld   [w_rNR50Value_CF14], A                        ;; 07:6324 $ea $14 $cf
+    ld   [w_rNR50Value_CF1B], A                        ;; 07:6327 $ea $1b $cf
     ret                                                ;; 07:632a $c9
 .jr_07_632b:
     xor  A, A                                          ;; 07:632b $af

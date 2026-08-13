@@ -3,7 +3,7 @@
 
 ; These first 1029 bytes in 07, 08, 09, and 0A are identical.
 call_07_4000:
-    jp   jp_07_5f82                                    ;; 07:4000 $c3 $82 $5f
+    jp   resetAllSoundRegisters                        ;; 07:4000 $c3 $82 $5f
 
 call_07_4003:
     call call_07_5b0c                                  ;; 07:4003 $cd $0c $5b
@@ -14,7 +14,7 @@ call_07_4003:
 ; CF02 will be $0A if the sound effect value was $81 or higher
 ; It will be $07 if the sound effect value was $80 or less
 switchBankToCF02_doStuff1_backTo07_07_400c:
-    ld   A, [wCF02]                                    ;; 07:400c $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 07:400c $fa $02 $cf
     ld   [currentSoundBank], A                         ;; 07:400f $ea $ba $ca
 ; This bank switch is immediate. Happens mid execution.
 ; The other banks this may switch to have identical code in this region.
@@ -23,27 +23,26 @@ switchBankToCF02_doStuff1_backTo07_07_400c:
     jr   goBackToBank7_07                              ;; 07:4018 $18 $2a
 
 switchBankToCF02_doStuff2_backTo07_07_401a:
-    ld   A, [wCF02]                                    ;; 07:401a $fa $02 $cf
+    ld   A, [soundBankToUseCF02]                       ;; 07:401a $fa $02 $cf
     ld   [currentSoundBank], A                         ;; 07:401d $ea $ba $ca
     ld   [$2000], A                                    ;; 07:4020 $ea $00 $20
     call call_07_44c0                                  ;; 07:4023 $cd $c0 $44
     jr   goBackToBank7_07                              ;; 07:4026 $18 $1c
 
 switchBankToCF01_doStuff1_backTo07_07_4028:
-    ld   A, [wCF01]                                    ;; 07:4028 $fa $01 $cf
+    ld   A, [soundBankToUseCF01]                       ;; 07:4028 $fa $01 $cf
     ld   [currentSoundBank], A                         ;; 07:402b $ea $ba $ca
     ld   [$2000], A                                    ;; 07:402e $ea $00 $20
     call call_07_4405                                  ;; 07:4031 $cd $05 $44
     jr   goBackToBank7_07                              ;; 07:4034 $18 $0e
 
 switchBankToCF01_doStuff3_backTo07_07_4036:
-    ld   A, [wCF01]                                    ;; 07:4036 $fa $01 $cf
+    ld   A, [soundBankToUseCF01]                       ;; 07:4036 $fa $01 $cf
     ld   [currentSoundBank], A                         ;; 07:4039 $ea $ba $ca
     ld   [$2000], A                                    ;; 07:403c $ea $00 $20
     call call_07_448d                                  ;; 07:403f $cd $8d $44
     jr   goBackToBank7_07                              ;; 07:4042 $18 $00
 
-; Only relevant in the 0A bank, but in 07 as well.
 goBackToBank7_07:
     ld   A, $07                                        ;; 07:4044 $3e $07
     ld   [currentSoundBank], A                         ;; 07:4046 $ea $ba $ca
@@ -179,7 +178,7 @@ jp_07_40ec:
     ld   A, [wCEE8]                                    ;; 07:40ec $fa $e8 $ce
     cp   A, $03                                        ;; 07:40ef $fe $03
     jp   Z, .jp_07_4157                                ;; 07:40f1 $ca $57 $41
-    ld   A, [wCEEB]                                    ;; 07:40f4 $fa $eb $ce
+    ld   A, [channelControl_4_CEEB]                    ;; 07:40f4 $fa $eb $ce
     ld   E, A                                          ;; 07:40f7 $5f
     and  A, $01                                        ;; 07:40f8 $e6 $01
     ld   C, A                                          ;; 07:40fa $4f
@@ -256,7 +255,7 @@ jp_07_40ec:
     ld   [HL], A                                       ;; 07:4155 $77
     ret                                                ;; 07:4156 $c9
 .jp_07_4157:
-    ld   A, [wCEEB]                                    ;; 07:4157 $fa $eb $ce
+    ld   A, [channelControl_4_CEEB]                    ;; 07:4157 $fa $eb $ce
     ld   E, A                                          ;; 07:415a $5f
     ld   D, $00                                        ;; 07:415b $16 $00
     dec  E                                             ;; 07:415d $1d
@@ -500,7 +499,7 @@ call_07_4292:
     ret                                                ;; 07:42a0 $c9
 
 call_07_42a1:
-    ld   A, [wCEEB]                                    ;; 07:42a1 $fa $eb $ce
+    ld   A, [channelControl_4_CEEB]                    ;; 07:42a1 $fa $eb $ce
     sub  A, $d0                                        ;; 07:42a4 $d6 $d0
     ld   E, A                                          ;; 07:42a6 $5f
     ld   D, $00                                        ;; 07:42a7 $16 $00
