@@ -112,9 +112,9 @@ call_0a_4405:
     ret                                                ;; 0a:44bf $c9
 
 call_0a_44c0:
-    ld   A, [wCEDB]                                    ;; 0a:44c0 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 0a:44c0 $fa $db $ce
     ld   H, A                                          ;; 0a:44c3 $67
-    ld   A, [wCEDA]                                    ;; 0a:44c4 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 0a:44c4 $fa $da $ce
     ld   L, A                                          ;; 0a:44c7 $6f
     ld   E, [HL]                                       ;; 0a:44c8 $5e
     inc  L                                             ;; 0a:44c9 $2c

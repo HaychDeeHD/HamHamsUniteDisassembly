@@ -129,10 +129,17 @@ doneThirdRegisterSetting:
     ld   [wCE5A], A                                    ;; 07:44bc $ea $5a $ce
     ret                                                ;; 07:44bf $c9
 
-call_07_44c0:
-    ld   A, [wCEDB]                                    ;; 07:44c0 $fa $db $ce
+; Dereferences the PercussionProgramCounterPointer to the PercussionProgramCounter ram address.
+; Dereferences the PercussionProgramCounter to a Rom address. That Rom address in DE.
+; Dereferences that Rom address to a note in the song, writes it to channelControl_4_CEEB.
+; Increments the PercussionProgramCounter (via incrementing DE).
+; Jumps using jumptable using new channelControl value as index.
+; Example:
+; CEDA-B holds $CEBD. CEBD-E holds $47D0. $47D0 holds some note value in a sequence.
+processChan4Note:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:44c0 $fa $db $ce
     ld   H, A                                          ;; 07:44c3 $67
-    ld   A, [wCEDA]                                    ;; 07:44c4 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:44c4 $fa $da $ce
     ld   L, A                                          ;; 07:44c7 $6f
     ld   E, [HL]                                       ;; 07:44c8 $5e
     inc  L                                             ;; 07:44c9 $2c
@@ -148,278 +155,283 @@ call_07_44c0:
     ld   B, $00                                        ;; 07:44d5 $06 $00
     sla  C                                             ;; 07:44d7 $cb $21
     rl   B                                             ;; 07:44d9 $cb $10
-    ld   HL, .data_07_44e5                             ;; 07:44db $21 $e5 $44
+; BC = the sound value we wrote * 2
+; To be used as an index in this jumptable.
+    ld   HL, .chan4Jumptable                           ;; 07:44db $21 $e5 $44
     ccf                                                ;; 07:44de $3f
     add  HL, BC                                        ;; 07:44df $09
+; Restore BC to what it was when this function was called.
     pop  BC                                            ;; 07:44e0 $c1
     ld   A, [HL+]                                      ;; 07:44e1 $2a
     ld   H, [HL]                                       ;; 07:44e2 $66
     ld   L, A                                          ;; 07:44e3 $6f
+; Going into the jumptable, DE is the programCounter(+1)
+; And [DE] is the next "note" byte in the song
     jp   HL                                            ;; 07:44e4 $e9
 ;@jumptable
-.data_07_44e5:
-    dw   call_07_46e8                                  ;; 07:44e5 ?? $00
-    dw   call_07_4739                                  ;; 07:44e7 ?? $01
-    dw   call_07_4716                                  ;; 07:44e9 ?? $02
-    dw   call_07_4716                                  ;; 07:44eb ?? $03
-    dw   call_07_4716                                  ;; 07:44ed ?? $04
-    dw   call_07_4716                                  ;; 07:44ef ?? $05
-    dw   call_07_4716                                  ;; 07:44f1 ?? $06
-    dw   call_07_4716                                  ;; 07:44f3 ?? $07
-    dw   call_07_4716                                  ;; 07:44f5 ?? $08
-    dw   call_07_4716                                  ;; 07:44f7 ?? $09
-    dw   call_07_4716                                  ;; 07:44f9 ?? $0a
-    dw   call_07_4716                                  ;; 07:44fb ?? $0b
-    dw   call_07_4716                                  ;; 07:44fd ?? $0c
-    dw   call_07_4716                                  ;; 07:44ff ?? $0d
-    dw   call_07_4716                                  ;; 07:4501 ?? $0e
-    dw   call_07_4716                                  ;; 07:4503 ?? $0f
-    dw   call_07_4716                                  ;; 07:4505 ?? $10
-    dw   call_07_4716                                  ;; 07:4507 ?? $11
-    dw   call_07_4716                                  ;; 07:4509 ?? $12
-    dw   call_07_4716                                  ;; 07:450b ?? $13
-    dw   call_07_4716                                  ;; 07:450d ?? $14
-    dw   call_07_4716                                  ;; 07:450f ?? $15
-    dw   call_07_4716                                  ;; 07:4511 ?? $16
-    dw   call_07_4716                                  ;; 07:4513 ?? $17
-    dw   call_07_4716                                  ;; 07:4515 ?? $18
-    dw   call_07_4716                                  ;; 07:4517 ?? $19
-    dw   call_07_4716                                  ;; 07:4519 ?? $1a
-    dw   call_07_4716                                  ;; 07:451b ?? $1b
-    dw   call_07_4716                                  ;; 07:451d ?? $1c
-    dw   call_07_4716                                  ;; 07:451f ?? $1d
-    dw   call_07_4716                                  ;; 07:4521 ?? $1e
-    dw   call_07_4716                                  ;; 07:4523 ?? $1f
-    dw   call_07_4716                                  ;; 07:4525 ?? $20
-    dw   call_07_4716                                  ;; 07:4527 ?? $21
-    dw   call_07_4716                                  ;; 07:4529 ?? $22
-    dw   call_07_4716                                  ;; 07:452b ?? $23
-    dw   call_07_4716                                  ;; 07:452d ?? $24
-    dw   call_07_4716                                  ;; 07:452f ?? $25
-    dw   call_07_4716                                  ;; 07:4531 ?? $26
-    dw   call_07_4716                                  ;; 07:4533 ?? $27
-    dw   call_07_4716                                  ;; 07:4535 ?? $28
-    dw   call_07_4716                                  ;; 07:4537 ?? $29
-    dw   call_07_4716                                  ;; 07:4539 ?? $2a
-    dw   call_07_4716                                  ;; 07:453b ?? $2b
-    dw   call_07_4716                                  ;; 07:453d ?? $2c
-    dw   call_07_4716                                  ;; 07:453f ?? $2d
-    dw   call_07_4716                                  ;; 07:4541 ?? $2e
-    dw   call_07_4716                                  ;; 07:4543 ?? $2f
-    dw   call_07_4716                                  ;; 07:4545 ?? $30
-    dw   call_07_4716                                  ;; 07:4547 ?? $31
-    dw   call_07_4716                                  ;; 07:4549 ?? $32
-    dw   call_07_4716                                  ;; 07:454b ?? $33
-    dw   call_07_4716                                  ;; 07:454d ?? $34
-    dw   call_07_4716                                  ;; 07:454f ?? $35
-    dw   call_07_4716                                  ;; 07:4551 ?? $36
-    dw   call_07_4716                                  ;; 07:4553 ?? $37
-    dw   call_07_4716                                  ;; 07:4555 ?? $38
-    dw   call_07_4716                                  ;; 07:4557 ?? $39
-    dw   call_07_4716                                  ;; 07:4559 ?? $3a
-    dw   call_07_4716                                  ;; 07:455b ?? $3b
-    dw   call_07_4716                                  ;; 07:455d ?? $3c
-    dw   call_07_4716                                  ;; 07:455f ?? $3d
-    dw   call_07_4716                                  ;; 07:4561 ?? $3e
-    dw   call_07_4716                                  ;; 07:4563 ?? $3f
-    dw   call_07_4716                                  ;; 07:4565 ?? $40
-    dw   call_07_4716                                  ;; 07:4567 ?? $41
-    dw   call_07_4716                                  ;; 07:4569 ?? $42
-    dw   call_07_4716                                  ;; 07:456b ?? $43
-    dw   call_07_4716                                  ;; 07:456d ?? $44
-    dw   call_07_4716                                  ;; 07:456f ?? $45
-    dw   call_07_4716                                  ;; 07:4571 ?? $46
-    dw   call_07_4716                                  ;; 07:4573 ?? $47
-    dw   call_07_4716                                  ;; 07:4575 ?? $48
-    dw   call_07_4716                                  ;; 07:4577 ?? $49
-    dw   call_07_4716                                  ;; 07:4579 ?? $4a
-    dw   call_07_4716                                  ;; 07:457b ?? $4b
-    dw   call_07_4716                                  ;; 07:457d ?? $4c
-    dw   call_07_4716                                  ;; 07:457f ?? $4d
-    dw   call_07_4716                                  ;; 07:4581 ?? $4e
-    dw   call_07_4716                                  ;; 07:4583 ?? $4f
-    dw   call_07_4716                                  ;; 07:4585 ?? $50
-    dw   call_07_4716                                  ;; 07:4587 ?? $51
-    dw   call_07_4716                                  ;; 07:4589 ?? $52
-    dw   call_07_4716                                  ;; 07:458b ?? $53
-    dw   call_07_4716                                  ;; 07:458d ?? $54
-    dw   call_07_4716                                  ;; 07:458f ?? $55
-    dw   call_07_4716                                  ;; 07:4591 ?? $56
-    dw   call_07_4716                                  ;; 07:4593 ?? $57
-    dw   call_07_4716                                  ;; 07:4595 ?? $58
-    dw   call_07_4716                                  ;; 07:4597 ?? $59
-    dw   call_07_4716                                  ;; 07:4599 ?? $5a
-    dw   call_07_4716                                  ;; 07:459b ?? $5b
-    dw   call_07_4716                                  ;; 07:459d ?? $5c
-    dw   call_07_4716                                  ;; 07:459f ?? $5d
-    dw   call_07_4716                                  ;; 07:45a1 ?? $5e
-    dw   call_07_4716                                  ;; 07:45a3 ?? $5f
-    dw   call_07_4716                                  ;; 07:45a5 ?? $60
-    dw   call_07_4716                                  ;; 07:45a7 ?? $61
-    dw   call_07_4716                                  ;; 07:45a9 ?? $62
-    dw   call_07_4716                                  ;; 07:45ab ?? $63
-    dw   call_07_4716                                  ;; 07:45ad ?? $64
-    dw   call_07_4716                                  ;; 07:45af ?? $65
-    dw   call_07_4716                                  ;; 07:45b1 ?? $66
-    dw   call_07_4716                                  ;; 07:45b3 ?? $67
-    dw   call_07_4716                                  ;; 07:45b5 ?? $68
-    dw   call_07_4716                                  ;; 07:45b7 ?? $69
-    dw   call_07_4716                                  ;; 07:45b9 ?? $6a
-    dw   call_07_4716                                  ;; 07:45bb ?? $6b
-    dw   call_07_4716                                  ;; 07:45bd ?? $6c
-    dw   call_07_4716                                  ;; 07:45bf ?? $6d
-    dw   call_07_4716                                  ;; 07:45c1 ?? $6e
-    dw   call_07_4716                                  ;; 07:45c3 ?? $6f
-    dw   call_07_4716                                  ;; 07:45c5 ?? $70
-    dw   call_07_4716                                  ;; 07:45c7 ?? $71
-    dw   call_07_4716                                  ;; 07:45c9 ?? $72
-    dw   call_07_4716                                  ;; 07:45cb ?? $73
-    dw   call_07_4716                                  ;; 07:45cd ?? $74
-    dw   call_07_4716                                  ;; 07:45cf ?? $75
-    dw   call_07_4716                                  ;; 07:45d1 ?? $76
-    dw   call_07_4716                                  ;; 07:45d3 ?? $77
-    dw   call_07_4716                                  ;; 07:45d5 ?? $78
-    dw   call_07_4716                                  ;; 07:45d7 ?? $79
-    dw   call_07_4716                                  ;; 07:45d9 ?? $7a
-    dw   call_07_4716                                  ;; 07:45db ?? $7b
-    dw   call_07_4716                                  ;; 07:45dd ?? $7c
-    dw   call_07_4716                                  ;; 07:45df ?? $7d
-    dw   call_07_4716                                  ;; 07:45e1 ?? $7e
-    dw   call_07_4716                                  ;; 07:45e3 ?? $7f
-    dw   call_07_4716                                  ;; 07:45e5 ?? $80
-    dw   call_07_4716                                  ;; 07:45e7 ?? $81
-    dw   call_07_4716                                  ;; 07:45e9 ?? $82
-    dw   call_07_4716                                  ;; 07:45eb ?? $83
-    dw   call_07_4716                                  ;; 07:45ed ?? $84
-    dw   call_07_4716                                  ;; 07:45ef ?? $85
-    dw   call_07_4716                                  ;; 07:45f1 ?? $86
-    dw   call_07_4716                                  ;; 07:45f3 ?? $87
-    dw   call_07_4716                                  ;; 07:45f5 ?? $88
-    dw   call_07_4716                                  ;; 07:45f7 ?? $89
-    dw   call_07_4716                                  ;; 07:45f9 ?? $8a
-    dw   call_07_4716                                  ;; 07:45fb ?? $8b
-    dw   call_07_4716                                  ;; 07:45fd ?? $8c
-    dw   call_07_4716                                  ;; 07:45ff ?? $8d
-    dw   call_07_4716                                  ;; 07:4601 ?? $8e
-    dw   call_07_4716                                  ;; 07:4603 ?? $8f
-    dw   call_07_4716                                  ;; 07:4605 ?? $90
-    dw   call_07_4716                                  ;; 07:4607 ?? $91
-    dw   call_07_4716                                  ;; 07:4609 ?? $92
-    dw   call_07_4716                                  ;; 07:460b ?? $93
-    dw   call_07_4716                                  ;; 07:460d ?? $94
-    dw   call_07_4716                                  ;; 07:460f ?? $95
-    dw   call_07_4716                                  ;; 07:4611 ?? $96
-    dw   call_07_4716                                  ;; 07:4613 ?? $97
-    dw   call_07_4716                                  ;; 07:4615 ?? $98
-    dw   call_07_4716                                  ;; 07:4617 ?? $99
-    dw   call_07_4716                                  ;; 07:4619 ?? $9a
-    dw   call_07_4716                                  ;; 07:461b ?? $9b
-    dw   call_07_4716                                  ;; 07:461d ?? $9c
-    dw   call_07_4716                                  ;; 07:461f ?? $9d
-    dw   call_07_4716                                  ;; 07:4621 ?? $9e
-    dw   call_07_4716                                  ;; 07:4623 ?? $9f
-    dw   call_07_4716                                  ;; 07:4625 ?? $a0
-    dw   call_07_4716                                  ;; 07:4627 ?? $a1
-    dw   call_07_4716                                  ;; 07:4629 ?? $a2
-    dw   call_07_4716                                  ;; 07:462b ?? $a3
-    dw   call_07_4716                                  ;; 07:462d ?? $a4
-    dw   call_07_4716                                  ;; 07:462f ?? $a5
-    dw   call_07_4716                                  ;; 07:4631 ?? $a6
-    dw   call_07_4716                                  ;; 07:4633 ?? $a7
-    dw   call_07_4716                                  ;; 07:4635 ?? $a8
-    dw   call_07_4716                                  ;; 07:4637 ?? $a9
-    dw   call_07_4716                                  ;; 07:4639 ?? $aa
-    dw   call_07_4716                                  ;; 07:463b ?? $ab
-    dw   call_07_46e5                                  ;; 07:463d ?? $ac
-    dw   call_07_46e5                                  ;; 07:463f ?? $ad
-    dw   call_07_46e5                                  ;; 07:4641 ?? $ae
-    dw   call_07_46e5                                  ;; 07:4643 ?? $af
-    dw   call_07_46e5                                  ;; 07:4645 ?? $b0
-    dw   call_07_46e5                                  ;; 07:4647 ?? $b1
-    dw   call_07_46e5                                  ;; 07:4649 ?? $b2
-    dw   call_07_46e5                                  ;; 07:464b ?? $b3
-    dw   call_07_46e5                                  ;; 07:464d ?? $b4
-    dw   call_07_46e5                                  ;; 07:464f ?? $b5
-    dw   call_07_46e5                                  ;; 07:4651 ?? $b6
-    dw   call_07_46e5                                  ;; 07:4653 ?? $b7
-    dw   call_07_46e5                                  ;; 07:4655 ?? $b8
-    dw   call_07_46e5                                  ;; 07:4657 ?? $b9
-    dw   call_07_46e5                                  ;; 07:4659 ?? $ba
-    dw   call_07_46e5                                  ;; 07:465b ?? $bb
-    dw   call_07_46e5                                  ;; 07:465d ?? $bc
-    dw   call_07_46e5                                  ;; 07:465f ?? $bd
-    dw   call_07_46e5                                  ;; 07:4661 ?? $be
-    dw   call_07_46e5                                  ;; 07:4663 ?? $bf
-    dw   call_07_46e5                                  ;; 07:4665 ?? $c0
-    dw   call_07_46e5                                  ;; 07:4667 ?? $c1
-    dw   call_07_46e5                                  ;; 07:4669 ?? $c2
-    dw   call_07_46e5                                  ;; 07:466b ?? $c3
-    dw   call_07_46e5                                  ;; 07:466d ?? $c4
-    dw   call_07_46e5                                  ;; 07:466f ?? $c5
-    dw   call_07_46e5                                  ;; 07:4671 ?? $c6
-    dw   call_07_46e5                                  ;; 07:4673 ?? $c7
-    dw   call_07_46e5                                  ;; 07:4675 ?? $c8
-    dw   call_07_46e5                                  ;; 07:4677 ?? $c9
-    dw   call_07_418a                                  ;; 07:4679 ?? $ca
-    dw   call_07_418a                                  ;; 07:467b ?? $cb
-    dw   call_07_418a                                  ;; 07:467d ?? $cc
-    dw   call_07_418a                                  ;; 07:467f ?? $cd
-    dw   call_07_418a                                  ;; 07:4681 ?? $ce
-    dw   call_07_418a                                  ;; 07:4683 ?? $cf
-    dw   call_07_42a1                                  ;; 07:4685 ?? $d0
-    dw   call_07_42a1                                  ;; 07:4687 ?? $d1
-    dw   call_07_42a1                                  ;; 07:4689 ?? $d2
-    dw   call_07_42a1                                  ;; 07:468b ?? $d3
-    dw   call_07_42a1                                  ;; 07:468d ?? $d4
-    dw   call_07_42a1                                  ;; 07:468f ?? $d5
-    dw   call_07_42a1                                  ;; 07:4691 ?? $d6
-    dw   call_07_42a1                                  ;; 07:4693 ?? $d7
-    dw   call_07_42a1                                  ;; 07:4695 ?? $d8
-    dw   call_07_42a1                                  ;; 07:4697 ?? $d9
-    dw   call_07_42a1                                  ;; 07:4699 ?? $da
-    dw   call_07_42a1                                  ;; 07:469b ?? $db
-    dw   call_07_42a1                                  ;; 07:469d ?? $dc
-    dw   call_07_42a1                                  ;; 07:469f ?? $dd
-    dw   call_07_42a1                                  ;; 07:46a1 ?? $de
-    dw   call_07_42a1                                  ;; 07:46a3 ?? $df
-    dw   call_07_42a1                                  ;; 07:46a5 ?? $e0
-    dw   call_07_42a1                                  ;; 07:46a7 ?? $e1
-    dw   call_07_42a1                                  ;; 07:46a9 ?? $e2
-    dw   call_07_42a1                                  ;; 07:46ab ?? $e3
-    dw   call_07_42a1                                  ;; 07:46ad ?? $e4
-    dw   call_07_42a1                                  ;; 07:46af ?? $e5
-    dw   call_07_42a1                                  ;; 07:46b1 ?? $e6
-    dw   call_07_42a1                                  ;; 07:46b3 ?? $e7
-    dw   call_07_46e5                                  ;; 07:46b5 ?? $e8
-    dw   call_07_46e5                                  ;; 07:46b7 ?? $e9
-    dw   call_07_46e5                                  ;; 07:46b9 ?? $ea
-    dw   call_07_42db                                  ;; 07:46bb ?? $eb
-    dw   call_07_42c0                                  ;; 07:46bd ?? $ec
-    dw   call_07_4068                                  ;; 07:46bf ?? $ed
-    dw   call_07_4248                                  ;; 07:46c1 ?? $ee
-    dw   call_07_471c                                  ;; 07:46c3 ?? $ef
-    dw   call_07_473f                                  ;; 07:46c5 ?? $f0
-    dw   call_07_404d                                  ;; 07:46c7 ?? $f1
-    dw   call_07_4268                                  ;; 07:46c9 ?? $f2
-    dw   call_07_4233                                  ;; 07:46cb ?? $f3
-    dw   call_07_42f5                                  ;; 07:46cd ?? $f4
-    dw   call_07_40ab                                  ;; 07:46cf ?? $f5
-    dw   call_07_427c                                  ;; 07:46d1 ?? $f6
-    dw   call_07_4292                                  ;; 07:46d3 ?? $f7
-    dw   call_07_46e5                                  ;; 07:46d5 ?? $f8
-    dw   call_07_46e5                                  ;; 07:46d7 ?? $f9
-    dw   call_07_46e5                                  ;; 07:46d9 ?? $fa
-    dw   call_07_46e5                                  ;; 07:46db ?? $fb
-    dw   call_07_46e5                                  ;; 07:46dd ?? $fc
-    dw   call_07_46e5                                  ;; 07:46df ?? $fd
-    dw   call_07_46e5                                  ;; 07:46e1 ?? $fe
-    dw   call_07_430d                                  ;; 07:46e3 ?? $ff
+.chan4Jumptable:
+    dw   soundOp_00                                    ;; 07:44e5 ?? $00
+    dw   soundOp_01                                    ;; 07:44e7 ?? $01
+    dw   soundOp_02thruAB                              ;; 07:44e9 ?? $02
+    dw   soundOp_02thruAB                              ;; 07:44eb ?? $03
+    dw   soundOp_02thruAB                              ;; 07:44ed ?? $04
+    dw   soundOp_02thruAB                              ;; 07:44ef ?? $05
+    dw   soundOp_02thruAB                              ;; 07:44f1 ?? $06
+    dw   soundOp_02thruAB                              ;; 07:44f3 ?? $07
+    dw   soundOp_02thruAB                              ;; 07:44f5 ?? $08
+    dw   soundOp_02thruAB                              ;; 07:44f7 ?? $09
+    dw   soundOp_02thruAB                              ;; 07:44f9 ?? $0a
+    dw   soundOp_02thruAB                              ;; 07:44fb ?? $0b
+    dw   soundOp_02thruAB                              ;; 07:44fd ?? $0c
+    dw   soundOp_02thruAB                              ;; 07:44ff ?? $0d
+    dw   soundOp_02thruAB                              ;; 07:4501 ?? $0e
+    dw   soundOp_02thruAB                              ;; 07:4503 ?? $0f
+    dw   soundOp_02thruAB                              ;; 07:4505 ?? $10
+    dw   soundOp_02thruAB                              ;; 07:4507 ?? $11
+    dw   soundOp_02thruAB                              ;; 07:4509 ?? $12
+    dw   soundOp_02thruAB                              ;; 07:450b ?? $13
+    dw   soundOp_02thruAB                              ;; 07:450d ?? $14
+    dw   soundOp_02thruAB                              ;; 07:450f ?? $15
+    dw   soundOp_02thruAB                              ;; 07:4511 ?? $16
+    dw   soundOp_02thruAB                              ;; 07:4513 ?? $17
+    dw   soundOp_02thruAB                              ;; 07:4515 ?? $18
+    dw   soundOp_02thruAB                              ;; 07:4517 ?? $19
+    dw   soundOp_02thruAB                              ;; 07:4519 ?? $1a
+    dw   soundOp_02thruAB                              ;; 07:451b ?? $1b
+    dw   soundOp_02thruAB                              ;; 07:451d ?? $1c
+    dw   soundOp_02thruAB                              ;; 07:451f ?? $1d
+    dw   soundOp_02thruAB                              ;; 07:4521 ?? $1e
+    dw   soundOp_02thruAB                              ;; 07:4523 ?? $1f
+    dw   soundOp_02thruAB                              ;; 07:4525 ?? $20
+    dw   soundOp_02thruAB                              ;; 07:4527 ?? $21
+    dw   soundOp_02thruAB                              ;; 07:4529 ?? $22
+    dw   soundOp_02thruAB                              ;; 07:452b ?? $23
+    dw   soundOp_02thruAB                              ;; 07:452d ?? $24
+    dw   soundOp_02thruAB                              ;; 07:452f ?? $25
+    dw   soundOp_02thruAB                              ;; 07:4531 ?? $26
+    dw   soundOp_02thruAB                              ;; 07:4533 ?? $27
+    dw   soundOp_02thruAB                              ;; 07:4535 ?? $28
+    dw   soundOp_02thruAB                              ;; 07:4537 ?? $29
+    dw   soundOp_02thruAB                              ;; 07:4539 ?? $2a
+    dw   soundOp_02thruAB                              ;; 07:453b ?? $2b
+    dw   soundOp_02thruAB                              ;; 07:453d ?? $2c
+    dw   soundOp_02thruAB                              ;; 07:453f ?? $2d
+    dw   soundOp_02thruAB                              ;; 07:4541 ?? $2e
+    dw   soundOp_02thruAB                              ;; 07:4543 ?? $2f
+    dw   soundOp_02thruAB                              ;; 07:4545 ?? $30
+    dw   soundOp_02thruAB                              ;; 07:4547 ?? $31
+    dw   soundOp_02thruAB                              ;; 07:4549 ?? $32
+    dw   soundOp_02thruAB                              ;; 07:454b ?? $33
+    dw   soundOp_02thruAB                              ;; 07:454d ?? $34
+    dw   soundOp_02thruAB                              ;; 07:454f ?? $35
+    dw   soundOp_02thruAB                              ;; 07:4551 ?? $36
+    dw   soundOp_02thruAB                              ;; 07:4553 ?? $37
+    dw   soundOp_02thruAB                              ;; 07:4555 ?? $38
+    dw   soundOp_02thruAB                              ;; 07:4557 ?? $39
+    dw   soundOp_02thruAB                              ;; 07:4559 ?? $3a
+    dw   soundOp_02thruAB                              ;; 07:455b ?? $3b
+    dw   soundOp_02thruAB                              ;; 07:455d ?? $3c
+    dw   soundOp_02thruAB                              ;; 07:455f ?? $3d
+    dw   soundOp_02thruAB                              ;; 07:4561 ?? $3e
+    dw   soundOp_02thruAB                              ;; 07:4563 ?? $3f
+    dw   soundOp_02thruAB                              ;; 07:4565 ?? $40
+    dw   soundOp_02thruAB                              ;; 07:4567 ?? $41
+    dw   soundOp_02thruAB                              ;; 07:4569 ?? $42
+    dw   soundOp_02thruAB                              ;; 07:456b ?? $43
+    dw   soundOp_02thruAB                              ;; 07:456d ?? $44
+    dw   soundOp_02thruAB                              ;; 07:456f ?? $45
+    dw   soundOp_02thruAB                              ;; 07:4571 ?? $46
+    dw   soundOp_02thruAB                              ;; 07:4573 ?? $47
+    dw   soundOp_02thruAB                              ;; 07:4575 ?? $48
+    dw   soundOp_02thruAB                              ;; 07:4577 ?? $49
+    dw   soundOp_02thruAB                              ;; 07:4579 ?? $4a
+    dw   soundOp_02thruAB                              ;; 07:457b ?? $4b
+    dw   soundOp_02thruAB                              ;; 07:457d ?? $4c
+    dw   soundOp_02thruAB                              ;; 07:457f ?? $4d
+    dw   soundOp_02thruAB                              ;; 07:4581 ?? $4e
+    dw   soundOp_02thruAB                              ;; 07:4583 ?? $4f
+    dw   soundOp_02thruAB                              ;; 07:4585 ?? $50
+    dw   soundOp_02thruAB                              ;; 07:4587 ?? $51
+    dw   soundOp_02thruAB                              ;; 07:4589 ?? $52
+    dw   soundOp_02thruAB                              ;; 07:458b ?? $53
+    dw   soundOp_02thruAB                              ;; 07:458d ?? $54
+    dw   soundOp_02thruAB                              ;; 07:458f ?? $55
+    dw   soundOp_02thruAB                              ;; 07:4591 ?? $56
+    dw   soundOp_02thruAB                              ;; 07:4593 ?? $57
+    dw   soundOp_02thruAB                              ;; 07:4595 ?? $58
+    dw   soundOp_02thruAB                              ;; 07:4597 ?? $59
+    dw   soundOp_02thruAB                              ;; 07:4599 ?? $5a
+    dw   soundOp_02thruAB                              ;; 07:459b ?? $5b
+    dw   soundOp_02thruAB                              ;; 07:459d ?? $5c
+    dw   soundOp_02thruAB                              ;; 07:459f ?? $5d
+    dw   soundOp_02thruAB                              ;; 07:45a1 ?? $5e
+    dw   soundOp_02thruAB                              ;; 07:45a3 ?? $5f
+    dw   soundOp_02thruAB                              ;; 07:45a5 ?? $60
+    dw   soundOp_02thruAB                              ;; 07:45a7 ?? $61
+    dw   soundOp_02thruAB                              ;; 07:45a9 ?? $62
+    dw   soundOp_02thruAB                              ;; 07:45ab ?? $63
+    dw   soundOp_02thruAB                              ;; 07:45ad ?? $64
+    dw   soundOp_02thruAB                              ;; 07:45af ?? $65
+    dw   soundOp_02thruAB                              ;; 07:45b1 ?? $66
+    dw   soundOp_02thruAB                              ;; 07:45b3 ?? $67
+    dw   soundOp_02thruAB                              ;; 07:45b5 ?? $68
+    dw   soundOp_02thruAB                              ;; 07:45b7 ?? $69
+    dw   soundOp_02thruAB                              ;; 07:45b9 ?? $6a
+    dw   soundOp_02thruAB                              ;; 07:45bb ?? $6b
+    dw   soundOp_02thruAB                              ;; 07:45bd ?? $6c
+    dw   soundOp_02thruAB                              ;; 07:45bf ?? $6d
+    dw   soundOp_02thruAB                              ;; 07:45c1 ?? $6e
+    dw   soundOp_02thruAB                              ;; 07:45c3 ?? $6f
+    dw   soundOp_02thruAB                              ;; 07:45c5 ?? $70
+    dw   soundOp_02thruAB                              ;; 07:45c7 ?? $71
+    dw   soundOp_02thruAB                              ;; 07:45c9 ?? $72
+    dw   soundOp_02thruAB                              ;; 07:45cb ?? $73
+    dw   soundOp_02thruAB                              ;; 07:45cd ?? $74
+    dw   soundOp_02thruAB                              ;; 07:45cf ?? $75
+    dw   soundOp_02thruAB                              ;; 07:45d1 ?? $76
+    dw   soundOp_02thruAB                              ;; 07:45d3 ?? $77
+    dw   soundOp_02thruAB                              ;; 07:45d5 ?? $78
+    dw   soundOp_02thruAB                              ;; 07:45d7 ?? $79
+    dw   soundOp_02thruAB                              ;; 07:45d9 ?? $7a
+    dw   soundOp_02thruAB                              ;; 07:45db ?? $7b
+    dw   soundOp_02thruAB                              ;; 07:45dd ?? $7c
+    dw   soundOp_02thruAB                              ;; 07:45df ?? $7d
+    dw   soundOp_02thruAB                              ;; 07:45e1 ?? $7e
+    dw   soundOp_02thruAB                              ;; 07:45e3 ?? $7f
+    dw   soundOp_02thruAB                              ;; 07:45e5 ?? $80
+    dw   soundOp_02thruAB                              ;; 07:45e7 ?? $81
+    dw   soundOp_02thruAB                              ;; 07:45e9 ?? $82
+    dw   soundOp_02thruAB                              ;; 07:45eb ?? $83
+    dw   soundOp_02thruAB                              ;; 07:45ed ?? $84
+    dw   soundOp_02thruAB                              ;; 07:45ef ?? $85
+    dw   soundOp_02thruAB                              ;; 07:45f1 ?? $86
+    dw   soundOp_02thruAB                              ;; 07:45f3 ?? $87
+    dw   soundOp_02thruAB                              ;; 07:45f5 ?? $88
+    dw   soundOp_02thruAB                              ;; 07:45f7 ?? $89
+    dw   soundOp_02thruAB                              ;; 07:45f9 ?? $8a
+    dw   soundOp_02thruAB                              ;; 07:45fb ?? $8b
+    dw   soundOp_02thruAB                              ;; 07:45fd ?? $8c
+    dw   soundOp_02thruAB                              ;; 07:45ff ?? $8d
+    dw   soundOp_02thruAB                              ;; 07:4601 ?? $8e
+    dw   soundOp_02thruAB                              ;; 07:4603 ?? $8f
+    dw   soundOp_02thruAB                              ;; 07:4605 ?? $90
+    dw   soundOp_02thruAB                              ;; 07:4607 ?? $91
+    dw   soundOp_02thruAB                              ;; 07:4609 ?? $92
+    dw   soundOp_02thruAB                              ;; 07:460b ?? $93
+    dw   soundOp_02thruAB                              ;; 07:460d ?? $94
+    dw   soundOp_02thruAB                              ;; 07:460f ?? $95
+    dw   soundOp_02thruAB                              ;; 07:4611 ?? $96
+    dw   soundOp_02thruAB                              ;; 07:4613 ?? $97
+    dw   soundOp_02thruAB                              ;; 07:4615 ?? $98
+    dw   soundOp_02thruAB                              ;; 07:4617 ?? $99
+    dw   soundOp_02thruAB                              ;; 07:4619 ?? $9a
+    dw   soundOp_02thruAB                              ;; 07:461b ?? $9b
+    dw   soundOp_02thruAB                              ;; 07:461d ?? $9c
+    dw   soundOp_02thruAB                              ;; 07:461f ?? $9d
+    dw   soundOp_02thruAB                              ;; 07:4621 ?? $9e
+    dw   soundOp_02thruAB                              ;; 07:4623 ?? $9f
+    dw   soundOp_02thruAB                              ;; 07:4625 ?? $a0
+    dw   soundOp_02thruAB                              ;; 07:4627 ?? $a1
+    dw   soundOp_02thruAB                              ;; 07:4629 ?? $a2
+    dw   soundOp_02thruAB                              ;; 07:462b ?? $a3
+    dw   soundOp_02thruAB                              ;; 07:462d ?? $a4
+    dw   soundOp_02thruAB                              ;; 07:462f ?? $a5
+    dw   soundOp_02thruAB                              ;; 07:4631 ?? $a6
+    dw   soundOp_02thruAB                              ;; 07:4633 ?? $a7
+    dw   soundOp_02thruAB                              ;; 07:4635 ?? $a8
+    dw   soundOp_02thruAB                              ;; 07:4637 ?? $a9
+    dw   soundOp_02thruAB                              ;; 07:4639 ?? $aa
+    dw   soundOp_02thruAB                              ;; 07:463b ?? $ab
+    dw   hang_46E5                                     ;; 07:463d ?? $ac
+    dw   hang_46E5                                     ;; 07:463f ?? $ad
+    dw   hang_46E5                                     ;; 07:4641 ?? $ae
+    dw   hang_46E5                                     ;; 07:4643 ?? $af
+    dw   hang_46E5                                     ;; 07:4645 ?? $b0
+    dw   hang_46E5                                     ;; 07:4647 ?? $b1
+    dw   hang_46E5                                     ;; 07:4649 ?? $b2
+    dw   hang_46E5                                     ;; 07:464b ?? $b3
+    dw   hang_46E5                                     ;; 07:464d ?? $b4
+    dw   hang_46E5                                     ;; 07:464f ?? $b5
+    dw   hang_46E5                                     ;; 07:4651 ?? $b6
+    dw   hang_46E5                                     ;; 07:4653 ?? $b7
+    dw   hang_46E5                                     ;; 07:4655 ?? $b8
+    dw   hang_46E5                                     ;; 07:4657 ?? $b9
+    dw   hang_46E5                                     ;; 07:4659 ?? $ba
+    dw   hang_46E5                                     ;; 07:465b ?? $bb
+    dw   hang_46E5                                     ;; 07:465d ?? $bc
+    dw   hang_46E5                                     ;; 07:465f ?? $bd
+    dw   hang_46E5                                     ;; 07:4661 ?? $be
+    dw   hang_46E5                                     ;; 07:4663 ?? $bf
+    dw   hang_46E5                                     ;; 07:4665 ?? $c0
+    dw   hang_46E5                                     ;; 07:4667 ?? $c1
+    dw   hang_46E5                                     ;; 07:4669 ?? $c2
+    dw   hang_46E5                                     ;; 07:466b ?? $c3
+    dw   hang_46E5                                     ;; 07:466d ?? $c4
+    dw   hang_46E5                                     ;; 07:466f ?? $c5
+    dw   hang_46E5                                     ;; 07:4671 ?? $c6
+    dw   hang_46E5                                     ;; 07:4673 ?? $c7
+    dw   hang_46E5                                     ;; 07:4675 ?? $c8
+    dw   hang_46E5                                     ;; 07:4677 ?? $c9
+    dw   soundOp_CAthruCF                              ;; 07:4679 ?? $ca
+    dw   soundOp_CAthruCF                              ;; 07:467b ?? $cb
+    dw   soundOp_CAthruCF                              ;; 07:467d ?? $cc
+    dw   soundOp_CAthruCF                              ;; 07:467f ?? $cd
+    dw   soundOp_CAthruCF                              ;; 07:4681 ?? $ce
+    dw   soundOp_CAthruCF                              ;; 07:4683 ?? $cf
+    dw   soundOp_D0thruE7                              ;; 07:4685 ?? $d0
+    dw   soundOp_D0thruE7                              ;; 07:4687 ?? $d1
+    dw   soundOp_D0thruE7                              ;; 07:4689 ?? $d2
+    dw   soundOp_D0thruE7                              ;; 07:468b ?? $d3
+    dw   soundOp_D0thruE7                              ;; 07:468d ?? $d4
+    dw   soundOp_D0thruE7                              ;; 07:468f ?? $d5
+    dw   soundOp_D0thruE7                              ;; 07:4691 ?? $d6
+    dw   soundOp_D0thruE7                              ;; 07:4693 ?? $d7
+    dw   soundOp_D0thruE7                              ;; 07:4695 ?? $d8
+    dw   soundOp_D0thruE7                              ;; 07:4697 ?? $d9
+    dw   soundOp_D0thruE7                              ;; 07:4699 ?? $da
+    dw   soundOp_D0thruE7                              ;; 07:469b ?? $db
+    dw   soundOp_D0thruE7                              ;; 07:469d ?? $dc
+    dw   soundOp_D0thruE7                              ;; 07:469f ?? $dd
+    dw   soundOp_D0thruE7                              ;; 07:46a1 ?? $de
+    dw   soundOp_D0thruE7                              ;; 07:46a3 ?? $df
+    dw   soundOp_D0thruE7                              ;; 07:46a5 ?? $e0
+    dw   soundOp_D0thruE7                              ;; 07:46a7 ?? $e1
+    dw   soundOp_D0thruE7                              ;; 07:46a9 ?? $e2
+    dw   soundOp_D0thruE7                              ;; 07:46ab ?? $e3
+    dw   soundOp_D0thruE7                              ;; 07:46ad ?? $e4
+    dw   soundOp_D0thruE7                              ;; 07:46af ?? $e5
+    dw   soundOp_D0thruE7                              ;; 07:46b1 ?? $e6
+    dw   soundOp_D0thruE7                              ;; 07:46b3 ?? $e7
+    dw   hang_46E5                                     ;; 07:46b5 ?? $e8
+    dw   hang_46E5                                     ;; 07:46b7 ?? $e9
+    dw   hang_46E5                                     ;; 07:46b9 ?? $ea
+    dw   beginLoop_eb                                  ;; 07:46bb ?? $eb
+    dw   endLoop_ec                                    ;; 07:46bd ?? $ec
+    dw   soundOp_ED                                    ;; 07:46bf ?? $ed
+    dw   soundOp_EE                                    ;; 07:46c1 ?? $ee
+    dw   beginPercussionLoop                           ;; 07:46c3 ?? $ef
+    dw   soundOp_F0                                    ;; 07:46c5 ?? $f0
+    dw   soundOp_F1                                    ;; 07:46c7 ?? $f1
+    dw   soundOp_F2                                    ;; 07:46c9 ?? $f2
+    dw   soundOp_F3                                    ;; 07:46cb ?? $f3
+    dw   soundOp_F4                                    ;; 07:46cd ?? $f4
+    dw   soundOp_F5                                    ;; 07:46cf ?? $f5
+    dw   soundOp_F6                                    ;; 07:46d1 ?? $f6
+    dw   soundOp_F7                                    ;; 07:46d3 ?? $f7
+    dw   hang_46E5                                     ;; 07:46d5 ?? $f8
+    dw   hang_46E5                                     ;; 07:46d7 ?? $f9
+    dw   hang_46E5                                     ;; 07:46d9 ?? $fa
+    dw   hang_46E5                                     ;; 07:46db ?? $fb
+    dw   hang_46E5                                     ;; 07:46dd ?? $fc
+    dw   hang_46E5                                     ;; 07:46df ?? $fd
+    dw   hang_46E5                                     ;; 07:46e1 ?? $fe
+    dw   soundOp_FF                                    ;; 07:46e3 ?? $ff
 
 ; 46E5 just hangs? So those entries in the table are 'unused'?
-call_07_46e5:
-    jp   call_07_46e5                                  ;; 07:46e5 $c3 $e5 $46
+hang_46E5:
+    jp   hang_46E5                                     ;; 07:46e5 $c3 $e5 $46
 
-call_07_46e8:
+soundOp_00:
     xor  A, A                                          ;; 07:46e8 $af
     ld   [BC], A                                       ;; 07:46e9 $02
     ld   HL, wCEDC                                     ;; 07:46ea $21 $dc $ce
@@ -448,16 +460,27 @@ call_07_46e8:
     ld   [w_rNR51Value_CF14], A                        ;; 07:4712 $ea $15 $cf
     ret                                                ;; 07:4715 $c9
 
-call_07_4716:
+soundOp_02thruAB:
     ld   A, $02                                        ;; 07:4716 $3e $02
     ld   [BC], A                                       ;; 07:4718 $02
     jp   jp_07_40ec                                    ;; 07:4719 $c3 $ec $40
 
-call_07_471c:
-    ld   A, [wCEDB]                                    ;; 07:471c $fa $db $ce
+; Dereferences the PercussionProgramCounterPointer to the PercussionProgramCounter ram address.
+; DE is still the PercussionProgramCounter's updated value from earlier note processing. (Rom address of next note.)
+; Dereferences the PercussionProgramCounter to a Rom address, note in a song.
+; Writes the value to channelControl_4_CEEB.
+; Increments the PercussionProgramCounter.
+; Jumps using jumptable using new channelControl value as index.
+; Example:
+; CEDA-B holds $CEBD. CEBD-E holds $47D0. $47D0 holds some note value in a sequence.
+beginPercussionLoop:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:471c $fa $db $ce
     ld   H, A                                          ;; 07:471f $67
-    ld   A, [wCEDA]                                    ;; 07:4720 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4720 $fa $da $ce
     ld   L, A                                          ;; 07:4723 $6f
+; HL is the ram address of the ProgramCounter now.
+; A is a "note" value.
+; Here the next 2 "notes" are being treated as an address.
     ld   A, [DE]                                       ;; 07:4724 $1a
     ld   C, A                                          ;; 07:4725 $4f
     inc  DE                                            ;; 07:4726 $13
@@ -465,10 +488,15 @@ call_07_471c:
     ld   [HL], C                                       ;; 07:4728 $71
     inc  L                                             ;; 07:4729 $2c
     ld   [HL], A                                       ;; 07:472a $77
+; Wrote the address from the "notes" to the program counter.
+; This has to do with how the song denotes loops.
     inc  DE                                            ;; 07:472b $13
-    ld   A, [wCEDA]                                    ;; 07:472c $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:472c $fa $da $ce
     add  A, $09                                        ;; 07:472f $c6 $09
     ld   L, A                                          ;; 07:4731 $6f
+; If CEDA was $CEBD, HL is now CEBD + 09 = CEC6
+; This is the looping mechanism. 02 is a number of loops to do.
+; DE is the point to loop back to.
     ld   [HL], $02                                     ;; 07:4732 $36 $02
     inc  L                                             ;; 07:4734 $2c
     ld   [HL], E                                       ;; 07:4735 $73
@@ -476,12 +504,12 @@ call_07_471c:
     ld   [HL], D                                       ;; 07:4737 $72
     ret                                                ;; 07:4738 $c9
 
-call_07_4739:
+soundOp_01:
     ld   A, $02                                        ;; 07:4739 $3e $02
     ld   [BC], A                                       ;; 07:473b $02
     jp   jp_07_40c6                                    ;; 07:473c $c3 $c6 $40
 
-call_07_473f:
+soundOp_F0:
     ld   A, $02                                        ;; 07:473f $3e $02
     ld   [BC], A                                       ;; 07:4741 $02
     jp   jp_07_41b5                                    ;; 07:4742 $c3 $b5 $41
@@ -1660,7 +1688,7 @@ call_07_5b0c:
 ; wCEE8 is a loop counter, but different stuff happens each loop.
     ld   [wCEE8], A                                    ;; 07:5b58 $ea $e8 $ce
 .topOfFourPassLoop:
-    ld   HL, wCEDA                                     ;; 07:5b5b $21 $da $ce
+    ld   HL, wPointerToPercussionProgramCounter_CEDA   ;; 07:5b5b $21 $da $ce
     ld   A, [wCEE8]                                    ;; 07:5b5e $fa $e8 $ce
     cp   A, $01                                        ;; 07:5b61 $fe $01
     jr   Z, .secondLoopPass                            ;; 07:5b63 $28 $20
@@ -1861,7 +1889,7 @@ call_07_5c20:
     ld   [wCurrentlyPlayingSong], A                    ;; 07:5cb0 $ea $fa $cf
     ret                                                ;; 07:5cb3 $c9
 .jp_07_5cb4:
-    ld   HL, wCEDA                                     ;; 07:5cb4 $21 $da $ce
+    ld   HL, wPointerToPercussionProgramCounter_CEDA   ;; 07:5cb4 $21 $da $ce
     ld   A, [wCEE8]                                    ;; 07:5cb7 $fa $e8 $ce
     cp   A, $01                                        ;; 07:5cba $fe $01
     jr   Z, .jr_07_5cda                                ;; 07:5cbc $28 $1c
@@ -1982,7 +2010,7 @@ call_07_5d63:
     ld   [wCE88], A                                    ;; 07:5d8d $ea $88 $ce
     ld   [wCEA2], A                                    ;; 07:5d90 $ea $a2 $ce
     ld   [wCEA3], A                                    ;; 07:5d93 $ea $a3 $ce
-    ld   [wCEBD], A                                    ;; 07:5d96 $ea $bd $ce
+    ld   [wPercussionProgramCounter_CEBD], A           ;; 07:5d96 $ea $bd $ce
     ld   [wCEBE], A                                    ;; 07:5d99 $ea $be $ce
     ld   [wCE6E], A                                    ;; 07:5d9c $ea $6e $ce
     ld   [wCE89], A                                    ;; 07:5d9f $ea $89 $ce
@@ -2053,9 +2081,9 @@ call_07_5dd4:
 .jr_07_5e0c:
     push DE                                            ;; 07:5e0c $d5
     ld   B, A                                          ;; 07:5e0d $47
-    ld   A, [wCEDB]                                    ;; 07:5e0e $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:5e0e $fa $db $ce
     ld   H, A                                          ;; 07:5e11 $67
-    ld   A, [wCEDA]                                    ;; 07:5e12 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:5e12 $fa $da $ce
     add  A, $19                                        ;; 07:5e15 $c6 $19
     ld   L, A                                          ;; 07:5e17 $6f
     ld   A, [HL-]                                      ;; 07:5e18 $3a
@@ -2135,9 +2163,9 @@ call_07_5dd4:
     ld   [HL], E                                       ;; 07:5e8a $73
     ret                                                ;; 07:5e8b $c9
 .jp_07_5e8c:
-    ld   A, [wCEDB]                                    ;; 07:5e8c $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:5e8c $fa $db $ce
     ld   H, A                                          ;; 07:5e8f $67
-    ld   A, [wCEDA]                                    ;; 07:5e90 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:5e90 $fa $da $ce
     add  A, $03                                        ;; 07:5e93 $c6 $03
     ld   L, A                                          ;; 07:5e95 $6f
     ld   A, [HL]                                       ;; 07:5e96 $7e

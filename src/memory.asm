@@ -1975,7 +1975,9 @@ wCEB9:
 channelControl_3_CEBB:
     ds 2                                               ;; cebb
 
-wCEBD:
+; Generally increments, but loops on parts matching the song.
+; This with CEBE are values like 47DO, rom looking addresses. Guessing note pointers.
+wPercussionProgramCounter_CEBD:
     ds 1                                               ;; cebd
 
 wCEBE:
@@ -1985,7 +1987,18 @@ wCEBF:
     ds 1                                               ;; cebf
 
 wCEC0:
-    ds 10                                              ;; cec0
+    ds 6                                               ;; cec0
+
+; See 07:4732 for an example of this being written to without being referenced.
+; This value counts down to zero. The percussion is looping, decrementing each time it repeats.
+; The following pointer is the point to loop back to until the countdown hits zero.
+wPercussionLoopCountdown_CEC6:
+    ds 1                                               ;; cec6
+
+wPercussionLoopPointer_CEC7:
+    ds 1                                               ;; cec7
+.high:
+    ds 2                                               ;; cec8
 
 wCECA:
     ds 9                                               ;; ceca
@@ -2002,10 +2015,9 @@ wCED6:
 wCED8:
     ds 2                                               ;; ced8
 
-wCEDA:
+wPointerToPercussionProgramCounter_CEDA:
     ds 1                                               ;; ceda
-
-wCEDB:
+.high:
     ds 1                                               ;; cedb
 
 wCEDC:

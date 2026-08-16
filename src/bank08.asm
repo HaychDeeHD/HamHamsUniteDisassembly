@@ -30,7 +30,7 @@ call_08_4405:
     ld   [HL+], A                                      ;; 08:441e $22
     dec  C                                             ;; 08:441f $0d
     jr   NZ, .jr_08_441c                               ;; 08:4420 $20 $fa
-    ld   HL, wCEDA                                     ;; 08:4422 $21 $da $ce
+    ld   HL, wPointerToPercussionProgramCounter_CEDA   ;; 08:4422 $21 $da $ce
     ld   [HL], $6c                                     ;; 08:4425 $36 $6c
     inc  HL                                            ;; 08:4427 $23
     ld   [HL], $ce                                     ;; 08:4428 $36 $ce
@@ -38,9 +38,9 @@ call_08_4405:
 .jr_08_442b:
     ld   [wCEE8], A                                    ;; 08:442b $ea $e8 $ce
     call call_08_4442                                  ;; 08:442e $cd $42 $44
-    ld   A, [wCEDA]                                    ;; 08:4431 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4431 $fa $da $ce
     add  A, $1b                                        ;; 08:4434 $c6 $1b
-    ld   [wCEDA], A                                    ;; 08:4436 $ea $da $ce
+    ld   [wPointerToPercussionProgramCounter_CEDA], A  ;; 08:4436 $ea $da $ce
     ld   A, [wCEE8]                                    ;; 08:4439 $fa $e8 $ce
     inc  A                                             ;; 08:443c $3c
     cp   A, $04                                        ;; 08:443d $fe $04
@@ -78,16 +78,16 @@ call_08_4442:
     ld   [HL], E                                       ;; 08:4464 $73
     inc  L                                             ;; 08:4465 $2c
     ld   [HL], D                                       ;; 08:4466 $72
-    ld   A, [wCEDA]                                    ;; 08:4467 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4467 $fa $da $ce
     ld   L, A                                          ;; 08:446a $6f
-    ld   A, [wCEDB]                                    ;; 08:446b $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:446b $fa $db $ce
     ld   H, A                                          ;; 08:446e $67
     jr   .jr_08_447f                                   ;; 08:446f $18 $0e
 .jr_08_4471:
     push HL                                            ;; 08:4471 $e5
-    ld   A, [wCEDB]                                    ;; 08:4472 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:4472 $fa $db $ce
     ld   H, A                                          ;; 08:4475 $67
-    ld   A, [wCEDA]                                    ;; 08:4476 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4476 $fa $da $ce
     add  A, $03                                        ;; 08:4479 $c6 $03
     ld   L, A                                          ;; 08:447b $6f
     xor  A, A                                          ;; 08:447c $af
@@ -110,9 +110,9 @@ call_08_4442:
     jr   .jr_08_4453                                   ;; 08:448b $18 $c6
 
 call_08_448d:
-    ld   A, [wCEDB]                                    ;; 08:448d $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:448d $fa $db $ce
     ld   H, A                                          ;; 08:4490 $67
-    ld   A, [wCEDA]                                    ;; 08:4491 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4491 $fa $da $ce
     ld   L, A                                          ;; 08:4494 $6f
     ld   E, [HL]                                       ;; 08:4495 $5e
     inc  L                                             ;; 08:4496 $2c
@@ -341,9 +341,9 @@ call_08_448d:
     ld   L, A                                          ;; 08:46c2 $6f
     ld   A, [HL]                                       ;; 08:46c3 $7e
     and  A, A                                          ;; 08:46c4 $a7
-    ld   A, [wCEDB]                                    ;; 08:46c5 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:46c5 $fa $db $ce
     ld   H, A                                          ;; 08:46c8 $67
-    ld   A, [wCEDA]                                    ;; 08:46c9 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:46c9 $fa $da $ce
     ld   L, A                                          ;; 08:46cc $6f
     jp   NZ, jp_08_40ec                                ;; 08:46cd $c2 $ec $40
     ld   A, $01                                        ;; 08:46d0 $3e $01
@@ -373,7 +373,7 @@ call_08_448d:
     dw   .data_08_4b6e                                 ;; 08:46fd pP
     db   $00, $00                                      ;; 08:46ff ..
 .data_08_4701:
-    dw   .data_08_4bab                                 ;; 08:4701 pP
+    dw   call_08_448d.titleSongPercussionSheet         ;; 08:4701 pP
     db   $00, $00                                      ;; 08:4703 ..
 .data_08_4705:
     db   $f0, $00, $14, $08, $80, $ed, $40             ;; 08:4705 .......
@@ -644,7 +644,9 @@ call_08_448d:
     dw   $6d33                                         ;; 08:4b9d wW
     db   $de, $33, $ca, $d8, $ca, $dd, $01, $f0        ;; 08:4b9f ........
     db   $01, $01, $00, $00                            ;; 08:4ba7 ....
-.data_08_4bab:
+; This is the beginning of the percussion sheet for the title screen.
+; Jumps from 4BAB to 4BB0
+.titleSongPercussionSheet:
     db   $f0, $00, $14, $08, $80, $d5, $3f, $10        ;; 08:4bab ........
     db   $10, $10, $3f, $10, $10, $10, $3f, $10        ;; 08:4bb3 ........
     db   $10, $10, $3f, $10, $10, $10, $d3, $3f        ;; 08:4bbb ........
@@ -654,6 +656,9 @@ call_08_448d:
     db   $57, $d5, $09, $09, $d2, $4d, $01, $d5        ;; 08:4bdb ........
     db   $01, $09, $09, $d2, $4d, $01, $d5, $01        ;; 08:4be3 ........
     db   $09, $09, $d2, $4d, $01, $d5, $01, $09        ;; 08:4beb ........
+; $4bf6 thru 4bfd is a loop. Loop value is $14.
+; $eb begin loop + times looped
+; $ec end loop
     db   $09, $eb, $14, $d2, $4d, $01, $d5, $01        ;; 08:4bf3 ........
     db   $09, $09, $ec, $d5, $3f, $10, $10, $10        ;; 08:4bfb ........
     db   $3f, $10, $10, $10, $3f, $10, $10, $10        ;; 08:4c03 ........
@@ -700,6 +705,7 @@ call_08_448d:
     db   $3f, $10, $10, $10, $10, $10, $3f, $10        ;; 08:4d4b ........
     db   $10, $3f, $0d, $0d, $3f, $23, $23, $3f        ;; 08:4d53 ........
     db   $23, $23, $de, $64, $ca, $01, $00             ;; 08:4d5b .......
+; End of title theme song
     dw   $43dd                                         ;; 08:4d62 wW
     db   $6c                                           ;; 08:4d64 .
     dw   .data_08_46ed                                 ;; 08:4d65 pP

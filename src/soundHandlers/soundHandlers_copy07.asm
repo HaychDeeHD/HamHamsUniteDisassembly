@@ -26,7 +26,7 @@ switchBankToCF02_doStuff2_backTo07_07_401a:
     ld   A, [soundBankToUseCF02]                       ;; 07:401a $fa $02 $cf
     ld   [currentSoundBank], A                         ;; 07:401d $ea $ba $ca
     ld   [$2000], A                                    ;; 07:4020 $ea $00 $20
-    call call_07_44c0                                  ;; 07:4023 $cd $c0 $44
+    call processChan4Note                              ;; 07:4023 $cd $c0 $44
     jr   goBackToBank7_07                              ;; 07:4026 $18 $1c
 
 switchBankToCF01_doStuff1_backTo07_07_4028:
@@ -49,21 +49,21 @@ goBackToBank7_07:
     ld   [$2000], A                                    ;; 07:4049 $ea $00 $20
     ret                                                ;; 07:404c $c9
 
-call_07_404d:
+soundOp_F1:
     ld   A, [DE]                                       ;; 07:404d $1a
     ld   C, A                                          ;; 07:404e $4f
     inc  DE                                            ;; 07:404f $13
     ld   A, [DE]                                       ;; 07:4050 $1a
     ld   B, A                                          ;; 07:4051 $47
     inc  DE                                            ;; 07:4052 $13
-    ld   A, [wCEDB]                                    ;; 07:4053 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:4053 $fa $db $ce
     ld   H, A                                          ;; 07:4056 $67
-    ld   A, [wCEDA]                                    ;; 07:4057 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4057 $fa $da $ce
     ld   L, A                                          ;; 07:405a $6f
     ld   [HL], E                                       ;; 07:405b $73
     inc  L                                             ;; 07:405c $2c
     ld   [HL], D                                       ;; 07:405d $72
-    ld   A, [wCEDA]                                    ;; 07:405e $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:405e $fa $da $ce
     add  A, $0c                                        ;; 07:4061 $c6 $0c
     ld   L, A                                          ;; 07:4063 $6f
     ld   [HL], C                                       ;; 07:4064 $71
@@ -71,7 +71,7 @@ call_07_404d:
     ld   [HL], B                                       ;; 07:4066 $70
     ret                                                ;; 07:4067 $c9
 
-call_07_4068:
+soundOp_ED:
     ld   A, [wCEE8]                                    ;; 07:4068 $fa $e8 $ce
     cp   A, $02                                        ;; 07:406b $fe $02
     jr   NZ, .jr_07_407f                               ;; 07:406d $20 $10
@@ -89,9 +89,9 @@ call_07_4068:
     ld   [BC], A                                       ;; 07:407d $02
     inc  DE                                            ;; 07:407e $13
 .jr_07_407f:
-    ld   A, [wCEDB]                                    ;; 07:407f $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:407f $fa $db $ce
     ld   H, A                                          ;; 07:4082 $67
-    ld   A, [wCEDA]                                    ;; 07:4083 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4083 $fa $da $ce
     add  A, $16                                        ;; 07:4086 $c6 $16
     ld   L, A                                          ;; 07:4088 $6f
     ld   A, [DE]                                       ;; 07:4089 $1a
@@ -115,7 +115,7 @@ call_07_4068:
     inc  DE                                            ;; 07:409f $13
     ld   A, [DE]                                       ;; 07:40a0 $1a
     ld   [HL], A                                       ;; 07:40a1 $77
-    ld   A, [wCEDA]                                    ;; 07:40a2 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:40a2 $fa $da $ce
     ld   L, A                                          ;; 07:40a5 $6f
     inc  DE                                            ;; 07:40a6 $13
     ld   [HL], E                                       ;; 07:40a7 $73
@@ -123,21 +123,21 @@ call_07_4068:
     ld   [HL], D                                       ;; 07:40a9 $72
     ret                                                ;; 07:40aa $c9
 
-call_07_40ab:
+soundOp_F5:
     ld   A, [DE]                                       ;; 07:40ab $1a
     ld   C, A                                          ;; 07:40ac $4f
     inc  DE                                            ;; 07:40ad $13
     ld   A, [DE]                                       ;; 07:40ae $1a
     ld   B, A                                          ;; 07:40af $47
     inc  DE                                            ;; 07:40b0 $13
-    ld   A, [wCEDB]                                    ;; 07:40b1 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:40b1 $fa $db $ce
     ld   H, A                                          ;; 07:40b4 $67
-    ld   A, [wCEDA]                                    ;; 07:40b5 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:40b5 $fa $da $ce
     ld   L, A                                          ;; 07:40b8 $6f
     ld   [HL], E                                       ;; 07:40b9 $73
     inc  L                                             ;; 07:40ba $2c
     ld   [HL], D                                       ;; 07:40bb $72
-    ld   A, [wCEDA]                                    ;; 07:40bc $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:40bc $fa $da $ce
     add  A, $06                                        ;; 07:40bf $c6 $06
     ld   L, A                                          ;; 07:40c1 $6f
     ld   [HL], C                                       ;; 07:40c2 $71
@@ -146,9 +146,9 @@ call_07_40ab:
     ret                                                ;; 07:40c5 $c9
 
 jp_07_40c6:
-    ld   A, [wCEDB]                                    ;; 07:40c6 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:40c6 $fa $db $ce
     ld   H, A                                          ;; 07:40c9 $67
-    ld   A, [wCEDA]                                    ;; 07:40ca $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:40ca $fa $da $ce
     add  A, $17                                        ;; 07:40cd $c6 $17
     ld   L, A                                          ;; 07:40cf $6f
     ld   A, $08                                        ;; 07:40d0 $3e $08
@@ -191,9 +191,9 @@ jp_07_40ec:
     ld   E, [HL]                                       ;; 07:4105 $5e
     inc  HL                                            ;; 07:4106 $23
     ld   D, [HL]                                       ;; 07:4107 $56
-    ld   A, [wCEDB]                                    ;; 07:4108 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:4108 $fa $db $ce
     ld   H, A                                          ;; 07:410b $67
-    ld   A, [wCEDA]                                    ;; 07:410c $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:410c $fa $da $ce
     add  A, $03                                        ;; 07:410f $c6 $03
     ld   L, A                                          ;; 07:4111 $6f
     ld   A, [HL]                                       ;; 07:4112 $7e
@@ -267,9 +267,9 @@ jp_07_40ec:
     add  HL, DE                                        ;; 07:4169 $19
     ld   D, H                                          ;; 07:416a $54
     ld   E, L                                          ;; 07:416b $5d
-    ld   A, [wCEDB]                                    ;; 07:416c $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:416c $fa $db $ce
     ld   H, A                                          ;; 07:416f $67
-    ld   A, [wCEDA]                                    ;; 07:4170 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4170 $fa $da $ce
     add  A, $03                                        ;; 07:4173 $c6 $03
     ld   L, A                                          ;; 07:4175 $6f
     ld   A, [HL]                                       ;; 07:4176 $7e
@@ -291,10 +291,10 @@ jp_07_40ec:
     ld   [HL], A                                       ;; 07:4188 $77
     ret                                                ;; 07:4189 $c9
 
-call_07_418a:
-    ld   A, [wCEDB]                                    ;; 07:418a $fa $db $ce
+soundOp_CAthruCF:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:418a $fa $db $ce
     ld   H, A                                          ;; 07:418d $67
-    ld   A, [wCEDA]                                    ;; 07:418e $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:418e $fa $da $ce
     add  A, $08                                        ;; 07:4191 $c6 $08
     ld   L, A                                          ;; 07:4193 $6f
     ld   E, [HL]                                       ;; 07:4194 $5e
@@ -305,19 +305,40 @@ call_07_418a:
     add  A, E                                          ;; 07:419a $83
     ld   [HL], A                                       ;; 07:419b $77
     ret                                                ;; 07:419c $c9
-    db   $fa, $db, $ce, $67, $fa, $da, $ce, $c6        ;; 07:419d ????????
-    db   $08, $6f, $4e, $7d, $d6, $06, $6f, $7e        ;; 07:41a5 ????????
-    db   $81, $d8, $c8, $fe, $ef, $d0, $77, $c9        ;; 07:41ad ????????
+;@code
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:419d $fa $db $ce
+    ld   H, A                                          ;; 07:41a0 $67
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:41a1 $fa $da $ce
+    add  A, $08                                        ;; 07:41a4 $c6 $08
+    ld   L, A                                          ;; 07:41a6 $6f
+    ld   C, [HL]                                       ;; 07:41a7 $4e
+    ld   A, L                                          ;; 07:41a8 $7d
+    sub  A, $06                                        ;; 07:41a9 $d6 $06
+    ld   L, A                                          ;; 07:41ab $6f
+    ld   A, [HL]                                       ;; 07:41ac $7e
+    add  A, C                                          ;; 07:41ad $81
+    ret  C                                             ;; 07:41ae $d8
+    ret  Z                                             ;; 07:41af $c8
+    cp   A, $ef                                        ;; 07:41b0 $fe $ef
+    ret  NC                                            ;; 07:41b2 $d0
+    ld   [HL], A                                       ;; 07:41b3 $77
+    ret                                                ;; 07:41b4 $c9
 
 jp_07_41b5:
-    ld   A, [wCEDB]                                    ;; 07:41b5 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:41b5 $fa $db $ce
     ld   H, A                                          ;; 07:41b8 $67
-    ld   A, [wCEDA]                                    ;; 07:41b9 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:41b9 $fa $da $ce
     add  A, $02                                        ;; 07:41bc $c6 $02
+; HL becomes the byte in ram directly after the ProgramCounter 2 bytes.
+; Typically has a value between 01 and 05
     ld   L, A                                          ;; 07:41be $6f
     ld   B, [HL]                                       ;; 07:41bf $46
     ld   A, [DE]                                       ;; 07:41c0 $1a
     add  A, B                                          ;; 07:41c1 $80
+; Add [DE] to the byte after the program counter
+; [DE] is the next "note" byte in the song
+; This might be some kind of song instruction that takes multiple arguments
+; Or this byte after the program counter might be an instruction length?
     ld   [HL], A                                       ;; 07:41c2 $77
     ld   A, L                                          ;; 07:41c3 $7d
     add  A, $12                                        ;; 07:41c4 $c6 $12
@@ -378,7 +399,7 @@ jp_07_41b5:
     ld   [HL], A                                       ;; 07:4207 $77
 .jr_07_4208:
     ld   C, $00                                        ;; 07:4208 $0e $00
-    ld   A, [wCEDA]                                    ;; 07:420a $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:420a $fa $da $ce
     add  A, $0d                                        ;; 07:420d $c6 $0d
     ld   L, A                                          ;; 07:420f $6f
     ld   A, [HL]                                       ;; 07:4210 $7e
@@ -386,7 +407,7 @@ jp_07_41b5:
     jr   Z, .jr_07_4216                                ;; 07:4212 $28 $02
     ld   C, $40                                        ;; 07:4214 $0e $40
 .jr_07_4216:
-    ld   A, [wCEDA]                                    ;; 07:4216 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4216 $fa $da $ce
     add  A, $03                                        ;; 07:4219 $c6 $03
     ld   L, A                                          ;; 07:421b $6f
     ld   A, [HL]                                       ;; 07:421c $7e
@@ -401,7 +422,7 @@ jp_07_41b5:
     ld   [HL+], A                                      ;; 07:4227 $22
     ld   [HL+], A                                      ;; 07:4228 $22
     ld   [HL], A                                       ;; 07:4229 $77
-    ld   A, [wCEDA]                                    ;; 07:422a $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:422a $fa $da $ce
     ld   L, A                                          ;; 07:422d $6f
     inc  DE                                            ;; 07:422e $13
     ld   [HL], E                                       ;; 07:422f $73
@@ -409,7 +430,7 @@ jp_07_41b5:
     ld   [HL], D                                       ;; 07:4231 $72
     ret                                                ;; 07:4232 $c9
 
-call_07_4233:
+soundOp_F3:
     ld   A, [DE]                                       ;; 07:4233 $1a
     ld   C, A                                          ;; 07:4234 $4f
     inc  DE                                            ;; 07:4235 $13
@@ -419,16 +440,16 @@ call_07_4233:
     ld   A, [DE]                                       ;; 07:4239 $1a
     ld   [BC], A                                       ;; 07:423a $02
     inc  DE                                            ;; 07:423b $13
-    ld   A, [wCEDB]                                    ;; 07:423c $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:423c $fa $db $ce
     ld   H, A                                          ;; 07:423f $67
-    ld   A, [wCEDA]                                    ;; 07:4240 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4240 $fa $da $ce
     ld   L, A                                          ;; 07:4243 $6f
     ld   [HL], E                                       ;; 07:4244 $73
     inc  L                                             ;; 07:4245 $2c
     ld   [HL], D                                       ;; 07:4246 $72
     ret                                                ;; 07:4247 $c9
 
-call_07_4248:
+soundOp_EE:
     ld   A, [DE]                                       ;; 07:4248 $1a
     ld   C, A                                          ;; 07:4249 $4f
     inc  DE                                            ;; 07:424a $13
@@ -438,9 +459,9 @@ call_07_4248:
     ld   A, [DE]                                       ;; 07:424e $1a
     ld   [wCFFF], A                                    ;; 07:424f $ea $ff $cf
     inc  DE                                            ;; 07:4252 $13
-    ld   A, [wCEDB]                                    ;; 07:4253 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:4253 $fa $db $ce
     ld   H, A                                          ;; 07:4256 $67
-    ld   A, [wCEDA]                                    ;; 07:4257 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4257 $fa $da $ce
     ld   L, A                                          ;; 07:425a $6f
     ld   [HL], E                                       ;; 07:425b $73
     inc  L                                             ;; 07:425c $2c
@@ -454,10 +475,10 @@ call_07_4248:
     ld   [HL], B                                       ;; 07:4266 $70
     ret                                                ;; 07:4267 $c9
 
-call_07_4268:
-    ld   A, [wCEDB]                                    ;; 07:4268 $fa $db $ce
+soundOp_F2:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:4268 $fa $db $ce
     ld   H, A                                          ;; 07:426b $67
-    ld   A, [wCEDA]                                    ;; 07:426c $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:426c $fa $da $ce
     add  A, $03                                        ;; 07:426f $c6 $03
     ld   L, A                                          ;; 07:4271 $6f
     xor  A, A                                          ;; 07:4272 $af
@@ -470,10 +491,10 @@ call_07_4268:
     ld   [HL], A                                       ;; 07:427a $77
     ret                                                ;; 07:427b $c9
 
-call_07_427c:
-    ld   A, [wCEDB]                                    ;; 07:427c $fa $db $ce
+soundOp_F6:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:427c $fa $db $ce
     ld   H, A                                          ;; 07:427f $67
-    ld   A, [wCEDA]                                    ;; 07:4280 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4280 $fa $da $ce
     add  A, $03                                        ;; 07:4283 $c6 $03
     ld   L, A                                          ;; 07:4285 $6f
     ld   A, [HL]                                       ;; 07:4286 $7e
@@ -487,10 +508,10 @@ call_07_427c:
     ld   [HL], A                                       ;; 07:4290 $77
     ret                                                ;; 07:4291 $c9
 
-call_07_4292:
-    ld   A, [wCEDB]                                    ;; 07:4292 $fa $db $ce
+soundOp_F7:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:4292 $fa $db $ce
     ld   H, A                                          ;; 07:4295 $67
-    ld   A, [wCEDA]                                    ;; 07:4296 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4296 $fa $da $ce
     add  A, $03                                        ;; 07:4299 $c6 $03
     ld   L, A                                          ;; 07:429b $6f
     ld   A, [HL]                                       ;; 07:429c $7e
@@ -498,7 +519,7 @@ call_07_4292:
     ld   [HL], A                                       ;; 07:429f $77
     ret                                                ;; 07:42a0 $c9
 
-call_07_42a1:
+soundOp_D0thruE7:
     ld   A, [channelControl_4_CEEB]                    ;; 07:42a1 $fa $eb $ce
     sub  A, $d0                                        ;; 07:42a4 $d6 $d0
     ld   E, A                                          ;; 07:42a6 $5f
@@ -512,18 +533,18 @@ call_07_42a1:
     ld   L, A                                          ;; 07:42b1 $6f
     add  HL, DE                                        ;; 07:42b2 $19
     ld   E, [HL]                                       ;; 07:42b3 $5e
-    ld   A, [wCEDB]                                    ;; 07:42b4 $fa $db $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:42b4 $fa $db $ce
     ld   H, A                                          ;; 07:42b7 $67
-    ld   A, [wCEDA]                                    ;; 07:42b8 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:42b8 $fa $da $ce
     add  A, $08                                        ;; 07:42bb $c6 $08
     ld   L, A                                          ;; 07:42bd $6f
     ld   [HL], E                                       ;; 07:42be $73
     ret                                                ;; 07:42bf $c9
 
-call_07_42c0:
-    ld   A, [wCEDB]                                    ;; 07:42c0 $fa $db $ce
+endLoop_ec:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:42c0 $fa $db $ce
     ld   H, A                                          ;; 07:42c3 $67
-    ld   A, [wCEDA]                                    ;; 07:42c4 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:42c4 $fa $da $ce
     add  A, $09                                        ;; 07:42c7 $c6 $09
     ld   L, A                                          ;; 07:42c9 $6f
     dec  [HL]                                          ;; 07:42ca $35
@@ -535,17 +556,17 @@ call_07_42c0:
     inc  L                                             ;; 07:42d1 $2c
     ld   D, [HL]                                       ;; 07:42d2 $56
 .jr_07_42d3:
-    ld   A, [wCEDA]                                    ;; 07:42d3 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:42d3 $fa $da $ce
     ld   L, A                                          ;; 07:42d6 $6f
     ld   [HL], E                                       ;; 07:42d7 $73
     inc  L                                             ;; 07:42d8 $2c
     ld   [HL], D                                       ;; 07:42d9 $72
     ret                                                ;; 07:42da $c9
 
-call_07_42db:
-    ld   A, [wCEDB]                                    ;; 07:42db $fa $db $ce
+beginLoop_eb:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:42db $fa $db $ce
     ld   H, A                                          ;; 07:42de $67
-    ld   A, [wCEDA]                                    ;; 07:42df $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:42df $fa $da $ce
     ld   L, A                                          ;; 07:42e2 $6f
     ld   A, [DE]                                       ;; 07:42e3 $1a
     ld   C, A                                          ;; 07:42e4 $4f
@@ -553,7 +574,7 @@ call_07_42db:
     ld   [HL], E                                       ;; 07:42e6 $73
     inc  L                                             ;; 07:42e7 $2c
     ld   [HL], D                                       ;; 07:42e8 $72
-    ld   A, [wCEDA]                                    ;; 07:42e9 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:42e9 $fa $da $ce
     add  A, $09                                        ;; 07:42ec $c6 $09
     ld   L, A                                          ;; 07:42ee $6f
     ld   [HL], C                                       ;; 07:42ef $71
@@ -563,10 +584,10 @@ call_07_42db:
     ld   [HL], D                                       ;; 07:42f3 $72
     ret                                                ;; 07:42f4 $c9
 
-call_07_42f5:
-    ld   A, [wCEDB]                                    ;; 07:42f5 $fa $db $ce
+soundOp_F4:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:42f5 $fa $db $ce
     ld   H, A                                          ;; 07:42f8 $67
-    ld   A, [wCEDA]                                    ;; 07:42f9 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:42f9 $fa $da $ce
     ld   L, A                                          ;; 07:42fc $6f
     xor  A, A                                          ;; 07:42fd $af
     ld   [BC], A                                       ;; 07:42fe $02
@@ -576,16 +597,16 @@ call_07_42f5:
     ld   [HL], E                                       ;; 07:4302 $73
     inc  L                                             ;; 07:4303 $2c
     ld   [HL], D                                       ;; 07:4304 $72
-    ld   A, [wCEDA]                                    ;; 07:4305 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4305 $fa $da $ce
     add  A, $02                                        ;; 07:4308 $c6 $02
     ld   L, A                                          ;; 07:430a $6f
     ld   [HL], C                                       ;; 07:430b $71
     ret                                                ;; 07:430c $c9
 
-call_07_430d:
-    ld   A, [wCEDB]                                    ;; 07:430d $fa $db $ce
+soundOp_FF:
+    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:430d $fa $db $ce
     ld   H, A                                          ;; 07:4310 $67
-    ld   A, [wCEDA]                                    ;; 07:4311 $fa $da $ce
+    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4311 $fa $da $ce
     ld   L, A                                          ;; 07:4314 $6f
     ld   A, [DE]                                       ;; 07:4315 $1a
     ld   C, A                                          ;; 07:4316 $4f
