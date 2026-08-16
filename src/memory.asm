@@ -1899,17 +1899,24 @@ wCE5E:
 wCE67:
     ds 5                                               ;; ce67
 
-wCE6C:
+wChannel1ProgramCounter_CE6C:
     ds 1                                               ;; ce6c
-
-wCE6D:
+.high:
     ds 1                                               ;; ce6d
 
 wCE6E:
     ds 1                                               ;; ce6e
 
 wCE6F:
-    ds 10                                              ;; ce6f
+    ds 6                                               ;; ce6f
+
+wChannel1LoopCountdown_CE75:
+    ds 1                                               ;; ce75
+
+wChannel1LoopPointer_CE76:
+    ds 1                                               ;; ce76
+.high:
+    ds 2                                               ;; ce77
 
 wCE79:
     ds 8                                               ;; ce79
@@ -1925,17 +1932,24 @@ wCE83:
 channelControl_1_CE85:
     ds 2                                               ;; ce85
 
-wCE87:
+wChannel2ProgramCounter_CE87:
     ds 1                                               ;; ce87
-
-wCE88:
+.high:
     ds 1                                               ;; ce88
 
 wCE89:
     ds 1                                               ;; ce89
 
 wCE8A:
-    ds 10                                              ;; ce8a
+    ds 6                                               ;; ce8a
+
+wChannel2LoopCountdown_CE90:
+    ds 1                                               ;; ce90
+
+wChannel2LoopPointer_CE91:
+    ds 1                                               ;; ce91
+.high:
+    ds 2                                               ;; ce92
 
 wCE94:
     ds 9                                               ;; ce94
@@ -1950,17 +1964,24 @@ wCE9E:
 channelControl_2_CEA0:
     ds 2                                               ;; cea0
 
-wCEA2:
+wChannel3ProgramCounter_CEA2:
     ds 1                                               ;; cea2
-
-wCEA3:
+.high:
     ds 1                                               ;; cea3
 
 wCEA4:
     ds 1                                               ;; cea4
 
 wCEA5:
-    ds 10                                              ;; cea5
+    ds 6                                               ;; cea5
+
+wChannel1LoopCountdown_CEAB:
+    ds 1                                               ;; ceab
+
+wChannel1LoopPointer_CEAC:
+    ds 1                                               ;; ceac
+.high:
+    ds 2                                               ;; cead
 
 wCEAF:
     ds 8                                               ;; ceaf
@@ -1975,12 +1996,9 @@ wCEB9:
 channelControl_3_CEBB:
     ds 2                                               ;; cebb
 
-; Generally increments, but loops on parts matching the song.
-; This with CEBE are values like 47DO, rom looking addresses. Guessing note pointers.
-wPercussionProgramCounter_CEBD:
+wChannel4ProgramCounter_CEBD:
     ds 1                                               ;; cebd
-
-wCEBE:
+.high:
     ds 1                                               ;; cebe
 
 wCEBF:
@@ -1989,13 +2007,10 @@ wCEBF:
 wCEC0:
     ds 6                                               ;; cec0
 
-; See 07:4732 for an example of this being written to without being referenced.
-; This value counts down to zero. The percussion is looping, decrementing each time it repeats.
-; The following pointer is the point to loop back to until the countdown hits zero.
-wPercussionLoopCountdown_CEC6:
+wChannel4LoopCountdown__CEC6:
     ds 1                                               ;; cec6
 
-wPercussionLoopPointer_CEC7:
+wChannel4LoopCountdown__CEC7:
     ds 1                                               ;; cec7
 .high:
     ds 2                                               ;; cec8
@@ -2015,7 +2030,7 @@ wCED6:
 wCED8:
     ds 2                                               ;; ced8
 
-wPointerToPercussionProgramCounter_CEDA:
+wPointerToCurrentChannelSongProgramCounter_CEDA:
     ds 1                                               ;; ceda
 .high:
     ds 1                                               ;; cedb
@@ -2056,13 +2071,15 @@ wCEE6:
 wCEE7:
     ds 1                                               ;; cee7
 
-wCEE8:
+; Increments to 4 as we loop over channels initializing them.
+channelNum_CEE8:
     ds 1                                               ;; cee8
 
 wCEE9:
     ds 2                                               ;; cee9
 
 ; Percussion note
+; This is probably actually shared and not chan4 specific.
 channelControl_4_CEEB:
     ds 1                                               ;; ceeb
 

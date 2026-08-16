@@ -129,17 +129,17 @@ doneThirdRegisterSetting:
     ld   [wCE5A], A                                    ;; 07:44bc $ea $5a $ce
     ret                                                ;; 07:44bf $c9
 
-; Dereferences the PercussionProgramCounterPointer to the PercussionProgramCounter ram address.
-; Dereferences the PercussionProgramCounter to a Rom address. That Rom address in DE.
+; Dereferences the ProgramCounterPointer to the ProgramCounter ram address.
+; Dereferences the ProgramCounter to a Rom address. That Rom address in DE.
 ; Dereferences that Rom address to a note in the song, writes it to channelControl_4_CEEB.
-; Increments the PercussionProgramCounter (via incrementing DE).
+; Increments the ProgramCounter (via incrementing DE).
 ; Jumps using jumptable using new channelControl value as index.
 ; Example:
 ; CEDA-B holds $CEBD. CEBD-E holds $47D0. $47D0 holds some note value in a sequence.
 processChan4Note:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:44c0 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:44c0 $fa $db $ce
     ld   H, A                                          ;; 07:44c3 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:44c4 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:44c4 $fa $da $ce
     ld   L, A                                          ;; 07:44c7 $6f
     ld   E, [HL]                                       ;; 07:44c8 $5e
     inc  L                                             ;; 07:44c9 $2c
@@ -409,7 +409,7 @@ processChan4Note:
     dw   endLoop_ec                                    ;; 07:46bd ?? $ec
     dw   soundOp_ED                                    ;; 07:46bf ?? $ed
     dw   soundOp_EE                                    ;; 07:46c1 ?? $ee
-    dw   beginPercussionLoop                           ;; 07:46c3 ?? $ef
+    dw   beginLoop_count02_ef                          ;; 07:46c3 ?? $ef
     dw   soundOp_F0                                    ;; 07:46c5 ?? $f0
     dw   soundOp_F1                                    ;; 07:46c7 ?? $f1
     dw   soundOp_F2                                    ;; 07:46c9 ?? $f2
@@ -435,13 +435,13 @@ soundOp_00:
     xor  A, A                                          ;; 07:46e8 $af
     ld   [BC], A                                       ;; 07:46e9 $02
     ld   HL, wCEDC                                     ;; 07:46ea $21 $dc $ce
-    ld   A, [wCEE8]                                    ;; 07:46ed $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:46ed $fa $e8 $ce
     add  A, L                                          ;; 07:46f0 $85
     ld   L, A                                          ;; 07:46f1 $6f
     xor  A, A                                          ;; 07:46f2 $af
     ld   [HL], A                                       ;; 07:46f3 $77
     ld   C, $11                                        ;; 07:46f4 $0e $11
-    ld   A, [wCEE8]                                    ;; 07:46f6 $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:46f6 $fa $e8 $ce
     sub  A, $01                                        ;; 07:46f9 $d6 $01
     jr   C, .jr_07_470b                                ;; 07:46fb $38 $0e
     sla  C                                             ;; 07:46fd $cb $21
@@ -465,18 +465,19 @@ soundOp_02thruAB:
     ld   [BC], A                                       ;; 07:4718 $02
     jp   jp_07_40ec                                    ;; 07:4719 $c3 $ec $40
 
-; Dereferences the PercussionProgramCounterPointer to the PercussionProgramCounter ram address.
-; DE is still the PercussionProgramCounter's updated value from earlier note processing. (Rom address of next note.)
-; Dereferences the PercussionProgramCounter to a Rom address, note in a song.
+; Dereferences the CurrentChannelSongProgramCounterPointer to the CurrentChannelSongProgramCounter ram address.
+; DE is still the CurrentChannelSongProgramCounter's updated value from earlier note processing. (Rom address of next note.)
+; Dereferences the CurrentChannelSongProgramCounter to a Rom address, note in a song.
 ; Writes the value to channelControl_4_CEEB.
-; Increments the PercussionProgramCounter.
+; Increments the CurrentChannelSongProgramCounter.
 ; Jumps using jumptable using new channelControl value as index.
 ; Example:
 ; CEDA-B holds $CEBD. CEBD-E holds $47D0. $47D0 holds some note value in a sequence.
-beginPercussionLoop:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:471c $fa $db $ce
+; This version of beginLoop uses a loop value of $02 rather than an arg.
+beginLoop_count02_ef:
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:471c $fa $db $ce
     ld   H, A                                          ;; 07:471f $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:4720 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:4720 $fa $da $ce
     ld   L, A                                          ;; 07:4723 $6f
 ; HL is the ram address of the ProgramCounter now.
 ; A is a "note" value.
@@ -491,7 +492,7 @@ beginPercussionLoop:
 ; Wrote the address from the "notes" to the program counter.
 ; This has to do with how the song denotes loops.
     inc  DE                                            ;; 07:472b $13
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:472c $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:472c $fa $da $ce
     add  A, $09                                        ;; 07:472f $c6 $09
     ld   L, A                                          ;; 07:4731 $6f
 ; If CEDA was $CEBD, HL is now CEBD + 09 = CEC6
@@ -1686,10 +1687,10 @@ call_07_5b0c:
 .afterLoop:
     xor  A, A                                          ;; 07:5b57 $af
 ; wCEE8 is a loop counter, but different stuff happens each loop.
-    ld   [wCEE8], A                                    ;; 07:5b58 $ea $e8 $ce
+    ld   [channelNum_CEE8], A                          ;; 07:5b58 $ea $e8 $ce
 .topOfFourPassLoop:
-    ld   HL, wPointerToPercussionProgramCounter_CEDA   ;; 07:5b5b $21 $da $ce
-    ld   A, [wCEE8]                                    ;; 07:5b5e $fa $e8 $ce
+    ld   HL, wPointerToCurrentChannelSongProgramCounter_CEDA ;; 07:5b5b $21 $da $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:5b5e $fa $e8 $ce
     cp   A, $01                                        ;; 07:5b61 $fe $01
     jr   Z, .secondLoopPass                            ;; 07:5b63 $28 $20
     cp   A, $02                                        ;; 07:5b65 $fe $02
@@ -1792,16 +1793,16 @@ call_07_5b0c:
 .jr_07_5c06:
     call call_07_5efe                                  ;; 07:5c06 $cd $fe $5e
     ld   HL, wCF0A                                     ;; 07:5c09 $21 $0a $cf
-    ld   A, [wCEE8]                                    ;; 07:5c0c $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:5c0c $fa $e8 $ce
     add  A, L                                          ;; 07:5c0f $85
     ld   L, A                                          ;; 07:5c10 $6f
     ld   [HL], $02                                     ;; 07:5c11 $36 $02
 .prepNextPassInFourPassLoop:
-    ld   A, [wCEE8]                                    ;; 07:5c13 $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:5c13 $fa $e8 $ce
     inc  A                                             ;; 07:5c16 $3c
     cp   A, $04                                        ;; 07:5c17 $fe $04
     ret  Z                                             ;; 07:5c19 $c8
-    ld   [wCEE8], A                                    ;; 07:5c1a $ea $e8 $ce
+    ld   [channelNum_CEE8], A                          ;; 07:5c1a $ea $e8 $ce
     jp   .topOfFourPassLoop                            ;; 07:5c1d $c3 $5b $5b
 
 call_07_5c20:
@@ -1868,7 +1869,7 @@ call_07_5c20:
     jp   call_07_5d63                                  ;; 07:5c95 $c3 $63 $5d
 .jp_07_5c98:
     xor  A, A                                          ;; 07:5c98 $af
-    ld   [wCEE8], A                                    ;; 07:5c99 $ea $e8 $ce
+    ld   [channelNum_CEE8], A                          ;; 07:5c99 $ea $e8 $ce
     ld   HL, wCEE0                                     ;; 07:5c9c $21 $e0 $ce
     or   A, [HL]                                       ;; 07:5c9f $b6
     inc  HL                                            ;; 07:5ca0 $23
@@ -1889,8 +1890,8 @@ call_07_5c20:
     ld   [wCurrentlyPlayingSong], A                    ;; 07:5cb0 $ea $fa $cf
     ret                                                ;; 07:5cb3 $c9
 .jp_07_5cb4:
-    ld   HL, wPointerToPercussionProgramCounter_CEDA   ;; 07:5cb4 $21 $da $ce
-    ld   A, [wCEE8]                                    ;; 07:5cb7 $fa $e8 $ce
+    ld   HL, wPointerToCurrentChannelSongProgramCounter_CEDA ;; 07:5cb4 $21 $da $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:5cb7 $fa $e8 $ce
     cp   A, $01                                        ;; 07:5cba $fe $01
     jr   Z, .jr_07_5cda                                ;; 07:5cbc $28 $1c
     cp   A, $02                                        ;; 07:5cbe $fe $02
@@ -1978,16 +1979,16 @@ call_07_5c20:
 .jr_07_5d49:
     call call_07_5efe                                  ;; 07:5d49 $cd $fe $5e
     ld   HL, wCF0E                                     ;; 07:5d4c $21 $0e $cf
-    ld   A, [wCEE8]                                    ;; 07:5d4f $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:5d4f $fa $e8 $ce
     add  A, L                                          ;; 07:5d52 $85
     ld   L, A                                          ;; 07:5d53 $6f
     ld   [HL], $01                                     ;; 07:5d54 $36 $01
 .jp_07_5d56:
-    ld   A, [wCEE8]                                    ;; 07:5d56 $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:5d56 $fa $e8 $ce
     inc  A                                             ;; 07:5d59 $3c
     cp   A, $04                                        ;; 07:5d5a $fe $04
     ret  Z                                             ;; 07:5d5c $c8
-    ld   [wCEE8], A                                    ;; 07:5d5d $ea $e8 $ce
+    ld   [channelNum_CEE8], A                          ;; 07:5d5d $ea $e8 $ce
     jp   .jp_07_5cb4                                   ;; 07:5d60 $c3 $b4 $5c
 
 call_07_5d63:
@@ -2004,14 +2005,14 @@ call_07_5d63:
     ld   [channelControl_3_CEBB], A                    ;; 07:5d7d $ea $bb $ce
     ld   [wCED6], A                                    ;; 07:5d80 $ea $d6 $ce
     xor  A, A                                          ;; 07:5d83 $af
-    ld   [wCE6C], A                                    ;; 07:5d84 $ea $6c $ce
-    ld   [wCE6D], A                                    ;; 07:5d87 $ea $6d $ce
-    ld   [wCE87], A                                    ;; 07:5d8a $ea $87 $ce
-    ld   [wCE88], A                                    ;; 07:5d8d $ea $88 $ce
-    ld   [wCEA2], A                                    ;; 07:5d90 $ea $a2 $ce
-    ld   [wCEA3], A                                    ;; 07:5d93 $ea $a3 $ce
-    ld   [wPercussionProgramCounter_CEBD], A           ;; 07:5d96 $ea $bd $ce
-    ld   [wCEBE], A                                    ;; 07:5d99 $ea $be $ce
+    ld   [wChannel1ProgramCounter_CE6C], A             ;; 07:5d84 $ea $6c $ce
+    ld   [wChannel1ProgramCounter_CE6C.high], A        ;; 07:5d87 $ea $6d $ce
+    ld   [wChannel2ProgramCounter_CE87], A             ;; 07:5d8a $ea $87 $ce
+    ld   [wChannel2ProgramCounter_CE87.high], A        ;; 07:5d8d $ea $88 $ce
+    ld   [wChannel3ProgramCounter_CEA2], A             ;; 07:5d90 $ea $a2 $ce
+    ld   [wChannel3ProgramCounter_CEA2.high], A        ;; 07:5d93 $ea $a3 $ce
+    ld   [wChannel4ProgramCounter_CEBD], A             ;; 07:5d96 $ea $bd $ce
+    ld   [wChannel4ProgramCounter_CEBD.high], A        ;; 07:5d99 $ea $be $ce
     ld   [wCE6E], A                                    ;; 07:5d9c $ea $6e $ce
     ld   [wCE89], A                                    ;; 07:5d9f $ea $89 $ce
     ld   [wCEA4], A                                    ;; 07:5da2 $ea $a4 $ce
@@ -2081,9 +2082,9 @@ call_07_5dd4:
 .jr_07_5e0c:
     push DE                                            ;; 07:5e0c $d5
     ld   B, A                                          ;; 07:5e0d $47
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:5e0e $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:5e0e $fa $db $ce
     ld   H, A                                          ;; 07:5e11 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:5e12 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:5e12 $fa $da $ce
     add  A, $19                                        ;; 07:5e15 $c6 $19
     ld   L, A                                          ;; 07:5e17 $6f
     ld   A, [HL-]                                      ;; 07:5e18 $3a
@@ -2163,9 +2164,9 @@ call_07_5dd4:
     ld   [HL], E                                       ;; 07:5e8a $73
     ret                                                ;; 07:5e8b $c9
 .jp_07_5e8c:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 07:5e8c $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:5e8c $fa $db $ce
     ld   H, A                                          ;; 07:5e8f $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 07:5e90 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:5e90 $fa $da $ce
     add  A, $03                                        ;; 07:5e93 $c6 $03
     ld   L, A                                          ;; 07:5e95 $6f
     ld   A, [HL]                                       ;; 07:5e96 $7e
@@ -2258,7 +2259,7 @@ call_07_5dd4:
     ret                                                ;; 07:5efd $c9
 
 call_07_5efe:
-    ld   A, [wCEE8]                                    ;; 07:5efe $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:5efe $fa $e8 $ce
     cp   A, $03                                        ;; 07:5f01 $fe $03
     jr   Z, .jr_07_5f61                                ;; 07:5f03 $28 $5c
     push HL                                            ;; 07:5f05 $e5
@@ -2285,7 +2286,7 @@ call_07_5efe:
 .jr_07_5f1e:
     cp   A, $fe                                        ;; 07:5f1e $fe $fe
     jr   NZ, .jr_07_5f44                               ;; 07:5f20 $20 $22
-    ld   A, [wCEE8]                                    ;; 07:5f22 $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 07:5f22 $fa $e8 $ce
     cp   A, $02                                        ;; 07:5f25 $fe $02
     jr   NZ, .jr_07_5f3f                               ;; 07:5f27 $20 $16
     push HL                                            ;; 07:5f29 $e5

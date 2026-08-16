@@ -29,14 +29,14 @@ data_08_404d:
     ld   A, [DE]                                       ;; 08:4050 $1a
     ld   B, A                                          ;; 08:4051 $47
     inc  DE                                            ;; 08:4052 $13
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:4053 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:4053 $fa $db $ce
     ld   H, A                                          ;; 08:4056 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4057 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:4057 $fa $da $ce
     ld   L, A                                          ;; 08:405a $6f
     ld   [HL], E                                       ;; 08:405b $73
     inc  L                                             ;; 08:405c $2c
     ld   [HL], D                                       ;; 08:405d $72
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:405e $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:405e $fa $da $ce
     add  A, $0c                                        ;; 08:4061 $c6 $0c
     ld   L, A                                          ;; 08:4063 $6f
     ld   [HL], C                                       ;; 08:4064 $71
@@ -45,7 +45,7 @@ data_08_404d:
     ret                                                ;; 08:4067 $c9
 
 data_08_4068:
-    ld   A, [wCEE8]                                    ;; 08:4068 $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 08:4068 $fa $e8 $ce
     cp   A, $02                                        ;; 08:406b $fe $02
     jr   NZ, .jr_08_407f                               ;; 08:406d $20 $10
     ld   HL, wCED8                                     ;; 08:406f $21 $d8 $ce
@@ -62,9 +62,9 @@ data_08_4068:
     ld   [BC], A                                       ;; 08:407d $02
     inc  DE                                            ;; 08:407e $13
 .jr_08_407f:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:407f $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:407f $fa $db $ce
     ld   H, A                                          ;; 08:4082 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4083 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:4083 $fa $da $ce
     add  A, $16                                        ;; 08:4086 $c6 $16
     ld   L, A                                          ;; 08:4088 $6f
     ld   A, [DE]                                       ;; 08:4089 $1a
@@ -88,7 +88,7 @@ data_08_4068:
     inc  DE                                            ;; 08:409f $13
     ld   A, [DE]                                       ;; 08:40a0 $1a
     ld   [HL], A                                       ;; 08:40a1 $77
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:40a2 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:40a2 $fa $da $ce
     ld   L, A                                          ;; 08:40a5 $6f
     inc  DE                                            ;; 08:40a6 $13
     ld   [HL], E                                       ;; 08:40a7 $73
@@ -103,14 +103,14 @@ data_08_40ab:
     ld   A, [DE]                                       ;; 08:40ae $1a
     ld   B, A                                          ;; 08:40af $47
     inc  DE                                            ;; 08:40b0 $13
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:40b1 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:40b1 $fa $db $ce
     ld   H, A                                          ;; 08:40b4 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:40b5 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:40b5 $fa $da $ce
     ld   L, A                                          ;; 08:40b8 $6f
     ld   [HL], E                                       ;; 08:40b9 $73
     inc  L                                             ;; 08:40ba $2c
     ld   [HL], D                                       ;; 08:40bb $72
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:40bc $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:40bc $fa $da $ce
     add  A, $06                                        ;; 08:40bf $c6 $06
     ld   L, A                                          ;; 08:40c1 $6f
     ld   [HL], C                                       ;; 08:40c2 $71
@@ -119,9 +119,9 @@ data_08_40ab:
     ret                                                ;; 08:40c5 $c9
 
 jp_08_40c6:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:40c6 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:40c6 $fa $db $ce
     ld   H, A                                          ;; 08:40c9 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:40ca $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:40ca $fa $da $ce
     add  A, $17                                        ;; 08:40cd $c6 $17
     ld   L, A                                          ;; 08:40cf $6f
     ld   A, $08                                        ;; 08:40d0 $3e $08
@@ -148,7 +148,7 @@ jp_08_40c6:
     ret                                                ;; 08:40eb $c9
 
 jp_08_40ec:
-    ld   A, [wCEE8]                                    ;; 08:40ec $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 08:40ec $fa $e8 $ce
     cp   A, $03                                        ;; 08:40ef $fe $03
     jp   Z, .jp_08_4157                                ;; 08:40f1 $ca $57 $41
     ld   A, [channelControl_4_CEEB]                    ;; 08:40f4 $fa $eb $ce
@@ -164,9 +164,9 @@ jp_08_40ec:
     ld   E, [HL]                                       ;; 08:4105 $5e
     inc  HL                                            ;; 08:4106 $23
     ld   D, [HL]                                       ;; 08:4107 $56
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:4108 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:4108 $fa $db $ce
     ld   H, A                                          ;; 08:410b $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:410c $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:410c $fa $da $ce
     add  A, $03                                        ;; 08:410f $c6 $03
     ld   L, A                                          ;; 08:4111 $6f
     ld   A, [HL]                                       ;; 08:4112 $7e
@@ -240,9 +240,9 @@ jp_08_40ec:
     add  HL, DE                                        ;; 08:4169 $19
     ld   D, H                                          ;; 08:416a $54
     ld   E, L                                          ;; 08:416b $5d
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:416c $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:416c $fa $db $ce
     ld   H, A                                          ;; 08:416f $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4170 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:4170 $fa $da $ce
     add  A, $03                                        ;; 08:4173 $c6 $03
     ld   L, A                                          ;; 08:4175 $6f
     ld   A, [HL]                                       ;; 08:4176 $7e
@@ -265,9 +265,9 @@ jp_08_40ec:
     ret                                                ;; 08:4189 $c9
 
 data_08_418a:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:418a $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:418a $fa $db $ce
     ld   H, A                                          ;; 08:418d $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:418e $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:418e $fa $da $ce
     add  A, $08                                        ;; 08:4191 $c6 $08
     ld   L, A                                          ;; 08:4193 $6f
     ld   E, [HL]                                       ;; 08:4194 $5e
@@ -283,9 +283,9 @@ data_08_418a:
     db   $81, $d8, $c8, $fe, $ef, $d0, $77, $c9        ;; 08:41ad ????????
 
 jp_08_41b5:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:41b5 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:41b5 $fa $db $ce
     ld   H, A                                          ;; 08:41b8 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:41b9 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:41b9 $fa $da $ce
     add  A, $02                                        ;; 08:41bc $c6 $02
     ld   L, A                                          ;; 08:41be $6f
     ld   B, [HL]                                       ;; 08:41bf $46
@@ -351,7 +351,7 @@ jp_08_41b5:
     ld   [HL], A                                       ;; 08:4207 $77
 .jr_08_4208:
     ld   C, $00                                        ;; 08:4208 $0e $00
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:420a $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:420a $fa $da $ce
     add  A, $0d                                        ;; 08:420d $c6 $0d
     ld   L, A                                          ;; 08:420f $6f
     ld   A, [HL]                                       ;; 08:4210 $7e
@@ -359,7 +359,7 @@ jp_08_41b5:
     jr   Z, .jr_08_4216                                ;; 08:4212 $28 $02
     ld   C, $40                                        ;; 08:4214 $0e $40
 .jr_08_4216:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4216 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:4216 $fa $da $ce
     add  A, $03                                        ;; 08:4219 $c6 $03
     ld   L, A                                          ;; 08:421b $6f
     ld   A, [HL]                                       ;; 08:421c $7e
@@ -374,7 +374,7 @@ jp_08_41b5:
     ld   [HL+], A                                      ;; 08:4227 $22
     ld   [HL+], A                                      ;; 08:4228 $22
     ld   [HL], A                                       ;; 08:4229 $77
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:422a $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:422a $fa $da $ce
     ld   L, A                                          ;; 08:422d $6f
     inc  DE                                            ;; 08:422e $13
     ld   [HL], E                                       ;; 08:422f $73
@@ -393,9 +393,9 @@ jp_08_41b5:
     db   $c9                                           ;; 08:427b ?
 
 data_08_427c:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:427c $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:427c $fa $db $ce
     ld   H, A                                          ;; 08:427f $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4280 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:4280 $fa $da $ce
     add  A, $03                                        ;; 08:4283 $c6 $03
     ld   L, A                                          ;; 08:4285 $6f
     ld   A, [HL]                                       ;; 08:4286 $7e
@@ -425,18 +425,18 @@ data_08_42a1:
     ld   L, A                                          ;; 08:42b1 $6f
     add  HL, DE                                        ;; 08:42b2 $19
     ld   E, [HL]                                       ;; 08:42b3 $5e
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:42b4 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:42b4 $fa $db $ce
     ld   H, A                                          ;; 08:42b7 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:42b8 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:42b8 $fa $da $ce
     add  A, $08                                        ;; 08:42bb $c6 $08
     ld   L, A                                          ;; 08:42bd $6f
     ld   [HL], E                                       ;; 08:42be $73
     ret                                                ;; 08:42bf $c9
 
 data_08_42c0:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:42c0 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:42c0 $fa $db $ce
     ld   H, A                                          ;; 08:42c3 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:42c4 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:42c4 $fa $da $ce
     add  A, $09                                        ;; 08:42c7 $c6 $09
     ld   L, A                                          ;; 08:42c9 $6f
     dec  [HL]                                          ;; 08:42ca $35
@@ -448,7 +448,7 @@ data_08_42c0:
     inc  L                                             ;; 08:42d1 $2c
     ld   D, [HL]                                       ;; 08:42d2 $56
 .jr_08_42d3:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:42d3 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:42d3 $fa $da $ce
     ld   L, A                                          ;; 08:42d6 $6f
     ld   [HL], E                                       ;; 08:42d7 $73
     inc  L                                             ;; 08:42d8 $2c
@@ -456,9 +456,9 @@ data_08_42c0:
     ret                                                ;; 08:42da $c9
 
 data_08_42db:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:42db $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:42db $fa $db $ce
     ld   H, A                                          ;; 08:42de $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:42df $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:42df $fa $da $ce
     ld   L, A                                          ;; 08:42e2 $6f
     ld   A, [DE]                                       ;; 08:42e3 $1a
     ld   C, A                                          ;; 08:42e4 $4f
@@ -466,7 +466,7 @@ data_08_42db:
     ld   [HL], E                                       ;; 08:42e6 $73
     inc  L                                             ;; 08:42e7 $2c
     ld   [HL], D                                       ;; 08:42e8 $72
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:42e9 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:42e9 $fa $da $ce
     add  A, $09                                        ;; 08:42ec $c6 $09
     ld   L, A                                          ;; 08:42ee $6f
     ld   [HL], C                                       ;; 08:42ef $71

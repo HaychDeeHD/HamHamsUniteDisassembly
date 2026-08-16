@@ -30,26 +30,28 @@ call_08_4405:
     ld   [HL+], A                                      ;; 08:441e $22
     dec  C                                             ;; 08:441f $0d
     jr   NZ, .jr_08_441c                               ;; 08:4420 $20 $fa
-    ld   HL, wPointerToPercussionProgramCounter_CEDA   ;; 08:4422 $21 $da $ce
-    ld   [HL], $6c                                     ;; 08:4425 $36 $6c
+    ld   HL, wPointerToCurrentChannelSongProgramCounter_CEDA ;; 08:4422 $21 $da $ce
+    ld   [HL], LOW(wChannel1ProgramCounter_CE6C) ;@=low wChannel1ProgramCounter_CE6C ;; 08:4425 $36 $6c
     inc  HL                                            ;; 08:4427 $23
-    ld   [HL], $ce                                     ;; 08:4428 $36 $ce
+    ld   [HL], HIGH(wChannel1ProgramCounter_CE6C) ;@=high wChannel1ProgramCounter_CE6C ;; 08:4428 $36 $ce
     xor  A, A                                          ;; 08:442a $af
-.jr_08_442b:
-    ld   [wCEE8], A                                    ;; 08:442b $ea $e8 $ce
+; Loops 4 times. Each channel's stuff is $1b apart.
+; Starting with CE6C
+.loopInitializingAllChannelsToPlay:
+    ld   [channelNum_CEE8], A                          ;; 08:442b $ea $e8 $ce
     call call_08_4442                                  ;; 08:442e $cd $42 $44
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4431 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:4431 $fa $da $ce
     add  A, $1b                                        ;; 08:4434 $c6 $1b
-    ld   [wPointerToPercussionProgramCounter_CEDA], A  ;; 08:4436 $ea $da $ce
-    ld   A, [wCEE8]                                    ;; 08:4439 $fa $e8 $ce
+    ld   [wPointerToCurrentChannelSongProgramCounter_CEDA], A ;; 08:4436 $ea $da $ce
+    ld   A, [channelNum_CEE8]                          ;; 08:4439 $fa $e8 $ce
     inc  A                                             ;; 08:443c $3c
     cp   A, $04                                        ;; 08:443d $fe $04
     ret  Z                                             ;; 08:443f $c8
-    jr   .jr_08_442b                                   ;; 08:4440 $18 $e9
+    jr   .loopInitializingAllChannelsToPlay            ;; 08:4440 $18 $e9
 
 call_08_4442:
     ld   HL, wCEE0                                     ;; 08:4442 $21 $e0 $ce
-    ld   A, [wCEE8]                                    ;; 08:4445 $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 08:4445 $fa $e8 $ce
     sla  A                                             ;; 08:4448 $cb $27
     add  A, L                                          ;; 08:444a $85
     ld   L, A                                          ;; 08:444b $6f
@@ -78,16 +80,16 @@ call_08_4442:
     ld   [HL], E                                       ;; 08:4464 $73
     inc  L                                             ;; 08:4465 $2c
     ld   [HL], D                                       ;; 08:4466 $72
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4467 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:4467 $fa $da $ce
     ld   L, A                                          ;; 08:446a $6f
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:446b $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:446b $fa $db $ce
     ld   H, A                                          ;; 08:446e $67
     jr   .jr_08_447f                                   ;; 08:446f $18 $0e
 .jr_08_4471:
     push HL                                            ;; 08:4471 $e5
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:4472 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:4472 $fa $db $ce
     ld   H, A                                          ;; 08:4475 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4476 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:4476 $fa $da $ce
     add  A, $03                                        ;; 08:4479 $c6 $03
     ld   L, A                                          ;; 08:447b $6f
     xor  A, A                                          ;; 08:447c $af
@@ -110,9 +112,9 @@ call_08_4442:
     jr   .jr_08_4453                                   ;; 08:448b $18 $c6
 
 call_08_448d:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:448d $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:448d $fa $db $ce
     ld   H, A                                          ;; 08:4490 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:4491 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:4491 $fa $da $ce
     ld   L, A                                          ;; 08:4494 $6f
     ld   E, [HL]                                       ;; 08:4495 $5e
     inc  L                                             ;; 08:4496 $2c
@@ -336,14 +338,14 @@ call_08_448d:
     jp   call_08_4442                                  ;; 08:46b8 $c3 $42 $44
 .data_08_46bb:
     ld   HL, wCF0A                                     ;; 08:46bb $21 $0a $cf
-    ld   A, [wCEE8]                                    ;; 08:46be $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 08:46be $fa $e8 $ce
     add  A, L                                          ;; 08:46c1 $85
     ld   L, A                                          ;; 08:46c2 $6f
     ld   A, [HL]                                       ;; 08:46c3 $7e
     and  A, A                                          ;; 08:46c4 $a7
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 08:46c5 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 08:46c5 $fa $db $ce
     ld   H, A                                          ;; 08:46c8 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 08:46c9 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 08:46c9 $fa $da $ce
     ld   L, A                                          ;; 08:46cc $6f
     jp   NZ, jp_08_40ec                                ;; 08:46cd $c2 $ec $40
     ld   A, $01                                        ;; 08:46d0 $3e $01
@@ -359,6 +361,7 @@ call_08_448d:
     jp   jp_08_41b5                                    ;; 08:46df $c3 $b5 $41
     db   $dd, $43, $6c, $ed, $46, $f1, $46, $f5        ;; 08:46e2 ????????
     db   $46, $01, $47                                 ;; 08:46ea ???
+; This gets used at initial boot.
 .data_08_46ed:
     dw   .data_08_4705                                 ;; 08:46ed pP
     db   $00, $00                                      ;; 08:46ef ..

@@ -112,9 +112,9 @@ call_0a_4405:
     ret                                                ;; 0a:44bf $c9
 
 call_0a_44c0:
-    ld   A, [wPointerToPercussionProgramCounter_CEDA.high] ;; 0a:44c0 $fa $db $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 0a:44c0 $fa $db $ce
     ld   H, A                                          ;; 0a:44c3 $67
-    ld   A, [wPointerToPercussionProgramCounter_CEDA]  ;; 0a:44c4 $fa $da $ce
+    ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 0a:44c4 $fa $da $ce
     ld   L, A                                          ;; 0a:44c7 $6f
     ld   E, [HL]                                       ;; 0a:44c8 $5e
     inc  L                                             ;; 0a:44c9 $2c
@@ -319,13 +319,13 @@ call_0a_44c0:
     xor  A, A                                          ;; 0a:46e8 $af
     ld   [BC], A                                       ;; 0a:46e9 $02
     ld   HL, wCEDC                                     ;; 0a:46ea $21 $dc $ce
-    ld   A, [wCEE8]                                    ;; 0a:46ed $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 0a:46ed $fa $e8 $ce
     add  A, L                                          ;; 0a:46f0 $85
     ld   L, A                                          ;; 0a:46f1 $6f
     xor  A, A                                          ;; 0a:46f2 $af
     ld   [HL], A                                       ;; 0a:46f3 $77
     ld   C, $11                                        ;; 0a:46f4 $0e $11
-    ld   A, [wCEE8]                                    ;; 0a:46f6 $fa $e8 $ce
+    ld   A, [channelNum_CEE8]                          ;; 0a:46f6 $fa $e8 $ce
     sub  A, $01                                        ;; 0a:46f9 $d6 $01
     jr   C, .jr_0a_470b                                ;; 0a:46fb $38 $0e
     sla  C                                             ;; 0a:46fd $cb $21
