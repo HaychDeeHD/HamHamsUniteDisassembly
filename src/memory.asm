@@ -1904,12 +1904,21 @@ wChannel1ProgramCounter_CE6C:
 .high:
     ds 1                                               ;; ce6d
 
-wCE6E:
+; 2 after program counter
+wChannel1RemainingNoteDuration_CE6E:
     ds 1                                               ;; ce6e
 
-wCE6F:
-    ds 6                                               ;; ce6f
+; 3 after program counter
+; Is $80 at the start of a note, $00 otherwise.
+; $C0 is also possible, not sure what it means, haven't observed it.
+wChannel1StrikeNote_CE6F:
+    ds 5                                               ;; ce6f
 
+; 8 after program counter
+wChannel1TotalNoteDuration_CE74:
+    ds 1                                               ;; ce74
+
+; 9 after program counter.
 wChannel1LoopCountdown_CE75:
     ds 1                                               ;; ce75
 
@@ -1925,11 +1934,14 @@ wCE81:
     ds 2                                               ;; ce81
 
 wCE83:
-    ds 2                                               ;; ce83
+    ds 1                                               ;; ce83
 
+; 0x18 after program counter
 ; CE84-5 channel 1 note?
 ; The latter one is 0 when no sound, between 04-08 otherwise.
-channelControl_1_CE85:
+channelControl_1_CE84:
+    ds 1                                               ;; ce84
+.high:
     ds 2                                               ;; ce85
 
 wChannel2ProgramCounter_CE87:
@@ -1937,12 +1949,21 @@ wChannel2ProgramCounter_CE87:
 .high:
     ds 1                                               ;; ce88
 
-wCE89:
+; 2 after program counter
+wChannel2RemainingNoteDuration_CE89:
     ds 1                                               ;; ce89
 
-wCE8A:
-    ds 6                                               ;; ce8a
+; 3 after program counter
+; Is $80 at the start of a note, $00 otherwise.
+; $C0 is also possible, not sure what it means, haven't observed it.
+wChannel2StrikeNote_wCE8A:
+    ds 5                                               ;; ce8a
 
+; 8 after program counter
+wChannel2TotalNoteDuration_CE8F:
+    ds 1                                               ;; ce8f
+
+; 9 after program counter
 wChannel2LoopCountdown_CE90:
     ds 1                                               ;; ce90
 
@@ -1958,10 +1979,13 @@ wCE9D:
     ds 1                                               ;; ce9d
 
 wCE9E:
-    ds 2                                               ;; ce9e
+    ds 1                                               ;; ce9e
 
+; 0x18 after program counter
 ; CE9F-A0 channel 2 note
-channelControl_2_CEA0:
+channelControl_2_CE9F:
+    ds 1                                               ;; ce9f
+.high:
     ds 2                                               ;; cea0
 
 wChannel3ProgramCounter_CEA2:
@@ -1969,16 +1993,22 @@ wChannel3ProgramCounter_CEA2:
 .high:
     ds 1                                               ;; cea3
 
-wCEA4:
+; 2 after program counter
+wChannel3RemainingNoteDuration_CEA4:
     ds 1                                               ;; cea4
 
-wCEA5:
+; 3 after program counter
+; Is $80 at the start of a note, $00 otherwise.
+; $C0 is also possible, not sure what it means, haven't observed it.
+wChannel3StrikeNote_CEA5:
     ds 6                                               ;; cea5
 
-wChannel1LoopCountdown_CEAB:
+; 8 after program counter
+; 9 after program counter
+wChannel3LoopCountdown_CEAB:
     ds 1                                               ;; ceab
 
-wChannel1LoopPointer_CEAC:
+wChannel3LoopPointer_CEAC:
     ds 1                                               ;; ceac
 .high:
     ds 2                                               ;; cead
@@ -1990,10 +2020,13 @@ wCEB7:
     ds 2                                               ;; ceb7
 
 wCEB9:
-    ds 2                                               ;; ceb9
+    ds 1                                               ;; ceb9
 
+; 0x18 after program counter
 ; CEBA-B channel 3 note
-channelControl_3_CEBB:
+channelControl_3_CEBA:
+    ds 1                                               ;; ceba
+.high:
     ds 2                                               ;; cebb
 
 wChannel4ProgramCounter_CEBD:
@@ -2001,12 +2034,21 @@ wChannel4ProgramCounter_CEBD:
 .high:
     ds 1                                               ;; cebe
 
-wCEBF:
+; 2 after program counter
+wChannel4RemainingNoteDuration_CEBF:
     ds 1                                               ;; cebf
 
-wCEC0:
-    ds 6                                               ;; cec0
+; 3 after program counter
+; Is $80 at the start of a note, $00 otherwise.
+; $C0 is also possible, not sure what it means, haven't observed it.
+wChannel4StrikeNote_CEC0:
+    ds 5                                               ;; cec0
 
+; 8 after program counter
+wChannel4TotalNoteDuration_CEC5:
+    ds 1                                               ;; cec5
+
+; 9 after program counter
 wChannel4LoopCountdown__CEC6:
     ds 1                                               ;; cec6
 
@@ -2022,13 +2064,19 @@ wCED3:
     ds 1                                               ;; ced3
 
 wCED4:
-    ds 2                                               ;; ced4
+    ds 1                                               ;; ced4
 
-wCED6:
+channelControl_4_CED5:
+    ds 1                                               ;; ced5
+.high:
     ds 2                                               ;; ced6
 
-wCED8:
-    ds 2                                               ;; ced8
+; Pointer to a pointer to a note duration.
+; pc + 8 comes from double dereferencing this.
+wNoteDurationPointerPointer_CED8:
+    ds 1                                               ;; ced8
+.high:
+    ds 1                                               ;; ced9
 
 wPointerToCurrentChannelSongProgramCounter_CEDA:
     ds 1                                               ;; ceda
@@ -2078,9 +2126,7 @@ channelNum_CEE8:
 wCEE9:
     ds 2                                               ;; cee9
 
-; Percussion note
-; This is probably actually shared and not chan4 specific.
-channelControl_4_CEEB:
+channelControl_CEEB:
     ds 1                                               ;; ceeb
 
 wCEEC:

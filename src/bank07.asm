@@ -18,20 +18,15 @@ call_07_4405:
     ld   E, A                                          ;; 07:4406 $5f
     ld   A, [HL+]                                      ;; 07:4407 $2a
     and  A, A                                          ;; 07:4408 $a7
-    jr   Z, .doneRegisterSetting                       ;; 07:4409 $28 $29
+    jr   Z, .jr_07_4434                                ;; 07:4409 $28 $29
     ld   D, A                                          ;; 07:440b $57
-; The bigSoundTable value got put into DE.
-; If it's nonzero,
     ld   A, [wCEDC]                                    ;; 07:440c $fa $dc $ce
-; I think B was last modified in BC = wCFxx ?
     cp   A, B                                          ;; 07:440f $b8
-; If B is not bigger than A, skip
-    jr   NC, .doneRegisterSetting                      ;; 07:4410 $30 $22
+    jr   NC, .jr_07_4434                               ;; 07:4410 $30 $22
     ld   A, B                                          ;; 07:4412 $78
     dec  A                                             ;; 07:4413 $3d
     ld   [wCEDC], A                                    ;; 07:4414 $ea $dc $ce
     ld   A, E                                          ;; 07:4417 $7b
-; CE00-1 gets DE, the value from the bigSoundTable
     ld   [wCE00], A                                    ;; 07:4418 $ea $00 $ce
     ld   A, D                                          ;; 07:441b $7a
     ld   [wCE01], A                                    ;; 07:441c $ea $01 $ce
@@ -43,22 +38,20 @@ call_07_4405:
     ld   [wCE0D], A                                    ;; 07:442c $ea $0d $ce
     ld   A, $01                                        ;; 07:442f $3e $01
     ld   [wCE09], A                                    ;; 07:4431 $ea $09 $ce
-; Read 2 more bytes from bigSoundTable, do similar thing.
-.doneRegisterSetting:
+.jr_07_4434:
     ld   A, [HL+]                                      ;; 07:4434 $2a
     ld   E, A                                          ;; 07:4435 $5f
     ld   A, [HL+]                                      ;; 07:4436 $2a
     and  A, A                                          ;; 07:4437 $a7
-    jr   Z, .doneSecondRegisterSetting                 ;; 07:4438 $28 $29
+    jr   Z, .jr_07_4463                                ;; 07:4438 $28 $29
     ld   D, A                                          ;; 07:443a $57
     ld   A, [wCEDD]                                    ;; 07:443b $fa $dd $ce
     cp   A, B                                          ;; 07:443e $b8
-    jr   NC, .doneSecondRegisterSetting                ;; 07:443f $30 $22
+    jr   NC, .jr_07_4463                               ;; 07:443f $30 $22
     ld   A, B                                          ;; 07:4441 $78
     dec  A                                             ;; 07:4442 $3d
     ld   [wCEDD], A                                    ;; 07:4443 $ea $dd $ce
     ld   A, E                                          ;; 07:4446 $7b
-; CE1B-C gets DE, the second value from the bigSoundTable
     ld   [wCE1B], A                                    ;; 07:4447 $ea $1b $ce
     ld   A, D                                          ;; 07:444a $7a
     ld   [wCE1C], A                                    ;; 07:444b $ea $1c $ce
@@ -70,22 +63,20 @@ call_07_4405:
     ld   [wCE28], A                                    ;; 07:445b $ea $28 $ce
     ld   A, $01                                        ;; 07:445e $3e $01
     ld   [wCE24], A                                    ;; 07:4460 $ea $24 $ce
-; Same deal a third time.
-.doneSecondRegisterSetting:
+.jr_07_4463:
     ld   A, [HL+]                                      ;; 07:4463 $2a
     ld   E, A                                          ;; 07:4464 $5f
     ld   A, [HL+]                                      ;; 07:4465 $2a
     and  A, A                                          ;; 07:4466 $a7
-    jr   Z, doneThirdRegisterSetting                   ;; 07:4467 $28 $29
+    jr   Z, jr_07_4492                                 ;; 07:4467 $28 $29
     ld   D, A                                          ;; 07:4469 $57
     ld   A, [wCEDE]                                    ;; 07:446a $fa $de $ce
     cp   A, B                                          ;; 07:446d $b8
-    jr   NC, doneThirdRegisterSetting                  ;; 07:446e $30 $22
+    jr   NC, jr_07_4492                                ;; 07:446e $30 $22
     ld   A, B                                          ;; 07:4470 $78
     dec  A                                             ;; 07:4471 $3d
     ld   [wCEDE], A                                    ;; 07:4472 $ea $de $ce
     ld   A, E                                          ;; 07:4475 $7b
-; CE36-7 gets DE, the third value from the bigSoundTable
     ld   [wCE36], A                                    ;; 07:4476 $ea $36 $ce
     ld   A, D                                          ;; 07:4479 $7a
     ld   [wCE37], A                                    ;; 07:447a $ea $37 $ce
@@ -100,8 +91,7 @@ call_07_448d:
     ld   A, $01                                        ;; 07:448d $3e $01
     ld   [wCE3F], A                                    ;; 07:448f $ea $3f $ce
 
-; It's happening a 4th time, then return.
-doneThirdRegisterSetting:
+jr_07_4492:
     ld   A, [HL+]                                      ;; 07:4492 $2a
     ld   E, A                                          ;; 07:4493 $5f
     ld   A, [HL+]                                      ;; 07:4494 $2a
@@ -115,7 +105,6 @@ doneThirdRegisterSetting:
     dec  A                                             ;; 07:449e $3d
     ld   [wCEDF], A                                    ;; 07:449f $ea $df $ce
     ld   A, E                                          ;; 07:44a2 $7b
-; CE51-2 gets DE, the 4th value from the bigSoundTable
     ld   [wCE51], A                                    ;; 07:44a3 $ea $51 $ce
     ld   A, D                                          ;; 07:44a6 $7a
     ld   [wCE52], A                                    ;; 07:44a7 $ea $52 $ce
@@ -136,7 +125,7 @@ doneThirdRegisterSetting:
 ; Jumps using jumptable using new channelControl value as index.
 ; Example:
 ; CEDA-B holds $CEBD. CEBD-E holds $47D0. $47D0 holds some note value in a sequence.
-processChan4Note:
+processNote:
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:44c0 $fa $db $ce
     ld   H, A                                          ;; 07:44c3 $67
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:44c4 $fa $da $ce
@@ -145,7 +134,7 @@ processChan4Note:
     inc  L                                             ;; 07:44c9 $2c
     ld   D, [HL]                                       ;; 07:44ca $56
     ld   A, [DE]                                       ;; 07:44cb $1a
-    ld   [channelControl_4_CEEB], A                    ;; 07:44cc $ea $eb $ce
+    ld   [channelControl_CEEB], A                      ;; 07:44cc $ea $eb $ce
     inc  DE                                            ;; 07:44cf $13
     ld   [HL], D                                       ;; 07:44d0 $72
     dec  L                                             ;; 07:44d1 $2d
@@ -172,176 +161,176 @@ processChan4Note:
 .chan4Jumptable:
     dw   soundOp_00                                    ;; 07:44e5 ?? $00
     dw   soundOp_01                                    ;; 07:44e7 ?? $01
-    dw   soundOp_02thruAB                              ;; 07:44e9 ?? $02
-    dw   soundOp_02thruAB                              ;; 07:44eb ?? $03
-    dw   soundOp_02thruAB                              ;; 07:44ed ?? $04
-    dw   soundOp_02thruAB                              ;; 07:44ef ?? $05
-    dw   soundOp_02thruAB                              ;; 07:44f1 ?? $06
-    dw   soundOp_02thruAB                              ;; 07:44f3 ?? $07
-    dw   soundOp_02thruAB                              ;; 07:44f5 ?? $08
-    dw   soundOp_02thruAB                              ;; 07:44f7 ?? $09
-    dw   soundOp_02thruAB                              ;; 07:44f9 ?? $0a
-    dw   soundOp_02thruAB                              ;; 07:44fb ?? $0b
-    dw   soundOp_02thruAB                              ;; 07:44fd ?? $0c
-    dw   soundOp_02thruAB                              ;; 07:44ff ?? $0d
-    dw   soundOp_02thruAB                              ;; 07:4501 ?? $0e
-    dw   soundOp_02thruAB                              ;; 07:4503 ?? $0f
-    dw   soundOp_02thruAB                              ;; 07:4505 ?? $10
-    dw   soundOp_02thruAB                              ;; 07:4507 ?? $11
-    dw   soundOp_02thruAB                              ;; 07:4509 ?? $12
-    dw   soundOp_02thruAB                              ;; 07:450b ?? $13
-    dw   soundOp_02thruAB                              ;; 07:450d ?? $14
-    dw   soundOp_02thruAB                              ;; 07:450f ?? $15
-    dw   soundOp_02thruAB                              ;; 07:4511 ?? $16
-    dw   soundOp_02thruAB                              ;; 07:4513 ?? $17
-    dw   soundOp_02thruAB                              ;; 07:4515 ?? $18
-    dw   soundOp_02thruAB                              ;; 07:4517 ?? $19
-    dw   soundOp_02thruAB                              ;; 07:4519 ?? $1a
-    dw   soundOp_02thruAB                              ;; 07:451b ?? $1b
-    dw   soundOp_02thruAB                              ;; 07:451d ?? $1c
-    dw   soundOp_02thruAB                              ;; 07:451f ?? $1d
-    dw   soundOp_02thruAB                              ;; 07:4521 ?? $1e
-    dw   soundOp_02thruAB                              ;; 07:4523 ?? $1f
-    dw   soundOp_02thruAB                              ;; 07:4525 ?? $20
-    dw   soundOp_02thruAB                              ;; 07:4527 ?? $21
-    dw   soundOp_02thruAB                              ;; 07:4529 ?? $22
-    dw   soundOp_02thruAB                              ;; 07:452b ?? $23
-    dw   soundOp_02thruAB                              ;; 07:452d ?? $24
-    dw   soundOp_02thruAB                              ;; 07:452f ?? $25
-    dw   soundOp_02thruAB                              ;; 07:4531 ?? $26
-    dw   soundOp_02thruAB                              ;; 07:4533 ?? $27
-    dw   soundOp_02thruAB                              ;; 07:4535 ?? $28
-    dw   soundOp_02thruAB                              ;; 07:4537 ?? $29
-    dw   soundOp_02thruAB                              ;; 07:4539 ?? $2a
-    dw   soundOp_02thruAB                              ;; 07:453b ?? $2b
-    dw   soundOp_02thruAB                              ;; 07:453d ?? $2c
-    dw   soundOp_02thruAB                              ;; 07:453f ?? $2d
-    dw   soundOp_02thruAB                              ;; 07:4541 ?? $2e
-    dw   soundOp_02thruAB                              ;; 07:4543 ?? $2f
-    dw   soundOp_02thruAB                              ;; 07:4545 ?? $30
-    dw   soundOp_02thruAB                              ;; 07:4547 ?? $31
-    dw   soundOp_02thruAB                              ;; 07:4549 ?? $32
-    dw   soundOp_02thruAB                              ;; 07:454b ?? $33
-    dw   soundOp_02thruAB                              ;; 07:454d ?? $34
-    dw   soundOp_02thruAB                              ;; 07:454f ?? $35
-    dw   soundOp_02thruAB                              ;; 07:4551 ?? $36
-    dw   soundOp_02thruAB                              ;; 07:4553 ?? $37
-    dw   soundOp_02thruAB                              ;; 07:4555 ?? $38
-    dw   soundOp_02thruAB                              ;; 07:4557 ?? $39
-    dw   soundOp_02thruAB                              ;; 07:4559 ?? $3a
-    dw   soundOp_02thruAB                              ;; 07:455b ?? $3b
-    dw   soundOp_02thruAB                              ;; 07:455d ?? $3c
-    dw   soundOp_02thruAB                              ;; 07:455f ?? $3d
-    dw   soundOp_02thruAB                              ;; 07:4561 ?? $3e
-    dw   soundOp_02thruAB                              ;; 07:4563 ?? $3f
-    dw   soundOp_02thruAB                              ;; 07:4565 ?? $40
-    dw   soundOp_02thruAB                              ;; 07:4567 ?? $41
-    dw   soundOp_02thruAB                              ;; 07:4569 ?? $42
-    dw   soundOp_02thruAB                              ;; 07:456b ?? $43
-    dw   soundOp_02thruAB                              ;; 07:456d ?? $44
-    dw   soundOp_02thruAB                              ;; 07:456f ?? $45
-    dw   soundOp_02thruAB                              ;; 07:4571 ?? $46
-    dw   soundOp_02thruAB                              ;; 07:4573 ?? $47
-    dw   soundOp_02thruAB                              ;; 07:4575 ?? $48
-    dw   soundOp_02thruAB                              ;; 07:4577 ?? $49
-    dw   soundOp_02thruAB                              ;; 07:4579 ?? $4a
-    dw   soundOp_02thruAB                              ;; 07:457b ?? $4b
-    dw   soundOp_02thruAB                              ;; 07:457d ?? $4c
-    dw   soundOp_02thruAB                              ;; 07:457f ?? $4d
-    dw   soundOp_02thruAB                              ;; 07:4581 ?? $4e
-    dw   soundOp_02thruAB                              ;; 07:4583 ?? $4f
-    dw   soundOp_02thruAB                              ;; 07:4585 ?? $50
-    dw   soundOp_02thruAB                              ;; 07:4587 ?? $51
-    dw   soundOp_02thruAB                              ;; 07:4589 ?? $52
-    dw   soundOp_02thruAB                              ;; 07:458b ?? $53
-    dw   soundOp_02thruAB                              ;; 07:458d ?? $54
-    dw   soundOp_02thruAB                              ;; 07:458f ?? $55
-    dw   soundOp_02thruAB                              ;; 07:4591 ?? $56
-    dw   soundOp_02thruAB                              ;; 07:4593 ?? $57
-    dw   soundOp_02thruAB                              ;; 07:4595 ?? $58
-    dw   soundOp_02thruAB                              ;; 07:4597 ?? $59
-    dw   soundOp_02thruAB                              ;; 07:4599 ?? $5a
-    dw   soundOp_02thruAB                              ;; 07:459b ?? $5b
-    dw   soundOp_02thruAB                              ;; 07:459d ?? $5c
-    dw   soundOp_02thruAB                              ;; 07:459f ?? $5d
-    dw   soundOp_02thruAB                              ;; 07:45a1 ?? $5e
-    dw   soundOp_02thruAB                              ;; 07:45a3 ?? $5f
-    dw   soundOp_02thruAB                              ;; 07:45a5 ?? $60
-    dw   soundOp_02thruAB                              ;; 07:45a7 ?? $61
-    dw   soundOp_02thruAB                              ;; 07:45a9 ?? $62
-    dw   soundOp_02thruAB                              ;; 07:45ab ?? $63
-    dw   soundOp_02thruAB                              ;; 07:45ad ?? $64
-    dw   soundOp_02thruAB                              ;; 07:45af ?? $65
-    dw   soundOp_02thruAB                              ;; 07:45b1 ?? $66
-    dw   soundOp_02thruAB                              ;; 07:45b3 ?? $67
-    dw   soundOp_02thruAB                              ;; 07:45b5 ?? $68
-    dw   soundOp_02thruAB                              ;; 07:45b7 ?? $69
-    dw   soundOp_02thruAB                              ;; 07:45b9 ?? $6a
-    dw   soundOp_02thruAB                              ;; 07:45bb ?? $6b
-    dw   soundOp_02thruAB                              ;; 07:45bd ?? $6c
-    dw   soundOp_02thruAB                              ;; 07:45bf ?? $6d
-    dw   soundOp_02thruAB                              ;; 07:45c1 ?? $6e
-    dw   soundOp_02thruAB                              ;; 07:45c3 ?? $6f
-    dw   soundOp_02thruAB                              ;; 07:45c5 ?? $70
-    dw   soundOp_02thruAB                              ;; 07:45c7 ?? $71
-    dw   soundOp_02thruAB                              ;; 07:45c9 ?? $72
-    dw   soundOp_02thruAB                              ;; 07:45cb ?? $73
-    dw   soundOp_02thruAB                              ;; 07:45cd ?? $74
-    dw   soundOp_02thruAB                              ;; 07:45cf ?? $75
-    dw   soundOp_02thruAB                              ;; 07:45d1 ?? $76
-    dw   soundOp_02thruAB                              ;; 07:45d3 ?? $77
-    dw   soundOp_02thruAB                              ;; 07:45d5 ?? $78
-    dw   soundOp_02thruAB                              ;; 07:45d7 ?? $79
-    dw   soundOp_02thruAB                              ;; 07:45d9 ?? $7a
-    dw   soundOp_02thruAB                              ;; 07:45db ?? $7b
-    dw   soundOp_02thruAB                              ;; 07:45dd ?? $7c
-    dw   soundOp_02thruAB                              ;; 07:45df ?? $7d
-    dw   soundOp_02thruAB                              ;; 07:45e1 ?? $7e
-    dw   soundOp_02thruAB                              ;; 07:45e3 ?? $7f
-    dw   soundOp_02thruAB                              ;; 07:45e5 ?? $80
-    dw   soundOp_02thruAB                              ;; 07:45e7 ?? $81
-    dw   soundOp_02thruAB                              ;; 07:45e9 ?? $82
-    dw   soundOp_02thruAB                              ;; 07:45eb ?? $83
-    dw   soundOp_02thruAB                              ;; 07:45ed ?? $84
-    dw   soundOp_02thruAB                              ;; 07:45ef ?? $85
-    dw   soundOp_02thruAB                              ;; 07:45f1 ?? $86
-    dw   soundOp_02thruAB                              ;; 07:45f3 ?? $87
-    dw   soundOp_02thruAB                              ;; 07:45f5 ?? $88
-    dw   soundOp_02thruAB                              ;; 07:45f7 ?? $89
-    dw   soundOp_02thruAB                              ;; 07:45f9 ?? $8a
-    dw   soundOp_02thruAB                              ;; 07:45fb ?? $8b
-    dw   soundOp_02thruAB                              ;; 07:45fd ?? $8c
-    dw   soundOp_02thruAB                              ;; 07:45ff ?? $8d
-    dw   soundOp_02thruAB                              ;; 07:4601 ?? $8e
-    dw   soundOp_02thruAB                              ;; 07:4603 ?? $8f
-    dw   soundOp_02thruAB                              ;; 07:4605 ?? $90
-    dw   soundOp_02thruAB                              ;; 07:4607 ?? $91
-    dw   soundOp_02thruAB                              ;; 07:4609 ?? $92
-    dw   soundOp_02thruAB                              ;; 07:460b ?? $93
-    dw   soundOp_02thruAB                              ;; 07:460d ?? $94
-    dw   soundOp_02thruAB                              ;; 07:460f ?? $95
-    dw   soundOp_02thruAB                              ;; 07:4611 ?? $96
-    dw   soundOp_02thruAB                              ;; 07:4613 ?? $97
-    dw   soundOp_02thruAB                              ;; 07:4615 ?? $98
-    dw   soundOp_02thruAB                              ;; 07:4617 ?? $99
-    dw   soundOp_02thruAB                              ;; 07:4619 ?? $9a
-    dw   soundOp_02thruAB                              ;; 07:461b ?? $9b
-    dw   soundOp_02thruAB                              ;; 07:461d ?? $9c
-    dw   soundOp_02thruAB                              ;; 07:461f ?? $9d
-    dw   soundOp_02thruAB                              ;; 07:4621 ?? $9e
-    dw   soundOp_02thruAB                              ;; 07:4623 ?? $9f
-    dw   soundOp_02thruAB                              ;; 07:4625 ?? $a0
-    dw   soundOp_02thruAB                              ;; 07:4627 ?? $a1
-    dw   soundOp_02thruAB                              ;; 07:4629 ?? $a2
-    dw   soundOp_02thruAB                              ;; 07:462b ?? $a3
-    dw   soundOp_02thruAB                              ;; 07:462d ?? $a4
-    dw   soundOp_02thruAB                              ;; 07:462f ?? $a5
-    dw   soundOp_02thruAB                              ;; 07:4631 ?? $a6
-    dw   soundOp_02thruAB                              ;; 07:4633 ?? $a7
-    dw   soundOp_02thruAB                              ;; 07:4635 ?? $a8
-    dw   soundOp_02thruAB                              ;; 07:4637 ?? $a9
-    dw   soundOp_02thruAB                              ;; 07:4639 ?? $aa
-    dw   soundOp_02thruAB                              ;; 07:463b ?? $ab
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44e9 ?? $02
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44eb ?? $03
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44ed ?? $04
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44ef ?? $05
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44f1 ?? $06
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44f3 ?? $07
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44f5 ?? $08
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44f7 ?? $09
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44f9 ?? $0a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44fb ?? $0b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44fd ?? $0c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:44ff ?? $0d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4501 ?? $0e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4503 ?? $0f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4505 ?? $10
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4507 ?? $11
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4509 ?? $12
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:450b ?? $13
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:450d ?? $14
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:450f ?? $15
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4511 ?? $16
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4513 ?? $17
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4515 ?? $18
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4517 ?? $19
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4519 ?? $1a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:451b ?? $1b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:451d ?? $1c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:451f ?? $1d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4521 ?? $1e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4523 ?? $1f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4525 ?? $20
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4527 ?? $21
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4529 ?? $22
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:452b ?? $23
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:452d ?? $24
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:452f ?? $25
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4531 ?? $26
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4533 ?? $27
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4535 ?? $28
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4537 ?? $29
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4539 ?? $2a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:453b ?? $2b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:453d ?? $2c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:453f ?? $2d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4541 ?? $2e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4543 ?? $2f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4545 ?? $30
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4547 ?? $31
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4549 ?? $32
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:454b ?? $33
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:454d ?? $34
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:454f ?? $35
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4551 ?? $36
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4553 ?? $37
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4555 ?? $38
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4557 ?? $39
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4559 ?? $3a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:455b ?? $3b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:455d ?? $3c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:455f ?? $3d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4561 ?? $3e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4563 ?? $3f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4565 ?? $40
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4567 ?? $41
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4569 ?? $42
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:456b ?? $43
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:456d ?? $44
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:456f ?? $45
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4571 ?? $46
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4573 ?? $47
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4575 ?? $48
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4577 ?? $49
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4579 ?? $4a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:457b ?? $4b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:457d ?? $4c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:457f ?? $4d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4581 ?? $4e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4583 ?? $4f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4585 ?? $50
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4587 ?? $51
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4589 ?? $52
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:458b ?? $53
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:458d ?? $54
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:458f ?? $55
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4591 ?? $56
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4593 ?? $57
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4595 ?? $58
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4597 ?? $59
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4599 ?? $5a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:459b ?? $5b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:459d ?? $5c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:459f ?? $5d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45a1 ?? $5e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45a3 ?? $5f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45a5 ?? $60
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45a7 ?? $61
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45a9 ?? $62
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45ab ?? $63
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45ad ?? $64
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45af ?? $65
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45b1 ?? $66
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45b3 ?? $67
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45b5 ?? $68
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45b7 ?? $69
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45b9 ?? $6a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45bb ?? $6b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45bd ?? $6c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45bf ?? $6d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45c1 ?? $6e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45c3 ?? $6f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45c5 ?? $70
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45c7 ?? $71
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45c9 ?? $72
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45cb ?? $73
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45cd ?? $74
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45cf ?? $75
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45d1 ?? $76
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45d3 ?? $77
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45d5 ?? $78
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45d7 ?? $79
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45d9 ?? $7a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45db ?? $7b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45dd ?? $7c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45df ?? $7d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45e1 ?? $7e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45e3 ?? $7f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45e5 ?? $80
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45e7 ?? $81
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45e9 ?? $82
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45eb ?? $83
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45ed ?? $84
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45ef ?? $85
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45f1 ?? $86
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45f3 ?? $87
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45f5 ?? $88
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45f7 ?? $89
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45f9 ?? $8a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45fb ?? $8b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45fd ?? $8c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:45ff ?? $8d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4601 ?? $8e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4603 ?? $8f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4605 ?? $90
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4607 ?? $91
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4609 ?? $92
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:460b ?? $93
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:460d ?? $94
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:460f ?? $95
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4611 ?? $96
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4613 ?? $97
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4615 ?? $98
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4617 ?? $99
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4619 ?? $9a
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:461b ?? $9b
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:461d ?? $9c
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:461f ?? $9d
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4621 ?? $9e
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4623 ?? $9f
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4625 ?? $a0
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4627 ?? $a1
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4629 ?? $a2
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:462b ?? $a3
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:462d ?? $a4
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:462f ?? $a5
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4631 ?? $a6
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4633 ?? $a7
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4635 ?? $a8
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4637 ?? $a9
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:4639 ?? $aa
+    dw   soundOp_02thruAB_basicPlayNote                ;; 07:463b ?? $ab
     dw   hang_46E5                                     ;; 07:463d ?? $ac
     dw   hang_46E5                                     ;; 07:463f ?? $ad
     dw   hang_46E5                                     ;; 07:4641 ?? $ae
@@ -372,36 +361,36 @@ processChan4Note:
     dw   hang_46E5                                     ;; 07:4673 ?? $c7
     dw   hang_46E5                                     ;; 07:4675 ?? $c8
     dw   hang_46E5                                     ;; 07:4677 ?? $c9
-    dw   soundOp_CAthruCF                              ;; 07:4679 ?? $ca
-    dw   soundOp_CAthruCF                              ;; 07:467b ?? $cb
-    dw   soundOp_CAthruCF                              ;; 07:467d ?? $cc
-    dw   soundOp_CAthruCF                              ;; 07:467f ?? $cd
-    dw   soundOp_CAthruCF                              ;; 07:4681 ?? $ce
-    dw   soundOp_CAthruCF                              ;; 07:4683 ?? $cf
-    dw   soundOp_D0thruE7                              ;; 07:4685 ?? $d0
-    dw   soundOp_D0thruE7                              ;; 07:4687 ?? $d1
-    dw   soundOp_D0thruE7                              ;; 07:4689 ?? $d2
-    dw   soundOp_D0thruE7                              ;; 07:468b ?? $d3
-    dw   soundOp_D0thruE7                              ;; 07:468d ?? $d4
-    dw   soundOp_D0thruE7                              ;; 07:468f ?? $d5
-    dw   soundOp_D0thruE7                              ;; 07:4691 ?? $d6
-    dw   soundOp_D0thruE7                              ;; 07:4693 ?? $d7
-    dw   soundOp_D0thruE7                              ;; 07:4695 ?? $d8
-    dw   soundOp_D0thruE7                              ;; 07:4697 ?? $d9
-    dw   soundOp_D0thruE7                              ;; 07:4699 ?? $da
-    dw   soundOp_D0thruE7                              ;; 07:469b ?? $db
-    dw   soundOp_D0thruE7                              ;; 07:469d ?? $dc
-    dw   soundOp_D0thruE7                              ;; 07:469f ?? $dd
-    dw   soundOp_D0thruE7                              ;; 07:46a1 ?? $de
-    dw   soundOp_D0thruE7                              ;; 07:46a3 ?? $df
-    dw   soundOp_D0thruE7                              ;; 07:46a5 ?? $e0
-    dw   soundOp_D0thruE7                              ;; 07:46a7 ?? $e1
-    dw   soundOp_D0thruE7                              ;; 07:46a9 ?? $e2
-    dw   soundOp_D0thruE7                              ;; 07:46ab ?? $e3
-    dw   soundOp_D0thruE7                              ;; 07:46ad ?? $e4
-    dw   soundOp_D0thruE7                              ;; 07:46af ?? $e5
-    dw   soundOp_D0thruE7                              ;; 07:46b1 ?? $e6
-    dw   soundOp_D0thruE7                              ;; 07:46b3 ?? $e7
+    dw   soundOp_CAthruCF_restOrHold                   ;; 07:4679 ?? $ca
+    dw   soundOp_CAthruCF_restOrHold                   ;; 07:467b ?? $cb
+    dw   soundOp_CAthruCF_restOrHold                   ;; 07:467d ?? $cc
+    dw   soundOp_CAthruCF_restOrHold                   ;; 07:467f ?? $cd
+    dw   soundOp_CAthruCF_restOrHold                   ;; 07:4681 ?? $ce
+    dw   soundOp_CAthruCF_restOrHold                   ;; 07:4683 ?? $cf
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:4685 ?? $d0
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:4687 ?? $d1
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:4689 ?? $d2
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:468b ?? $d3
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:468d ?? $d4
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:468f ?? $d5
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:4691 ?? $d6
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:4693 ?? $d7
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:4695 ?? $d8
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:4697 ?? $d9
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:4699 ?? $da
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:469b ?? $db
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:469d ?? $dc
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:469f ?? $dd
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46a1 ?? $de
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46a3 ?? $df
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46a5 ?? $e0
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46a7 ?? $e1
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46a9 ?? $e2
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46ab ?? $e3
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46ad ?? $e4
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46af ?? $e5
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46b1 ?? $e6
+    dw   soundOp_D0thruE7_obtainNewNoteDuration        ;; 07:46b3 ?? $e7
     dw   hang_46E5                                     ;; 07:46b5 ?? $e8
     dw   hang_46E5                                     ;; 07:46b7 ?? $e9
     dw   hang_46E5                                     ;; 07:46b9 ?? $ea
@@ -460,10 +449,11 @@ soundOp_00:
     ld   [w_rNR51Value_CF14], A                        ;; 07:4712 $ea $15 $cf
     ret                                                ;; 07:4715 $c9
 
-soundOp_02thruAB:
+soundOp_02thruAB_basicPlayNote:
     ld   A, $02                                        ;; 07:4716 $3e $02
+; Writing to [BC] is instr/arg length?
     ld   [BC], A                                       ;; 07:4718 $02
-    jp   jp_07_40ec                                    ;; 07:4719 $c3 $ec $40
+    jp   basicPlayNote                                 ;; 07:4719 $c3 $ec $40
 
 ; Dereferences the CurrentChannelSongProgramCounterPointer to the CurrentChannelSongProgramCounter ram address.
 ; DE is still the CurrentChannelSongProgramCounter's updated value from earlier note processing. (Rom address of next note.)
@@ -513,7 +503,7 @@ soundOp_01:
 soundOp_F0:
     ld   A, $02                                        ;; 07:473f $3e $02
     ld   [BC], A                                       ;; 07:4741 $02
-    jp   jp_07_41b5                                    ;; 07:4742 $c3 $b5 $41
+    jp   handleOpF0                                    ;; 07:4742 $c3 $b5 $41
 
 data_07_4745:
     db   $75, $47, $75, $47, $75, $47, $75, $47        ;; 07:4745 ????????
@@ -1617,7 +1607,7 @@ data_07_5a8d:
 
 ; Responsible for reading audio control registers CFF0-9
 call_07_5b0c:
-    ld   HL, wCED8                                     ;; 07:5b0c $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 07:5b0c $21 $d8 $ce
 ; Write $12 to CED8
     ld   [HL], $12                                     ;; 07:5b0f $36 $12
     inc  L                                             ;; 07:5b11 $2c
@@ -1836,7 +1826,7 @@ call_07_5c20:
     ld   [soundBankToUseCF01], A                       ;; 07:5c57 $ea $01 $cf
     xor  A, A                                          ;; 07:5c5a $af
     ld   [wSongToPlay], A                              ;; 07:5c5b $ea $f9 $cf
-    ld   HL, wCED8                                     ;; 07:5c5e $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 07:5c5e $21 $d8 $ce
     ld   [HL], $19                                     ;; 07:5c61 $36 $19
     inc  L                                             ;; 07:5c63 $2c
     ld   [HL], $cf                                     ;; 07:5c64 $36 $cf
@@ -1857,7 +1847,7 @@ call_07_5c20:
     ld   A, [wCurrentlyPlayingSong]                    ;; 07:5c7e $fa $fa $cf
     and  A, A                                          ;; 07:5c81 $a7
     ret  Z                                             ;; 07:5c82 $c8
-    ld   HL, wCED8                                     ;; 07:5c83 $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 07:5c83 $21 $d8 $ce
     ld   [HL], $19                                     ;; 07:5c86 $36 $19
     inc  L                                             ;; 07:5c88 $2c
     ld   [HL], $cf                                     ;; 07:5c89 $36 $cf
@@ -1904,7 +1894,7 @@ call_07_5c20:
     ld   [HL], $6c                                     ;; 07:5ccd $36 $6c
     inc  HL                                            ;; 07:5ccf $23
     ld   [HL], $ce                                     ;; 07:5cd0 $36 $ce
-    ld   HL, wCE6E                                     ;; 07:5cd2 $21 $6e $ce
+    ld   HL, wChannel1RemainingNoteDuration_CE6E       ;; 07:5cd2 $21 $6e $ce
     ld   BC, wCF0E                                     ;; 07:5cd5 $01 $0e $cf
     jr   .jr_07_5d13                                   ;; 07:5cd8 $18 $39
 .jr_07_5cda:
@@ -1914,7 +1904,7 @@ call_07_5c20:
     ld   [HL], $87                                     ;; 07:5ce1 $36 $87
     inc  HL                                            ;; 07:5ce3 $23
     ld   [HL], $ce                                     ;; 07:5ce4 $36 $ce
-    ld   HL, wCE89                                     ;; 07:5ce6 $21 $89 $ce
+    ld   HL, wChannel2RemainingNoteDuration_CE89       ;; 07:5ce6 $21 $89 $ce
     ld   BC, wCF0F                                     ;; 07:5ce9 $01 $0f $cf
     jr   .jr_07_5d13                                   ;; 07:5cec $18 $25
 .jr_07_5cee:
@@ -1924,7 +1914,7 @@ call_07_5c20:
     ld   [HL], $a2                                     ;; 07:5cf5 $36 $a2
     inc  HL                                            ;; 07:5cf7 $23
     ld   [HL], $ce                                     ;; 07:5cf8 $36 $ce
-    ld   HL, wCEA4                                     ;; 07:5cfa $21 $a4 $ce
+    ld   HL, wChannel3RemainingNoteDuration_CEA4       ;; 07:5cfa $21 $a4 $ce
     ld   BC, wCF10                                     ;; 07:5cfd $01 $10 $cf
     jr   .jr_07_5d13                                   ;; 07:5d00 $18 $11
 .jr_07_5d02:
@@ -1934,7 +1924,7 @@ call_07_5c20:
     ld   [HL], $bd                                     ;; 07:5d08 $36 $bd
     inc  HL                                            ;; 07:5d0a $23
     ld   [HL], $ce                                     ;; 07:5d0b $36 $ce
-    ld   HL, wCEBF                                     ;; 07:5d0d $21 $bf $ce
+    ld   HL, wChannel4RemainingNoteDuration_CEBF       ;; 07:5d0d $21 $bf $ce
     ld   BC, wCF11                                     ;; 07:5d10 $01 $11 $cf
 .jr_07_5d13:
     ld   A, [HL]                                       ;; 07:5d13 $7e
@@ -2000,10 +1990,10 @@ call_07_5d63:
     ld   [wCED4], A                                    ;; 07:5d6f $ea $d4 $ce
     ld   A, $80                                        ;; 07:5d72 $3e $80
     ld   [wCEB7], A                                    ;; 07:5d74 $ea $b7 $ce
-    ld   [channelControl_1_CE85], A                    ;; 07:5d77 $ea $85 $ce
-    ld   [channelControl_2_CEA0], A                    ;; 07:5d7a $ea $a0 $ce
-    ld   [channelControl_3_CEBB], A                    ;; 07:5d7d $ea $bb $ce
-    ld   [wCED6], A                                    ;; 07:5d80 $ea $d6 $ce
+    ld   [channelControl_1_CE84.high], A               ;; 07:5d77 $ea $85 $ce
+    ld   [channelControl_2_CE9F.high], A               ;; 07:5d7a $ea $a0 $ce
+    ld   [channelControl_3_CEBA.high], A               ;; 07:5d7d $ea $bb $ce
+    ld   [channelControl_4_CED5.high], A               ;; 07:5d80 $ea $d6 $ce
     xor  A, A                                          ;; 07:5d83 $af
     ld   [wChannel1ProgramCounter_CE6C], A             ;; 07:5d84 $ea $6c $ce
     ld   [wChannel1ProgramCounter_CE6C.high], A        ;; 07:5d87 $ea $6d $ce
@@ -2013,14 +2003,14 @@ call_07_5d63:
     ld   [wChannel3ProgramCounter_CEA2.high], A        ;; 07:5d93 $ea $a3 $ce
     ld   [wChannel4ProgramCounter_CEBD], A             ;; 07:5d96 $ea $bd $ce
     ld   [wChannel4ProgramCounter_CEBD.high], A        ;; 07:5d99 $ea $be $ce
-    ld   [wCE6E], A                                    ;; 07:5d9c $ea $6e $ce
-    ld   [wCE89], A                                    ;; 07:5d9f $ea $89 $ce
-    ld   [wCEA4], A                                    ;; 07:5da2 $ea $a4 $ce
-    ld   [wCEBF], A                                    ;; 07:5da5 $ea $bf $ce
-    ld   [wCE6F], A                                    ;; 07:5da8 $ea $6f $ce
-    ld   [wCE8A], A                                    ;; 07:5dab $ea $8a $ce
-    ld   [wCEA5], A                                    ;; 07:5dae $ea $a5 $ce
-    ld   [wCEC0], A                                    ;; 07:5db1 $ea $c0 $ce
+    ld   [wChannel1RemainingNoteDuration_CE6E], A      ;; 07:5d9c $ea $6e $ce
+    ld   [wChannel2RemainingNoteDuration_CE89], A      ;; 07:5d9f $ea $89 $ce
+    ld   [wChannel3RemainingNoteDuration_CEA4], A      ;; 07:5da2 $ea $a4 $ce
+    ld   [wChannel4RemainingNoteDuration_CEBF], A      ;; 07:5da5 $ea $bf $ce
+    ld   [wChannel1StrikeNote_CE6F], A                 ;; 07:5da8 $ea $6f $ce
+    ld   [wChannel2StrikeNote_wCE8A], A                ;; 07:5dab $ea $8a $ce
+    ld   [wChannel3StrikeNote_CEA5], A                 ;; 07:5dae $ea $a5 $ce
+    ld   [wChannel4StrikeNote_CEC0], A                 ;; 07:5db1 $ea $c0 $ce
     ld   [wCE79], A                                    ;; 07:5db4 $ea $79 $ce
     ld   [wCE94], A                                    ;; 07:5db7 $ea $94 $ce
     ld   [wCEAF], A                                    ;; 07:5dba $ea $af $ce
@@ -2290,7 +2280,7 @@ call_07_5efe:
     cp   A, $02                                        ;; 07:5f25 $fe $02
     jr   NZ, .jr_07_5f3f                               ;; 07:5f27 $20 $16
     push HL                                            ;; 07:5f29 $e5
-    ld   HL, wCED8                                     ;; 07:5f2a $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 07:5f2a $21 $d8 $ce
     ld   A, [HL+]                                      ;; 07:5f2d $2a
     ld   D, [HL]                                       ;; 07:5f2e $56
     ld   E, $05                                        ;; 07:5f2f $1e $05

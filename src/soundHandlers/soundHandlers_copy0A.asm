@@ -47,7 +47,7 @@ data_0a_4068:
     ld   A, [channelNum_CEE8]                          ;; 0a:4068 $fa $e8 $ce
     cp   A, $02                                        ;; 0a:406b $fe $02
     jr   NZ, .jr_0a_407f                               ;; 0a:406d $20 $10
-    ld   HL, wCED8                                     ;; 0a:406f $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 0a:406f $21 $d8 $ce
     ld   A, [HL+]                                      ;; 0a:4072 $2a
     ld   B, [HL]                                       ;; 0a:4073 $46
     ld   C, $05                                        ;; 0a:4074 $0e $05
@@ -150,7 +150,7 @@ jp_0a_40ec:
     ld   A, [channelNum_CEE8]                          ;; 0a:40ec $fa $e8 $ce
     cp   A, $03                                        ;; 0a:40ef $fe $03
     jp   Z, .jp_0a_4157                                ;; 0a:40f1 $ca $57 $41
-    ld   A, [channelControl_4_CEEB]                    ;; 0a:40f4 $fa $eb $ce
+    ld   A, [channelControl_CEEB]                      ;; 0a:40f4 $fa $eb $ce
     ld   E, A                                          ;; 0a:40f7 $5f
     and  A, $01                                        ;; 0a:40f8 $e6 $01
     ld   C, A                                          ;; 0a:40fa $4f
@@ -227,7 +227,7 @@ jp_0a_40ec:
     ld   [HL], A                                       ;; 0a:4155 $77
     ret                                                ;; 0a:4156 $c9
 .jp_0a_4157:
-    ld   A, [channelControl_4_CEEB]                    ;; 0a:4157 $fa $eb $ce
+    ld   A, [channelControl_CEEB]                      ;; 0a:4157 $fa $eb $ce
     ld   E, A                                          ;; 0a:415a $5f
     ld   D, $00                                        ;; 0a:415b $16 $00
     dec  E                                             ;; 0a:415d $1d
@@ -311,7 +311,7 @@ jp_0a_41b5:
     jr   .jr_0a_41cd                                   ;; 0a:41d8 $18 $f3
 .jr_0a_41da:
     push HL                                            ;; 0a:41da $e5
-    ld   HL, wCED8                                     ;; 0a:41db $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 0a:41db $21 $d8 $ce
     ld   A, [HL+]                                      ;; 0a:41de $2a
     ld   H, [HL]                                       ;; 0a:41df $66
     ld   L, A                                          ;; 0a:41e0 $6f
@@ -411,11 +411,11 @@ data_0a_427c:
     db   $03, $6f, $7e, $e6, $fe, $77, $c9             ;; 0a:429a ???????
 
 data_0a_42a1:
-    ld   A, [channelControl_4_CEEB]                    ;; 0a:42a1 $fa $eb $ce
+    ld   A, [channelControl_CEEB]                      ;; 0a:42a1 $fa $eb $ce
     sub  A, $d0                                        ;; 0a:42a4 $d6 $d0
     ld   E, A                                          ;; 0a:42a6 $5f
     ld   D, $00                                        ;; 0a:42a7 $16 $00
-    ld   HL, wCED8                                     ;; 0a:42a9 $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 0a:42a9 $21 $d8 $ce
     ld   A, [HL+]                                      ;; 0a:42ac $2a
     ld   H, [HL]                                       ;; 0a:42ad $66
     ld   L, A                                          ;; 0a:42ae $6f

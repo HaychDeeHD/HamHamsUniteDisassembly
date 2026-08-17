@@ -120,7 +120,7 @@ call_0a_44c0:
     inc  L                                             ;; 0a:44c9 $2c
     ld   D, [HL]                                       ;; 0a:44ca $56
     ld   A, [DE]                                       ;; 0a:44cb $1a
-    ld   [channelControl_4_CEEB], A                    ;; 0a:44cc $ea $eb $ce
+    ld   [channelControl_CEEB], A                      ;; 0a:44cc $ea $eb $ce
     inc  DE                                            ;; 0a:44cf $13
     ld   [HL], D                                       ;; 0a:44d0 $72
     dec  L                                             ;; 0a:44d1 $2d

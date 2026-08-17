@@ -26,7 +26,7 @@ switchBankToCF02_doStuff2_backTo07_07_401a:
     ld   A, [soundBankToUseCF02]                       ;; 07:401a $fa $02 $cf
     ld   [currentSoundBank], A                         ;; 07:401d $ea $ba $ca
     ld   [$2000], A                                    ;; 07:4020 $ea $00 $20
-    call processChan4Note                              ;; 07:4023 $cd $c0 $44
+    call processNote                                   ;; 07:4023 $cd $c0 $44
     jr   goBackToBank7_07                              ;; 07:4026 $18 $1c
 
 switchBankToCF01_doStuff1_backTo07_07_4028:
@@ -75,7 +75,7 @@ soundOp_ED:
     ld   A, [channelNum_CEE8]                          ;; 07:4068 $fa $e8 $ce
     cp   A, $02                                        ;; 07:406b $fe $02
     jr   NZ, .jr_07_407f                               ;; 07:406d $20 $10
-    ld   HL, wCED8                                     ;; 07:406f $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 07:406f $21 $d8 $ce
     ld   A, [HL+]                                      ;; 07:4072 $2a
     ld   B, [HL]                                       ;; 07:4073 $46
     ld   C, $05                                        ;; 07:4074 $0e $05
@@ -174,11 +174,12 @@ jp_07_40c6:
     ld   [HL], A                                       ;; 07:40ea $77
     ret                                                ;; 07:40eb $c9
 
-jp_07_40ec:
+; Basic play note?
+basicPlayNote:
     ld   A, [channelNum_CEE8]                          ;; 07:40ec $fa $e8 $ce
     cp   A, $03                                        ;; 07:40ef $fe $03
-    jp   Z, .jp_07_4157                                ;; 07:40f1 $ca $57 $41
-    ld   A, [channelControl_4_CEEB]                    ;; 07:40f4 $fa $eb $ce
+    jp   Z, .lastChannel                               ;; 07:40f1 $ca $57 $41
+    ld   A, [channelControl_CEEB]                      ;; 07:40f4 $fa $eb $ce
     ld   E, A                                          ;; 07:40f7 $5f
     and  A, $01                                        ;; 07:40f8 $e6 $01
     ld   C, A                                          ;; 07:40fa $4f
@@ -186,6 +187,7 @@ jp_07_40ec:
     and  A, $fe                                        ;; 07:40fc $e6 $fe
     ld   E, A                                          ;; 07:40fe $5f
     ld   D, $00                                        ;; 07:40ff $16 $00
+; Index is channelControl_4_CEEB rounded down to even.
     ld   HL, data_07_431d                              ;; 07:4101 $21 $1d $43
     add  HL, DE                                        ;; 07:4104 $19
     ld   E, [HL]                                       ;; 07:4105 $5e
@@ -194,17 +196,21 @@ jp_07_40ec:
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:4108 $fa $db $ce
     ld   H, A                                          ;; 07:410b $67
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:410c $fa $da $ce
+; 3 after program counter
     add  A, $03                                        ;; 07:410f $c6 $03
     ld   L, A                                          ;; 07:4111 $6f
     ld   A, [HL]                                       ;; 07:4112 $7e
     and  A, $01                                        ;; 07:4113 $e6 $01
-    jr   Z, .jr_07_4119                                ;; 07:4115 $28 $02
+    jr   Z, .afterMaybeSub2                            ;; 07:4115 $28 $02
+; If the value 3 after the program counter is odd, sub 2 from DE (value from table)
     dec  DE                                            ;; 07:4117 $1b
     dec  DE                                            ;; 07:4118 $1b
-.jr_07_4119:
+.afterMaybeSub2:
     ld   A, L                                          ;; 07:4119 $7d
+; $18 after program counter (channel control)
     add  A, $15                                        ;; 07:411a $c6 $15
     ld   L, A                                          ;; 07:411c $6f
+; Write DE ( table value) and $80 to the 3 channel control bytes.
     ld   [HL], E                                       ;; 07:411d $73
     inc  HL                                            ;; 07:411e $23
     ld   [HL], D                                       ;; 07:411f $72
@@ -213,22 +219,29 @@ jp_07_40ec:
     ld   [HL-], A                                      ;; 07:4123 $32
     ld   A, L                                          ;; 07:4124 $7d
     sub  A, $16                                        ;; 07:4125 $d6 $16
+; This puts HL 3 after the program counter again.
     ld   L, A                                          ;; 07:4127 $6f
     ld   A, C                                          ;; 07:4128 $79
     and  A, $01                                        ;; 07:4129 $e6 $01
-    jr   Z, .jr_07_414a                                ;; 07:412b $28 $1d
+; Jump if CEEB was even at the start.
+    jr   Z, .addPlus8intoPlus2andEnd                   ;; 07:412b $28 $1d
+; Store HL 3 after program counter for later.
     push HL                                            ;; 07:412d $e5
     inc  L                                             ;; 07:412e $2c
     xor  A, A                                          ;; 07:412f $af
+; Zero out the 2 bytes at program counter +4 and +5.
     ld   [HL+], A                                      ;; 07:4130 $22
     ld   [HL], A                                       ;; 07:4131 $77
     ld   C, $00                                        ;; 07:4132 $0e $00
     ld   A, L                                          ;; 07:4134 $7d
+; Add 8 puts HL on the byte following the loop pointer.
     add  A, $08                                        ;; 07:4135 $c6 $08
     ld   L, A                                          ;; 07:4137 $6f
     ld   A, [HL]                                       ;; 07:4138 $7e
     and  A, A                                          ;; 07:4139 $a7
-    jr   Z, .jr_07_4144                                ;; 07:413a $28 $08
+    jr   Z, .afterMaybeZeroStuff                       ;; 07:413a $28 $08
+; If the byte following the loop pointer is not 00.
+; Put $40 into C and clear the following 4 bytes.
     ld   C, $40                                        ;; 07:413c $0e $40
     inc  L                                             ;; 07:413e $2c
     xor  A, A                                          ;; 07:413f $af
@@ -236,26 +249,36 @@ jp_07_40ec:
     ld   [HL+], A                                      ;; 07:4141 $22
     ld   [HL+], A                                      ;; 07:4142 $22
     ld   [HL], A                                       ;; 07:4143 $77
-.jr_07_4144:
+; HL goes back to 3 after the program counter.
+.afterMaybeZeroStuff:
     pop  HL                                            ;; 07:4144 $e1
     ld   A, [HL]                                       ;; 07:4145 $7e
     or   A, $80                                        ;; 07:4146 $f6 $80
+; C is either $00 or $40 depending on if the byte after the loop pointer was set.
     or   A, C                                          ;; 07:4148 $b1
+; These 'or's ensure the highest bit (or 2) of [HL] (3 after program counter) are set.
     ld   [HL], A                                       ;; 07:4149 $77
-.jr_07_414a:
+.addPlus8intoPlus2andEnd:
     ld   A, L                                          ;; 07:414a $7d
+; HL becomes program counter + 8. (Byte before channel loop countdown.)
     add  A, $05                                        ;; 07:414b $c6 $05
     ld   L, A                                          ;; 07:414d $6f
     ld   E, [HL]                                       ;; 07:414e $5e
     ld   A, L                                          ;; 07:414f $7d
+; HL becomes program counter + 2. (Byte following program counter and before pc+3.)
     sub  A, $06                                        ;; 07:4150 $d6 $06
     ld   L, A                                          ;; 07:4152 $6f
     ld   A, [HL]                                       ;; 07:4153 $7e
+; This is an add, but in practice I see that pc+2 doesn't exceed pc+8.
+; I observe pc+2 counting down to 0 from pc+8.
+; So maybe the add mostly only happens when pc+2 hits 0.
     add  A, E                                          ;; 07:4154 $83
+; Add pc + 8 into pc + 2.
     ld   [HL], A                                       ;; 07:4155 $77
     ret                                                ;; 07:4156 $c9
-.jp_07_4157:
-    ld   A, [channelControl_4_CEEB]                    ;; 07:4157 $fa $eb $ce
+; When channelNum_CEE8 is $03
+.lastChannel:
+    ld   A, [channelControl_CEEB]                      ;; 07:4157 $fa $eb $ce
     ld   E, A                                          ;; 07:415a $5f
     ld   D, $00                                        ;; 07:415b $16 $00
     dec  E                                             ;; 07:415d $1d
@@ -263,6 +286,7 @@ jp_07_40ec:
     rl   D                                             ;; 07:4160 $cb $12
     sla  E                                             ;; 07:4162 $cb $23
     rl   D                                             ;; 07:4164 $cb $12
+; (channelControl_4_CEEB - 1) * 4 = index
     ld   HL, data_07_6493                              ;; 07:4166 $21 $93 $64
     add  HL, DE                                        ;; 07:4169 $19
     ld   D, H                                          ;; 07:416a $54
@@ -270,16 +294,21 @@ jp_07_40ec:
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:416c $fa $db $ce
     ld   H, A                                          ;; 07:416f $67
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:4170 $fa $da $ce
+; 3 after program counter
     add  A, $03                                        ;; 07:4173 $c6 $03
     ld   L, A                                          ;; 07:4175 $6f
     ld   A, [HL]                                       ;; 07:4176 $7e
+; Flip highest bit of pc + 3, setting note to play.
     or   A, $80                                        ;; 07:4177 $f6 $80
     ld   [HL+], A                                      ;; 07:4179 $22
     xor  A, A                                          ;; 07:417a $af
+; Zero out next 2 bytes
     ld   [HL+], A                                      ;; 07:417b $22
     ld   [HL+], A                                      ;; 07:417c $22
     ld   [HL], E                                       ;; 07:417d $73
     inc  L                                             ;; 07:417e $2c
+; pc +7 gets D, E gets pc +8 (total note duration).
+; Then add value from pc +8 into pc +2.
     ld   [HL], D                                       ;; 07:417f $72
     inc  L                                             ;; 07:4180 $2c
     ld   E, [HL]                                       ;; 07:4181 $5e
@@ -291,14 +320,18 @@ jp_07_40ec:
     ld   [HL], A                                       ;; 07:4188 $77
     ret                                                ;; 07:4189 $c9
 
-soundOp_CAthruCF:
+; Just adds pc+8 into pc+2.
+; Effectively a rest or a hold?
+soundOp_CAthruCF_restOrHold:
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:418a $fa $db $ce
     ld   H, A                                          ;; 07:418d $67
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:418e $fa $da $ce
+; pc + 8
     add  A, $08                                        ;; 07:4191 $c6 $08
     ld   L, A                                          ;; 07:4193 $6f
     ld   E, [HL]                                       ;; 07:4194 $5e
     ld   A, L                                          ;; 07:4195 $7d
+; pc + 2
     sub  A, $06                                        ;; 07:4196 $d6 $06
     ld   L, A                                          ;; 07:4198 $6f
     ld   A, [HL]                                       ;; 07:4199 $7e
@@ -324,43 +357,51 @@ soundOp_CAthruCF:
     ld   [HL], A                                       ;; 07:41b3 $77
     ret                                                ;; 07:41b4 $c9
 
-jp_07_41b5:
+; OpF0 is followed by an argument that gets added to remaining note duration.
+; It has a second argument, whose 6 low bits determine which ram registers to write to.
+; For each 1 in those bits, there will be an additional arg.
+handleOpF0:
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:41b5 $fa $db $ce
     ld   H, A                                          ;; 07:41b8 $67
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:41b9 $fa $da $ce
     add  A, $02                                        ;; 07:41bc $c6 $02
-; HL becomes the byte in ram directly after the ProgramCounter 2 bytes.
-; Typically has a value between 01 and 05
+; pc + 2 is remaining note duration
     ld   L, A                                          ;; 07:41be $6f
     ld   B, [HL]                                       ;; 07:41bf $46
     ld   A, [DE]                                       ;; 07:41c0 $1a
     add  A, B                                          ;; 07:41c1 $80
-; Add [DE] to the byte after the program counter
-; [DE] is the next "note" byte in the song
-; This might be some kind of song instruction that takes multiple arguments
-; Or this byte after the program counter might be an instruction length?
+; Add [DE] to the remaining note duration
+; [DE] is the next "note" byte in the song. Arg 1.
     ld   [HL], A                                       ;; 07:41c2 $77
     ld   A, L                                          ;; 07:41c3 $7d
+; pc + 0x14
     add  A, $12                                        ;; 07:41c4 $c6 $12
     ld   L, A                                          ;; 07:41c6 $6f
+; Arg 2
     inc  DE                                            ;; 07:41c7 $13
     ld   A, [DE]                                       ;; 07:41c8 $1a
+; Push arg 2
     push AF                                            ;; 07:41c9 $f5
     ld   B, A                                          ;; 07:41ca $47
     ld   C, $06                                        ;; 07:41cb $0e $06
-.jr_07_41cd:
+; Loop 6 times.
+; Loops over the 6 lowest bits of Arg 2 and 6 ram addresses.
+; For each 1 bit encountered, copy an op arg to ram.
+; HL starts at pc +14.
+; Operates on +0x15 through +0x1A.
+.loopOver6:
     dec  C                                             ;; 07:41cd $0d
-    jr   Z, .jr_07_41da                                ;; 07:41ce $28 $0a
+    jr   Z, .doneLooping                               ;; 07:41ce $28 $0a
     inc  HL                                            ;; 07:41d0 $23
     srl  B                                             ;; 07:41d1 $cb $38
-    jr   NC, .jr_07_41cd                               ;; 07:41d3 $30 $f8
+    jr   NC, .loopOver6                                ;; 07:41d3 $30 $f8
     inc  DE                                            ;; 07:41d5 $13
     ld   A, [DE]                                       ;; 07:41d6 $1a
     ld   [HL], A                                       ;; 07:41d7 $77
-    jr   .jr_07_41cd                                   ;; 07:41d8 $18 $f3
-.jr_07_41da:
+    jr   .loopOver6                                    ;; 07:41d8 $18 $f3
+.doneLooping:
     push HL                                            ;; 07:41da $e5
-    ld   HL, wCED8                                     ;; 07:41db $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 07:41db $21 $d8 $ce
     ld   A, [HL+]                                      ;; 07:41de $2a
     ld   H, [HL]                                       ;; 07:41df $66
     ld   L, A                                          ;; 07:41e0 $6f
@@ -466,7 +507,7 @@ soundOp_EE:
     ld   [HL], E                                       ;; 07:425b $73
     inc  L                                             ;; 07:425c $2c
     ld   [HL], D                                       ;; 07:425d $72
-    ld   HL, wCED8                                     ;; 07:425e $21 $d8 $ce
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 07:425e $21 $d8 $ce
     ld   A, [HL+]                                      ;; 07:4261 $2a
     ld   H, [HL]                                       ;; 07:4262 $66
     ld   L, A                                          ;; 07:4263 $6f
@@ -519,25 +560,33 @@ soundOp_F7:
     ld   [HL], A                                       ;; 07:429f $77
     ret                                                ;; 07:42a0 $c9
 
-soundOp_D0thruE7:
-    ld   A, [channelControl_4_CEEB]                    ;; 07:42a1 $fa $eb $ce
+; Obtain new note duration
+soundOp_D0thruE7_obtainNewNoteDuration:
+    ld   A, [channelControl_CEEB]                      ;; 07:42a1 $fa $eb $ce
     sub  A, $d0                                        ;; 07:42a4 $d6 $d0
     ld   E, A                                          ;; 07:42a6 $5f
     ld   D, $00                                        ;; 07:42a7 $16 $00
-    ld   HL, wCED8                                     ;; 07:42a9 $21 $d8 $ce
+; DE = [channelControl_CEEB] - $d0
+    ld   HL, wNoteDurationPointerPointer_CED8          ;; 07:42a9 $21 $d8 $ce
+; CED8 + 9 is an address. Make HL that address.
+; CED8-9 is a pointer to a pointer to a note duration.
     ld   A, [HL+]                                      ;; 07:42ac $2a
     ld   H, [HL]                                       ;; 07:42ad $66
     ld   L, A                                          ;; 07:42ae $6f
+; Dereference that into HL again.
     ld   A, [HL+]                                      ;; 07:42af $2a
     ld   H, [HL]                                       ;; 07:42b0 $66
     ld   L, A                                          ;; 07:42b1 $6f
+; Use DE as an index into a table at that address.
     add  HL, DE                                        ;; 07:42b2 $19
+; Put byte stored there into E.
     ld   E, [HL]                                       ;; 07:42b3 $5e
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA.high] ;; 07:42b4 $fa $db $ce
     ld   H, A                                          ;; 07:42b7 $67
     ld   A, [wPointerToCurrentChannelSongProgramCounter_CEDA] ;; 07:42b8 $fa $da $ce
     add  A, $08                                        ;; 07:42bb $c6 $08
     ld   L, A                                          ;; 07:42bd $6f
+; Write looked-up byte from E into pc+8 (note duration).
     ld   [HL], E                                       ;; 07:42be $73
     ret                                                ;; 07:42bf $c9
 
@@ -618,31 +667,97 @@ soundOp_FF:
     ld   [HL], A                                       ;; 07:431b $77
     ret                                                ;; 07:431c $c9
 
+;@data format=w amount=86
 data_07_431d:
-    db   $00, $00, $2c, $00, $9c, $00, $06, $01        ;; 07:431d ????????
-    db   $6b, $01, $c9, $01, $23, $02, $77, $02        ;; 07:4325 ????????
-    db   $c6, $02, $12, $03, $56, $03, $9b, $03        ;; 07:432d ????????
-    db   $da, $03, $16, $04, $4e, $04, $83, $04        ;; 07:4335 ????????
-    db   $b5, $04, $e5, $04, $11, $05, $3b, $05        ;; 07:433d ????????
-    db   $63, $05, $89, $05, $ac, $05, $ce, $05        ;; 07:4345 ????????
-    db   $ed, $05, $0a, $06, $27, $06, $42, $06        ;; 07:434d ????????
-    db   $5b, $06, $72, $06, $89, $06, $9e, $06        ;; 07:4355 ????????
-    db   $b2, $06, $c4, $06, $d6, $06, $e7, $06        ;; 07:435d ????????
-    db   $f7, $06, $06, $07, $14, $07, $21, $07        ;; 07:4365 ????????
-    db   $2d, $07, $39, $07, $44, $07, $4f, $07        ;; 07:436d ????????
-    db   $59, $07, $62, $07, $6b, $07, $73, $07        ;; 07:4375 ????????
-    db   $7b, $07, $83, $07, $8a, $07, $90, $07        ;; 07:437d ????????
-    db   $97, $07, $9d, $07, $a2, $07, $a7, $07        ;; 07:4385 ????????
-    db   $ac, $07, $b1, $07, $b6, $07, $ba, $07        ;; 07:438d ????????
-    db   $be, $07, $c1, $07, $c4, $07, $c8, $07        ;; 07:4395 ????????
-    db   $cb, $07, $ce, $07, $d1, $07, $d4, $07        ;; 07:439d ????????
-    db   $d6, $07, $d9, $07, $db, $07, $dd, $07        ;; 07:43a5 ????????
-    db   $df, $07, $e1, $07, $e2, $07, $e4, $07        ;; 07:43ad ????????
-    db   $e6, $07, $e7, $07, $e9, $07, $ea, $07        ;; 07:43b5 ????????
-    db   $eb, $07, $ed, $07, $ee, $07, $ef, $07        ;; 07:43bd ????????
-    db   $f0, $07, $f1, $07, $02, $04, $06, $08        ;; 07:43c5 ????????
-    db   $09, $0c, $10, $12, $18, $20, $24, $30        ;; 07:43cd ????????
-    db   $40, $48, $60, $90, $c0, $01, $02, $03        ;; 07:43d5 ????????
+    dw   $0000                                         ;; 07:431d ?? $00
+    dw   $002c                                         ;; 07:431f ?? $01
+    dw   $009c                                         ;; 07:4321 ?? $02
+    dw   $0106                                         ;; 07:4323 ?? $03
+    dw   $016b                                         ;; 07:4325 ?? $04
+    dw   $01c9                                         ;; 07:4327 ?? $05
+    dw   $0223                                         ;; 07:4329 ?? $06
+    dw   $0277                                         ;; 07:432b ?? $07
+    dw   $02c6                                         ;; 07:432d ?? $08
+    dw   $0312                                         ;; 07:432f ?? $09
+    dw   $0356                                         ;; 07:4331 ?? $0a
+    dw   $039b                                         ;; 07:4333 ?? $0b
+    dw   $03da                                         ;; 07:4335 ?? $0c
+    dw   $0416                                         ;; 07:4337 ?? $0d
+    dw   $044e                                         ;; 07:4339 ?? $0e
+    dw   $0483                                         ;; 07:433b ?? $0f
+    dw   $04b5                                         ;; 07:433d ?? $10
+    dw   $04e5                                         ;; 07:433f ?? $11
+    dw   $0511                                         ;; 07:4341 ?? $12
+    dw   $053b                                         ;; 07:4343 ?? $13
+    dw   $0563                                         ;; 07:4345 ?? $14
+    dw   $0589                                         ;; 07:4347 ?? $15
+    dw   $05ac                                         ;; 07:4349 ?? $16
+    dw   $05ce                                         ;; 07:434b ?? $17
+    dw   $05ed                                         ;; 07:434d ?? $18
+    dw   $060a                                         ;; 07:434f ?? $19
+    dw   $0627                                         ;; 07:4351 ?? $1a
+    dw   $0642                                         ;; 07:4353 ?? $1b
+    dw   $065b                                         ;; 07:4355 ?? $1c
+    dw   $0672                                         ;; 07:4357 ?? $1d
+    dw   $0689                                         ;; 07:4359 ?? $1e
+    dw   $069e                                         ;; 07:435b ?? $1f
+    dw   $06b2                                         ;; 07:435d ?? $20
+    dw   $06c4                                         ;; 07:435f ?? $21
+    dw   $06d6                                         ;; 07:4361 ?? $22
+    dw   $06e7                                         ;; 07:4363 ?? $23
+    dw   $06f7                                         ;; 07:4365 ?? $24
+    dw   $0706                                         ;; 07:4367 ?? $25
+    dw   $0714                                         ;; 07:4369 ?? $26
+    dw   $0721                                         ;; 07:436b ?? $27
+    dw   $072d                                         ;; 07:436d ?? $28
+    dw   $0739                                         ;; 07:436f ?? $29
+    dw   $0744                                         ;; 07:4371 ?? $2a
+    dw   $074f                                         ;; 07:4373 ?? $2b
+    dw   $0759                                         ;; 07:4375 ?? $2c
+    dw   $0762                                         ;; 07:4377 ?? $2d
+    dw   $076b                                         ;; 07:4379 ?? $2e
+    dw   $0773                                         ;; 07:437b ?? $2f
+    dw   $077b                                         ;; 07:437d ?? $30
+    dw   $0783                                         ;; 07:437f ?? $31
+    dw   $078a                                         ;; 07:4381 ?? $32
+    dw   $0790                                         ;; 07:4383 ?? $33
+    dw   $0797                                         ;; 07:4385 ?? $34
+    dw   $079d                                         ;; 07:4387 ?? $35
+    dw   $07a2                                         ;; 07:4389 ?? $36
+    dw   $07a7                                         ;; 07:438b ?? $37
+    dw   $07ac                                         ;; 07:438d ?? $38
+    dw   $07b1                                         ;; 07:438f ?? $39
+    dw   $07b6                                         ;; 07:4391 ?? $3a
+    dw   $07ba                                         ;; 07:4393 ?? $3b
+    dw   $07be                                         ;; 07:4395 ?? $3c
+    dw   $07c1                                         ;; 07:4397 ?? $3d
+    dw   $07c4                                         ;; 07:4399 ?? $3e
+    dw   $07c8                                         ;; 07:439b ?? $3f
+    dw   $07cb                                         ;; 07:439d ?? $40
+    dw   $07ce                                         ;; 07:439f ?? $41
+    dw   $07d1                                         ;; 07:43a1 ?? $42
+    dw   $07d4                                         ;; 07:43a3 ?? $43
+    dw   $07d6                                         ;; 07:43a5 ?? $44
+    dw   $07d9                                         ;; 07:43a7 ?? $45
+    dw   $07db                                         ;; 07:43a9 ?? $46
+    dw   $07dd                                         ;; 07:43ab ?? $47
+    dw   $07df                                         ;; 07:43ad ?? $48
+    dw   $07e1                                         ;; 07:43af ?? $49
+    dw   $07e2                                         ;; 07:43b1 ?? $4a
+    dw   $07e4                                         ;; 07:43b3 ?? $4b
+    dw   $07e6                                         ;; 07:43b5 ?? $4c
+    dw   $07e7                                         ;; 07:43b7 ?? $4d
+    dw   $07e9                                         ;; 07:43b9 ?? $4e
+    dw   $07ea                                         ;; 07:43bb ?? $4f
+    dw   $07eb                                         ;; 07:43bd ?? $50
+    dw   $07ed                                         ;; 07:43bf ?? $51
+    dw   $07ee                                         ;; 07:43c1 ?? $52
+    dw   $07ef                                         ;; 07:43c3 ?? $53
+    dw   $07f0                                         ;; 07:43c5 ?? $54
+    dw   $07f1                                         ;; 07:43c7 ?? $55
+    db   $02, $04, $06, $08, $09, $0c, $10, $12        ;; 07:43c9 ????????
+    db   $18, $20, $24, $30, $40, $48, $60, $90        ;; 07:43d1 ????????
+    db   $c0, $01, $02, $03                            ;; 07:43d9 ????
 
 data_07_43dd:
     db   $01, $02, $03, $04, $05, $06, $08, $09        ;; 07:43dd ????????

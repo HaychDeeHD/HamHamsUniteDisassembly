@@ -120,7 +120,7 @@ call_08_448d:
     inc  L                                             ;; 08:4496 $2c
     ld   D, [HL]                                       ;; 08:4497 $56
     ld   A, [DE]                                       ;; 08:4498 $1a
-    ld   [channelControl_4_CEEB], A                    ;; 08:4499 $ea $eb $ce
+    ld   [channelControl_CEEB], A                      ;; 08:4499 $ea $eb $ce
     inc  DE                                            ;; 08:449c $13
     ld   [HL], D                                       ;; 08:449d $72
     dec  L                                             ;; 08:449e $2d
@@ -649,6 +649,12 @@ call_08_448d:
     db   $01, $01, $00, $00                            ;; 08:4ba7 ....
 ; This is the beginning of the percussion sheet for the title screen.
 ; Jumps from 4BAB to 4BB0
+; Op F0 takes 2+ args.
+; Arg 1 is 00, meaning add 00 to the note duration.
+; Arg 2 is 0b010100. Going right to left looking at 1's:
+;   $08 will be written to the third ram slot.
+;   $80 will be written to the 5th ram slot.
+; Then $d5 is a new Op.
 .titleSongPercussionSheet:
     db   $f0, $00, $14, $08, $80, $d5, $3f, $10        ;; 08:4bab ........
     db   $10, $10, $3f, $10, $10, $10, $3f, $10        ;; 08:4bb3 ........
