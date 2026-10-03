@@ -61,8 +61,7 @@ call_23_4089:
     Op18_Jump call_23_401b                             ;; 23:408d $18 $1b $40 $23
 
 call_23_4091:
-    Op50_WriteByte wC720, $00, $16                     ;; 23:4091 $50 $20 $c7 $00 $16
-    Op82_Run data_01_6844                              ;; 23:4096 $82 $44 $68 $01
+    ChangeSong $16                                     ;; 23:4091 $50 $20 $c7 $00 $16 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 23:409a $4a
     Op1E_Call call_04_61cf                             ;; 23:409b $1e $cf $61 $04
     Op32_Graphics data_66_51ef, w5_D000                ;; 23:409f $32 $ef $51 $66 $00 $d0 $05
@@ -1639,8 +1638,7 @@ call_23_5631:
     Op18_Jump call_23_55dd                             ;; 23:5648 $18 $dd $55 $23
 
 call_23_564c:
-    Op50_WriteByte wC720, $00, $12                     ;; 23:564c $50 $20 $c7 $00 $12
-    Op82_Run data_01_6844                              ;; 23:5651 $82 $44 $68 $01
+    ChangeSong $12                                     ;; 23:564c $50 $20 $c7 $00 $12 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 23:5655 $4a
     Op32_Graphics data_5e_6803, w5_D000                ;; 23:5656 $32 $03 $68 $5e $00 $d0 $05
     Op32_Graphics data_61_46be, w4_D8A0                ;; 23:565d $32 $be $46 $61 $a0 $d8 $04
@@ -3046,8 +3044,7 @@ call_23_6892:
     SCRIPT_RETURN_20                                   ;; 23:68a5 $20
 
 call_23_68a6:
-    Op50_WriteByte wC720, $00, $12                     ;; 23:68a6 $50 $20 $c7 $00 $12
-    Op82_Run data_01_6844                              ;; 23:68ab $82 $44 $68 $01
+    ChangeSong $12                                     ;; 23:68a6 $50 $20 $c7 $00 $12 $82 $44 $68 $01
     Op16_SubOps 1                                      ;; 23:68af $16 $01
     SubOp_SetFlag 5 ; Bit 5 of wBitArrayC918           ;; 23:68b1 $3e $05
     Op16_SubOps 1                                      ;; 23:68b3 $16 $01

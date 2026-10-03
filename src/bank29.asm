@@ -1644,8 +1644,7 @@ call_29_6ebb:
     SCRIPT_RETURN_20                                   ;; 29:6f0b $20
 
 call_29_6f0c:
-    Op50_WriteByte wC720, $00, $18                     ;; 29:6f0c $50 $20 $c7 $00 $18
-    Op82_Run data_01_6844                              ;; 29:6f11 $82 $44 $68 $01
+    ChangeSong $18                                     ;; 29:6f0c $50 $20 $c7 $00 $18 $82 $44 $68 $01
     Op52_WriteBytes wC689, $00, $00, $00               ;; 29:6f15 $52 $89 $c6 $00 $00 $00
     Op52_WriteBytes wC694, $00, $00, $00               ;; 29:6f1b $52 $94 $c6 $00 $00 $00
     Op50_WriteByte wC67F, $00, $00                     ;; 29:6f21 $50 $7f $c6 $00 $00

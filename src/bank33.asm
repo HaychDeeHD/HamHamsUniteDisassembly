@@ -54,13 +54,11 @@ call_33_4068:
 call_33_407f:
     Op14_BranchWithHamChatWheelRules 1, data_05_788e   ;; 33:407f $14 $01 $8e $78
     SCRIPT_POINTER call_33_4093                        ;; 33:4083 $93 $40 $33
-    Op50_WriteByte wC720, $00, $17                     ;; 33:4086 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 33:408b $82 $44 $68 $01
+    ChangeSong $17                                     ;; 33:4086 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     Op18_Jump call_33_409c                             ;; 33:408f $18 $9c $40 $33
 
 call_33_4093:
-    Op50_WriteByte wC720, $00, $1f                     ;; 33:4093 $50 $20 $c7 $00 $1f
-    Op82_Run data_01_6844                              ;; 33:4098 $82 $44 $68 $01
+    ChangeSong $1f                                     ;; 33:4093 $50 $20 $c7 $00 $1f $82 $44 $68 $01
 
 call_33_409c:
     SCRIPT_RETURN_4A                                   ;; 33:409c $4a
@@ -550,8 +548,7 @@ call_33_4680:
     SCRIPT_POINTER call_33_469b                        ;; 33:4684 $9b $46 $33
     Op14_BranchWithHamChatWheelRules 1, data_05_78ae   ;; 33:4687 $14 $01 $ae $78
     SCRIPT_POINTER call_33_4702                        ;; 33:468b $02 $47 $33
-    Op50_WriteByte wC720, $00, $17                     ;; 33:468e $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 33:4693 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 33:468e $50 $20 $c7 $00 $17 $82 $44 $68 $01
     Op18_Jump call_33_4811                             ;; 33:4697 $18 $11 $48 $33
 
 call_33_469b:
@@ -1199,8 +1196,7 @@ call_33_4ebc:
     Op18_Jump call_33_4edb                             ;; 33:4ed7 $18 $db $4e $33
 
 call_33_4edb:
-    Op50_WriteByte wC720, $00, $05                     ;; 33:4edb $50 $20 $c7 $00 $05
-    Op82_Run data_01_6844                              ;; 33:4ee0 $82 $44 $68 $01
+    ChangeSong $05                                     ;; 33:4edb $50 $20 $c7 $00 $05 $82 $44 $68 $01
     Op44_Unknown $10, $00                              ;; 33:4ee4 $44 $10 $00
     Op36_Graphics data_7f_74ab, w1_DDF2                ;; 33:4ee7 $36 $ab $74 $7f $f2 $dd $01
     Op4C_Unknown $08, $01, $04, $00, $00, $00, $00, data_12_6255 ;; 33:4eee $4c $08 $01 $04 $00 $00 $00 $00 $55 $62 $12
@@ -2103,8 +2099,7 @@ call_33_5b4e:
     Op18_Jump call_33_5b30                             ;; 33:5b62 $18 $30 $5b $33
 
 call_33_5b66:
-    Op50_WriteByte wC720, $00, $0f                     ;; 33:5b66 $50 $20 $c7 $00 $0f
-    Op82_Run data_01_6844                              ;; 33:5b6b $82 $44 $68 $01
+    ChangeSong $0f                                     ;; 33:5b66 $50 $20 $c7 $00 $0f $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 33:5b6f $4a
     Op32_Graphics data_64_7777, w5_D000                ;; 33:5b70 $32 $77 $77 $64 $00 $d0 $05
     Op32_Graphics data_75_709a, w7_D000                ;; 33:5b77 $32 $9a $70 $75 $00 $d0 $07
@@ -2844,13 +2839,11 @@ call_33_646b:
     SCRIPT_POINTER call_33_6486                        ;; 33:646f $86 $64 $33
     Op14_BranchWithHamChatWheelRules 1, data_05_756e   ;; 33:6472 $14 $01 $6e $75
     SCRIPT_POINTER call_33_6486                        ;; 33:6476 $86 $64 $33
-    Op50_WriteByte wC720, $00, $17                     ;; 33:6479 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 33:647e $82 $44 $68 $01
+    ChangeSong $17                                     ;; 33:6479 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     Op18_Jump call_33_648f                             ;; 33:6482 $18 $8f $64 $33
 
 call_33_6486:
-    Op50_WriteByte wC720, $00, $1f                     ;; 33:6486 $50 $20 $c7 $00 $1f
-    Op82_Run data_01_6844                              ;; 33:648b $82 $44 $68 $01
+    ChangeSong $1f                                     ;; 33:6486 $50 $20 $c7 $00 $1f $82 $44 $68 $01
 
 call_33_648f:
     SCRIPT_RETURN_4A                                   ;; 33:648f $4a
@@ -3406,8 +3399,7 @@ call_33_6b08:
     SCRIPT_POINTER call_33_6b23                        ;; 33:6b0c $23 $6b $33
     Op14_BranchWithHamChatWheelRules 1, data_05_756e   ;; 33:6b0f $14 $01 $6e $75
     SCRIPT_POINTER call_33_6b75                        ;; 33:6b13 $75 $6b $33
-    Op50_WriteByte wC720, $00, $17                     ;; 33:6b16 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 33:6b1b $82 $44 $68 $01
+    ChangeSong $17                                     ;; 33:6b16 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     Op18_Jump call_33_6bdc                             ;; 33:6b1f $18 $dc $6b $33
 
 call_33_6b23:
@@ -3527,8 +3519,7 @@ call_33_6cf0:
 
 call_33_6d08:
     SCRIPT_RETURN_4A                                   ;; 33:6d08 $4a
-    Op50_WriteByte wC720, $00, $22                     ;; 33:6d09 $50 $20 $c7 $00 $22
-    Op82_Run data_01_6844                              ;; 33:6d0e $82 $44 $68 $01
+    ChangeSong $22                                     ;; 33:6d09 $50 $20 $c7 $00 $22 $82 $44 $68 $01
     Op32_Graphics data_65_5e5d, w5_D000                ;; 33:6d12 $32 $5d $5e $65 $00 $d0 $05
     Op32_Graphics data_7b_68e4, w7_D000                ;; 33:6d19 $32 $e4 $68 $7b $00 $d0 $07
     Op32_Graphics data_6d_43da, w4_D900                ;; 33:6d20 $32 $da $43 $6d $00 $d9 $04
@@ -4221,8 +4212,7 @@ call_33_75e4:
     Op18_Jump call_33_7597                             ;; 33:75f7 $18 $97 $75 $33
 
 call_33_75fb:
-    Op50_WriteByte wC720, $00, $17                     ;; 33:75fb $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 33:7600 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 33:75fb $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 33:7604 $4a
     Op14_BranchWithHamChatWheelRules 1, data_05_77cb   ;; 33:7605 $14 $01 $cb $77
     SCRIPT_POINTER call_33_7610                        ;; 33:7609 $10 $76 $33

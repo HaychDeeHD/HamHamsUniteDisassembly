@@ -55,8 +55,7 @@ call_2c_406b:
     Op18_Jump call_2c_400f                             ;; 2c:4082 $18 $0f $40 $2c
 
 call_2c_4086:
-    Op50_WriteByte wC720, $00, $12                     ;; 2c:4086 $50 $20 $c7 $00 $12
-    Op82_Run data_01_6844                              ;; 2c:408b $82 $44 $68 $01
+    ChangeSong $12                                     ;; 2c:4086 $50 $20 $c7 $00 $12 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 2c:408f $4a
     Op32_Graphics data_75_6dbb, w4_DE50                ;; 2c:4090 $32 $bb $6d $75 $50 $de $04
     Op32_Graphics data_5e_76b0, w5_D000                ;; 2c:4097 $32 $b0 $76 $5e $00 $d0 $05
@@ -1448,8 +1447,7 @@ call_2c_5c73:
     SCRIPT_RETURN_4A                                   ;; 2c:5c73 $4a
     Op14_BranchWithHamChatWheelRules 1, data_05_4cfa   ;; 2c:5c74 $14 $01 $fa $4c
     SCRIPT_POINTER call_2c_5c84                        ;; 2c:5c78 $84 $5c $2c
-    Op50_WriteByte wC720, $00, $18                     ;; 2c:5c7b $50 $20 $c7 $00 $18
-    Op82_Run data_01_6844                              ;; 2c:5c80 $82 $44 $68 $01
+    ChangeSong $18                                     ;; 2c:5c7b $50 $20 $c7 $00 $18 $82 $44 $68 $01
 
 call_2c_5c84:
     Op1E_Call call_04_61cf                             ;; 2c:5c84 $1e $cf $61 $04
@@ -2457,8 +2455,7 @@ call_2c_6962:
     Op18_Jump call_2c_6918                             ;; 2c:6979 $18 $18 $69 $2c
 
 call_2c_697d:
-    Op50_WriteByte wC720, $00, $10                     ;; 2c:697d $50 $20 $c7 $00 $10
-    Op82_Run data_01_6844                              ;; 2c:6982 $82 $44 $68 $01
+    ChangeSong $10                                     ;; 2c:697d $50 $20 $c7 $00 $10 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 2c:6986 $4a
     Op32_Graphics data_61_682a, w5_D000                ;; 2c:6987 $32 $2a $68 $61 $00 $d0 $05
     Op32_Graphics data_6e_795e, w4_DC00                ;; 2c:698e $32 $5e $79 $6e $00 $dc $04
@@ -3422,8 +3419,7 @@ call_2c_7715:
     SCRIPT_RETURN_20                                   ;; 2c:771a $20
 
 call_2c_771b:
-    Op50_WriteByte wC720, $00, $15                     ;; 2c:771b $50 $20 $c7 $00 $15
-    Op82_Run data_01_6844                              ;; 2c:7720 $82 $44 $68 $01
+    ChangeSong $15                                     ;; 2c:771b $50 $20 $c7 $00 $15 $82 $44 $68 $01
     Op1E_Call call_2c_7f09                             ;; 2c:7724 $1e $09 $7f $2c
     Op14_BranchWithHamChatWheelRules 1, useIfHave_329_69ba ;; 2c:7728 $14 $01 $ba $69
     SCRIPT_POINTER call_2c_7733                        ;; 2c:772c $33 $77 $2c
@@ -3875,8 +3871,7 @@ call_2c_7c26:
     Op3E_Compare_Branch 22, data_10_4c83, call_2c_7c26 ;; 2c:7c27 $3e $16 $83 $4c $10 $26 $7c $2c
     Op4C_Unknown $16, $ff, $02, $00, $00, $00, $00, data_17_7865 ;; 2c:7c2f $4c $16 $ff $02 $00 $00 $00 $00 $65 $78 $17
     Op32_Graphics data_6d_7d0d, w6_D400                ;; 2c:7c3a $32 $0d $7d $6d $00 $d4 $06
-    Op50_WriteByte wC720, $00, $15                     ;; 2c:7c41 $50 $20 $c7 $00 $15
-    Op82_Run data_01_6844                              ;; 2c:7c46 $82 $44 $68 $01
+    ChangeSong $15                                     ;; 2c:7c41 $50 $20 $c7 $00 $15 $82 $44 $68 $01
     Op56_WriteBitArrayIndex 26, data_16_7f79           ;; 2c:7c4a $56 $1a $79 $7f $16
     Op1E_Call call_1d_6b5d                             ;; 2c:7c4f $1e $5d $6b $1d
     ;;We need to find<E4>my brother, then.<E3><E7>,<E3>help me look for<E4>him around<E4>here.<E0>

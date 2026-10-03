@@ -69,8 +69,7 @@ call_21_40a5:
     Op18_Jump call_21_401c                             ;; 21:40a9 $18 $1c $40 $21
 
 call_21_40ad:
-    Op50_WriteByte wC720, $00, $11                     ;; 21:40ad $50 $20 $c7 $00 $11
-    Op82_Run data_01_6844                              ;; 21:40b2 $82 $44 $68 $01
+    ChangeSong $11                                     ;; 21:40ad $50 $20 $c7 $00 $11 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 21:40b6 $4a
     Op14_BranchWithHamChatWheelRules 1, data_05_5544   ;; 21:40b7 $14 $01 $44 $55
     SCRIPT_POINTER call_21_40c2                        ;; 21:40bb $c2 $40 $21
@@ -591,8 +590,7 @@ call_21_4753:
     SubOp_SetFlag 7 ; Bit 7 of wBitArrayC918           ;; 21:4768 $3e $07
     Op16_SubOps 1                                      ;; 21:476a $16 $01
     SubOp_SetFlag 9 ; Bit 1 of wC919                   ;; 21:476c $3e $09
-    Op50_WriteByte wC720, $00, $11                     ;; 21:476e $50 $20 $c7 $00 $11
-    Op82_Run data_01_6844                              ;; 21:4773 $82 $44 $68 $01
+    ChangeSong $11                                     ;; 21:476e $50 $20 $c7 $00 $11 $82 $44 $68 $01
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_04_7487 ;; 21:4777 $4c $1a $01 $04 $00 $00 $00 $00 $87 $74 $04
     Op44_Unknown $10, $00                              ;; 21:4782 $44 $10 $00
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_17_77d2 ;; 21:4785 $4c $16 $08 $04 $00 $00 $00 $00 $d2 $77 $17
@@ -1250,8 +1248,7 @@ call_21_4fa9:
     ;;Let's get started.<E2>Good luck!<E0>
     Op04_Unknown_Text data_26_7d54                     ;; 21:4fc5 $04 $54 $7d $26
     Op92_Unknown $00                                   ;; 21:4fc9 $92 $00
-    Op50_WriteByte wC720, $00, $1d                     ;; 21:4fcb $50 $20 $c7 $00 $1d
-    Op82_Run data_01_6844                              ;; 21:4fd0 $82 $44 $68 $01
+    ChangeSong $1d                                     ;; 21:4fcb $50 $20 $c7 $00 $1d $82 $44 $68 $01
     Op16_SubOps 1                                      ;; 21:4fd4 $16 $01
     SubOp_SetByte wC780, $02                           ;; 21:4fd6 $7e $68 $02
     Op50_WriteByte wButtonsOfInterest, $00, $10        ;; 21:4fd9 $50 $1d $c3 $00 $10
@@ -1631,8 +1628,7 @@ call_21_541a:
     ;;OK! Stop there!<E0>
     Op04_Unknown_Text data_26_7eb8                     ;; 21:5442 $04 $b8 $7e $26
     Op92_Unknown $00                                   ;; 21:5446 $92 $00
-    Op50_WriteByte wC720, $00, $11                     ;; 21:5448 $50 $20 $c7 $00 $11
-    Op82_Run data_01_6844                              ;; 21:544d $82 $44 $68 $01
+    ChangeSong $11                                     ;; 21:5448 $50 $20 $c7 $00 $11 $82 $44 $68 $01
     Op1E_Call call_04_5b76                             ;; 21:5451 $1e $76 $5b $04
     Op44_Unknown $09, $00                              ;; 21:5455 $44 $09 $00
     Op4C_Unknown $16, $10, $02, $60, $00, $60, $00, data_10_4235 ;; 21:5458 $4c $16 $10 $02 $60 $00 $60 $00 $35 $42 $10
@@ -3513,8 +3509,7 @@ call_21_6da2:
     Op18_Jump call_21_6d49                             ;; 21:6db5 $18 $49 $6d $21
 
 call_21_6db9:
-    Op50_WriteByte wC720, $00, $1f                     ;; 21:6db9 $50 $20 $c7 $00 $1f
-    Op82_Run data_01_6844                              ;; 21:6dbe $82 $44 $68 $01
+    ChangeSong $1f                                     ;; 21:6db9 $50 $20 $c7 $00 $1f $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 21:6dc2 $4a
     Op1E_Call call_04_61cf                             ;; 21:6dc3 $1e $cf $61 $04
     Op32_Graphics data_6c_4473, w5_D000                ;; 21:6dc7 $32 $73 $44 $6c $00 $d0 $05

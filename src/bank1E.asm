@@ -82,8 +82,7 @@ call_1e_40b0:
     Op18_Jump call_1e_4054                             ;; 1e:40c3 $18 $54 $40 $1e
 
 call_1e_40c7:
-    Op50_WriteByte wC720, $00, $17                     ;; 1e:40c7 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 1e:40cc $82 $44 $68 $01
+    ChangeSong $17                                     ;; 1e:40c7 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 1e:40d0 $4a
     Op14_BranchWithHamChatWheelRules 1, data_05_77cb   ;; 1e:40d1 $14 $01 $cb $77
     SCRIPT_POINTER call_1e_40dc                        ;; 1e:40d5 $dc $40 $1e
@@ -2224,8 +2223,7 @@ call_1e_5d84:
     SCRIPT_RETURN_20                                   ;; 1e:5d93 $20
 
 call_1e_5d94:
-    Op50_WriteByte wC720, $00, $17                     ;; 1e:5d94 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 1e:5d99 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 1e:5d94 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 1e:5d9d $4a
     Op32_Graphics data_68_7784, w5_D000                ;; 1e:5d9e $32 $84 $77 $68 $00 $d0 $05
     Op32_Graphics data_7b_6f15, w7_D000                ;; 1e:5da5 $32 $15 $6f $7b $00 $d0 $07
@@ -2805,8 +2803,7 @@ call_1e_643b:
     Op4C_Unknown $3a, $00, $00, $00, $00, $00, $00, zero_pointer ;; 1e:649a $4c $3a $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1e_719b                             ;; 1e:64a5 $1e $9b $71 $1e
     Op36_Graphics data_7c_7405, w3_D168                ;; 1e:64a9 $36 $05 $74 $7c $68 $d1 $03
-    Op50_WriteByte wC720, $00, $1d                     ;; 1e:64b0 $50 $20 $c7 $00 $1d
-    Op82_Run data_01_6844                              ;; 1e:64b5 $82 $44 $68 $01
+    ChangeSong $1d                                     ;; 1e:64b0 $50 $20 $c7 $00 $1d $82 $44 $68 $01
     Op1E_Call call_1e_6684                             ;; 1e:64b9 $1e $84 $66 $1e
     Op44_Unknown $3c, $00                              ;; 1e:64bd $44 $3c $00
     Op18_Jump call_1e_66ba                             ;; 1e:64c0 $18 $ba $66 $1e
@@ -3154,8 +3151,7 @@ call_1e_68a1:
     Op04_Unknown_Text data_30_5a9b                     ;; 1e:68b4 $04 $9b $5a $30
     Op1E_Call call_04_615d                             ;; 1e:68b8 $1e $5d $61 $04
     Op1E_Call call_1e_7565                             ;; 1e:68bc $1e $65 $75 $1e
-    Op50_WriteByte wC720, $00, $17                     ;; 1e:68c0 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 1e:68c5 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 1e:68c0 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     Op1E_Call call_1d_6dda                             ;; 1e:68c9 $1e $da $6d $1d
     Op1E_Call call_1e_7184                             ;; 1e:68cd $1e $84 $71 $1e
     ;;Your score is<...><E4><end>
@@ -3298,8 +3294,7 @@ call_1e_6a3d:
     ;;I like your grit,<E4>kid! Let's go!<E0>
     Op04_Unknown_Text data_30_5c78                     ;; 1e:6a59 $04 $78 $5c $30
     Op1E_Call call_04_615d                             ;; 1e:6a5d $1e $5d $61 $04
-    Op50_WriteByte wC720, $00, $1d                     ;; 1e:6a61 $50 $20 $c7 $00 $1d
-    Op82_Run data_01_6844                              ;; 1e:6a66 $82 $44 $68 $01
+    ChangeSong $1d                                     ;; 1e:6a61 $50 $20 $c7 $00 $1d $82 $44 $68 $01
     Op1E_Call call_1e_6684                             ;; 1e:6a6a $1e $84 $66 $1e
     Op18_Jump call_1e_66ba                             ;; 1e:6a6e $18 $ba $66 $1e
 

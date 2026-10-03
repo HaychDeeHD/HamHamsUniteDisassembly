@@ -469,13 +469,11 @@ call_1c_6648:
     SCRIPT_POINTER call_1c_6663                        ;; 1c:664c $63 $66 $1c
     Op14_BranchWithHamChatWheelRules 1, data_05_75c8   ;; 1c:664f $14 $01 $c8 $75
     SCRIPT_POINTER call_1c_6663                        ;; 1c:6653 $63 $66 $1c
-    Op50_WriteByte wC720, $00, $17                     ;; 1c:6656 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 1c:665b $82 $44 $68 $01
+    ChangeSong $17                                     ;; 1c:6656 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     Op18_Jump call_1c_666c                             ;; 1c:665f $18 $6c $66 $1c
 
 call_1c_6663:
-    Op50_WriteByte wC720, $00, $1f                     ;; 1c:6663 $50 $20 $c7 $00 $1f
-    Op82_Run data_01_6844                              ;; 1c:6668 $82 $44 $68 $01
+    ChangeSong $1f                                     ;; 1c:6663 $50 $20 $c7 $00 $1f $82 $44 $68 $01
 
 call_1c_666c:
     SCRIPT_RETURN_4A                                   ;; 1c:666c $4a
@@ -2140,8 +2138,7 @@ call_1c_79d9:
     SCRIPT_POINTER call_1c_79f4                        ;; 1c:79dd $f4 $79 $1c
     Op14_BranchWithHamChatWheelRules 1, data_05_75c8   ;; 1c:79e0 $14 $01 $c8 $75
     SCRIPT_POINTER call_1c_7a46                        ;; 1c:79e4 $46 $7a $1c
-    Op50_WriteByte wC720, $00, $17                     ;; 1c:79e7 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 1c:79ec $82 $44 $68 $01
+    ChangeSong $17                                     ;; 1c:79e7 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     Op18_Jump call_1c_7b16                             ;; 1c:79f0 $18 $16 $7b $1c
 
 call_1c_79f4:

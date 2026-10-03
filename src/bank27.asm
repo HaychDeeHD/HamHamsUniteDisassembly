@@ -87,8 +87,7 @@ call_27_40db:
     Op18_Jump call_27_408a                             ;; 27:40f2 $18 $8a $40 $27
 
 call_27_40f6:
-    Op50_WriteByte wC720, $00, $10                     ;; 27:40f6 $50 $20 $c7 $00 $10
-    Op82_Run data_01_6844                              ;; 27:40fb $82 $44 $68 $01
+    ChangeSong $10                                     ;; 27:40f6 $50 $20 $c7 $00 $10 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 27:40ff $4a
     Op32_Graphics data_68_6189, w5_D000                ;; 27:4100 $32 $89 $61 $68 $00 $d0 $05
     Op34_Graphics data_73_6db8, w5_D800, $1e           ;; 27:4107 $34 $b8 $6d $73 $00 $d8 $05 $1e
@@ -1414,8 +1413,7 @@ call_27_522b:
 
 call_27_5231:
     Op50_WriteByte w1_D000, $01, $01                   ;; 27:5231 $50 $00 $d0 $01 $01
-    Op50_WriteByte wC720, $00, $17                     ;; 27:5236 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 27:523b $82 $44 $68 $01
+    ChangeSong $17                                     ;; 27:5236 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 27:523f $4a
     Op32_Graphics data_67_6270, w5_D000                ;; 27:5240 $32 $70 $62 $67 $00 $d0 $05
     Op32_Graphics data_75_5479, w4_DE20                ;; 27:5247 $32 $79 $54 $75 $20 $de $04
@@ -2744,8 +2742,7 @@ call_27_62ec:
     SCRIPT_RETURN_20                                   ;; 27:62f1 $20
 
 call_27_62f2:
-    Op50_WriteByte wC720, $00, $16                     ;; 27:62f2 $50 $20 $c7 $00 $16
-    Op82_Run data_01_6844                              ;; 27:62f7 $82 $44 $68 $01
+    ChangeSong $16                                     ;; 27:62f2 $50 $20 $c7 $00 $16 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 27:62fb $4a
     Op32_Graphics data_6b_4000, w5_D000                ;; 27:62fc $32 $00 $40 $6b $00 $d0 $05
     Op32_Graphics data_6b_5395, w4_D860                ;; 27:6303 $32 $95 $53 $6b $60 $d8 $04
@@ -4120,8 +4117,7 @@ call_27_7381:
     Op18_Jump call_27_7316                             ;; 27:7385 $18 $16 $73 $27
 
 call_27_7389:
-    Op50_WriteByte wC720, $00, $11                     ;; 27:7389 $50 $20 $c7 $00 $11
-    Op82_Run data_01_6844                              ;; 27:738e $82 $44 $68 $01
+    ChangeSong $11                                     ;; 27:7389 $50 $20 $c7 $00 $11 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 27:7392 $4a
     Op1E_Call call_04_61cf                             ;; 27:7393 $1e $cf $61 $04
     Op32_Graphics data_5f_4000, w5_D000                ;; 27:7397 $32 $00 $40 $5f $00 $d0 $05
@@ -4950,8 +4946,7 @@ call_27_7d2a:
 call_27_7d55:
     Op16_SubOps 1                                      ;; 27:7d55 $16 $01
     SubOp_SetFlag 224 ; Bit 0 of wC934                 ;; 27:7d57 $3e $e0
-    Op50_WriteByte wC720, $00, $11                     ;; 27:7d59 $50 $20 $c7 $00 $11
-    Op82_Run data_01_6844                              ;; 27:7d5e $82 $44 $68 $01
+    ChangeSong $11                                     ;; 27:7d59 $50 $20 $c7 $00 $11 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 27:7d62 $4a
     Op1E_Call call_04_61cf                             ;; 27:7d63 $1e $cf $61 $04
     Op32_Graphics data_5f_4000, w5_D000                ;; 27:7d67 $32 $00 $40 $5f $00 $d0 $05

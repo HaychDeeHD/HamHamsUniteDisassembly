@@ -552,8 +552,7 @@ call_22_56b6:
     Op18_Jump call_22_5645                             ;; 22:56ba $18 $45 $56 $22
 
 call_22_56be:
-    Op50_WriteByte wC720, $00, $16                     ;; 22:56be $50 $20 $c7 $00 $16
-    Op82_Run data_01_6844                              ;; 22:56c3 $82 $44 $68 $01
+    ChangeSong $16                                     ;; 22:56be $50 $20 $c7 $00 $16 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 22:56c7 $4a
     Op1E_Call call_04_61cf                             ;; 22:56c8 $1e $cf $61 $04
     Op32_Graphics data_5f_4e59, w5_D000                ;; 22:56cc $32 $59 $4e $5f $00 $d0 $05
@@ -2213,8 +2212,7 @@ call_22_6cf1:
     Op18_Jump call_22_6c77                             ;; 22:6cf5 $18 $77 $6c $22
 
 call_22_6cf9:
-    Op50_WriteByte wC720, $00, $16                     ;; 22:6cf9 $50 $20 $c7 $00 $16
-    Op82_Run data_01_6844                              ;; 22:6cfe $82 $44 $68 $01
+    ChangeSong $16                                     ;; 22:6cf9 $50 $20 $c7 $00 $16 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 22:6d02 $4a
     Op1E_Call call_04_61cf                             ;; 22:6d03 $1e $cf $61 $04
     Op32_Graphics data_66_4000, w5_D010                ;; 22:6d07 $32 $00 $40 $66 $10 $d0 $05

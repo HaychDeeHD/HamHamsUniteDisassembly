@@ -279,6 +279,7 @@ class Op50Block(Block):
         # Can't use BANK(\1). Example: The label is in VRAM but the bank arg is 1.
         RomInfo.macros["Op50_WriteByte"] = "db $50\ndw \\1\ndb \\2\ndb \\3"
         RomInfo.macros["GiveHamchat"] = "db $50, $15, $c7, $00, (\\1 - $0b)\ndb $82, $d9, $6d, $02"
+        RomInfo.macros["ChangeSong"] = "db $50, $20, $c7, $00, \\1\ndb $82, $44, $68, $01"
 
         pointer = memory.word(addr + 1)
         self.bankNum = memory.byte(addr + 3)
@@ -288,19 +289,27 @@ class Op50Block(Block):
         targetMemory.addAutoLabel(pointer, None, None)
         self.label = targetMemory.getLabel(pointer)
 
-        # Checking if this is the very common Op50+Op82 to use the GiveHamchat macro.
+        # Checking if this is a common Op50+Op82 combo to use more specific macros.
+        self.giveHamchat = False
+        self.changeSong = False
         if addr + 8 < memory.base_address + 0x4000:
             upcomingBytes = list(memory.data(addr, 9))
             del upcomingBytes[4] # Remove the 5th byte, the one that would be the argument.
             if upcomingBytes == [0x50, 0x15, 0xc7, 0x00, 0x82, 0xd9, 0x6d, 0x02]:
+                self.giveHamchat = True
+                self.resize(9)
+            elif upcomingBytes == [0x50, 0x20, 0xc7, 0x00, 0x82, 0x44, 0x68, 0x01]:
+                self.changeSong = True
                 self.resize(9)
 
 
     def export(self, file):
         payload = self.memory.byte(file.addr + 4)
-        if len(self) == 9:
+        if self.giveHamchat:
             # The bitarray indices are 0x0b higher than the Hamchat IDs.
             file.asmLine(9, "GiveHamchat", BITARRAY_INDEX_TO_HAMCHAT[payload + 0x0b])
+        elif self.changeSong:
+            file.asmLine(9, "ChangeSong", "$%02x" % payload)
         else:
             file.asmLine(5, "Op50_WriteByte", str(self.label), "$%02x" % self.bankNum, "$%02x" % payload)
 

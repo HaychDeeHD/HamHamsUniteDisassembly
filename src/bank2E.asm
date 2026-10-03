@@ -383,8 +383,7 @@ call_2e_44ad:
     Op3E_Compare_Branch 22, data_10_4c83, call_2e_44ad ;; 2e:44ae $3e $16 $83 $4c $10 $ad $44 $2e
     Op16_SubOps 1                                      ;; 2e:44b6 $16 $01
     SubOp_SetByte wC78B, $01                           ;; 2e:44b8 $7e $73 $01
-    Op50_WriteByte wC720, $00, $14                     ;; 2e:44bb $50 $20 $c7 $00 $14
-    Op82_Run data_01_6844                              ;; 2e:44c0 $82 $44 $68 $01
+    ChangeSong $14                                     ;; 2e:44bb $50 $20 $c7 $00 $14 $82 $44 $68 $01
     Op4C_Unknown $1a, $01, $04, $00, $00, $00, $00, data_16_77d5 ;; 2e:44c4 $4c $1a $01 $04 $00 $00 $00 $00 $d5 $77 $16
     Op44_Unknown $10, $00                              ;; 2e:44cf $44 $10 $00
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_17_77d2 ;; 2e:44d2 $4c $16 $08 $04 $00 $00 $00 $00 $d2 $77 $17
@@ -1498,8 +1497,7 @@ call_2e_5281:
     Op3E_Compare_Branch 22, data_10_4c83, call_2e_5281 ;; 2e:5282 $3e $16 $83 $4c $10 $81 $52 $2e
     Op16_SubOps 1                                      ;; 2e:528a $16 $01
     SubOp_SetByte wC78A, $03                           ;; 2e:528c $7e $72 $03
-    Op50_WriteByte wC720, $00, $14                     ;; 2e:528f $50 $20 $c7 $00 $14
-    Op82_Run data_01_6844                              ;; 2e:5294 $82 $44 $68 $01
+    ChangeSong $14                                     ;; 2e:528f $50 $20 $c7 $00 $14 $82 $44 $68 $01
     Op56_WriteBitArrayIndex 26, data_1a_61c7           ;; 2e:5298 $56 $1a $c7 $61 $1a
     Op44_Unknown $10, $00                              ;; 2e:529d $44 $10 $00
     Op4C_Unknown $16, $08, $04, $00, $00, $00, $00, data_17_77d2 ;; 2e:52a0 $4c $16 $08 $04 $00 $00 $00 $00 $d2 $77 $17
@@ -2009,8 +2007,7 @@ call_2e_58f1:
     Op18_Jump call_2e_58a0                             ;; 2e:5908 $18 $a0 $58 $2e
 
 call_2e_590c:
-    Op50_WriteByte wC720, $00, $12                     ;; 2e:590c $50 $20 $c7 $00 $12
-    Op82_Run data_01_6844                              ;; 2e:5911 $82 $44 $68 $01
+    ChangeSong $12                                     ;; 2e:590c $50 $20 $c7 $00 $12 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 2e:5915 $4a
     Op32_Graphics data_75_6dbb, w4_DE50                ;; 2e:5916 $32 $bb $6d $75 $50 $de $04
     Op32_Graphics data_5e_76b0, w5_D000                ;; 2e:591d $32 $b0 $76 $5e $00 $d0 $05
@@ -2868,8 +2865,7 @@ call_2e_63e4:
     Op18_Jump call_2e_638d                             ;; 2e:63fb $18 $8d $63 $2e
 
 call_2e_63ff:
-    Op50_WriteByte wC720, $00, $12                     ;; 2e:63ff $50 $20 $c7 $00 $12
-    Op82_Run data_01_6844                              ;; 2e:6404 $82 $44 $68 $01
+    ChangeSong $12                                     ;; 2e:63ff $50 $20 $c7 $00 $12 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 2e:6408 $4a
     Op32_Graphics data_5f_71ca, w5_D000                ;; 2e:6409 $32 $ca $71 $5f $00 $d0 $05
     Op32_Graphics data_61_5430, w7_D000                ;; 2e:6410 $32 $30 $54 $61 $00 $d0 $07
@@ -3747,8 +3743,7 @@ call_2e_6fab:
     Op18_Jump call_2e_6f49                             ;; 2e:6fbe $18 $49 $6f $2e
 
 call_2e_6fc2:
-    Op50_WriteByte wC720, $00, $17                     ;; 2e:6fc2 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 2e:6fc7 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 2e:6fc2 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 2e:6fcb $4a
     Op1E_Call call_04_61cf                             ;; 2e:6fcc $1e $cf $61 $04
     Op32_Graphics data_64_5eec, w5_D000                ;; 2e:6fd0 $32 $ec $5e $64 $00 $d0 $05

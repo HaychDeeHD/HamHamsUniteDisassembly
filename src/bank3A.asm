@@ -54,8 +54,7 @@ call_3a_4065:
     Op18_Jump call_3a_4011                             ;; 3a:407c $18 $11 $40 $3a
 
 call_3a_4080:
-    Op50_WriteByte wC720, $00, $15                     ;; 3a:4080 $50 $20 $c7 $00 $15
-    Op82_Run data_01_6844                              ;; 3a:4085 $82 $44 $68 $01
+    ChangeSong $15                                     ;; 3a:4080 $50 $20 $c7 $00 $15 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3a:4089 $4a
     Op32_Graphics data_60_70ee, w5_D000                ;; 3a:408a $32 $ee $70 $60 $00 $d0 $05
     Op32_Graphics data_7a_7d63, w7_D000                ;; 3a:4091 $32 $63 $7d $7a $00 $d0 $07
@@ -3069,8 +3068,7 @@ call_3a_7db4:
     SCRIPT_RETURN_20                                   ;; 3a:7dc7 $20
 
 call_3a_7dc8:
-    Op50_WriteByte wC720, $00, $11                     ;; 3a:7dc8 $50 $20 $c7 $00 $11
-    Op82_Run data_01_6844                              ;; 3a:7dcd $82 $44 $68 $01
+    ChangeSong $11                                     ;; 3a:7dc8 $50 $20 $c7 $00 $11 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3a:7dd1 $4a
     Op1E_Call call_04_61cf                             ;; 3a:7dd2 $1e $cf $61 $04
     Op6A_Unknown $00, $00, $00, $00                    ;; 3a:7dd6 $6a $00 $00 $00 $00

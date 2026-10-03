@@ -65,8 +65,7 @@ call_1d_408a:
     Op18_Jump call_1d_401f                             ;; 1d:409d $18 $1f $40 $1d
 
 call_1d_40a1:
-    Op50_WriteByte wC720, $00, $17                     ;; 1d:40a1 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 1d:40a6 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 1d:40a1 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 1d:40aa $4a
     Op1E_Call call_04_61cf                             ;; 1d:40ab $1e $cf $61 $04
     Op32_Graphics data_64_5eec, w5_D000                ;; 1d:40af $32 $ec $5e $64 $00 $d0 $05

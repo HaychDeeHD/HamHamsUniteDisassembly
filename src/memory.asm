@@ -951,7 +951,7 @@ wC71E:
 wC71F:
     ds 1                                               ;; c71f
 
-wC720:
+wSongToSwitchToC720:
     ds 1                                               ;; c720
 
 wC721:

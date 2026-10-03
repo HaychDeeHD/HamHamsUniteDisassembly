@@ -5502,10 +5502,10 @@ call_01_66b6:
     db   $00, $7c, $00, $7c, $00, $7c, $00, $7c        ;; 01:6836 ????????
     db   $3e, $80, $ea, $f9, $cf, $c9                  ;; 01:683e ??????
 
-data_01_6844:
+changeSong:
     ld   A, [wCurrentlyPlayingSong]                    ;; 01:6844 $fa $fa $cf
     ld   B, A                                          ;; 01:6847 $47
-    ld   A, [wC720]                                    ;; 01:6848 $fa $20 $c7
+    ld   A, [wSongToSwitchToC720]                      ;; 01:6848 $fa $20 $c7
     cp   A, B                                          ;; 01:684b $b8
     jr   Z, .jr_01_6852                                ;; 01:684c $28 $04
     ld   [wSongToPlay], A                              ;; 01:684e $ea $f9 $cf
@@ -5542,7 +5542,7 @@ data_01_68ab:
     db   $c8                                           ;; 01:68b9 ?
 
 data_01_68ba:
-    ld   A, [wC720]                                    ;; 01:68ba $fa $20 $c7
+    ld   A, [wSongToSwitchToC720]                      ;; 01:68ba $fa $20 $c7
     ld   [wSongToPlay], A                              ;; 01:68bd $ea $f9 $cf
     ld   A, $08                                        ;; 01:68c0 $3e $08
     ld   [wCFFD], A                                    ;; 01:68c2 $ea $fd $cf

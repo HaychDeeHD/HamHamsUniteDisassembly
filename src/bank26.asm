@@ -85,8 +85,7 @@ call_26_40d5:
     Op18_Jump call_26_4084                             ;; 26:40ec $18 $84 $40 $26
 
 call_26_40f0:
-    Op50_WriteByte wC720, $00, $10                     ;; 26:40f0 $50 $20 $c7 $00 $10
-    Op82_Run data_01_6844                              ;; 26:40f5 $82 $44 $68 $01
+    ChangeSong $10                                     ;; 26:40f0 $50 $20 $c7 $00 $10 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 26:40f9 $4a
     Op32_Graphics data_64_4000, w5_D000                ;; 26:40fa $32 $00 $40 $64 $00 $d0 $05
     Op34_Graphics data_74_4000, w5_D800, $1e           ;; 26:4101 $34 $00 $40 $74 $00 $d8 $05 $1e
@@ -1438,8 +1437,7 @@ call_26_526d:
     Op1E_Call call_04_5f51                             ;; 26:5291 $1e $51 $5f $04
     Op14_BranchWithHamChatWheelRules 1, data_05_42fc   ;; 26:5295 $14 $01 $fc $42
     SCRIPT_POINTER call_26_52a5                        ;; 26:5299 $a5 $52 $26
-    Op50_WriteByte wC720, $00, $19                     ;; 26:529c $50 $20 $c7 $00 $19
-    Op82_Run data_01_6844                              ;; 26:52a1 $82 $44 $68 $01
+    ChangeSong $19                                     ;; 26:529c $50 $20 $c7 $00 $19 $82 $44 $68 $01
 
 call_26_52a5:
     Op52_WriteBytes wC689, $00, $00, $00               ;; 26:52a5 $52 $89 $c6 $00 $00 $00
@@ -2614,8 +2612,7 @@ call_26_6431:
     Op18_Jump call_26_63dd                             ;; 26:6448 $18 $dd $63 $26
 
 call_26_644c:
-    Op50_WriteByte wC720, $00, $12                     ;; 26:644c $50 $20 $c7 $00 $12
-    Op82_Run data_01_6844                              ;; 26:6451 $82 $44 $68 $01
+    ChangeSong $12                                     ;; 26:644c $50 $20 $c7 $00 $12 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 26:6455 $4a
     Op32_Graphics data_60_77d9, w5_D000                ;; 26:6456 $32 $d9 $77 $60 $00 $d0 $05
     Op32_Graphics data_67_6826, w7_D000                ;; 26:645d $32 $26 $68 $67 $00 $d0 $07

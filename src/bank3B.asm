@@ -53,8 +53,7 @@ call_3b_4067:
     Op18_Jump call_3b_400d                             ;; 3b:407e $18 $0d $40 $3b
 
 call_3b_4082:
-    Op50_WriteByte wC720, $00, $17                     ;; 3b:4082 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 3b:4087 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 3b:4082 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3b:408b $4a
     Op1E_Call call_04_61cf                             ;; 3b:408c $1e $cf $61 $04
     Op32_Graphics data_6a_68b6, w5_D000                ;; 3b:4090 $32 $b6 $68 $6a $00 $d0 $05
@@ -317,8 +316,7 @@ call_3b_4375:
     Op18_Jump call_3b_431b                             ;; 3b:438c $18 $1b $43 $3b
 
 call_3b_4390:
-    Op50_WriteByte wC720, $00, $17                     ;; 3b:4390 $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 3b:4395 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 3b:4390 $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3b:4399 $4a
     Op1E_Call call_04_61cf                             ;; 3b:439a $1e $cf $61 $04
     Op32_Graphics data_6a_68b6, w5_D000                ;; 3b:439e $32 $b6 $68 $6a $00 $d0 $05
@@ -684,8 +682,7 @@ call_3b_4990:
     Op18_Jump call_3b_4936                             ;; 3b:49a7 $18 $36 $49 $3b
 
 call_3b_49ab:
-    Op50_WriteByte wC720, $00, $17                     ;; 3b:49ab $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 3b:49b0 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 3b:49ab $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3b:49b4 $4a
     Op32_Graphics data_6b_6208, w5_D000                ;; 3b:49b5 $32 $08 $62 $6b $00 $d0 $05
     Op34_Graphics data_79_42dc, w5_D800, $15           ;; 3b:49bc $34 $dc $42 $79 $00 $d8 $05 $15
@@ -2792,8 +2789,7 @@ call_3b_70a1:
     Op18_Jump call_3b_704d                             ;; 3b:70b8 $18 $4d $70 $3b
 
 call_3b_70bc:
-    Op50_WriteByte wC720, $00, $17                     ;; 3b:70bc $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 3b:70c1 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 3b:70bc $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3b:70c5 $4a
     Op32_Graphics data_67_5146, w5_D000                ;; 3b:70c6 $32 $46 $51 $67 $00 $d0 $05
     Op32_Graphics data_70_6f25, w7_D000                ;; 3b:70cd $32 $25 $6f $70 $00 $d0 $07

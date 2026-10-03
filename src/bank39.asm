@@ -872,8 +872,7 @@ call_39_575a:
     SCRIPT_RETURN_20                                   ;; 39:575f $20
 
 call_39_5760:
-    Op50_WriteByte wC720, $00, $15                     ;; 39:5760 $50 $20 $c7 $00 $15
-    Op82_Run data_01_6844                              ;; 39:5765 $82 $44 $68 $01
+    ChangeSong $15                                     ;; 39:5760 $50 $20 $c7 $00 $15 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 39:5769 $4a
     Op32_Graphics data_60_70ee, w5_D000                ;; 39:576a $32 $ee $70 $60 $00 $d0 $05
     Op32_Graphics data_6d_52f1, w7_D000                ;; 39:5771 $32 $f1 $52 $6d $00 $d0 $07
@@ -1339,8 +1338,7 @@ call_39_5f7a:
     SCRIPT_RETURN_20                                   ;; 39:5f8c $20
 
 call_39_5f8d:
-    Op50_WriteByte wC720, $00, $11                     ;; 39:5f8d $50 $20 $c7 $00 $11
-    Op82_Run data_01_6844                              ;; 39:5f92 $82 $44 $68 $01
+    ChangeSong $11                                     ;; 39:5f8d $50 $20 $c7 $00 $11 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 39:5f96 $4a
     Op1E_Call call_04_61cf                             ;; 39:5f97 $1e $cf $61 $04
     Op32_Graphics data_61_4000, w5_D000                ;; 39:5f9b $32 $00 $40 $61 $00 $d0 $05
@@ -2133,8 +2131,7 @@ call_39_7338:
     Op18_Jump call_39_72dc                             ;; 39:733c $18 $dc $72 $39
 
 call_39_7340:
-    Op50_WriteByte wC720, $00, $16                     ;; 39:7340 $50 $20 $c7 $00 $16
-    Op82_Run data_01_6844                              ;; 39:7345 $82 $44 $68 $01
+    ChangeSong $16                                     ;; 39:7340 $50 $20 $c7 $00 $16 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 39:7349 $4a
     Op1E_Call call_04_61cf                             ;; 39:734a $1e $cf $61 $04
     Op32_Graphics data_76_61b5, w5_D000                ;; 39:734e $32 $b5 $61 $76 $00 $d0 $05
@@ -2495,8 +2492,7 @@ call_39_7ac0:
     Op18_Jump call_39_7a81                             ;; 39:7ad7 $18 $81 $7a $39
 
 call_39_7adb:
-    Op50_WriteByte wC720, $00, $15                     ;; 39:7adb $50 $20 $c7 $00 $15
-    Op82_Run data_01_6844                              ;; 39:7ae0 $82 $44 $68 $01
+    ChangeSong $15                                     ;; 39:7adb $50 $20 $c7 $00 $15 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 39:7ae4 $4a
     Op32_Graphics data_69_6593, w5_D000                ;; 39:7ae5 $32 $93 $65 $69 $00 $d0 $05
     Op32_Graphics data_6e_49fc, w7_D000                ;; 39:7aec $32 $fc $49 $6e $00 $d0 $07

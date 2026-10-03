@@ -241,15 +241,13 @@ call_3c_469e:
     SubOp_SetFlag 403 ; Bit 3 of wC94A                 ;; 3c:46ae $3f $93
 
 call_3c_46b0:
-    Op50_WriteByte wC720, $00, $14                     ;; 3c:46b0 $50 $20 $c7 $00 $14
-    Op82_Run data_01_6844                              ;; 3c:46b5 $82 $44 $68 $01
+    ChangeSong $14                                     ;; 3c:46b0 $50 $20 $c7 $00 $14 $82 $44 $68 $01
     Op16_SubOps 1                                      ;; 3c:46b9 $16 $01
     SubOp_ClearFlag 233 ; Bit 1 of wC935               ;; 3c:46bb $5e $e9
     Op18_Jump call_3c_46d2                             ;; 3c:46bd $18 $d2 $46 $3c
 
 call_3c_46c1:
-    Op50_WriteByte wC720, $00, $13                     ;; 3c:46c1 $50 $20 $c7 $00 $13
-    Op82_Run data_01_6844                              ;; 3c:46c6 $82 $44 $68 $01
+    ChangeSong $13                                     ;; 3c:46c1 $50 $20 $c7 $00 $13 $82 $44 $68 $01
     Op16_SubOps 1                                      ;; 3c:46ca $16 $01
     SubOp_SetFlag 233 ; Bit 1 of wC935                 ;; 3c:46cc $3e $e9
     Op18_Jump call_3c_46d2                             ;; 3c:46ce $18 $d2 $46 $3c
@@ -260,8 +258,7 @@ call_3c_46d2:
 call_3c_46d3:
     Op14_BranchWithHamChatWheelRules 1, data_05_6078   ;; 3c:46d3 $14 $01 $78 $60
     SCRIPT_POINTER call_3c_469e                        ;; 3c:46d7 $9e $46 $3c
-    Op50_WriteByte wC720, $00, $20                     ;; 3c:46da $50 $20 $c7 $00 $20
-    Op82_Run data_01_6844                              ;; 3c:46df $82 $44 $68 $01
+    ChangeSong $20                                     ;; 3c:46da $50 $20 $c7 $00 $20 $82 $44 $68 $01
     SCRIPT_RETURN_20                                   ;; 3c:46e3 $20
 
 data_3c_46e4:
@@ -1577,8 +1574,7 @@ data_3c_6a2e:
     Op18_Jump call_3c_6b31                             ;; 3c:6a57 $18 $31 $6b $3c
 
 call_3c_6a5b:
-    Op50_WriteByte wC720, $00, $16                     ;; 3c:6a5b $50 $20 $c7 $00 $16
-    Op82_Run data_01_6844                              ;; 3c:6a60 $82 $44 $68 $01
+    ChangeSong $16                                     ;; 3c:6a5b $50 $20 $c7 $00 $16 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 3c:6a64 $4a
     Op32_Graphics data_68_4000, w5_D000                ;; 3c:6a65 $32 $00 $40 $68 $00 $d0 $05
     Op32_Graphics data_7b_7726, w7_D000                ;; 3c:6a6c $32 $26 $77 $7b $00 $d0 $07

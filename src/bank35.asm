@@ -15,7 +15,7 @@ call_35_4000:
     Op6A_Unknown $00, $00, $00, $00                    ;; 35:400b $6a $00 $00 $00 $00
     SCRIPT_RETURN_4A                                   ;; 35:4010 $4a
     Op16_SubOps 1                                      ;; 35:4011 $16 $01
-    SubOp_SetByte wC720, $1a                           ;; 35:4013 $7e $08 $1a
+    SubOp_SetByte wSongToSwitchToC720, $1a             ;; 35:4013 $7e $08 $1a
     Op82_Run data_01_68ba                              ;; 35:4016 $82 $ba $68 $01
     Op32_Graphics data_6b_66c7, w4_D800                ;; 35:401a $32 $c7 $66 $6b $00 $d8 $04
     Op32_Graphics data_65_523e, w5_D000                ;; 35:4021 $32 $3e $52 $65 $00 $d0 $05
@@ -349,7 +349,7 @@ call_35_45d2:
     Op86_Unknown w5_DC00, $a0, $99, $00, $00, $01      ;; 35:45e2 $86 $00 $dc $05 $a0 $99 $00 $00 $01
     Op7E_Unknown w7_DC00, $a0, $99, $01, $00, $01      ;; 35:45eb $7e $00 $dc $07 $a0 $99 $01 $00 $01
     SCRIPT_RETURN_4A                                   ;; 35:45f4 $4a
-    Op50_WriteByte wC720, $00, $02                     ;; 35:45f5 $50 $20 $c7 $00 $02
+    Op50_WriteByte wSongToSwitchToC720, $00, $02       ;; 35:45f5 $50 $20 $c7 $00 $02
     Op82_Run data_01_68ba                              ;; 35:45fa $82 $ba $68 $01
     Op42_Unknown_StoreValue 0, $01, data_14_7f8f       ;; 35:45fe $42 $00 $01 $8f $7f $14
     Op4E_Unknown_StoreValue 0, $01, data_14_7ecb       ;; 35:4604 $4e $00 $01 $cb $7e $14
@@ -413,7 +413,7 @@ call_35_468e:
     Op52_WriteBytes w1_D2A0, $01, $78, $00             ;; 35:4726 $52 $a0 $d2 $01 $78 $00
     Op52_WriteBytes w1_D2C6, $01, $90, $00             ;; 35:472c $52 $c6 $d2 $01 $90 $00
     Op52_WriteBytes w1_D2CE, $01, $78, $00             ;; 35:4732 $52 $ce $d2 $01 $78 $00
-    Op50_WriteByte wC720, $00, $02                     ;; 35:4738 $50 $20 $c7 $00 $02
+    Op50_WriteByte wSongToSwitchToC720, $00, $02       ;; 35:4738 $50 $20 $c7 $00 $02
     Op82_Run data_01_68ba                              ;; 35:473d $82 $ba $68 $01
     Op42_Unknown_StoreValue 0, $01, data_14_7f8f       ;; 35:4741 $42 $00 $01 $8f $7f $14
     Op16_SubOps 1                                      ;; 35:4747 $16 $01
@@ -514,8 +514,7 @@ call_35_4895:
     Op18_Jump call_35_4844                             ;; 35:48ac $18 $44 $48 $35
 
 call_35_48b0:
-    Op50_WriteByte wC720, $00, $10                     ;; 35:48b0 $50 $20 $c7 $00 $10
-    Op82_Run data_01_6844                              ;; 35:48b5 $82 $44 $68 $01
+    ChangeSong $10                                     ;; 35:48b0 $50 $20 $c7 $00 $10 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 35:48b9 $4a
     Op32_Graphics data_67_738f, w5_D000                ;; 35:48ba $32 $8f $73 $67 $00 $d0 $05
     Op34_Graphics data_74_72f2, w5_D800, $1e           ;; 35:48c1 $34 $f2 $72 $74 $00 $d8 $05 $1e
@@ -1109,8 +1108,7 @@ call_35_507c:
     Op18_Jump call_35_5029                             ;; 35:5093 $18 $29 $50 $35
 
 call_35_5097:
-    Op50_WriteByte wC720, $00, $12                     ;; 35:5097 $50 $20 $c7 $00 $12
-    Op82_Run data_01_6844                              ;; 35:509c $82 $44 $68 $01
+    ChangeSong $12                                     ;; 35:5097 $50 $20 $c7 $00 $12 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 35:50a0 $4a
     Op1E_Call call_04_61cf                             ;; 35:50a1 $1e $cf $61 $04
     Op32_Graphics data_5e_6803, w5_D000                ;; 35:50a5 $32 $03 $68 $5e $00 $d0 $05
@@ -2019,8 +2017,7 @@ call_35_6099:
     SCRIPT_RETURN_20                                   ;; 35:609e $20
 
 call_35_609f:
-    Op50_WriteByte wC720, $00, $16                     ;; 35:609f $50 $20 $c7 $00 $16
-    Op82_Run data_01_6844                              ;; 35:60a4 $82 $44 $68 $01
+    ChangeSong $16                                     ;; 35:609f $50 $20 $c7 $00 $16 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 35:60a8 $4a
     Op32_Graphics data_68_4000, w5_D000                ;; 35:60a9 $32 $00 $40 $68 $00 $d0 $05
     Op34_Graphics data_76_77c2, w5_D800, $1e           ;; 35:60b0 $34 $c2 $77 $76 $00 $d8 $05 $1e
@@ -2815,8 +2812,7 @@ call_35_7004:
     Op18_Jump call_35_6f98                             ;; 35:7027 $18 $98 $6f $35
 
 call_35_702b:
-    Op50_WriteByte wC720, $00, $16                     ;; 35:702b $50 $20 $c7 $00 $16
-    Op82_Run data_01_6844                              ;; 35:7030 $82 $44 $68 $01
+    ChangeSong $16                                     ;; 35:702b $50 $20 $c7 $00 $16 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 35:7034 $4a
     Op32_Graphics data_6b_4000, w5_D000                ;; 35:7035 $32 $00 $40 $6b $00 $d0 $05
     Op32_Graphics data_6b_5395, w4_D860                ;; 35:703c $32 $95 $53 $6b $60 $d8 $04

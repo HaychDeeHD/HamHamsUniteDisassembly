@@ -1772,8 +1772,7 @@ call_20_57c6:
     Op18_Jump call_20_5749                             ;; 20:57ca $18 $49 $57 $20
 
 call_20_57ce:
-    Op50_WriteByte wC720, $00, $17                     ;; 20:57ce $50 $20 $c7 $00 $17
-    Op82_Run data_01_6844                              ;; 20:57d3 $82 $44 $68 $01
+    ChangeSong $17                                     ;; 20:57ce $50 $20 $c7 $00 $17 $82 $44 $68 $01
     SCRIPT_RETURN_4A                                   ;; 20:57d7 $4a
     Op1E_Call call_04_61cf                             ;; 20:57d8 $1e $cf $61 $04
     Op32_Graphics data_63_5fec, w5_D000                ;; 20:57dc $32 $ec $5f $63 $00 $d0 $05
@@ -3886,8 +3885,7 @@ call_20_72c9:
     SubOp_SetFlag 411 ; Bit 3 of wC94B                 ;; 20:7308 $3f $9b
     Op16_SubOps 1                                      ;; 20:730a $16 $01
     SubOp_SetFlag 412 ; Bit 4 of wC94B                 ;; 20:730c $3f $9c
-    Op50_WriteByte wC720, $00, $20                     ;; 20:730e $50 $20 $c7 $00 $20
-    Op82_Run data_01_6844                              ;; 20:7313 $82 $44 $68 $01
+    ChangeSong $20                                     ;; 20:730e $50 $20 $c7 $00 $20 $82 $44 $68 $01
     Op1E_Call call_1d_6cfd                             ;; 20:7317 $1e $fd $6c $1d
     ;;Huh?<E3>Oh<...> I don't<E4>know<...><E3><end>
     Op04_Unknown_Text data_39_5b13                     ;; 20:731b $04 $13 $5b $39
@@ -4858,13 +4856,11 @@ call_20_7f73:
     SubOp_ClearFlag 412 ; Bit 4 of wC94B               ;; 20:7f75 $5f $9c
     Op14_BranchWithHamChatWheelRules 1, useIfHave_233_6278 ;; 20:7f77 $14 $01 $78 $62
     SCRIPT_POINTER call_20_7f88                        ;; 20:7f7b $88 $7f $20
-    Op50_WriteByte wC720, $00, $14                     ;; 20:7f7e $50 $20 $c7 $00 $14
-    Op82_Run data_01_6844                              ;; 20:7f83 $82 $44 $68 $01
+    ChangeSong $14                                     ;; 20:7f7e $50 $20 $c7 $00 $14 $82 $44 $68 $01
     SCRIPT_RETURN_20                                   ;; 20:7f87 $20
 
 call_20_7f88:
-    Op50_WriteByte wC720, $00, $13                     ;; 20:7f88 $50 $20 $c7 $00 $13
-    Op82_Run data_01_6844                              ;; 20:7f8d $82 $44 $68 $01
+    ChangeSong $13                                     ;; 20:7f88 $50 $20 $c7 $00 $13 $82 $44 $68 $01
     SCRIPT_RETURN_20                                   ;; 20:7f91 $20
 
 call_20_7f92:
@@ -4877,8 +4873,7 @@ call_20_7f92:
 call_20_7fa4:
     Op16_SubOps 1                                      ;; 20:7fa4 $16 $01
     SubOp_SetFlag 412 ; Bit 4 of wC94B                 ;; 20:7fa6 $3f $9c
-    Op50_WriteByte wC720, $00, $20                     ;; 20:7fa8 $50 $20 $c7 $00 $20
-    Op82_Run data_01_6844                              ;; 20:7fad $82 $44 $68 $01
+    ChangeSong $20                                     ;; 20:7fa8 $50 $20 $c7 $00 $20 $82 $44 $68 $01
 
 call_20_7fb1:
     SCRIPT_RETURN_20                                   ;; 20:7fb1 $20
