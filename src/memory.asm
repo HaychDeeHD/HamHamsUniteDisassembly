@@ -1110,7 +1110,10 @@ wC769:
 wC76A:
     ds 1                                               ;; c76a
 
-wC76B:
+; 00 to start.
+; $01 if you've talked to her (obtained Mega-Q).
+; $02 if you convinced her to Tack-Q her crush (?)
+wMegaqGiverC76B:
     ds 1                                               ;; c76b
 
 wC76C:
@@ -1592,6 +1595,7 @@ wC944:
 wC948:
     ds 1                                               ;; c948
 
+; Bit 2 is whether old lady is out of her house in Acorn Shrine.
 wC949:
     ds 1                                               ;; c949
 

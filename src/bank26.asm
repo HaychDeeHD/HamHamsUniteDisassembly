@@ -3144,7 +3144,7 @@ call_26_6a8d:
     Op14_BranchWithHamChatWheelRules 1, data_05_5b58   ;; 26:6aa6 $14 $01 $58 $5b
     SCRIPT_POINTER call_26_6b99                        ;; 26:6aaa $99 $6b $26
     Op16_SubOps 1                                      ;; 26:6aad $16 $01
-    SubOp_SetByte wC76B, $01                           ;; 26:6aaf $7e $53 $01
+    SubOp_SetByte wMegaqGiverC76B, $01                 ;; 26:6aaf $7e $53 $01
     Op4C_Unknown $1a, $ff, $ff, $00, $00, $00, $00, data_13_4c77 ;; 26:6ab2 $4c $1a $ff $ff $00 $00 $00 $00 $77 $4c $13
     Op4C_Unknown $30, $00, $00, $00, $00, $00, $00, zero_pointer ;; 26:6abd $4c $30 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_6bd2                             ;; 26:6ac8 $1e $d2 $6b $1d
@@ -3291,7 +3291,7 @@ call_26_6ce0:
     Op04_Unknown_Text data_36_6c9f                     ;; 26:6ce0 $04 $9f $6c $36
     Op1E_Call call_04_615d                             ;; 26:6ce4 $1e $5d $61 $04
     Op16_SubOps 1                                      ;; 26:6ce8 $16 $01
-    SubOp_SetByte wC76B, $02                           ;; 26:6cea $7e $53 $02
+    SubOp_SetByte wMegaqGiverC76B, $02                 ;; 26:6cea $7e $53 $02
     Op14_BranchWithHamChatWheelRules 1, data_05_5b88   ;; 26:6ced $14 $01 $88 $5b
     SCRIPT_POINTER call_26_6d5c                        ;; 26:6cf1 $5c $6d $26
     Op4C_Unknown $1a, $ff, $ff, $00, $00, $00, $00, data_13_4b3d ;; 26:6cf4 $4c $1a $ff $ff $00 $00 $00 $00 $3d $4b $13
@@ -3457,7 +3457,7 @@ call_26_6f53:
     Op14_BranchWithHamChatWheelRules 1, data_05_5b58   ;; 26:6f6c $14 $01 $58 $5b
     SCRIPT_POINTER call_26_7040                        ;; 26:6f70 $40 $70 $26
     Op16_SubOps 1                                      ;; 26:6f73 $16 $01
-    SubOp_SetByte wC76B, $01                           ;; 26:6f75 $7e $53 $01
+    SubOp_SetByte wMegaqGiverC76B, $01                 ;; 26:6f75 $7e $53 $01
     Op4C_Unknown $1a, $ff, $ff, $00, $00, $00, $00, data_13_4c77 ;; 26:6f78 $4c $1a $ff $ff $00 $00 $00 $00 $77 $4c $13
     Op4C_Unknown $30, $00, $00, $00, $00, $00, $00, zero_pointer ;; 26:6f83 $4c $30 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_6bd2                             ;; 26:6f8e $1e $d2 $6b $1d
@@ -3569,7 +3569,7 @@ call_26_70d8:
     Op14_BranchWithHamChatWheelRules 1, data_05_5b58   ;; 26:70f1 $14 $01 $58 $5b
     SCRIPT_POINTER call_26_71c5                        ;; 26:70f5 $c5 $71 $26
     Op16_SubOps 1                                      ;; 26:70f8 $16 $01
-    SubOp_SetByte wC76B, $01                           ;; 26:70fa $7e $53 $01
+    SubOp_SetByte wMegaqGiverC76B, $01                 ;; 26:70fa $7e $53 $01
     Op4C_Unknown $1a, $ff, $ff, $00, $00, $00, $00, data_13_4c77 ;; 26:70fd $4c $1a $ff $ff $00 $00 $00 $00 $77 $4c $13
     Op4C_Unknown $30, $00, $00, $00, $00, $00, $00, zero_pointer ;; 26:7108 $4c $30 $00 $00 $00 $00 $00 $00 $00 $00 $00
     Op1E_Call call_1d_6bd2                             ;; 26:7113 $1e $d2 $6b $1d
