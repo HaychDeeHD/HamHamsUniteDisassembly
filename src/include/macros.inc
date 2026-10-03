@@ -1,6 +1,10 @@
 MACRO ARGUMENT_WORD
 dw \1
 ENDM
+MACRO GiveHamchat
+db $50, $15, $c7, $00, (\1 - $0b)
+db $82, $d9, $6d, $02
+ENDM
 MACRO HamChatWheelOption
 db \1
 ENDM

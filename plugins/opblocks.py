@@ -2,7 +2,7 @@ from block.base import Block
 from romInfo import RomInfo
 from memory.rom import RomMemory
 
-from hamchatwheel import HamChatWheelOptionsBlock, HamChatWheelRulesBlock
+from hamchatwheel import HamChatWheelOptionsBlock, HamChatWheelRulesBlock, BITARRAY_INDEX_TO_HAMCHAT
 from scripthelpers import label3ByteRomAddressArg, serializeAddress, pullTextFrom3ByteRomAddressArg
 
 
@@ -278,6 +278,7 @@ class Op50Block(Block):
         super().__init__(memory, addr, size=5)
         # Can't use BANK(\1). Example: The label is in VRAM but the bank arg is 1.
         RomInfo.macros["Op50_WriteByte"] = "db $50\ndw \\1\ndb \\2\ndb \\3"
+        RomInfo.macros["GiveHamchat"] = "db $50, $15, $c7, $00, (\\1 - $0b)\ndb $82, $d9, $6d, $02"
 
         pointer = memory.word(addr + 1)
         self.bankNum = memory.byte(addr + 3)
@@ -287,10 +288,21 @@ class Op50Block(Block):
         targetMemory.addAutoLabel(pointer, None, None)
         self.label = targetMemory.getLabel(pointer)
 
+        # Checking if this is the very common Op50+Op82 to use the GiveHamchat macro.
+        if addr + 8 < memory.base_address + 0x4000:
+            upcomingBytes = list(memory.data(addr, 9))
+            del upcomingBytes[4] # Remove the 5th byte, the one that would be the argument.
+            if upcomingBytes == [0x50, 0x15, 0xc7, 0x00, 0x82, 0xd9, 0x6d, 0x02]:
+                self.resize(9)
+
 
     def export(self, file):
         payload = self.memory.byte(file.addr + 4)
-        file.asmLine(5, "Op50_WriteByte", str(self.label), "$%02x" % self.bankNum, "$%02x" % payload)
+        if len(self) == 9:
+            # The bitarray indices are 0x0b higher than the Hamchat IDs.
+            file.asmLine(9, "GiveHamchat", BITARRAY_INDEX_TO_HAMCHAT[payload + 0x0b])
+        else:
+            file.asmLine(5, "Op50_WriteByte", str(self.label), "$%02x" % self.bankNum, "$%02x" % payload)
 
 class Op52Block(Block):
     def __init__(self, memory, addr):

@@ -1466,6 +1466,7 @@ wC854:
 wC856:
     ds 194                                             ;; c856
 
+; Bit 3 of this is whether you are in a conversation or something like that.
 wBitArrayC918:
     ds 1                                               ;; c918
 
