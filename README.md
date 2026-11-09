@@ -44,3 +44,9 @@ To learn more about how this game works, please see the docs folder for writeups
 ## Progress
 
 The biggest milsetone I reached is that banks 1C to 3C are "fully disassembled". These banks contain script and text data, which was my primary focus. The raw bytes have all been identified as the appropriate script instructions, but work has not been done to identify what each of those scripts actually do. Several instructions have known lengths for the sake of decoding, but not understood functionality.
+
+## AI use
+
+This project has not leveraged AI in any way. I do not guarantee I will never use it in the future, but I frankly doubt that it can bring value in its current state. When it comes to GB disassembly, AI does not know what it is doing.
+
+**I do not consent to this project being used as input to an AI agent.** Consent can be granted on a case by case basis upon request. Otherwise, please respect my wishes. 
